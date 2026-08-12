@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="犬種: 8つの犬種とmoodle、それぞれの特徴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: 犬種">
+<meta property="og:description" content="犬種: 8つの犬種とmoodle、それぞれの特徴">
+<meta property="og:url" content="https://geich.github.io/companion-dogs-docs/ja/breeds.html">
+<meta property="og:image" content="https://geich.github.io/companion-dogs-docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/companion-dogs-docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: 犬種</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="目次を開く" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="ドキュメントのトップページに戻る"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">犬種</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>機能マニュアルを見る</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="マニュアル内を検索…" aria-label="マニュアル内を検索" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="機械翻訳"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="テーマを切り替え">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>機械翻訳（未校正）.</b> このページはポルトガル語から機械翻訳したもので、校正はされていません。用語や数値が正しくない場合があります。内容に迷ったときは、英語版かポルトガル語の原文を確認してください。 <a href="../en/breeds.html">英語版を読む</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">目次 &middot; <b>犬種</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-犬種で実際に変わること" data-id="1-犬種で実際に変わること">1. 犬種で実際に変わること</a>
+<div class="sub">
+<a class="s3" href="#体の大きさと筋力は別物" data-id="体の大きさと筋力は別物">体の大きさと筋力は別物</a>
+<a class="s3" href="#犬種ごとに見た目はひとつ" data-id="犬種ごとに見た目はひとつ">犬種ごとに見た目はひとつ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-早わかりの選び方" data-id="2-早わかりの選び方">2. 早わかりの選び方</a>
+<div class="sub">
+<a class="s3" href="#1行でまとめると" data-id="1行でまとめると">1行でまとめると</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-ベースmodの5犬種" data-id="3-ベースmodの5犬種">3. ベースmodの5犬種</a>
+<div class="sub">
+<a class="s3" href="#カラーメロ" data-id="カラーメロ">カラーメロ</a>
+<a class="s3" href="#ジャーマンシェパード" data-id="ジャーマンシェパード">ジャーマンシェパード</a>
+<a class="s3" href="#ゴールデンレトリバー" data-id="ゴールデンレトリバー">ゴールデンレトリバー</a>
+<a class="s3" href="#ハスキー" data-id="ハスキー">ハスキー</a>
+<a class="s3" href="#ボーダーコリー" data-id="ボーダーコリー">ボーダー・コリー</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-アドオンの3犬種" data-id="4-アドオンの3犬種">4. アドオンの3犬種</a>
+<div class="sub">
+<a class="s3" href="#ロットワイラー" data-id="ロットワイラー">ロットワイラー</a>
+<a class="s3" href="#ドーベルマン" data-id="ドーベルマン">ドーベルマン</a>
+<a class="s3" href="#ラブラドール" data-id="ラブラドール">ラブラドール</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-比較表" data-id="5-比較表">5. 比較表</a>
+<div class="sub">
+<a class="s3" href="#習得の速さ" data-id="習得の速さ">習得の速さ</a>
+<a class="s3" href="#戦闘" data-id="戦闘">戦闘</a>
+<a class="s3" href="#戦いの度胸" data-id="戦いの度胸">戦いの度胸</a>
+<a class="s3" href="#資質生まれつきの範囲" data-id="資質生まれつきの範囲">資質（生まれつきの範囲）</a>
+<a class="s3" href="#サドルバッグ" data-id="サドルバッグ">サドルバッグ</a>
+<a class="s3" href="#ひと腹の数" data-id="ひと腹の数">ひと腹の数</a>
+<a class="s3" href="#犬種ごとの出現場所" data-id="犬種ごとの出現場所">犬種ごとの出現場所</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-moodle全リスト" data-id="6-moodle全リスト">6. moodle：全リスト</a>
+<div class="sub">
+<a class="s3" href="#犬種moodleに共通するルール" data-id="犬種moodleに共通するルール">犬種moodleに共通するルール</a>
+<a class="s3" href="#犬種ごとのmoodle" data-id="犬種ごとのmoodle">犬種ごとのmoodle</a>
+<a class="s3" href="#どの犬種でも出るmoodle" data-id="どの犬種でも出るmoodle">どの犬種でも出るmoodle</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-資質遺伝子" data-id="7-資質遺伝子">7. 資質（遺伝子）</a>
+<div class="sub">
+<a class="s3" href="#ラベルの読み方" data-id="ラベルの読み方">ラベルの読み方</a>
+<a class="s3" href="#実際どのくらい効くのか" data-id="実際どのくらい効くのか">実際どのくらい効くのか</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-ミックス違う犬種をかけ合わせる" data-id="8-ミックス違う犬種をかけ合わせる">8. ミックス：違う犬種をかけ合わせる</a>
+<div class="sub">
+<a class="s3" href="#子犬に何が起きるか" data-id="子犬に何が起きるか">子犬に何が起きるか</a>
+<a class="s3" href="#ミックスの表記" data-id="ミックスの表記">「ミックス」の表記</a>
+<a class="s3" href="#違う犬種をかけ合わせる価値はあるか" data-id="違う犬種をかけ合わせる価値はあるか">違う犬種をかけ合わせる価値はあるか</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-アドオンの導入" data-id="9-アドオンの導入">9. アドオンの導入</a>
+</div>
+<div class="grp">
+<a class="s2" href="#10-犬種のよくある質問" data-id="10-犬種のよくある質問">10. 犬種のよくある質問</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs犬種マニュアル">Companion Dogs：犬種マニュアル</h1>
+<p>全犬種のガイドです。それぞれ何が一番得意なのか、moodle、資質、そして自分の遊び方に合った犬の 選び方をまとめます。</p>
+<p><strong>modの仕組み</strong>（手懐け、指示、食事、サドルバッグ、芸、狩り）を知りたい場合は、もう一つの マニュアルを見てください：<a href="features.html" class="xlink">機能</a>。</p>
+<blockquote class="quote"><strong>このマニュアルの数字は、すべて初期設定を前提にしています。</strong> サーバー側で <strong>「スキルと訓練」</strong>を切ると、犬種は<strong>伸びなくなります</strong>。スキルはゼロで固定され、レベルごとの ダメージ曲線は犬種共通のものになり、4つの芸が一度に全部解放されます（modがすべての犬を服従10 として扱うようになるためです）。犬種が<strong>生まれつき</strong>持っているものはそのまま残ります。噛む力の 基礎値、ノックダウン、戦いの度胸、専用moodle、サドルバッグ、ひと腹の数です。 芸を隠すのは、別枠の<strong>「服従の芸」</strong>というオプションのほうです。</blockquote>
+<h2 id="1-犬種で実際に変わること">1. 犬種で実際に変わること</h2>
+<p>犬種が変えるのは<strong>7つ</strong>だけで、それ以外には一切影響しません。</p>
+<div class="tw"><table><thead><tr>
+<th>変わるもの</th>
+<th>中身</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>習得の速さ</strong></td>
+<td>5つのスキルそれぞれを、犬種ごとに違う速さで覚えます。犬種の性格を一番決めている部分です</td>
+</tr>
+<tr>
+<td><strong>噛む力</strong></td>
+<td>一噛みあたりのダメージと、そのうちどれだけを訓練で伸ばせるか</td>
+</tr>
+<tr>
+<td><strong>戦いの度胸</strong></td>
+<td>戦ってどれだけストレスが溜まるか、どこでパニックになって止まるか</td>
+</tr>
+<tr>
+<td><strong>資質（遺伝子）</strong></td>
+<td>筋力・攻撃性・耐性が、どの範囲で生まれてくるか</td>
+</tr>
+<tr>
+<td><strong>専用moodle</strong></td>
+<td>犬が近くにいて、餌を与えられ、忠実な間、<strong>あなた</strong>にかかるボーナス</td>
+</tr>
+<tr>
+<td><strong>ひと腹の数</strong></td>
+<td>一回の出産で生まれる子犬の数</td>
+</tr>
+<tr>
+<td><strong>マップのどこに出るか</strong></td>
+<td>犬種ごとに出現場所が決まっています</td>
+</tr>
+</tbody></table></div>
+<p>逆に、よく誤解されていますが、犬種では<strong>変わらない</strong>ものもあります。</p>
+<ul>
+<li><strong>走る速さ。</strong> 速い犬種というものはありません。全部同じ速さで走ります。</li>
+<li><strong>見張り、嗅覚、狩りの範囲。</strong> スキルのレベルだけで決まります。犬種が変えるのはそこへ届くまでの 速さであって、上限ではありません。</li>
+<li><strong>芸。</strong> 4つとも服従のレベルで解放され、どの犬種でも同じです。</li>
+<li><strong>空腹と喉の渇き。</strong> 減っていく速さはどの犬種でも同じです（ハスキーも同じです。詳しくはハスキーの 項目で）。</li>
+<li><strong>サドルバッグの容量。</strong> 唯一の例外がハスキーで、犬種ボーナスを持つのはこの犬だけです。</li>
+<li><strong>体の大きさは筋力ではありません。</strong> 別々のもので、いつも一緒に動くので混同しやすいだけです。 下で説明します。</li>
+</ul>
+<h3 id="体の大きさと筋力は別物">体の大きさと筋力は別物</h3>
+<p><strong>筋力</strong>は資質のひとつで、これは本当に効きます。噛みつきのダメージを最大<strong>30%</strong>上げますし、 サドルバッグの容量を決めているのもこれです。</p>
+<p><strong>体の大きさ</strong>は別の話です。こちらはゲーム側が持っている専用の遺伝子で、modは抽選も変更もして いません。それに、子犬から成犬の体格まで育つ自然な成長が乗ります。同じ犬種の2匹で大きさが違っても 筋力の差はまったくありませんし、<strong>同じ犬種の中で</strong>体が大きいからといって、その分強く噛むわけでも ありません。</p>
+<p>ややこしいのは、<strong>犬種</strong>がこの2つを別々に、しかし同時に決めているからです。ジャーマンシェパードは 体が大きく、<strong>しかも</strong>生まれつき力があります。カラーメロは小さく、<strong>しかも</strong>生まれつき非力です。 だから犬種同士を比べると、たしかに体の大きい犬のほうが強く噛みます。ただし原因は犬種であって 体格ではありません。体の大きさを見ても、その1匹の筋力については何も分かりません。それを見るために あるのが、犬のウィンドウの「資質」にある筋力のバーです。</p>
+<h3 id="犬種ごとに見た目はひとつ">犬種ごとに見た目はひとつ</h3>
+<p><strong>同じ犬種の中に毛色のバリエーションはありません。</strong> 犬種ごとにテクスチャはちょうど1枚で、オスも メスも同じものを使います。ハスキーはいつでも同じハスキーの見た目です。</p>
+<p>子犬はどの犬種でも同じ小ささで生まれ、その犬種の成犬の体格まで育ちます。</p>
+<h2 id="2-早わかりの選び方">2. 早わかりの選び方</h2>
+<div class="tw"><table><thead><tr>
+<th>やりたいこと</th>
+<th>選ぶ犬</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>その辺で見つかる犬で最初の数日を生き延びる</strong></td>
+<td><strong>カラーメロ</strong></td>
+</tr>
+<tr>
+<td><strong>前線を支えて、ゾンビを自力で倒せる犬がほしい</strong></td>
+<td><strong>ジャーマンシェパード</strong>か<strong>ロットワイラー</strong></td>
+</tr>
+<tr>
+<td><strong>肉を獲る</strong></td>
+<td><strong>ゴールデンレトリバー</strong>か<strong>ラブラドール</strong></td>
+</tr>
+<tr>
+<td><strong>戦利品を運ぶ</strong></td>
+<td>文句なしで<strong>ハスキー</strong></td>
+</tr>
+<tr>
+<td><strong>出かけている間、農場を任せる</strong></td>
+<td><strong>ボーダー・コリー</strong></td>
+</tr>
+<tr>
+<td><strong>銃をうまく撃つ</strong></td>
+<td><strong>ドーベルマン</strong></td>
+</tr>
+<tr>
+<td><strong>近接戦を長く続ける</strong></td>
+<td><strong>ロットワイラー</strong></td>
+</tr>
+<tr>
+<td><strong>退屈と悲しみを減らす</strong></td>
+<td><strong>カラーメロ</strong></td>
+</tr>
+<tr>
+<td><strong>パニックを減らす</strong></td>
+<td><strong>ジャーマンシェパード</strong></td>
+</tr>
+<tr>
+<td><strong>採集をもっと稼ぐ</strong></td>
+<td><strong>ゴールデンレトリバー</strong></td>
+</tr>
+<tr>
+<td><strong>寒さで死なない</strong></td>
+<td><strong>ハスキー</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="1行でまとめると">1行でまとめると</h3>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>1行まとめ</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>カラーメロ</strong></td>
+<td>素朴な野良犬。非力だがゾンビを転ばせるし、相棒としては本物</td>
+</tr>
+<tr>
+<td><strong>ジャーマンシェパード</strong></td>
+<td>兵隊。強く噛み、めったにパニックにならない</td>
+</tr>
+<tr>
+<td><strong>ゴールデンレトリバー</strong></td>
+<td>鼻の利く猟犬。あなたの採集まで良くしてくれる</td>
+</tr>
+<tr>
+<td><strong>ハスキー</strong></td>
+<td>冬に暖めてくれる荷役犬。ただし頑固</td>
+</tr>
+<tr>
+<td><strong>ボーダー・コリー</strong></td>
+<td>農場の働き手</td>
+</tr>
+<tr>
+<td><strong>ロットワイラー</strong></td>
+<td>近接戦であなたのスタミナを節約してくれる戦士</td>
+</tr>
+<tr>
+<td><strong>ドーベルマン</strong></td>
+<td>射撃向きの犬。反動が減り、リロードが速く、気持ちも落ち着く</td>
+</tr>
+<tr>
+<td><strong>ラブラドール</strong></td>
+<td>回収役。modで一番戦えないが、獲物を届けさせたら一番</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-ベースmodの5犬種">3. ベースmodの5犬種</h2>
+<p>この5犬種はメインのmodに最初から入っています。ほかに何もインストールする必要はありません。</p>
+<hr>
+<h3 id="カラーメロ">カラーメロ</h3>
+<p><strong>ブラジルの雑種犬。</strong> 最初に出会う犬で、たいていはあなたの最初の相棒になります。</p>
+<blockquote class="quote"><em>「カラーメロは街中でよく見かける、ごく普通の雑種犬です。特別な能力はなく、生まれつき非力で、 自力でゾンビを倒すことはできず、ゾンビを転ばせて時間を稼ぐことしかできません。」</em></blockquote>
+<p><strong>見つかる場所：</strong> 街や住宅地にある民家。<strong>1軒あたり20%</strong>で、ゲーム中もっとも数の多い犬種です。</p>
+<p><strong>習得：</strong> 何もかも標準の速さです。飛び抜けて得意なものも、苦手なものもありません。</p>
+<p><strong>戦闘では：</strong> <strong>ゾンビにとどめを刺せない唯一の犬</strong>です。噛みついてもゾンビを瀕死のまま止めるだけで、 そこから先には進みません。これは仕様で、<strong>サンドボックス設定をどういじっても変わりません</strong>。 その代わりに<strong>転ばせる</strong>ことはできます。ゾンビを転ばせるというのは、逃げるなり殴るなりする時間を そのまま稼ぐということです。</p>
+<p>そして<strong>modの中でいちばん気が立ちやすい犬</strong>でもあります。戦闘でのストレスの溜まり方は ジャーマンシェパードの5倍速く、真っ先にパニックになります。</p>
+<p><strong>資質：</strong> 全犬種で最低です。犬のウィンドウでは筋力・攻撃性・耐性のすべてが<strong>低い</strong>と表示されます。 手懐けたカラーメロは<strong>必ず</strong>そうなるので、「当たり」のカラーメロを探し回っても意味がありません。</p>
+<p><strong>ひと腹の子犬：</strong> <strong>2～4匹</strong>で、modで最多です。頭数をそろえるのが目的なら、いちばん増えるのが この犬種です。</p>
+<p><strong>サドルバッグ：</strong> 積載4～5。いちばん小さい容量です。</p>
+<p><strong>Moodle：「良き相棒」</strong></p>
+<blockquote class="quote"><em>「カラーメロは愛情深く魅力的な雑種犬です。その忠実な存在があなたの心を励まし、そばにいると 悲しみと退屈がより早く和らぎます。」</em></blockquote>
+<p>そばにいるあいだ、<strong>不幸と退屈</strong>を継続的に減らします。退屈と悲しみはZomboidでずっと付きまとう 問題で、ほかの手段で解消しようとすると高くつくので、日常の使い勝手ではmod屈指のmoodleです。</p>
+<p><strong>向いている人：</strong> 序盤は全員。その後もずっと使えます。ほかのどの犬種も解決できない問題を このmoodleが片付けてくれるからです。ただし、何かを倒す役には期待しないでください。</p>
+<hr>
+<h3 id="ジャーマンシェパード">ジャーマンシェパード</h3>
+<p><strong>軍用犬。</strong> ベースmodの戦闘担当です。</p>
+<blockquote class="quote"><em>「強靭で知能の高い使役犬です。カラーメロよりはるかに頑丈で力強く生まれ、戦闘と服従の習得も早く、 戦闘でもほとんど動揺せず、群れに囲まれてもパニックにならずに持ちこたえ、単独でゾンビを倒すことも できます。」</em></blockquote>
+<p><strong>見つかる場所：</strong> 警察署、刑務所、拘置所、軍事基地、兵舎、銃砲店、弾薬庫。 <strong>1棟あたり20%</strong>です。民家には出ません。こちらから出向く必要があります。</p>
+<p><strong>習得：</strong> <strong>戦闘は2倍の速さ</strong>で、服従は50%速く覚えます。狩りも少しだけ速いです。いちばん早く 強くなる犬種です。</p>
+<p><strong>戦闘では：</strong> ベースmodで最も強い噛みつきを持ち、<strong>単独でゾンビを倒せます</strong>。ただし本当の売りは ダメージではなく<strong>度胸</strong>のほうです。ストレスの溜まり方はカラーメロの<strong>5分の1の遅さ</strong>で、 パニックに入る境界値はmod最高です。要するに、<strong>ほかの犬種ならとっくに動かなくなっている状況でも 戦い続けます</strong>。</p>
+<p><strong>資質：</strong> すべて中くらいの帯で、カラーメロよりはっきり上です。ジャーマンシェパードは3つの資質すべてに <strong>普通</strong>と表示されます。</p>
+<p><strong>ひと腹の子犬：</strong> 1～2匹。</p>
+<p><strong>サドルバッグ：</strong> 6～8。</p>
+<p><strong>Moodle：「勇気」</strong></p>
+<blockquote class="quote"><em>「勇敢なジャーマンシェパードがそばにいると気持ちが落ち着きます。その恐れを知らない存在が、 近くにいる間あなたのパニックを和らげます。」</em></blockquote>
+<p><strong>パニック</strong>を継続的に下げます。数字の上ではベースmodで最も強いmoodleで、深刻な問題を一つ 片付けてくれます。パニックは銃の狙いも近接戦の効率も台無しにするからです。この犬がそばにいれば、 手元がぶれずに戦えます。</p>
+<p><strong>向いている人：</strong> 戦う人。殴り合いで街の真ん中に踏み込む遊び方をするなら、この犬種です。</p>
+<blockquote class="quote"><strong>注意：</strong> ゲーム内の説明は「ストレスは3分の1」となっていますが、実際の数字は<strong>5分の1</strong>です。 説明のほうが控えめすぎて、この犬は書いてある以上に優秀です。</blockquote>
+<hr>
+<h3 id="ゴールデンレトリバー">ゴールデンレトリバー</h3>
+<p><strong>鼻の利く猟犬。</strong> あなたの採集を底上げしてくれる犬種です。</p>
+<blockquote class="quote"><em>「人懐っこく鼻の利く猟犬で、生まれながらのハンターです。狩りをカラーメロの2倍の速さで習得し、 単独でゾンビを倒すこともできます（ただしジャーマンシェパードより気が立ちやすいです）。その鼻の おかげで、より遠くから採集物を見つけ、獲物を追跡できます。」</em></blockquote>
+<p><strong>見つかる場所：</strong> 民家。カラーメロとは別枠の抽選です。<strong>1軒あたり5%</strong>。雑種の4分の1しか出ませんが、 抽選されるのは同じ民家なので、1軒に両方いることもあります。</p>
+<p><strong>習得：</strong> <strong>狩りは2倍の速さ</strong>で、嗅覚は50%速く覚えます。狩りのLv6にいちばん早く届く犬種で、 Lv6は犬が鹿に挑めるようになるラインです。</p>
+<p><strong>戦闘では：</strong> ダメージは中くらいで、<strong>単独で倒せます</strong>。ストレスの溜まり方はジャーマンシェパード より速く、カラーメロよりは遅いです。</p>
+<p><strong>資質：</strong> カラーメロより少し上、ジャーマンシェパードより下です。けんかの犬ではありません。</p>
+<p><strong>ひと腹の子犬：</strong> 1～2匹。</p>
+<p><strong>サドルバッグ：</strong> 6～7。</p>
+<p><strong>Moodle：「鋭い嗅覚」</strong></p>
+<blockquote class="quote"><em>「ゴールデンレトリバーがあなたと一緒に地面を探ります。そばにいて、十分に食べ、忠実である間、 より遠くから採集物を見つけられ、採集・トラッピング・エイミングの習得が早くなります。」</em></blockquote>
+<p>効果は3つ：</p>
+<ul>
+<li><strong>採集・トラッピング・エイミング</strong>の<strong>経験値+20%</strong>。</li>
+<li><strong>探索モード</strong>での視認範囲<strong>+4タイル</strong>。これはどの犬でも付くボーナスに<strong>上乗せ</strong>されます。</li>
+</ul>
+<p>田舎で暮らすキャラクターのテンポをいちばん大きく変えるmoodleです。採集とトラッピングは伸びの遅い スキルですし、エイミングは上げるのに手間がかかります。</p>
+<p><strong>向いている人：</strong> 狩り、採集、罠で食べていく人。田舎の拠点と相性がいいです。</p>
+<blockquote class="quote"><strong>注意：</strong> ゲーム内の説明には「戦闘も少し速く習得」すると書いてありますが、これは正しくありません。 戦闘の習得速度は雑種とまったく同じです。</blockquote>
+<hr>
+<h3 id="ハスキー">ハスキー</h3>
+<p><strong>荷役の犬。</strong> modで最も力が強く、唯一あなたを暖めてくれる犬です。</p>
+<blockquote class="quote"><em>「頑健な北国のそり犬です。圧倒的に最も強い犬種で、荷物を運ぶ（サドルバッグの積載量は随一です） ためと寒さを生き抜くために生まれました。頑固で（服従の習得が遅い）、人懐っこく（番犬には不向き）、 大食いです。」</em></blockquote>
+<p><strong>見つかる場所：</strong> 二通りあります。</p>
+<ul>
+<li><strong>民家、冬のあいだだけ。</strong> 1軒あたり2.5%。季節を外すとゲーム中もっとも珍しい犬種です。</li>
+<li><strong>ペットショップと動物病院。</strong> 1棟あたり10%、通年です。確実に手に入れたいならこちらです。</li>
+</ul>
+<p><strong>習得：</strong> <strong>嗅覚は2倍の速さ</strong>で、modで最高の見張り役になります。狩りは50%速く、戦闘も平均より 少し上です。<strong>ただし服従の習得は20%遅く</strong>、これは<strong>mod全体で唯一の犬種ペナルティ</strong>です。 これも仕様で、要は頑固なのです。</p>
+<p>服従が遅いことの実害はこうです。芸の解放が遅れ、言うことを聞かない期間が長引き、不服従になる 忠誠度のラインもなかなか下がりません。ハスキーは根気が要ります。</p>
+<p><strong>戦闘では：</strong> ダメージは平均以上で、<strong>単独で倒せます</strong>が、戦士ではありません。ストレスの溜まり方は ジャーマンシェパードよりかなり速いです。</p>
+<p><strong>資質：</strong> <strong>筋力の帯がmod最大で、しかも差は大きい</strong>です。ハスキーの筋力は<strong>普通か高い</strong>と 表示されます。ほかの犬種が普通か低いに収まるところです。</p>
+<p><strong>ひと腹の子犬：</strong> 1～2匹。</p>
+<p><strong>サドルバッグ：積載13～16。</strong> サドルバッグにボーナス（+50%）が付く唯一の犬種で、差は歴然です。 ほかのどの犬よりも<strong>2～3倍</strong>運べます。</p>
+<p><strong>Moodle：「暖かい」</strong></p>
+<blockquote class="quote"><em>「ハスキーがあなたのそばで力を貸してくれます。そばにいて、十分に食べ、忠実である間、荷物を少し 肩代わりしてくれるのでより多く運べ、スタミナを保ってくれるので疲れにくくなります。そして寒さが 増すと、その厚い被毛があなたを暖めてくれます。」</em></blockquote>
+<p>効果は3つ：</p>
+<ul>
+<li><strong>あなたの最大積載量+2</strong>。これは犬のサドルバッグに入る分とは別勘定です。</li>
+<li><strong>スタミナが継続的に回復</strong>し、疲れにくくなります。</li>
+<li><strong>歩く暖房</strong>です。<strong>体が冷えてくると自動でオンになり</strong>、暖まると切れます。冬のあいだ、たき火を 横に連れて歩いているようなものです。</li>
+</ul>
+<p><strong>向いている人：</strong> 遠出して荷物を抱えて帰ってくる人と、厳しい冬で遊ぶ人。物流担当の犬です。</p>
+<blockquote class="quote"><strong>注意：</strong> 説明には「大食いです（すぐに空腹になります）」とあります。<strong>これは手懐けたあとの犬には 当てはまりません。</strong> 相棒の空腹の進み方はどの犬種でも同じです。食欲が大きいのは、野良でいる あいだだけです。</blockquote>
+<hr>
+<h3 id="ボーダーコリー">ボーダー・コリー</h3>
+<p><strong>農場の犬。</strong> 牧羊担当の犬種です。</p>
+<blockquote class="quote"><em>「賢く疲れ知らずの牧羊犬で、その知能ゆえに何より重宝される、農場の定番の相棒です。」</em></blockquote>
+<p><strong>見つかる場所：</strong> <strong>田舎</strong>にある納屋、厩舎、サイロ、鶏小屋、家畜囲い。<strong>1棟あたり15%</strong>で、 この抽選は<strong>都市の判定を無視する</strong>ので、何もない場所にぽつんと建っている農場でも対象になります。</p>
+<p><strong>習得：</strong> <strong>Herdingは2倍の速さ</strong>で、服従は50%速く、嗅覚も平均より少し速く覚えます。</p>
+<p><strong>戦闘では：</strong> ダメージは中くらいで、ゴールデンレトリバーと同じです。<strong>単独で倒せます。</strong> ストレスの溜まり方はカラーメロより遅いものの、ジャーマンシェパードよりはかなり速いです。 けんかの犬ではなく、仕事の犬です。</p>
+<p><strong>資質：</strong> 中くらいの帯で、ゴールデンレトリバーより少し上です。</p>
+<p><strong>ひと腹の子犬：</strong> <strong>1～3匹</strong>で、ベースmodでは2番目に多いです。</p>
+<p><strong>サドルバッグ：</strong> 6～8。</p>
+<p><strong>本当の専門分野：</strong> レベルあたりの鎮静オーラの効率が、ほかのどの犬種よりも<strong>50%高い</strong>です。 このオーラが働く場所は2つあり、そのどちらにも効きます。</p>
+<ul>
+<li><strong>「Care for livestock here」</strong>モードで、家畜囲いに常駐しているとき。</li>
+<li>この犬のmoodleで、<strong>あなた</strong>の周りの家畜を落ち着かせるとき。</li>
+</ul>
+<p>ストレスの溜まった家畜は乳も毛も出さず、流産し、群れから離れていってしまうので、訓練した ボーダー・コリーがいるかどうかは、生産できる農場とできない農場の分かれ目そのものです。</p>
+<p><strong>Moodle：「牧羊本能」</strong></p>
+<blockquote class="quote"><em>「ボーダー・コリーがあなたと共に群れを扱います。そばにいて、十分に食べ、忠実である間、周りの 動物たちは落ち着き、動物の世話と農業の習得が速くなります。」</em></blockquote>
+<p>効果は2つ：</p>
+<ul>
+<li><strong>動物の世話と農業</strong>の<strong>経験値+20%</strong>。</li>
+<li>作業しているあいだ、<strong>あなたを中心とした一定範囲の家畜を自動で落ち着かせます</strong>。</li>
+</ul>
+<p><strong>向いている人：</strong> 農場をやる人。牛、羊、鶏を飼っているなら、生産を守ってくれるのがこの犬種です。</p>
+<blockquote class="quote"><strong>注意：</strong> ゲーム内の説明にはいまだに「今のところは特筆すべき専門性のない、バランス型の万能犬です」 と書かれています。これは古い文言です。Herdingの2倍習得も強化されたオーラも、すでに入っています。</blockquote>
+<h2 id="4-アドオンの3犬種">4. アドオンの3犬種</h2>
+<p>この3種はそれぞれ<strong>Steamの別mod</strong>として配布されていて、動かすにはCompanion Dogs本体が必要です。 リンクは下の各犬種の欄にあり、<a href="#9-アドオンの導入">アドオンの導入</a>にもまとめてあります。</p>
+<hr>
+<h3 id="ロットワイラー">ロットワイラー</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>、独立したアドオン)</em></p>
+<p><strong>あなたのスタミナを節約してくれる戦士。</strong></p>
+<blockquote class="quote"><em>「護衛のために生み出された力強い番犬で、ジャーマンシェパードに並ぶ生粋の戦士。戦闘スキルを2倍の 速さで習得し、高レベルでは強烈な一撃を放ち、ゾンビを転倒させ、他の犬種がパニックに陥る状況でも 戦い続けます。」</em></blockquote>
+<p><strong>見つかる場所：</strong></p>
+<ul>
+<li><strong>工業系の建物</strong>（倉庫、物置小屋、工場、廃品置き場、整備工場、荷役ドック）： <strong>1棟につき10%</strong>。</li>
+<li><strong>民家：</strong> 1軒につき5%、まれに出るくらいです。</li>
+</ul>
+<p><strong>覚える速さ：</strong> <strong>戦闘が2倍</strong>、嗅覚が50%速いです（鼻の利く唯一の戦闘犬です）。服従にボーナスは ありません。</p>
+<p><strong>戦いでは：</strong> 噛む力はジャーマンシェパードと互角で、<strong>気の強さも互角</strong>です。ストレスの溜まる速さは カラーメロの5分の1、パニックに陥る閾値はMOD最高です。ゾンビを転ばせますし、とどめも刺せます。</p>
+<p><strong>資質：</strong> ジャーマンシェパードと同じです。</p>
+<p><strong>ひと腹の子犬：</strong> 1〜2匹。<strong>サドルバッグ：</strong> 6〜8。</p>
+<p><strong>moodle：「前線」</strong></p>
+<blockquote class="quote"><em>「ロットワイラーがあなたの傍らで戦っています。近くで戦闘中で、餌を与えられ忠実な間、あなたの 近接攻撃のスタミナ消費が減ります。」</em></blockquote>
+<p><strong>近接攻撃1回ごとに、消費したスタミナの35%が戻ってきます。</strong></p>
+<p>これはMODで最も条件のうるさいmoodleです。アイコンはロットワイラーが近くにいれば常に出ますが、 <strong>効果が乗るのは実際に戦っている間だけ</strong>です。しかも<strong>近接攻撃だけ</strong>で、銃には何も付きません。</p>
+<p>そのぶん実際の効き目は大きいです。ゾンビを何体続けて殴れるかを決めているのはスタミナなので、 ロットワイラーが隣で戦っていれば、息が上がるまでに殴れる回数がおよそ3分の1増えます。</p>
+<p><strong>向いている人：</strong> 近接で群れを片付ける人向けです。攻撃的な立ち回りと最もかみ合う犬種です。</p>
+<hr>
+<h3 id="ドーベルマン">ドーベルマン</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>、独立したアドオン)</em></p>
+<p><strong>銃使いの犬。</strong></p>
+<blockquote class="quote"><em>「引き締まった体つきの警戒心の強い番犬で、全犬種で最も覚えが早い犬です。戦いでは刃そのもので、 鎧は持ちません。訓練前は非力ですが、戦闘スキルが最大になれば強く噛みつきます。ただしロットワイラー ほど打たれ強くはありません。」</em></blockquote>
+<p><strong>見つかる場所：</strong></p>
+<ul>
+<li><strong>警察署：</strong> 1棟につき18%。</li>
+<li><strong>軍事施設</strong>（弾薬庫、兵舎、バンカー、詰所、検問所）：1棟につき22%。</li>
+</ul>
+<blockquote class="quote"><strong>実用上の注意：</strong> 軍事施設はゲームの基本マップに<strong>ほとんど存在しません</strong>（ケンタッキー全体で 5部屋ほどしかありません）。現実的には<strong>警察署</strong>を回ってください。</blockquote>
+<p><strong>覚える速さ：</strong> <strong>戦闘が2倍</strong>、<strong>服従が50%速い</strong>で、ジャーマンシェパードとまったく同じ組み合わせ です。この2頭を分けるのは訓練の速さではなく、<strong>ダメージの伸び方</strong>です。</p>
+<p><strong>戦いでは：</strong> <strong>MOD内で最も伸びが急</strong>です。無訓練のうちはロットワイラーよりかなり弱いのですが、 戦闘レベル10では<strong>頂点に並びます</strong>。つまり投資型で、手懐けたばかりのドーベルマンは弱く、訓練を積んだ ドーベルマンは一線級です。</p>
+<p>気は強い（パニックに陥る閾値はMOD最高）のですが、<strong>打たれ強さは劣ります</strong>。耐性は戦える犬の中で 最も低い値です。</p>
+<p><strong>資質：</strong> <strong>MOD内で攻撃性の幅が最も高く</strong>、そのぶん戦闘の経験値をさらに速く稼ぎます。筋力と耐性は ロットワイラーより少し下です。</p>
+<p><strong>ひと腹の子犬：</strong> 1〜2匹。<strong>サドルバッグ：</strong> 6〜8。</p>
+<p><strong>moodle：「安定した照準」</strong></p>
+<blockquote class="quote"><em>「ドーベルマンがあなたの背後を守っています。近くにいて、餌を与えられ忠実な間、ストレスが和らぎ、 射撃後の照準の復帰が速まり、リロードも速くなります。」</em></blockquote>
+<p>効果は3つあり、どれも<strong>銃</strong>に効きます。</p>
+<ul>
+<li><strong>ストレスが常に下がり続けます</strong>（Zomboidではストレスが高いと照準がぶれます）。</li>
+<li>射撃後の<strong>反動の復帰が45%速く</strong>なります。次の狙いに早く戻れます。</li>
+<li><strong>リロードが15%速くなります。</strong></li>
+</ul>
+<p><strong>向いている人：</strong> 銃を主体に遊ぶ人向けです。3つの効果はどれも「1発と次の1発の間に失う時間」という 同じ問題に効きます。</p>
+<blockquote class="quote"><strong>補足：</strong> ゲーム内の説明では、服従を「ジャーマンシェパードをも上回る速さで」習得し、戦闘が最大に なれば「他のどの犬よりも強く噛みつきます」と書かれています。どちらも実際は<strong>互角</strong>で、上回っては いません。服従はジャーマンシェパードと同じ、レベル10のダメージはロットワイラーと同じです。</blockquote>
+<hr>
+<h3 id="ラブラドール">ラブラドール</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>、独立したアドオン)</em></p>
+<p><strong>回収役。</strong> 最高の猟犬であり、そして意図的にMODで最も弱い戦闘犬です。</p>
+<blockquote class="quote"><em>「獲物を持ち帰るための猟犬です。狩猟の習得速度は他の倍で、従順さもそれに次ぎます。その代わり、 意図的に一族で最も戦えない犬です。噛む力は最弱、ノックダウンもなく、乱闘になるとひどく動揺します。 真価はその口にあります。」</em></blockquote>
+<p><strong>見つかる場所：</strong></p>
+<ul>
+<li><strong>民家：</strong> <strong>1軒につき10%。</strong> アドオンの中では最も見つけやすく、ゴールデンレトリバーの2倍の 確率です。</li>
+<li><strong>森や郊外：</strong> 狩猟小屋、キャンプ場、ボートハウス、釣り小屋、レンジャー詰所。 <strong>1棟につき20%。</strong></li>
+</ul>
+<p><strong>覚える速さ：</strong> <strong>狩りが2倍</strong>、<strong>服従が50%速い</strong>です。規律のある猟犬という組み合わせです。</p>
+<p><strong>戦いでは：</strong> <strong>意図的にMOD最弱</strong>です。</p>
+<ul>
+<li><strong>噛む力が全犬種で最も弱い</strong>です。</li>
+<li><strong>ゾンビを転ばせません。</strong> これができない唯一の犬種です。</li>
+<li>ストレスの溜まる速さはロットワイラーの<strong>3.5倍</strong>で、パニックに陥る点もカラーメロと同じ低さです。</li>
+</ul>
+<p>粘れば<strong>とどめは刺せます</strong>が、この犬を戦わせるのはやめておきましょう。</p>
+<p><strong>資質：</strong> <strong>MOD内で攻撃性の幅が最も低い</strong>です。ここで一番おとなしい犬で、そのぶん戦い方を覚えるのに 時間がかかります。</p>
+<p><strong>ひと腹の子犬：</strong> <strong>1〜3匹</strong>で、アドオンの中で唯一2匹を超えます。<strong>サドルバッグ：</strong> 6〜8。</p>
+<p><strong>moodle：「ソフトマウス」</strong></p>
+<blockquote class="quote"><em>「ラブラドールは最初の狩りから必ず獲物を運び、おまけを咥えてくることもあります。近くにいて、餌を 与えられ忠実な間は、解体と短刃の習得も速くなります。」</em></blockquote>
+<p>効果は4つあり、MODで最も内容の詰まったmoodleです。</p>
+<ul>
+<li><strong>狩りがレベル3になった時点から獲物を運んできます。</strong> つまり<strong>狩りができるようになった瞬間から</strong> です。他の犬種はどれも狩り6にならないと運びません。これはゲーム半分ぶんの差になります。</li>
+<li>途中で獲物を置いていくまで、<strong>3倍長く粘ります</strong>。</li>
+<li><strong>運搬の60%で追加の品</strong>があなたの足元の地面に落ちます。小動物の骨、鶏の羽根、小枝、野生の卵など です。<em>「ラブラドールがもう一つ持ってきました：…」</em></li>
+<li><strong>解体と短刃の経験値が+20%</strong>。まさに彼が運んできたものを処理するためのスキルです。</li>
+</ul>
+<p><strong>向いている人：</strong> 狩り中心の暮らし向けです。ゴールデンレトリバーも狩りを覚える速さは同じですが、 <strong>ラブラドールは最初から運んできます</strong>。その差はプレイ開始から数週間で効いてきます。</p>
+<h2 id="5-比較表">5. 比較表</h2>
+<h3 id="習得の速さ">習得の速さ</h3>
+<p>数字が大きいほど速く覚えます。<strong>1.0が標準の速さです。</strong></p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>嗅覚</th>
+<th>戦闘</th>
+<th>服従</th>
+<th>狩り</th>
+<th>Herding</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td><strong>0.8</strong></td>
+<td>1.5</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+</tbody></table></div>
+<p>ハスキーの<strong>0.8</strong>は、mod全体でただひとつの犬種ペナルティです。</p>
+<h3 id="戦闘">戦闘</h3>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>訓練なしの噛む力</th>
+<th>戦闘レベル10の噛む力</th>
+<th>単独で倒せる？</th>
+<th>ノックダウン？</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>弱い</td>
+<td><strong>1倍</strong>（基準）</td>
+<td><strong>いいえ</strong></td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>弱い</td>
+<td>1.3倍</td>
+<td>はい</td>
+<td><strong>いいえ</strong></td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>弱い</td>
+<td>1.5倍</td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>弱い</td>
+<td>1.5倍</td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td>中くらい</td>
+<td>1.9倍</td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>中くらい</td>
+<td><strong>2.6倍</strong></td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード</td>
+<td><strong>強い</strong></td>
+<td><strong>2.6倍</strong></td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td><strong>強い</strong></td>
+<td><strong>2.6倍</strong></td>
+<td>はい</td>
+<td>はい</td>
+</tr>
+</tbody></table></div>
+<p>ドーベルマンは最後には頂点に届きますが、出発点はかなり下です。噛む力はロットワイラーの <strong>3分の2</strong>ほどから始まり、並ぶのはレベル10になってからです。</p>
+<h3 id="戦いの度胸">戦いの度胸</h3>
+<p>数字が<strong>小さい</strong>ほど、戦っているときに落ち着いていられます。</p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>戦って溜まるストレス</th>
+<th>パニックになる点</th>
+</tr></thead><tbody>
+<tr>
+<td>ジャーマンシェパード</td>
+<td><strong>0.20</strong>（最も落ち着いている）</td>
+<td><strong>0.90</strong>（最も高い）</td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td><strong>0.20</strong></td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>0.25</td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td>0.60</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>0.70</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>カラーメロ</td>
+<td><strong>1.00</strong>（最も気が立ちやすい）</td>
+<td><strong>0.80</strong></td>
+</tr>
+</tbody></table></div>
+<p>パニックになった犬は<strong>戦わず、見張らず、芸もしません</strong>。だからこの表は、ダメージの表と同じくらい 大事です。その手前で固まってしまうなら、強く噛めてもあまり意味がありません。</p>
+<h3 id="資質生まれつきの範囲">資質（生まれつきの範囲）</h3>
+<p>範囲が上に寄っているほど、良い素質で生まれる可能性があります。0.34未満の値はウィンドウに <strong>「低い」</strong>と表示され、0.66を超えると<strong>「高い」</strong>、その間は<strong>「普通」</strong>になります。</p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>筋力</th>
+<th>攻撃性</th>
+<th>耐性</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>0.00～0.15</td>
+<td>0.00～0.15</td>
+<td>0.00～0.15</td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>0.20～0.40</td>
+<td>0.10～0.30</td>
+<td>0.20～0.40</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>0.20～0.45</td>
+<td>0.15～0.40</td>
+<td>0.25～0.50</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>0.25～0.45</td>
+<td><strong>0.10～0.25</strong></td>
+<td>0.25～0.45</td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>0.25～0.45</td>
+<td><strong>0.35～0.55</strong></td>
+<td>0.20～0.40</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード</td>
+<td>0.30～0.50</td>
+<td>0.30～0.50</td>
+<td>0.30～0.50</td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td>0.30～0.50</td>
+<td>0.30～0.50</td>
+<td>0.30～0.50</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td><strong>0.55～0.80</strong></td>
+<td>0.10～0.30</td>
+<td>0.40～0.60</td>
+</tr>
+</tbody></table></div>
+<p>ざっと読むならこうです。</p>
+<ul>
+<li><strong>カラーメロは3つとも必ず「低い」と出ます。</strong> 良いカラーメロというものは存在しません。</li>
+<li><strong>筋力で「高い」がよく出るのはハスキーだけです。</strong></li>
+<li>ゴールデンレトリバー、ハスキー、ラブラドールは、<strong>攻撃性がいつも「低い」</strong>になります。それが その犬種の普通であって、運が悪いわけではありません。</li>
+<li>ゴールデンレトリバーとドーベルマンも、筋力と耐性でよく「低い」に落ちます。</li>
+<li><strong>ジャーマンシェパードとロットワイラー</strong>だけが、3つともほぼいつも「普通」と出ます。</li>
+</ul>
+<h3 id="サドルバッグ">サドルバッグ</h3>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>積載量</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>4～5</td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>6～7</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード、ボーダー・コリー、ロットワイラー、ドーベルマン、ラブラドール</td>
+<td>6～8</td>
+</tr>
+<tr>
+<td><strong>ハスキー</strong></td>
+<td><strong>13～16</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="ひと腹の数">ひと腹の数</h3>
+<div class="tw"><table><thead><tr>
+<th>母犬の犬種</th>
+<th>1回の出産で生まれる子犬</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>カラーメロ</strong></td>
+<td><strong>2～4</strong></td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>1～3</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>1～3</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード、ゴールデンレトリバー、ハスキー、ロットワイラー、ドーベルマン</td>
+<td>1～2</td>
+</tr>
+</tbody></table></div>
+<p>ひと腹の数は<strong>母犬の犬種</strong>で決まります。父犬の犬種は関係ありません。</p>
+<h3 id="犬種ごとの出現場所">犬種ごとの出現場所</h3>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>場所</th>
+<th>確率</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>民家</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード</td>
+<td>警察署、刑務所、軍事施設、銃砲店</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>軍の施設</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td>警察署</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>納屋、厩舎、農場（田舎）</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>狩猟小屋、キャンプ場、ボートハウス、レンジャー詰所</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td>民家</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td>ペットショップ、獣医</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td>倉庫、工場、廃品置き場</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>民家</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td>民家</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td>民家、<strong>冬だけ</strong></td>
+<td>2.5%</td>
+</tr>
+</tbody></table></div>
+<p>どの確率も、サンドボックス設定の<strong>「犬の出現率倍率」</strong>でまとめて増減します。</p>
+<p>覚えておいてください。この判定は<strong>建物ごとに1回だけ</strong>行われ、結果は保存されます。一度探索した 場所に戻っても、新しい犬は出てきません。</p>
+<h2 id="6-moodle全リスト">6. moodle：全リスト</h2>
+<p>犬のmoodleは、<strong>あなた自身のmoodleの左側にある専用の列</strong>に出ます。</p>
+<h3 id="犬種moodleに共通するルール">犬種moodleに共通するルール</h3>
+<p>ボーナスが働くのは、次の条件が<strong>すべて</strong>そろっているときだけです。</p>
+<div class="tw"><table><thead><tr>
+<th>条件</th>
+<th>中身</th>
+</tr></thead><tbody>
+<tr>
+<td>犬が<strong>近く</strong>にいる</td>
+<td><strong>8タイル以内</strong>で、<strong>同じ階</strong>にいること</td>
+</tr>
+<tr>
+<td>その犬が<strong>自分のもの</strong>である</td>
+<td>他のプレイヤーの犬では何ももらえません</td>
+</tr>
+<tr>
+<td><strong>不服従</strong>になっていない</td>
+<td>忠誠度が下限より上にあること</td>
+</tr>
+<tr>
+<td><strong>中毒</strong>になっていない</td>
+<td>体に悪い食べ物を食べていないこと</td>
+</tr>
+<tr>
+<td><strong>空腹</strong>になっていない</td>
+<td>空腹のバーが75%未満</td>
+</tr>
+<tr>
+<td><strong>喉の渇き</strong>が出ていない</td>
+<td>喉の渇きのバーが75%未満</td>
+</tr>
+</tbody></table></div>
+<p><strong>ひとつでも欠けた時点で、moodleは消えます。</strong> 雑に扱っている犬は、ボーナスを何もくれません。 これがこのmodの中心にある仕組みです。<strong>世話をしない犬から、ただでもらえるものはありません。</strong></p>
+<blockquote class="quote"><strong>犬が何頭も近くにいるときは、一番近い1頭だけが数えられます。</strong> modは1頭だけを選び、その犬種の moodleを出します。ジャーマンシェパードの「勇気」とハスキーの「暖かい」を同時に重ねることは できません。</blockquote>
+<p>犬を<strong>腕に抱えているときや、一緒に車に乗っているとき</strong>も、moodleはそのまま働き続けます。</p>
+<h3 id="犬種ごとのmoodle">犬種ごとのmoodle</h3>
+<div class="tw"><table><thead><tr>
+<th>moodle</th>
+<th>犬種</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>良き相棒</strong></td>
+<td>カラーメロ</td>
+<td><strong>不機嫌と退屈</strong>を下げます</td>
+</tr>
+<tr>
+<td><strong>勇気</strong></td>
+<td>ジャーマンシェパード</td>
+<td><strong>パニック</strong>を下げます（基本modで最も強い効果）</td>
+</tr>
+<tr>
+<td><strong>鋭い嗅覚</strong></td>
+<td>ゴールデンレトリバー</td>
+<td>採集・トラッピング・エイミングの<strong>経験値+20%</strong>、採集の視界<strong>+4タイル</strong></td>
+</tr>
+<tr>
+<td><strong>暖かい</strong></td>
+<td>ハスキー</td>
+<td><strong>運べる重量+2</strong>、スタミナの回復、そして寒くなると<strong>熱源</strong>になります</td>
+</tr>
+<tr>
+<td><strong>牧羊本能</strong></td>
+<td>ボーダー・コリー</td>
+<td>動物の世話と農業の<strong>経験値+20%</strong>、そして<strong>周りの家畜を落ち着かせます</strong></td>
+</tr>
+<tr>
+<td><strong>前線</strong></td>
+<td>ロットワイラー</td>
+<td>近接攻撃1回ごとに<strong>スタミナの35%</strong>が戻ります。<strong>犬が戦っている間だけです</strong></td>
+</tr>
+<tr>
+<td><strong>安定した照準</strong></td>
+<td>ドーベルマン</td>
+<td>あなたの<strong>ストレス</strong>を下げ、射撃ごとの<strong>反動が45%減</strong>、<strong>リロード速度+15%</strong></td>
+</tr>
+<tr>
+<td><strong>ソフトマウス</strong></td>
+<td>ラブラドール</td>
+<td><strong>狩りLv3から</strong>獲物を運び、3倍粘り、<strong>60%の確率でおまけの品</strong>、解体と短刃の<strong>経験値+20%</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="どの犬種でも出るmoodle">どの犬種でも出るmoodle</h3>
+<div class="tw"><table><thead><tr>
+<th>moodle</th>
+<th>出る条件</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>空腹</strong></td>
+<td>犬の空腹が60%以上</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>喉の渇き</strong></td>
+<td>犬の喉の渇きが60%以上</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>中毒</strong></td>
+<td>体に悪い食べ物を食べた</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>ぐっすり休息</strong></td>
+<td>犬から<strong>8タイル以内</strong>で眠って目を覚ました</td>
+<td><strong>ゲーム内2時間</strong>のあいだ、<strong>パニック・ストレス・疲労・悲しみ・退屈</strong>を下げます</td>
+</tr>
+</tbody></table></div>
+<p><strong>「ぐっすり休息」だけは、そのあと犬がそばにい続ける必要がありません。</strong> これはタイマーで、 一度ついてしまえば、あなたが離れても2時間そのまま続きます。しかも世話のチェックを通らないので、 雑に扱っている犬でも効きます。犬のそばで寝るのは<strong>いつでも</strong>得だということです。</p>
+<p>3つの警告（空腹、喉の渇き、中毒）も世話のチェックを無視します。当然で、この3つは犬の調子が <strong>良くない</strong>ことを知らせるためにあるからです。</p>
+<h2 id="7-資質遺伝子">7. 資質（遺伝子）</h2>
+<p>犬種とは別に、どの犬もウィンドウの<strong>「資質」</strong>の欄に<strong>3つの資質</strong>を持っています。これは<strong>その犬を手懐けた 瞬間</strong>に犬種ごとの範囲の中から抽選され、<strong>あとから変わることはありません</strong>。</p>
+<blockquote class="quote"><em>「生まれつきの遺伝で、生涯変わりません。犬を手懐けた時に決定され、個体ごとに異なります。スキルと違い 訓練で変化することはなく、この犬が生まれ持った素質そのものです。」</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>資質</th>
+<th>何が変わるか</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>筋力</strong></td>
+<td><strong>噛む力</strong>が上がり、何より<strong>サドルバッグの積載量</strong>が増えます</td>
+</tr>
+<tr>
+<td><strong>攻撃性</strong></td>
+<td><strong>戦闘経験値を速く稼ぎます</strong>。戦うか逃げるかの判断そのものは<strong>変わりません</strong></td>
+</tr>
+<tr>
+<td><strong>耐性</strong></td>
+<td>戦いで<strong>たまるストレスが減ります</strong></td>
+</tr>
+</tbody></table></div>
+<p>これとは別に、<strong>ウィンドウには表示されない4つめの遺伝子</strong>があり、全体のストレスを受け持っています。戦って たまるストレスすべてに掛かる値です。いちばん悪いのがカラーメロ、いちばん良いのがジャーマンシェパードと ハスキーです。</p>
+<h3 id="ラベルの読み方">ラベルの読み方</h3>
+<div class="tw"><table><thead><tr>
+<th>ラベル</th>
+<th>意味</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>低い</strong></td>
+<td>目盛りの34%未満</td>
+</tr>
+<tr>
+<td><strong>普通</strong></td>
+<td>34%から66%の間</td>
+</tr>
+<tr>
+<td><strong>高い</strong></td>
+<td>66%より上</td>
+</tr>
+</tbody></table></div>
+<p><strong>注意:</strong> このラベルは<strong>犬種を基準にした相対評価ではなく</strong>、絶対的な目盛りで付きます。だからカラーメロは 3つとも<strong>必ず</strong>「低い」と出ますし、飛び抜けたカラーメロというものは存在しません。そして筋力が「高い」と 出る犬を見かけるのは、事実上ハスキーだけです。</p>
+<h3 id="実際どのくらい効くのか">実際どのくらい効くのか</h3>
+<p>遺伝子がダメージと戦闘経験値を動かす幅は<strong>上下それぞれ15%まで</strong>で、ストレス耐性は最大で10ポイントぶんです。 <strong>遺伝子よりも犬種のほうがはるかに重く効きます。</strong></p>
+<p>例外は<strong>サドルバッグ</strong>です。ここでは筋力の遺伝子が主役になり、同じ犬種でも非力な犬と力のある犬とでは、 はっきり差が出ます。</p>
+<p><strong>遺伝子を訓練で伸ばす方法はありません。</strong> 良くする手段は <a href="#8-ミックス違う犬種をかけ合わせる">犬をかけ合わせる</a>ことだけです。</p>
+<h2 id="8-ミックス違う犬種をかけ合わせる">8. ミックス：違う犬種をかけ合わせる</h2>
+<p>違う犬種のオスとメスのあいだに子犬が生まれると、<strong>ミックス</strong>になります。</p>
+<h3 id="子犬に何が起きるか">子犬に何が起きるか</h3>
+<p><strong>血統は両親の平均になります。</strong> カラーメロとジャーマンシェパードなら50/50の子犬です。その子犬を純血の ジャーマンシェパードとかけ合わせれば、カラーメロ25%、ジャーマンシェパード75%になります。以降も世代を 重ねるたびに同じ計算です。</p>
+<p><strong>見た目はどちらか一方の犬種で、血統を重みにした抽選で決まります。</strong> 50/50の子犬はジャーマンシェパードの 顔<strong>か</strong>カラーメロの顔で生まれ、見た目が混ざることはありません。血統が片側に寄っているほど、その側の顔で 生まれる確率が上がります。</p>
+<blockquote class="quote"><strong>そしてここが全員のつまずくところです。</strong> 抽選で出た犬種が、その犬の<strong>機能上の</strong>犬種になります。 ハスキー50%／ジャーマンシェパード50%のミックスがハスキーの顔で生まれたら、それは<strong>あらゆる面で ハスキー</strong>です。moodleは「暖かい」、覚える速さもハスキー、サドルバッグもハスキーのものです。 混ざっているからといって、どれかが中間の値になったりはしません。</blockquote>
+<p><strong>遺伝子は両親の中間に落ち着き</strong>、上下6%ほどのぶれが乗ります。</p>
+<p><strong>そしてミックスが本当に効いてくるのがここです。</strong> 子犬の遺伝子の範囲は、血統に入っている犬種の範囲を <strong>合わせたもの</strong>になります。カラーメロとハスキーのミックスは筋力0.00から0.80までのどこでも生まれる 可能性があり、つまり<strong>カラーメロの上限を突き抜けられます</strong>。ひと腹ごとにいちばん強い子を選んで かけ合わせていけば、世代を重ねるうちに血統全体が底上げされます。</p>
+<p><strong>子犬が受け継がないもの:</strong> スキルは一切受け継ぎません。生まれた時点で<strong>5つとも必ずレベル0</strong>です。犬種から 受け継ぐのは<strong>覚える速さ</strong>であって、覚えた中身ではありません。</p>
+<h3 id="ミックスの表記">「ミックス」の表記</h3>
+<p>血統に2つ以上の犬種が入っている犬は、ウィンドウとコンテキストメニューで犬種名の横に<strong>「（ミックス）」</strong>が 付きます。</p>
+<p><strong>割合の内訳</strong>（「ハスキー50%、ジャーマンシェパード50%」）は、犬のウィンドウの<strong>「犬種」の行にマウスを 乗せる</strong>と、優勢な犬種の説明といっしょに表示されます。</p>
+<h3 id="違う犬種をかけ合わせる価値はあるか">違う犬種をかけ合わせる価値はあるか</h3>
+<div class="tw"><table><thead><tr>
+<th>目的</th>
+<th>答え</th>
+</tr></thead><tbody>
+<tr>
+<td>世代を重ねて遺伝子を良くする</td>
+<td><strong>あります</strong>。ほかに手段はありません</td>
+</tr>
+<tr>
+<td>2つの犬種のmoodleを両取りする</td>
+<td><strong>ありません。</strong> moodleは1つだけで、その犬がなった犬種のものです</td>
+</tr>
+<tr>
+<td>覚える速さを組み合わせる</td>
+<td><strong>ありません。</strong> その犬がなった犬種の表をそのまま使います</td>
+</tr>
+<tr>
+<td>子犬をたくさん早く作る</td>
+<td><strong>カラーメロを母親</strong>にしてください（ひと腹2匹から4匹）</td>
+</tr>
+</tbody></table></div>
+<h2 id="9-アドオンの導入">9. アドオンの導入</h2>
+<p>ロットワイラー、ドーベルマン、ラブラドールは<strong>Steam上の別MOD</strong>です。3つに共通するのは次の点です。</p>
+<ul>
+<li><strong>Companion Dogs本体が導入され、有効になっている必要があります。</strong></li>
+<li><strong>犬種を1つ</strong>追加します。モデル、テクスチャ、moodle、出現場所は専用のものです。</li>
+<li>本体と同じ<strong>13言語の翻訳</strong>が入っています。</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>アドオン</th>
+<th>Steamのページ</th>
+<th>本体の最低バージョン</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">サブスクライブ</a></td>
+<td>0.6.3以降</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">サブスクライブ</a></td>
+<td>0.6.3以降</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">サブスクライブ</a></td>
+<td><strong>0.6.6以降</strong></td>
+</tr>
+</tbody></table></div>
+<p>本体をまだ持っていない場合はこちらです。 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>。</p>
+<p>本体が古すぎると、アドオンは<strong>ただ何も起きないだけ</strong>になります。エラーも出ず、ゲームが固まることもなく、 その犬種が存在しないだけです。ラブラドールを入れたのに1匹も見つからないなら、<strong>まず本体のバージョンを 確認してください</strong>。</p>
+<blockquote class="quote"><strong>その犬種の犬が生きているセーブから、アドオンを外さないでください。</strong> 犬が参照しているモデルと テクスチャを失ってしまいます。</blockquote>
+<p>アドオンを入れても、<strong>すでにある犬種には何の影響もありません</strong>。追加された犬種は、交配とミックスの抽選に 自動で加わります。</p>
+<h2 id="10-犬種のよくある質問">10. 犬種のよくある質問</h2>
+<p><strong>「いちばんいい犬種はどれ？」</strong> 何をするかによります。<strong>戦闘</strong>ならジャーマンシェパードかロットワイラー。<strong>狩り</strong>ならラブラドール。 <strong>荷物運び</strong>ならハスキー。<strong>農場</strong>ならボーダー・コリー。<strong>銃</strong>ならドーベルマンです。そして<strong>カラーメロ</strong>は いちばん非力ですが、moodleのおかげで今でも優秀です。</p>
+<p><strong>「うちのカラーメロも訓練すれば強くなりますか？」</strong> なりません。どれだけ訓練してもゾンビを倒せるようにはなりませんし、資質も定義上いちばん悪いままです。 訓練で伸びるのは服従、嗅覚、狩りで、そこはどの犬にも引けを取りません。</p>
+<p><strong>「同じ犬種の犬を2匹見つけました。どちらを連れて行けばいいですか？」</strong> <strong>事前に知る方法はありません。</strong> 抽選は手懐けた瞬間に行われます。手懐けてから、ウィンドウの<strong>「資質」</strong>の 欄を見てください。</p>
+<p><strong>「資質の悪い犬を手懐けてしまいました。解放してもう一度手懐ければ直りますか？」</strong> <strong>直りません。</strong> 遺伝子は<strong>最初に手懐けたとき一度だけ</strong>決まり、解放してもう一度手懐けても（スキルと同じ ように）ずっとそのままです。別の目を出したいなら、<strong>別の犬を手懐ける</strong>しかありません。時間をかけて本当に 良くしていきたいなら、道は<a href="#8-ミックス違う犬種をかけ合わせる">かけ合わせ</a>です。</p>
+<p><strong>「犬種のmoodleを2つ同時に付けられますか？」</strong> できません。効くのは<strong>いちばん近い犬</strong>だけです。<strong>「ぐっすり休息」</strong>は距離に関係しないので例外です。</p>
+<p><strong>「moodleが消えてしまいました。」</strong> たいていは空腹か喉の渇きが75%を超えているか、忠誠度が下限を割ったかのどちらかです。餌をやり、水をやり、 撫でてあげてください。犬が<strong>8タイル以内で同じ階にいるか</strong>も確認してみてください。</p>
+<p><strong>「速い犬種はありますか？」</strong> ありません。どの犬種も走る速さは同じです。</p>
+<p><strong>「別の色のハスキーはいますか？」</strong> いません。犬種ごとにテクスチャは1つだけで、オスもメスも同じものを使います。</p>
+<p><strong>「体の大きい犬のほうが強く噛みますか？」</strong> 噛みません。大きさは完全に見た目だけの話です。体格と筋力のつながりは、意図的に切ってあります。</p>
+<p><strong>「ドーベルマンはどこにいますか？」</strong> <strong>警察署</strong>です。軍事施設のほうが確率は高い設定ですが、ゲームの基本マップには軍事施設がほとんど存在しません。</p>
+<p><strong>「ラブラドールを入れたのに1匹も見つかりません。」</strong> Companion Dogs本体のバージョンを確認してください。ラブラドールは<strong>0.6.6以降が必要</strong>で、古い本体では 姿も見えず鳴き声もしません。そのあたりの家をもう探索済みでないかも確認してください。出現の判定は <strong>建物ごとに1回、それきり</strong>です。</p>
+<p><strong>「うちのミックスに2犬種ぶんのmoodleが付きません。」</strong> そういうものです。ミックスは仕組みのうえでは<strong>見た目どおりの犬種</strong>です。混ざったことで変わるのは、子孫の 遺伝子の範囲と、ウィンドウに出る割合の表記だけです。</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">見つかりませんでした： <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' 件'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'先頭');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

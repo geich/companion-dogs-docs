@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Raças: As 8 raças, moodles e características">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Raças">
+<meta property="og:description" content="Raças: As 8 raças, moodles e características">
+<meta property="og:url" content="https://geich.github.io/companion-dogs-docs/pt-br/breeds.html">
+<meta property="og:image" content="https://geich.github.io/companion-dogs-docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/companion-dogs-docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Raças</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Abrir índice" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Voltar para a página inicial da documentação"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Raças</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Ir para o Manual de Funcionalidades</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="buscar no manual..." aria-label="Buscar no manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Idioma"><optgroup label="Revisado"><option value="en">English</option><option value="pt-br" selected>Português (Brasil)</option></optgroup><optgroup label="Tradução automática"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Alternar tema">&#9789;</button>
+</header>
+
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Índice &middot; <b>Raças</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-o-que-uma-raça-muda-de-fato" data-id="1-o-que-uma-raça-muda-de-fato">1. O que uma raça muda de fato</a>
+<div class="sub">
+<a class="s3" href="#tamanho-e-força-não-são-a-mesma-coisa" data-id="tamanho-e-força-não-são-a-mesma-coisa">Tamanho e Força não são a mesma coisa</a>
+<a class="s3" href="#uma-raça-uma-aparência" data-id="uma-raça-uma-aparência">Uma raça, uma aparência</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-escolha-rápida" data-id="2-escolha-rápida">2. Escolha rápida</a>
+<div class="sub">
+<a class="s3" href="#o-resumo-em-uma-linha-cada" data-id="o-resumo-em-uma-linha-cada">O resumo em uma linha cada</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-as-cinco-raças-do-mod-base" data-id="3-as-cinco-raças-do-mod-base">3. As cinco raças do mod base</a>
+<div class="sub">
+<a class="s3" href="#caramelo" data-id="caramelo">Caramelo</a>
+<a class="s3" href="#pastor-alemão" data-id="pastor-alemão">Pastor Alemão</a>
+<a class="s3" href="#golden-retriever" data-id="golden-retriever">Golden Retriever</a>
+<a class="s3" href="#husky" data-id="husky">Husky</a>
+<a class="s3" href="#border-collie" data-id="border-collie">Border Collie</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-as-três-raças-de-addon" data-id="4-as-três-raças-de-addon">4. As três raças de addon</a>
+<div class="sub">
+<a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
+<a class="s3" href="#doberman" data-id="doberman">Doberman</a>
+<a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-tabelas-comparativas" data-id="5-tabelas-comparativas">5. Tabelas comparativas</a>
+<div class="sub">
+<a class="s3" href="#velocidade-de-aprender" data-id="velocidade-de-aprender">Velocidade de aprender</a>
+<a class="s3" href="#combate" data-id="combate">Combate</a>
+<a class="s3" href="#nervo-na-luta" data-id="nervo-na-luta">Nervo na luta</a>
+<a class="s3" href="#características-faixas-de-nascimento" data-id="características-faixas-de-nascimento">Características (faixas de nascimento)</a>
+<a class="s3" href="#alforje" data-id="alforje">Alforje</a>
+<a class="s3" href="#ninhada" data-id="ninhada">Ninhada</a>
+<a class="s3" href="#onde-encontrar-cada-raça" data-id="onde-encontrar-cada-raça">Onde encontrar cada raça</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-moodles-a-lista-completa" data-id="6-moodles-a-lista-completa">6. Moodles: a lista completa</a>
+<div class="sub">
+<a class="s3" href="#a-regra-que-vale-para-todos-os-moodles-de-raça" data-id="a-regra-que-vale-para-todos-os-moodles-de-raça">A regra que vale para todos os moodles de raça</a>
+<a class="s3" href="#os-moodles-de-raça" data-id="os-moodles-de-raça">Os moodles de raça</a>
+<a class="s3" href="#os-moodles-que-qualquer-raça-dá" data-id="os-moodles-que-qualquer-raça-dá">Os moodles que qualquer raça dá</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-características-os-genes" data-id="7-características-os-genes">7. Características (os genes)</a>
+<div class="sub">
+<a class="s3" href="#como-ler-os-rótulos" data-id="como-ler-os-rótulos">Como ler os rótulos</a>
+<a class="s3" href="#quanto-isso-importa-de-verdade" data-id="quanto-isso-importa-de-verdade">Quanto isso importa de verdade</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-mestiços-cruzando-raças-diferentes" data-id="8-mestiços-cruzando-raças-diferentes">8. Mestiços: cruzando raças diferentes</a>
+<div class="sub">
+<a class="s3" href="#o-que-acontece-com-o-filhote" data-id="o-que-acontece-com-o-filhote">O que acontece com o filhote</a>
+<a class="s3" href="#o-rótulo-mestiço" data-id="o-rótulo-mestiço">O rótulo "Mestiço"</a>
+<a class="s3" href="#vale-a-pena-cruzar-raças-diferentes" data-id="vale-a-pena-cruzar-raças-diferentes">Vale a pena cruzar raças diferentes?</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-instalando-os-addons" data-id="9-instalando-os-addons">9. Instalando os addons</a>
+</div>
+<div class="grp">
+<a class="s2" href="#10-perguntas-frequentes-de-raça" data-id="10-perguntas-frequentes-de-raça">10. Perguntas frequentes de raça</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-manual-de-raças">Companion Dogs: Manual de Raças</h1>
+<p>Guia de todas as raças: o que cada uma faz de melhor, os moodles, as características e como escolher a certa para o seu jogo.</p>
+<p>Para saber <strong>como o mod funciona</strong> (domesticar, comandos, comida, alforje, truques, caça), veja o outro manual: <a href="features.html" class="xlink">Funcionalidades</a>.</p>
+<blockquote class="quote"><strong>Os números deste manual assumem as opções padrão.</strong> Se o servidor desligar <strong><span class="ig">Habilidades e treino</span></strong>, as raças param de <strong>evoluir</strong>: as habilidades ficam travadas em zero, a curva de dano por nível vira genérica, e os quatro truques destravam todos de uma vez (o mod passa a tratar todo cão como Obediência 10). O que a raça dá <strong>de nascença</strong> continua valendo: força base da mordida, derrubada, nervo na luta, moodle exclusivo, alforje e ninhada. Quem esconde os truques é a opção separada <strong><span class="ig">Truques de obediência</span></strong>.</blockquote>
+<h2 id="1-o-que-uma-raça-muda-de-fato">1. O que uma raça muda de fato</h2>
+<p>Uma raça mexe em <strong>sete coisas</strong>, e nada além disso:</p>
+<div class="tw"><table><thead><tr>
+<th>O que muda</th>
+<th>Explicando</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Velocidade de aprender</strong></td>
+<td>Cada raça aprende cada uma das 5 habilidades numa velocidade diferente. É o que mais define a raça</td>
+</tr>
+<tr>
+<td><strong>Força da mordida</strong></td>
+<td>Quanto dano por mordida, e quanto disso é conquistado com treino</td>
+</tr>
+<tr>
+<td><strong>Nervo na luta</strong></td>
+<td>Quanto estresse ele acumula brigando e em que ponto ele entra em pânico e para</td>
+</tr>
+<tr>
+<td><strong>As características (genes)</strong></td>
+<td>A faixa de Força, Agressividade e Resistência em que ele pode nascer</td>
+</tr>
+<tr>
+<td><strong>Moodle exclusivo</strong></td>
+<td>Um bônus para <strong>você</strong>, enquanto o cão estiver perto, alimentado e leal</td>
+</tr>
+<tr>
+<td><strong>Ninhada</strong></td>
+<td>Quantos filhotes por parto</td>
+</tr>
+<tr>
+<td><strong>Onde ele aparece no mapa</strong></td>
+<td>Cada raça tem os próprios lugares</td>
+</tr>
+</tbody></table></div>
+<p>E o que <strong>NÃO</strong> muda por raça, apesar do que muita gente imagina:</p>
+<ul>
+<li><strong>Velocidade de correr.</strong> Não existe raça mais rápida. Todos correm igual.</li>
+<li><strong>Alcance da sentinela, do faro e da caça.</strong> Dependem só do nível da habilidade. A raça muda a velocidade de chegar lá, não o teto.</li>
+<li><strong>Os truques.</strong> Os quatro destravam por nível de Obediência, iguais para todos.</li>
+<li><strong>Fome e sede.</strong> O ritmo é o mesmo para todas as raças (mesmo o Husky, veja a ficha dele).</li>
+<li><strong>Capacidade do alforje</strong>, exceto o Husky, que é o único com bônus de raça.</li>
+<li><strong>O tamanho do corpo não é a Força.</strong> São duas coisas separadas, e é fácil confundir porque andam juntas. Veja abaixo.</li>
+</ul>
+<h3 id="tamanho-e-força-não-são-a-mesma-coisa">Tamanho e Força não são a mesma coisa</h3>
+<p>A <strong>Força</strong> é um gene e faz diferença de verdade: aumenta o dano da mordida em até <strong>30%</strong> e é ela que define a capacidade do alforje.</p>
+<p>O <strong>tamanho do corpo</strong> é outra coisa. Ele vem de um gene próprio do jogo, que o mod não sorteia nem mexe, mais o crescimento natural do filhote até o porte adulto. Dois cães da mesma raça podem ter tamanhos diferentes sem nenhuma diferença de Força, e um cão maior que outro <strong>da mesma raça</strong> não bate mais forte por isso.</p>
+<p>O que confunde é que a <strong>raça</strong> define as duas coisas ao mesmo tempo, cada uma pelo seu lado: um Pastor Alemão é grande <strong>e</strong> nasce forte, um Caramelo é pequeno <strong>e</strong> nasce fraco. Então, comparando raça com raça, o cão maior costuma mesmo bater mais forte. Só que a causa é a raça, não o tamanho: olhar o porte não diz nada sobre a Força de um cão individual. Para isso existe a barra de Força na aba de Genética da janela do cão.</p>
+<h3 id="uma-raça-uma-aparência">Uma raça, uma aparência</h3>
+<p><strong>Não existe variação de cor dentro de uma raça.</strong> Cada raça tem exatamente uma textura, e macho e fêmea usam a mesma. Um Husky sempre parece o mesmo Husky.</p>
+<p>Filhote de qualquer raça nasce no mesmo tamanho reduzido, e cresce para o porte adulto da raça dele.</p>
+<h2 id="2-escolha-rápida">2. Escolha rápida</h2>
+<div class="tw"><table><thead><tr>
+<th>Se você quer...</th>
+<th>Pegue</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Sobreviver aos primeiros dias com o que aparecer</strong></td>
+<td><strong>Caramelo</strong></td>
+</tr>
+<tr>
+<td><strong>Um cão que segura a linha e mata zumbi sozinho</strong></td>
+<td><strong>Pastor Alemão</strong> ou <strong>Rottweiler</strong></td>
+</tr>
+<tr>
+<td><strong>Caçar carne</strong></td>
+<td><strong>Golden Retriever</strong> ou <strong>Labrador</strong></td>
+</tr>
+<tr>
+<td><strong>Carregar loot</strong></td>
+<td><strong>Husky</strong>, sem discussão</td>
+</tr>
+<tr>
+<td><strong>Cuidar da fazenda enquanto você viaja</strong></td>
+<td><strong>Border Collie</strong></td>
+</tr>
+<tr>
+<td><strong>Atirar melhor</strong></td>
+<td><strong>Doberman</strong></td>
+</tr>
+<tr>
+<td><strong>Bater mais tempo no corpo a corpo</strong></td>
+<td><strong>Rottweiler</strong></td>
+</tr>
+<tr>
+<td><strong>Menos tédio e tristeza</strong></td>
+<td><strong>Caramelo</strong></td>
+</tr>
+<tr>
+<td><strong>Menos pânico</strong></td>
+<td><strong>Pastor Alemão</strong></td>
+</tr>
+<tr>
+<td><strong>Forragear mais</strong></td>
+<td><strong>Golden Retriever</strong></td>
+</tr>
+<tr>
+<td><strong>Não morrer de frio</strong></td>
+<td><strong>Husky</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="o-resumo-em-uma-linha-cada">O resumo em uma linha cada</h3>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Em uma linha</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td>O vira-lata humilde. Fraco, mas derruba zumbi e faz companhia de verdade</td>
+</tr>
+<tr>
+<td><strong>Pastor Alemão</strong></td>
+<td>O soldado. Bate forte e quase não entra em pânico</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>O caçador de faro fino, que também melhora o seu forrageio</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>A mula de carga que te aquece no inverno. Teimoso</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>O funcionário da fazenda</td>
+</tr>
+<tr>
+<td><strong>Rottweiler</strong></td>
+<td>O guerreiro que economiza o seu fôlego no corpo a corpo</td>
+</tr>
+<tr>
+<td><strong>Doberman</strong></td>
+<td>O cão de tiro: menos recuo, recarga mais rápida, nervos calmos</td>
+</tr>
+<tr>
+<td><strong>Labrador</strong></td>
+<td>O cobrador: o pior lutador do mod, o melhor entregador de caça</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-as-cinco-raças-do-mod-base">3. As cinco raças do mod base</h2>
+<p>Estas vêm junto com o mod principal, sem instalar mais nada.</p>
+<hr>
+<h3 id="caramelo">Caramelo</h3>
+<p><strong>O vira-lata brasileiro.</strong> É o cão que você vai encontrar primeiro, e provavelmente o seu primeiro companheiro.</p>
+<blockquote class="quote quote-game"><em>"O caramelo é uma raça básica do dia a dia, o vira-lata que se encontra por todas as cidades. Não tem habilidades especiais e é fraco por natureza: não consegue matar um zumbi sozinho, só derrubar pra te dar tempo."</em></blockquote>
+<p><strong>Onde achar:</strong> casa residencial, em cidade ou bairro. <strong>20% por casa</strong>, a raça mais comum do jogo.</p>
+<p><strong>Aprende:</strong> tudo na velocidade normal. Não tem nada em que se destaque, e nada em que seja ruim.</p>
+<p><strong>Na luta:</strong> é o <strong>único cão que não consegue finalizar um zumbi</strong>. A mordida trava o zumbi quase morto e para por aí. Isso é de propósito e <strong>nenhum ajuste de sandbox muda</strong>. Em compensação, ele <strong>derruba</strong>, e derrubar zumbi é exatamente o que compra o seu tempo para fugir ou bater.</p>
+<p>Ele também é o <strong>cão mais nervoso do mod</strong>: acumula estresse na luta cinco vezes mais rápido que um Pastor Alemão, e é o primeiro a entrar em pânico.</p>
+<p><strong>Características:</strong> as mais fracas de todas. Na janela do cão ele vai mostrar <strong>Baixa</strong> em Força, Agressividade e Resistência, <strong>sempre</strong>, em qualquer Caramelo que você domesticar. Não adianta procurar um Caramelo <span class="ig">bom</span>.</p>
+<p><strong>Ninhada:</strong> <strong>2 a 4 filhotes</strong>, a maior do mod. Se o seu objetivo é montar um plantel, é a raça que mais produz.</p>
+<p><strong>Alforje:</strong> 4 a 5 de carga. O menor.</p>
+<p><strong>Moodle: <span class="ig">Boa Companhia</span></strong></p>
+<blockquote class="quote quote-game"><em>"O Caramelo é um cão muito carinhoso e carismático. A companhia leal dele levanta o ânimo, então tristeza e tédio passam mais rápido com ele por perto."</em></blockquote>
+<p>Reduz <strong>Infelicidade e Tédio</strong> continuamente enquanto ele estiver perto. É um dos moodles mais úteis do mod no dia a dia, porque tédio e tristeza são problemas constantes em Zomboid e caros de resolver de outro jeito.</p>
+<p><strong>Para quem é:</strong> para todo mundo, no começo. E continua bom depois, porque o moodle dele resolve um problema que nenhuma outra raça resolve. Só não conte com ele para matar nada.</p>
+<hr>
+<h3 id="pastor-alemão">Pastor Alemão</h3>
+<p><strong>O cão de guerra.</strong> A raça de combate do mod base.</p>
+<blockquote class="quote quote-game"><em>"Um cão de trabalho forte e inteligente. Nasce bem mais forte e resistente que o caramelo, aprende Combate e Obediência rápido, mal se abala numa luta, segura a horda sem entrar em pânico e derruba um zumbi sozinho."</em></blockquote>
+<p><strong>Onde achar:</strong> delegacia, prisão, cadeia, base militar, quartel, loja de armas, paiol. <strong>20% por prédio.</strong> Não aparece em casa. Você precisa ir atrás.</p>
+<p><strong>Aprende:</strong> <strong>Combate no dobro da velocidade</strong>, e Obediência 50% mais rápido. Caça um pouco mais rápido também. É a raça que fica forte mais depressa.</p>
+<p><strong>Na luta:</strong> a mordida mais forte do mod base, e <strong>mata zumbi sozinho</strong>. Mas o diferencial dele nem é o dano: é o <strong>nervo</strong>. Ele acumula estresse <strong>cinco vezes mais devagar</strong> que o Caramelo, e o ponto em que ele entra em pânico é o mais alto do mod. Na prática: <strong>ele continua lutando em situações onde qualquer outra raça já teria travado</strong>.</p>
+<p><strong>Características:</strong> faixa média em tudo, bem acima do Caramelo. Um Pastor Alemão vai mostrar <strong>Média</strong> nas três características.</p>
+<p><strong>Ninhada:</strong> 1 a 2.</p>
+<p><strong>Alforje:</strong> 6 a 8.</p>
+<p><strong>Moodle: <span class="ig">Coragem</span></strong></p>
+<blockquote class="quote quote-game"><em>"Um Pastor Alemão corajoso ao seu lado acalma os nervos: a presença destemida dele reduz seu pânico enquanto fica por perto."</em></blockquote>
+<p>Derruba <strong>Pânico</strong> continuamente. É o moodle mais forte em números do mod base, e resolve um problema sério: pânico estraga a sua mira e a sua eficiência no corpo a corpo. Com um Pastor perto, você luta com a mão mais firme.</p>
+<p><strong>Para quem é:</strong> para quem luta. Se você joga na porrada e no meio da cidade, é a raça.</p>
+<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz <span class="ig">um terço do estresse</span>, mas o número real é <strong>um quinto</strong>. O texto é conservador demais, o cão é ainda melhor do que promete.</blockquote>
+<hr>
+<h3 id="golden-retriever">Golden Retriever</h3>
+<p><strong>O cão de caça de faro fino.</strong> A raça que melhora o seu forrageio.</p>
+<blockquote class="quote quote-game"><em>"Um cão de caça simpático e de faro aguçado, caçador nato: aprende Caça duas vezes mais rápido e derruba um zumbi sozinho (mas se abala mais fácil que o Pastor Alemão). O faro dele ajuda a forragear e farejar caça de mais longe."</em></blockquote>
+<p><strong>Onde achar:</strong> casa residencial, num sorteio à parte do Caramelo. <strong>5% por casa.</strong> Quatro vezes mais raro que o vira-lata, mas na mesma casa: uma casa pode ter os dois.</p>
+<p><strong>Aprende:</strong> <strong>Caça no dobro da velocidade</strong>, e Faro 50% mais rápido. É a raça que chega mais cedo ao nível 6 de Caça, que é quando o cão passa a enfrentar cervo.</p>
+<p><strong>Na luta:</strong> dano médio, <strong>mata sozinho</strong>. Se estressa mais que o Pastor, menos que o Caramelo.</p>
+<p><strong>Características:</strong> um pouco acima do Caramelo, abaixo do Pastor. Não é um cão de briga.</p>
+<p><strong>Ninhada:</strong> 1 a 2.</p>
+<p><strong>Alforje:</strong> 6 a 7.</p>
+<p><strong>Moodle: <span class="ig">Faro Apurado</span></strong></p>
+<blockquote class="quote quote-game"><em>"O Golden Retriever trabalha o terreno junto com você. Enquanto fica por perto, alimentado e leal, você enxerga itens de forrageio de mais longe e aprende Forrageio, Armadilhas e Mira mais rápido."</em></blockquote>
+<p>Dois efeitos:</p>
+<ul>
+<li><strong>+20% de XP</strong> em <strong>Forrageio, Armadilhas e Mira</strong>.</li>
+<li><strong>+4 tiles</strong> no seu raio de visão do Modo Busca, <strong>além</strong> do bônus que qualquer cão já dá.</li>
+</ul>
+<p>Este é o moodle que mais muda o ritmo de um personagem de campo. Forrageio e Armadilhas são habilidades lentas de subir, e Mira é cara.</p>
+<p><strong>Para quem é:</strong> para quem vive de caça, forrageio e armadilha. Combina com uma base rural.</p>
+<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz que ele aprende Combate <span class="ig">um pouco mais rápido que o caramelo</span>. Não é verdade: ele aprende Combate na mesma velocidade que o vira-lata.</blockquote>
+<hr>
+<h3 id="husky">Husky</h3>
+<p><strong>A mula de carga.</strong> O cão mais forte do mod, e o único que aquece.</p>
+<blockquote class="quote quote-game"><em>"Um resistente cão de trenó do norte: de longe a raça mais forte, feita para carregar carga (o alforje dele leva mais que o de qualquer outro) e sobreviver ao frio. Teimoso (demora a aprender Obediência), simpático (péssimo de guarda) e comilão."</em></blockquote>
+<p><strong>Onde achar:</strong> duas fontes.</p>
+<ul>
+<li><strong>Casa residencial, só no inverno.</strong> 2,5% por casa. A raça mais rara do jogo fora de temporada.</li>
+<li><strong>Pet shop e clínica veterinária.</strong> 10% por prédio, o ano todo. Esta é a forma confiável de conseguir um.</li>
+</ul>
+<p><strong>Aprende:</strong> <strong>Faro no dobro da velocidade</strong> (o melhor sentinela do mod), Caça 50% mais rápido, e Combate um pouco acima da média. <strong>Mas aprende Obediência 20% mais devagar</strong>, e essa é <strong>a única penalidade de raça do mod inteiro</strong>. É de propósito: ele é teimoso.</p>
+<p>Consequência prática do Obediência lento: ele demora mais para destravar os truques, desobedece mais tempo, e o piso de lealdade dele desce mais devagar. Um Husky exige mais paciência.</p>
+<p><strong>Na luta:</strong> dano acima da média, <strong>mata sozinho</strong>, mas não é um guerreiro. Se estressa bem mais que um Pastor.</p>
+<p><strong>Características:</strong> a <strong>maior faixa de Força do mod, com folga</strong>. Um Husky vai mostrar <strong>Média ou Alta</strong> em Força, onde as outras raças ficam em Média ou Baixa.</p>
+<p><strong>Ninhada:</strong> 1 a 2.</p>
+<p><strong>Alforje: 13 a 16 de carga.</strong> É a única raça com bônus de alforje (+50%), e a diferença é enorme: ele carrega <strong>duas a três vezes mais</strong> que qualquer outro cão.</p>
+<p><strong>Moodle: <span class="ig">Aquecido</span></strong></p>
+<blockquote class="quote quote-game"><em>"O husky puxa o peso ao seu lado. Enquanto fica por perto, alimentado e leal, ele carrega um pouco da sua carga (você leva mais) e te ajuda a segurar o fôlego, então você cansa mais devagar; e quando o frio aperta, o pelo grosso dele te mantém aquecido."</em></blockquote>
+<p>Três efeitos:</p>
+<ul>
+<li><strong>+2 no seu peso máximo carregável</strong> (isso é além do que vai no alforje dele).</li>
+<li><strong>Fôlego se recupera continuamente</strong>, você cansa mais devagar.</li>
+<li><strong>Fonte de calor móvel</strong>, que <strong>liga sozinha quando você começa a esfriar</strong> e desliga quando você aquece. Você anda com uma fogueira do seu lado no inverno.</li>
+</ul>
+<p><strong>Para quem é:</strong> para quem faz viagens longas de saque e volta carregado, e para quem joga inverno pesado. É o cão logístico.</p>
+<blockquote class="quote"><strong>Nota:</strong> a descrição diz <span class="ig">comilão (fica com fome rápido)</span>. <strong>Isso não vale para o cão já domesticado.</strong> O ritmo de fome dos companheiros é o mesmo para todas as raças. O apetite maior só existe enquanto ele é um cão selvagem.</blockquote>
+<hr>
+<h3 id="border-collie">Border Collie</h3>
+<p><strong>O cão de fazenda.</strong> A raça de pastoreio.</p>
+<blockquote class="quote quote-game"><em>"Um cão de pastoreio brilhante e incansável, o clássico companheiro de fazenda, valorizado acima de tudo pela inteligência."</em></blockquote>
+<p><strong>Onde achar:</strong> celeiro, estábulo, silo, galinheiro, curral, na <strong>zona rural</strong>. <strong>15% por prédio</strong>, e esse sorteio <strong>ignora o filtro urbano</strong>, então uma fazenda perdida no meio do nada conta.</p>
+<p><strong>Aprende:</strong> <strong>Pastoreio no dobro da velocidade</strong>, Obediência 50% mais rápido, e Faro um pouco acima da média.</p>
+<p><strong>Na luta:</strong> dano médio, igual ao Golden. <strong>Mata sozinho.</strong> Se estressa menos que o Caramelo, mas bem mais que um Pastor. Ele não é um cão de briga, é um cão de trabalho.</p>
+<p><strong>Características:</strong> faixas médias, um pouco acima do Golden.</p>
+<p><strong>Ninhada:</strong> <strong>1 a 3</strong>, a segunda maior do mod base.</p>
+<p><strong>Alforje:</strong> 6 a 8.</p>
+<p><strong>A especialidade real:</strong> ele é <strong>50% mais eficiente na aura de calma por nível</strong> do que qualquer outra raça. Isso vale nos dois lugares em que a aura existe:</p>
+<ul>
+<li>no modo <strong><span class="ig">Cuidar do gado aqui</span></strong>, onde ele fica de plantão no curral;</li>
+<li>no moodle dele, que acalma o gado ao redor de <strong>você</strong>.</li>
+</ul>
+<p>Como animal estressado não dá leite nem lã, aborta e debanda, um Border Collie treinado é literalmente a diferença entre uma fazenda que produz e uma que não produz.</p>
+<p><strong>Moodle: <span class="ig">Instinto de Pastor</span></strong></p>
+<blockquote class="quote quote-game"><em>"O border collie trabalha o rebanho junto com você. Enquanto fica por perto, alimentado e leal, os animais ao seu redor se acalmam, e você aprende Cuidado Animal e Agricultura mais rápido."</em></blockquote>
+<p>Dois efeitos:</p>
+<ul>
+<li><strong>+20% de XP</strong> em <strong>Cuidado Animal e Agricultura</strong>.</li>
+<li><strong>Acalma o gado num raio ao seu redor</strong>, automaticamente, enquanto você trabalha.</li>
+</ul>
+<p><strong>Para quem é:</strong> para quem monta fazenda. Se você tem vaca, ovelha ou galinha, esta é a raça que protege a produção.</p>
+<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo ainda diz que ele <span class="ig">é um generalista equilibrado, sem especialidade que se destaque</span>. Isso está desatualizado: o Pastoreio dobrado e a aura reforçada já existem.</blockquote>
+<h2 id="4-as-três-raças-de-addon">4. As três raças de addon</h2>
+<p>Estas vêm em <strong>mods separados na Steam</strong>, que dependem do Companion Dogs base. Os links de cada uma estão na ficha abaixo e juntos em <a href="#9-instalando-os-addons">Instalando os addons</a>.</p>
+<hr>
+<h3 id="rottweiler">Rottweiler</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, addon separado)</em></p>
+<p><strong>O guerreiro que economiza o seu fôlego.</strong></p>
+<blockquote class="quote quote-game"><em>"Um poderoso cão de guarda criado para proteção, um guerreiro pleno à altura do Pastor Alemão: aprende Combate duas vezes mais rápido, bate forte em nível alto, derruba zumbis e continua lutando onde a maioria das raças entra em pânico."</em></blockquote>
+<p><strong>Onde achar:</strong></p>
+<ul>
+<li><strong>Prédio industrial</strong> (depósito, galpão, fábrica, ferro-velho, oficina, doca de carga): <strong>10% por prédio</strong>.</li>
+<li><strong>Casa residencial:</strong> 5% por casa, uma chance rara.</li>
+</ul>
+<p><strong>Aprende:</strong> <strong>Combate no dobro</strong>, e Faro 50% mais rápido (o único cão de combate com faro bom). Não tem bônus de Obediência.</p>
+<p><strong>Na luta:</strong> empata com o Pastor Alemão na mordida, e <strong>empata no nervo</strong>: ele acumula estresse cinco vezes mais devagar que o vira-lata e tem o ponto de pânico no máximo. Derruba e mata.</p>
+<p><strong>Características:</strong> iguais às do Pastor Alemão.</p>
+<p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 8.</p>
+<p><strong>Moodle: <span class="ig">Linha de Frente</span></strong></p>
+<blockquote class="quote quote-game"><em>"Seu Rottweiler está lutando ao seu lado. Enquanto ele estiver engajado em combate perto de você, alimentado e leal, seus golpes corpo a corpo gastam menos fôlego."</em></blockquote>
+<p><strong>Devolve 35% do fôlego gasto em cada golpe corpo a corpo.</strong></p>
+<p>Este é o moodle mais condicional do mod: o ícone aparece sempre que o Rottweiler está por perto, mas <strong>o efeito só vale enquanto ele está de fato brigando</strong>. E vale <strong>só para corpo a corpo</strong>, arma de fogo não ganha nada.</p>
+<p>Na prática, é enorme. Fôlego é o que limita quantos zumbis você aguenta bater seguidos. Com um Rottweiler brigando ao seu lado, você bate quase um terço a mais antes de ficar sem ar.</p>
+<p><strong>Para quem é:</strong> para quem limpa horda no corpo a corpo. É a raça mais sinérgica do mod com um estilo de jogo agressivo.</p>
+<hr>
+<h3 id="doberman">Doberman</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, addon separado)</em></p>
+<p><strong>O cão de tiro.</strong></p>
+<blockquote class="quote quote-game"><em>"Um cão de guarda esguio e vigilante, e o mais rápido de todos para aprender. Na briga é só fio e nada de armadura: fraco sem treino, mas com Combate no máximo morde forte, embora aguente menos pancada que um Rottweiler."</em></blockquote>
+<p><strong>Onde achar:</strong></p>
+<ul>
+<li><strong>Delegacia:</strong> 18% por prédio.</li>
+<li><strong>Prédio militar</strong> (paiol, quartel, bunker, posto de guarda, checkpoint): 22% por prédio.</li>
+</ul>
+<blockquote class="quote"><strong>Aviso prático:</strong> prédios militares são <strong>raríssimos</strong> no mapa base do jogo (existem só uns cinco cômodos assim no Kentucky inteiro). Na prática, procure em <strong>delegacia</strong>.</blockquote>
+<p><strong>Aprende:</strong> <strong>Combate no dobro</strong> e <strong>Obediência 50% mais rápido</strong>, exatamente o mesmo pacote do Pastor Alemão. O que separa os dois não é a velocidade de treino, é a <strong>curva de dano</strong>.</p>
+<p><strong>Na luta:</strong> ele tem a <strong>curva mais íngreme do mod</strong>. Sem treino ele bate bem menos que um Rottweiler, mas no Combate 10 ele <strong>alcança o topo</strong>. É um investimento: o Doberman que você acabou de domesticar é fraco, o Doberman treinado é de primeira linha.</p>
+<p>Nervo alto (ponto de pânico no máximo), mas <strong>aguenta menos pancada</strong>: a Resistência dele é a mais baixa entre os cães de briga.</p>
+<p><strong>Características:</strong> a <strong>maior faixa de Agressividade do mod</strong>, o que significa que ele ganha XP de combate mais rápido ainda. Força e Resistência um pouco abaixo do Rottweiler.</p>
+<p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 8.</p>
+<p><strong>Moodle: <span class="ig">Mira Firme</span></strong></p>
+<blockquote class="quote quote-game"><em>"Seu Doberman está guardando suas costas. Enquanto ele estiver por perto, alimentado e leal, seu estresse diminui, sua mira reassenta mais rápido depois de cada tiro e você recarrega mais depressa."</em></blockquote>
+<p>Três efeitos, todos para <strong>arma de fogo</strong>:</p>
+<ul>
+<li><strong>Seu estresse drena continuamente</strong> (estresse alto piora a mira em Zomboid).</li>
+<li><strong>O recuo se recupera 45% mais rápido</strong> depois de cada tiro. Você volta a mirar antes.</li>
+<li><strong>Recarga 15% mais rápida.</strong></li>
+</ul>
+<p><strong>Para quem é:</strong> para quem joga de arma de fogo. Os três efeitos empilham no mesmo problema, que é <span class="ig">quanto tempo eu perco entre um tiro e o próximo</span>.</p>
+<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz que ele treina Obediência <span class="ig">mais rápido até que o Pastor Alemão</span> e que no Combate máximo <span class="ig">morde mais forte que qualquer outro cão</span>. Nos dois casos é <strong>empate</strong>, não vantagem: ele iguala o Pastor em Obediência e iguala o Rottweiler no dano de nível 10.</blockquote>
+<hr>
+<h3 id="labrador">Labrador</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, addon separado)</em></p>
+<p><strong>O cobrador.</strong> O melhor cão de caça e, de propósito, o pior lutador do mod.</p>
+<blockquote class="quote quote-game"><em>"Um cão de caça feito para trazer de volta: treina Caça no dobro da velocidade, com Obediência logo atrás. É, de propósito, o pior lutador da família: a mordida mais fraca, sem derrubada, e uma briga o abala demais. O dom dele é a boca."</em></blockquote>
+<p><strong>Onde achar:</strong></p>
+<ul>
+<li><strong>Casa residencial:</strong> <strong>10% por casa.</strong> É o addon mais fácil de encontrar, o dobro da chance do Golden.</li>
+<li><strong>Mato:</strong> cabana de caça, acampamento, casa de barco, pesqueiro, posto de guarda-florestal. <strong>20% por prédio.</strong></li>
+</ul>
+<p><strong>Aprende:</strong> <strong>Caça no dobro</strong> e <strong>Obediência 50% mais rápido</strong>. É o pacote de caçador com disciplina.</p>
+<p><strong>Na luta:</strong> o <strong>pior do mod, de propósito</strong>.</p>
+<ul>
+<li>A <strong>mordida mais fraca</strong> de todas.</li>
+<li><strong>Não derruba zumbi.</strong> É a única raça sem essa capacidade.</li>
+<li>Acumula estresse <strong>três vezes e meia mais rápido</strong> que um Rottweiler, e entra em pânico no mesmo ponto baixo do vira-lata.</li>
+</ul>
+<p>Ele <strong>mata</strong> um zumbi se você insistir, mas não mande esse cão brigar.</p>
+<p><strong>Características:</strong> a <strong>menor faixa de Agressividade do mod</strong>. Ele é o cão mais dócil que existe aqui, e demora mais para aprender a lutar por isso.</p>
+<p><strong>Ninhada:</strong> <strong>1 a 3</strong>, o único addon que passa de 2. <strong>Alforje:</strong> 6 a 8.</p>
+<p><strong>Moodle: <span class="ig">Boca Macia</span></strong></p>
+<blockquote class="quote quote-game"><em>"Seu Labrador traz todo abate desde a primeira caçada, e muitas vezes um extra. Enquanto ele estiver por perto, alimentado e leal, você também aprende Açougue e Lâmina Curta mais rápido."</em></blockquote>
+<p>Quatro efeitos, e este é o moodle mais completo do mod:</p>
+<ul>
+<li><strong>Ele traz o abate a partir do Caça 3</strong>, ou seja, <strong>desde que consegue caçar</strong>. Todas as outras raças só passam a trazer no Caça 6. Isso é meio jogo de diferença.</li>
+<li><strong>Ele insiste três vezes mais tempo</strong> na entrega antes de largar a carcaça no caminho.</li>
+<li><strong>60% das entregas vêm com um item extra</strong> largado no chão do seu lado: osso de bicho pequeno, pena de galinha, gravetos ou ovo selvagem. <em><span class="ig">Seu Labrador trouxe mais uma coisa: ...</span></em></li>
+<li><strong>+20% de XP</strong> em <strong>Açougue e Lâmina Curta</strong>, exatamente as habilidades de processar o que ele traz.</li>
+</ul>
+<p><strong>Para quem é:</strong> para uma vida de caça. O Golden aprende a caçar tão rápido quanto, mas <strong>o Labrador entrega desde o começo</strong>, e a diferença aparece nas primeiras semanas de jogo.</p>
+<h2 id="5-tabelas-comparativas">5. Tabelas comparativas</h2>
+<h3 id="velocidade-de-aprender">Velocidade de aprender</h3>
+<p>Quanto maior, mais rápido. <strong>1.0 é a velocidade normal.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Faro</th>
+<th>Combate</th>
+<th>Obediência</th>
+<th>Caça</th>
+<th>Pastoreio</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Pastor Alemão</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td><strong>0.8</strong></td>
+<td>1.5</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+</tbody></table></div>
+<p>O <strong>0.8</strong> do Husky é a única penalidade de raça do mod inteiro.</p>
+<h3 id="combate">Combate</h3>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Mordida sem treino</th>
+<th>Mordida no nível 10</th>
+<th>Mata sozinho?</th>
+<th>Derruba?</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>fraca</td>
+<td><strong>1x</strong> (referência)</td>
+<td><strong>Não</strong></td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>fraca</td>
+<td>1,3x</td>
+<td>Sim</td>
+<td><strong>Não</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>fraca</td>
+<td>1,5x</td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>fraca</td>
+<td>1,5x</td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>média</td>
+<td>1,9x</td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>média</td>
+<td><strong>2,6x</strong></td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Pastor Alemão</td>
+<td><strong>forte</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><strong>forte</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
+</tbody></table></div>
+<p>O Doberman chega ao topo, mas parte de bem mais baixo: ele começa com cerca de <strong>dois terços</strong> da mordida de um Rottweiler e só empata no nível 10.</p>
+<h3 id="nervo-na-luta">Nervo na luta</h3>
+<p>Quanto <strong>menor</strong> o número, mais frio o cão fica brigando.</p>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Estresse acumulado brigando</th>
+<th>Ponto de pânico</th>
+</tr></thead><tbody>
+<tr>
+<td>Pastor Alemão</td>
+<td><strong>0,20</strong> (o mais frio)</td>
+<td><strong>0,90</strong> (o mais alto)</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><strong>0,20</strong></td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>0,25</td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>0,60</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>0,70</td>
+<td>0,80</td>
+</tr>
+<tr>
+<td>Caramelo</td>
+<td><strong>1,00</strong> (o mais nervoso)</td>
+<td><strong>0,80</strong></td>
+</tr>
+</tbody></table></div>
+<p>Um cão que entra em pânico <strong>para de lutar, de vigiar e de fazer truque</strong>. Por isso esta tabela importa tanto quanto o dano: adianta pouco morder forte se ele trava antes.</p>
+<h3 id="características-faixas-de-nascimento">Características (faixas de nascimento)</h3>
+<p>Quanto maior a faixa, melhor o cão pode nascer. Um valor abaixo de 0,34 aparece como <strong>Baixa</strong> na janela, acima de 0,66 como <strong>Alta</strong>, e o meio como <strong>Média</strong>.</p>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Força</th>
+<th>Agressividade</th>
+<th>Resistência</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>0,00 a 0,15</td>
+<td>0,00 a 0,15</td>
+<td>0,00 a 0,15</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0,20 a 0,40</td>
+<td>0,10 a 0,30</td>
+<td>0,20 a 0,40</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0,20 a 0,45</td>
+<td>0,15 a 0,40</td>
+<td>0,25 a 0,50</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>0,25 a 0,45</td>
+<td><strong>0,10 a 0,25</strong></td>
+<td>0,25 a 0,45</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>0,25 a 0,45</td>
+<td><strong>0,35 a 0,55</strong></td>
+<td>0,20 a 0,40</td>
+</tr>
+<tr>
+<td>Pastor Alemão</td>
+<td>0,30 a 0,50</td>
+<td>0,30 a 0,50</td>
+<td>0,30 a 0,50</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>0,30 a 0,50</td>
+<td>0,30 a 0,50</td>
+<td>0,30 a 0,50</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>0,55 a 0,80</strong></td>
+<td>0,10 a 0,30</td>
+<td>0,40 a 0,60</td>
+</tr>
+</tbody></table></div>
+<p>Leitura rápida:</p>
+<ul>
+<li><strong>O Caramelo sempre mostra <span class="ig">Baixa</span> nas três.</strong> Não existe Caramelo bom.</li>
+<li><strong>O Husky é o único que costuma mostrar <span class="ig">Alta</span> em Força.</strong></li>
+<li><strong>Agressividade sai sempre <span class="ig">Baixa</span></strong> no Golden, no Husky e no Labrador. É o normal deles, não azar.</li>
+<li>Golden e Doberman também caem em <span class="ig">Baixa</span> com frequência em Força e Resistência.</li>
+<li><strong>Pastor Alemão e Rottweiler</strong> são os únicos que mostram <span class="ig">Média</span> nas três quase sempre.</li>
+</ul>
+<h3 id="alforje">Alforje</h3>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Carga</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>4 a 5</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>6 a 7</td>
+</tr>
+<tr>
+<td>Pastor Alemão, Border Collie, Rottweiler, Doberman, Labrador</td>
+<td>6 a 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>13 a 16</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="ninhada">Ninhada</h3>
+<div class="tw"><table><thead><tr>
+<th>Raça da mãe</th>
+<th>Filhotes por parto</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td><strong>2 a 4</strong></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1 a 3</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>1 a 3</td>
+</tr>
+<tr>
+<td>Pastor Alemão, Golden Retriever, Husky, Rottweiler, Doberman</td>
+<td>1 a 2</td>
+</tr>
+</tbody></table></div>
+<p>O tamanho da ninhada segue a <strong>raça da mãe</strong>, não a do pai.</p>
+<h3 id="onde-encontrar-cada-raça">Onde encontrar cada raça</h3>
+<div class="tw"><table><thead><tr>
+<th>Raça</th>
+<th>Lugar</th>
+<th>Chance</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>Casa residencial</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Pastor Alemão</td>
+<td>Delegacia, prisão, militar, loja de armas</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>Prédio militar</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>Delegacia</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>Celeiro, estábulo, fazenda (rural)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Cabana de caça, camping, pesqueiro, posto florestal</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Casa residencial</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>Pet shop, veterinário</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Depósito, fábrica, ferro-velho</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Casa residencial</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Casa residencial</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>Casa residencial, <strong>só no inverno</strong></td>
+<td>2,5%</td>
+</tr>
+</tbody></table></div>
+<p>Todas escalam junto com a opção de sandbox <strong><span class="ig">Multiplicador de spawn de cães</span></strong>.</p>
+<p>Lembre: a decisão é tomada <strong>uma vez por prédio</strong> e fica salva. Voltar num lugar já explorado não gera cão novo.</p>
+<h2 id="6-moodles-a-lista-completa">6. Moodles: a lista completa</h2>
+<p>Os moodles de cão aparecem numa <strong>coluna própria, à esquerda dos seus moodles normais</strong>.</p>
+<h3 id="a-regra-que-vale-para-todos-os-moodles-de-raça">A regra que vale para todos os moodles de raça</h3>
+<p>O bônus <strong>só existe</strong> se <strong>todas</strong> estas condições forem verdade:</p>
+<div class="tw"><table><thead><tr>
+<th>Condição</th>
+<th>Detalhe</th>
+</tr></thead><tbody>
+<tr>
+<td>O cão está <strong>perto</strong></td>
+<td>Dentro de <strong>8 tiles</strong> e <strong>no mesmo andar</strong></td>
+</tr>
+<tr>
+<td>Ele é <strong>seu</strong></td>
+<td>Cão de outro jogador não dá nada</td>
+</tr>
+<tr>
+<td>Ele <strong>não está desobediente</strong></td>
+<td>Lealdade acima do piso</td>
+</tr>
+<tr>
+<td>Ele <strong>não está intoxicado</strong></td>
+<td>Nada de comida ruim</td>
+</tr>
+<tr>
+<td>Ele <strong>não está com fome</strong></td>
+<td>Barra de fome abaixo de 75%</td>
+</tr>
+<tr>
+<td>Ele <strong>não está com sede</strong></td>
+<td>Barra de sede abaixo de 75%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Falhando qualquer uma, o moodle desliga.</strong> Cão maltratado não rende bônus nenhum. Este é o mecanismo central do mod: <strong>você não ganha nada de graça de um cão que você não cuida.</strong></p>
+<blockquote class="quote"><strong>Com vários cães perto, só conta o mais próximo.</strong> O mod escolhe um cão só e mostra o moodle daquela raça. Não dá para empilhar Coragem do Pastor com Aquecido do Husky ao mesmo tempo.</blockquote>
+<p>O moodle continua valendo enquanto o cão viaja <strong>no seu colo ou no carro com você</strong>.</p>
+<h3 id="os-moodles-de-raça">Os moodles de raça</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Raça</th>
+<th>O que faz</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Boa Companhia</strong></td>
+<td>Caramelo</td>
+<td>Derruba <strong>Infelicidade e Tédio</strong></td>
+</tr>
+<tr>
+<td><strong>Coragem</strong></td>
+<td>Pastor Alemão</td>
+<td>Derruba <strong>Pânico</strong> (o efeito mais forte do mod base)</td>
+</tr>
+<tr>
+<td><strong>Faro Apurado</strong></td>
+<td>Golden Retriever</td>
+<td><strong>+20% de XP</strong> em Forrageio, Armadilhas e Mira, <strong>+4 tiles</strong> de visão de forrageio</td>
+</tr>
+<tr>
+<td><strong>Aquecido</strong></td>
+<td>Husky</td>
+<td><strong>+2 de peso carregável</strong>, recupera fôlego, e vira <strong>fonte de calor</strong> quando você esfria</td>
+</tr>
+<tr>
+<td><strong>Instinto de Pastor</strong></td>
+<td>Border Collie</td>
+<td><strong>+20% de XP</strong> em Cuidado Animal e Agricultura, e <strong>acalma o gado ao seu redor</strong></td>
+</tr>
+<tr>
+<td><strong>Linha de Frente</strong></td>
+<td>Rottweiler</td>
+<td>Devolve <strong>35% do fôlego</strong> de cada golpe corpo a corpo. <strong>Só enquanto ele estiver brigando</strong></td>
+</tr>
+<tr>
+<td><strong>Mira Firme</strong></td>
+<td>Doberman</td>
+<td>Drena seu <strong>estresse</strong>, <strong>-45% de recuo</strong> por tiro, <strong>+15% de velocidade de recarga</strong></td>
+</tr>
+<tr>
+<td><strong>Boca Macia</strong></td>
+<td>Labrador</td>
+<td>Entrega o abate <strong>desde o Caça 3</strong>, insiste 3x mais, <strong>60% de chance de item extra</strong>, <strong>+20% de XP</strong> em Açougue e Lâmina Curta</td>
+</tr>
+</tbody></table></div>
+<h3 id="os-moodles-que-qualquer-raça-dá">Os moodles que qualquer raça dá</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Quando</th>
+<th>O que faz</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Com fome</strong></td>
+<td>Fome do cão em 60% ou mais</td>
+<td>Só aviso</td>
+</tr>
+<tr>
+<td><strong>Com sede</strong></td>
+<td>Sede do cão em 60% ou mais</td>
+<td>Só aviso</td>
+</tr>
+<tr>
+<td><strong>Intoxicado</strong></td>
+<td>Ele comeu comida que faz mal</td>
+<td>Só aviso</td>
+</tr>
+<tr>
+<td><strong>Bem Descansado</strong></td>
+<td>Você acordou tendo dormido a <strong>8 tiles ou menos</strong> do cão</td>
+<td>Derruba <strong>Pânico, Estresse, Cansaço, Tristeza e Tédio</strong> por <strong>2 horas de jogo</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong><span class="ig">Bem Descansado</span> é o único que não depende do cão continuar perto.</strong> É um cronômetro: uma vez ligado, vale as duas horas mesmo que você saia. E ele não passa pelo filtro de cuidado, então funciona até com um cão maltratado. Vale a pena dormir do lado do cão <strong>sempre</strong>.</p>
+<p>Os três avisos (fome, sede, intoxicado) também ignoram o filtro de cuidado, o que faz sentido: eles existem justamente para avisar que o cão <strong>não</strong> está bem.</p>
+<h2 id="7-características-os-genes">7. Características (os genes)</h2>
+<p>Além da raça, cada cão tem <strong>três características</strong> mostradas na janela, na seção <strong><span class="ig">Características</span></strong>. Elas são sorteadas <strong>no momento em que você domestica o cão</strong>, dentro da faixa da raça, e <strong>nunca mudam</strong>.</p>
+<blockquote class="quote quote-game"><em>"Genes inatos, fixos para a vida toda, sorteados quando o cão é domesticado e variando de um para outro. Diferente das habilidades, nunca mudam com o treino; são a natureza bruta com que este cão nasceu."</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>Característica</th>
+<th>O que faz</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Força</strong></td>
+<td>Aumenta a <strong>força da mordida</strong> e, principalmente, a <strong>capacidade do alforje</strong></td>
+</tr>
+<tr>
+<td><strong>Agressividade</strong></td>
+<td>Faz ele <strong>ganhar XP de Combate mais rápido</strong>. <strong>Não</strong> muda quando ele decide lutar ou fugir</td>
+</tr>
+<tr>
+<td><strong>Resistência</strong></td>
+<td>Faz ele <strong>acumular menos estresse</strong> na luta</td>
+</tr>
+</tbody></table></div>
+<p>Existe ainda um <strong>quarto gene, de estresse geral, que não aparece na janela</strong>. Ele multiplica todo o estresse que o cão pega brigando. O Caramelo tem o pior de todos, o Pastor Alemão e o Husky os melhores.</p>
+<h3 id="como-ler-os-rótulos">Como ler os rótulos</h3>
+<div class="tw"><table><thead><tr>
+<th>Rótulo</th>
+<th>Significa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Baixa</strong></td>
+<td>Abaixo de 34% da escala</td>
+</tr>
+<tr>
+<td><strong>Média</strong></td>
+<td>Entre 34% e 66%</td>
+</tr>
+<tr>
+<td><strong>Alta</strong></td>
+<td>Acima de 66%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Atenção:</strong> os rótulos são numa escala absoluta, <strong>não</strong> relativa à raça. Por isso um Caramelo mostra <span class="ig">Baixa</span> nas três <strong>sempre</strong>, e não existe Caramelo excepcional. E por isso o Husky é praticamente o único cão que você vai ver com <span class="ig">Alta</span> em Força.</p>
+<h3 id="quanto-isso-importa-de-verdade">Quanto isso importa de verdade</h3>
+<p>Os genes mexem em <strong>até 15% para cada lado</strong> no dano e no XP de combate, e em até 10 pontos percentuais na resistência ao estresse. <strong>A raça pesa muito mais que o gene.</strong></p>
+<p>A exceção é o <strong>alforje</strong>: aí o gene de Força é o fator principal, e a diferença entre um cão fraco e um forte da mesma raça é real.</p>
+<p><strong>Não existe como treinar um gene.</strong> A única forma de melhorar é <a href="#8-mestiços-cruzando-raças-diferentes">cruzar cães</a>.</p>
+<h2 id="8-mestiços-cruzando-raças-diferentes">8. Mestiços: cruzando raças diferentes</h2>
+<p>Quando um macho e uma fêmea de raças diferentes têm filhotes, sai um <strong>mestiço</strong>.</p>
+<h3 id="o-que-acontece-com-o-filhote">O que acontece com o filhote</h3>
+<p><strong>A linhagem é a média dos pais.</strong> Caramelo com Pastor Alemão dá um filhote 50/50. Cruzar esse filhote com um Pastor puro dá 25% Caramelo, 75% Pastor. E assim por diante, geração após geração.</p>
+<p><strong>A aparência é UMA das raças, sorteada com peso na linhagem.</strong> Um filhote 50/50 nasce com a cara de um Pastor <strong>ou</strong> de um Caramelo, nunca de uma mistura visual. Quanto mais a linhagem pende para um lado, maior a chance de sair com a cara daquele lado.</p>
+<blockquote class="quote"><strong>E aqui está o ponto que confunde todo mundo:</strong> a raça que saiu no sorteio é a raça <strong>funcional</strong> do cão. Um mestiço 50% Husky / 50% Pastor que nasceu com cara de Husky <strong>é um Husky para todos os efeitos</strong>: moodle Aquecido, velocidade de aprender do Husky, alforje de Husky. A mistura não faz ele ficar no meio-termo em nada disso.</blockquote>
+<p><strong>Os genes ficam no meio-termo dos pais</strong>, com uma variação de mais ou menos 6% para cada lado.</p>
+<p><strong>E é aqui que a mestiçagem realmente vale a pena:</strong> a faixa de gene do filhote passa a ser a <strong>união</strong> das faixas das raças na linhagem. Um mestiço Caramelo + Husky pode nascer com qualquer Força entre 0,00 e 0,80, ou seja, ele <strong>pode furar o teto do Caramelo</strong>. Cruzando os cães mais fortes de cada ninhada, você sobe a linhagem inteira ao longo das gerações.</p>
+<p><strong>O que o filhote NÃO herda:</strong> nada de habilidade. Ele nasce com <strong>nível 0 nas cinco</strong>, sempre. O que ele herda da raça é a <strong>velocidade de aprender</strong>, não o aprendizado.</p>
+<h3 id="o-rótulo-mestiço">O rótulo "Mestiço"</h3>
+<p>Um cão com mais de uma raça na linhagem ganha <strong><span class="ig">(Mestiço)</span></strong> ao lado do nome da raça, na janela e no menu de contexto.</p>
+<p>O <strong>detalhamento percentual</strong> (<span class="ig">50% Husky, 50% Pastor Alemão</span>) aparece <strong>passando o mouse na linha <span class="ig">Raça</span></strong> da janela do cão, junto com a descrição da raça dominante.</p>
+<h3 id="vale-a-pena-cruzar-raças-diferentes">Vale a pena cruzar raças diferentes?</h3>
+<div class="tw"><table><thead><tr>
+<th>Objetivo</th>
+<th>Resposta</th>
+</tr></thead><tbody>
+<tr>
+<td>Melhorar genes ao longo de gerações</td>
+<td><strong>Sim</strong>, é a única forma que existe</td>
+</tr>
+<tr>
+<td>Ganhar o moodle de duas raças</td>
+<td><strong>Não.</strong> O cão tem um moodle só, o da raça que ele virou</td>
+</tr>
+<tr>
+<td>Combinar as velocidades de aprender</td>
+<td><strong>Não.</strong> Ele usa a tabela da raça que ele virou</td>
+</tr>
+<tr>
+<td>Fazer muitos filhotes rápido</td>
+<td>Use uma <strong>Caramelo como mãe</strong> (2 a 4 por ninhada)</td>
+</tr>
+</tbody></table></div>
+<h2 id="9-instalando-os-addons">9. Instalando os addons</h2>
+<p>Rottweiler, Doberman e Labrador são <strong>mods separados na Steam</strong>. Cada um:</p>
+<ul>
+<li><strong>Precisa do Companion Dogs base instalado e ativo.</strong></li>
+<li>Adiciona <strong>uma raça</strong>, com modelo, textura, moodle e locais de spawn próprios.</li>
+<li>Vem com as <strong>13 traduções</strong>, iguais às do base.</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>Addon</th>
+<th>Página na Steam</th>
+<th>Versão mínima do base</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">assinar</a></td>
+<td>0.6.3 ou mais novo</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">assinar</a></td>
+<td>0.6.3 ou mais novo</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">assinar</a></td>
+<td><strong>0.6.6 ou mais novo</strong></td>
+</tr>
+</tbody></table></div>
+<p>E o base, se você ainda não tem: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
+<p>Se o base for antigo demais, o addon <strong>simplesmente não faz nada</strong>: ele não dá erro, não trava o jogo, a raça só não existe. Se você instalou o Labrador e nunca acha um, <strong>confira a versão do base primeiro</strong>.</p>
+<blockquote class="quote"><strong>Não remova um addon de um save que tenha cães vivos daquela raça.</strong> O cão perde o modelo e a textura de referência.</blockquote>
+<p>Instalar um addon <strong>não muda nada nas raças que já existem</strong>. As raças novas entram no sorteio de cruzamento e de mestiçagem automaticamente.</p>
+<h2 id="10-perguntas-frequentes-de-raça">10. Perguntas frequentes de raça</h2>
+<p><strong>"Qual é a melhor raça?"</strong> Depende do que você faz. Para <strong>combate</strong>, Pastor Alemão ou Rottweiler. Para <strong>caça</strong>, Labrador. Para <strong>carga</strong>, Husky. Para <strong>fazenda</strong>, Border Collie. Para <strong>arma de fogo</strong>, Doberman. E o <strong>Caramelo</strong> continua sendo excelente pelo moodle, mesmo sendo o mais fraco.</p>
+<p><strong>"Meu Caramelo pode virar forte com treino?"</strong> Não. Ele nunca vai matar um zumbi, por mais que você treine, e as características dele são as piores por definição. O que o treino melhora é a Obediência, o Faro e a Caça, e nisso ele vai igual a qualquer um.</p>
+<p><strong>"Achei dois cães da mesma raça, qual eu pego?"</strong> Você <strong>não tem como saber antes</strong>: o sorteio acontece no momento da domesticação. Domestique e olhe a seção <strong>"Características"</strong> na janela.</p>
+<p><strong>"Peguei um cão com características ruins. Solto e domestico de novo?"</strong> <strong>Não adianta.</strong> Os genes são sorteados <strong>uma vez só, na primeira domesticação</strong>, e o cão os mantém para sempre, mesmo depois de solto e re-domesticado (assim como mantém as habilidades). Para tentar outra rolagem, você precisa <strong>domesticar um cão diferente</strong>. Para melhorar de verdade ao longo do tempo, o caminho é <a href="#8-mestiços-cruzando-raças-diferentes">cruzar</a>.</p>
+<p><strong>"Posso ter dois moodles de raça ao mesmo tempo?"</strong> Não. Só o <strong>cão mais próximo</strong> conta. O <strong>"Bem Descansado"</strong> é a exceção, porque não depende de proximidade.</p>
+<p><strong>"Por que o moodle sumiu?"</strong> Quase sempre é fome ou sede acima de 75%, ou a lealdade tendo caído abaixo do piso. Alimente, dê água e faça carinho. Confira também se o cão está a <strong>8 tiles ou menos e no mesmo andar</strong>.</p>
+<p><strong>"Existe raça mais rápida?"</strong> Não. Nenhuma raça corre mais que outra.</p>
+<p><strong>"Existe Husky de outra cor?"</strong> Não. Cada raça tem uma textura só, e macho e fêmea usam a mesma.</p>
+<p><strong>"Cão grande bate mais forte?"</strong> Não. O tamanho é puramente visual. A ligação entre porte e força foi desligada de propósito.</p>
+<p><strong>"Onde acho Doberman?"</strong> <strong>Delegacia.</strong> A chance em prédio militar é maior no papel, mas quase não existe prédio militar no mapa base do jogo.</p>
+<p><strong>"Instalei o Labrador e não acho nenhum."</strong> Confira a versão do Companion Dogs base: o Labrador <strong>exige 0.6.6 ou mais novo</strong> e fica invisível e silencioso num base antigo. Confira também se você já não explorou as casas da região: a decisão de spawn é <strong>uma por prédio, para sempre</strong>.</p>
+<p><strong>"Meu mestiço não tem o moodle das duas raças."</strong> Isso é esperado. Um mestiço é, mecanicamente, <strong>a raça que ele aparenta</strong>. A mistura só muda a faixa de genes dos descendentes e o rótulo percentual na janela.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Nada encontrado para <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' resultados'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Começo');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

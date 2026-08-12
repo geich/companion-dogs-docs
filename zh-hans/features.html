@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="功能: 狗能做什么，以及怎么指挥它">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: 功能">
+<meta property="og:description" content="功能: 狗能做什么，以及怎么指挥它">
+<meta property="og:url" content="https://geich.github.io/companion-dogs-docs/zh-hans/features.html">
+<meta property="og:image" content="https://geich.github.io/companion-dogs-docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/companion-dogs-docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: 功能</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="打开目录" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="返回文档首页"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">功能</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往品种手册</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="搜索手册……" aria-label="搜索手册" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="语言"><optgroup label="已校对"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="机器翻译"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans" selected>简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="切换主题">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>机器翻译，未经校对.</b> 本页由葡萄牙语机器翻译而成，没有经过人工校对，术语和数字都可能有误。如有疑问，请对照英文版或葡萄牙语原文。 <a href="../en/features.html">阅读英文版</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">目录 &middot; <b>功能</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-5-分钟上手从流浪狗到同伴犬" data-id="1-5-分钟上手从流浪狗到同伴犬">1. 5 分钟上手：从流浪狗到同伴犬</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-找到并驯服一只狗" data-id="2-找到并驯服一只狗">2. 找到并驯服一只狗</a>
+<div class="sub">
+<a class="s3" href="#各个品种在哪里出现" data-id="各个品种在哪里出现">各个品种在哪里出现</a>
+<a class="s3" href="#怎么驯服" data-id="怎么驯服">怎么驯服</a>
+<a class="s3" href="#需要多少食物" data-id="需要多少食物">需要多少食物</a>
+<a class="s3" href="#对狗有害的食物" data-id="对狗有害的食物">对狗有害的食物</a>
+<a class="s3" href="#它归你的那一刻会发生什么" data-id="它归你的那一刻会发生什么">它归你的那一刻会发生什么</a>
+<a class="s3" href="#狗的数量上限" data-id="狗的数量上限">狗的数量上限</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-如何下命令四种方式" data-id="3-如何下命令四种方式">3. 如何下命令：四种方式</a>
+<div class="sub">
+<a class="s3" href="#a-右键菜单右键点狗" data-id="a-右键菜单右键点狗">a) 右键菜单（右键点狗）</a>
+<a class="s3" href="#b-轮盘菜单按住-q" data-id="b-轮盘菜单按住-q">b) 轮盘菜单（按住 Q）</a>
+<a class="s3" href="#c-快捷键" data-id="c-快捷键">c) 快捷键</a>
+<a class="s3" href="#d-狗狗窗口里的按钮" data-id="d-狗狗窗口里的按钮">d) 狗狗窗口里的按钮</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-三种模式跟随停留和守卫" data-id="4-三种模式跟随停留和守卫">4. 三种模式：跟随、停留和守卫</a>
+<div class="sub">
+<a class="s3" href="#跟随" data-id="跟随">跟随</a>
+<a class="s3" href="#停留" data-id="停留">停留</a>
+<a class="s3" href="#守卫" data-id="守卫">守卫</a>
+<a class="s3" href="#两个召唤命令" data-id="两个召唤命令">两个召唤命令</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-哨兵把狗当报警器" data-id="5-哨兵把狗当报警器">5. 哨兵：把狗当报警器</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-战斗" data-id="6-战斗">6. 战斗</a>
+<div class="sub">
+<a class="s3" href="#它什么时候会自己动手" data-id="它什么时候会自己动手">它什么时候会自己动手</a>
+<a class="s3" href="#它不会隔着墙咬人" data-id="它不会隔着墙咬人">它不会隔着墙咬人</a>
+<a class="s3" href="#它能打出多少伤害" data-id="它能打出多少伤害">它能打出多少伤害</a>
+<a class="s3" href="#自动守护" data-id="自动守护">自动守护</a>
+<a class="s3" href="#你的子弹伤不到它" data-id="你的子弹伤不到它">你的子弹伤不到它</a>
+<a class="s3" href="#受伤后退和恐慌" data-id="受伤后退和恐慌">受伤、后退和恐慌</a>
+<a class="s3" href="#恢复" data-id="恢复">恢复</a>
+<a class="s3" href="#击杀统计" data-id="击杀统计">击杀统计</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-需求与照料" data-id="7-需求与照料">7. 需求与照料</a>
+<div class="sub">
+<a class="s3" href="#压力从哪里来" data-id="压力从哪里来">压力从哪里来</a>
+<a class="s3" href="#手动喂食" data-id="手动喂食">手动喂食</a>
+<a class="s3" href="#喂水" data-id="喂水">喂水</a>
+<a class="s3" href="#抚摸" data-id="抚摸">抚摸</a>
+<a class="s3" href="#疏于照顾的连锁反应" data-id="疏于照顾的连锁反应">疏于照顾的连锁反应</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-忠诚度" data-id="8-忠诚度">8. 忠诚度</a>
+<div class="sub">
+<a class="s3" href="#不服从的下限" data-id="不服从的下限">不服从的下限</a>
+<a class="s3" href="#狗拒绝执行命令的时候" data-id="狗拒绝执行命令的时候">狗拒绝执行命令的时候</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-食盆不用你在场也有吃有喝" data-id="9-食盆不用你在场也有吃有喝">9. 食盆：不用你在场也有吃有喝</a>
+<div class="sub">
+<a class="s3" href="#使用方法" data-id="使用方法">使用方法</a>
+<a class="s3" href="#哪些东西能放进食盆" data-id="哪些东西能放进食盆">哪些东西能放进食盆</a>
+<a class="s3" href="#狗怎么用食盆" data-id="狗怎么用食盆">狗怎么用食盆</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-技能狗的五项技能" data-id="10-技能狗的五项技能">10. 技能：狗的五项技能</a>
+<div class="sub">
+<a class="s3" href="#关于经验曲线" data-id="关于经验曲线">关于经验曲线</a>
+<a class="s3" href="#不服从" data-id="不服从">不服从</a>
+<a class="s3" href="#技能和特性不是一回事" data-id="技能和特性不是一回事">技能和特性不是一回事</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-服从技巧" data-id="11-服从技巧">11. 服从技巧</a>
+<div class="sub">
+<a class="s3" href="#前往指定地点服从-1" data-id="前往指定地点服从-1">前往指定地点（服从 1）</a>
+<a class="s3" href="#引开注意服从-3" data-id="引开注意服从-3">引开注意（服从 3）</a>
+<a class="s3" href="#嗅出物品服从-5" data-id="嗅出物品服从-5">嗅出物品（服从 5）</a>
+<a class="s3" href="#睡觉时寻找物品服从-10" data-id="睡觉时寻找物品服从-10">睡觉时寻找物品（服从 10）</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-狩猎" data-id="12-狩猎">12. 狩猎</a>
+<div class="sub">
+<a class="s3" href="#它会猎什么" data-id="它会猎什么">它会猎什么</a>
+<a class="s3" href="#实际是怎么运作的" data-id="实际是怎么运作的">实际是怎么运作的</a>
+<a class="s3" href="#限制" data-id="限制">限制</a>
+<a class="s3" href="#代价" data-id="代价">代价</a>
+<a class="s3" href="#采集加成" data-id="采集加成">采集加成</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-照看牲畜" data-id="13-照看牲畜">13. 照看牲畜</a>
+<div class="sub">
+<a class="s3" href="#怎么指派" data-id="怎么指派">怎么指派</a>
+<a class="s3" href="#它在那里做什么" data-id="它在那里做什么">它在那里做什么</a>
+<a class="s3" href="#重要规则" data-id="重要规则">重要规则</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-驮袋让狗帮你驮东西" data-id="14-驮袋让狗帮你驮东西">14. 驮袋：让狗帮你驮东西</a>
+<div class="sub">
+<a class="s3" href="#怎么装上驮袋" data-id="怎么装上驮袋">怎么装上驮袋</a>
+<a class="s3" href="#能驮多少" data-id="能驮多少">能驮多少</a>
+<a class="s3" href="#能放什么" data-id="能放什么">能放什么</a>
+<a class="s3" href="#驮袋窗口" data-id="驮袋窗口">驮袋窗口</a>
+<a class="s3" href="#从哪里获得" data-id="从哪里获得">从哪里获得</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-繁殖与幼犬" data-id="15-繁殖与幼犬">15. 繁殖与幼犬</a>
+<div class="sub">
+<a class="s3" href="#没有交配按钮" data-id="没有交配按钮">没有“交配”按钮</a>
+<a class="s3" href="#需要满足的条件" data-id="需要满足的条件">需要满足的条件</a>
+<a class="s3" href="#求偶与妊娠" data-id="求偶与妊娠">求偶与妊娠</a>
+<a class="s3" href="#分娩" data-id="分娩">分娩</a>
+<a class="s3" href="#幼犬会继承什么" data-id="幼犬会继承什么">幼犬会继承什么</a>
+<a class="s3" href="#把幼犬养大" data-id="把幼犬养大">把幼犬养大</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-同时养多只狗" data-id="16-同时养多只狗">16. 同时养多只狗</a>
+<div class="sub">
+<a class="s3" href="#我的狗标签页你的犬只名册" data-id="我的狗标签页你的犬只名册">“我的狗”标签页：你的犬只名册</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-狗狗窗口" data-id="17-狗狗窗口">17. 狗狗窗口</a>
+<div class="sub">
+<a class="s3" href="#技能与状态标签页" data-id="技能与状态标签页">"技能与状态"标签页</a>
+<a class="s3" href="#指令标签页" data-id="指令标签页">"指令"标签页</a>
+<a class="s3" href="#我的狗标签页" data-id="我的狗标签页">"我的狗"标签页</a>
+<a class="s3" href="#设置标签页" data-id="设置标签页">"设置"标签页</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-屏幕上会出现什么" data-id="18-屏幕上会出现什么">18. 屏幕上会出现什么</a>
+<div class="sub">
+<a class="s3" href="#狗的moodle" data-id="狗的moodle">狗的moodle</a>
+<a class="s3" href="#头顶上的文字" data-id="头顶上的文字">头顶上的文字</a>
+<a class="s3" href="#地图上的标记" data-id="地图上的标记">地图上的标记</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-mod的物品" data-id="19-mod的物品">19. mod的物品</a>
+<div class="sub">
+<a class="s3" href="#同伴犬食盆" data-id="同伴犬食盆">同伴犬食盆</a>
+<a class="s3" href="#同伴犬驮袋" data-id="同伴犬驮袋">同伴犬驮袋</a>
+<a class="s3" href="#这个mod没有的东西" data-id="这个mod没有的东西">这个mod没有的东西</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-多人游戏" data-id="20-多人游戏">20. 多人游戏</a>
+<div class="sub">
+<a class="s3" href="#你的狗就是你的" data-id="你的狗就是你的">你的狗就是你的</a>
+<a class="s3" href="#你断线的时候" data-id="你断线的时候">你断线的时候</a>
+<a class="s3" href="#给管理员" data-id="给管理员">给管理员</a>
+<a class="s3" href="#联机合作的安装提醒" data-id="联机合作的安装提醒">联机合作的安装提醒</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-沙盒选项" data-id="21-沙盒选项">21. 沙盒选项</a>
+<div class="sub">
+<a class="s3" href="#驯服与生成" data-id="驯服与生成">驯服与生成</a>
+<a class="s3" href="#战斗" data-id="战斗">战斗</a>
+<a class="s3" href="#照料与羁绊" data-id="照料与羁绊">照料与羁绊</a>
+<a class="s3" href="#行为" data-id="行为">行为</a>
+<a class="s3" href="#技能与活动" data-id="技能与活动">技能与活动</a>
+<a class="s3" href="#驮袋" data-id="驮袋">驮袋</a>
+<a class="s3" href="#幼犬" data-id="幼犬">幼犬</a>
+<a class="s3" href="#界面与多人游戏" data-id="界面与多人游戏">界面与多人游戏</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-常见问题" data-id="22-常见问题">22. 常见问题</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs功能手册">Companion Dogs：功能手册</h1>
+<p>一份完整的指南：你的狗能做什么、怎么指挥它、怎么照顾它。</p>
+<p>这份手册涵盖<strong>这个 mod 的全部内容</strong>。如果你想了解的是<strong>品种</strong>（该选哪一只、每个品种特别在哪、 moodle 和特性），请看另一份手册： <a href="breeds.html" class="xlink">品种</a>。</p>
+<blockquote class="quote"><strong>关于名称：</strong>本手册里所有带引号的文字，都和游戏简体中文界面里显示的完全一致。 如果你玩的是英文版，名称会不一样，但它们在菜单里的位置是相同的。</blockquote>
+<h2 id="1-5-分钟上手从流浪狗到同伴犬">1. 5 分钟上手：从流浪狗到同伴犬</h2>
+<p>如果你只想赶紧开始玩，看这几步就够了：</p>
+<ol>
+<li><strong>找一只狗。</strong> 流浪的小卡犬会在城市和居民区里自己晃悠。只要多探索，早晚会碰上一只。</li>
+<li><strong>背包里带上食物。</strong> 什么食物都行，只要没腐烂、能填肚子。</li>
+<li><strong>右键点这只狗</strong>，选<strong>“喂食（结交）”</strong>。</li>
+<li><strong>一直喂到它信任你。</strong> 每喂一份都会涨信任值。一大袋狗粮几乎一次就够； 小零食大概要喂四次。</li>
+<li><strong>给它起个名字。</strong> 好了，它是你的了。从这一刻起它会自己跟着你走。</li>
+</ol>
+<p>之后有三件事别忘了：</p>
+<ul>
+<li><strong>每天喂食喂水。</strong> 狗会因为疏于照顾而死掉，而且不会再回来。</li>
+<li><strong>多抚摸它。</strong> 这能稳住忠诚度，还能缓解你自己的无聊和悲伤。</li>
+<li><strong>打开它的窗口</strong>，按钮是你双手面板下面那个爪印。所有东西都在里面。</li>
+</ul>
+<h2 id="2-找到并驯服一只狗">2. 找到并驯服一只狗</h2>
+<h3 id="各个品种在哪里出现">各个品种在哪里出现</h3>
+<p>mod 会<strong>为每栋建筑判定一次</strong>这栋楼里有没有狗，判定结果会存进存档。你回到已经探索过的地方， 不会凭空又冒出一只新的狗。</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>去哪里找</th>
+<th>每栋建筑的几率</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>小卡犬</strong></td>
+<td>城市或居民区的民宅</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>金毛寻回犬</strong></td>
+<td>民宅（额外再抽一次）</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>德国牧羊犬</strong></td>
+<td>警察局、监狱、军事基地、枪店</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>民宅，<strong>只在冬天</strong></td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>宠物店和兽医诊所，全年都有</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>边境牧羊犬</strong></td>
+<td>乡下的谷仓、马厩、筒仓、鸡舍</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>狗通常会出现在建筑<strong>外面</strong>的空格子上：马路、院子、空地。只有外面一个空格子都不剩时， 它才会出现在建筑里面。所以先找马路和院子。</p>
+<p>沙盒选项<strong>“狗生成倍率”</strong>会一次性缩放上面所有几率，同时保持各品种之间的相对稀有度。 设为 0 就彻底关掉生成。</p>
+<blockquote class="quote"><strong>附加品种</strong>是 Steam 上的独立 mod，各自有专属的出现地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> 和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>。 每个品种各有什么本事，见<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
+<h3 id="怎么驯服">怎么驯服</h3>
+<p>右键点这只野狗。它给出的选项只有一个： <strong>“喂食（结交）”</strong>。</p>
+<ul>
+<li><strong>除了食物，什么都不需要。</strong> 不看技能等级，不需要特质，不需要项圈，也不需要工具。</li>
+<li>食物<strong>装在包里</strong>也没关系，mod 会自己找到。</li>
+<li>如果你身上有好几种食物，这个选项会变成子菜单，每种都带图标和数量。</li>
+<li>一点食物都没有时，这个选项会变灰：<em>“你的背包里需要有食物。”</em></li>
+</ul>
+<h3 id="需要多少食物">需要多少食物</h3>
+<p>每喂一份，<strong>给的信任值和这份食物能消掉的饥饿量成正比</strong>。一件能减 60 点饥饿的食物就给 60 点信任。默认是<strong>信任值到 100 就驯服成功</strong>（可以在沙盒的*“驯服所需信任值”*里改）。</p>
+<p>实际玩起来是这样：</p>
+<ul>
+<li>一大袋<strong>狗粮</strong>几乎一次就搞定。</li>
+<li>小份的零食大概要喂<strong>四次</strong>。</li>
+</ul>
+<p>mod <strong>只会吃掉需要的那一口</strong>，剩下的会还回你的背包，所以你不用为了补最后一点信任值 而浪费半罐食物。</p>
+<p><strong>这里没有运气成分。</strong> 信任值到 100，这只狗就是你的了，就这么简单。</p>
+<p>进度条没满之前，你会看到：<em>“这只小卡犬对你产生了好感……”</em> 满了之后：<em>“这只小卡犬现在已经是你的同伴了！”</em>，接着会弹出起名字的窗口。</p>
+<h3 id="对狗有害的食物">对狗有害的食物</h3>
+<p>有些食物对狗来说是毒，mod 会提醒你：它们在菜单里显示成<strong>红色</strong>，并附上提示 <em>“对狗有害，吃了会生病并失去对你的信任。”</em></p>
+<p>具体是这些：</p>
+<ul>
+<li><strong>按类型：</strong> 糖果、糖、咖啡、茶、可可、巧克力、辣椒、坚果。</li>
+<li><strong>按名称：</strong> 洋葱、大蒜、韭葱、细香葱、青葱、葡萄、葡萄干、巧克力、可可、咖啡、 花生。（西柚是明确放行的。）</li>
+</ul>
+<p>给<strong>野狗</strong>喂有害的食物会扣 15 点信任，而且永远不会加分。给<strong>同伴犬</strong>喂，则扣 20 点忠诚度、 拉高压力，还会让它<strong>中毒 120 个游戏分钟</strong>。</p>
+<h3 id="它归你的那一刻会发生什么">它归你的那一刻会发生什么</h3>
+<ul>
+<li>它进入<strong>跟随</strong>模式，并打开<strong>自动守护</strong>。</li>
+<li>饥饿、口渴和压力清零。</li>
+<li><strong>基因特性在这一刻随机生成，而且终生不变</strong>。</li>
+<li>它变得<strong>无敌</strong>：僵尸、汽车、子弹和火都杀不死它。只有疏于照顾才会要它的命。</li>
+<li>它会被登记进<strong>“我的狗”</strong>，并开始显示在地图上。</li>
+</ul>
+<p><strong>驯服一只新狗不会丢下原来那只。</strong> 新的变成当前同伴，旧的转为待命，处在停留模式。 见<a href="#16-同时养多只狗">同时养多只狗</a>。</p>
+<h3 id="狗的数量上限">狗的数量上限</h3>
+<p>沙盒选项<strong>“每位玩家的最大犬只数”</strong>默认是 <strong>0，也就是不限制</strong>。如果服务器设了上限， 达到上限后结交的选项会变红并锁住：<em>“已达到同伴数量上限（5）。”</em>（括号里的数字就是设定的上限） 放归或失去一只狗，就能空出一个名额。</p>
+<h2 id="3-如何下命令四种方式">3. 如何下命令：四种方式</h2>
+<p>指挥狗一共有四种方式。它们做的事完全一样，你用哪种顺手就用哪种。</p>
+<h3 id="a-右键菜单右键点狗">a) 右键菜单（右键点狗）</h3>
+<p>所有内容都在一个以狗的名字命名的子菜单里。顺序永远是固定的：</p>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td><em>（第一行，不可点击）</em></td>
+<td>狗的身份信息：名字、性别、是不是幼犬、有没有怀孕、是不是混血</td>
+</tr>
+<tr>
+<td><strong>禁止繁殖</strong> / <strong>允许繁殖</strong></td>
+<td>开关这只狗能不能繁殖（只有成年犬才有）</td>
+</tr>
+<tr>
+<td><strong>暂停成长</strong> / <strong>恢复成长</strong></td>
+<td>只有幼犬才有。无限期冻结成长</td>
+</tr>
+<tr>
+<td><strong>喂食</strong></td>
+<td>给它吃东西。按种类分子菜单</td>
+</tr>
+<tr>
+<td><strong>喂水</strong></td>
+<td>需要一个装着水的容器</td>
+</tr>
+<tr>
+<td><strong>抚摸</strong></td>
+<td>摸摸它</td>
+</tr>
+<tr>
+<td><strong>命令停留</strong> / <strong>命令跟随</strong></td>
+<td>在这两个模式之间切换</td>
+</tr>
+<tr>
+<td><strong>过来</strong></td>
+<td>把狗叫到你身边</td>
+</tr>
+<tr>
+<td><strong>攻击最近目标</strong></td>
+<td>让它去打最近的那只僵尸</td>
+</tr>
+<tr>
+<td><strong>技巧</strong> ▸</td>
+<td>子菜单，里面是四个技巧</td>
+</tr>
+<tr>
+<td><strong>Care for livestock here</strong> / <strong>Stop caring for livestock</strong></td>
+<td>农场模式</td>
+</tr>
+<tr>
+<td><strong>装上驮袋</strong> / <strong>打开驮袋</strong> / <strong>卸下驮袋</strong></td>
+<td>按当前状态显示</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>打开狗狗窗口</td>
+</tr>
+<tr>
+<td><strong>重命名……</strong></td>
+<td>最多 30 个字符</td>
+</tr>
+<tr>
+<td><strong>抱起</strong></td>
+<td>把狗抱在怀里</td>
+</tr>
+<tr>
+<td><strong>放归同伴</strong></td>
+<td>把它放回野外（训练成果和技能都保留）</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>这里没有<span class="ig">守卫</span>。</strong> 这个命令只存在于轮盘菜单、快捷键，以及指令标签页里的按钮。</blockquote>
+<h3 id="b-轮盘菜单按住-q">b) 轮盘菜单（按住 Q）</h3>
+<p>这个 mod 挂在游戏自带的表情轮盘上。按住 <strong>Q</strong>，会多出一个新分类，名字就是你那只狗的品种，图标是一个爪印。只有当前同伴犬在你附近时，这个分类才会出现。</p>
+<p>轮盘里的选项是：<strong>过来</strong>、<strong>跟随</strong>、<strong>停留</strong>、<strong>守卫</strong>、<strong>警报</strong>、<strong>静默</strong>、<strong>静音</strong>、<strong>攻击最近目标</strong>、<strong>狩猎</strong> / <strong>停止狩猎</strong>、<strong>技巧 ▸</strong>，以及<strong>打开驮袋</strong>（前提是它背着驮袋）。</p>
+<p>选 <strong>技巧</strong> 会打开轮盘的第三层，里面是四个技巧再加一个<strong>返回</strong>。还没解锁的技巧图标是红色的，名字里带着需要的等级，比如 <em><span class="ig">引开注意（服从 3）</span></em>。</p>
+<p>有些命令还会让你的角色做动作：叫它过来会抬手，让它停留会做出"停"的手势，让它攻击会伸手指过去。</p>
+<h3 id="c-快捷键">c) 快捷键</h3>
+<p>一共 <strong>14 个可绑定的动作</strong>，而且 <strong>默认全都没有绑定按键</strong>，这是故意的，免得跟别的东西冲突。按键在狗狗窗口的 <strong><span class="ig">设置</span></strong> 标签页里配置，不是在游戏的选项菜单里。</p>
+<div class="tw"><table><thead><tr>
+<th>动作</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>过来</strong></td>
+<td>把狗叫过来</td>
+</tr>
+<tr>
+<td><strong>跟随</strong></td>
+<td>切换到跟随模式</td>
+</tr>
+<tr>
+<td><strong>停留</strong></td>
+<td>切换到停留模式</td>
+</tr>
+<tr>
+<td><strong>守卫</strong></td>
+<td>切换到守卫模式</td>
+</tr>
+<tr>
+<td><strong>召回</strong></td>
+<td><strong>把狗瞬间传送到你身边。</strong> 你会吹一声响亮的口哨，口哨会引来僵尸</td>
+</tr>
+<tr>
+<td><strong>攻击最近目标</strong></td>
+<td>手动下令攻击</td>
+</tr>
+<tr>
+<td><strong>警报</strong> / <strong>静默</strong> / <strong>静音</strong></td>
+<td>哨兵模式</td>
+</tr>
+<tr>
+<td><strong>自动守护</strong></td>
+<td>开和关</td>
+</tr>
+<tr>
+<td><strong>狩猎</strong></td>
+<td>开和关</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>打开和关闭狗狗窗口</td>
+</tr>
+<tr>
+<td><strong>前往指定地点</strong></td>
+<td>打开这个技巧的选点光标</td>
+</tr>
+<tr>
+<td><strong>引开注意</strong></td>
+<td>直接触发这个技巧</td>
+</tr>
+</tbody></table></div>
+<p>如果你选的键已经被占用，mod 会提示：<em><span class="ig">F 已被占用：停留</span></em>。没有绑定按键时，按钮上显示 <em><span class="ig">未绑定</span></em>。</p>
+<h3 id="d-狗狗窗口里的按钮">d) 狗狗窗口里的按钮</h3>
+<p><strong><span class="ig">指令</span></strong> 标签页把一切都做成了按钮：模式那一排、哨兵那一排、自动守护和狩猎的开关、四个技巧、驮袋，还有行动那一排（<strong>召回</strong> | <strong>重命名</strong> | <strong>放归</strong>）。</p>
+<h2 id="4-三种模式跟随停留和守卫">4. 三种模式：跟随、停留和守卫</h2>
+<p>狗<strong>永远处在</strong>这三种模式中的一种。其它所有东西（哨兵、狩猎、自动守护）都只是叠加在模式之上的调整。</p>
+<h3 id="跟随">跟随</h3>
+<p>默认模式。它跟在你后面走：你走到 2 格远的时候它开始动，超过 5 格就改成跑。</p>
+<ul>
+<li><strong>它打的是以你为中心 5 格内的僵尸</strong>（不是以它自己为中心）。目标跑到 8 格就放弃。</li>
+<li>会跳矮栅栏、上楼梯，也会跟着你换楼层。</li>
+<li><strong>只有这个模式会跟你一起上车。</strong></li>
+<li>你要是离得太远（24 格），它会自动被挪到你身后，免得卡在某栋楼的另一边。</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">小卡犬会跟随在你身后，并警戒靠近的僵尸。其哨兵功能保持警戒。默认模式，你的同伴在移动中。</span></em></blockquote>
+<h3 id="停留">停留</h3>
+<p>它停在原地不动，也不会离开。停了大约一分钟以后，它会趴下。</p>
+<ul>
+<li><strong>它还是会闻、还是会提醒</strong>你附近有僵尸。</li>
+<li><strong>不追也不打</strong>，僵尸怼到脸上也一样。</li>
+<li><strong>你上车的时候它会被留在原地。</strong> 只有跟随模式的狗才会上车。</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">小卡犬会待在原地，不会跟随。它仍会感知并警告僵尸，但不会追逐或战斗，只是坐着警戒。适合将它安置在安全的地方。</span></em></blockquote>
+<h3 id="守卫">守卫</h3>
+<p>它会把自己当前站的这个位置记成<strong>岗位</strong>，然后守住这个岗位。</p>
+<ul>
+<li>会跟<strong>距离岗位 10 格以内</strong>的僵尸打，追出去以后再回来。</li>
+<li>打不过的时候会退到你身后。</li>
+<li><strong>一个重要的限制：</strong>目前只有<strong>你在附近</strong>时它才工作。把狗留在基地守着、自己跑到地图另一头，是没用的。</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">小卡犬会锚定在此确切位置并进行防御，在更广范围内与僵尸交战、发出警报，追击后返回岗位。如果被包围，它会退到你身后。</span></em></blockquote>
+<h3 id="两个召唤命令">两个召唤命令</h3>
+<div class="tw"><table><thead><tr>
+<th>命令</th>
+<th>作用</th>
+<th>代价</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>过来</strong></td>
+<td>它<strong>走</strong>回来，并切换到跟随模式</td>
+<td>没有</td>
+</tr>
+<tr>
+<td><strong>召回</strong></td>
+<td>它<strong>立刻出现在你身边</strong></td>
+<td>你会吹一声响亮的口哨，这<strong>会引来僵尸</strong></td>
+</tr>
+</tbody></table></div>
+<p>狗卡在栅栏后面、被困在楼里，或者远到走不回来的时候，才用<strong>召回</strong>。它是应急出口，不是日常命令。</p>
+<h2 id="5-哨兵把狗当报警器">5. 哨兵：把狗当报警器</h2>
+<p>实际用下来，这是整个 mod 最有用的功能：<strong>狗能察觉到你看不见的僵尸</strong>。</p>
+<p>哨兵在三种模式（跟随、停留、守卫）下都工作。但在时间快进期间和你睡觉期间，它<strong>不工作</strong>。</p>
+<div class="tw"><table><thead><tr>
+<th>模式</th>
+<th>范围</th>
+<th>怎么提醒</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>警报</strong></td>
+<td>18 格（嗅觉满级能到 27 格）</td>
+<td>僵尸远或者数量少时低声咆哮。僵尸近了、成群或者已经看得见时<strong>大声吠叫</strong>。<strong>这个吠叫是真的会引来僵尸</strong></td>
+</tr>
+<tr>
+<td><strong>静默</strong></td>
+<td>固定 10 格</td>
+<td><strong>只有咆哮。</strong>从不吠叫，也从不引来任何东西</td>
+</tr>
+<tr>
+<td><strong>静音</strong></td>
+<td>没有</td>
+<td>完全不提示僵尸</td>
+</tr>
+</tbody></table></div>
+<p>僵尸到 6 格以内，<strong>或者</strong>有 3 只以上僵尸，<strong>或者</strong>在 12 格内有没被挡住的视线，狗就会从<span class="ig">闻到了什么</span>升级成<span class="ig">报警</span>。</p>
+<p>提示文字会浮在它头顶上：</p>
+<ul>
+<li><em><span class="ig">你的小卡犬察觉到附近有东西……</span></em>（有东西，但是远或者少）</li>
+<li><em><span class="ig">你的小卡犬在朝什么东西吠叫！</span></em>（近了或者多了，该动手了）</li>
+</ul>
+<p><strong>取舍就在这里：</strong>警报给你最大的预警范围，但会暴露你的位置。静默安静地提醒你，可只覆盖近处。静音是给那种无论如何都要让狗闭嘴的场合用的。</p>
+<blockquote class="quote"><strong>压力大的狗不会自己吠叫。</strong> 以前有过一套按压力吠叫的机制，但它在 mod 里是关掉的。如果你的狗在招僵尸，来源只可能是下面这四个之一，而且都能控制：<strong>警报模式的哨兵</strong>、<strong>引开注意</strong>这个技巧、<strong>狩猎时的追逐</strong>，或者<strong>战斗</strong>。</blockquote>
+<h2 id="6-战斗">6. 战斗</h2>
+<h3 id="它什么时候会自己动手">它什么时候会自己动手</h3>
+<p><strong>狗不会主动跑去咬人。</strong>它要等一个触发条件：</p>
+<ul>
+<li><strong>在跟随模式下：</strong>要<strong>自动守护是开着的</strong>，而且僵尸盯上了你或者狗，或者你已经打起来了，它才会出手。另外这个僵尸得<strong>离你 5 格以内</strong>。</li>
+<li><strong>在守卫模式下：</strong>只要在岗位周围 10 格之内，它随时都打。</li>
+<li><strong>“攻击最近目标”指令：</strong>它会在 12 格的半径里找目标，然后追击 2 个游戏分钟。</li>
+</ul>
+<p>它只打<strong>有敌意的僵尸</strong>。其他 mod（Bandits、A-Life）里的友方 NPC 不会挨咬。</p>
+<h3 id="它不会隔着墙咬人">它不会隔着墙咬人</h3>
+<p>狗只会去打那些<strong>它真的能靠腿走到</strong>的僵尸。栅栏另一边的僵尸，或者关在封闭房间里的僵尸，它会直接无视，因为绕过去的代价太大了。如果它试着过去，卡住 2.5 秒都没有进展，它就会放弃那个目标，并在接下来的 12 秒里不再理它。</p>
+<p>这是有意设计的：免得狗为了一个够不着的目标一直撞在墙上。</p>
+<h3 id="它能打出多少伤害">它能打出多少伤害</h3>
+<p>伤害由<strong>四样东西相乘</strong>决定：品种天生的力气、战斗等级、力量基因，还有沙盒倍率。</p>
+<p>对玩家来说，重要的是这两点：</p>
+<ul>
+<li><strong>小卡犬没办法单独杀死僵尸。</strong>它会把僵尸压在 10% 生命值上就停手。这是有意设计的，沙盒怎么调都改不了。它的任务是<strong>把僵尸撂倒</strong>，替你争取时间。</li>
+<li>其他所有品种<strong>都能补上最后一下</strong>。</li>
+</ul>
+<p>各品种的伤害数值表在<a href="breeds.html" class="xlink">品种手册</a>里。</p>
+<p><strong>撂倒僵尸：</strong>每一次攻击都有撂倒的几率，从 10% 起步，战斗满级时到 50%。</p>
+<h3 id="自动守护">自动守护</h3>
+<p>可以逐只狗开关。开着的时候，<strong>只要你处在毫无防备的状态，狗就会自动进入守护</strong>：</p>
+<ul>
+<li>睡觉</li>
+<li>阅读</li>
+<li>坐在地上</li>
+<li>进食</li>
+<li>钓鱼</li>
+</ul>
+<p>它会锚定在你身边，来什么挡什么。你走动的话，这个锚点也跟着走。等你把事情做完，它自己就会恢复跟随。</p>
+<ul>
+<li>真正<strong>守在岗位上的狗绝不会因为这个离开岗位</strong>。</li>
+<li><strong>这样战斗会让狗产生压力，而且不涨忠诚度。</strong>这是在干活，不是在亲近。</li>
+</ul>
+<p>驯服狗的时候，这个开关默认是<strong>开着</strong>的。</p>
+<h3 id="你的子弹伤不到它">你的子弹伤不到它</h3>
+<p><strong>你可以放心地越过狗开枪。</strong>同伴犬<strong>在任何情况下都不会因为枪击掉血</strong>，不管开枪的是你还是别的玩家。</p>
+<p>有两件事保证了这一点：</p>
+<ul>
+<li>它被排除在<strong>自动瞄准</strong>之外，所以你举枪的时候准星不会黏到它身上。</li>
+<li>在单人游戏里，开枪的那一瞬间，mod 会<strong>把狗从这一枪的判定里拿掉</strong>：子弹直接飞向它身后的僵尸。</li>
+</ul>
+<p>这一切<strong>不需要狗让开位置</strong>，而且它<strong>绝不会反过来咬你</strong>。</p>
+<blockquote class="quote">在多人游戏里，如果你从远处开枪，别的玩家的狗<strong>在你屏幕上可能看起来有反应</strong>，但它并没有掉血。</blockquote>
+<h3 id="受伤后退和恐慌">受伤、后退和恐慌</h3>
+<ul>
+<li><strong>战斗不会让狗受伤</strong>，只会让它有压力。</li>
+<li>它掉血的原因是<strong>疏于照顾</strong>（饥饿或口渴超过 0.8）、<strong>有毒的食物</strong>，还有<strong>打猎时被鹿反击</strong>。其中只有疏于照顾会要它的命。</li>
+<li>受伤状态：生命值低于 30% 是<strong>“受伤”</strong>，低于 10% 是<strong>“重伤”</strong>。重伤的狗<strong>只会跟着你，不会战斗</strong>。</li>
+<li><strong>后退：</strong>生命值掉到 10% 或更低时，它会退到你身后。</li>
+<li><strong>恐慌：</strong>压力高的时候，它<strong>不战斗、不守卫，也不做技巧</strong>。不过你叫它的时候，它还是会跑到你身边。</li>
+</ul>
+<h3 id="恢复">恢复</h3>
+<p>狗会自己恢复，而且<strong>相当快</strong>：一整条生命值大约要 <strong>8 个游戏小时</strong>，也就是说，从奄奄一息到活蹦乱跳只要一个晚上。<strong>但前提是它吃饱喝足</strong>：饥饿<strong>或</strong>口渴超过半条，<strong>恢复就会完全停下</strong>。</p>
+<p>也就是说，想治好一只受伤的狗，<strong>喂食、喂水，然后让时间过去</strong>就行了。</p>
+<h3 id="击杀统计">击杀统计</h3>
+<p>每只狗都有自己的计数器，在它的窗口里就能看到：<strong>“击杀：14 只丧尸，3 只猎物”</strong>。</p>
+<p>打开沙盒选项<strong>“狗的击杀计入你的数据”</strong>以后（默认就是开的），它杀掉的丧尸<strong>也会算进角色信息界面上你自己的数字</strong>。</p>
+<h2 id="7-需求与照料">7. 需求与照料</h2>
+<p>同伴犬是无敌的，而这会把游戏原本的饥饿系统冻住。所以这些东西全部由 mod 自己接管。</p>
+<p>一共<strong>四条状态条</strong>，外加忠诚度。</p>
+<div class="tw"><table><thead><tr>
+<th>状态条</th>
+<th>上涨 / 下降</th>
+<th>速度</th>
+<th>什么时候开始碍事</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>饥饿</strong></td>
+<td>随时间上涨</td>
+<td>从空到满大约 <strong>3 天</strong></td>
+<td>高于 0.6</td>
+</tr>
+<tr>
+<td><strong>口渴</strong></td>
+<td>随时间上涨</td>
+<td>从空到满大约 <strong>1.7 天</strong></td>
+<td>高于 0.6</td>
+</tr>
+<tr>
+<td><strong>生命值</strong></td>
+<td>只有疏于照顾才会掉</td>
+<td>饥饿或口渴超过 0.8 时，<strong>一整条约 8 小时</strong>掉光</td>
+<td>低于 30%</td>
+</tr>
+<tr>
+<td><strong>压力</strong></td>
+<td>由其他几条算出来</td>
+<td>无</td>
+<td>高于 50%</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>没有睡眠，也没有清洁度。</strong>狗不需要睡觉，也不会变脏。</blockquote>
+<p>沙盒选项<strong>“饥饿与口渴速度”</strong>会把这两条一起缩放。设成 0 它们就彻底冻结，狗再也不需要吃喝（忠诚度还是会掉，所以它依然需要你的关注）。</p>
+<h3 id="压力从哪里来">压力从哪里来</h3>
+<p>压力不是一条要你去填满的条，而是其他几条的<strong>结果</strong>。饥饿、口渴、生命值低、忠诚度低，还有<strong>战斗里每一次来回的攻击</strong>，都会把它往上推。</p>
+<p>分级如下：</p>
+<div class="tw"><table><thead><tr>
+<th>等级</th>
+<th>从多少开始</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>紧张</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>恐慌</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>恐惧</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>恐慌中的狗<strong>不再战斗、守卫，也不做技巧</strong>。但你叫它的时候，它还是会跑到你身边。</p>
+<p>好消息是：离开战斗以后，<strong>战斗压力消得很快</strong>。整整一条大约 <strong>2 个游戏小时</strong>就清空。<strong>抚摸、喂食和喂水还能让它更快平静下来。</strong></p>
+<h3 id="手动喂食">手动喂食</h3>
+<p>右键点狗 → <strong>“喂食”</strong>。</p>
+<ul>
+<li><strong>任何食物</strong>都行，只要没腐烂、能填饱肚子。没有只能给肉或者狗粮这种限制，唯一的例外是那份有毒食物清单。</li>
+<li>效果：降低饥饿，食物水分足的话还能解渴，<strong>生命值 +0.10</strong>，缓解压力，再加上<strong>按这一份填掉多少饥饿来算的忠诚度</strong>。</li>
+<li>只会消耗必要的那一口。</li>
+<li>提示：<em>“这只小卡犬很满足。”</em></li>
+</ul>
+<h3 id="喂水">喂水</h3>
+<p>右键 → <strong>“喂水”</strong>。背包里要有任意装着水的容器（mod 也会去翻你背包里面的包）。</p>
+<p>口渴条会降一半，<strong>忠诚度 +2</strong>，压力也会缓解。<em>“这只小卡犬在喝水。”</em></p>
+<h3 id="抚摸">抚摸</h3>
+<p>右键 → <strong>“抚摸”</strong>。</p>
+<ul>
+<li><strong>冷却时间是 90 个游戏分钟。</strong>没到时间的话会提示：<em>“你的小卡犬刚被抚摸过，暂时够了。”</em></li>
+<li>对狗的效果：<strong>缓解压力，忠诚度 +2</strong>。</li>
+<li><strong>对你的效果：</strong>缓解<strong>无聊和不开心</strong>。有机会就摸一摸，很划算。</li>
+</ul>
+<h3 id="疏于照顾的连锁反应">疏于照顾的连锁反应</h3>
+<p>如果你把狗丢在一边不管，事情会按这个顺序发生：</p>
+<ol>
+<li>饥饿和口渴超过 0.6。你的屏幕上会出现<strong>“饥饿”</strong> / <strong>“口渴”</strong>的 moodle。</li>
+<li><strong>忠诚度开始以三倍速度下降</strong>。</li>
+<li>超过一半以后，<strong>自然恢复停止</strong>。</li>
+<li>超过 0.8 以后，<strong>生命值开始飞快流失</strong>：一只满血的狗大约 <strong>8 个游戏小时</strong>就归零。</li>
+<li>忠诚度跌破下限，狗变成<strong>“不服从”</strong>，不再听命令。</li>
+<li>压力上升，它进入恐慌：<strong>不再战斗、守卫，也不做技巧</strong>。</li>
+<li>生命值归零，<strong>它就死了</strong>。</li>
+</ol>
+<p><strong>死亡是永久的。</strong>没有复活。<em>“你的小卡犬已经死了。”</em>驮袋和里面的所有东西都会掉在地上。如果你还有别的狗，它会自动被提升为当前同伴。</p>
+<p>僵尸杀不死你的狗。<strong>忘了喂它，才会。</strong></p>
+<h2 id="8-忠诚度">8. 忠诚度</h2>
+<p>忠诚度从 0 到 100，衡量的是这只狗有多信任你。</p>
+<ul>
+<li><strong>它会自己往下掉</strong>，一天大约 12 点；狗正饿着或者渴着的时候，掉得<strong>快三倍</strong>。</li>
+<li><strong>只有靠人的手才涨得回来：</strong> 喂食、喂水（+2）和抚摸（+2）。</li>
+<li><strong>喂食是快得多的办法</strong>，但涨多少<strong>取决于这一顿真正消掉了多少饥饿</strong>。给一只已经吃饱的狗喂东西， 几乎没有效果；喂一只饿坏了的狗，一次就能补回几十点。忠诚度掉下去了，就<strong>先让它饿一饿再喂</strong>。</li>
+<li><strong>从食盆里吃东西永远不会涨忠诚度。</strong> 这是故意这么设计的：一只自己在食盆边解决温饱的狗，不会和 你产生感情。想要一只忠诚的狗，你就得亲自出现在它面前。</li>
+</ul>
+<h3 id="不服从的下限">不服从的下限</h3>
+<p>低于某个数值以后，狗就会变成<strong>“不服从”</strong>，拒绝跟随、拒绝战斗，也不肯做技巧： <em>“你的小卡犬不再信任你了……”</em></p>
+<p>这条下限<strong>会随着服从等级上升而下降</strong>：从 30 起步，每升一级降 1.5，最低不会低于 10。也就是说， <strong>服从 10 的狗要掉到 15 点忠诚度以下才会不服从</strong>，而一只没受过训练的狗，掉到 30 以下就开始 出问题了。</p>
+<p><strong>训练服从技能，就是在给忠诚度争取余地。</strong></p>
+<h3 id="狗拒绝执行命令的时候">狗拒绝执行命令的时候</h3>
+<p>一共有四个原因，按下面这个优先顺序：</p>
+<div class="tw"><table><thead><tr>
+<th>情况</th>
+<th>你会看到</th>
+</tr></thead><tbody>
+<tr>
+<td>忠诚度低于下限</td>
+<td><em>“小卡犬 Rex 不够信任你，因此没有服从命令。”</em></td>
+</tr>
+<tr>
+<td>压力到了恐慌</td>
+<td><em>“小卡犬 Rex 过于恐慌，无法战斗。”</em></td>
+</tr>
+<tr>
+<td>生命值只剩 10% 或更少</td>
+<td><em>“小卡犬 Rex 伤势过重，无法战斗。”</em></td>
+</tr>
+<tr>
+<td>训练没到位</td>
+<td><em>“小卡犬 Rex 分心了，没听你的。”</em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-食盆不用你在场也有吃有喝">9. 食盆：不用你在场也有吃有喝</h2>
+<p>食盆是让<strong>当前同伴</strong>在你忙别的事情时自己解决吃喝的办法。</p>
+<blockquote class="quote"><strong>只有当前同伴会饿会渴，也只有它会用食盆。</strong> 其他和你羁绊过的狗都处在暂停状态：不饿、不渴、 不会去找食盆，也不掉忠诚度。你<strong>不需要为它们准备食盆</strong>，它们等着的时候也不会挨饿。可以看 <a href="#16-同时养多只狗">同时养多只狗</a>。</blockquote>
+<h3 id="使用方法">使用方法</h3>
+<ol>
+<li>先弄到一个食盆（自己做或者搜到，见 <a href="#19-mod的物品">Mod 物品</a>）。</li>
+<li>在背包里右键 → <strong>“放置食盆”</strong>。这会打开一个可以自由摆放的光标，<strong>按 R 旋转</strong>。</li>
+<li>食盆放到地上以后，右键点它 → <strong>“向食盆添加食物”</strong>或者<strong>“向水盆添加水”</strong>。</li>
+</ol>
+<p>食盆里<strong>要么装食物要么装水，绝不会同时装两样</strong>。要换内容，就用<strong>“倒空食盆”</strong>。</p>
+<p>从外观就能看出里面是什么：空的是灰色，装狗粮是棕色，装水是蓝色。</p>
+<h3 id="哪些东西能放进食盆">哪些东西能放进食盆</h3>
+<p><strong>基本上任何能消饥饿、又没有腐烂的食物都行：</strong> 肉、罐头、做好的饭菜、蔬菜、水果、鸡蛋、狗粮， 还有青草和干草。</p>
+<p>被排除在外的只有腐烂的食物、根本不顶饿的东西，以及 <a href="#对狗有害的食物">对狗有害的清单</a>，那些在菜单里显示为红色。</p>
+<blockquote class="quote"><strong>没开封的狗粮罐头不会出现</strong>在清单里。先把罐头打开。</blockquote>
+<p>食盆最多装 <strong>100 点</strong>。每样东西按它的大小折算：</p>
+<div class="tw"><table><thead><tr>
+<th>物品</th>
+<th>点数</th>
+</tr></thead><tbody>
+<tr>
+<td>一袋狗粮</td>
+<td>60</td>
+</tr>
+<tr>
+<td>开封的狗粮罐头</td>
+<td>30</td>
+</tr>
+<tr>
+<td>干草</td>
+<td>12</td>
+</tr>
+<tr>
+<td>青草</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>如果这样东西比剩下的空位还多，食盆会装到满，多出来的部分退还给你。</strong> 一个已经装到 80 点的 食盆，放进一袋狗粮会被填到 100，袋子按 40 的量回到你的背包。只有食盆<strong>完全装满</strong>的时候，才会 出现 <em>“食盆放不下这么多。”</em> 这句提示。</p>
+<h3 id="狗怎么用食盆">狗怎么用食盆</h3>
+<ul>
+<li><strong>饥饿或口渴达到 0.5</strong> 时它会自己过去（可以在设置标签页的滑条 <em>“饥饿/口渴达到时进食”</em>里按角色调整）。</li>
+<li>它会在 <strong>16 格</strong>范围内找食盆。Mod 的食盆和<strong>游戏原版的饲料槽</strong>都能用。</li>
+<li>每去一次消掉半条。它大概会吃上 3 分钟游戏时间。</li>
+<li>认定了食盆以后，它会<strong>无视僵尸、无视一切</strong>，只有你的命令才打断得了。这其实是好事：一只饿到 恐慌的狗，可以靠吃东西自己走出恐慌。</li>
+</ul>
+<p>它头顶上会出现<strong>“去进食”</strong>、<strong>“进食中”</strong>、<strong>“去喝水”</strong>、<strong>“喝水中”</strong>。</p>
+<blockquote class="quote"><strong>记住：</strong> 从食盆里吃东西<strong>一点忠诚度都不给</strong>。食盆让狗活下去，抚摸让狗是你的。</blockquote>
+<p>食盆<strong>永远不能当成你自己的饮用水来源</strong>，下雨也不会把它灌满。</p>
+<h2 id="10-技能狗的五项技能">10. 技能：狗的五项技能</h2>
+<p>每只狗都有五项技能，从 0 到 10，靠<strong>实际去做</strong>来涨，而不是专门训练出来的。</p>
+<div class="tw"><table><thead><tr>
+<th>技能</th>
+<th>怎么涨</th>
+<th>涨了有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>嗅觉</strong></td>
+<td>哨兵每发现一个新目标；使用嗅出物品的技巧</td>
+<td><strong>哨兵范围</strong>（18 → 27 格），以及记住的气味能闻多远</td>
+</tr>
+<tr>
+<td><strong>战斗</strong></td>
+<td>每一次撕咬和每一次击杀</td>
+<td><strong>伤害</strong>、击倒几率（10% → 50%）和对战斗压力的抗性</td>
+</tr>
+<tr>
+<td><strong>服从</strong></td>
+<td>每一次听话执行命令（有冷却）。<strong>3 级以下涨得快 4 倍</strong></td>
+<td><strong>忠诚度下限更低</strong>、<strong>四个技巧</strong>，还有更小的不服从几率</td>
+</tr>
+<tr>
+<td><strong>狩猎</strong></td>
+<td>指示猎物、嗅探、捕杀，以及<strong>你</strong>在它旁边猎杀的时候</td>
+<td><strong>3 级：</strong> 能捕杀小型猎物。<strong>6 级：</strong> 敢对付鹿，还会把猎物拖回来。也会扩大你的搜寻半径</td>
+</tr>
+<tr>
+<td><strong>Herding</strong></td>
+<td>看顾一处畜栏、压住畜群的恐慌、赶走靠近畜栏的僵尸</td>
+<td><strong>安抚畜群</strong>那圈光环的强度</td>
+</tr>
+</tbody></table></div>
+<h3 id="关于经验曲线">关于经验曲线</h3>
+<p>等级 1 很快就到，等级 10 则是个长期工程。整体的快慢由沙盒选项<strong>“技能经验倍率”</strong>决定。</p>
+<blockquote class="quote"><strong>注意：</strong> 这个选项在文件里的默认值是 <strong>0.5</strong>，也就是一半速度，尽管说明文字写着“1.0为正常”。 如果你觉得自己的狗学得实在太慢，原因就在这里。把它调到 1.0 或者更高。</blockquote>
+<h3 id="不服从">不服从</h3>
+<p><strong>“狗可能不服从”</strong>这个选项开着的时候（默认就是开着的），没受过训练的狗有时候就是会无视你： <em>“小卡犬 Rex 分心了，没听你的。”</em></p>
+<ul>
+<li>几率从<strong>服从 0 级的 30%</strong> 起步，到<strong>服从 10 级降为 0%</strong>。</li>
+<li><strong>紧接着把同样的命令再下一次，一定管用。</strong> 它绝不会连着两次无视你。</li>
+<li><strong>被无视的那次命令照样在训练它</strong>，所以经验不算白费。</li>
+<li>只对<strong>直接命令</strong>有效：跟随、停留、守卫、过来、攻击和技巧。喂食、喂水、抚摸、驮袋、<strong>召回</strong>， 还有那些行为开关（哨兵、自动守护、狩猎、农场照料）都不受影响。</li>
+</ul>
+<p>如果你不喜欢这个机制，在沙盒里把这个选项关掉就行。</p>
+<h3 id="技能和特性不是一回事">技能和特性不是一回事</h3>
+<p>狗的窗口里有两份长得很像的列表，值得分清楚：</p>
+<ul>
+<li><strong>技能</strong>（嗅觉、战斗、服从、狩猎、Herding）<strong>会随着使用一直涨</strong>，涨一辈子。这一章讲的就是它们。</li>
+<li><strong>特性</strong>（力量、攻击性、抗性）是<strong>在你驯服这只狗的时候随机决定的，之后永远不变</strong>。训练碰不到 它们。</li>
+</ul>
+<blockquote class="quote"><strong>每项特性具体有什么用，以及每个品种的取值范围</strong>，都在 <a href="breeds.html" class="xlink">品种手册</a>里。</blockquote>
+<h2 id="11-服从技巧">11. 服从技巧</h2>
+<p>一共四个技巧，按<strong>服从</strong>等级逐个解锁。它们从一开始就全部列在菜单里，还没解锁的显示成红色，好让你知道后面还有什么在等着：<em>“在服从等级 3 解锁（当前：1）。”</em></p>
+<h3 id="前往指定地点服从-1">前往指定地点（服从 1）</h3>
+<p>会出现一个<strong>地面光标</strong>：能去的地方是绿色，不能去的是红色。左键选定，右键取消。</p>
+<ul>
+<li>最远距离：<strong>从你自己算起 30 格</strong>，不是从狗那里算。</li>
+<li>它会走过去，然后<strong>守在那个点上</strong>（到达后进入停留模式）。</li>
+<li>任何新命令都会取消这趟行程。</li>
+</ul>
+<p>这个技巧是用来在自己不过去的情况下摆放狗的位置的：把它派到街道对面、某个街角，或者某个房间里面。</p>
+<h3 id="引开注意服从-3">引开注意（服从 3）</h3>
+<p>狗会故意大声吠叫，声音传到 24 格远，<strong>尸群会朝它扑过去</strong>。之后它再退回你身边。</p>
+<ul>
+<li><strong>它会故意无视“狗的噪音吸引僵尸”这个选项</strong>：这个技巧的目的就是弄出声响，所以它每次都会叫。</li>
+<li>会增加压力。</li>
+<li>它头上会出现红色标记：<strong>“引开丧尸中”</strong>。</li>
+<li>冷却时间是游戏内 10 分钟。</li>
+</ul>
+<p>这是<strong>打开一条通路</strong>的工具：把一群丧尸拉到一边，你从另一边进去。别忘了狗那边背着一整群丧尸，所以要先想好接下来怎么办。</p>
+<h3 id="嗅出物品服从-5">嗅出物品（服从 5）</h3>
+<p><strong>手上拿好一件物品</strong>再用这个技巧。狗会记住<strong>那一类物品的气味</strong>：<em>“小卡犬 记住了 锤子 的气味。”</em></p>
+<p>从这一刻起，它会在后台一直扫描周围（12 格，嗅觉满级时能到 20 格），<strong>在柜子里和地上</strong>找这件物品。找到之后：</p>
+<ol>
+<li>先叫一声。</li>
+<li>走过去，摆出指示的姿势。</li>
+<li><strong>那件物品会在世界里高亮成绿色。</strong></li>
+</ol>
+<p>提示是这两条：<em>“小卡犬 闻到附近有 锤子。”</em> 和 <em>“小卡犬 指向 锤子。”</em></p>
+<p>狗只记得<strong>一种气味</strong>，让它闻别的东西就会把旧的覆盖掉。取消的选项是：<strong>“停止追踪 锤子”</strong>（后面跟着它记住的那件物品的名字），而取消这个动作永远不会被拒绝。</p>
+<p>手上什么都没拿的时候：<em>“手上拿好要让狗闻的物品。”</em></p>
+<h3 id="睡觉时寻找物品服从-10">睡觉时寻找物品（服从 10）</h3>
+<p>最后一个技巧。<strong>狗身上必须装着驮袋。</strong></p>
+<p>手上拿好一件物品再发动：<em>“小卡犬 会在你睡觉时寻找 锤子。”</em> 它头上会一直挂着一个标记：<strong>“寻找：锤子”</strong>。</p>
+<p>它是这样运作的：</p>
+<ul>
+<li><strong>游戏内每天只有一次。</strong> 在你醒来之后马上结算，前提是狗就在附近。</li>
+<li><strong>成功率取决于物品有多稀有</strong>，而且<strong>没有任何保证</strong>。就算是游戏里最常见的物品，一晚上也最多有<strong>50% 的成功率</strong>（平均要等 2 天左右）。斧头这种不太常见的物品在 15% 上下，武士刀那种真正稀有的东西只有 2% 左右，也就是要试上好几个星期。</li>
+<li>成功的话：<em>“小卡犬 在你睡觉时带回了 锤子。”</em>，物品会出现<strong>在驮袋里</strong>，并且有一个绿色标记：<strong>“带回：锤子”</strong>。</li>
+<li>失败的话：<em>“小卡犬 没有带回 锤子。”</em>，红色标记：<strong>“空手而归”</strong>。</li>
+</ul>
+<p>发动的时候有两种情况会被直接挡下来：</p>
+<ul>
+<li>物品太重：<em>“小卡犬 搬不动 铁砧。”</em></li>
+<li>游戏的战利品表里根本不存在的物品：<em>“小卡犬 不知道该去哪里找 那个东西。”</em></li>
+</ul>
+<h2 id="12-狩猎">12. 狩猎</h2>
+<p>狩猎模式默认是<strong>关闭</strong>的，要一只一只地开：轮盘菜单、快捷键，或者“指令”标签页里的按钮都可以。<em>“小卡犬将去捕猎附近的猎物。”</em></p>
+<h3 id="它会猎什么">它会猎什么</h3>
+<div class="tw"><table><thead><tr>
+<th>猎物</th>
+<th>所需狩猎等级</th>
+</tr></thead><tbody>
+<tr>
+<td>兔子、浣熊、老鼠、松鼠</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>鹿（幼鹿、母鹿、公鹿）</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>其他野生动物它只会指出来，不会真的去猎。</p>
+<h3 id="实际是怎么运作的">实际是怎么运作的</h3>
+<p><strong>0、1、2 级：只会指出位置，仅此而已。</strong> 这个阶段的狗<strong>根本不会碰到猎物</strong>。它叫一声，小跑到那只动物附近，停下来，摆出嗅探的姿势，<strong>在那里保持指示好几分钟</strong>，好让你看清猎物在哪里。之后它就放弃回来了。提示是：<em>“你的狗在附近嗅到了猎物……”</em></p>
+<p>这可不是白费功夫：<strong>前期就是靠这个练狩猎的</strong>。让它去指，指得够多，等级自然就上去了。</p>
+<p><strong>3 级：它开始会杀小型猎物了。</strong></p>
+<ul>
+<li><strong>如果它正饿着，就会把猎物吃掉。</strong> 你什么都拿不到，但它的肚子填饱了。</li>
+<li><strong>如果不饿，它会以你的名义完成猎杀</strong>，把能剥皮的尸体<strong>留在狩猎结束的地方，就丢在地上</strong>。它会提示：<em>“你的狗捕到了猎物！”</em>，但<strong>去捡的人是你</strong>。</li>
+</ul>
+<p><strong>6 级：它开始把猎物带到你面前。</strong> 标记：<strong>“叼回猎物”</strong>，提示：<em>“你的狗把猎物拖到了你面前。”</em> 这<strong>只对小型猎物有效</strong>。</p>
+<p><strong>6 级同时解锁了鹿</strong>，而鹿的规则完全不同：<strong>不管等级多高、不管什么品种，它都不会把鹿拖回来</strong>。它会把鹿消耗到只剩一口气，然后<strong>咬住猎物等你来补最后一刀</strong>：<em>“你的狗咬伤了一头鹿，去补刀吧！”</em>，标记：<strong>“咬住猎物”</strong>。要是游戏内 20 分钟你都没出现，它会自己了结（击杀照样算你的）。鹿要是跑了，它会去追：<em>“你的狗正在追踪受伤的猎物……”</em></p>
+<blockquote class="quote"><strong>拉布拉多是例外：</strong> 它<strong>从 3 级起</strong>就会把猎物送到你手上，也就是从它能杀死的第一只猎物开始，而且在半路上把猎物丢下之前会多坚持一会儿。细节见<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
+<p><strong>鹿会反击。</strong> 大约每四次冲撞里就有一次会弄伤狗，还会给它压力。但绝不会致命。</p>
+<h3 id="限制">限制</h3>
+<ul>
+<li>狩猎是<strong>乡野活动</strong>。猎物生活在森林和郊外，城里没有。</li>
+<li>只有在<strong>跟随</strong>模式下才有效。</li>
+<li><strong>它身上有一条 32 格的牵引绳。</strong> 跑得太远它就会放弃、回来，然后休息游戏内 20 分钟（标记：<strong>“狩猎：休息中”</strong>）。</li>
+<li>时间快进期间、你在睡觉的时候、在车里，以及你下过命令之后的 5 分钟内，它都不会去打猎。</li>
+<li><strong>如果它已经在跟丧尸打架，就不会去考虑打猎。</strong> 但反过来不成立：旁边路过一只丧尸<strong>并不会把狗从狩猎里拉出来</strong>。它会松开猎物的情况只有这几种：你进入战斗、自动守护触发，或者你直接下令。<strong>你的任何命令都会当场取消狩猎。</strong></li>
+</ul>
+<h3 id="代价">代价</h3>
+<ul>
+<li>打猎会让它<strong>变饿</strong>。</li>
+<li>追逐时的吠叫<strong>会引来丧尸</strong>，这一点是写死的，关不掉。</li>
+<li>它会离开你身边，把自己暴露在外面。</li>
+</ul>
+<h3 id="采集加成">采集加成</h3>
+<p>这是两件不同的事，而且<strong>两件都只有在游戏的搜寻模式打开时才看得到</strong>。</p>
+<p><strong>a) 它会帮你找到采集点（只在狩猎模式下）。</strong> 附近没有猎物的时候，狗会去找动物类的采集点，走过去，叫一声，<strong>把那个位置指出来</strong>：<em>“你的狗发现了东西！开启搜寻模式查看。”</em> 标记：<strong>“嗅探采集物”</strong>。</p>
+<p><strong>狗绝对不会替你把东西捡起来。</strong> 它只是告诉你该去哪里找；<strong>动手采的人是你</strong>，打开搜寻模式，在那个点上采集。</p>
+<p><strong>b) 它会扩大你的搜寻范围（任何品种，任何时候）。</strong> 只要你自己的狗在附近、忠诚，而且饥饿和口渴都不算高就行：</p>
+<ul>
+<li>狩猎 0 级时是 <strong>+6 格</strong>，狩猎 10 级时能到 <strong>+12 格</strong>。</li>
+<li><strong>动物、昆虫、足迹和尸骸</strong>这几类东西会明显更容易找到。</li>
+</ul>
+<p>这<strong>不是任何品种的专属</strong>：哪怕是一只小卡犬也照样有效。金毛寻回犬只是在这个基础上<strong>再多加 4 格</strong>而已。</p>
+<h2 id="13-照看牲畜">13. 照看牲畜</h2>
+<p>这个模式把狗变成了农场的雇工：它待在畜栏里，<strong>就算你人在很远的地方，也会自己照看畜群</strong>。</p>
+<h3 id="怎么指派">怎么指派</h3>
+<ol>
+<li>划出一块<strong>指定动物区域</strong>（游戏本体里的畜栏）。</li>
+<li>把狗带到区域里面。</li>
+<li>右键 → <strong>“Care for livestock here”</strong>。</li>
+<li>确认。mod 会提醒你<strong>这只狗会被取消选择，不再跟着你走</strong>。</li>
+</ol>
+<p>没有畜栏的时候：<em>“小卡犬 needs a designated animal pen here to care for livestock.”</em></p>
+<h3 id="它在那里做什么">它在那里做什么</h3>
+<ul>
+<li><strong>在畜栏里巡逻。</strong></li>
+<li><strong>安抚畜群。</strong> 这才是重点：压力大的牲畜<strong>既不产奶也不产毛</strong>，会流产，丧尸一出现就四散奔逃。狗会把畜群的压力压在临界点以下。</li>
+<li>在 12 格范围内<strong>悄无声息地赶走丧尸</strong>。</li>
+<li><strong>哪怕你在地图的另一头</strong>，它照样干活。</li>
+</ul>
+<p>提示：<em>“小卡犬 senses a zombie near the pen!”</em> 和 <em>“小卡犬's herd is getting stressed!”</em> 头上的标记：<strong>“Tending the livestock”</strong>。</p>
+<h3 id="重要规则">重要规则</h3>
+<ul>
+<li>在岗期间，<strong>饥饿、口渴和忠诚度衰减都是冻结的</strong>。它自己照顾得了自己。</li>
+<li>但它也<strong>不再管别的任何事</strong>：不替你战斗，不打猎，不守卫，也不用食盆。</li>
+<li><strong>没受过训练、不服从或者陷入恐慌的狗，只会让畜群更有压力，而不是安抚它们。</strong> 别把没训练过的幼犬丢去看牛。</li>
+<li><strong>重新选择这只狗，模式会自动取消。</strong></li>
+</ul>
+<p><strong>边境牧羊犬学 Herding 的速度是别的品种的两倍</strong>，不过这份活儿任何品种都干得了。</p>
+<h2 id="14-驮袋让狗帮你驮东西">14. 驮袋：让狗帮你驮东西</h2>
+<h3 id="怎么装上驮袋">怎么装上驮袋</h3>
+<ol>
+<li>背包里要有<strong>“同伴犬驮袋”</strong>。</li>
+<li>右键点狗 → <strong>“装上驮袋”</strong>。<em>“驮袋已装上。”</em></li>
+<li>要打开：<strong>“打开驮袋”</strong>（也可以用轮盘菜单上的那一格，或者“指令”标签页里的按钮）。</li>
+<li>要卸下：<strong>“卸下驮袋”</strong>。驮袋会<strong>连同里面的东西</strong>一起掉在地上。</li>
+</ol>
+<h3 id="能驮多少">能驮多少</h3>
+<p>容量由<strong>一个固定的基础值，加上狗的力量基因</strong>决定。用默认值的话：</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>载货（重量）</th>
+</tr></thead><tbody>
+<tr>
+<td>小卡犬</td>
+<td><strong>4～5</strong></td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>6～7</td>
+</tr>
+<tr>
+<td>德国牧羊犬、边境牧羊犬、罗威纳犬、杜宾犬、拉布拉多</td>
+<td>6～8</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td><strong>13～16</strong></td>
+</tr>
+</tbody></table></div>
+<p>哈士奇是唯一在驮袋上有品种加成的狗（多 50%）。其他狗都只看力量基因，所以同一个品种的两只狗， 能驮的量也可能不一样。</p>
+<p>服务器可以用<strong>“驮袋基础容量”</strong>和<strong>“力量载货加成”</strong>来调整这两个数字。</p>
+<h3 id="能放什么">能放什么</h3>
+<p>几乎什么都行，而且限制的是<strong>重量</strong>，不是物品数量。例外有这些：</p>
+<ul>
+<li>另一个驮袋。</li>
+<li>已经装备的物品（身上穿的衣服、手里拿的武器）。</li>
+<li><strong>背包和各种袋子。</strong>要放进去的是包里的东西，而不是包本身。</li>
+</ul>
+<p><strong>地图上的标注不会被保留。</strong>如果你把一张做过标记的地图放进去，那些标记会丢失： <em>“地图上的标记不会保存在驮包里。”</em></p>
+<h3 id="驮袋窗口">驮袋窗口</h3>
+<p>左右两个列表：左边是<strong>“你的背包”</strong>（点一下就放进去），右边是驮袋（点一下就取出来）。底部显示 <strong>“载货：7/12”</strong>。</p>
+<h3 id="从哪里获得">从哪里获得</h3>
+<p><strong>制作：</strong>2 个皮革条 + 缝衣针 + 线（缝衣针和线不会被消耗）。分类是裁缝，需要<strong>裁缝 1 级</strong>。 制作一次给 15 点裁缝经验。</p>
+<p><strong>搜刮：</strong>宠物店、宠物用品箱、露营用品店、狩猎储物柜、生存工具包、车库工具箱和农场箱子。</p>
+<blockquote class="quote"><strong>如果狗死了或者被放归，驮袋和里面的全部货物都会掉在地上</strong>，就掉在它当时站着的位置。</blockquote>
+<h2 id="15-繁殖与幼犬">15. 繁殖与幼犬</h2>
+<h3 id="没有交配按钮">没有“交配”按钮</h3>
+<p>繁殖是<strong>100% 被动</strong>的。你没法命令两只狗去交配，你只能把条件准备好，然后等。</p>
+<p>每个游戏小时，只要附近有一只符合条件的公犬，符合条件的母犬就会自己掷一次受孕判定。默认是 <strong>每天 5%</strong>（沙盒选项<strong>“每日繁殖几率”</strong>）。</p>
+<h3 id="需要满足的条件">需要满足的条件</h3>
+<p>下面这些全都是必须的，而且两只狗都要满足：</p>
+<ol>
+<li>两只都是<strong>同一个主人的同伴犬</strong>。</li>
+<li>要一只<strong>成年公犬和一只成年母犬</strong>。幼犬永远不会繁殖。</li>
+<li>两只都没有开着<strong>“禁止繁殖”</strong>。</li>
+<li>在<strong>同一层楼</strong>，而且相距<strong>40 格以内</strong>。</li>
+<li>两只都不是<strong>重伤</strong>，也没有<strong>中毒</strong>。</li>
+<li>两只的<strong>忠诚度都不低于 60</strong>。</li>
+<li><strong>吃饱喝足：</strong>两只的饥饿<strong>和</strong>口渴都在一半以下。</li>
+<li>母犬<strong>没有怀孕</strong>，也不在产后的<strong>7 天冷却</strong>里。</li>
+<li>犬只数量上限里还有<strong>空位</strong>。</li>
+<li>那片区域必须<strong>在你附近处于加载状态</strong>。</li>
+</ol>
+<p>说白了就是：<strong>两只照顾得好的狗待在一起，而你就在旁边</strong>。要是一直没动静，原因几乎都是饥饿、口渴 或者忠诚度。</p>
+<h3 id="求偶与妊娠">求偶与妊娠</h3>
+<p>母犬会<strong>自己走到公犬那边</strong>（<em>“小卡犬 Rex 正前往配偶处”</em>），靠近之后就会受孕。 <em>“小卡犬 Rex 怀孕了”</em>。</p>
+<ul>
+<li><strong>妊娠：默认 4 个游戏日。</strong></li>
+<li>这个计时<strong>即使母犬离得很远、或者你已经下线，也照样在走</strong>。</li>
+<li>头顶和菜单里会有提示：<strong>“怀孕”</strong>，到了后期是<strong>“即将分娩”</strong>。它们是粉色的，而且<strong>一直</strong>都显示， 就算你关掉了状态文字也一样。</li>
+</ul>
+<h3 id="分娩">分娩</h3>
+<p>一窝生几只，取决于<strong>母亲的</strong>品种：</p>
+<div class="tw"><table><thead><tr>
+<th>母亲的品种</th>
+<th>一窝数量</th>
+</tr></thead><tbody>
+<tr>
+<td>小卡犬</td>
+<td>2～4</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>1～3</td>
+</tr>
+<tr>
+<td>德国牧羊犬、金毛寻回犬、哈士奇</td>
+<td>1～2</td>
+</tr>
+</tbody></table></div>
+<p><em>“小卡犬 Rex 产下了一窝幼犬”</em>。生完之后要<strong>休息 7 个游戏日</strong>，才能再次怀孕。</p>
+<blockquote class="quote">如果服务器设了<strong>犬只数量上限</strong>，而且已经没有空位，这一窝会被削减到刚好放得下（怀孕状态照样 结束）。出厂默认是<strong>无限制</strong>，所以这种情况不会发生。</blockquote>
+<h3 id="幼犬会继承什么">幼犬会继承什么</h3>
+<ul>
+<li><strong>血统取父母的平均值。</strong>小卡犬配德国牧羊犬，生出来就是 50/50。这只混血再配一只纯种德牧， 就是 25/75。</li>
+<li><strong>外观按血统比例抽取。</strong>一只 75% 德牧血统的幼犬，多半长得就像德牧。</li>
+<li><strong>基因落在父母之间，上下浮动 6% 左右。</strong>改良血统就是靠这个：把手上最强的两只反复配下去。</li>
+<li>身上有一个以上品种的狗会被标成<strong>“混血”</strong>，窗口里还会列出具体的比例 （“50% 哈士奇，50% 德国牧羊犬”）。</li>
+<li><strong>血统记录会被保存下来：</strong>世代，以及父母双方的名字和品种。</li>
+</ul>
+<h3 id="把幼犬养大">把幼犬养大</h3>
+<ul>
+<li>出生时是<strong>待命</strong>状态（处于“停留”模式），<strong>忠诚度 50</strong>（不是 0），<strong>没有任何技能</strong>， 体型也明显更小。</li>
+<li><strong>从出生那一刻起就占用犬只数量上限。</strong></li>
+<li>要 <strong>90 个游戏日</strong>才会长成成犬。这个计时<strong>一直在走</strong>，就算幼犬离你很远、根本没有加载也一样。 如果时间在它没加载的时候到了，等你再靠近它，它马上就变成年。</li>
+<li>长大之后<strong>名字、羁绊、基因和技能都保留</strong>：<em>“小卡犬 Rex 长大成年了”</em>。</li>
+<li>如果你就喜欢它小时候的样子，<strong>“暂停成长”</strong>开关可以把它永远定格在这个阶段。 <em>“永远长不大的狗狗？真希望现实生活里也有这个选项 :D”</em></li>
+</ul>
+<h2 id="16-同时养多只狗">16. 同时养多只狗</h2>
+<p>你可以养很多只狗，但<strong>一次只能带一只出门</strong>，也就是“当前”的那只。其他的都在待命。</p>
+<blockquote class="quote"><strong>这一点计划在以后的版本里改。</strong>目前请按一次带一只来安排。</blockquote>
+<p><strong>待命的狗是完全暂停的。</strong>这其实是好事，它不会变成一个还得你养着的累赘。</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>当前狗</th>
+<th>待命狗</th>
+</tr></thead><tbody>
+<tr>
+<td>跟着你走</td>
+<td>是</td>
+<td>否，待在原地不动</td>
+</tr>
+<tr>
+<td><strong>会饿会渴</strong></td>
+<td>是</td>
+<td><strong>否，也不会攒着以后再算</strong></td>
+</tr>
+<tr>
+<td><strong>到食盆吃东西</strong></td>
+<td>是</td>
+<td><strong>否，而且也不需要</strong></td>
+</tr>
+<tr>
+<td>自己掉忠诚度</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>战斗、守卫、狩猎</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>接受抚摸（并涨忠诚度）</td>
+<td>是</td>
+<td><strong>是</strong></td>
+</tr>
+<tr>
+<td>可以繁殖、生幼犬</td>
+<td>是</td>
+<td><strong>是</strong></td>
+</tr>
+<tr>
+<td>计入 moodle 和搜寻加成</td>
+<td>是</td>
+<td><strong>是，只要在附近</strong></td>
+</tr>
+</tbody></table></div>
+<p>日常最要紧的一点是：<strong>待命中的狗不需要你喂。</strong>它们在等待的时候不会挨饿，不会掉忠诚度，也不会 因为没人管而死掉。等你把其中一只选出来，它的饥饿会<strong>从停下的地方</strong>接着走，不会一下子补上一大堆。</p>
+<p>要换狗的话，右键点它 → <strong>“选择”</strong>。</p>
+<p>待命狗的菜单是故意做少的：没有喂食、没有喂水、没有移动指令，因为这些对它都不起作用。</p>
+<h3 id="我的狗标签页你的犬只名册">“我的狗”标签页：你的犬只名册</h3>
+<p>这就是你的犬只名册。它会列出所有和你结下羁绊的狗，带头像、名字、品种、性别、技能和当前状态：</p>
+<div class="tw"><table><thead><tr>
+<th>状态</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>当前同伴</strong></td>
+<td>你现在带在身边的那只狗</td>
+</tr>
+<tr>
+<td><strong>在附近</strong></td>
+<td>已经在你身边加载了</td>
+</tr>
+<tr>
+<td><strong>抱在怀里</strong></td>
+<td>你正抱着它</td>
+</tr>
+<tr>
+<td><strong>在车上</strong></td>
+<td>放在车里</td>
+</tr>
+<tr>
+<td><strong>在远处</strong></td>
+<td>有羁绊，但不在范围内。会显示“X 小时前见过”</td>
+</tr>
+<tr>
+<td><strong>失踪</strong></td>
+<td>不见了。从这里用<strong>召回</strong></td>
+</tr>
+<tr>
+<td><strong>暂无记录</strong></td>
+<td>结下羁绊之后，你还从没靠近过它</td>
+</tr>
+</tbody></table></div>
+<p>每只狗有三个按钮：<strong>召回</strong> | <strong>状态</strong> | <strong>选择</strong>。</p>
+<p>对<strong>在附近</strong>的狗用<strong>召回</strong>，就是一次简单的传送。对<strong>在远处</strong>的狗，它会先要一次确认： <em>“把小卡犬 Rex 从远处召回来吗？响亮的口哨会引来丧尸。”</em>，然后让狗重新出现，技能、基因、名字 和驮袋都保留着。</p>
+<p><strong>每只狗有 2 个游戏小时的冷却。</strong>没过冷却的话：<em>“小卡犬 Rex 刚被召唤过，稍等片刻再叫它。”</em></p>
+<blockquote class="quote"><strong>丢了的狗就是这样找回来的。</strong>狗不见了的时候，mod 会提示你： <em>“小卡犬 Rex 失踪了！打开“我的狗”（爪印按钮）把它召回来。”</em></blockquote>
+<h2 id="17-狗狗窗口">17. 狗狗窗口</h2>
+<p>打开它有四种方式：手持物品面板正下方的<strong>爪印按钮</strong>、<strong>状态</strong>快捷键、右键菜单里的<strong><span class="ig">状态</span></strong>选项，或者<span class="ig">我的狗</span>标签页里的按钮。</p>
+<p>窗口<strong>可以调整大小</strong>，也会记住你上次把它放在哪里。顶部是<strong>狗的实时3D形象</strong>，旁边写着它的名字。人坐在车里时，还会多出一条<strong><span class="ig">在车上</span></strong>的横幅。</p>
+<h3 id="技能与状态标签页">"技能与状态"标签页</h3>
+<ul>
+<li><strong>忠诚度</strong>，配一条进度条，鼠标悬停有说明。</li>
+<li><strong>需求：</strong>饥饿、口渴、生命值、压力。</li>
+<li><strong>技能：</strong>嗅觉、战斗、服从、狩猎、Herding，每一项都有进度条和<strong><span class="ig">Lv X</span></strong>。</li>
+<li><strong>特性：</strong>力量、攻击性、抗性，分成 低 / 平均 / 高 三档显示。</li>
+<li><strong>品种：</strong>名称、年龄（成年或幼犬），是混血的话还会标上<span class="ig">（混血）</span>，鼠标悬停能看到品种介绍。</li>
+<li><strong>击杀：</strong>这只狗到目前为止杀掉了多少丧尸、多少猎物。</li>
+</ul>
+<p><strong>每一项鼠标悬停都有说明。</strong>看不懂某条进度条是干什么用的，把鼠标放上去就知道了。</p>
+<h3 id="指令标签页">"指令"标签页</h3>
+<ul>
+<li><strong>模式：</strong>跟随 | 停留 | 守卫</li>
+<li><strong>哨兵：</strong>警报 | 静默 | 静音</li>
+<li><strong>自动守护</strong>（开/关）</li>
+<li><strong>狩猎</strong>（开/关）</li>
+<li><strong>Care for livestock here</strong></li>
+<li><strong>技巧：</strong>四个按钮（没解锁的点不了，鼠标悬停会告诉你原因）</li>
+<li><strong>打开驮袋</strong></li>
+<li><strong>行动：</strong>召回 | 重命名 | 放归</li>
+</ul>
+<p>人在车里的时候，所有需要狗待在外面世界才能做的操作都会变灰（<em><span class="ig">驾驶时不可用，你的同伴正与你同行。</span></em>），行动那一行也会变成<strong>喂食 | 重命名 | 喂水</strong>。</p>
+<h3 id="我的狗标签页">"我的狗"标签页</h3>
+<p>见<a href="#16-同时养多只狗">同时养多只狗</a>。</p>
+<h3 id="设置标签页">"设置"标签页</h3>
+<p>这些选项是<strong>你自己的</strong>，按玩家分开保存，不会影响服务器上的任何其他人：</p>
+<ul>
+<li><strong>界面：</strong><span class="ig">状态文字：开/关</span>（狗头顶上漂浮的提示）和<span class="ig">心情图标：开/关</span>（狗的moodle）。</li>
+<li><strong>声音：</strong>主音量、静音，以及<strong>吠叫</strong>、<strong>音效</strong>和<strong>环境</strong>三条各自独立的滑条。</li>
+<li><strong>自动进食：</strong><span class="ig">饥饿/口渴达到时进食</span>这条滑条。</li>
+<li><strong>按键绑定：</strong>14个操作，每个都带<strong>重新绑定</strong>和<strong>清除</strong>。</li>
+</ul>
+<blockquote class="quote">如果狗叫吵到你了，这里的<strong>吠叫</strong>滑条就能解决，不用关掉任何机制。</blockquote>
+<h2 id="18-屏幕上会出现什么">18. 屏幕上会出现什么</h2>
+<h3 id="狗的moodle">狗的moodle</h3>
+<p>一列专属图标，<strong>排在游戏原本那列moodle的左边</strong>。每个品种都有自己的一个，完整说明见<a href="breeds.html" class="xlink">品种手册</a>。</p>
+<p>任何狗都可能出现的有这些：</p>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>什么时候出现</th>
+<th>有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>饥饿</strong></td>
+<td>饥饿值高</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>口渴</strong></td>
+<td>口渴值高</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>中毒</strong></td>
+<td>吃了不好的食物</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>精神饱满</strong></td>
+<td>你在狗身边睡了一觉</td>
+<td>缓解恐慌、压力、悲伤和无聊，还让你更慢感到疲惫。默认持续2个游戏小时</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>所有品种moodle都适用的一条规则：</strong>一只<strong>不忠诚、生病，或者饥饿、口渴很高的狗不会给任何加成</strong>。moodle会直接关掉。照顾得好的狗才是能干活的狗。</blockquote>
+<h3 id="头顶上的文字">头顶上的文字</h3>
+<p>狗会在头顶叠出好几行状态，14格以内、而且在同一层楼时才看得见。从上往下依次是：哨兵警报、状态（<strong>恐惧</strong>、<strong>恐慌</strong>、<strong>重伤</strong>、<strong>不服从</strong>、<strong>受伤</strong>、<strong>紧张</strong>）、它正在做的事（进食、狩猎、嗅探、照看牲畜）、怀孕，最后是<strong>名字</strong>，名字永远排在最末，离头最近。</p>
+<p><strong><span class="ig">状态文字：关</span></strong>这个选项（<span class="ig">设置</span>标签页）会把名字以外的全部关掉。沙盒选项<strong><span class="ig">显示狗的名称标签</span></strong>连名字都能关掉。</p>
+<p><strong>别人的狗</strong>只会显示<strong><span class="ig">主人：某某</span></strong>、怀孕状态和名字。</p>
+<h3 id="地图上的标记">地图上的标记</h3>
+<p>世界地图和小地图上，<strong>每只结下羁绊的狗都有一个爪印</strong>。</p>
+<ul>
+<li><strong>棕色爪印 = 当前同伴。灰色爪印 = 待命的狗。</strong></li>
+<li>世界地图上，爪印旁边还带着狗的名字；小地图上没有名字，而且狗不在视野里时，爪印会<strong>贴在屏幕边缘</strong>指出方向。</li>
+<li>狗还在加载范围里时，标记会实时跟着它走。一旦卸载，标记就<strong>停在最后看到的位置</strong>。</li>
+</ul>
+<p><strong>被落下的狗，或者你死掉之后走散的狗，就是靠这个找回来的。</strong>这个标记纯粹是叠加显示，永远不会变成保存在地图上的符号。</p>
+<p>用沙盒选项<strong><span class="ig">在地图上显示狗</span></strong>可以关掉。</p>
+<h2 id="19-mod的物品">19. mod的物品</h2>
+<p>这个mod只加了<strong>两件你会用到的物品</strong>，别的什么都没有。</p>
+<h3 id="同伴犬食盆">同伴犬食盆</h3>
+<p>喂食的据点。重量1.5。</p>
+<p><strong>两个配方</strong>，都不需要任何技能，徒手就能做：</p>
+<ul>
+<li><strong>1件厨具</strong>（锅、平底锅、烤盘、水壶、水桶、马克杯、瓶子……），做的时候会被消耗掉。</li>
+<li><strong>1个游戏本体的宠物碗</strong>，同样会被消耗掉。</li>
+</ul>
+<p><strong>掉落位置：</strong>宠物店货架、宠物用品箱、超市杂货区、园艺店、农场和园艺的箱子、超市库房、厨房。</p>
+<h3 id="同伴犬驮袋">同伴犬驮袋</h3>
+<p>见<a href="#14-驮袋让狗帮你驮东西">驮袋</a>。重量1.0，内部减重效果不错。</p>
+<h3 id="这个mod没有的东西">这个mod没有的东西</h3>
+<p>免得你白找一场：<strong>食盆和驮袋就是这个mod仅有的两件物品。</strong>没有项圈，没有特制零食，没有玩具，也没有狗屋或者能建造的犬舍。游戏本体的普通狗粮mod是认的，但那是游戏的物品，不是mod的。</p>
+<h2 id="20-多人游戏">20. 多人游戏</h2>
+<p>这个mod从一开始就是照着多人游戏做的，在联机合作和独立服务器上表现完全一样。</p>
+<h3 id="你的狗就是你的">你的狗就是你的</h3>
+<p>归属绑在<strong>你的账号</strong>上，不是绑在角色或者连接位上。重启服务器不会把你的狗交给别人。</p>
+<p><strong>其他玩家可以：</strong>看到这只狗，头顶带着名字和<strong><span class="ig">主人：某某</span></strong>。</p>
+<p><strong>其他玩家不能：</strong></p>
+<div class="tw"><table><thead><tr>
+<th>想干什么</th>
+<th>会发生什么</th>
+</tr></thead><tbody>
+<tr>
+<td>抱起来</td>
+<td><em><span class="ig">这只狗属于另一位幸存者。</span></em></td>
+</tr>
+<tr>
+<td>喂食或者重新驯服</td>
+<td><em><span class="ig">这只狗已经属于另一位幸存者。</span></em> 而且是在消耗掉对方的食物<strong>之前</strong>就检查</td>
+</tr>
+<tr>
+<td>下指令、重命名、放归、动驮袋</td>
+<td>服务器直接拦下</td>
+</tr>
+<tr>
+<td>杀掉</td>
+<td>选项根本不会出现，而且同伴是无敌的</td>
+</tr>
+</tbody></table></div>
+<h3 id="你断线的时候">你断线的时候</h3>
+<p>开着<strong><span class="ig">主人离线时收起狗</span></strong>这个选项时（默认就是开的）：</p>
+<ul>
+<li>你的狗会被<strong>收到世界之外</strong>，状态和需求都<strong>冻结</strong>起来。</li>
+<li>你回来时，处于<strong>跟随</strong>的狗会出现在你身边；处于<strong>停留</strong>和<strong>守卫</strong>的狗，还有待命的狗，会在那片区域加载好之后<strong>回到你留下它们的地方</strong>。</li>
+<li><strong>你不会一回来就面对一只饿坏的狗。</strong>离线的那段时间不算数。</li>
+</ul>
+<p>关掉之后，狗会留在世界里，无敌而且原地不动。</p>
+<h3 id="给管理员">给管理员</h3>
+<p>有一个<strong><span class="ig">犬只登记（管理员）</span></strong>：可以按玩家搜索，显示在线/离线状态、狗的数量，还有一个刷新按钮。另外还有一个可以实时<strong>调整服务器性能</strong>的面板。这两个都只有管理员能用。</p>
+<h3 id="联机合作的安装提醒">联机合作的安装提醒</h3>
+<p><strong>如果狗出现时没有贴图，或者看起来<span class="ig">被压扁了</span>：</strong>请在<strong>主菜单的Mod列表</strong>里启用Companion Dogs（光在联机合作的选择界面里勾上是不够的），然后在读取存档之前<strong>把游戏完全关掉重开</strong>。联机合作的房主也要照做一遍，并重启服务器。</p>
+<h2 id="21-沙盒选项">21. 沙盒选项</h2>
+<p>世界设置里的 <strong><span class="ig">同伴犬</span></strong> 页面，一共 33 个选项。</p>
+<blockquote class="quote"><strong>记住：</strong> 多人游戏里说了算的是<strong>服务器</strong>那边的设置。而且 Project Zomboid 的沙盒选项是写进<strong>存档</strong> 里的，之后想改就得去编辑存档，或者干脆开一个新世界。</blockquote>
+<h3 id="驯服与生成">驯服与生成</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>驯服所需信任值</td>
+<td>100</td>
+<td>要喂多少东西这只狗才算你的</td>
+</tr>
+<tr>
+<td>每位玩家的最大犬只数</td>
+<td><strong>0（无限制）</strong></td>
+<td>能羁绊的狗的数量上限</td>
+</tr>
+<tr>
+<td>城镇中出现流浪狗</td>
+<td>开启</td>
+<td>随着你探索，狗会自己冒出来</td>
+</tr>
+<tr>
+<td>狗生成倍率</td>
+<td>1.0</td>
+<td>缩放所有的生成。0 表示关闭</td>
+</tr>
+<tr>
+<td>野狗无敌</td>
+<td><strong>关闭</strong></td>
+<td>让外面的狗不会在你驯服它之前死掉</td>
+</tr>
+<tr>
+<td>允许调试生成</td>
+<td>开启</td>
+<td>调试菜单（多人游戏里仅管理员可用）</td>
+</tr>
+</tbody></table></div>
+<h3 id="战斗">战斗</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>同伴攻击僵尸</td>
+<td>开启</td>
+<td>战斗的总开关</td>
+</tr>
+<tr>
+<td>同伴犬伤害倍率</td>
+<td>1.0</td>
+<td>缩放伤害。<strong>不管你调多高，小卡犬还是没法自己了结一只僵尸</strong></td>
+</tr>
+<tr>
+<td>狗的击杀计入你的数据</td>
+<td>开启</td>
+<td>狗杀掉的僵尸会加进你的击杀数</td>
+</tr>
+</tbody></table></div>
+<h3 id="照料与羁绊">照料与羁绊</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>需求与维持</td>
+<td>开启</td>
+<td>饥饿、口渴、忠诚度和压力的总开关</td>
+</tr>
+<tr>
+<td>饥饿与口渴速度</td>
+<td>1.0</td>
+<td>同时缩放这两项。<strong>设为 0 就冻结了，狗再也不用吃东西</strong></td>
+</tr>
+<tr>
+<td>每日忠诚度衰减</td>
+<td>12.0</td>
+<td>每天掉多少忠诚度</td>
+</tr>
+<tr>
+<td>羁绊安抚（抚摸与同睡）</td>
+<td>开启</td>
+<td>抚摸和同睡能缓解你的无聊和悲伤</td>
+</tr>
+<tr>
+<td>精神饱满（在狗身边睡觉）</td>
+<td>开启</td>
+<td>醒来时拿到的增益</td>
+</tr>
+<tr>
+<td>精神饱满持续时间（小时）</td>
+<td>2.0</td>
+<td>效果能持续多久</td>
+</tr>
+</tbody></table></div>
+<h3 id="行为">行为</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>哨兵：僵尸警报</td>
+<td>开启</td>
+<td>警戒的总开关</td>
+</tr>
+<tr>
+<td>自动守护：忙碌时守卫</td>
+<td>开启</td>
+<td>启用每只狗身上的那个开关</td>
+</tr>
+<tr>
+<td>狗的噪音吸引僵尸</td>
+<td>开启</td>
+<td>大声吠叫是真实的噪音。<strong>低声咆哮从不吸引</strong></td>
+</tr>
+<tr>
+<td>狗可能不服从</td>
+<td>开启</td>
+<td>0 级时 30% 的几率，到 10 级降为 0%</td>
+</tr>
+</tbody></table></div>
+<h3 id="技能与活动">技能与活动</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>技能与训练</td>
+<td>开启</td>
+<td>技能的总开关</td>
+</tr>
+<tr>
+<td>技能经验倍率</td>
+<td><strong>0.5</strong></td>
+<td>训练速度。觉得慢就调到 1.0 以上</td>
+</tr>
+<tr>
+<td>协助狩猎</td>
+<td>开启</td>
+<td>狩猎的总开关</td>
+</tr>
+<tr>
+<td>Farm care (herding)</td>
+<td>开启</td>
+<td>畜栏模式的总开关</td>
+</tr>
+<tr>
+<td>服从技巧</td>
+<td>开启</td>
+<td>四个技巧的总开关</td>
+</tr>
+</tbody></table></div>
+<h3 id="驮袋">驮袋</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>驮袋基础容量</td>
+<td>4</td>
+<td>载货量的下限</td>
+</tr>
+<tr>
+<td>力量载货加成</td>
+<td>8</td>
+<td>力气很大的狗能在这之上多加多少</td>
+</tr>
+</tbody></table></div>
+<h3 id="幼犬">幼犬</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>繁殖与幼犬</td>
+<td>开启</td>
+<td>总开关</td>
+</tr>
+<tr>
+<td>妊娠时间（天）</td>
+<td>4</td>
+<td>到分娩为止的游戏天数</td>
+</tr>
+<tr>
+<td>幼犬成熟时间（天）</td>
+<td>90</td>
+<td>长成成犬要多少天</td>
+</tr>
+<tr>
+<td>每日繁殖几率</td>
+<td>5.0</td>
+<td>一对狗自己怀上的几率。0 表示关闭</td>
+</tr>
+</tbody></table></div>
+<h3 id="界面与多人游戏">界面与多人游戏</h3>
+<div class="tw"><table><thead><tr>
+<th>选项</th>
+<th>默认值</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>显示狗的名称标签</td>
+<td>开启</td>
+<td>头顶上漂浮的名字</td>
+</tr>
+<tr>
+<td>在地图上显示狗</td>
+<td>开启</td>
+<td>地图和小地图上的那个爪印</td>
+</tr>
+<tr>
+<td>主人离线时收起狗</td>
+<td>开启</td>
+<td>多人游戏：你断线时狗会离开世界</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-常见问题">22. 常见问题</h2>
+<p><strong><span class="ig">狗出现的时候没有贴图，整个皱成一团。</span></strong> 先在<strong>主菜单</strong>的 Mods 列表里把这个 mod 打开，然后把游戏彻底关掉，再重新进去读存档。这是联机合作里 最常见的问题。</p>
+<p><strong><span class="ig">我装了 mod，可是存档里什么都没出现。</span></strong> Project Zomboid 是<strong>按存档</strong>启用 mod 的。后来才加进去的 mod 不会进到已经建好的世界里，而且游戏 <strong>完全不会报错</strong>。在读取存档的界面上确认一下，那个世界有没有把这个 mod 勾上。</p>
+<p><strong><span class="ig">我的狗不听话。</span></strong> 看一下弹出来的提示。如果写的是 <em><span class="ig">不够信任你，因此没有服从命令。</span></em>，那是忠诚度的问题：喂它、给它 水、多摸摸它。如果写的是 <em><span class="ig">分心了，没听你的。</span></em>，那是训练不够：<strong>把命令再下一遍，第二次一定会通 过</strong>。如果是恐慌或者受伤，那就先把它照顾好。</p>
+<p><strong><span class="ig">我的狗打不死僵尸，只会把它们撂倒。</span></strong> 如果它是<strong>小卡犬</strong>，那本来就是这样，是故意设计的，怎么调都不会变。要么换一个品种，要么接受它的 分工：它负责撂倒，你负责补刀。</p>
+<p><strong><span class="ig">狗一直叫，还把僵尸引过来了。</span></strong> 可能的来源有四个，而且全都能控制：<strong>处在警报的哨兵</strong>（改成<strong>静默</strong>，它就绝不会大声吠叫）、 <strong>引开注意</strong>这个技巧（制造噪音本来就是它的目的）、<strong>狩猎</strong>（把狩猎模式关掉），还有<strong>战斗</strong>。 压力大的狗<strong>不会</strong>自己乱叫。</p>
+<p><strong><span class="ig">我的狗不见了。</span></strong> 点爪印按钮打开窗口，切到 <strong><span class="ig">我的狗</span></strong> 这个标签页，然后用<strong>召回</strong>。如果它在很远的地方，mod 会先让 你确认一下，再把它连同身上的东西一起带回来。每只狗有 2 个游戏小时的冷却。地图上的标记也会留着最后 一次看到它的位置。</p>
+<p><strong><span class="ig">狗卡在栅栏的另一边过不来。</span></strong> 用<strong>召回</strong>（也就是吹口哨）。这个功能就是为这种情况准备的，代价是会引来僵尸。</p>
+<p><strong><span class="ig">我的狗怀不上。</span></strong> 对着<a href="#15-繁殖与幼犬">繁殖条件</a>那份清单挨个查一遍。绝大多数时候是两只里有一只饿了、渴了， 或者忠诚度低于 60。另外也看看<strong><span class="ig">禁止繁殖</span></strong>是不是被打开了。</p>
+<p><strong><span class="ig">我的幼犬长不大。</span></strong> 先看看它身上是不是开着<strong><span class="ig">暂停成长</span></strong>。除此之外就只是时间问题：默认要 <strong>90 个游戏日</strong>，而且你不在 它身边的时候，这个时间照样在走。如果时间早就到了它还是幼犬，那就走近它一点：变成成犬这件事，只在 幼犬被加载出来的时候才会发生。</p>
+<p><strong><span class="ig">狗不跟我一起上车。</span></strong> 只有处在<strong>跟随</strong>的狗才会上车。停留或守卫的时候，它就留在原地了。</p>
+<p><strong><span class="ig">我留了一只狗看家，结果它什么都没干。</span></strong> 守卫模式目前<strong>只在你人就在附近的时候才起作用</strong>。想让一只狗在远处自己干活，唯一能做到这件事的模式是 <strong>Care for livestock here</strong>，而且它需要一个指定好的动物围栏。</p>
+<p><strong><span class="ig">狗学得太慢了。</span></strong> <strong><span class="ig">技能经验倍率</span></strong>的默认值是 <strong>0.5</strong>，只有正常速度的一半。开新世界的时候把它调到 1.0 或者更高。</p>
+<p><strong><span class="ig">我的狗死了。</span></strong> 没得挽回，也不会重新刷出来。唯一的死因是饥饿或口渴被拖到了极限。驮袋和里面的货物会留在它倒下的 那块地上。</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">未找到相关结果： <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' 个结果'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'顶部');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

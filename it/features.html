@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Funzionalità: Cosa fa il cane e come dargli ordini">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Funzionalità">
+<meta property="og:description" content="Funzionalità: Cosa fa il cane e come dargli ordini">
+<meta property="og:url" content="https://geich.github.io/companion-dogs-docs/it/features.html">
+<meta property="og:image" content="https://geich.github.io/companion-dogs-docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/companion-dogs-docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Funzionalità</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Apri l'indice" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Torna alla pagina iniziale della documentazione"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Funzionalità</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Vai al Manuale: Razze</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="cerca nel manuale..." aria-label="Cerca nel manuale" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Lingua"><optgroup label="Revisionate"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Traduzione automatica"><option value="de">Deutsch</option><option value="es">Español</option><option value="it" selected>Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Cambia tema">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Traduzione automatica, non revisionata.</b> Questa pagina è stata tradotta a macchina dal portoghese e nessuno l'ha revisionata. Potrebbe contenere errori nei termini e nei numeri. In caso di dubbio, controlla la versione inglese o l'originale in portoghese. <a href="../en/features.html">Leggi in inglese</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Indice &middot; <b>Funzionalità</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-in-5-minuti-dal-randagio-al-compagno" data-id="1-in-5-minuti-dal-randagio-al-compagno">1. In 5 minuti: dal randagio al compagno</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-trovare-e-addomesticare-un-cane" data-id="2-trovare-e-addomesticare-un-cane">2. Trovare e addomesticare un cane</a>
+<div class="sub">
+<a class="s3" href="#dove-compare-ogni-razza" data-id="dove-compare-ogni-razza">Dove compare ogni razza</a>
+<a class="s3" href="#come-addomesticare" data-id="come-addomesticare">Come addomesticare</a>
+<a class="s3" href="#quanto-cibo-serve" data-id="quanto-cibo-serve">Quanto cibo serve</a>
+<a class="s3" href="#il-cibo-che-fa-male" data-id="il-cibo-che-fa-male">Il cibo che fa male</a>
+<a class="s3" href="#cosa-succede-nel-momento-in-cui-diventa-tuo" data-id="cosa-succede-nel-momento-in-cui-diventa-tuo">Cosa succede nel momento in cui diventa tuo</a>
+<a class="s3" href="#il-limite-di-cani" data-id="il-limite-di-cani">Il limite di cani</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-come-dare-ordini-le-quattro-vie" data-id="3-come-dare-ordini-le-quattro-vie">3. Come dare ordini: le quattro vie</a>
+<div class="sub">
+<a class="s3" href="#a-menu-contestuale-tasto-destro-sul-cane" data-id="a-menu-contestuale-tasto-destro-sul-cane">a) Menu contestuale (tasto destro sul cane)</a>
+<a class="s3" href="#b-menu-radiale-tieni-premuto-q" data-id="b-menu-radiale-tieni-premuto-q">b) Menu radiale (tieni premuto Q)</a>
+<a class="s3" href="#c-tasti-di-scelta-rapida" data-id="c-tasti-di-scelta-rapida">c) Tasti di scelta rapida</a>
+<a class="s3" href="#d-pulsanti-nella-finestra-del-cane" data-id="d-pulsanti-nella-finestra-del-cane">d) Pulsanti nella finestra del cane</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-le-tre-modalità-segui-resta-e-difendi" data-id="4-le-tre-modalità-segui-resta-e-difendi">4. Le tre modalità: Segui, Resta e Difendi</a>
+<div class="sub">
+<a class="s3" href="#segui" data-id="segui">Segui</a>
+<a class="s3" href="#resta" data-id="resta">Resta</a>
+<a class="s3" href="#difendi" data-id="difendi">Difendi</a>
+<a class="s3" href="#i-due-comandi-di-richiamo" data-id="i-due-comandi-di-richiamo">I due comandi di richiamo</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-sentinella-il-cane-come-allarme" data-id="5-sentinella-il-cane-come-allarme">5. Sentinella: il cane come allarme</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-combattimento" data-id="6-combattimento">6. Combattimento</a>
+<div class="sub">
+<a class="s3" href="#quando-combatte-da-solo" data-id="quando-combatte-da-solo">Quando combatte da solo</a>
+<a class="s3" href="#non-morde-attraverso-i-muri" data-id="non-morde-attraverso-i-muri">Non morde attraverso i muri</a>
+<a class="s3" href="#quanto-fa-male" data-id="quanto-fa-male">Quanto fa male</a>
+<a class="s3" href="#auto-protezione" data-id="auto-protezione">Auto-protezione</a>
+<a class="s3" href="#non-prende-i-tuoi-colpi" data-id="non-prende-i-tuoi-colpi">Non prende i tuoi colpi</a>
+<a class="s3" href="#ferite-ritirata-e-panico" data-id="ferite-ritirata-e-panico">Ferite, ritirata e panico</a>
+<a class="s3" href="#guarigione" data-id="guarigione">Guarigione</a>
+<a class="s3" href="#conteggio-delle-uccisioni" data-id="conteggio-delle-uccisioni">Conteggio delle uccisioni</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-bisogni-e-cure" data-id="7-bisogni-e-cure">7. Bisogni e cure</a>
+<div class="sub">
+<a class="s3" href="#da-dove-arriva-lo-stress" data-id="da-dove-arriva-lo-stress">Da dove arriva lo stress</a>
+<a class="s3" href="#dare-da-mangiare-a-mano" data-id="dare-da-mangiare-a-mano">Dare da mangiare a mano</a>
+<a class="s3" href="#dare-acqua" data-id="dare-acqua">Dare acqua</a>
+<a class="s3" href="#coccole" data-id="coccole">Coccole</a>
+<a class="s3" href="#la-scala-dellincuria" data-id="la-scala-dellincuria">La scala dell'incuria</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-lealtà" data-id="8-lealtà">8. Lealtà</a>
+<div class="sub">
+<a class="s3" href="#il-limite-di-disubbidienza" data-id="il-limite-di-disubbidienza">Il limite di disubbidienza</a>
+<a class="s3" href="#quando-il-cane-rifiuta-un-ordine" data-id="quando-il-cane-rifiuta-un-ordine">Quando il cane rifiuta un ordine</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-la-ciotola-cibo-e-acqua-senza-di-te" data-id="9-la-ciotola-cibo-e-acqua-senza-di-te">9. La ciotola: cibo e acqua senza di te</a>
+<div class="sub">
+<a class="s3" href="#come-si-usa" data-id="come-si-usa">Come si usa</a>
+<a class="s3" href="#cosa-vale-come-cibo-da-ciotola" data-id="cosa-vale-come-cibo-da-ciotola">Cosa vale come cibo da ciotola</a>
+<a class="s3" href="#come-la-usa-il-cane" data-id="come-la-usa-il-cane">Come la usa il cane</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-abilità-le-cinque-abilità-del-cane" data-id="10-abilità-le-cinque-abilità-del-cane">10. Abilità: le cinque abilità del cane</a>
+<div class="sub">
+<a class="s3" href="#la-curva-di-xp" data-id="la-curva-di-xp">La curva di XP</a>
+<a class="s3" href="#disubbidienza" data-id="disubbidienza">Disubbidienza</a>
+<a class="s3" href="#abilità-e-tratto-non-sono-la-stessa-cosa" data-id="abilità-e-tratto-non-sono-la-stessa-cosa">Abilità e tratto non sono la stessa cosa</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-trucchi-di-obbedienza" data-id="11-trucchi-di-obbedienza">11. Trucchi di obbedienza</a>
+<div class="sub">
+<a class="s3" href="#vai-in-un-punto-obbedienza-1" data-id="vai-in-un-punto-obbedienza-1">Vai in un punto (Obbedienza 1)</a>
+<a class="s3" href="#distrai-obbedienza-3" data-id="distrai-obbedienza-3">Distrai (Obbedienza 3)</a>
+<a class="s3" href="#fiuta-un-oggetto-obbedienza-5" data-id="fiuta-un-oggetto-obbedienza-5">Fiuta un oggetto (Obbedienza 5)</a>
+<a class="s3" href="#portare-un-oggetto-mentre-dormi-obbedienza-10" data-id="portare-un-oggetto-mentre-dormi-obbedienza-10">Portare un oggetto mentre dormi (Obbedienza 10)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-caccia" data-id="12-caccia">12. Caccia</a>
+<div class="sub">
+<a class="s3" href="#cosa-caccia" data-id="cosa-caccia">Cosa caccia</a>
+<a class="s3" href="#come-funziona-in-pratica" data-id="come-funziona-in-pratica">Come funziona in pratica</a>
+<a class="s3" href="#limiti" data-id="limiti">Limiti</a>
+<a class="s3" href="#i-costi" data-id="i-costi">I costi</a>
+<a class="s3" href="#bonus-di-foraggiamento" data-id="bonus-di-foraggiamento">Bonus di foraggiamento</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-prendersi-cura-del-bestiame" data-id="13-prendersi-cura-del-bestiame">13. Prendersi cura del bestiame</a>
+<div class="sub">
+<a class="s3" href="#come-si-assegna" data-id="come-si-assegna">Come si assegna</a>
+<a class="s3" href="#cosa-fa-lì" data-id="cosa-fa-lì">Cosa fa lì</a>
+<a class="s3" href="#regole-importanti" data-id="regole-importanti">Regole importanti</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-bisacce-il-cane-come-mulo-da-carico" data-id="14-bisacce-il-cane-come-mulo-da-carico">14. Bisacce: il cane come mulo da carico</a>
+<div class="sub">
+<a class="s3" href="#come-si-equipaggiano" data-id="come-si-equipaggiano">Come si equipaggiano</a>
+<a class="s3" href="#quanto-carico-porta" data-id="quanto-carico-porta">Quanto carico porta</a>
+<a class="s3" href="#cosa-ci-puoi-mettere" data-id="cosa-ci-puoi-mettere">Cosa ci puoi mettere</a>
+<a class="s3" href="#la-finestra" data-id="la-finestra">La finestra</a>
+<a class="s3" href="#dove-trovarle" data-id="dove-trovarle">Dove trovarle</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-accoppiamento-e-cuccioli" data-id="15-accoppiamento-e-cuccioli">15. Accoppiamento e cuccioli</a>
+<div class="sub">
+<a class="s3" href="#non-esiste-un-pulsante-accoppia" data-id="non-esiste-un-pulsante-accoppia">Non esiste un pulsante "accoppia"</a>
+<a class="s3" href="#le-condizioni" data-id="le-condizioni">Le condizioni</a>
+<a class="s3" href="#il-rito-e-la-gestazione" data-id="il-rito-e-la-gestazione">Il rito e la gestazione</a>
+<a class="s3" href="#il-parto" data-id="il-parto">Il parto</a>
+<a class="s3" href="#cosa-eredita-il-cucciolo" data-id="cosa-eredita-il-cucciolo">Cosa eredita il cucciolo</a>
+<a class="s3" href="#crescere-il-cucciolo" data-id="crescere-il-cucciolo">Crescere il cucciolo</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-più-cani-allo-stesso-tempo" data-id="16-più-cani-allo-stesso-tempo">16. Più cani allo stesso tempo</a>
+<div class="sub">
+<a class="s3" href="#la-scheda-i-miei-cani-il-registro" data-id="la-scheda-i-miei-cani-il-registro">La scheda "I Miei Cani": il registro</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-la-finestra-del-cane" data-id="17-la-finestra-del-cane">17. La finestra del cane</a>
+<div class="sub">
+<a class="s3" href="#scheda-abilità-e-stato" data-id="scheda-abilità-e-stato">Scheda "Abilità e stato"</a>
+<a class="s3" href="#scheda-comandi" data-id="scheda-comandi">Scheda "Comandi"</a>
+<a class="s3" href="#scheda-i-miei-cani" data-id="scheda-i-miei-cani">Scheda "I Miei Cani"</a>
+<a class="s3" href="#scheda-impostazioni" data-id="scheda-impostazioni">Scheda "Impostazioni"</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-cosa-vedi-sullo-schermo" data-id="18-cosa-vedi-sullo-schermo">18. Cosa vedi sullo schermo</a>
+<div class="sub">
+<a class="s3" href="#i-moodle-del-cane" data-id="i-moodle-del-cane">I moodle del cane</a>
+<a class="s3" href="#i-testi-sopra-la-testa" data-id="i-testi-sopra-la-testa">I testi sopra la testa</a>
+<a class="s3" href="#il-segnalino-sulla-mappa" data-id="il-segnalino-sulla-mappa">Il segnalino sulla mappa</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-gli-oggetti-del-mod" data-id="19-gli-oggetti-del-mod">19. Gli oggetti del mod</a>
+<div class="sub">
+<a class="s3" href="#ciotola-per-cani" data-id="ciotola-per-cani">Ciotola per cani</a>
+<a class="s3" href="#bisacce-per-cani" data-id="bisacce-per-cani">Bisacce per cani</a>
+<a class="s3" href="#cosa-il-mod-non-ha" data-id="cosa-il-mod-non-ha">Cosa il mod NON ha</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-multiplayer" data-id="20-multiplayer">20. Multiplayer</a>
+<div class="sub">
+<a class="s3" href="#il-tuo-cane-è-tuo" data-id="il-tuo-cane-è-tuo">Il tuo cane è tuo</a>
+<a class="s3" href="#quando-ti-disconnetti" data-id="quando-ti-disconnetti">Quando ti disconnetti</a>
+<a class="s3" href="#per-gli-amministratori" data-id="per-gli-amministratori">Per gli amministratori</a>
+<a class="s3" href="#avviso-di-installazione-in-co-op" data-id="avviso-di-installazione-in-co-op">Avviso di installazione in co-op</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-opzioni-di-sandbox" data-id="21-opzioni-di-sandbox">21. Opzioni di sandbox</a>
+<div class="sub">
+<a class="s3" href="#addomesticamento-e-spawn" data-id="addomesticamento-e-spawn">Addomesticamento e spawn</a>
+<a class="s3" href="#combattimento" data-id="combattimento">Combattimento</a>
+<a class="s3" href="#cure-e-legame" data-id="cure-e-legame">Cure e legame</a>
+<a class="s3" href="#comportamento" data-id="comportamento">Comportamento</a>
+<a class="s3" href="#abilità-e-attività" data-id="abilità-e-attività">Abilità e attività</a>
+<a class="s3" href="#bisacce" data-id="bisacce">Bisacce</a>
+<a class="s3" href="#cuccioli" data-id="cuccioli">Cuccioli</a>
+<a class="s3" href="#interfaccia-e-multiplayer" data-id="interfaccia-e-multiplayer">Interfaccia e multiplayer</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-problemi-comuni" data-id="22-problemi-comuni">22. Problemi comuni</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-manuale-delle-funzionalità">Companion Dogs: Manuale delle funzionalità</h1>
+<p>Guida completa a cosa fa il tuo cane, come dargli ordini e come prendertene cura.</p>
+<p>Questo manuale copre <strong>tutto quello che fa il mod</strong>. Se ti interessano le <strong>razze</strong> (quale scegliere, cosa ha di speciale ognuna, moodle e caratteristiche), guarda l'altro manuale: <a href="breeds.html" class="xlink">Razze</a>.</p>
+<blockquote class="quote"><strong>Sui nomi:</strong> tutti i testi tra virgolette in questo manuale sono esattamente come appaiono nel gioco in italiano. Se il tuo gioco è in inglese, i nomi cambiano, ma la posizione nel menù è la stessa.</blockquote>
+<h2 id="1-in-5-minuti-dal-randagio-al-compagno">1. In 5 minuti: dal randagio al compagno</h2>
+<p>Se vuoi soltanto iniziare a giocare, ti basta questo:</p>
+<ol>
+<li><strong>Trova un cane.</strong> I bastardini caramelo girano liberi per le città e i quartieri residenziali. Prima o poi ne incontri uno solo esplorando.</li>
+<li><strong>Tieni del cibo nell'inventario.</strong> Va bene qualsiasi cibo, purché non sia marcio e tolga la fame.</li>
+<li><strong>Clicca col tasto destro sul cane</strong> e scegli <strong><span class="ig">Dai cibo (fai amicizia)</span></strong>.</li>
+<li><strong>Ripeti finché non si fida.</strong> Ogni porzione fa salire la fiducia. Un sacco grande di crocchette risolve quasi in un colpo solo; con i biscottini ci vogliono circa quattro passaggi.</li>
+<li><strong>Dagli un nome.</strong> Fatto, è tuo. Da lì in poi ti segue da solo.</li>
+</ol>
+<p>Dopodiché, tre cose da non dimenticare:</p>
+<ul>
+<li><strong>Dagli cibo e acqua ogni giorno.</strong> Il cane muore se lo trascuri, e non torna.</li>
+<li><strong>Accarezzalo.</strong> Tiene su la lealtà e in più allevia la tua noia e la tua tristezza.</li>
+<li><strong>Apri la sua finestra</strong> dal pulsante a forma di zampa, sotto il pannello delle tue mani. Lì dentro c'è tutto.</li>
+</ul>
+<h2 id="2-trovare-e-addomesticare-un-cane">2. Trovare e addomesticare un cane</h2>
+<h3 id="dove-compare-ogni-razza">Dove compare ogni razza</h3>
+<p>Il mod decide <strong>una volta per edificio</strong> se quell'edificio ha un cane, e la decisione resta salvata. Non tornerai in un posto già esplorato per trovarci un cane nuovo dal nulla.</p>
+<div class="tw"><table><thead><tr>
+<th>Razza</th>
+<th>Dove cercare</th>
+<th>Probabilità per edificio</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td>Casa residenziale, in città o nei quartieri</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>Casa residenziale (sorteggio extra)</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>Pastore Tedesco</strong></td>
+<td>Stazione di polizia, prigione, base militare, armeria</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Casa residenziale, <strong>solo d'inverno</strong></td>
+<td>2,5%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Negozio di animali e clinica veterinaria, tutto l'anno</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>Fienile, stalla, silo, pollaio, in campagna</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>Di solito il cane compare su una casella libera <strong>fuori</strong> dall'edificio: strada, cortile, terreno. Solo quando non resta nessuna casella esterna libera finisce per comparire dentro l'edificio. Cerca prima in strada e nel cortile.</p>
+<p>L'opzione sandbox <strong><span class="ig">Moltiplicatore tasso di spawn cani</span></strong> scala tutte queste probabilità insieme, mantenendo la rarità relativa. Mettendola a 0 lo spawn si spegne.</p>
+<blockquote class="quote"><strong>Le razze addon</strong> arrivano in mod separati su Steam e hanno i propri luoghi di spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. Cosa fa ognuna è spiegato nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</blockquote>
+<h3 id="come-addomesticare">Come addomesticare</h3>
+<p>Clicca col tasto destro sul cane selvatico. L'unica opzione che ti offre è <strong><span class="ig">Dai cibo (fai amicizia)</span></strong>.</p>
+<ul>
+<li><strong>Non serve nient'altro che del cibo.</strong> Nessuna abilità minima, nessun tratto, nessun collare, nessun attrezzo.</li>
+<li>Il cibo può stare <strong>dentro uno zaino</strong>, il mod lo trova da solo.</li>
+<li>Se hai più di un tipo di cibo, diventa un sottomenù con icona e quantità di ciascuno.</li>
+<li>Senza nessun cibo, l'opzione resta grigia: <em><span class="ig">Ti serve del cibo nell'inventario.</span></em></li>
+</ul>
+<h3 id="quanto-cibo-serve">Quanto cibo serve</h3>
+<p>Ogni porzione dà <strong>fiducia in proporzione a quanta fame toglierebbe quel cibo</strong>. Un oggetto che toglie 60 punti di fame dà 60 di fiducia. Il valore predefinito è <strong>100 di fiducia per addomesticare</strong> (regolabile nel sandbox alla voce <em><span class="ig">Lealtà necessaria per addomesticare</span></em>).</p>
+<p>In pratica:</p>
+<ul>
+<li>Un <strong>sacco di crocchette</strong> grande basta quasi da solo.</li>
+<li>I bocconcini piccoli richiedono circa <strong>quattro passaggi</strong>.</li>
+</ul>
+<p>Il mod <strong>consuma solo il morso necessario</strong> e ti restituisce il resto dell'oggetto nell'inventario, quindi non sprechi mezza scatoletta di cibo per dare l'ultimo punto di fiducia.</p>
+<p><strong>Non c'è nessuna fortuna di mezzo.</strong> Arrivato a 100 di fiducia, il cane è tuo. Punto.</p>
+<p>Finché la barra non si riempie, vedi: <em><span class="ig">Il Caramelo inizia a fidarsi di te...</span></em> Quando si riempie: <em><span class="ig">Il Caramelo è ora il tuo compagno!</span></em> e si apre la finestra per dare il nome.</p>
+<h3 id="il-cibo-che-fa-male">Il cibo che fa male</h3>
+<p>Alcuni cibi sono velenosi per il cane, e il mod avvisa: compaiono <strong>in rosso</strong> nel menù, con l'avviso <em><span class="ig">Cibo dannoso per i cani. Mangiarlo lo farà ammalare e romperà il legame di fiducia.</span></em></p>
+<p>Sono questi:</p>
+<ul>
+<li><strong>Per tipo:</strong> dolci, zucchero, caffè, tè, cacao, cioccolato, peperoncino, noci e frutta secca.</li>
+<li><strong>Per nome:</strong> cipolla, aglio, porro, erba cipollina, scalogno, uva, uvetta, cioccolato, cacao, caffè, arachidi. (Il pompelmo è esplicitamente permesso.)</li>
+</ul>
+<p>Dare cibo cattivo a un <strong>cane selvatico</strong> toglie 15 di fiducia e non somma mai. Con un <strong>compagno</strong> toglie 20 di lealtà, alza lo stress e lo lascia <strong>intossicato per 120 minuti di gioco</strong>.</p>
+<h3 id="cosa-succede-nel-momento-in-cui-diventa-tuo">Cosa succede nel momento in cui diventa tuo</h3>
+<ul>
+<li>Passa in modalità <strong>Segui</strong> e attiva l'<strong>auto-protezione</strong>.</li>
+<li>Fame, sete e stress vanno a zero.</li>
+<li>Le <strong>caratteristiche genetiche vengono estratte adesso e restano fisse per tutta la vita</strong>.</li>
+<li>Diventa <strong>invincibile</strong>: zombie, auto, colpi e fuoco non lo uccidono. Lo uccide solo l'incuria.</li>
+<li>Entra nel registro <strong><span class="ig">I Miei Cani</span></strong>, e comincia a comparire sulla mappa.</li>
+</ul>
+<p><strong>Addomesticare un cane nuovo non abbandona quello di prima.</strong> Il nuovo diventa il cane attivo, e il vecchio diventa passivo in modalità Resta. Vedi <a href="#16-più-cani-allo-stesso-tempo">Più cani insieme</a>.</p>
+<h3 id="il-limite-di-cani">Il limite di cani</h3>
+<p>L'opzione sandbox <strong><span class="ig">Numero massimo di cani</span></strong> parte da <strong>0, che vuol dire nessun limite</strong>. Se il server imposta un tetto, una volta raggiunto l'opzione per fare amicizia diventa rossa e bloccata: <em><span class="ig">Limite compagni raggiunto (5).</span></em> (il numero è il tetto configurato) Liberare o perdere un cane libera di nuovo il posto.</p>
+<h2 id="3-come-dare-ordini-le-quattro-vie">3. Come dare ordini: le quattro vie</h2>
+<p>Ci sono quattro modi per comandare il cane. Fanno tutti la stessa cosa, usa quello che ti risulta più comodo.</p>
+<h3 id="a-menu-contestuale-tasto-destro-sul-cane">a) Menu contestuale (tasto destro sul cane)</h3>
+<p>È tutto dentro un sottomenu con il nome del cane. L'ordine è sempre lo stesso:</p>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(prima riga, senza clic)</em></td>
+<td>L'identità del cane: nome, sesso, se è cucciolo, se è incinta, se è meticcio</td>
+</tr>
+<tr>
+<td><strong>Blocca accoppiamento</strong> / <strong>Consenti accoppiamento</strong></td>
+<td>Attiva e disattiva il permesso di accoppiarsi per questo cane (solo adulti)</td>
+</tr>
+<tr>
+<td><strong>Ferma la crescita</strong> / <strong>Riprendi la crescita</strong></td>
+<td>Solo nei cuccioli. Congela la crescita a tempo indeterminato</td>
+</tr>
+<tr>
+<td><strong>Dai cibo</strong></td>
+<td>Gli dà da mangiare. Sottomenu per tipo</td>
+</tr>
+<tr>
+<td><strong>Dai acqua</strong></td>
+<td>Serve un contenitore con acqua</td>
+</tr>
+<tr>
+<td><strong>Accarezza</strong></td>
+<td>Coccole</td>
+</tr>
+<tr>
+<td><strong>Di' di restare</strong> / <strong>Di' di seguirti</strong></td>
+<td>Alterna tra le due modalità</td>
+</tr>
+<tr>
+<td><strong>Vieni qui</strong></td>
+<td>Chiama il cane da te</td>
+</tr>
+<tr>
+<td><strong>Attacca il più vicino</strong></td>
+<td>Gli ordina di attaccare lo zombie più vicino</td>
+</tr>
+<tr>
+<td><strong>Trucchi</strong> ▸</td>
+<td>Sottomenu con i quattro trucchi</td>
+</tr>
+<tr>
+<td><strong>Care for livestock here</strong> / <strong>Stop caring for livestock</strong></td>
+<td>Modalità fattoria</td>
+</tr>
+<tr>
+<td><strong>Metti le bisacce</strong> / <strong>Apri le bisacce</strong> / <strong>Togli le bisacce</strong></td>
+<td>A seconda dello stato</td>
+</tr>
+<tr>
+<td><strong>Stato</strong></td>
+<td>Apre la finestra del cane</td>
+</tr>
+<tr>
+<td><strong>Rinomina...</strong></td>
+<td>Fino a 30 caratteri</td>
+</tr>
+<tr>
+<td><strong>Prendi in braccio</strong></td>
+<td>Porta il cane in braccio</td>
+</tr>
+<tr>
+<td><strong>Rilascia compagno</strong></td>
+<td>Lo rimette in libertà (mantiene addestramento e abilità)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong><span class="ig">Difendi</span> non è qui.</strong> Questo comando esiste solo nel menu radiale, nel tasto di scelta rapida e nel pulsante della scheda Comandi.</blockquote>
+<h3 id="b-menu-radiale-tieni-premuto-q">b) Menu radiale (tieni premuto Q)</h3>
+<p>La mod si aggancia al menu delle emote del gioco. Tieni premuto <strong>Q</strong> e comparirà una categoria nuova con il nome della razza del tuo cane e un'icona a forma di zampa. La categoria appare solo se hai un cane attivo nelle vicinanze.</p>
+<p>Gli spicchi sono: <strong>Vieni qui</strong>, <strong>Segui</strong>, <strong>Resta</strong>, <strong>Difendi</strong>, <strong>Avviso</strong>, <strong>Discreto</strong>, <strong>Silenzioso</strong>, <strong>Attacca il più vicino</strong>, <strong>Caccia</strong> / <strong>Smetti di cacciare</strong>, <strong>Trucchi ▸</strong> e <strong>Apri le bisacce</strong> (se ha le bisacce addosso).</p>
+<p>Scegliere <strong>Trucchi</strong> apre un terzo livello del radiale con i quattro trucchi e un <strong>Indietro</strong>. Un trucco non ancora sbloccato compare con l'icona rossa e il livello richiesto nel nome, tipo <em><span class="ig">Distrai (Obbedienza 3)</span></em>.</p>
+<p>Alcuni comandi fanno anche gesticolare il tuo personaggio: chiamarlo alza la mano, ordinare di restare fa il gesto di stop, ordinare l'attacco punta il dito.</p>
+<h3 id="c-tasti-di-scelta-rapida">c) Tasti di scelta rapida</h3>
+<p>Sono <strong>14 azioni assegnabili</strong>, e <strong>arrivano tutte senza tasto assegnato</strong> di proposito, per non entrare in conflitto con niente. Le configuri nella scheda <strong><span class="ig">Impostazioni</span></strong> della finestra del cane, non nel menu delle opzioni del gioco.</p>
+<div class="tw"><table><thead><tr>
+<th>Azione</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Vieni qui</strong></td>
+<td>Chiama il cane</td>
+</tr>
+<tr>
+<td><strong>Segui</strong></td>
+<td>Modalità Segui</td>
+</tr>
+<tr>
+<td><strong>Resta</strong></td>
+<td>Modalità Resta</td>
+</tr>
+<tr>
+<td><strong>Difendi</strong></td>
+<td>Modalità Difendi</td>
+</tr>
+<tr>
+<td><strong>Porta</strong></td>
+<td><strong>Teletrasporta il cane al tuo fianco.</strong> Fischi forte, e il fischio attira gli zombie</td>
+</tr>
+<tr>
+<td><strong>Attacca il più vicino</strong></td>
+<td>Attacco a comando</td>
+</tr>
+<tr>
+<td><strong>Avviso</strong> / <strong>Discreto</strong> / <strong>Silenzioso</strong></td>
+<td>Modalità della sentinella</td>
+</tr>
+<tr>
+<td><strong>Auto-protezione</strong></td>
+<td>Attiva e disattiva</td>
+</tr>
+<tr>
+<td><strong>Caccia</strong></td>
+<td>Attiva e disattiva</td>
+</tr>
+<tr>
+<td><strong>Stato</strong></td>
+<td>Apre e chiude la finestra del cane</td>
+</tr>
+<tr>
+<td><strong>Vai in un punto</strong></td>
+<td>Apre il cursore di mira del trucco</td>
+</tr>
+<tr>
+<td><strong>Distrai</strong></td>
+<td>Lancia il trucco</td>
+</tr>
+</tbody></table></div>
+<p>Se scegli un tasto già in uso, la mod avvisa: <em><span class="ig">F già in uso da: Resta</span></em>. Senza tasto assegnato, il pulsante mostra <em><span class="ig">Non assegnato</span></em>.</p>
+<h3 id="d-pulsanti-nella-finestra-del-cane">d) Pulsanti nella finestra del cane</h3>
+<p>La scheda <strong><span class="ig">Comandi</span></strong> ha tutto sotto forma di pulsante: la riga della modalità, la riga della sentinella, gli interruttori di auto-protezione e caccia, i quattro trucchi, le bisacce e la riga delle azioni (<strong>Porta</strong> | <strong>Rinomina</strong> | <strong>Lascia andare</strong>).</p>
+<h2 id="4-le-tre-modalità-segui-resta-e-difendi">4. Le tre modalità: Segui, Resta e Difendi</h2>
+<p>Il cane è <strong>sempre in una</strong> di queste tre. Tutto il resto (sentinella, caccia, auto-protezione) è una regolazione che si mette sopra la modalità.</p>
+<h3 id="segui">Segui</h3>
+<p>La modalità predefinita. Ti cammina dietro: comincia a muoversi quando sei a 2 tile di distanza e si mette a correre oltre i 5 tile.</p>
+<ul>
+<li><strong>Combatte gli zombie in un raggio di 5 tile intorno a TE</strong> (non a lui). Molla il bersaglio a 8.</li>
+<li>Salta le recinzioni basse, sale le scale, cambia piano per starti dietro.</li>
+<li><strong>È l'unica modalità in cui sale in macchina con te.</strong></li>
+<li>Se ti allontani troppo (24 tile), viene riposizionato in automatico dietro di te, così non resta bloccato dall'altra parte di un edificio.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">Il Caramelo ti segue e attacca gli zombie vicini.</span></em></blockquote>
+<h3 id="resta">Resta</h3>
+<p>Si ferma dov'è e non si muove da lì. Dopo circa un minuto fermo, si sdraia.</p>
+<ul>
+<li><strong>Continua a fiutare e ad avvisare</strong> sugli zombie.</li>
+<li><strong>Non insegue e non combatte</strong>, nemmeno con uno zombie in faccia.</li>
+<li><strong>Resta indietro quando sali in macchina.</strong> Solo il cane in modalità Segui sale a bordo.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">Il Caramelo mantiene la posizione. Avvisa ancora degli zombie ma non combatte.</span></em></blockquote>
+<h3 id="difendi">Difendi</h3>
+<p>Registra il punto esatto in cui si trova come <strong>postazione</strong> e difende quella postazione.</p>
+<ul>
+<li>Affronta gli zombie in un <strong>raggio di 10 tile dalla postazione</strong>, li insegue e poi torna indietro.</li>
+<li>Se si mette male, ripiega dietro di te.</li>
+<li><strong>Limite importante:</strong> per ora funziona solo <strong>con te nelle vicinanze</strong>. Non serve a niente lasciare un cane a difendere la base e uscire dalla mappa.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">Il Caramelo difende l'area circostante.</span></em></blockquote>
+<h3 id="i-due-comandi-di-richiamo">I due comandi di richiamo</h3>
+<div class="tw"><table><thead><tr>
+<th>Comando</th>
+<th>Cosa fa</th>
+<th>Costo</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Vieni qui</strong></td>
+<td>Torna <strong>camminando</strong> e passa alla modalità Segui</td>
+<td>Nessuno</td>
+</tr>
+<tr>
+<td><strong>Porta</strong></td>
+<td><strong>Compare al tuo fianco all'istante</strong></td>
+<td>Fischi forte, e questo <strong>attira gli zombie</strong></td>
+</tr>
+</tbody></table></div>
+<p>Usa <strong>Porta</strong> quando il cane si è bloccato dietro una recinzione, è rimasto chiuso in un edificio o è troppo lontano per tornare a piedi. È l'uscita di emergenza, non il comando di tutti i giorni.</p>
+<h2 id="5-sentinella-il-cane-come-allarme">5. Sentinella: il cane come allarme</h2>
+<p>Questa è, in pratica, la funzione più utile della mod: <strong>il cane percepisce zombie che tu non riesci a vedere</strong>.</p>
+<p>La sentinella funziona in tutte e tre le modalità (Segui, Resta e Difendi). <strong>Non funziona</strong> durante l'avanzamento rapido del tempo né mentre dormi.</p>
+<div class="tw"><table><thead><tr>
+<th>Modalità</th>
+<th>Portata</th>
+<th>Come avvisa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Avviso</strong></td>
+<td>18 tile (arriva a 27 con Fiuto al massimo)</td>
+<td>Ringhio per zombie lontani o poco numerosi. <strong>Abbaio forte</strong> per zombie vicini, in gruppo o a vista. <strong>L'abbaio attira zombie davvero</strong></td>
+</tr>
+<tr>
+<td><strong>Discreto</strong></td>
+<td>10 tile fissi</td>
+<td><strong>Solo ringhio.</strong> Non abbaia mai, non attira niente</td>
+</tr>
+<tr>
+<td><strong>Silenzioso</strong></td>
+<td>Nessuna</td>
+<td>Nessun avviso sugli zombie</td>
+</tr>
+</tbody></table></div>
+<p>Il cane passa da <span class="ig">ha fiutato qualcosa</span> ad <span class="ig">allarme</span> quando lo zombie è a 6 tile o meno, <strong>oppure</strong> quando ci sono 3 o più zombie, <strong>oppure</strong> quando c'è linea di vista libera fino a 12 tile.</p>
+<p>I messaggi fluttuano sopra la sua testa:</p>
+<ul>
+<li><em><span class="ig">Il tuo Caramelo percepisce qualcosa nelle vicinanze...</span></em> (c'è qualcosa, lontano o poco numeroso)</li>
+<li><em><span class="ig">Il tuo Caramelo rileva zombie!</span></em> (vicino o in numero, è ora di reagire)</li>
+</ul>
+<p><strong>Lo scambio è questo:</strong> Avviso ti dà la portata di allarme più ampia ma rivela la tua posizione. Discreto ti avvisa senza rumore, ma solo da vicino. Silenzioso è per quando vuoi il cane zitto a qualunque costo.</p>
+<blockquote class="quote"><strong>Un cane stressato NON abbaia da solo.</strong> Esisteva un sistema di abbaio da stress, ma nella mod è disattivato. Se il tuo cane sta richiamando zombie, la fonte è una di queste quattro, tutte controllabili: la <strong>sentinella in Avviso</strong>, il trucco <strong>Distrai</strong>, l'<strong>inseguimento durante la caccia</strong> oppure il <strong>combattimento</strong>.</blockquote>
+<h2 id="6-combattimento">6. Combattimento</h2>
+<h3 id="quando-combatte-da-solo">Quando combatte da solo</h3>
+<p><strong>Il cane non attacca di sua iniziativa.</strong> Aspetta un innesco:</p>
+<ul>
+<li><strong>In Segui:</strong> solo con l'<strong>auto-protezione attiva</strong> e solo se lo zombie punta te o il cane, oppure se stai già combattendo. E lo zombie deve trovarsi a <strong>5 caselle o meno da te</strong>.</li>
+<li><strong>In Difendi:</strong> sempre, entro le 10 caselle dalla postazione.</li>
+<li><strong>Comando <span class="ig">Attacca il più vicino</span>:</strong> cerca in un raggio di 12 caselle e insegue per 2 minuti di gioco.</li>
+</ul>
+<p>Attacca solo <strong>zombie ostili</strong>. Gli NPC alleati di altre mod (Bandits, A-Life) vengono risparmiati.</p>
+<h3 id="non-morde-attraverso-i-muri">Non morde attraverso i muri</h3>
+<p>Il cane ingaggia solo gli zombie che riesce a <strong>raggiungere davvero a piedi</strong>. Uno zombie dall'altra parte di una recinzione, o chiuso in una stanza, viene ignorato, perché fare il giro costerebbe troppo. Se ci prova e resta bloccato per due secondi e mezzo senza avanzare, molla quel bersaglio e lo ignora per 12 secondi.</p>
+<p>È voluto: evita che il cane sbatta contro il muro cercando di arrivare a qualcosa di irraggiungibile.</p>
+<h3 id="quanto-fa-male">Quanto fa male</h3>
+<p>Il danno dipende da <strong>quattro cose moltiplicate tra loro</strong>: la forza naturale della razza, il livello di Combattimento, il gene di Forza e il moltiplicatore sandbox.</p>
+<p>Il dettaglio che conta per il giocatore:</p>
+<ul>
+<li>Il <strong>Caramelo non riesce a uccidere uno zombie da solo</strong>. Blocca lo zombie al 10% di vita e si ferma. È voluto e nessuna impostazione sandbox lo cambia. Il suo ruolo è <strong>buttare a terra lo zombie</strong> e darti tempo.</li>
+<li>Tutte le altre razze <strong>riescono a finire il lavoro</strong>.</li>
+</ul>
+<p>La tabella dei danni per razza si trova nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</p>
+<p><strong>Buttare a terra:</strong> ogni colpo ha una probabilità di far cadere lo zombie, dal 10% iniziale fino al 50% con Combattimento al massimo.</p>
+<h3 id="auto-protezione">Auto-protezione</h3>
+<p>Si attiva e si disattiva cane per cane. Quando è attiva, il cane <strong>monta la guardia da solo mentre sei indifeso</strong>:</p>
+<ul>
+<li>mentre dormi</li>
+<li>mentre leggi</li>
+<li>mentre sei seduto per terra</li>
+<li>mentre mangi</li>
+<li>mentre peschi</li>
+</ul>
+<p>Si ancora al tuo fianco e affronta quello che arriva. Se ti sposti, l'ancoraggio ti segue. Quando finisci l'azione, torna a seguirti da solo.</p>
+<ul>
+<li>Un cane davvero in <strong>Difendi non abbandona mai la postazione</strong> per questo.</li>
+<li><strong>Combattere così stressa il cane e non dà lealtà.</strong> È lavoro, non coccole.</li>
+</ul>
+<p>Arriva <strong>attiva</strong> quando addomestichi il cane.</p>
+<h3 id="non-prende-i-tuoi-colpi">Non prende i tuoi colpi</h3>
+<p><strong>Puoi sparare sopra il cane senza paura.</strong> Un cane compagno <strong>non perde vita per un colpo d'arma da fuoco in nessuna situazione</strong>, né tuo né di un altro giocatore.</p>
+<p>Due cose lo garantiscono:</p>
+<ul>
+<li>Resta fuori dalla <strong>mira automatica</strong>, quindi il bersaglio non si aggancia a lui quando prendi la mira.</li>
+<li>In giocatore singolo, nell'istante dello sparo, la mod <strong>toglie il cane dal calcolo del colpo</strong>: il proiettile va dritto allo zombie dietro di lui.</li>
+</ul>
+<p><strong>Il cane non si sposta</strong> perché questo accada, e <strong>non reagisce mai contro di te</strong>.</p>
+<blockquote class="quote">In multigiocatore, se spari da lontano, il cane di un altro giocatore può anche <strong>sembrare che reagisca sul tuo schermo</strong>, ma non perde vita.</blockquote>
+<h3 id="ferite-ritirata-e-panico">Ferite, ritirata e panico</h3>
+<ul>
+<li><strong>Combattere non ferisce il cane.</strong> Lo stressa e basta.</li>
+<li>La sua vita cala per <strong>incuria</strong> (fame o sete sopra 0,8), per <strong>cibo tossico</strong> e per il <strong>contrattacco di un cervo durante la caccia</strong>. Solo l'incuria può ucciderlo.</li>
+<li>Stati di ferita: <strong><span class="ig">Ferito</span></strong> sotto il 30% di vita, <strong><span class="ig">Gravemente ferito</span></strong> sotto il 10%. Un cane gravemente ferito <strong>ti segue soltanto, non combatte</strong>.</li>
+<li><strong>Ritirata:</strong> corre a ripararsi dietro di te quando la vita scende al 10% o meno.</li>
+<li><strong>Panico:</strong> con lo stress alto <strong>non combatte, non fa la guardia e non esegue trucchi</strong>. Però corre ancora da te quando lo chiami.</li>
+</ul>
+<h3 id="guarigione">Guarigione</h3>
+<p>Il cane guarisce da solo, ed è <strong>piuttosto veloce</strong>: una barra piena di vita in circa <strong>8 ore di gioco</strong>, cioè da quasi morto a sano nel giro di una notte. <strong>Ma solo se è ben nutrito e idratato</strong>: superata la metà della barra della fame <strong>o</strong> della sete, <strong>la guarigione si ferma del tutto</strong>.</p>
+<p>In pratica: per curare un cane ferito, <strong>dagli da mangiare, dagli acqua e lascia passare il tempo</strong>.</p>
+<h3 id="conteggio-delle-uccisioni">Conteggio delle uccisioni</h3>
+<p>Ogni cane ha il proprio contatore, visibile nella sua finestra: <strong><span class="ig">Uccisioni: 14 zombie, 3 prede</span></strong>.</p>
+<p>Con l'opzione sandbox <strong><span class="ig">Le uccisioni del cane contano per te</span></strong> attiva (è il valore predefinito), gli zombie che uccide <strong>si sommano anche al tuo contatore</strong> nella schermata del personaggio.</p>
+<h2 id="7-bisogni-e-cure">7. Bisogni e cure</h2>
+<p>Il cane compagno è invincibile, e questo congela i normali sistemi di fame del gioco. Per questo la mod gestisce tutto a mano.</p>
+<p>Sono <strong>quattro barre</strong>, più la lealtà.</p>
+<div class="tw"><table><thead><tr>
+<th>Barra</th>
+<th>Sale / scende</th>
+<th>Ritmo</th>
+<th>Quando dà fastidio</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Fame</strong></td>
+<td>Sale con il tempo</td>
+<td>Da vuota a piena in circa <strong>3 giorni</strong></td>
+<td>Sopra 0,6</td>
+</tr>
+<tr>
+<td><strong>Sete</strong></td>
+<td>Sale con il tempo</td>
+<td>Da vuota a piena in circa <strong>1,7 giorni</strong></td>
+<td>Sopra 0,6</td>
+</tr>
+<tr>
+<td><strong>Salute</strong></td>
+<td>Cala solo per incuria</td>
+<td><strong>Barra piena in ~8 ore</strong> con fame o sete sopra 0,8</td>
+<td>Sotto il 30%</td>
+</tr>
+<tr>
+<td><strong>Stress</strong></td>
+<td>Calcolato dalle altre</td>
+<td>Nessuno</td>
+<td>Sopra il 50%</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Non esistono sonno né igiene.</strong> Il cane non ha bisogno di dormire e non si sporca.</blockquote>
+<p>L'opzione sandbox <strong><span class="ig">Ritmo di fame e sete</span></strong> scala entrambe insieme. A 0 si congelano del tutto e il cane non ha mai più bisogno di mangiare o bere (la lealtà continua a calare, quindi vuole comunque le tue attenzioni).</p>
+<h3 id="da-dove-arriva-lo-stress">Da dove arriva lo stress</h3>
+<p>Lo stress non è una barra che riempi, è il <strong>risultato</strong> delle altre. Sale con la fame, con la sete, con la vita bassa, con la lealtà bassa e con <strong>ogni colpo scambiato in un combattimento</strong>.</p>
+<p>Livelli:</p>
+<div class="tw"><table><thead><tr>
+<th>Livello</th>
+<th>A partire da</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Nervoso</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>Nel panico</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>Terrorizzato</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>Un cane nel panico <strong>smette di combattere, di fare la guardia e di eseguire trucchi</strong>. Corre ancora da te quando lo chiami.</p>
+<p>La buona notizia: <strong>lo stress da combattimento sparisce in fretta</strong> fuori dalla mischia. Una barra piena si svuota in circa <strong>2 ore di gioco</strong>. <strong>Coccole, cibo e acqua velocizzano ancora di più.</strong></p>
+<h3 id="dare-da-mangiare-a-mano">Dare da mangiare a mano</h3>
+<p>Tasto destro sul cane → <strong><span class="ig">Dai cibo</span></strong>.</p>
+<ul>
+<li>Va bene <strong>qualsiasi cibo</strong> che non sia marcio e che tolga la fame. Non c'è nessuna restrizione a carne o crocchette, solo la lista dei cibi tossici.</li>
+<li>Effetto: abbassa la fame, idrata se l'alimento è succoso, <strong>+0,10 di vita</strong>, sollievo dallo stress e un <strong>guadagno di lealtà proporzionale a quanta fame ha tolto la porzione</strong>.</li>
+<li>Viene consumato solo il boccone necessario.</li>
+<li>Messaggio: <em><span class="ig">Il Caramelo è soddisfatto.</span></em></li>
+</ul>
+<h3 id="dare-acqua">Dare acqua</h3>
+<p>Tasto destro → <strong><span class="ig">Dai acqua</span></strong>. Serve un contenitore d'acqua qualsiasi nell'inventario (la mod cerca anche dentro gli zaini).</p>
+<p>Abbassa di metà la barra della sete, dà <strong>+2 di lealtà</strong> e allevia lo stress. <em><span class="ig">Il Caramelo beve.</span></em></p>
+<h3 id="coccole">Coccole</h3>
+<p>Tasto destro → <strong><span class="ig">Accarezza</span></strong>.</p>
+<ul>
+<li><strong>Cooldown di 90 minuti di gioco.</strong> Prima di allora: <em><span class="ig">Il tuo Caramelo ha ricevuto abbastanza attenzioni per ora.</span></em></li>
+<li>Effetto sul cane: <strong>allevia lo stress e dà +2 di lealtà</strong>.</li>
+<li><strong>Effetto su di te:</strong> allevia <strong>Noia e Tristezza</strong>. Vale la pena farlo ogni volta che puoi.</li>
+</ul>
+<h3 id="la-scala-dellincuria">La scala dell'incuria</h3>
+<p>Se trascuri il cane, ecco cosa succede, in quest'ordine:</p>
+<ol>
+<li>Fame e sete superano 0,6. Sul tuo schermo compare il moodle <strong><span class="ig">Affamato</span></strong> / <strong><span class="ig">Assetato</span></strong>.</li>
+<li>La <strong>lealtà inizia a calare tre volte più in fretta</strong>.</li>
+<li>Superata la metà, <strong>la guarigione naturale si ferma</strong>.</li>
+<li>Superato 0,8, la <strong>vita inizia a scendere in fretta</strong>: un cane con la vita piena arriva a zero in circa <strong>8 ore di gioco</strong>.</li>
+<li>La lealtà sfonda il minimo, il cane diventa <strong><span class="ig">Disubbidiente</span></strong> e smette di obbedire.</li>
+<li>Lo stress sale e va nel panico: <strong>smette di combattere, di fare la guardia e di eseguire trucchi</strong>.</li>
+<li>La vita arriva a zero e <strong>muore</strong>.</li>
+</ol>
+<p><strong>La morte è definitiva.</strong> Non esiste respawn. <em><span class="ig">Il tuo Caramelo è morto.</span></em> Le bisacce e tutto quello che c'era dentro cadono per terra. Se hai un altro cane, viene promosso ad attivo in automatico.</p>
+<p>Gli zombie non uccidono il tuo cane. <strong>Dimenticarsi di dargli da mangiare, sì.</strong></p>
+<h2 id="8-lealtà">8. Lealtà</h2>
+<p>La lealtà va da 0 a 100 ed è la misura di quanta fiducia il cane ha in te.</p>
+<ul>
+<li><strong>Cala da sola</strong>, circa 12 punti al giorno, e <strong>tre volte più in fretta</strong> se il cane ha fame o sete.</li>
+<li><strong>Sale solo per mano umana:</strong> dare cibo, dare acqua (+2) e coccole (+2).</li>
+<li><strong>Dare cibo è di gran lunga il modo più rapido</strong>, ma il guadagno è <strong>proporzionale a quanta fame ha tolto la porzione</strong>. Dare cibo a un cane già sazio non serve quasi a niente; dare cibo a un cane affamato può restituire decine di punti in una volta sola. Se la lealtà è scesa, <strong>lascia che il cane abbia fame prima di dargli da mangiare</strong>.</li>
+<li><strong>Mangiare dalla ciotola NON dà mai lealtà.</strong> È voluto: un cane che si arrangia da solo alla ciotola non crea nessun legame con te. Se vuoi un cane leale, devi farti vedere.</li>
+</ul>
+<h3 id="il-limite-di-disubbidienza">Il limite di disubbidienza</h3>
+<p>Sotto un certo punto il cane diventa <strong><span class="ig">Disubbidiente</span></strong> e si rifiuta di seguirti, di combattere e di fare trucchi: <em><span class="ig">Il tuo Caramelo non si fida più di te...</span></em></p>
+<p>Questo limite <strong>scende man mano che l'Obbedienza sale</strong>: parte da 30 e cala di 1,5 per livello, mai sotto 10. Vuol dire che un cane con <strong>Obbedienza 10 diventa disubbidiente solo sotto i 15 di lealtà</strong>, mentre un cane senza addestramento dà già problemi sotto i 30.</p>
+<p><strong>Addestrare l'Obbedienza è il modo di comprarti margine sulla lealtà.</strong></p>
+<h3 id="quando-il-cane-rifiuta-un-ordine">Quando il cane rifiuta un ordine</h3>
+<p>Ci sono quattro motivi, in questo ordine di priorità:</p>
+<div class="tw"><table><thead><tr>
+<th>Situazione</th>
+<th>Cosa vedi</th>
+</tr></thead><tbody>
+<tr>
+<td>Lealtà sotto il limite</td>
+<td><em><span class="ig">Caramelo Rex non si fida abbastanza di te per ubbidire.</span></em></td>
+</tr>
+<tr>
+<td>Stress al livello di panico</td>
+<td><em><span class="ig">Caramelo Rex è troppo nel panico per combattere.</span></em></td>
+</tr>
+<tr>
+<td>Salute al 10% o meno</td>
+<td><em><span class="ig">Caramelo Rex è troppo ferito per combattere.</span></em></td>
+</tr>
+<tr>
+<td>Fallimento di addestramento</td>
+<td><em><span class="ig">Caramelo Rex si distrae e ti ignora.</span></em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-la-ciotola-cibo-e-acqua-senza-di-te">9. La ciotola: cibo e acqua senza di te</h2>
+<p>La ciotola è il modo in cui il <strong>cane attivo</strong> si arrangia da solo mentre tu fai altro.</p>
+<blockquote class="quote"><strong>Solo il cane attivo sente fame e sete, e solo lui usa la ciotola.</strong> Gli altri cani legati a te restano in pausa: non hanno fame, non hanno sete, non cercano la ciotola e non perdono lealtà. <strong>Non ti serve preparare una ciotola per loro</strong>, e non patiscono la fame mentre aspettano. Vedi <a href="#16-più-cani-allo-stesso-tempo">Più cani contemporaneamente</a>.</blockquote>
+<h3 id="come-si-usa">Come si usa</h3>
+<ol>
+<li>Procurati una ciotola (ricetta o loot, vedi <a href="#19-gli-oggetti-del-mod">Oggetti del mod</a>).</li>
+<li>Nell'inventario, tasto destro → <strong><span class="ig">Posiziona ciotola</span></strong>. Si apre un cursore di posizionamento libero, con <strong>R per ruotare</strong>.</li>
+<li>Con la ciotola a terra, tasto destro su di essa → <strong><span class="ig">Aggiungi cibo alla ciotola</span></strong> oppure <strong><span class="ig">Aggiungi acqua alla ciotola</span></strong>.</li>
+</ol>
+<p>La ciotola tiene <strong>cibo O acqua, mai le due cose insieme</strong>. Per cambiare, usa <strong><span class="ig">Svuota la ciotola</span></strong>.</p>
+<p>A colpo d'occhio mostra cosa contiene: grigia da vuota, marrone con il cibo, blu con l'acqua.</p>
+<h3 id="cosa-vale-come-cibo-da-ciotola">Cosa vale come cibo da ciotola</h3>
+<p><strong>Praticamente qualsiasi cibo che tolga la fame e non sia andato a male:</strong> carne, scatolame, piatti cucinati, verdura, frutta, uova, cibo per cani, e anche erba e fieno.</p>
+<p>Restano fuori solo il cibo marcio, quello che non nutre, e tutto <a href="#il-cibo-che-fa-male">l'elenco di ciò che fa male al cane</a>, che nel menu compare in rosso.</p>
+<blockquote class="quote">La <strong>lattina di cibo per cani chiusa non compare</strong> nell'elenco. Apri prima la lattina.</blockquote>
+<p>La ciotola tiene fino a <strong>100 punti</strong>. Ogni oggetto rende in base alla sua dimensione:</p>
+<div class="tw"><table><thead><tr>
+<th>Oggetto</th>
+<th>Punti</th>
+</tr></thead><tbody>
+<tr>
+<td>Sacco di cibo per cani</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Lattina di cibo per cani aperta</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Fieno</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Erba</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>Se l'oggetto è più grande dello spazio libero, la ciotola si riempie fino in cima e ti restituisce il resto.</strong> In una ciotola ferma a 80 punti, un sacco di cibo per cani la porta a 100 e torna nel tuo inventario con valore 40. Il messaggio <em><span class="ig">La ciotola è piena.</span></em> compare solo con la ciotola <strong>completamente piena</strong>.</p>
+<h3 id="come-la-usa-il-cane">Come la usa il cane</h3>
+<ul>
+<li>Ci va da solo quando la <strong>fame o la sete arrivano a 0,5</strong> (regolabile per personaggio con lo slider <em><span class="ig">Mangia quando fame/sete raggiunge</span></em>, nella scheda Impostazioni).</li>
+<li>Cerca una ciotola in un raggio di <strong>16 caselle</strong>. Vanno bene sia la ciotola del mod sia la <strong>mangiatoia vanilla del gioco</strong>.</li>
+<li>Ogni visita svuota metà della barra. Resta a mangiare per circa 3 minuti di gioco.</li>
+<li>Mentre è impegnato con la ciotola <strong>ignora gli zombie e ignora tutto il resto</strong>. Solo un tuo ordine lo interrompe. Ed è un bene: un cane nel panico per la fame riesce a rompere il panico mangiando.</li>
+</ul>
+<p>Sopra la sua testa compaiono <strong><span class="ig">Sta andando a mangiare</span></strong>, <strong><span class="ig">Mangia</span></strong>, <strong><span class="ig">Sta andando a bere</span></strong>, <strong><span class="ig">Beve</span></strong>.</p>
+<blockquote class="quote"><strong>Ricorda:</strong> mangiare dalla ciotola <strong>non dà nessuna lealtà</strong>. La ciotola tiene il cane in vita, le coccole lo tengono tuo.</blockquote>
+<p>La ciotola <strong>non funziona mai come fonte di acqua potabile per te</strong>, e la pioggia non la riempie.</p>
+<h2 id="10-abilità-le-cinque-abilità-del-cane">10. Abilità: le cinque abilità del cane</h2>
+<p>Ogni cane ha cinque abilità, da 0 a 10, che salgono <strong>facendo</strong>, non addestrando di proposito.</p>
+<div class="tw"><table><thead><tr>
+<th>Abilità</th>
+<th>Come sale</th>
+<th>Cosa migliora</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Fiuto</strong></td>
+<td>Ogni nuovo rilevamento della sentinella; usare il trucco per fiutare</td>
+<td><strong>Raggio della sentinella</strong> (18 → 27 caselle) e portata dell'odore memorizzato</td>
+</tr>
+<tr>
+<td><strong>Combattimento</strong></td>
+<td>Ogni colpo e ogni uccisione</td>
+<td><strong>Danno</strong>, probabilità di atterrare (10% → 50%) e resistenza allo stress della lotta</td>
+</tr>
+<tr>
+<td><strong>Obbedienza</strong></td>
+<td>Ogni ordine eseguito (con cooldown). <strong>Sale 4 volte più in fretta sotto il livello 3</strong></td>
+<td><strong>Limite di lealtà più basso</strong>, <strong>i quattro trucchi</strong>, e meno probabilità di disubbidire</td>
+</tr>
+<tr>
+<td><strong>Caccia</strong></td>
+<td>Indicare la selvaggina, fiutare, abbattere, e quando <strong>tu</strong> uccidi selvaggina vicino a lui</td>
+<td><strong>Livello 3:</strong> abbatte selvaggina piccola. <strong>Livello 6:</strong> affronta il cervo e riporta la preda. Aumenta anche il tuo raggio di foraggiamento</td>
+</tr>
+<tr>
+<td><strong>Herding</strong></td>
+<td>Sorvegliare un recinto, trattenere il panico della mandria, cacciare via gli zombie dal recinto</td>
+<td>Forza dell'aura che <strong>calma la mandria</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="la-curva-di-xp">La curva di XP</h3>
+<p>Il livello 1 arriva in fretta, il livello 10 è un progetto a lungo termine. L'opzione di sandbox <strong><span class="ig">Rate XP abilità</span></strong> regola la velocità di tutto.</p>
+<blockquote class="quote"><strong>Attenzione:</strong> il valore predefinito di quell'opzione nel file è <strong>0,5</strong>, cioè metà velocità, anche se il testo di aiuto dice che <span class="ig">1.0 è normale</span>. Se ti sembra che il tuo cane impari troppo lentamente, il motivo è questo. Portalo a 1.0 o più.</blockquote>
+<h3 id="disubbidienza">Disubbidienza</h3>
+<p>Con l'opzione <strong><span class="ig">I cani possono disobbedire</span></strong> attiva (è il predefinito), un cane senza addestramento ogni tanto ti ignora e basta: <em><span class="ig">Caramelo Rex si distrae e ti ignora.</span></em></p>
+<ul>
+<li>La probabilità parte dal <strong>30% a Obbedienza 0</strong> e arriva a <strong>0% a Obbedienza 10</strong>.</li>
+<li><strong>Ripetere subito l'ordine funziona sempre.</strong> Non ti ignora mai due volte di fila.</li>
+<li><strong>L'ordine ignorato lo addestra lo stesso</strong>, quindi non è XP sprecato.</li>
+<li>Vale solo per gli <strong>ordini diretti</strong>: segui, resta, difendi, vieni, attacca e trucchi. Non tocca mai dare cibo, dare acqua, le coccole, le bisacce, <strong>Porta</strong>, né le impostazioni di comportamento (sentinella, auto-protezione, caccia, cura del bestiame).</li>
+</ul>
+<p>Se la meccanica non ti piace, disattiva quell'opzione nel sandbox.</p>
+<h3 id="abilità-e-tratto-non-sono-la-stessa-cosa">Abilità e tratto non sono la stessa cosa</h3>
+<p>La finestra del cane ha due elenchi che si somigliano, e conviene non confonderli:</p>
+<ul>
+<li>Le <strong>Abilità</strong> (Fiuto, Combattimento, Obbedienza, Caccia, Herding) <strong>salgono con l'uso</strong>, per tutta la vita. Sono quelle di cui parla questo capitolo.</li>
+<li>I <strong>Tratti</strong> (Forza, Aggressività, Resistenza) vengono <strong>sorteggiati quando addomestichi il cane e non cambiano mai</strong>. L'addestramento non li tocca.</li>
+</ul>
+<blockquote class="quote"><strong>I tratti, cosa fa ciascuno e gli intervalli di ogni razza</strong> sono nel <a href="breeds.html" class="xlink">Manuale delle Razze</a>.</blockquote>
+<h2 id="11-trucchi-di-obbedienza">11. Trucchi di obbedienza</h2>
+<p>Quattro trucchi, sbloccati dal livello di <strong>Obbedienza</strong>. Compaiono tutti nel menu fin dall'inizio, quelli ancora bloccati in rosso, così vedi cosa ti aspetta: <em><span class="ig">Si sblocca al livello 3 di Obbedienza (attuale: 1).</span></em></p>
+<h3 id="vai-in-un-punto-obbedienza-1">Vai in un punto (Obbedienza 1)</h3>
+<p>Apre un <strong>cursore a terra</strong>: verde dove si può, rosso dove non si può. Il clic sinistro sceglie, il destro annulla.</p>
+<ul>
+<li>Portata massima: <strong>30 caselle a partire da TE</strong>, non dal cane.</li>
+<li>Ci va a piedi e <strong>tiene la posizione</strong> (appena arriva entra in modalità Resta).</li>
+<li>Qualsiasi nuovo ordine annulla il viaggio.</li>
+</ul>
+<p>Serve per piazzare il cane senza andarci insieme: mandarlo dall'altra parte della strada, a un angolo, dentro una stanza.</p>
+<h3 id="distrai-obbedienza-3">Distrai (Obbedienza 3)</h3>
+<p>Il cane abbaia apposta, bello forte, in un raggio di 24 caselle, e <strong>l'orda gli va addosso</strong>. Poi si ritira verso di te.</p>
+<ul>
+<li><strong>Ignora di proposito l'opzione <span class="ig">Il rumore del cane attira gli zombie</span></strong>: il senso del trucco è fare rumore, quindi lo fa sempre.</li>
+<li>Costa stress.</li>
+<li>Etichetta rossa sopra la testa: <strong><span class="ig">Attira gli zombie</span></strong>.</li>
+<li>Cooldown di 10 minuti di gioco.</li>
+</ul>
+<p>È lo strumento per <strong>aprirti un varco</strong>: tiri il gruppo da una parte mentre tu entri dall'altra. Ricorda che il cane resta con l'orda alle calcagna, quindi preparati un piano.</p>
+<h3 id="fiuta-un-oggetto-obbedienza-5">Fiuta un oggetto (Obbedienza 5)</h3>
+<p><strong>Tieni in mano un oggetto</strong> e usa il trucco. Il cane memorizza l'<strong>odore di quel tipo di oggetto</strong>: <em><span class="ig">Caramelo ha memorizzato l'odore di Martello.</span></em></p>
+<p>Da quel momento, in secondo piano, setaccia i dintorni (12 caselle, fino a 20 con Fiuto al massimo) cercando quell'oggetto <strong>dentro gli armadi e per terra</strong>. Quando lo trova:</p>
+<ol>
+<li>Abbaia.</li>
+<li>Ci va e lo indica.</li>
+<li><strong>L'oggetto viene evidenziato in verde nel mondo.</strong></li>
+</ol>
+<p>Messaggi: <em><span class="ig">Caramelo sente odore di Martello qui vicino.</span></em> e <em><span class="ig">Caramelo indica Martello.</span></em></p>
+<p>Il cane ricorda <strong>un odore solo</strong>. Fiutare qualcos'altro lo sostituisce. Per annullare, usa <strong><span class="ig">Smetti di cercare Martello</span></strong> (con il nome dell'oggetto memorizzato) (annullare non è mai bloccato).</p>
+<p>Senza oggetto in mano: <em><span class="ig">Tieni in mano l'oggetto che vuoi far annusare al cane.</span></em></p>
+<h3 id="portare-un-oggetto-mentre-dormi-obbedienza-10">Portare un oggetto mentre dormi (Obbedienza 10)</h3>
+<p>Il trucco finale. <strong>Servono le bisacce sul cane.</strong></p>
+<p>Tieni in mano un oggetto e attivalo: <em><span class="ig">Caramelo cercherà Martello mentre dormi.</span></em> Sopra la testa resta un'etichetta fissa: <strong><span class="ig">Cerca: Martello</span></strong>.</p>
+<p>Come funziona:</p>
+<ul>
+<li><strong>Una volta per giorno di gioco.</strong> Scatta subito dopo il tuo risveglio, con il cane nei paraggi.</li>
+<li>La <strong>probabilità di riuscita dipende da quanto è raro l'oggetto</strong>, e <strong>niente è garantito</strong>. Perfino l'oggetto più banale del gioco arriva al massimo al <strong>50% di probabilità a notte</strong> (in media un paio di giorni di attesa). Un oggetto non comune come un'ascia sta vicino al 15%, e qualcosa di davvero raro come una katana sta intorno al 2%, cioè settimane di tentativi.</li>
+<li>Se va bene: <em><span class="ig">Caramelo ha portato Martello mentre dormivi.</span></em>, l'oggetto compare <strong>dentro le bisacce</strong>, con un'etichetta verde <strong><span class="ig">Ha portato: Martello</span></strong>.</li>
+<li>Se no: <em><span class="ig">Caramelo è tornato senza Martello.</span></em> e un'etichetta rossa <strong><span class="ig">Tornato a mani vuote</span></strong>.</li>
+</ul>
+<p>Due blocchi al momento di attivarlo:</p>
+<ul>
+<li>Oggetto troppo pesante: <em><span class="ig">Caramelo non riuscirebbe a trasportare Incudine.</span></em></li>
+<li>Oggetto che non esiste nelle tabelle di loot del gioco: <em><span class="ig">Caramelo non saprebbe dove cercare questo.</span></em></li>
+</ul>
+<h2 id="12-caccia">12. Caccia</h2>
+<p>La modalità Caccia parte <strong>spenta</strong> e la accendi cane per cane: menu radiale, tasto, o il pulsante nella scheda Comandi. <em><span class="ig">Caramelo Rex darà la caccia alla selvaggina vicina.</span></em></p>
+<h3 id="cosa-caccia">Cosa caccia</h3>
+<div class="tw"><table><thead><tr>
+<th>Preda</th>
+<th>Livello di Caccia richiesto</th>
+</tr></thead><tbody>
+<tr>
+<td>Coniglio, procione, ratto, scoiattolo</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>Cervo (cerbiatto, cerva, maschio)</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>Gli altri animali selvatici li indica soltanto, non li caccia.</p>
+<h3 id="come-funziona-in-pratica">Come funziona in pratica</h3>
+<p><strong>Livelli 0, 1 e 2: indica, e basta.</strong> In questa fase il cane <strong>non tocca mai la preda</strong>. Abbaia una volta, trotterella fino a poca distanza dall'animale, si ferma, fa la posa da punta e <strong>resta lì qualche minuto a indicare</strong>, per farti vedere dov'è. Poi rinuncia e torna indietro. Avviso: <em><span class="ig">Il tuo cane ha trovato selvaggina...</span></em></p>
+<p>Non è poco: <strong>è così che si allena in Caccia all'inizio</strong>. Fallo cacciare, lascialo indicare, e il livello sale.</p>
+<p><strong>Livello 3: comincia a uccidere la selvaggina piccola.</strong></p>
+<ul>
+<li><strong>Se ha fame, si mangia la preda.</strong> Tu non porti a casa niente, ma lui si toglie la fame.</li>
+<li><strong>Se non ha fame, uccide accreditando te</strong> e lascia la carcassa scuoiabile <strong>per terra, dove è finita la caccia</strong>. Ti avvisa: <em><span class="ig">Il tuo cane ha abbattuto la preda!</span></em>, ma <strong>a recuperarla ci vai tu</strong>.</li>
+</ul>
+<p><strong>Livello 6: comincia a portarti la preda.</strong> Etichetta <strong><span class="ig">Portando la preda</span></strong> e il messaggio <em><span class="ig">Il tuo cane ti ha trascinato la preda.</span></em> Vale <strong>solo per la selvaggina piccola</strong>.</p>
+<p><strong>Il livello 6 sblocca anche il cervo</strong>, e lì la regola è un'altra: il cervo <strong>non lo trascina, a nessun livello e con nessuna razza</strong>. Sfianca il cervo fin quasi a ucciderlo e <strong>trattiene la preda aspettando che sia tu a dare il colpo finale</strong>: <em><span class="ig">Il tuo cane ha ferito un cervo, finiscilo!</span></em>, con l'etichetta <strong><span class="ig">Trattenendo la preda</span></strong>. Se non ti fai vedere entro 20 minuti di gioco, lo finisce da solo (e l'uccisione resta accreditata a te). Se il cervo scappa, lo insegue: <em><span class="ig">Il tuo cane sta tracciando la preda ferita...</span></em></p>
+<blockquote class="quote"><strong>Il Labrador è l'eccezione:</strong> consegna la preda <strong>fin dal livello 3</strong>, cioè dalla prima preda che riesce a uccidere, e insiste più a lungo prima di mollarla per strada. Dettagli nel <a href="breeds.html" class="xlink">Manuale delle Razze</a>.</blockquote>
+<p><strong>Il cervo reagisce.</strong> Circa un assalto su quattro ferisce il cane e lo stressa. Non è mai letale.</p>
+<h3 id="limiti">Limiti</h3>
+<ul>
+<li>Cacciare è <strong>attività di campagna</strong>. La selvaggina vive nei boschi e nei campi, non in città.</li>
+<li>Funziona solo in modalità <strong>Segui</strong>.</li>
+<li><strong>Guinzaglio di 32 caselle.</strong> Se si allontana troppo, rinuncia, torna e riposa 20 minuti di gioco (etichetta <strong><span class="ig">Caccia: sta riposando</span></strong>).</li>
+<li>Non caccia durante l'avanzamento rapido del tempo, mentre dormi, dentro un veicolo, né nei 5 minuti successivi a un tuo ordine.</li>
+<li><strong>Se sta già combattendo con uno zombie, non prende nemmeno in considerazione la caccia.</strong> Il contrario però non vale da solo: uno zombie che passa vicino <strong>non lo distoglie dalla caccia</strong>. Molla la preda se entri tu in combattimento, se scatta l'auto-protezione, o se glielo ordini. <strong>Qualsiasi tuo ordine annulla la caccia all'istante.</strong></li>
+</ul>
+<h3 id="i-costi">I costi</h3>
+<ul>
+<li>Cacciare <strong>gli fa venire fame</strong>.</li>
+<li>L'abbaio dell'inseguimento <strong>attira gli zombie</strong>, ed è fisso, non si può disattivare.</li>
+<li>Si allontana da te e resta esposto.</li>
+</ul>
+<h3 id="bonus-di-foraggiamento">Bonus di foraggiamento</h3>
+<p>Sono due cose diverse, e <strong>compaiono entrambe solo con la Modalità Ricerca del gioco attiva</strong>.</p>
+<p><strong>a) Trova il punto di raccolta (solo in modalità Caccia).</strong> Quando non c'è selvaggina nei paraggi, il cane cerca un punto di foraggiamento animale, ci va, abbaia e <strong>indica il posto</strong>: <em><span class="ig">Il tuo cane ha trovato qualcosa! Attiva la Modalità Ricerca per vederlo.</span></em> Etichetta: <strong><span class="ig">Fiutando in cerca di provviste</span></strong>.</p>
+<p><strong>Il cane non raccoglie mai l'oggetto per te.</strong> Ti mostra dove cercare; <strong>a raccogliere sei tu</strong>, attivando la Modalità Ricerca e foraggiando in quel punto.</p>
+<p><strong>b) Aumenta la tua portata di ricerca (qualsiasi razza, sempre).</strong> Basta avere un tuo cane nei paraggi, leale e senza fame né sete alte:</p>
+<ul>
+<li><strong>+6 caselle</strong> di portata con Caccia 0, fino a <strong>+12 caselle</strong> con Caccia 10.</li>
+<li>Le categorie <strong>animali, insetti, tracce e carcasse</strong> diventano molto più facili da trovare.</li>
+</ul>
+<p>Questo <strong>non è esclusiva di nessuna razza</strong>: vale perfino con un Caramelo. Il Golden Retriever si limita a <strong>sommarci altre 4 caselle</strong>.</p>
+<h2 id="13-prendersi-cura-del-bestiame">13. Prendersi cura del bestiame</h2>
+<p>Questa modalità trasforma il cane in un dipendente della fattoria: resta nel recinto e <strong>bada alla mandria da solo anche con te lontano</strong>.</p>
+<h3 id="come-si-assegna">Come si assegna</h3>
+<ol>
+<li>Crea una <strong>zona animali designata</strong> (il recinto del gioco base).</li>
+<li>Porta il cane dentro.</li>
+<li>Tasto destro → <strong><span class="ig">Care for livestock here</span></strong>.</li>
+<li>Conferma. Il mod avvisa che <strong>il cane verrà deselezionato e non ti seguirà più</strong>.</li>
+</ol>
+<p>Senza recinto: <em><span class="ig">Caramelo Rex needs a designated animal pen here to care for livestock.</span></em></p>
+<h3 id="cosa-fa-lì">Cosa fa lì</h3>
+<ul>
+<li><strong>Pattuglia il recinto.</strong></li>
+<li><strong>Calma la mandria.</strong> È questa la cosa principale: un animale stressato <strong>non dà latte né lana</strong>, abortisce e si sbanda appena compare uno zombie. Il cane tiene lo stress della mandria sotto il punto critico.</li>
+<li><strong>Elimina gli zombie in silenzio</strong> in un raggio di 12 caselle.</li>
+<li>Lavora <strong>anche con te dall'altra parte della mappa</strong>.</li>
+</ul>
+<p>Avvisi: <em><span class="ig">Caramelo Rex senses a zombie near the pen!</span></em> e <em><span class="ig">Caramelo Rex's herd is getting stressed!</span></em> Etichetta sopra la testa: <strong><span class="ig">Tending the livestock</span></strong>.</p>
+<h3 id="regole-importanti">Regole importanti</h3>
+<ul>
+<li>Mentre è in servizio, <strong>fame, sete e perdita di lealtà restano congelate</strong>. Se la cava da solo.</li>
+<li>Resta <strong>fuori da tutto il resto</strong>: non combatte per te, non caccia, non fa la sentinella, non usa la ciotola.</li>
+<li><strong>Un cane senza addestramento, sleale o nel panico STRESSA la mandria invece di calmarla.</strong> Non mettere un cucciolo non addestrato a badare alle vacche.</li>
+<li><strong>Riselezionare il cane annulla la modalità</strong> in automatico.</li>
+</ul>
+<p>Il <strong>Border Collie impara Herding due volte più in fretta</strong> delle altre razze, ma il lavoro può farlo qualsiasi razza.</p>
+<h2 id="14-bisacce-il-cane-come-mulo-da-carico">14. Bisacce: il cane come mulo da carico</h2>
+<h3 id="come-si-equipaggiano">Come si equipaggiano</h3>
+<ol>
+<li>Tieni le <strong><span class="ig">Bisacce per cani</span></strong> nell'inventario.</li>
+<li>Tasto destro sul cane → <strong><span class="ig">Metti le bisacce</span></strong>. <em><span class="ig">Bisacce fissate al cane.</span></em></li>
+<li>Per aprirle: <strong><span class="ig">Apri le bisacce</span></strong> (oppure la fetta del menu radiale, o il pulsante nella scheda Comandi).</li>
+<li>Per toglierle: <strong><span class="ig">Togli le bisacce</span></strong>. La bisaccia <strong>con dentro il carico</strong> cade a terra.</li>
+</ol>
+<h3 id="quanto-carico-porta">Quanto carico porta</h3>
+<p>La capacità viene da <strong>una base fissa più il gene di Forza del cane</strong>. Con i valori predefiniti:</p>
+<div class="tw"><table><thead><tr>
+<th>Razza</th>
+<th>Carico (peso)</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td><strong>da 4 a 5</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>da 6 a 7</td>
+</tr>
+<tr>
+<td>Pastore Tedesco, Border Collie, Rottweiler, Dobermann, Labrador</td>
+<td>da 6 a 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>da 13 a 16</strong></td>
+</tr>
+</tbody></table></div>
+<p>L'Husky è l'unico cane con un bonus di razza sulle bisacce (50% in più). Tutti gli altri dipendono solo dal gene di Forza, quindi due cani della stessa razza possono portare quantità diverse.</p>
+<p>Il server può regolare tutto questo con <strong><span class="ig">Capacità base delle bisacce</span></strong> e <strong><span class="ig">Bonus di carico da forza</span></strong>.</p>
+<h3 id="cosa-ci-puoi-mettere">Cosa ci puoi mettere</h3>
+<p>Quasi tutto, e il limite è di <strong>peso</strong>, non di numero di oggetti. Le eccezioni:</p>
+<ul>
+<li>Un'altra bisaccia.</li>
+<li>Un oggetto equipaggiato (vestito indossato, arma in mano).</li>
+<li><strong>Zaini e borse.</strong> Riponi quello che c'è dentro, non la borsa.</li>
+</ul>
+<p><strong>Le annotazioni sulla mappa non vengono conservate.</strong> Se riponi una mappa annotata, i segni si perdono: <em><span class="ig">Le annotazioni sulla mappa non vengono conservate nella bisaccia.</span></em></p>
+<h3 id="la-finestra">La finestra</h3>
+<p>Due liste affiancate: <strong><span class="ig">Il tuo inventario</span></strong> a sinistra (un clic deposita) e la bisaccia a destra (un clic preleva). In basso: <strong><span class="ig">Carico: 7/12</span></strong>.</p>
+<h3 id="dove-trovarle">Dove trovarle</h3>
+<p><strong>Creazione:</strong> 2x Strisce di cuoio + Ago + Filo (ago e filo non vengono consumati). Categoria Sartoria, richiede <strong>Sartoria livello 1</strong>. Dà 15 di XP di Sartoria.</p>
+<p><strong>Loot:</strong> negozi per animali, scatole di provviste per animali, negozi da campeggio, armadietti da caccia, kit di sopravvivenza, attrezzi da garage e casse delle fattorie.</p>
+<blockquote class="quote"><strong>Se il cane muore o viene lasciato libero, le bisacce e tutto il carico cadono a terra</strong> nel punto in cui si trovava.</blockquote>
+<h2 id="15-accoppiamento-e-cuccioli">15. Accoppiamento e cuccioli</h2>
+<h3 id="non-esiste-un-pulsante-accoppia">Non esiste un pulsante "accoppia"</h3>
+<p>L'accoppiamento è <strong>100% passivo</strong>. Non sei tu a ordinare a due cani di accoppiarsi. Tu prepari le condizioni e aspetti.</p>
+<p>Ogni ora di gioco, ogni femmina idonea con un maschio idoneo nei paraggi ha una probabilità di concepire da sola. Il valore predefinito è <strong>5% al giorno</strong> (opzione sandbox <strong><span class="ig">Probabilità di accoppiamento al giorno</span></strong>).</p>
+<h3 id="le-condizioni">Le condizioni</h3>
+<p>Tutte obbligatorie, in entrambi i cani:</p>
+<ol>
+<li>Sono tutti e due <strong>compagni dello stesso proprietario</strong>.</li>
+<li>Un <strong>maschio e una femmina adulti</strong>. Un cucciolo non si accoppia mai.</li>
+<li>Nessuno dei due ha <strong><span class="ig">Blocca accoppiamento</span></strong> attivo.</li>
+<li><strong>Stesso piano</strong> e a <strong>40 caselle o meno</strong> l'uno dall'altro.</li>
+<li>Nessuno dei due <strong>troppo ferito</strong> né <strong>intossicato</strong>.</li>
+<li><strong>Lealtà 60 o più</strong> in tutti e due.</li>
+<li><strong>Ben nutriti:</strong> fame <strong>e</strong> sete sotto la metà in tutti e due.</li>
+<li>La femmina <strong>non è incinta</strong> né nel <strong>cooldown di 7 giorni</strong> dopo un parto.</li>
+<li>C'è uno <strong>slot libero</strong> nel limite di cani.</li>
+<li>L'area deve essere <strong>caricata vicino a te</strong>.</li>
+</ol>
+<p>In pratica: <strong>due cani ben curati, insieme, con te nei paraggi</strong>. Se non succede, quasi sempre è fame, sete o lealtà.</p>
+<h3 id="il-rito-e-la-gestazione">Il rito e la gestazione</h3>
+<p>La femmina <strong>raggiunge il maschio a piedi</strong> (<em><span class="ig">Caramelo Rex sta raggiungendo il partner</span></em>) e concepisce appena gli arriva vicino. <em><span class="ig">Caramelo Rex è incinta</span></em>.</p>
+<ul>
+<li><strong>Gestazione: 4 giorni di gioco</strong> di base.</li>
+<li>L'orologio scorre <strong>anche con la cagna lontana o con te offline</strong>.</li>
+<li>Indicatori sopra la testa e nel menu: <strong><span class="ig">Incinta</span></strong> e, verso la fine, <strong><span class="ig">Parto imminente</span></strong>. Compaiono in rosa e <strong>sempre</strong>, anche con i testi di stato disattivati.</li>
+</ul>
+<h3 id="il-parto">Il parto</h3>
+<p>La dimensione della cucciolata dipende dalla razza <strong>della madre</strong>:</p>
+<div class="tw"><table><thead><tr>
+<th>Razza della madre</th>
+<th>Cucciolata</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>da 2 a 4</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>da 1 a 3</td>
+</tr>
+<tr>
+<td>Pastore Tedesco, Golden Retriever, Husky</td>
+<td>da 1 a 2</td>
+</tr>
+</tbody></table></div>
+<p><em><span class="ig">Caramelo Rex ha avuto una cucciolata</span></em>. Dopodiché, <strong>7 giorni di gioco di riposo</strong> prima di poter restare incinta di nuovo.</p>
+<blockquote class="quote">Se il server ha impostato un <strong>limite di cani</strong> e non c'è posto, la cucciolata viene tagliata per starci dentro (e la gravidanza finisce lo stesso). Con il valore di fabbrica, che è <strong>senza limite</strong>, questo non succede mai.</blockquote>
+<h3 id="cosa-eredita-il-cucciolo">Cosa eredita il cucciolo</h3>
+<ul>
+<li><strong>La linea di sangue è la media dei genitori.</strong> Un Caramelo con un Pastore Tedesco dà 50/50. Questo meticcio con un Pastore puro dà 25/75.</li>
+<li><strong>L'aspetto viene sorteggiato con un peso sulla linea di sangue.</strong> Un cucciolo 75% Pastore quasi sicuramente sembrerà un Pastore.</li>
+<li><strong>I geni stanno nella via di mezzo tra i genitori, con una variazione di più o meno 6%.</strong> È così che migliori una linea: accoppia i due cani più forti che hai, di continuo.</li>
+<li>Un cane con più di una razza viene segnato come <strong><span class="ig">Meticcio</span></strong>, e la finestra mostra il dettaglio (<span class="ig">50% Husky, 50% Pastore Tedesco</span>).</li>
+<li><strong>Il pedigree resta registrato:</strong> generazione, nome e razza del padre e della madre.</li>
+</ul>
+<h3 id="crescere-il-cucciolo">Crescere il cucciolo</h3>
+<ul>
+<li>Nasce <strong>passivo</strong> (in modalità Resta), con <strong>50 di lealtà</strong> (non zero), <strong>senza nessuna abilità</strong>, e visibilmente più piccolo.</li>
+<li><strong>Conta nel limite di cani fin dalla nascita.</strong></li>
+<li>Ci mette <strong>90 giorni di gioco</strong> a diventare adulto. L'orologio <strong>scorre sempre</strong>, anche con il cucciolo lontano e fuori portata. Se il tempo scade mentre è scaricato, diventa adulto appena gli torni vicino.</li>
+<li>Crescendo <strong>mantiene nome, legame, geni e abilità</strong>: <em><span class="ig">Caramelo Rex è cresciuto ed è diventato adulto</span></em>.</li>
+<li>Se ti piace il cucciolo piccolo, l'interruttore <strong><span class="ig">Ferma la crescita</span></strong> lo congela per sempre. <em><span class="ig">Cani che non crescono mai? Magari ci fosse questa opzione nella vita vera :D</span></em></li>
+</ul>
+<h2 id="16-più-cani-allo-stesso-tempo">16. Più cani allo stesso tempo</h2>
+<p>Puoi avere più cani, ma <strong>solo uno esce con te alla volta</strong>: è il cane <span class="ig">attivo</span>. Gli altri restano in attesa.</p>
+<blockquote class="quote"><strong>È previsto che questo cambi in una versione futura.</strong> Per ora, pianifica con un cane alla volta.</blockquote>
+<p><strong>Un cane passivo è in pausa totale.</strong> Ed è un bene: non è un peso morto da mantenere.</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Cane attivo</th>
+<th>Cane passivo</th>
+</tr></thead><tbody>
+<tr>
+<td>Ti segue</td>
+<td>Sì</td>
+<td>No, resta fermo dov'è</td>
+</tr>
+<tr>
+<td><strong>Sente fame e sete</strong></td>
+<td>Sì</td>
+<td><strong>No. E non le accumula per dopo</strong></td>
+</tr>
+<tr>
+<td><strong>Mangia nella ciotola</strong></td>
+<td>Sì</td>
+<td><strong>No, e non ne ha bisogno</strong></td>
+</tr>
+<tr>
+<td>Perde lealtà da solo</td>
+<td>Sì</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Combatte, fa la guardia, caccia</td>
+<td>Sì</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Accetta le coccole (e guadagna lealtà)</td>
+<td>Sì</td>
+<td><strong>Sì</strong></td>
+</tr>
+<tr>
+<td>Può accoppiarsi e avere cuccioli</td>
+<td>Sì</td>
+<td><strong>Sì</strong></td>
+</tr>
+<tr>
+<td>Conta per i moodle e il bonus di ricerca</td>
+<td>Sì</td>
+<td><strong>Sì, se è vicino</strong></td>
+</tr>
+</tbody></table></div>
+<p>Il punto che conta di più nel quotidiano: <strong>non devi dare da mangiare ai cani che stanno in attesa.</strong> Non soffrono la fame, non perdono lealtà e non muoiono di abbandono mentre aspettano. Quando ne selezioni uno, la sua fame riparte <strong>da dov'era rimasta</strong>, senza brutte sorprese accumulate.</p>
+<p>Per cambiare, tasto destro sul cane → <strong><span class="ig">Seleziona</span></strong>.</p>
+<p>Il menu di un cane passivo è ridotto di proposito: niente cibo, niente acqua, niente ordini di movimento, perché su di lui non hanno alcun effetto.</p>
+<h3 id="la-scheda-i-miei-cani-il-registro">La scheda "I Miei Cani": il registro</h3>
+<p>È il tuo registro dei cani. Elenca tutti i cani legati a te con ritratto, nome, razza, sesso, abilità e lo stato attuale:</p>
+<div class="tw"><table><thead><tr>
+<th>Stato</th>
+<th>Cosa significa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Attivo</strong></td>
+<td>È il cane che stai usando</td>
+</tr>
+<tr>
+<td><strong>Vicino</strong></td>
+<td>Caricato vicino a te</td>
+</tr>
+<tr>
+<td><strong>In braccio</strong></td>
+<td>Lo stai portando in braccio</td>
+</tr>
+<tr>
+<td><strong>Nel veicolo</strong></td>
+<td>Riposto in auto</td>
+</tr>
+<tr>
+<td><strong>Lontano</strong></td>
+<td>Legato a te, ma fuori portata. Mostra <span class="ig">visto Xh fa</span></td>
+</tr>
+<tr>
+<td><strong>Disperso</strong></td>
+<td>Sparito. Usa <strong>Porta</strong> da qui</td>
+</tr>
+<tr>
+<td><strong>Nessun dato</strong></td>
+<td>Non gli sei mai andato vicino dopo averlo legato a te</td>
+</tr>
+</tbody></table></div>
+<p>Tre pulsanti per ogni cane: <strong>Porta</strong> | <strong>Stato</strong> | <strong>Seleziona</strong>.</p>
+<p><strong>Porta</strong> su un cane vicino è un semplice teletrasporto. Su un cane <strong>lontano</strong> chiede conferma: <em><span class="ig">Richiamare Caramelo Rex da lontano? Il fischio forte attira gli zombi.</span></em> e fa ricomparire il cane, mantenendo abilità, geni, nome e bisacce.</p>
+<p><strong>Cooldown di 2 ore di gioco per cane.</strong> Se ci riprovi prima: <em><span class="ig">Caramelo Rex è stato richiamato da poco, aspetta un po' prima di richiamarlo.</span></em></p>
+<blockquote class="quote"><strong>È così che recuperi un cane perso.</strong> Se il cane è sparito, il mod avvisa: <em><span class="ig">Caramelo Rex è disperso! Apri I Miei Cani (pulsante zampa) per richiamarlo.</span></em></blockquote>
+<h2 id="17-la-finestra-del-cane">17. La finestra del cane</h2>
+<p>Puoi aprirla in quattro modi: il <strong>pulsante zampa</strong> subito sotto il pannello delle tue mani, il tasto <strong>Stato</strong>, l'opzione <strong><span class="ig">Stato</span></strong> nel menu contestuale, oppure il pulsante nella scheda I Miei Cani.</p>
+<p>La finestra è <strong>ridimensionabile</strong> e ricorda dove l'hai lasciata. In alto c'è l'<strong>avatar 3D del cane in tempo reale</strong> con il nome. Dentro l'auto compare la fascia <strong><span class="ig">Nel veicolo</span></strong>.</p>
+<h3 id="scheda-abilità-e-stato">Scheda "Abilità e stato"</h3>
+<ul>
+<li><strong>Lealtà</strong>, con barra e spiegazione al passaggio del mouse.</li>
+<li><strong>Bisogni:</strong> Fame, Sete, Salute, Stress.</li>
+<li><strong>Abilità:</strong> Fiuto, Combattimento, Obbedienza, Caccia, Herding, ognuna con barra di avanzamento e <strong><span class="ig">Liv X</span></strong>.</li>
+<li><strong>Tratti:</strong> Forza, Aggressività, Resistenza, mostrati come Basso / Medio / Alto.</li>
+<li><strong>Razza:</strong> nome, età (Adulto o Cucciolo), <span class="ig">(Meticcio)</span> quando è il caso, con la descrizione della razza al passaggio del mouse.</li>
+<li><strong>Uccisioni:</strong> quanti zombie e quante prede ha già abbattuto quel cane.</li>
+</ul>
+<p><strong>Ogni cosa ha la sua spiegazione al passaggio del mouse.</strong> Se non sai cosa fa una barra, passaci sopra il puntatore.</p>
+<h3 id="scheda-comandi">Scheda "Comandi"</h3>
+<ul>
+<li><strong>Modalità:</strong> Segui | Resta | Difendi</li>
+<li><strong>Sentinella:</strong> Avviso | Discreto | Silenzioso</li>
+<li><strong>Auto-protezione</strong> (attiva/disattiva)</li>
+<li><strong>Caccia</strong> (attiva/disattiva)</li>
+<li><strong>Care for livestock here</strong></li>
+<li><strong>Trucchi:</strong> quattro pulsanti (quelli bloccati restano disattivati, con il motivo al passaggio del mouse)</li>
+<li><strong>Apri le bisacce</strong></li>
+<li><strong>Azioni:</strong> Porta | Rinomina | Lascia andare</li>
+</ul>
+<p>Dentro un veicolo, tutto ciò che richiede il cane nel mondo resta disattivato (<em><span class="ig">Non disponibile mentre guidi, il tuo compagno è a bordo con te.</span></em>) e la riga delle azioni diventa <strong>Dai cibo | Rinomina | Dai acqua</strong>.</p>
+<h3 id="scheda-i-miei-cani">Scheda "I Miei Cani"</h3>
+<p>Vedi <a href="#16-più-cani-allo-stesso-tempo">Più cani contemporaneamente</a>.</p>
+<h3 id="scheda-impostazioni">Scheda "Impostazioni"</h3>
+<p>Queste opzioni sono <strong>tue</strong>, per giocatore, e non toccano nessun altro sul server:</p>
+<ul>
+<li><strong>Interfaccia:</strong> <span class="ig">Testi di stato: on/off</span> (le scritte che fluttuano sopra la testa del cane) e <span class="ig">Icona umore: on/off</span> (i moodle del cane).</li>
+<li><strong>Suono:</strong> volume principale, muto, e slider separati per <strong>Abbaio</strong>, <strong>Effetti</strong> e <strong>Ambiente</strong>.</li>
+<li><strong>Auto-nutrizione:</strong> lo slider <span class="ig">Mangia quando fame/sete raggiunge</span>.</li>
+<li><strong>Tasti di scelta rapida:</strong> le 14 azioni, con <strong>Riassegna</strong> e <strong>Cancella</strong>.</li>
+</ul>
+<blockquote class="quote">Se l'abbaiare ti dà fastidio, lo slider <strong>Abbaio</strong> qui risolve senza spegnere nessuna meccanica.</blockquote>
+<h2 id="18-cosa-vedi-sullo-schermo">18. Cosa vedi sullo schermo</h2>
+<h3 id="i-moodle-del-cane">I moodle del cane</h3>
+<p>Una colonna di icone tutta sua, <strong>a sinistra della normale colonna di moodle del gioco</strong>. Ogni razza ha il suo. Tutti i dettagli nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</p>
+<p>Quelli che può dare qualsiasi cane:</p>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Quando compare</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Affamato</strong></td>
+<td>Fame alta</td>
+<td>Solo un avviso</td>
+</tr>
+<tr>
+<td><strong>Assetato</strong></td>
+<td>Sete alta</td>
+<td>Solo un avviso</td>
+</tr>
+<tr>
+<td><strong>Intossicato</strong></td>
+<td>Ha mangiato cibo che gli fa male</td>
+<td>Solo un avviso</td>
+</tr>
+<tr>
+<td><strong>Ben Riposato</strong></td>
+<td>Hai dormito accanto al cane</td>
+<td>Allevia panico, stress, tristezza e noia, e ti stanchi più lentamente. Dura 2 ore di gioco di default</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Regola valida per tutti i moodle di razza:</strong> un cane <strong>sleale, malato, o molto affamato o assetato non dà nessun bonus</strong>. Il moodle si spegne e basta. Un cane curato bene è un cane che rende.</blockquote>
+<h3 id="i-testi-sopra-la-testa">I testi sopra la testa</h3>
+<p>Il cane impila diverse righe di stato sopra la testa, visibili fino a 14 caselle e solo se siete sullo stesso piano. Dall'alto in basso: l'avviso della sentinella, lo stato (<strong>Terrorizzato</strong>, <strong>Nel panico</strong>, <strong>Gravemente ferito</strong>, <strong>Disubbidiente</strong>, <strong>Ferito</strong>, <strong>Nervoso</strong>), cosa sta facendo (mangia, caccia, fiuta, bada al bestiame), la gravidanza e <strong>il nome</strong>, sempre per ultimo e più vicino alla testa.</p>
+<p>L'opzione <strong><span class="ig">Testi di stato: off</span></strong> (scheda Impostazioni) cancella tutto tranne il nome. L'opzione sandbox <strong><span class="ig">Mostra nomi sopra la testa</span></strong> spegne anche il nome.</p>
+<p><strong>Il cane di un altro giocatore</strong> mostra solo <strong><span class="ig">Proprietario: Tizio</span></strong>, la gravidanza e il nome.</p>
+<h3 id="il-segnalino-sulla-mappa">Il segnalino sulla mappa</h3>
+<p>Una <strong>zampa per ogni cane legato a te</strong>, sulla mappa del mondo e sulla minimappa.</p>
+<ul>
+<li><strong>Zampa marrone = cane attivo. Zampa grigia = cani passivi.</strong></li>
+<li>Sulla mappa del mondo la zampa ha accanto il nome del cane. Sulla minimappa no, e lì <strong>si incolla al bordo</strong> indicando la direzione quando il cane è fuori dalla vista.</li>
+<li>Finché il cane è caricato, il segnalino lo segue in tempo reale. Quando l'area si scarica, <strong>resta sull'ultima posizione vista</strong>.</li>
+</ul>
+<p><strong>È così che ritrovi un cane rimasto indietro, o il tuo cane dopo che sei morto.</strong> Il segnalino è puro overlay, non diventa mai un simbolo salvato sulla mappa.</p>
+<p>Si spegne con l'opzione sandbox <strong><span class="ig">Mostra cane su mappa</span></strong>.</p>
+<h2 id="19-gli-oggetti-del-mod">19. Gli oggetti del mod</h2>
+<p>Il mod aggiunge <strong>due oggetti che usi tu</strong> e nient'altro.</p>
+<h3 id="ciotola-per-cani">Ciotola per cani</h3>
+<p>La stazione di alimentazione. Peso 1,5.</p>
+<p><strong>Due ricette</strong>, entrambe senza bisogno di nessuna abilità e fatte a mano:</p>
+<ul>
+<li><strong>1 utensile da cucina</strong> (pentola, padella, teglia, bollitore, secchio, tazza, bottiglia...), che viene distrutto.</li>
+<li><strong>1 ciotola per animali del gioco base</strong>, distrutta.</li>
+</ul>
+<p><strong>Loot:</strong> scaffali dei negozi di animali, casse di forniture per animali, reparto casalinghi del supermercato, negozi di giardinaggio, casse di fattoria e giardinaggio, scorte del supermercato, cucine.</p>
+<h3 id="bisacce-per-cani">Bisacce per cani</h3>
+<p>Vedi <a href="#14-bisacce-il-cane-come-mulo-da-carico">Le bisacce</a>. Peso 1,0, con una buona riduzione del peso interno.</p>
+<h3 id="cosa-il-mod-non-ha">Cosa il mod NON ha</h3>
+<p>Per evitare ricerche inutili: <strong>la ciotola e le bisacce sono gli unici due oggetti del mod.</strong> Non esistono collari, snack speciali, giochi, cucce o canili da costruire. Il normale cibo per cani del gioco base è riconosciuto dal mod, ma è roba del gioco, non sua.</p>
+<h2 id="20-multiplayer">20. Multiplayer</h2>
+<p>Il mod è nato pensando al multiplayer, e funziona allo stesso modo in co-op e su server dedicato.</p>
+<h3 id="il-tuo-cane-è-tuo">Il tuo cane è tuo</h3>
+<p>La proprietà è legata al <strong>tuo account</strong>, non al personaggio e nemmeno allo slot di connessione. Riavviare il server non passa il tuo cane a qualcun altro.</p>
+<p><strong>Gli altri giocatori possono:</strong> vedere il cane, con il nome e <strong><span class="ig">Proprietario: Tizio</span></strong> sopra la testa.</p>
+<p><strong>Gli altri giocatori non possono:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Tentativo</th>
+<th>Cosa succede</th>
+</tr></thead><tbody>
+<tr>
+<td>Prenderlo in braccio</td>
+<td><em><span class="ig">Questo cane appartiene a un altro sopravvissuto.</span></em></td>
+</tr>
+<tr>
+<td>Dargli cibo o riaddomesticarlo</td>
+<td><em><span class="ig">Questo cane appartiene già a un altro sopravvissuto.</span></em> Controllato <strong>prima</strong> di consumare il cibo della persona</td>
+</tr>
+<tr>
+<td>Dargli ordini, rinominarlo, lasciarlo andare, toccare le bisacce</td>
+<td>Bloccato dal server</td>
+</tr>
+<tr>
+<td>Ucciderlo</td>
+<td>L'opzione non compare nemmeno, e il compagno è invincibile</td>
+</tr>
+</tbody></table></div>
+<h3 id="quando-ti-disconnetti">Quando ti disconnetti</h3>
+<p>Con l'opzione <strong><span class="ig">Metti via i cani col padrone offline</span></strong> attiva (è il default):</p>
+<ul>
+<li>I tuoi cani vengono <strong>messi via fuori dal mondo</strong>, con stato e bisogni <strong>congelati</strong>.</li>
+<li>Quando torni, il cane in <strong>Segui</strong> ricompare al tuo fianco; quelli in <strong>Resta</strong> e <strong>Difendi</strong> e i passivi ricompaiono <strong>dove li avevi lasciati</strong>, appena l'area si carica.</li>
+<li><strong>Non ritrovi il cane affamato.</strong> Il tempo offline non conta.</li>
+</ul>
+<p>Se la disattivi, i cani restano nel mondo, invincibili e fermi.</p>
+<h3 id="per-gli-amministratori">Per gli amministratori</h3>
+<p>C'è un <strong><span class="ig">Registro cani (admin)</span></strong>: ricerca per giocatore, stato Online/Offline, conteggio dei cani e pulsante Aggiorna. C'è anche un pannello per la <strong>regolazione delle prestazioni del server</strong> in tempo reale. Sono entrambi riservati agli admin.</p>
+<h3 id="avviso-di-installazione-in-co-op">Avviso di installazione in co-op</h3>
+<p><strong>Se il cane compare senza texture o tutto <span class="ig">schiacciato</span>:</strong> attiva Companion Dogs nella <strong>lista dei Mod del menu principale</strong> (non solo nella selezione del co-op) e <strong>chiudi del tutto il gioco</strong> prima di caricare il salvataggio. Anche l'host del co-op deve fare lo stesso e riavviare il server.</p>
+<h2 id="21-opzioni-di-sandbox">21. Opzioni di sandbox</h2>
+<p>Pagina <strong><span class="ig">Cani da compagnia</span></strong> nelle impostazioni del mondo. Sono 33 opzioni.</p>
+<blockquote class="quote"><strong>Ricorda:</strong> in multiplayer comanda la configurazione <strong>del server</strong>. E in Project Zomboid le opzioni di sandbox restano registrate <strong>nel salvataggio</strong>, quindi cambiarle dopo richiede di modificare il salvataggio o iniziare un mondo nuovo.</blockquote>
+<h3 id="addomesticamento-e-spawn">Addomesticamento e spawn</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Lealtà necessaria per addomesticare</td>
+<td>100</td>
+<td>Quanto cibo serve perché il cane diventi tuo</td>
+</tr>
+<tr>
+<td>Numero massimo di cani</td>
+<td><strong>0 (illimitati)</strong></td>
+<td>Tetto di cani legati a te</td>
+</tr>
+<tr>
+<td>Spawn randagi nelle città</td>
+<td>Attivo</td>
+<td>I cani compaiono da soli mentre esplori</td>
+</tr>
+<tr>
+<td>Moltiplicatore tasso di spawn cani</td>
+<td>1,0</td>
+<td>Scala tutti gli spawn. 0 li disattiva</td>
+</tr>
+<tr>
+<td>Cani selvatici invincibili</td>
+<td><strong>Disattivo</strong></td>
+<td>Evita che un cane libero muoia prima che tu lo addomestichi</td>
+</tr>
+<tr>
+<td>Debug spawn</td>
+<td>Attivo</td>
+<td>Menù di debug (solo admin in MP)</td>
+</tr>
+</tbody></table></div>
+<h3 id="combattimento">Combattimento</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Combattimento attivo</td>
+<td>Attivo</td>
+<td>L'interruttore principale del combattimento</td>
+</tr>
+<tr>
+<td>Moltiplicatore danno dei cani</td>
+<td>1,0</td>
+<td>Scala il danno. <strong>Il Caramelo continua a non finire uno zombie, per quanto in alto lo metti</strong></td>
+</tr>
+<tr>
+<td>Le uccisioni del cane contano per te</td>
+<td>Attivo</td>
+<td>Gli zombie uccisi dal cane si sommano al tuo contatore</td>
+</tr>
+</tbody></table></div>
+<h3 id="cure-e-legame">Cure e legame</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Bisogni e manutenzione</td>
+<td>Attivo</td>
+<td>L'interruttore principale di fame, sete, lealtà e stress</td>
+</tr>
+<tr>
+<td>Ritmo di fame e sete</td>
+<td>1,0</td>
+<td>Scala entrambe. <strong>0 le congela e il cane non ha mai più bisogno di mangiare</strong></td>
+</tr>
+<tr>
+<td>Calo lealtà giornaliero</td>
+<td>12,0</td>
+<td>Quanta lealtà svanisce ogni giorno</td>
+</tr>
+<tr>
+<td>Bonus legame (pet/sleep)</td>
+<td>Attivo</td>
+<td>Le coccole e il dormire insieme alleviano la tua noia e la tua tristezza</td>
+</tr>
+<tr>
+<td>Ben Riposato (dormire vicino al cane)</td>
+<td>Attivo</td>
+<td>Il bonus al risveglio</td>
+</tr>
+<tr>
+<td>Durata di Ben Riposato (ore)</td>
+<td>2,0</td>
+<td>Quanto dura</td>
+</tr>
+</tbody></table></div>
+<h3 id="comportamento">Comportamento</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Sentinella attiva</td>
+<td>Attivo</td>
+<td>L'interruttore principale della sorveglianza</td>
+</tr>
+<tr>
+<td>Auto-protezione attiva</td>
+<td>Attivo</td>
+<td>Abilita l'interruttore individuale di ogni cane</td>
+</tr>
+<tr>
+<td>Il rumore del cane attira gli zombie</td>
+<td>Attivo</td>
+<td>L'abbaio forte è rumore reale. <strong>Il ringhio non attira mai</strong></td>
+</tr>
+<tr>
+<td>I cani possono disobbedire</td>
+<td>Attivo</td>
+<td>La probabilità del 30% al livello 0, che scende a 0% al 10</td>
+</tr>
+</tbody></table></div>
+<h3 id="abilità-e-attività">Abilità e attività</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Abilità attive</td>
+<td>Attivo</td>
+<td>L'interruttore principale delle abilità</td>
+</tr>
+<tr>
+<td>Rate XP abilità</td>
+<td><strong>0,5</strong></td>
+<td>Velocità di addestramento. Alzalo a 1,0 o più se ti sembra lento</td>
+</tr>
+<tr>
+<td>Caccia assistita</td>
+<td>Attivo</td>
+<td>L'interruttore principale della caccia</td>
+</tr>
+<tr>
+<td>Farm care (herding)</td>
+<td>Attivo</td>
+<td>L'interruttore principale della modalità recinto</td>
+</tr>
+<tr>
+<td>Trucchi di obbedienza</td>
+<td>Attivo</td>
+<td>L'interruttore principale dei quattro trucchi</td>
+</tr>
+</tbody></table></div>
+<h3 id="bisacce">Bisacce</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Capacità base delle bisacce</td>
+<td>4</td>
+<td>Il minimo di carico</td>
+</tr>
+<tr>
+<td>Bonus di carico da forza</td>
+<td>8</td>
+<td>Quanto aggiunge sopra un cane molto forte</td>
+</tr>
+</tbody></table></div>
+<h3 id="cuccioli">Cuccioli</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Accoppiamento e cuccioli</td>
+<td>Attivo</td>
+<td>L'interruttore principale</td>
+</tr>
+<tr>
+<td>Durata della gravidanza (giorni)</td>
+<td>4</td>
+<td>Giorni di gioco fino al parto</td>
+</tr>
+<tr>
+<td>Tempo di maturazione del cucciolo (giorni)</td>
+<td>90</td>
+<td>Giorni per diventare adulto</td>
+</tr>
+<tr>
+<td>Probabilità di accoppiamento al giorno</td>
+<td>5,0</td>
+<td>Probabilità che una coppia concepisca da sola. 0 disattiva</td>
+</tr>
+</tbody></table></div>
+<h3 id="interfaccia-e-multiplayer">Interfaccia e multiplayer</h3>
+<div class="tw"><table><thead><tr>
+<th>Opzione</th>
+<th>Predefinito</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Mostra nomi sopra la testa</td>
+<td>Attivo</td>
+<td>Il nome fluttuante</td>
+</tr>
+<tr>
+<td>Mostra cane su mappa</td>
+<td>Attivo</td>
+<td>La zampetta sulla mappa e sulla minimappa</td>
+</tr>
+<tr>
+<td>Metti via i cani col padrone offline</td>
+<td>Attivo</td>
+<td>MP: i cani escono dal mondo quando ti disconnetti</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-problemi-comuni">22. Problemi comuni</h2>
+<p><strong><span class="ig">Il cane è comparso senza texture, tutto schiacciato.</span></strong> Attiva il mod nella lista dei Mod <strong>del menu principale</strong> e chiudi del tutto il gioco prima di caricare la partita. È il problema numero uno in co-op.</p>
+<p><strong><span class="ig">Ho aggiunto il mod e nel mio salvataggio non compare niente.</span></strong> Project Zomboid attiva i mod <strong>per salvataggio</strong>. Un mod aggiunto dopo non entra in un mondo già creato, e il gioco <strong>non dà nessun errore</strong>. Nella schermata di caricamento partita controlla che il mod sia spuntato per quel mondo.</p>
+<p><strong><span class="ig">Il mio cane non obbedisce.</span></strong> Guarda il messaggio. Se dice <em><span class="ig">non si fida abbastanza di te</span></em>, è lealtà: dagli da mangiare, dagli acqua e fagli le coccole. Se dice <em><span class="ig">si distrae e ti ignora</span></em>, manca addestramento: <strong>ripeti l'ordine, che la seconda volta passa sempre</strong>. Se è panico o una ferita, pensa prima a quello.</p>
+<p><strong><span class="ig">Il mio cane non uccide gli zombie, li butta solo a terra.</span></strong> Se è un <strong>Caramelo</strong> funziona così di proposito, e nessuna impostazione lo cambia. Prendi un'altra razza oppure accetta il suo ruolo: lui li stende e tu li finisci.</p>
+<p><strong><span class="ig">Il cane abbaia in continuazione e mi porta gli zombie.</span></strong> Le fonti possibili sono quattro, tutte controllabili: la <strong>sentinella su Avviso</strong> (passa a <strong>Discreto</strong>, che non abbaia mai), il trucco <strong>Distrai</strong> (il rumore è proprio il suo scopo), la <strong>caccia</strong> (spegni la modalità Caccia) e il <strong>combattimento</strong>. Un cane stressato <strong>non</strong> abbaia da solo.</p>
+<p><strong><span class="ig">Il mio cane è sparito.</span></strong> Apri la finestra con il pulsante a zampa, vai nella scheda <strong><span class="ig">I Miei Cani</span></strong> e usa <strong>Porta</strong>. Se è lontano, il mod chiede conferma e te lo riporta indietro con tutto quello che ha addosso. C'è un cooldown di 2 ore di gioco per cane. Anche il segnalino sulla mappa mostra l'ultima posizione vista.</p>
+<p><strong><span class="ig">Il cane resta bloccato dall'altra parte del recinto.</span></strong> Usa <strong>Porta</strong> (il fischio). Serve esattamente a questo, al prezzo di attirare zombie.</p>
+<p><strong><span class="ig">La mia cagna non resta incinta.</span></strong> Controlla la lista delle <a href="#15-accoppiamento-e-cuccioli">condizioni di accoppiamento</a>. Quasi sempre è fame, sete o lealtà sotto 60 in uno dei due. Controlla anche che <strong><span class="ig">Blocca accoppiamento</span></strong> non sia attivo.</p>
+<p><strong><span class="ig">Il mio cucciolo non cresce.</span></strong> Controlla che su di lui non sia attivo <strong><span class="ig">Ferma la crescita</span></strong>. A parte questo è solo questione di tempo: il valore predefinito è di <strong>90 giorni di gioco</strong>, e l'orologio corre anche con il cane lontano. Se il termine è già passato e resta cucciolo, avvicinati a lui: la trasformazione avviene quando il cucciolo è caricato.</p>
+<p><strong><span class="ig">Il cane non sale in macchina con me.</span></strong> Sale solo il cane in <strong>Segui</strong>. In Resta o Difendi rimane dov'è.</p>
+<p><strong><span class="ig">Ho lasciato il cane a sorvegliare la base e non ha fatto niente.</span></strong> La modalità Difendi, per ora, <strong>funziona solo con te nei paraggi</strong>. Per lasciare un cane a lavorare da solo e lontano, l'unica modalità che fa questo è <strong>Care for livestock here</strong>, e richiede un recinto designato.</p>
+<p><strong><span class="ig">Il cane impara troppo lentamente.</span></strong> Il valore predefinito di <strong><span class="ig">Rate XP abilità</span></strong> è <strong>0,5</strong>, cioè metà velocità. Alzalo a 1,0 o più in un mondo nuovo.</p>
+<p><strong><span class="ig">Il mio cane è morto.</span></strong> Non si torna indietro e non c'è respawn. L'unica causa è fame o sete portate all'estremo. Le bisacce e il carico restano a terra dove è caduto.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Nessun risultato per <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' risultati'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Inizio');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

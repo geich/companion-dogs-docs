@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Giống chó: 8 giống chó, moodle và đặc tính">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Giống chó">
+<meta property="og:description" content="Giống chó: 8 giống chó, moodle và đặc tính">
+<meta property="og:url" content="https://geich.github.io/companion-dogs-docs/vi/breeds.html">
+<meta property="og:image" content="https://geich.github.io/companion-dogs-docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/companion-dogs-docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Giống chó</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Mở mục lục" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Về trang chủ tài liệu"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Giống chó</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mở tài liệu Tính năng</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="tìm trong tài liệu..." aria-label="Tìm trong tài liệu" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Ngôn ngữ"><optgroup label="Đã duyệt"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Dịch máy"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi" selected>Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Đổi giao diện sáng/tối">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Dịch máy, chưa được kiểm tra.</b> Trang này được dịch bằng máy từ bản tiếng Bồ Đào Nha và chưa có ai kiểm lại. Thuật ngữ và con số có thể sai. Nếu thấy chỗ nào chưa rõ, hãy đối chiếu với bản tiếng Anh hoặc bản gốc tiếng Bồ Đào Nha. <a href="../en/breeds.html">Đọc bản tiếng Anh</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Mục lục &middot; <b>Giống chó</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-một-giống-chó-thật-sự-thay-đổi-những-gì" data-id="1-một-giống-chó-thật-sự-thay-đổi-những-gì">1. Một giống chó thật sự thay đổi những gì</a>
+<div class="sub">
+<a class="s3" href="#kích-thước-và-sức-mạnh-không-phải-một-thứ" data-id="kích-thước-và-sức-mạnh-không-phải-một-thứ">Kích thước và Sức mạnh không phải một thứ</a>
+<a class="s3" href="#một-giống-một-bộ-dạng" data-id="một-giống-một-bộ-dạng">Một giống, một bộ dạng</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-chọn-nhanh" data-id="2-chọn-nhanh">2. Chọn nhanh</a>
+<div class="sub">
+<a class="s3" href="#tóm-tắt-mỗi-giống-một-dòng" data-id="tóm-tắt-mỗi-giống-một-dòng">Tóm tắt mỗi giống một dòng</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-năm-giống-chó-của-mod-gốc" data-id="3-năm-giống-chó-của-mod-gốc">3. Năm giống chó của mod gốc</a>
+<div class="sub">
+<a class="s3" href="#chó-cỏ" data-id="chó-cỏ">Chó cỏ</a>
+<a class="s3" href="#chó-chăn-cừu-đức" data-id="chó-chăn-cừu-đức">Chó chăn cừu Đức</a>
+<a class="s3" href="#golden-retriever" data-id="golden-retriever">Golden Retriever</a>
+<a class="s3" href="#husky" data-id="husky">Husky</a>
+<a class="s3" href="#border-collie" data-id="border-collie">Border Collie</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-ba-giống-chó-addon" data-id="4-ba-giống-chó-addon">4. Ba giống chó addon</a>
+<div class="sub">
+<a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
+<a class="s3" href="#doberman" data-id="doberman">Doberman</a>
+<a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-bảng-so-sánh" data-id="5-bảng-so-sánh">5. Bảng so sánh</a>
+<div class="sub">
+<a class="s3" href="#tốc-độ-học" data-id="tốc-độ-học">Tốc độ học</a>
+<a class="s3" href="#chiến-đấu" data-id="chiến-đấu">Chiến đấu</a>
+<a class="s3" href="#bản-lĩnh-khi-giao-chiến" data-id="bản-lĩnh-khi-giao-chiến">Bản lĩnh khi giao chiến</a>
+<a class="s3" href="#đặc-tính-khoảng-giá-trị-lúc-sinh-ra" data-id="đặc-tính-khoảng-giá-trị-lúc-sinh-ra">Đặc tính (khoảng giá trị lúc sinh ra)</a>
+<a class="s3" href="#túi-yên" data-id="túi-yên">Túi yên</a>
+<a class="s3" href="#lứa-đẻ" data-id="lứa-đẻ">Lứa đẻ</a>
+<a class="s3" href="#tìm-từng-giống-ở-đâu" data-id="tìm-từng-giống-ở-đâu">Tìm từng giống ở đâu</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-moodle-danh-sách-đầy-đủ" data-id="6-moodle-danh-sách-đầy-đủ">6. Moodle: danh sách đầy đủ</a>
+<div class="sub">
+<a class="s3" href="#quy-tắc-chung-cho-mọi-moodle-theo-giống" data-id="quy-tắc-chung-cho-mọi-moodle-theo-giống">Quy tắc chung cho mọi moodle theo giống</a>
+<a class="s3" href="#các-moodle-theo-giống" data-id="các-moodle-theo-giống">Các moodle theo giống</a>
+<a class="s3" href="#các-moodle-mà-giống-nào-cũng-có" data-id="các-moodle-mà-giống-nào-cũng-có">Các moodle mà giống nào cũng có</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-đặc-tính-các-gen" data-id="7-đặc-tính-các-gen">7. Đặc tính (các gen)</a>
+<div class="sub">
+<a class="s3" href="#cách-đọc-các-nhãn" data-id="cách-đọc-các-nhãn">Cách đọc các nhãn</a>
+<a class="s3" href="#chuyện-này-quan-trọng-đến-mức-nào" data-id="chuyện-này-quan-trọng-đến-mức-nào">Chuyện này quan trọng đến mức nào</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-chó-lai-phối-hai-giống-khác-nhau" data-id="8-chó-lai-phối-hai-giống-khác-nhau">8. Chó lai: phối hai giống khác nhau</a>
+<div class="sub">
+<a class="s3" href="#chuyện-gì-xảy-ra-với-chó-con" data-id="chuyện-gì-xảy-ra-với-chó-con">Chuyện gì xảy ra với chó con</a>
+<a class="s3" href="#nhãn-lai" data-id="nhãn-lai">Nhãn "Lai"</a>
+<a class="s3" href="#có-đáng-phối-hai-giống-khác-nhau-không" data-id="có-đáng-phối-hai-giống-khác-nhau-không">Có đáng phối hai giống khác nhau không?</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-cài-đặt-các-addon" data-id="9-cài-đặt-các-addon">9. Cài đặt các addon</a>
+</div>
+<div class="grp">
+<a class="s2" href="#10-câu-hỏi-thường-gặp-về-giống-chó" data-id="10-câu-hỏi-thường-gặp-về-giống-chó">10. Câu hỏi thường gặp về giống chó</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-sổ-tay-giống-chó">Companion Dogs: Sổ tay giống chó</h1>
+<p>Hướng dẫn về tất cả các giống chó: mỗi giống làm tốt nhất việc gì, moodle, đặc tính và cách chọn con phù hợp với lối chơi của bạn.</p>
+<p>Muốn biết <strong>mod hoạt động ra sao</strong> (thuần hóa, mệnh lệnh, thức ăn, túi yên, trò khéo, săn mồi), hãy xem sổ tay còn lại: <a href="features.html" class="xlink">Tính năng</a>.</p>
+<blockquote class="quote"><strong>Các con số trong sổ tay này giả định bạn để nguyên thiết lập mặc định.</strong> Nếu máy chủ tắt <strong><span class="ig">Kỹ năng và huấn luyện</span></strong>, các giống chó ngừng <strong>tiến bộ</strong>: kỹ năng bị khóa ở mức 0, đường sát thương theo cấp trở thành chung chung, và bốn trò khéo mở khóa hết cùng một lúc (mod coi mọi con chó như đang ở Vâng lời 10). Những gì giống chó có <strong>từ lúc sinh ra</strong> thì vẫn còn nguyên: lực cắn cơ bản, khả năng quật ngã, độ lì khi đánh nhau, moodle riêng, túi yên và lứa đẻ. Thứ ẩn các trò khéo đi lại là một tùy chọn khác: <strong><span class="ig">Trò khéo theo Vâng lời</span></strong>.</blockquote>
+<h2 id="1-một-giống-chó-thật-sự-thay-đổi-những-gì">1. Một giống chó thật sự thay đổi những gì</h2>
+<p>Một giống chó chỉ tác động đến <strong>bảy thứ</strong>, ngoài ra không có gì khác:</p>
+<div class="tw"><table><thead><tr>
+<th>Thứ thay đổi</th>
+<th>Giải thích</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Tốc độ học</strong></td>
+<td>Mỗi giống học 5 kỹ năng với tốc độ khác nhau. Đây là thứ định hình giống chó rõ nhất</td>
+</tr>
+<tr>
+<td><strong>Lực cắn</strong></td>
+<td>Mỗi cú cắn gây bao nhiêu sát thương, và bao nhiêu phần trong đó phải luyện mới có</td>
+</tr>
+<tr>
+<td><strong>Độ lì khi đánh nhau</strong></td>
+<td>Nó tích bao nhiêu căng thẳng lúc giao chiến, và tới mức nào thì hoảng loạn rồi bỏ cuộc</td>
+</tr>
+<tr>
+<td><strong>Các đặc tính (gene)</strong></td>
+<td>Khoảng giá trị Sức mạnh, Độ hung hăng và Sức chịu đựng mà nó có thể sinh ra với</td>
+</tr>
+<tr>
+<td><strong>Moodle riêng</strong></td>
+<td>Một lợi ích cho <strong>bạn</strong>, miễn là con chó ở gần, được ăn no và trung thành</td>
+</tr>
+<tr>
+<td><strong>Lứa đẻ</strong></td>
+<td>Mỗi lần sinh được bao nhiêu chó con</td>
+</tr>
+<tr>
+<td><strong>Nơi nó xuất hiện trên bản đồ</strong></td>
+<td>Mỗi giống có những chỗ riêng của nó</td>
+</tr>
+</tbody></table></div>
+<p>Còn đây là những thứ <strong>KHÔNG</strong> đổi theo giống, dù nhiều người vẫn nghĩ ngược lại:</p>
+<ul>
+<li><strong>Tốc độ chạy.</strong> Không có giống nào chạy nhanh hơn. Tất cả chạy như nhau.</li>
+<li><strong>Tầm cảnh giới, đánh hơi và săn mồi.</strong> Chỉ phụ thuộc vào cấp kỹ năng. Giống chó quyết định bạn lên tới đó nhanh hay chậm, chứ không nâng trần lên được.</li>
+<li><strong>Các trò khéo.</strong> Cả bốn đều mở khóa theo cấp Vâng lời, giống hệt nhau ở mọi con chó.</li>
+<li><strong>Đói và khát.</strong> Nhịp độ giống nhau ở tất cả các giống (kể cả Husky, xem phần riêng của nó).</li>
+<li><strong>Sức chứa của túi yên</strong>, trừ Husky, giống duy nhất được cộng thêm nhờ giống chó.</li>
+<li><strong>Kích thước cơ thể không phải là Sức mạnh.</strong> Đây là hai chuyện tách biệt, và rất dễ nhầm vì chúng hay đi cùng nhau. Xem bên dưới.</li>
+</ul>
+<h3 id="kích-thước-và-sức-mạnh-không-phải-một-thứ">Kích thước và Sức mạnh không phải một thứ</h3>
+<p><strong>Sức mạnh</strong> là một gene và có tác dụng thật: nó tăng sát thương cú cắn thêm tối đa <strong>30%</strong>, và cũng chính nó quyết định sức chứa của túi yên.</p>
+<p><strong>Kích thước cơ thể</strong> lại là chuyện khác. Nó đến từ một gene riêng của game, thứ mà mod không bốc cũng không đụng vào, cộng thêm việc chó con lớn dần lên tới cỡ trưởng thành. Hai con chó cùng giống có thể to nhỏ khác nhau mà Sức mạnh vẫn y hệt, và một con to hơn con khác <strong>trong cùng một giống</strong> không vì thế mà cắn mạnh hơn.</p>
+<p>Cái gây nhầm lẫn là <strong>giống chó</strong> định đoạt cả hai thứ đó cùng lúc, mỗi thứ theo một đường riêng: Chó chăn cừu Đức thì to <strong>và</strong> sinh ra đã khỏe, Chó cỏ thì nhỏ <strong>và</strong> sinh ra đã yếu. Nên khi đem giống này so với giống kia, con to hơn đúng là thường cắn mạnh hơn thật. Chỉ có điều nguyên nhân là giống chó chứ không phải kích thước: nhìn vóc dáng thì chẳng biết được gì về Sức mạnh của một con chó cụ thể. Muốn biết thì có thanh Sức mạnh ở mục Đặc tính trong cửa sổ của chó.</p>
+<h3 id="một-giống-một-bộ-dạng">Một giống, một bộ dạng</h3>
+<p><strong>Không có chuyện khác màu trong cùng một giống.</strong> Mỗi giống chỉ có đúng một bộ hình ảnh, và con đực với con cái dùng chung. Husky nào cũng trông y như Husky nào.</p>
+<p>Chó con của giống nào cũng sinh ra với cùng một cỡ nhỏ, rồi lớn dần lên đúng vóc dáng trưởng thành của giống mình.</p>
+<h2 id="2-chọn-nhanh">2. Chọn nhanh</h2>
+<div class="tw"><table><thead><tr>
+<th>Nếu bạn muốn...</th>
+<th>Hãy chọn</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Sống sót qua những ngày đầu với bất cứ thứ gì gặp được</strong></td>
+<td><strong>Chó cỏ</strong></td>
+</tr>
+<tr>
+<td><strong>Một con chó giữ được trận tuyến và tự giết zombie</strong></td>
+<td><strong>Chó chăn cừu Đức</strong> hoặc <strong>Rottweiler</strong></td>
+</tr>
+<tr>
+<td><strong>Đi săn kiếm thịt</strong></td>
+<td><strong>Golden Retriever</strong> hoặc <strong>Labrador</strong></td>
+</tr>
+<tr>
+<td><strong>Chở đồ nhặt được</strong></td>
+<td><strong>Husky</strong>, khỏi phải bàn</td>
+</tr>
+<tr>
+<td><strong>Trông nom nông trại trong lúc bạn đi xa</strong></td>
+<td><strong>Border Collie</strong></td>
+</tr>
+<tr>
+<td><strong>Bắn súng chuẩn hơn</strong></td>
+<td><strong>Doberman</strong></td>
+</tr>
+<tr>
+<td><strong>Đánh cận chiến được lâu hơn</strong></td>
+<td><strong>Rottweiler</strong></td>
+</tr>
+<tr>
+<td><strong>Bớt chán chường và buồn bã</strong></td>
+<td><strong>Chó cỏ</strong></td>
+</tr>
+<tr>
+<td><strong>Bớt hoảng loạn</strong></td>
+<td><strong>Chó chăn cừu Đức</strong></td>
+</tr>
+<tr>
+<td><strong>Kiếm đồ được nhiều hơn</strong></td>
+<td><strong>Golden Retriever</strong></td>
+</tr>
+<tr>
+<td><strong>Không chết cóng</strong></td>
+<td><strong>Husky</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="tóm-tắt-mỗi-giống-một-dòng">Tóm tắt mỗi giống một dòng</h3>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Tóm trong một dòng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Chó cỏ</strong></td>
+<td>Con chó lai bình dân. Yếu, nhưng quật ngã được zombie và làm bạn thật sự</td>
+</tr>
+<tr>
+<td><strong>Chó chăn cừu Đức</strong></td>
+<td>Người lính. Đánh mạnh và gần như không hoảng loạn</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>Thợ săn mũi thính, đồng thời giúp bạn kiếm đồ tốt hơn</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Con thú chở đồ giữ ấm cho bạn giữa mùa đông. Bướng</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>Nhân công của nông trại</td>
+</tr>
+<tr>
+<td><strong>Rottweiler</strong></td>
+<td>Chiến binh giúp bạn tiết kiệm thể lực khi cận chiến</td>
+</tr>
+<tr>
+<td><strong>Doberman</strong></td>
+<td>Con chó của súng đạn: ít giật hơn, nạp đạn nhanh hơn, thần kinh vững</td>
+</tr>
+<tr>
+<td><strong>Labrador</strong></td>
+<td>Chuyên gia tha đồ: đánh nhau tệ nhất mod, mang con mồi về giỏi nhất</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-năm-giống-chó-của-mod-gốc">3. Năm giống chó của mod gốc</h2>
+<p>Những giống này có sẵn trong mod chính, bạn không cần cài thêm gì cả.</p>
+<hr>
+<h3 id="chó-cỏ">Chó cỏ</h3>
+<p><strong>Con chó lai đường phố của Brazil.</strong> Đây là con chó bạn sẽ gặp đầu tiên, và nhiều khả năng cũng là bạn đồng hành đầu tiên của bạn.</p>
+<blockquote class="quote quote-game"><em>"Chó cỏ là giống chó bình thường, phổ biến, loại chó lai bạn có thể bắt gặp khắp thành phố. Nó không có kỹ năng đặc biệt và vốn khá yếu: không thể tự giết một con zombie, chỉ có thể quật ngã để câu giờ cho bạn."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> nhà dân, trong thành phố hoặc khu dân cư. <strong>20% mỗi căn</strong>, giống phổ biến nhất game.</p>
+<p><strong>Học:</strong> mọi thứ ở tốc độ bình thường. Không có gì nổi trội, mà cũng không có gì kém.</p>
+<p><strong>Khi chiến đấu:</strong> đây là <strong>con chó duy nhất không kết liễu nổi một con zombie</strong>. Cú cắn của nó ghim con zombie ở mức gần chết rồi dừng lại ở đó. Đây là chủ ý thiết kế và <strong>không tùy chọn sandbox nào thay đổi được</strong>. Bù lại, nó <strong>quật ngã</strong> được, mà quật ngã zombie chính là thứ mua thời gian cho bạn chạy hoặc đánh trả.</p>
+<p>Nó cũng là <strong>con chó dễ hoảng nhất mod</strong>: khi đánh nhau, nó tích căng thẳng nhanh gấp năm lần một con Chó chăn cừu Đức, và luôn là con hoảng loạn đầu tiên.</p>
+<p><strong>Đặc tính:</strong> thấp nhất trong tất cả. Trong cửa sổ của chó, nó <strong>luôn luôn</strong> hiện <strong>Thấp</strong> ở Sức mạnh, Độ hung hăng và Sức chịu đựng, ở bất kỳ con Chó cỏ nào bạn thuần hóa. Có đi tìm một con Chó cỏ <span class="ig">xịn</span> cũng vô ích.</p>
+<p><strong>Lứa đẻ:</strong> <strong>2 đến 4 chó con</strong>, nhiều nhất mod. Nếu mục tiêu của bạn là gây dựng cả một đàn, đây là giống đẻ khỏe nhất.</p>
+<p><strong>Túi yên:</strong> chứa 4 đến 5. Ít nhất.</p>
+<p><strong>Moodle: <span class="ig">Có bạn bên cạnh</span></strong></p>
+<blockquote class="quote quote-game"><em>"Chó cỏ là giống chó lai rất tình cảm và dễ mến. Sự đồng hành trung thành của nó giúp bạn lên tinh thần, khiến nỗi buồn và sự chán chường tan nhanh hơn khi nó ở gần."</em></blockquote>
+<p>Nó liên tục làm giảm <strong>Buồn bã và Chán chường</strong> khi con chó còn ở gần. Đây là một trong những moodle hữu dụng nhất mod trong sinh hoạt hằng ngày, vì chán chường và buồn bã là chuyện xảy ra liên tục trong Zomboid mà xử lý bằng cách khác thì rất tốn kém.</p>
+<p><strong>Hợp với ai:</strong> hợp với tất cả mọi người, ở giai đoạn đầu. Về sau vẫn tốt, vì moodle của nó giải quyết một vấn đề mà không giống nào khác lo được. Chỉ là đừng trông chờ nó giết được thứ gì.</p>
+<hr>
+<h3 id="chó-chăn-cừu-đức">Chó chăn cừu Đức</h3>
+<p><strong>Con chó của chiến trận.</strong> Giống chuyên chiến đấu của mod gốc.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó nghiệp vụ mạnh mẽ và thông minh. Bẩm sinh khỏe và lì đòn hơn chó cỏ rất nhiều, học Chiến đấu và Vâng lời nhanh, gần như không mất bình tĩnh khi giao chiến, có thể giữ vững vị trí trước cả đàn zombie mà không hoảng loạn, đồng thời tự hạ gục một con zombie."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> đồn cảnh sát, nhà tù, trại giam, căn cứ quân sự, doanh trại, tiệm súng, kho đạn. <strong>20% mỗi tòa nhà.</strong> Nó không xuất hiện ở nhà dân. Bạn phải chủ động đi tìm.</p>
+<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong>, và Vâng lời nhanh hơn 50%. Săn mồi cũng nhanh hơn một chút. Đây là giống mạnh lên nhanh nhất.</p>
+<p><strong>Khi chiến đấu:</strong> cú cắn mạnh nhất mod gốc, và <strong>tự giết được zombie</strong>. Nhưng thứ tạo nên khác biệt của nó thậm chí không phải sát thương, mà là <strong>bản lĩnh</strong>. Nó tích căng thẳng <strong>chậm hơn Chó cỏ năm lần</strong>, và ngưỡng hoảng loạn của nó cao nhất mod. Trên thực tế: <strong>nó vẫn đánh tiếp trong những tình huống mà bất kỳ giống nào khác cũng đã đứng hình từ lâu</strong>.</p>
+<p><strong>Đặc tính:</strong> khoảng trung bình ở mọi mặt, cao hơn Chó cỏ rất nhiều. Một con Chó chăn cừu Đức sẽ hiện <strong>Trung bình</strong> ở cả ba đặc tính.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
+<p><strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Moodle: <span class="ig">Can đảm</span></strong></p>
+<blockquote class="quote quote-game"><em>"Một chú chó chăn cừu Đức gan dạ bên cạnh giúp bạn vững tinh thần: sự hiện diện không biết sợ của nó làm giảm hoảng loạn khi ở gần."</em></blockquote>
+<p>Nó liên tục kéo <strong>Hoảng loạn</strong> xuống. Xét về con số thì đây là moodle mạnh nhất của mod gốc, và nó xử lý một vấn đề nghiêm túc: hoảng loạn làm hỏng đường ngắm của bạn và làm bạn đánh cận chiến kém hẳn đi. Có một con Chó chăn cừu Đức ở gần, bạn đánh nhau với đôi tay vững hơn nhiều.</p>
+<p><strong>Hợp với ai:</strong> hợp với người thích đánh nhau. Nếu bạn chơi kiểu lao vào ăn thua và ở luôn giữa thành phố, đây chính là giống dành cho bạn.</p>
+<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói <span class="ig">chỉ nhận một phần ba mức căng thẳng</span>, nhưng con số thật là <strong>một phần năm</strong>. Dòng chữ đó khiêm tốn quá mức, con chó còn ngon hơn những gì nó hứa.</blockquote>
+<hr>
+<h3 id="golden-retriever">Golden Retriever</h3>
+<p><strong>Con chó săn mũi thính.</strong> Giống chó giúp bạn kiếm đồ tốt hơn.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó săn thân thiện, thính mũi và có bản năng săn mồi tự nhiên: học Săn mồi nhanh gấp đôi, đồng thời có thể tự hạ gục zombie (dù dễ mất bình tĩnh hơn chó chăn cừu Đức). Chiếc mũi thính giúp bạn kiếm đồ và lần theo thú rừng từ xa hơn."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> nhà dân, ở một lượt quay riêng tách khỏi Chó cỏ. <strong>5% mỗi căn.</strong> Hiếm gấp bốn lần so với Chó cỏ, nhưng lại ở cùng loại nhà: một căn có thể có cả hai.</p>
+<p><strong>Học:</strong> <strong>Săn mồi nhanh gấp đôi</strong>, và Đánh hơi nhanh hơn 50%. Đây là giống lên tới Săn mồi cấp 6 sớm nhất, tức là lúc con chó bắt đầu dám đấu với hươu.</p>
+<p><strong>Khi chiến đấu:</strong> sát thương trung bình, <strong>tự giết được zombie</strong>. Nó căng thẳng nhiều hơn Chó chăn cừu Đức, nhưng ít hơn Chó cỏ.</p>
+<p><strong>Đặc tính:</strong> nhỉnh hơn Chó cỏ một chút, thấp hơn Chó chăn cừu Đức. Đây không phải con chó để đánh nhau.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
+<p><strong>Túi yên:</strong> 6 đến 7.</p>
+<p><strong>Moodle: <span class="ig">Mũi thính</span></strong></p>
+<blockquote class="quote quote-game"><em>"Golden Retriever cùng bạn rà soát mặt đất. Khi ở gần, được ăn no và trung thành, nó giúp bạn phát hiện đồ kiếm được từ xa hơn và học Kiếm đồ, Đặt bẫy cùng Ngắm bắn nhanh hơn."</em></blockquote>
+<p>Ba hiệu ứng:</p>
+<ul>
+<li><strong>+20% XP</strong> cho <strong>Kiếm đồ, Đặt bẫy và Ngắm bắn</strong>.</li>
+<li><strong>+4 ô</strong> vào tầm nhìn của bạn trong Chế độ tìm kiếm, <strong>cộng thêm</strong> vào phần thưởng mà con chó nào cũng có sẵn.</li>
+</ul>
+<p>Đây là moodle làm thay đổi nhịp chơi của một nhân vật sống ở vùng quê nhiều nhất. Kiếm đồ và Đặt bẫy là hai kỹ năng lên rất chậm, còn Ngắm bắn thì đắt đỏ.</p>
+<p><strong>Hợp với ai:</strong> hợp với người sống bằng săn bắn, kiếm đồ và đặt bẫy. Rất ăn ý với một căn cứ ở vùng quê.</p>
+<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói nó học Chiến đấu <span class="ig">nhanh hơn chó cỏ một chút</span>. Không đúng: nó học Chiến đấu đúng bằng tốc độ của Chó cỏ.</blockquote>
+<hr>
+<h3 id="husky">Husky</h3>
+<p><strong>Con thú chở đồ.</strong> Con chó khỏe nhất mod, và là con duy nhất biết sưởi ấm.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó kéo xe phương Bắc khỏe bền: mạnh nhất trong các giống, sinh ra để chở hàng (túi yên của nó chứa được nhiều nhất) và sống sót trong giá lạnh. Bướng bỉnh (học Vâng lời chậm hơn), thân thiện (canh gác kém) và ăn khỏe."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> hai nguồn.</p>
+<ul>
+<li><strong>Nhà dân, chỉ vào mùa đông.</strong> 2,5% mỗi căn. Không đúng mùa thì đây là giống hiếm nhất game.</li>
+<li><strong>Cửa hàng thú cưng và phòng khám thú y.</strong> 10% mỗi tòa nhà, quanh năm. Đây là cách chắc ăn để kiếm một con.</li>
+</ul>
+<p><strong>Học:</strong> <strong>Đánh hơi nhanh gấp đôi</strong> (khả năng cảnh giới tốt nhất mod), Săn mồi nhanh hơn 50%, và Chiến đấu nhỉnh hơn mức trung bình. <strong>Nhưng nó học Vâng lời chậm hơn 20%</strong>, và đó là <strong>điểm trừ theo giống duy nhất trong cả mod</strong>. Đây là chủ ý: nó bướng thật.</p>
+<p>Hệ quả thực tế của việc Vâng lời lên chậm: nó lâu mở khóa các trò khéo hơn, không nghe lời trong thời gian dài hơn, và ngưỡng trung thành tối thiểu của nó hạ xuống chậm hơn. Nuôi một con Husky cần nhiều kiên nhẫn hơn.</p>
+<p><strong>Khi chiến đấu:</strong> sát thương trên mức trung bình, <strong>tự giết được zombie</strong>, nhưng nó không phải chiến binh. Nó căng thẳng hơn Chó chăn cừu Đức khá nhiều.</p>
+<p><strong>Đặc tính:</strong> <strong>khoảng Sức mạnh cao nhất mod, bỏ xa phần còn lại</strong>. Một con Husky sẽ hiện <strong>Trung bình hoặc Cao</strong> ở Sức mạnh, trong khi các giống khác chỉ nằm ở Trung bình hoặc Thấp.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
+<p><strong>Túi yên: chứa 13 đến 16.</strong> Đây là giống duy nhất có thưởng túi yên (+50%), và khác biệt là rất lớn: nó chở được <strong>gấp hai đến ba lần</strong> bất kỳ con chó nào khác.</p>
+<p><strong>Moodle: <span class="ig">Được sưởi ấm</span></strong></p>
+<blockquote class="quote quote-game"><em>"Husky san sẻ gánh nặng khi ở bên bạn. Khi ở gần, được ăn no và trung thành, nó gánh bớt một phần đồ đạc để bạn mang được nhiều hơn, giúp giữ sức nên mệt chậm hơn; khi trời lạnh, bộ lông dày của nó còn giúp bạn giữ ấm."</em></blockquote>
+<p>Ba hiệu ứng:</p>
+<ul>
+<li><strong>+2 vào khối lượng tối đa bạn mang được</strong> (khoản này tính riêng, ngoài những gì cất trong túi yên của nó).</li>
+<li><strong>Thể lực hồi liên tục</strong>, bạn mệt chậm hơn.</li>
+<li><strong>Một nguồn sưởi di động</strong>, thứ <strong>tự bật khi bạn bắt đầu thấy lạnh</strong> và tự tắt khi bạn ấm lại. Mùa đông thì coi như bạn đi đâu cũng có một đống lửa bên cạnh.</li>
+</ul>
+<p><strong>Hợp với ai:</strong> hợp với người đi những chuyến nhặt đồ dài ngày rồi vác đầy đồ trở về, và với người chơi mùa đông khắc nghiệt. Đây là con chó lo hậu cần.</p>
+<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói <span class="ig">ăn khỏe (nhanh đói)</span>. <strong>Điều đó không đúng với con chó đã được thuần hóa.</strong> Nhịp đói của bạn đồng hành là như nhau ở mọi giống. Cái bụng to hơn kia chỉ tồn tại khi nó còn là chó hoang.</blockquote>
+<hr>
+<h3 id="border-collie">Border Collie</h3>
+<p><strong>Con chó của nông trại.</strong> Giống chuyên chăn đàn.</p>
+<blockquote class="quote quote-game"><em><span class="ig">Một giống chó chăn đàn thông minh, bền bỉ và là bạn đồng hành quen thuộc ở nông trại, nổi bật nhất nhờ trí thông minh.</span></em></blockquote>
+<p><strong>Tìm ở đâu:</strong> nhà kho, chuồng ngựa, silo, chuồng gà, chuồng gia súc, ở <strong>vùng quê</strong>. <strong>15% mỗi tòa nhà</strong>, và lượt quay này <strong>bỏ qua bộ lọc đô thị</strong>, nên một trang trại nằm lọt thỏm giữa đồng không mông quạnh vẫn được tính.</p>
+<p><strong>Học:</strong> <strong>Chăn đàn nhanh gấp đôi</strong>, Vâng lời nhanh hơn 50%, và Đánh hơi nhỉnh hơn mức trung bình.</p>
+<p><strong>Khi chiến đấu:</strong> sát thương trung bình, ngang Golden Retriever. <strong>Tự giết được zombie.</strong> Nó căng thẳng ít hơn Chó cỏ, nhưng nhiều hơn Chó chăn cừu Đức khá xa. Đây không phải chó để đánh nhau, mà là chó làm việc.</p>
+<p><strong>Đặc tính:</strong> các khoảng đều ở mức trung bình, nhỉnh hơn Golden Retriever một chút.</p>
+<p><strong>Lứa đẻ:</strong> <strong>1 đến 3</strong>, nhiều thứ hai trong mod gốc.</p>
+<p><strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Sở trường thật sự:</strong> vùng làm dịu của nó <strong>hiệu quả hơn 50% trên mỗi cấp</strong> so với bất kỳ giống nào khác. Điều này đúng ở cả hai chỗ mà vùng làm dịu tồn tại:</p>
+<ul>
+<li>ở chế độ <strong><span class="ig">Chăm đàn vật nuôi ở đây</span></strong>, khi nó trực trong chuồng;</li>
+<li>ở moodle của nó, thứ làm dịu đàn vật nuôi quanh <strong>bạn</strong>.</li>
+</ul>
+<p>Vì con vật bị căng thẳng thì không cho sữa, không cho len, dễ sảy thai và bỏ đàn chạy tán loạn, một con Border Collie được huấn luyện đúng là ranh giới giữa một nông trại có sản lượng và một nông trại chẳng ra gì.</p>
+<p><strong>Moodle: <span class="ig">Bản năng chăn đàn</span></strong></p>
+<blockquote class="quote quote-game"><em>"Border Collie cùng bạn chăm đàn vật nuôi. Khi ở gần, được ăn no và trung thành, nó giúp những con vật xung quanh bình tĩnh hơn, đồng thời giúp bạn học Chăm sóc động vật và Trồng trọt nhanh hơn."</em></blockquote>
+<p>Hai hiệu ứng:</p>
+<ul>
+<li><strong>+20% XP</strong> cho <strong>Chăm sóc động vật và Trồng trọt</strong>.</li>
+<li><strong>Làm dịu đàn vật nuôi trong một bán kính quanh bạn</strong>, tự động, trong lúc bạn làm việc.</li>
+</ul>
+<p><strong>Hợp với ai:</strong> hợp với người xây dựng nông trại. Nếu bạn nuôi bò, cừu hay gà, đây là giống bảo vệ sản lượng cho bạn.</p>
+<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game vẫn nói nó <span class="ig">là giống chó cân bằng, làm được nhiều việc nhưng không có sở trường vượt trội</span>. Câu đó đã lỗi thời: Chăn đàn nhân đôi và vùng làm dịu được tăng cường đều đã có rồi.</blockquote>
+<h2 id="4-ba-giống-chó-addon">4. Ba giống chó addon</h2>
+<p>Ba giống này nằm trong <strong>các mod riêng trên Steam</strong>, và cần có mod Companion Dogs gốc mới chạy được. Link của từng giống nằm ngay trong phần giới thiệu bên dưới, và được gom lại ở mục <a href="#9-cài-đặt-các-addon">Cài đặt các mod addon</a>.</p>
+<hr>
+<h3 id="rottweiler">Rottweiler</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, mod addon riêng)</em></p>
+<p><strong>Chiến binh giúp bạn đỡ tốn thể lực.</strong></p>
+<blockquote class="quote quote-game"><em>"Một giống chó canh gác mạnh mẽ được nuôi cho công việc bảo vệ, một chiến binh thực thụ ngang tầm chó chăn cừu Đức: nó học Chiến đấu nhanh gấp đôi, đánh rất mạnh khi lên cấp cao, quật ngã zombie và vẫn tiếp tục chiến đấu ở nơi mà hầu hết các giống khác đã hoảng loạn."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong></p>
+<ul>
+<li><strong>Tòa nhà công nghiệp</strong> (nhà kho, nhà xưởng, nhà máy, bãi phế liệu, xưởng sửa chữa, bến bốc hàng): <strong>10% mỗi tòa nhà</strong>.</li>
+<li><strong>Nhà dân:</strong> 5% mỗi căn, một cơ hội hiếm.</li>
+</ul>
+<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong>, và Đánh hơi nhanh hơn 50% (con chó chiến đấu duy nhất có mũi tốt). Không có thưởng cho Vâng lời.</p>
+<p><strong>Khi chiến đấu:</strong> cú cắn ngang với chó chăn cừu Đức, và <strong>thần kinh cũng ngang ngửa</strong>: nó tích căng thẳng chậm hơn chó cỏ năm lần và có ngưỡng hoảng loạn cao nhất. Nó quật ngã và giết được zombie.</p>
+<p><strong>Đặc tính:</strong> giống hệt chó chăn cừu Đức.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Moodle: <span class="ig">Tuyến đầu</span></strong></p>
+<blockquote class="quote quote-game"><em>"Rottweiler của bạn đang chiến đấu bên cạnh bạn. Khi nó giao chiến ở gần bạn, được ăn no và trung thành, các đòn cận chiến của bạn tiêu hao ít thể lực hơn."</em></blockquote>
+<p><strong>Hoàn lại 35% thể lực đã tiêu hao cho mỗi đòn cận chiến.</strong></p>
+<p>Đây là moodle nhiều điều kiện nhất mod: biểu tượng hiện lên bất cứ khi nào Rottweiler ở gần, nhưng <strong>hiệu ứng chỉ có tác dụng trong lúc nó thật sự đang đánh nhau</strong>. Và nó chỉ áp dụng cho <strong>cận chiến</strong>, súng thì không được gì.</p>
+<p>Trên thực tế, chỗ này rất lớn. Thể lực chính là thứ giới hạn số zombie bạn đánh liên tục được. Có một con Rottweiler đánh nhau bên cạnh, bạn đánh được nhiều hơn gần một phần ba trước khi hụt hơi.</p>
+<p><strong>Hợp với ai:</strong> hợp với người dọn đàn zombie bằng cận chiến. Đây là giống ăn ý nhất mod với lối chơi hung hăng.</p>
+<hr>
+<h3 id="doberman">Doberman</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, mod addon riêng)</em></p>
+<p><strong>Chó của xạ thủ.</strong></p>
+<blockquote class="quote quote-game"><em>"Một giống chó canh gác thon gọn, luôn cảnh giác và học nhanh nhất trong tất cả các giống. Khi giao chiến, nó thiên hẳn về tấn công mà không có phòng thủ: yếu lúc chưa được huấn luyện, nhưng khi Chiến đấu đạt cấp tối đa thì cắn rất mạnh, dù chịu đòn kém hơn Rottweiler."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong></p>
+<ul>
+<li><strong>Đồn cảnh sát:</strong> 18% mỗi tòa nhà.</li>
+<li><strong>Công trình quân sự</strong> (kho đạn, doanh trại, hầm ngầm, chốt gác, trạm kiểm soát): 22% mỗi tòa nhà.</li>
+</ul>
+<blockquote class="quote"><strong>Lưu ý thực tế:</strong> công trình quân sự <strong>cực kỳ hiếm</strong> trên bản đồ gốc của game (cả bang Kentucky chỉ có chừng năm căn phòng như vậy). Trên thực tế, hãy tìm ở <strong>đồn cảnh sát</strong>.</blockquote>
+<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong> và <strong>Vâng lời nhanh hơn 50%</strong>, đúng y bộ của chó chăn cừu Đức. Thứ tách hai giống này ra không phải tốc độ huấn luyện, mà là <strong>đường cong sát thương</strong>.</p>
+<p><strong>Khi chiến đấu:</strong> nó có <strong>đường cong dốc nhất mod</strong>. Chưa huấn luyện thì nó đánh yếu hơn Rottweiler khá nhiều, nhưng ở Chiến đấu cấp 10 thì nó <strong>lên tới đỉnh</strong>. Đây là một khoản đầu tư: con Doberman vừa thuần hóa xong thì yếu, còn con Doberman đã huấn luyện thì thuộc hàng đầu.</p>
+<p>Thần kinh vững (ngưỡng hoảng loạn cao nhất), nhưng <strong>chịu đòn kém hơn</strong>: Sức chịu đựng của nó thấp nhất trong nhóm chó chiến.</p>
+<p><strong>Đặc tính:</strong> <strong>khoảng Độ hung hăng cao nhất mod</strong>, nghĩa là nó còn nhận XP chiến đấu nhanh hơn nữa. Sức mạnh và Sức chịu đựng thấp hơn Rottweiler một chút.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Moodle: <span class="ig">Ngắm vững</span></strong></p>
+<blockquote class="quote quote-game"><em>"Doberman của bạn đang canh chừng phía sau. Khi nó ở gần, được ăn no và trung thành, căng thẳng của bạn giảm dần, tầm ngắm hồi phục nhanh hơn sau mỗi phát bắn và bạn nạp đạn nhanh hơn."</em></blockquote>
+<p>Ba hiệu ứng, tất cả đều dành cho <strong>súng</strong>:</p>
+<ul>
+<li><strong>Căng thẳng của bạn giảm liên tục</strong> (căng thẳng cao làm tay ngắm tệ đi trong Zomboid).</li>
+<li><strong>Độ giật hồi phục nhanh hơn 45%</strong> sau mỗi phát bắn. Bạn ngắm lại được sớm hơn.</li>
+<li><strong>Nạp đạn nhanh hơn 15%.</strong></li>
+</ul>
+<p><strong>Hợp với ai:</strong> hợp với người chơi bằng súng. Cả ba hiệu ứng đều dồn vào cùng một chuyện: <span class="ig">mình mất bao nhiêu thời gian giữa phát bắn này và phát bắn tiếp theo</span>.</p>
+<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói nó luyện Vâng lời <span class="ig">còn nhanh hơn cả chó chăn cừu Đức</span> và khi Chiến đấu đạt cấp tối đa thì <span class="ig">cắn mạnh hơn bất kỳ con chó nào khác</span>. Cả hai trường hợp đều là <strong>ngang bằng</strong>, không phải hơn: nó ngang chó chăn cừu Đức về Vâng lời và ngang Rottweiler về sát thương ở cấp 10.</blockquote>
+<hr>
+<h3 id="labrador">Labrador</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, mod addon riêng)</em></p>
+<p><strong>Chuyên gia tha mồi.</strong> Giống chó săn giỏi nhất, và cố ý là kẻ đánh nhau tệ nhất mod.</p>
+<blockquote class="quote quote-game"><em>"Chó săn sinh ra để tha về: nó luyện Săn bắn nhanh gấp đôi, Vâng lời theo ngay sau. Đổi lại, nó cố tình là kẻ đánh nhau tệ nhất trong nhà: cú cắn yếu nhất, không quật ngã được ai, và một trận ẩu đả khiến nó hoảng nặng. Tài thật sự của nó nằm ở cái miệng."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong></p>
+<ul>
+<li><strong>Nhà dân:</strong> <strong>10% mỗi căn.</strong> Đây là giống addon dễ gặp nhất, gấp đôi tỷ lệ của Golden Retriever.</li>
+<li><strong>Vùng hoang dã:</strong> lều săn, khu cắm trại, nhà thuyền, chòi câu cá, trạm kiểm lâm. <strong>20% mỗi tòa nhà.</strong></li>
+</ul>
+<p><strong>Học:</strong> <strong>Săn mồi nhanh gấp đôi</strong> và <strong>Vâng lời nhanh hơn 50%</strong>. Đây là bộ của một thợ săn có kỷ luật.</p>
+<p><strong>Khi chiến đấu:</strong> <strong>tệ nhất mod, và là cố ý</strong>.</p>
+<ul>
+<li><strong>Cú cắn yếu nhất</strong> trong tất cả.</li>
+<li><strong>Không quật ngã được zombie.</strong> Đây là giống duy nhất không làm được việc đó.</li>
+<li>Tích căng thẳng <strong>nhanh gấp ba lần rưỡi</strong> so với Rottweiler, và hoảng loạn ở đúng cái ngưỡng thấp của chó cỏ.</li>
+</ul>
+<p>Nó <strong>giết</strong> được zombie nếu bạn cố, nhưng đừng bắt con chó này đi đánh nhau.</p>
+<p><strong>Đặc tính:</strong> <strong>khoảng Độ hung hăng thấp nhất mod</strong>. Nó là con chó hiền nhất ở đây, và cũng vì vậy mà lâu học đánh nhau hơn.</p>
+<p><strong>Lứa đẻ:</strong> <strong>1 đến 3</strong>, giống addon duy nhất vượt quá 2. <strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Moodle: <span class="ig">Miệng Mềm</span></strong></p>
+<blockquote class="quote quote-game"><em>"Labrador tha về mọi con mồi ngay từ chuyến săn đầu tiên, và thường kèm một món thêm. Khi nó ở gần, được cho ăn và trung thành, bạn cũng học Mổ xẻ và Đao ngắn nhanh hơn."</em></blockquote>
+<p>Bốn hiệu ứng, và đây là moodle đầy đủ nhất mod:</p>
+<ul>
+<li><strong>Nó tha con mồi về từ Săn mồi cấp 3</strong>, tức là <strong>ngay từ lúc nó biết săn</strong>. Mọi giống khác phải tới Săn mồi cấp 6 mới bắt đầu tha về. Khác biệt đó lớn bằng nửa ván chơi.</li>
+<li><strong>Nó kiên trì lâu gấp ba lần</strong> khi mang mồi về, trước khi bỏ xác con mồi lại giữa đường.</li>
+<li><strong>60% số lần tha về có kèm một món thêm</strong> rơi xuống đất ngay cạnh bạn: xương thú nhỏ, lông gà, cành khô hoặc trứng chim hoang. <em><span class="ig">Labrador của bạn còn tha về cho bạn: ...</span></em></li>
+<li><strong>+20% XP</strong> cho <strong>Mổ xẻ và Đao ngắn</strong>, đúng hai kỹ năng dùng để xử lý thứ nó tha về.</li>
+</ul>
+<p><strong>Hợp với ai:</strong> hợp với một cuộc sống săn bắn. Golden Retriever học săn nhanh ngang vậy, nhưng <strong>Labrador tha về ngay từ đầu</strong>, và khác biệt đó lộ ra ngay trong những tuần chơi đầu tiên.</p>
+<h2 id="5-bảng-so-sánh">5. Bảng so sánh</h2>
+<h3 id="tốc-độ-học">Tốc độ học</h3>
+<p>Số càng lớn thì học càng nhanh. <strong>1.0 là tốc độ bình thường.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Đánh hơi</th>
+<th>Chiến đấu</th>
+<th>Vâng lời</th>
+<th>Săn mồi</th>
+<th>Chăn đàn</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td><strong>0.8</strong></td>
+<td>1.5</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+</tbody></table></div>
+<p>Mức <strong>0.8</strong> của Husky là điểm trừ theo giống duy nhất trong cả mod.</p>
+<h3 id="chiến-đấu">Chiến đấu</h3>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Lực cắn khi chưa huấn luyện</th>
+<th>Lực cắn ở cấp 10</th>
+<th>Tự giết được zombie?</th>
+<th>Quật ngã?</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>yếu</td>
+<td><strong>1x</strong> (mốc tham chiếu)</td>
+<td><strong>Không</strong></td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>yếu</td>
+<td>1,3x</td>
+<td>Có</td>
+<td><strong>Không</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>yếu</td>
+<td>1,5x</td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>yếu</td>
+<td>1,5x</td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>trung bình</td>
+<td>1,9x</td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>trung bình</td>
+<td><strong>2,6x</strong></td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td><strong>mạnh</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><strong>mạnh</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+</tbody></table></div>
+<p>Doberman lên tới đỉnh, nhưng xuất phát thấp hơn nhiều: lúc chưa huấn luyện, cú cắn của nó chỉ bằng khoảng <strong>hai phần ba</strong> của Rottweiler, và phải tới cấp 10 mới đuổi kịp.</p>
+<h3 id="bản-lĩnh-khi-giao-chiến">Bản lĩnh khi giao chiến</h3>
+<p>Số càng <strong>nhỏ</strong> thì con chó càng lì đòn lúc đánh nhau.</p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Căng thẳng tích lũy khi đánh nhau</th>
+<th>Ngưỡng hoảng loạn</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td><strong>0,20</strong> (lì nhất)</td>
+<td><strong>0,90</strong> (cao nhất)</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><strong>0,20</strong></td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>0,25</td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>0,60</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>0,70</td>
+<td>0,80</td>
+</tr>
+<tr>
+<td>Chó cỏ</td>
+<td><strong>1,00</strong> (dễ hoảng nhất)</td>
+<td><strong>0,80</strong></td>
+</tr>
+</tbody></table></div>
+<p>Con chó đã hoảng loạn thì <strong>ngừng chiến đấu, ngừng canh gác và ngừng làm trò khéo</strong>. Vì vậy bảng này quan trọng ngang với sát thương: cắn mạnh mà đứng hình trước đó thì cũng chẳng ích gì.</p>
+<h3 id="đặc-tính-khoảng-giá-trị-lúc-sinh-ra">Đặc tính (khoảng giá trị lúc sinh ra)</h3>
+<p>Khoảng càng cao thì con chó càng có thể sinh ra tốt. Giá trị dưới 0,34 hiện lên trong cửa sổ là <strong>Thấp</strong>, trên 0,66 là <strong>Cao</strong>, còn ở giữa là <strong>Trung bình</strong>.</p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Sức mạnh</th>
+<th>Độ hung hăng</th>
+<th>Sức chịu đựng</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>0,00 đến 0,15</td>
+<td>0,00 đến 0,15</td>
+<td>0,00 đến 0,15</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0,20 đến 0,40</td>
+<td>0,10 đến 0,30</td>
+<td>0,20 đến 0,40</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0,20 đến 0,45</td>
+<td>0,15 đến 0,40</td>
+<td>0,25 đến 0,50</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>0,25 đến 0,45</td>
+<td><strong>0,10 đến 0,25</strong></td>
+<td>0,25 đến 0,45</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>0,25 đến 0,45</td>
+<td><strong>0,35 đến 0,55</strong></td>
+<td>0,20 đến 0,40</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td>0,30 đến 0,50</td>
+<td>0,30 đến 0,50</td>
+<td>0,30 đến 0,50</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>0,30 đến 0,50</td>
+<td>0,30 đến 0,50</td>
+<td>0,30 đến 0,50</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>0,55 đến 0,80</strong></td>
+<td>0,10 đến 0,30</td>
+<td>0,40 đến 0,60</td>
+</tr>
+</tbody></table></div>
+<p>Đọc nhanh:</p>
+<ul>
+<li><strong>Chó cỏ lúc nào cũng hiện <span class="ig">Thấp</span> ở cả ba.</strong> Không làm gì có Chó cỏ xịn.</li>
+<li><strong>Husky là giống duy nhất thường hiện <span class="ig">Cao</span> ở Sức mạnh.</strong></li>
+<li><strong>Độ hung hăng luôn ra <span class="ig">Thấp</span></strong> ở Golden, Husky và Labrador. Đó là chuyện bình thường của giống, không phải bạn xui.</li>
+<li>Golden và Doberman cũng hay rơi vào <span class="ig">Thấp</span> ở Sức mạnh và Sức chịu đựng.</li>
+<li><strong>Chó chăn cừu Đức và Rottweiler</strong> là hai giống duy nhất gần như luôn hiện <span class="ig">Trung bình</span> ở cả ba.</li>
+</ul>
+<h3 id="túi-yên">Túi yên</h3>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Sức chứa</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>4 đến 5</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>6 đến 7</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức, Border Collie, Rottweiler, Doberman, Labrador</td>
+<td>6 đến 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>13 đến 16</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="lứa-đẻ">Lứa đẻ</h3>
+<div class="tw"><table><thead><tr>
+<th>Giống của chó mẹ</th>
+<th>Số chó con mỗi lứa</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Chó cỏ</strong></td>
+<td><strong>2 đến 4</strong></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1 đến 3</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>1 đến 3</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức, Golden Retriever, Husky, Rottweiler, Doberman</td>
+<td>1 đến 2</td>
+</tr>
+</tbody></table></div>
+<p>Số con mỗi lứa tính theo <strong>giống của chó mẹ</strong>, không theo giống của chó bố.</p>
+<h3 id="tìm-từng-giống-ở-đâu">Tìm từng giống ở đâu</h3>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Nơi xuất hiện</th>
+<th>Tỷ lệ</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>Nhà dân</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td>Đồn cảnh sát, nhà tù, căn cứ quân sự, tiệm súng</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>Công trình quân sự</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td>Đồn cảnh sát</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>Chuồng trại, chuồng ngựa, trang trại (vùng quê)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Lều săn, khu cắm trại, nhà thuyền, trạm kiểm lâm</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Nhà dân</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>Cửa hàng thú cưng, phòng khám thú y</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Nhà kho, nhà máy, bãi phế liệu</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Nhà dân</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Nhà dân</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>Nhà dân, <strong>chỉ vào mùa đông</strong></td>
+<td>2,5%</td>
+</tr>
+</tbody></table></div>
+<p>Tất cả các tỷ lệ trên đều thay đổi cùng lúc theo tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong>.</p>
+<p>Nhớ rằng: quyết định chỉ được đưa ra <strong>một lần cho mỗi tòa nhà</strong> và được lưu lại. Quay về một nơi đã khám phá rồi thì không có chó mới xuất hiện.</p>
+<h2 id="6-moodle-danh-sách-đầy-đủ">6. Moodle: danh sách đầy đủ</h2>
+<p>Moodle của chó hiện ở <strong>một cột riêng, bên trái các moodle bình thường của bạn</strong>.</p>
+<h3 id="quy-tắc-chung-cho-mọi-moodle-theo-giống">Quy tắc chung cho mọi moodle theo giống</h3>
+<p>Phần thưởng <strong>chỉ có</strong> khi <strong>tất cả</strong> những điều kiện sau đều đúng:</p>
+<div class="tw"><table><thead><tr>
+<th>Điều kiện</th>
+<th>Chi tiết</th>
+</tr></thead><tbody>
+<tr>
+<td>Con chó ở <strong>gần</strong></td>
+<td>Trong vòng <strong>8 ô</strong> và <strong>cùng một tầng</strong></td>
+</tr>
+<tr>
+<td>Nó là <strong>của bạn</strong></td>
+<td>Chó của người chơi khác không cho gì cả</td>
+</tr>
+<tr>
+<td>Nó <strong>vẫn nghe lời</strong></td>
+<td>Độ trung thành còn trên mức sàn</td>
+</tr>
+<tr>
+<td>Nó <strong>không bị trúng độc</strong></td>
+<td>Không ăn phải đồ có hại</td>
+</tr>
+<tr>
+<td>Nó <strong>không đói</strong></td>
+<td>Thanh đói dưới 75%</td>
+</tr>
+<tr>
+<td>Nó <strong>không khát</strong></td>
+<td>Thanh khát dưới 75%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Thiếu bất kỳ điều kiện nào là moodle tắt.</strong> Con chó bị bỏ bê không đem lại phần thưởng nào hết. Đây là cơ chế cốt lõi của mod: <strong>bạn không được gì miễn phí từ một con chó mà bạn không chăm.</strong></p>
+<blockquote class="quote"><strong>Khi có nhiều chó ở gần, chỉ con gần nhất được tính.</strong> Mod chỉ chọn đúng một con và hiện moodle của giống đó. Bạn không thể cùng lúc chồng Can đảm của chó chăn cừu Đức với Được sưởi ấm của Husky.</blockquote>
+<p>Moodle vẫn có tác dụng khi con chó đi cùng bạn, <strong>lúc bạn bế nó hoặc lúc nó ngồi trong xe với bạn</strong>.</p>
+<h3 id="các-moodle-theo-giống">Các moodle theo giống</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Giống</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Có bạn bên cạnh</strong></td>
+<td>Chó cỏ</td>
+<td>Làm tan <strong>Buồn bã và Chán chường</strong></td>
+</tr>
+<tr>
+<td><strong>Can đảm</strong></td>
+<td>Chó chăn cừu Đức</td>
+<td>Làm tan <strong>Hoảng loạn</strong> (hiệu ứng mạnh nhất của mod gốc)</td>
+</tr>
+<tr>
+<td><strong>Mũi thính</strong></td>
+<td>Golden Retriever</td>
+<td><strong>+20% XP</strong> cho Kiếm đồ, Đặt bẫy và Ngắm bắn, <strong>+4 ô</strong> tầm nhìn khi kiếm đồ</td>
+</tr>
+<tr>
+<td><strong>Được sưởi ấm</strong></td>
+<td>Husky</td>
+<td><strong>+2 khối lượng mang được</strong>, hồi thể lực, và thành <strong>nguồn sưởi ấm</strong> khi bạn bị lạnh</td>
+</tr>
+<tr>
+<td><strong>Bản năng chăn đàn</strong></td>
+<td>Border Collie</td>
+<td><strong>+20% XP</strong> cho Chăm sóc động vật và Trồng trọt, và <strong>làm dịu đàn vật nuôi quanh bạn</strong></td>
+</tr>
+<tr>
+<td><strong>Tuyến đầu</strong></td>
+<td>Rottweiler</td>
+<td>Hoàn lại <strong>35% thể lực</strong> của mỗi đòn cận chiến. <strong>Chỉ khi nó đang giao chiến</strong></td>
+</tr>
+<tr>
+<td><strong>Ngắm vững</strong></td>
+<td>Doberman</td>
+<td>Rút bớt <strong>căng thẳng</strong> của bạn, <strong>-45% độ giật</strong> mỗi phát bắn, <strong>+15% tốc độ nạp đạn</strong></td>
+</tr>
+<tr>
+<td><strong>Miệng Mềm</strong></td>
+<td>Labrador</td>
+<td>Tha con mồi về <strong>ngay từ Săn mồi cấp 3</strong>, kiên trì gấp 3 lần, <strong>60% cơ hội có thêm vật phẩm</strong>, <strong>+20% XP</strong> cho Mổ xẻ và Đao ngắn</td>
+</tr>
+</tbody></table></div>
+<h3 id="các-moodle-mà-giống-nào-cũng-có">Các moodle mà giống nào cũng có</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Khi nào</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Đói</strong></td>
+<td>Cơn đói của chó từ 60% trở lên</td>
+<td>Chỉ để báo</td>
+</tr>
+<tr>
+<td><strong>Khát</strong></td>
+<td>Cơn khát của chó từ 60% trở lên</td>
+<td>Chỉ để báo</td>
+</tr>
+<tr>
+<td><strong>Trúng độc</strong></td>
+<td>Nó ăn phải thứ có hại</td>
+<td>Chỉ để báo</td>
+</tr>
+<tr>
+<td><strong>Ngủ ngon</strong></td>
+<td>Bạn thức dậy sau khi ngủ cách con chó <strong>8 ô trở lại</strong></td>
+<td>Làm tan <strong>Hoảng loạn, Căng thẳng, Mệt mỏi, Buồn bã và Chán chường</strong> trong <strong>2 giờ trong game</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong><span class="ig">Ngủ ngon</span> là moodle duy nhất không cần con chó tiếp tục ở gần.</strong> Nó là một cái đồng hồ đếm ngược: đã bật rồi thì kéo đủ hai giờ dù bạn có đi đâu. Nó cũng không qua bộ lọc chăm sóc, nên chạy được ngay cả với một con chó bị bỏ bê. Ngủ cạnh con chó thì <strong>lúc nào cũng</strong> đáng làm.</p>
+<p>Ba cái báo còn lại (đói, khát, trúng độc) cũng bỏ qua bộ lọc chăm sóc, và như vậy là hợp lý: chúng sinh ra đúng để báo cho bạn biết con chó <strong>không</strong> ổn.</p>
+<h2 id="7-đặc-tính-các-gen">7. Đặc tính (các gen)</h2>
+<p>Ngoài giống chó, mỗi con còn có <strong>ba đặc tính</strong> hiện trong cửa sổ, ở mục <strong><span class="ig">Đặc tính</span></strong>. Chúng được bốc <strong>ngay lúc bạn thuần hóa con chó</strong>, trong khoảng của giống đó, và <strong>không bao giờ thay đổi</strong>.</p>
+<blockquote class="quote quote-game"><em>"Các đặc tính bẩm sinh, cố định suốt đời, được tạo khi con chó được thuần hóa và khác nhau ở từng con. Không giống kỹ năng, chúng không thay đổi qua huấn luyện; đây là bản chất mà con chó sinh ra đã có."</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>Đặc tính</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Sức mạnh</strong></td>
+<td>Tăng <strong>lực cắn</strong> và, quan trọng hơn cả, <strong>sức chứa của túi yên</strong></td>
+</tr>
+<tr>
+<td><strong>Độ hung hăng</strong></td>
+<td>Giúp nó <strong>nhận XP Chiến đấu nhanh hơn</strong>. <strong>Không</strong> ảnh hưởng tới lúc nó quyết định đánh hay bỏ chạy</td>
+</tr>
+<tr>
+<td><strong>Sức chịu đựng</strong></td>
+<td>Giúp nó <strong>tích ít căng thẳng hơn</strong> khi giao chiến</td>
+</tr>
+</tbody></table></div>
+<p>Còn một <strong>gen thứ tư, về mức căng thẳng chung, và nó không hiện trong cửa sổ</strong>. Gen này nhân lên toàn bộ căng thẳng mà con chó nhận được khi đánh nhau. Chó cỏ có gen tệ nhất, chó chăn cừu Đức và Husky tốt nhất.</p>
+<h3 id="cách-đọc-các-nhãn">Cách đọc các nhãn</h3>
+<div class="tw"><table><thead><tr>
+<th>Nhãn</th>
+<th>Nghĩa là</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Thấp</strong></td>
+<td>Dưới 34% của thang đo</td>
+</tr>
+<tr>
+<td><strong>Trung bình</strong></td>
+<td>Từ 34% đến 66%</td>
+</tr>
+<tr>
+<td><strong>Cao</strong></td>
+<td>Trên 66%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Lưu ý:</strong> các nhãn nằm trên một thang tuyệt đối, <strong>không</strong> phải so với giống. Vì vậy chó cỏ <strong>luôn</strong> hiện <span class="ig">Thấp</span> ở cả ba, và không có con chó cỏ nào xuất sắc. Cũng vì vậy mà Husky gần như là giống duy nhất bạn sẽ thấy hiện <span class="ig">Cao</span> ở Sức mạnh.</p>
+<h3 id="chuyện-này-quan-trọng-đến-mức-nào">Chuyện này quan trọng đến mức nào</h3>
+<p>Các gen chỉ xê dịch <strong>tối đa 15% về mỗi phía</strong> ở sát thương và XP chiến đấu, và tối đa 10 điểm phần trăm ở khả năng chịu căng thẳng. <strong>Giống chó nặng ký hơn gen rất nhiều.</strong></p>
+<p>Ngoại lệ là <strong>túi yên</strong>: ở đó gen Sức mạnh mới là yếu tố chính, và khác biệt giữa một con yếu với một con khỏe trong cùng một giống là có thật.</p>
+<p><strong>Không có cách nào huấn luyện được một cái gen.</strong> Cách duy nhất để cải thiện là <a href="#8-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
+<h2 id="8-chó-lai-phối-hai-giống-khác-nhau">8. Chó lai: phối hai giống khác nhau</h2>
+<p>Khi một con đực và một con cái khác giống sinh con, bạn được một con <strong>chó lai</strong>.</p>
+<h3 id="chuyện-gì-xảy-ra-với-chó-con">Chuyện gì xảy ra với chó con</h3>
+<p><strong>Dòng máu là mức trung bình của bố mẹ.</strong> Chó cỏ với chó chăn cừu Đức cho ra một con 50/50. Đem con đó phối với một con chăn cừu Đức thuần thì ra 25% chó cỏ, 75% chăn cừu Đức. Cứ thế qua từng đời.</p>
+<p><strong>Ngoại hình chỉ lấy MỘT trong hai giống, bốc theo tỷ trọng dòng máu.</strong> Một con 50/50 sinh ra mang mặt chăn cừu Đức <strong>hoặc</strong> mặt chó cỏ, không bao giờ pha trộn về hình ảnh. Dòng máu nghiêng về bên nào nhiều hơn thì khả năng ra mặt bên đó càng cao.</p>
+<blockquote class="quote"><strong>Và đây là chỗ khiến ai cũng nhầm:</strong> giống bốc trúng chính là giống <strong>có tác dụng thật</strong> của con chó. Một con lai 50% Husky / 50% chăn cừu Đức mà sinh ra mang mặt Husky thì <strong>là Husky về mọi mặt</strong>: moodle Được sưởi ấm, tốc độ học của Husky, túi yên của Husky. Việc pha máu không kéo nó về mức trung gian ở bất kỳ điểm nào trong số đó.</blockquote>
+<p><strong>Các gen thì nằm ở khoảng giữa của bố mẹ</strong>, xê dịch chừng 6% về mỗi phía.</p>
+<p><strong>Và đây mới là chỗ lai giống thật sự đáng giá:</strong> khoảng gen của chó con trở thành <strong>hợp</strong> của các khoảng thuộc mọi giống trong dòng máu. Một con lai chó cỏ + Husky có thể sinh ra với Sức mạnh bất kỳ từ 0,00 đến 0,80, tức là nó <strong>có thể vượt trần của chó cỏ</strong>. Cứ chọn những con khỏe nhất mỗi lứa để phối, bạn kéo cả dòng máu đi lên qua các đời.</p>
+<p><strong>Thứ chó con KHÔNG thừa hưởng:</strong> kỹ năng. Nó luôn sinh ra với <strong>cấp 0 ở cả năm kỹ năng</strong>. Cái nó nhận từ giống là <strong>tốc độ học</strong>, chứ không phải phần đã học được.</p>
+<h3 id="nhãn-lai">Nhãn "Lai"</h3>
+<p>Con chó có nhiều hơn một giống trong dòng máu sẽ được ghi thêm <strong><span class="ig">(Lai)</span></strong> bên cạnh tên giống, cả trong cửa sổ lẫn trong menu chuột phải.</p>
+<p><strong>Chi tiết phần trăm</strong> (<span class="ig">50% Husky, 50% chó chăn cừu Đức</span>) hiện ra khi bạn <strong>rê chuột lên dòng <span class="ig">Giống</span></strong> trong cửa sổ của chó, kèm theo mô tả của giống chiếm ưu thế.</p>
+<h3 id="có-đáng-phối-hai-giống-khác-nhau-không">Có đáng phối hai giống khác nhau không?</h3>
+<div class="tw"><table><thead><tr>
+<th>Mục tiêu</th>
+<th>Câu trả lời</th>
+</tr></thead><tbody>
+<tr>
+<td>Cải thiện gen qua nhiều đời</td>
+<td><strong>Có</strong>, đây là cách duy nhất</td>
+</tr>
+<tr>
+<td>Có moodle của hai giống</td>
+<td><strong>Không.</strong> Con chó chỉ có một moodle, của giống mà nó trở thành</td>
+</tr>
+<tr>
+<td>Gộp tốc độ học của hai giống</td>
+<td><strong>Không.</strong> Nó dùng bảng của giống mà nó trở thành</td>
+</tr>
+<tr>
+<td>Đẻ thật nhiều chó con</td>
+<td>Hãy chọn <strong>chó cỏ làm mẹ</strong> (2 đến 4 con mỗi lứa)</td>
+</tr>
+</tbody></table></div>
+<h2 id="9-cài-đặt-các-addon">9. Cài đặt các addon</h2>
+<p>Rottweiler, Doberman và Labrador là <strong>các mod riêng trên Steam</strong>. Mỗi mod:</p>
+<ul>
+<li><strong>Cần có mod nền Companion Dogs đã cài và đang bật.</strong></li>
+<li>Thêm <strong>một giống chó</strong>, kèm mô hình, texture, moodle và các nơi xuất hiện riêng.</li>
+<li>Đi kèm đủ <strong>13 bản dịch</strong>, giống như mod nền.</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>Addon</th>
+<th>Trang trên Steam</th>
+<th>Phiên bản nền tối thiểu</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">đăng ký</a></td>
+<td>0.6.3 trở lên</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">đăng ký</a></td>
+<td>0.6.3 trở lên</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">đăng ký</a></td>
+<td><strong>0.6.6 trở lên</strong></td>
+</tr>
+</tbody></table></div>
+<p>Và mod nền, nếu bạn chưa có: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
+<p>Nếu mod nền quá cũ, addon <strong>đơn giản là không làm gì cả</strong>: nó không báo lỗi, không làm treo game, giống chó đó chỉ là không tồn tại. Nếu bạn đã cài Labrador mà mãi không gặp con nào, <strong>hãy kiểm tra phiên bản mod nền trước</strong>.</p>
+<blockquote class="quote"><strong>Đừng gỡ một addon khỏi bản lưu đang có chó sống thuộc giống đó.</strong> Con chó sẽ mất mô hình và texture mà nó tham chiếu tới.</blockquote>
+<p>Cài thêm addon <strong>không thay đổi gì ở các giống đã có sẵn</strong>. Những giống mới tự động tham gia vào việc phối giống và lai giống.</p>
+<h2 id="10-câu-hỏi-thường-gặp-về-giống-chó">10. Câu hỏi thường gặp về giống chó</h2>
+<p><strong><span class="ig">Giống nào tốt nhất?</span></strong> Tùy bạn chơi kiểu gì. Cần <strong>chiến đấu</strong> thì chọn chó chăn cừu Đức hoặc Rottweiler. Cần <strong>săn mồi</strong> thì Labrador. Cần <strong>chở đồ</strong> thì Husky. Cần <strong>nông trại</strong> thì Border Collie. Cần <strong>bắn súng</strong> thì Doberman. Còn <strong>chó cỏ</strong> vẫn rất đáng nuôi nhờ moodle của nó, dù nó yếu nhất.</p>
+<p><strong><span class="ig">Chó cỏ của tôi có thể mạnh lên nhờ huấn luyện không?</span></strong> Không. Dù bạn huấn luyện tới đâu thì nó cũng không bao giờ tự giết được một con zombie, và đặc tính của nó vốn dĩ là tệ nhất. Huấn luyện chỉ cải thiện Vâng lời, Đánh hơi và Săn mồi, mà ở mấy khoản đó nó chẳng thua con nào.</p>
+<p><strong><span class="ig">Tôi gặp hai con cùng giống, nên bắt con nào?</span></strong> Bạn <strong>không có cách nào biết trước</strong>: đặc tính chỉ được bốc vào đúng lúc thuần hóa. Cứ thuần hóa rồi xem mục <strong><span class="ig">Đặc tính</span></strong> trong cửa sổ.</p>
+<p><strong><span class="ig">Tôi nhận một con có đặc tính xấu. Thả ra rồi thuần hóa lại được không?</span></strong> <strong>Không ăn thua.</strong> Các gen chỉ được bốc <strong>một lần duy nhất, ở lần thuần hóa đầu tiên</strong>, và con chó giữ chúng mãi mãi, kể cả sau khi bị thả rồi thuần hóa lại (kỹ năng cũng được giữ y như vậy). Muốn bốc lại, bạn phải <strong>thuần hóa một con chó khác</strong>. Còn muốn tiến bộ thật sự theo thời gian thì con đường là <a href="#8-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
+<p><strong><span class="ig">Tôi có thể nhận moodle của hai giống cùng lúc không?</span></strong> Không. Chỉ <strong>con chó ở gần nhất</strong> được tính. Ngoại lệ là <strong><span class="ig">Ngủ ngon</span></strong>, vì nó không phụ thuộc vào khoảng cách.</p>
+<p><strong><span class="ig">Sao moodle biến mất rồi?</span></strong> Gần như luôn là do đói hoặc khát vượt quá 75%, hoặc độ trung thành tụt xuống dưới mức sàn. Hãy cho ăn, cho uống nước và vuốt ve nó. Cũng nên kiểm tra xem con chó có đang ở <strong>cách bạn 8 ô trở xuống và cùng một tầng</strong> hay không.</p>
+<p><strong><span class="ig">Có giống nào chạy nhanh hơn không?</span></strong> Không. Không giống nào chạy nhanh hơn giống nào.</p>
+<p><strong><span class="ig">Có Husky màu khác không?</span></strong> Không. Mỗi giống chỉ có một texture, và con đực với con cái dùng chung.</p>
+<p><strong><span class="ig">Chó to thì cắn mạnh hơn à?</span></strong> Không. Kích thước chỉ là hình thức. Liên hệ giữa vóc dáng và sức mạnh đã bị tắt một cách có chủ ý.</p>
+<p><strong><span class="ig">Tìm Doberman ở đâu?</span></strong> <strong>Đồn cảnh sát.</strong> Trên giấy tờ thì tỷ lệ ở công trình quân sự cao hơn, nhưng bản đồ gốc của game gần như không có công trình quân sự nào.</p>
+<p><strong><span class="ig">Tôi cài Labrador mà không thấy con nào.</span></strong> Hãy kiểm tra phiên bản mod nền Companion Dogs: Labrador <strong>đòi bản 0.6.6 trở lên</strong> và sẽ im lặng biến mất trên một mod nền cũ. Cũng nên xem lại bạn đã lục hết nhà cửa trong vùng chưa: quyết định xuất hiện là <strong>một lần cho mỗi tòa nhà, và giữ mãi</strong>.</p>
+<p><strong><span class="ig">Chó lai của tôi không có moodle của cả hai giống.</span></strong> Đúng như thiết kế. Về mặt cơ chế, một con lai chính là <strong>giống mà nó trông giống</strong>. Việc pha máu chỉ thay đổi khoảng gen của đời sau và phần nhãn phần trăm trong cửa sổ.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Không tìm thấy kết quả cho <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' kết quả'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Đầu trang');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>
