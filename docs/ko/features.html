@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="기능: 개가 할 수 있는 일과 명령하는 방법">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: 기능">
+<meta property="og:description" content="기능: 개가 할 수 있는 일과 명령하는 방법">
+<meta property="og:url" content="https://companiondogs.pet/docs/ko/features.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: 기능</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="목차 열기" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="가이드 홈으로 돌아가기"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">기능</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>견종 가이드로 이동</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="가이드 검색..." aria-label="가이드 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="언어"><optgroup label="검수 완료"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="자동 번역"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko" selected>한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="테마 전환">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>검수되지 않은 자동 번역.</b> 이 페이지는 포르투갈어 원문을 기계로 번역한 것이며, 아직 사람이 검수하지 않았습니다. 용어나 수치가 정확하지 않을 수 있으니, 내용이 헷갈린다면 영어 버전이나 포르투갈어 원문을 확인해 주세요. <a href="../en/features.html">영어로 보기</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">목차 &middot; <b>기능</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-5분-요약-떠돌이-개에서-동반자로" data-id="1-5분-요약-떠돌이-개에서-동반자로">1. 5분 요약: 떠돌이 개에서 동반자로</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-개를-찾아서-길들이기" data-id="2-개를-찾아서-길들이기">2. 개를 찾아서 길들이기</a>
+<div class="sub">
+<a class="s3" href="#견종별-출현-장소" data-id="견종별-출현-장소">견종별 출현 장소</a>
+<a class="s3" href="#길들이는-방법" data-id="길들이는-방법">길들이는 방법</a>
+<a class="s3" href="#음식이-얼마나-필요한가" data-id="음식이-얼마나-필요한가">음식이 얼마나 필요한가</a>
+<a class="s3" href="#개에게-해로운-음식" data-id="개에게-해로운-음식">개에게 해로운 음식</a>
+<a class="s3" href="#길들여지는-순간-벌어지는-일" data-id="길들여지는-순간-벌어지는-일">길들여지는 순간 벌어지는 일</a>
+<a class="s3" href="#개-마릿수-제한" data-id="개-마릿수-제한">개 마릿수 제한</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-명령을-내리는-네-가지-방법" data-id="3-명령을-내리는-네-가지-방법">3. 명령을 내리는 네 가지 방법</a>
+<div class="sub">
+<a class="s3" href="#a-컨텍스트-메뉴-개를-우클릭" data-id="a-컨텍스트-메뉴-개를-우클릭">a) 컨텍스트 메뉴 (개를 우클릭)</a>
+<a class="s3" href="#b-라디얼-메뉴-q-길게-누르기" data-id="b-라디얼-메뉴-q-길게-누르기">b) 라디얼 메뉴 (Q 길게 누르기)</a>
+<a class="s3" href="#c-단축키" data-id="c-단축키">c) 단축키</a>
+<a class="s3" href="#d-개-창의-버튼" data-id="d-개-창의-버튼">d) 개 창의 버튼</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-세-가지-모드-따라와-기다려-경계수비" data-id="4-세-가지-모드-따라와-기다려-경계수비">4. 세 가지 모드: 따라와, 기다려, 경계/수비</a>
+<div class="sub">
+<a class="s3" href="#따라와" data-id="따라와">따라와</a>
+<a class="s3" href="#기다려" data-id="기다려">기다려</a>
+<a class="s3" href="#경계수비" data-id="경계수비">경계/수비</a>
+<a class="s3" href="#개를-부르는-두-가지-명령" data-id="개를-부르는-두-가지-명령">개를 부르는 두 가지 명령</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-경계-모드-경보기가-되는-개" data-id="5-경계-모드-경보기가-되는-개">5. 경계 모드: 경보기가 되는 개</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-전투" data-id="6-전투">6. 전투</a>
+<div class="sub">
+<a class="s3" href="#개가-혼자-싸울-때" data-id="개가-혼자-싸울-때">개가 혼자 싸울 때</a>
+<a class="s3" href="#벽-너머로는-물지-않습니다" data-id="벽-너머로는-물지-않습니다">벽 너머로는 물지 않습니다</a>
+<a class="s3" href="#개가-주는-피해" data-id="개가-주는-피해">개가 주는 피해</a>
+<a class="s3" href="#자동-보호" data-id="자동-보호">자동 보호</a>
+<a class="s3" href="#당신의-총알에는-맞지-않습니다" data-id="당신의-총알에는-맞지-않습니다">당신의 총알에는 맞지 않습니다</a>
+<a class="s3" href="#부상-후퇴-패닉" data-id="부상-후퇴-패닉">부상, 후퇴, 패닉</a>
+<a class="s3" href="#회복" data-id="회복">회복</a>
+<a class="s3" href="#처치-수-기록" data-id="처치-수-기록">처치 수 기록</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-욕구와-관리" data-id="7-욕구와-관리">7. 욕구와 관리</a>
+<div class="sub">
+<a class="s3" href="#스트레스는-어디서-오나" data-id="스트레스는-어디서-오나">스트레스는 어디서 오나</a>
+<a class="s3" href="#직접-먹이-주기" data-id="직접-먹이-주기">직접 먹이 주기</a>
+<a class="s3" href="#물-주기" data-id="물-주기">물 주기</a>
+<a class="s3" href="#쓰다듬기" data-id="쓰다듬기">쓰다듬기</a>
+<a class="s3" href="#방치했을-때의-순서" data-id="방치했을-때의-순서">방치했을 때의 순서</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-충성도" data-id="8-충성도">8. 충성도</a>
+<div class="sub">
+<a class="s3" href="#불순종-기준선" data-id="불순종-기준선">불순종 기준선</a>
+<a class="s3" href="#개가-명령을-거부할-때" data-id="개가-명령을-거부할-때">개가 명령을 거부할 때</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-밥그릇-당신-없이도-먹고-마시기" data-id="9-밥그릇-당신-없이도-먹고-마시기">9. 밥그릇: 당신 없이도 먹고 마시기</a>
+<div class="sub">
+<a class="s3" href="#밥그릇-사용법" data-id="밥그릇-사용법">밥그릇 사용법</a>
+<a class="s3" href="#밥그릇에-넣을-수-있는-음식" data-id="밥그릇에-넣을-수-있는-음식">밥그릇에 넣을 수 있는 음식</a>
+<a class="s3" href="#개가-밥그릇을-쓰는-방식" data-id="개가-밥그릇을-쓰는-방식">개가 밥그릇을 쓰는 방식</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-스킬-개가-가진-다섯-가지-능력" data-id="10-스킬-개가-가진-다섯-가지-능력">10. 스킬: 개가 가진 다섯 가지 능력</a>
+<div class="sub">
+<a class="s3" href="#경험치-곡선-이야기" data-id="경험치-곡선-이야기">경험치 곡선 이야기</a>
+<a class="s3" href="#불복종" data-id="불복종">불복종</a>
+<a class="s3" href="#스킬과-특성은-다릅니다" data-id="스킬과-특성은-다릅니다">스킬과 특성은 다릅니다</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-복종-재주" data-id="11-복종-재주">11. 복종 재주</a>
+<div class="sub">
+<a class="s3" href="#지정-위치로-가기-복종-1" data-id="지정-위치로-가기-복종-1">지정 위치로 가기 (복종 1)</a>
+<a class="s3" href="#주의-끌기-복종-3" data-id="주의-끌기-복종-3">주의 끌기 (복종 3)</a>
+<a class="s3" href="#물건-냄새-추적-복종-5" data-id="물건-냄새-추적-복종-5">물건 냄새 추적 (복종 5)</a>
+<a class="s3" href="#자는-동안-물건-찾아오기-복종-10" data-id="자는-동안-물건-찾아오기-복종-10">자는 동안 물건 찾아오기 (복종 10)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-사냥" data-id="12-사냥">12. 사냥</a>
+<div class="sub">
+<a class="s3" href="#무엇을-사냥하나" data-id="무엇을-사냥하나">무엇을 사냥하나</a>
+<a class="s3" href="#실제로는-어떻게-돌아가나" data-id="실제로는-어떻게-돌아가나">실제로는 어떻게 돌아가나</a>
+<a class="s3" href="#제약" data-id="제약">제약</a>
+<a class="s3" href="#대가" data-id="대가">대가</a>
+<a class="s3" href="#채집-보너스" data-id="채집-보너스">채집 보너스</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-가축-돌보기" data-id="13-가축-돌보기">13. 가축 돌보기</a>
+<div class="sub">
+<a class="s3" href="#맡기는-방법" data-id="맡기는-방법">맡기는 방법</a>
+<a class="s3" href="#우리에서-하는-일" data-id="우리에서-하는-일">우리에서 하는 일</a>
+<a class="s3" href="#중요한-규칙" data-id="중요한-규칙">중요한 규칙</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-안장-가방-짐을-나르는-개" data-id="14-안장-가방-짐을-나르는-개">14. 안장 가방: 짐을 나르는 개</a>
+<div class="sub">
+<a class="s3" href="#착용하는-방법" data-id="착용하는-방법">착용하는 방법</a>
+<a class="s3" href="#얼마나-실을-수-있나" data-id="얼마나-실을-수-있나">얼마나 실을 수 있나</a>
+<a class="s3" href="#무엇을-넣을-수-있나" data-id="무엇을-넣을-수-있나">무엇을 넣을 수 있나</a>
+<a class="s3" href="#안장-가방-창" data-id="안장-가방-창">안장 가방 창</a>
+<a class="s3" href="#구하는-곳" data-id="구하는-곳">구하는 곳</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-번식과-강아지" data-id="15-번식과-강아지">15. 번식과 강아지</a>
+<div class="sub">
+<a class="s3" href="#교배-버튼은-없습니다" data-id="교배-버튼은-없습니다">"교배" 버튼은 없습니다</a>
+<a class="s3" href="#조건" data-id="조건">조건</a>
+<a class="s3" href="#짝짓기와-임신-기간" data-id="짝짓기와-임신-기간">짝짓기와 임신 기간</a>
+<a class="s3" href="#출산" data-id="출산">출산</a>
+<a class="s3" href="#강아지가-물려받는-것" data-id="강아지가-물려받는-것">강아지가 물려받는 것</a>
+<a class="s3" href="#강아지-키우기" data-id="강아지-키우기">강아지 키우기</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-여러-마리를-동시에-두기" data-id="16-여러-마리를-동시에-두기">16. 여러 마리를 동시에 두기</a>
+<div class="sub">
+<a class="s3" href="#내-반려견-탭-등록부" data-id="내-반려견-탭-등록부">"내 반려견" 탭: 등록부</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-개-정보-창" data-id="17-개-정보-창">17. 개 정보 창</a>
+<div class="sub">
+<a class="s3" href="#스킬-및-상태-탭" data-id="스킬-및-상태-탭">"스킬 및 상태" 탭</a>
+<a class="s3" href="#명령-탭" data-id="명령-탭">"명령" 탭</a>
+<a class="s3" href="#내-반려견-탭" data-id="내-반려견-탭">"내 반려견" 탭</a>
+<a class="s3" href="#설정-탭" data-id="설정-탭">"설정" 탭</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-화면에-표시되는-것들" data-id="18-화면에-표시되는-것들">18. 화면에 표시되는 것들</a>
+<div class="sub">
+<a class="s3" href="#개-moodle" data-id="개-moodle">개 moodle</a>
+<a class="s3" href="#머리-위에-뜨는-문구" data-id="머리-위에-뜨는-문구">머리 위에 뜨는 문구</a>
+<a class="s3" href="#지도-마커" data-id="지도-마커">지도 마커</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-모드가-추가하는-아이템" data-id="19-모드가-추가하는-아이템">19. 모드가 추가하는 아이템</a>
+<div class="sub">
+<a class="s3" href="#반려견-밥그릇" data-id="반려견-밥그릇">반려견 밥그릇</a>
+<a class="s3" href="#반려견-안장-가방" data-id="반려견-안장-가방">반려견 안장 가방</a>
+<a class="s3" href="#모드에-없는-것" data-id="모드에-없는-것">모드에 없는 것</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-멀티플레이어" data-id="20-멀티플레이어">20. 멀티플레이어</a>
+<div class="sub">
+<a class="s3" href="#개는-당신-것입니다" data-id="개는-당신-것입니다">개는 당신 것입니다</a>
+<a class="s3" href="#접속을-끊었을-때" data-id="접속을-끊었을-때">접속을 끊었을 때</a>
+<a class="s3" href="#서버-관리자용" data-id="서버-관리자용">서버 관리자용</a>
+<a class="s3" href="#코옵-설치-시-주의사항" data-id="코옵-설치-시-주의사항">코옵 설치 시 주의사항</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-샌드박스-옵션" data-id="21-샌드박스-옵션">21. 샌드박스 옵션</a>
+<div class="sub">
+<a class="s3" href="#길들이기와-스폰" data-id="길들이기와-스폰">길들이기와 스폰</a>
+<a class="s3" href="#전투" data-id="전투">전투</a>
+<a class="s3" href="#관리와-유대감" data-id="관리와-유대감">관리와 유대감</a>
+<a class="s3" href="#행동" data-id="행동">행동</a>
+<a class="s3" href="#스킬과-활동" data-id="스킬과-활동">스킬과 활동</a>
+<a class="s3" href="#안장-가방" data-id="안장-가방">안장 가방</a>
+<a class="s3" href="#강아지" data-id="강아지">강아지</a>
+<a class="s3" href="#인터페이스와-멀티플레이어" data-id="인터페이스와-멀티플레이어">인터페이스와 멀티플레이어</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-자주-겪는-문제" data-id="22-자주-겪는-문제">22. 자주 겪는 문제</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-기능-설명서">Companion Dogs: 기능 설명서</h1>
+<p>개가 무엇을 하는지, 어떻게 명령을 내리는지, 어떻게 돌보는지 전부 담은 안내서입니다.</p>
+<p>이 설명서는 <strong>모드가 하는 모든 것</strong>을 다룹니다. <strong>견종</strong> 이야기(어떤 견종을 고를지, 각 견종의 특별한 점, moodle과 특성)가 궁금하다면 다른 설명서를 보세요: <a href="breeds.html" class="xlink">견종</a>.</p>
+<blockquote class="quote"><strong>이름에 대해:</strong> 이 설명서에서 따옴표 안에 있는 문구는 게임에 한국어로 나오는 그대로입니다. 게임을 영어로 하고 있다면 이름은 달라지지만 메뉴에서의 위치는 똑같습니다.</blockquote>
+<h2 id="1-5분-요약-떠돌이-개에서-동반자로">1. 5분 요약: 떠돌이 개에서 동반자로</h2>
+<p>일단 게임부터 시작하고 싶다면 이것만 알면 됩니다.</p>
+<ol>
+<li><strong>개를 찾으세요.</strong> 떠돌이 믹스견은 도시와 주택가를 자유롭게 돌아다닙니다. 탐험하다 보면 언젠가는 마주치게 됩니다.</li>
+<li><strong>인벤토리에 음식을 챙기세요.</strong> 썩지 않았고 배고픔을 채워 주는 음식이라면 무엇이든 괜찮습니다.</li>
+<li><strong>개를 우클릭해서</strong> <strong><span class="ig">먹이 주기 (길들이기)</span></strong>를 고르세요.</li>
+<li><strong>개가 마음을 열 때까지 반복하세요.</strong> 한 번 줄 때마다 신뢰도가 올라갑니다. 큰 사료 봉지는 거의 한 번에 끝나고, 작은 간식은 네 번쯤 줘야 합니다.</li>
+<li><strong>이름을 지어 주세요.</strong> 이제 그 개는 당신 것입니다. 그때부터는 알아서 따라다닙니다.</li>
+</ol>
+<p>그다음 잊지 말아야 할 세 가지입니다.</p>
+<ul>
+<li><strong>매일 먹이와 물을 주세요.</strong> 방치하면 개가 죽고, 죽으면 돌아오지 않습니다.</li>
+<li><strong>쓰다듬어 주세요.</strong> 충성도가 유지되고, 덤으로 당신의 지루함과 슬픔도 빨리 가십니다.</li>
+<li><strong>개 정보 창을 여세요.</strong> 손 패널 아래에 있는 발자국 버튼입니다. 필요한 건 전부 그 안에 있습니다.</li>
+</ul>
+<h2 id="2-개를-찾아서-길들이기">2. 개를 찾아서 길들이기</h2>
+<h3 id="견종별-출현-장소">견종별 출현 장소</h3>
+<p>모드는 어떤 건물에 개가 있는지를 <strong>건물마다 한 번만</strong> 결정하고, 그 결과를 저장합니다. 이미 둘러본 곳에 다시 갔을 때 없던 개가 갑자기 생기는 일은 없습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>견종</th>
+<th>찾을 곳</th>
+<th>건물당 확률</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>믹스견</strong></td>
+<td>도시나 주택가의 일반 주택</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>골든 리트리버</strong></td>
+<td>일반 주택 (추가 굴림)</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>저먼 셰퍼드</strong></td>
+<td>경찰서, 교도소, 군사 기지, 총포상</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>허스키</strong></td>
+<td>일반 주택, <strong>겨울에만</strong></td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>허스키</strong></td>
+<td>애완동물 숍과 동물병원, 사계절 내내</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>보더콜리</strong></td>
+<td>시골의 헛간, 마구간, 사일로, 닭장</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>개는 보통 건물 <strong>바깥쪽</strong>의 빈 타일에서 나타납니다. 길, 마당, 공터 같은 곳이죠. 바깥에 빈 타일이 하나도 남지 않았을 때만 건물 안에서 나타납니다. 길과 마당부터 살펴보세요.</p>
+<p>샌드박스 옵션 <strong><span class="ig">개 스폰 비율 배율</span></strong>은 이 확률들을 한꺼번에 조절하면서 견종 사이의 희귀도 비율은 그대로 유지합니다. 0으로 두면 스폰이 꺼집니다.</p>
+<blockquote class="quote"><strong>애드온 견종</strong>은 Steam에 별도 모드로 올라와 있고, 각자 고유한 스폰 장소가 있습니다. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>입니다. 각 견종이 무엇을 하는지는 <a href="breeds.html" class="xlink">견종 설명서</a>에 있습니다.</blockquote>
+<h3 id="길들이는-방법">길들이는 방법</h3>
+<p>들개를 우클릭하세요. 나오는 옵션은 <strong><span class="ig">먹이 주기 (길들이기)</span></strong> 하나뿐입니다.</p>
+<ul>
+<li><strong>음식 말고는 아무것도 필요 없습니다.</strong> 최소 스킬도, 특성도, 목줄도, 도구도 필요 없습니다.</li>
+<li>음식이 <strong>가방 안에 들어 있어도</strong> 모드가 알아서 찾아냅니다.</li>
+<li>음식 종류가 여러 개면 각각의 아이콘과 개수가 붙은 하위 메뉴로 펼쳐집니다.</li>
+<li>음식이 하나도 없으면 옵션이 회색으로 바뀝니다: <em><span class="ig">인벤토리에 음식 아이템이 필요합니다.</span></em></li>
+</ul>
+<h3 id="음식이-얼마나-필요한가">음식이 얼마나 필요한가</h3>
+<p>한 번 줄 때마다 <strong>그 음식이 채워 줄 배고픔 수치만큼 신뢰도</strong>가 올라갑니다. 배고픔을 60 줄여 주는 음식이면 신뢰도도 60이 오릅니다. 기본값은 <strong>신뢰도 100이면 길들이기 성공</strong>이고, 샌드박스의 <em><span class="ig">길들이기 필요 신뢰도</span></em>에서 바꿀 수 있습니다.</p>
+<p>실제로는 이렇습니다.</p>
+<ul>
+<li>큰 <strong>사료 봉지</strong> 하나면 거의 한 번에 끝납니다.</li>
+<li>작은 간식류는 <strong>네 번쯤</strong> 줘야 합니다.</li>
+</ul>
+<p>모드는 <strong>필요한 만큼만 먹이고</strong> 남은 부분은 인벤토리로 돌려줍니다. 마지막 신뢰도 1점을 채우자고 통조림 반 통을 버릴 일은 없습니다.</p>
+<p><strong>운은 전혀 개입하지 않습니다.</strong> 신뢰도가 100에 닿으면 그 개는 당신 것입니다. 그걸로 끝입니다.</p>
+<p>게이지가 다 차기 전까지는 이렇게 뜹니다: <em><span class="ig">믹스견이(가) 당신에게 마음을 열기 시작합니다...</span></em> 다 차면 <em><span class="ig">믹스견이(가) 이제 당신의 동반자가 되었습니다!</span></em>가 뜨고 이름을 정하는 창이 열립니다.</p>
+<h3 id="개에게-해로운-음식">개에게 해로운 음식</h3>
+<p>어떤 음식은 개에게 독이고, 모드가 미리 알려 줍니다. 메뉴에 <strong>빨간색</strong>으로 표시되고 <em><span class="ig">개에게 해로운 음식. 이것을 먹으면 병에 걸리고 신뢰가 깨집니다.</span></em>라는 경고가 붙습니다.</p>
+<p>해당하는 음식은 이렇습니다.</p>
+<ul>
+<li><strong>분류 기준:</strong> 사탕류, 설탕, 커피, 차, 카카오, 초콜릿, 후추, 견과류.</li>
+<li><strong>이름 기준:</strong> 양파, 마늘, 리크, 차이브, 샬롯, 포도, 건포도, 초콜릿, 카카오, 커피, 땅콩. (자몽은 예외로 확실하게 허용됩니다.)</li>
+</ul>
+<p><strong>들개</strong>에게 나쁜 음식을 주면 신뢰도가 15 깎이고 절대 다시 오르지 않습니다. <strong>동반자</strong>에게 주면 충성도가 20 깎이고 스트레스가 오르며 <strong>게임 시간으로 120분 동안 중독됨</strong> 상태가 됩니다.</p>
+<h3 id="길들여지는-순간-벌어지는-일">길들여지는 순간 벌어지는 일</h3>
+<ul>
+<li><strong>따라와</strong> 모드로 들어가고 <strong>자동 보호</strong>가 켜집니다.</li>
+<li>배고픔, 목마름, 스트레스가 0으로 초기화됩니다.</li>
+<li><strong>유전 특성이 이때 결정되고 평생 그대로 고정됩니다</strong>.</li>
+<li><strong>무적</strong>이 됩니다. 좀비도, 차도, 총알도, 불도 개를 죽이지 못합니다. 죽이는 건 방치뿐입니다.</li>
+<li><strong><span class="ig">내 반려견</span></strong> 목록에 등록되고, 지도에도 표시되기 시작합니다.</li>
+</ul>
+<p><strong>새 개를 길들여도 먼저 있던 개를 버리는 게 아닙니다.</strong> 새로 들인 개가 활성 개가 되고, 원래 있던 개는 기다려 모드의 비활성 개가 됩니다. <a href="#16-여러-마리를-동시에-두기">여러 마리를 동시에 데리고 다니기</a>를 보세요.</p>
+<h3 id="개-마릿수-제한">개 마릿수 제한</h3>
+<p>샌드박스 옵션 <strong><span class="ig">플레이어당 최대 반려견 수</span></strong>는 기본값이 <strong>0이고, 0은 제한 없음을 뜻합니다</strong>. 서버가 상한을 걸어 두면 그 수에 도달하는 순간 친해지기 옵션이 빨간색으로 바뀌며 막힙니다: <em><span class="ig">동반자 수 제한에 도달했습니다 (5).</span></em> (숫자는 설정된 상한입니다) 개를 방생하거나 잃으면 자리가 다시 납니다.</p>
+<h2 id="3-명령을-내리는-네-가지-방법">3. 명령을 내리는 네 가지 방법</h2>
+<p>개에게 명령하는 방법은 네 가지가 있습니다. 넷 다 하는 일은 똑같으니 편한 것을 쓰면 됩니다.</p>
+<h3 id="a-컨텍스트-메뉴-개를-우클릭">a) 컨텍스트 메뉴 (개를 우클릭)</h3>
+<p>모든 항목은 개 이름이 붙은 하위 메뉴 안에 들어 있습니다. 순서는 항상 같습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>항목</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(첫 줄, 클릭은 안 됩니다)</em></td>
+<td>개의 신상: 이름, 성별, 강아지인지, 임신 중인지, 믹스견인지</td>
+</tr>
+<tr>
+<td><strong>번식 차단</strong> / <strong>번식 허용</strong></td>
+<td>이 개의 교배 허용을 켜고 끕니다 (성견만)</td>
+</tr>
+<tr>
+<td><strong>성장 일시정지</strong> / <strong>성장 재개</strong></td>
+<td>강아지에게만 나옵니다. 성장을 무기한 멈춥니다</td>
+</tr>
+<tr>
+<td><strong>먹이 주기</strong></td>
+<td>음식을 줍니다. 종류별 하위 메뉴가 있습니다</td>
+</tr>
+<tr>
+<td><strong>물 주기</strong></td>
+<td>물이 든 용기가 있어야 합니다</td>
+</tr>
+<tr>
+<td><strong>쓰다듬기</strong></td>
+<td>애정 표현입니다</td>
+</tr>
+<tr>
+<td><strong>기다리게 하기</strong> / <strong>따라오게 하기</strong></td>
+<td>두 모드를 서로 전환합니다</td>
+</tr>
+<tr>
+<td><strong>이리 오렴</strong></td>
+<td>개를 당신 쪽으로 부릅니다</td>
+</tr>
+<tr>
+<td><strong>가장 가까운 대상 공격</strong></td>
+<td>가장 가까운 좀비를 공격하게 합니다</td>
+</tr>
+<tr>
+<td><strong>재주</strong> ▸</td>
+<td>재주 네 가지가 들어 있는 하위 메뉴</td>
+</tr>
+<tr>
+<td><strong>여기서 가축 돌보기</strong> / <strong>가축 돌보기 중지</strong></td>
+<td>농장 모드</td>
+</tr>
+<tr>
+<td><strong>안장 가방 착용</strong> / <strong>안장 가방 열기</strong> / <strong>안장 가방 벗기기</strong></td>
+<td>상황에 따라 다르게 나옵니다</td>
+</tr>
+<tr>
+<td><strong>상태 확인</strong></td>
+<td>개 창을 엽니다</td>
+</tr>
+<tr>
+<td><strong>이름 변경...</strong></td>
+<td>최대 30자</td>
+</tr>
+<tr>
+<td><strong>안아들기</strong></td>
+<td>개를 안고 다닙니다</td>
+</tr>
+<tr>
+<td><strong>동반자 방생</strong></td>
+<td>야생으로 돌려보냅니다 (훈련과 스킬은 그대로 유지됩니다)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong><span class="ig">경계/수비</span>는 여기에 없습니다.</strong> 이 명령은 라디얼 메뉴, 단축키, 그리고 <span class="ig">명령</span> 탭의 버튼에만 있습니다.</blockquote>
+<h3 id="b-라디얼-메뉴-q-길게-누르기">b) 라디얼 메뉴 (Q 길게 누르기)</h3>
+<p>이 모드는 게임의 감정표현 메뉴에 얹혀 있습니다. <strong>Q</strong>를 길게 누르면 키우는 개의 견종 이름과 발바닥 아이콘이 붙은 새 항목이 나타납니다. 이 항목은 활성화된 개가 근처에 있을 때만 보입니다.</p>
+<p>조각은 <strong>이리 오렴</strong>, <strong>따라와</strong>, <strong>기다려</strong>, <strong>경계/수비</strong>, <strong>경보</strong>, <strong>조용히</strong>, <strong>침묵</strong>, <strong>가장 가까운 대상 공격</strong>, <strong>사냥 시작</strong> / <strong>사냥 중지</strong>, <strong>재주 ▸</strong>, 그리고 <strong>안장 가방 열기</strong>(안장 가방을 차고 있을 때)입니다.</p>
+<p><strong>재주</strong>를 고르면 재주 네 가지와 <strong>뒤로 가기</strong>가 들어 있는 3단계 라디얼이 열립니다. 아직 해금되지 않은 재주는 빨간 아이콘으로 나오고, 이름에 필요한 레벨이 같이 붙습니다. 예를 들면 <em><span class="ig">주의 끌기 (복종 3)</span></em> 같은 식입니다.</p>
+<p>명령에 따라 캐릭터도 같이 몸짓을 합니다. 부를 때는 손을 들고, 기다리라고 할 때는 멈추라는 손짓을 하고, 공격을 명령할 때는 손가락으로 가리킵니다.</p>
+<h3 id="c-단축키">c) 단축키</h3>
+<p>지정할 수 있는 동작은 <strong>14가지</strong>이고, 무엇과도 충돌하지 않도록 <strong>전부 일부러 키가 비어 있는 상태</strong>로 나옵니다. 설정은 게임 옵션 화면이 아니라 개 창의 <strong><span class="ig">설정</span></strong> 탭에서 합니다.</p>
+<div class="tw"><table><thead><tr>
+<th>동작</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>이리 오렴</strong></td>
+<td>개를 부릅니다</td>
+</tr>
+<tr>
+<td><strong>따라와</strong></td>
+<td>따라와 모드</td>
+</tr>
+<tr>
+<td><strong>기다려</strong></td>
+<td>기다려 모드</td>
+</tr>
+<tr>
+<td><strong>경계/수비</strong></td>
+<td>경계/수비 모드</td>
+</tr>
+<tr>
+<td><strong>물어와</strong></td>
+<td><strong>개를 곧바로 당신 옆으로 순간이동시킵니다.</strong> 크게 휘파람을 불기 때문에 그 소리가 좀비를 끌어들입니다</td>
+</tr>
+<tr>
+<td><strong>가장 가까운 대상 공격</strong></td>
+<td>명령으로 하는 공격</td>
+</tr>
+<tr>
+<td><strong>경보</strong> / <strong>조용히</strong> / <strong>침묵</strong></td>
+<td>경계 모드 설정</td>
+</tr>
+<tr>
+<td><strong>자동 보호</strong></td>
+<td>켜고 끕니다</td>
+</tr>
+<tr>
+<td><strong>사냥</strong></td>
+<td>켜고 끕니다</td>
+</tr>
+<tr>
+<td><strong>상태 확인</strong></td>
+<td>개 창을 열고 닫습니다</td>
+</tr>
+<tr>
+<td><strong>지정 위치로 가기</strong></td>
+<td>재주용 조준 커서를 엽니다</td>
+</tr>
+<tr>
+<td><strong>주의 끌기</strong></td>
+<td>재주를 발동합니다</td>
+</tr>
+</tbody></table></div>
+<p>이미 쓰이고 있는 키를 고르면 모드가 <em><span class="ig">F 키가 이미 기다려에서 사용 중입니다</span></em> 라고 알려줍니다. 키를 지정하지 않은 버튼에는 <em><span class="ig">지정 안 됨</span></em> 이라고 표시됩니다.</p>
+<h3 id="d-개-창의-버튼">d) 개 창의 버튼</h3>
+<p><strong><span class="ig">명령</span></strong> 탭에는 모든 것이 버튼으로 놓여 있습니다. 모드 줄, 경계 모드 줄, 자동 보호와 사냥 토글, 재주 네 가지, 안장 가방, 그리고 행동 줄 (<strong>물어와</strong> | <strong>이름 변경</strong> | <strong>야생으로 방생</strong>)입니다.</p>
+<h2 id="4-세-가지-모드-따라와-기다려-경계수비">4. 세 가지 모드: 따라와, 기다려, 경계/수비</h2>
+<p>개는 <strong>항상 이 셋 중 하나</strong>에 있습니다. 나머지(경계 모드, 사냥, 자동 보호)는 전부 그 모드 위에 얹는 조정이라고 보면 됩니다.</p>
+<h3 id="따라와">따라와</h3>
+<p>기본 모드입니다. 개가 당신 뒤를 따라 걷습니다. 거리가 2타일이 되면 움직이기 시작하고, 5타일을 넘어가면 달립니다.</p>
+<ul>
+<li><strong>개가 아니라 당신을 중심으로 반경 5타일 안의 좀비와 싸웁니다.</strong> 8타일이 되면 목표를 놓습니다.</li>
+<li>낮은 울타리를 넘고, 계단을 오르고, 당신을 따라 층을 옮깁니다.</li>
+<li><strong>당신과 함께 차에 타는 유일한 모드입니다.</strong></li>
+<li>당신이 너무 멀어지면(24타일) 개가 자동으로 당신 뒤에 끼워집니다. 건물 반대편에 갇혀 버리지 않게 하려는 장치입니다.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">믹스견이 당신의 뒤를 따라다니며 가까이 오는 좀비와 싸웁니다. 경계 기능이 파수를 봅니다. 이동 중인 동반자의 기본 설정입니다.</span></em></blockquote>
+<h3 id="기다려">기다려</h3>
+<p>있던 자리에 멈춰서 거기서 벗어나지 않습니다. 1분쯤 가만히 서 있으면 엎드립니다.</p>
+<ul>
+<li>좀비를 <strong>계속 냄새로 감지하고 알려줍니다.</strong></li>
+<li>좀비가 코앞에 있어도 <strong>쫓아가지도, 싸우지도 않습니다.</strong></li>
+<li><strong>당신이 차에 타면 남겨집니다.</strong> 차에 타는 것은 따라와 모드의 개뿐입니다.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">믹스견이 현재 위치를 고수하고 따라오지 않습니다. 여전히 좀비를 감지하고 경고하지만, 추적하거나 싸우지 않고 앉아서 지켜보기만 합니다. 안전한 곳에 놔둘 때 좋습니다.</span></em></blockquote>
+<h3 id="경계수비">경계/수비</h3>
+<p>지금 서 있는 자리를 그대로 <strong>초소</strong>로 기억하고 그 자리를 지킵니다.</p>
+<ul>
+<li><strong>초소에서 반경 10타일</strong> 안의 좀비에게 맞서고, 쫓아갔다가 다시 돌아옵니다.</li>
+<li>상황이 나빠지면 당신 뒤로 물러납니다.</li>
+<li><strong>중요한 제한:</strong> 지금은 <strong>당신이 근처에 있을 때만</strong> 작동합니다. 개에게 거점을 지키게 해놓고 맵 밖으로 나가 봐야 소용이 없습니다.</li>
+</ul>
+<blockquote class="quote quote-game"><em><span class="ig">믹스견이 이 위치에 고정되어 방어합니다. 더 넓은 반경의 좀비와 교전하고, 경고를 보낸 뒤, 추적 후 원래 위치로 돌아옵니다. 둘러싸이면 당신 뒤로 물러납니다.</span></em></blockquote>
+<h3 id="개를-부르는-두-가지-명령">개를 부르는 두 가지 명령</h3>
+<div class="tw"><table><thead><tr>
+<th>명령</th>
+<th>하는 일</th>
+<th>대가</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>이리 오렴</strong></td>
+<td><strong>걸어서</strong> 돌아오고 따라와 모드로 바뀝니다</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>물어와</strong></td>
+<td><strong>그 자리에서 바로 당신 옆에 나타납니다</strong></td>
+<td>크게 휘파람을 불고, 그 소리가 <strong>좀비를 끌어들입니다</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>물어와</strong>는 개가 울타리 뒤에 걸렸을 때, 건물 안에 갇혔을 때, 걸어서 돌아오기에 너무 멀 때 쓰세요. 비상용 탈출구이지 평소에 쓰는 명령이 아닙니다.</p>
+<h2 id="5-경계-모드-경보기가-되는-개">5. 경계 모드: 경보기가 되는 개</h2>
+<p>실제로 써 보면 이게 모드에서 가장 쓸모 있는 기능입니다. <strong>개는 당신 눈에 보이지 않는 좀비를 감지합니다.</strong></p>
+<p>경계 모드는 세 모드(따라와, 기다려, 경계/수비) 모두에서 돌아갑니다. 다만 시간 빨리 감기 중과 자는 동안에는 <strong>작동하지 않습니다</strong>.</p>
+<div class="tw"><table><thead><tr>
+<th>모드</th>
+<th>범위</th>
+<th>알리는 방식</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>경보</strong></td>
+<td>18타일 (후각이 최대치면 27타일까지)</td>
+<td>멀리 있거나 수가 적은 좀비에게는 으르렁거립니다. 가깝거나, 무리를 이루거나, 눈에 보이는 좀비에게는 <strong>크게 짖습니다</strong>. <strong>이 짖는 소리는 실제로 좀비를 끌어들입니다</strong></td>
+</tr>
+<tr>
+<td><strong>조용히</strong></td>
+<td>10타일 고정</td>
+<td><strong>으르렁거리기만 합니다.</strong> 절대 짖지 않고 아무것도 끌어들이지 않습니다</td>
+</tr>
+<tr>
+<td><strong>침묵</strong></td>
+<td>없음</td>
+<td>좀비 경고를 전혀 하지 않습니다</td>
+</tr>
+</tbody></table></div>
+<p>개가 <span class="ig">뭔가 냄새를 맡았다</span>에서 <span class="ig">경보</span>로 넘어가는 조건은 좀비가 6타일 이내에 있을 때, <strong>또는</strong> 좀비가 3마리 이상일 때, <strong>또는</strong> 12타일까지 시야가 뚫려 있을 때입니다.</p>
+<p>메시지는 개 머리 위에 떠서 나옵니다.</p>
+<ul>
+<li><em><span class="ig">당신의 믹스견이 근처에서 무언가를 감지했습니다...</span></em> (뭔가 있긴 한데 멀거나 수가 적을 때)</li>
+<li><em><span class="ig">당신의 믹스견이 좀비를 포착했습니다!</span></em> (가깝거나 수가 많을 때, 대응해야 할 때)</li>
+</ul>
+<p><strong>맞바꾸는 관계입니다.</strong> 경보는 경고 범위가 가장 넓은 대신 당신 위치를 드러냅니다. 조용히는 소리 없이 알려주지만 가까운 것만 잡습니다. 침묵은 무슨 일이 있어도 개를 조용히 시키고 싶을 때 쓰는 설정입니다.</p>
+<blockquote class="quote"><strong>스트레스를 받은 개가 혼자 짖는 일은 없습니다.</strong> 스트레스로 짖는 시스템이 있기는 했지만 모드에서는 꺼져 있습니다. 개가 좀비를 불러들이고 있다면 원인은 다음 넷 중 하나이고, 넷 다 당신이 조절할 수 있는 것들입니다. <strong>경보 상태의 경계 모드</strong>, <strong>주의 끌기</strong> 재주, <strong>사냥 중의 추격</strong>, 아니면 <strong>전투</strong>입니다.</blockquote>
+<h2 id="6-전투">6. 전투</h2>
+<h3 id="개가-혼자-싸울-때">개가 혼자 싸울 때</h3>
+<p><strong>개는 자기 마음대로 달려들지 않습니다.</strong> 먼저 계기가 있어야 움직입니다.</p>
+<ul>
+<li><strong>'따라와' 상태일 때:</strong> <strong>자동 보호가 켜져 있어야</strong> 하고, 좀비가 당신이나 개를 노리고 있거나 당신이 이미 싸우고 있어야 합니다. 게다가 좀비가 <strong>당신에게서 5타일 이내</strong>에 있어야 합니다.</li>
+<li><strong>'경계/수비' 상태일 때:</strong> 자리에서 10타일 안이라면 언제든 싸웁니다.</li>
+<li><strong>'가장 가까운 대상 공격' 명령:</strong> 반경 12타일을 뒤져서 게임 내 2분 동안 쫓아갑니다.</li>
+</ul>
+<p>개가 공격하는 것은 <strong>적대적인 좀비</strong>뿐입니다. 다른 모드(Bandits, A-Life)의 아군 NPC는 건드리지 않습니다.</p>
+<h3 id="벽-너머로는-물지-않습니다">벽 너머로는 물지 않습니다</h3>
+<p>개는 <strong>실제로 걸어서 닿을 수 있는</strong> 좀비만 상대합니다. 울타리 건너편에 있거나 닫힌 방 안에 있는 좀비는 무시하는데, 빙 돌아가는 비용이 너무 크기 때문입니다. 가보려다 2.5초 동안 전혀 나아가지 못하면 그 대상을 포기하고 12초 동안 무시합니다.</p>
+<p>이건 의도한 동작입니다. 닿을 수 없는 것을 쫓느라 개가 벽에 붙어 계속 부딪히는 상황을 막아 줍니다.</p>
+<h3 id="개가-주는-피해">개가 주는 피해</h3>
+<p>피해량은 <strong>네 가지를 곱해서</strong> 정해집니다. 견종 자체의 힘, 전투 레벨, 근력 유전자, 그리고 샌드박스 배율입니다.</p>
+<p>플레이어에게 중요한 건 이 부분입니다.</p>
+<ul>
+<li><strong>믹스견은 혼자서 좀비를 죽이지 못합니다.</strong> 좀비 체력을 10%에서 멈춰 세우고 거기서 그칩니다. 이건 의도한 설계라 샌드박스를 어떻게 바꿔도 달라지지 않습니다. 믹스견의 역할은 <strong>좀비를 넘어뜨려서</strong> 당신에게 시간을 벌어 주는 것입니다.</li>
+<li>나머지 견종은 전부 <strong>마무리를 지을 수 있습니다</strong>.</li>
+</ul>
+<p>견종별 피해량 표는 <a href="breeds.html" class="xlink">견종 안내서</a>에 있습니다.</p>
+<p><strong>좀비 넘어뜨리기:</strong> 공격할 때마다 넘어뜨릴 확률이 있고, 10%에서 시작해 전투가 최대 레벨이면 50%에 이릅니다.</p>
+<h3 id="자동-보호">자동 보호</h3>
+<p>개마다 따로 켜고 끕니다. 켜 두면 <strong>당신이 무방비 상태가 되는 동안 개가 알아서 경비를 섭니다</strong>. 대상이 되는 행동은 이렇습니다.</p>
+<ul>
+<li>수면</li>
+<li>독서</li>
+<li>바닥에 앉기</li>
+<li>식사</li>
+<li>낚시</li>
+</ul>
+<p>개는 당신 옆에 자리를 잡고 다가오는 것을 맞받아칩니다. 당신이 움직이면 그 기준점도 같이 따라옵니다. 하던 행동이 끝나면 개는 알아서 다시 따라오기 시작합니다.</p>
+<ul>
+<li><strong>'경계/수비'로 진짜 자리를 지키고 있는 개는</strong> 이것 때문에 자리를 뜨는 일이 <strong>절대 없습니다</strong>.</li>
+<li><strong>이렇게 싸우면 개가 스트레스를 받고 충성도도 오르지 않습니다.</strong> 애정 표현이 아니라 일이니까요.</li>
+</ul>
+<p>개를 길들인 시점에는 <strong>켜져</strong> 있습니다.</p>
+<h3 id="당신의-총알에는-맞지-않습니다">당신의 총알에는 맞지 않습니다</h3>
+<p><strong>개 머리 너머로 마음 놓고 쏴도 됩니다.</strong> 동반자 개는 당신의 총이든 다른 플레이어의 총이든 <strong>어떤 상황에서도 총격으로 체력을 잃지 않습니다</strong>.</p>
+<p>이걸 보장하는 장치가 두 가지 있습니다.</p>
+<ul>
+<li>개는 <strong>자동 조준 대상에서 빠져 있어서</strong>, 조준할 때 표적이 개에게 달라붙지 않습니다.</li>
+<li>싱글 플레이에서는 발사되는 순간 모드가 <strong>개를 명중 판정에서 빼 버립니다</strong>. 총알은 개 뒤에 있는 좀비로 곧장 날아갑니다.</li>
+</ul>
+<p>이러려고 <strong>개가 자리를 비킬 필요는 없고</strong>, 개가 <strong>당신에게 반격하는 일도 절대 없습니다</strong>.</p>
+<blockquote class="quote">멀티플레이에서 멀리서 쏘면 다른 플레이어의 개가 <strong>당신 화면에서는 반응하는 것처럼 보일</strong> 수 있지만, 체력이 깎이지는 않습니다.</blockquote>
+<h3 id="부상-후퇴-패닉">부상, 후퇴, 패닉</h3>
+<ul>
+<li><strong>싸운다고 개가 다치지는 않습니다.</strong> 쌓이는 건 스트레스뿐입니다.</li>
+<li>체력이 떨어지는 건 <strong>방치</strong>(배고픔이나 목마름이 0.8을 넘김), <strong>개에게 해로운 음식</strong>, 그리고 <strong>사냥 중 사슴의 반격</strong> 때문입니다. 죽음까지 가는 건 방치뿐입니다.</li>
+<li>부상 상태는 체력 30% 미만이면 <strong><span class="ig">부상</span></strong>, 10% 미만이면 <strong><span class="ig">중상</span></strong>입니다. 중상인 개는 <strong>따라오기만 하고 싸우지 않습니다</strong>.</li>
+<li><strong>후퇴:</strong> 체력이 10% 이하로 떨어지면 개가 당신 뒤로 물러납니다.</li>
+<li><strong>패닉:</strong> 스트레스가 높으면 <strong>싸우지도, 경계하지도, 재주를 부리지도 않습니다</strong>. 그래도 부르면 당신에게 달려오기는 합니다.</li>
+</ul>
+<h3 id="회복">회복</h3>
+<p>개는 알아서 회복하는데 <strong>꽤 빠릅니다</strong>. 체력 바를 통째로 채우는 데 <strong>게임 내 8시간</strong> 정도, 그러니까 거의 죽어 가던 상태에서 하룻밤이면 멀쩡해집니다. <strong>단, 잘 먹고 물도 충분할 때만 그렇습니다.</strong> 배고픔 <strong>또는</strong> 목마름이 바의 절반을 넘어가면 <strong>회복이 완전히 멈춥니다</strong>.</p>
+<p>정리하면, 다친 개를 낫게 하려면 <strong>먹이를 주고, 물을 주고, 시간이 지나기를 기다리면</strong> 됩니다.</p>
+<h3 id="처치-수-기록">처치 수 기록</h3>
+<p>개마다 자기 카운터가 있고, 개 창에서 볼 수 있습니다. <strong><span class="ig">처치 수: 좀비 14마리, 사냥감 3마리</span></strong> 같은 식입니다.</p>
+<p>샌드박스 옵션 <strong><span class="ig">개의 좀비 처치 수를 플레이어에게 합산</span></strong>을 켜 두면(기본값이 켜짐) 개가 죽인 좀비가 캐릭터 정보창의 <strong>당신 카운터에도 더해집니다</strong>.</p>
+<h2 id="7-욕구와-관리">7. 욕구와 관리</h2>
+<p>동반자 개는 무적이고, 그래서 게임의 기본 배고픔 시스템이 멈춰 버립니다. 그래서 이 모드는 모든 것을 직접 관리합니다.</p>
+<p><strong>바가 네 개</strong> 있고, 여기에 충성도가 더해집니다.</p>
+<div class="tw"><table><thead><tr>
+<th>바</th>
+<th>오름 / 내림</th>
+<th>속도</th>
+<th>문제가 되는 지점</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>배고픔</strong></td>
+<td>시간이 지나면 오름</td>
+<td>빈 상태에서 가득 차기까지 약 <strong>3일</strong></td>
+<td>0.6 초과</td>
+</tr>
+<tr>
+<td><strong>목마름</strong></td>
+<td>시간이 지나면 오름</td>
+<td>빈 상태에서 가득 차기까지 약 <strong>1.7일</strong></td>
+<td>0.6 초과</td>
+</tr>
+<tr>
+<td><strong>체력</strong></td>
+<td>방치했을 때만 내려감</td>
+<td>배고픔이나 목마름이 0.8을 넘으면 <strong>바 하나가 약 8시간</strong></td>
+<td>30% 미만</td>
+</tr>
+<tr>
+<td><strong>스트레스</strong></td>
+<td>다른 값에서 계산됨</td>
+<td>없음</td>
+<td>50% 초과</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>수면이나 위생은 없습니다.</strong> 개는 잘 필요가 없고 더러워지지도 않습니다.</blockquote>
+<p>샌드박스 옵션 <strong><span class="ig">배고픔 및 목마름 속도 배율</span></strong>은 두 바를 함께 조절합니다. 0으로 두면 완전히 멈춰서 개가 다시는 먹거나 마실 필요가 없어집니다(충성도는 계속 떨어지니 관심은 여전히 필요합니다).</p>
+<h3 id="스트레스는-어디서-오나">스트레스는 어디서 오나</h3>
+<p>스트레스는 당신이 채우는 바가 아니라 나머지 바들의 <strong>결과</strong>입니다. 배고픔, 목마름, 낮은 체력, 낮은 충성도, 그리고 <strong>싸움에서 주고받는 한 대 한 대</strong>로 올라갑니다.</p>
+<p>단계는 이렇습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>단계</th>
+<th>이 수치부터</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>불안함</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>공포</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>극도의 공포</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>공포 상태에 빠진 개는 <strong>싸우지도, 경계하지도, 재주를 부리지도 않습니다</strong>. 그래도 부르면 당신에게 달려옵니다.</p>
+<p>좋은 소식도 있습니다. <strong>전투 스트레스는 싸움이 끝나면 금방 빠집니다.</strong> 가득 찬 바가 <strong>게임 내 2시간</strong> 정도면 비워집니다. <strong>쓰다듬기, 먹이, 물은 진정을 더 앞당깁니다.</strong></p>
+<h3 id="직접-먹이-주기">직접 먹이 주기</h3>
+<p>개를 우클릭 → <strong><span class="ig">먹이 주기</span></strong>.</p>
+<ul>
+<li>썩지 않았고 배고픔을 채워 주는 <strong>음식이면 뭐든</strong> 됩니다. 고기나 사료여야 한다는 제한은 없고, 해로운 음식 목록만 예외입니다.</li>
+<li>효과는 배고픔 감소, 수분이 많은 음식이면 목마름 해소, <strong>체력 +0.10</strong>, 스트레스 완화, 그리고 <strong>채워 준 배고픔의 양에 비례한 충성도 상승</strong>입니다.</li>
+<li>필요한 한 입만큼만 소모됩니다.</li>
+<li>메시지: <em><span class="ig">믹스견이(가) 만족해합니다.</span></em></li>
+</ul>
+<h3 id="물-주기">물 주기</h3>
+<p>우클릭 → <strong><span class="ig">물 주기</span></strong>. 인벤토리에 물이 든 용기가 있어야 합니다(모드가 가방 속까지 찾아 줍니다).</p>
+<p>목마름 바가 절반 내려가고, <strong>충성도 +2</strong>를 주며 스트레스도 완화됩니다. <em><span class="ig">믹스견이(가) 물을 마십니다.</span></em></p>
+<h3 id="쓰다듬기">쓰다듬기</h3>
+<p>우클릭 → <strong><span class="ig">쓰다듬기</span></strong>.</p>
+<ul>
+<li><strong>쿨다운은 게임 내 90분입니다.</strong> 그 전에는 이렇게 나옵니다. <em><span class="ig">당신의 믹스견이(가) 지금은 애정 표현을 충분히 받았습니다.</span></em></li>
+<li>개가 받는 효과는 <strong>스트레스 완화와 충성도 +2</strong>입니다.</li>
+<li><strong>당신이 받는 효과:</strong> <strong>지루함과 불행</strong>이 완화됩니다. 기회가 될 때마다 해 둘 만합니다.</li>
+</ul>
+<h3 id="방치했을-때의-순서">방치했을 때의 순서</h3>
+<p>개를 내버려 두면 다음 순서로 일이 벌어집니다.</p>
+<ol>
+<li>배고픔과 목마름이 0.6을 넘습니다. 화면에 <strong><span class="ig">배고픔</span></strong> / <strong><span class="ig">목마름</span></strong> moodle이 뜹니다.</li>
+<li><strong>충성도가 세 배 빠르게 떨어지기 시작합니다.</strong></li>
+<li>절반을 넘어가면 <strong>자연 회복이 멈춥니다</strong>.</li>
+<li>0.8을 넘어가면 <strong>체력이 빠르게 깎이기 시작합니다</strong>. 체력이 가득한 개도 <strong>게임 내 8시간</strong> 정도면 0이 됩니다.</li>
+<li>충성도가 바닥을 뚫고, 개는 <strong><span class="ig">불순종</span></strong> 상태가 되어 말을 듣지 않습니다.</li>
+<li>스트레스가 올라 패닉에 빠지고 <strong>싸우지도, 경계하지도, 재주를 부리지도 않습니다</strong>.</li>
+<li>체력이 0이 되고 <strong>개는 죽습니다</strong>.</li>
+</ol>
+<p><strong>죽음은 되돌릴 수 없습니다.</strong> 리스폰은 없습니다. <em><span class="ig">당신의 믹스견이(가) 죽었습니다.</span></em> 안장 가방과 그 안에 들어 있던 것은 바닥에 떨어집니다. 다른 개가 있다면 그 개가 자동으로 활성 동반자가 됩니다.</p>
+<p>좀비는 당신의 개를 죽이지 않습니다. <strong>먹이 주는 것을 잊으면 죽습니다.</strong></p>
+<h2 id="8-충성도">8. 충성도</h2>
+<p>충성도는 0에서 100까지의 수치로, 개가 당신을 얼마나 믿는지를 나타냅니다.</p>
+<ul>
+<li><strong>가만히 두면 알아서 떨어집니다.</strong> 하루에 12포인트 정도이고, 배가 고프거나 목이 마르면 <strong>3배 빠르게</strong> 떨어집니다.</li>
+<li><strong>올라가는 건 사람 손을 탈 때뿐입니다.</strong> 먹이 주기, 물 주기(+2), 쓰다듬기(+2)입니다.</li>
+<li><strong>먹이 주기가 압도적으로 빠릅니다.</strong> 다만 오르는 양은 <strong>그 한 끼가 실제로 없애 준 배고픔에 비례합니다</strong>. 이미 배부른 개에게 음식을 줘도 거의 효과가 없고, 굶주린 개에게 먹이면 한 번에 수십 포인트가 돌아옵니다. 충성도가 떨어졌다면 <strong>배가 고파질 때까지 두었다가 먹이세요</strong>.</li>
+<li><strong>밥그릇으로 알아서 먹는 것은 충성도를 절대 올리지 않습니다.</strong> 일부러 그렇게 만들었습니다. 밥그릇에서 혼자 해결하는 개는 당신과 유대가 생기지 않습니다. 충성스러운 개를 원한다면 직접 얼굴을 비춰야 합니다.</li>
+</ul>
+<h3 id="불순종-기준선">불순종 기준선</h3>
+<p>충성도가 일정 수준 아래로 내려가면 개는 <strong><span class="ig">불순종</span></strong> 상태가 되어 따라오기, 싸우기, 재주 부리기를 거부합니다: <em><span class="ig">당신의 믹스견이(가) 더 이상 당신을 신뢰하지 않습니다...</span></em></p>
+<p>이 기준선은 <strong>복종이 오를수록 내려갑니다</strong>. 30에서 시작해 레벨당 1.5씩 낮아지고, 10 아래로는 내려가지 않습니다. 그래서 <strong>복종 10인 개는 충성도가 15 아래로 떨어져야 불순종이 되고</strong>, 훈련이 안 된 개는 충성도 30 아래에서 벌써 말썽을 부립니다.</p>
+<p><strong>복종을 훈련하는 것이 곧 충성도에 여유를 사 두는 방법입니다.</strong></p>
+<h3 id="개가-명령을-거부할-때">개가 명령을 거부할 때</h3>
+<p>이유는 네 가지이고, 우선순위는 다음과 같습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>상황</th>
+<th>화면에 뜨는 문구</th>
+</tr></thead><tbody>
+<tr>
+<td>충성도가 기준선 아래</td>
+<td><em><span class="ig">믹스견 렉스이(가) 복종할 만큼 당신을 신뢰하지 않습니다.</span></em></td>
+</tr>
+<tr>
+<td>스트레스가 공포 수준</td>
+<td><em><span class="ig">믹스견 렉스이(가) 너무 패닉에 빠져 싸울 수 없습니다.</span></em></td>
+</tr>
+<tr>
+<td>체력이 10% 이하</td>
+<td><em><span class="ig">믹스견 렉스이(가) 너무 심하게 다쳐 싸울 수 없습니다.</span></em></td>
+</tr>
+<tr>
+<td>훈련 실패</td>
+<td><em><span class="ig">믹스견 렉스이(가) 딴짓을 하며 당신을 무시합니다.</span></em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-밥그릇-당신-없이도-먹고-마시기">9. 밥그릇: 당신 없이도 먹고 마시기</h2>
+<p>밥그릇은 당신이 다른 일을 하는 동안 <strong>활성화된 개</strong>가 혼자 끼니를 해결하는 수단입니다.</p>
+<blockquote class="quote"><strong>배고픔과 목마름을 느끼는 것도, 밥그릇을 쓰는 것도 활성화된 개뿐입니다.</strong> 유대를 맺은 나머지 개들은 멈춰 있습니다. 배도 고프지 않고, 목도 마르지 않고, 밥그릇을 찾아가지도 않고, 충성도도 잃지 않습니다. 그 개들을 위해 <strong>밥그릇을 따로 놓아 줄 필요가 없고</strong>, 기다리는 동안 굶지도 않습니다. <a href="#16-여러-마리를-동시에-두기">여러 마리를 동시에 키우기</a> 항목을 보세요.</blockquote>
+<h3 id="밥그릇-사용법">밥그릇 사용법</h3>
+<ol>
+<li>밥그릇을 구합니다(제작하거나 주워서. <a href="#19-모드가-추가하는-아이템">모드 아이템</a> 참고).</li>
+<li>인벤토리에서 우클릭 → <strong><span class="ig">밥그릇 배치</span></strong>. 원하는 자리에 놓을 수 있는 커서가 열리고, <strong>R 키로 회전</strong>합니다.</li>
+<li>바닥에 놓은 밥그릇에 우클릭 → <strong><span class="ig">밥그릇에 사료 추가</span></strong> 또는 <strong><span class="ig">밥그릇에 물 추가</span></strong>.</li>
+</ol>
+<p>밥그릇에는 <strong>사료 아니면 물, 둘 중 하나만 들어가고 둘을 같이 담을 수는 없습니다</strong>. 바꾸려면 <strong><span class="ig">밥그릇 비우기</span></strong> 항목을 쓰세요.</p>
+<p>내용물은 겉모습으로 드러납니다. 비어 있으면 회색, 사료가 담기면 갈색, 물이 담기면 파란색입니다.</p>
+<h3 id="밥그릇에-넣을-수-있는-음식">밥그릇에 넣을 수 있는 음식</h3>
+<p><strong>배고픔을 채워 주고 상하지 않은 음식이면 사실상 다 됩니다.</strong> 고기, 통조림, 조리한 요리, 채소, 과일, 달걀, 개 사료, 그리고 풀과 건초까지 들어갑니다.</p>
+<p>빠지는 것은 상한 음식, 배를 채우지 못하는 것, 그리고 <a href="#개에게-해로운-음식">개에게 해로운 음식 목록</a>뿐이고, 해로운 음식은 메뉴에 빨간색으로 표시됩니다.</p>
+<blockquote class="quote"><strong>따지 않은 사료 캔은 목록에 뜨지 않습니다.</strong> 캔을 먼저 여세요.</blockquote>
+<p>밥그릇은 최대 <strong>100포인트</strong>까지 담습니다. 아이템마다 크기에 따라 값이 다릅니다.</p>
+<div class="tw"><table><thead><tr>
+<th>아이템</th>
+<th>포인트</th>
+</tr></thead><tbody>
+<tr>
+<td>개 사료 포대</td>
+<td>60</td>
+</tr>
+<tr>
+<td>개봉한 개 사료 캔</td>
+<td>30</td>
+</tr>
+<tr>
+<td>건초</td>
+<td>12</td>
+</tr>
+<tr>
+<td>풀</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>넣으려는 아이템이 남은 공간보다 크면 밥그릇은 꼭대기까지 차고 나머지는 당신에게 돌아옵니다.</strong> 이미 80포인트가 담긴 밥그릇에 사료 포대를 넣으면 밥그릇은 100이 되고, 포대는 40짜리가 되어 인벤토리로 돌아옵니다. 밥그릇이 <strong>완전히 가득 찼을 때만</strong> 이런 메시지가 뜹니다: <em><span class="ig">밥그릇에 더 이상 들어갈 공간이 없습니다.</span></em></p>
+<h3 id="개가-밥그릇을-쓰는-방식">개가 밥그릇을 쓰는 방식</h3>
+<ul>
+<li><strong>배고픔이나 목마름이 0.5에 도달하면</strong> 알아서 갑니다(캐릭터별로 설정 탭의 <em><span class="ig">배고픔/목마름 수치가 다음에 도달하면 섭취</span></em> 슬라이더에서 조절합니다).</li>
+<li><strong>16타일</strong> 반경 안에서 밥그릇을 찾습니다. 모드의 밥그릇도 되고, <strong>게임에 원래 있는 가축용 여물통</strong>도 됩니다.</li>
+<li>한 번 다녀올 때마다 해당 수치의 절반이 채워집니다. 먹는 데 게임 시간으로 3분쯤 걸립니다.</li>
+<li>밥그릇에 매달려 있는 동안에는 <strong>좀비도, 그 밖의 무엇도 신경 쓰지 않습니다</strong>. 끊을 수 있는 것은 당신의 명령뿐입니다. 이건 좋은 일입니다. 배가 고파 패닉에 빠진 개가 밥을 먹으면서 스스로 패닉에서 빠져나올 수 있으니까요.</li>
+</ul>
+<p>머리 위에는 <strong><span class="ig">밥 먹으러 가는 중</span></strong>, <strong><span class="ig">밥 먹는 중</span></strong>, <strong><span class="ig">물 마시러 가는 중</span></strong>, <strong><span class="ig">물 마시는 중</span></strong> 같은 문구가 뜹니다.</p>
+<blockquote class="quote"><strong>기억하세요.</strong> 밥그릇에서 먹는 것으로는 <strong>충성도가 전혀 오르지 않습니다</strong>. 밥그릇은 개를 살려 두고, 쓰다듬기는 개를 당신 것으로 만듭니다.</blockquote>
+<p>밥그릇은 <strong>당신이 마실 물의 공급원으로는 절대 쓸 수 없고</strong>, 비가 와도 차지 않습니다.</p>
+<h2 id="10-스킬-개가-가진-다섯-가지-능력">10. 스킬: 개가 가진 다섯 가지 능력</h2>
+<p>개마다 0에서 10까지 올라가는 스킬이 다섯 개 있고, 이 스킬은 따로 훈련 시간을 잡는 게 아니라 <strong>직접 해 보면서</strong> 오릅니다.</p>
+<div class="tw"><table><thead><tr>
+<th>스킬</th>
+<th>오르는 방법</th>
+<th>좋아지는 것</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>후각</strong></td>
+<td>경계 모드가 새로 감지할 때마다, 물건 냄새 추적 재주를 쓸 때</td>
+<td><strong>경계 범위</strong>(18 → 27 타일)와 기억한 냄새를 알아채는 거리</td>
+</tr>
+<tr>
+<td><strong>전투</strong></td>
+<td>공격 한 번, 처치 한 번마다</td>
+<td><strong>피해량</strong>, 넘어뜨릴 확률(10% → 50%), 그리고 전투 스트레스에 대한 저항력</td>
+</tr>
+<tr>
+<td><strong>복종</strong></td>
+<td>명령에 따를 때마다(쿨타임 있음). <strong>레벨 3 미만에서는 4배 빠르게 오릅니다</strong></td>
+<td><strong>더 낮은 충성도 기준선</strong>, <strong>네 가지 재주</strong>, 그리고 줄어드는 불복종 확률</td>
+</tr>
+<tr>
+<td><strong>사냥</strong></td>
+<td>사냥감 가리키기, 냄새 맡기, 잡기, 그리고 <strong>당신</strong>이 개 근처에서 사냥감을 잡을 때</td>
+<td><strong>레벨 3:</strong> 작은 사냥감을 잡습니다. <strong>레벨 6:</strong> 사슴에게 덤벼들어 사냥감을 물어옵니다. 당신의 채집 반경도 넓혀 줍니다</td>
+</tr>
+<tr>
+<td><strong>가축 몰이</strong></td>
+<td>우리 지키기, 무리가 패닉에 빠지지 않게 붙잡아 두기, 우리에 들어온 좀비 쫓아내기</td>
+<td><strong>무리를 진정시키는</strong> 효과의 세기</td>
+</tr>
+</tbody></table></div>
+<h3 id="경험치-곡선-이야기">경험치 곡선 이야기</h3>
+<p>레벨 1은 금방 나오지만 레벨 10은 장기 프로젝트입니다. 샌드박스의 <strong><span class="ig">스킬 경험치 획득 배율</span></strong> 옵션이 전체 속도를 정합니다.</p>
+<blockquote class="quote"><strong>주의:</strong> 이 옵션의 파일상 기본값은 <strong>0.5</strong>, 즉 속도의 절반입니다. 도움말에 <span class="ig">기본값은 1.0</span>이라고 적혀 있는데도 그렇습니다. 개가 너무 느리게 배운다고 느꼈다면 원인이 이겁니다. 값을 1.0 이상으로 올리세요.</blockquote>
+<h3 id="불복종">불복종</h3>
+<p><strong><span class="ig">개의 명령 불복종 허용</span></strong> 옵션이 켜져 있으면(기본값입니다) 훈련이 안 된 개가 가끔 그냥 당신을 무시합니다: <em><span class="ig">믹스견 렉스이(가) 딴짓을 하며 당신을 무시합니다.</span></em></p>
+<ul>
+<li>확률은 <strong>복종 0에서 30%로 시작</strong>해서 <strong>복종 10이 되면 0%까지 떨어집니다</strong>.</li>
+<li><strong>곧바로 같은 명령을 다시 내리면 반드시 통합니다.</strong> 연달아 두 번 무시하는 일은 없습니다.</li>
+<li><strong>무시당한 명령도 똑같이 훈련이 됩니다</strong>. 경험치를 버린 게 아닙니다.</li>
+<li><strong>직접 내리는 명령</strong>에만 적용됩니다. 따라오기, 기다리기, 경계, 이리 오기, 공격, 그리고 재주입니다. 먹이 주기, 물 주기, 쓰다듬기, 안장 가방, <strong>물어와</strong>, 행동 토글(경계 모드, 자동 보호, 사냥, 가축 관리)은 전혀 영향을 받지 않습니다.</li>
+</ul>
+<p>이 방식이 마음에 들지 않으면 샌드박스에서 해당 옵션을 끄면 됩니다.</p>
+<h3 id="스킬과-특성은-다릅니다">스킬과 특성은 다릅니다</h3>
+<p>개 정보창에는 비슷하게 생긴 목록이 두 개 있는데, 헷갈리지 않는 편이 좋습니다.</p>
+<ul>
+<li><strong>스킬</strong>(후각, 전투, 복종, 사냥, 가축 몰이)은 평생 <strong>쓰면서 오릅니다</strong>. 이 장에서 다루는 게 이쪽입니다.</li>
+<li><strong>특성</strong>(근력, 공격성, 저항력)은 <strong>개를 길들이는 순간 정해지고 두 번 다시 바뀌지 않습니다</strong>. 훈련으로는 건드릴 수 없습니다.</li>
+</ul>
+<blockquote class="quote"><strong>특성이 각각 무슨 일을 하는지, 견종마다 어느 범위인지</strong>는 <a href="breeds.html" class="xlink">견종 매뉴얼</a>에 있습니다.</blockquote>
+<h2 id="11-복종-재주">11. 복종 재주</h2>
+<p>재주는 네 가지이고, <strong>복종</strong> 레벨에 따라 하나씩 열립니다. 처음부터 전부 메뉴에 보이고, 아직 잠긴 것은 빨간색으로 나오니 앞으로 뭐가 열리는지 미리 볼 수 있습니다: <em><span class="ig">복종 레벨 3에서 해금됩니다 (현재 1).</span></em></p>
+<h3 id="지정-위치로-가기-복종-1">지정 위치로 가기 (복종 1)</h3>
+<p><strong>바닥에 커서</strong>가 뜹니다. 보낼 수 있는 곳은 초록, 못 보내는 곳은 빨강입니다. 좌클릭으로 고르고 우클릭으로 취소합니다.</p>
+<ul>
+<li>최대 거리는 개가 아니라 <strong>당신을 기준으로 30타일</strong>입니다.</li>
+<li>거기까지 걸어가서 <strong>그 자리를 지킵니다</strong> (도착하면 기다려 모드로 들어갑니다).</li>
+<li>새 명령을 내리면 이동은 취소됩니다.</li>
+</ul>
+<p>같이 가지 않고 개만 배치할 때 씁니다. 길 건너편으로 보내거나, 모퉁이에 세워두거나, 방 안에 넣어둘 수 있습니다.</p>
+<h3 id="주의-끌기-복종-3">주의 끌기 (복종 3)</h3>
+<p>개가 일부러 아주 크게 짖어서 24타일 반경의 <strong>좀비 무리를 자기 쪽으로 끌어당깁니다</strong>. 그다음 당신 쪽으로 물러납니다.</p>
+<ul>
+<li><strong><span class="ig">개가 내는 소리의 좀비 유인 효과</span> 옵션을 일부러 무시합니다.</strong> 소리를 내는 게 이 재주의 목적이라 옵션과 상관없이 항상 소리를 냅니다.</li>
+<li>스트레스를 소모합니다.</li>
+<li>머리 위에 빨간 표시가 붙습니다: <strong><span class="ig">좀비 유인 중</span></strong>.</li>
+<li>게임 시간 10분 쿨타임이 있습니다.</li>
+</ul>
+<p><strong>길을 여는 도구</strong>입니다. 무리를 한쪽으로 끌어놓고 당신은 반대쪽으로 들어가면 됩니다. 대신 개는 무리를 뒤에 달고 있게 되니 그 뒤를 어떻게 할지 계획은 세워두세요.</p>
+<h3 id="물건-냄새-추적-복종-5">물건 냄새 추적 (복종 5)</h3>
+<p><strong>물건을 손에 들고</strong> 재주를 쓰면 개가 <strong>그 물건 종류의 냄새</strong>를 외웁니다: <em><span class="ig">믹스견이(가) 망치의 냄새를 기억했습니다.</span></em></p>
+<p>그때부터 개는 뒤에서 조용히 주변을 훑습니다(12타일, 후각이 최대면 20타일까지). <strong>수납장 안과 바닥</strong>에 있는 그 물건을 찾습니다. 찾으면:</p>
+<ol>
+<li>짖습니다.</li>
+<li>그쪽으로 가서 가리킵니다.</li>
+<li><strong>월드에서 그 물건이 초록색으로 강조됩니다.</strong></li>
+</ol>
+<p>메시지: <em><span class="ig">믹스견이(가) 근처에서 망치의 냄새를 맡았습니다.</span></em>, <em><span class="ig">믹스견이(가) 망치을(를) 가리킵니다.</span></em></p>
+<p>개는 <strong>냄새를 하나만</strong> 기억합니다. 다른 걸 맡게 하면 앞의 것이 지워집니다. 그만두게 하려면 <strong><span class="ig">망치 추적 중지</span></strong>를 쓰면 됩니다(개가 외운 물건 이름이 들어갑니다). 취소는 절대 막히지 않습니다.</p>
+<p>손에 아무것도 없으면: <em><span class="ig">개에게 냄새를 맡게 할 물건을 손에 드세요.</span></em></p>
+<h3 id="자는-동안-물건-찾아오기-복종-10">자는 동안 물건 찾아오기 (복종 10)</h3>
+<p>마지막 재주입니다. <strong>개가 안장 가방을 착용하고 있어야 합니다.</strong></p>
+<p>물건을 손에 들고 걸어두면: <em><span class="ig">믹스견이(가) 자는 동안 망치을(를) 찾습니다.</span></em> 머리 위에는 표시가 계속 붙어 있습니다: <strong><span class="ig">찾는 중: 망치</span></strong>.</p>
+<p>작동 방식은 이렇습니다:</p>
+<ul>
+<li><strong>게임 내 하루에 한 번.</strong> 당신이 일어난 직후, 개가 근처에 있을 때 판정이 돌아갑니다.</li>
+<li><strong>성공 확률은 물건이 얼마나 희귀한지에 달려 있고</strong>, <strong>확정은 없습니다</strong>. 게임에서 가장 흔한 물건도 하룻밤에 <strong>최대 50%</strong>입니다(평균 이틀쯤 기다리는 셈). 도끼처럼 조금 덜 흔한 물건은 15% 근처, 카타나처럼 정말 희귀한 물건은 2% 안팎이라 몇 주씩 시도해야 합니다.</li>
+<li>성공하면: <em><span class="ig">자는 동안 믹스견이(가) 망치을(를) 가져왔습니다.</span></em> 물건은 <strong>안장 가방 안에</strong> 들어가고, 초록색 표시로 <strong><span class="ig">가져옴: 망치</span></strong>가 뜹니다.</li>
+<li>실패하면: <em><span class="ig">믹스견이(가) 망치 없이 돌아왔습니다.</span></em> 그리고 빨간 표시로 <strong><span class="ig">빈손으로 돌아옴</span></strong>이 뜹니다.</li>
+</ul>
+<p>걸어둘 때 막히는 경우가 두 가지 있습니다:</p>
+<ul>
+<li>너무 무거운 물건: <em><span class="ig">믹스견이(가) 모루을(를) 옮길 수 없습니다.</span></em></li>
+<li>게임의 루트 테이블에 없는 물건: <em><span class="ig">믹스견이(가) 그것을(를) 어디서 찾아야 할지 모릅니다.</span></em></li>
+</ul>
+<h2 id="12-사냥">12. 사냥</h2>
+<p>사냥 모드는 <strong>꺼진 채로</strong> 시작하고, 개마다 따로 켭니다. 라디얼 메뉴, 단축키, 명령 탭의 버튼 중 아무거나 쓰면 됩니다. <em><span class="ig">믹스견 Rex이(가) 근처의 사냥감을 사냥합니다.</span></em></p>
+<h3 id="무엇을-사냥하나">무엇을 사냥하나</h3>
+<div class="tw"><table><thead><tr>
+<th>사냥감</th>
+<th>필요한 사냥 레벨</th>
+</tr></thead><tbody>
+<tr>
+<td>토끼, 너구리, 쥐, 다람쥐</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>사슴 (새끼, 암사슴, 수사슴)</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>다른 야생 동물은 가리키기만 하고 사냥하지는 않습니다.</p>
+<h3 id="실제로는-어떻게-돌아가나">실제로는 어떻게 돌아가나</h3>
+<p><strong>0, 1, 2레벨은 가리키기만 하고 끝입니다.</strong> 이 구간에서 개는 <strong>사냥감에 손도 대지 않습니다</strong>. 한 번 짖고, 동물 근처까지 총총 달려가 멈춘 다음, 포인팅 자세를 잡고 <strong>몇 분 동안 그 자리에서 가리키고 있습니다</strong>. 어디에 있는지 당신이 볼 수 있게 하는 겁니다. 그러고는 포기하고 돌아옵니다. 알림은 이렇게 뜹니다: <em><span class="ig">당신의 개이(가) 근처에서 사냥감을 발견했습니다...</span></em></p>
+<p>별것 아닌 게 아닙니다. <strong>초반에 사냥 스킬을 올리는 방법이 바로 이겁니다.</strong> 계속 가리키게 두면 레벨이 올라갑니다.</p>
+<p><strong>3레벨부터 작은 사냥감을 잡기 시작합니다.</strong></p>
+<ul>
+<li><strong>배가 고프면 개가 사냥감을 먹어버립니다.</strong> 당신에게 남는 건 없지만 개는 배를 채웁니다.</li>
+<li><strong>배가 고프지 않으면 잡은 실적을 당신 앞으로 달아주고</strong>, 가죽을 벗길 수 있는 사체를 <strong>사냥이 끝난 자리 바닥에</strong> 그대로 둡니다. 알림은 뜹니다: <em><span class="ig">당신의 개이(가) 사냥감을 쓰러뜨렸습니다!</span></em> 하지만 <strong>주우러 가는 건 당신 몫입니다</strong>.</li>
+</ul>
+<p><strong>6레벨부터는 잡은 것을 당신에게 물어옵니다.</strong> 표시는 <strong><span class="ig">사냥감 물어오는 중</span></strong>, 메시지는 <em><span class="ig">당신의 개이(가) 사냥감을 플레이어에게 끌고 왔습니다.</span></em>입니다. 이건 <strong>작은 사냥감에만</strong> 해당합니다.</p>
+<p><strong>6레벨은 사슴도 열어줍니다.</strong> 사슴은 규칙이 다릅니다. <strong>어느 레벨, 어느 견종이든 사슴은 끌고 오지 않습니다.</strong> 개는 사슴을 거의 죽기 직전까지 몰아붙인 뒤 <strong>당신이 마무리하도록 붙잡고 기다립니다</strong>: <em><span class="ig">당신의 개이(가) 사슴에게 상처를 입혔습니다. 마무리 지으세요!</span></em>, 표시는 <strong><span class="ig">먹잇감 제압 중</span></strong>입니다. 게임 시간 20분 안에 당신이 나타나지 않으면 개가 알아서 끝냅니다(실적은 그대로 당신 앞으로 갑니다). 사슴이 도망치면 개가 추적합니다: <em><span class="ig">당신의 개이(가) 상처 입은 사냥감을 추적 중입니다...</span></em></p>
+<blockquote class="quote"><strong>래브라도는 예외입니다.</strong> 이 견종은 <strong>3레벨부터</strong> 잡은 것을 가져다줍니다. 즉 처음 잡을 수 있게 된 사냥감부터 바로 물어오고, 도중에 놓아버리기까지 더 오래 버팁니다. 자세한 내용은 <a href="breeds.html" class="xlink">견종 매뉴얼</a>에 있습니다.</blockquote>
+<p><strong>사슴은 반격합니다.</strong> 네 번 달려들면 한 번꼴로 개가 다치고 스트레스를 받습니다. 죽지는 않습니다.</p>
+<h3 id="제약">제약</h3>
+<ul>
+<li>사냥은 <strong>시골 활동</strong>입니다. 사냥감은 숲과 들에 살지, 도시에는 없습니다.</li>
+<li><strong>따라와</strong> 모드에서만 작동합니다.</li>
+<li><strong>32타일짜리 목줄이 있습니다.</strong> 너무 멀어지면 포기하고 돌아와 게임 시간 20분 동안 쉽니다 (표시: <strong><span class="ig">사냥: 휴식 중</span></strong>).</li>
+<li>시간 빨리 감기 중, 당신이 자는 동안, 차량 안, 그리고 당신이 명령을 내린 뒤 5분 동안은 사냥하지 않습니다.</li>
+<li><strong>이미 좀비와 싸우는 중이면 사냥할 생각을 하지 않습니다.</strong> 반대는 그것만으로는 성립하지 않습니다. 좀비가 근처를 지나간다고 해서 <strong>개가 사냥을 그만두지는 않습니다</strong>. 당신이 전투에 들어가거나, 자동 보호가 발동하거나, 당신이 명령을 내리면 사냥감을 놓습니다. <strong>당신의 명령은 무엇이든 사냥을 즉시 취소합니다.</strong></li>
+</ul>
+<h3 id="대가">대가</h3>
+<ul>
+<li>사냥하면 <strong>배가 고파집니다</strong>.</li>
+<li>추격 중에 짖는 소리가 <strong>좀비를 끌어들입니다</strong>. 이건 고정이라 끌 수 없습니다.</li>
+<li>개가 당신 곁을 떠나 위험에 노출됩니다.</li>
+</ul>
+<h3 id="채집-보너스">채집 보너스</h3>
+<p>서로 다른 두 가지 이야기이고, <strong>둘 다 게임의 탐색 모드를 켜야 보입니다</strong>.</p>
+<p><strong>a) 채집 지점을 찾아줍니다 (사냥 모드에서만).</strong> 근처에 사냥감이 없으면 개는 동물 채집 지점을 찾아 그리로 가서 짖고 <strong>그 자리를 가리킵니다</strong>: <em><span class="ig">당신의 개이(가) 무언가를 찾았습니다! 탐색 모드를 켜서 확인하세요.</span></em> 표시는 <strong><span class="ig">채집품 냄새 맡는 중</span></strong>.</p>
+<p><strong>개가 물건을 대신 주워오지는 않습니다.</strong> 어디를 뒤질지 알려줄 뿐이고, <strong>채집은 당신이</strong> 탐색 모드를 켜고 그 자리에서 해야 합니다.</p>
+<p><strong>b) 당신의 탐색 범위를 넓혀줍니다 (견종 무관, 항상).</strong> 당신의 개가 근처에 있고, 충성스럽고, 배고픔과 목마름이 심하지 않기만 하면 됩니다:</p>
+<ul>
+<li>사냥 0에서 <strong>+6타일</strong>, 사냥 10에서 <strong>+12타일</strong>까지 늘어납니다.</li>
+<li><strong>동물, 곤충, 흔적, 사체</strong> 계열이 훨씬 잘 보입니다.</li>
+</ul>
+<p>이건 <strong>어느 견종의 전유물도 아닙니다.</strong> 믹스견으로도 됩니다. 골든 리트리버는 여기에 <strong>4타일을 더 얹어줄</strong> 뿐입니다.</p>
+<h2 id="13-가축-돌보기">13. 가축 돌보기</h2>
+<p>이 모드는 개를 농장 일꾼으로 만듭니다. 개는 우리에 남아서 <strong>당신이 멀리 있어도 혼자 가축을 돌봅니다</strong>.</p>
+<h3 id="맡기는-방법">맡기는 방법</h3>
+<ol>
+<li><strong>지정된 동물 구역</strong>(기본 게임의 우리)을 만듭니다.</li>
+<li>개를 그 안으로 데려갑니다.</li>
+<li>우클릭 → <strong><span class="ig">여기서 가축 돌보기</span></strong>.</li>
+<li>확인합니다. <strong>개의 선택이 해제되어 더 이상 따라오지 않는다</strong>는 안내가 뜹니다.</li>
+</ol>
+<p>우리가 없으면: <em><span class="ig">가축을 돌보려면 믹스견 Rex에게 이곳에 지정된 동물 우리가 필요합니다.</span></em></p>
+<h3 id="우리에서-하는-일">우리에서 하는 일</h3>
+<ul>
+<li><strong>우리를 순찰합니다.</strong></li>
+<li><strong>무리를 진정시킵니다.</strong> 이게 핵심입니다. 스트레스를 받은 가축은 <strong>우유도 양모도 내놓지 않고</strong>, 유산하고, 좀비가 나타나면 흩어집니다. 개는 무리의 스트레스를 위험 수위 아래로 붙잡아 둡니다.</li>
+<li>12타일 반경의 <strong>좀비를 조용히 처리합니다</strong>.</li>
+<li><strong>당신이 지도 반대편에 있어도</strong> 계속 일합니다.</li>
+</ul>
+<p>알림: <em><span class="ig">믹스견 Rex이(가) 우리 근처에서 좀비를 감지했습니다!</span></em>, 그리고 <em><span class="ig">믹스견 Rex의 가축 무리가 스트레스를 받고 있습니다!</span></em> 머리 위 표시: <strong><span class="ig">가축 돌보는 중</span></strong>.</p>
+<h3 id="중요한-규칙">중요한 규칙</h3>
+<ul>
+<li>근무 중에는 <strong>배고픔, 목마름, 충성도 감소가 전부 멈춥니다</strong>. 알아서 지냅니다.</li>
+<li>대신 <strong>다른 모든 일에서 빠집니다.</strong> 당신을 위해 싸우지도, 사냥하지도, 경계를 서지도, 밥그릇을 쓰지도 않습니다.</li>
+<li><strong>훈련이 안 됐거나, 불순종이거나, 패닉에 빠진 개는 무리를 진정시키기는커녕 오히려 스트레스를 줍니다.</strong> 훈련 안 된 강아지에게 소를 맡기지 마세요.</li>
+<li><strong>개를 다시 선택하면 모드가 자동으로 해제됩니다.</strong></li>
+</ul>
+<p><strong>보더콜리는 가축 몰이를 다른 견종보다 두 배 빠르게 배우지만</strong>, 어느 견종이든 이 일은 할 수 있습니다.</p>
+<h2 id="14-안장-가방-짐을-나르는-개">14. 안장 가방: 짐을 나르는 개</h2>
+<h3 id="착용하는-방법">착용하는 방법</h3>
+<ol>
+<li>인벤토리에 <strong><span class="ig">반려견 안장 가방</span></strong>을 가지고 있어야 합니다.</li>
+<li>개를 우클릭 → <strong><span class="ig">안장 가방 착용</span></strong>. <em><span class="ig">안장 가방을 채웠습니다.</span></em></li>
+<li>열 때는 <strong><span class="ig">안장 가방 열기</span></strong> (라디얼 메뉴의 조각이나 명령 탭의 버튼으로도 됩니다).</li>
+<li>벗길 때는 <strong><span class="ig">안장 가방 벗기기</span></strong>. 가방은 <strong>안에 든 짐과 함께</strong> 바닥에 떨어집니다.</li>
+</ol>
+<h3 id="얼마나-실을-수-있나">얼마나 실을 수 있나</h3>
+<p>용량은 <strong>고정된 기본값에 개의 근력 유전자를 더한 값</strong>으로 정해집니다. 기본 설정이라면 이렇습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>견종</th>
+<th>적재량 (무게)</th>
+</tr></thead><tbody>
+<tr>
+<td>믹스견</td>
+<td><strong>4~5</strong></td>
+</tr>
+<tr>
+<td>골든 리트리버</td>
+<td>6~7</td>
+</tr>
+<tr>
+<td>저먼 셰퍼드, 보더콜리, 로트와일러, 도베르만, 래브라도</td>
+<td>6~8</td>
+</tr>
+<tr>
+<td><strong>허스키</strong></td>
+<td><strong>13~16</strong></td>
+</tr>
+</tbody></table></div>
+<p>안장 가방에 견종 보너스가 붙는 개는 허스키뿐입니다(50% 더 실립니다). 나머지는 전부 근력 유전자에만 좌우되니, 같은 견종이라도 개체에 따라 싣는 양이 다릅니다.</p>
+<p>서버는 <strong><span class="ig">안장 가방 기본 용량</span></strong>과 <strong><span class="ig">안장 가방 근력 보너스 용량</span></strong>으로 이 값을 조정할 수 있습니다.</p>
+<h3 id="무엇을-넣을-수-있나">무엇을 넣을 수 있나</h3>
+<p>거의 다 됩니다. 제한은 아이템 개수가 아니라 <strong>무게</strong>입니다. 예외는 이렇습니다.</p>
+<ul>
+<li>또 다른 안장 가방.</li>
+<li>장착 중인 아이템(입고 있는 옷, 손에 든 무기).</li>
+<li><strong>배낭과 가방류.</strong> 가방 자체가 아니라 그 안에 든 물건을 옮겨 담으세요.</li>
+</ul>
+<p><strong>지도에 해 둔 표시는 유지되지 않습니다.</strong> 표시가 있는 지도를 넣으면 그 표시는 사라집니다. <em><span class="ig">지도 표시 정보는 안장 가방에 보관되지 않습니다.</span></em></p>
+<h3 id="안장-가방-창">안장 가방 창</h3>
+<p>목록 두 개가 나란히 놓입니다. 왼쪽이 <strong><span class="ig">플레이어 인벤토리</span></strong>(클릭하면 집어넣기), 오른쪽이 안장 가방(클릭하면 꺼내기)입니다. 아래쪽에는 <strong><span class="ig">용량: 7/12</span></strong> 같은 표시가 나옵니다.</p>
+<h3 id="구하는-곳">구하는 곳</h3>
+<p><strong>제작:</strong> 가죽 끈 2개 + 바늘 + 실(바늘과 실은 소모되지 않습니다). 재봉 카테고리이고 <strong>재봉 1레벨</strong>이 필요합니다. 재봉 경험치를 15 줍니다.</p>
+<p><strong>전리품:</strong> 애완동물 숍, 반려동물 용품 상자, 캠핑용품점, 사냥용품 보관함, 생존 키트, 차고 공구함, 농장 상자.</p>
+<blockquote class="quote"><strong>개가 죽거나 방생되면 안장 가방과 실린 짐이 전부 바닥에 떨어집니다.</strong> 개가 서 있던 바로 그 자리에 남습니다.</blockquote>
+<h2 id="15-번식과-강아지">15. 번식과 강아지</h2>
+<h3 id="교배-버튼은-없습니다">"교배" 버튼은 없습니다</h3>
+<p>번식은 <strong>100% 자동</strong>입니다. 개 두 마리에게 짝짓기를 시키는 게 아니라, 조건을 갖춰 놓고 기다리는 방식입니다.</p>
+<p>게임 내 한 시간마다, 조건을 갖춘 암컷은 근처에 조건을 갖춘 수컷이 있으면 스스로 임신할 확률 판정을 받습니다. 기본값은 <strong>하루 5%</strong> 확률입니다(샌드박스 옵션 <strong><span class="ig">일일 자연 교배 확률</span></strong>).</p>
+<h3 id="조건">조건</h3>
+<p>아래는 전부 필수이고, 두 마리 모두에게 적용됩니다.</p>
+<ol>
+<li>둘 다 <strong>같은 주인의 동반자</strong>여야 합니다.</li>
+<li><strong>성견 수컷과 성견 암컷</strong>이어야 합니다. 강아지는 절대 번식하지 않습니다.</li>
+<li>둘 다 <strong><span class="ig">번식 차단</span></strong>이 꺼져 있어야 합니다.</li>
+<li><strong>같은 층</strong>에 있고 서로 <strong>40타일 이내</strong>여야 합니다.</li>
+<li>둘 다 <strong>중상</strong>도 <strong>중독됨</strong>도 아니어야 합니다.</li>
+<li>둘 다 <strong>충성도 60 이상</strong>이어야 합니다.</li>
+<li><strong>잘 먹은 상태:</strong> 둘 다 배고픔과 목마름이 <strong>모두</strong> 절반 아래여야 합니다.</li>
+<li>암컷이 <strong>임신 중이 아니어야</strong> 하고, 출산 뒤 <strong>7일 쿨타임</strong>도 끝나 있어야 합니다.</li>
+<li>반려견 수 제한에 <strong>빈 자리</strong>가 있어야 합니다.</li>
+<li>해당 구역이 <strong>플레이어 근처에 로드되어 있어야</strong> 합니다.</li>
+</ol>
+<p>정리하면 <strong>잘 돌본 개 두 마리가 함께 있고, 플레이어가 근처에 있으면 됩니다</strong>. 아무 일도 일어나지 않는다면 원인은 거의 항상 배고픔, 목마름, 충성도 중 하나입니다.</p>
+<h3 id="짝짓기와-임신-기간">짝짓기와 임신 기간</h3>
+<p>암컷이 <strong>수컷에게 걸어갑니다</strong>(<em><span class="ig">믹스견 렉스이(가) 짝짓기를 하러 갑니다</span></em>). 그리고 가까이 닿으면 임신합니다. <em><span class="ig">믹스견 렉스이(가) 임신했습니다</span></em>.</p>
+<ul>
+<li><strong>임신 기간은 게임 내 4일</strong>이 기본값입니다.</li>
+<li>시계는 <strong>암컷이 멀리 있든 플레이어가 접속을 끊었든 계속 돌아갑니다</strong>.</li>
+<li>머리 위와 메뉴에 표시가 뜹니다. <strong><span class="ig">임신 중</span></strong>, 그리고 막바지에는 <strong><span class="ig">출산 임박</span></strong>입니다. 분홍색으로 나오고, 상태 텍스트를 꺼 두어도 <strong>항상</strong> 보입니다.</li>
+</ul>
+<h3 id="출산">출산</h3>
+<p>한배에 나오는 새끼 수는 <strong>어미의</strong> 견종에 따라 달라집니다.</p>
+<div class="tw"><table><thead><tr>
+<th>어미의 견종</th>
+<th>한배 새끼 수</th>
+</tr></thead><tbody>
+<tr>
+<td>믹스견</td>
+<td>2~4</td>
+</tr>
+<tr>
+<td>보더콜리</td>
+<td>1~3</td>
+</tr>
+<tr>
+<td>저먼 셰퍼드, 골든 리트리버, 허스키</td>
+<td>1~2</td>
+</tr>
+</tbody></table></div>
+<p><em><span class="ig">믹스견 렉스이(가) 새끼를 낳았습니다</span></em>. 그 뒤로는 <strong>게임 내 7일의 휴식</strong>을 거쳐야 다시 임신할 수 있습니다.</p>
+<blockquote class="quote">서버가 <strong>반려견 수 제한</strong>을 걸어 두었는데 빈 자리가 없으면, 한배 새끼 수가 남은 자리에 맞게 줄어듭니다(임신은 어차피 그대로 끝납니다). 기본 설정은 <strong>제한 없음</strong>이라서 이런 일은 일어나지 않습니다.</blockquote>
+<h3 id="강아지가-물려받는-것">강아지가 물려받는 것</h3>
+<ul>
+<li><strong>혈통은 부모의 평균입니다.</strong> 믹스견과 저먼 셰퍼드를 붙이면 50/50이 나옵니다. 이 잡종을 순종 저먼 셰퍼드와 붙이면 25/75가 됩니다.</li>
+<li><strong>외모는 혈통 비율을 가중치로 두고 추첨합니다.</strong> 저먼 셰퍼드 피가 75%인 강아지는 대체로 저먼 셰퍼드처럼 생깁니다.</li>
+<li><strong>유전자는 부모의 중간값을 따라가되 위아래로 6% 정도 흔들립니다.</strong> 혈통을 개량하는 방법이 바로 이겁니다. 가진 개 중에 가장 강한 두 마리를 반복해서 붙이면 됩니다.</li>
+<li>견종이 둘 이상 섞인 개에는 <strong><span class="ig">믹스견</span></strong> 표시가 붙고, 창에서 세부 비율을 보여 줍니다 (<span class="ig">50% 허스키, 50% 저먼 셰퍼드</span>).</li>
+<li><strong>혈통 기록이 남습니다:</strong> 세대, 그리고 아비와 어미의 이름과 견종.</li>
+</ul>
+<h3 id="강아지-키우기">강아지 키우기</h3>
+<ul>
+<li>태어날 때는 <strong>비활성 상태</strong>(<span class="ig">기다려</span> 모드)이고, <strong>충성도 50</strong>(0이 아닙니다)에 <strong>스킬은 전혀 없으며</strong>, 눈에 띄게 작습니다.</li>
+<li><strong>태어난 순간부터 반려견 수 제한에 포함됩니다.</strong></li>
+<li>성견이 되기까지 <strong>게임 내 90일</strong>이 걸립니다. 시계는 강아지가 멀리 떨어져 로드되지 않은 상태에서도 <strong>계속 돌아갑니다</strong>. 로드되지 않은 사이에 기한이 지나면, 플레이어가 다시 가까이 가는 순간 성견이 됩니다.</li>
+<li>자라도 <strong>이름, 유대감, 유전자, 스킬은 그대로 유지됩니다</strong>. <em><span class="ig">믹스견 렉스이(가) 성견으로 자랐습니다</span></em></li>
+<li>작을 때 모습이 마음에 든다면 <strong><span class="ig">성장 일시정지</span></strong> 토글로 영원히 그 상태로 묶어 둘 수 있습니다. <em><span class="ig">평생 자라지 않는 개라니, 현실에도 이런 방법이 있으면 좋겠네요 :D</span></em></li>
+</ul>
+<h2 id="16-여러-마리를-동시에-두기">16. 여러 마리를 동시에 두기</h2>
+<p>개는 여러 마리를 둘 수 있지만 <strong>한 번에 한 마리만 데리고 다닐 수 있습니다</strong>. 그 한 마리가 <span class="ig">활성화됨</span> 상태인 개이고, 나머지는 대기 상태로 남습니다.</p>
+<blockquote class="quote"><strong>이 부분은 앞으로 바뀔 예정입니다.</strong> 지금은 한 번에 한 마리씩 쓴다고 생각하고 계획을 세우세요.</blockquote>
+<p><strong>비활성 개는 완전히 멈춰 있습니다.</strong> 이게 좋은 점입니다. 따로 챙겨야 하는 짐덩이가 되지 않습니다.</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>활성 개</th>
+<th>비활성 개</th>
+</tr></thead><tbody>
+<tr>
+<td>플레이어를 따라다님</td>
+<td>예</td>
+<td>아니요, 있던 자리에 그대로</td>
+</tr>
+<tr>
+<td><strong>배고픔과 목마름을 느낌</strong></td>
+<td>예</td>
+<td><strong>아니요. 나중을 위해 쌓이지도 않음</strong></td>
+</tr>
+<tr>
+<td><strong>밥그릇에서 먹음</strong></td>
+<td>예</td>
+<td><strong>아니요, 그럴 필요도 없음</strong></td>
+</tr>
+<tr>
+<td>저절로 충성도가 떨어짐</td>
+<td>예</td>
+<td>아니요</td>
+</tr>
+<tr>
+<td>싸우고, 경계하고, 사냥함</td>
+<td>예</td>
+<td>아니요</td>
+</tr>
+<tr>
+<td>쓰다듬기를 받음 (충성도도 오름)</td>
+<td>예</td>
+<td><strong>예</strong></td>
+</tr>
+<tr>
+<td>번식해서 새끼를 낳음</td>
+<td>예</td>
+<td><strong>예</strong></td>
+</tr>
+<tr>
+<td>moodle과 채집 보너스에 반영됨</td>
+<td>예</td>
+<td><strong>예, 근처에 있다면</strong></td>
+</tr>
+</tbody></table></div>
+<p>실제 플레이에서 제일 중요한 건 이겁니다. <strong>대기 중인 개에게는 밥을 줄 필요가 없습니다.</strong> 기다리는 동안에는 굶지도, 충성도를 잃지도, 방치로 죽지도 않습니다. 그중 한 마리를 선택하면 배고픔은 <strong>멈춘 지점부터</strong> 다시 진행되고, 그동안 밀린 수치가 한꺼번에 몰리는 일은 없습니다.</p>
+<p>바꿀 때는 개를 우클릭 → <strong><span class="ig">선택</span></strong>.</p>
+<p>비활성 개의 메뉴는 일부러 줄여 놓았습니다. 먹이 주기도, 물 주기도, 이동 명령도 없습니다. 어차피 효과가 없기 때문입니다.</p>
+<h3 id="내-반려견-탭-등록부">"내 반려견" 탭: 등록부</h3>
+<p>플레이어의 개 등록부입니다. 유대감을 형성한 개를 전부 보여 주며, 초상화, 이름, 견종, 성별, 스킬, 현재 상태가 함께 나옵니다.</p>
+<div class="tw"><table><thead><tr>
+<th>상태</th>
+<th>뜻</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>활성화됨</strong></td>
+<td>지금 데리고 다니는 개</td>
+</tr>
+<tr>
+<td><strong>근처 있음</strong></td>
+<td>플레이어 근처에 로드되어 있음</td>
+</tr>
+<tr>
+<td><strong>품에 안고 있음</strong></td>
+<td>플레이어가 안고 있음</td>
+</tr>
+<tr>
+<td><strong>차량 탑승 중</strong></td>
+<td>차에 태워 둔 상태</td>
+</tr>
+<tr>
+<td><strong>멀리 있음</strong></td>
+<td>유대는 맺었지만 범위 밖. <span class="ig">X시간 전에 마지막으로 봄</span>이 함께 표시됨</td>
+</tr>
+<tr>
+<td><strong>실종됨</strong></td>
+<td>사라짐. 여기서 <strong>물어와</strong>를 쓰세요</td>
+</tr>
+<tr>
+<td><strong>기록 없음</strong></td>
+<td>유대를 맺은 뒤로 한 번도 가까이 가 본 적이 없음</td>
+</tr>
+</tbody></table></div>
+<p>개마다 버튼이 세 개 있습니다. <strong>물어와</strong> | <strong>상태 확인</strong> | <strong>선택</strong>.</p>
+<p>가까이 있는 개에게 <strong>물어와</strong>를 쓰면 그냥 순간이동입니다. <strong>멀리 있음</strong> 상태인 개에게 쓰면 확인 창이 뜹니다. <em><span class="ig">멀리 있는 믹스견 렉스을(를) 불러오시겠습니까? 큰 휘파람 소리가 좀비를 끌어모을 수 있습니다.</span></em> 확인하면 스킬, 유전자, 이름, 안장 가방을 그대로 유지한 채 개가 다시 나타납니다.</p>
+<p><strong>개마다 게임 내 2시간의 쿨타임이 있습니다.</strong> 그 안에 다시 부르면 이렇게 나옵니다. <em><span class="ig">믹스견 렉스을(를) 최근에 호출했습니다. 잠시 후 다시 시도하세요.</span></em></p>
+<blockquote class="quote"><strong>잃어버린 개를 되찾는 방법이 바로 이겁니다.</strong> 개가 사라지면 모드가 알려 줍니다. <em><span class="ig">믹스견 렉스이(가) 길을 잃었습니다! '내 반려견' 메뉴(발자국 버튼)를 열어 불러오세요.</span></em></blockquote>
+<h2 id="17-개-정보-창">17. 개 정보 창</h2>
+<p>여는 방법은 네 가지입니다. 손 패널 바로 아래에 있는 <strong>발자국 버튼</strong>, <strong>상태 확인</strong> 키, 우클릭 메뉴의 <strong><span class="ig">상태 확인</span></strong> 옵션, 그리고 <span class="ig">내 반려견</span> 탭에 있는 버튼입니다.</p>
+<p>창은 <strong>크기를 조절할 수 있고</strong> 마지막으로 놓아둔 자리를 기억합니다. 맨 위에는 이름과 함께 <strong>개의 실시간 3D 아바타</strong>가 있습니다. 차 안에 있을 때는 <strong><span class="ig">차량 탑승 중</span></strong> 띠가 뜹니다.</p>
+<h3 id="스킬-및-상태-탭">"스킬 및 상태" 탭</h3>
+<ul>
+<li><strong>충성도</strong>는 바로 표시되고, 마우스를 올리면 설명이 나옵니다.</li>
+<li><strong>욕구 상태:</strong> 배고픔, 목마름, 체력, 스트레스.</li>
+<li><strong>스킬:</strong> 후각, 전투, 복종, 사냥, 가축 몰이. 각각 진행도 바와 함께 <strong><span class="ig">Lv X</span></strong>가 붙습니다.</li>
+<li><strong>특성 (유전자):</strong> 근력, 공격성, 저항력. 낮음 / 보통 / 높음으로 표시됩니다.</li>
+<li><strong>견종:</strong> 이름, 나이(성견 또는 강아지), 해당하는 경우 <span class="ig">(믹스견)</span>까지 나오고, 마우스를 올리면 견종 설명이 나옵니다.</li>
+<li><strong>처치 수:</strong> 그 개가 지금까지 죽인 좀비와 사냥감 마릿수.</li>
+</ul>
+<p><strong>전부 마우스를 올리면 설명이 나옵니다.</strong> 어떤 바가 무슨 일을 하는지 모르겠다면 그 위에 마우스를 올려 보세요.</p>
+<h3 id="명령-탭">"명령" 탭</h3>
+<ul>
+<li><strong>모드:</strong> 따라와 | 기다려 | 경계/수비</li>
+<li><strong>경계 모드:</strong> 경보 | 조용히 | 침묵</li>
+<li><strong>자동 보호</strong> (켜기/끄기)</li>
+<li><strong>사냥</strong> (켜기/끄기)</li>
+<li><strong>여기서 가축 돌보기</strong></li>
+<li><strong>재주:</strong> 버튼 네 개 (잠긴 재주는 비활성 상태이고, 마우스를 올리면 이유가 나옵니다)</li>
+<li><strong>안장 가방 열기</strong></li>
+<li><strong>행동:</strong> 물어와 | 이름 변경 | 야생으로 방생</li>
+</ul>
+<p>차 안에 있을 때는 개가 월드에 있어야 하는 기능이 전부 비활성화되고 (<em><span class="ig">운전 중에는 이용할 수 없으며, 동반자가 함께 타고 있습니다.</span></em>), 행동 줄은 <strong>먹이 주기 | 이름 변경 | 물 주기</strong>로 바뀝니다.</p>
+<h3 id="내-반려견-탭">"내 반려견" 탭</h3>
+<p><a href="#16-여러-마리를-동시에-두기">여러 마리를 동시에 데리고 다니기</a>를 보세요.</p>
+<h3 id="설정-탭">"설정" 탭</h3>
+<p>여기 있는 옵션은 <strong>플레이어 각자의 것</strong>이라서 서버의 다른 사람에게는 아무 영향도 주지 않습니다.</p>
+<ul>
+<li><strong>인터페이스:</strong> <span class="ig">상태 텍스트: 켜짐/꺼짐</span>(개 머리 위에 떠 있는 알림 문구)과 <span class="ig">무들 아이콘: 켜짐/꺼짐</span>(개 moodle).</li>
+<li><strong>사운드:</strong> 마스터 음량, 음소거, 그리고 <strong>짖는 소리</strong>, <strong>효과음</strong>, <strong>환경음</strong>을 따로 조절하는 슬라이더.</li>
+<li><strong>자동 섭취:</strong> <span class="ig">배고픔/목마름 수치가 다음에 도달하면 섭취</span> 슬라이더.</li>
+<li><strong>단축키 설정:</strong> 14가지 동작을 <strong>재설정</strong>과 <strong>해제</strong>로 관리합니다.</li>
+</ul>
+<blockquote class="quote">짖는 소리가 거슬린다면 여기 있는 <strong>짖는 소리</strong> 슬라이더로 해결됩니다. 어떤 기능도 끌 필요가 없습니다.</blockquote>
+<h2 id="18-화면에-표시되는-것들">18. 화면에 표시되는 것들</h2>
+<h3 id="개-moodle">개 moodle</h3>
+<p><strong>게임의 기본 moodle 열 왼쪽</strong>에 아이콘 열이 따로 생깁니다. 견종마다 자기 moodle이 있습니다. 자세한 내용은 <a href="breeds.html" class="xlink">견종 설명서</a>에 있습니다.</p>
+<p>어떤 개든 띄울 수 있는 것은 이렇습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>moodle</th>
+<th>언제 뜨는지</th>
+<th>어떤 효과인지</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>배고픔</strong></td>
+<td>배고픔이 높을 때</td>
+<td>알림만</td>
+</tr>
+<tr>
+<td><strong>목마름</strong></td>
+<td>목마름이 높을 때</td>
+<td>알림만</td>
+</tr>
+<tr>
+<td><strong>중독됨</strong></td>
+<td>나쁜 음식을 먹었을 때</td>
+<td>알림만</td>
+</tr>
+<tr>
+<td><strong>푹 쉼</strong></td>
+<td>개 곁에서 잠을 잤을 때</td>
+<td>패닉, 스트레스, 슬픔, 지루함이 빠르게 가시고 덜 피로해집니다. 기본 지속 시간은 게임 내 2시간</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>모든 견종 moodle에 똑같이 적용되는 규칙:</strong> <strong>충성도가 바닥이거나, 아프거나, 배고픔이나 목마름이 높은 개는 아무 보너스도 주지 않습니다</strong>. moodle이 그냥 꺼집니다. 잘 돌본 개가 제 몫을 합니다.</blockquote>
+<h3 id="머리-위에-뜨는-문구">머리 위에 뜨는 문구</h3>
+<p>개는 머리 위에 여러 줄의 상태 문구를 쌓아서 보여 줍니다. 같은 층에서 14타일 안에 있을 때만 보입니다. 위에서 아래로 경계 알림, 상태(<strong>극도의 공포</strong>, <strong>공포</strong>, <strong>중상</strong>, <strong>불순종</strong>, <strong>부상</strong>, <strong>불안함</strong>), 지금 하는 일(밥 먹기, 사냥, 냄새 추적, 가축 돌보기), 임신 여부, 그리고 <strong>이름</strong> 순입니다. 이름은 언제나 맨 마지막이라 머리에 가장 가깝게 붙습니다.</p>
+<p><strong><span class="ig">상태 텍스트: 꺼짐</span></strong> 옵션(설정 탭)을 쓰면 이름만 남고 나머지가 전부 사라집니다. 샌드박스 옵션 <strong><span class="ig">개가 가진 이름표 표시</span></strong>를 끄면 이름까지 사라집니다.</p>
+<p><strong>다른 플레이어의 개</strong>는 <strong><span class="ig">주인: 아무개</span></strong>와 임신 여부, 이름만 보여 줍니다.</p>
+<h3 id="지도-마커">지도 마커</h3>
+<p><strong>유대감을 형성한 개마다 발자국 하나</strong>가 월드 지도와 미니맵에 표시됩니다.</p>
+<ul>
+<li><strong>갈색 발자국은 활성 개, 회색 발자국은 비활성 개입니다.</strong></li>
+<li>월드 지도에서는 발자국 옆에 개 이름이 같이 나옵니다. 미니맵에서는 이름이 없고, 개가 화면 밖에 있으면 발자국이 <strong>가장자리에 붙어서</strong> 방향을 가리킵니다.</li>
+<li>개가 로드되어 있는 동안에는 마커가 실시간으로 따라다닙니다. 언로드되면 <strong>마지막으로 확인된 자리에 그대로 남습니다</strong>.</li>
+</ul>
+<p><strong>두고 온 개나, 죽은 뒤에 잃어버린 내 개를 찾는 방법이 바로 이겁니다.</strong> 이 마커는 순수한 오버레이라서 지도에 저장되는 기호로 바뀌는 일은 없습니다.</p>
+<p>샌드박스 옵션 <strong><span class="ig">지도에 개 위치 표시</span></strong>로 끌 수 있습니다.</p>
+<h2 id="19-모드가-추가하는-아이템">19. 모드가 추가하는 아이템</h2>
+<p>이 모드가 넣는 것은 <strong>실제로 쓰는 아이템 두 개</strong>가 전부입니다.</p>
+<h3 id="반려견-밥그릇">반려견 밥그릇</h3>
+<p>밥을 주는 거점입니다. 무게 1.5.</p>
+<p><strong>제작법은 두 가지</strong>이고, 둘 다 필요한 스킬이 없으며 맨손으로 만듭니다.</p>
+<ul>
+<li><strong>주방 도구 1개</strong> (냄비, 프라이팬, 베이킹 트레이, 주전자, 양동이, 머그컵, 병 등). 만들면서 사라집니다.</li>
+<li><strong>기본 게임의 반려동물 밥그릇 1개</strong>. 마찬가지로 사라집니다.</li>
+</ul>
+<p><strong>루팅 위치:</strong> 애완동물 숍 진열대, 반려동물 용품 상자, 마트 잡화 코너, 원예용품점, 농장과 원예 상자, 마트 창고, 주방.</p>
+<h3 id="반려견-안장-가방">반려견 안장 가방</h3>
+<p><a href="#14-안장-가방-짐을-나르는-개">안장 가방</a>을 보세요. 무게 1.0이고, 안에 넣은 물건의 무게를 꽤 많이 줄여 줍니다.</p>
+<h3 id="모드에-없는-것">모드에 없는 것</h3>
+<p>괜히 찾아다니지 않도록 미리 알려 둡니다. <strong>밥그릇과 안장 가방이 이 모드의 유일한 아이템 두 개입니다.</strong> 목줄도, 특별한 간식도, 장난감도, 개집도, 지어서 쓰는 견사도 없습니다. 기본 게임의 개 사료는 모드가 알아보긴 하지만 그건 게임 아이템이지 모드 아이템이 아닙니다.</p>
+<h2 id="20-멀티플레이어">20. 멀티플레이어</h2>
+<p>이 모드는 처음부터 멀티플레이어를 염두에 두고 만들었고, 코옵이든 전용 서버든 똑같이 작동합니다.</p>
+<h3 id="개는-당신-것입니다">개는 당신 것입니다</h3>
+<p>소유권은 캐릭터도 접속 슬롯도 아닌 <strong>당신의 계정</strong>에 묶여 있습니다. 서버를 재시작한다고 당신의 개가 다른 사람에게 넘어가는 일은 없습니다.</p>
+<p><strong>다른 플레이어가 할 수 있는 것:</strong> 개를 볼 수 있고, 머리 위의 이름과 <strong><span class="ig">주인: 아무개</span></strong>도 보입니다.</p>
+<p><strong>다른 플레이어가 할 수 없는 것:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>시도</th>
+<th>결과</th>
+</tr></thead><tbody>
+<tr>
+<td>안아들기</td>
+<td><em><span class="ig">이 개은(는) 다른 생존자의 소유입니다.</span></em></td>
+</tr>
+<tr>
+<td>먹이 주기나 다시 길들이기</td>
+<td><em><span class="ig">이 개은(는) 이미 다른 생존자의 소유입니다.</span></em> 상대의 음식을 소모하기 <strong>전에</strong> 검사합니다</td>
+</tr>
+<tr>
+<td>명령, 이름 변경, 방생, 안장 가방 조작</td>
+<td>서버에서 차단됩니다</td>
+</tr>
+<tr>
+<td>죽이기</td>
+<td>옵션 자체가 뜨지 않고, 동반자는 무적입니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="접속을-끊었을-때">접속을 끊었을 때</h3>
+<p><strong><span class="ig">주인 오프라인 시 개 보관 (디스폰)</span></strong> 옵션이 켜져 있으면(기본값입니다):</p>
+<ul>
+<li>당신의 개들은 <strong>월드 밖에 보관되고</strong>, 상태와 욕구가 <strong>그대로 멈춥니다</strong>.</li>
+<li>다시 접속하면 <strong>따라와</strong> 상태였던 개는 당신 옆에 나타나고, <strong>기다려</strong>와 <strong>경계/수비</strong> 상태였던 개와 비활성 개들은 해당 구역이 로드되는 대로 <strong>두고 온 자리에</strong> 다시 나타납니다.</li>
+<li><strong>돌아왔을 때 개가 굶주려 있지 않습니다.</strong> 접속하지 않은 시간은 계산에 들어가지 않습니다.</li>
+</ul>
+<p>꺼 두면 개들은 무적 상태로 월드에 그대로 서 있게 됩니다.</p>
+<h3 id="서버-관리자용">서버 관리자용</h3>
+<p><strong><span class="ig">개 등록부 (관리자)</span></strong>가 있습니다. 플레이어로 검색할 수 있고, 온라인/오프라인 상태와 개 마릿수, 새로고침 버튼이 나옵니다. 서버 성능을 실시간으로 조절하는 패널도 따로 있습니다. 둘 다 관리자 전용입니다.</p>
+<h3 id="코옵-설치-시-주의사항">코옵 설치 시 주의사항</h3>
+<p><strong>개가 텍스처 없이 나오거나 <span class="ig">찌그러져</span> 보인다면:</strong> 코옵 선택 화면에서만이 아니라 <strong>메인 메뉴의 모드 목록에서도</strong> Companion Dogs를 켜고, 세이브를 불러오기 전에 <strong>게임을 완전히 종료했다가 다시 켜세요.</strong> 코옵 호스트도 똑같이 하고 서버를 재시작해야 합니다.</p>
+<h2 id="21-샌드박스-옵션">21. 샌드박스 옵션</h2>
+<p>월드 설정 안에 있는 <strong><span class="ig">Companion Dogs</span></strong> 페이지입니다. 옵션은 모두 33개입니다.</p>
+<blockquote class="quote"><strong>기억하세요:</strong> 멀티플레이어에서는 <strong>서버 쪽</strong> 설정이 우선입니다. 그리고 Project Zomboid는 샌드박스 옵션을 <strong>세이브에 저장</strong>하기 때문에, 나중에 값을 바꾸려면 세이브를 직접 손보거나 새 월드를 시작해야 합니다.</blockquote>
+<h3 id="길들이기와-스폰">길들이기와 스폰</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>길들이기 필요 신뢰도</td>
+<td>100</td>
+<td>개가 당신 것이 될 때까지 필요한 음식의 양</td>
+</tr>
+<tr>
+<td>플레이어당 최대 반려견 수</td>
+<td><strong>0 (제한 없음)</strong></td>
+<td>유대감을 맺을 수 있는 개의 상한</td>
+</tr>
+<tr>
+<td>도시 및 주택가 들개 스폰</td>
+<td>켜짐</td>
+<td>탐험하다 보면 개가 알아서 나타납니다</td>
+</tr>
+<tr>
+<td>개 스폰 비율 배율</td>
+<td>1.0</td>
+<td>모든 스폰을 한꺼번에 조절합니다. 0이면 꺼집니다</td>
+</tr>
+<tr>
+<td>야생/들개 무적 적용</td>
+<td><strong>꺼짐</strong></td>
+<td>길들이기 전에 떠돌이 개가 죽지 않도록 보호합니다</td>
+</tr>
+<tr>
+<td>디버그 스폰 허용</td>
+<td>켜짐</td>
+<td>디버그 메뉴 (멀티에서는 관리자 전용)</td>
+</tr>
+</tbody></table></div>
+<h3 id="전투">전투</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>동반자 좀비 공격 허용</td>
+<td>켜짐</td>
+<td>전투 전체의 마스터 스위치</td>
+</tr>
+<tr>
+<td>동반자 공격력 배율</td>
+<td>1.0</td>
+<td>피해량을 조절합니다. <strong>아무리 높게 올려도 믹스견은 여전히 좀비를 끝장내지 못합니다</strong></td>
+</tr>
+<tr>
+<td>개의 좀비 처치 수를 플레이어에게 합산</td>
+<td>켜짐</td>
+<td>개가 잡은 좀비가 당신 카운터에 더해집니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="관리와-유대감">관리와 유대감</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>욕구 및 관리 시스템</td>
+<td>켜짐</td>
+<td>배고픔, 목마름, 충성도, 스트레스의 마스터 스위치</td>
+</tr>
+<tr>
+<td>배고픔 및 목마름 속도 배율</td>
+<td>1.0</td>
+<td>두 수치를 함께 조절합니다. <strong>0이면 완전히 멈춰서 개가 다시는 먹지 않아도 됩니다</strong></td>
+</tr>
+<tr>
+<td>일일 충성도 감소량</td>
+<td>12.0</td>
+<td>하루에 사라지는 충성도의 양</td>
+</tr>
+<tr>
+<td>유대감 정서 효과 (쓰다듬기 &amp; 함께 자기)</td>
+<td>켜짐</td>
+<td>쓰다듬기와 곁에서 자기가 당신의 지루함과 슬픔을 덜어 줍니다</td>
+</tr>
+<tr>
+<td>푹 쉼 버프 (개 곁에서 수면)</td>
+<td>켜짐</td>
+<td>깨어날 때 받는 버프</td>
+</tr>
+<tr>
+<td>푹 쉼 버프 지속 시간 (시간)</td>
+<td>2.0</td>
+<td>버프가 유지되는 시간</td>
+</tr>
+</tbody></table></div>
+<h3 id="행동">행동</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>경계: 좀비 감지 알림</td>
+<td>켜짐</td>
+<td>경계 기능의 마스터 스위치</td>
+</tr>
+<tr>
+<td>자동 보호: 작업 중 경비</td>
+<td>켜짐</td>
+<td>개별 개의 토글을 사용할 수 있게 합니다</td>
+</tr>
+<tr>
+<td>개가 내는 소리의 좀비 유인 효과</td>
+<td>켜짐</td>
+<td>크게 짖는 소리는 실제 소음입니다. <strong>으르렁거림은 절대 끌어들이지 않습니다</strong></td>
+</tr>
+<tr>
+<td>개의 명령 불복종 허용</td>
+<td>켜짐</td>
+<td>복종 0에서 30%인 확률이 레벨 10에서 0%까지 떨어집니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="스킬과-활동">스킬과 활동</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>스킬 및 훈련 시스템</td>
+<td>켜짐</td>
+<td>스킬 전체의 마스터 스위치</td>
+</tr>
+<tr>
+<td>스킬 경험치 획득 배율</td>
+<td><strong>0.5</strong></td>
+<td>훈련 속도입니다. 느리게 느껴지면 1.0 이상으로 올리세요</td>
+</tr>
+<tr>
+<td>협동 사냥 지원</td>
+<td>켜짐</td>
+<td>사냥의 마스터 스위치</td>
+</tr>
+<tr>
+<td>가축 관리 (돌보기) 기능</td>
+<td>켜짐</td>
+<td>가축 돌보기 모드의 마스터 스위치</td>
+</tr>
+<tr>
+<td>복종 재주</td>
+<td>켜짐</td>
+<td>재주 네 가지의 마스터 스위치</td>
+</tr>
+</tbody></table></div>
+<h3 id="안장-가방">안장 가방</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>안장 가방 기본 용량</td>
+<td>4</td>
+<td>적재량의 하한선</td>
+</tr>
+<tr>
+<td>안장 가방 근력 보너스 용량</td>
+<td>8</td>
+<td>아주 힘센 개가 그 위에 더 얹는 양</td>
+</tr>
+</tbody></table></div>
+<h3 id="강아지">강아지</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>번식 및 강아지 출산</td>
+<td>켜짐</td>
+<td>마스터 스위치</td>
+</tr>
+<tr>
+<td>임신 기간 (일)</td>
+<td>4</td>
+<td>출산까지 걸리는 게임 내 일수</td>
+</tr>
+<tr>
+<td>강아지 성장 기간 (일)</td>
+<td>90</td>
+<td>성견이 되기까지 걸리는 일수</td>
+</tr>
+<tr>
+<td>일일 자연 교배 확률</td>
+<td>5.0</td>
+<td>한 쌍이 알아서 임신할 확률. 0이면 꺼집니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="인터페이스와-멀티플레이어">인터페이스와 멀티플레이어</h3>
+<div class="tw"><table><thead><tr>
+<th>옵션</th>
+<th>기본값</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>개가 가진 이름표 표시</td>
+<td>켜짐</td>
+<td>머리 위에 떠 있는 이름</td>
+</tr>
+<tr>
+<td>지도에 개 위치 표시</td>
+<td>켜짐</td>
+<td>지도와 미니맵에 표시되는 발자국</td>
+</tr>
+<tr>
+<td>주인 오프라인 시 개 보관 (디스폰)</td>
+<td>켜짐</td>
+<td>멀티: 접속을 끊으면 개가 월드에서 빠집니다</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-자주-겪는-문제">22. 자주 겪는 문제</h2>
+<p><strong><span class="ig">개가 텍스처도 없이 잔뜩 찌그러진 모습으로 나왔어요.</span></strong> <strong>메인 메뉴</strong>의 모드 목록에서 모드를 켠 다음, 세이브를 불러오기 전에 게임을 완전히 껐다가 다시 켜세요. 코옵에서 가장 흔한 문제입니다.</p>
+<p><strong><span class="ig">모드를 추가했는데 제 세이브에는 아무것도 안 나와요.</span></strong> Project Zomboid는 모드를 <strong>세이브 단위로</strong> 켭니다. 나중에 추가한 모드는 이미 만들어진 월드에 들어가지 않고, 게임은 <strong>오류를 전혀 띄우지 않습니다</strong>. 세이브 불러오기 화면에서 그 월드에 모드가 체크되어 있는지 확인하세요.</p>
+<p><strong><span class="ig">개가 말을 안 들어요.</span></strong> 뜨는 메시지를 보세요. <em><span class="ig">복종할 만큼 당신을 신뢰하지 않습니다</span></em>라면 충성도 문제입니다. 먹이와 물을 주고 쓰다듬어 주세요. <em><span class="ig">딴짓을 하며 당신을 무시합니다</span></em>라면 훈련이 모자란 것입니다. <strong>같은 명령을 한 번 더 내리면 두 번째는 항상 통합니다</strong>. 패닉이나 부상 때문이라면 그것부터 해결하세요.</p>
+<p><strong><span class="ig">개가 좀비를 죽이지 못하고 넘어뜨리기만 해요.</span></strong> <strong>믹스견</strong>이라면 원래 그렇게 만들어진 것이고, 어떤 설정으로도 바뀌지 않습니다. 다른 견종을 데려오거나, 개가 넘어뜨리면 당신이 마무리하는 역할 분담을 받아들이세요.</p>
+<p><strong><span class="ig">개가 시도 때도 없이 짖어서 좀비를 끌고 와요.</span></strong> 원인은 네 가지이고 전부 당신이 조절할 수 있습니다. <strong>경보 상태의 경계 모드</strong>(절대 짖지 않는 <strong>조용히</strong>로 바꾸세요), <strong>주의 끌기</strong> 재주(짖는 것 자체가 목적입니다), <strong>사냥</strong>(사냥 모드를 끄세요), 그리고 <strong>전투</strong>입니다. 스트레스를 받은 개가 혼자 짖는 일은 <strong>없습니다</strong>.</p>
+<p><strong><span class="ig">개가 사라졌어요.</span></strong> 발자국 버튼으로 창을 열고 <strong><span class="ig">내 반려견</span></strong> 탭에서 <strong>물어와</strong>를 쓰세요. 개가 멀리 있으면 모드가 확인 창을 띄우고, 싣고 있던 짐까지 그대로 데려옵니다. 쿨다운은 개마다 게임 내 2시간입니다. 지도의 표시도 마지막으로 확인된 위치를 보여 줍니다.</p>
+<p><strong><span class="ig">개가 울타리 반대편에 갇혔어요.</span></strong> <strong>물어와</strong>(휘파람)를 쓰세요. 딱 이런 상황을 위한 명령이고, 대가는 좀비를 끌어들이는 것입니다.</p>
+<p><strong><span class="ig">제 개가 임신을 안 해요.</span></strong> <a href="#15-번식과-강아지">번식 조건</a> 목록을 확인하세요. 거의 대부분 둘 중 한 마리의 배고픔, 목마름, 아니면 60 아래로 떨어진 충성도가 원인입니다. <strong><span class="ig">번식 차단</span></strong>이 켜져 있지는 않은지도 확인하세요.</p>
+<p><strong><span class="ig">강아지가 안 커요.</span></strong> 그 강아지에게 <strong><span class="ig">성장 일시정지</span></strong>가 켜져 있는지 먼저 확인하세요. 그게 아니라면 시간 문제일 뿐입니다. 기본값은 <strong>게임 내 90일</strong>이고, 개가 멀리 있어도 시계는 계속 돕니다. 기한이 다 지났는데도 계속 강아지라면 가까이 가 보세요. 성장은 강아지가 로드되어 있을 때 처리됩니다.</p>
+<p><strong><span class="ig">개가 저랑 같이 차에 안 타요.</span></strong> <strong>따라와</strong> 상태인 개만 탑승합니다. 기다려나 경계/수비 상태라면 그 자리에 남습니다.</p>
+<p><strong><span class="ig">개한테 기지를 지키라고 했는데 아무것도 안 했어요.</span></strong> 경계/수비 모드는 아직 <strong>당신이 근처에 있을 때만 작동합니다</strong>. 멀리 떨어진 곳에서 개 혼자 일하게 하려면 <strong>가축 돌보기</strong>밖에 없고, 이 모드는 지정된 동물 우리가 필요합니다.</p>
+<p><strong><span class="ig">개가 너무 느리게 배워요.</span></strong> <strong><span class="ig">스킬 경험치 획득 배율</span></strong>의 기본값은 <strong>0.5</strong>로 절반 속도입니다. 새 월드에서 1.0 이상으로 올리세요.</p>
+<p><strong><span class="ig">제 개가 죽었어요.</span></strong> 되돌릴 방법도 없고 리스폰도 없습니다. 유일한 원인은 극단까지 간 배고픔이나 목마름입니다. 안장 가방과 그 안에 들어 있던 짐은 개가 쓰러진 자리 바닥에 남습니다.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">검색 결과가 없습니다: <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' 개의 결과'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'맨 위');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

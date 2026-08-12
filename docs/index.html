@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Player manual for the Companion Dogs mod, for Project Zomboid Build 42: commands, training, combat, the 8 breeds, moodles and breeding.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Player Documentation">
+<meta property="og:description" content="Player manual for the Companion Dogs mod, for Project Zomboid Build 42: commands, training, combat, the 8 breeds, moodles and breeding.">
+<meta property="og:url" content="https://companiondogs.pet/docs/">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Player Documentation</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9;
+  --text:#20201D; --text-2:#5C574E; --text-3:#8A8377;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22; --paw-fur:#6E4514;
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#75736C;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45; --paw-fur:#8A5A1B;
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#75736C;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45; --paw-fur:#8A5A1B;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); -webkit-font-smoothing:antialiased;
+  min-height:100dvh; display:flex; flex-direction:column;
+}
+:focus-visible{outline:2px solid var(--signal); outline-offset:-4px;}
+
+/* ---------- faixa de marca ---------- */
+.bar{
+  flex:none; display:flex; align-items:center; gap:11px;
+  padding:11px 24px; border-bottom:1px solid var(--line); background:var(--surface);
+}
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.bar .paw{width:26px; height:26px; flex:none; display:block;}
+.bar h1{font-size:15px; font-weight:650; letter-spacing:-.01em; margin:0;}
+/* filho direto: o rotulo dentro do botao do Discord nao pode herdar este chip */
+.bar > span{
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); border:1px solid var(--line); border-radius:3px; padding:2px 7px;
+}
+.grow{flex:1;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:32px; height:32px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+
+/* ---------- os dois painéis ---------- */
+.split{flex:1; display:grid; grid-template-columns:1fr 1fr; min-height:0;}
+
+.card{
+  position:relative; overflow:hidden; text-decoration:none; color:inherit;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(28px,5vw,72px);
+  border-right:1px solid var(--line);
+  transition:background .18s ease;
+}
+.card:last-child{border-right:0; background:var(--sunk);}
+.card:hover{background:var(--accent-wash);}
+
+/* pata de marca d'agua, cortada pela borda do painel */
+.card .mark{
+  position:absolute; right:-14%; bottom:-22%; width:min(58%,420px); height:auto;
+  opacity:.07; pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease;
+}
+.card:hover .mark{opacity:.14; transform:translate(-6px,-6px);}
+
+.eyebrow{
+  font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--text-3); margin-bottom:14px;
+}
+.card:hover .eyebrow{color:var(--accent-soft);}
+.card h2{
+  margin:0 0 12px; font-size:clamp(34px,5.4vw,64px); font-weight:700;
+  letter-spacing:-.028em; line-height:1.02; text-wrap:balance;
+}
+.card p{
+  margin:0 0 24px; font-size:clamp(15px,1.35vw,17.5px); line-height:1.55;
+  color:var(--text-2); max-width:34ch;
+}
+.topics{
+  display:flex; flex-wrap:wrap; gap:6px; margin:0 0 30px; padding:0; list-style:none;
+  max-width:40ch;
+}
+.topics li{
+  font-family:var(--mono); font-size:11px; letter-spacing:.02em;
+  color:var(--text-3); border:1px solid var(--line); border-radius:4px;
+  padding:3px 8px; white-space:nowrap; background:var(--ground);
+}
+.card:last-child .topics li{background:var(--surface);}
+.go{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:14px; font-weight:660; color:var(--accent);
+}
+.go .arrow{transition:transform .18s ease;}
+.card:hover .go .arrow{transform:translateX(5px);}
+.count{
+  font-family:var(--mono); font-size:11px; color:var(--text-3);
+  margin-left:auto; padding-left:14px;
+}
+
+/* ---------- rodapé ---------- */
+.foot{
+  flex:none; padding:12px 24px; border-top:1px solid var(--line);
+  background:var(--surface); color:var(--text-3);
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.05em;
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+.foot b{color:var(--text-2); font-weight:600;}
+.foot .sep{opacity:.5;}
+
+/* comunidade: cor da propria marca, para ler como destino externo e nao competir com o acento */
+.discord{
+  display:inline-flex; align-items:center; gap:9px;
+  text-decoration:none; color:#fff; background:#5865F2;
+  border:1px solid #5865F2; border-radius:7px; padding:9px 16px 9px 13px;
+  font-family:var(--sans); font-size:14px; font-weight:660; letter-spacing:-.01em;
+  white-space:nowrap; flex:none;
+  box-shadow:0 1px 2px rgba(46,52,120,.28), 0 6px 18px -8px rgba(88,101,242,.6);
+  transition:background .15s, box-shadow .15s, transform .12s;
+}
+.discord svg{width:20px; height:20px; fill:currentColor; flex:none;}
+.discord:hover{
+  background:#4752E0; border-color:#4752E0;
+  box-shadow:0 1px 2px rgba(46,52,120,.32), 0 9px 24px -8px rgba(88,101,242,.75);
+}
+.discord:active{transform:translateY(1px);}
+.discord:focus-visible{outline:2px solid #fff; outline-offset:2px;}
+
+@media (max-width:560px){
+  .discord span{display:none;}
+  .discord{padding:9px 11px; gap:0;}
+}
+@media (max-width:820px){
+  .split{grid-template-columns:1fr;}
+  .card{border-right:0; border-bottom:1px solid var(--line); padding:34px 24px;}
+  .card:last-child{border-bottom:0;}
+  .card p{margin-bottom:18px;}
+  .topics{margin-bottom:22px;}
+  .card .mark{width:44%; right:-10%; bottom:-18%;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+/* a barra da home tem menos itens que a dos manuais, mas o seletor de idioma e largo:
+   em tela estreita o rotulo de texto sai e o seletor encolhe, senao a linha estoura */
+@media (max-width:560px){
+  .bar{gap:8px; padding:10px 12px;}
+  .bar > span{display:none;}
+  .discord span{display:none;}
+  .discord{padding:9px 11px;}
+  .lang select{max-width:98px; padding:6px 19px 6px 23px;}
+}
+@media (max-width:400px){
+  .bar h1{font-size:13.5px;}
+  .lang select{max-width:76px;}
+}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<div class="bar">
+  <svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg>
+  <h1>Companion Dogs</h1>
+  <span data-i18n="chip">Player documentation</span>
+  <div class="grow"></div>
+  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span data-i18n="discord">Join the Discord</span></a>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Machine translated"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Alternar tema">&#9789;</button>
+</div>
+
+<main class="split">
+  <a class="card" id="card-features" href="en/features.html">
+    <svg viewBox="0 0 1024 1024" class="mark" aria-hidden="true" focusable="false"><use href="#paw"/></svg>
+    <div class="eyebrow" data-i18n="eyebrow_f">Manual 1 of 2</div>
+    <h2 data-i18n="title_f">Features</h2>
+    <p data-i18n="desc_f">How the mod works: taming, commanding your dog, looking after it and keeping it alive.</p>
+    <ul class="topics" data-i18n-list="topics_f"><li>taming</li><li>Commands</li><li>Combat</li><li>Needs</li><li>Tricks</li><li>Hunting</li><li>Saddlebags</li><li>Puppy</li><li>sandbox</li></ul>
+    <div class="go"><span data-i18n="open">Open manual</span> <span class="arrow">&rarr;</span><span class="count" data-i18n="count_f">23 sections</span></div>
+  </a>
+
+  <a class="card" id="card-breeds" href="en/breeds.html">
+    <svg viewBox="0 0 1024 1024" class="mark" aria-hidden="true" focusable="false"><use href="#paw"/></svg>
+    <div class="eyebrow" data-i18n="eyebrow_b">Manual 2 of 2</div>
+    <h2 data-i18n="title_b">Breeds</h2>
+    <p data-i18n="desc_b">Which dog to pick: what each breed is best at, the moodles and the traits.</p>
+    <ul class="topics" data-i18n-list="topics_b"><li>Caramelo</li><li>German Shepherd</li><li>Golden Retriever</li><li>Husky</li><li>Border Collie</li><li>Rottweiler</li><li>Doberman</li><li>Labrador</li></ul>
+    <div class="go"><span data-i18n="open">Open manual</span> <span class="arrow">&rarr;</span><span class="count" data-i18n="count_b">8 breeds</span></div>
+  </a>
+</main>
+
+<div class="foot">
+  <span>Project Zomboid <b>Build 42</b></span><span class="sep">&middot;</span>
+  <span data-i18n="foot">written for people who have never used the mod</span><span class="sep">&middot;</span>
+  <span data-i18n="lang">English</span>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('theme');
+  b.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+  try{ var st=localStorage.getItem('cd-theme'); if(st) document.documentElement.setAttribute('data-theme',st); }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  var T={"en":{"chip":"Player documentation","discord":"Join the Discord","eyebrow_f":"Manual 1 of 2","eyebrow_b":"Manual 2 of 2","title_f":"Features","title_b":"Breeds","desc_f":"How the mod works: taming, commanding your dog, looking after it and keeping it alive.","desc_b":"Which dog to pick: what each breed is best at, the moodles and the traits.","topics_f":["taming","Commands","Combat","Needs","Tricks","Hunting","Saddlebags","Puppy","sandbox"],"topics_b":["Caramelo","German Shepherd","Golden Retriever","Husky","Border Collie","Rottweiler","Doberman","Labrador"],"open":"Open manual","count_f":"23 sections","count_b":"8 breeds","foot":"written for people who have never used the mod","lang":"English"},"pt-br":{"chip":"Documentação do jogador","discord":"Entrar no Discord","eyebrow_f":"Manual 1 de 2","eyebrow_b":"Manual 2 de 2","title_f":"Funcionalidades","title_b":"Raças","desc_f":"Como o mod funciona: domesticar, mandar no cão, cuidar dele e não deixar ele morrer.","desc_b":"Qual cão escolher: o que cada raça faz de melhor, os moodles e as características.","topics_f":["domesticar","Comandos","Combate","Necessidades","Truques","Caça","Alforjes","Filhote","sandbox"],"topics_b":["Caramelo","Pastor Alemão","Golden Retriever","Husky","Border Collie","Rottweiler","Doberman","Labrador"],"open":"Abrir manual","count_f":"23 seções","count_b":"8 raças","foot":"escrito para quem nunca usou o mod","lang":"Português (Brasil)"},"de":{"chip":"Spielerdokumentation","discord":"Discord beitreten","eyebrow_f":"Handbuch 1 von 2","eyebrow_b":"Handbuch 2 von 2","title_f":"Funktionen","title_b":"Rassen","desc_f":"Wie der Mod funktioniert: zähmen, den Hund kommandieren, für ihn sorgen und ihn am Leben halten.","desc_b":"Welchen Hund du nimmst: worin jede Rasse am besten ist, die Moodles und die Eigenschaften.","topics_f":["zähmen","Befehle","Kampf","Bedürfnisse","Kunststücke","Jagd","Satteltaschen","Welpe","Sandbox"],"topics_b":["Caramelo","Deutscher Schäferhund","Golden Retriever","Husky","Border Collie","Rottweiler","Dobermann","Labrador"],"open":"Handbuch öffnen","count_f":"23 Abschnitte","count_b":"8 Rassen","foot":"geschrieben für alle, die den Mod noch nie benutzt haben","lang":"Deutsch"},"es":{"chip":"Documentación del jugador","discord":"Entrar al Discord","eyebrow_f":"Manual 1 de 2","eyebrow_b":"Manual 2 de 2","title_f":"Funciones","title_b":"Razas","desc_f":"Cómo funciona el mod: domesticar, dar órdenes al perro, cuidarlo y mantenerlo con vida.","desc_b":"Qué perro elegir: en qué destaca cada raza, los moodles y los rasgos.","topics_f":["domesticar","Órdenes","Combate","Necesidades","Trucos","Caza","Alforjas","Cachorro","sandbox"],"topics_b":["Caramelo","Pastor Alemán","Golden Retriever","Husky","Border Collie","Rottweiler","Doberman","Labrador"],"open":"Abrir manual","count_f":"23 secciones","count_b":"8 razas","foot":"escrito para quien nunca ha usado el mod","lang":"Español"},"it":{"chip":"Documentazione del giocatore","discord":"Entra nel Discord","eyebrow_f":"Manuale 1 di 2","eyebrow_b":"Manuale 2 di 2","title_f":"Funzionalità","title_b":"Razze","desc_f":"Come funziona la mod: addomesticare, comandare il cane, prendersene cura e tenerlo in vita.","desc_b":"Quale cane scegliere: in cosa è più forte ogni razza, i moodle e le caratteristiche.","topics_f":["addomesticare","Comandi","Combattimento","Bisogni","Trucchi","Caccia","Bisacce","Cucciolo","sandbox"],"topics_b":["Caramelo","Pastore Tedesco","Golden Retriever","Husky","Border Collie","Rottweiler","Dobermann","Labrador"],"open":"Apri il manuale","count_f":"23 sezioni","count_b":"8 razze","foot":"scritto per chi non ha mai usato la mod","lang":"Italiano"},"ja":{"chip":"プレイヤー向けドキュメント","discord":"Discord に参加","eyebrow_f":"マニュアル 1 / 2","eyebrow_b":"マニュアル 2 / 2","title_f":"機能","title_b":"犬種","desc_f":"Mod の仕組み。手懐け方、犬への指示、世話の仕方、そして死なせないためのコツをまとめています。","desc_b":"どの犬を選ぶか。犬種ごとの得意分野、ムードル、そして特性について。","topics_f":["手懐け","コマンド","戦闘","欲求","芸","狩り","サドルバッグ","子犬","サンドボックス"],"topics_b":["カラーメロ","ジャーマンシェパード","ゴールデンレトリバー","ハスキー","ボーダー・コリー","ロットワイラー","ドーベルマン","ラブラドール"],"open":"マニュアルを開く","count_f":"23 セクション","count_b":"8 犬種","foot":"Mod を初めて使う人のために書かれています","lang":"日本語"},"ko":{"chip":"플레이어 문서","discord":"디스코드 참여","eyebrow_f":"설명서 1 / 2","eyebrow_b":"설명서 2 / 2","title_f":"기능","title_b":"견종","desc_f":"모드가 어떻게 돌아가는지: 길들이기, 개에게 명령하기, 돌보기, 그리고 죽지 않게 하기.","desc_b":"어떤 개를 고를까: 견종별로 가장 잘하는 것, 무들, 그리고 특성.","topics_f":["길들이기","명령","전투","욕구 상태","재주","사냥","안장 가방","강아지","샌드박스"],"topics_b":["믹스견","저먼 셰퍼드","골든 리트리버","허스키","보더콜리","로트와일러","도베르만","래브라도"],"open":"설명서 열기","count_f":"23개 항목","count_b":"8개 견종","foot":"모드를 한 번도 써 본 적 없는 사람을 위해 썼습니다","lang":"한국어"},"ru":{"chip":"Документация игрока","discord":"Зайти в Discord","eyebrow_f":"Руководство 1 из 2","eyebrow_b":"Руководство 2 из 2","title_f":"Возможности","title_b":"Породы","desc_f":"Как работает мод: приручение, команды собаке, уход за ней и то, как не дать ей погибнуть.","desc_b":"Какую собаку выбрать: в чём сильна каждая порода, муддлы и особенности.","topics_f":["приручение","Команды","Бой","Потребности","Трюки","Охота","Вьючные сумки","Щенок","песочница"],"topics_b":["Дворняжка","Немецкая овчарка","Золотистый ретривер","Хаски","Бордер-колли","Ротвейлер","Доберман","Лабрадор"],"open":"Открыть руководство","count_f":"Разделов: 23","count_b":"Пород: 8","foot":"написано для тех, кто ни разу не пользовался модом","lang":"Русский"},"th":{"chip":"คู่มือสำหรับผู้เล่น","discord":"เข้าร่วม Discord","eyebrow_f":"คู่มือเล่มที่ 1 จาก 2","eyebrow_b":"คู่มือเล่มที่ 2 จาก 2","title_f":"ฟีเจอร์","title_b":"สายพันธุ์","desc_f":"ม็อดนี้ทำงานยังไง: การรับเลี้ยง สั่งงานหมา ดูแลมัน และทำยังไงไม่ให้มันตาย","desc_b":"จะเลือกหมาตัวไหนดี: แต่ละสายพันธุ์เก่งเรื่องอะไร moodle และคุณลักษณะ","topics_f":["รับเลี้ยง","คำสั่ง","การต่อสู้","ความต้องการ","ท่าทาง","การล่าสัตว์","กระเป๋าอาน","ลูกสุนัข","แซนด์บ็อกซ์"],"topics_b":["Caramelo","German Shepherd","Golden Retriever","Husky","Border Collie","ร็อตไวเลอร์","โดเบอร์แมน","ลาบราดอร์"],"open":"เปิดคู่มือ","count_f":"23 หัวข้อ","count_b":"8 สายพันธุ์","foot":"เขียนให้คนที่ไม่เคยใช้ม็อดนี้มาก่อน","lang":"ไทย"},"uk":{"chip":"Документація гравця","discord":"Зайти в Discord","eyebrow_f":"Посібник 1 з 2","eyebrow_b":"Посібник 2 з 2","title_f":"Можливості","title_b":"Породи","desc_f":"Як працює мод: приборкати, командувати собакою, доглядати за нею і не дати їй загинути.","desc_b":"Яку собаку обрати: у чому найкраща кожна порода, мудли та характеристики.","topics_f":["приборкання","Команди","Бій","Потреби","Трюки","Полювання","Сідельні сумки","Цуценя","пісочниця"],"topics_b":["Карамело","Німецька вівчарка","Золотистий ретривер","Хаскі","Бордер-колі","Ротвейлер","Доберман","Лабрадор"],"open":"Відкрити посібник","count_f":"Розділів: 23","count_b":"Порід: 8","foot":"написано для тих, хто жодного разу не користувався модом","lang":"Українська"},"vi":{"chip":"Tài liệu người chơi","discord":"Vào Discord","eyebrow_f":"Sổ tay 1 trên 2","eyebrow_b":"Sổ tay 2 trên 2","title_f":"Tính năng","title_b":"Giống chó","desc_f":"Mod hoạt động thế nào: thuần hóa, ra lệnh cho chó, chăm sóc nó và giữ cho nó sống.","desc_b":"Nên chọn chó nào: mỗi giống giỏi nhất ở điểm gì, các moodle và đặc điểm.","topics_f":["thuần hóa","Mệnh lệnh","Chiến đấu","Nhu cầu","Trò khéo","Săn mồi","Túi yên","Chó con","sandbox"],"topics_b":["Chó cỏ","Chó chăn cừu Đức","Golden Retriever","Husky","Border Collie","Rottweiler","Doberman","Labrador"],"open":"Mở sổ tay","count_f":"23 mục","count_b":"8 giống","foot":"viết cho người chưa từng dùng mod này","lang":"Tiếng Việt"},"zh-hans":{"chip":"玩家文档","discord":"加入 Discord","eyebrow_f":"手册 1 / 2","eyebrow_b":"手册 2 / 2","title_f":"功能","title_b":"品种","desc_f":"这个模组怎么玩：驯服、指挥你的狗、照顾它，以及别让它死掉。","desc_b":"该选哪只狗：每个犬种最擅长什么、心情图标和特性。","topics_f":["驯服","指令","战斗","需求","技巧","狩猎","驮袋","幼犬","沙盒"],"topics_b":["小卡犬","德国牧羊犬","金毛寻回犬","哈士奇","边境牧羊犬","罗威纳犬","杜宾犬","拉布拉多"],"open":"打开手册","count_f":"23 个章节","count_b":"8 个犬种","foot":"写给从没用过这个模组的人","lang":"简体中文"},"zh-hant":{"chip":"玩家文件","discord":"加入 Discord","eyebrow_f":"手冊 1 / 2","eyebrow_b":"手冊 2 / 2","title_f":"功能","title_b":"品種","desc_f":"這個模組怎麼玩：馴服、指揮你的狗、照顧牠，以及別讓牠死掉。","desc_b":"該選哪隻狗：每個犬種最擅長什麼、心情圖示和特性。","topics_f":["馴服","指令","戰鬥","需求","技巧","狩獵","馱袋","幼犬","沙盒"],"topics_b":["小卡犬","德國牧羊犬","黃金獵犬","哈士奇","邊境牧羊犬","羅威納犬","杜賓犬","拉布拉多"],"open":"開啟手冊","count_f":"23 個章節","count_b":"8 個犬種","foot":"寫給從沒用過這個模組的人","lang":"繁體中文"}};
+  var sel=document.getElementById('lang');
+  function apply(code){
+    var t=T[code]; if(!t) return;
+    document.getElementById('card-features').href=code+'/features.html';
+    document.getElementById('card-breeds').href=code+'/breeds.html';
+    // textContent, nunca innerHTML: o texto vem de traducao, e um & solto viraria entidade
+    var n=document.querySelectorAll('[data-i18n]');
+    for(var i=0;i<n.length;i++){
+      var v=t[n[i].getAttribute('data-i18n')];
+      if(v!=null) n[i].textContent=v;
+    }
+    var ls=document.querySelectorAll('[data-i18n-list]');
+    for(var j=0;j<ls.length;j++){
+      var arr=t[ls[j].getAttribute('data-i18n-list')];
+      if(!arr||!arr.length) continue;
+      ls[j].textContent='';
+      for(var k=0;k<arr.length;k++){
+        var li=document.createElement('li');
+        li.textContent=arr[k];
+        ls[j].appendChild(li);
+      }
+    }
+    document.documentElement.lang=code;
+    if(sel) sel.value=code;
+  }
+  function guess(){
+    try{ var v=localStorage.getItem('cd-lang'); if(v&&T[v]) return v; }catch(e){}
+    var want=(navigator.languages||[navigator.language||'']).map(function(x){
+      return String(x).toLowerCase(); });
+    for(var i=0;i<want.length;i++){
+      if(T[want[i]]) return want[i];
+      var base=want[i].split('-')[0];
+      if(base==='pt') return 'pt-br';
+      // Taiwan, Hong Kong e Macau escrevem em tradicional; o resto, em simplificado.
+      // o navegador manda zh-TW, zh-HK, zh-MO ou zh-Hant-*, nunca so "zh-hant"
+      if(base==='zh'){
+        var trad=/-(tw|hk|mo)(?:-|$)/.test(want[i])||want[i].indexOf('hant')>=0;
+        var quer=trad?'zh-hant':'zh-hans';
+        return T[quer]?quer:(T['zh-hans']?'zh-hans':null);
+      }
+      if(T[base]) return base;
+    }
+    return 'en';
+  }
+  apply(guess());
+  if(sel) sel.addEventListener('change',function(){
+    try{ localStorage.setItem('cd-lang',this.value); }catch(e){}
+    apply(this.value);
+  });
+})();
+</script>
+</body>
+</html>

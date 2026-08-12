@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="สายพันธุ์: ครบทั้ง 8 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: สายพันธุ์">
+<meta property="og:description" content="สายพันธุ์: ครบทั้ง 8 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
+<meta property="og:url" content="https://companiondogs.pet/docs/th/breeds.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: สายพันธุ์</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="เปิดสารบัญ" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="กลับไปหน้าแรกของคู่มือ"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">สายพันธุ์</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>ไปที่คู่มือ ฟีเจอร์</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="ค้นหาในคู่มือ..." aria-label="ค้นหาในคู่มือ" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="ภาษา"><optgroup label="ตรวจทานแล้ว"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="แปลอัตโนมัติ"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th" selected>ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="สลับธีม">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>แปลอัตโนมัติ ยังไม่ได้ตรวจทาน.</b> หน้านี้แปลจากภาษาโปรตุเกสด้วยเครื่อง และยังไม่มีใครตรวจทาน จึงอาจมีคำศัพท์หรือตัวเลขที่คลาดเคลื่อน หากไม่แน่ใจ ให้ดูฉบับภาษาอังกฤษหรือต้นฉบับภาษาโปรตุเกสประกอบ <a href="../en/breeds.html">อ่านฉบับภาษาอังกฤษ</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">สารบัญ &middot; <b>สายพันธุ์</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-สายพนธเปลยนอะไรบางจรง-ๆ" data-id="1-สายพนธเปลยนอะไรบางจรง-ๆ">1. สายพันธุ์เปลี่ยนอะไรบ้างจริง ๆ</a>
+<div class="sub">
+<a class="s3" href="#ขนาดตวกบความแขงแกรงไมใชเรองเดยวกน" data-id="ขนาดตวกบความแขงแกรงไมใชเรองเดยวกน">ขนาดตัวกับความแข็งแกร่งไม่ใช่เรื่องเดียวกัน</a>
+<a class="s3" href="#หนงสายพนธ-หนงหนาตา" data-id="หนงสายพนธ-หนงหนาตา">หนึ่งสายพันธุ์ หนึ่งหน้าตา</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-เลอกแบบเรว-ๆ" data-id="2-เลอกแบบเรว-ๆ">2. เลือกแบบเร็ว ๆ</a>
+<div class="sub">
+<a class="s3" href="#สรปพนธละบรรทด" data-id="สรปพนธละบรรทด">สรุปพันธุ์ละบรรทัด</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-หาสายพนธในมอดหลก" data-id="3-หาสายพนธในมอดหลก">3. ห้าสายพันธุ์ในม็อดหลัก</a>
+<div class="sub">
+<a class="s3" href="#caramelo" data-id="caramelo">Caramelo</a>
+<a class="s3" href="#german-shepherd" data-id="german-shepherd">German Shepherd</a>
+<a class="s3" href="#golden-retriever" data-id="golden-retriever">Golden Retriever</a>
+<a class="s3" href="#husky" data-id="husky">Husky</a>
+<a class="s3" href="#border-collie" data-id="border-collie">Border Collie</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-สามสายพนธจากมอดเสรม" data-id="4-สามสายพนธจากมอดเสรม">4. สามสายพันธุ์จากม็อดเสริม</a>
+<div class="sub">
+<a class="s3" href="#รอตไวเลอร" data-id="รอตไวเลอร">ร็อตไวเลอร์</a>
+<a class="s3" href="#โดเบอรแมน" data-id="โดเบอรแมน">โดเบอร์แมน</a>
+<a class="s3" href="#ลาบราดอร" data-id="ลาบราดอร">ลาบราดอร์</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-ตารางเปรยบเทยบ" data-id="5-ตารางเปรยบเทยบ">5. ตารางเปรียบเทียบ</a>
+<div class="sub">
+<a class="s3" href="#ความเรวในการเรยนร" data-id="ความเรวในการเรยนร">ความเร็วในการเรียนรู้</a>
+<a class="s3" href="#การตอส" data-id="การตอส">การต่อสู้</a>
+<a class="s3" href="#ความนงเวลาส" data-id="ความนงเวลาส">ความนิ่งเวลาสู้</a>
+<a class="s3" href="#คณลกษณะ-ชวงคาตอนเกด" data-id="คณลกษณะ-ชวงคาตอนเกด">คุณลักษณะ (ช่วงค่าตอนเกิด)</a>
+<a class="s3" href="#กระเปาอาน" data-id="กระเปาอาน">กระเป๋าอาน</a>
+<a class="s3" href="#จำนวนลกตอครอก" data-id="จำนวนลกตอครอก">จำนวนลูกต่อครอก</a>
+<a class="s3" href="#หาสนขแตละสายพนธไดทไหน" data-id="หาสนขแตละสายพนธไดทไหน">หาสุนัขแต่ละสายพันธุ์ได้ที่ไหน</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-moodles-รายการทงหมด" data-id="6-moodles-รายการทงหมด">6. Moodles: รายการทั้งหมด</a>
+<div class="sub">
+<a class="s3" href="#กฎทใชกบ-moodle-ประจำสายพนธทกตว" data-id="กฎทใชกบ-moodle-ประจำสายพนธทกตว">กฎที่ใช้กับ moodle ประจำสายพันธุ์ทุกตัว</a>
+<a class="s3" href="#moodle-ประจำสายพนธ" data-id="moodle-ประจำสายพนธ">moodle ประจำสายพันธุ์</a>
+<a class="s3" href="#moodle-ททกสายพนธให" data-id="moodle-ททกสายพนธให">moodle ที่ทุกสายพันธุ์ให้</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-คณลกษณะ-ยน" data-id="7-คณลกษณะ-ยน">7. คุณลักษณะ (ยีน)</a>
+<div class="sub">
+<a class="s3" href="#วธอานปายกำกบ" data-id="วธอานปายกำกบ">วิธีอ่านป้ายกำกับ</a>
+<a class="s3" href="#จรง-ๆ-แลวมผลมากแคไหน" data-id="จรง-ๆ-แลวมผลมากแคไหน">จริง ๆ แล้วมีผลมากแค่ไหน</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-พนธผสม-การผสมขามสายพนธ" data-id="8-พนธผสม-การผสมขามสายพนธ">8. พันธุ์ผสม: การผสมข้ามสายพันธุ์</a>
+<div class="sub">
+<a class="s3" href="#ลกสนขจะออกมาเปนอยางไร" data-id="ลกสนขจะออกมาเปนอยางไร">ลูกสุนัขจะออกมาเป็นอย่างไร</a>
+<a class="s3" href="#ปาย-พนธผสม" data-id="ปาย-พนธผสม">ป้าย "พันธุ์ผสม"</a>
+<a class="s3" href="#ผสมขามสายพนธแลวคมไหม" data-id="ผสมขามสายพนธแลวคมไหม">ผสมข้ามสายพันธุ์แล้วคุ้มไหม</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-การตดตงแอดออน" data-id="9-การตดตงแอดออน">9. การติดตั้งแอดออน</a>
+</div>
+<div class="grp">
+<a class="s2" href="#10-คำถามทพบบอยเรองสายพนธ" data-id="10-คำถามทพบบอยเรองสายพนธ">10. คำถามที่พบบ่อยเรื่องสายพันธุ์</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-คมอสายพนธ">Companion Dogs: คู่มือสายพันธุ์</h1>
+<p>คู่มือรวมทุกสายพันธุ์ ว่าแต่ละพันธุ์ทำอะไรได้ดีที่สุด มี moodle อะไรบ้าง คุณลักษณะเป็นอย่างไร และจะเลือกตัวไหนให้เข้ากับเกมของคุณ</p>
+<p>ถ้าอยากรู้ว่า <strong>ม็อดนี้ทำงานอย่างไร</strong> (การรับเลี้ยง คำสั่ง อาหาร กระเป๋าอาน ท่าทาง การล่าสัตว์) ให้ดูคู่มืออีกเล่ม: <a href="features.html" class="xlink">ฟีเจอร์</a></p>
+<blockquote class="quote"><strong>ตัวเลขทั้งหมดในคู่มือนี้อ้างอิงจากการตั้งค่าเริ่มต้น</strong> ถ้าเซิร์ฟเวอร์ปิด <strong><span class="ig">ทักษะ และ การฝึกฝน</span></strong> สายพันธุ์จะหยุด <strong>พัฒนา</strong> ทักษะจะค้างอยู่ที่ศูนย์ เส้นโค้งความเสียหายตามเลเวลจะกลายเป็นแบบกลาง ๆ และท่าทางทั้งสี่จะปลดล็อกพร้อมกันทีเดียว (ม็อดจะเริ่มมองสุนัขทุกตัวว่าอยู่ที่ เชื่อฟัง 10) ส่วนสิ่งที่สายพันธุ์ให้ <strong>มาตั้งแต่เกิด</strong> ยังใช้ได้เหมือนเดิม ทั้งพลังกัดพื้นฐาน การทำให้ซอมบี้ล้ม ความนิ่งเวลาสู้ moodle เฉพาะพันธุ์ กระเป๋าอาน และขนาดครอก ตัวที่ซ่อนท่าทางเอาไว้คือออปชันแยกอีกอันชื่อ <strong><span class="ig">ท่าทางจากการเชื่อฟัง</span></strong></blockquote>
+<h2 id="1-สายพนธเปลยนอะไรบางจรง-ๆ">1. สายพันธุ์เปลี่ยนอะไรบ้างจริง ๆ</h2>
+<p>สายพันธุ์มีผลกับ <strong>เจ็ดเรื่อง</strong> เท่านั้น ไม่มีมากไปกว่านี้:</p>
+<div class="tw"><table><thead><tr>
+<th>สิ่งที่เปลี่ยน</th>
+<th>คำอธิบาย</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>ความเร็วในการเรียนรู้</strong></td>
+<td>แต่ละพันธุ์เรียนทักษะทั้ง 5 อย่างด้วยความเร็วต่างกัน นี่คือสิ่งที่บอกความเป็นสายพันธุ์มากที่สุด</td>
+</tr>
+<tr>
+<td><strong>พลังกัด</strong></td>
+<td>กัดทีหนึ่งแรงแค่ไหน และในนั้นมีส่วนไหนที่ต้องฝึกเอาเอง</td>
+</tr>
+<tr>
+<td><strong>ความนิ่งเวลาสู้</strong></td>
+<td>สู้แล้วสะสมความเครียดเร็วแค่ไหน และถึงจุดไหนถึงจะตกใจแล้วหยุดสู้</td>
+</tr>
+<tr>
+<td><strong>คุณลักษณะ (ยีน)</strong></td>
+<td>ช่วงค่าความแข็งแกร่ง ความก้าวร้าว และความอดทน ที่มันเกิดมาพร้อมได้</td>
+</tr>
+<tr>
+<td><strong>moodle เฉพาะพันธุ์</strong></td>
+<td>โบนัสสำหรับ <strong>ตัวคุณเอง</strong> ตราบใดที่สุนัขอยู่ใกล้ ได้กินอิ่มและภักดี</td>
+</tr>
+<tr>
+<td><strong>ขนาดครอก</strong></td>
+<td>ออกลูกครั้งละกี่ตัว</td>
+</tr>
+<tr>
+<td><strong>จุดที่มันโผล่มาบนแผนที่</strong></td>
+<td>แต่ละพันธุ์มีที่ทางของตัวเอง</td>
+</tr>
+</tbody></table></div>
+<p>ส่วนสิ่งที่ <strong>ไม่</strong> เปลี่ยนตามสายพันธุ์ ถึงหลายคนจะคิดว่าเปลี่ยน:</p>
+<ul>
+<li><strong>ความเร็วในการวิ่ง</strong> ไม่มีพันธุ์ไหนวิ่งเร็วกว่ากัน ทุกตัววิ่งเท่ากันหมด</li>
+<li><strong>ระยะของการป้องกันอันตราย การดมกลิ่น และการล่าสัตว์</strong> ขึ้นอยู่กับเลเวลของทักษะอย่างเดียว สายพันธุ์เปลี่ยนแค่ความเร็วที่จะไปถึงจุดนั้น ไม่ได้เปลี่ยนเพดาน</li>
+<li><strong>ท่าทาง</strong> ทั้งสี่ท่าปลดล็อกตามระดับความเชื่อฟัง เหมือนกันหมดทุกตัว</li>
+<li><strong>ความหิวและความกระหาย</strong> อัตราเท่ากันทุกสายพันธุ์ (รวมถึง Husky ด้วย ดูในหัวข้อของมัน)</li>
+<li><strong>ความจุของกระเป๋าอาน</strong> ยกเว้น Husky ที่เป็นพันธุ์เดียวที่ได้โบนัสจากสายพันธุ์</li>
+<li><strong>ขนาดตัวไม่ใช่ความแข็งแกร่ง</strong> สองอย่างนี้แยกกัน และสับสนกันง่ายเพราะมันมักมาคู่กัน อ่านต่อข้างล่าง</li>
+</ul>
+<h3 id="ขนาดตวกบความแขงแกรงไมใชเรองเดยวกน">ขนาดตัวกับความแข็งแกร่งไม่ใช่เรื่องเดียวกัน</h3>
+<p><strong>ความแข็งแกร่ง</strong> เป็นยีน และมีผลจริง มันเพิ่มความเสียหายจากการกัดได้ถึง <strong>30%</strong> และเป็นตัวกำหนดความจุของกระเป๋าอาน</p>
+<p>ส่วน <strong>ขนาดตัว</strong> เป็นอีกเรื่องหนึ่ง มันมาจากยีนของตัวเกมเอง ซึ่งม็อดไม่ได้สุ่มและไม่ได้ไปยุ่งด้วย บวกกับการเติบโตตามธรรมชาติของลูกสุนัขจนถึงขนาดตัวเต็มวัยของพันธุ์นั้น สุนัขสองตัวพันธุ์เดียวกันอาจตัวไม่เท่ากันโดยที่ความแข็งแกร่งไม่ต่างกันเลย และสุนัขที่ตัวใหญ่กว่าอีกตัวหนึ่ง <strong>ในพันธุ์เดียวกัน</strong> ก็ไม่ได้กัดแรงกว่าเพราะเรื่องนี้</p>
+<p>ที่ทำให้สับสนคือ <strong>สายพันธุ์</strong> เป็นตัวกำหนดทั้งสองอย่างพร้อมกัน แต่แยกกันคนละทาง German Shepherd ตัวใหญ่ <strong>และ</strong> เกิดมาแข็งแรง ส่วน Caramelo ตัวเล็ก <strong>และ</strong> เกิดมาอ่อนแอ พอเอาพันธุ์มาเทียบกับพันธุ์ ตัวที่ใหญ่กว่าก็เลยกัดแรงกว่าจริง ๆ แต่สาเหตุคือสายพันธุ์ ไม่ใช่ขนาดตัว การดูขนาดตัวไม่ได้บอกอะไรเลยเกี่ยวกับความแข็งแกร่งของสุนัขตัวนั้น เรื่องนี้ต้องดูที่แถบความแข็งแกร่งในหน้าพันธุกรรมของหน้าต่างสุนัข</p>
+<h3 id="หนงสายพนธ-หนงหนาตา">หนึ่งสายพันธุ์ หนึ่งหน้าตา</h3>
+<p><strong>ในสายพันธุ์เดียวกันไม่มีการเปลี่ยนสี</strong> แต่ละพันธุ์มีเท็กซ์เจอร์แบบเดียวเท่านั้น และตัวผู้กับตัวเมียก็ใช้อันเดียวกัน Husky จึงหน้าตาเหมือนเดิมทุกตัวเสมอ</p>
+<p>ลูกสุนัขของทุกสายพันธุ์เกิดมาตัวเล็กเท่ากันหมด แล้วค่อยโตขึ้นไปจนได้ขนาดตัวเต็มวัยของพันธุ์ตัวเอง</p>
+<h2 id="2-เลอกแบบเรว-ๆ">2. เลือกแบบเร็ว ๆ</h2>
+<div class="tw"><table><thead><tr>
+<th>ถ้าคุณอยาก...</th>
+<th>เลือกตัวนี้</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>รอดผ่านช่วงวันแรก ๆ ด้วยของที่หาเจอ</strong></td>
+<td><strong>Caramelo</strong></td>
+</tr>
+<tr>
+<td><strong>สุนัขที่ยืนหยัดรับหน้าและฆ่าซอมบี้ได้เอง</strong></td>
+<td><strong>German Shepherd</strong> หรือ <strong>ร็อตไวเลอร์</strong></td>
+</tr>
+<tr>
+<td><strong>ล่าสัตว์เอาเนื้อ</strong></td>
+<td><strong>Golden Retriever</strong> หรือ <strong>ลาบราดอร์</strong></td>
+</tr>
+<tr>
+<td><strong>ขนของ</strong></td>
+<td><strong>Husky</strong> ไม่ต้องเถียง</td>
+</tr>
+<tr>
+<td><strong>ดูแลฟาร์มให้ตอนคุณออกเดินทาง</strong></td>
+<td><strong>Border Collie</strong></td>
+</tr>
+<tr>
+<td><strong>ยิงปืนให้ดีขึ้น</strong></td>
+<td><strong>โดเบอร์แมน</strong></td>
+</tr>
+<tr>
+<td><strong>ฟาดระยะประชิดได้นานขึ้น</strong></td>
+<td><strong>ร็อตไวเลอร์</strong></td>
+</tr>
+<tr>
+<td><strong>เบื่อและเศร้าน้อยลง</strong></td>
+<td><strong>Caramelo</strong></td>
+</tr>
+<tr>
+<td><strong>ตื่นตระหนกน้อยลง</strong></td>
+<td><strong>German Shepherd</strong></td>
+</tr>
+<tr>
+<td><strong>หาของได้มากขึ้น</strong></td>
+<td><strong>Golden Retriever</strong></td>
+</tr>
+<tr>
+<td><strong>ไม่ตายเพราะความหนาว</strong></td>
+<td><strong>Husky</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="สรปพนธละบรรทด">สรุปพันธุ์ละบรรทัด</h3>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>สรุปหนึ่งบรรทัด</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td>หมาข้างถนนบ้าน ๆ อ่อนแอ แต่ทำให้ซอมบี้ล้มได้ และเป็นเพื่อนที่ดีจริง ๆ</td>
+</tr>
+<tr>
+<td><strong>German Shepherd</strong></td>
+<td>สายทหาร กัดแรงและแทบไม่ตกใจเลย</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>นักล่าจมูกไว แถมยังช่วยให้คุณหาของเก่งขึ้นด้วย</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>ตัวขนของที่ทำให้คุณอบอุ่นในหน้าหนาว ดื้อรั้นหน่อย</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>ลูกจ้างประจำฟาร์ม</td>
+</tr>
+<tr>
+<td><strong>ร็อตไวเลอร์</strong></td>
+<td>นักรบที่ช่วยประหยัดพลังกายของคุณในการต่อสู้ระยะประชิด</td>
+</tr>
+<tr>
+<td><strong>โดเบอร์แมน</strong></td>
+<td>สุนัขสายปืน: แรงสะท้อนน้อยลง บรรจุกระสุนไวขึ้น ประสาทนิ่ง</td>
+</tr>
+<tr>
+<td><strong>ลาบราดอร์</strong></td>
+<td>ตัวคาบของ: นักสู้ที่แย่ที่สุดในม็อด แต่คาบเหยื่อกลับมาให้เก่งที่สุด</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-หาสายพนธในมอดหลก">3. ห้าสายพันธุ์ในม็อดหลัก</h2>
+<p>ห้าตัวนี้มากับม็อดหลักอยู่แล้ว ไม่ต้องติดตั้งอะไรเพิ่ม</p>
+<hr>
+<h3 id="caramelo">Caramelo</h3>
+<p><strong>หมาข้างถนนของบราซิล</strong> เป็นสุนัขตัวแรกที่คุณจะได้เจอ และน่าจะเป็นคู่หูตัวแรกของคุณด้วย</p>
+<blockquote class="quote quote-game"><em>"Caramelo เป็นสุนัขที่พบเห็นได้ในทั่วไป ไม่ว่าจะเป็นตามเมืองหรือที่ไหน ไม่มีทักษะพิเศษใดๆ และ อ่อนแอโดยธรรมชาติ : ไม่สามารถจัดการซอมบี้ได้ด้วยตัวเอง แต่ สามารถทำให้ซอมบี้ล้มเพื่อซื้อเวลาได้"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong> บ้านพักอาศัยในเมืองหรือย่านที่อยู่อาศัย <strong>20% ต่อหนึ่งหลัง</strong> เป็นสายพันธุ์ที่พบบ่อยที่สุดในเกม</p>
+<p><strong>การเรียนรู้:</strong> ทุกทักษะขึ้นที่ความเร็วปกติ ไม่มีอะไรที่เด่นเป็นพิเศษ และไม่มีอะไรที่แย่เป็นพิเศษ</p>
+<p><strong>ในการต่อสู้:</strong> เป็น <strong>สุนัขตัวเดียวที่จัดการซอมบี้ให้ตายไม่ได้</strong> การกัดของมันทำให้ซอมบี้เหลือพลังชีวิตนิดเดียว แล้วก็หยุดแค่นั้น อันนี้ตั้งใจออกแบบมา และ <strong>ไม่มีค่าแซนด์บ็อกซ์ตัวไหนเปลี่ยนได้</strong> สิ่งที่มันทำได้แทนคือ <strong>ทำให้ซอมบี้ล้ม</strong> และการทำให้ซอมบี้ล้มนี่แหละคือสิ่งที่ซื้อเวลาให้คุณหนีหรือฟาดกลับ</p>
+<p>มันยังเป็น <strong>สุนัขที่ขี้ตกใจที่สุดในม็อด</strong> ด้วย เวลาสู้มันสะสมความเครียดเร็วกว่า German Shepherd ห้าเท่า และเป็นตัวแรกที่จะตกใจจนไม่ยอมสู้</p>
+<p><strong>คุณลักษณะ:</strong> อ่อนที่สุดในบรรดาทุกสายพันธุ์ ในหน้าต่างสถานะของสุนัขมันจะขึ้น <strong>ต่ำ</strong> ทั้งความแข็งแกร่ง ความก้าวร้าว และความอดทน <strong>เสมอ</strong> ไม่ว่าจะเป็น Caramelo ตัวไหนที่คุณรับเลี้ยง ไม่ต้องเสียเวลาตามหา Caramelo ที่ <span class="ig">ดีกว่า</span> หรอก</p>
+<p><strong>ลูกต่อครอก:</strong> <strong>2 ถึง 4 ตัว</strong> มากที่สุดในม็อด ถ้าเป้าหมายของคุณคือเพาะฝูงสุนัข นี่คือสายพันธุ์ที่ให้ลูกดกที่สุด</p>
+<p><strong>กระเป๋าอาน:</strong> จุของได้ 4 ถึง 5 น้อยที่สุดในม็อด</p>
+<p><strong>Moodle: <span class="ig">เพื่อนที่ดี</span></strong></p>
+<blockquote class="quote quote-game"><em>"caramelo เป็นสุนัขพันธุ์ผสมที่น่ารักและมีเสน่ห์อย่างยอดเยี่ยม การอยู่ด้วยอย่างภักดีของมันช่วยเยียวยาใจของคุณ ทำให้ความเศร้าและความเบื่อหน่ายจางหายไปเร็วขึ้นเมื่อมันอยู่ใกล้ๆ"</em></blockquote>
+<p>ลด <strong>ความเศร้าและความเบื่อหน่าย</strong> ให้เรื่อย ๆ ตราบใดที่มันอยู่ใกล้ ๆ เป็นหนึ่งใน moodle ที่ใช้งานได้จริงที่สุดในชีวิตประจำวัน เพราะความเบื่อกับความเศร้าเป็นปัญหาที่โผล่มาตลอดใน Zomboid และแก้ด้วยวิธีอื่นก็แพง</p>
+<p><strong>เหมาะกับใคร:</strong> ทุกคนในช่วงเริ่มเกม และยังใช้ได้ดีต่อไปเรื่อย ๆ เพราะ moodle ของมันแก้ปัญหาที่ไม่มีสายพันธุ์อื่นแก้ให้ได้ แค่อย่าหวังให้มันฆ่าอะไรได้ก็พอ</p>
+<hr>
+<h3 id="german-shepherd">German Shepherd</h3>
+<p><strong>สุนัขนักรบ</strong> สายพันธุ์สายบู๊ของม็อดหลัก</p>
+<blockquote class="quote quote-game"><em>"เป็นสุนัขที่มีพลัง และความฉลาด มีกำลังและความอึดที่มากกว่า Caramelo เป็นสุนัขที่ฝึกฝนง่ายและเชื่อฟัง ยากที่จะหนีจากการต่อสู้ (รับมือกับความเครียดได้ดี), สามารถยืนหยัดได้แม้ว่าจะเจอฝูงซอมบี้ และสามารถจัดการซอมบี้ได้ด้วยตัวเอง"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong> สถานีตำรวจ เรือนจำ ห้องขัง ฐานทัพ ค่ายทหาร ร้านขายปืน และคลังกระสุน <strong>20% ต่อหนึ่งอาคาร</strong> ไม่โผล่ตามบ้าน คุณต้องออกไปตามหาเอง</p>
+<p><strong>การเรียนรู้:</strong> <strong>การต่อสู้เร็วเป็นสองเท่า</strong> และความเชื่อฟังเร็วขึ้น 50% การล่าสัตว์ก็เร็วขึ้นนิดหน่อยด้วย เป็นสายพันธุ์ที่แกร่งขึ้นเร็วที่สุด</p>
+<p><strong>ในการต่อสู้:</strong> กัดแรงที่สุดในม็อดหลัก และ <strong>จัดการซอมบี้ให้ตายได้ด้วยตัวเอง</strong> แต่จุดเด่นจริง ๆ ของมันไม่ใช่ความแรง มันคือ <strong>ความใจนิ่ง</strong> มันสะสมความเครียด <strong>ช้ากว่า Caramelo ห้าเท่า</strong> และจุดที่มันจะตกใจก็สูงที่สุดในม็อด แปลว่า <strong>มันยังสู้ต่อในสถานการณ์ที่สายพันธุ์อื่นหยุดไปนานแล้ว</strong></p>
+<p><strong>คุณลักษณะ:</strong> อยู่ในช่วงกลางทุกค่า และสูงกว่า Caramelo อยู่มาก German Shepherd จะขึ้น <strong>กลาง</strong> ทั้งสามคุณลักษณะ</p>
+<p><strong>ลูกต่อครอก:</strong> 1 ถึง 2 ตัว</p>
+<p><strong>กระเป๋าอาน:</strong> 6 ถึง 8</p>
+<p><strong>Moodle: <span class="ig">กำลังใจดี</span></strong></p>
+<blockquote class="quote quote-game"><em>"German Shepherd ที่กล้าหาญอยู่ข้าง ๆ คุณช่วยทำให้คุณผ่อนคลาย - การปรากฏตัวที่ไม่กลัวใครของมันช่วยลดความตื่นตระหนกของคุณได้ในขณะที่อยู่ใกล้ ๆ"</em></blockquote>
+<p>กด <strong>ความตื่นตระหนก</strong> ลงเรื่อย ๆ เป็น moodle ที่ตัวเลขแรงที่สุดในม็อดหลัก และแก้ปัญหาใหญ่ให้ด้วย เพราะความตื่นตระหนกทำให้เล็งเป้าเพี้ยนและตีระยะประชิดได้แย่ลง มี German Shepherd อยู่ใกล้ ๆ มือคุณจะนิ่งขึ้นเวลาสู้</p>
+<p><strong>เหมาะกับใคร:</strong> คนที่เล่นสายสู้ ถ้าคุณชอบลุยตีกลางเมือง นี่คือสายพันธุ์ของคุณ</p>
+<blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายในเกมบอกไว้แค่ว่ามัน <span class="ig">รับมือกับความเครียดได้ดี</span> ไม่ได้ให้ตัวเลข ตัวเลขจริงคือมันได้ความเครียดแค่ <strong>หนึ่งในห้า</strong> ของ Caramelo คำอธิบายเขียนไว้ถ่อมตัวเกินไป ของจริงดีกว่าที่บอกไว้</blockquote>
+<hr>
+<h3 id="golden-retriever">Golden Retriever</h3>
+<p><strong>สุนัขล่าสัตว์จมูกไว</strong> สายพันธุ์ที่ช่วยเรื่องการหาของ</p>
+<blockquote class="quote quote-game"><em>"สุนัขล่าสัตว์ที่เป็นมิตรและมีจมูกไวตามสัญชาตญาณนักล่า: เรียนรู้การล่าสัตว์เร็วเป็นสองเท่า และสามารถจัดการกับซอมบี้ได้ด้วยตัวเอง แต่จะเหนื่อยง่ายกว่า German Shepherd จมูกของมันจะช่วยให้คุณหาอาหารและติดตามเหยื่อจากระยะไกลได้"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong> บ้านพักอาศัย โดยสุ่มคนละรอบกับ Caramelo <strong>5% ต่อหนึ่งหลัง</strong> หายากกว่าหมาข้างถนนสี่เท่า แต่เป็นบ้านแบบเดียวกัน บ้านหลังเดียวมีทั้งสองตัวก็ได้</p>
+<p><strong>การเรียนรู้:</strong> <strong>การล่าสัตว์เร็วเป็นสองเท่า</strong> และการดมกลิ่นเร็วขึ้น 50% เป็นสายพันธุ์ที่ไปถึงการล่าสัตว์เลเวล 6 ได้เร็วที่สุด ซึ่งเป็นจุดที่สุนัขเริ่มสู้กับกวางได้</p>
+<p><strong>ในการต่อสู้:</strong> ความแรงระดับกลาง และ <strong>จัดการซอมบี้ได้ด้วยตัวเอง</strong> เครียดง่ายกว่า German Shepherd แต่ยังทนกว่า Caramelo</p>
+<p><strong>คุณลักษณะ:</strong> สูงกว่า Caramelo อยู่นิดหน่อย แต่ต่ำกว่า German Shepherd ไม่ใช่สุนัขสายบู๊</p>
+<p><strong>ลูกต่อครอก:</strong> 1 ถึง 2 ตัว</p>
+<p><strong>กระเป๋าอาน:</strong> 6 ถึง 7</p>
+<p><strong>Moodle: <span class="ig">จมูกดี</span></strong></p>
+<blockquote class="quote quote-game"><em>"Golden Retriever ช่วยงานคุณเมื่ออยู่ใกล้ ๆ ทำให้คุณหาของได้ระยะที่ไกลขึ้น และเรีัยนรู้การหาของ, การวางกับดับ และ การเล็งปืนเร็วขึ้น"</em></blockquote>
+<p>มีสามผลด้วยกัน:</p>
+<ul>
+<li><strong>XP +20%</strong> ในทักษะ <strong>การหาของ การวางกับดัก และการเล็งปืน</strong></li>
+<li><strong>+4 ช่อง</strong> ในรัศมีการมองเห็นของโหมดค้นหา ซึ่ง <strong>เพิ่มจาก</strong> โบนัสที่สุนัขทุกตัวให้อยู่แล้ว</li>
+</ul>
+<p>นี่คือ moodle ที่เปลี่ยนจังหวะการเล่นของตัวละครสายนอกเมืองมากที่สุด การหาของกับการวางกับดักเป็นทักษะที่ขึ้นช้า ส่วนการเล็งปืนก็แพง</p>
+<p><strong>เหมาะกับใคร:</strong> คนที่อยู่ได้ด้วยการล่าสัตว์ หาของ และวางกับดัก เข้ากับฐานที่ตั้งในชนบท</p>
+<blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายในเกมบอกว่ามันเรียนรู้ <span class="ig">การต่อสู้เร็วขึ้นเล็กน้อยเมื่อเทียบกับ Caramelo</span> ซึ่งไม่จริง มันเรียนรู้การต่อสู้ที่ความเร็วเท่ากับหมาข้างถนนเป๊ะ</blockquote>
+<hr>
+<h3 id="husky">Husky</h3>
+<p><strong>สุนัขสายขนของ</strong> เป็นสุนัขที่แข็งแรงที่สุดในม็อด และเป็นตัวเดียวที่ให้ความอบอุ่น</p>
+<blockquote class="quote quote-game"><em>"สุนัขลากเลื่อนจากแดนเหนือที่แสนทรหด: เป็นสายพันธุ์ที่แข็งแรงที่สุด เกิดมาเพื่อบรรทุกสัมภาระ (กระเป๋าอานของมันจุได้มากที่สุด) และทนต่อความหนาวเย็น ดื้อรั้น (เรียนรู้ความเชื่อฟังช้ากว่า), เป็นมิตร (เฝ้าบ้านได้ไม่ดี) และกินจุ"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong> มีสองแหล่ง</p>
+<ul>
+<li><strong>บ้านพักอาศัย เฉพาะหน้าหนาว</strong> 2.5% ต่อหนึ่งหลัง เป็นสายพันธุ์ที่หายากที่สุดในเกมเมื่อพ้นฤดู</li>
+<li><strong>ร้านขายสัตว์เลี้ยงและคลินิกสัตวแพทย์</strong> 10% ต่อหนึ่งอาคาร ตลอดทั้งปี นี่คือทางที่พึ่งพาได้จริงถ้าอยากได้สักตัว</li>
+</ul>
+<p><strong>การเรียนรู้:</strong> <strong>การดมกลิ่นเร็วเป็นสองเท่า</strong> (ระบบป้องกันอันตรายดีที่สุดในม็อด) การล่าสัตว์เร็วขึ้น 50% และการต่อสู้สูงกว่าค่าเฉลี่ยเล็กน้อย <strong>แต่เรียนรู้ความเชื่อฟังช้าลง 20%</strong> ซึ่งเป็น <strong>บทลงโทษของสายพันธุ์อย่างเดียวที่มีในม็อดทั้งหมด</strong> อันนี้ตั้งใจ เพราะมันดื้อ</p>
+<p>ผลจริงของความเชื่อฟังที่ขึ้นช้า คือมันปลดล็อกท่าทางได้ช้ากว่า ดื้อไม่ฟังคำสั่งอยู่นานกว่า และกว่ามันจะยอมเชื่อฟังทั้งที่ความซื่อสัตย์ต่ำก็ใช้เวลานานกว่า เลี้ยง Husky ต้องใจเย็นกว่าปกติ</p>
+<p><strong>ในการต่อสู้:</strong> ความแรงสูงกว่าค่าเฉลี่ย <strong>จัดการซอมบี้ได้ด้วยตัวเอง</strong> แต่ก็ไม่ใช่นักรบ เครียดง่ายกว่า German Shepherd อยู่มาก</p>
+<p><strong>คุณลักษณะ:</strong> มี <strong>ช่วงค่าความแข็งแกร่งสูงที่สุดในม็อด แบบทิ้งห่าง</strong> Husky จะขึ้น <strong>กลางหรือสูง</strong> ในความแข็งแกร่ง ขณะที่สายพันธุ์อื่นได้แค่กลางหรือต่ำ</p>
+<p><strong>ลูกต่อครอก:</strong> 1 ถึง 2 ตัว</p>
+<p><strong>กระเป๋าอาน: จุของได้ 13 ถึง 16</strong> เป็นสายพันธุ์เดียวที่ได้โบนัสกระเป๋าอาน (+50%) และต่างกันเยอะมาก มันขนของได้ <strong>มากกว่าสุนัขตัวอื่นสองถึงสามเท่า</strong></p>
+<p><strong>Moodle: <span class="ig">อบอุ่น</span></strong></p>
+<blockquote class="quote quote-game"><em>"Husky ของคุณช่วยแบ่งเบาภาระเมื่ออยู่ข้าง ๆ ตราบใดที่มันอยู่ใกล้ ได้กินอิ่มและภักดี มันจะช่วยแบกของบางส่วนให้คุณถือของได้มากขึ้น และช่วยให้คุณเหนื่อยช้าลง และเมื่ออากาศหนาวเย็น ขนหนา ๆ ที่น่ากอดของมันก็ช่วยให้คุณอบอุ่น"</em></blockquote>
+<p>มีสามผลด้วยกัน:</p>
+<ul>
+<li><strong>น้ำหนักที่คุณแบกได้เพิ่มขึ้น +2</strong> (อันนี้แยกจากของที่อยู่ในกระเป๋าอานของมัน)</li>
+<li><strong>ค่าความอึดฟื้นตัวตลอดเวลา</strong> ทำให้คุณเหนื่อยช้าลง</li>
+<li><strong>เป็นแหล่งความอบอุ่นเคลื่อนที่</strong> ที่ <strong>เปิดเองเมื่อคุณเริ่มหนาว</strong> และปิดเมื่อคุณอุ่นแล้ว หน้าหนาวเหมือนมีกองไฟเดินอยู่ข้างคุณตลอด</li>
+</ul>
+<p><strong>เหมาะกับใคร:</strong> คนที่ออกไปเก็บของไกล ๆ แล้วกลับมาพร้อมของเต็มมือ และคนที่เล่นหน้าหนาวโหด ๆ นี่คือสุนัขสายขนส่ง</p>
+<blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายบอกว่ามัน <span class="ig">กินจุ (หิวเร็ว)</span> <strong>อันนี้ไม่มีผลกับสุนัขที่รับเลี้ยงแล้ว</strong> อัตราความหิวของสุนัขคู่หูเท่ากันหมดทุกสายพันธุ์ ความอยากอาหารที่มากกว่ามีผลเฉพาะตอนที่มันยังเป็นสุนัขจรจัด</blockquote>
+<hr>
+<h3 id="border-collie">Border Collie</h3>
+<p><strong>สุนัขประจำฟาร์ม</strong> สายพันธุ์สายต้อนฝูง</p>
+<blockquote class="quote quote-game"><em><span class="ig">สุนัขต้อนฝูงที่ฉลาดและไม่รู้จักเหน็ดเหนื่อย เพื่อนคู่ใจประจำฟาร์มที่ได้รับการยกย่องเรื่องความฉลาดเป็นพิเศษ</span></em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong> โรงนา คอกม้า ไซโล เล้าไก่ และคอกสัตว์ ใน <strong>เขตชนบท</strong> <strong>15% ต่อหนึ่งอาคาร</strong> และการสุ่มรอบนี้ <strong>ไม่สนใจตัวกรองเขตเมือง</strong> ฟาร์มที่อยู่กลางที่เปลี่ยวก็นับ</p>
+<p><strong>การเรียนรู้:</strong> <strong>Herding เร็วเป็นสองเท่า</strong> ความเชื่อฟังเร็วขึ้น 50% และการดมกลิ่นสูงกว่าค่าเฉลี่ยเล็กน้อย</p>
+<p><strong>ในการต่อสู้:</strong> ความแรงระดับกลาง เท่ากับ Golden Retriever <strong>จัดการซอมบี้ได้ด้วยตัวเอง</strong> เครียดยากกว่า Caramelo แต่ก็ยังเครียดง่ายกว่า German Shepherd อยู่มาก มันไม่ใช่สุนัขสายบู๊ แต่เป็นสุนัขสายทำงาน</p>
+<p><strong>คุณลักษณะ:</strong> อยู่ในช่วงกลาง สูงกว่า Golden Retriever อยู่นิดหน่อย</p>
+<p><strong>ลูกต่อครอก:</strong> <strong>1 ถึง 3 ตัว</strong> มากเป็นอันดับสองของม็อดหลัก</p>
+<p><strong>กระเป๋าอาน:</strong> 6 ถึง 8</p>
+<p><strong>ความเก่งจริง ๆ ของมัน:</strong> ออร่าความสงบของมันมีประสิทธิภาพ <strong>มากกว่าสายพันธุ์อื่น 50% ต่อหนึ่งเลเวล</strong> และมีผลทั้งสองที่ที่ออร่านี้ทำงาน</p>
+<ul>
+<li>ในโหมด <strong><span class="ig">Care for livestock here</span></strong> ที่มันประจำการอยู่ในคอกสัตว์</li>
+<li>ใน moodle ของมัน ที่ทำให้สัตว์รอบตัว <strong>คุณ</strong> สงบลง</li>
+</ul>
+<p>เพราะสัตว์ที่เครียดจะไม่ให้นมไม่ให้ขนสัตว์ แท้ลูก และแตกฝูงหนีไป Border Collie ที่ฝึกมาดี จึงเป็นตัวชี้ขาดระหว่างฟาร์มที่ผลิตได้กับฟาร์มที่ผลิตไม่ได้เลยจริง ๆ</p>
+<p><strong>Moodle: <span class="ig">สัญชาตญาณต้อนฝูง</span></strong></p>
+<blockquote class="quote quote-game"><em>"บอร์เดอร์ คอลลี่ ของคุณช่วยคุมฝูงสัตว์ไปกับคุณ ตราบใดที่มันอยู่ใกล้ ได้กินอิ่มและภักดี สัตว์รอบตัวคุณจะสงบลง และคุณจะเรียนรู้การดูแลสัตว์และการเกษตรได้เร็วขึ้น"</em></blockquote>
+<p>มีสองผล:</p>
+<ul>
+<li><strong>XP +20%</strong> ในทักษะ <strong>การดูแลสัตว์และการเกษตร</strong></li>
+<li><strong>ทำให้ปศุสัตว์ในรัศมีรอบตัวคุณสงบลง</strong> โดยอัตโนมัติ ระหว่างที่คุณทำงาน</li>
+</ul>
+<p><strong>เหมาะกับใคร:</strong> คนที่ทำฟาร์ม ถ้าคุณเลี้ยงวัว แกะ หรือไก่ นี่คือสายพันธุ์ที่ปกป้องผลผลิตของคุณ</p>
+<blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายในเกมยังบอกว่ามัน <span class="ig">เป็นสุนัขสารพัดประโยชน์ที่สมดุล ยังไม่มีความเชี่ยวชาญที่โดดเด่น</span> อันนี้เก่าไปแล้ว ตอนนี้ Herding สองเท่าและออร่าที่แรงขึ้นมีอยู่จริงแล้ว</blockquote>
+<h2 id="4-สามสายพนธจากมอดเสรม">4. สามสายพันธุ์จากม็อดเสริม</h2>
+<p>สามสายพันธุ์นี้มาใน <strong>ม็อดแยกต่างหากบน Steam</strong> ซึ่งต้องมี Companion Dogs ตัวหลักอยู่ด้วย ลิงก์ของแต่ละตัวอยู่ในข้อมูลด้านล่าง และรวมไว้ด้วยกันที่ <a href="#9-การตดตงแอดออน">การติดตั้งม็อดเสริม</a></p>
+<hr>
+<h3 id="รอตไวเลอร">ร็อตไวเลอร์</h3>
+<p><em>(ม็อด <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, ม็อดเสริมแยกต่างหาก)</em></p>
+<p><strong>นักรบที่ช่วยประหยัดพลังกายของคุณ</strong></p>
+<blockquote class="quote quote-game"><em>"สุนัขเฝ้ายามทรงพลังที่ถูกเพาะพันธุ์มาเพื่องานคุ้มกัน เป็นนักรบตัวจริงทัดเทียมเยอรมันเชพเพิร์ด: เรียนรู้สกิลต่อสู้เร็วขึ้นสองเท่า ตีแรงเมื่อสกิลสูง ล้มซอมบี้ได้ และสู้ต่อในสถานการณ์ที่สุนัขพันธุ์อื่นแตกตื่น"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong></p>
+<ul>
+<li><strong>อาคารอุตสาหกรรม</strong> (โกดัง โรงเก็บของ โรงงาน ลานเก็บเศษเหล็ก อู่ซ่อม ท่าขนถ่ายสินค้า): <strong>10% ต่ออาคาร</strong></li>
+<li><strong>บ้านพักอาศัย:</strong> 5% ต่อหลัง เป็นโอกาสที่เจอได้ยาก</li>
+</ul>
+<p><strong>การเรียนรู้:</strong> <strong>การต่อสู้เร็วขึ้นสองเท่า</strong> และดมกลิ่นเร็วขึ้น 50% (เป็นสุนัขสายบู๊ตัวเดียวที่จมูกดี) ไม่มีโบนัสเชื่อฟัง</p>
+<p><strong>ในการต่อสู้:</strong> แรงกัดเสมอกับ German Shepherd และ <strong>ใจสู้ก็เสมอกัน</strong> มันสะสมความเครียดช้ากว่า Caramelo ถึงห้าเท่า และมีจุดตกใจสูงสุด ล้มซอมบี้ได้และฆ่าได้ด้วย</p>
+<p><strong>คุณลักษณะ:</strong> เท่ากับ German Shepherd</p>
+<p><strong>ลูกต่อครอก:</strong> 1 ถึง 2 ตัว <strong>กระเป๋าอาน:</strong> 6 ถึง 8</p>
+<p><strong>Moodle: <span class="ig">แนวหน้า</span></strong></p>
+<blockquote class="quote quote-game"><em>"ร็อตไวเลอร์ของคุณกำลังสู้อยู่เคียงข้างคุณ ขณะที่มันต่อสู้อยู่ใกล้ ๆ ได้รับอาหารและภักดี การโจมตีระยะประชิดของคุณจะใช้พลังกายน้อยลง"</em></blockquote>
+<p><strong>คืนพลังกายที่เสียไป 35% ในการโจมตีระยะประชิดทุกครั้ง</strong></p>
+<p>นี่คือ moodle ที่มีเงื่อนไขมากที่สุดในม็อด ไอคอนจะขึ้นทุกครั้งที่ร็อตไวเลอร์อยู่ใกล้ ๆ แต่ <strong>ผลจะทำงานเฉพาะตอนที่มันกำลังสู้อยู่จริง ๆ</strong> และใช้ได้ <strong>กับการโจมตีระยะประชิดเท่านั้น</strong> ปืนไม่ได้อะไรเลย</p>
+<p>ในทางปฏิบัติถือว่าใหญ่มาก พลังกายคือตัวจำกัดว่าคุณจะฟาดซอมบี้ติด ๆ กันได้กี่ตัว ถ้ามีร็อตไวเลอร์สู้อยู่ข้าง ๆ คุณจะฟาดได้มากขึ้นเกือบหนึ่งในสามก่อนจะหมดแรง</p>
+<p><strong>เหมาะกับใคร:</strong> เหมาะกับคนที่เคลียร์ฝูงซอมบี้ด้วยอาวุธระยะประชิด เป็นสายพันธุ์ที่เข้ากับสไตล์การเล่นแบบบุกได้ดีที่สุดในม็อด</p>
+<hr>
+<h3 id="โดเบอรแมน">โดเบอร์แมน</h3>
+<p><em>(ม็อด <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, ม็อดเสริมแยกต่างหาก)</em></p>
+<p><strong>สุนัขสายปืน</strong></p>
+<blockquote class="quote quote-game"><em>"สุนัขเฝ้ายามรูปร่างเพรียวและช่างระวังภัย เรียนรู้ไวที่สุดในบรรดาสุนัขทุกพันธุ์ ในการต่อสู้มันมีแต่คมไร้เกราะ: อ่อนแอเมื่อยังไม่ได้ฝึก แต่เมื่อสกิลต่อสู้เต็มขั้นมันกัดแรง ถึงจะทนการโจมตีได้น้อยกว่าร็อตไวเลอร์"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong></p>
+<ul>
+<li><strong>สถานีตำรวจ:</strong> 18% ต่ออาคาร</li>
+<li><strong>อาคารทหาร</strong> (คลังกระสุน ค่ายทหาร บังเกอร์ ป้อมยาม จุดตรวจ): 22% ต่ออาคาร</li>
+</ul>
+<blockquote class="quote"><strong>ข้อควรรู้:</strong> อาคารทหารนั้น <strong>หายากมาก</strong> ในแผนที่หลักของเกม (ทั้งรัฐเคนทักกีมีห้องแบบนี้อยู่ราวห้าห้องเท่านั้น) ในทางปฏิบัติให้ไปหาที่ <strong>สถานีตำรวจ</strong></blockquote>
+<p><strong>การเรียนรู้:</strong> <strong>การต่อสู้เร็วขึ้นสองเท่า</strong> และ <strong>เชื่อฟังเร็วขึ้น 50%</strong> ชุดเดียวกับ German Shepherd เป๊ะ สิ่งที่แยกสองตัวนี้ออกจากกันไม่ใช่ความเร็วในการฝึก แต่เป็น <strong>เส้นโค้งความเสียหาย</strong></p>
+<p><strong>ในการต่อสู้:</strong> มันมี <strong>เส้นโค้งที่ชันที่สุดในม็อด</strong> ถ้าไม่ฝึกเลยมันตีเบากว่าร็อตไวเลอร์อยู่มาก แต่พอการต่อสู้ถึงเลเวล 10 มันก็ <strong>ขึ้นไปถึงจุดสูงสุด</strong> นี่คือการลงทุน โดเบอร์แมนที่เพิ่งรับเลี้ยงมายังอ่อนอยู่ ส่วนโดเบอร์แมนที่ฝึกแล้วคือตัวแถวหน้า</p>
+<p>ใจสู้สูง (จุดตกใจสูงสุด) แต่ <strong>ทนการโจมตีได้น้อยกว่า</strong> ค่าความอดทนของมันต่ำที่สุดในบรรดาสุนัขสายบู๊</p>
+<p><strong>คุณลักษณะ:</strong> มี <strong>ช่วงค่าความก้าวร้าวสูงที่สุดในม็อด</strong> ซึ่งแปลว่ามันได้ XP การต่อสู้เร็วขึ้นไปอีก ส่วนความแข็งแกร่งและความอดทนต่ำกว่าร็อตไวเลอร์เล็กน้อย</p>
+<p><strong>ลูกต่อครอก:</strong> 1 ถึง 2 ตัว <strong>กระเป๋าอาน:</strong> 6 ถึง 8</p>
+<p><strong>Moodle: <span class="ig">เล็งนิ่ง</span></strong></p>
+<blockquote class="quote quote-game"><em>"โดเบอร์แมนของคุณคอยระวังหลังให้คุณ ขณะที่มันอยู่ใกล้ ๆ ได้รับอาหารและภักดี ความเครียดของคุณจะลดลง การเล็งจะกลับเข้าที่เร็วขึ้นหลังยิงแต่ละนัด และคุณบรรจุกระสุนได้ไวขึ้น"</em></blockquote>
+<p>มีสามผล ทั้งหมดเป็นเรื่องของ <strong>ปืน</strong>:</p>
+<ul>
+<li><strong>ความเครียดของคุณลดลงเรื่อย ๆ</strong> (ความเครียดสูงทำให้เล็งแย่ลงใน Zomboid)</li>
+<li><strong>อาการสะท้อนของปืนฟื้นตัวเร็วขึ้น 45%</strong> หลังยิงแต่ละนัด คุณกลับมาเล็งได้ไวขึ้น</li>
+<li><strong>บรรจุกระสุนเร็วขึ้น 15%</strong></li>
+</ul>
+<p><strong>เหมาะกับใคร:</strong> เหมาะกับคนที่เล่นสายปืน ทั้งสามผลไปกองอยู่ที่ปัญหาเดียวกัน คือ <span class="ig">ระหว่างนัดนี้กับนัดถัดไปฉันเสียเวลาไปเท่าไร</span></p>
+<blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายในเกมบอกว่ามัน <span class="ig">ฝึกสกิลเชื่อฟังได้เร็วกว่าเยอรมันเชพเพิร์ดเสียอีก</span> และตอนสกิลต่อสู้เต็มขั้น <span class="ig">มันกัดแรงกว่าสุนัขตัวใดในม็อด</span> ทั้งสองกรณีความจริงคือ <strong>เสมอกัน</strong> ไม่ใช่เหนือกว่า มันเสมอกับ German Shepherd ในเรื่องเชื่อฟัง และเสมอกับร็อตไวเลอร์ในความเสียหายที่เลเวล 10</blockquote>
+<hr>
+<h3 id="ลาบราดอร">ลาบราดอร์</h3>
+<p><em>(ม็อด <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, ม็อดเสริมแยกต่างหาก)</em></p>
+<p><strong>นักคาบกลับ</strong> สุนัขล่าสัตว์ที่เก่งที่สุด และเป็นนักสู้ที่แย่ที่สุดในม็อดอย่างตั้งใจ</p>
+<blockquote class="quote quote-game"><em>"สุนัขล่าเนื้อที่เกิดมาเพื่อคาบกลับ ฝึกการล่าได้เร็วเป็นสองเท่า ตามติดด้วยความเชื่อฟัง แลกกับการเป็นนักสู้ที่แย่ที่สุดในตระกูลโดยตั้งใจ กัดเบาที่สุด ล้มศัตรูไม่ได้ และการปะทะทำให้มันเสียขวัญอย่างหนัก พรสวรรค์ที่แท้จริงอยู่ที่ปากของมัน"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong></p>
+<ul>
+<li><strong>บ้านพักอาศัย:</strong> <strong>10% ต่อหลัง</strong> เป็นม็อดเสริมที่หาง่ายที่สุด โอกาสเป็นสองเท่าของ Golden Retriever</li>
+<li><strong>ในป่า:</strong> กระท่อมนายพราน ลานกางเต็นท์ โรงเก็บเรือ กระท่อมตกปลา สถานีพิทักษ์ป่า <strong>20% ต่ออาคาร</strong></li>
+</ul>
+<p><strong>การเรียนรู้:</strong> <strong>การล่าสัตว์เร็วขึ้นสองเท่า</strong> และ <strong>เชื่อฟังเร็วขึ้น 50%</strong> เป็นชุดของนักล่าที่มีวินัย</p>
+<p><strong>ในการต่อสู้:</strong> <strong>แย่ที่สุดในม็อด และตั้งใจให้เป็นแบบนั้น</strong></p>
+<ul>
+<li><strong>แรงกัดเบาที่สุด</strong> ในบรรดาทุกสายพันธุ์</li>
+<li><strong>ล้มซอมบี้ไม่ได้</strong> เป็นสายพันธุ์เดียวที่ทำแบบนั้นไม่ได้</li>
+<li>สะสมความเครียด <strong>เร็วกว่าร็อตไวเลอร์สามเท่าครึ่ง</strong> และเข้าสู่อาการตกใจที่จุดต่ำเท่ากับ Caramelo</li>
+</ul>
+<p>มัน <strong>ฆ่า</strong> ซอมบี้ได้ถ้าคุณดันทุรังจริง ๆ แต่อย่าส่งสุนัขตัวนี้ไปสู้เลย</p>
+<p><strong>คุณลักษณะ:</strong> มี <strong>ช่วงค่าความก้าวร้าวต่ำที่สุดในม็อด</strong> มันเป็นสุนัขที่เชื่องที่สุดเท่าที่มีในนี้ และเพราะแบบนั้นมันจึงเรียนรู้การต่อสู้ได้ช้ากว่าตัวอื่น</p>
+<p><strong>ลูกต่อครอก:</strong> <strong>1 ถึง 3 ตัว</strong> เป็นม็อดเสริมตัวเดียวที่เกิน 2 <strong>กระเป๋าอาน:</strong> 6 ถึง 8</p>
+<p><strong>Moodle: <span class="ig">ปากนุ่ม</span></strong></p>
+<blockquote class="quote quote-game"><em>"ลาบราดอร์คาบเหยื่อกลับมาให้ตั้งแต่การล่าครั้งแรก และมักมีของแถมมาด้วย ตราบใดที่มันอยู่ใกล้ อิ่มท้อง และภักดี คุณยังเรียนรู้การชำแหละและใบมีดสั้นได้เร็วขึ้น"</em></blockquote>
+<p>มีสี่ผล และนี่คือ moodle ที่ครบเครื่องที่สุดในม็อด:</p>
+<ul>
+<li><strong>มันคาบเหยื่อกลับมาให้ตั้งแต่การล่าสัตว์เลเวล 3</strong> นั่นคือ <strong>ตั้งแต่วินาทีที่มันล่าเป็น</strong> สายพันธุ์อื่นทั้งหมดต้องรอถึงการล่าสัตว์เลเวล 6 ตรงนี้ต่างกันครึ่งเกม</li>
+<li><strong>มันพยายามนานกว่าสามเท่า</strong> กว่าจะยอมทิ้งซากไว้กลางทางแทนที่จะคาบมาส่งให้คุณ</li>
+<li><strong>60% ของการส่งจะมีของแถมอีกชิ้น</strong> หล่นอยู่บนพื้นข้างตัวคุณ เช่น กระดูกสัตว์เล็ก ขนไก่ กิ่งไม้ หรือไข่ป่า <em><span class="ig">ลาบราดอร์ของคุณคาบของมาให้อีกอย่าง: ...</span></em></li>
+<li><strong>+20% XP</strong> ใน <strong>การชำแหละและใบมีดสั้น</strong> ซึ่งเป็นทักษะสำหรับจัดการสิ่งที่มันคาบมาให้พอดี</li>
+</ul>
+<p><strong>เหมาะกับใคร:</strong> เหมาะกับชีวิตสายล่าสัตว์ Golden Retriever เรียนรู้การล่าได้เร็วพอ ๆ กัน แต่ <strong>ลาบราดอร์ส่งของให้ตั้งแต่ต้น</strong> และความต่างนี้เห็นได้ตั้งแต่สัปดาห์แรก ๆ ของเกม</p>
+<h2 id="5-ตารางเปรยบเทยบ">5. ตารางเปรียบเทียบ</h2>
+<h3 id="ความเรวในการเรยนร">ความเร็วในการเรียนรู้</h3>
+<p>ตัวเลขยิ่งสูง ยิ่งเรียนรู้เร็ว <strong>1.0 คือความเร็วปกติ</strong></p>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>ดมกลิ่น</th>
+<th>การต่อสู้</th>
+<th>เชื่อฟัง</th>
+<th>การล่าสัตว์</th>
+<th>Herding</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td><strong>0.8</strong></td>
+<td>1.5</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td><strong>2.0</strong></td>
+<td>1.0</td>
+</tr>
+</tbody></table></div>
+<p>ค่า <strong>0.8</strong> ของ Husky เป็นค่าปรับลดประจำสายพันธุ์เพียงค่าเดียวที่มีในม็อดทั้งหมด</p>
+<h3 id="การตอส">การต่อสู้</h3>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>แรงกัดตอนยังไม่ฝึก</th>
+<th>แรงกัดที่ระดับ 10</th>
+<th>ฆ่าเองได้ไหม</th>
+<th>ทำให้ล้มได้ไหม</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>อ่อน</td>
+<td><strong>1x</strong> (ค่าอ้างอิง)</td>
+<td><strong>ไม่ได้</strong></td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>อ่อน</td>
+<td>1.3x</td>
+<td>ได้</td>
+<td><strong>ไม่ได้</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>อ่อน</td>
+<td>1.5x</td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>อ่อน</td>
+<td>1.5x</td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>ปานกลาง</td>
+<td>1.9x</td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>ปานกลาง</td>
+<td><strong>2.6x</strong></td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td><strong>แรง</strong></td>
+<td><strong>2.6x</strong></td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td><strong>แรง</strong></td>
+<td><strong>2.6x</strong></td>
+<td>ได้</td>
+<td>ได้</td>
+</tr>
+</tbody></table></div>
+<p>โดเบอร์แมนไต่ขึ้นไปถึงจุดสูงสุดได้ก็จริง แต่มันเริ่มจากที่ต่ำกว่ามาก ตอนแรกมันมีแรงกัดราว <strong>สองในสาม</strong> ของร็อตไวเลอร์ และจะไล่ทันก็ต่อเมื่อถึงระดับ 10</p>
+<h3 id="ความนงเวลาส">ความนิ่งเวลาสู้</h3>
+<p>ตัวเลขยิ่ง <strong>น้อย</strong> สุนัขก็ยิ่งใจเย็นตอนสู้</p>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>ความเครียดที่สะสมจากการสู้</th>
+<th>จุดที่เริ่มตกใจ</th>
+</tr></thead><tbody>
+<tr>
+<td>German Shepherd</td>
+<td><strong>0.20</strong> (นิ่งที่สุด)</td>
+<td><strong>0.90</strong> (สูงที่สุด)</td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td><strong>0.20</strong></td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>0.25</td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>0.60</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>0.70</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>Caramelo</td>
+<td><strong>1.00</strong> (ตื่นง่ายที่สุด)</td>
+<td><strong>0.80</strong></td>
+</tr>
+</tbody></table></div>
+<p>สุนัขที่ตกใจจะ <strong>หยุดสู้ หยุดเฝ้าระวัง และหยุดทำท่าทาง</strong> ตารางนี้จึงสำคัญพอ ๆ กับตารางความเสียหาย เพราะกัดแรงแค่ไหนก็ไม่มีประโยชน์ ถ้ามันแข็งค้างไปเสียก่อน</p>
+<h3 id="คณลกษณะ-ชวงคาตอนเกด">คุณลักษณะ (ช่วงค่าตอนเกิด)</h3>
+<p>ช่วงค่ายิ่งสูง สุนัขก็ยิ่งมีโอกาสเกิดมาดี ค่าที่ต่ำกว่า 0.34 จะขึ้นในหน้าต่างว่า <strong>ต่ำ</strong> ค่าที่สูงกว่า 0.66 ขึ้นว่า <strong>สูง</strong> ส่วนค่าที่อยู่ตรงกลางขึ้นว่า <strong>กลาง</strong></p>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>ความแข็งแกร่ง</th>
+<th>ความก้าวร้าว</th>
+<th>ความอดทน</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>0.00 ถึง 0.15</td>
+<td>0.00 ถึง 0.15</td>
+<td>0.00 ถึง 0.15</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>0.20 ถึง 0.40</td>
+<td>0.10 ถึง 0.30</td>
+<td>0.20 ถึง 0.40</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>0.20 ถึง 0.45</td>
+<td>0.15 ถึง 0.40</td>
+<td>0.25 ถึง 0.50</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>0.25 ถึง 0.45</td>
+<td><strong>0.10 ถึง 0.25</strong></td>
+<td>0.25 ถึง 0.45</td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>0.25 ถึง 0.45</td>
+<td><strong>0.35 ถึง 0.55</strong></td>
+<td>0.20 ถึง 0.40</td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td>0.30 ถึง 0.50</td>
+<td>0.30 ถึง 0.50</td>
+<td>0.30 ถึง 0.50</td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td>0.30 ถึง 0.50</td>
+<td>0.30 ถึง 0.50</td>
+<td>0.30 ถึง 0.50</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><strong>0.55 ถึง 0.80</strong></td>
+<td>0.10 ถึง 0.30</td>
+<td>0.40 ถึง 0.60</td>
+</tr>
+</tbody></table></div>
+<p>อ่านแบบเร็ว ๆ</p>
+<ul>
+<li><strong>Caramelo ขึ้นว่า <span class="ig">ต่ำ</span> ครบทั้งสามค่าเสมอ</strong> ไม่มี Caramelo ตัวไหนที่ดี</li>
+<li><strong>Husky เป็นตัวเดียวที่มักขึ้นว่า <span class="ig">สูง</span> ในความแข็งแกร่ง</strong></li>
+<li><strong>ความก้าวร้าวออกมาเป็น <span class="ig">ต่ำ</span> เสมอ</strong> ทั้งใน Golden, Husky และลาบราดอร์ นั่นคือธรรมชาติของพวกมัน ไม่ใช่ดวงไม่ดี</li>
+<li>Golden กับโดเบอร์แมนก็ตกไปอยู่ที่ <span class="ig">ต่ำ</span> บ่อยเหมือนกัน ทั้งความแข็งแกร่งและความอดทน</li>
+<li><strong>German Shepherd กับร็อตไวเลอร์</strong> เป็นสองตัวเดียวที่ขึ้นว่า <span class="ig">กลาง</span> ครบทั้งสามค่าเกือบทุกครั้ง</li>
+</ul>
+<h3 id="กระเปาอาน">กระเป๋าอาน</h3>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>ความจุ</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>4 ถึง 5</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>6 ถึง 7</td>
+</tr>
+<tr>
+<td>German Shepherd, Border Collie, ร็อตไวเลอร์, โดเบอร์แมน, ลาบราดอร์</td>
+<td>6 ถึง 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>13 ถึง 16</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="จำนวนลกตอครอก">จำนวนลูกต่อครอก</h3>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์ของแม่</th>
+<th>ลูกสุนัขต่อการคลอดหนึ่งครั้ง</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td><strong>2 ถึง 4</strong></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1 ถึง 3</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>1 ถึง 3</td>
+</tr>
+<tr>
+<td>German Shepherd, Golden Retriever, Husky, ร็อตไวเลอร์, โดเบอร์แมน</td>
+<td>1 ถึง 2</td>
+</tr>
+</tbody></table></div>
+<p>ขนาดของครอกยึดตาม <strong>สายพันธุ์ของแม่</strong> ไม่ใช่ของพ่อ</p>
+<h3 id="หาสนขแตละสายพนธไดทไหน">หาสุนัขแต่ละสายพันธุ์ได้ที่ไหน</h3>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>สถานที่</th>
+<th>โอกาส</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>บ้านพักอาศัย</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td>สถานีตำรวจ, เรือนจำ, อาคารทหาร, ร้านขายปืน</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>อาคารทหาร</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td>สถานีตำรวจ</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>โรงนา, คอกสัตว์, ฟาร์ม (ชนบท)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>กระท่อมนายพราน, ลานกางเต็นท์, โรงเก็บเรือ, สถานีพิทักษ์ป่า</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td>บ้านพักอาศัย</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>ร้านขายสัตว์เลี้ยง, คลินิกสัตวแพทย์</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td>โกดัง, โรงงาน, ลานเก็บเศษเหล็ก</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>บ้านพักอาศัย</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td>บ้านพักอาศัย</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>บ้านพักอาศัย, <strong>เฉพาะฤดูหนาว</strong></td>
+<td>2.5%</td>
+</tr>
+</tbody></table></div>
+<p>ทุกค่าจะขึ้นลงไปพร้อมกับตัวเลือกแซนด์บ็อกซ์ <strong><span class="ig">ตัวคูณสำหรับการเกิดของสุนัข</span></strong></p>
+<p>อย่าลืมว่าเกมตัดสินใจเรื่องนี้ <strong>ครั้งเดียวต่ออาคารหนึ่งหลัง</strong> แล้วบันทึกเก็บไว้ การกลับไปยังที่ที่สำรวจไปแล้วจะไม่ทำให้มีสุนัขตัวใหม่โผล่ขึ้นมา</p>
+<h2 id="6-moodles-รายการทงหมด">6. Moodles: รายการทั้งหมด</h2>
+<p>moodle ของสุนัขจะแสดงอยู่ใน <strong>คอลัมน์ของตัวเอง ทางซ้ายของ moodle ปกติของคุณ</strong></p>
+<h3 id="กฎทใชกบ-moodle-ประจำสายพนธทกตว">กฎที่ใช้กับ moodle ประจำสายพันธุ์ทุกตัว</h3>
+<p>โบนัส <strong>จะมีก็ต่อเมื่อ</strong> เงื่อนไขเหล่านี้เป็นจริง <strong>ทุกข้อ</strong></p>
+<div class="tw"><table><thead><tr>
+<th>เงื่อนไข</th>
+<th>รายละเอียด</th>
+</tr></thead><tbody>
+<tr>
+<td>สุนัข <strong>อยู่ใกล้</strong></td>
+<td>ภายใน <strong>8 ช่อง</strong> และ <strong>อยู่ชั้นเดียวกัน</strong></td>
+</tr>
+<tr>
+<td>มันเป็น <strong>ของคุณ</strong></td>
+<td>สุนัขของผู้เล่นคนอื่นไม่ให้อะไรเลย</td>
+</tr>
+<tr>
+<td>มัน <strong>ไม่ได้ดื้อ</strong></td>
+<td>ความซื่อสัตย์ยังสูงกว่าขีดต่ำสุด</td>
+</tr>
+<tr>
+<td>มัน <strong>ไม่ได้เมา</strong></td>
+<td>ไม่ได้กินอาหารที่ไม่ดีเข้าไป</td>
+</tr>
+<tr>
+<td>มัน <strong>ไม่หิว</strong></td>
+<td>แถบความหิวต่ำกว่า 75%</td>
+</tr>
+<tr>
+<td>มัน <strong>ไม่กระหายน้ำ</strong></td>
+<td>แถบความกระหายต่ำกว่า 75%</td>
+</tr>
+</tbody></table></div>
+<p><strong>ถ้าข้อใดข้อหนึ่งไม่ผ่าน moodle จะดับทันที</strong> สุนัขที่ถูกเลี้ยงแบบทิ้งขว้างจะไม่ให้โบนัสอะไรเลย นี่คือกลไกหลักของม็อดนี้ <strong>คุณจะไม่ได้อะไรฟรี ๆ จากสุนัขที่คุณไม่ดูแล</strong></p>
+<blockquote class="quote"><strong>ถ้ามีสุนัขหลายตัวอยู่ใกล้ จะนับแค่ตัวที่ใกล้ที่สุด</strong> ม็อดจะเลือกสุนัขมาตัวเดียวแล้วแสดง moodle ของสายพันธุ์นั้น คุณจะซ้อน กำลังใจดี ของ German Shepherd กับ อบอุ่น ของ Husky พร้อมกันไม่ได้</blockquote>
+<p>moodle ยังทำงานต่อไปขณะที่สุนัขเดินทางไปกับคุณ <strong>ในอ้อมแขนหรืออยู่ในรถกับคุณ</strong></p>
+<h3 id="moodle-ประจำสายพนธ">moodle ประจำสายพันธุ์</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>สายพันธุ์</th>
+<th>ทำอะไร</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>เพื่อนที่ดี</strong></td>
+<td>Caramelo</td>
+<td>ลด <strong>ความเศร้าและความเบื่อหน่าย</strong></td>
+</tr>
+<tr>
+<td><strong>กำลังใจดี</strong></td>
+<td>German Shepherd</td>
+<td>ลด <strong>ความตื่นตระหนก</strong> (เอฟเฟกต์ที่แรงที่สุดของม็อดหลัก)</td>
+</tr>
+<tr>
+<td><strong>จมูกดี</strong></td>
+<td>Golden Retriever</td>
+<td><strong>+20% XP</strong> ในการหาของ การวางกับดัก และการเล็ง, ระยะมองเห็นของโหมดค้นหา <strong>+4 ช่อง</strong></td>
+</tr>
+<tr>
+<td><strong>อบอุ่น</strong></td>
+<td>Husky</td>
+<td><strong>+2 น้ำหนักที่แบกได้</strong>, ฟื้นพลังกายให้, และกลายเป็น <strong>แหล่งความอบอุ่น</strong> เมื่อคุณเริ่มหนาว</td>
+</tr>
+<tr>
+<td><strong>สัญชาตญาณต้อนฝูง</strong></td>
+<td>Border Collie</td>
+<td><strong>+20% XP</strong> ในการเลี้ยงสัตว์และการเกษตร และ <strong>ทำให้ปศุสัตว์รอบตัวคุณสงบลง</strong></td>
+</tr>
+<tr>
+<td><strong>แนวหน้า</strong></td>
+<td>ร็อตไวเลอร์</td>
+<td>คืน <strong>พลังกาย 35%</strong> ของการฟาดระยะประชิดแต่ละครั้ง <strong>เฉพาะตอนที่มันกำลังสู้อยู่เท่านั้น</strong></td>
+</tr>
+<tr>
+<td><strong>เล็งนิ่ง</strong></td>
+<td>โดเบอร์แมน</td>
+<td>ลด <strong>ความเครียด</strong> ของคุณ, แรงสะท้อนของปืน <strong>-45%</strong> ต่อการยิงหนึ่งนัด, <strong>+15% ความเร็วในการบรรจุกระสุน</strong></td>
+</tr>
+<tr>
+<td><strong>ปากนุ่ม</strong></td>
+<td>ลาบราดอร์</td>
+<td>คาบเหยื่อมาให้ <strong>ตั้งแต่การล่าสัตว์ระดับ 3</strong>, พยายามมากกว่าเดิม 3 เท่า, <strong>โอกาส 60% ที่จะได้ไอเทมแถม</strong>, <strong>+20% XP</strong> ในการชำแหละและอาวุธมีคมสั้น</td>
+</tr>
+</tbody></table></div>
+<h3 id="moodle-ททกสายพนธให">moodle ที่ทุกสายพันธุ์ให้</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>เมื่อไหร่</th>
+<th>ทำอะไร</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>หิว</strong></td>
+<td>ความหิวของสุนัขอยู่ที่ 60% ขึ้นไป</td>
+<td>เป็นแค่คำเตือน</td>
+</tr>
+<tr>
+<td><strong>กระหายน้ำ</strong></td>
+<td>ความกระหายของสุนัขอยู่ที่ 60% ขึ้นไป</td>
+<td>เป็นแค่คำเตือน</td>
+</tr>
+<tr>
+<td><strong>เมา</strong></td>
+<td>มันกินอาหารที่ทำร้ายตัวมันเองเข้าไป</td>
+<td>เป็นแค่คำเตือน</td>
+</tr>
+<tr>
+<td><strong>พักผ่อนเต็มที่</strong></td>
+<td>คุณตื่นขึ้นมาหลังนอนห่างจากสุนัข <strong>ไม่เกิน 8 ช่อง</strong></td>
+<td>ลด <strong>ความตื่นตระหนก ความเครียด ความเหนื่อยล้า ความเศร้า และความเบื่อหน่าย</strong> เป็นเวลา <strong>2 ชั่วโมงในเกม</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong><span class="ig">พักผ่อนเต็มที่</span> เป็นตัวเดียวที่ไม่ต้องให้สุนัขอยู่ใกล้ต่อไป</strong> มันคือตัวจับเวลา พอติดแล้วก็อยู่ครบสองชั่วโมง ต่อให้คุณเดินจากไปก็ตาม และมันไม่ผ่านตัวกรองเรื่องการดูแล เลยใช้ได้แม้กับสุนัขที่ถูกเลี้ยงแบบทิ้งขว้าง นอนข้างสุนัขคุ้ม <strong>เสมอ</strong></p>
+<p>คำเตือนสามตัว (หิว กระหายน้ำ เมา) ก็ไม่สนใจตัวกรองเรื่องการดูแลเหมือนกัน ซึ่งก็สมเหตุสมผล เพราะมันมีไว้เพื่อบอกว่าสุนัข <strong>ไม่</strong> สบายดี</p>
+<h2 id="7-คณลกษณะ-ยน">7. คุณลักษณะ (ยีน)</h2>
+<p>นอกจากสายพันธุ์แล้ว สุนัขทุกตัวยังมี<strong>คุณลักษณะสามอย่าง</strong>ที่แสดงอยู่ในหน้าต่างสถานะ ในหัวข้อ <strong><span class="ig">คุณลักษณะ</span></strong> ค่าพวกนี้จะถูกสุ่ม<strong>ตอนที่คุณรับเลี้ยงสุนัขตัวนั้น</strong> โดยสุ่มอยู่ในช่วงของสายพันธุ์ และ<strong>ไม่มีวันเปลี่ยน</strong></p>
+<blockquote class="quote quote-game"><em>"ยีนที่ติดตัวมาแต่กำเนิด กำหนดตลอดชีวิต จะสุ่มเมื่อสุนัขถูกฝึกให้เชื่องและแตกต่างกันไปในแต่ละตัว ไม่สามารถทำให้หายไปได้แม้ได้รับการฝึกก็ตาม"</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>คุณลักษณะ</th>
+<th>มีผลอย่างไร</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>ความแข็งแกร่ง</strong></td>
+<td>เพิ่ม<strong>แรงกัด</strong> และที่สำคัญที่สุดคือ<strong>ความจุของกระเป๋าอาน</strong></td>
+</tr>
+<tr>
+<td><strong>ความก้าวร้าว</strong></td>
+<td>ทำให้<strong>ได้ XP การต่อสู้เร็วขึ้น</strong> <strong>ไม่</strong>เกี่ยวกับการที่มันจะตัดสินใจสู้หรือหนี</td>
+</tr>
+<tr>
+<td><strong>ความอดทน</strong></td>
+<td>ทำให้<strong>สะสมความเครียดน้อยลง</strong>เวลาต่อสู้</td>
+</tr>
+</tbody></table></div>
+<p>ยังมี<strong>ยีนตัวที่สี่ ซึ่งเป็นยีนความเครียดโดยรวม และไม่แสดงในหน้าต่าง</strong>อีกตัวหนึ่ง มันเป็นตัวคูณของความเครียดทั้งหมดที่สุนัขได้รับจากการต่อสู้ Caramelo มียีนตัวนี้แย่ที่สุด ส่วน German Shepherd กับ Husky ดีที่สุด</p>
+<h3 id="วธอานปายกำกบ">วิธีอ่านป้ายกำกับ</h3>
+<div class="tw"><table><thead><tr>
+<th>ป้ายกำกับ</th>
+<th>หมายความว่า</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>ต่ำ</strong></td>
+<td>ต่ำกว่า 34% ของสเกล</td>
+</tr>
+<tr>
+<td><strong>กลาง</strong></td>
+<td>อยู่ระหว่าง 34% ถึง 66%</td>
+</tr>
+<tr>
+<td><strong>สูง</strong></td>
+<td>สูงกว่า 66%</td>
+</tr>
+</tbody></table></div>
+<p><strong>ข้อควรรู้:</strong> ป้ายพวกนี้วัดจากสเกลสัมบูรณ์ <strong>ไม่ใช่</strong>เทียบกับสายพันธุ์ของตัวเอง Caramelo จึงขึ้นว่า <span class="ig">ต่ำ</span> ทั้งสามช่อง<strong>เสมอ</strong> และไม่มี Caramelo ตัวไหนที่เก่งเป็นพิเศษ ด้วยเหตุผลเดียวกัน Husky ก็แทบจะเป็นสุนัขพันธุ์เดียวที่คุณจะได้เห็นคำว่า <span class="ig">สูง</span> ในช่องความแข็งแกร่ง</p>
+<h3 id="จรง-ๆ-แลวมผลมากแคไหน">จริง ๆ แล้วมีผลมากแค่ไหน</h3>
+<p>ยีนขยับความเสียหายและ XP การต่อสู้ได้<strong>มากที่สุด 15% ในแต่ละทาง</strong> และขยับความต้านทานความเครียดได้มากที่สุด 10 จุดเปอร์เซ็นต์ <strong>สายพันธุ์มีน้ำหนักมากกว่ายีนเยอะมาก</strong></p>
+<p>ข้อยกเว้นคือ<strong>กระเป๋าอาน</strong> ตรงนี้ยีนความแข็งแกร่งเป็นตัวหลัก และความต่างระหว่างสุนัขที่อ่อนแอกับสุนัขที่แข็งแรงในสายพันธุ์เดียวกันเห็นผลจริง</p>
+<p><strong>ไม่มีทางฝึกยีนให้ดีขึ้นได้</strong> ทางเดียวที่จะทำให้ดีขึ้นคือ<a href="#8-พนธผสม-การผสมขามสายพนธ">การผสมข้ามสายพันธุ์</a></p>
+<h2 id="8-พนธผสม-การผสมขามสายพนธ">8. พันธุ์ผสม: การผสมข้ามสายพันธุ์</h2>
+<p>เมื่อสุนัขตัวผู้กับตัวเมียคนละสายพันธุ์มีลูกด้วยกัน ลูกที่ออกมาจะเป็น<strong>พันธุ์ผสม</strong></p>
+<h3 id="ลกสนขจะออกมาเปนอยางไร">ลูกสุนัขจะออกมาเป็นอย่างไร</h3>
+<p><strong>สายเลือดคือค่าเฉลี่ยของพ่อกับแม่</strong> Caramelo ผสมกับ German Shepherd ได้ลูกที่เป็น 50/50 พอเอาลูกตัวนั้นไปผสมกับ German Shepherd แท้ ก็จะได้ Caramelo 25% กับ German Shepherd 75% แล้วก็เป็นแบบนี้ต่อไปเรื่อย ๆ รุ่นแล้วรุ่นเล่า</p>
+<p><strong>หน้าตาจะออกมาเป็นสายพันธุ์ใดสายพันธุ์หนึ่งเท่านั้น โดยสุ่มตามน้ำหนักของสายเลือด</strong> ลูกที่เป็น 50/50 จะเกิดมาหน้าตาแบบ German Shepherd <strong>หรือ</strong> แบบ Caramelo อย่างใดอย่างหนึ่ง ไม่มีการผสมกันทางหน้าตา ยิ่งสายเลือดเอนไปทางไหนมาก โอกาสที่จะได้หน้าตาทางนั้นก็ยิ่งสูง</p>
+<blockquote class="quote"><strong>และนี่คือจุดที่ทำเอาทุกคนงง:</strong> สายพันธุ์ที่สุ่มออกมาได้คือสายพันธุ์<strong>เชิงกลไก</strong>ของสุนัขตัวนั้น พันธุ์ผสม Husky 50% / German Shepherd 50% ที่เกิดมาหน้าตาแบบ Husky <strong>ก็คือ Husky เต็มตัวในทุกด้าน</strong> ทั้ง moodle อบอุ่น ความเร็วในการเรียนรู้ของ Husky และกระเป๋าอานแบบ Husky การผสมไม่ได้ทำให้เรื่องพวกนี้ไปอยู่ตรงกลางเลยสักอย่าง</blockquote>
+<p><strong>ยีนจะไปอยู่กึ่งกลางระหว่างพ่อกับแม่</strong> โดยแกว่งบวกลบได้ราว 6% ในแต่ละทาง</p>
+<p><strong>และนี่คือจุดที่การผสมข้ามสายพันธุ์คุ้มค่าจริง ๆ:</strong> ช่วงยีนของลูกจะกลายเป็นช่วงของทุกสายพันธุ์ที่อยู่ในสายเลือด<strong>รวมกัน</strong> พันธุ์ผสม Caramelo กับ Husky เกิดมาพร้อมความแข็งแกร่งเท่าไรก็ได้ระหว่าง 0.00 ถึง 0.80 นั่นแปลว่ามัน<strong>ทะลุเพดานของ Caramelo ได้</strong> ถ้าคุณเลือกตัวที่แข็งแรงที่สุดของแต่ละครอกมาผสมกันต่อไป สายเลือดทั้งสายก็จะดีขึ้นเรื่อย ๆ ไปตามรุ่น</p>
+<p><strong>สิ่งที่ลูกสุนัขไม่ได้รับสืบทอด:</strong> ทักษะ ลูกจะเกิดมาพร้อม<strong>ระดับ 0 ทั้งห้าทักษะ</strong>เสมอ สิ่งที่มันได้จากสายพันธุ์คือ<strong>ความเร็วในการเรียนรู้</strong> ไม่ใช่ทักษะที่เรียนมาแล้ว</p>
+<h3 id="ปาย-พนธผสม">ป้าย "พันธุ์ผสม"</h3>
+<p>สุนัขที่มีมากกว่าหนึ่งสายพันธุ์อยู่ในสายเลือดจะมีคำว่า <strong><span class="ig">(พันธุ์ผสม)</span></strong> ต่อท้ายชื่อสายพันธุ์ ทั้งในหน้าต่างสถานะและในเมนูคลิกขวา</p>
+<p><strong>รายละเอียดเป็นเปอร์เซ็นต์</strong> (<span class="ig">50% Husky, 50% German Shepherd</span>) จะขึ้นเมื่อ<strong>เอาเมาส์ไปชี้ที่บรรทัด <span class="ig">สายพันธุ์</span></strong> ในหน้าต่างของสุนัข พร้อมกับคำอธิบายของสายพันธุ์ที่เด่นกว่า</p>
+<h3 id="ผสมขามสายพนธแลวคมไหม">ผสมข้ามสายพันธุ์แล้วคุ้มไหม</h3>
+<div class="tw"><table><thead><tr>
+<th>เป้าหมาย</th>
+<th>คำตอบ</th>
+</tr></thead><tbody>
+<tr>
+<td>ทำให้ยีนดีขึ้นไปตามรุ่น</td>
+<td><strong>คุ้ม</strong> เป็นวิธีเดียวที่มี</td>
+</tr>
+<tr>
+<td>ได้ moodle ของสองสายพันธุ์</td>
+<td><strong>ไม่ได้</strong> สุนัขมี moodle เดียว คือของสายพันธุ์ที่มันกลายเป็น</td>
+</tr>
+<tr>
+<td>รวมความเร็วในการเรียนรู้เข้าด้วยกัน</td>
+<td><strong>ไม่ได้</strong> มันใช้ตารางของสายพันธุ์ที่มันกลายเป็น</td>
+</tr>
+<tr>
+<td>อยากได้ลูกเยอะ ๆ เร็ว ๆ</td>
+<td>ใช้ <strong>Caramelo เป็นแม่</strong> (ครอกละ 2 ถึง 4 ตัว)</td>
+</tr>
+</tbody></table></div>
+<h2 id="9-การตดตงแอดออน">9. การติดตั้งแอดออน</h2>
+<p>ร็อตไวเลอร์ โดเบอร์แมน และลาบราดอร์ เป็น<strong>ม็อดแยกกันคนละตัวบน Steam</strong> แต่ละตัว:</p>
+<ul>
+<li><strong>ต้องมี Companion Dogs ตัวหลักติดตั้งและเปิดใช้งานอยู่</strong></li>
+<li>เพิ่มมาให้<strong>หนึ่งสายพันธุ์</strong> พร้อมโมเดล เท็กซ์เจอร์ moodle และจุดเกิดเป็นของตัวเอง</li>
+<li>มา<strong>พร้อมคำแปล 13 ภาษา</strong> เหมือนกับตัวหลัก</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>แอดออน</th>
+<th>หน้าบน Steam</th>
+<th>เวอร์ชันขั้นต่ำของตัวหลัก</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">สมัครสมาชิก</a></td>
+<td>0.6.3 ขึ้นไป</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">สมัครสมาชิก</a></td>
+<td>0.6.3 ขึ้นไป</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">สมัครสมาชิก</a></td>
+<td><strong>0.6.6 ขึ้นไป</strong></td>
+</tr>
+</tbody></table></div>
+<p>ส่วนตัวหลัก ถ้าคุณยังไม่มี อยู่ที่นี่: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a></p>
+<p>ถ้าตัวหลักเก่าเกินไป แอดออนจะ<strong>ไม่ทำอะไรเลย</strong> ไม่ขึ้นข้อผิดพลาด ไม่ทำให้เกมค้าง แค่ไม่มีสายพันธุ์นั้นอยู่เฉย ๆ ถ้าคุณติดตั้งลาบราดอร์แล้วหาไม่เจอสักตัว ให้<strong>เช็กเวอร์ชันของตัวหลักก่อน</strong></p>
+<blockquote class="quote"><strong>อย่าถอดแอดออนออกจากเซฟที่ยังมีสุนัขสายพันธุ์นั้นมีชีวิตอยู่</strong> สุนัขจะเสียโมเดลและเท็กซ์เจอร์ที่มันใช้อ้างอิงไป</blockquote>
+<p>การติดตั้งแอดออน<strong>ไม่กระทบสายพันธุ์ที่มีอยู่เดิมเลย</strong> สายพันธุ์ใหม่จะเข้าไปอยู่ในการสุ่มของการผสมพันธุ์และการผสมข้ามสายพันธุ์เองโดยอัตโนมัติ</p>
+<h2 id="10-คำถามทพบบอยเรองสายพนธ">10. คำถามที่พบบ่อยเรื่องสายพันธุ์</h2>
+<p><strong><span class="ig">สายพันธุ์ไหนดีที่สุด?</span></strong> ขึ้นอยู่กับว่าคุณเล่นแบบไหน ถ้าเน้น<strong>การต่อสู้</strong> เอา German Shepherd หรือร็อตไวเลอร์ ถ้าเน้น<strong>การล่าสัตว์</strong> เอาลาบราดอร์ ถ้าเน้น<strong>ขนของ</strong> เอา Husky ถ้าเน้น<strong>ฟาร์ม</strong> เอา Border Collie ถ้าเน้น<strong>ปืน</strong> เอาโดเบอร์แมน ส่วน <strong>Caramelo</strong> ก็ยังดีมากเพราะ moodle ของมัน ถึงจะอ่อนแอที่สุดก็ตาม</p>
+<p><strong><span class="ig">Caramelo ของผมฝึกให้แข็งแกร่งขึ้นได้ไหม?</span></strong> ไม่ได้ ต่อให้ฝึกแค่ไหนมันก็ฆ่าซอมบี้ไม่ได้ และคุณลักษณะของมันก็แย่ที่สุดอยู่แล้วโดยนิยาม สิ่งที่การฝึกช่วยได้คือเชื่อฟัง ดมกลิ่น และการล่าสัตว์ ซึ่งเรื่องพวกนี้มันทำได้ดีไม่แพ้ตัวไหน</p>
+<p><strong><span class="ig">เจอสุนัขสายพันธุ์เดียวกันสองตัว ควรเอาตัวไหนดี?</span></strong> <strong>คุณไม่มีทางรู้ล่วงหน้า</strong> เพราะการสุ่มเกิดขึ้นตอนที่รับเลี้ยง รับเลี้ยงมาก่อน แล้วค่อยดูหัวข้อ <strong><span class="ig">คุณลักษณะ</span></strong> ในหน้าต่างสถานะ</p>
+<p><strong><span class="ig">รับเลี้ยงสุนัขที่คุณลักษณะแย่มา ปล่อยแล้วรับเลี้ยงใหม่ดีไหม?</span></strong> <strong>ไม่ช่วยอะไร</strong> ยีนถูกสุ่ม<strong>ครั้งเดียวตอนรับเลี้ยงครั้งแรก</strong> และสุนัขจะเก็บค่านั้นไว้ตลอดไป ต่อให้ปล่อยแล้วรับเลี้ยงใหม่ก็ตาม (เหมือนกับที่มันเก็บทักษะไว้) ถ้าอยากลองสุ่มใหม่ คุณต้องไป<strong>รับเลี้ยงสุนัขตัวอื่น</strong> ส่วนถ้าอยากให้ดีขึ้นจริงจังในระยะยาว ทางของมันคือ<a href="#8-พนธผสม-การผสมขามสายพนธ">การผสมข้ามสายพันธุ์</a></p>
+<p><strong><span class="ig">มี moodle ของสองสายพันธุ์พร้อมกันได้ไหม?</span></strong> ไม่ได้ นับเฉพาะ<strong>สุนัขที่อยู่ใกล้ที่สุด</strong>ตัวเดียว ข้อยกเว้นคือ <strong><span class="ig">พักผ่อนเต็มที่</span></strong> เพราะมันไม่ได้ขึ้นกับระยะห่าง</p>
+<p><strong><span class="ig">ทำไม moodle ถึงหายไป?</span></strong> เกือบทุกครั้งเป็นเพราะความหิวหรือความกระหายเกิน 75% หรือความซื่อสัตย์ตกลงต่ำกว่าขั้นต่ำ ให้อาหาร ให้น้ำ แล้วลูบมันซะ แล้วเช็กด้วยว่าสุนัขอยู่ห่างไม่เกิน <strong>8 ช่อง และอยู่ชั้นเดียวกัน</strong> หรือเปล่า</p>
+<p><strong><span class="ig">มีสายพันธุ์ไหนวิ่งเร็วกว่าไหม?</span></strong> ไม่มี ไม่มีสายพันธุ์ไหนวิ่งเร็วกว่าสายพันธุ์อื่น</p>
+<p><strong><span class="ig">มี Husky สีอื่นไหม?</span></strong> ไม่มี แต่ละสายพันธุ์มีเท็กซ์เจอร์เดียว และตัวผู้กับตัวเมียก็ใช้อันเดียวกัน</p>
+<p><strong><span class="ig">สุนัขตัวใหญ่กัดแรงกว่าไหม?</span></strong> ไม่ ขนาดตัวเป็นเรื่องของภาพล้วน ๆ ความเชื่อมโยงระหว่างขนาดตัวกับความแข็งแกร่งถูกตัดออกโดยตั้งใจ</p>
+<p><strong><span class="ig">หาโดเบอร์แมนได้ที่ไหน?</span></strong> <strong>สถานีตำรวจ</strong> ในทางทฤษฎีอาคารทหารมีโอกาสสูงกว่า แต่แผนที่หลักของเกมแทบไม่มีอาคารทหารอยู่เลย</p>
+<p><strong><span class="ig">ติดตั้งลาบราดอร์แล้วหาไม่เจอสักตัว</span></strong> เช็กเวอร์ชันของ Companion Dogs ตัวหลักก่อน ลาบราดอร์<strong>ต้องใช้เวอร์ชัน 0.6.6 ขึ้นไป</strong> ถ้าตัวหลักเก่ากว่านั้น มันจะไม่โผล่มาให้เห็นและไม่มีเสียงอะไรเลย แล้วลองเช็กด้วยว่าคุณสำรวจบ้านแถวนั้นไปหมดแล้วหรือยัง เพราะการตัดสินใจเรื่องจุดเกิดเป็น<strong>ครั้งเดียวต่ออาคาร และเป็นแบบนั้นตลอดไป</strong></p>
+<p><strong><span class="ig">พันธุ์ผสมของผมไม่มี moodle ของทั้งสองสายพันธุ์</span></strong> เป็นแบบนั้นอยู่แล้ว ในเชิงกลไก พันธุ์ผสมคือ<strong>สายพันธุ์ที่มันหน้าตาเหมือน</strong> การผสมเปลี่ยนแค่ช่วงยีนของลูกหลานกับป้ายเปอร์เซ็นต์ในหน้าต่างเท่านั้น</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">ไม่พบผลลัพธ์สำหรับ <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' ผลลัพธ์'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'ด้านบนสุด');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

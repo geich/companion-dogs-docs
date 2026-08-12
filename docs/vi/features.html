@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Tính năng: Chó làm được gì và cách ra lệnh cho nó">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Tính năng">
+<meta property="og:description" content="Tính năng: Chó làm được gì và cách ra lệnh cho nó">
+<meta property="og:url" content="https://companiondogs.pet/docs/vi/features.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Tính năng</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Mở mục lục" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Về trang chủ tài liệu"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Tính năng</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mở tài liệu Giống chó</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="tìm trong tài liệu..." aria-label="Tìm trong tài liệu" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Ngôn ngữ"><optgroup label="Đã duyệt"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Dịch máy"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi" selected>Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Đổi giao diện sáng/tối">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Dịch máy, chưa được kiểm tra.</b> Trang này được dịch bằng máy từ bản tiếng Bồ Đào Nha và chưa có ai kiểm lại. Thuật ngữ và con số có thể sai. Nếu thấy chỗ nào chưa rõ, hãy đối chiếu với bản tiếng Anh hoặc bản gốc tiếng Bồ Đào Nha. <a href="../en/features.html">Đọc bản tiếng Anh</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Mục lục &middot; <b>Tính năng</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-trong-5-phút-từ-chó-hoang-thành-bạn-đồng-hành" data-id="1-trong-5-phút-từ-chó-hoang-thành-bạn-đồng-hành">1. Trong 5 phút: từ chó hoang thành bạn đồng hành</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-tìm-và-thuần-hóa-một-con-chó" data-id="2-tìm-và-thuần-hóa-một-con-chó">2. Tìm và thuần hóa một con chó</a>
+<div class="sub">
+<a class="s3" href="#nơi-xuất-hiện-của-từng-giống" data-id="nơi-xuất-hiện-của-từng-giống">Nơi xuất hiện của từng giống</a>
+<a class="s3" href="#cách-thuần-hóa" data-id="cách-thuần-hóa">Cách thuần hóa</a>
+<a class="s3" href="#cần-bao-nhiêu-thức-ăn" data-id="cần-bao-nhiêu-thức-ăn">Cần bao nhiêu thức ăn</a>
+<a class="s3" href="#thức-ăn-có-hại" data-id="thức-ăn-có-hại">Thức ăn có hại</a>
+<a class="s3" href="#chuyện-gì-xảy-ra-ngay-lúc-nó-thành-chó-của-bạn" data-id="chuyện-gì-xảy-ra-ngay-lúc-nó-thành-chó-của-bạn">Chuyện gì xảy ra ngay lúc nó thành chó của bạn</a>
+<a class="s3" href="#giới-hạn-số-chó" data-id="giới-hạn-số-chó">Giới hạn số chó</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-cách-ra-lệnh-bốn-con-đường" data-id="3-cách-ra-lệnh-bốn-con-đường">3. Cách ra lệnh: bốn con đường</a>
+<div class="sub">
+<a class="s3" href="#a-menu-ngữ-cảnh-nhấp-chuột-phải-vào-chó" data-id="a-menu-ngữ-cảnh-nhấp-chuột-phải-vào-chó">a) Menu ngữ cảnh (nhấp chuột phải vào chó)</a>
+<a class="s3" href="#b-menu-vòng-tròn-giữ-phím-q" data-id="b-menu-vòng-tròn-giữ-phím-q">b) Menu vòng tròn (giữ phím Q)</a>
+<a class="s3" href="#c-phím-tắt" data-id="c-phím-tắt">c) Phím tắt</a>
+<a class="s3" href="#d-các-nút-trong-cửa-sổ-của-chó" data-id="d-các-nút-trong-cửa-sổ-của-chó">d) Các nút trong cửa sổ của chó</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-ba-chế-độ-đi-theo-đứng-yên-và-canh-gác" data-id="4-ba-chế-độ-đi-theo-đứng-yên-và-canh-gác">4. Ba chế độ: Đi theo, Đứng yên và Canh gác</a>
+<div class="sub">
+<a class="s3" href="#đi-theo" data-id="đi-theo">Đi theo</a>
+<a class="s3" href="#đứng-yên" data-id="đứng-yên">Đứng yên</a>
+<a class="s3" href="#canh-gác" data-id="canh-gác">Canh gác</a>
+<a class="s3" href="#hai-lệnh-gọi-chó-về" data-id="hai-lệnh-gọi-chó-về">Hai lệnh gọi chó về</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-cảnh-giới-con-chó-như-một-hệ-thống-báo-động" data-id="5-cảnh-giới-con-chó-như-một-hệ-thống-báo-động">5. Cảnh giới: con chó như một hệ thống báo động</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-chiến-đấu" data-id="6-chiến-đấu">6. Chiến đấu</a>
+<div class="sub">
+<a class="s3" href="#khi-nào-nó-tự-động-chiến-đấu" data-id="khi-nào-nó-tự-động-chiến-đấu">Khi nào nó tự động chiến đấu</a>
+<a class="s3" href="#nó-không-cắn-xuyên-tường" data-id="nó-không-cắn-xuyên-tường">Nó không cắn xuyên tường</a>
+<a class="s3" href="#nó-đánh-mạnh-cỡ-nào" data-id="nó-đánh-mạnh-cỡ-nào">Nó đánh mạnh cỡ nào</a>
+<a class="s3" href="#tự-bảo-vệ" data-id="tự-bảo-vệ">Tự bảo vệ</a>
+<a class="s3" href="#đạn-của-bạn-không-bao-giờ-trúng-nó" data-id="đạn-của-bạn-không-bao-giờ-trúng-nó">Đạn của bạn không bao giờ trúng nó</a>
+<a class="s3" href="#vết-thương-rút-lui-và-hoảng-loạn" data-id="vết-thương-rút-lui-và-hoảng-loạn">Vết thương, rút lui và hoảng loạn</a>
+<a class="s3" href="#hồi-phục" data-id="hồi-phục">Hồi phục</a>
+<a class="s3" href="#bộ-đếm-số-mạng" data-id="bộ-đếm-số-mạng">Bộ đếm số mạng</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-nhu-cầu-và-chăm-sóc" data-id="7-nhu-cầu-và-chăm-sóc">7. Nhu cầu và chăm sóc</a>
+<div class="sub">
+<a class="s3" href="#căng-thẳng-đến-từ-đâu" data-id="căng-thẳng-đến-từ-đâu">Căng thẳng đến từ đâu</a>
+<a class="s3" href="#cho-ăn-bằng-tay" data-id="cho-ăn-bằng-tay">Cho ăn bằng tay</a>
+<a class="s3" href="#cho-uống-nước" data-id="cho-uống-nước">Cho uống nước</a>
+<a class="s3" href="#vuốt-ve" data-id="vuốt-ve">Vuốt ve</a>
+<a class="s3" href="#nấc-thang-bỏ-bê" data-id="nấc-thang-bỏ-bê">Nấc thang bỏ bê</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-độ-trung-thành" data-id="8-độ-trung-thành">8. Độ trung thành</a>
+<div class="sub">
+<a class="s3" href="#ngưỡng-không-nghe-lời" data-id="ngưỡng-không-nghe-lời">Ngưỡng không nghe lời</a>
+<a class="s3" href="#khi-con-chó-từ-chối-một-mệnh-lệnh" data-id="khi-con-chó-từ-chối-một-mệnh-lệnh">Khi con chó từ chối một mệnh lệnh</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-chén-ăn-thức-ăn-và-nước-khi-vắng-bạn" data-id="9-chén-ăn-thức-ăn-và-nước-khi-vắng-bạn">9. Chén ăn: thức ăn và nước khi vắng bạn</a>
+<div class="sub">
+<a class="s3" href="#cách-dùng" data-id="cách-dùng">Cách dùng</a>
+<a class="s3" href="#những-gì-bỏ-được-vào-chén" data-id="những-gì-bỏ-được-vào-chén">Những gì bỏ được vào chén</a>
+<a class="s3" href="#con-chó-dùng-chén-ra-sao" data-id="con-chó-dùng-chén-ra-sao">Con chó dùng chén ra sao</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-kỹ-năng-năm-kỹ-năng-của-con-chó" data-id="10-kỹ-năng-năm-kỹ-năng-của-con-chó">10. Kỹ năng: năm kỹ năng của con chó</a>
+<div class="sub">
+<a class="s3" href="#về-đường-cong-kinh-nghiệm" data-id="về-đường-cong-kinh-nghiệm">Về đường cong kinh nghiệm</a>
+<a class="s3" href="#không-nghe-lời" data-id="không-nghe-lời">Không nghe lời</a>
+<a class="s3" href="#kỹ-năng-không-phải-là-đặc-tính" data-id="kỹ-năng-không-phải-là-đặc-tính">Kỹ năng không phải là đặc tính</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-trò-khéo-theo-vâng-lời" data-id="11-trò-khéo-theo-vâng-lời">11. Trò khéo theo Vâng lời</a>
+<div class="sub">
+<a class="s3" href="#đến-một-vị-trí-vâng-lời-1" data-id="đến-một-vị-trí-vâng-lời-1">Đến một vị trí (Vâng lời 1)</a>
+<a class="s3" href="#đánh-lạc-hướng-vâng-lời-3" data-id="đánh-lạc-hướng-vâng-lời-3">Đánh lạc hướng (Vâng lời 3)</a>
+<a class="s3" href="#đánh-hơi-tìm-vật-phẩm-vâng-lời-5" data-id="đánh-hơi-tìm-vật-phẩm-vâng-lời-5">Đánh hơi tìm vật phẩm (Vâng lời 5)</a>
+<a class="s3" href="#tìm-đồ-khi-bạn-ngủ-vâng-lời-10" data-id="tìm-đồ-khi-bạn-ngủ-vâng-lời-10">Tìm đồ khi bạn ngủ (Vâng lời 10)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-săn-mồi" data-id="12-săn-mồi">12. Săn mồi</a>
+<div class="sub">
+<a class="s3" href="#nó-săn-những-gì" data-id="nó-săn-những-gì">Nó săn những gì</a>
+<a class="s3" href="#trên-thực-tế-nó-hoạt-động-ra-sao" data-id="trên-thực-tế-nó-hoạt-động-ra-sao">Trên thực tế nó hoạt động ra sao</a>
+<a class="s3" href="#giới-hạn" data-id="giới-hạn">Giới hạn</a>
+<a class="s3" href="#cái-giá-phải-trả" data-id="cái-giá-phải-trả">Cái giá phải trả</a>
+<a class="s3" href="#thưởng-thêm-khi-kiếm-đồ" data-id="thưởng-thêm-khi-kiếm-đồ">Thưởng thêm khi kiếm đồ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-chăm-đàn-vật-nuôi" data-id="13-chăm-đàn-vật-nuôi">13. Chăm đàn vật nuôi</a>
+<div class="sub">
+<a class="s3" href="#cách-giao-việc" data-id="cách-giao-việc">Cách giao việc</a>
+<a class="s3" href="#nó-làm-gì-ở-đó" data-id="nó-làm-gì-ở-đó">Nó làm gì ở đó</a>
+<a class="s3" href="#quy-tắc-quan-trọng" data-id="quy-tắc-quan-trọng">Quy tắc quan trọng</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-túi-yên-dùng-chó-làm-thú-chở-đồ" data-id="14-túi-yên-dùng-chó-làm-thú-chở-đồ">14. Túi yên: dùng chó làm thú chở đồ</a>
+<div class="sub">
+<a class="s3" href="#cách-đeo-vào" data-id="cách-đeo-vào">Cách đeo vào</a>
+<a class="s3" href="#nó-chở-được-bao-nhiêu" data-id="nó-chở-được-bao-nhiêu">Nó chở được bao nhiêu</a>
+<a class="s3" href="#cất-được-những-gì" data-id="cất-được-những-gì">Cất được những gì</a>
+<a class="s3" href="#cửa-sổ-túi-yên" data-id="cửa-sổ-túi-yên">Cửa sổ túi yên</a>
+<a class="s3" href="#kiếm-ở-đâu" data-id="kiếm-ở-đâu">Kiếm ở đâu</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-phối-giống-và-chó-con" data-id="15-phối-giống-và-chó-con">15. Phối giống và chó con</a>
+<div class="sub">
+<a class="s3" href="#không-có-nút-phối-giống" data-id="không-có-nút-phối-giống">Không có nút "phối giống"</a>
+<a class="s3" href="#các-điều-kiện" data-id="các-điều-kiện">Các điều kiện</a>
+<a class="s3" href="#màn-tán-tỉnh-và-thời-gian-mang-thai" data-id="màn-tán-tỉnh-và-thời-gian-mang-thai">Màn tán tỉnh và thời gian mang thai</a>
+<a class="s3" href="#lúc-sinh" data-id="lúc-sinh">Lúc sinh</a>
+<a class="s3" href="#chó-con-thừa-hưởng-những-gì" data-id="chó-con-thừa-hưởng-những-gì">Chó con thừa hưởng những gì</a>
+<a class="s3" href="#nuôi-chó-con" data-id="nuôi-chó-con">Nuôi chó con</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-nhiều-chó-cùng-lúc" data-id="16-nhiều-chó-cùng-lúc">16. Nhiều chó cùng lúc</a>
+<div class="sub">
+<a class="s3" href="#tab-đàn-chó-của-tôi-sổ-đăng-ký" data-id="tab-đàn-chó-của-tôi-sổ-đăng-ký">Tab "Đàn chó của tôi": sổ đăng ký</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-cửa-sổ-của-chó" data-id="17-cửa-sổ-của-chó">17. Cửa sổ của chó</a>
+<div class="sub">
+<a class="s3" href="#tab-kỹ-năng-và-tình-trạng" data-id="tab-kỹ-năng-và-tình-trạng">Tab "Kỹ năng và tình trạng"</a>
+<a class="s3" href="#tab-mệnh-lệnh" data-id="tab-mệnh-lệnh">Tab "Mệnh lệnh"</a>
+<a class="s3" href="#tab-đàn-chó-của-tôi" data-id="tab-đàn-chó-của-tôi">Tab "Đàn chó của tôi"</a>
+<a class="s3" href="#tab-cài-đặt" data-id="tab-cài-đặt">Tab "Cài đặt"</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-những-gì-hiện-trên-màn-hình" data-id="18-những-gì-hiện-trên-màn-hình">18. Những gì hiện trên màn hình</a>
+<div class="sub">
+<a class="s3" href="#moodle-của-chó" data-id="moodle-của-chó">Moodle của chó</a>
+<a class="s3" href="#chữ-hiện-trên-đầu-chó" data-id="chữ-hiện-trên-đầu-chó">Chữ hiện trên đầu chó</a>
+<a class="s3" href="#dấu-trên-bản-đồ" data-id="dấu-trên-bản-đồ">Dấu trên bản đồ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-vật-phẩm-của-mod" data-id="19-vật-phẩm-của-mod">19. Vật phẩm của mod</a>
+<div class="sub">
+<a class="s3" href="#chén-cho-chó-đồng-hành" data-id="chén-cho-chó-đồng-hành">Chén cho chó đồng hành</a>
+<a class="s3" href="#túi-đồ-cho-chó-đồng-hành" data-id="túi-đồ-cho-chó-đồng-hành">Túi đồ cho chó đồng hành</a>
+<a class="s3" href="#những-gì-mod-không-có" data-id="những-gì-mod-không-có">Những gì mod KHÔNG có</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-nhiều-người-chơi" data-id="20-nhiều-người-chơi">20. Nhiều người chơi</a>
+<div class="sub">
+<a class="s3" href="#chó-của-bạn-là-của-bạn" data-id="chó-của-bạn-là-của-bạn">Chó của bạn là của bạn</a>
+<a class="s3" href="#khi-bạn-thoát-ra" data-id="khi-bạn-thoát-ra">Khi bạn thoát ra</a>
+<a class="s3" href="#dành-cho-quản-trị-viên" data-id="dành-cho-quản-trị-viên">Dành cho quản trị viên</a>
+<a class="s3" href="#lưu-ý-khi-cài-đặt-trong-co-op" data-id="lưu-ý-khi-cài-đặt-trong-co-op">Lưu ý khi cài đặt trong co-op</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-tùy-chọn-sandbox" data-id="21-tùy-chọn-sandbox">21. Tùy chọn sandbox</a>
+<div class="sub">
+<a class="s3" href="#thuần-hóa-và-xuất-hiện" data-id="thuần-hóa-và-xuất-hiện">Thuần hóa và xuất hiện</a>
+<a class="s3" href="#chiến-đấu" data-id="chiến-đấu">Chiến đấu</a>
+<a class="s3" href="#chăm-sóc-và-gắn-kết" data-id="chăm-sóc-và-gắn-kết">Chăm sóc và gắn kết</a>
+<a class="s3" href="#hành-vi" data-id="hành-vi">Hành vi</a>
+<a class="s3" href="#kỹ-năng-và-hoạt-động" data-id="kỹ-năng-và-hoạt-động">Kỹ năng và hoạt động</a>
+<a class="s3" href="#túi-yên" data-id="túi-yên">Túi yên</a>
+<a class="s3" href="#chó-con" data-id="chó-con">Chó con</a>
+<a class="s3" href="#giao-diện-và-nhiều-người-chơi" data-id="giao-diện-và-nhiều-người-chơi">Giao diện và nhiều người chơi</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-sự-cố-thường-gặp" data-id="22-sự-cố-thường-gặp">22. Sự cố thường gặp</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-sổ-tay-tính-năng">Companion Dogs: Sổ tay tính năng</h1>
+<p>Hướng dẫn đầy đủ về những gì con chó của bạn làm được, cách ra lệnh cho nó và cách chăm sóc nó.</p>
+<p>Sổ tay này nói về <strong>mọi thứ mà mod làm</strong>. Nếu bạn muốn tìm hiểu về các <strong>giống chó</strong> (nên chọn con nào, mỗi giống có gì đặc biệt, moodle và đặc tính), hãy xem sổ tay còn lại: <a href="breeds.html" class="xlink">Giống chó</a>.</p>
+<blockquote class="quote"><strong>Về tên gọi:</strong> mọi đoạn chữ nằm trong ngoặc kép ở sổ tay này đều đúng như trong game bản tiếng Việt. Nếu bạn chơi bằng tiếng Anh thì tên sẽ khác, nhưng vị trí trong menu vẫn y như vậy.</blockquote>
+<h2 id="1-trong-5-phút-từ-chó-hoang-thành-bạn-đồng-hành">1. Trong 5 phút: từ chó hoang thành bạn đồng hành</h2>
+<p>Nếu bạn chỉ muốn bắt đầu chơi ngay, thì làm như sau:</p>
+<ol>
+<li><strong>Tìm một con chó.</strong> Chó cỏ hoang đi lang thang khắp thành phố và khu dân cư. Chỉ cần đi khám phá là sớm muộn gì bạn cũng gặp một con.</li>
+<li><strong>Mang theo thức ăn trong túi đồ.</strong> Loại nào cũng được, miễn là chưa hỏng và có làm giảm cơn đói.</li>
+<li><strong>Nhấp chuột phải vào con chó</strong> và chọn <strong><span class="ig">Cho ăn (làm quen)</span></strong>.</li>
+<li><strong>Lặp lại cho tới khi nó tin bạn.</strong> Mỗi lần cho ăn đều tăng mức tin tưởng. Một bao thức ăn cho chó cỡ lớn gần như xong ngay trong một lần; mấy món ăn vặt nhỏ thì cần khoảng bốn lần.</li>
+<li><strong>Đặt tên cho nó.</strong> Xong, nó là của bạn. Từ lúc đó nó tự đi theo bạn.</li>
+</ol>
+<p>Sau đó, có ba điều đừng quên:</p>
+<ul>
+<li><strong>Cho ăn và cho uống nước mỗi ngày.</strong> Chó bị bỏ bê sẽ chết, và không quay lại được nữa.</li>
+<li><strong>Vuốt ve nó.</strong> Việc này giữ độ trung thành, đồng thời làm dịu cảm giác chán chường và buồn bã của bạn.</li>
+<li><strong>Mở cửa sổ của nó</strong> bằng nút hình bàn chân, ngay dưới khung hai tay của bạn. Mọi thứ đều nằm trong đó.</li>
+</ul>
+<h2 id="2-tìm-và-thuần-hóa-một-con-chó">2. Tìm và thuần hóa một con chó</h2>
+<h3 id="nơi-xuất-hiện-của-từng-giống">Nơi xuất hiện của từng giống</h3>
+<p>Mod chỉ quyết định <strong>một lần cho mỗi tòa nhà</strong> xem tòa nhà đó có chó hay không, và quyết định ấy được lưu lại. Bạn sẽ không quay lại một nơi đã khám phá rồi bỗng thấy một con chó mới.</p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Tìm ở đâu</th>
+<th>Tỷ lệ mỗi tòa nhà</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Chó cỏ</strong></td>
+<td>Nhà dân, trong thành phố hoặc khu dân cư</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>Nhà dân (lượt quay thêm)</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>Chó chăn cừu Đức</strong></td>
+<td>Đồn cảnh sát, nhà tù, căn cứ quân sự, tiệm súng</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Nhà dân, <strong>chỉ vào mùa đông</strong></td>
+<td>2,5%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Cửa hàng thú cưng và phòng khám thú y, quanh năm</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>Nhà kho, chuồng ngựa, silo, chuồng gà, ở vùng quê</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>Chó thường xuất hiện ở một ô trống <strong>bên ngoài</strong> tòa nhà: ngoài đường, ngoài sân, trên bãi đất. Chỉ khi không còn ô trống nào bên ngoài thì nó mới xuất hiện bên trong tòa nhà. Hãy tìm ngoài đường và ngoài sân trước.</p>
+<p>Tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong> điều chỉnh tất cả các tỷ lệ trên cùng một lúc, vẫn giữ nguyên độ hiếm tương đối giữa các giống. Đặt về 0 là tắt hẳn việc chó xuất hiện.</p>
+<blockquote class="quote"><strong>Các giống addon</strong> nằm trong những mod riêng trên Steam và có nơi xuất hiện của riêng chúng: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> và <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. Mỗi giống làm được gì thì xem trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</blockquote>
+<h3 id="cách-thuần-hóa">Cách thuần hóa</h3>
+<p>Nhấp chuột phải vào con chó hoang. Lựa chọn duy nhất hiện ra là <strong><span class="ig">Cho ăn (làm quen)</span></strong>.</p>
+<ul>
+<li><strong>Không cần gì ngoài thức ăn.</strong> Không cần cấp kỹ năng tối thiểu, không cần đặc điểm nhân vật, không cần vòng cổ, không cần dụng cụ.</li>
+<li>Thức ăn có thể nằm <strong>trong ba lô</strong>, mod tự tìm ra.</li>
+<li>Nếu bạn mang nhiều loại thức ăn, mục này biến thành menu con kèm biểu tượng và số lượng từng loại.</li>
+<li>Không có chút thức ăn nào thì lựa chọn bị làm mờ: <em><span class="ig">Bạn cần có thức ăn trong túi đồ.</span></em></li>
+</ul>
+<h3 id="cần-bao-nhiêu-thức-ăn">Cần bao nhiêu thức ăn</h3>
+<p>Mỗi lần cho ăn sẽ tăng <strong>mức tin tưởng tương ứng với lượng đói mà món đó xóa được</strong>. Một món giảm 60 điểm đói thì cho 60 điểm tin tưởng. Mặc định cần <strong>100 điểm tin tưởng để thuần hóa</strong> (chỉnh được trong sandbox ở mục <em><span class="ig">Mức tin tưởng cần để thuần hóa</span></em>).</p>
+<p>Trên thực tế:</p>
+<ul>
+<li>Một <strong>bao thức ăn cho chó</strong> cỡ lớn gần như đủ một mình.</li>
+<li>Mấy món ăn nhỏ thì cần khoảng <strong>bốn lần</strong>.</li>
+</ul>
+<p>Mod <strong>chỉ lấy đúng phần cần thiết</strong> rồi trả phần còn lại của món đồ về túi đồ của bạn, nên bạn không phí nửa hộp thức ăn chỉ để thêm điểm tin tưởng cuối cùng.</p>
+<p><strong>Không có yếu tố may rủi nào cả.</strong> Chạm mốc 100 điểm tin tưởng là con chó thuộc về bạn. Hết chuyện.</p>
+<p>Khi thanh chưa đầy, bạn sẽ thấy: <em><span class="ig">Chó cỏ bắt đầu tin tưởng bạn hơn...</span></em> Khi đầy: <em><span class="ig">Chó cỏ giờ đã trở thành bạn đồng hành của bạn!</span></em> và hộp thoại đặt tên hiện ra.</p>
+<h3 id="thức-ăn-có-hại">Thức ăn có hại</h3>
+<p>Một số món là chất độc với chó, và mod có báo trước: chúng hiện <strong>màu đỏ</strong> trong menu, kèm dòng cảnh báo <em><span class="ig">Không tốt cho chó. Ăn món này sẽ làm nó bị bệnh và mất lòng tin.</span></em></p>
+<p>Cụ thể là:</p>
+<ul>
+<li><strong>Theo loại:</strong> bánh kẹo ngọt, đường, cà phê, trà, ca cao, sô cô la, ớt, các loại hạt.</li>
+<li><strong>Theo tên:</strong> hành tây, tỏi, tỏi tây, hành lá, hành tăm, nho, nho khô, sô cô la, ca cao, cà phê, đậu phộng. (Bưởi chùm thì được cho phép rõ ràng.)</li>
+</ul>
+<p>Cho một con <strong>chó hoang</strong> ăn đồ có hại sẽ trừ 15 điểm tin tưởng và không bao giờ cộng thêm. Với <strong>bạn đồng hành</strong>, nó trừ 20 điểm trung thành, đẩy căng thẳng lên và khiến nó <strong>trúng độc trong 120 phút trong game</strong>.</p>
+<h3 id="chuyện-gì-xảy-ra-ngay-lúc-nó-thành-chó-của-bạn">Chuyện gì xảy ra ngay lúc nó thành chó của bạn</h3>
+<ul>
+<li>Nó chuyển sang chế độ <strong>Đi theo</strong> và bật <strong>Tự bảo vệ</strong>.</li>
+<li>Đói, khát và căng thẳng về 0.</li>
+<li><strong>Đặc tính bẩm sinh được bốc ngay lúc này và cố định suốt đời</strong>.</li>
+<li>Nó trở nên <strong>bất tử</strong>: zombie, xe cộ, đạn và lửa đều không giết được nó. Chỉ sự bỏ bê mới giết được nó.</li>
+<li>Nó được ghi vào danh sách <strong><span class="ig">Đàn chó của tôi</span></strong> và bắt đầu hiện trên bản đồ.</li>
+</ul>
+<p><strong>Thuần hóa một con chó mới không có nghĩa là bỏ rơi con cũ.</strong> Con mới trở thành con đang được chọn, còn con cũ chuyển sang trạng thái không hoạt động ở chế độ Đứng yên. Xem <a href="#16-nhiều-chó-cùng-lúc">Nhiều chó cùng lúc</a>.</p>
+<h3 id="giới-hạn-số-chó">Giới hạn số chó</h3>
+<p>Tùy chọn sandbox <strong><span class="ig">Số chó tối đa mỗi người chơi</span></strong> mặc định là <strong>0, tức là không giới hạn</strong>. Nếu máy chủ đặt một mức trần, khi chạm mức đó thì lựa chọn làm quen sẽ chuyển sang màu đỏ và bị khóa: <em><span class="ig">Đã đạt giới hạn bạn đồng hành (5).</span></em> (con số chính là mức trần đã đặt) Thả hoặc mất một con chó sẽ mở lại chỗ trống.</p>
+<h2 id="3-cách-ra-lệnh-bốn-con-đường">3. Cách ra lệnh: bốn con đường</h2>
+<p>Có bốn cách để ra lệnh cho chó. Cả bốn đều làm được như nhau, bạn thấy cách nào tiện thì dùng cách đó.</p>
+<h3 id="a-menu-ngữ-cảnh-nhấp-chuột-phải-vào-chó">a) Menu ngữ cảnh (nhấp chuột phải vào chó)</h3>
+<p>Mọi thứ đều nằm trong một menu con mang tên con chó. Thứ tự lúc nào cũng như nhau:</p>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(dòng đầu, không nhấp được)</em></td>
+<td>Thông tin của con chó: tên, giới tính, có phải chó con không, có đang mang thai không, có phải chó lai không</td>
+</tr>
+<tr>
+<td><strong>Không cho phối giống</strong> / <strong>Cho phép phối giống</strong></td>
+<td>Bật tắt quyền phối giống của con chó này (chỉ chó trưởng thành)</td>
+</tr>
+<tr>
+<td><strong>Tạm dừng lớn lên</strong> / <strong>Tiếp tục lớn lên</strong></td>
+<td>Chỉ có ở chó con. Đóng băng việc lớn lên vô thời hạn</td>
+</tr>
+<tr>
+<td><strong>Cho ăn</strong></td>
+<td>Cho chó ăn. Có menu con chia theo loại thức ăn</td>
+</tr>
+<tr>
+<td><strong>Cho uống nước</strong></td>
+<td>Cần có một vật chứa nước</td>
+</tr>
+<tr>
+<td><strong>Vuốt ve</strong></td>
+<td>Âu yếm con chó</td>
+</tr>
+<tr>
+<td><strong>Ra lệnh đứng yên</strong> / <strong>Ra lệnh đi theo</strong></td>
+<td>Chuyển qua lại giữa hai chế độ</td>
+</tr>
+<tr>
+<td><strong>Lại đây</strong></td>
+<td>Gọi chó chạy tới chỗ bạn</td>
+</tr>
+<tr>
+<td><strong>Tấn công mục tiêu gần nhất</strong></td>
+<td>Bảo chó tấn công con zombie gần nhất</td>
+</tr>
+<tr>
+<td><strong>Trò khéo</strong> ▸</td>
+<td>Menu con chứa bốn trò khéo</td>
+</tr>
+<tr>
+<td><strong>Chăm đàn vật nuôi ở đây</strong> / <strong>Ngừng chăm đàn vật nuôi</strong></td>
+<td>Chế độ nông trại</td>
+</tr>
+<tr>
+<td><strong>Đeo túi yên</strong> / <strong>Mở túi yên</strong> / <strong>Tháo túi yên</strong></td>
+<td>Tùy theo tình trạng lúc đó</td>
+</tr>
+<tr>
+<td><strong>Tình trạng</strong></td>
+<td>Mở cửa sổ của con chó</td>
+</tr>
+<tr>
+<td><strong>Đổi tên...</strong></td>
+<td>Tối đa 30 ký tự</td>
+</tr>
+<tr>
+<td><strong>Bế lên</strong></td>
+<td>Bế con chó theo người</td>
+</tr>
+<tr>
+<td><strong>Thả bạn đồng hành</strong></td>
+<td>Trả nó về tự nhiên (nó vẫn giữ nguyên việc huấn luyện và kỹ năng)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong><span class="ig">Canh gác</span> không nằm ở đây.</strong> Lệnh này chỉ có trong menu vòng tròn, ở phím tắt và ở nút trong tab Mệnh lệnh.</blockquote>
+<h3 id="b-menu-vòng-tròn-giữ-phím-q">b) Menu vòng tròn (giữ phím Q)</h3>
+<p>Mod bám vào menu biểu cảm có sẵn của game. Giữ <strong>Q</strong> và một nhóm mới sẽ hiện ra, mang tên giống chó của bạn kèm biểu tượng bàn chân. Nhóm này chỉ hiện khi bạn có một con chó đang được chọn ở gần.</p>
+<p>Các nhánh gồm: <strong>Lại đây</strong>, <strong>Đi theo</strong>, <strong>Đứng yên</strong>, <strong>Canh gác</strong>, <strong>Báo động</strong>, <strong>Nhẹ tiếng</strong>, <strong>Im lặng</strong>, <strong>Tấn công mục tiêu gần nhất</strong>, <strong>Đi săn</strong> / <strong>Ngừng săn</strong>, <strong>Trò khéo ▸</strong> và <strong>Mở túi yên</strong> (nếu nó đang đeo túi yên).</p>
+<p>Chọn <strong>Trò khéo</strong> sẽ mở ra tầng thứ ba của menu vòng tròn, gồm bốn trò khéo và một nút <strong>Quay lại</strong>. Trò nào chưa mở khóa thì hiện biểu tượng màu đỏ kèm cấp yêu cầu ngay trong tên, kiểu <em><span class="ig">Đánh lạc hướng (Vâng lời 3)</span></em>.</p>
+<p>Một vài lệnh còn khiến nhân vật của bạn ra hiệu bằng tay: gọi chó thì giơ tay lên, bảo nó đứng yên thì làm động tác dừng lại, ra lệnh tấn công thì chỉ tay.</p>
+<h3 id="c-phím-tắt">c) Phím tắt</h3>
+<p>Có <strong>14 hành động gán được phím</strong>, và <strong>tất cả đều để trống phím</strong> một cách có chủ ý, để không xung đột với bất cứ phím nào khác. Bạn gán phím ở tab <strong><span class="ig">Cài đặt</span></strong> trong cửa sổ của con chó, không phải ở menu tùy chọn của game.</p>
+<div class="tw"><table><thead><tr>
+<th>Hành động</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Lại đây</strong></td>
+<td>Gọi chó tới chỗ bạn</td>
+</tr>
+<tr>
+<td><strong>Đi theo</strong></td>
+<td>Chế độ Đi theo</td>
+</tr>
+<tr>
+<td><strong>Đứng yên</strong></td>
+<td>Chế độ Đứng yên</td>
+</tr>
+<tr>
+<td><strong>Canh gác</strong></td>
+<td>Chế độ Canh gác</td>
+</tr>
+<tr>
+<td><strong>Gọi về</strong></td>
+<td><strong>Dịch chuyển con chó về ngay bên bạn.</strong> Bạn huýt sáo thật lớn, và tiếng huýt sáo đó thu hút zombie</td>
+</tr>
+<tr>
+<td><strong>Tấn công mục tiêu gần nhất</strong></td>
+<td>Đòn tấn công theo lệnh</td>
+</tr>
+<tr>
+<td><strong>Báo động</strong> / <strong>Nhẹ tiếng</strong> / <strong>Im lặng</strong></td>
+<td>Chế độ cảnh giới</td>
+</tr>
+<tr>
+<td><strong>Tự bảo vệ</strong></td>
+<td>Bật và tắt</td>
+</tr>
+<tr>
+<td><strong>Săn mồi</strong></td>
+<td>Bật và tắt</td>
+</tr>
+<tr>
+<td><strong>Tình trạng</strong></td>
+<td>Mở và đóng cửa sổ của con chó</td>
+</tr>
+<tr>
+<td><strong>Đến một vị trí</strong></td>
+<td>Mở con trỏ chọn ô của trò khéo đó</td>
+</tr>
+<tr>
+<td><strong>Đánh lạc hướng</strong></td>
+<td>Kích hoạt trò khéo</td>
+</tr>
+</tbody></table></div>
+<p>Nếu bạn chọn một phím đã có thứ khác dùng rồi, mod sẽ báo: <em><span class="ig">F đã được dùng cho: Đứng yên</span></em>. Khi chưa gán phím nào, nút sẽ hiện <em><span class="ig">Chưa gán</span></em>.</p>
+<h3 id="d-các-nút-trong-cửa-sổ-của-chó">d) Các nút trong cửa sổ của chó</h3>
+<p>Tab <strong><span class="ig">Mệnh lệnh</span></strong> có đủ mọi thứ dưới dạng nút: hàng chế độ, hàng cảnh giới, hai công tắc tự bảo vệ và săn mồi, bốn trò khéo, túi yên và hàng hành động (<strong>Gọi về</strong> | <strong>Đổi tên</strong> | <strong>Thả đi</strong>).</p>
+<h2 id="4-ba-chế-độ-đi-theo-đứng-yên-và-canh-gác">4. Ba chế độ: Đi theo, Đứng yên và Canh gác</h2>
+<p>Con chó <strong>luôn ở một trong ba</strong> chế độ này. Mọi thứ còn lại (cảnh giới, săn mồi, tự bảo vệ) chỉ là tinh chỉnh chồng lên chế độ đang chọn.</p>
+<h3 id="đi-theo">Đi theo</h3>
+<p>Chế độ mặc định. Chó đi phía sau bạn: nó bắt đầu di chuyển khi bạn cách nó 2 ô và chuyển sang chạy khi khoảng cách vượt quá 5 ô.</p>
+<ul>
+<li><strong>Đánh zombie trong bán kính 5 ô quanh BẠN</strong> (không phải quanh nó). Tới 8 ô thì nó buông mục tiêu.</li>
+<li>Nhảy qua hàng rào thấp, leo cầu thang, đổi tầng để bám theo bạn.</li>
+<li><strong>Đây là chế độ duy nhất mà chó lên xe cùng bạn.</strong></li>
+<li>Nếu bạn đi quá xa (24 ô), nó tự động được đưa về ngay sau lưng bạn, để khỏi mắc kẹt ở phía bên kia một tòa nhà.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Chó cỏ đi phía sau bạn và tấn công zombie đến gần. Nó vẫn cảnh giới xung quanh. Đây là chế độ mặc định khi cùng bạn di chuyển."</em></blockquote>
+<h3 id="đứng-yên">Đứng yên</h3>
+<p>Chó dừng lại ngay tại chỗ và không đi đâu nữa. Sau khoảng một phút đứng yên, nó nằm xuống.</p>
+<ul>
+<li><strong>Vẫn đánh hơi và vẫn cảnh báo</strong> về zombie.</li>
+<li><strong>Không đuổi theo và không đánh nhau</strong>, kể cả khi zombie sát ngay mặt.</li>
+<li><strong>Bị bỏ lại khi bạn lên xe.</strong> Chỉ con chó ở chế độ Đi theo mới lên xe cùng.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Chó cỏ giữ nguyên vị trí và không đi theo. Nó vẫn phát hiện và cảnh báo zombie, nhưng không đuổi theo hay chiến đấu, chỉ ngồi yên quan sát. Phù hợp khi muốn để nó ở nơi an toàn."</em></blockquote>
+<h3 id="canh-gác">Canh gác</h3>
+<p>Chó ghi lại đúng vị trí nó đang đứng làm <strong>chốt gác</strong> và bảo vệ cái chốt đó.</p>
+<ul>
+<li>Đánh zombie trong <strong>bán kính 10 ô tính từ chốt</strong>, đuổi theo rồi quay về.</li>
+<li>Nếu gặp nguy, nó lùi về phía sau bạn.</li>
+<li><strong>Giới hạn quan trọng:</strong> hiện tại chế độ này chỉ hoạt động <strong>khi bạn ở gần</strong>. Để chó canh căn cứ rồi đi hẳn khỏi vùng bản đồ thì chẳng được ích gì.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Chó cỏ trấn giữ đúng vị trí này và bảo vệ khu vực, tấn công zombie trong phạm vi rộng hơn, phát cảnh báo rồi quay về chỗ cũ sau khi truy đuổi. Nếu bị bao vây, nó sẽ lùi về phía sau bạn."</em></blockquote>
+<h3 id="hai-lệnh-gọi-chó-về">Hai lệnh gọi chó về</h3>
+<div class="tw"><table><thead><tr>
+<th>Lệnh</th>
+<th>Tác dụng</th>
+<th>Cái giá</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Lại đây</strong></td>
+<td>Nó <strong>chạy bộ</strong> về và chuyển sang chế độ Đi theo</td>
+<td>Không mất gì</td>
+</tr>
+<tr>
+<td><strong>Gọi về</strong></td>
+<td>Nó <strong>hiện ra ngay bên cạnh bạn tức thì</strong></td>
+<td>Bạn huýt sáo thật lớn, và tiếng đó <strong>thu hút zombie</strong></td>
+</tr>
+</tbody></table></div>
+<p>Hãy dùng <strong>Gọi về</strong> khi chó kẹt sau hàng rào, bị nhốt trong một tòa nhà hoặc ở quá xa để tự chạy về. Đây là lối thoát khẩn cấp, không phải lệnh dùng hằng ngày.</p>
+<h2 id="5-cảnh-giới-con-chó-như-một-hệ-thống-báo-động">5. Cảnh giới: con chó như một hệ thống báo động</h2>
+<p>Trên thực tế đây là tính năng có ích nhất của mod: <strong>con chó cảm nhận được những con zombie mà bạn không nhìn thấy</strong>.</p>
+<p>Cảnh giới hoạt động ở cả ba chế độ (Đi theo, Đứng yên và Canh gác). Nó <strong>không hoạt động</strong> trong lúc tua nhanh thời gian, cũng không hoạt động khi bạn đang ngủ.</p>
+<div class="tw"><table><thead><tr>
+<th>Chế độ</th>
+<th>Phạm vi</th>
+<th>Cách báo</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Báo động</strong></td>
+<td>18 ô (lên tới 27 ô khi Đánh hơi đạt tối đa)</td>
+<td>Gầm nhẹ khi zombie ở xa hoặc chỉ có vài con. <strong>Sủa lớn</strong> khi zombie ở gần, đi thành đàn hoặc nằm trong tầm nhìn. <strong>Tiếng sủa đó thu hút zombie thật sự</strong></td>
+</tr>
+<tr>
+<td><strong>Nhẹ tiếng</strong></td>
+<td>10 ô cố định</td>
+<td><strong>Chỉ gầm nhẹ.</strong> Không bao giờ sủa, không thu hút thứ gì</td>
+</tr>
+<tr>
+<td><strong>Im lặng</strong></td>
+<td>Không có</td>
+<td>Không báo zombie gì hết</td>
+</tr>
+</tbody></table></div>
+<p>Chó chuyển từ <span class="ig">ngửi thấy gì đó</span> sang <span class="ig">báo động</span> khi zombie ở cách 6 ô trở xuống, <strong>hoặc</strong> khi có từ ba con zombie trở lên, <strong>hoặc</strong> khi có đường nhìn thông thoáng trong vòng 12 ô.</p>
+<p>Các dòng thông báo hiện lơ lửng trên đầu nó:</p>
+<ul>
+<li><em><span class="ig">Chó cỏ của bạn cảm nhận có gì đó ở gần...</span></em> (có thứ gì đó thật, nhưng ở xa hoặc ít con)</li>
+<li><em><span class="ig">Chó cỏ của bạn phát hiện zombie!</span></em> (ở gần hoặc đông, đã đến lúc phản ứng)</li>
+</ul>
+<p><strong>Đánh đổi nằm ở đó:</strong> Báo động cho bạn tầm cảnh báo xa nhất nhưng làm lộ vị trí của bạn. Nhẹ tiếng báo cho bạn mà không gây tiếng động, nhưng chỉ báo được khi zombie tới gần. Im lặng dành cho lúc bạn muốn con chó câm lặng bằng mọi giá.</p>
+<blockquote class="quote"><strong>Chó bị căng thẳng KHÔNG tự sủa.</strong> Từng có một cơ chế sủa vì căng thẳng, nhưng nó đã bị tắt trong mod. Nếu chó của bạn đang kéo zombie tới, nguồn cơn chỉ là một trong bốn thứ này, và cả bốn đều nằm trong tầm kiểm soát của bạn: <strong>cảnh giới ở mức Báo động</strong>, trò khéo <strong>Đánh lạc hướng</strong>, <strong>cuộc rượt đuổi khi đi săn</strong>, hoặc <strong>giao tranh</strong>.</blockquote>
+<h2 id="6-chiến-đấu">6. Chiến đấu</h2>
+<h3 id="khi-nào-nó-tự-động-chiến-đấu">Khi nào nó tự động chiến đấu</h3>
+<p><strong>Con chó không tự ý đi tấn công.</strong> Phải có thứ kích hoạt thì nó mới ra tay:</p>
+<ul>
+<li><strong>Ở chế độ Đi theo:</strong> chỉ khi <strong>bật Tự bảo vệ</strong>, và chỉ khi con zombie nhắm vào bạn hoặc vào con chó, hoặc bạn đã đang đánh nhau. Ngoài ra con zombie phải ở <strong>cách bạn tối đa 5 ô</strong>.</li>
+<li><strong>Ở chế độ Canh gác:</strong> lúc nào cũng đánh, trong phạm vi 10 ô quanh vị trí trấn giữ.</li>
+<li><strong>Mệnh lệnh <span class="ig">Tấn công mục tiêu gần nhất</span>:</strong> nó tìm trong bán kính 12 ô và đuổi theo suốt 2 phút trong game.</li>
+</ul>
+<p>Nó chỉ tấn công <strong>zombie thù địch</strong>. NPC đồng minh đến từ các mod khác (Bandits, A-Life) thì được tha.</p>
+<h3 id="nó-không-cắn-xuyên-tường">Nó không cắn xuyên tường</h3>
+<p>Con chó chỉ lao vào con zombie mà nó <strong>thật sự đi bộ tới được</strong>. Một con zombie ở bên kia hàng rào, hoặc trong một căn phòng đóng kín, sẽ bị bỏ qua, vì đi vòng thì tốn quá nhiều công. Nếu nó có thử mà kẹt lại hai giây rưỡi không tiến thêm được chút nào, nó sẽ bỏ mục tiêu đó và lờ mục tiêu ấy đi trong 12 giây.</p>
+<p>Chuyện này là cố ý: nó tránh cảnh con chó cứ húc vào tường để với tới thứ không thể với tới.</p>
+<h3 id="nó-đánh-mạnh-cỡ-nào">Nó đánh mạnh cỡ nào</h3>
+<p>Sát thương phụ thuộc vào <strong>bốn thứ nhân với nhau</strong>: sức mạnh tự nhiên của giống chó, cấp kỹ năng Chiến đấu, đặc tính Sức mạnh và hệ số nhân của sandbox.</p>
+<p>Điều quan trọng với người chơi là:</p>
+<ul>
+<li><strong>Chó cỏ không thể tự giết một con zombie.</strong> Nó ghim con zombie ở mức 10% máu rồi dừng lại. Đây là chủ ý và không có thiết lập sandbox nào thay đổi được. Vai trò của nó là <strong>quật ngã con zombie</strong> và câu giờ cho bạn.</li>
+<li>Tất cả các giống còn lại <strong>đều kết liễu được</strong>.</li>
+</ul>
+<p>Bảng sát thương của từng giống nằm trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</p>
+<p><strong>Quật ngã zombie:</strong> mỗi cú đánh đều có khả năng quật ngã, bắt đầu ở 10% và lên tới 50% khi Chiến đấu đạt cấp tối đa.</p>
+<h3 id="tự-bảo-vệ">Tự bảo vệ</h3>
+<p>Bật tắt riêng theo từng con chó. Khi bật, con chó <strong>tự động đứng canh trong lúc bạn không thể tự vệ</strong>:</p>
+<ul>
+<li>ngủ</li>
+<li>đọc sách</li>
+<li>ngồi dưới đất</li>
+<li>ăn</li>
+<li>câu cá</li>
+</ul>
+<p>Nó neo mình bên cạnh bạn và đối đầu với bất cứ thứ gì lại gần. Nếu bạn đi, điểm neo đi theo. Khi bạn làm xong việc, nó tự quay lại đi theo bạn.</p>
+<ul>
+<li>Một con chó đang <strong>Canh gác thật sự thì không bao giờ bỏ vị trí</strong> vì chuyện này.</li>
+<li><strong>Đánh nhau kiểu này làm chó căng thẳng và không tăng độ trung thành.</strong> Đó là công việc, không phải tình cảm.</li>
+</ul>
+<p>Khi bạn thuần hóa con chó thì nó đã <strong>bật sẵn</strong>.</p>
+<h3 id="đạn-của-bạn-không-bao-giờ-trúng-nó">Đạn của bạn không bao giờ trúng nó</h3>
+<p><strong>Bạn có thể bắn ngay qua đầu con chó mà không phải lo.</strong> Chó đồng hành <strong>không mất máu vì đạn trong bất kỳ tình huống nào</strong>, dù là đạn của bạn hay của người chơi khác.</p>
+<p>Có hai thứ đảm bảo điều đó:</p>
+<ul>
+<li>Nó nằm ngoài <strong>ngắm tự động</strong>, nên tâm ngắm không dính vào nó khi bạn giương súng.</li>
+<li>Trong chế độ chơi đơn, ngay khoảnh khắc bóp cò, mod <strong>loại con chó ra khỏi phép tính đường đạn</strong>: viên đạn bay thẳng tới con zombie phía sau nó.</li>
+</ul>
+<p><strong>Con chó không hề né sang chỗ khác</strong> để chuyện đó xảy ra, và nó <strong>không bao giờ quay lại cắn bạn</strong>.</p>
+<blockquote class="quote">Trong chế độ nhiều người chơi, nếu bạn bắn từ xa, chó của người chơi khác có thể <strong>trông như đang phản ứng trên màn hình của bạn</strong>, nhưng nó không mất máu.</blockquote>
+<h3 id="vết-thương-rút-lui-và-hoảng-loạn">Vết thương, rút lui và hoảng loạn</h3>
+<ul>
+<li><strong>Đánh nhau không làm chó bị thương.</strong> Chỉ làm nó căng thẳng.</li>
+<li>Máu của nó tụt vì <strong>bị bỏ bê</strong> (đói hoặc khát trên 0.8), vì <strong>thức ăn gây độc</strong> và vì <strong>bị hươu phản đòn khi đi săn</strong>. Chỉ có sự bỏ bê mới giết được nó.</li>
+<li>Trạng thái thương tích: <strong><span class="ig">Bị thương</span></strong> khi dưới 30% máu, <strong><span class="ig">Bị thương nặng</span></strong> khi dưới 10%. Một con chó bị thương nặng <strong>chỉ đi theo bạn chứ không đánh nhau</strong>.</li>
+<li><strong>Rút lui:</strong> nó chạy về nấp sau lưng bạn khi máu tụt còn 10% hoặc thấp hơn.</li>
+<li><strong>Hoảng loạn:</strong> khi căng thẳng lên cao nó <strong>không đánh, không canh gác và không làm trò khéo</strong>. Nhưng vẫn chạy tới chỗ bạn khi được gọi.</li>
+</ul>
+<h3 id="hồi-phục">Hồi phục</h3>
+<p>Con chó tự lành, và <strong>khá nhanh</strong>: đầy lại cả thanh máu trong khoảng <strong>8 giờ trong game</strong>, tức là từ gần chết thành khỏe mạnh chỉ sau một đêm. <strong>Nhưng chỉ khi nó được ăn no và uống đủ nước</strong>: khi thanh đói <strong>hoặc</strong> thanh khát vượt quá nửa, <strong>quá trình hồi phục dừng hẳn</strong>.</p>
+<p>Nói cách khác: muốn chữa một con chó bị thương thì <strong>hãy cho ăn, cho uống nước và để thời gian trôi</strong>.</p>
+<h3 id="bộ-đếm-số-mạng">Bộ đếm số mạng</h3>
+<p>Mỗi con chó có bộ đếm riêng, hiện trong cửa sổ của nó: <strong><span class="ig">Số mạng: 14 zombie, 3 con mồi</span></strong>.</p>
+<p>Khi bật tùy chọn sandbox <strong><span class="ig">Mạng của chó được tính cho người chơi</span></strong> (mặc định là bật), những con zombie mà nó giết <strong>cũng được cộng vào bộ đếm của bạn</strong> trên màn hình nhân vật.</p>
+<h2 id="7-nhu-cầu-và-chăm-sóc">7. Nhu cầu và chăm sóc</h2>
+<p>Chó đồng hành là bất tử, và điều đó làm đóng băng các hệ thống đói khát bình thường của game. Vì vậy mod phải tự điều khiển mọi thứ bằng tay.</p>
+<p>Có <strong>bốn thanh chỉ số</strong>, cộng thêm độ trung thành.</p>
+<div class="tw"><table><thead><tr>
+<th>Thanh</th>
+<th>Tăng / giảm</th>
+<th>Tốc độ</th>
+<th>Khi nào thành vấn đề</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Đói</strong></td>
+<td>Tăng theo thời gian</td>
+<td>Từ rỗng đến đầy trong khoảng <strong>3 ngày</strong></td>
+<td>Trên 0.6</td>
+</tr>
+<tr>
+<td><strong>Khát</strong></td>
+<td>Tăng theo thời gian</td>
+<td>Từ rỗng đến đầy trong khoảng <strong>1.7 ngày</strong></td>
+<td>Trên 0.6</td>
+</tr>
+<tr>
+<td><strong>Sức khỏe</strong></td>
+<td>Chỉ giảm khi bị bỏ bê</td>
+<td><strong>Hết cả thanh trong khoảng 8 giờ</strong> khi đói hoặc khát trên 0.8</td>
+<td>Dưới 30%</td>
+</tr>
+<tr>
+<td><strong>Căng thẳng</strong></td>
+<td>Tính ra từ các thanh khác</td>
+<td>Không có</td>
+<td>Trên 50%</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Không có giấc ngủ và không có vệ sinh.</strong> Con chó không cần ngủ và không bao giờ bị bẩn.</blockquote>
+<p>Tùy chọn sandbox <strong><span class="ig">Tốc độ đói và khát</span></strong> chỉnh cả hai thanh cùng lúc. Đặt về 0 thì chúng đóng băng hẳn và con chó không bao giờ phải ăn uống nữa (độ trung thành vẫn giảm, nên nó vẫn cần bạn quan tâm).</p>
+<h3 id="căng-thẳng-đến-từ-đâu">Căng thẳng đến từ đâu</h3>
+<p>Căng thẳng không phải là thanh do bạn làm đầy, nó là <strong>kết quả</strong> của các thanh còn lại. Nó tăng theo cơn đói, cơn khát, máu thấp, độ trung thành thấp và <strong>từng cú đánh qua lại trong một trận đánh</strong>.</p>
+<p>Các mức:</p>
+<div class="tw"><table><thead><tr>
+<th>Mức</th>
+<th>Bắt đầu từ</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Lo lắng</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>Đang hoảng loạn</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>Kinh hãi</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>Một con chó đang hoảng loạn <strong>thì ngừng đánh nhau, ngừng canh gác và ngừng làm trò khéo</strong>. Nó vẫn chạy tới chỗ bạn khi được gọi.</p>
+<p>Tin tốt: <strong>căng thẳng do chiến đấu tan rất nhanh</strong> khi rời khỏi trận đánh. Một thanh đầy sẽ cạn trong khoảng <strong>2 giờ trong game</strong>. <strong>Vuốt ve, cho ăn và cho uống nước còn làm nó nhanh hơn nữa.</strong></p>
+<h3 id="cho-ăn-bằng-tay">Cho ăn bằng tay</h3>
+<p>Nhấp chuột phải vào con chó → <strong><span class="ig">Cho ăn</span></strong>.</p>
+<ul>
+<li>Dùng được <strong>bất kỳ món ăn nào</strong> miễn là chưa hỏng và có làm giảm cơn đói. Không bắt buộc phải là thịt hay thức ăn cho chó, chỉ có danh sách thức ăn gây độc là ngoại lệ.</li>
+<li>Hiệu quả: hạ cơn đói, cấp nước nếu món đó mọng nước, <strong>+0.10 máu</strong>, giảm căng thẳng và <strong>tăng độ trung thành tương ứng với lượng đói mà phần ăn đó xóa đi</strong>.</li>
+<li>Chỉ đúng một miếng cần thiết bị ăn mất.</li>
+<li>Thông báo: <em><span class="ig">Chó cỏ đã no bụng.</span></em></li>
+</ul>
+<h3 id="cho-uống-nước">Cho uống nước</h3>
+<p>Nhấp chuột phải → <strong><span class="ig">Cho uống nước</span></strong>. Cần có bất kỳ vật chứa nước nào trong túi đồ (mod tìm cả bên trong ba lô).</p>
+<p>Nó hạ một nửa thanh khát, cho <strong>+2 độ trung thành</strong> và giảm căng thẳng. <em><span class="ig">Chó cỏ đã uống nước.</span></em></p>
+<h3 id="vuốt-ve">Vuốt ve</h3>
+<p>Nhấp chuột phải → <strong><span class="ig">Vuốt ve</span></strong>.</p>
+<ul>
+<li><strong>Thời gian chờ 90 phút trong game.</strong> Trước đó thì: <em><span class="ig">Chó cỏ của bạn tạm thời không muốn được vuốt ve thêm.</span></em></li>
+<li>Tác dụng lên con chó: <strong>giảm căng thẳng và cho +2 độ trung thành</strong>.</li>
+<li><strong>Tác dụng lên bạn:</strong> làm dịu <strong>Chán chường và Buồn bã</strong>. Rất đáng làm mỗi khi có thể.</li>
+</ul>
+<h3 id="nấc-thang-bỏ-bê">Nấc thang bỏ bê</h3>
+<p>Nếu bạn bỏ mặc con chó, đây là những gì sẽ xảy ra, theo đúng thứ tự này:</p>
+<ol>
+<li>Đói và khát vượt quá 0.6. Moodle <strong><span class="ig">Đói</span></strong> / <strong><span class="ig">Khát</span></strong> hiện lên trên màn hình của bạn.</li>
+<li><strong>Độ trung thành bắt đầu giảm nhanh gấp ba lần</strong>.</li>
+<li>Vượt quá nửa thanh, <strong>khả năng tự lành dừng lại</strong>.</li>
+<li>Vượt quá 0.8, <strong>máu bắt đầu tụt nhanh</strong>: một con chó đầy máu sẽ về 0 trong khoảng <strong>8 giờ trong game</strong>.</li>
+<li>Độ trung thành thủng đáy, con chó thành <strong><span class="ig">Không nghe lời</span></strong> và ngừng nghe lệnh.</li>
+<li>Căng thẳng dâng lên và nó hoảng loạn: <strong>ngừng đánh nhau, ngừng canh gác và ngừng làm trò khéo</strong>.</li>
+<li>Máu về 0 và <strong>nó chết</strong>.</li>
+</ol>
+<p><strong>Cái chết là vĩnh viễn.</strong> Không có chuyện hồi sinh. <em><span class="ig">Chó cỏ của bạn đã chết.</span></em> Túi yên và mọi thứ bên trong rơi xuống đất. Nếu bạn còn con chó khác, con đó tự động trở thành con đang được chọn.</p>
+<p>Zombie không giết được con chó của bạn. <strong>Quên cho nó ăn thì có.</strong></p>
+<h2 id="8-độ-trung-thành">8. Độ trung thành</h2>
+<p>Độ trung thành chạy từ 0 đến 100, cho biết con chó tin bạn tới mức nào.</p>
+<ul>
+<li><strong>Nó tự tụt xuống</strong>, khoảng 12 điểm mỗi ngày, và <strong>nhanh gấp ba lần</strong> nếu con chó đang đói hoặc khát.</li>
+<li><strong>Chỉ có bàn tay con người mới kéo nó lên:</strong> cho ăn, cho uống nước (+2) và vuốt ve (+2).</li>
+<li><strong>Cho ăn là cách nhanh nhất, hơn hẳn mọi cách khác</strong>, nhưng mức tăng <strong>tỉ lệ với lượng đói mà phần ăn đó thực sự xóa được</strong>. Cho một con chó đã no ăn thì gần như chẳng ăn thua gì; cho một con chó đang đói lả ăn thì có thể trả lại hàng chục điểm cùng lúc. Nếu độ trung thành đã tụt, <strong>hãy để nó đói rồi mới cho ăn</strong>.</li>
+<li><strong>Ăn từ chén thì KHÔNG BAO GIỜ tăng độ trung thành.</strong> Chuyện này là cố ý: một con chó tự lo được ở chén ăn sẽ chẳng gắn bó gì với bạn. Muốn có một con chó trung thành thì bạn phải đích thân xuất hiện.</li>
+</ul>
+<h3 id="ngưỡng-không-nghe-lời">Ngưỡng không nghe lời</h3>
+<p>Dưới một mức nhất định, con chó chuyển sang trạng thái <strong><span class="ig">Không nghe lời</span></strong> và từ chối đi theo, từ chối chiến đấu và từ chối làm trò khéo: <em><span class="ig">Chó cỏ của bạn không còn tin tưởng bạn nữa...</span></em></p>
+<p>Ngưỡng này <strong>hạ xuống khi Vâng lời tăng lên</strong>: nó bắt đầu ở 30 và giảm 1,5 mỗi cấp, không bao giờ xuống dưới 10. Nghĩa là một con chó có <strong>Vâng lời cấp 10 chỉ giở chứng khi trung thành dưới 15</strong>, còn một con chó chưa huấn luyện thì đã gây chuyện từ dưới 30.</p>
+<p><strong>Huấn luyện Vâng lời chính là cách mua thêm khoảng thở cho độ trung thành.</strong></p>
+<h3 id="khi-con-chó-từ-chối-một-mệnh-lệnh">Khi con chó từ chối một mệnh lệnh</h3>
+<p>Có bốn lý do, xếp theo thứ tự ưu tiên sau:</p>
+<div class="tw"><table><thead><tr>
+<th>Tình huống</th>
+<th>Bạn sẽ thấy</th>
+</tr></thead><tbody>
+<tr>
+<td>Trung thành dưới ngưỡng</td>
+<td><em><span class="ig">Chó cỏ Rex chưa đủ tin tưởng để nghe lời bạn.</span></em></td>
+</tr>
+<tr>
+<td>Căng thẳng tới mức hoảng loạn</td>
+<td><em><span class="ig">Chó cỏ Rex đang quá hoảng loạn nên không thể chiến đấu.</span></em></td>
+</tr>
+<tr>
+<td>Sức khỏe còn 10% trở xuống</td>
+<td><em><span class="ig">Chó cỏ Rex bị thương quá nặng nên không thể chiến đấu.</span></em></td>
+</tr>
+<tr>
+<td>Huấn luyện chưa tới</td>
+<td><em><span class="ig">Chó cỏ Rex bị phân tâm và phớt lờ bạn.</span></em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-chén-ăn-thức-ăn-và-nước-khi-vắng-bạn">9. Chén ăn: thức ăn và nước khi vắng bạn</h2>
+<p>Chén ăn là cách để <strong>con chó đang được chọn</strong> tự lo cho mình trong lúc bạn bận việc khác.</p>
+<blockquote class="quote"><strong>Chỉ con chó đang được chọn mới thấy đói và khát, và cũng chỉ nó dùng chén ăn.</strong> Những con chó gắn bó còn lại đều đang tạm dừng: không đói, không khát, không đi tìm chén và không mất độ trung thành. Bạn <strong>không cần đặt chén riêng cho chúng</strong>, và chúng cũng không bị bỏ đói trong lúc chờ. Xem <a href="#16-nhiều-chó-cùng-lúc">Nuôi nhiều chó cùng lúc</a>.</blockquote>
+<h3 id="cách-dùng">Cách dùng</h3>
+<ol>
+<li>Kiếm một cái chén (chế tạo hoặc nhặt được, xem <a href="#19-vật-phẩm-của-mod">Vật phẩm của mod</a>).</li>
+<li>Trong túi đồ, nhấp chuột phải → <strong><span class="ig">Đặt chén ăn</span></strong>. Một con trỏ đặt tự do sẽ hiện ra, với <strong>phím R để xoay</strong>.</li>
+<li>Khi chén đã nằm dưới đất, nhấp chuột phải vào nó → <strong><span class="ig">Thêm thức ăn vào chén</span></strong> hoặc <strong><span class="ig">Thêm nước vào chén</span></strong>.</li>
+</ol>
+<p>Chén chỉ chứa <strong>thức ăn HOẶC nước, không bao giờ chứa cả hai cùng lúc</strong>. Muốn đổi thì dùng <strong><span class="ig">Đổ hết trong chén</span></strong>.</p>
+<p>Nhìn vào chén là biết bên trong có gì: xám là trống, nâu là có thức ăn, xanh là có nước.</p>
+<h3 id="những-gì-bỏ-được-vào-chén">Những gì bỏ được vào chén</h3>
+<p><strong>Gần như mọi thức ăn có làm no bụng và chưa bị hỏng:</strong> thịt, đồ hộp, món đã nấu, rau củ, trái cây, trứng, thức ăn cho chó, và cả cỏ lẫn cỏ khô.</p>
+<p>Chỉ có đồ đã hỏng, những thứ không làm no và <a href="#thức-ăn-có-hại">danh sách món có hại cho chó</a> là nằm ngoài, và món có hại hiện màu đỏ trong menu.</p>
+<blockquote class="quote"><strong>Lon thức ăn chưa mở thì không hiện ra</strong> trong danh sách. Hãy mở lon trước đã.</blockquote>
+<p>Chén chứa được tối đa <strong>100 điểm</strong>. Mỗi món cho ra số điểm tùy theo kích cỡ:</p>
+<div class="tw"><table><thead><tr>
+<th>Vật phẩm</th>
+<th>Điểm</th>
+</tr></thead><tbody>
+<tr>
+<td>Bao thức ăn cho chó</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Lon thức ăn cho chó đã mở</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Cỏ khô</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Cỏ</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>Nếu món đó lớn hơn chỗ trống còn lại, chén sẽ đầy tới miệng và phần dư được trả lại cho bạn.</strong> Với một cái chén đang ở 80 điểm, một bao thức ăn sẽ đưa nó lên 100 rồi quay về túi đồ của bạn với giá trị 40. Dòng <em><span class="ig">Chén không còn đủ chỗ cho hết số đó.</span></em> chỉ hiện khi chén đã <strong>đầy hoàn toàn</strong>.</p>
+<h3 id="con-chó-dùng-chén-ra-sao">Con chó dùng chén ra sao</h3>
+<ul>
+<li>Nó tự đi khi <strong>cơn đói hoặc cơn khát chạm mức 0,5</strong> (chỉnh riêng cho từng nhân vật bằng thanh trượt <em><span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span></em>, ở thẻ Cài đặt).</li>
+<li>Nó tìm chén trong bán kính <strong>16 ô</strong>. Dùng được cả chén của mod lẫn <strong>máng ăn có sẵn của game</strong>.</li>
+<li>Mỗi lần ghé chén, nó xóa được nửa thanh. Nó ăn chừng 3 phút trong game.</li>
+<li>Trong lúc đang dính vào chén, nó <strong>mặc kệ zombie và mặc kệ mọi thứ</strong>. Chỉ mệnh lệnh của bạn mới ngắt được. Chuyện này lại hay: một con chó đang hoảng loạn vì đói có thể tự thoát khỏi cơn hoảng loạn bằng cách ăn.</li>
+</ul>
+<p>Trên đầu nó sẽ hiện <strong><span class="ig">Đang đi ăn</span></strong>, <strong><span class="ig">Đang ăn</span></strong>, <strong><span class="ig">Đang đi uống nước</span></strong>, <strong><span class="ig">Đang uống nước</span></strong>.</p>
+<blockquote class="quote"><strong>Nhớ nhé:</strong> ăn từ chén <strong>không cho một điểm trung thành nào</strong>. Chén giữ cho con chó sống, còn vuốt ve mới giữ nó là chó của bạn.</blockquote>
+<p>Chén <strong>không bao giờ dùng được làm nguồn nước uống cho bạn</strong>, và mưa cũng không làm nó đầy.</p>
+<h2 id="10-kỹ-năng-năm-kỹ-năng-của-con-chó">10. Kỹ năng: năm kỹ năng của con chó</h2>
+<p>Mỗi con chó có năm kỹ năng, từ 0 đến 10, và chúng lên bằng cách <strong>làm thật</strong>, chứ không phải ngồi luyện riêng.</p>
+<div class="tw"><table><thead><tr>
+<th>Kỹ năng</th>
+<th>Cách lên cấp</th>
+<th>Cải thiện điều gì</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Đánh hơi</strong></td>
+<td>Mỗi lần cảnh giới phát hiện ra thứ gì mới; dùng trò đánh hơi</td>
+<td><strong>Phạm vi cảnh giới</strong> (18 → 27 ô) và tầm nhận ra mùi đã ghi nhớ</td>
+</tr>
+<tr>
+<td><strong>Chiến đấu</strong></td>
+<td>Mỗi cú đánh và mỗi mạng hạ được</td>
+<td><strong>Sát thương</strong>, tỷ lệ quật ngã (10% → 50%) và sức chịu căng thẳng khi giao chiến</td>
+</tr>
+<tr>
+<td><strong>Vâng lời</strong></td>
+<td>Mỗi mệnh lệnh được nghe theo (có thời gian chờ). <strong>Lên nhanh gấp 4 lần khi còn dưới cấp 3</strong></td>
+<td><strong>Ngưỡng trung thành thấp hơn</strong>, <strong>bốn trò khéo</strong>, và ít khả năng không nghe lời hơn</td>
+</tr>
+<tr>
+<td><strong>Săn mồi</strong></td>
+<td>Chỉ điểm thú, đánh hơi, hạ con mồi, và khi <strong>bạn</strong> giết thú ngay gần nó</td>
+<td><strong>Cấp 3:</strong> bắt được thú nhỏ. <strong>Cấp 6:</strong> dám đấu với hươu và mang con mồi về. Nó cũng nới rộng bán kính kiếm đồ của bạn</td>
+</tr>
+<tr>
+<td><strong>Chăn đàn</strong></td>
+<td>Trông một chuồng nuôi, giữ cho đàn khỏi hoảng loạn, xua zombie ra khỏi chuồng</td>
+<td>Độ mạnh của vùng ảnh hưởng giúp <strong>đàn vật nuôi bình tĩnh</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="về-đường-cong-kinh-nghiệm">Về đường cong kinh nghiệm</h3>
+<p>Cấp 1 lên rất nhanh, còn cấp 10 là chuyện đường dài. Tùy chọn sandbox <strong><span class="ig">Tốc độ nhận XP kỹ năng</span></strong> quyết định tốc độ của tất cả.</p>
+<blockquote class="quote"><strong>Chú ý:</strong> giá trị mặc định của tùy chọn này trong file là <strong>0,5</strong>, tức là chỉ nửa tốc độ, dù phần mô tả có ghi <span class="ig">1.0 là bình thường</span>. Nếu bạn thấy con chó của mình học chậm quá đáng thì đó chính là nguyên nhân. Hãy nâng lên 1.0 hoặc cao hơn.</blockquote>
+<h3 id="không-nghe-lời">Không nghe lời</h3>
+<p>Khi tùy chọn <strong><span class="ig">Chó có thể không nghe lời</span></strong> đang bật (mặc định là bật), một con chó chưa huấn luyện đôi lúc sẽ phớt lờ bạn: <em><span class="ig">Chó cỏ Rex bị phân tâm và phớt lờ bạn.</span></em></p>
+<ul>
+<li>Tỷ lệ bắt đầu ở <strong>30% khi Vâng lời cấp 0</strong> và về <strong>0% khi Vâng lời cấp 10</strong>.</li>
+<li><strong>Ra lại mệnh lệnh ngay sau đó thì luôn ăn.</strong> Nó không bao giờ phớt lờ bạn hai lần liên tiếp.</li>
+<li><strong>Mệnh lệnh bị phớt lờ vẫn tính là huấn luyện</strong>, nên không phí XP đâu.</li>
+<li>Chỉ áp dụng cho <strong>mệnh lệnh trực tiếp</strong>: đi theo, đứng yên, canh gác, lại đây, tấn công và các trò khéo. Nó không bao giờ ảnh hưởng tới cho ăn, cho uống nước, vuốt ve, túi yên, <strong>Gọi về</strong>, hay các công tắc hành vi (cảnh giới, tự bảo vệ, săn mồi, vật nuôi).</li>
+</ul>
+<p>Nếu bạn không thích cơ chế này, hãy tắt tùy chọn đó trong sandbox.</p>
+<h3 id="kỹ-năng-không-phải-là-đặc-tính">Kỹ năng không phải là đặc tính</h3>
+<p>Cửa sổ của chó có hai danh sách trông na ná nhau, và bạn không nên lẫn lộn chúng:</p>
+<ul>
+<li><strong>Kỹ năng</strong> (Đánh hơi, Chiến đấu, Vâng lời, Săn mồi, Chăn đàn) <strong>lên nhờ được dùng tới</strong>, suốt cả đời. Đây chính là thứ chương này nói tới.</li>
+<li><strong>Đặc tính</strong> (Sức mạnh, Độ hung hăng, Sức chịu đựng) được <strong>bốc ngẫu nhiên lúc bạn thuần hóa con chó và không bao giờ đổi</strong>. Huấn luyện không đụng được vào chúng.</li>
+</ul>
+<blockquote class="quote"><strong>Các đặc tính, tác dụng của từng cái và khoảng giá trị của mỗi giống chó</strong> nằm trong <a href="breeds.html" class="xlink">Cẩm nang giống chó</a>.</blockquote>
+<h2 id="11-trò-khéo-theo-vâng-lời">11. Trò khéo theo Vâng lời</h2>
+<p>Bốn trò khéo, mở khóa dần theo cấp <strong>Vâng lời</strong>. Tất cả đều hiện trong menu ngay từ đầu, trò nào chưa mở thì hiện màu đỏ, để bạn biết trước sắp có gì: <em><span class="ig">Mở khóa ở cấp Vâng lời 3 (hiện tại 1).</span></em></p>
+<h3 id="đến-một-vị-trí-vâng-lời-1">Đến một vị trí (Vâng lời 1)</h3>
+<p>Mở ra một <strong>con trỏ trên mặt đất</strong>: xanh là gửi được, đỏ là không. Nhấp chuột trái để chọn, nhấp chuột phải để hủy.</p>
+<ul>
+<li>Tầm xa tối đa: <strong>30 ô tính từ BẠN</strong>, không phải tính từ con chó.</li>
+<li>Nó đi tới đó và <strong>giữ nguyên chỗ đó</strong> (đến nơi là chuyển sang chế độ Đứng yên).</li>
+<li>Bất kỳ mệnh lệnh mới nào cũng hủy chuyến đi.</li>
+</ul>
+<p>Dùng để đặt con chó vào một chỗ mà bạn không cần đi cùng: gửi nó sang bên kia đường, ra một góc phố, hay vào hẳn trong một căn phòng.</p>
+<h3 id="đánh-lạc-hướng-vâng-lời-3">Đánh lạc hướng (Vâng lời 3)</h3>
+<p>Con chó cố tình sủa thật to trong bán kính 24 ô, và <strong>cả đàn zombie sẽ kéo tới chỗ nó</strong>. Sau đó nó lùi về phía bạn.</p>
+<ul>
+<li><strong>Trò này cố tình bỏ qua tùy chọn <span class="ig">Tiếng chó thu hút zombie</span></strong>: mục đích của trò khéo chính là gây tiếng động, nên nó luôn gây tiếng động.</li>
+<li>Tốn căng thẳng.</li>
+<li>Nhãn đỏ trên đầu nó: <strong><span class="ig">Đang dụ zombie</span></strong>.</li>
+<li>Thời gian chờ 10 phút trong game.</li>
+</ul>
+<p>Đây là công cụ để <strong>mở đường</strong>: kéo cả nhóm sang một bên trong lúc bạn đi vào từ bên kia. Nhớ là con chó sẽ bị cả đàn bám sau lưng, nên hãy có sẵn kế hoạch.</p>
+<h3 id="đánh-hơi-tìm-vật-phẩm-vâng-lời-5">Đánh hơi tìm vật phẩm (Vâng lời 5)</h3>
+<p><strong>Cầm một vật phẩm trên tay</strong> rồi dùng trò khéo. Con chó ghi nhớ <strong>mùi của loại vật phẩm đó</strong>: <em><span class="ig">Chó cỏ đã ghi nhớ mùi của Búa.</span></em></p>
+<p>Từ đó trở đi, nó âm thầm quét khu vực quanh mình (12 ô, lên tới 20 ô khi Đánh hơi đạt tối đa) để tìm đúng món đó, <strong>cả trong tủ lẫn dưới đất</strong>. Khi tìm thấy:</p>
+<ol>
+<li>Nó sủa.</li>
+<li>Nó chạy tới đó và chỉ vào.</li>
+<li><strong>Vật phẩm được tô sáng màu xanh lá ngay trong thế giới game.</strong></li>
+</ol>
+<p>Thông báo: <em><span class="ig">Chó cỏ ngửi thấy Búa ở gần.</span></em> và <em><span class="ig">Chó cỏ chỉ vào Búa.</span></em></p>
+<p>Con chó chỉ nhớ <strong>đúng một mùi</strong>. Cho nó ngửi thứ khác là mùi cũ bị thay. Muốn hủy thì dùng <strong><span class="ig">Ngừng tìm Búa</span></strong> (kèm tên món đồ nó đã ghi nhớ) (việc hủy không bao giờ bị chặn).</p>
+<p>Nếu tay không cầm gì: <em><span class="ig">Hãy cầm trên tay vật phẩm bạn muốn chó ngửi.</span></em></p>
+<h3 id="tìm-đồ-khi-bạn-ngủ-vâng-lời-10">Tìm đồ khi bạn ngủ (Vâng lời 10)</h3>
+<p>Trò khéo cuối cùng. <strong>Con chó phải đang đeo túi yên.</strong></p>
+<p>Cầm một món đồ trên tay rồi giao việc: <em><span class="ig">Chó cỏ sẽ đi tìm Búa khi bạn ngủ.</span></em> Trên đầu nó sẽ có một nhãn cố định: <strong><span class="ig">Đang tìm: Búa</span></strong>.</p>
+<p>Cách nó hoạt động:</p>
+<ul>
+<li><strong>Mỗi ngày trong game một lần.</strong> Nó chạy ngay sau khi bạn thức dậy, với con chó ở gần bên.</li>
+<li><strong>Tỷ lệ thành công phụ thuộc vào độ hiếm của món đồ</strong>, và <strong>không có gì là chắc chắn</strong>. Ngay cả món tầm thường nhất trong game cũng chỉ đạt tối đa <strong>50% mỗi đêm</strong> (trung bình phải chờ chừng 2 ngày). Một món ít gặp như cái rìu thì quanh mức 15%, còn thứ thật sự hiếm như thanh katana thì khoảng 2%, tức là phải thử hàng tuần liền.</li>
+<li>Nếu thành công: <em><span class="ig">Chó cỏ đã mang Búa về khi bạn ngủ.</span></em>, món đồ nằm <strong>trong túi yên</strong>, kèm nhãn xanh <strong><span class="ig">Mang về: Búa</span></strong>.</li>
+<li>Nếu không: <em><span class="ig">Chó cỏ quay về mà không có Búa.</span></em> và một nhãn đỏ <strong><span class="ig">Về tay không</span></strong>.</li>
+</ul>
+<p>Hai trường hợp bị chặn ngay lúc giao việc:</p>
+<ul>
+<li>Món đồ quá nặng: <em><span class="ig">Chó cỏ không thể mang nổi Đe.</span></em></li>
+<li>Món đồ không tồn tại trong bảng loot của game: <em><span class="ig">Chó cỏ sẽ không biết tìm thứ đó ở đâu.</span></em></li>
+</ul>
+<h2 id="12-săn-mồi">12. Săn mồi</h2>
+<p>Chế độ Săn mồi mặc định <strong>đang tắt</strong> và bạn bật riêng cho từng con: menu vòng tròn, phím tắt, hoặc nút trong thẻ Mệnh lệnh. <em><span class="ig">Chó cỏ Rex sẽ săn thú ở gần.</span></em></p>
+<h3 id="nó-săn-những-gì">Nó săn những gì</h3>
+<div class="tw"><table><thead><tr>
+<th>Con mồi</th>
+<th>Cấp Săn mồi cần có</th>
+</tr></thead><tbody>
+<tr>
+<td>Thỏ, gấu mèo, chuột, sóc</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>Hươu (hươu con, hươu cái, hươu đực)</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>Các loài thú hoang khác thì nó chỉ chỉ điểm chứ không săn.</p>
+<h3 id="trên-thực-tế-nó-hoạt-động-ra-sao">Trên thực tế nó hoạt động ra sao</h3>
+<p><strong>Cấp 0, 1 và 2: nó chỉ chỉ điểm, thế thôi.</strong> Ở giai đoạn này con chó <strong>không bao giờ đụng vào con mồi</strong>. Nó sủa một tiếng, chạy lon ton tới sát con vật, dừng lại, làm tư thế đánh hơi và <strong>đứng chỉ ở đó vài phút</strong>, để bạn thấy con mồi đang ở đâu. Sau đó nó bỏ cuộc và quay về. Thông báo: <em><span class="ig">Chó của bạn phát hiện thú ở gần...</span></em></p>
+<p>Đừng coi thường giai đoạn này: <strong>đây chính là cách nó luyện Săn mồi lúc đầu</strong>. Cứ để nó chỉ điểm thoải mái, rồi cấp sẽ tự lên.</p>
+<p><strong>Cấp 3: nó bắt đầu giết được thú nhỏ.</strong></p>
+<ul>
+<li><strong>Nếu đang đói, nó ăn luôn con mồi.</strong> Bạn chẳng được gì, nhưng nó no bụng.</li>
+<li><strong>Nếu không đói, nó giết và ghi công cho bạn</strong>, để lại cái xác lột da được <strong>nằm dưới đất, ngay chỗ cuộc săn kết thúc</strong>. Nó báo: <em><span class="ig">Chó của bạn đã hạ được con mồi!</span></em>, nhưng <strong>người đi nhặt là bạn</strong>.</li>
+</ul>
+<p><strong>Cấp 6: nó bắt đầu mang con mồi về tận nơi cho bạn.</strong> Nhãn <strong><span class="ig">Đang mang con mồi về</span></strong> và thông báo <em><span class="ig">Chó của bạn đã kéo con mồi về.</span></em> Điều này <strong>chỉ áp dụng cho thú nhỏ</strong>.</p>
+<p><strong>Cấp 6 cũng mở khóa hươu</strong>, và với hươu thì luật khác hẳn: nó <strong>không kéo hươu về, ở bất kỳ cấp nào và bất kỳ giống nào</strong>. Nó quần cho con hươu gần chết rồi <strong>giữ con mồi lại chờ bạn ra đòn kết liễu</strong>: <em><span class="ig">Chó của bạn đã làm một con hươu bị thương, kết liễu nó đi!</span></em>, kèm nhãn <strong><span class="ig">Đang giữ con mồi</span></strong>. Nếu 20 phút trong game trôi qua mà bạn không tới, nó tự kết thúc (và bạn vẫn được ghi công). Nếu con hươu chạy thoát, nó lần theo: <em><span class="ig">Chó của bạn đang lần theo con vật bị thương...</span></em></p>
+<blockquote class="quote"><strong>Labrador là ngoại lệ:</strong> nó mang con mồi về <strong>ngay từ cấp 3</strong>, tức là từ con mồi đầu tiên mà nó giết nổi, và cũng kiên trì lâu hơn trước khi bỏ giữa đường. Chi tiết nằm trong <a href="breeds.html" class="xlink">Sổ tay giống chó</a>.</blockquote>
+<p><strong>Hươu đánh trả.</strong> Khoảng một trong bốn cú lao vào sẽ làm con chó bị thương và căng thẳng. Không bao giờ tới mức chết.</p>
+<h3 id="giới-hạn">Giới hạn</h3>
+<ul>
+<li>Săn mồi là <strong>hoạt động vùng quê</strong>. Thú sống trong rừng và ngoài đồng, không có trong thị trấn.</li>
+<li>Chỉ chạy khi con chó đang ở chế độ <strong>Đi theo</strong>.</li>
+<li><strong>Dây xích dài 32 ô.</strong> Nếu nó đi quá xa, nó bỏ cuộc, quay về và nghỉ 20 phút trong game (nhãn <strong><span class="ig">Săn mồi: Đang nghỉ</span></strong>).</li>
+<li>Nó không săn trong lúc tua nhanh thời gian, lúc bạn đang ngủ, lúc ở trong xe, và trong 5 phút ngay sau một mệnh lệnh của bạn.</li>
+<li><strong>Nếu đang đánh nhau với zombie, nó không tính chuyện đi săn.</strong> Nhưng chiều ngược lại thì không tự động đúng: một con zombie đi ngang qua <strong>không kéo con chó ra khỏi cuộc săn</strong>. Nó bỏ con mồi khi bạn lâm trận, khi Tự bảo vệ kích hoạt, hoặc khi bạn ra lệnh. <strong>Bất kỳ mệnh lệnh nào của bạn cũng hủy cuộc săn ngay lập tức.</strong></li>
+</ul>
+<h3 id="cái-giá-phải-trả">Cái giá phải trả</h3>
+<ul>
+<li>Săn mồi khiến nó <strong>mau đói</strong>.</li>
+<li>Tiếng sủa lúc truy đuổi <strong>thu hút zombie</strong>, và cái này cố định, không tắt được.</li>
+<li>Nó rời khỏi bên bạn và dễ gặp nguy hiểm.</li>
+</ul>
+<h3 id="thưởng-thêm-khi-kiếm-đồ">Thưởng thêm khi kiếm đồ</h3>
+<p>Đây là hai chuyện khác nhau, và <strong>cả hai chỉ xuất hiện khi bật Chế độ tìm kiếm của game</strong>.</p>
+<p><strong>a) Nó tìm ra điểm kiếm đồ (chỉ trong chế độ Săn mồi).</strong> Khi quanh đó không có con mồi, con chó đi tìm một điểm kiếm đồ dạng động vật, chạy tới, sủa và <strong>chỉ ra chỗ đó</strong>: <em><span class="ig">Chó của bạn tìm thấy thứ gì đó! Hãy bật Chế độ tìm kiếm để thấy nó.</span></em> Nhãn: <strong><span class="ig">Đang đánh hơi tìm đồ</span></strong>.</p>
+<p><strong>Con chó không bao giờ nhặt đồ hộ bạn.</strong> Nó chỉ cho bạn biết chỗ cần lục; <strong>người thu hoạch là bạn</strong>, bằng cách bật Chế độ tìm kiếm rồi kiếm đồ ngay tại điểm đó.</p>
+<p><strong>b) Nó nới rộng tầm tìm kiếm của bạn (giống nào cũng có, lúc nào cũng có).</strong> Chỉ cần có một con chó của bạn ở gần, trung thành, không quá đói và không quá khát:</p>
+<ul>
+<li><strong>+6 ô</strong> tầm tìm kiếm khi Săn mồi cấp 0, lên tới <strong>+12 ô</strong> khi Săn mồi cấp 10.</li>
+<li>Các nhóm <strong>động vật, côn trùng, dấu vết và xác thú</strong> trở nên dễ tìm hơn hẳn.</li>
+</ul>
+<p>Cái này <strong>không phải đặc quyền của riêng giống nào</strong>: một con Chó cỏ cũng làm được. Golden Retriever chỉ <strong>cộng thêm 4 ô</strong> lên trên mức đó.</p>
+<h2 id="13-chăm-đàn-vật-nuôi">13. Chăm đàn vật nuôi</h2>
+<p>Chế độ này biến con chó thành nhân công của nông trại: nó ở lại trong chuồng và <strong>tự chăm đàn vật nuôi ngay cả khi bạn ở xa</strong>.</p>
+<h3 id="cách-giao-việc">Cách giao việc</h3>
+<ol>
+<li>Tạo một <strong>khu vực nuôi động vật được chỉ định</strong> (cái chuồng của game gốc).</li>
+<li>Dẫn con chó vào bên trong.</li>
+<li>Nhấp chuột phải → <strong><span class="ig">Chăm đàn vật nuôi ở đây</span></strong>.</li>
+<li>Xác nhận. Mod sẽ báo trước rằng <strong>con chó sẽ bị bỏ chọn và không đi theo bạn nữa</strong>.</li>
+</ol>
+<p>Nếu không có chuồng: <em><span class="ig">Chó cỏ Rex cần có một chuồng nuôi được chỉ định ở đây để chăm đàn vật nuôi.</span></em></p>
+<h3 id="nó-làm-gì-ở-đó">Nó làm gì ở đó</h3>
+<ul>
+<li><strong>Tuần tra quanh chuồng.</strong></li>
+<li><strong>Giữ đàn bình tĩnh.</strong> Đây mới là việc chính: con vật bị căng thẳng <strong>không cho sữa cũng không cho len</strong>, dễ sảy thai và chạy tán loạn khi có zombie xuất hiện. Con chó giữ mức căng thẳng của cả đàn ở dưới ngưỡng nguy hiểm.</li>
+<li><strong>Âm thầm xử lý zombie</strong> trong bán kính 12 ô.</li>
+<li>Vẫn làm việc <strong>kể cả khi bạn đang ở đầu kia bản đồ</strong>.</li>
+</ul>
+<p>Thông báo: <em><span class="ig">Chó cỏ Rex cảm nhận có zombie gần chuồng!</span></em> và <em><span class="ig">Đàn vật nuôi do Chó cỏ Rex chăm đang bị căng thẳng!</span></em> Nhãn trên đầu: <strong><span class="ig">Đang chăm đàn vật nuôi</span></strong>.</p>
+<h3 id="quy-tắc-quan-trọng">Quy tắc quan trọng</h3>
+<ul>
+<li>Trong lúc nhận việc, <strong>cơn đói, cơn khát và mức giảm trung thành đều bị đóng băng</strong>. Nó tự lo được.</li>
+<li>Nó <strong>đứng ngoài mọi việc khác</strong>: không đánh nhau giúp bạn, không đi săn, không cảnh giới, không dùng chén ăn.</li>
+<li><strong>Một con chó chưa được huấn luyện, không nghe lời hoặc đang hoảng loạn sẽ LÀM ĐÀN CĂNG THẲNG thay vì trấn an.</strong> Đừng giao đàn bò cho một con chó con chưa qua huấn luyện.</li>
+<li><strong>Chọn lại con chó sẽ tự động hủy chế độ này.</strong></li>
+</ul>
+<p><strong>Border Collie học Chăn đàn nhanh gấp đôi</strong> các giống khác, nhưng giống nào cũng làm được việc này.</p>
+<h2 id="14-túi-yên-dùng-chó-làm-thú-chở-đồ">14. Túi yên: dùng chó làm thú chở đồ</h2>
+<h3 id="cách-đeo-vào">Cách đeo vào</h3>
+<ol>
+<li>Có sẵn <strong><span class="ig">Túi đồ cho chó đồng hành</span></strong> trong túi đồ.</li>
+<li>Nhấp chuột phải vào con chó → <strong><span class="ig">Đeo túi yên</span></strong>. <em><span class="ig">Đã đeo túi yên.</span></em></li>
+<li>Để mở ra: <strong><span class="ig">Mở túi yên</span></strong> (hoặc mục trong menu vòng tròn, hoặc nút trong tab Mệnh lệnh).</li>
+<li>Để tháo ra: <strong><span class="ig">Tháo túi yên</span></strong>. Cái túi <strong>cùng toàn bộ đồ bên trong</strong> rơi xuống đất.</li>
+</ol>
+<h3 id="nó-chở-được-bao-nhiêu">Nó chở được bao nhiêu</h3>
+<p>Sức chứa tính bằng <strong>một mức nền cố định cộng thêm gen Sức mạnh của con chó</strong>. Với giá trị mặc định:</p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Sức chở (khối lượng)</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td><strong>4 đến 5</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>6 đến 7</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức, Border Collie, Rottweiler, Doberman, Labrador</td>
+<td>6 đến 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>13 đến 16</strong></td>
+</tr>
+</tbody></table></div>
+<p>Husky là con chó duy nhất được cộng thêm sức chở nhờ giống (nhiều hơn 50%). Tất cả các giống còn lại chỉ dựa vào gen Sức mạnh, nên hai con cùng giống vẫn có thể chở được lượng khác nhau.</p>
+<p>Máy chủ có thể chỉnh chuyện này bằng <strong><span class="ig">Sức chứa cơ bản của túi yên</span></strong> và <strong><span class="ig">Sức chứa cộng thêm theo sức mạnh</span></strong>.</p>
+<h3 id="cất-được-những-gì">Cất được những gì</h3>
+<p>Gần như mọi thứ, và giới hạn là <strong>khối lượng</strong>, không phải số lượng món đồ. Các ngoại lệ:</p>
+<ul>
+<li>Một cái túi yên khác.</li>
+<li>Đồ đang mang trên người (quần áo đang mặc, vũ khí đang cầm).</li>
+<li><strong>Ba lô và các loại túi.</strong> Hãy cất đồ nằm bên trong chúng, đừng cất cả cái túi.</li>
+</ul>
+<p><strong>Ghi chú trên bản đồ không được giữ lại.</strong> Nếu bạn cất một tấm bản đồ đã đánh dấu, các dấu đó sẽ mất: <em><span class="ig">Ghi chú trên bản đồ sẽ không được giữ khi cất trong túi yên.</span></em></p>
+<h3 id="cửa-sổ-túi-yên">Cửa sổ túi yên</h3>
+<p>Hai danh sách nằm cạnh nhau: <strong><span class="ig">Túi đồ của bạn</span></strong> ở bên trái (nhấp vào là cất đồ) và túi yên ở bên phải (nhấp vào là lấy ra). Dưới chân cửa sổ: <strong><span class="ig">Hàng hóa: 7/12</span></strong>.</p>
+<h3 id="kiếm-ở-đâu">Kiếm ở đâu</h3>
+<p><strong>Chế tạo:</strong> 2x Dải da + Kim + Chỉ (kim và chỉ không bị tiêu hao). Nằm ở nhóm May vá, cần <strong>May vá cấp 1</strong>. Cho 15 XP May vá.</p>
+<p><strong>Nhặt được ở:</strong> cửa hàng thú cưng, thùng đồ dùng cho thú cưng, cửa hàng đồ cắm trại, tủ đồ đi săn, bộ đồ sinh tồn, thùng dụng cụ trong nhà để xe và thùng đồ ở nông trại.</p>
+<blockquote class="quote"><strong>Nếu con chó chết hoặc bị thả đi, túi yên cùng toàn bộ đồ bên trong sẽ rơi xuống đất</strong> ngay chỗ nó đang đứng lúc đó.</blockquote>
+<h2 id="15-phối-giống-và-chó-con">15. Phối giống và chó con</h2>
+<h3 id="không-có-nút-phối-giống">Không có nút "phối giống"</h3>
+<p>Việc phối giống là chuyện <strong>thụ động 100%</strong>. Bạn không ra lệnh cho hai con chó giao phối. Bạn chỉ dọn sẵn điều kiện rồi chờ.</p>
+<p>Cứ mỗi giờ trong game, mỗi con cái đủ điều kiện mà có một con đực đủ điều kiện ở gần đều có khả năng tự thụ thai. Mặc định là <strong>5% mỗi ngày</strong> (tùy chọn sandbox <strong><span class="ig">Tỷ lệ phối giống mỗi ngày</span></strong>).</p>
+<h3 id="các-điều-kiện">Các điều kiện</h3>
+<p>Bắt buộc phải đủ hết, và đúng với cả hai con chó:</p>
+<ol>
+<li>Cả hai đều là <strong>bạn đồng hành của cùng một chủ</strong>.</li>
+<li>Một con <strong>đực và một con cái đã trưởng thành</strong>. Chó con không bao giờ phối giống.</li>
+<li>Không con nào đang bật <strong><span class="ig">Không cho phối giống</span></strong>.</li>
+<li><strong>Cùng một tầng</strong> và cách nhau <strong>40 ô trở xuống</strong>.</li>
+<li>Không con nào <strong>bị thương nặng</strong> hay <strong>trúng độc</strong>.</li>
+<li><strong>Độ trung thành từ 60 trở lên</strong> ở cả hai con.</li>
+<li><strong>Được cho ăn uống đầy đủ:</strong> cả cơn đói <strong>và</strong> cơn khát đều dưới nửa thanh ở cả hai con.</li>
+<li>Con cái <strong>không đang mang thai</strong> và cũng không trong <strong>thời gian chờ 7 ngày</strong> sau một lần sinh.</li>
+<li>Vẫn còn <strong>chỗ trống</strong> trong giới hạn số chó.</li>
+<li>Khu vực đó phải <strong>đang được tải gần chỗ bạn</strong>.</li>
+</ol>
+<p>Nói gọn lại: <strong>hai con chó được chăm tử tế, ở cạnh nhau, có bạn ở gần</strong>. Nếu mãi chẳng thấy gì xảy ra, gần như lúc nào cũng là do đói, khát hoặc độ trung thành.</p>
+<h3 id="màn-tán-tỉnh-và-thời-gian-mang-thai">Màn tán tỉnh và thời gian mang thai</h3>
+<p>Con cái <strong>tự đi tới chỗ con đực</strong> (<em><span class="ig">Chó cỏ Rex đang đi tìm bạn phối giống</span></em>) và thụ thai khi tới nơi. <em><span class="ig">Chó cỏ Rex đã mang thai</span></em>.</p>
+<ul>
+<li><strong>Thời gian mang thai: 4 ngày trong game</strong> theo mặc định.</li>
+<li>Đồng hồ vẫn chạy <strong>kể cả khi con chó ở xa hoặc bạn đang ngoại tuyến</strong>.</li>
+<li>Dấu hiệu trên đầu chó và trong menu: <strong><span class="ig">Đang mang thai</span></strong>, rồi tới cuối thai kỳ là <strong><span class="ig">Sắp sinh</span></strong>. Chúng hiện màu hồng và <strong>luôn luôn hiện</strong>, kể cả khi bạn đã tắt chữ trạng thái.</li>
+</ul>
+<h3 id="lúc-sinh">Lúc sinh</h3>
+<p>Số con mỗi lứa phụ thuộc vào giống <strong>của chó mẹ</strong>:</p>
+<div class="tw"><table><thead><tr>
+<th>Giống của chó mẹ</th>
+<th>Số con mỗi lứa</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td>2 đến 4</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1 đến 3</td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức, Golden Retriever, Husky</td>
+<td>1 đến 2</td>
+</tr>
+</tbody></table></div>
+<p><em><span class="ig">Chó cỏ Rex đã sinh một đàn con</span></em>. Sau đó là <strong>7 ngày trong game nghỉ ngơi</strong> trước khi nó có thể mang thai lần nữa.</p>
+<blockquote class="quote">Nếu máy chủ có đặt <strong>giới hạn số chó</strong> mà lúc đó không còn chỗ, lứa con sẽ bị cắt bớt cho vừa (và thai kỳ vẫn kết thúc như thường). Với thiết lập gốc, vốn là <strong>không giới hạn</strong>, chuyện này không bao giờ xảy ra.</blockquote>
+<h3 id="chó-con-thừa-hưởng-những-gì">Chó con thừa hưởng những gì</h3>
+<ul>
+<li><strong>Dòng máu là mức trung bình của bố mẹ.</strong> Chó cỏ ghép với Chó chăn cừu Đức cho ra 50/50. Con lai đó ghép với một con Chó chăn cừu Đức thuần thì ra 25/75.</li>
+<li><strong>Ngoại hình được bốc ngẫu nhiên, nhưng nghiêng theo dòng máu.</strong> Một con chó con mang 75% máu Chó chăn cừu Đức thì nhiều khả năng sẽ trông giống Chó chăn cừu Đức.</li>
+<li><strong>Các đặc tính nằm ở khoảng giữa của bố mẹ, xê dịch chừng 6% theo hai chiều.</strong> Đây chính là cách bạn cải thiện một dòng máu: cứ ghép hai con khỏe nhất mình có, lặp đi lặp lại.</li>
+<li>Con chó mang máu nhiều hơn một giống sẽ được đánh dấu <strong><span class="ig">Lai</span></strong>, và cửa sổ của nó hiện rõ tỷ lệ (<span class="ig">50% Husky, 50% Chó chăn cừu Đức</span>).</li>
+<li><strong>Gia phả được ghi lại:</strong> đời thứ mấy, tên và giống của cả bố lẫn mẹ.</li>
+</ul>
+<h3 id="nuôi-chó-con">Nuôi chó con</h3>
+<ul>
+<li>Nó sinh ra ở trạng thái <strong>không hoạt động</strong> (chế độ Đứng yên), với <strong>50 điểm trung thành</strong> (không phải 0), <strong>chưa có kỹ năng nào</strong>, và nhỏ hơn hẳn về ngoại hình.</li>
+<li><strong>Nó tính vào giới hạn số chó ngay từ lúc chào đời.</strong></li>
+<li>Nó cần <strong>90 ngày trong game</strong> để thành chó trưởng thành. Đồng hồ <strong>luôn chạy</strong>, kể cả khi con chó con ở xa và ngoài tầm. Nếu hết hạn lúc khu vực của nó chưa được tải, nó sẽ trưởng thành ngay khi bạn quay lại gần.</li>
+<li>Khi lớn lên, nó <strong>giữ nguyên tên, mối gắn kết, đặc tính và kỹ năng</strong>: <em><span class="ig">Chó cỏ Rex đã trưởng thành</span></em>.</li>
+<li>Nếu bạn thích nó lúc còn bé, công tắc <strong><span class="ig">Tạm dừng lớn lên</span></strong> sẽ giữ nó bé mãi mãi. <em><span class="ig">Chó con không bao giờ lớn hả? Ngoài đời mà cũng có nút này thì hay :D</span></em></li>
+</ul>
+<h2 id="16-nhiều-chó-cùng-lúc">16. Nhiều chó cùng lúc</h2>
+<p>Bạn có thể nuôi nhiều chó, nhưng <strong>mỗi lần chỉ có một con ra ngoài cùng bạn</strong>: đó là con chó <span class="ig">đang được chọn</span>. Những con còn lại nằm chờ.</p>
+<blockquote class="quote"><strong>Chuyện này dự kiến sẽ thay đổi ở một bản cập nhật sau.</strong> Còn bây giờ, hãy tính toán theo kiểu mỗi lần một con.</blockquote>
+<p><strong>Một con chó không hoạt động thì dừng hẳn mọi thứ.</strong> Đây là điều tốt: nó không phải gánh nặng mà bạn phải nuôi.</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Chó đang được chọn</th>
+<th>Chó không hoạt động</th>
+</tr></thead><tbody>
+<tr>
+<td>Đi theo bạn</td>
+<td>Có</td>
+<td>Không, nó đứng yên tại chỗ</td>
+</tr>
+<tr>
+<td><strong>Biết đói và khát</strong></td>
+<td>Có</td>
+<td><strong>Không. Cũng không dồn lại để tính sau</strong></td>
+</tr>
+<tr>
+<td><strong>Ăn ở chén</strong></td>
+<td>Có</td>
+<td><strong>Không, và cũng không cần</strong></td>
+</tr>
+<tr>
+<td>Tự tụt độ trung thành</td>
+<td>Có</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Đánh nhau, canh gác, đi săn</td>
+<td>Có</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Nhận vuốt ve (và được cộng trung thành)</td>
+<td>Có</td>
+<td><strong>Có</strong></td>
+</tr>
+<tr>
+<td>Phối giống và sinh chó con</td>
+<td>Có</td>
+<td><strong>Có</strong></td>
+</tr>
+<tr>
+<td>Tính cho moodle và thưởng thêm khi kiếm đồ</td>
+<td>Có</td>
+<td><strong>Có, nếu nó ở gần</strong></td>
+</tr>
+</tbody></table></div>
+<p>Điểm quan trọng nhất trong lúc chơi: <strong>bạn không cần cho ăn những con chó đang nằm chờ.</strong> Chúng không bị đói, không tụt độ trung thành và không chết vì bị bỏ bê trong lúc chờ. Khi bạn chọn một con trong số đó, cơn đói của nó chạy tiếp <strong>từ đúng chỗ đã dừng lại</strong>, không có cú dồn nào bất ngờ.</p>
+<p>Muốn đổi con khác thì nhấp chuột phải vào con chó → <strong><span class="ig">Chọn</span></strong>.</p>
+<p>Menu của một con chó không hoạt động bị rút gọn có chủ đích: không cho ăn, không cho uống nước, không ra lệnh di chuyển, vì mấy thứ đó chẳng có tác dụng gì với nó.</p>
+<h3 id="tab-đàn-chó-của-tôi-sổ-đăng-ký">Tab "Đàn chó của tôi": sổ đăng ký</h3>
+<p>Đây là sổ đăng ký chó của bạn. Nó liệt kê mọi con chó đã gắn bó, kèm hình đại diện, tên, giống, giới tính, kỹ năng và trạng thái hiện tại:</p>
+<div class="tw"><table><thead><tr>
+<th>Trạng thái</th>
+<th>Nghĩa là gì</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Đang được chọn</strong></td>
+<td>Là con chó bạn đang dùng</td>
+</tr>
+<tr>
+<td><strong>Ở gần</strong></td>
+<td>Đang được tải ở gần bạn</td>
+</tr>
+<tr>
+<td><strong>Đang được bế</strong></td>
+<td>Bạn đang bế nó trên tay</td>
+</tr>
+<tr>
+<td><strong>Đang ở trên xe</strong></td>
+<td>Nó được cất trong xe</td>
+</tr>
+<tr>
+<td><strong>Ở xa</strong></td>
+<td>Đã gắn bó, nhưng ngoài tầm. Có hiện <span class="ig">gặp lần cuối X giờ trước</span></td>
+</tr>
+<tr>
+<td><strong>Mất tích</strong></td>
+<td>Nó biến mất. Hãy dùng nút <strong>Gọi về</strong> ngay ở đây</td>
+</tr>
+<tr>
+<td><strong>Chưa có dữ liệu</strong></td>
+<td>Bạn chưa từng tới gần nó kể từ khi gắn bó</td>
+</tr>
+</tbody></table></div>
+<p>Mỗi con chó có ba nút: <strong>Gọi về</strong> | <strong>Tình trạng</strong> | <strong>Chọn</strong>.</p>
+<p><strong>Gọi về</strong> với một con chó ở gần chỉ là một cú dịch chuyển đơn giản. Với con chó <strong>ở xa</strong>, nó sẽ hỏi lại: <em><span class="ig">Gọi Chó cỏ Rex về từ xa? Tiếng huýt sáo lớn của bạn sẽ thu hút zombie.</span></em> rồi cho con chó xuất hiện lại, giữ nguyên kỹ năng, đặc tính, tên và túi yên.</p>
+<p><strong>Thời gian chờ 2 giờ trong game cho mỗi con.</strong> Gọi sớm hơn thì: <em><span class="ig">Chó cỏ Rex vừa được gọi gần đây, hãy chờ một lúc rồi gọi lại.</span></em></p>
+<blockquote class="quote"><strong>Đây chính là cách bạn tìm lại một con chó bị mất tích.</strong> Nếu con chó biến mất, mod sẽ báo: <em><span class="ig">Chó cỏ Rex đã mất tích! Mở Đàn chó của tôi (nút hình bàn chân) để gọi nó về.</span></em></blockquote>
+<h2 id="17-cửa-sổ-của-chó">17. Cửa sổ của chó</h2>
+<p>Bạn mở nó theo bốn cách: <strong>nút hình bàn chân</strong> ngay dưới khung hai tay của bạn, phím tắt <strong>Tình trạng</strong>, mục <strong><span class="ig">Tình trạng</span></strong> trong menu chuột phải, hoặc nút trong tab Đàn chó của tôi.</p>
+<p>Cửa sổ này <strong>đổi kích thước được</strong> và nhớ chỗ bạn đã đặt nó. Trên cùng là <strong>hình 3D của con chó theo thời gian thực</strong> kèm tên nó. Khi ở trong xe, sẽ hiện dòng <strong><span class="ig">Đang ở trên xe</span></strong>.</p>
+<h3 id="tab-kỹ-năng-và-tình-trạng">Tab "Kỹ năng và tình trạng"</h3>
+<ul>
+<li><strong>Độ trung thành</strong> có thanh chỉ số và phần giải thích khi rê chuột lên.</li>
+<li><strong>Nhu cầu:</strong> Đói, Khát, Sức khỏe, Căng thẳng.</li>
+<li><strong>Kỹ năng:</strong> Đánh hơi, Chiến đấu, Vâng lời, Săn mồi, Chăn đàn, mỗi kỹ năng có thanh tiến độ riêng và <strong><span class="ig">Cấp X</span></strong>.</li>
+<li><strong>Đặc tính:</strong> Sức mạnh, Độ hung hăng, Sức chịu đựng, hiện ra dưới dạng Thấp / Trung bình / Cao.</li>
+<li><strong>Giống:</strong> tên giống, độ tuổi (Trưởng thành hoặc Chó con), <span class="ig">(Lai)</span> khi đúng trường hợp đó, kèm mô tả giống khi rê chuột lên.</li>
+<li><strong>Số mạng:</strong> con chó đó đã hạ bao nhiêu zombie và bao nhiêu con mồi.</li>
+</ul>
+<p><strong>Mọi thứ đều có giải thích khi rê chuột.</strong> Nếu bạn không biết một thanh chỉ số dùng để làm gì, cứ đưa chuột lên đó.</p>
+<h3 id="tab-mệnh-lệnh">Tab "Mệnh lệnh"</h3>
+<ul>
+<li><strong>Chế độ:</strong> Đi theo | Đứng yên | Canh gác</li>
+<li><strong>Cảnh giới:</strong> Báo động | Nhẹ tiếng | Im lặng</li>
+<li><strong>Tự bảo vệ</strong> (bật/tắt)</li>
+<li><strong>Săn mồi</strong> (bật/tắt)</li>
+<li><strong>Chăm đàn vật nuôi ở đây</strong></li>
+<li><strong>Trò khéo:</strong> bốn nút (những trò còn khóa sẽ bị làm mờ, rê chuột lên là thấy lý do)</li>
+<li><strong>Mở túi yên</strong></li>
+<li><strong>Hành động:</strong> Gọi về | Đổi tên | Thả đi</li>
+</ul>
+<p>Khi đang ở trong xe, mọi thứ đòi hỏi con chó phải có mặt ngoài thế giới đều bị làm mờ (<em><span class="ig">Không thể dùng khi đang lái xe vì bạn đồng hành đang đi cùng.</span></em>) và hàng hành động đổi thành <strong>Cho ăn | Đổi tên | Cho uống nước</strong>.</p>
+<h3 id="tab-đàn-chó-của-tôi">Tab "Đàn chó của tôi"</h3>
+<p>Xem <a href="#16-nhiều-chó-cùng-lúc">Nhiều chó cùng lúc</a>.</p>
+<h3 id="tab-cài-đặt">Tab "Cài đặt"</h3>
+<p>Những tùy chọn này là <strong>của riêng bạn</strong>, theo từng người chơi, và không ảnh hưởng tới ai khác trên máy chủ:</p>
+<ul>
+<li><strong>Giao diện:</strong> <span class="ig">Chữ trạng thái: Bật/Tắt</span> (mấy dòng chữ lơ lửng trên đầu con chó) và <span class="ig">Biểu tượng trạng thái: Bật/Tắt</span> (các moodle của chó).</li>
+<li><strong>Âm thanh:</strong> âm lượng tổng, nút tắt tiếng, và các thanh trượt riêng cho <strong>Tiếng sủa</strong>, <strong>Hiệu ứng</strong> và <strong>Môi trường</strong>.</li>
+<li><strong>Tự ăn uống:</strong> thanh trượt <span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span>.</li>
+<li><strong>Phím điều khiển:</strong> 14 hành động, kèm <strong>Gán lại</strong> và <strong>Xóa</strong>.</li>
+</ul>
+<blockquote class="quote">Nếu tiếng sủa làm phiền bạn, thanh trượt <strong>Tiếng sủa</strong> ở đây giải quyết được mà không phải tắt cơ chế nào cả.</blockquote>
+<h2 id="18-những-gì-hiện-trên-màn-hình">18. Những gì hiện trên màn hình</h2>
+<h3 id="moodle-của-chó">Moodle của chó</h3>
+<p>Một cột biểu tượng riêng, <strong>nằm bên trái cột moodle thường của game</strong>. Mỗi giống chó có moodle riêng của mình. Chi tiết đầy đủ nằm trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</p>
+<p>Những moodle mà con chó nào cũng có thể tạo ra:</p>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Khi nào xuất hiện</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Đói</strong></td>
+<td>Mức đói lên cao</td>
+<td>Chỉ để cảnh báo</td>
+</tr>
+<tr>
+<td><strong>Khát</strong></td>
+<td>Mức khát lên cao</td>
+<td>Chỉ để cảnh báo</td>
+</tr>
+<tr>
+<td><strong>Trúng độc</strong></td>
+<td>Đã ăn phải đồ không tốt</td>
+<td>Chỉ để cảnh báo</td>
+</tr>
+<tr>
+<td><strong>Ngủ ngon</strong></td>
+<td>Bạn đã ngủ cạnh con chó</td>
+<td>Giảm hoảng loạn, căng thẳng, buồn bã và chán chường, đồng thời bạn mệt chậm hơn. Mặc định kéo dài 2 giờ trong game</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Quy tắc đúng với mọi moodle của các giống chó:</strong> một con chó <strong>không còn trung thành, đang bệnh, hoặc đang đói khát nặng thì không cho bạn lợi ích nào cả</strong>. Moodle chỉ đơn giản là tắt đi. Chó được chăm tốt mới là chó có ích.</blockquote>
+<h3 id="chữ-hiện-trên-đầu-chó">Chữ hiện trên đầu chó</h3>
+<p>Con chó xếp chồng nhiều dòng trạng thái trên đầu, nhìn thấy được trong phạm vi 14 ô và chỉ khi cùng tầng. Từ trên xuống dưới: cảnh báo của cảnh giới, trạng thái (<strong>Kinh hãi</strong>, <strong>Đang hoảng loạn</strong>, <strong>Bị thương nặng</strong>, <strong>Không nghe lời</strong>, <strong>Bị thương</strong>, <strong>Lo lắng</strong>), việc nó đang làm (đang ăn, đang săn, đang đánh hơi, đang chăm đàn vật nuôi), tình trạng mang thai, và <strong>tên nó</strong>, luôn nằm cuối cùng và gần đầu nó nhất.</p>
+<p>Tùy chọn <strong><span class="ig">Chữ trạng thái: Tắt</span></strong> (tab Cài đặt) xóa hết mọi thứ trừ cái tên. Tùy chọn sandbox <strong><span class="ig">Hiện tên trên đầu chó</span></strong> thì tắt luôn cả tên.</p>
+<p><strong>Chó của người chơi khác</strong> chỉ hiện <strong><span class="ig">Chủ: Tên người đó</span></strong>, tình trạng mang thai và cái tên.</p>
+<h3 id="dấu-trên-bản-đồ">Dấu trên bản đồ</h3>
+<p><strong>Mỗi con chó gắn bó là một dấu chân</strong>, hiện trên bản đồ thế giới và bản đồ nhỏ.</p>
+<ul>
+<li><strong>Dấu chân màu nâu = con chó đang được chọn. Dấu chân màu xám = những con không hoạt động.</strong></li>
+<li>Trên bản đồ thế giới, dấu chân có kèm tên con chó bên cạnh. Trên bản đồ nhỏ thì không, và nó <strong>bám vào mép bản đồ</strong> để chỉ hướng khi con chó nằm ngoài tầm nhìn.</li>
+<li>Khi con chó còn đang được tải, dấu chỉ vị trí đi theo nó theo thời gian thực. Lúc nó được cất đi, dấu <strong>nằm lại ở vị trí cuối cùng nhìn thấy</strong>.</li>
+</ul>
+<p><strong>Đây chính là cách bạn tìm lại con chó bị bỏ lại phía sau, hoặc tìm con chó của mình sau khi bạn chết.</strong> Dấu chỉ vị trí này chỉ là lớp phủ hiển thị, không bao giờ biến thành ký hiệu được lưu trên bản đồ.</p>
+<p>Tắt nó bằng tùy chọn sandbox <strong><span class="ig">Hiện chó trên bản đồ</span></strong>.</p>
+<h2 id="19-vật-phẩm-của-mod">19. Vật phẩm của mod</h2>
+<p>Mod thêm vào <strong>hai vật phẩm để bạn dùng</strong>, ngoài ra không có gì khác.</p>
+<h3 id="chén-cho-chó-đồng-hành">Chén cho chó đồng hành</h3>
+<p>Chỗ để chó tự ăn uống. Nặng 1,5.</p>
+<p><strong>Có hai công thức chế tạo</strong>, cả hai đều không đòi hỏi kỹ năng nào và làm bằng tay:</p>
+<ul>
+<li><strong>1 dụng cụ nấu ăn</strong> (nồi, chảo, khay nướng, ấm đun, xô, cốc, chai...), và nó sẽ bị tiêu hủy.</li>
+<li><strong>1 chén thú cưng của game gốc</strong>, cũng bị tiêu hủy.</li>
+</ul>
+<p><strong>Nơi nhặt được:</strong> kệ ở cửa hàng thú cưng, thùng đồ dùng cho thú cưng, khu đồ gia dụng trong siêu thị, cửa hàng làm vườn, thùng đồ ở nông trại và vườn, kho hàng siêu thị, nhà bếp.</p>
+<h3 id="túi-đồ-cho-chó-đồng-hành">Túi đồ cho chó đồng hành</h3>
+<p>Xem <a href="#14-túi-yên-dùng-chó-làm-thú-chở-đồ">Túi yên</a>. Nặng 1,0, và giảm khá nhiều trọng lượng đồ bên trong.</p>
+<h3 id="những-gì-mod-không-có">Những gì mod KHÔNG có</h3>
+<p>Để bạn khỏi mất công tìm: <strong>cái chén và túi yên là hai vật phẩm duy nhất của mod.</strong> Không có vòng cổ, không có bánh thưởng đặc biệt, không có đồ chơi, không có nhà cho chó hay chuồng chó xây được. Thức ăn cho chó thường của game gốc thì mod có nhận biết, nhưng đó là vật phẩm của game chứ không phải của mod.</p>
+<h2 id="20-nhiều-người-chơi">20. Nhiều người chơi</h2>
+<p>Mod được làm cho chế độ nhiều người chơi ngay từ đầu, và chạy y như nhau ở co-op lẫn máy chủ riêng.</p>
+<h3 id="chó-của-bạn-là-của-bạn">Chó của bạn là của bạn</h3>
+<p>Quyền sở hữu gắn với <strong>tài khoản của bạn</strong>, không gắn với nhân vật hay chỗ kết nối. Khởi động lại máy chủ cũng không làm con chó của bạn rơi vào tay người khác.</p>
+<p><strong>Người chơi khác có thể:</strong> nhìn thấy con chó, kèm tên nó và dòng <strong><span class="ig">Chủ: Tên bạn</span></strong> trên đầu.</p>
+<p><strong>Người chơi khác không thể:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Việc thử làm</th>
+<th>Chuyện gì xảy ra</th>
+</tr></thead><tbody>
+<tr>
+<td>Bế lên</td>
+<td><em><span class="ig">Chó này thuộc về một người sống sót khác.</span></em></td>
+</tr>
+<tr>
+<td>Cho ăn hoặc thuần hóa lại</td>
+<td><em><span class="ig">Chó này đã thuộc về một người sống sót khác.</span></em> Được kiểm tra <strong>trước</strong> khi tiêu tốn thức ăn của người đó</td>
+</tr>
+<tr>
+<td>Ra lệnh, đổi tên, thả đi, đụng vào túi yên</td>
+<td>Bị máy chủ chặn</td>
+</tr>
+<tr>
+<td>Giết</td>
+<td>Lựa chọn đó còn không hiện ra, và bạn đồng hành thì bất tử</td>
+</tr>
+</tbody></table></div>
+<h3 id="khi-bạn-thoát-ra">Khi bạn thoát ra</h3>
+<p>Khi tùy chọn <strong><span class="ig">Cất chó khi chủ ngoại tuyến</span></strong> đang bật (mặc định là bật):</p>
+<ul>
+<li>Chó của bạn được <strong>cất ra khỏi thế giới</strong>, với trạng thái và nhu cầu bị <strong>đóng băng</strong>.</li>
+<li>Lúc bạn quay lại, con chó ở chế độ <strong>Đi theo</strong> xuất hiện lại bên cạnh bạn; những con ở <strong>Đứng yên</strong> và <strong>Canh gác</strong> cùng các con không hoạt động thì hiện lại <strong>đúng chỗ bạn để lại</strong>, ngay khi khu vực đó được tải.</li>
+<li><strong>Bạn sẽ không quay lại và thấy con chó đói lả.</strong> Thời gian bạn ngoại tuyến không được tính.</li>
+</ul>
+<p>Khi tắt, chó vẫn ở lại trong thế giới, bất tử và đứng yên.</p>
+<h3 id="dành-cho-quản-trị-viên">Dành cho quản trị viên</h3>
+<p>Có một <strong><span class="ig">Sổ đăng ký chó (quản trị viên)</span></strong>: tìm theo người chơi, trạng thái Trực tuyến/Ngoại tuyến, số lượng chó và nút Làm mới. Ngoài ra còn có một bảng <strong>chỉnh hiệu năng máy chủ</strong> ngay lúc đang chạy. Cả hai chỉ dành cho quản trị viên.</p>
+<h3 id="lưu-ý-khi-cài-đặt-trong-co-op">Lưu ý khi cài đặt trong co-op</h3>
+<p><strong>Nếu con chó hiện ra không có texture hoặc bị <span class="ig">bẹp dúm</span>:</strong> hãy bật Companion Dogs trong <strong>danh sách Mods ở menu chính</strong> (chứ không phải chỉ ở phần chọn mod của co-op) và <strong>thoát game hoàn toàn</strong> trước khi vào lại save. Người host co-op cũng phải làm y như vậy rồi khởi động lại máy chủ.</p>
+<h2 id="21-tùy-chọn-sandbox">21. Tùy chọn sandbox</h2>
+<p>Trang <strong><span class="ig">Chó đồng hành</span></strong> trong phần cài đặt thế giới. Tổng cộng có 33 tùy chọn.</p>
+<blockquote class="quote"><strong>Nhớ nhé:</strong> trong chế độ nhiều người chơi, cấu hình <strong>của máy chủ</strong> mới là cái quyết định. Và trong Project Zomboid, các tùy chọn sandbox được ghi thẳng <strong>vào file save</strong>, nên muốn đổi sau đó thì phải sửa file save hoặc tạo một thế giới mới.</blockquote>
+<h3 id="thuần-hóa-và-xuất-hiện">Thuần hóa và xuất hiện</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Mức tin tưởng cần để thuần hóa</td>
+<td>100</td>
+<td>Cần bao nhiêu thức ăn để con chó thành của bạn</td>
+</tr>
+<tr>
+<td>Số chó tối đa mỗi người chơi</td>
+<td><strong>0 (không giới hạn)</strong></td>
+<td>Trần số chó gắn bó với bạn</td>
+</tr>
+<tr>
+<td>Chó hoang xuất hiện trong thị trấn</td>
+<td>Bật</td>
+<td>Chó tự xuất hiện khi bạn đi khám phá</td>
+</tr>
+<tr>
+<td>Hệ số xuất hiện của chó</td>
+<td>1,0</td>
+<td>Điều chỉnh mọi lượt xuất hiện. 0 là tắt</td>
+</tr>
+<tr>
+<td>Chó hoang bất tử</td>
+<td><strong>Tắt</strong></td>
+<td>Giữ cho chó hoang khỏi chết trước khi bạn kịp thuần hóa</td>
+</tr>
+<tr>
+<td>Cho phép tạo chó gỡ lỗi</td>
+<td>Bật</td>
+<td>Menu gỡ lỗi (chỉ quản trị viên trong MP)</td>
+</tr>
+</tbody></table></div>
+<h3 id="chiến-đấu">Chiến đấu</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Chó đồng hành chiến đấu với zombie</td>
+<td>Bật</td>
+<td>Công tắc chính của phần chiến đấu</td>
+</tr>
+<tr>
+<td>Hệ số sát thương của chó đồng hành</td>
+<td>1,0</td>
+<td>Điều chỉnh sát thương. <strong>Chó cỏ vẫn không kết liễu nổi zombie, dù bạn đặt cao đến đâu</strong></td>
+</tr>
+<tr>
+<td>Mạng của chó được tính cho người chơi</td>
+<td>Bật</td>
+<td>Zombie do chó hạ được cộng vào bộ đếm của bạn</td>
+</tr>
+</tbody></table></div>
+<h3 id="chăm-sóc-và-gắn-kết">Chăm sóc và gắn kết</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Nhu cầu và chăm sóc</td>
+<td>Bật</td>
+<td>Công tắc chính của đói, khát, trung thành và căng thẳng</td>
+</tr>
+<tr>
+<td>Tốc độ đói và khát</td>
+<td>1,0</td>
+<td>Điều chỉnh cả hai. <strong>Đặt 0 là đóng băng, con chó không bao giờ cần ăn nữa</strong></td>
+</tr>
+<tr>
+<td>Mức giảm trung thành mỗi ngày</td>
+<td>12,0</td>
+<td>Mỗi ngày mất đi bao nhiêu điểm trung thành</td>
+</tr>
+<tr>
+<td>Gắn kết tinh thần (vuốt ve và ngủ cùng)</td>
+<td>Bật</td>
+<td>Vuốt ve và ngủ cạnh chó làm dịu chán chường và buồn bã của bạn</td>
+</tr>
+<tr>
+<td>Ngủ ngon (ngủ gần chó)</td>
+<td>Bật</td>
+<td>Hiệu ứng bạn nhận được lúc thức dậy</td>
+</tr>
+<tr>
+<td>Thời lượng Ngủ ngon (giờ)</td>
+<td>2,0</td>
+<td>Hiệu ứng kéo dài bao lâu</td>
+</tr>
+</tbody></table></div>
+<h3 id="hành-vi">Hành vi</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Cảnh giới: báo zombie</td>
+<td>Bật</td>
+<td>Công tắc chính của khả năng canh chừng</td>
+</tr>
+<tr>
+<td>Tự bảo vệ: canh khi bạn đang bận</td>
+<td>Bật</td>
+<td>Cho bật công tắc riêng trên từng con chó</td>
+</tr>
+<tr>
+<td>Tiếng chó thu hút zombie</td>
+<td>Bật</td>
+<td>Tiếng sủa lớn là tiếng động thật. <strong>Tiếng gầm thì không bao giờ thu hút</strong></td>
+</tr>
+<tr>
+<td>Chó có thể không nghe lời</td>
+<td>Bật</td>
+<td>Tỷ lệ 30% ở cấp 0 và giảm dần về 0% ở cấp 10</td>
+</tr>
+</tbody></table></div>
+<h3 id="kỹ-năng-và-hoạt-động">Kỹ năng và hoạt động</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Kỹ năng và huấn luyện</td>
+<td>Bật</td>
+<td>Công tắc chính của các kỹ năng</td>
+</tr>
+<tr>
+<td>Tốc độ nhận XP kỹ năng</td>
+<td><strong>0,5</strong></td>
+<td>Tốc độ huấn luyện. Tăng lên 1,0 trở lên nếu bạn thấy chậm</td>
+</tr>
+<tr>
+<td>Hỗ trợ săn mồi</td>
+<td>Bật</td>
+<td>Công tắc chính của việc săn mồi</td>
+</tr>
+<tr>
+<td>Chăm nông trại (chăn đàn)</td>
+<td>Bật</td>
+<td>Công tắc chính của chế độ trông chuồng trại</td>
+</tr>
+<tr>
+<td>Trò khéo theo Vâng lời</td>
+<td>Bật</td>
+<td>Công tắc chính của bốn trò khéo</td>
+</tr>
+</tbody></table></div>
+<h3 id="túi-yên">Túi yên</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Sức chứa cơ bản của túi yên</td>
+<td>4</td>
+<td>Mức sàn của khối lượng hàng</td>
+</tr>
+<tr>
+<td>Sức chứa cộng thêm theo sức mạnh</td>
+<td>8</td>
+<td>Một con chó rất khỏe được cộng thêm bao nhiêu</td>
+</tr>
+</tbody></table></div>
+<h3 id="chó-con">Chó con</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Phối giống và chó con</td>
+<td>Bật</td>
+<td>Công tắc chính</td>
+</tr>
+<tr>
+<td>Thời gian mang thai (ngày)</td>
+<td>4</td>
+<td>Số ngày trong game cho tới lúc sinh</td>
+</tr>
+<tr>
+<td>Thời gian chó con trưởng thành (ngày)</td>
+<td>90</td>
+<td>Số ngày để lớn thành chó trưởng thành</td>
+</tr>
+<tr>
+<td>Tỷ lệ phối giống mỗi ngày</td>
+<td>5,0</td>
+<td>Khả năng một cặp tự thụ thai. 0 là tắt</td>
+</tr>
+</tbody></table></div>
+<h3 id="giao-diện-và-nhiều-người-chơi">Giao diện và nhiều người chơi</h3>
+<div class="tw"><table><thead><tr>
+<th>Tùy chọn</th>
+<th>Mặc định</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td>Hiện tên trên đầu chó</td>
+<td>Bật</td>
+<td>Cái tên lơ lửng trên đầu nó</td>
+</tr>
+<tr>
+<td>Hiện chó trên bản đồ</td>
+<td>Bật</td>
+<td>Dấu bàn chân trên bản đồ và bản đồ nhỏ</td>
+</tr>
+<tr>
+<td>Cất chó khi chủ ngoại tuyến</td>
+<td>Bật</td>
+<td>MP: chó rời khỏi thế giới khi bạn ngắt kết nối</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-sự-cố-thường-gặp">22. Sự cố thường gặp</h2>
+<p><strong><span class="ig">Con chó hiện ra không có texture, méo mó cả người.</span></strong> Hãy bật mod trong danh sách Mods <strong>ở menu chính</strong>, rồi thoát game hẳn trước khi tải save. Đây là lỗi số một khi chơi co-op.</p>
+<p><strong><span class="ig">Tôi đã thêm mod mà save của tôi chẳng thấy gì hết.</span></strong> Project Zomboid bật mod <strong>theo từng save</strong>. Mod thêm vào sau sẽ không vào được một thế giới đã tạo từ trước, và game <strong>không báo lỗi gì cả</strong>. Hãy kiểm tra ở màn hình tải save xem mod có được đánh dấu cho thế giới đó không.</p>
+<p><strong><span class="ig">Chó của tôi không nghe lời.</span></strong> Hãy đọc dòng thông báo. Nếu là <em><span class="ig">chưa đủ tin tưởng để nghe lời bạn</span></em> thì đó là chuyện trung thành: cho ăn, cho uống nước và vuốt ve. Nếu là <em><span class="ig">bị phân tâm và phớt lờ bạn</span></em> thì là thiếu huấn luyện: <strong>cứ ra lại mệnh lệnh, lần thứ hai luôn thành công</strong>. Còn nếu nó đang hoảng loạn hoặc bị thương thì lo cho nó trước đã.</p>
+<p><strong><span class="ig">Chó của tôi không giết zombie, chỉ quật ngã thôi.</span></strong> Nếu nó là <strong>Chó cỏ</strong> thì đúng là như vậy, cố ý như vậy, và không chỉnh gì được. Hãy kiếm một giống khác, hoặc chấp nhận vai trò quật ngã của nó để bạn kết liễu.</p>
+<p><strong><span class="ig">Con chó sủa suốt ngày và kéo zombie tới.</span></strong> Có bốn nguồn có thể gây ra, và cả bốn đều kiểm soát được: <strong>cảnh giới ở mức Báo động</strong> (đổi sang <strong>Nhẹ tiếng</strong>, mức này không bao giờ sủa), trò <strong>Đánh lạc hướng</strong> (tiếng động chính là mục đích của trò này), việc <strong>săn mồi</strong> (tắt chế độ Săn mồi) và <strong>chiến đấu</strong>. Chó bị căng thẳng thì <strong>không</strong> tự sủa.</p>
+<p><strong><span class="ig">Chó của tôi biến mất rồi.</span></strong> Hãy mở cửa sổ bằng nút hình bàn chân, vào thẻ <strong><span class="ig">Đàn chó của tôi</span></strong> rồi bấm <strong>Gọi về</strong>. Nếu nó ở xa, mod sẽ hỏi xác nhận rồi đưa nó về cùng toàn bộ đồ đạc. Mỗi con có thời gian chờ 2 giờ trong game. Dấu trên bản đồ cũng cho bạn biết vị trí nhìn thấy lần cuối.</p>
+<p><strong><span class="ig">Con chó bị kẹt ở bên kia hàng rào.</span></strong> Hãy dùng <strong>Gọi về</strong> (tiếng huýt sáo). Nó sinh ra đúng để làm việc đó, đổi lại là kéo zombie tới.</p>
+<p><strong><span class="ig">Chó của tôi không mang thai.</span></strong> Hãy xem lại danh sách <a href="#15-phối-giống-và-chó-con">điều kiện phối giống</a>. Gần như lúc nào cũng là do đói, khát, hoặc độ trung thành dưới 60 ở một trong hai con. Cũng nên kiểm tra xem <strong><span class="ig">Không cho phối giống</span></strong> có đang bật hay không.</p>
+<p><strong><span class="ig">Chó con của tôi không lớn.</span></strong> Hãy kiểm tra xem <strong><span class="ig">Tạm dừng lớn lên</span></strong> có đang bật trên con đó không. Ngoài chuyện đó ra thì chỉ là thời gian: mặc định là <strong>90 ngày trong game</strong>, và đồng hồ vẫn chạy kể cả khi nó ở xa bạn. Nếu đã quá hạn mà nó vẫn còn là chó con, hãy tới gần nó: việc lớn lên chỉ diễn ra khi khu vực của chó con đang được tải.</p>
+<p><strong><span class="ig">Con chó không lên xe cùng tôi.</span></strong> Chỉ con chó đang ở chế độ <strong>Đi theo</strong> mới lên xe. Ở chế độ Đứng yên hoặc Canh gác thì nó ở lại.</p>
+<p><strong><span class="ig">Tôi để chó canh gác căn cứ mà nó chẳng làm gì cả.</span></strong> Hiện tại chế độ Canh gác <strong>chỉ hoạt động khi bạn ở gần</strong>. Muốn để một con chó tự làm việc ở xa thì cách duy nhất là <strong>Chăm đàn vật nuôi</strong>, và chế độ đó cần một chuồng nuôi được chỉ định.</p>
+<p><strong><span class="ig">Con chó học chậm quá.</span></strong> Mặc định của <strong><span class="ig">Tốc độ nhận XP kỹ năng</span></strong> là <strong>0,5</strong>, tức là một nửa tốc độ. Hãy tăng lên 1,0 hoặc cao hơn trong một thế giới mới.</p>
+<p><strong><span class="ig">Chó của tôi chết rồi.</span></strong> Không có cách nào lấy lại, và cũng không có chuyện hồi sinh. Nguyên nhân duy nhất là để đói hoặc khát tới mức cùng cực. Túi yên và số hàng bên trong nằm lại trên mặt đất, ngay chỗ nó gục xuống.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Không tìm thấy kết quả cho <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' kết quả'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Đầu trang');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

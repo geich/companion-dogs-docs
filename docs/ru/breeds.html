@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Породы: Все 8 пород, их moodle и особенности">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Породы">
+<meta property="og:description" content="Породы: Все 8 пород, их moodle и особенности">
+<meta property="og:url" content="https://companiondogs.pet/docs/ru/breeds.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Породы</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Открыть содержание" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Вернуться на главную страницу документации"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Породы</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Перейти к руководству «Возможности»</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="поиск по руководству..." aria-label="Поиск по руководству" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Язык"><optgroup label="Проверено"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Автоперевод"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru" selected>Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Переключить тему">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Автоперевод, без проверки.</b> Эта страница переведена машиной с португальского, и её никто не вычитывал. В терминах и числах возможны ошибки. Если сомневаетесь, сверьтесь с английской версией или с оригиналом на португальском. <a href="../en/breeds.html">Читать на английском</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Содержание &middot; <b>Породы</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-что-порода-меняет-на-самом-деле" data-id="1-что-порода-меняет-на-самом-деле">1. Что порода меняет на самом деле</a>
+<div class="sub">
+<a class="s3" href="#размер-и-сила-это-не-одно-и-то-же" data-id="размер-и-сила-это-не-одно-и-то-же">Размер и Сила это не одно и то же</a>
+<a class="s3" href="#одна-порода-один-облик" data-id="одна-порода-один-облик">Одна порода, один облик</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-быстрый-выбор" data-id="2-быстрый-выбор">2. Быстрый выбор</a>
+<div class="sub">
+<a class="s3" href="#каждая-порода-в-одну-строку" data-id="каждая-порода-в-одну-строку">Каждая порода в одну строку</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-пять-пород-базового-мода" data-id="3-пять-пород-базового-мода">3. Пять пород базового мода</a>
+<div class="sub">
+<a class="s3" href="#дворняжка" data-id="дворняжка">Дворняжка</a>
+<a class="s3" href="#немецкая-овчарка" data-id="немецкая-овчарка">Немецкая овчарка</a>
+<a class="s3" href="#золотистый-ретривер" data-id="золотистый-ретривер">Золотистый ретривер</a>
+<a class="s3" href="#хаски" data-id="хаски">Хаски</a>
+<a class="s3" href="#бордер-колли" data-id="бордер-колли">Бордер-колли</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-три-породы-из-аддонов" data-id="4-три-породы-из-аддонов">4. Три породы из аддонов</a>
+<div class="sub">
+<a class="s3" href="#ротвейлер" data-id="ротвейлер">Ротвейлер</a>
+<a class="s3" href="#доберман" data-id="доберман">Доберман</a>
+<a class="s3" href="#лабрадор" data-id="лабрадор">Лабрадор</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-сравнительные-таблицы" data-id="5-сравнительные-таблицы">5. Сравнительные таблицы</a>
+<div class="sub">
+<a class="s3" href="#скорость-обучения" data-id="скорость-обучения">Скорость обучения</a>
+<a class="s3" href="#бой" data-id="бой">Бой</a>
+<a class="s3" href="#хладнокровие-в-бою" data-id="хладнокровие-в-бою">Хладнокровие в бою</a>
+<a class="s3" href="#черты-диапазоны-при-рождении" data-id="черты-диапазоны-при-рождении">Черты (диапазоны при рождении)</a>
+<a class="s3" href="#вьючные-сумки" data-id="вьючные-сумки">Вьючные сумки</a>
+<a class="s3" href="#помёт" data-id="помёт">Помёт</a>
+<a class="s3" href="#где-искать-каждую-породу" data-id="где-искать-каждую-породу">Где искать каждую породу</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-moodles-полный-список" data-id="6-moodles-полный-список">6. Moodles: полный список</a>
+<div class="sub">
+<a class="s3" href="#правило-общее-для-всех-породных-moodles" data-id="правило-общее-для-всех-породных-moodles">Правило, общее для всех породных moodles</a>
+<a class="s3" href="#породные-moodles" data-id="породные-moodles">Породные moodles</a>
+<a class="s3" href="#moodles-которые-даёт-любая-порода" data-id="moodles-которые-даёт-любая-порода">Moodles, которые даёт любая порода</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-черты-гены" data-id="7-черты-гены">7. Черты (гены)</a>
+<div class="sub">
+<a class="s3" href="#как-читать-метки" data-id="как-читать-метки">Как читать метки</a>
+<a class="s3" href="#насколько-это-важно-на-самом-деле" data-id="насколько-это-важно-на-самом-деле">Насколько это важно на самом деле</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-метисы-скрещивание-разных-пород" data-id="8-метисы-скрещивание-разных-пород">8. Метисы: скрещивание разных пород</a>
+<div class="sub">
+<a class="s3" href="#что-происходит-со-щенком" data-id="что-происходит-со-щенком">Что происходит со щенком</a>
+<a class="s3" href="#метка-метис" data-id="метка-метис">Метка «Метис»</a>
+<a class="s3" href="#стоит-ли-скрещивать-разные-породы" data-id="стоит-ли-скрещивать-разные-породы">Стоит ли скрещивать разные породы?</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-установка-аддонов" data-id="9-установка-аддонов">9. Установка аддонов</a>
+</div>
+<div class="grp">
+<a class="s2" href="#10-частые-вопросы-о-породах" data-id="10-частые-вопросы-о-породах">10. Частые вопросы о породах</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-справочник-по-породам">Companion Dogs: справочник по породам</h1>
+<p>Обзор всех пород: что каждая умеет лучше всего, какие moodle она даёт, какие у неё черты и как выбрать подходящую под вашу игру.</p>
+<p>Про то, <strong>как устроен сам мод</strong> (приручение, команды, еда, вьючные сумки, трюки, охота), читайте во втором справочнике: <a href="features.html" class="xlink">Возможности</a>.</p>
+<blockquote class="quote"><strong>Все числа в этом справочнике даны для настроек по умолчанию.</strong> Если на сервере выключить <strong>«Навыки и тренировка»</strong>, породы перестают <strong>развиваться</strong>: навыки застревают на нуле, кривая урона по уровням становится общей, а все четыре трюка открываются разом (мод считает, что у любой собаки Послушание 10). То, что порода даёт <strong>от рождения</strong>, продолжает работать: базовая сила укуса, сбивание с ног, выдержка в бою, свой moodle, вьючные сумки и помёт. А прячет трюки отдельная опция <strong>«Трюки послушания»</strong>.</blockquote>
+<h2 id="1-что-порода-меняет-на-самом-деле">1. Что порода меняет на самом деле</h2>
+<p>Порода влияет на <strong>семь вещей</strong>, и больше ни на что:</p>
+<div class="tw"><table><thead><tr>
+<th>Что меняется</th>
+<th>Пояснение</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Скорость обучения</strong></td>
+<td>Каждая порода осваивает все 5 навыков с разной скоростью. Именно это больше всего определяет породу</td>
+</tr>
+<tr>
+<td><strong>Сила укуса</strong></td>
+<td>Сколько урона за укус и какая его часть зарабатывается тренировкой</td>
+</tr>
+<tr>
+<td><strong>Выдержка в бою</strong></td>
+<td>Сколько стресса собака набирает в драке и в какой момент впадает в панику и останавливается</td>
+</tr>
+<tr>
+<td><strong>Черты (гены)</strong></td>
+<td>Диапазон Силы, Агрессивности и Устойчивости, с которым собака может родиться</td>
+</tr>
+<tr>
+<td><strong>Свой moodle</strong></td>
+<td>Бонус для <strong>вас</strong>, пока собака рядом, сыта и предана</td>
+</tr>
+<tr>
+<td><strong>Помёт</strong></td>
+<td>Сколько щенков рождается за раз</td>
+</tr>
+<tr>
+<td><strong>Где она появляется на карте</strong></td>
+<td>У каждой породы свои места</td>
+</tr>
+</tbody></table></div>
+<p>А вот что от породы <strong>НЕ</strong> зависит, хотя многие думают иначе:</p>
+<ul>
+<li><strong>Скорость бега.</strong> Более быстрых пород не бывает. Все бегают одинаково.</li>
+<li><strong>Радиус сторожа, чутья и охоты.</strong> Зависит только от уровня навыка. Порода меняет скорость, с которой собака дорастает до этого уровня, а не потолок.</li>
+<li><strong>Трюки.</strong> Все четыре открываются по уровню Послушания, одинаково для всех.</li>
+<li><strong>Голод и жажда.</strong> Скорость одна и та же у всех пород (в том числе у Хаски, смотрите его карточку).</li>
+<li><strong>Вместимость вьючных сумок</strong>, кроме Хаски: он единственный с породным бонусом.</li>
+<li><strong>Размер тела это не Сила.</strong> Это две разные вещи, и их легко перепутать, потому что они ходят парой. Об этом ниже.</li>
+</ul>
+<h3 id="размер-и-сила-это-не-одно-и-то-же">Размер и Сила это не одно и то же</h3>
+<p><strong>Сила</strong> это ген, и она действительно решает: повышает урон укуса вплоть до <strong>30%</strong> и задаёт вместимость вьючных сумок.</p>
+<p><strong>Размер тела</strong> это совсем другое. Он складывается из собственного гена игры, который мод не разыгрывает и не трогает, и из естественного роста щенка до взрослых размеров. Две собаки одной породы могут быть разного размера при абсолютно одинаковой Силе, и собака покрупнее другой <strong>той же породы</strong> от этого бьёт не сильнее.</p>
+<p>Путаницу создаёт то, что <strong>порода</strong> задаёт обе вещи сразу, но каждую по своей линии: Немецкая овчарка крупная <strong>и</strong> рождается сильной, Дворняжка мелкая <strong>и</strong> рождается слабой. Поэтому при сравнении породы с породой более крупная собака и правда обычно бьёт сильнее. Только причина тут порода, а не размер: по габаритам нельзя сказать ничего о Силе конкретной собаки. Для этого есть полоска Силы на вкладке генетики в окне собаки.</p>
+<h3 id="одна-порода-один-облик">Одна порода, один облик</h3>
+<p><strong>Внутри породы нет вариантов окраса.</strong> У каждой породы ровно одна текстура, и самец с самкой используют одну и ту же. Хаски всегда выглядит одним и тем же Хаски.</p>
+<p>Щенок любой породы рождается одинаково маленьким и дорастает до взрослого размера своей породы.</p>
+<h2 id="2-быстрый-выбор">2. Быстрый выбор</h2>
+<div class="tw"><table><thead><tr>
+<th>Если вам нужно...</th>
+<th>Берите</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Пережить первые дни с тем, что подвернулось</strong></td>
+<td><strong>Дворняжка</strong></td>
+</tr>
+<tr>
+<td><strong>Собаку, которая держит строй и сама убивает зомби</strong></td>
+<td><strong>Немецкая овчарка</strong> или <strong>Ротвейлер</strong></td>
+</tr>
+<tr>
+<td><strong>Добывать мясо</strong></td>
+<td><strong>Золотистый ретривер</strong> или <strong>Лабрадор</strong></td>
+</tr>
+<tr>
+<td><strong>Таскать лут</strong></td>
+<td><strong>Хаски</strong>, без вариантов</td>
+</tr>
+<tr>
+<td><strong>Приглядывать за фермой, пока вы в разъездах</strong></td>
+<td><strong>Бордер-колли</strong></td>
+</tr>
+<tr>
+<td><strong>Стрелять точнее</strong></td>
+<td><strong>Доберман</strong></td>
+</tr>
+<tr>
+<td><strong>Дольше махать в ближнем бою</strong></td>
+<td><strong>Ротвейлер</strong></td>
+</tr>
+<tr>
+<td><strong>Меньше скуки и печали</strong></td>
+<td><strong>Дворняжка</strong></td>
+</tr>
+<tr>
+<td><strong>Меньше паники</strong></td>
+<td><strong>Немецкая овчарка</strong></td>
+</tr>
+<tr>
+<td><strong>Больше находить при поиске</strong></td>
+<td><strong>Золотистый ретривер</strong></td>
+</tr>
+<tr>
+<td><strong>Не замёрзнуть насмерть</strong></td>
+<td><strong>Хаски</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="каждая-порода-в-одну-строку">Каждая порода в одну строку</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>В одну строку</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Дворняжка</strong></td>
+<td>Скромная дворняга. Слабая, но сбивает зомби с ног и по-настоящему составляет компанию</td>
+</tr>
+<tr>
+<td><strong>Немецкая овчарка</strong></td>
+<td>Солдат. Бьёт тяжело и почти не паникует</td>
+</tr>
+<tr>
+<td><strong>Золотистый ретривер</strong></td>
+<td>Охотник с тонким нюхом, который заодно улучшает ваш поиск</td>
+</tr>
+<tr>
+<td><strong>Хаски</strong></td>
+<td>Вьючный тяжеловоз, который греет вас зимой. Упрямый</td>
+</tr>
+<tr>
+<td><strong>Бордер-колли</strong></td>
+<td>Работник фермы</td>
+</tr>
+<tr>
+<td><strong>Ротвейлер</strong></td>
+<td>Воин, который бережёт вашу выносливость в ближнем бою</td>
+</tr>
+<tr>
+<td><strong>Доберман</strong></td>
+<td>Стрелковая собака: меньше отдачи, быстрее перезарядка, спокойные нервы</td>
+</tr>
+<tr>
+<td><strong>Лабрадор</strong></td>
+<td>Апортировщик: худший боец в моде и лучший доставщик добычи</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-пять-пород-базового-мода">3. Пять пород базового мода</h2>
+<p>Они идут вместе с основным модом, ставить что-то ещё не нужно.</p>
+<hr>
+<h3 id="дворняжка">Дворняжка</h3>
+<p><strong>Бразильская дворняга.</strong> Это первая собака, которую вы встретите, и, скорее всего, ваш первый компаньон.</p>
+<blockquote class="quote"><em>«Дворняжка это базовая, обычная собака, которую можно встретить по всему городу. У неё нет особых навыков, и она слаба от природы: не может убить зомби самостоятельно, только сбить с ног, чтобы выиграть вам время.»</em></blockquote>
+<p><strong>Где найти:</strong> жилые дома в городах и посёлках. <strong>20% на дом</strong>, самая частая порода в игре.</p>
+<p><strong>Учится:</strong> всему с обычной скоростью. Ни в чём не выделяется и ни в чём не проваливается.</p>
+<p><strong>В бою:</strong> это <strong>единственная собака, которая не может добить зомби</strong>. Укус доводит зомби до почти мёртвого состояния, и на этом всё. Так задумано, и <strong>никакая настройка песочницы этого не меняет</strong>. Зато она <strong>сбивает с ног</strong>, а сбитый зомби это ровно то, что даёт вам время убежать или ударить.</p>
+<p>Ещё это <strong>самая нервная собака мода</strong>: в бою она набирает стресс в пять раз быстрее немецкой овчарки и первой впадает в панику.</p>
+<p><strong>Черты:</strong> самые слабые из всех. В окне собаки будет стоять <strong>Низкая</strong> в Силе, Агрессивности и Устойчивости, <strong>всегда</strong>, у любой дворняжки, которую вы приручите. Искать «хорошую» дворняжку бесполезно.</p>
+<p><strong>Помёт:</strong> <strong>от 2 до 4 щенков</strong>, самый большой в моде. Если ваша цель собрать питомник, эта порода даёт больше всех.</p>
+<p><strong>Вьючные сумки:</strong> от 4 до 5 груза. Самые маленькие.</p>
+<p><strong>Moodle: «Хорошая компания»</strong></p>
+<blockquote class="quote"><em>«Дворняжка это чудесная ласковая и харизматичная собака. Её преданное общество поднимает настроение, поэтому печаль и скука проходят быстрее, когда она рядом.»</em></blockquote>
+<p>Постоянно снижает <strong>Несчастье и Скуку</strong>, пока собака рядом. В повседневной игре это один из самых полезных moodle в моде, потому что скука и грусть в Zomboid это постоянная проблема, а лечить их другими способами дорого.</p>
+<p><strong>Кому подойдёт:</strong> всем в начале игры. И дальше она остаётся хорошей, потому что её moodle решает задачу, которую не решает ни одна другая порода. Просто не рассчитывайте, что она кого-то убьёт.</p>
+<hr>
+<h3 id="немецкая-овчарка">Немецкая овчарка</h3>
+<p><strong>Пёс войны.</strong> Боевая порода базового мода.</p>
+<blockquote class="quote"><em>«Мощная, умная служебная собака. Рождается гораздо сильнее и выносливее дворняжки, быстро учится бою и послушанию, почти не паникует в бою, выдерживает строй против толпы без паники и может самостоятельно повалить зомби.»</em></blockquote>
+<p><strong>Где найти:</strong> полицейский участок, тюрьма, изолятор, военная база, казарма, оружейный магазин, склад боеприпасов. <strong>20% на здание.</strong> В жилых домах не появляется. За ней придётся идти.</p>
+<p><strong>Учится:</strong> <strong>Бою вдвое быстрее</strong>, а Послушанию на 50% быстрее. Охоте тоже немного быстрее. Это порода, которая раньше всех становится сильной.</p>
+<p><strong>В бою:</strong> самый сильный укус в базовом моде, и она <strong>убивает зомби сама</strong>. Но главный её козырь даже не урон, а <strong>нервы</strong>. Стресс она набирает <strong>в пять раз медленнее</strong> дворняжки, а порог паники у неё самый высокий в моде. На практике: <strong>она продолжает драться там, где любая другая порода уже встала бы</strong>.</p>
+<p><strong>Черты:</strong> средний диапазон во всём, заметно выше дворняжки. У немецкой овчарки будет стоять <strong>Средняя</strong> во всех трёх чертах.</p>
+<p><strong>Помёт:</strong> от 1 до 2.</p>
+<p><strong>Вьючные сумки:</strong> от 6 до 8.</p>
+<p><strong>Moodle: «Мужество»</strong></p>
+<blockquote class="quote"><em>«Смелая немецкая овчарка рядом успокаивает нервы: её бесстрашное присутствие облегчает вашу панику, пока она рядом.»</em></blockquote>
+<p>Постоянно сбивает <strong>Панику</strong>. По цифрам это самый сильный moodle базового мода, и он решает серьёзную проблему: паника портит прицел и вашу эффективность в ближнем бою. С овчаркой рядом рука у вас твёрже.</p>
+<p><strong>Кому подойдёт:</strong> тем, кто дерётся. Если вы играете врукопашную и прямо в городе, это ваша порода.</p>
+<blockquote class="quote"><strong>Примечание:</strong> в описании в игре сказано «треть стресса», но настоящее число это <strong>пятая часть</strong>. Текст слишком скромный, собака даже лучше, чем обещает.</blockquote>
+<hr>
+<h3 id="золотистый-ретривер">Золотистый ретривер</h3>
+<p><strong>Охотничья собака с тонким нюхом.</strong> Порода, которая улучшает ваш поиск ресурсов.</p>
+<blockquote class="quote"><em>«Дружелюбная, с острым нюхом охотничья собака и прирождённый охотник: учится Охоте вдвое быстрее и может самостоятельно повалить зомби (хотя паникует легче, чем немецкая овчарка). Её нюх помогает вам искать ресурсы и отслеживать дичь на большем расстоянии.»</em></blockquote>
+<p><strong>Где найти:</strong> жилые дома, отдельным броском от дворняжки. <strong>5% на дом.</strong> В четыре раза реже дворняги, но в тех же домах: в одном доме могут оказаться обе.</p>
+<p><strong>Учится:</strong> <strong>Охоте вдвое быстрее</strong>, а Чутью на 50% быстрее. Эта порода раньше всех добирается до 6 уровня Охоты, а с него собака начинает брать оленя.</p>
+<p><strong>В бою:</strong> средний урон, <strong>убивает сам</strong>. Стресс копит быстрее овчарки, но медленнее дворняжки.</p>
+<p><strong>Черты:</strong> чуть выше дворняжки, ниже овчарки. Это не драчун.</p>
+<p><strong>Помёт:</strong> от 1 до 2.</p>
+<p><strong>Вьючные сумки:</strong> от 6 до 7.</p>
+<p><strong>Moodle: «Острый нюх»</strong></p>
+<blockquote class="quote"><em>«Ваш золотистый ретривер работает с вами на земле. Пока он рядом, сыт и предан, вы замечаете ресурсы на большем расстоянии и быстрее учитесь Поиску, Ловушкам и Прицеливанию.»</em></blockquote>
+<p>Три эффекта:</p>
+<ul>
+<li><strong>+20% опыта</strong> к <strong>Поиску, Ловушкам и Прицеливанию</strong>.</li>
+<li><strong>+4 тайла</strong> к радиусу обзора в режиме поиска, <strong>сверх</strong> того бонуса, который даёт любая собака.</li>
+</ul>
+<p>Это тот moodle, который сильнее всего меняет темп персонажа, живущего за городом. Поиск и Ловушки качаются медленно, а Прицеливание стоит дорого.</p>
+<p><strong>Кому подойдёт:</strong> тем, кто живёт охотой, поиском и ловушками. Хорошо ложится на сельскую базу.</p>
+<blockquote class="quote"><strong>Примечание:</strong> в описании в игре сказано, что Бою он учится «немного быстрее, чем дворняжка». Это неправда: Бою он учится с той же скоростью, что и дворняга.</blockquote>
+<hr>
+<h3 id="хаски">Хаски</h3>
+<p><strong>Вьючный мул.</strong> Самая сильная собака мода и единственная, которая греет.</p>
+<blockquote class="quote"><em>«Выносливая северная ездовая собака: безусловно, самая сильная порода, созданная для перевозки грузов (её вьючные сумки вмещают больше всего) и для выживания на холоде. Упряма (медленнее учится Послушанию), дружелюбна (плохой сторож) и много ест.»</em></blockquote>
+<p><strong>Где найти:</strong> два источника.</p>
+<ul>
+<li><strong>Жилые дома, только зимой.</strong> 2,5% на дом. Вне сезона это самая редкая порода в игре.</li>
+<li><strong>Зоомагазин и ветклиника.</strong> 10% на здание, круглый год. Это надёжный способ его раздобыть.</li>
+</ul>
+<p><strong>Учится:</strong> <strong>Чутью вдвое быстрее</strong> (лучший сторож в моде), Охоте на 50% быстрее, а Бою чуть выше среднего. <strong>Зато Послушанию учится на 20% медленнее</strong>, и это <strong>единственный породный штраф во всём моде</strong>. Так и задумано: он упрямый.</p>
+<p>Что медленное Послушание даёт на практике: трюки открываются дольше, он дольше не слушается, и порог неповиновения у него опускается медленнее. Хаски требует больше терпения.</p>
+<p><strong>В бою:</strong> урон выше среднего, <strong>убивает сам</strong>, но воин из него никакой. Стресс копит заметно быстрее овчарки.</p>
+<p><strong>Черты:</strong> <strong>самый широкий диапазон Силы в моде, с большим отрывом</strong>. У хаски в Силе будет стоять <strong>Средняя или Высокая</strong> там, где у остальных пород Средняя или Низкая.</p>
+<p><strong>Помёт:</strong> от 1 до 2.</p>
+<p><strong>Вьючные сумки: от 13 до 16 груза.</strong> Это единственная порода с бонусом к сумкам (+50%), и разница огромная: он тащит <strong>в два или три раза больше</strong>, чем любая другая собака.</p>
+<p><strong>Moodle: «Согрет»</strong></p>
+<blockquote class="quote"><em>«Ваш хаски работает наравне с вами. Пока он рядом, сыт и предан, он берёт на себя часть вашей ноши (вы можете нести больше) и помогает вам сохранять дыхание, так что вы устаёте медленнее; а когда наступает холод, его густая шерсть согревает вас.»</em></blockquote>
+<p>Три эффекта:</p>
+<ul>
+<li><strong>+2 к вашему максимальному переносимому весу</strong> (и это сверх того, что лежит в его сумках).</li>
+<li><strong>Дыхание восстанавливается постоянно</strong>, вы устаёте медленнее.</li>
+<li><strong>Передвижной источник тепла</strong>, который <strong>включается сам, когда вы начинаете мёрзнуть</strong>, и выключается, когда вы согрелись. Зимой вы ходите с костром под боком.</li>
+</ul>
+<p><strong>Кому подойдёт:</strong> тем, кто уходит в долгие рейды за лутом и возвращается гружёным, и тем, кто играет в суровую зиму. Это собака для логистики.</p>
+<blockquote class="quote"><strong>Примечание:</strong> в описании сказано «много ест (быстро голодает)». <strong>К уже прирученной собаке это не относится.</strong> Скорость голода у компаньонов одинаковая для всех пород. Повышенный аппетит есть только пока он бродячий.</blockquote>
+<hr>
+<h3 id="бордер-колли">Бордер-колли</h3>
+<p><strong>Фермерская собака.</strong> Пастушья порода.</p>
+<blockquote class="quote"><em>«Умная и неутомимая пастушья собака, классический спутник фермера, ценимая прежде всего за сообразительность.»</em></blockquote>
+<p><strong>Где найти:</strong> амбар, конюшня, силос, курятник, загон, в <strong>сельской местности</strong>. <strong>15% на здание</strong>, причём этот бросок <strong>не смотрит на городской фильтр</strong>, так что ферма посреди глуши тоже считается.</p>
+<p><strong>Учится:</strong> <strong>Пастушеству вдвое быстрее</strong>, Послушанию на 50% быстрее, а Чутью чуть выше среднего.</p>
+<p><strong>В бою:</strong> средний урон, как у ретривера. <strong>Убивает сам.</strong> Стресс копит медленнее дворняжки, но заметно быстрее овчарки. Это не драчун, а рабочая собака.</p>
+<p><strong>Черты:</strong> средние диапазоны, чуть выше ретривера.</p>
+<p><strong>Помёт:</strong> <strong>от 1 до 3</strong>, второй по величине в базовом моде.</p>
+<p><strong>Вьючные сумки:</strong> от 6 до 8.</p>
+<p><strong>Настоящая специальность:</strong> аура спокойствия у него <strong>на 50% эффективнее за уровень</strong>, чем у любой другой породы. Это работает в обоих местах, где аура вообще есть:</p>
+<ul>
+<li>в режиме <strong>«Ухаживать за скотом здесь»</strong>, когда он дежурит в загоне;</li>
+<li>в его moodle, который успокаивает скот вокруг <strong>вас</strong>.</li>
+</ul>
+<p>Животное в стрессе не даёт ни молока, ни шерсти, теряет приплод и разбегается, так что обученный бордер-колли это буквально разница между фермой, которая производит, и фермой, которая нет.</p>
+<p><strong>Moodle: «Пастуший инстинкт»</strong></p>
+<blockquote class="quote"><em>«Ваш бордер-колли работает со стадом вместе с вами. Пока он рядом, сыт и предан, животные вокруг вас успокаиваются, а вы быстрее осваиваете Уход за животными и Земледелие.»</em></blockquote>
+<p>Два эффекта:</p>
+<ul>
+<li><strong>+20% опыта</strong> к <strong>Уходу за животными и Земледелию</strong>.</li>
+<li><strong>Успокаивает скот в радиусе вокруг вас</strong>, автоматически, пока вы работаете.</li>
+</ul>
+<p><strong>Кому подойдёт:</strong> тем, кто строит ферму. Если у вас есть корова, овца или курица, эта порода бережёт производство.</p>
+<blockquote class="quote"><strong>Примечание:</strong> в описании в игре до сих пор написано, что это «сбалансированная универсальная собака без выраженной специализации». Это устарело: удвоенное Пастушество и усиленная аура уже есть.</blockquote>
+<h2 id="4-три-породы-из-аддонов">4. Три породы из аддонов</h2>
+<p>Они выходят <strong>отдельными модами в Steam</strong>, которые требуют базовый Companion Dogs. Ссылка на каждую есть в её карточке ниже, а все вместе они собраны в разделе <a href="#9-установка-аддонов">Установка аддонов</a>.</p>
+<hr>
+<h3 id="ротвейлер">Ротвейлер</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, отдельный аддон)</em></p>
+<p><strong>Боец, который экономит вашу выносливость.</strong></p>
+<blockquote class="quote quote-game"><em>"Мощная сторожевая собака, выведенная для охраны, настоящий воин наравне с немецкой овчаркой: учится бою вдвое быстрее, бьёт тяжело на высоких уровнях, валит зомби с ног и продолжает драться там, где большинство пород паникует."</em></blockquote>
+<p><strong>Где искать:</strong></p>
+<ul>
+<li><strong>Промышленное здание</strong> (склад, ангар, завод, свалка, мастерская, погрузочный док): <strong>10% на здание</strong>.</li>
+<li><strong>Жилой дом:</strong> 5% на дом, редкий шанс.</li>
+</ul>
+<p><strong>Учится:</strong> <strong>Бою вдвое быстрее</strong>, а Чутью на 50% быстрее (единственная боевая собака с хорошим нюхом). Бонуса к Послушанию нет.</p>
+<p><strong>В бою:</strong> по укусу вровень с немецкой овчаркой и <strong>вровень по крепости нервов</strong>: стресс копится у него в пять раз медленнее, чем у дворняжки, а порог паники стоит на максимуме. Валит с ног и добивает.</p>
+<p><strong>Черты:</strong> такие же, как у немецкой овчарки.</p>
+<p><strong>Помёт:</strong> от 1 до 2. <strong>Вьючные сумки:</strong> от 6 до 8.</p>
+<p><strong>Moodle: <span class="ig">Передовая</span></strong></p>
+<blockquote class="quote quote-game"><em>"Ваш ротвейлер сражается рядом с вами. Пока он в бою рядом, сытый и преданный, ваши удары в ближнем бою тратят меньше выносливости."</em></blockquote>
+<p><strong>Возвращает 35% выносливости, потраченной на каждый удар в ближнем бою.</strong></p>
+<p>Это самый условный moodle в моде: иконка появляется всегда, когда ротвейлер рядом, но <strong>эффект работает только пока он на самом деле дерётся</strong>. И работает он <strong>только в ближнем бою</strong>, огнестрелу не достаётся ничего.</p>
+<p>На практике это очень много. Именно выносливость ограничивает, сколько зомби вы успеете забить подряд. С ротвейлером, который дерётся рядом, вы бьёте почти на треть дольше, прежде чем задохнётесь.</p>
+<p><strong>Кому подойдёт:</strong> тем, кто вычищает толпу в ближнем бою. Это самая удачная порода мода для агрессивного стиля игры.</p>
+<hr>
+<h3 id="доберман">Доберман</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, отдельный аддон)</em></p>
+<p><strong>Собака стрелка.</strong></p>
+<blockquote class="quote quote-game"><em>"Худощавая и внимательная сторожевая собака и самая сообразительная из всех пород. В бою это сплошное лезвие без брони: слаба без подготовки, но на полном уровне боя кусает сильно, хотя держит меньше ударов, чем ротвейлер."</em></blockquote>
+<p><strong>Где искать:</strong></p>
+<ul>
+<li><strong>Полицейский участок:</strong> 18% на здание.</li>
+<li><strong>Военное здание</strong> (склад боеприпасов, казарма, бункер, караулка, блокпост): 22% на здание.</li>
+</ul>
+<blockquote class="quote"><strong>Важно на практике:</strong> военные здания на базовой карте игры встречаются <strong>крайне редко</strong> (на весь Кентукки таких помещений наберётся штук пять). Так что на деле ищите в <strong>полицейском участке</strong>.</blockquote>
+<p><strong>Учится:</strong> <strong>Бою вдвое быстрее</strong> и <strong>Послушанию на 50% быстрее</strong>, ровно тот же набор, что у немецкой овчарки. Разделяет их не скорость обучения, а <strong>кривая урона</strong>.</p>
+<p><strong>В бою:</strong> у него <strong>самая крутая кривая в моде</strong>. Без обучения он бьёт заметно слабее ротвейлера, но на Бое 10 он <strong>выходит на самый верх</strong>. Это вложение: только что прирученный доберман слаб, а обученный доберман уже в первых рядах.</p>
+<p>Нервы крепкие (порог паники на максимуме), но <strong>держит меньше ударов</strong>: Устойчивость у него самая низкая среди бойцовых собак.</p>
+<p><strong>Черты:</strong> <strong>самый широкий диапазон Агрессивности в моде</strong>, а значит, боевой опыт он получает ещё быстрее. Сила и Устойчивость немного ниже, чем у ротвейлера.</p>
+<p><strong>Помёт:</strong> от 1 до 2. <strong>Вьючные сумки:</strong> от 6 до 8.</p>
+<p><strong>Moodle: <span class="ig">Твёрдая рука</span></strong></p>
+<blockquote class="quote quote-game"><em>"Ваш доберман прикрывает вас. Пока он рядом, сытый и преданный, ваш стресс уходит, прицел быстрее восстанавливается после каждого выстрела, а перезарядка идёт быстрее."</em></blockquote>
+<p>Три эффекта, и все они для <strong>огнестрельного оружия</strong>:</p>
+<ul>
+<li><strong>Ваш стресс постоянно снижается</strong> (высокий стресс портит прицел в Zomboid).</li>
+<li><strong>Отдача гасится на 45% быстрее</strong> после каждого выстрела. Вы раньше возвращаетесь к прицелу.</li>
+<li><strong>Перезарядка на 15% быстрее.</strong></li>
+</ul>
+<p><strong>Кому подойдёт:</strong> тем, кто играет от огнестрела. Все три эффекта бьют в одну и ту же задачу: <span class="ig">сколько времени я теряю между выстрелом и следующим выстрелом</span>.</p>
+<blockquote class="quote"><strong>Примечание:</strong> в игре сказано, что он учит послушание <span class="ig">быстрее даже немецкой овчарки</span> и что на полном уровне боя <span class="ig">кусает сильнее любой другой собаки в стае</span>. В обоих случаях это <strong>ничья</strong>, а не преимущество: по Послушанию он равен овчарке, а по урону на 10-м уровне равен ротвейлеру.</blockquote>
+<hr>
+<h3 id="лабрадор">Лабрадор</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, отдельный аддон)</em></p>
+<p><strong>Апортировщик.</strong> Лучшая охотничья собака и, намеренно, худший боец мода.</p>
+<blockquote class="quote quote-game"><em>"Охотничья собака, созданная приносить добычу: охоту она осваивает вдвое быстрее, послушание идёт следом. Взамен это намеренно худший боец в семье: самый слабый укус, никаких сбиваний с ног, а драка выбивает её из колеи. Настоящий дар лабрадора в пасти."</em></blockquote>
+<p><strong>Где искать:</strong></p>
+<ul>
+<li><strong>Жилой дом:</strong> <strong>10% на дом.</strong> Это самый лёгкий в поиске аддон, шанс вдвое выше, чем у золотистого ретривера.</li>
+<li><strong>Глушь:</strong> охотничья хижина, лагерь, лодочный сарай, рыбацкий домик, пост лесничего. <strong>20% на здание.</strong></li>
+</ul>
+<p><strong>Учится:</strong> <strong>Охоте вдвое быстрее</strong> и <strong>Послушанию на 50% быстрее</strong>. Это набор охотника с дисциплиной.</p>
+<p><strong>В бою:</strong> <strong>худший в моде, и это задумано так</strong>.</p>
+<ul>
+<li><strong>Самый слабый укус</strong> из всех.</li>
+<li><strong>Не валит зомби с ног.</strong> Единственная порода без этой способности.</li>
+<li>Копит стресс <strong>в три с половиной раза быстрее</strong>, чем ротвейлер, и впадает в панику на том же низком пороге, что и дворняжка.</li>
+</ul>
+<p>Он <strong>добьёт</strong> зомби, если вы будете настаивать, но не отправляйте эту собаку драться.</p>
+<p><strong>Черты:</strong> <strong>самый узкий диапазон Агрессивности в моде</strong>. Это самый мирный пёс из всех, что тут есть, и учится драться он поэтому дольше.</p>
+<p><strong>Помёт:</strong> <strong>от 1 до 3</strong>, единственный аддон, который выходит за 2. <strong>Вьючные сумки:</strong> от 6 до 8.</p>
+<p><strong>Moodle: <span class="ig">Мягкая хватка</span></strong></p>
+<blockquote class="quote quote-game"><em>"Ваш лабрадор приносит добычу с первой же охоты, часто с прибавкой. Пока он рядом, сыт и предан, разделка и короткие клинки осваиваются быстрее."</em></blockquote>
+<p>Четыре эффекта, и это самый насыщенный moodle мода:</p>
+<ul>
+<li><strong>Он приносит добычу уже с Охоты 3</strong>, то есть <strong>с того момента, как вообще способен охотиться</strong>. Все остальные породы начинают приносить только на Охоте 6, а это разрыв в половину игры.</li>
+<li><strong>Он втрое дольше не сдаётся</strong> при доставке, прежде чем бросить тушу по дороге.</li>
+<li><strong>60% доставок приходят с дополнительным предметом</strong>, брошенным на землю рядом с вами: кость мелкого зверя, куриное перо, ветки или дикое яйцо. <em><span class="ig">Ваш лабрадор принёс кое-что ещё: ...</span></em></li>
+<li><strong>+20% опыта</strong> к <strong>Разделке и Коротким клинкам</strong>, ровно к тем навыкам, которыми обрабатывают то, что он приносит.</li>
+</ul>
+<p><strong>Кому подойдёт:</strong> для жизни на охоте. Золотистый ретривер учится охотиться так же быстро, но <strong>лабрадор приносит добычу с самого начала</strong>, и разница видна уже в первые недели игры.</p>
+<h2 id="5-сравнительные-таблицы">5. Сравнительные таблицы</h2>
+<h3 id="скорость-обучения">Скорость обучения</h3>
+<p>Чем больше число, тем быстрее. <strong>1,0 это обычная скорость.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Чутьё</th>
+<th>Бой</th>
+<th>Послушание</th>
+<th>Охота</th>
+<th>Пастушество</th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Немецкая овчарка</td>
+<td>1,0</td>
+<td><strong>2,0</strong></td>
+<td>1,5</td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>1,5</td>
+<td>1,0</td>
+<td>1,2</td>
+<td><strong>2,0</strong></td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td><strong>2,0</strong></td>
+<td>1,2</td>
+<td><strong>0,8</strong></td>
+<td>1,5</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>1,2</td>
+<td>1,0</td>
+<td>1,5</td>
+<td>1,0</td>
+<td><strong>2,0</strong></td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>1,5</td>
+<td><strong>2,0</strong></td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>1,0</td>
+<td><strong>2,0</strong></td>
+<td>1,5</td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>1,2</td>
+<td>1,0</td>
+<td>1,5</td>
+<td><strong>2,0</strong></td>
+<td>1,0</td>
+</tr>
+</tbody></table></div>
+<p>Показатель <strong>0,8</strong> у хаски это единственный породный штраф во всём моде.</p>
+<h3 id="бой">Бой</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Укус без тренировки</th>
+<th>Укус на 10 уровне</th>
+<th>Убивает сама?</th>
+<th>Сбивает с ног?</th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td>слабый</td>
+<td><strong>1x</strong> (эталон)</td>
+<td><strong>Нет</strong></td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>слабый</td>
+<td>1,3x</td>
+<td>Да</td>
+<td><strong>Нет</strong></td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>слабый</td>
+<td>1,5x</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>слабый</td>
+<td>1,5x</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td>средний</td>
+<td>1,9x</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>средний</td>
+<td><strong>2,6x</strong></td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Немецкая овчарка</td>
+<td><strong>сильный</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td><strong>сильный</strong></td>
+<td><strong>2,6x</strong></td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+</tbody></table></div>
+<p>Доберман добирается до самой вершины, но стартует куда ниже: в начале его укус составляет примерно <strong>две трети</strong> от укуса ротвейлера, и сравниваются они только на 10 уровне.</p>
+<h3 id="хладнокровие-в-бою">Хладнокровие в бою</h3>
+<p>Чем <strong>меньше</strong> число, тем спокойнее собака в драке.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Набор стресса в бою</th>
+<th>Порог паники</th>
+</tr></thead><tbody>
+<tr>
+<td>Немецкая овчарка</td>
+<td><strong>0,20</strong> (самая спокойная)</td>
+<td><strong>0,90</strong> (самый высокий)</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td><strong>0,20</strong></td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>0,25</td>
+<td><strong>0,90</strong></td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td>0,60</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>0,70</td>
+<td>0,80</td>
+</tr>
+<tr>
+<td>Дворняжка</td>
+<td><strong>1,00</strong> (самая нервная)</td>
+<td><strong>0,80</strong></td>
+</tr>
+</tbody></table></div>
+<p>Собака в панике <strong>перестаёт драться, сторожить и выполнять трюки</strong>. Поэтому эта таблица важна не меньше урона: толку от сильного укуса мало, если собака встаёт колом раньше.</p>
+<h3 id="черты-диапазоны-при-рождении">Черты (диапазоны при рождении)</h3>
+<p>Чем выше диапазон, тем лучше может родиться собака. Значение ниже 0,34 показывается в окне как <strong>Низкая</strong>, выше 0,66 как <strong>Высокая</strong>, а всё, что между, как <strong>Средняя</strong>.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Сила</th>
+<th>Агрессивность</th>
+<th>Устойчивость</th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td>от 0,00 до 0,15</td>
+<td>от 0,00 до 0,15</td>
+<td>от 0,00 до 0,15</td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>от 0,20 до 0,40</td>
+<td>от 0,10 до 0,30</td>
+<td>от 0,20 до 0,40</td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>от 0,20 до 0,45</td>
+<td>от 0,15 до 0,40</td>
+<td>от 0,25 до 0,50</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>от 0,25 до 0,45</td>
+<td><strong>от 0,10 до 0,25</strong></td>
+<td>от 0,25 до 0,45</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>от 0,25 до 0,45</td>
+<td><strong>от 0,35 до 0,55</strong></td>
+<td>от 0,20 до 0,40</td>
+</tr>
+<tr>
+<td>Немецкая овчарка</td>
+<td>от 0,30 до 0,50</td>
+<td>от 0,30 до 0,50</td>
+<td>от 0,30 до 0,50</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>от 0,30 до 0,50</td>
+<td>от 0,30 до 0,50</td>
+<td>от 0,30 до 0,50</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td><strong>от 0,55 до 0,80</strong></td>
+<td>от 0,10 до 0,30</td>
+<td>от 0,40 до 0,60</td>
+</tr>
+</tbody></table></div>
+<p>Коротко:</p>
+<ul>
+<li><strong>У дворняжки во всех трёх чертах всегда «Низкая».</strong> Хорошей дворняжки не бывает.</li>
+<li><strong>Хаски единственная, у кого в Силе обычно стоит «Высокая».</strong></li>
+<li><strong>Агрессивность всегда выходит «Низкая»</strong> у золотистого ретривера, хаски и лабрадора. Это их норма, а не невезение.</li>
+<li>У золотистого ретривера и добермана «Низкая» часто выпадает ещё и в Силе с Устойчивостью.</li>
+<li><strong>Немецкая овчарка и ротвейлер</strong> единственные, у кого почти всегда «Средняя» во всех трёх чертах.</li>
+</ul>
+<h3 id="вьючные-сумки">Вьючные сумки</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Груз</th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td>от 4 до 5</td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>от 6 до 7</td>
+</tr>
+<tr>
+<td>Немецкая овчарка, бордер-колли, ротвейлер, доберман, лабрадор</td>
+<td>от 6 до 8</td>
+</tr>
+<tr>
+<td><strong>Хаски</strong></td>
+<td><strong>от 13 до 16</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="помёт">Помёт</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода матери</th>
+<th>Щенков за роды</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Дворняжка</strong></td>
+<td><strong>от 2 до 4</strong></td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>от 1 до 3</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>от 1 до 3</td>
+</tr>
+<tr>
+<td>Немецкая овчарка, золотистый ретривер, хаски, ротвейлер, доберман</td>
+<td>от 1 до 2</td>
+</tr>
+</tbody></table></div>
+<p>Размер помёта зависит от <strong>породы матери</strong>, а не отца.</p>
+<h3 id="где-искать-каждую-породу">Где искать каждую породу</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Место</th>
+<th>Шанс</th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td>Жилой дом</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Немецкая овчарка</td>
+<td>Полицейский участок, тюрьма, военный объект, оружейный магазин</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>Военное здание</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>Полицейский участок</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td>Амбар, конюшня, ферма (сельская местность)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>Охотничья хижина, кемпинг, лодочный сарай, пост лесничего</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>Жилой дом</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td>Зоомагазин, ветеринар</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>Склад, завод, свалка</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td>Жилой дом</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>Жилой дом</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td>Жилой дом, <strong>только зимой</strong></td>
+<td>2,5%</td>
+</tr>
+</tbody></table></div>
+<p>Все эти шансы масштабируются вместе с опцией песочницы <strong>«Множитель появления собак»</strong>.</p>
+<p>Помните: решение принимается <strong>один раз на здание</strong> и сохраняется. Возвращение в уже обследованное место новую собаку не создаст.</p>
+<h2 id="6-moodles-полный-список">6. Moodles: полный список</h2>
+<p>Собачьи moodles показываются <strong>отдельной колонкой, слева от ваших обычных moodles</strong>.</p>
+<h3 id="правило-общее-для-всех-породных-moodles">Правило, общее для всех породных moodles</h3>
+<p>Бонус <strong>работает только тогда</strong>, когда выполнены <strong>все</strong> эти условия:</p>
+<div class="tw"><table><thead><tr>
+<th>Условие</th>
+<th>Подробности</th>
+</tr></thead><tbody>
+<tr>
+<td>Собака <strong>рядом</strong></td>
+<td>В пределах <strong>8 клеток</strong> и <strong>на том же этаже</strong></td>
+</tr>
+<tr>
+<td>Она <strong>ваша</strong></td>
+<td>Собака другого игрока не даёт ничего</td>
+</tr>
+<tr>
+<td>Она <strong>не стала непослушной</strong></td>
+<td>Преданность выше порога</td>
+</tr>
+<tr>
+<td>Она <strong>не отравлена</strong></td>
+<td>Никакой вредной еды</td>
+</tr>
+<tr>
+<td>Она <strong>не голодна</strong></td>
+<td>Шкала голода ниже 75%</td>
+</tr>
+<tr>
+<td>Она <strong>не хочет пить</strong></td>
+<td>Шкала жажды ниже 75%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Стоит нарушиться хотя бы одному условию, и moodle гаснет.</strong> Запущенная собака не даёт никакого бонуса. Это главный механизм мода: <strong>собака, о которой вы не заботитесь, не даст вам ничего просто так.</strong></p>
+<blockquote class="quote"><strong>Если рядом несколько собак, считается только ближайшая.</strong> Мод выбирает одну собаку и показывает moodle её породы. Сложить «Мужество» немецкой овчарки и «Согрет» хаски одновременно не выйдет.</blockquote>
+<p>Moodle продолжает действовать, пока собака едет <strong>у вас на руках или в машине вместе с вами</strong>.</p>
+<h3 id="породные-moodles">Породные moodles</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Порода</th>
+<th>Что даёт</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Хорошая компания</strong></td>
+<td>Дворняжка</td>
+<td>Снижает <strong>Несчастье и Скуку</strong></td>
+</tr>
+<tr>
+<td><strong>Мужество</strong></td>
+<td>Немецкая овчарка</td>
+<td>Снижает <strong>Панику</strong> (самый сильный эффект в базовом моде)</td>
+</tr>
+<tr>
+<td><strong>Острый нюх</strong></td>
+<td>Золотистый ретривер</td>
+<td><strong>+20% опыта</strong> к Поиску, Ловушкам и Прицеливанию, <strong>+4 клетки</strong> к дальности обзора при поиске</td>
+</tr>
+<tr>
+<td><strong>Согрет</strong></td>
+<td>Хаски</td>
+<td><strong>+2 к переносимому весу</strong>, восстанавливает дыхание и становится <strong>источником тепла</strong>, когда вы мёрзнете</td>
+</tr>
+<tr>
+<td><strong>Пастуший инстинкт</strong></td>
+<td>Бордер-колли</td>
+<td><strong>+20% опыта</strong> к Уходу за животными и Земледелию, а также <strong>успокаивает скот вокруг вас</strong></td>
+</tr>
+<tr>
+<td><strong>Передовая</strong></td>
+<td>Ротвейлер</td>
+<td>Возвращает <strong>35% выносливости</strong> с каждого удара в ближнем бою. <strong>Только пока он сам в бою</strong></td>
+</tr>
+<tr>
+<td><strong>Твёрдая рука</strong></td>
+<td>Доберман</td>
+<td>Снимает ваш <strong>стресс</strong>, <strong>-45% отдачи</strong> на выстрел, <strong>+15% к скорости перезарядки</strong></td>
+</tr>
+<tr>
+<td><strong>Мягкая хватка</strong></td>
+<td>Лабрадор</td>
+<td>Приносит добычу <strong>уже с Охоты 3</strong>, старается втрое упорнее, <strong>60% шанс на дополнительный предмет</strong>, <strong>+20% опыта</strong> к Разделке и Коротким клинкам</td>
+</tr>
+</tbody></table></div>
+<h3 id="moodles-которые-даёт-любая-порода">Moodles, которые даёт любая порода</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Когда</th>
+<th>Что даёт</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Голоден</strong></td>
+<td>Голод собаки на 60% и выше</td>
+<td>Только предупреждение</td>
+</tr>
+<tr>
+<td><strong>Хочет пить</strong></td>
+<td>Жажда собаки на 60% и выше</td>
+<td>Только предупреждение</td>
+</tr>
+<tr>
+<td><strong>Отравлен</strong></td>
+<td>Она съела еду, которая ей вредит</td>
+<td>Только предупреждение</td>
+</tr>
+<tr>
+<td><strong>Хорошо отдохнул</strong></td>
+<td>Вы проснулись после сна <strong>не дальше 8 клеток</strong> от собаки</td>
+<td>Снижает <strong>Панику, Стресс, Усталость, Печаль и Скуку</strong> на <strong>2 игровых часа</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>«Хорошо отдохнул» единственный, кому не нужно, чтобы собака оставалась рядом.</strong> Это таймер: раз включившись, он держится все два часа, даже если вы ушли. И он не проходит через фильтр ухода, так что работает даже с запущенной собакой. Спать рядом с собакой стоит <strong>всегда</strong>.</p>
+<p>Три предупреждения (голод, жажда, отравление) тоже игнорируют фильтр ухода, и это логично: они как раз для того и нужны, чтобы сообщить, что с собакой <strong>не</strong> всё хорошо.</p>
+<h2 id="7-черты-гены">7. Черты (гены)</h2>
+<p>Кроме породы, у каждой собаки есть <strong>три черты</strong>, которые показаны в её окне, в разделе <strong>«Черты»</strong>. Они разыгрываются <strong>в момент приручения собаки</strong>, в пределах диапазона породы, и <strong>никогда не меняются</strong>.</p>
+<blockquote class="quote"><em>«Врождённые гены, закреплённые на всю жизнь, определяются при приручении собаки и различаются от особи к особи. В отличие от навыков, они никогда не меняются от тренировок; это врождённая природа этого пса.»</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>Черта</th>
+<th>Что даёт</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Сила</strong></td>
+<td>Повышает <strong>силу укуса</strong> и, самое главное, <strong>вместимость вьючных сумок</strong></td>
+</tr>
+<tr>
+<td><strong>Агрессивность</strong></td>
+<td>Собака <strong>быстрее получает опыт Боя</strong>. <strong>Не</strong> влияет на то, вступит она в драку или отступит</td>
+</tr>
+<tr>
+<td><strong>Устойчивость</strong></td>
+<td>Собака <strong>набирает меньше стресса</strong> в бою</td>
+</tr>
+</tbody></table></div>
+<p>Есть ещё <strong>четвёртый ген, общий ген стресса, которого в окне не видно</strong>. Он умножает весь стресс, который собака получает в драках. Хуже всего он у Дворняжки, лучше всего у Немецкой овчарки и Хаски.</p>
+<h3 id="как-читать-метки">Как читать метки</h3>
+<div class="tw"><table><thead><tr>
+<th>Метка</th>
+<th>Что означает</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Низкая</strong></td>
+<td>Ниже 34% шкалы</td>
+</tr>
+<tr>
+<td><strong>Средняя</strong></td>
+<td>От 34% до 66%</td>
+</tr>
+<tr>
+<td><strong>Высокая</strong></td>
+<td>Выше 66%</td>
+</tr>
+</tbody></table></div>
+<p><strong>Внимание:</strong> метки идут по абсолютной шкале, а <strong>не</strong> относительно породы. Поэтому у Дворняжки <strong>всегда</strong> во всех трёх стоит «Низкая», и выдающейся Дворняжки просто не бывает. И поэтому Хаски практически единственная собака, у которой вы увидите «Высокая» в Силе.</p>
+<h3 id="насколько-это-важно-на-самом-деле">Насколько это важно на самом деле</h3>
+<p>Гены сдвигают урон и опыт боя <strong>не больше чем на 15% в каждую сторону</strong>, а стойкость к стрессу не больше чем на 10 процентных пунктов. <strong>Порода значит гораздо больше, чем ген.</strong></p>
+<p>Исключение это <strong>вьючные сумки</strong>: там ген Силы главный фактор, и разница между слабой и сильной собакой одной породы вполне заметна.</p>
+<p><strong>Натренировать ген невозможно.</strong> Единственный способ улучшить его это <a href="#8-метисы-скрещивание-разных-пород">скрещивать собак</a>.</p>
+<h2 id="8-метисы-скрещивание-разных-пород">8. Метисы: скрещивание разных пород</h2>
+<p>Когда у самца и самки разных пород появляются щенки, получается <strong>метис</strong>.</p>
+<h3 id="что-происходит-со-щенком">Что происходит со щенком</h3>
+<p><strong>Родословная это среднее между родителями.</strong> Дворняжка с Немецкой овчаркой дают щенка 50/50. Если скрестить такого щенка с чистой Овчаркой, выйдет 25% Дворняжки и 75% Овчарки. И так далее, поколение за поколением.</p>
+<p><strong>Внешность это ОДНА из пород, выпадающая жребием с учётом родословной.</strong> Щенок 50/50 рождается с мордой Овчарки <strong>или</strong> Дворняжки, но никогда с визуальной смесью. Чем сильнее родословная клонится в одну сторону, тем выше шанс, что щенок будет выглядеть именно так.</p>
+<blockquote class="quote"><strong>И вот момент, который сбивает с толку всех:</strong> порода, выпавшая в жребии, и есть <strong>рабочая</strong> порода собаки. Метис 50% Хаски / 50% Овчарки, родившийся с мордой Хаски, <strong>во всём считается Хаски</strong>: moodle «Согрет», скорость обучения Хаски, вьючные сумки Хаски. Смесь не делает его чем-то средним ни в одном из этих пунктов.</blockquote>
+<p><strong>Гены оказываются посередине между родителями</strong>, с разбросом примерно в 6% в каждую сторону.</p>
+<p><strong>А вот ради чего метисация действительно стоит усилий:</strong> диапазон гена у щенка становится <strong>объединением</strong> диапазонов всех пород в его родословной. Метис Дворняжка + Хаски может родиться с любой Силой от 0,00 до 0,80, то есть он <strong>способен пробить потолок Дворняжки</strong>. Скрещивая самых сильных собак из каждого помёта, вы поднимаете всю линию за несколько поколений.</p>
+<p><strong>Что щенок НЕ наследует:</strong> никаких навыков. Он всегда рождается с <strong>уровнем 0 во всех пяти</strong>. От породы он получает <strong>скорость обучения</strong>, а не само обучение.</p>
+<h3 id="метка-метис">Метка «Метис»</h3>
+<p>Собака, у которой в родословной больше одной породы, получает <strong>«(Метис)»</strong> рядом с названием породы, в окне и в контекстном меню.</p>
+<p><strong>Разбивку по процентам</strong> («50% Хаски, 50% Немецкая овчарка») видно, если <strong>навести мышь на строку «Порода»</strong> в окне собаки; там же будет описание доминирующей породы.</p>
+<h3 id="стоит-ли-скрещивать-разные-породы">Стоит ли скрещивать разные породы?</h3>
+<div class="tw"><table><thead><tr>
+<th>Цель</th>
+<th>Ответ</th>
+</tr></thead><tbody>
+<tr>
+<td>Улучшать гены из поколения в поколение</td>
+<td><strong>Да</strong>, другого способа просто нет</td>
+</tr>
+<tr>
+<td>Получить moodle сразу двух пород</td>
+<td><strong>Нет.</strong> У собаки только один moodle, от той породы, которой она стала</td>
+</tr>
+<tr>
+<td>Совместить скорости обучения</td>
+<td><strong>Нет.</strong> Она берёт таблицу той породы, которой стала</td>
+</tr>
+<tr>
+<td>Быстро наплодить щенков</td>
+<td>Берите <strong>Дворняжку в качестве матери</strong> (от 2 до 4 в помёте)</td>
+</tr>
+</tbody></table></div>
+<h2 id="9-установка-аддонов">9. Установка аддонов</h2>
+<p>Ротвейлер, Доберман и Лабрадор это <strong>отдельные моды в Steam</strong>. Каждый из них:</p>
+<ul>
+<li><strong>Требует установленного и включённого базового Companion Dogs.</strong></li>
+<li>Добавляет <strong>одну породу</strong> со своей моделью, текстурой, moodle и местами появления.</li>
+<li>Идёт с теми же <strong>13 переводами</strong>, что и база.</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>Аддон</th>
+<th>Страница в Steam</th>
+<th>Минимальная версия базы</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">подписаться</a></td>
+<td>0.6.3 или новее</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">подписаться</a></td>
+<td>0.6.3 или новее</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">подписаться</a></td>
+<td><strong>0.6.6 или новее</strong></td>
+</tr>
+</tbody></table></div>
+<p>И сама база, если её у вас ещё нет: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
+<p>Если база слишком старая, аддон <strong>просто ничего не делает</strong>: ошибки нет, игра не падает, породы просто не существует. Если вы поставили Лабрадора и ни разу его не встретили, <strong>сначала проверьте версию базы</strong>.</p>
+<blockquote class="quote"><strong>Не удаляйте аддон из сохранения, где есть живые собаки этой породы.</strong> Собака потеряет модель и текстуру, на которые ссылается.</blockquote>
+<p>Установка аддона <strong>ничего не меняет в уже существующих породах</strong>. Новые породы автоматически входят в розыгрыш при разведении и метисации.</p>
+<h2 id="10-частые-вопросы-о-породах">10. Частые вопросы о породах</h2>
+<p><strong>«Какая порода лучшая?»</strong> Зависит от того, чем вы занимаетесь. Для <strong>боя</strong> Немецкая овчарка или Ротвейлер. Для <strong>охоты</strong> Лабрадор. Для <strong>груза</strong> Хаски. Для <strong>фермы</strong> Бордер-колли. Для <strong>стрельбы</strong> Доберман. А <strong>Дворняжка</strong> так и остаётся отличным выбором ради своего moodle, хоть она и самая слабая.</p>
+<p><strong>«Может ли моя Дворняжка стать сильной от тренировок?»</strong> Нет. Она никогда не убьёт зомби, сколько её ни тренируй, а её черты по определению худшие. Тренировка поднимает Послушание, Чутьё и Охоту, и вот тут она ничем не хуже остальных.</p>
+<p><strong>«Нашёл двух собак одной породы, какую брать?»</strong> <strong>Заранее узнать никак нельзя</strong>: жребий бросается в момент приручения. Приручите и посмотрите раздел <strong>«Черты»</strong> в окне.</p>
+<p><strong>«Достался пёс с плохими чертами. Отпустить и приручить заново?»</strong> <strong>Смысла нет.</strong> Гены разыгрываются <strong>один раз, при первом приручении</strong>, и остаются с собакой навсегда, даже если её отпустить и приручить снова (навыки, кстати, тоже сохраняются). Чтобы получить другой бросок, придётся <strong>приручить другую собаку</strong>. А чтобы по-настоящему улучшать их со временем, есть только <a href="#8-метисы-скрещивание-разных-пород">скрещивание</a>.</p>
+<p><strong>«Можно ли иметь два породных moodle одновременно?»</strong> Нет. Считается только <strong>ближайшая собака</strong>. Исключение это <strong>«Хорошо отдохнул»</strong>, потому что он не зависит от того, рядом ли собака.</p>
+<p><strong>«Почему moodle пропал?»</strong> Почти всегда это голод или жажда выше 75%, либо преданность, упавшая ниже порога. Покормите, напоите и погладьте. Проверьте ещё, что собака находится <strong>не дальше 8 тайлов и на том же этаже</strong>.</p>
+<p><strong>«Есть ли порода побыстрее?»</strong> Нет. Ни одна порода не бегает быстрее другой.</p>
+<p><strong>«Бывает ли Хаски другого цвета?»</strong> Нет. У каждой породы всего одна текстура, и самец с самкой используют одну и ту же.</p>
+<p><strong>«Большая собака бьёт сильнее?»</strong> Нет. Размер чисто визуальный. Связь между габаритами и силой отключена намеренно.</p>
+<p><strong>«Где искать Добермана?»</strong> <strong>В полицейских участках.</strong> На бумаге шанс выше в военных зданиях, но на базовой карте игры военных зданий почти нет.</p>
+<p><strong>«Поставил Лабрадора и ни одного не нахожу.»</strong> Проверьте версию базового Companion Dogs: Лабрадору <strong>нужна версия 0.6.6 или новее</strong>, а на старой базе он остаётся невидимым и молчит. Проверьте ещё, не обошли ли вы уже все дома в округе: решение о появлении принимается <strong>один раз на здание и навсегда</strong>.</p>
+<p><strong>«У моего метиса нет moodle обеих пород.»</strong> Так и задумано. Механически метис это <strong>та порода, на которую он похож</strong>. Смесь меняет только диапазон генов у потомков и процентную пометку в окне.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Ничего не найдено по запросу <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' результатов'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Начало');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

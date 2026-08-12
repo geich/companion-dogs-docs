@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Можливості: Що вміє собака і як ним керувати">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Можливості">
+<meta property="og:description" content="Можливості: Що вміє собака і як ним керувати">
+<meta property="og:url" content="https://companiondogs.pet/docs/uk/features.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Можливості</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Відкрити зміст" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Повернутися на головну сторінку документації"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Можливості</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Перейти до посібника «Породи»</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="пошук у посібнику..." aria-label="Пошук у посібнику" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Мова"><optgroup label="Перевірено"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Автопереклад"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk" selected>Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Перемкнути тему">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Автоматичний переклад, не перевірено.</b> Цю сторінку переклала машина з португальської, і ніхто її не перевіряв. Можливі помилки в термінах і числах. Якщо сумніваєтеся, звіряйтеся з англійською версією або з португальським оригіналом. <a href="../en/features.html">Читати англійською</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Зміст &middot; <b>Можливості</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-за-5-хвилин-від-безпритульного-до-компаньйона" data-id="1-за-5-хвилин-від-безпритульного-до-компаньйона">1. За 5 хвилин: від безпритульного до компаньйона</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-як-знайти-і-приручити-пса" data-id="2-як-знайти-і-приручити-пса">2. Як знайти і приручити пса</a>
+<div class="sub">
+<a class="s3" href="#де-зявляється-кожна-порода" data-id="де-зявляється-кожна-порода">Де з'являється кожна порода</a>
+<a class="s3" href="#як-приручити" data-id="як-приручити">Як приручити</a>
+<a class="s3" href="#скільки-треба-їжі" data-id="скільки-треба-їжі">Скільки треба їжі</a>
+<a class="s3" href="#їжа-яка-шкодить" data-id="їжа-яка-шкодить">Їжа, яка шкодить</a>
+<a class="s3" href="#що-відбувається-тієї-миті-коли-пес-стає-вашим" data-id="що-відбувається-тієї-миті-коли-пес-стає-вашим">Що відбувається тієї миті, коли пес стає вашим</a>
+<a class="s3" href="#ліміт-собак" data-id="ліміт-собак">Ліміт собак</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-як-віддавати-накази-чотири-способи" data-id="3-як-віддавати-накази-чотири-способи">3. Як віддавати накази: чотири способи</a>
+<div class="sub">
+<a class="s3" href="#a-контекстне-меню-правий-клік-на-собаці" data-id="a-контекстне-меню-правий-клік-на-собаці">a) Контекстне меню (правий клік на собаці)</a>
+<a class="s3" href="#b-радіальне-меню-утримуйте-q" data-id="b-радіальне-меню-утримуйте-q">b) Радіальне меню (утримуйте Q)</a>
+<a class="s3" href="#c-гарячі-клавіші" data-id="c-гарячі-клавіші">c) Гарячі клавіші</a>
+<a class="s3" href="#d-кнопки-у-вікні-собаки" data-id="d-кнопки-у-вікні-собаки">d) Кнопки у вікні собаки</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-три-режими-слідувати-на-місці-й-охороняти" data-id="4-три-режими-слідувати-на-місці-й-охороняти">4. Три режими: Слідувати, На місці й Охороняти</a>
+<div class="sub">
+<a class="s3" href="#слідувати" data-id="слідувати">Слідувати</a>
+<a class="s3" href="#на-місці" data-id="на-місці">На місці</a>
+<a class="s3" href="#охороняти" data-id="охороняти">Охороняти</a>
+<a class="s3" href="#дві-команди-виклику" data-id="дві-команди-виклику">Дві команди виклику</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-вартовий-собака-як-сигналізація" data-id="5-вартовий-собака-як-сигналізація">5. Вартовий: собака як сигналізація</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-бій" data-id="6-бій">6. Бій</a>
+<div class="sub">
+<a class="s3" href="#коли-він-бється-сам" data-id="коли-він-бється-сам">Коли він б'ється сам</a>
+<a class="s3" href="#він-не-кусає-крізь-стіну" data-id="він-не-кусає-крізь-стіну">Він не кусає крізь стіну</a>
+<a class="s3" href="#скільки-він-завдає-шкоди" data-id="скільки-він-завдає-шкоди">Скільки він завдає шкоди</a>
+<a class="s3" href="#автозахист" data-id="автозахист">Автозахист</a>
+<a class="s3" href="#він-не-отримує-ваших-куль" data-id="він-не-отримує-ваших-куль">Він не отримує ваших куль</a>
+<a class="s3" href="#поранення-відступ-і-паніка" data-id="поранення-відступ-і-паніка">Поранення, відступ і паніка</a>
+<a class="s3" href="#одужання" data-id="одужання">Одужання</a>
+<a class="s3" href="#лічильник-убивств" data-id="лічильник-убивств">Лічильник убивств</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-потреби-та-догляд" data-id="7-потреби-та-догляд">7. Потреби та догляд</a>
+<div class="sub">
+<a class="s3" href="#звідки-береться-стрес" data-id="звідки-береться-стрес">Звідки береться стрес</a>
+<a class="s3" href="#годування-вручну" data-id="годування-вручну">Годування вручну</a>
+<a class="s3" href="#дати-воду" data-id="дати-воду">Дати воду</a>
+<a class="s3" href="#ласка" data-id="ласка">Ласка</a>
+<a class="s3" href="#сходинки-занедбаності" data-id="сходинки-занедбаності">Сходинки занедбаності</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-лояльність" data-id="8-лояльність">8. Лояльність</a>
+<div class="sub">
+<a class="s3" href="#поріг-непокори" data-id="поріг-непокори">Поріг непокори</a>
+<a class="s3" href="#коли-пес-відмовляється-виконати-наказ" data-id="коли-пес-відмовляється-виконати-наказ">Коли пес відмовляється виконати наказ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-миска-їжа-та-вода-без-вашої-участі" data-id="9-миска-їжа-та-вода-без-вашої-участі">9. Миска: їжа та вода без вашої участі</a>
+<div class="sub">
+<a class="s3" href="#як-користуватися" data-id="як-користуватися">Як користуватися</a>
+<a class="s3" href="#що-годиться-як-їжа-для-миски" data-id="що-годиться-як-їжа-для-миски">Що годиться як їжа для миски</a>
+<a class="s3" href="#як-пес-нею-користується" data-id="як-пес-нею-користується">Як пес нею користується</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-навички-пять-умінь-пса" data-id="10-навички-пять-умінь-пса">10. Навички: п'ять умінь пса</a>
+<div class="sub">
+<a class="s3" href="#про-криву-досвіду" data-id="про-криву-досвіду">Про криву досвіду</a>
+<a class="s3" href="#непокора" data-id="непокора">Непокора</a>
+<a class="s3" href="#навичка-це-не-те-саме-що-риса" data-id="навичка-це-не-те-саме-що-риса">Навичка це не те саме, що риса</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-трюки-послуху" data-id="11-трюки-послуху">11. Трюки послуху</a>
+<div class="sub">
+<a class="s3" href="#відправити-в-точку-послух-1" data-id="відправити-в-точку-послух-1">Відправити в точку (Послух 1)</a>
+<a class="s3" href="#відволікти-послух-3" data-id="відволікти-послух-3">Відволікти (Послух 3)</a>
+<a class="s3" href="#винюхати-предмет-послух-5" data-id="винюхати-предмет-послух-5">Винюхати предмет (Послух 5)</a>
+<a class="s3" href="#шукати-предмет-поки-ви-спите-послух-10" data-id="шукати-предмет-поки-ви-спите-послух-10">Шукати предмет, поки ви спите (Послух 10)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-полювання" data-id="12-полювання">12. Полювання</a>
+<div class="sub">
+<a class="s3" href="#на-кого-він-полює" data-id="на-кого-він-полює">На кого він полює</a>
+<a class="s3" href="#як-це-працює-на-практиці" data-id="як-це-працює-на-практиці">Як це працює на практиці</a>
+<a class="s3" href="#обмеження" data-id="обмеження">Обмеження</a>
+<a class="s3" href="#чого-це-коштує" data-id="чого-це-коштує">Чого це коштує</a>
+<a class="s3" href="#бонуси-до-пошуку-ресурсів" data-id="бонуси-до-пошуку-ресурсів">Бонуси до пошуку ресурсів</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-догляд-за-худобою" data-id="13-догляд-за-худобою">13. Догляд за худобою</a>
+<div class="sub">
+<a class="s3" href="#як-призначити" data-id="як-призначити">Як призначити</a>
+<a class="s3" href="#що-він-там-робить" data-id="що-він-там-робить">Що він там робить</a>
+<a class="s3" href="#важливі-правила" data-id="важливі-правила">Важливі правила</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-сідельні-сумки-собака-як-вючний-мул" data-id="14-сідельні-сумки-собака-як-вючний-мул">14. Сідельні сумки: собака як в'ючний мул</a>
+<div class="sub">
+<a class="s3" href="#як-одягнути" data-id="як-одягнути">Як одягнути</a>
+<a class="s3" href="#скільки-вантажу-він-несе" data-id="скільки-вантажу-він-несе">Скільки вантажу він несе</a>
+<a class="s3" href="#що-можна-покласти" data-id="що-можна-покласти">Що можна покласти</a>
+<a class="s3" href="#вікно" data-id="вікно">Вікно</a>
+<a class="s3" href="#де-дістати" data-id="де-дістати">Де дістати</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-розведення-та-цуценята" data-id="15-розведення-та-цуценята">15. Розведення та цуценята</a>
+<div class="sub">
+<a class="s3" href="#кнопки-звести-немає" data-id="кнопки-звести-немає">Кнопки "звести" немає</a>
+<a class="s3" href="#умови" data-id="умови">Умови</a>
+<a class="s3" href="#залицяння-і-вагітність" data-id="залицяння-і-вагітність">Залицяння і вагітність</a>
+<a class="s3" href="#пологи" data-id="пологи">Пологи</a>
+<a class="s3" href="#що-успадковує-цуценя" data-id="що-успадковує-цуценя">Що успадковує цуценя</a>
+<a class="s3" href="#вирощування-цуценяти" data-id="вирощування-цуценяти">Вирощування цуценяти</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-кілька-собак-одночасно" data-id="16-кілька-собак-одночасно">16. Кілька собак одночасно</a>
+<div class="sub">
+<a class="s3" href="#вкладка-мої-собаки-реєстр" data-id="вкладка-мої-собаки-реєстр">Вкладка "Мої собаки": реєстр</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-вікно-собаки" data-id="17-вікно-собаки">17. Вікно собаки</a>
+<div class="sub">
+<a class="s3" href="#вкладка-навички-та-стан" data-id="вкладка-навички-та-стан">Вкладка "Навички та стан"</a>
+<a class="s3" href="#вкладка-команди" data-id="вкладка-команди">Вкладка "Команди"</a>
+<a class="s3" href="#вкладка-мої-собаки" data-id="вкладка-мої-собаки">Вкладка "Мої собаки"</a>
+<a class="s3" href="#вкладка-налаштування" data-id="вкладка-налаштування">Вкладка "Налаштування"</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-що-зявляється-на-екрані" data-id="18-що-зявляється-на-екрані">18. Що з'являється на екрані</a>
+<div class="sub">
+<a class="s3" href="#moodles-собаки" data-id="moodles-собаки">Moodles собаки</a>
+<a class="s3" href="#написи-над-головою" data-id="написи-над-головою">Написи над головою</a>
+<a class="s3" href="#позначка-на-карті" data-id="позначка-на-карті">Позначка на карті</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-предмети-мода" data-id="19-предмети-мода">19. Предмети мода</a>
+<div class="sub">
+<a class="s3" href="#миска-для-собаки-компаньона" data-id="миска-для-собаки-компаньона">Миска для собаки компаньона</a>
+<a class="s3" href="#седлова-сумка-для-собаки-компаньона" data-id="седлова-сумка-для-собаки-компаньона">Седлова сумка для собаки компаньона</a>
+<a class="s3" href="#чого-в-моді-немає" data-id="чого-в-моді-немає">Чого в моді НЕМАЄ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-мультиплеєр" data-id="20-мультиплеєр">20. Мультиплеєр</a>
+<div class="sub">
+<a class="s3" href="#ваша-собака-тільки-ваша" data-id="ваша-собака-тільки-ваша">Ваша собака тільки ваша</a>
+<a class="s3" href="#коли-ви-виходите-з-гри" data-id="коли-ви-виходите-з-гри">Коли ви виходите з гри</a>
+<a class="s3" href="#для-адміністраторів" data-id="для-адміністраторів">Для адміністраторів</a>
+<a class="s3" href="#попередження-щодо-встановлення-в-кооперативі" data-id="попередження-щодо-встановлення-в-кооперативі">Попередження щодо встановлення в кооперативі</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-параметри-пісочниці" data-id="21-параметри-пісочниці">21. Параметри пісочниці</a>
+<div class="sub">
+<a class="s3" href="#приручення-та-поява" data-id="приручення-та-поява">Приручення та поява</a>
+<a class="s3" href="#бій" data-id="бій">Бій</a>
+<a class="s3" href="#догляд-і-звязок" data-id="догляд-і-звязок">Догляд і зв'язок</a>
+<a class="s3" href="#поведінка" data-id="поведінка">Поведінка</a>
+<a class="s3" href="#навички-та-заняття" data-id="навички-та-заняття">Навички та заняття</a>
+<a class="s3" href="#сідельні-сумки" data-id="сідельні-сумки">Сідельні сумки</a>
+<a class="s3" href="#цуценята" data-id="цуценята">Цуценята</a>
+<a class="s3" href="#інтерфейс-і-мультиплеєр" data-id="інтерфейс-і-мультиплеєр">Інтерфейс і мультиплеєр</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-часті-проблеми" data-id="22-часті-проблеми">22. Часті проблеми</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-посібник-з-можливостей">Companion Dogs: посібник з можливостей</h1>
+<p>Повний опис того, що вміє ваш пес, як ним командувати і як про нього дбати.</p>
+<p>Цей посібник охоплює <strong>все, що робить мод</strong>. Якщо вас цікавлять <strong>породи</strong> (яку вибрати, чим кожна особлива, moodle і риси), загляньте в інший посібник: <a href="breeds.html" class="xlink">Породи</a>.</p>
+<blockquote class="quote"><strong>Про назви:</strong> усі тексти в лапках у цьому посібнику наведені так, як вони виглядають у грі українською. Якщо ваша гра англійською, назви будуть іншими, але місце в меню те саме.</blockquote>
+<h2 id="1-за-5-хвилин-від-безпритульного-до-компаньйона">1. За 5 хвилин: від безпритульного до компаньйона</h2>
+<p>Якщо ви просто хочете почати грати, ось коротка інструкція:</p>
+<ol>
+<li><strong>Знайдіть пса.</strong> Безпритульні Карамело блукають містами та житловими районами. Рано чи пізно ви натрапите на одного, просто досліджуючи світ.</li>
+<li><strong>Майте їжу в інвентарі.</strong> Підійде будь-яка їжа, аби не була зіпсована і вгамовувала голод.</li>
+<li><strong>Клацніть правою кнопкою по псу</strong> і виберіть <strong>«Дати їжу (подружитися)»</strong>.</li>
+<li><strong>Повторюйте, доки він не почне довіряти.</strong> Кожна порція підіймає довіру. Великий мішок корму майже вирішує справу за раз, а дрібне печиво доведеться дати разів чотири.</li>
+<li><strong>Дайте ім'я.</strong> Готово, пес ваш. Далі він сам ходить за вами.</li>
+</ol>
+<p>Після цього не забудьте про три речі:</p>
+<ul>
+<li><strong>Годуйте і поїть щодня.</strong> Від занедбаності пес гине, і повернути його не вийде.</li>
+<li><strong>Гладьте його.</strong> Це тримає лояльність і ще й знімає вашу нудьгу та смуток.</li>
+<li><strong>Відкривайте його вікно</strong> кнопкою з лапою під панеллю ваших рук. Усе є всередині.</li>
+</ul>
+<h2 id="2-як-знайти-і-приручити-пса">2. Як знайти і приручити пса</h2>
+<h3 id="де-зявляється-кожна-порода">Де з'являється кожна порода</h3>
+<p>Мод вирішує <strong>один раз на будівлю</strong>, чи є в ній пес, і це рішення зберігається. Ви не повернетеся до вже дослідженого місця й не знайдете там нового пса нізвідки.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Де шукати</th>
+<th>Шанс на будівлю</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Карамело</strong></td>
+<td>Житловий будинок у місті чи районі</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Золотистий ретривер</strong></td>
+<td>Житловий будинок (додатковий розіграш)</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>Німецька вівчарка</strong></td>
+<td>Поліцейська дільниця, в'язниця, військова база, збройовий магазин</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Хаскі</strong></td>
+<td>Житловий будинок, <strong>тільки взимку</strong></td>
+<td>2,5%</td>
+</tr>
+<tr>
+<td><strong>Хаскі</strong></td>
+<td>Зоомагазин і ветеринарна клініка, цілий рік</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>Бордер-колі</strong></td>
+<td>Сарай, стайня, силос, курник у сільській місцевості</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>Зазвичай пес з'являється на вільній клітинці <strong>зовні</strong> будівлі: на вулиці, у дворі, на ділянці. Лише коли жодної вільної зовнішньої клітинки не лишилося, він опиняється всередині будівлі. Спершу шукайте на вулиці та у дворі.</p>
+<p>Налаштування пісочниці <strong>«Множник появи собак»</strong> масштабує всі ці шанси одразу, зберігаючи відносну рідкість порід. Значення 0 вимикає появу.</p>
+<blockquote class="quote"><strong>Породи з доповнень</strong> виходять окремими модами в Steam і мають власні місця появи: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> та <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. Що вміє кожна з них, описано в <a href="breeds.html" class="xlink">посібнику з порід</a>.</blockquote>
+<h3 id="як-приручити">Як приручити</h3>
+<p>Клацніть правою кнопкою по дикому псу. Єдиний пункт, який він пропонує, це <strong>«Дати їжу (подружитися)»</strong>.</p>
+<ul>
+<li><strong>Нічого, крім їжі, не потрібно.</strong> Ні мінімального рівня навички, ні риси персонажа, ні нашийника, ні інструмента.</li>
+<li>Їжа може лежати <strong>всередині рюкзака</strong>, мод знайде її сам.</li>
+<li>Якщо у вас кілька видів їжі, пункт перетворюється на підменю з іконкою та кількістю кожного.</li>
+<li>Без жодної їжі пункт стає сірим: <em>«Вам потрібна їжа в інвентарі.»</em></li>
+</ul>
+<h3 id="скільки-треба-їжі">Скільки треба їжі</h3>
+<p>Кожна порція дає <strong>довіру, пропорційну до того, скільки голоду вгамувала б ця їжа</strong>. Предмет, який знімає 60 пунктів голоду, дає 60 довіри. За замовчуванням для приручення потрібно <strong>100 довіри</strong> (налаштовується в пісочниці пунктом <em>«Потрібна довіра, щоб приборкати»</em>).</p>
+<p>На практиці:</p>
+<ul>
+<li>Великий <strong>мішок корму</strong> майже сам усе вирішує.</li>
+<li>Дрібні шматочки їжі вимагають десь <strong>чотирьох повторень</strong>.</li>
+</ul>
+<p>Мод <strong>з'їдає лише потрібний шматок</strong> і повертає решту предмета до вашого інвентарю, тож ви не витратите півбанки їжі заради останнього пункту довіри.</p>
+<p><strong>Жодної випадковості тут немає.</strong> Дійшли до 100 довіри, і пес ваш. Крапка.</p>
+<p>Поки шкала не заповниться, ви бачите: <em>«Карамело починає вам довіряти...»</em> Коли заповниться: <em>«Карамело тепер ваш компаньйон!»</em> і відкриється віконце, де треба дати ім'я.</p>
+<h3 id="їжа-яка-шкодить">Їжа, яка шкодить</h3>
+<p>Деякі продукти отруйні для собак, і мод попереджає: у меню вони показані <strong>червоним</strong>, з підписом <em>«Погано для собак: з'ївши це, він захворіє і втратить довіру до вас.»</em></p>
+<p>Ось вони:</p>
+<ul>
+<li><strong>За типом:</strong> солодке, цукор, кава, чай, какао, шоколад, перець, горіхи.</li>
+<li><strong>За назвою:</strong> цибуля, часник, цибуля-порей, зелена цибуля, шалот, виноград, родзинки, шоколад, какао, кава, арахіс. (Грейпфрут окремо дозволено.)</li>
+</ul>
+<p>Якщо дати шкідливу їжу <strong>дикому псу</strong>, він втратить 15 довіри, і вона ніколи не додається. <strong>Компаньйону</strong> це знімає 20 лояльності, підіймає стрес і лишає його <strong>отруєним на 120 ігрових хвилин</strong>.</p>
+<h3 id="що-відбувається-тієї-миті-коли-пес-стає-вашим">Що відбувається тієї миті, коли пес стає вашим</h3>
+<ul>
+<li>Він переходить у режим <strong>Слідувати</strong> і вмикає <strong>Автозахист</strong>.</li>
+<li>Голод, спрага і стрес обнуляються.</li>
+<li><strong>Генетичні риси розігруються саме зараз і лишаються незмінними на все життя</strong>.</li>
+<li>Він стає <strong>невразливим</strong>: зомбі, машина, постріл і вогонь його не вбивають. Убиває тільки занедбаність.</li>
+<li>Він потрапляє до реєстру <strong>«Мої собаки»</strong> і починає з'являтися на карті.</li>
+</ul>
+<p><strong>Приручення нового пса не кидає попереднього.</strong> Новий стає активним, а старий переходить у пасивний стан у режимі На місці. Дивіться <a href="#16-кілька-собак-одночасно">Кілька собак одночасно</a>.</p>
+<h3 id="ліміт-собак">Ліміт собак</h3>
+<p>Налаштування пісочниці <strong>«Максимальна кількість собак на гравця»</strong> стоїть на <strong>0, тобто без обмеження</strong>. Якщо сервер виставить стелю, після її досягнення пункт про дружбу стає червоним і заблокованим: <em>«Досягнуто ліміту компаньйонів (5).»</em> (число дорівнює виставленій стелі) Звільнення або втрата собаки звільняє слот.</p>
+<h2 id="3-як-віддавати-накази-чотири-способи">3. Як віддавати накази: чотири способи</h2>
+<p>Командувати собакою можна чотирма способами. Усі вони роблять те саме, тож користуйтеся тим, який вам зручніший.</p>
+<h3 id="a-контекстне-меню-правий-клік-на-собаці">a) Контекстне меню (правий клік на собаці)</h3>
+<p>Усе зібрано в підменю з іменем собаки. Порядок пунктів завжди однаковий:</p>
+<div class="tw"><table><thead><tr>
+<th>Пункт</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(перший рядок, без кліку)</em></td>
+<td>Хто ця собака: ім'я, стать, чи це цуценя, чи вагітна, чи метис</td>
+</tr>
+<tr>
+<td><strong>Заблокувати розведення</strong> / <strong>Дозволити розведення</strong></td>
+<td>Вмикає і вимикає дозвіл цій собаці розмножуватися (лише дорослі)</td>
+</tr>
+<tr>
+<td><strong>Призупинити дорослішання</strong> / <strong>Відновити дорослішання</strong></td>
+<td>Лише в цуценят. Заморожує ріст на невизначений час</td>
+</tr>
+<tr>
+<td><strong>Погодувати</strong></td>
+<td>Дає їжу. Підменю за типом</td>
+</tr>
+<tr>
+<td><strong>Дати воду</strong></td>
+<td>Потрібна ємність з водою</td>
+</tr>
+<tr>
+<td><strong>Погладити</strong></td>
+<td>Ласка</td>
+</tr>
+<tr>
+<td><strong>Наказати залишитися на місці</strong> / <strong>Наказати йти за вами</strong></td>
+<td>Перемикає між двома режимами</td>
+</tr>
+<tr>
+<td><strong>Іди сюди</strong></td>
+<td>Кличе собаку до вас</td>
+</tr>
+<tr>
+<td><strong>Атакувати найближчу ціль</strong></td>
+<td>Наказує напасти на найближчого зомбі</td>
+</tr>
+<tr>
+<td><strong>Трюки</strong> ▸</td>
+<td>Підменю з чотирма трюками</td>
+</tr>
+<tr>
+<td><strong>Доглядати за худобою тут</strong> / <strong>Припинити догляд за худобою</strong></td>
+<td>Режим ферми</td>
+</tr>
+<tr>
+<td><strong>Одягнути сідельні сумки</strong> / <strong>Відкрити сідельні сумки</strong> / <strong>Зняти сідельні сумки</strong></td>
+<td>Залежно від стану</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>Відкриває вікно собаки</td>
+</tr>
+<tr>
+<td><strong>Перейменувати...</strong></td>
+<td>До 30 символів</td>
+</tr>
+<tr>
+<td><strong>Підібрати</strong></td>
+<td>Бере собаку на руки</td>
+</tr>
+<tr>
+<td><strong>Випустити компаньона</strong></td>
+<td>Повертає на волю (собака зберігає тренування і навички)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>«Охороняти» тут немає.</strong> Ця команда є лише в радіальному меню, на гарячій клавіші та на кнопці у вкладці Команди.</blockquote>
+<h3 id="b-радіальне-меню-утримуйте-q">b) Радіальне меню (утримуйте Q)</h3>
+<p>Мод вбудовується в ігрове меню емоцій. Затисніть <strong>Q</strong>, і там з'явиться нова категорія з назвою породи вашої собаки та іконкою лапки. Категорія показується, тільки якщо поруч є ваша активна собака.</p>
+<p>Сектори такі: <strong>Іди сюди</strong>, <strong>Слідувати</strong>, <strong>На місці</strong>, <strong>Охороняти</strong>, <strong>Тривога</strong>, <strong>Тихо</strong>, <strong>Повна тиша</strong>, <strong>Атакувати найближчу ціль</strong>, <strong>Полювати</strong> / <strong>Припинити полювання</strong>, <strong>Трюки ▸</strong> та <strong>Відкрити сідельні сумки</strong> (якщо на собаці є сумки).</p>
+<p>Вибір <strong>Трюки</strong> відкриває третій рівень радіального меню з чотирма трюками і пунктом <strong>Назад</strong>. Ще не відкритий трюк показується червоною іконкою, а в назві стоїть потрібний рівень, наприклад <em>«Відволікти (Послух 3)»</em>.</p>
+<p>Деякі команди ще й змушують вашого персонажа жестикулювати: коли кличете, він піднімає руку; коли наказуєте залишитися, показує жест «стоп»; коли наказуєте атакувати, вказує рукою.</p>
+<h3 id="c-гарячі-клавіші">c) Гарячі клавіші</h3>
+<p>Усього <strong>14 дій, яким можна призначити клавішу</strong>, і <strong>жодна з них не має клавіші за замовчуванням</strong>, це зроблено навмисно, щоб нічого не конфліктувало. Налаштовуються вони у вкладці <strong>«Налаштування»</strong> вікна собаки, а не в меню опцій гри.</p>
+<div class="tw"><table><thead><tr>
+<th>Дія</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Іди сюди</strong></td>
+<td>Кличе собаку</td>
+</tr>
+<tr>
+<td><strong>Слідувати</strong></td>
+<td>Режим Слідувати</td>
+</tr>
+<tr>
+<td><strong>На місці</strong></td>
+<td>Режим На місці</td>
+</tr>
+<tr>
+<td><strong>Охороняти</strong></td>
+<td>Режим Охороняти</td>
+</tr>
+<tr>
+<td><strong>Принести</strong></td>
+<td><strong>Телепортує собаку до вас.</strong> Ви голосно свистите, а свист приваблює зомбі</td>
+</tr>
+<tr>
+<td><strong>Атакувати найближчу ціль</strong></td>
+<td>Атака за наказом</td>
+</tr>
+<tr>
+<td><strong>Тривога</strong> / <strong>Тихо</strong> / <strong>Повна тиша</strong></td>
+<td>Режим вартового</td>
+</tr>
+<tr>
+<td><strong>Автозахист</strong></td>
+<td>Вмикає і вимикає</td>
+</tr>
+<tr>
+<td><strong>Полювання</strong></td>
+<td>Вмикає і вимикає</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>Відкриває і закриває вікно собаки</td>
+</tr>
+<tr>
+<td><strong>Відправити в точку</strong></td>
+<td>Відкриває приціл для вибору місця</td>
+</tr>
+<tr>
+<td><strong>Відволікти</strong></td>
+<td>Запускає трюк</td>
+</tr>
+</tbody></table></div>
+<p>Якщо вибрати вже зайняту клавішу, мод попередить: <em>«F вже використовується для: На місці»</em>. Коли клавішу не призначено, на кнопці написано <em>«Не призначено»</em>.</p>
+<h3 id="d-кнопки-у-вікні-собаки">d) Кнопки у вікні собаки</h3>
+<p>У вкладці <strong>«Команди»</strong> усе зібрано в кнопки: рядок режиму, рядок вартового, перемикачі автозахисту й полювання, чотири трюки, сідельні сумки та рядок дій (<strong>Принести</strong> | <strong>Перейменувати</strong> | <strong>Відпустити</strong>).</p>
+<h2 id="4-три-режими-слідувати-на-місці-й-охороняти">4. Три режими: Слідувати, На місці й Охороняти</h2>
+<p>Собака <strong>завжди перебуває в одному</strong> з цих трьох режимів. Усе інше (вартовий, полювання, автозахист) лише накладається поверх режиму.</p>
+<h3 id="слідувати">Слідувати</h3>
+<p>Режим за замовчуванням. Собака ходить за вами: рушає з місця, коли ви відійшли на 2 клітинки, і переходить на біг далі ніж за 5 клітинок.</p>
+<ul>
+<li><strong>Б'ється із зомбі в радіусі 5 клітинок навколо ВАС</strong> (не навколо себе). Відпускає ціль на 8.</li>
+<li>Перестрибує низький паркан, піднімається сходами, змінює поверх слідом за вами.</li>
+<li><strong>Це єдиний режим, у якому собака сідає з вами в машину.</strong></li>
+<li>Якщо ви відійдете надто далеко (24 клітинки), собака автоматично опиняється у вас за спиною, щоб не застрягти по інший бік будівлі.</li>
+</ul>
+<blockquote class="quote"><em>«Карамело слідує за вами та атакує зомбі, які підходять надто близько. Його сторожовий інстинкт продовжує пильнувати навколо. Режим за замовчуванням, ваш вірний супутник у дорозі.»</em></blockquote>
+<h3 id="на-місці">На місці</h3>
+<p>Собака зупиняється там, де стоїть, і нікуди звідти не йде. Приблизно через хвилину без руху вона лягає.</p>
+<ul>
+<li><strong>Далі принюхується і попереджає</strong> про зомбі.</li>
+<li><strong>Не переслідує і не б'ється</strong>, навіть коли зомбі просто перед носом.</li>
+<li><strong>Залишається на місці, коли ви сідаєте в машину.</strong> У транспорт сідає лише собака в режимі Слідувати.</li>
+</ul>
+<blockquote class="quote"><em>«Карамело залишається на місці й не слідує за вами. Він усе ще помічає та попереджає про зомбі, але не переслідує їх і не вступає в бій, а просто сидить і спостерігає. Чудово підходить, щоб залишити його в безпечному місці.»</em></blockquote>
+<h3 id="охороняти">Охороняти</h3>
+<p>Собака запам'ятовує точне місце, де стоїть, як <strong>пост</strong> і захищає цей пост.</p>
+<ul>
+<li>Б'ється із зомбі в <strong>радіусі 10 клітинок від поста</strong>, переслідує їх, а потім повертається.</li>
+<li>Якщо стає скрутно, відступає вам за спину.</li>
+<li><strong>Важливе обмеження:</strong> поки що це працює, <strong>тільки коли ви поруч</strong>. Немає сенсу лишати собаку охороняти базу й іти на інший кінець карти.</li>
+</ul>
+<blockquote class="quote"><em>«Карамело охороняє саме це місце: атакує зомбі у великому радіусі, попереджає про небезпеку, а після переслідування повертається на свій пост. Якщо його оточать, він відступить за вас.»</em></blockquote>
+<h3 id="дві-команди-виклику">Дві команди виклику</h3>
+<div class="tw"><table><thead><tr>
+<th>Команда</th>
+<th>Що робить</th>
+<th>Ціна</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Іди сюди</strong></td>
+<td>Собака повертається <strong>пішки</strong> й переходить у режим Слідувати</td>
+<td>Немає</td>
+</tr>
+<tr>
+<td><strong>Принести</strong></td>
+<td>Собака <strong>миттєво з'являється поруч із вами</strong></td>
+<td>Ви голосно свистите, і це <strong>приваблює зомбі</strong></td>
+</tr>
+</tbody></table></div>
+<p>Користуйтеся командою <strong>Принести</strong>, коли собака застрягла за парканом, замкнулася в будівлі або зайшла надто далеко, щоб повернутися пішки. Це аварійний вихід, а не команда на кожен день.</p>
+<h2 id="5-вартовий-собака-як-сигналізація">5. Вартовий: собака як сигналізація</h2>
+<p>На практиці це найкорисніша функція мода: <strong>собака чує зомбі, яких ви не бачите</strong>.</p>
+<p>Вартовий працює в усіх трьох режимах (Слідувати, На місці й Охороняти). Він <strong>не працює</strong> під час прискорення часу і поки ви спите.</p>
+<div class="tw"><table><thead><tr>
+<th>Режим</th>
+<th>Дальність</th>
+<th>Як попереджає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Тривога</strong></td>
+<td>18 клітинок (до 27 з максимальним Нюхом)</td>
+<td>Гарчання на далекого або нечисленного зомбі. <strong>Гучний гавкіт</strong> на зомбі, який близько, іде юрбою або в полі зору. <strong>Гавкіт справді приваблює зомбі</strong></td>
+</tr>
+<tr>
+<td><strong>Тихо</strong></td>
+<td>Фіксовані 10 клітинок</td>
+<td><strong>Тільки гарчання.</strong> Ніколи не гавкає і нічого не приваблює</td>
+</tr>
+<tr>
+<td><strong>Повна тиша</strong></td>
+<td>Немає</td>
+<td>Жодних попереджень про зомбі</td>
+</tr>
+</tbody></table></div>
+<p>Собака переходить від «щось відчула» до «тривоги», коли зомбі за 6 клітинок або ближче, <strong>або</strong> коли зомбі троє чи більше, <strong>або</strong> коли є вільна лінія огляду до 12 клітинок.</p>
+<p>Повідомлення спливають над головою собаки:</p>
+<ul>
+<li><em>«Ваш Карамело щось відчуває поруч...»</em> (щось є, але далеко або небагато)</li>
+<li><em>«Ваш Карамело виявив зомбі!»</em> (близько або багато, час реагувати)</li>
+</ul>
+<p><strong>Ось у чому обмін:</strong> Тривога дає найбільшу дальність попередження, але видає вашу позицію. Тихо попереджає без шуму, зате лише зблизька. Повна тиша потрібна тоді, коли ви хочете, щоб собака мовчала за будь-яку ціну.</p>
+<blockquote class="quote"><strong>Собака в стресі НЕ гавкає сама по собі.</strong> Система гавкоту від стресу колись була, але в моді вона вимкнена. Якщо ваша собака стягує зомбі, джерело одне з цих чотирьох, і всі вони під контролем: <strong>вартовий у режимі Тривога</strong>, трюк <strong>Відволікти</strong>, <strong>переслідування на полюванні</strong> або <strong>бій</strong>.</blockquote>
+<h2 id="6-бій">6. Бій</h2>
+<h3 id="коли-він-бється-сам">Коли він б'ється сам</h3>
+<p><strong>Пес не кидається в бій за власним бажанням.</strong> Він чекає на привід:</p>
+<ul>
+<li><strong>У режимі «Слідувати»:</strong> тільки з <strong>увімкненим автозахистом</strong> і тільки якщо зомбі націлився на вас чи на пса, або ви вже б'єтеся. І зомбі має бути <strong>за 5 клітинок від вас або ближче</strong>.</li>
+<li><strong>У режимі «Охороняти»:</strong> завжди, у межах 10 клітинок від посту.</li>
+<li><strong>Команда «Атакувати найближчу ціль»:</strong> він шукає в радіусі 12 клітинок і переслідує 2 ігрові хвилини.</li>
+</ul>
+<p>Він атакує тільки <strong>ворожих зомбі</strong>. Дружніх NPC з інших модів (Bandits, A-Life) він не чіпає.</p>
+<h3 id="він-не-кусає-крізь-стіну">Він не кусає крізь стіну</h3>
+<p>Пес береться лише за того зомбі, до якого він <strong>справді може дійти пішки</strong>. Зомбі по інший бік паркану або в зачиненій кімнаті буде проігнорований, бо обхід коштував би надто дорого. Якщо він спробує і застрягне на дві з половиною секунди без просування, він кидає цю ціль і не чіпає її 12 секунд.</p>
+<p>Це зроблено навмисно: так пес не гатить у стіну, намагаючись дістати недосяжне.</p>
+<h3 id="скільки-він-завдає-шкоди">Скільки він завдає шкоди</h3>
+<p>Шкода залежить від <strong>чотирьох речей, які перемножуються</strong>: природної сили породи, рівня навички Бій, гена Сила та множника з пісочниці.</p>
+<p>Важлива деталь для гравця:</p>
+<ul>
+<li><strong>Карамело не здатен убити зомбі самотужки.</strong> Він доводить зомбі до 10% здоров'я і спиняється. Це зроблено навмисно, і жодне налаштування пісочниці цього не змінює. Його роль у тому, щоб <strong>збити зомбі з ніг</strong> і виграти вам час.</li>
+<li>Усі інші породи <strong>здатні добити</strong>.</li>
+</ul>
+<p>Таблиця шкоди за породами є в <a href="breeds.html" class="xlink">посібнику з порід</a>.</p>
+<p><strong>Збивання зомбі з ніг:</strong> кожен удар має шанс збити з ніг, від 10% на старті до 50% з навичкою Бій на максимумі.</p>
+<h3 id="автозахист">Автозахист</h3>
+<p>Вмикається й вимикається окремо для кожного пса. Коли увімкнено, пес <strong>автоматично стає на варту, поки ви беззахисні</strong>:</p>
+<ul>
+<li>спите</li>
+<li>читаєте</li>
+<li>сидите на землі</li>
+<li>їсте</li>
+<li>рибалите</li>
+</ul>
+<p>Він тримається поруч із вами і зустрічає все, що підійде. Якщо ви йдете, точка прив'язки йде за вами. Коли ви завершуєте справу, він сам повертається до слідування за вами.</p>
+<ul>
+<li>Пес, який <strong>справді охороняє пост, ніколи його не залишає</strong> через це.</li>
+<li><strong>Такий бій викликає у пса стрес і не додає лояльності.</strong> Це робота, а не ласка.</li>
+</ul>
+<p>Коли ви приручаєте пса, він приходить із <strong>увімкненим</strong> автозахистом.</p>
+<h3 id="він-не-отримує-ваших-куль">Він не отримує ваших куль</h3>
+<p><strong>Ви можете стріляти понад псом без страху.</strong> Пес-компаньйон <strong>не втрачає здоров'я від пострілу за жодних обставин</strong>, ні від вашого, ні від пострілу іншого гравця.</p>
+<p>Це гарантують дві речі:</p>
+<ul>
+<li>Він не потрапляє під <strong>автоприцілювання</strong>, тож приціл не чіпляється за нього, коли ви наводите зброю.</li>
+<li>В одиночній грі в мить пострілу мод <strong>виключає пса з розрахунку</strong>: куля летить просто в зомбі за його спиною.</li>
+</ul>
+<p><strong>Пес не зрушує з місця</strong>, щоб це спрацювало, і він <strong>ніколи не відповідає вам агресією</strong>.</p>
+<blockquote class="quote">У мультиплеєрі, якщо ви стріляєте здалеку, пес іншого гравця може навіть <strong>показати реакцію на вашому екрані</strong>, але здоров'я він не втрачає.</blockquote>
+<h3 id="поранення-відступ-і-паніка">Поранення, відступ і паніка</h3>
+<ul>
+<li><strong>Бій не ранить пса.</strong> Тільки стресує.</li>
+<li>Здоров'я падає через <strong>занедбаність</strong> (голод або спрага вище 0,8), через <strong>отруйну їжу</strong> і через <strong>відсіч оленя на полюванні</strong>. Убити може тільки занедбаність.</li>
+<li>Стани поранення: <strong>«Боляче»</strong> нижче 30% здоров'я, <strong>«Тяжко поранений»</strong> нижче 10%. Тяжко поранений пес <strong>тільки йде за вами, але не б'ється</strong>.</li>
+<li><strong>Відступ:</strong> він тікає вам за спину, коли здоров'я падає до 10% або нижче.</li>
+<li><strong>Паніка:</strong> з високим стресом він <strong>не б'ється, не охороняє і не виконує трюки</strong>. Але він усе одно прибіжить до вас, коли покличете.</li>
+</ul>
+<h3 id="одужання">Одужання</h3>
+<p>Пес лікується сам, і <strong>доволі швидко</strong>: повна шкала здоров'я приблизно за <strong>8 ігрових годин</strong>, тобто з майже мертвого до здорового за одну ніч. <strong>Але тільки якщо він ситий і напоєний</strong>: щойно шкала голоду <strong>або</strong> спраги переходить за половину, <strong>одужання спиняється повністю</strong>.</p>
+<p>Тобто: щоб вилікувати пораненого пса, <strong>нагодуйте його, дайте води і дайте часу минути</strong>.</p>
+<h3 id="лічильник-убивств">Лічильник убивств</h3>
+<p>У кожного пса свій лічильник, який видно в його вікні: <strong>«Вбивства: 14 зомбі, 3 дичини»</strong>.</p>
+<p>З увімкненою опцією пісочниці <strong>«Вбивства собак зараховуються вам»</strong> (це стандарт) зомбі, яких він убиває, <strong>також додаються до вашого лічильника</strong> на екрані персонажа.</p>
+<h2 id="7-потреби-та-догляд">7. Потреби та догляд</h2>
+<p>Пес-компаньйон невразливий, а це заморожує звичайні системи голоду в грі. Тому мод керує всім вручну.</p>
+<p>Шкал тут <strong>чотири</strong>, плюс лояльність.</p>
+<div class="tw"><table><thead><tr>
+<th>Шкала</th>
+<th>Росте / падає</th>
+<th>Темп</th>
+<th>Коли заважає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Голод</strong></td>
+<td>Росте з часом</td>
+<td>Від порожньої до повної приблизно за <strong>3 дні</strong></td>
+<td>Вище 0,6</td>
+</tr>
+<tr>
+<td><strong>Спрага</strong></td>
+<td>Росте з часом</td>
+<td>Від порожньої до повної приблизно за <strong>1,7 дня</strong></td>
+<td>Вище 0,6</td>
+</tr>
+<tr>
+<td><strong>Здоров'я</strong></td>
+<td>Падає лише через занедбаність</td>
+<td><strong>Повна шкала за ~8 годин</strong> з голодом або спрагою вище 0,8</td>
+<td>Нижче 30%</td>
+</tr>
+<tr>
+<td><strong>Стрес</strong></td>
+<td>Обчислюється з інших</td>
+<td>Немає</td>
+<td>Вище 50%</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Сну й гігієни не існує.</strong> Псові не треба спати, і він не бруднішає.</blockquote>
+<p>Опція пісочниці <strong>«Швидкість появи голоду та спраги»</strong> масштабує обидві шкали разом. На 0 вони застигають назавжди, і пес більше ніколи не потребуватиме ні їжі, ні води (лояльність і далі падає, тож уваги він усе одно хоче).</p>
+<h3 id="звідки-береться-стрес">Звідки береться стрес</h3>
+<p>Стрес не є шкалою, яку ви наповнюєте, він <strong>результат</strong> усіх інших. Він росте від голоду, від спраги, від низького здоров'я, від низької лояльності і від <strong>кожного удару в бою</strong>.</p>
+<p>Рівні:</p>
+<div class="tw"><table><thead><tr>
+<th>Рівень</th>
+<th>Починаючи з</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Нервує</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>Панікує</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>Наляканий</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>Пес у паніці <strong>перестає битися, охороняти й виконувати трюки</strong>. Він усе ще прибіжить до вас, коли покличете.</p>
+<p>Добра новина: <strong>бойовий стрес швидко минає</strong> поза боєм. Повна шкала спорожнюється приблизно за <strong>2 ігрові години</strong>. <strong>Ласка, їжа й вода прискорюють це ще більше.</strong></p>
+<h3 id="годування-вручну">Годування вручну</h3>
+<p>Правий клік по псові → <strong>«Погодувати»</strong>.</p>
+<ul>
+<li>Годиться <strong>будь-яка їжа</strong>, яка не зіпсована і вгамовує голод. Обмежень на м'ясо чи корм немає, є тільки список отруйної їжі.</li>
+<li>Ефект: знижує голод, напуває, якщо продукт соковитий, <strong>+0,10 здоров'я</strong>, послаблення стресу і <strong>приріст лояльності, пропорційний тому, скільки голоду вгамувала порція</strong>.</li>
+<li>З'їдається тільки потрібний шматок.</li>
+<li>Повідомлення: <em>«Карамело задоволений.»</em></li>
+</ul>
+<h3 id="дати-воду">Дати воду</h3>
+<p>Правий клік → <strong>«Дати воду»</strong>. Потрібна будь-яка ємність із водою в інвентарі (мод шукає і всередині рюкзаків).</p>
+<p>Знижує шкалу спраги наполовину, дає <strong>+2 лояльності</strong> і послаблює стрес. <em>«Карамело попив.»</em></p>
+<h3 id="ласка">Ласка</h3>
+<p>Правий клік → <strong>«Погладити»</strong>.</p>
+<ul>
+<li><strong>Відкат 90 ігрових хвилин.</strong> До того: <em>«Ваш Карамело наразі отримав достатньо ласки.»</em></li>
+<li>Ефект на пса: <strong>послаблює стрес і дає +2 лояльності</strong>.</li>
+<li><strong>Ефект на вас:</strong> послаблює <strong>Нудьгу та Нещастя</strong>. Варто робити щоразу, коли є нагода.</li>
+</ul>
+<h3 id="сходинки-занедбаності">Сходинки занедбаності</h3>
+<p>Якщо ви закинете пса, станеться ось що, саме в такому порядку:</p>
+<ol>
+<li>Голод і спрага переходять за 0,6. На вашому екрані з'являється moodle <strong>«Голодний»</strong> / <strong>«Спраглий»</strong>.</li>
+<li><strong>Лояльність починає падати втричі швидше.</strong></li>
+<li>За половиною шкали <strong>природне одужання спиняється</strong>.</li>
+<li>За 0,8 <strong>здоров'я починає швидко витікати</strong>: пес із повним здоров'ям доходить до нуля приблизно за <strong>8 ігрових годин</strong>.</li>
+<li>Лояльність пробиває дно, пес стає <strong>«Неслухняний»</strong> і перестає слухатися.</li>
+<li>Стрес росте, і він впадає в паніку: <strong>перестає битися, охороняти й виконувати трюки</strong>.</li>
+<li>Здоров'я доходить до нуля, і <strong>він гине</strong>.</li>
+</ol>
+<p><strong>Смерть остаточна.</strong> Респауну немає. <em>«Ваш Карамело загинув.»</em> Сідельні сумки і все, що було всередині, падають на землю. Якщо у вас є інший пес, він автоматично стає активним.</p>
+<p>Зомбі вашого пса не вб'є. <strong>А ось якщо забути його нагодувати, це вб'є.</strong></p>
+<h2 id="8-лояльність">8. Лояльність</h2>
+<p>Лояльність вимірюється від 0 до 100 і показує, наскільки пес вам довіряє.</p>
+<ul>
+<li><strong>Падає сама по собі</strong>, приблизно на 12 пунктів за день, і <strong>втричі швидше</strong>, якщо пес голодний або хоче пити.</li>
+<li><strong>Росте тільки від людських рук:</strong> годування, вода (+2) і погладжування (+2).</li>
+<li><strong>Годування це найшвидший спосіб</strong>, але приріст <strong>пропорційний тому, скільки голоду зняла порція</strong>. Дати їжу вже ситому псу майже не має ефекту; нагодувати голодного може повернути десятки пунктів за раз. Якщо лояльність впала, <strong>дайте псу зголодніти перед годуванням</strong>.</li>
+<li><strong>Автоматична миска НІКОЛИ не дає лояльності.</strong> Так задумано: пес, який сам дає собі раду біля миски, не будує з вами зв'язку. Хочете відданого пса, тоді треба з'являтися особисто.</li>
+</ul>
+<h3 id="поріг-непокори">Поріг непокори</h3>
+<p>Нижче певної позначки пес стає <strong>«Неслухняним»</strong> і відмовляється слідувати, битися та робити трюки: <em>«Ваш Карамело більше вам не довіряє...»</em></p>
+<p>Цей поріг <strong>знижується разом зі зростанням Послуху</strong>: починає з 30 і падає на 1,5 за рівень, але ніколи не опускається нижче 10. Тобто пес із <strong>Послухом 10 стає неслухняним лише нижче 15 очок лояльності</strong>, а ненавчений пес створює проблеми вже нижче 30.</p>
+<p><strong>Тренувати Послух це спосіб купити собі запас лояльності.</strong></p>
+<h3 id="коли-пес-відмовляється-виконати-наказ">Коли пес відмовляється виконати наказ</h3>
+<p>Причин чотири, ось вони за пріоритетом:</p>
+<div class="tw"><table><thead><tr>
+<th>Ситуація</th>
+<th>Що ви бачите</th>
+</tr></thead><tbody>
+<tr>
+<td>Лояльність нижче порогу</td>
+<td><em>«Карамело Рекс недостатньо вам довіряє, щоб підкоритися.»</em></td>
+</tr>
+<tr>
+<td>Стрес на рівні паніки</td>
+<td><em>«Карамело Рекс надто панікує, щоб битися.»</em></td>
+</tr>
+<tr>
+<td>Здоров'я 10% або менше</td>
+<td><em>«Карамело Рекс надто тяжко поранений, щоб битися.»</em></td>
+</tr>
+<tr>
+<td>Збій тренування</td>
+<td><em>«Карамело Рекс відволікається й не слухається.»</em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-миска-їжа-та-вода-без-вашої-участі">9. Миска: їжа та вода без вашої участі</h2>
+<p>Миска це спосіб для <strong>активного пса</strong> дати собі раду, поки ви зайняті чимось іншим.</p>
+<blockquote class="quote"><strong>Тільки активний пес відчуває голод і спрагу, і тільки він користується мискою.</strong> Решта прив'язаних собак стоїть на паузі: без голоду, без спраги, без пошуку миски і без втрати лояльності. Вам <strong>не треба ставити миску для них</strong>, і вони не голодують, поки чекають. Дивіться <a href="#16-кілька-собак-одночасно">Кілька собак одночасно</a>.</blockquote>
+<h3 id="як-користуватися">Як користуватися</h3>
+<ol>
+<li>Роздобудьте миску (крафт або лут, дивіться <a href="#19-предмети-мода">Предмети моду</a>).</li>
+<li>В інвентарі правий клік → <strong>«Поставити миску для їжі»</strong>. Відкриється курсор вільного розміщення, <strong>R повертає</strong>.</li>
+<li>Коли миска на землі, правий клік на ній → <strong>«Додати їжу в миску»</strong> або <strong>«Додати воду в миску»</strong>.</li>
+</ol>
+<p>Миска тримає <strong>або їжу, або воду, ніколи обидва разом</strong>. Щоб змінити вміст, скористайтеся <strong>«Спорожнити миску»</strong>.</p>
+<p>Вміст видно з вигляду: сіра порожня, коричнева з кормом, синя з водою.</p>
+<h3 id="що-годиться-як-їжа-для-миски">Що годиться як їжа для миски</h3>
+<p><strong>Практично будь-яка їжа, яка втамовує голод і не зіпсована:</strong> м'ясо, консерви, готова страва, овочі, фрукти, яйця, собачий корм, а також трава і сіно.</p>
+<p>Не годяться лише зіпсована їжа, те, що не втамовує голод, і <a href="#їжа-яка-шкодить">список того, що шкодить собаці</a>, який у меню світиться червоним.</p>
+<blockquote class="quote"><strong>Закрита банка корму не з'являється</strong> у списку. Спочатку відкрийте банку.</blockquote>
+<p>Миска вміщає до <strong>100 пунктів</strong>. Кожен предмет дає своє, залежно від розміру:</p>
+<div class="tw"><table><thead><tr>
+<th>Предмет</th>
+<th>Пункти</th>
+</tr></thead><tbody>
+<tr>
+<td>Мішок корму</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Відкрита банка корму</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Сіно</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Трава</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>Якщо предмет більший за вільне місце, миска наповнюється до краю, а решта повертається вам.</strong> У мисці на 80 пунктів мішок корму доводить її до 100 і повертається у ваш інвентар зі значенням 40. Повідомлення <em>«У мисці недостатньо місця для цього.»</em> з'являється лише тоді, коли миска <strong>повністю повна</strong>.</p>
+<h3 id="як-пес-нею-користується">Як пес нею користується</h3>
+<ul>
+<li>Він іде сам, коли <strong>голод або спрага досягають 0,5</strong> (налаштовується для кожного персонажа повзунком <em>«Їсть, коли голод/спрага досягає»</em> на вкладці Налаштування).</li>
+<li>Він шукає миску в радіусі <strong>16 клітинок</strong>. Годиться і миска з мода, і <strong>ванільна годівниця з гри</strong>.</li>
+<li>Кожен підхід знімає половину шкали. Їсть він близько 3 ігрових хвилин.</li>
+<li>Поки він зайнятий мискою, він <strong>ігнорує зомбі та ігнорує все</strong>. Перервати може тільки ваш наказ. І це добре: пес, який панікує від голоду, здатен вибити власну паніку їжею.</li>
+</ul>
+<p>Над його головою з'являється <strong>«Йде їсти»</strong>, <strong>«Їсть»</strong>, <strong>«Йде пити»</strong>, <strong>«П'є»</strong>.</p>
+<blockquote class="quote"><strong>Пам'ятайте:</strong> їжа з миски <strong>не дає жодної лояльності</strong>. Миска тримає пса живим, а погладжування тримає пса вашим.</blockquote>
+<p>Миска <strong>ніколи не працює як джерело питної води для вас</strong>, і дощ її не наповнює.</p>
+<h2 id="10-навички-пять-умінь-пса">10. Навички: п'ять умінь пса</h2>
+<p>У кожного пса п'ять навичок, від 0 до 10, і вони ростуть <strong>від справи</strong>, а не від спеціальних тренувань.</p>
+<div class="tw"><table><thead><tr>
+<th>Навичка</th>
+<th>Як росте</th>
+<th>Що покращує</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Нюх</strong></td>
+<td>Кожне нове виявлення вартовим; трюк винюхування</td>
+<td><strong>Радіус вартового</strong> (18 → 27 клітинок) і дальність запам'ятованого запаху</td>
+</tr>
+<tr>
+<td><strong>Бій</strong></td>
+<td>Кожен удар і кожне вбивство</td>
+<td><strong>Шкода</strong>, шанс збити з ніг (10% → 50%) і стійкість до бойового стресу</td>
+</tr>
+<tr>
+<td><strong>Послух</strong></td>
+<td>Кожен виконаний наказ (з відкотом). <strong>Росте вчетверо швидше нижче 3 рівня</strong></td>
+<td><strong>Нижчий поріг лояльності</strong>, <strong>чотири трюки</strong> і менший шанс непокори</td>
+</tr>
+<tr>
+<td><strong>Полювання</strong></td>
+<td>Вказати на дичину, винюхати, вполювати, а також коли <strong>ви</strong> вбиваєте дичину поруч із ним</td>
+<td><strong>Рівень 3:</strong> вбиває дрібну дичину. <strong>Рівень 6:</strong> дає раду оленю і приносить здобич. Також збільшує ваш радіус пошуку ресурсів</td>
+</tr>
+<tr>
+<td><strong>Пастуша справа</strong></td>
+<td>Догляд за загоном, стримування паніки стада, знищення зомбі в загоні</td>
+<td>Сила аури, яка <strong>заспокоює стадо</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="про-криву-досвіду">Про криву досвіду</h3>
+<p>Перший рівень дається швидко, десятий це проєкт надовго. Опція пісочниці <strong>«Швидкість отримання досвіду навичок»</strong> керує швидкістю всього.</p>
+<blockquote class="quote"><strong>Увага:</strong> типове значення цієї опції у файлі це <strong>0,5</strong>, тобто половина швидкості, хоча в підказці написано «Стандартна швидкість 1.0». Якщо вам здається, що пес вчиться надто повільно, річ саме в цьому. Підніміть до 1,0 або вище.</blockquote>
+<h3 id="непокора">Непокора</h3>
+<p>З увімкненою опцією <strong>«Собаки можуть не слухатися»</strong> (так за замовчуванням) ненавчений пес іноді просто вас ігнорує: <em>«Карамело Рекс відволікається й не слухається.»</em></p>
+<ul>
+<li>Шанс починається з <strong>30% на Послуху 0</strong> і сходить до <strong>0% на Послуху 10</strong>.</li>
+<li><strong>Повторити наказ одразу завжди спрацьовує.</strong> Двічі поспіль він ніколи не ігнорує.</li>
+<li><strong>Проігнорований наказ усе одно його тренує</strong>, тож досвід не пропадає.</li>
+<li>Стосується лише <strong>прямих наказів</strong>: слідувати, на місці, охороняти, іди сюди, атакувати і трюки. Ніколи не зачіпає годування, воду, погладжування, сідельні сумки, <strong>Принести</strong> та налаштування поведінки (вартовий, автозахист, полювання, худоба).</li>
+</ul>
+<p>Якщо вам ця механіка не подобається, вимкніть цю опцію в пісочниці.</p>
+<h3 id="навичка-це-не-те-саме-що-риса">Навичка це не те саме, що риса</h3>
+<p>У вікні пса є два схожі списки, і краще їх не плутати:</p>
+<ul>
+<li><strong>Навички</strong> (Нюх, Бій, Послух, Полювання, Пастуша справа) <strong>ростуть від використання</strong> протягом усього життя. Саме про них цей розділ.</li>
+<li><strong>Риси</strong> (Сила, Агресивність, Спротив) <strong>визначаються, коли ви приручаєте пса, і ніколи не змінюються</strong>. Тренування їх не чіпає.</li>
+</ul>
+<blockquote class="quote"><strong>Риси, що робить кожна з них і діапазони кожної породи</strong> описані в <a href="breeds.html" class="xlink">Довіднику порід</a>.</blockquote>
+<h2 id="11-трюки-послуху">11. Трюки послуху</h2>
+<p>Чотири трюки, які відкриває рівень <strong>Послуху</strong>. Усі вони є в меню від самого початку, закриті показані червоним, щоб ви бачили, що на вас чекає далі: <em><span class="ig">Відкривається на рівні послуху 3 (зараз: 1).</span></em></p>
+<h3 id="відправити-в-точку-послух-1">Відправити в точку (Послух 1)</h3>
+<p>Відкриває <strong>курсор на землі</strong>: зелений там, де можна, червоний там, де ні. Лівий клік обирає місце, правий скасовує.</p>
+<ul>
+<li>Максимальна відстань: <strong>30 клітинок від ВАС</strong>, а не від собаки.</li>
+<li>Пес іде туди і <strong>тримає точку</strong> (після прибуття переходить у режим На місці).</li>
+<li>Будь-який новий наказ скасовує похід.</li>
+</ul>
+<p>Це спосіб поставити пса кудись, не йдучи разом з ним: відправити на інший бік вулиці, на ріг, усередину кімнати.</p>
+<h3 id="відволікти-послух-3">Відволікти (Послух 3)</h3>
+<p>Пес навмисно гавкає, добряче голосно, у радіусі 24 клітинок, і <strong>натовп іде на нього</strong>. Потім він відходить до вас.</p>
+<ul>
+<li><strong>Навмисно ігнорує опцію <span class="ig">Шум собаки приваблює зомбі</span></strong>: увесь сенс трюку в тому, щоб шуміти, тож він шумить завжди.</li>
+<li>Коштує стресу.</li>
+<li>Червона позначка над головою: <strong><span class="ig">Відволікає зомбі</span></strong>.</li>
+<li>Відкат 10 ігрових хвилин.</li>
+</ul>
+<p>Це інструмент, щоб <strong>пробити собі дорогу</strong>: тягнете групу в один бік, поки самі заходите з іншого. Пам'ятайте, що пес лишається з натовпом за спиною, тож майте план.</p>
+<h3 id="винюхати-предмет-послух-5">Винюхати предмет (Послух 5)</h3>
+<p><strong>Візьміть річ у руки</strong> і скористайтеся трюком. Пес запам'ятовує <strong>запах саме такого типу предмета</strong>: <em><span class="ig">Карамело запам'ятала запах: Молоток.</span></em></p>
+<p>Далі він у фоні обшукує все навколо (12 клітинок, до 20 з максимальним Нюхом) у пошуках цього предмета <strong>у шафах і на землі</strong>. Коли знаходить:</p>
+<ol>
+<li>Гавкає.</li>
+<li>Іде туди і показує.</li>
+<li><strong>Предмет підсвічується зеленим прямо у світі.</strong></li>
+</ol>
+<p>Повідомлення: <em><span class="ig">Карамело чує Молоток поблизу.</span></em> і <em><span class="ig">Карамело вказує на Молоток.</span></em></p>
+<p>Пес тримає в пам'яті <strong>лише один запах</strong>. Понюхати щось інше означає замінити його. Щоб скасувати, скористайтеся <strong><span class="ig">Припинити шукати Молоток</span></strong> (з назвою предмета, який він запам'ятав) (скасування ніколи не блокується).</p>
+<p>Без речі в руках: <em><span class="ig">Візьміть у руки річ, яку має обнюхати собака.</span></em></p>
+<h3 id="шукати-предмет-поки-ви-спите-послух-10">Шукати предмет, поки ви спите (Послух 10)</h3>
+<p>Останній трюк. <strong>Собаці потрібні сідельні сумки.</strong></p>
+<p>Візьміть предмет у руки і задайте пошук: <em><span class="ig">Карамело шукатиме Молоток, поки ви спите.</span></em> Над головою лишається постійна позначка: <strong><span class="ig">Шукає: Молоток</span></strong>.</p>
+<p>Як це працює:</p>
+<ul>
+<li><strong>Один раз на ігрову добу.</strong> Спрацьовує одразу після того, як ви прокинулися, якщо пес поруч.</li>
+<li><strong>Шанс на успіх залежить від того, наскільки рідкісний предмет</strong>, і <strong>гарантій немає жодних</strong>. Навіть найбуденніша річ у грі має максимум <strong>50% шансу за ніч</strong> (у середньому десь 2 дні очікування). Нечаста річ на кшталт сокири дає близько 15%, а щось справді рідкісне на кшталт катани дає близько 2%, тобто тижні спроб.</li>
+<li>Якщо вийшло: <em><span class="ig">Карамело приніс Молоток, поки ви спали.</span></em>, предмет з'являється <strong>всередині сідельних сумок</strong>, а над головою зелена позначка <strong><span class="ig">Приніс: Молоток</span></strong>.</li>
+<li>Якщо ні: <em><span class="ig">Карамело повернувся без Молотка.</span></em> і червона позначка <strong><span class="ig">Повернувся ні з чим</span></strong>.</li>
+</ul>
+<p>Дві перешкоди в момент, коли ви задаєте пошук:</p>
+<ul>
+<li>Предмет заважкий: <em><span class="ig">Карамело не зміг би віднести Ковадло.</span></em></li>
+<li>Предмет, якого немає в таблицях луту гри: <em><span class="ig">Карамело не знав би, де шукати це.</span></em></li>
+</ul>
+<h2 id="12-полювання">12. Полювання</h2>
+<p>Режим Полювання за замовчуванням <strong>вимкнений</strong>, і ви вмикаєте його для кожного пса окремо: радіальне меню, клавіша або кнопка на вкладці Команди. <em><span class="ig">Карамело Рекс буде полювати на дичину поблизу.</span></em></p>
+<h3 id="на-кого-він-полює">На кого він полює</h3>
+<div class="tw"><table><thead><tr>
+<th>Здобич</th>
+<th>Потрібний рівень Полювання</th>
+</tr></thead><tbody>
+<tr>
+<td>Кролик, єнот, щур, білка</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>Олень (оленя, олениця, самець оленя)</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>Інших диких тварин він лише показує, а не полює на них.</p>
+<h3 id="як-це-працює-на-практиці">Як це працює на практиці</h3>
+<p><strong>Рівні 0, 1 і 2: він показує, і все.</strong> Пес <strong>жодного разу не торкається здобичі</strong> на цьому етапі. Гавкає один раз, підбігає близько до тварини, зупиняється, стає в стійку і <strong>тримає її кілька хвилин</strong>, щоб ви побачили, де вона. Потім кидає це і повертається. Сповіщення: <em><span class="ig">Ваш пес знайшов дичину неподалік...</span></em></p>
+<p>Це не дрібниця: <strong>саме так він тренує Полювання на початку</strong>. Показуйте йому дичину, дайте постояти в стійці, і рівень росте.</p>
+<p><strong>Рівень 3: він починає вбивати дрібну дичину.</strong></p>
+<ul>
+<li><strong>Якщо він голодний, то з'їдає здобич.</strong> Вам не дістається нічого, але пес наїдається.</li>
+<li><strong>Якщо ні, він вбиває і зараховує це вам</strong>, а тушу, з якої можна зняти шкуру, лишає <strong>на землі там, де закінчилася гонитва</strong>. Він повідомляє: <em><span class="ig">Ваш пес здолав дичину!</span></em>, але <strong>забирати йдете ви</strong>.</li>
+</ul>
+<p><strong>Рівень 6: він починає приносити здобич до вас.</strong> Позначка <strong><span class="ig">Повернення зі здобиччю</span></strong> і повідомлення <em><span class="ig">Ваш пес приніс свою здобич до вас.</span></em> Це стосується <strong>лише дрібної дичини</strong>.</p>
+<p><strong>Рівень 6 також відкриває оленя</strong>, і тут правило інше: він <strong>не тягне оленя, на жодному рівні і в жодній породі</strong>. Він виснажує оленя майже до смерті і <strong>тримає здобич, чекаючи, поки ви завдасте останнього удару</strong>: <em><span class="ig">Ваш пес поранив оленя, добийте його!</span></em>, з позначкою <strong><span class="ig">Утримання здобичі</span></strong>. Якщо ви не з'явитеся протягом 20 ігрових хвилин, він добиває сам (і вам це все одно зараховують). Якщо олень утече, пес іде по сліду: <em><span class="ig">Ваш пес вистежує поранену дичину...</span></em></p>
+<blockquote class="quote"><strong>Лабрадор тут виняток:</strong> він віддає здобич <strong>уже з 3-го рівня</strong>, тобто з першої ж дичини, яку здатен вбити, і довше не кидає її по дорозі. Подробиці в <a href="breeds.html" class="xlink">Посібнику з порід</a>.</blockquote>
+<p><strong>Олень дає відсіч.</strong> Приблизно кожен четвертий наскок ранить пса і додає йому стресу. Смертельним це не буває ніколи.</p>
+<h3 id="обмеження">Обмеження</h3>
+<ul>
+<li>Полювання це <strong>сільське заняття</strong>. Дичина живе в лісі і в полі, а не в місті.</li>
+<li>Працює лише в режимі <strong>Слідувати</strong>.</li>
+<li><strong>Повідець на 32 клітинки.</strong> Якщо пес відійде задалеко, він кидає гонитву, повертається і відпочиває 20 ігрових хвилин (позначка <strong><span class="ig">Полювання: відпочинок</span></strong>).</li>
+<li>Не полює під час прискорення часу, поки ви спите, у транспорті, а також протягом 5 хвилин після вашого наказу.</li>
+<li><strong>Якщо він уже б'ється із зомбі, про полювання й не думає.</strong> Але навпаки це саме по собі не працює: зомбі, що проходить поруч, <strong>не витягує пса з полювання</strong>. Він кидає здобич, якщо ви вступили в бій, якщо спрацював автозахист або якщо ви наказали. <strong>Будь-який ваш наказ скасовує полювання миттєво.</strong></li>
+</ul>
+<h3 id="чого-це-коштує">Чого це коштує</h3>
+<ul>
+<li>Полювання <strong>викликає голод</strong>.</li>
+<li>Гавкіт під час гонитви <strong>приваблює зомбі</strong>, і це намертво, вимкнути не можна.</li>
+<li>Пес відходить від вас і лишається без прикриття.</li>
+</ul>
+<h3 id="бонуси-до-пошуку-ресурсів">Бонуси до пошуку ресурсів</h3>
+<p>Це дві різні речі, і <strong>обидві працюють лише з увімкненим режимом пошуку</strong>.</p>
+<p><strong>а) Він знаходить місце для збору (тільки в режимі Полювання).</strong> Коли поблизу немає здобичі, пес шукає тваринне місце для збору ресурсів, іде туди, гавкає і <strong>показує це місце</strong>: <em><span class="ig">Ваш пес щось знайшов! Увімкніть режим пошуку, щоб побачити це.</span></em> Позначка: <strong><span class="ig">Пошук ресурсів</span></strong>.</p>
+<p><strong>Пес ніколи не піднімає предмет за вас.</strong> Він показує, де шукати; <strong>збираєте ви</strong>, увімкнувши режим пошуку і зібравши ресурси в тій точці.</p>
+<p><strong>б) Він збільшує ваш радіус пошуку (будь-яка порода, завжди).</strong> Достатньо, щоб поруч був ваш пес, відданий, не надто голодний і не спраглий:</p>
+<ul>
+<li><strong>+6 клітинок</strong> радіуса з Полюванням 0, до <strong>+12 клітинок</strong> з Полюванням 10.</li>
+<li>Категорії <strong>тварин, комах, слідів і туш</strong> стає набагато легше знаходити.</li>
+</ul>
+<p>Це <strong>не є ексклюзивом жодної породи</strong>: працює навіть із Карамело. Золотистий ретривер лише <strong>додає ще 4 клітинки</strong> зверху.</p>
+<h2 id="13-догляд-за-худобою">13. Догляд за худобою</h2>
+<p>Цей режим перетворює пса на працівника ферми: він лишається в загоні і <strong>доглядає стадо сам, навіть коли ви далеко</strong>.</p>
+<h3 id="як-призначити">Як призначити</h3>
+<ol>
+<li>Зробіть <strong>визначену зону для тварин</strong> (загін з базової гри).</li>
+<li>Заведіть пса всередину.</li>
+<li>Правий клік → <strong><span class="ig">Доглядати за худобою тут</span></strong>.</li>
+<li>Підтвердьте. Мод попереджає, що <strong>пса буде знято з вибору і він більше не слідуватиме за вами</strong>.</li>
+</ol>
+<p>Без загону: <em><span class="ig">Карамело Рекс потрібен визначений загін для тварин, щоб доглядати за худобою тут.</span></em></p>
+<h3 id="що-він-там-робить">Що він там робить</h3>
+<ul>
+<li><strong>Патрулює загін.</strong></li>
+<li><strong>Заспокоює стадо.</strong> Це головне: нервова тварина <strong>не дає ні молока, ні вовни</strong>, скидає приплід і розбігається, щойно з'явиться зомбі. Пес тримає стрес стада нижче критичної позначки.</li>
+<li><strong>Тихо відганяє зомбі</strong> в радіусі 12 клітинок.</li>
+<li>Працює, <strong>навіть коли ви на іншому кінці карти</strong>.</li>
+</ul>
+<p>Сповіщення: <em><span class="ig">Карамело Рекс відчуває зомбі біля загону!</span></em> і <em><span class="ig">Стадо Карамело Рекса починає нервувати!</span></em> Позначка над головою: <strong><span class="ig">Догляд за худобою</span></strong>.</p>
+<h3 id="важливі-правила">Важливі правила</h3>
+<ul>
+<li>Поки пес на посту, <strong>голод, спрага і втрата відданості заморожені</strong>. Він дає раду сам.</li>
+<li>Він <strong>випадає з усього іншого</strong>: не б'ється за вас, не полює, не вартує, не користується мискою.</li>
+<li><strong>Ненавчений, неслухняний або наляканий пес НЕРВУЄ стадо замість того, щоб заспокоювати.</strong> Не ставте нетреноване цуценя наглядати за коровами.</li>
+<li><strong>Якщо вибрати пса знову, режим скасовується</strong> автоматично.</li>
+</ul>
+<p><strong>Бордер-колі вчить Пастушу справу вдвічі швидше</strong> за інші породи, але виконати цю роботу може будь-яка порода.</p>
+<h2 id="14-сідельні-сумки-собака-як-вючний-мул">14. Сідельні сумки: собака як в'ючний мул</h2>
+<h3 id="як-одягнути">Як одягнути</h3>
+<ol>
+<li>Майте в інвентарі предмет <strong><span class="ig">Седлова сумка для собаки компаньона</span></strong>.</li>
+<li>Правий клік на собаці → <strong><span class="ig">Одягнути сідельні сумки</span></strong>. <em><span class="ig">Сідельні сумки закріплено.</span></em></li>
+<li>Щоб відкрити: <strong><span class="ig">Відкрити сідельні сумки</span></strong> (або сегмент радіального меню, або кнопка на вкладці Команди).</li>
+<li>Щоб зняти: <strong><span class="ig">Зняти сідельні сумки</span></strong>. Сумки <strong>разом із вантажем усередині</strong> падають на землю.</li>
+</ol>
+<h3 id="скільки-вантажу-він-несе">Скільки вантажу він несе</h3>
+<p>Місткість складається з <strong>фіксованої бази плюс ген Сили собаки</strong>. Зі стандартними значеннями:</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Вантаж (вага)</th>
+</tr></thead><tbody>
+<tr>
+<td>Карамело</td>
+<td><strong>від 4 до 5</strong></td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>від 6 до 7</td>
+</tr>
+<tr>
+<td>Німецька вівчарка, Бордер-колі, Ротвейлер, Доберман, Лабрадор</td>
+<td>від 6 до 8</td>
+</tr>
+<tr>
+<td><strong>Хаскі</strong></td>
+<td><strong>від 13 до 16</strong></td>
+</tr>
+</tbody></table></div>
+<p>Хаскі це єдиний пес із породним бонусом до сідельних сумок (на 50% більше). Усі інші залежать тільки від гена Сили, тож дві собаки однієї породи можуть нести різну вагу.</p>
+<p>Сервер може змінити це опціями <strong><span class="ig">Базова місткість сідельних сумок</span></strong> і <strong><span class="ig">Бонус сили для сідельних сумок</span></strong>.</p>
+<h3 id="що-можна-покласти">Що можна покласти</h3>
+<p>Майже все, і обмеження тут по <strong>вазі</strong>, а не по кількості предметів. Винятки:</p>
+<ul>
+<li>Інші сідельні сумки.</li>
+<li>Речі, які на вас або в руках (вдягнений одяг, зброя в руках).</li>
+<li><strong>Рюкзаки й сумки.</strong> Складайте те, що всередині них, а не саму сумку.</li>
+</ul>
+<p><strong>Позначки на карті не зберігаються.</strong> Якщо покласти карту з позначками, вони зникнуть: <em><span class="ig">Позначки на карті не зберігаються в сідельних сумках.</span></em></p>
+<h3 id="вікно">Вікно</h3>
+<p>Два списки поруч: <strong><span class="ig">Ваш інвентар</span></strong> ліворуч (клік кладе всередину) і сідельні сумки праворуч (клік дістає). Унизу: <strong><span class="ig">Вантаж: 7/12</span></strong>.</p>
+<h3 id="де-дістати">Де дістати</h3>
+<p><strong>Крафт:</strong> 2x Шкіряні смужки + Голка + Нитка (голка й нитка не витрачаються). Категорія Кравецтво, потрібен <strong>1 рівень Кравецтва</strong>. Дає 15 досвіду Кравецтва.</p>
+<p><strong>Лут:</strong> зоомагазини, ящики із зоотоварами, туристичні магазини, мисливські шафи, набори виживання, гаражні інструменти та фермерські ящики.</p>
+<blockquote class="quote"><strong>Якщо собака загине або ви її відпустите, сідельні сумки з усім вантажем впадуть на землю</strong> там, де вона стояла.</blockquote>
+<h2 id="15-розведення-та-цуценята">15. Розведення та цуценята</h2>
+<h3 id="кнопки-звести-немає">Кнопки "звести" немає</h3>
+<p>Розведення <strong>на 100% пасивне</strong>. Ви не наказуєте двом собакам паруватися. Ви створюєте умови і чекаєте.</p>
+<p>Щогодини ігрового часу кожна придатна самка, поруч з якою є придатний самець, має шанс зачати сама. Стандартне значення це <strong>5% на день</strong> (опція пісочниці <strong><span class="ig">Шанс розведення за день</span></strong>).</p>
+<h3 id="умови">Умови</h3>
+<p>Усі обов'язкові, і для обох собак:</p>
+<ol>
+<li>Обидві <strong>належать одному власнику</strong>.</li>
+<li>Один <strong>дорослий самець і одна доросла самка</strong>. Цуценя не розмножується ніколи.</li>
+<li>У жодної з них не ввімкнено <strong><span class="ig">Заблокувати розведення</span></strong>.</li>
+<li><strong>Той самий поверх</strong> і відстань <strong>не більше ніж 40 тайлів</strong> одна від одної.</li>
+<li>Жодна з них не <strong>тяжко поранена</strong> і не <strong>отруєна</strong>.</li>
+<li><strong>Лояльність 60 або вище</strong> в обох.</li>
+<li><strong>Ситі:</strong> голод <strong>і</strong> спрага нижче половини в обох.</li>
+<li>Самка <strong>не вагітна</strong> і не на <strong>семиденному відновленні</strong> після пологів.</li>
+<li>Є <strong>вільне місце</strong> в ліміті собак.</li>
+<li>Ділянка має бути <strong>завантажена поруч із вами</strong>.</li>
+</ol>
+<p>Тобто: <strong>дві доглянуті собаки поруч, і ви неподалік</strong>. Якщо нічого не відбувається, то майже завжди винен голод, спрага або лояльність.</p>
+<h3 id="залицяння-і-вагітність">Залицяння і вагітність</h3>
+<p>Самка <strong>йде до самця</strong> (<em><span class="ig">Карамело Рекс прямує до партнера</span></em>) і зачинає, щойно підійде близько. <em><span class="ig">Карамело Рекс вагітна</span></em>.</p>
+<ul>
+<li><strong>Вагітність: 4 ігрові дні</strong> за замовчуванням.</li>
+<li>Годинник іде <strong>навіть коли самка далеко або ви не в мережі</strong>.</li>
+<li>Індикатори над головою і в меню: <strong><span class="ig">Вагітна</span></strong>, а під кінець <strong><span class="ig">Скоро пологи</span></strong>. Показуються рожевим і <strong>завжди</strong>, навіть з вимкненими текстами стану.</li>
+</ul>
+<h3 id="пологи">Пологи</h3>
+<p>Розмір виводку залежить від породи <strong>матері</strong>:</p>
+<div class="tw"><table><thead><tr>
+<th>Порода матері</th>
+<th>Виводок</th>
+</tr></thead><tbody>
+<tr>
+<td>Карамело</td>
+<td>від 2 до 4</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>від 1 до 3</td>
+</tr>
+<tr>
+<td>Німецька вівчарка, Золотистий ретривер, Хаскі</td>
+<td>від 1 до 2</td>
+</tr>
+</tbody></table></div>
+<p><em><span class="ig">У Карамело Рекс народився виводок</span></em>. Після цього <strong>7 ігрових днів відпочинку</strong>, перш ніж вона зможе завагітніти знову.</p>
+<blockquote class="quote">Якщо сервер задав <strong>ліміт собак</strong> і вільного місця немає, виводок обріжуть так, щоб він помістився (а вагітність усе одно завершиться). Зі стандартними налаштуваннями, де ліміту <strong>немає</strong>, такого ніколи не буває.</blockquote>
+<h3 id="що-успадковує-цуценя">Що успадковує цуценя</h3>
+<ul>
+<li><strong>Походження це середнє від батьків.</strong> Карамело з Німецькою вівчаркою дає 50/50. Такий метис із чистою вівчаркою дає 25/75.</li>
+<li><strong>Зовнішність визначається жеребом, де походження задає вагу.</strong> Цуценя, яке на 75% вівчарка, найімовірніше й виглядатиме як вівчарка.</li>
+<li><strong>Гени лягають десь між батьківськими, з відхиленням плюс-мінус 6%.</strong> Саме так покращують лінію: схрещуйте двох найсильніших собак, яких маєте, знову і знову.</li>
+<li>Собаку з більш ніж однією породою позначено як <strong><span class="ig">Метис</span></strong>, і вікно показує розклад (<span class="ig">50% Хаскі, 50% Німецька вівчарка</span>).</li>
+<li><strong>Родовід записується:</strong> покоління, ім'я та порода батька й матері.</li>
+</ul>
+<h3 id="вирощування-цуценяти">Вирощування цуценяти</h3>
+<ul>
+<li>Народжується <strong>пасивним</strong> (у режимі На місці), з <strong>50 лояльності</strong> (а не з нуля), <strong>зовсім без навичок</strong> і помітно меншим.</li>
+<li><strong>Рахується в ліміті собак від самого народження.</strong></li>
+<li>Щоб стати дорослим, потрібно <strong>90 ігрових днів</strong>. Годинник <strong>іде завжди</strong>, навіть коли цуценя далеко й поза зоною завантаження. Якщо строк мине, поки воно вивантажене, воно стане дорослим, щойно ви знову підійдете ближче.</li>
+<li>Виростаючи, воно <strong>зберігає ім'я, зв'язок, гени та навички</strong>: <em><span class="ig">Карамело Рекс виріс у дорослого</span></em>.</li>
+<li>Якщо вам сподобалося маленьке цуценя, перемикач <strong><span class="ig">Призупинити дорослішання</span></strong> заморозить його назавжди. <em><span class="ig">Собаки, які ніколи не виростають? Шкода, що в реальному житті такого перемикача немає :D</span></em></li>
+</ul>
+<h2 id="16-кілька-собак-одночасно">16. Кілька собак одночасно</h2>
+<p>Собак у вас може бути кілька, але <strong>виходить з вами лише одна за раз</strong>: це <span class="ig">активна</span> собака. Решта чекають.</p>
+<blockquote class="quote"><strong>Це планують змінити в майбутній версії.</strong> Поки що розраховуйте на одну собаку за раз.</blockquote>
+<p><strong>Пасивна собака повністю на паузі.</strong> І це добре: вона не мертвий вантаж, який треба постійно обслуговувати.</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Активна собака</th>
+<th>Пасивна собака</th>
+</tr></thead><tbody>
+<tr>
+<td>Іде за вами</td>
+<td>Так</td>
+<td>Ні, стоїть там, де є</td>
+</tr>
+<tr>
+<td><strong>Відчуває голод і спрагу</strong></td>
+<td>Так</td>
+<td><strong>Ні. І навіть не накопичує на потім</strong></td>
+</tr>
+<tr>
+<td><strong>Їсть з миски</strong></td>
+<td>Так</td>
+<td><strong>Ні, і їй це не потрібно</strong></td>
+</tr>
+<tr>
+<td>Втрачає лояльність сама по собі</td>
+<td>Так</td>
+<td>Ні</td>
+</tr>
+<tr>
+<td>Б'ється, вартує, полює</td>
+<td>Так</td>
+<td>Ні</td>
+</tr>
+<tr>
+<td>Приймає ласку (і набирає лояльність)</td>
+<td>Так</td>
+<td><strong>Так</strong></td>
+</tr>
+<tr>
+<td>Може розмножуватися й мати цуценят</td>
+<td>Так</td>
+<td><strong>Так</strong></td>
+</tr>
+<tr>
+<td>Рахується для moodles і бонусу до пошуку</td>
+<td>Так</td>
+<td><strong>Так, якщо поруч</strong></td>
+</tr>
+</tbody></table></div>
+<p>Найважливіше на кожен день: <strong>собак, які чекають, годувати не треба.</strong> Вони не голодують, не втрачають лояльність і не помруть від занедбаності, поки чекають. Коли ви виберете одну з них, її голод продовжиться <strong>з того місця, де зупинився</strong>, без накопиченого сюрпризу.</p>
+<p>Щоб перемкнутися, правий клік на собаці → <strong><span class="ig">Вибрати</span></strong>.</p>
+<p>Меню пасивної собаки навмисно скорочене: без годування, без води, без наказів руху, бо на неї це все одно не діє.</p>
+<h3 id="вкладка-мої-собаки-реєстр">Вкладка "Мої собаки": реєстр</h3>
+<p>Це ваш реєстр собак. Він перелічує всіх прив'язаних собак з портретом, іменем, породою, статтю, навичками та поточним станом:</p>
+<div class="tw"><table><thead><tr>
+<th>Стан</th>
+<th>Що це означає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Активна</strong></td>
+<td>Собака, якою ви зараз користуєтесь</td>
+</tr>
+<tr>
+<td><strong>Поруч</strong></td>
+<td>Завантажена неподалік від вас</td>
+</tr>
+<tr>
+<td><strong>На руках</strong></td>
+<td>Ви несете її на руках</td>
+</tr>
+<tr>
+<td><strong>У транспорті</strong></td>
+<td>Прибрана в машину</td>
+</tr>
+<tr>
+<td><strong>Далеко</strong></td>
+<td>Прив'язана, але поза зоною. Показує <span class="ig">бачили X год тому</span></td>
+</tr>
+<tr>
+<td><strong>Зник</strong></td>
+<td>Пропала. Скористайтеся кнопкою <strong>Принести</strong> звідси</td>
+</tr>
+<tr>
+<td><strong>Даних ще немає</strong></td>
+<td>Ви жодного разу не підходили до неї після прив'язки</td>
+</tr>
+</tbody></table></div>
+<p>Три кнопки на кожну собаку: <strong>Принести</strong> | <strong>Статус</strong> | <strong>Вибрати</strong>.</p>
+<p><strong>Принести</strong> для собаки поруч це простий телепорт. Для собаки <strong>далеко</strong> кнопка спитає підтвердження: <em><span class="ig">Покликати Карамело Рекс назад здалеку? Ваш гучний свист приверне зомбі.</span></em> і поверне собаку, зберігши навички, гени, ім'я та сідельні сумки.</p>
+<p><strong>Відновлення 2 ігрові години на кожну собаку.</strong> Раніше не вийде: <em><span class="ig">Карамело Рекс нещодавно був викликаний, зачекайте трохи перед повторним викликом.</span></em></p>
+<blockquote class="quote"><strong>Саме так ви повертаєте загублену собаку.</strong> Якщо собака пропала, мод попереджає: <em><span class="ig">Карамело Рекс зник! Відкрийте «Мої собаки» (кнопка з лапою), щоб повернути його.</span></em></blockquote>
+<h2 id="17-вікно-собаки">17. Вікно собаки</h2>
+<p>Відкрити його можна чотирма способами: <strong>кнопкою з лапою</strong> одразу під панеллю ваших рук, клавішею <strong>Статус</strong>, пунктом <strong><span class="ig">Статус</span></strong> у контекстному меню або кнопкою у вкладці <span class="ig">Мої собаки</span>.</p>
+<p>Вікно <strong>можна змінювати в розмірі</strong>, і воно запам'ятовує, де ви його залишили. Угорі стоїть <strong>живий 3D-портрет собаки</strong> з іменем. У машині з'являється смужка <strong><span class="ig">У транспорті</span></strong>.</p>
+<h3 id="вкладка-навички-та-стан">Вкладка "Навички та стан"</h3>
+<ul>
+<li><strong>Лояльність</strong> зі шкалою та поясненням при наведенні.</li>
+<li><strong>Потреби:</strong> Голод, Спрага, Здоров'я, Стрес.</li>
+<li><strong>Навички:</strong> Нюх, Бій, Послух, Полювання, Пастуша справа, кожна зі шкалою прогресу і <strong><span class="ig">Рів. X</span></strong>.</li>
+<li><strong>Риси:</strong> Сила, Агресивність, Спротив, показані як Низька / Звичайна / Висока.</li>
+<li><strong>Порода:</strong> назва, вік (Дорослий або Цуценя), <span class="ig">(Метис)</span>, якщо це той випадок, і опис породи при наведенні.</li>
+<li><strong>Вбивства:</strong> скільки зомбі та скільки дичини вже вбила ця собака.</li>
+</ul>
+<p><strong>В усього є пояснення при наведенні.</strong> Якщо не розумієте, за що відповідає якась шкала, наведіть на неї мишку.</p>
+<h3 id="вкладка-команди">Вкладка "Команди"</h3>
+<ul>
+<li><strong>Режим:</strong> Слідувати | На місці | Охороняти</li>
+<li><strong>Вартовий:</strong> Тривога | Тихо | Повна тиша</li>
+<li><strong>Автозахист</strong> (увімкнути/вимкнути)</li>
+<li><strong>Полювання</strong> (увімкнути/вимкнути)</li>
+<li><strong>Доглядати за худобою тут</strong></li>
+<li><strong>Трюки:</strong> чотири кнопки (закриті лишаються неактивними, а причину видно при наведенні)</li>
+<li><strong>Відкрити сідельні сумки</strong></li>
+<li><strong>Дії:</strong> Принести | Перейменувати | Відпустити</li>
+</ul>
+<p>У транспорті все, що вимагає собаки у світі, стає неактивним (<em><span class="ig">Недоступно за кермом, ваш компаньйон їде разом з вами.</span></em>), а рядок дій перетворюється на <strong>Погодувати | Перейменувати | Дати воду</strong>.</p>
+<h3 id="вкладка-мої-собаки">Вкладка "Мої собаки"</h3>
+<p>Дивіться <a href="#16-кілька-собак-одночасно">Кілька собак одночасно</a>.</p>
+<h3 id="вкладка-налаштування">Вкладка "Налаштування"</h3>
+<p>Ці опції <strong>ваші особисті</strong>, для кожного гравця окремо, і ні на кого більше на сервері не впливають:</p>
+<ul>
+<li><strong>Інтерфейс:</strong> <span class="ig">Тексти стану: увімкнено/вимкнено</span> (написи, що висять над головою собаки) і <span class="ig">Зображення стану: увімкнено/вимкнено</span> (moodles собаки).</li>
+<li><strong>Звук:</strong> загальна гучність, вимкнення звуку та окремі повзунки <strong>Гавкіт</strong>, <strong>Ефекти</strong> й <strong>Оточення</strong>.</li>
+<li><strong>Автоматичне годування:</strong> повзунок <span class="ig">Їсть, коли голод/спрага досягає</span>.</li>
+<li><strong>Клавіші керування:</strong> усі 14 дій, з кнопками <strong>Змінити клавішу</strong> та <strong>Очистити</strong>.</li>
+</ul>
+<blockquote class="quote">Якщо гавкіт вам набрид, повзунок <strong>Гавкіт</strong> тут усе владнає, і жодну механіку вимикати не доведеться.</blockquote>
+<h2 id="18-що-зявляється-на-екрані">18. Що з'являється на екрані</h2>
+<h3 id="moodles-собаки">Moodles собаки</h3>
+<p>Окремий стовпчик іконок, <strong>ліворуч від звичайного стовпчика moodles гри</strong>. У кожної породи свій. Повний опис у <a href="breeds.html" class="xlink">посібнику з порід</a>.</p>
+<p>Ті, що може дати будь-яка собака:</p>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Коли з'являється</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Голодний</strong></td>
+<td>Високий голод</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Спраглий</strong></td>
+<td>Висока спрага</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Отруєння</strong></td>
+<td>З'їла зіпсовану їжу</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Добре відпочив</strong></td>
+<td>Ви поспали поруч із собакою</td>
+<td>Зменшує паніку, стрес, смуток і нудьгу, а ще ви втомлюєтеся повільніше. За замовчуванням триває 2 ігрові години</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Правило, яке діє для всіх породних moodles:</strong> <strong>неслухняна, хвора або дуже голодна чи спрагла собака не дає жодного бонусу</strong>. Moodle просто вимикається. Доглянута собака це собака, яка працює.</blockquote>
+<h3 id="написи-над-головою">Написи над головою</h3>
+<p>Собака складає над головою кілька рядків стану, їх видно за 14 клітинок і лише на тому самому поверсі. Згори вниз: сповіщення вартового, стан (<strong>Наляканий</strong>, <strong>Панікує</strong>, <strong>Тяжко поранений</strong>, <strong>Неслухняний</strong>, <strong>Боляче</strong>, <strong>Нервує</strong>), чим вона зайнята (їсть, полює, винюхує, доглядає за худобою), вагітність і <strong>ім'я</strong>, завжди останнім і найближче до голови.</p>
+<p>Опція <strong><span class="ig">Тексти стану: вимкнено</span></strong> (вкладка <span class="ig">Налаштування</span>) прибирає все, крім імені. Опція пісочниці <strong><span class="ig">Показувати імена собак</span></strong> вимикає навіть ім'я.</p>
+<p><strong>Собака іншого гравця</strong> показує тільки <strong><span class="ig">Власник: Ім'я гравця</span></strong>, вагітність та ім'я.</p>
+<h3 id="позначка-на-карті">Позначка на карті</h3>
+<p><strong>Одна лапка на кожну прив'язану собаку</strong>, на карті світу і на мінікарті.</p>
+<ul>
+<li><strong>Коричнева лапка = активна собака. Сірі лапки = пасивні собаки.</strong></li>
+<li>На карті світу поруч із лапкою стоїть ім'я собаки. На мінікарті імені немає, зате там лапка <strong>прилипає до краю</strong> і показує напрямок, коли собака поза видимістю.</li>
+<li>Поки собака завантажена, позначка стежить за нею наживо. Коли вивантажується, вона <strong>лишається на останньому баченому місці</strong>.</li>
+</ul>
+<p><strong>Саме так ви знаходите собаку, яка відстала, або свою собаку після смерті.</strong> Позначка це чистий оверлей, вона ніколи не стає збереженим символом на карті.</p>
+<p>Вимикається опцією пісочниці <strong><span class="ig">Показувати собаку на карті</span></strong>.</p>
+<h2 id="19-предмети-мода">19. Предмети мода</h2>
+<p>Мод додає <strong>два предмети, якими ви користуєтесь</strong>, і більше нічого.</p>
+<h3 id="миска-для-собаки-компаньона">Миска для собаки компаньона</h3>
+<p>Станція годування. Вага 1,5.</p>
+<p><strong>Два рецепти</strong>, обидва не вимагають жодної навички і робляться руками:</p>
+<ul>
+<li><strong>1 кухонне начиння</strong> (каструля, сковорода, деко, чайник, відро, кухоль, пляшка...), яке знищується.</li>
+<li><strong>1 миска для тварин із базової гри</strong>, знищується.</li>
+</ul>
+<p><strong>Лут:</strong> полиця зоомагазину, ящик із зоотоварами, господарський відділ супермаркету, садовий магазин, ящики на фермі та в садівництві, склад супермаркету, кухня.</p>
+<h3 id="седлова-сумка-для-собаки-компаньона">Седлова сумка для собаки компаньона</h3>
+<p>Дивіться <a href="#14-сідельні-сумки-собака-як-вючний-мул">Сідельні сумки</a>. Вага 1,0, з добрим зменшенням ваги вмісту.</p>
+<h3 id="чого-в-моді-немає">Чого в моді НЕМАЄ</h3>
+<p>Щоб ви не шукали марно: <strong>миска та сідельні сумки це два єдині предмети мода.</strong> Немає ні нашийника, ні особливих ласощів, ні іграшки, ні будки, ні вольєра, який можна збудувати. Звичайний собачий корм із базової гри мод розпізнає, але це предмет гри, а не мода.</p>
+<h2 id="20-мультиплеєр">20. Мультиплеєр</h2>
+<p>Мод із самого початку робився під мультиплеєр і працює однаково в кооперативі та на виділеному сервері.</p>
+<h3 id="ваша-собака-тільки-ваша">Ваша собака тільки ваша</h3>
+<p>Право власності прив'язане до <strong>вашого акаунта</strong>, а не до персонажа чи слота підключення. Перезапуск сервера не передасть вашу собаку комусь іншому.</p>
+<p><strong>Інші гравці можуть:</strong> бачити собаку, з іменем і <strong><span class="ig">Власник: Ім'я гравця</span></strong> над головою.</p>
+<p><strong>Інші гравці не можуть:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Спроба</th>
+<th>Що відбувається</th>
+</tr></thead><tbody>
+<tr>
+<td>Підібрати на руки</td>
+<td><em><span class="ig">Цей пес належить іншому вцілілому.</span></em></td>
+</tr>
+<tr>
+<td>Погодувати або приручити знову</td>
+<td><em><span class="ig">Цей пес уже належить іншому вцілілому.</span></em> Перевіряється <strong>до</strong> того, як людина витратить свою їжу</td>
+</tr>
+<tr>
+<td>Наказувати, перейменовувати, відпускати, лізти в сідельні сумки</td>
+<td>Заблоковано на сервері</td>
+</tr>
+<tr>
+<td>Убити</td>
+<td>Опція навіть не з'являється, а компаньйон невразливий</td>
+</tr>
+</tbody></table></div>
+<h3 id="коли-ви-виходите-з-гри">Коли ви виходите з гри</h3>
+<p>З увімкненою опцією <strong><span class="ig">Прибирати собак, коли власник не в мережі</span></strong> (так стоїть за замовчуванням):</p>
+<ul>
+<li>Ваші собаки <strong>зберігаються поза світом</strong>, зі станом і потребами <strong>на паузі</strong>.</li>
+<li>Коли ви повертаєтесь, собака в режимі <strong>Слідувати</strong> знову опиняється поруч із вами; ті, що були в режимах <strong>На місці</strong> та <strong>Охороняти</strong>, і пасивні з'являються <strong>там, де ви їх залишили</strong>, щойно завантажиться область.</li>
+<li><strong>Ви не повернетесь до голодної собаки.</strong> Час поза грою не рахується.</li>
+</ul>
+<p>Якщо опцію вимкнути, собаки лишаються у світі, невразливі й нерухомі.</p>
+<h3 id="для-адміністраторів">Для адміністраторів</h3>
+<p>Є <strong><span class="ig">Реєстр собак (адмін)</span></strong>: пошук за гравцем, статус У мережі/Не в мережі, кількість собак і кнопка Оновити. Є також панель <strong>живого налаштування продуктивності сервера</strong>. І те, і те доступне тільки адмінам.</p>
+<h3 id="попередження-щодо-встановлення-в-кооперативі">Попередження щодо встановлення в кооперативі</h3>
+<p><strong>Якщо собака з'явилася без текстури або <span class="ig">зім'ята</span>:</strong> увімкніть Companion Dogs у <strong>списку модів головного меню</strong> (а не лише у виборі для кооперативу) і <strong>повністю закрийте гру</strong>, перш ніж завантажувати збереження. Хост кооперативу має зробити те саме й перезапустити сервер.</p>
+<h2 id="21-параметри-пісочниці">21. Параметри пісочниці</h2>
+<p>Сторінка <strong>«Компаньон собака»</strong> в налаштуваннях світу. Усього 33 опції.</p>
+<blockquote class="quote"><strong>Пам'ятайте:</strong> у мультиплеєрі головні налаштування <strong>сервера</strong>. А в Project Zomboid параметри пісочниці записуються <strong>у збереження</strong>, тож змінити їх пізніше можна лише редагуванням сейву або створенням нового світу.</blockquote>
+<h3 id="приручення-та-поява">Приручення та поява</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Потрібна довіра, щоб приборкати</td>
+<td>100</td>
+<td>Скільки їжі потрібно, щоб пес став вашим</td>
+</tr>
+<tr>
+<td>Максимальна кількість собак на гравця</td>
+<td><strong>0 (без обмежень)</strong></td>
+<td>Межа кількості прив'язаних собак</td>
+</tr>
+<tr>
+<td>Бродячі собаки з'являються в містах</td>
+<td>Увімкнено</td>
+<td>Собаки з'являються самі, поки ви досліджуєте світ</td>
+</tr>
+<tr>
+<td>Множник появи собак</td>
+<td>1,0</td>
+<td>Масштабує всю появу. 0 вимикає</td>
+</tr>
+<tr>
+<td>Невразливість диких собак</td>
+<td><strong>Вимкнено</strong></td>
+<td>Захищає вільних собак від загибелі, поки ви їх не приручили</td>
+</tr>
+<tr>
+<td>Дозволити тестове створення</td>
+<td>Увімкнено</td>
+<td>Меню налагодження (у мультиплеєрі лише для адмінів)</td>
+</tr>
+</tbody></table></div>
+<h3 id="бій">Бій</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Компаньон бореться с зомбі</td>
+<td>Увімкнено</td>
+<td>Головний перемикач бою</td>
+</tr>
+<tr>
+<td>Компаньон наносе урон іншим гравцям в мультиплееєрі</td>
+<td>1,0</td>
+<td>Масштабує шкоду. <strong>Карамело все одно не добиває зомбі, хоч би яке високе значення ви поставили</strong></td>
+</tr>
+<tr>
+<td>Вбивства собак зараховуються вам</td>
+<td>Увімкнено</td>
+<td>Зомбі, убиті собакою, додаються до вашого лічильника</td>
+</tr>
+</tbody></table></div>
+<h3 id="догляд-і-звязок">Догляд і зв'язок</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Потреби та догляд</td>
+<td>Увімкнено</td>
+<td>Головний перемикач голоду, спраги, відданості та стресу</td>
+</tr>
+<tr>
+<td>Швидкість появи голоду та спраги</td>
+<td>1,0</td>
+<td>Масштабує обидві потреби. <strong>0 заморожує їх, і пес більше ніколи не потребує їжі</strong></td>
+</tr>
+<tr>
+<td>Зменшення лояльності за день</td>
+<td>12,0</td>
+<td>Скільки відданості зникає за день</td>
+</tr>
+<tr>
+<td>Зв'язок: заспокоєння (гладити та спати)</td>
+<td>Увімкнено</td>
+<td>Погладжування і сон поруч зменшують вашу нудьгу та смуток</td>
+</tr>
+<tr>
+<td>Добре відпочив (сон біля собаки)</td>
+<td>Увімкнено</td>
+<td>Ефект, з яким ви прокидаєтеся</td>
+</tr>
+<tr>
+<td>Тривалість ефекту «Добре відпочив» (години)</td>
+<td>2,0</td>
+<td>Скільки він триває</td>
+</tr>
+</tbody></table></div>
+<h3 id="поведінка">Поведінка</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Вартовий: сповіщення про зомбі</td>
+<td>Увімкнено</td>
+<td>Головний перемикач чергування</td>
+</tr>
+<tr>
+<td>Автозахист: охорона під час зайнятості</td>
+<td>Увімкнено</td>
+<td>Вмикає перемикач для кожної окремої собаки</td>
+</tr>
+<tr>
+<td>Шум собаки приваблює зомбі</td>
+<td>Увімкнено</td>
+<td>Гучний гавкіт це справжній шум. <strong>Гарчання не приваблює ніколи</strong></td>
+</tr>
+<tr>
+<td>Собаки можуть не слухатися</td>
+<td>Увімкнено</td>
+<td>Шанс 30% на рівні 0, що спадає до 0% на 10-му</td>
+</tr>
+</tbody></table></div>
+<h3 id="навички-та-заняття">Навички та заняття</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Навички та тренування</td>
+<td>Увімкнено</td>
+<td>Головний перемикач навичок</td>
+</tr>
+<tr>
+<td>Швидкість отримання досвіду навичок</td>
+<td><strong>0,5</strong></td>
+<td>Швидкість навчання. Підніміть до 1,0+, якщо здається повільним</td>
+</tr>
+<tr>
+<td>Допоміжне полювання</td>
+<td>Увімкнено</td>
+<td>Головний перемикач полювання</td>
+</tr>
+<tr>
+<td>Догляд за фермою (пастуша справа)</td>
+<td>Увімкнено</td>
+<td>Головний перемикач режиму загону</td>
+</tr>
+<tr>
+<td>Трюки послуху</td>
+<td>Увімкнено</td>
+<td>Головний перемикач чотирьох трюків</td>
+</tr>
+</tbody></table></div>
+<h3 id="сідельні-сумки">Сідельні сумки</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Базова місткість сідельних сумок</td>
+<td>4</td>
+<td>Мінімум вантажу</td>
+</tr>
+<tr>
+<td>Бонус сили для сідельних сумок</td>
+<td>8</td>
+<td>Скільки додає зверху дуже сильний пес</td>
+</tr>
+</tbody></table></div>
+<h3 id="цуценята">Цуценята</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Розведення та цуценята</td>
+<td>Увімкнено</td>
+<td>Головний перемикач</td>
+</tr>
+<tr>
+<td>Тривалість вагітності (дні)</td>
+<td>4</td>
+<td>Ігрових днів до пологів</td>
+</tr>
+<tr>
+<td>Час дорослішання цуценяти (дні)</td>
+<td>90</td>
+<td>Днів до дорослішання</td>
+</tr>
+<tr>
+<td>Шанс розведення за день</td>
+<td>5,0</td>
+<td>Шанс, що пара зачне сама. 0 вимикає</td>
+</tr>
+</tbody></table></div>
+<h3 id="інтерфейс-і-мультиплеєр">Інтерфейс і мультиплеєр</h3>
+<div class="tw"><table><thead><tr>
+<th>Опція</th>
+<th>Значення за замовчуванням</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td>Показувати імена собак</td>
+<td>Увімкнено</td>
+<td>Ім'я, що висить над головою</td>
+</tr>
+<tr>
+<td>Показувати собаку на карті</td>
+<td>Увімкнено</td>
+<td>Лапка на карті та мінікарті</td>
+</tr>
+<tr>
+<td>Прибирати собак, коли власник не в мережі</td>
+<td>Увімкнено</td>
+<td>Мультиплеєр: собаки зникають зі світу, коли ви виходите з гри</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-часті-проблеми">22. Часті проблеми</h2>
+<p><strong>«Пес з'явився без текстури, весь зім'ятий».</strong> Увімкніть мод у списку Mods <strong>у головному меню</strong> і повністю закрийте гру, перш ніж завантажувати збереження. Це проблема номер один у кооперативі.</p>
+<p><strong>«Додав мод, а в моєму збереженні нічого немає».</strong> Project Zomboid вмикає мод <strong>окремо для кожного збереження</strong>. Мод, доданий пізніше, не потрапляє у вже створений світ, і гра <strong>не показує жодної помилки</strong>. На екрані завантаження збереження перевірте, чи мод позначений для того світу.</p>
+<p><strong>«Мій пес не слухається».</strong> Подивіться на повідомлення. Якщо там <em>«недостатньо вам довіряє, щоб підкоритися»</em>, справа у відданості: погодуйте, дайте води й погладьте. Якщо там <em>«відволікається й не слухається»</em>, бракує тренування: <strong>повторіть наказ, вдруге він завжди спрацює</strong>. Якщо це паніка чи поранення, спершу подбайте про пса.</p>
+<p><strong>«Мій пес не вбиває зомбі, а лише збиває їх з ніг».</strong> Якщо це <strong>Карамело</strong>, так і задумано, і жодне налаштування цього не змінить. Візьміть іншу породу або прийміть його роль: він збиває, а ви добиваєте.</p>
+<p><strong>«Пес гавкає постійно і приводить зомбі».</strong> Джерел може бути чотири, і всі вони під контролем: <strong>вартовий у режимі Тривога</strong> (перемкніть на <strong>Тихо</strong>, у ньому пес ніколи не гавкає), трюк <strong>Відволікти</strong> (шум і є його метою), <strong>полювання</strong> (вимкніть режим Полювання) і <strong>бій</strong>. Пес у стресі <strong>не</strong> гавкає сам по собі.</p>
+<p><strong>«Мій пес зник».</strong> Відкрийте вікно кнопкою з лапою, перейдіть на вкладку <strong>«Мої собаки»</strong> і скористайтеся командою <strong>Принести</strong>. Якщо пес далеко, мод попросить підтвердження і поверне його з усіма речами. Перезарядка 2 ігрові години на кожного пса. Позначка на карті теж показує останнє місце, де його бачили.</p>
+<p><strong>«Пес застряг по той бік паркану».</strong> Скористайтеся командою <strong>Принести</strong> (свист). Вона саме для цього, ціною буде тільки увага зомбі.</p>
+<p><strong>«Моя собака не вагітніє».</strong> Перегляньте список <a href="#15-розведення-та-цуценята">умов розведення</a>. Майже завжди причина в голоді, спразі або відданості нижче 60 в однієї з двох собак. Перевірте також, чи не ввімкнено <strong>«Заблокувати розведення»</strong>.</p>
+<p><strong>«Моє цуценя не росте».</strong> Перевірте, чи не ввімкнено на ньому <strong>«Призупинити дорослішання»</strong>. Крім цього, потрібен лише час: за замовчуванням це <strong>90 ігрових днів</strong>, і годинник цокає навіть тоді, коли цуценя далеко. Якщо строк уже минув, а воно й досі цуценя, підійдіть до нього ближче: перетворення відбувається тоді, коли цуценя завантажене у світі.</p>
+<p><strong>«Пес не сідає зі мною в машину».</strong> У транспорт сідає лише пес у режимі <strong>Слідувати</strong>. У режимі На місці чи Охороняти він залишається.</p>
+<p><strong>«Залишив пса охороняти базу, а він нічого не зробив».</strong> Режим Охороняти поки що <strong>працює лише тоді, коли ви поруч</strong>. Єдиний режим, у якому пес працює самостійно й далеко від вас, це <strong>Догляд за худобою</strong>, і для нього потрібен визначений загін.</p>
+<p><strong>«Пес навчається надто повільно».</strong> За замовчуванням <strong>«Швидкість отримання досвіду навичок»</strong> дорівнює <strong>0,5</strong>, тобто половині звичайної швидкості. У новому світі підніміть її до 1,0 або більше.</p>
+<p><strong>«Мій пес загинув».</strong> Це назавжди, і жодного відродження немає. Єдина причина це доведені до краю голод або спрага. Сідельні сумки й увесь вантаж залишаються на землі там, де пес упав.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Нічого не знайдено за запитом <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' результатів'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Початок');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

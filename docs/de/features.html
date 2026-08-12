@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Funktionen: Was der Hund kann und wie du ihm Befehle gibst">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Funktionen">
+<meta property="og:description" content="Funktionen: Was der Hund kann und wie du ihm Befehle gibst">
+<meta property="og:url" content="https://companiondogs.pet/docs/de/features.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Funktionen</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Inhalt öffnen" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Zurück zur Startseite der Dokumentation"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Funktionen</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Zum Rassen-Handbuch</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="im Handbuch suchen..." aria-label="Im Handbuch suchen" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Sprache"><optgroup label="Geprüft"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Maschinell übersetzt"><option value="de" selected>Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="Design wechseln">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Maschinell übersetzt, nicht geprüft.</b> Diese Seite wurde maschinell aus dem Portugiesischen übersetzt und von niemandem geprüft. Begriffe und Zahlen können falsch sein. Im Zweifel schau in die englische Fassung oder ins portugiesische Original. <a href="../en/features.html">Auf Englisch lesen</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Inhalt &middot; <b>Funktionen</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-in-5-minuten-vom-streuner-zum-begleiter" data-id="1-in-5-minuten-vom-streuner-zum-begleiter">1. In 5 Minuten: vom Streuner zum Begleiter</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-einen-hund-finden-und-zähmen" data-id="2-einen-hund-finden-und-zähmen">2. Einen Hund finden und zähmen</a>
+<div class="sub">
+<a class="s3" href="#wo-welche-rasse-auftaucht" data-id="wo-welche-rasse-auftaucht">Wo welche Rasse auftaucht</a>
+<a class="s3" href="#so-zähmst-du-einen-hund" data-id="so-zähmst-du-einen-hund">So zähmst du einen Hund</a>
+<a class="s3" href="#wie-viel-futter-nötig-ist" data-id="wie-viel-futter-nötig-ist">Wie viel Futter nötig ist</a>
+<a class="s3" href="#futter-das-schadet" data-id="futter-das-schadet">Futter, das schadet</a>
+<a class="s3" href="#was-in-dem-moment-passiert-in-dem-er-dir-gehört" data-id="was-in-dem-moment-passiert-in-dem-er-dir-gehört">Was in dem Moment passiert, in dem er dir gehört</a>
+<a class="s3" href="#hunde-limit" data-id="hunde-limit">Hunde-Limit</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-wie-du-befehle-gibst-die-vier-wege" data-id="3-wie-du-befehle-gibst-die-vier-wege">3. Wie du Befehle gibst: die vier Wege</a>
+<div class="sub">
+<a class="s3" href="#a-kontextmenü-rechtsklick-auf-den-hund" data-id="a-kontextmenü-rechtsklick-auf-den-hund">a) Kontextmenü (Rechtsklick auf den Hund)</a>
+<a class="s3" href="#b-radialmenü-q-gedrückt-halten" data-id="b-radialmenü-q-gedrückt-halten">b) Radialmenü (Q gedrückt halten)</a>
+<a class="s3" href="#c-tastenkürzel" data-id="c-tastenkürzel">c) Tastenkürzel</a>
+<a class="s3" href="#d-schaltflächen-im-hundefenster" data-id="d-schaltflächen-im-hundefenster">d) Schaltflächen im Hundefenster</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-die-drei-modi-folgen-bleib-und-bewachen" data-id="4-die-drei-modi-folgen-bleib-und-bewachen">4. Die drei Modi: Folgen, Bleib und Bewachen</a>
+<div class="sub">
+<a class="s3" href="#folgen" data-id="folgen">Folgen</a>
+<a class="s3" href="#bleib" data-id="bleib">Bleib</a>
+<a class="s3" href="#bewachen" data-id="bewachen">Bewachen</a>
+<a class="s3" href="#die-zwei-rückrufbefehle" data-id="die-zwei-rückrufbefehle">Die zwei Rückrufbefehle</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-wachdienst-der-hund-als-alarmanlage" data-id="5-wachdienst-der-hund-als-alarmanlage">5. Wachdienst: der Hund als Alarmanlage</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-kampf" data-id="6-kampf">6. Kampf</a>
+<div class="sub">
+<a class="s3" href="#wann-er-von-sich-aus-kämpft" data-id="wann-er-von-sich-aus-kämpft">Wann er von sich aus kämpft</a>
+<a class="s3" href="#er-beißt-nicht-durch-wände" data-id="er-beißt-nicht-durch-wände">Er beißt nicht durch Wände</a>
+<a class="s3" href="#wie-hart-er-zuschlägt" data-id="wie-hart-er-zuschlägt">Wie hart er zuschlägt</a>
+<a class="s3" href="#auto-schutz" data-id="auto-schutz">Auto-Schutz</a>
+<a class="s3" href="#deine-kugeln-treffen-ihn-nie" data-id="deine-kugeln-treffen-ihn-nie">Deine Kugeln treffen ihn nie</a>
+<a class="s3" href="#verletzung-rückzug-und-panik" data-id="verletzung-rückzug-und-panik">Verletzung, Rückzug und Panik</a>
+<a class="s3" href="#heilung" data-id="heilung">Heilung</a>
+<a class="s3" href="#kill-zählung" data-id="kill-zählung">Kill-Zählung</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-bedürfnisse-und-pflege" data-id="7-bedürfnisse-und-pflege">7. Bedürfnisse und Pflege</a>
+<div class="sub">
+<a class="s3" href="#woher-der-stress-kommt" data-id="woher-der-stress-kommt">Woher der Stress kommt</a>
+<a class="s3" href="#von-hand-füttern" data-id="von-hand-füttern">Von Hand füttern</a>
+<a class="s3" href="#wasser-geben" data-id="wasser-geben">Wasser geben</a>
+<a class="s3" href="#streicheln" data-id="streicheln">Streicheln</a>
+<a class="s3" href="#die-stufen-der-vernachlässigung" data-id="die-stufen-der-vernachlässigung">Die Stufen der Vernachlässigung</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-loyalität" data-id="8-loyalität">8. Loyalität</a>
+<div class="sub">
+<a class="s3" href="#die-ungehorsamsschwelle" data-id="die-ungehorsamsschwelle">Die Ungehorsamsschwelle</a>
+<a class="s3" href="#wenn-der-hund-einen-befehl-verweigert" data-id="wenn-der-hund-einen-befehl-verweigert">Wenn der Hund einen Befehl verweigert</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-der-napf-futter-und-wasser-ohne-dich" data-id="9-der-napf-futter-und-wasser-ohne-dich">9. Der Napf: Futter und Wasser ohne dich</a>
+<div class="sub">
+<a class="s3" href="#so-benutzt-du-ihn" data-id="so-benutzt-du-ihn">So benutzt du ihn</a>
+<a class="s3" href="#was-als-napffutter-zählt" data-id="was-als-napffutter-zählt">Was als Napffutter zählt</a>
+<a class="s3" href="#wie-der-hund-ihn-nutzt" data-id="wie-der-hund-ihn-nutzt">Wie der Hund ihn nutzt</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-fähigkeiten-die-fünf-skills-des-hundes" data-id="10-fähigkeiten-die-fünf-skills-des-hundes">10. Fähigkeiten: die fünf Skills des Hundes</a>
+<div class="sub">
+<a class="s3" href="#zur-xp-kurve" data-id="zur-xp-kurve">Zur XP-Kurve</a>
+<a class="s3" href="#ungehorsam" data-id="ungehorsam">Ungehorsam</a>
+<a class="s3" href="#eine-fähigkeit-ist-nicht-dasselbe-wie-eine-anlage" data-id="eine-fähigkeit-ist-nicht-dasselbe-wie-eine-anlage">Eine Fähigkeit ist nicht dasselbe wie eine Anlage</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-gehorsams-kunststücke" data-id="11-gehorsams-kunststücke">11. Gehorsams-Kunststücke</a>
+<div class="sub">
+<a class="s3" href="#zu-einer-stelle-gehen-gehorsam-1" data-id="zu-einer-stelle-gehen-gehorsam-1">Zu einer Stelle gehen (Gehorsam 1)</a>
+<a class="s3" href="#ablenken-gehorsam-3" data-id="ablenken-gehorsam-3">Ablenken (Gehorsam 3)</a>
+<a class="s3" href="#gegenstand-erschnüffeln-gehorsam-5" data-id="gegenstand-erschnüffeln-gehorsam-5">Gegenstand erschnüffeln (Gehorsam 5)</a>
+<a class="s3" href="#einen-gegenstand-holen-während-du-schläfst-gehorsam-10" data-id="einen-gegenstand-holen-während-du-schläfst-gehorsam-10">Einen Gegenstand holen, während du schläfst (Gehorsam 10)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-jagd" data-id="12-jagd">12. Jagd</a>
+<div class="sub">
+<a class="s3" href="#was-er-jagt" data-id="was-er-jagt">Was er jagt</a>
+<a class="s3" href="#wie-es-in-der-praxis-läuft" data-id="wie-es-in-der-praxis-läuft">Wie es in der Praxis läuft</a>
+<a class="s3" href="#grenzen" data-id="grenzen">Grenzen</a>
+<a class="s3" href="#die-kosten" data-id="die-kosten">Die Kosten</a>
+<a class="s3" href="#bonus-beim-sammeln" data-id="bonus-beim-sammeln">Bonus beim Sammeln</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-vieh-versorgen" data-id="13-vieh-versorgen">13. Vieh versorgen</a>
+<div class="sub">
+<a class="s3" href="#wie-du-ihn-einteilst" data-id="wie-du-ihn-einteilst">Wie du ihn einteilst</a>
+<a class="s3" href="#was-er-dort-tut" data-id="was-er-dort-tut">Was er dort tut</a>
+<a class="s3" href="#wichtige-regeln" data-id="wichtige-regeln">Wichtige Regeln</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-satteltaschen-der-hund-als-lasttier" data-id="14-satteltaschen-der-hund-als-lasttier">14. Satteltaschen: der Hund als Lasttier</a>
+<div class="sub">
+<a class="s3" href="#so-legst-du-sie-an" data-id="so-legst-du-sie-an">So legst du sie an</a>
+<a class="s3" href="#wie-viel-er-trägt" data-id="wie-viel-er-trägt">Wie viel er trägt</a>
+<a class="s3" href="#was-hineinpasst" data-id="was-hineinpasst">Was hineinpasst</a>
+<a class="s3" href="#das-fenster" data-id="das-fenster">Das Fenster</a>
+<a class="s3" href="#wo-du-sie-herbekommst" data-id="wo-du-sie-herbekommst">Wo du sie herbekommst</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-zucht-und-welpen" data-id="15-zucht-und-welpen">15. Zucht und Welpen</a>
+<div class="sub">
+<a class="s3" href="#es-gibt-keinen-knopf-zum-züchten" data-id="es-gibt-keinen-knopf-zum-züchten">Es gibt keinen Knopf zum "Züchten"</a>
+<a class="s3" href="#die-bedingungen" data-id="die-bedingungen">Die Bedingungen</a>
+<a class="s3" href="#das-ritual-und-die-tragezeit" data-id="das-ritual-und-die-tragezeit">Das Ritual und die Tragezeit</a>
+<a class="s3" href="#der-wurf" data-id="der-wurf">Der Wurf</a>
+<a class="s3" href="#was-der-welpe-erbt" data-id="was-der-welpe-erbt">Was der Welpe erbt</a>
+<a class="s3" href="#den-welpen-großziehen" data-id="den-welpen-großziehen">Den Welpen großziehen</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-mehrere-hunde-gleichzeitig" data-id="16-mehrere-hunde-gleichzeitig">16. Mehrere Hunde gleichzeitig</a>
+<div class="sub">
+<a class="s3" href="#der-reiter-meine-hunde-das-register" data-id="der-reiter-meine-hunde-das-register">Der Reiter "Meine Hunde": das Register</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-das-hundefenster" data-id="17-das-hundefenster">17. Das Hundefenster</a>
+<div class="sub">
+<a class="s3" href="#reiter-fähigkeiten-und-status" data-id="reiter-fähigkeiten-und-status">Reiter "Fähigkeiten und Status"</a>
+<a class="s3" href="#reiter-befehle" data-id="reiter-befehle">Reiter "Befehle"</a>
+<a class="s3" href="#reiter-meine-hunde" data-id="reiter-meine-hunde">Reiter "Meine Hunde"</a>
+<a class="s3" href="#reiter-einstellungen" data-id="reiter-einstellungen">Reiter "Einstellungen"</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-was-auf-dem-bildschirm-erscheint" data-id="18-was-auf-dem-bildschirm-erscheint">18. Was auf dem Bildschirm erscheint</a>
+<div class="sub">
+<a class="s3" href="#hunde-moodles" data-id="hunde-moodles">Hunde-Moodles</a>
+<a class="s3" href="#texte-über-dem-kopf" data-id="texte-über-dem-kopf">Texte über dem Kopf</a>
+<a class="s3" href="#markierung-auf-der-karte" data-id="markierung-auf-der-karte">Markierung auf der Karte</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-die-gegenstände-des-mods" data-id="19-die-gegenstände-des-mods">19. Die Gegenstände des Mods</a>
+<div class="sub">
+<a class="s3" href="#companion-dogs-napf" data-id="companion-dogs-napf">Companion Dogs Napf</a>
+<a class="s3" href="#companion-dogs-satteltaschen" data-id="companion-dogs-satteltaschen">Companion Dogs Satteltaschen</a>
+<a class="s3" href="#was-der-mod-nicht-hat" data-id="was-der-mod-nicht-hat">Was der Mod NICHT hat</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-mehrspieler" data-id="20-mehrspieler">20. Mehrspieler</a>
+<div class="sub">
+<a class="s3" href="#dein-hund-gehört-dir" data-id="dein-hund-gehört-dir">Dein Hund gehört dir</a>
+<a class="s3" href="#wenn-du-dich-abmeldest" data-id="wenn-du-dich-abmeldest">Wenn du dich abmeldest</a>
+<a class="s3" href="#für-administratoren" data-id="für-administratoren">Für Administratoren</a>
+<a class="s3" href="#installationshinweis-für-koop" data-id="installationshinweis-für-koop">Installationshinweis für Koop</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-sandbox-optionen" data-id="21-sandbox-optionen">21. Sandbox-Optionen</a>
+<div class="sub">
+<a class="s3" href="#zähmen-und-spawns" data-id="zähmen-und-spawns">Zähmen und Spawns</a>
+<a class="s3" href="#kampf" data-id="kampf">Kampf</a>
+<a class="s3" href="#pflege-und-bindung" data-id="pflege-und-bindung">Pflege und Bindung</a>
+<a class="s3" href="#verhalten" data-id="verhalten">Verhalten</a>
+<a class="s3" href="#fähigkeiten-und-aktivitäten" data-id="fähigkeiten-und-aktivitäten">Fähigkeiten und Aktivitäten</a>
+<a class="s3" href="#satteltaschen" data-id="satteltaschen">Satteltaschen</a>
+<a class="s3" href="#welpen" data-id="welpen">Welpen</a>
+<a class="s3" href="#oberfläche-und-mehrspieler" data-id="oberfläche-und-mehrspieler">Oberfläche und Mehrspieler</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-häufige-probleme" data-id="22-häufige-probleme">22. Häufige Probleme</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-handbuch-der-funktionen">Companion Dogs: Handbuch der Funktionen</h1>
+<p>Ein vollständiger Leitfaden dazu, was dein Hund kann, wie du ihn führst und wie du ihn versorgst.</p>
+<p>Dieses Handbuch deckt <strong>alles ab, was der Mod macht</strong>. Wenn du etwas über die <strong>Rassen</strong> wissen willst (welche du nehmen solltest, was jede besonders macht, Moodles und Anlagen), schau ins andere Handbuch: <a href="breeds.html" class="xlink">Rassen</a>.</p>
+<blockquote class="quote"><strong>Zu den Namen:</strong> alle Texte in Anführungszeichen in diesem Handbuch stehen genau so im Spiel auf Deutsch. Läuft dein Spiel auf Englisch, ändern sich die Namen, aber die Stelle im Menü bleibt dieselbe.</blockquote>
+<h2 id="1-in-5-minuten-vom-streuner-zum-begleiter">1. In 5 Minuten: vom Streuner zum Begleiter</h2>
+<p>Wenn du einfach nur loslegen willst, geht das so:</p>
+<ol>
+<li><strong>Finde einen Hund.</strong> Caramelo-Streuner laufen frei durch Städte und Wohngebiete. Früher oder später läufst du einem über den Weg, ganz von allein beim Erkunden.</li>
+<li><strong>Hab etwas Essbares im Inventar.</strong> Jedes Futter taugt, solange es nicht verdorben ist und satt macht.</li>
+<li><strong>Klicke den Hund mit der rechten Maustaste an</strong> und wähle <strong><span class="ig">Futter geben (anfreunden)</span></strong>.</li>
+<li><strong>Wiederhole das, bis er dir vertraut.</strong> Jede Portion hebt das Vertrauen. Ein großer Sack Trockenfutter erledigt es fast auf einen Schlag, kleine Leckerlis brauchen etwa vier Durchgänge.</li>
+<li><strong>Gib ihm einen Namen.</strong> Fertig, er gehört dir. Ab da folgt er dir von allein.</li>
+</ol>
+<p>Danach gibt es drei Dinge, die du nicht vergessen darfst:</p>
+<ul>
+<li><strong>Füttere ihn und gib ihm täglich Wasser.</strong> Der Hund stirbt an Vernachlässigung, und er kommt nicht wieder.</li>
+<li><strong>Streichle ihn.</strong> Das hält die Loyalität oben und lindert nebenbei deine Langeweile und Traurigkeit.</li>
+<li><strong>Öffne sein Fenster</strong> über die Pfoten-Schaltfläche unter der Anzeige deiner Hände. Alles steckt da drin.</li>
+</ul>
+<h2 id="2-einen-hund-finden-und-zähmen">2. Einen Hund finden und zähmen</h2>
+<h3 id="wo-welche-rasse-auftaucht">Wo welche Rasse auftaucht</h3>
+<p>Der Mod entscheidet <strong>einmal pro Gebäude</strong>, ob dort ein Hund lebt, und diese Entscheidung wird gespeichert. Du kommst also nicht an einen längst durchsuchten Ort zurück und findest dort aus dem Nichts einen neuen Hund.</p>
+<div class="tw"><table><thead><tr>
+<th>Rasse</th>
+<th>Wo du suchen solltest</th>
+<th>Chance pro Gebäude</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Caramelo</strong></td>
+<td>Wohnhaus, in der Stadt oder im Wohngebiet</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Golden Retriever</strong></td>
+<td>Wohnhaus (zusätzlicher Wurf)</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>Deutscher Schäferhund</strong></td>
+<td>Polizeiwache, Gefängnis, Militärbasis, Waffenladen</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Wohnhaus, <strong>nur im Winter</strong></td>
+<td>2,5%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Tierhandlung und Tierarztpraxis, das ganze Jahr über</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>Scheune, Stall, Silo, Hühnerstall, auf dem Land</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>Der Hund taucht meistens auf einem freien Feld <strong>außerhalb</strong> des Gebäudes auf: auf der Straße, im Garten, auf dem Grundstück. Nur wenn draußen kein freies Feld übrig ist, landet er im Gebäude selbst. Schau also zuerst auf der Straße und im Garten nach.</p>
+<p>Die Sandbox-Option <strong><span class="ig">Multiplikator für Hunde-Spawns</span></strong> skaliert all diese Chancen auf einmal und behält die relative Seltenheit bei. Auf 0 gestellt schaltet sie die Spawns ab.</p>
+<blockquote class="quote"><strong>Addon-Rassen</strong> kommen als eigene Mods im Steam Workshop und haben ihre eigenen Spawn-Orte: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> und <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. Was jede von ihnen kann, steht im <a href="breeds.html" class="xlink">Rassenhandbuch</a>.</blockquote>
+<h3 id="so-zähmst-du-einen-hund">So zähmst du einen Hund</h3>
+<p>Klicke den wilden Hund mit der rechten Maustaste an. Die einzige Option, die er anbietet, ist <strong><span class="ig">Futter geben (anfreunden)</span></strong>.</p>
+<ul>
+<li><strong>Du brauchst nichts außer Futter.</strong> Keine Mindeststufe, keine Eigenschaft, kein Halsband, kein Werkzeug.</li>
+<li>Das Futter darf auch <strong>in einer Tasche</strong> stecken, der Mod findet es von allein.</li>
+<li>Hast du mehrere Sorten dabei, wird daraus ein Untermenü mit Symbol und Menge für jede.</li>
+<li>Ohne jedes Futter ist die Option ausgegraut: <em><span class="ig">Du brauchst etwas Essbares im Inventar.</span></em></li>
+</ul>
+<h3 id="wie-viel-futter-nötig-ist">Wie viel Futter nötig ist</h3>
+<p>Jede Portion gibt <strong>so viel Vertrauen, wie das Futter an Hunger stillen würde</strong>. Ein Gegenstand, der 60 Hungerpunkte nimmt, gibt 60 Vertrauen. Der Standard sind <strong>100 Vertrauen zum Zähmen</strong> (in der Sandbox unter <em><span class="ig">Vertrauen zum Zähmen</span></em> einstellbar).</p>
+<p>In der Praxis:</p>
+<ul>
+<li>Ein großer <strong>Sack Trockenfutter</strong> reicht fast schon allein.</li>
+<li>Kleine Häppchen brauchen etwa <strong>vier Durchgänge</strong>.</li>
+</ul>
+<p>Der Mod <strong>verbraucht nur den nötigen Bissen</strong> und legt den Rest des Gegenstands zurück in dein Inventar, du verschwendest also keine halbe Dose Futter für den letzten Vertrauenspunkt.</p>
+<p><strong>Glück ist nicht im Spiel.</strong> Sind die 100 Vertrauen erreicht, gehört der Hund dir. Punkt.</p>
+<p>Solange die Leiste nicht voll ist, siehst du: <em><span class="ig">Der Caramelo fasst Vertrauen zu dir...</span></em> Ist sie voll: <em><span class="ig">Der Caramelo ist jetzt dein Begleiter!</span></em>, und das Fenster für den Namen geht auf.</p>
+<h3 id="futter-das-schadet">Futter, das schadet</h3>
+<p>Manche Lebensmittel sind für Hunde giftig, und der Mod warnt dich: Sie erscheinen <strong>in Rot</strong> im Menü, mit dem Hinweis <em><span class="ig">Schlecht für Hunde. Davon wird er krank und verliert sein Vertrauen.</span></em></p>
+<p>Das sind:</p>
+<ul>
+<li><strong>Nach Art:</strong> Süßes, Zucker, Kaffee, Tee, Kakao, Schokolade, Pfeffer, Nüsse.</li>
+<li><strong>Nach Name:</strong> Zwiebel, Knoblauch, Lauch, Schnittlauch, Schalotte, Weintraube, Rosine, Schokolade, Kakao, Kaffee, Erdnuss. (Grapefruit ist ausdrücklich erlaubt.)</li>
+</ul>
+<p>Schlechtes Futter kostet einen <strong>wilden Hund</strong> 15 Vertrauen und bringt nie welches ein. Bei einem <strong>Begleiter</strong> kostet es 20 Loyalität, treibt den Stress hoch und macht ihn <strong>für 120 Spielminuten vergiftet</strong>.</p>
+<h3 id="was-in-dem-moment-passiert-in-dem-er-dir-gehört">Was in dem Moment passiert, in dem er dir gehört</h3>
+<ul>
+<li>Er geht in den Modus <strong>Folgen</strong> und schaltet den <strong>Auto-Schutz</strong> ein.</li>
+<li>Hunger, Durst und Stress gehen auf null.</li>
+<li>Die <strong>Anlagen werden jetzt ausgewürfelt und bleiben ein Leben lang fest</strong>.</li>
+<li>Er wird <strong>unverwundbar</strong>: Zombies, Autos, Kugeln und Feuer töten ihn nicht. Nur Vernachlässigung tötet ihn.</li>
+<li>Er wird in <strong><span class="ig">Meine Hunde</span></strong> eingetragen und taucht ab jetzt auf der Karte auf.</li>
+</ul>
+<p><strong>Einen neuen Hund zu zähmen heißt nicht, den alten aufzugeben.</strong> Der neue wird dein aktiver Hund, der alte wird passiv und geht in den Modus Bleiben. Siehe <a href="#16-mehrere-hunde-gleichzeitig">Mehrere Hunde gleichzeitig</a>.</p>
+<h3 id="hunde-limit">Hunde-Limit</h3>
+<p>Die Sandbox-Option <strong><span class="ig">Max. Hunde pro Spieler</span></strong> steht auf <strong>0, und das heißt kein Limit</strong>. Setzt der Server eine Obergrenze, wird die Anfreunden-Option beim Erreichen rot und gesperrt: <em><span class="ig">Begleiter-Grenze erreicht (5).</span></em> (die Zahl ist die eingestellte Obergrenze) Lässt du einen Hund frei oder verlierst ihn, wird der Platz wieder frei.</p>
+<h2 id="3-wie-du-befehle-gibst-die-vier-wege">3. Wie du Befehle gibst: die vier Wege</h2>
+<p>Es gibt vier Möglichkeiten, den Hund zu kommandieren. Alle machen dasselbe, nimm die, die dir am angenehmsten ist.</p>
+<h3 id="a-kontextmenü-rechtsklick-auf-den-hund">a) Kontextmenü (Rechtsklick auf den Hund)</h3>
+<p>Alles steckt in einem Untermenü mit dem Namen des Hundes. Die Reihenfolge ist immer dieselbe:</p>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Was sie macht</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(erste Zeile, ohne Klick)</em></td>
+<td>Die Identität des Hundes: Name, Geschlecht, ob Welpe, ob trächtig, ob Mischling</td>
+</tr>
+<tr>
+<td><strong>Zucht verhindern</strong> / <strong>Zucht erlauben</strong></td>
+<td>Schaltet die Zuchterlaubnis dieses Hundes an und aus (nur Erwachsene)</td>
+</tr>
+<tr>
+<td><strong>Wachstum anhalten</strong> / <strong>Wachstum fortsetzen</strong></td>
+<td>Nur bei Welpen. Friert das Wachstum auf unbestimmte Zeit ein</td>
+</tr>
+<tr>
+<td><strong>Füttern</strong></td>
+<td>Gibt Futter. Untermenü nach Sorte</td>
+</tr>
+<tr>
+<td><strong>Wasser geben</strong></td>
+<td>Braucht einen Behälter mit Wasser</td>
+</tr>
+<tr>
+<td><strong>Streicheln</strong></td>
+<td>Zuwendung</td>
+</tr>
+<tr>
+<td><strong>Bleiben lassen</strong> / <strong>Folgen lassen</strong></td>
+<td>Wechselt zwischen den beiden Modi</td>
+</tr>
+<tr>
+<td><strong>Komm her</strong></td>
+<td>Ruft den Hund zu dir</td>
+</tr>
+<tr>
+<td><strong>Nächsten angreifen</strong></td>
+<td>Schickt ihn auf den nächsten Zombie</td>
+</tr>
+<tr>
+<td><strong>Kunststücke</strong> ▸</td>
+<td>Untermenü mit den vier Kunststücken</td>
+</tr>
+<tr>
+<td><strong>Hier das Vieh versorgen</strong> / <strong>Viehversorgung beenden</strong></td>
+<td>Hofmodus</td>
+</tr>
+<tr>
+<td><strong>Satteltaschen anlegen</strong> / <strong>Satteltaschen öffnen</strong> / <strong>Satteltaschen abnehmen</strong></td>
+<td>Je nach Zustand</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Öffnet das Hundefenster</td>
+</tr>
+<tr>
+<td><strong>Umbenennen...</strong></td>
+<td>Bis zu 30 Zeichen</td>
+</tr>
+<tr>
+<td><strong>Aufheben</strong></td>
+<td>Trägt den Hund</td>
+</tr>
+<tr>
+<td><strong>Begleiter freilassen</strong></td>
+<td>Gibt ihn in die Freiheit zurück (er behält Training und Fähigkeiten)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong><span class="ig">Bewachen</span> steht hier nicht.</strong> Diesen Befehl gibt es nur im Radialmenü, auf der Kurztaste und als Schaltfläche im Reiter Befehle.</blockquote>
+<h3 id="b-radialmenü-q-gedrückt-halten">b) Radialmenü (Q gedrückt halten)</h3>
+<p>Der Mod hängt sich in das Emote-Menü des Spiels. Halte <strong>Q</strong> gedrückt, dann erscheint eine neue Kategorie mit dem Rassennamen deines Hundes und einem Pfoten-Symbol. Die Kategorie taucht nur auf, wenn ein aktiver Hund in der Nähe ist.</p>
+<p>Die Segmente sind: <strong>Komm her</strong>, <strong>Folgen</strong>, <strong>Bleib</strong>, <strong>Bewachen</strong>, <strong>Alarm</strong>, <strong>Leise</strong>, <strong>Still</strong>, <strong>Nächsten angreifen</strong>, <strong>Jagen</strong> / <strong>Jagd beenden</strong>, <strong>Kunststücke ▸</strong> und <strong>Satteltaschen öffnen</strong> (wenn er Satteltaschen trägt).</p>
+<p>Wählst du <strong>Kunststücke</strong>, öffnet sich eine dritte Ebene des Radials mit den vier Kunststücken und einem <strong>Zurück</strong>. Ein noch nicht freigeschaltetes Kunststück erscheint mit rotem Symbol und der geforderten Stufe im Namen, etwa <em><span class="ig">Ablenken (Gehorsam 3)</span></em>.</p>
+<p>Einige Befehle lassen auch deine Spielfigur gestikulieren: Rufen hebt die Hand, Bleiben lassen macht die Stopp-Geste, Angreifen zeigt hin.</p>
+<h3 id="c-tastenkürzel">c) Tastenkürzel</h3>
+<p>Es sind <strong>14 belegbare Aktionen</strong>, und <strong>alle kommen absichtlich ohne Taste</strong>, damit nichts kollidiert. Du stellst sie im Reiter <strong><span class="ig">Einstellungen</span></strong> des Hundefensters ein, nicht im Optionsmenü des Spiels.</p>
+<div class="tw"><table><thead><tr>
+<th>Aktion</th>
+<th>Was sie macht</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Komm her</strong></td>
+<td>Ruft den Hund</td>
+</tr>
+<tr>
+<td><strong>Folgen</strong></td>
+<td>Modus Folgen</td>
+</tr>
+<tr>
+<td><strong>Bleib</strong></td>
+<td>Modus Bleib</td>
+</tr>
+<tr>
+<td><strong>Bewachen</strong></td>
+<td>Modus Bewachen</td>
+</tr>
+<tr>
+<td><strong>Bring</strong></td>
+<td><strong>Teleportiert den Hund an deine Seite.</strong> Du pfeifst laut, und der Pfiff lockt Zombies an</td>
+</tr>
+<tr>
+<td><strong>Nächsten angreifen</strong></td>
+<td>Befohlener Angriff</td>
+</tr>
+<tr>
+<td><strong>Alarm</strong> / <strong>Leise</strong> / <strong>Still</strong></td>
+<td>Modus des Wachdienstes</td>
+</tr>
+<tr>
+<td><strong>Auto-Schutz</strong></td>
+<td>Schaltet an und aus</td>
+</tr>
+<tr>
+<td><strong>Jagd</strong></td>
+<td>Schaltet an und aus</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Öffnet und schließt das Hundefenster</td>
+</tr>
+<tr>
+<td><strong>Zu einer Stelle gehen</strong></td>
+<td>Öffnet den Zielcursor des Kunststücks</td>
+</tr>
+<tr>
+<td><strong>Ablenken</strong></td>
+<td>Löst das Kunststück aus</td>
+</tr>
+</tbody></table></div>
+<p>Wählst du eine Taste, die schon vergeben ist, warnt der Mod: <em><span class="ig">F wird bereits verwendet von: Bleib</span></em>. Ohne belegte Taste zeigt die Schaltfläche <em><span class="ig">Nicht belegt</span></em>.</p>
+<h3 id="d-schaltflächen-im-hundefenster">d) Schaltflächen im Hundefenster</h3>
+<p>Der Reiter <strong><span class="ig">Befehle</span></strong> hat alles als Schaltfläche: die Modus-Zeile, die Wachdienst-Zeile, die Schalter für Auto-Schutz und Jagd, die vier Kunststücke, die Satteltaschen und die Aktionszeile (<strong>Bring</strong> | <strong>Umbenennen</strong> | <strong>Freilassen</strong>).</p>
+<h2 id="4-die-drei-modi-folgen-bleib-und-bewachen">4. Die drei Modi: Folgen, Bleib und Bewachen</h2>
+<p>Der Hund ist <strong>immer in einem</strong> dieser drei. Alles andere (Wachdienst, Jagd, Auto-Schutz) ist eine Einstellung obendrauf.</p>
+<h3 id="folgen">Folgen</h3>
+<p>Die Voreinstellung. Er läuft hinter dir her: Bei 2 Feldern Abstand setzt er sich in Bewegung, ab 5 Feldern fängt er an zu rennen.</p>
+<ul>
+<li><strong>Kämpft gegen Zombies in einem Umkreis von 5 Feldern um DICH</strong> (nicht um ihn). Bei 8 lässt er vom Ziel ab.</li>
+<li>Springt über niedrige Zäune, steigt Treppen, wechselt hinter dir das Stockwerk.</li>
+<li><strong>Es ist der einzige Modus, der mit dir ins Auto steigt.</strong></li>
+<li>Entfernst du dich zu weit (24 Felder), wird er automatisch hinter dir wieder eingesetzt, damit er nicht auf der anderen Seite eines Gebäudes festhängt.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Der Caramelo läuft hinter dir her und bekämpft Zombies, die zu nah kommen. Sein Wachdienst bleibt aktiv. Die Voreinstellung, dein Begleiter unterwegs."</em></blockquote>
+<h3 id="bleib">Bleib</h3>
+<p>Er hält an, wo er gerade ist, und geht dort nicht weg. Nach ungefähr einer Minute im Stand legt er sich hin.</p>
+<ul>
+<li><strong>Wittert und warnt weiterhin</strong> vor Zombies.</li>
+<li><strong>Verfolgt nicht und kämpft nicht</strong>, selbst wenn ein Zombie direkt vor ihm steht.</li>
+<li><strong>Bleibt zurück, wenn du in ein Auto steigst.</strong> Nur ein Hund im Modus Folgen steigt mit ein.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Der Caramelo hält seine Position und folgt dir nicht. Er nimmt Zombies weiterhin wahr und warnt dich, verfolgt und bekämpft sie aber nicht: er sitzt und beobachtet. Gut, um ihn an einem sicheren Ort abzustellen."</em></blockquote>
+<h3 id="bewachen">Bewachen</h3>
+<p>Er merkt sich die genaue Stelle, an der er steht, als <strong>Posten</strong> und verteidigt diesen Posten.</p>
+<ul>
+<li>Stellt sich Zombies in einem <strong>Umkreis von 10 Feldern um den Posten</strong>, verfolgt sie und kehrt danach zurück.</li>
+<li>Gerät er in Bedrängnis, zieht er sich hinter dich zurück.</li>
+<li><strong>Wichtige Einschränkung:</strong> vorerst klappt das nur, <strong>solange du in der Nähe bist</strong>. Es bringt nichts, einen Hund die Basis bewachen zu lassen und dann die Karte zu verlassen.</li>
+</ul>
+<blockquote class="quote quote-game"><em>"Der Caramelo verankert sich an genau dieser Stelle und verteidigt sie, greift Zombies in einem weiteren Umkreis an, schlägt Alarm und kehrt nach der Verfolgung auf seinen Posten zurück. Wird er umzingelt, zieht er sich hinter dich zurück."</em></blockquote>
+<h3 id="die-zwei-rückrufbefehle">Die zwei Rückrufbefehle</h3>
+<div class="tw"><table><thead><tr>
+<th>Befehl</th>
+<th>Was er macht</th>
+<th>Kosten</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Komm her</strong></td>
+<td>Er kommt <strong>zu Fuß</strong> zurück und wechselt in den Modus Folgen</td>
+<td>Keine</td>
+</tr>
+<tr>
+<td><strong>Bring</strong></td>
+<td>Er <strong>steht sofort neben dir</strong></td>
+<td>Du pfeifst laut, und das <strong>lockt Zombies an</strong></td>
+</tr>
+</tbody></table></div>
+<p>Nimm <strong>Bring</strong>, wenn der Hund hinter einem Zaun festhängt, in einem Gebäude eingesperrt ist oder zu weit weg ist, um zu Fuß zurückzukommen. Das ist der Notausgang, nicht der Befehl für jeden Tag.</p>
+<h2 id="5-wachdienst-der-hund-als-alarmanlage">5. Wachdienst: der Hund als Alarmanlage</h2>
+<p>Das ist in der Praxis die nützlichste Funktion des Mods: <strong>der Hund spürt Zombies, die du nicht sehen kannst</strong>.</p>
+<p>Der Wachdienst arbeitet in allen drei Modi (Folgen, Bleib und Bewachen). Er <strong>arbeitet nicht</strong> im Zeitraffer und auch nicht, während du schläfst.</p>
+<div class="tw"><table><thead><tr>
+<th>Modus</th>
+<th>Reichweite</th>
+<th>Wie er warnt</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Alarm</strong></td>
+<td>18 Felder (bis zu 27 bei maximalem Spürsinn)</td>
+<td>Knurren bei entfernten oder wenigen Zombies. <strong>Lautes Bellen</strong> bei nahen, vielen oder sichtbaren. <strong>Das Bellen lockt wirklich Zombies an</strong></td>
+</tr>
+<tr>
+<td><strong>Leise</strong></td>
+<td>10 Felder, fest</td>
+<td><strong>Nur Knurren.</strong> Bellt nie, lockt nie etwas an</td>
+</tr>
+<tr>
+<td><strong>Still</strong></td>
+<td>Keine</td>
+<td>Keine Zombie-Warnung</td>
+</tr>
+</tbody></table></div>
+<p>Der Hund wechselt von <span class="ig">hat etwas gewittert</span> zu <span class="ig">Alarm</span>, wenn der Zombie 6 Felder oder näher ist, <strong>oder</strong> wenn es 3 oder mehr Zombies sind, <strong>oder</strong> wenn freie Sicht auf bis zu 12 Felder besteht.</p>
+<p>Die Meldungen schweben über seinem Kopf:</p>
+<ul>
+<li><em><span class="ig">Dein Caramelo wittert etwas in der Nähe...</span></em> (da ist etwas, weit weg oder nur wenig)</li>
+<li><em><span class="ig">Dein Caramelo hat Zombies entdeckt!</span></em> (nah oder in Zahl, Zeit zu reagieren)</li>
+</ul>
+<p><strong>Die Abwägung ist einfach:</strong> Alarm gibt dir die größte Vorwarnreichweite, verrät aber deine Position. Leise warnt dich lautlos, dafür nur aus der Nähe. Still ist für den Fall, dass der Hund um jeden Preis ruhig bleiben soll.</p>
+<blockquote class="quote"><strong>Ein gestresster Hund bellt NICHT von selbst.</strong> Es gab mal ein Stressbellen-System, aber im Mod ist es abgeschaltet. Wenn dein Hund Zombies anlockt, kommt das aus einer dieser vier Quellen, und alle vier hast du in der Hand: dem <strong>Wachdienst auf Alarm</strong>, dem Kunststück <strong>Ablenken</strong>, der <strong>Hetzjagd</strong> oder dem <strong>Kampf</strong>.</blockquote>
+<h2 id="6-kampf">6. Kampf</h2>
+<h3 id="wann-er-von-sich-aus-kämpft">Wann er von sich aus kämpft</h3>
+<p><strong>Der Hund greift nicht einfach von sich aus an.</strong> Er wartet auf einen Auslöser:</p>
+<ul>
+<li><strong>Im Modus Folgen:</strong> nur mit <strong>eingeschaltetem Auto-Schutz</strong> und nur, wenn der Zombie dich oder den Hund ins Visier nimmt oder du schon kämpfst. Und der Zombie muss <strong>5 Felder oder weniger von dir entfernt</strong> sein.</li>
+<li><strong>Im Modus Bewachen:</strong> immer, im Umkreis von 10 Feldern um seinen Posten.</li>
+<li><strong>Befehl <span class="ig">Nächsten angreifen</span>:</strong> Er sucht im Umkreis von 12 Feldern und verfolgt das Ziel 2 Spielminuten lang.</li>
+</ul>
+<p>Er greift nur <strong>feindliche Zombies</strong> an. Verbündete NPCs aus anderen Mods (Bandits, A-Life) bleiben verschont.</p>
+<h3 id="er-beißt-nicht-durch-wände">Er beißt nicht durch Wände</h3>
+<p>Der Hund geht nur auf einen Zombie los, den er <strong>zu Fuß auch wirklich erreichen kann</strong>. Ein Zombie hinter einem Zaun oder in einem geschlossenen Raum wird ignoriert, weil der Umweg viel zu teuer wäre. Versucht er es doch und kommt zweieinhalb Sekunden lang nicht voran, gibt er dieses Ziel auf und ignoriert es für 12 Sekunden.</p>
+<p>Das ist so gewollt: So rennt der Hund nicht dauernd gegen eine Wand, um an etwas Unerreichbares zu kommen.</p>
+<h3 id="wie-hart-er-zuschlägt">Wie hart er zuschlägt</h3>
+<p>Der Schaden entsteht aus <strong>vier Werten, die miteinander multipliziert werden</strong>: die natürliche Kraft der Rasse, die Stufe in Kampf, das Stärke-Gen und der Multiplikator aus dem Sandbox-Menü.</p>
+<p>Das Wichtige für dich als Spieler:</p>
+<ul>
+<li>Der <strong>Caramelo kann einen Zombie nicht allein töten</strong>. Er drückt ihn auf 10% Gesundheit und hört dort auf. Das ist so gewollt, und keine Sandbox-Einstellung ändert daran etwas. Seine Aufgabe ist es, den <strong>Zombie umzuwerfen</strong> und dir Zeit zu verschaffen.</li>
+<li>Alle anderen Rassen <strong>bringen es zu Ende</strong>.</li>
+</ul>
+<p>Die Schadenstabelle nach Rasse steht im <a href="breeds.html" class="xlink">Rassen-Handbuch</a>.</p>
+<p><strong>Zombies umwerfen:</strong> Jeder Schlag hat die Chance, einen Zombie umzuwerfen, beginnend bei 10% und bis zu 50% bei voll ausgebautem Kampf.</p>
+<h3 id="auto-schutz">Auto-Schutz</h3>
+<p>Wird pro Hund ein- und ausgeschaltet. Ist er an, hält der Hund <strong>automatisch Wache, solange du wehrlos bist</strong>:</p>
+<ul>
+<li>beim Schlafen</li>
+<li>beim Lesen</li>
+<li>im Sitzen auf dem Boden</li>
+<li>beim Essen</li>
+<li>beim Angeln</li>
+</ul>
+<p>Er verankert sich an deiner Seite und stellt sich allem, was kommt. Gehst du weiter, wandert der Anker mit. Sobald du die Tätigkeit beendest, folgt er dir von selbst wieder.</p>
+<ul>
+<li>Ein Hund, der wirklich im Modus <strong>Bewachen steht, verlässt seinen Posten deswegen nie</strong>.</li>
+<li><strong>So zu kämpfen stresst den Hund und bringt keine Loyalität.</strong> Das ist Arbeit, keine Zuwendung.</li>
+</ul>
+<p>Beim Zähmen ist er <strong>an</strong>.</p>
+<h3 id="deine-kugeln-treffen-ihn-nie">Deine Kugeln treffen ihn nie</h3>
+<p><strong>Du kannst ohne Sorge über den Hund hinweg schießen.</strong> Ein Begleithund <strong>verliert in keiner Situation Gesundheit durch eine Kugel</strong>, weder durch deine noch durch die eines anderen Spielers.</p>
+<p>Dafür sorgen zwei Dinge:</p>
+<ul>
+<li>Er bleibt aus dem <strong>automatischen Zielen</strong> heraus, dein Fadenkreuz bleibt also nicht an ihm hängen, wenn du die Waffe hebst.</li>
+<li>Im Einzelspieler nimmt der Mod den <strong>Hund im Moment des Schusses aus der Rechnung</strong>: Die Kugel fliegt direkt zum Zombie dahinter.</li>
+</ul>
+<p><strong>Der Hund geht dafür nicht aus dem Weg</strong>, und er <strong>wehrt sich nie gegen dich</strong>.</p>
+<blockquote class="quote">Im Mehrspieler kann der Hund eines anderen Spielers bei einem Schuss aus der Ferne auf <strong>deinem Bildschirm sogar so aussehen, als würde er reagieren</strong>, Gesundheit verliert er aber nicht.</blockquote>
+<h3 id="verletzung-rückzug-und-panik">Verletzung, Rückzug und Panik</h3>
+<ul>
+<li><strong>Kämpfen verletzt den Hund nicht.</strong> Es stresst ihn nur.</li>
+<li>Seine Gesundheit sinkt durch <strong>Vernachlässigung</strong> (Hunger oder Durst über 0,8), durch <strong>giftiges Futter</strong> und durch <strong>ein Reh, das sich bei der Jagd wehrt</strong>. Töten kann ihn nur die Vernachlässigung.</li>
+<li>Verletzungsstufen: <strong><span class="ig">Verletzt</span></strong> unter 30% Gesundheit, <strong><span class="ig">Schwer verletzt</span></strong> unter 10%. Ein schwer verletzter Hund <strong>folgt dir nur noch und kämpft nicht</strong>.</li>
+<li><strong>Rückzug:</strong> Er läuft hinter dich, sobald seine Gesundheit auf 10% oder weniger fällt.</li>
+<li><strong>Panik:</strong> Bei hohem Stress <strong>kämpft er nicht, hält keine Wache und macht keine Kunststücke</strong>. Er läuft aber weiterhin zu dir, wenn du ihn rufst.</li>
+</ul>
+<h3 id="heilung">Heilung</h3>
+<p>Der Hund heilt von selbst, und zwar <strong>richtig schnell</strong>: eine volle Gesundheitsleiste in etwa <strong>8 Spielstunden</strong>, also vom Beinahe-Tod bis gesund in einer Nacht. <strong>Aber nur, wenn er satt und getränkt ist</strong>: jenseits der Hälfte der Hungerleiste <strong>oder</strong> der Durstleiste <strong>stoppt die Heilung vollständig</strong>.</p>
+<p>Um einen verletzten Hund zu heilen, gilt also: <strong>füttern, Wasser geben und Zeit vergehen lassen</strong>.</p>
+<h3 id="kill-zählung">Kill-Zählung</h3>
+<p>Jeder Hund hat seinen eigenen Zähler, zu sehen in seinem Fenster: <strong><span class="ig">Erlegt: 14 Zombies, 3 Wild</span></strong>.</p>
+<p>Mit der eingeschalteten Sandbox-Option <strong><span class="ig">Hunde-Kills zählen für dich</span></strong> (dem Standard) zählen die Zombies, die er tötet, <strong>auch für deinen eigenen Zähler</strong> auf dem Charakterbildschirm.</p>
+<h2 id="7-bedürfnisse-und-pflege">7. Bedürfnisse und Pflege</h2>
+<p>Ein Begleithund ist unverwundbar, und das friert die normalen Hungersysteme des Spiels ein. Deshalb steuert der Mod alles von Hand.</p>
+<p>Es gibt <strong>vier Leisten</strong>, dazu die Loyalität.</p>
+<div class="tw"><table><thead><tr>
+<th>Leiste</th>
+<th>Steigt / sinkt</th>
+<th>Tempo</th>
+<th>Wann es stört</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Hunger</strong></td>
+<td>Steigt mit der Zeit</td>
+<td>Von leer bis voll in etwa <strong>3 Tagen</strong></td>
+<td>Über 0,6</td>
+</tr>
+<tr>
+<td><strong>Durst</strong></td>
+<td>Steigt mit der Zeit</td>
+<td>Von leer bis voll in etwa <strong>1,7 Tagen</strong></td>
+<td>Über 0,6</td>
+</tr>
+<tr>
+<td><strong>Gesundheit</strong></td>
+<td>Sinkt nur durch Vernachlässigung</td>
+<td><strong>Volle Leiste in ~8 Stunden</strong> bei Hunger oder Durst über 0,8</td>
+<td>Unter 30%</td>
+</tr>
+<tr>
+<td><strong>Stress</strong></td>
+<td>Ergibt sich aus den anderen</td>
+<td>Keines</td>
+<td>Über 50%</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Schlaf und Hygiene gibt es nicht.</strong> Der Hund muss nicht schlafen und wird nicht schmutzig.</blockquote>
+<p>Die Sandbox-Option <strong><span class="ig">Tempo von Hunger und Durst</span></strong> skaliert beide zusammen. Bei 0 frieren sie für immer ein und der Hund muss nie wieder fressen oder trinken (die Loyalität sinkt trotzdem weiter, er will also weiterhin deine Aufmerksamkeit).</p>
+<h3 id="woher-der-stress-kommt">Woher der Stress kommt</h3>
+<p>Stress ist keine Leiste, die du auffüllst, sondern das <strong>Ergebnis</strong> der anderen. Er steigt mit Hunger, mit Durst, mit niedriger Gesundheit, mit niedriger Loyalität und mit <strong>jedem Schlag, der in einem Kampf fällt</strong>.</p>
+<p>Stufen:</p>
+<div class="tw"><table><thead><tr>
+<th>Stufe</th>
+<th>Ab</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Nervös</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>In Panik</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>Verängstigt</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>Ein Hund in Panik <strong>hört auf zu kämpfen, zu wachen und Kunststücke zu machen</strong>. Er läuft aber weiterhin zu dir, wenn du ihn rufst.</p>
+<p>Die gute Nachricht: <strong>Kampfstress baut sich außerhalb des Kampfes schnell wieder ab.</strong> Eine volle Leiste leert sich in etwa <strong>2 Spielstunden</strong>. <strong>Streicheln, Futter und Wasser beschleunigen das noch mehr.</strong></p>
+<h3 id="von-hand-füttern">Von Hand füttern</h3>
+<p>Rechtsklick auf den Hund → <strong><span class="ig">Füttern</span></strong>.</p>
+<ul>
+<li>Es geht <strong>jedes Essen</strong>, solange es nicht verdorben ist und wirklich Hunger stillt. Es gibt keine Beschränkung auf Fleisch oder Hundefutter, nur die Liste mit giftigem Futter.</li>
+<li>Wirkung: senkt den Hunger, tränkt ihn, wenn der Gegenstand saftig ist, <strong>+0,10 Gesundheit</strong>, Stressabbau und ein <strong>Loyalitätsgewinn im Verhältnis dazu, wie viel Hunger die Portion gestillt hat</strong>.</li>
+<li>Verbraucht wird nur der nötige Bissen.</li>
+<li>Meldung: <em><span class="ig">Der Caramelo ist satt.</span></em></li>
+</ul>
+<h3 id="wasser-geben">Wasser geben</h3>
+<p>Rechtsklick → <strong><span class="ig">Wasser geben</span></strong>. Du brauchst irgendeinen Wasserbehälter im Inventar (der Mod schaut auch in den Taschen nach).</p>
+<p>Das senkt die Durstleiste um die Hälfte, gibt <strong>+2 Loyalität</strong> und baut Stress ab. <em><span class="ig">Der Caramelo trinkt.</span></em></p>
+<h3 id="streicheln">Streicheln</h3>
+<p>Rechtsklick → <strong><span class="ig">Streicheln</span></strong>.</p>
+<ul>
+<li><strong>Abklingzeit von 90 Spielminuten.</strong> Vorher heißt es: <em><span class="ig">Dein Caramelo hat vorerst genug Zuwendung bekommen.</span></em></li>
+<li>Wirkung auf den Hund: <strong>baut Stress ab und gibt +2 Loyalität</strong>.</li>
+<li><strong>Wirkung auf dich:</strong> Es lindert <strong>Gelangweilt und Unglücklich</strong>. Lohnt sich immer, wenn es geht.</li>
+</ul>
+<h3 id="die-stufen-der-vernachlässigung">Die Stufen der Vernachlässigung</h3>
+<p>Wenn du den Hund sich selbst überlässt, passiert Folgendes, in dieser Reihenfolge:</p>
+<ol>
+<li>Hunger und Durst steigen über 0,6. Auf deinem Bildschirm erscheint das Moodle <strong><span class="ig">Hungrig</span></strong> / <strong><span class="ig">Durstig</span></strong>.</li>
+<li>Die <strong>Loyalität sinkt ab jetzt dreimal so schnell</strong>.</li>
+<li>Jenseits der Hälfte <strong>stoppt die natürliche Heilung</strong>.</li>
+<li>Über 0,8 <strong>sinkt die Gesundheit schnell</strong>: Ein Hund mit voller Gesundheit ist in etwa <strong>8 Spielstunden</strong> bei null.</li>
+<li>Die Loyalität fällt durch den Boden, der Hund wird <strong><span class="ig">Ungehorsam</span></strong> und gehorcht nicht mehr.</li>
+<li>Der Stress steigt und er gerät in Panik: <strong>Er kämpft nicht mehr, wacht nicht mehr und macht keine Kunststücke mehr</strong>.</li>
+<li>Die Gesundheit erreicht null und <strong>er stirbt</strong>.</li>
+</ol>
+<p><strong>Der Tod ist endgültig.</strong> Es gibt kein Respawn. <em><span class="ig">Dein Caramelo ist gestorben.</span></em> Die Satteltaschen und alles darin fallen zu Boden. Hast du noch einen Hund, wird er automatisch zum aktiven Begleiter.</p>
+<p>Zombies töten deinen Hund nicht. <strong>Ihn nicht zu füttern, das tötet ihn.</strong></p>
+<h2 id="8-loyalität">8. Loyalität</h2>
+<p>Die Loyalität reicht von 0 bis 100 und misst, wie sehr der Hund dir vertraut.</p>
+<ul>
+<li><strong>Sie sinkt von allein</strong>, etwa 12 Punkte pro Tag, und <strong>dreimal so schnell</strong>, wenn er hungrig oder durstig ist.</li>
+<li><strong>Sie steigt nur durch dich:</strong> füttern, Wasser geben (+2) und streicheln (+2).</li>
+<li><strong>Füttern ist mit Abstand der schnellste Weg</strong>, aber der Gewinn ist <strong>proportional zu dem Hunger, den die Portion tatsächlich gestillt hat</strong>. Einem schon satten Hund Futter zu geben bringt fast nichts; einen ausgehungerten Hund zu füttern kann auf einen Schlag dutzende Punkte zurückholen. Ist die Loyalität gefallen, <strong>lass ihn vor dem Füttern erst hungrig werden</strong>.</li>
+<li><strong>Aus dem Napf zu fressen bringt NIEMALS Loyalität.</strong> Das ist Absicht: Ein Hund, der sich am Napf selbst versorgt, baut keine Bindung zu dir auf. Wenn du einen loyalen Hund willst, musst du dich blicken lassen.</li>
+</ul>
+<h3 id="die-ungehorsamsschwelle">Die Ungehorsamsschwelle</h3>
+<p>Unterhalb eines bestimmten Punktes wird der Hund <strong><span class="ig">Ungehorsam</span></strong> und weigert sich zu folgen, zu kämpfen und Kunststücke zu machen: <em><span class="ig">Dein Caramelo vertraut dir nicht mehr...</span></em></p>
+<p>Diese Schwelle <strong>sinkt, je höher der Gehorsam steigt</strong>: Sie beginnt bei 30 und fällt um 1,5 pro Stufe, nie unter 10. Ein Hund mit <strong>Gehorsam 10 wird also erst unter 15 Loyalität ungehorsam</strong>, während ein untrainierter Hund schon unter 30 Ärger macht.</p>
+<p><strong>Gehorsam zu trainieren ist der Weg, sich bei der Loyalität Luft zu verschaffen.</strong></p>
+<h3 id="wenn-der-hund-einen-befehl-verweigert">Wenn der Hund einen Befehl verweigert</h3>
+<p>Es gibt vier Gründe, in dieser Reihenfolge:</p>
+<div class="tw"><table><thead><tr>
+<th>Situation</th>
+<th>Was du siehst</th>
+</tr></thead><tbody>
+<tr>
+<td>Loyalität unter der Schwelle</td>
+<td><em><span class="ig">Caramelo Rex vertraut dir nicht genug, um zu gehorchen.</span></em></td>
+</tr>
+<tr>
+<td>Stress auf Panikniveau</td>
+<td><em><span class="ig">Caramelo Rex ist zu panisch, um zu kämpfen.</span></em></td>
+</tr>
+<tr>
+<td>Gesundheit bei 10% oder weniger</td>
+<td><em><span class="ig">Caramelo Rex ist zu schwer verletzt, um zu kämpfen.</span></em></td>
+</tr>
+<tr>
+<td>Trainingsaussetzer</td>
+<td><em><span class="ig">Caramelo Rex lässt sich ablenken und ignoriert dich.</span></em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-der-napf-futter-und-wasser-ohne-dich">9. Der Napf: Futter und Wasser ohne dich</h2>
+<p>Der Napf ist die Art, wie dein <strong>aktiver Hund</strong> sich selbst versorgt, während du mit etwas anderem beschäftigt bist.</p>
+<blockquote class="quote"><strong>Nur der aktive Hund wird hungrig und durstig, und nur er benutzt den Napf.</strong> Deine anderen gebundenen Hunde sind pausiert: kein Hunger, kein Durst, keine Napfsuche und kein Loyalitätsverlust. Du <strong>musst für sie keinen Napf aufstellen</strong>, und sie hungern beim Warten nicht. Siehe <a href="#16-mehrere-hunde-gleichzeitig">Mehrere Hunde gleichzeitig</a>.</blockquote>
+<h3 id="so-benutzt-du-ihn">So benutzt du ihn</h3>
+<ol>
+<li>Besorg dir einen Napf (Rezept oder Loot, siehe <a href="#19-die-gegenstände-des-mods">Gegenstände des Mods</a>).</li>
+<li>Im Inventar Rechtsklick → <strong><span class="ig">Futternapf aufstellen</span></strong>. Das öffnet einen freien Platzierungscursor, mit <strong>R zum Drehen</strong>.</li>
+<li>Steht der Napf auf dem Boden, Rechtsklick darauf → <strong><span class="ig">Futter in den Napf geben</span></strong> oder <strong><span class="ig">Wasser in den Napf geben</span></strong>.</li>
+</ol>
+<p>Der Napf fasst <strong>Futter ODER Wasser, nie beides gleichzeitig</strong>. Zum Wechseln nimmst du <strong><span class="ig">Napf leeren</span></strong>.</p>
+<p>Man sieht ihm den Inhalt an: grau, wenn er leer ist, braun mit Trockenfutter, blau mit Wasser.</p>
+<h3 id="was-als-napffutter-zählt">Was als Napffutter zählt</h3>
+<p><strong>Praktisch jedes Essen, das Hunger stillt und nicht verdorben ist:</strong> Fleisch, Konserven, gekochte Mahlzeiten, Gemüse, Obst, Eier, Hundefutter, und auch Gras und Heu.</p>
+<p>Draußen bleiben nur verdorbene Lebensmittel, alles, was nicht sättigt, und die <a href="#futter-das-schadet">Liste dessen, was dem Hund schadet</a>, die im Menü rot erscheint.</p>
+<blockquote class="quote">Die <strong>ungeöffnete Dose Hundefutter taucht nicht</strong> in der Liste auf. Mach die Dose erst auf.</blockquote>
+<p>Der Napf fasst bis zu <strong>100 Punkte</strong>. Jeder Gegenstand bringt so viel, wie seine Größe hergibt:</p>
+<div class="tw"><table><thead><tr>
+<th>Gegenstand</th>
+<th>Punkte</th>
+</tr></thead><tbody>
+<tr>
+<td>Sack Hundefutter</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Offene Dose Hundefutter</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Heu</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Gras</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>Ist der Gegenstand größer als der freie Platz, füllt sich der Napf bis oben und du bekommst den Rest zurück.</strong> Bei einem Napf, der auf 80 Punkten steht, hebt ein Sack Hundefutter ihn auf 100 und wandert mit einem Wert von 40 zurück in dein Inventar. Die Meldung <em><span class="ig">Im Napf ist nicht genug Platz für all das.</span></em> erscheint nur, wenn der Napf <strong>komplett voll</strong> ist.</p>
+<h3 id="wie-der-hund-ihn-nutzt">Wie der Hund ihn nutzt</h3>
+<ul>
+<li>Er geht von allein hin, wenn <strong>Hunger oder Durst 0,5 erreichen</strong> (pro Charakter einstellbar über den Regler <em><span class="ig">Frisst, wenn Hunger/Durst erreicht</span></em> im Reiter Einstellungen).</li>
+<li>Er sucht in einem Umkreis von <strong>16 Feldern</strong> nach einem Napf. Es zählen sowohl der Napf aus dem Mod als auch der <strong>Futtertrog aus dem Grundspiel</strong>.</li>
+<li>Jeder Besuch leert die halbe Leiste. Er frisst dabei rund 3 Spielminuten lang.</li>
+<li>Solange er auf den Napf festgelegt ist, <strong>ignoriert er Zombies und alles andere</strong>. Nur ein Befehl von dir unterbricht ihn. Das ist gut so: Ein Hund in Hungerpanik kann seine Panik durchs Fressen selbst brechen.</li>
+</ul>
+<p>Über seinem Kopf erscheint <strong><span class="ig">Geht fressen</span></strong>, <strong><span class="ig">Frisst</span></strong>, <strong><span class="ig">Geht trinken</span></strong>, <strong><span class="ig">Trinkt</span></strong>.</p>
+<blockquote class="quote"><strong>Denk dran:</strong> Aus dem Napf zu fressen <strong>bringt überhaupt keine Loyalität</strong>. Der Napf hält den Hund am Leben, das Streicheln hält ihn bei dir.</blockquote>
+<p>Der Napf <strong>dient dir nie als Trinkwasserquelle</strong>, und Regen füllt ihn nicht.</p>
+<h2 id="10-fähigkeiten-die-fünf-skills-des-hundes">10. Fähigkeiten: die fünf Skills des Hundes</h2>
+<p>Jeder Hund hat fünf Fähigkeiten, von 0 bis 10, die durchs <strong>Tun</strong> steigen, nicht durch gezieltes Training.</p>
+<div class="tw"><table><thead><tr>
+<th>Fähigkeit</th>
+<th>Wie sie steigt</th>
+<th>Was besser wird</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Spürsinn</strong></td>
+<td>Jede neue Entdeckung des Wachdienstes; das Kunststück Erschnüffeln nutzen</td>
+<td><strong>Wachradius</strong> (18 → 27 Felder) und Reichweite des eingeprägten Geruchs</td>
+</tr>
+<tr>
+<td><strong>Kampf</strong></td>
+<td>Jeder Schlag und jeder erledigte Zombie</td>
+<td><strong>Schaden</strong>, Chance zum Umwerfen (10% → 50%) und Widerstand gegen Kampfstress</td>
+</tr>
+<tr>
+<td><strong>Gehorsam</strong></td>
+<td>Jeder befolgte Befehl (mit Abklingzeit). <strong>Steigt unterhalb von Stufe 3 viermal so schnell</strong></td>
+<td><strong>Niedrigere Loyalitätsschwelle</strong>, <strong>die vier Kunststücke</strong> und weniger Ungehorsam</td>
+</tr>
+<tr>
+<td><strong>Jagd</strong></td>
+<td>Wild vorstehen, schnüffeln, erlegen, und wenn <strong>du</strong> in seiner Nähe Wild erlegst</td>
+<td><strong>Stufe 3:</strong> erlegt Kleinwild. <strong>Stufe 6:</strong> nimmt es mit Rehen auf und bringt die Beute. Vergrößert außerdem deinen Sammelradius</td>
+</tr>
+<tr>
+<td><strong>Hüten</strong></td>
+<td>Ein Gehege betreuen, die Herde vor Panik bewahren, Zombies im Gehege vertreiben</td>
+<td>Stärke der Aura, die <strong>die Herde beruhigt</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="zur-xp-kurve">Zur XP-Kurve</h3>
+<p>Stufe 1 geht schnell, Stufe 10 ist ein Langzeitprojekt. Die Sandbox-Option <strong><span class="ig">XP-Rate für Fähigkeiten</span></strong> bestimmt das Tempo von allem.</p>
+<blockquote class="quote"><strong>Achtung:</strong> Der Standardwert dieser Option in der Datei ist <strong>0,5</strong>, also halbes Tempo, obwohl im Hilfetext steht, dass <span class="ig">1.0 normal</span> ist. Wenn dir dein Hund viel zu langsam lernt, liegt es genau daran. Stell ihn auf 1.0 oder höher.</blockquote>
+<h3 id="ungehorsam">Ungehorsam</h3>
+<p>Ist die Option <strong><span class="ig">Hunde können ungehorsam sein</span></strong> an (das ist der Standard), ignoriert dich ein untrainierter Hund manchmal einfach: <em><span class="ig">Caramelo Rex lässt sich ablenken und ignoriert dich.</span></em></p>
+<ul>
+<li>Die Chance beginnt bei <strong>30% mit Gehorsam 0</strong> und erreicht <strong>0% mit Gehorsam 10</strong>.</li>
+<li><strong>Den Befehl gleich zu wiederholen klappt immer.</strong> Er ignoriert dich nie zweimal hintereinander.</li>
+<li><strong>Der ignorierte Befehl trainiert ihn trotzdem</strong>, es geht also keine XP verloren.</li>
+<li>Das gilt nur für <strong>direkte Befehle</strong>: Folgen, Bleib, Bewachen, Komm her, Angreifen und Kunststücke. Nie betroffen sind Füttern, Wasser geben, Streicheln, die Satteltaschen, <strong>Bring</strong> und die Verhaltensschalter (Wachdienst, Auto-Schutz, Jagd, Hofarbeit).</li>
+</ul>
+<p>Wenn dir die Mechanik nicht gefällt, schalte die Option im Sandbox aus.</p>
+<h3 id="eine-fähigkeit-ist-nicht-dasselbe-wie-eine-anlage">Eine Fähigkeit ist nicht dasselbe wie eine Anlage</h3>
+<p>Das Hundefenster hat zwei Listen, die sich ähneln, und die sollte man nicht verwechseln:</p>
+<ul>
+<li><strong>Fähigkeiten</strong> (Spürsinn, Kampf, Gehorsam, Jagd, Hüten) <strong>steigen durch Anwendung</strong>, ein Leben lang. Um sie geht es in diesem Kapitel.</li>
+<li><strong>Anlagen</strong> (Stärke, Aggressivität, Widerstandskraft) werden <strong>ausgewürfelt, wenn du den Hund zähmst, und ändern sich nie</strong>. Training rührt sie nicht an.</li>
+</ul>
+<blockquote class="quote"><strong>Die Anlagen, was jede einzelne bewirkt und die Bandbreiten jeder Rasse</strong> stehen im <a href="breeds.html" class="xlink">Rassen-Handbuch</a>.</blockquote>
+<h2 id="11-gehorsams-kunststücke">11. Gehorsams-Kunststücke</h2>
+<p>Vier Kunststücke, freigeschaltet über die Stufe <strong>Gehorsam</strong>. Alle stehen von Anfang an im Menü, die gesperrten in Rot, damit du siehst, was noch kommt: <em><span class="ig">Wird bei Gehorsam Stufe 3 freigeschaltet (aktuell 1).</span></em></p>
+<h3 id="zu-einer-stelle-gehen-gehorsam-1">Zu einer Stelle gehen (Gehorsam 1)</h3>
+<p>Öffnet einen <strong>Cursor auf dem Boden</strong>: grün, wo es geht, rot, wo es nicht geht. Linksklick wählt aus, Rechtsklick bricht ab.</p>
+<ul>
+<li>Maximale Reichweite: <strong>30 Felder von DIR aus</strong>, nicht vom Hund.</li>
+<li>Er läuft hin und <strong>hält die Stelle</strong> (bei der Ankunft wechselt er in den Modus Bleiben).</li>
+<li>Jeder neue Befehl bricht die Reise ab.</li>
+</ul>
+<p>Damit stellst du den Hund irgendwohin, ohne selbst mitzugehen: auf die andere Straßenseite, an eine Ecke, in einen Raum hinein.</p>
+<h3 id="ablenken-gehorsam-3">Ablenken (Gehorsam 3)</h3>
+<p>Der Hund bellt mit Absicht, richtig laut, in einem Umkreis von 24 Feldern, und <strong>die Horde geht auf ihn los</strong>. Danach zieht er sich zu dir zurück.</p>
+<ul>
+<li><strong>Er ignoriert die Option <span class="ig">Hundelärm lockt Zombies an</span> absichtlich</strong>: Der ganze Sinn des Kunststücks ist der Lärm, also macht er ihn immer.</li>
+<li>Es kostet Stress.</li>
+<li>Rote Markierung über seinem Kopf: <strong><span class="ig">Lockt Zombies</span></strong>.</li>
+<li>Abklingzeit von 10 Spielminuten.</li>
+</ul>
+<p>Das ist dein Werkzeug, um <strong>einen Weg frei zu bekommen</strong>: Du ziehst die Gruppe auf die eine Seite und gehst auf der anderen hinein. Denk daran, dass der Hund die Horde am Hals hat, also hab einen Plan.</p>
+<h3 id="gegenstand-erschnüffeln-gehorsam-5">Gegenstand erschnüffeln (Gehorsam 5)</h3>
+<p><strong>Halte einen Gegenstand in der Hand</strong> und nutze das Kunststück. Der Hund prägt sich den <strong>Geruch dieser Art von Gegenstand</strong> ein: <em><span class="ig">Caramelo hat sich den Geruch von Hammer eingeprägt.</span></em></p>
+<p>Ab da sucht er im Hintergrund die Umgebung ab (12 Felder, mit maximalem Spürsinn bis zu 20) und hält nach diesem Gegenstand Ausschau, <strong>in Schränken und auf dem Boden</strong>. Wenn er einen findet:</p>
+<ol>
+<li>Er bellt.</li>
+<li>Er läuft hin und steht ihn vor.</li>
+<li><strong>Der Gegenstand wird draußen in der Welt grün hervorgehoben.</strong></li>
+</ol>
+<p>Meldungen: <em><span class="ig">Caramelo riecht Hammer in der Nähe.</span></em> und <em><span class="ig">Caramelo steht Hammer vor.</span></em></p>
+<p>Der Hund merkt sich <strong>nur einen Geruch</strong>. Etwas anderes zu erschnüffeln ersetzt ihn. Zum Abbrechen nutzt du <strong><span class="ig">Hammer nicht mehr suchen</span></strong> (mit dem Namen des eingeprägten Gegenstands) (das Abbrechen wird nie blockiert).</p>
+<p>Ohne Gegenstand in der Hand: <em><span class="ig">Halte den Gegenstand in der Hand, an dem der Hund riechen soll.</span></em></p>
+<h3 id="einen-gegenstand-holen-während-du-schläfst-gehorsam-10">Einen Gegenstand holen, während du schläfst (Gehorsam 10)</h3>
+<p>Das letzte Kunststück. <strong>Der Hund braucht Satteltaschen.</strong></p>
+<p>Halte einen Gegenstand in der Hand und richte es ein: <em><span class="ig">Caramelo wird nach Hammer suchen, während du schläfst.</span></em> Über seinem Kopf bleibt dann eine dauerhafte Markierung: <strong><span class="ig">Sucht: Hammer</span></strong>.</p>
+<p>So läuft das ab:</p>
+<ul>
+<li><strong>Einmal pro Spieltag.</strong> Es passiert direkt nach dem Aufwachen, mit dem Hund in der Nähe.</li>
+<li>Die <strong>Erfolgschance hängt davon ab, wie selten der Gegenstand ist</strong>, und <strong>garantiert ist gar nichts</strong>. Selbst der gewöhnlichste Gegenstand im Spiel kommt auf höchstens <strong>50 % pro Nacht</strong> (im Schnitt also rund 2 Tage Warten). Etwas Ungewöhnliches wie eine Axt liegt bei knapp 15 %, und etwas wirklich Seltenes wie eine Katana bei ungefähr 2 %, also Wochen voller Versuche.</li>
+<li>Wenn es klappt: <em><span class="ig">Caramelo hat Hammer mitgebracht, während du geschlafen hast.</span></em>, der Gegenstand liegt <strong>in den Satteltaschen</strong>, und dazu gibt es eine grüne Markierung <strong><span class="ig">Gebracht: Hammer</span></strong>.</li>
+<li>Wenn nicht: <em><span class="ig">Caramelo kam ohne Hammer zurück.</span></em> und eine rote Markierung <strong><span class="ig">Kam leer zurück</span></strong>.</li>
+</ul>
+<p>Zwei Sperren beim Einrichten:</p>
+<ul>
+<li>Gegenstand zu schwer: <em><span class="ig">Caramelo könnte Amboss nicht tragen.</span></em></li>
+<li>Gegenstand, den es in den Loot-Tabellen des Spiels nicht gibt: <em><span class="ig">Caramelo wüsste nicht, wo es das suchen soll.</span></em></li>
+</ul>
+<h2 id="12-jagd">12. Jagd</h2>
+<p>Der Jagdmodus ist <strong>ausgeschaltet</strong> und du schaltest ihn pro Hund ein: Radialmenü, Taste oder die Schaltfläche im Reiter Befehle. <em><span class="ig">Caramelo Rex jagt Wild in der Nähe.</span></em></p>
+<h3 id="was-er-jagt">Was er jagt</h3>
+<div class="tw"><table><thead><tr>
+<th>Beute</th>
+<th>Nötige Jagd-Stufe</th>
+</tr></thead><tbody>
+<tr>
+<td>Kaninchen, Waschbär, Ratte, Eichhörnchen</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>Reh (Kitz, Ricke, Bock)</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>Anderen Wildtieren steht er nur vor, gejagt werden sie nicht.</p>
+<h3 id="wie-es-in-der-praxis-läuft">Wie es in der Praxis läuft</h3>
+<p><strong>Stufe 0, 1 und 2: Er steht vor, mehr nicht.</strong> Der Hund <strong>rührt die Beute in dieser Phase nie an</strong>. Er bellt einmal, trabt bis nah an das Tier heran, bleibt stehen, nimmt die Vorstehhaltung ein und <strong>hält sie ein paar Minuten</strong>, damit du siehst, wo das Tier steckt. Dann gibt er auf und kommt zurück. Meldung: <em><span class="ig">Dein Hund hat Wild in der Nähe gefunden...</span></em></p>
+<p>Das ist nicht wenig: <strong>so trainiert er am Anfang seine Jagd</strong>. Lass ihn vorstehen, so oft es geht, und die Stufe steigt.</p>
+<p><strong>Stufe 3: Er fängt an, Kleinwild zu erlegen.</strong></p>
+<ul>
+<li><strong>Hat er Hunger, frisst er die Beute.</strong> Du bekommst nichts davon, aber sein Hunger ist gestillt.</li>
+<li><strong>Hat er keinen, erlegt er sie und schreibt sie dir gut</strong> und lässt den abziehbaren Kadaver <strong>dort auf dem Boden liegen, wo die Hetze geendet hat</strong>. Er meldet: <em><span class="ig">Dein Hund hat Wild erlegt!</span></em>, aber <strong>holen musst du sie selbst</strong>.</li>
+</ul>
+<p><strong>Stufe 6: Ab jetzt bringt er dir die Beute.</strong> Markierung <strong><span class="ig">Bringt die Beute</span></strong> und die Meldung <em><span class="ig">Dein Hund hat dir seine Beute gebracht.</span></em> Das gilt <strong>nur für Kleinwild</strong>.</p>
+<p><strong>Stufe 6 schaltet außerdem das Reh frei</strong>, und da gilt eine andere Regel: Er <strong>schleppt ein Reh nie heran, auf keiner Stufe und bei keiner Rasse</strong>. Er zermürbt das Reh, bis es fast tot ist, und <strong>stellt die Beute, bis du den letzten Schlag setzt</strong>: <em><span class="ig">Dein Hund hat ein Reh verwundet, gib ihm den Rest!</span></em>, mit der Markierung <strong><span class="ig">Stellt die Beute</span></strong>. Tauchst du nicht innerhalb von 20 Spielminuten auf, macht er es allein fertig (und dir wird die Beute trotzdem gutgeschrieben). Flieht das Reh, folgt er der Fährte: <em><span class="ig">Dein Hund folgt der Fährte des verwundeten Wilds...</span></em></p>
+<blockquote class="quote"><strong>Der Labrador ist die Ausnahme:</strong> Er liefert die Beute <strong>schon ab Stufe 3</strong> ab, also ab der ersten Beute, die er überhaupt erlegen kann, und bleibt länger dran, bevor er sie unterwegs fallen lässt. Einzelheiten im <a href="breeds.html" class="xlink">Rassen-Handbuch</a>.</blockquote>
+<p><strong>Rehe wehren sich.</strong> Etwa jeder vierte Angriff verletzt den Hund und stresst ihn. Tödlich ist es nie.</p>
+<h3 id="grenzen">Grenzen</h3>
+<ul>
+<li>Jagen ist eine <strong>ländliche Angelegenheit</strong>. Wild lebt im Wald und auf dem Land, nicht in der Stadt.</li>
+<li>Funktioniert nur im Modus <strong>Folgen</strong>.</li>
+<li><strong>Leine von 32 Feldern.</strong> Entfernt er sich zu weit, gibt er auf, kommt zurück und ruht 20 Spielminuten (Markierung <strong><span class="ig">Jagd: Pause</span></strong>).</li>
+<li>Er jagt nicht beim schnellen Vorspulen der Zeit, während du schläfst, im Fahrzeug und auch nicht in den 5 Minuten nach einem Befehl von dir.</li>
+<li><strong>Kämpft er schon gegen einen Zombie, denkt er gar nicht ans Jagen.</strong> Umgekehrt gilt das aber nicht von allein: Ein Zombie, der vorbeiläuft, <strong>holt den Hund nicht von der Jagd</strong>. Er lässt die Beute los, wenn du in einen Kampf gerätst, wenn der Auto-Schutz anspringt oder wenn du es ihm sagst. <strong>Jeder Befehl von dir bricht die Jagd sofort ab.</strong></li>
+</ul>
+<h3 id="die-kosten">Die Kosten</h3>
+<ul>
+<li>Jagen <strong>macht ihn hungrig</strong>.</li>
+<li>Das Bellen bei der Hetze <strong>lockt Zombies an</strong>, und das ist fest eingebaut, abschalten geht nicht.</li>
+<li>Er verlässt deine Seite und ist ungeschützt.</li>
+</ul>
+<h3 id="bonus-beim-sammeln">Bonus beim Sammeln</h3>
+<p>Das sind zwei verschiedene Dinge, und <strong>beide zeigen sich nur, wenn der Suchmodus des Spiels an ist</strong>.</p>
+<p><strong>a) Er findet die Sammelstelle (nur im Jagdmodus).</strong> Wenn keine Beute in der Nähe ist, sucht der Hund eine tierische Sammelstelle, läuft hin, bellt und <strong>zeigt dir den Ort</strong>: <em><span class="ig">Dein Hund hat etwas gefunden! Schalte den Suchmodus ein, um es zu sehen.</span></em> Markierung: <strong><span class="ig">Schnüffelt nach Essbarem</span></strong>.</p>
+<p><strong>Der Hund hebt den Gegenstand nie für dich auf.</strong> Er zeigt dir, wo du suchen musst; <strong>ernten musst du selbst</strong>, indem du den Suchmodus einschaltest und an dieser Stelle sammelst.</p>
+<p><strong>b) Er vergrößert deine Suchreichweite (jede Rasse, immer).</strong> Es reicht, dass ein Hund von dir in der Nähe ist, loyal und ohne großen Hunger oder Durst:</p>
+<ul>
+<li><strong>+6 Felder</strong> Reichweite bei Jagd 0, bis zu <strong>+12 Felder</strong> bei Jagd 10.</li>
+<li>Die Kategorien <strong>Tiere, Insekten, Spuren und Kadaver</strong> findest du damit deutlich leichter.</li>
+</ul>
+<p>Das ist <strong>bei keiner Rasse exklusiv</strong>: Es klappt sogar mit einem Caramelo. Der Golden Retriever legt nur <strong>weitere 4 Felder</strong> obendrauf.</p>
+<h2 id="13-vieh-versorgen">13. Vieh versorgen</h2>
+<p>Dieser Modus macht aus dem Hund einen Hofarbeiter: Er bleibt im Gehege und <strong>kümmert sich allein um die Herde, auch wenn du weit weg bist</strong>.</p>
+<h3 id="wie-du-ihn-einteilst">Wie du ihn einteilst</h3>
+<ol>
+<li>Leg eine <strong>ausgewiesene Tierzone</strong> an (das Gehege aus dem Grundspiel).</li>
+<li>Bring den Hund hinein.</li>
+<li>Rechtsklick → <strong><span class="ig">Hier das Vieh versorgen</span></strong>.</li>
+<li>Bestätige. Der Mod weist dich darauf hin, dass <strong>der Hund abgewählt wird und dir nicht mehr folgt</strong>.</li>
+</ol>
+<p>Ohne Gehege: <em><span class="ig">Caramelo Rex braucht hier ein ausgewiesenes Tiergehege, um Vieh zu versorgen.</span></em></p>
+<h3 id="was-er-dort-tut">Was er dort tut</h3>
+<ul>
+<li><strong>Er patrouilliert im Gehege.</strong></li>
+<li><strong>Er beruhigt die Herde.</strong> Das ist die Hauptsache: Ein gestresstes Tier <strong>gibt weder Milch noch Wolle</strong>, verliert seinen Nachwuchs und stiebt auseinander, sobald ein Zombie auftaucht. Der Hund hält den Stress der Herde unter dem kritischen Punkt.</li>
+<li><strong>Er erledigt Zombies lautlos</strong> in einem Umkreis von 12 Feldern.</li>
+<li>Er arbeitet, <strong>auch wenn du am anderen Ende der Karte bist</strong>.</li>
+</ul>
+<p>Meldungen: <em><span class="ig">Caramelo Rex wittert einen Zombie am Gehege!</span></em> und <em><span class="ig">Die Herde von Caramelo Rex wird unruhig!</span></em> Markierung über dem Kopf: <strong><span class="ig">Versorgt das Vieh</span></strong>.</p>
+<h3 id="wichtige-regeln">Wichtige Regeln</h3>
+<ul>
+<li>Solange er eingeteilt ist, <strong>sind Hunger, Durst und Loyalitätsverlust eingefroren</strong>. Er kommt allein zurecht.</li>
+<li>Er ist <strong>von allem anderen ausgenommen</strong>: Er kämpft nicht für dich, jagt nicht, hält keine Wache und nutzt keinen Napf.</li>
+<li><strong>Ein untrainierter, ungehorsamer oder panischer Hund STRESST die Herde, statt sie zu beruhigen.</strong> Setz keinen untrainierten Welpen auf die Kühe an.</li>
+<li><strong>Wählst du den Hund wieder aus, endet der Modus</strong> automatisch.</li>
+</ul>
+<p>Der <strong>Border Collie lernt Hüten doppelt so schnell</strong> wie die anderen Rassen, aber jede Rasse kann die Arbeit machen.</p>
+<h2 id="14-satteltaschen-der-hund-als-lasttier">14. Satteltaschen: der Hund als Lasttier</h2>
+<h3 id="so-legst-du-sie-an">So legst du sie an</h3>
+<ol>
+<li>Du brauchst die <strong><span class="ig">Companion Dogs Satteltaschen</span></strong> im Inventar.</li>
+<li>Rechtsklick auf den Hund → <strong><span class="ig">Satteltaschen anlegen</span></strong>. <em><span class="ig">Satteltaschen angelegt.</span></em></li>
+<li>Zum Öffnen: <strong><span class="ig">Satteltaschen öffnen</span></strong> (oder das Stück im Radialmenü oder die Schaltfläche im Reiter Befehle).</li>
+<li>Zum Abnehmen: <strong><span class="ig">Satteltaschen abnehmen</span></strong>. Die Taschen fallen <strong>mitsamt der Ladung</strong> zu Boden.</li>
+</ol>
+<h3 id="wie-viel-er-trägt">Wie viel er trägt</h3>
+<p>Die Kapazität ergibt sich aus <strong>einem festen Grundwert plus dem Stärke-Gen des Hundes</strong>. Mit den Standardwerten:</p>
+<div class="tw"><table><thead><tr>
+<th>Rasse</th>
+<th>Ladung (Gewicht)</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td><strong>4 bis 5</strong></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>6 bis 7</td>
+</tr>
+<tr>
+<td>Deutscher Schäferhund, Border Collie, Rottweiler, Dobermann, Labrador</td>
+<td>6 bis 8</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td><strong>13 bis 16</strong></td>
+</tr>
+</tbody></table></div>
+<p>Der Husky ist der einzige Hund mit einem Rassebonus auf die Satteltaschen (50% mehr). Alle anderen hängen allein am Stärke-Gen, deshalb tragen zwei Hunde derselben Rasse oft unterschiedlich viel.</p>
+<p>Der Server kann daran mit <strong><span class="ig">Grundkapazität der Satteltaschen</span></strong> und <strong><span class="ig">Stärkebonus der Satteltaschen</span></strong> drehen.</p>
+<h3 id="was-hineinpasst">Was hineinpasst</h3>
+<p>Fast alles, und die Grenze ist das <strong>Gewicht</strong>, nicht die Anzahl der Gegenstände. Die Ausnahmen:</p>
+<ul>
+<li>Weitere Satteltaschen.</li>
+<li>Ausgerüstete Gegenstände (getragene Kleidung, Waffe in der Hand).</li>
+<li><strong>Rucksäcke und Taschen.</strong> Verstaue lieber ihren Inhalt, nicht die Tasche selbst.</li>
+</ul>
+<p><strong>Karteneintragungen bleiben nicht erhalten.</strong> Wenn du eine beschriftete Karte verstaust, gehen die Markierungen verloren: <em><span class="ig">Karteneintragungen bleiben in der Satteltasche nicht erhalten.</span></em></p>
+<h3 id="das-fenster">Das Fenster</h3>
+<p>Zwei Listen nebeneinander: <strong><span class="ig">Dein Inventar</span></strong> links (ein Klick legt hinein) und die Satteltaschen rechts (ein Klick nimmt heraus). Unten steht: <strong><span class="ig">Ladung: 7/12</span></strong>.</p>
+<h3 id="wo-du-sie-herbekommst">Wo du sie herbekommst</h3>
+<p><strong>Herstellung:</strong> 2x Lederstreifen + Nadel + Faden (Nadel und Faden werden nicht verbraucht). Kategorie Schneidern, erfordert <strong>Schneidern Stufe 1</strong>. Gibt 15 XP auf Schneidern.</p>
+<p><strong>Loot:</strong> Tierhandlungen, Kisten mit Tierbedarf, Campingläden, Jagdschränke, Überlebenskits, Garagenwerkzeug und Kisten auf Bauernhöfen.</p>
+<blockquote class="quote"><strong>Stirbt der Hund oder lässt du ihn frei, fallen die Satteltaschen samt Ladung zu Boden</strong>, genau dort, wo er war.</blockquote>
+<h2 id="15-zucht-und-welpen">15. Zucht und Welpen</h2>
+<h3 id="es-gibt-keinen-knopf-zum-züchten">Es gibt keinen Knopf zum "Züchten"</h3>
+<p>Die Zucht läuft <strong>zu 100% passiv</strong>. Du befiehlst zwei Hunden nicht, sich zu paaren. Du schaffst die Bedingungen und wartest ab.</p>
+<p>Jede Spielstunde hat jede infrage kommende Hündin mit einem infrage kommenden Rüden in der Nähe eine Chance, von selbst zu empfangen. Der Standard sind <strong>5% pro Tag</strong> (Sandbox-Option <strong><span class="ig">Zuchtchance pro Tag</span></strong>).</p>
+<h3 id="die-bedingungen">Die Bedingungen</h3>
+<p>Alle sind Pflicht, und zwar bei beiden Hunden:</p>
+<ol>
+<li>Beide sind <strong>Begleiter desselben Besitzers</strong>.</li>
+<li>Ein <strong>erwachsener Rüde und eine erwachsene Hündin</strong>. Welpen paaren sich nie.</li>
+<li>Bei keinem der beiden ist <strong><span class="ig">Zucht verhindern</span></strong> eingeschaltet.</li>
+<li><strong>Dieselbe Etage</strong> und höchstens <strong>40 Felder</strong> voneinander entfernt.</li>
+<li>Keiner von beiden ist <strong>schwer verletzt</strong> oder <strong>vergiftet</strong>.</li>
+<li><strong>Loyalität von 60 oder mehr</strong> bei beiden.</li>
+<li><strong>Gut versorgt:</strong> Hunger <strong>und</strong> Durst bei beiden unter der Hälfte.</li>
+<li>Die Hündin ist <strong>nicht trächtig</strong> und nicht in der <strong>Wartezeit von 7 Tagen</strong> nach einem Wurf.</li>
+<li>Es gibt einen <strong>freien Platz</strong> im Hundelimit.</li>
+<li>Das Gebiet muss <strong>in deiner Nähe geladen</strong> sein.</li>
+</ol>
+<p>Kurz gesagt: <strong>zwei gut versorgte Hunde, beieinander, und du in der Nähe</strong>. Wenn nichts passiert, liegt es fast immer an Hunger, Durst oder Loyalität.</p>
+<h3 id="das-ritual-und-die-tragezeit">Das Ritual und die Tragezeit</h3>
+<p>Die Hündin <strong>läuft zum Rüden</strong> (<em><span class="ig">Caramelo Rex geht zum Partner</span></em>) und empfängt, sobald sie bei ihm ist. <em><span class="ig">Caramelo Rex ist trächtig</span></em>.</p>
+<ul>
+<li><strong>Tragezeit: 4 Spieltage</strong> als Standard.</li>
+<li>Die Uhr läuft weiter, <strong>auch wenn die Hündin weit weg ist oder du offline bist</strong>.</li>
+<li>Anzeigen über dem Kopf und im Menü: <strong><span class="ig">Trächtig</span></strong> und zum Schluss <strong><span class="ig">Wirft bald</span></strong>. Sie erscheinen in Rosa und <strong>immer</strong>, auch wenn die Statustexte ausgeschaltet sind.</li>
+</ul>
+<h3 id="der-wurf">Der Wurf</h3>
+<p>Die Wurfgröße hängt von der Rasse <strong>der Mutter</strong> ab:</p>
+<div class="tw"><table><thead><tr>
+<th>Rasse der Mutter</th>
+<th>Wurf</th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td>2 bis 4</td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td>1 bis 3</td>
+</tr>
+<tr>
+<td>Deutscher Schäferhund, Golden Retriever, Husky</td>
+<td>1 bis 2</td>
+</tr>
+</tbody></table></div>
+<p><em><span class="ig">Caramelo Rex hat geworfen</span></em>. Danach folgen <strong>7 Spieltage Pause</strong>, bevor sie wieder trächtig werden kann.</p>
+<blockquote class="quote">Hat der Server ein <strong>Hundelimit</strong> gesetzt und ist kein Platz frei, wird der Wurf so weit gekürzt, dass er hineinpasst (und die Trächtigkeit endet trotzdem). Mit der Werkseinstellung, also <strong>ohne Limit</strong>, passiert das nie.</blockquote>
+<h3 id="was-der-welpe-erbt">Was der Welpe erbt</h3>
+<ul>
+<li><strong>Die Abstammung ist der Durchschnitt der Eltern.</strong> Caramelo mit Deutschem Schäferhund ergibt 50/50. Dieser Mischling mit einem reinen Schäferhund ergibt 25/75.</li>
+<li><strong>Das Aussehen wird ausgewürfelt, gewichtet nach der Abstammung.</strong> Ein Welpe mit 75% Schäferhund sieht sehr wahrscheinlich auch wie ein Schäferhund aus.</li>
+<li><strong>Die Gene liegen zwischen denen der Eltern, mit einer Schwankung von plus oder minus 6%.</strong> So verbesserst du eine Linie: Verpaare immer wieder deine beiden stärksten Hunde.</li>
+<li>Ein Hund mit mehr als einer Rasse wird als <strong><span class="ig">Mischling</span></strong> geführt, und das Fenster zeigt die Aufschlüsselung (<span class="ig">50% Husky, 50% Deutscher Schäferhund</span>).</li>
+<li><strong>Der Stammbaum wird festgehalten:</strong> Generation, Name und Rasse von Vater und Mutter.</li>
+</ul>
+<h3 id="den-welpen-großziehen">Den Welpen großziehen</h3>
+<ul>
+<li>Er kommt <strong>passiv</strong> zur Welt (im Modus Bleib), mit <strong>50 Loyalität</strong> (nicht null), <strong>ohne jede Fähigkeit</strong> und sichtbar kleiner.</li>
+<li><strong>Er zählt ab der Geburt ins Hundelimit.</strong></li>
+<li>Er braucht <strong>90 Spieltage</strong>, um erwachsen zu werden. Die Uhr <strong>läuft immer</strong>, auch wenn der Welpe weit weg und außer Reichweite ist. Läuft die Frist ab, während er nicht geladen ist, wird er erwachsen, sobald du wieder in seine Nähe kommst.</li>
+<li>Beim Erwachsenwerden <strong>behält er Name, Bindung, Gene und Fähigkeiten</strong>: <em><span class="ig">Caramelo Rex ist erwachsen geworden</span></em>.</li>
+<li>Wenn dir der kleine Welpe gefällt, friert der Schalter <strong><span class="ig">Wachstum anhalten</span></strong> ihn für immer ein. <em><span class="ig">Hunde, die nie erwachsen werden? Hätte ich im echten Leben auch gern :D</span></em></li>
+</ul>
+<h2 id="16-mehrere-hunde-gleichzeitig">16. Mehrere Hunde gleichzeitig</h2>
+<p>Du kannst mehrere Hunde haben, aber <strong>nur einer zieht mit dir los</strong>: der <span class="ig">aktive</span> Hund. Die anderen warten.</p>
+<blockquote class="quote"><strong>Das soll sich in einer künftigen Version ändern.</strong> Plane vorerst mit einem Hund nach dem anderen.</blockquote>
+<p><strong>Ein passiver Hund ist komplett pausiert.</strong> Das ist gut so: Er ist kein Klotz am Bein, den du nebenher versorgen musst.</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Aktiver Hund</th>
+<th>Passiver Hund</th>
+</tr></thead><tbody>
+<tr>
+<td>Folgt dir</td>
+<td>Ja</td>
+<td>Nein, er bleibt, wo er ist</td>
+</tr>
+<tr>
+<td><strong>Bekommt Hunger und Durst</strong></td>
+<td>Ja</td>
+<td><strong>Nein. Es staut sich auch nichts an</strong></td>
+</tr>
+<tr>
+<td><strong>Frisst aus dem Napf</strong></td>
+<td>Ja</td>
+<td><strong>Nein, und er braucht es auch nicht</strong></td>
+</tr>
+<tr>
+<td>Verliert von selbst Loyalität</td>
+<td>Ja</td>
+<td>Nein</td>
+</tr>
+<tr>
+<td>Kämpft, bewacht, jagt</td>
+<td>Ja</td>
+<td>Nein</td>
+</tr>
+<tr>
+<td>Lässt sich streicheln (und gewinnt Loyalität)</td>
+<td>Ja</td>
+<td><strong>Ja</strong></td>
+</tr>
+<tr>
+<td>Kann sich paaren und Welpen bekommen</td>
+<td>Ja</td>
+<td><strong>Ja</strong></td>
+</tr>
+<tr>
+<td>Zählt für die Moodles und den Sammelbonus</td>
+<td>Ja</td>
+<td><strong>Ja, wenn er in der Nähe ist</strong></td>
+</tr>
+</tbody></table></div>
+<p>Das Wichtigste im Alltag: <strong>Du musst die wartenden Hunde nicht füttern.</strong> Sie hungern nicht, verlieren keine Loyalität und sterben beim Warten nicht an Vernachlässigung. Wählst du einen von ihnen aus, läuft sein Hunger <strong>da weiter, wo er aufgehört hat</strong>, ohne bösen Nachschlag.</p>
+<p>Zum Wechseln: Rechtsklick auf den Hund → <strong><span class="ig">Auswählen</span></strong>.</p>
+<p>Das Menü eines passiven Hundes ist mit Absicht kürzer: kein Füttern, kein Wasser, keine Bewegungsbefehle, weil nichts davon bei ihm Wirkung zeigt.</p>
+<h3 id="der-reiter-meine-hunde-das-register">Der Reiter "Meine Hunde": das Register</h3>
+<p>Das ist dein Hunderegister. Es listet alle gebundenen Hunde mit Bild, Name, Rasse, Geschlecht, Fähigkeiten und dem aktuellen Zustand auf:</p>
+<div class="tw"><table><thead><tr>
+<th>Zustand</th>
+<th>Was es bedeutet</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Aktiv</strong></td>
+<td>Der Hund, den du gerade dabei hast</td>
+</tr>
+<tr>
+<td><strong>In der Nähe</strong></td>
+<td>In deiner Nähe geladen</td>
+</tr>
+<tr>
+<td><strong>Auf dem Arm</strong></td>
+<td>Du trägst ihn gerade</td>
+</tr>
+<tr>
+<td><strong>Im Fahrzeug</strong></td>
+<td>Im Auto verstaut</td>
+</tr>
+<tr>
+<td><strong>Entfernt</strong></td>
+<td>Gebunden, aber außer Reichweite. Zeigt <span class="ig">vor X Std. gesehen</span></td>
+</tr>
+<tr>
+<td><strong>Vermisst</strong></td>
+<td>Verschwunden. Nutze hier <strong>Bring</strong></td>
+</tr>
+<tr>
+<td><strong>Noch kein Eintrag</strong></td>
+<td>Du warst nach dem Binden nie in seiner Nähe</td>
+</tr>
+</tbody></table></div>
+<p>Drei Schaltflächen pro Hund: <strong>Bring</strong> | <strong>Status</strong> | <strong>Auswählen</strong>.</p>
+<p><strong>Bring</strong> ist bei einem Hund in der Nähe ein einfacher Teleport. Bei einem <strong>entfernten</strong> Hund kommt eine Rückfrage: <em><span class="ig">Caramelo Rex aus der Ferne zurückrufen? Dein lauter Pfiff lockt Zombies an.</span></em> und der Hund taucht wieder auf, mit Fähigkeiten, Genen, Namen und Satteltaschen.</p>
+<p><strong>Wartezeit von 2 Spielstunden pro Hund.</strong> Sonst: <em><span class="ig">Caramelo Rex wurde vor Kurzem gerufen, warte eine Weile bis zum nächsten Ruf.</span></em></p>
+<blockquote class="quote"><strong>So holst du einen verlorenen Hund zurück.</strong> Ist der Hund verschwunden, meldet der Mod: <em><span class="ig">Caramelo Rex wird vermisst! Öffne Meine Hunde (Pfoten-Schaltfläche), um ihn zurückzurufen.</span></em></blockquote>
+<h2 id="17-das-hundefenster">17. Das Hundefenster</h2>
+<p>Du öffnest es auf vier Wegen: über die <strong>Pfoten-Schaltfläche</strong> direkt unter deinem Handbereich, über die Taste <strong>Status</strong>, über die Option <strong><span class="ig">Status</span></strong> im Kontextmenü oder über die Schaltfläche im Reiter Meine Hunde.</p>
+<p>Das Fenster ist <strong>größenverstellbar</strong> und merkt sich, wo du es zuletzt hattest. Ganz oben siehst du den <strong>3D-Avatar des Hundes in Echtzeit</strong> samt Namen. Im Auto erscheint das Banner <strong><span class="ig">Im Fahrzeug</span></strong>.</p>
+<h3 id="reiter-fähigkeiten-und-status">Reiter "Fähigkeiten und Status"</h3>
+<ul>
+<li><strong>Loyalität</strong> mit Balken und Erklärung im Tooltip.</li>
+<li><strong>Bedürfnisse:</strong> Hunger, Durst, Gesundheit, Stress.</li>
+<li><strong>Fähigkeiten:</strong> Spürsinn, Kampf, Gehorsam, Jagd, Hüten, jeweils mit Fortschrittsbalken und <strong><span class="ig">Lv X</span></strong>.</li>
+<li><strong>Anlagen:</strong> Stärke, Aggressivität, Widerstandskraft, angezeigt als Niedrig / Durchschnittlich / Hoch.</li>
+<li><strong>Rasse:</strong> Name, Alter (Erwachsen oder Welpe), <span class="ig">(Mischling)</span> wenn es zutrifft, mit der Rassenbeschreibung im Tooltip.</li>
+<li><strong>Erlegt:</strong> wie viele Zombies und wie viel Wild dieser Hund schon getötet hat.</li>
+</ul>
+<p><strong>Zu allem gibt es einen Tooltip.</strong> Wenn du nicht weißt, was ein Balken bedeutet, fahre mit der Maus darüber.</p>
+<h3 id="reiter-befehle">Reiter "Befehle"</h3>
+<ul>
+<li><strong>Modus:</strong> Folgen | Bleib | Bewachen</li>
+<li><strong>Wachdienst:</strong> Alarm | Leise | Still</li>
+<li><strong>Auto-Schutz</strong> (an/aus)</li>
+<li><strong>Jagd</strong> (an/aus)</li>
+<li><strong>Hier das Vieh versorgen</strong></li>
+<li><strong>Kunststücke:</strong> vier Schaltflächen (die gesperrten sind ausgegraut, der Grund steht im Tooltip)</li>
+<li><strong>Satteltaschen öffnen</strong></li>
+<li><strong>Aktionen:</strong> Bring | Umbenennen | Freilassen</li>
+</ul>
+<p>Im Fahrzeug ist alles ausgegraut, was den Hund draußen in der Welt braucht (<em><span class="ig">Beim Fahren nicht verfügbar, dein Begleiter fährt mit.</span></em>), und die Aktionszeile wird zu <strong>Füttern | Umbenennen | Wasser geben</strong>.</p>
+<h3 id="reiter-meine-hunde">Reiter "Meine Hunde"</h3>
+<p>Siehe <a href="#16-mehrere-hunde-gleichzeitig">Mehrere Hunde gleichzeitig</a>.</p>
+<h3 id="reiter-einstellungen">Reiter "Einstellungen"</h3>
+<p>Diese Optionen gehören <strong>dir</strong>, gelten pro Spieler und betreffen niemanden sonst auf dem Server:</p>
+<ul>
+<li><strong>Oberfläche:</strong> <span class="ig">Statustexte: an/aus</span> (die schwebenden Hinweise über dem Kopf des Hundes) und <span class="ig">Stimmungsbild: an/aus</span> (die Hunde-Moodles).</li>
+<li><strong>Ton:</strong> Gesamtlautstärke, Stummschalten und getrennte Regler für <strong>Bellen</strong>, <strong>Effekte</strong> und <strong>Umgebung</strong>.</li>
+<li><strong>Selbstfütterung:</strong> der Regler <span class="ig">Frisst, wenn Hunger/Durst erreicht</span>.</li>
+<li><strong>Tastenbelegung:</strong> die 14 Aktionen, mit <strong>Neu belegen</strong> und <strong>Löschen</strong>.</li>
+</ul>
+<blockquote class="quote">Wenn dich das Bellen stört, löst der Regler <strong>Bellen</strong> hier das Problem, ohne dass du irgendeine Mechanik abschalten musst.</blockquote>
+<h2 id="18-was-auf-dem-bildschirm-erscheint">18. Was auf dem Bildschirm erscheint</h2>
+<h3 id="hunde-moodles">Hunde-Moodles</h3>
+<p>Eine eigene Symbolspalte, <strong>links neben der normalen Moodle-Spalte des Spiels</strong>. Jede Rasse hat ihr eigenes. Alle Details im <a href="breeds.html" class="xlink">Rassenhandbuch</a>.</p>
+<p>Die, die jeder Hund bekommen kann:</p>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Wann es erscheint</th>
+<th>Was es bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Hungrig</strong></td>
+<td>Hunger hoch</td>
+<td>Nur ein Hinweis</td>
+</tr>
+<tr>
+<td><strong>Durstig</strong></td>
+<td>Durst hoch</td>
+<td>Nur ein Hinweis</td>
+</tr>
+<tr>
+<td><strong>Vergiftet</strong></td>
+<td>Hat schlechtes Futter gefressen</td>
+<td>Nur ein Hinweis</td>
+</tr>
+<tr>
+<td><strong>Gut erholt</strong></td>
+<td>Du hast neben dem Hund geschlafen</td>
+<td>Mildert Panik, Stress, Traurigkeit und Langeweile, und du ermüdest langsamer. Hält standardmäßig 2 Spielstunden an</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Regel für alle Rassen-Moodles:</strong> ein <strong>illoyaler, kranker oder stark hungriger bzw. durstiger Hund gibt gar keinen Bonus</strong>. Das Moodle schaltet sich einfach ab. Nur ein gut versorgter Hund bringt etwas.</blockquote>
+<h3 id="texte-über-dem-kopf">Texte über dem Kopf</h3>
+<p>Der Hund stapelt mehrere Statuszeilen über seinem Kopf, sichtbar auf 14 Felder Entfernung und nur auf derselben Etage. Von oben nach unten: Warnung des Wachdienstes, Zustand (<strong>Verängstigt</strong>, <strong>In Panik</strong>, <strong>Schwer verletzt</strong>, <strong>Ungehorsam</strong>, <strong>Verletzt</strong>, <strong>Nervös</strong>), was er gerade tut (fressen, jagen, schnüffeln, das Vieh versorgen), Trächtigkeit und <strong>der Name</strong>, immer zuletzt und am nächsten am Kopf.</p>
+<p>Die Option <strong><span class="ig">Statustexte: aus</span></strong> (Reiter Einstellungen) blendet alles außer dem Namen aus. Über die Sandbox-Option <strong><span class="ig">Namensschilder anzeigen</span></strong> lässt sich sogar der Name abschalten.</p>
+<p><strong>Beim Hund eines anderen Spielers</strong> siehst du nur <strong><span class="ig">Besitzer: Soundso</span></strong>, die Trächtigkeit und den Namen.</p>
+<h3 id="markierung-auf-der-karte">Markierung auf der Karte</h3>
+<p>Eine <strong>Pfote pro verbundenem Hund</strong>, auf der Weltkarte und auf der Minikarte.</p>
+<ul>
+<li><strong>Braune Pfote = aktiver Hund. Graue Pfote = passive Hunde.</strong></li>
+<li>Auf der Weltkarte steht der Name des Hundes neben der Pfote. Auf der Minikarte nicht, dafür <strong>klebt sie am Rand</strong> und zeigt die Richtung an, wenn der Hund außer Sicht ist.</li>
+<li>Solange der Hund geladen ist, folgt ihm die Markierung in Echtzeit. Wird er entladen, <strong>bleibt sie an der zuletzt gesehenen Stelle</strong>.</li>
+</ul>
+<p><strong>So findest du einen Hund wieder, den du zurückgelassen hast, oder deinen Hund nach deinem Tod.</strong> Die Markierung ist reines Overlay und wird nie zu einem gespeicherten Kartensymbol.</p>
+<p>Abschalten lässt sich das mit der Sandbox-Option <strong><span class="ig">Hund auf der Karte anzeigen</span></strong>.</p>
+<h2 id="19-die-gegenstände-des-mods">19. Die Gegenstände des Mods</h2>
+<p>Der Mod fügt <strong>zwei Gegenstände zum Benutzen</strong> hinzu und sonst nichts.</p>
+<h3 id="companion-dogs-napf">Companion Dogs Napf</h3>
+<p>Die Futterstation. Gewicht 1,5.</p>
+<p><strong>Zwei Rezepte</strong>, beide ohne jede Fähigkeitsanforderung und von Hand gefertigt:</p>
+<ul>
+<li><strong>1 Küchenutensil</strong> (Topf, Pfanne, Backblech, Kessel, Eimer, Becher, Flasche...), das dabei zerstört wird.</li>
+<li><strong>1 Tiernapf aus dem Grundspiel</strong>, wird ebenfalls zerstört.</li>
+</ul>
+<p><strong>Loot:</strong> Regal in der Tierhandlung, Kiste mit Tierbedarf, Haushaltsabteilung im Supermarkt, Gartencenter, Kisten auf Bauernhöfen und im Gartenbau, Lager des Supermarkts, Küche.</p>
+<h3 id="companion-dogs-satteltaschen">Companion Dogs Satteltaschen</h3>
+<p>Siehe <a href="#14-satteltaschen-der-hund-als-lasttier">Satteltaschen</a>. Gewicht 1,0, mit ordentlicher Gewichtsreduzierung im Inneren.</p>
+<h3 id="was-der-mod-nicht-hat">Was der Mod NICHT hat</h3>
+<p>Damit du nicht vergeblich suchst: <strong>der Napf und die Satteltaschen sind die einzigen beiden Gegenstände des Mods.</strong> Es gibt kein Halsband, kein besonderes Leckerli, kein Spielzeug, keine Hundehütte und keinen baubaren Zwinger. Das normale Hundefutter aus dem Grundspiel erkennt der Mod, aber es ist ein Gegenstand des Spiels, nicht des Mods.</p>
+<h2 id="20-mehrspieler">20. Mehrspieler</h2>
+<p>Der Mod ist von Anfang an für den Mehrspieler gebaut und funktioniert im Koop genauso wie auf einem dedizierten Server.</p>
+<h3 id="dein-hund-gehört-dir">Dein Hund gehört dir</h3>
+<p>Der Besitz hängt an <strong>deinem Konto</strong>, nicht am Charakter und nicht am Verbindungsplatz. Ein Serverneustart übergibt deinen Hund nicht an jemand anderen.</p>
+<p><strong>Andere Spieler können:</strong> den Hund sehen, mit seinem Namen und <strong><span class="ig">Besitzer: Soundso</span></strong> über dem Kopf.</p>
+<p><strong>Andere Spieler können nicht:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Versuch</th>
+<th>Was passiert</th>
+</tr></thead><tbody>
+<tr>
+<td>Aufheben</td>
+<td><em><span class="ig">Dieser Hund gehört einem anderen Überlebenden.</span></em></td>
+</tr>
+<tr>
+<td>Füttern oder erneut zähmen</td>
+<td><em><span class="ig">Dieser Hund gehört bereits einem anderen Überlebenden.</span></em> Wird geprüft, <strong>bevor</strong> das Futter der Person verbraucht wird</td>
+</tr>
+<tr>
+<td>Befehle geben, umbenennen, freilassen, an die Satteltaschen gehen</td>
+<td>Wird auf dem Server blockiert</td>
+</tr>
+<tr>
+<td>Töten</td>
+<td>Die Option erscheint gar nicht erst, und der Begleiter ist unverwundbar</td>
+</tr>
+</tbody></table></div>
+<h3 id="wenn-du-dich-abmeldest">Wenn du dich abmeldest</h3>
+<p>Mit eingeschalteter Option <strong><span class="ig">Hunde verwahren, wenn der Besitzer offline ist</span></strong> (so ist es voreingestellt):</p>
+<ul>
+<li>Deine Hunde werden <strong>aus der Welt genommen und verwahrt</strong>, Zustand und Bedürfnisse bleiben <strong>eingefroren</strong>.</li>
+<li>Wenn du zurückkommst, erscheint der Hund im Modus <strong>Folgen</strong> wieder an deiner Seite; die in <strong>Bleib</strong> und <strong>Bewachen</strong> sowie die passiven tauchen <strong>dort auf, wo du sie gelassen hast</strong>, sobald das Gebiet lädt.</li>
+<li><strong>Du kommst nicht zu einem ausgehungerten Hund zurück.</strong> Die Offline-Zeit zählt nicht mit.</li>
+</ul>
+<p>Ist sie aus, bleiben die Hunde in der Welt, unverwundbar und untätig.</p>
+<h3 id="für-administratoren">Für Administratoren</h3>
+<p>Es gibt ein <strong><span class="ig">Hunderegister (Admin)</span></strong>: Suche nach Spieler, Status Online/Offline, Anzahl der Hunde und die Schaltfläche Aktualisieren. Dazu kommt ein Panel für die <strong>Leistungsanpassung des Servers</strong> im laufenden Betrieb. Beides ist nur für Admins.</p>
+<h3 id="installationshinweis-für-koop">Installationshinweis für Koop</h3>
+<p><strong>Wenn der Hund ohne Textur oder <span class="ig">zerknautscht</span> erscheint:</strong> aktiviere Companion Dogs in der <strong>Mod-Liste im Hauptmenü</strong> (nicht nur in der Koop-Auswahl) und <strong>beende das Spiel komplett</strong>, bevor du den Spielstand lädst. Der Koop-Host muss dasselbe tun und den Server neu starten.</p>
+<h2 id="21-sandbox-optionen">21. Sandbox-Optionen</h2>
+<p>Die Seite <strong><span class="ig">Companion Dogs</span></strong> in den Welteinstellungen. Es sind 33 Optionen.</p>
+<blockquote class="quote"><strong>Denk dran:</strong> im Mehrspieler zählt die Einstellung <strong>des Servers</strong>. Und in Project Zomboid werden die Sandbox-Optionen <strong>im Spielstand</strong> festgeschrieben, spätere Änderungen brauchen also einen Eingriff in den Spielstand oder eine neue Welt.</blockquote>
+<h3 id="zähmen-und-spawns">Zähmen und Spawns</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Vertrauen zum Zähmen</td>
+<td>100</td>
+<td>Wie viel Futter, bis der Hund dir gehört</td>
+</tr>
+<tr>
+<td>Max. Hunde pro Spieler</td>
+<td><strong>0 (kein Limit)</strong></td>
+<td>Obergrenze für gebundene Hunde</td>
+</tr>
+<tr>
+<td>Streunende Hunde in Städten</td>
+<td>An</td>
+<td>Hunde tauchen beim Erkunden von selbst auf</td>
+</tr>
+<tr>
+<td>Multiplikator für Hunde-Spawns</td>
+<td>1,0</td>
+<td>Skaliert alle Spawns. 0 schaltet sie ab</td>
+</tr>
+<tr>
+<td>Wilde Hunde sind unverwundbar</td>
+<td><strong>Aus</strong></td>
+<td>Verhindert, dass freie Hunde sterben, bevor du sie zähmst</td>
+</tr>
+<tr>
+<td>Debug-Spawn erlauben</td>
+<td>An</td>
+<td>Debug-Menü (im Mehrspieler nur für Admins)</td>
+</tr>
+</tbody></table></div>
+<h3 id="kampf">Kampf</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Begleiter bekämpfen Zombies</td>
+<td>An</td>
+<td>Hauptschalter für den Kampf</td>
+</tr>
+<tr>
+<td>Schadensmultiplikator für Begleiter</td>
+<td>1,0</td>
+<td>Skaliert den Schaden. <strong>Der Caramelo erledigt einen Zombie trotzdem nicht, egal wie hoch du das stellst</strong></td>
+</tr>
+<tr>
+<td>Hunde-Kills zählen für dich</td>
+<td>An</td>
+<td>Die Zombies des Hundes zählen zu deiner eigenen Zählung</td>
+</tr>
+</tbody></table></div>
+<h3 id="pflege-und-bindung">Pflege und Bindung</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Bedürfnisse und Pflege</td>
+<td>An</td>
+<td>Hauptschalter für Hunger, Durst, Loyalität und Stress</td>
+</tr>
+<tr>
+<td>Tempo von Hunger und Durst</td>
+<td>1,0</td>
+<td>Skaliert beides. <strong>0 friert sie ein und der Hund muss nie wieder fressen</strong></td>
+</tr>
+<tr>
+<td>Loyalitätsverlust pro Tag</td>
+<td>12,0</td>
+<td>Wie viel Loyalität pro Tag verloren geht</td>
+</tr>
+<tr>
+<td>Nähe tut gut (Streicheln und Schlafen)</td>
+<td>An</td>
+<td>Streicheln und gemeinsames Schlafen mildern deine Langeweile und Traurigkeit</td>
+</tr>
+<tr>
+<td>Gut erholt (Schlaf neben dem Hund)</td>
+<td>An</td>
+<td>Der Bonus, mit dem du aufwachst</td>
+</tr>
+<tr>
+<td>Dauer von Gut erholt (Stunden)</td>
+<td>2,0</td>
+<td>Wie lange er anhält</td>
+</tr>
+</tbody></table></div>
+<h3 id="verhalten">Verhalten</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Wachdienst: Zombie-Warnungen</td>
+<td>An</td>
+<td>Hauptschalter für die Wache</td>
+</tr>
+<tr>
+<td>Auto-Schutz: Wache bei Tätigkeiten</td>
+<td>An</td>
+<td>Schaltet den Schalter pro Hund frei</td>
+</tr>
+<tr>
+<td>Hundelärm lockt Zombies an</td>
+<td>An</td>
+<td>Lautes Bellen ist echter Lärm. <strong>Knurren lockt nie an</strong></td>
+</tr>
+<tr>
+<td>Hunde können ungehorsam sein</td>
+<td>An</td>
+<td>Die Chance von 30 % auf Stufe 0, die bis Stufe 10 auf 0 % fällt</td>
+</tr>
+</tbody></table></div>
+<h3 id="fähigkeiten-und-aktivitäten">Fähigkeiten und Aktivitäten</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Fähigkeiten und Training</td>
+<td>An</td>
+<td>Hauptschalter für die Fähigkeiten</td>
+</tr>
+<tr>
+<td>XP-Rate für Fähigkeiten</td>
+<td><strong>0,5</strong></td>
+<td>Trainingstempo. Stell sie auf 1,0 oder mehr, wenn es dir zu langsam geht</td>
+</tr>
+<tr>
+<td>Unterstützte Jagd</td>
+<td>An</td>
+<td>Hauptschalter für die Jagd</td>
+</tr>
+<tr>
+<td>Hofarbeit (Hüten)</td>
+<td>An</td>
+<td>Hauptschalter für den Gehege-Modus</td>
+</tr>
+<tr>
+<td>Gehorsams-Kunststücke</td>
+<td>An</td>
+<td>Hauptschalter für die vier Kunststücke</td>
+</tr>
+</tbody></table></div>
+<h3 id="satteltaschen">Satteltaschen</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Grundkapazität der Satteltaschen</td>
+<td>4</td>
+<td>Die Untergrenze der Ladung</td>
+</tr>
+<tr>
+<td>Stärkebonus der Satteltaschen</td>
+<td>8</td>
+<td>Wie viel ein sehr starker Hund obendrauf packt</td>
+</tr>
+</tbody></table></div>
+<h3 id="welpen">Welpen</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Zucht und Welpen</td>
+<td>An</td>
+<td>Hauptschalter</td>
+</tr>
+<tr>
+<td>Tragezeit (Tage)</td>
+<td>4</td>
+<td>Spieltage bis zum Wurf</td>
+</tr>
+<tr>
+<td>Heranwachsen der Welpen (Tage)</td>
+<td>90</td>
+<td>Tage, bis ein Welpe erwachsen wird</td>
+</tr>
+<tr>
+<td>Zuchtchance pro Tag</td>
+<td>5,0</td>
+<td>Chance, dass ein Paar von selbst Nachwuchs zeugt. 0 schaltet es ab</td>
+</tr>
+</tbody></table></div>
+<h3 id="oberfläche-und-mehrspieler">Oberfläche und Mehrspieler</h3>
+<div class="tw"><table><thead><tr>
+<th>Option</th>
+<th>Standard</th>
+<th>Was sie bewirkt</th>
+</tr></thead><tbody>
+<tr>
+<td>Namensschilder anzeigen</td>
+<td>An</td>
+<td>Der schwebende Name</td>
+</tr>
+<tr>
+<td>Hund auf der Karte anzeigen</td>
+<td>An</td>
+<td>Die Pfote auf Karte und Minikarte</td>
+</tr>
+<tr>
+<td>Hunde verwahren, wenn der Besitzer offline ist</td>
+<td>An</td>
+<td>Mehrspieler: Hunde verlassen die Welt, wenn du dich abmeldest</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-häufige-probleme">22. Häufige Probleme</h2>
+<p><strong><span class="ig">Der Hund ist ohne Textur aufgetaucht, völlig verkrumpelt.</span></strong> Aktiviere den Mod in der Mod-Liste <strong>im Hauptmenü</strong> und schließe das Spiel komplett, bevor du den Spielstand lädst. Das ist Problem Nummer eins im Koop.</p>
+<p><strong><span class="ig">Ich habe den Mod hinzugefügt und in meinem Spielstand passiert nichts.</span></strong> Project Zomboid aktiviert Mods <strong>pro Spielstand</strong>. Ein später hinzugefügter Mod kommt nicht mehr in eine schon erstellte Welt hinein, und das Spiel <strong>meldet keinerlei Fehler</strong>. Prüfe im Spielstand-Ladebildschirm, ob der Mod für diese Welt angehakt ist.</p>
+<p><strong><span class="ig">Mein Hund gehorcht nicht.</span></strong> Schau dir die Meldung an. Steht da <em><span class="ig">vertraut dir nicht genug, um zu gehorchen</span></em>, ist es die Loyalität: füttern, Wasser geben und streicheln. Steht da <em><span class="ig">lässt sich ablenken und ignoriert dich</span></em>, fehlt Training: <strong>wiederhole den Befehl, der zweite geht immer durch</strong>. Ist es Panik oder eine Verletzung, kümmere dich zuerst darum.</p>
+<p><strong><span class="ig">Mein Hund tötet die Zombies nicht, er wirft sie nur um.</span></strong> Wenn es ein <strong>Caramelo</strong> ist, ist genau das gewollt, und keine Einstellung ändert daran etwas. Nimm eine andere Rasse oder nimm seine Rolle an: Er wirft um, du machst den Rest.</p>
+<p><strong><span class="ig">Der Hund bellt ständig und zieht Zombies an.</span></strong> Dafür gibt es vier mögliche Quellen, und alle hast du im Griff: der <strong>Wachdienst auf Alarm</strong> (stell ihn auf <strong>Leise</strong>, das bellt nie), das Kunststück <strong>Ablenken</strong> (der Lärm ist genau sein Zweck), die <strong>Jagd</strong> (schalte den Jagdmodus aus) und der <strong>Kampf</strong>. Ein gestresster Hund bellt <strong>nicht</strong> von selbst.</p>
+<p><strong><span class="ig">Mein Hund ist weg.</span></strong> Öffne das Fenster über die Pfoten-Schaltfläche, geh auf den Reiter <strong><span class="ig">Meine Hunde</span></strong> und nutze <strong>Bring</strong>. Ist er weit weg, fragt der Mod nach einer Bestätigung und holt ihn samt allem zurück. Abklingzeit von 2 Spielstunden pro Hund. Auch die Markierung auf der Karte zeigt seine zuletzt gesehene Position.</p>
+<p><strong><span class="ig">Der Hund hängt auf der anderen Seite des Zauns fest.</span></strong> Nutze <strong>Bring</strong> (den Pfiff). Genau dafür ist es da, um den Preis, dass Zombies angelockt werden.</p>
+<p><strong><span class="ig">Mein Hund wird nicht trächtig.</span></strong> Sieh dir die Liste der <a href="#15-zucht-und-welpen">Zuchtbedingungen</a> an. Fast immer sind es Hunger, Durst oder eine Loyalität unter 60 bei einem der beiden. Prüfe auch, ob <strong><span class="ig">Zucht verhindern</span></strong> nicht eingeschaltet ist.</p>
+<p><strong><span class="ig">Mein Welpe wächst nicht.</span></strong> Prüfe, ob bei ihm <strong><span class="ig">Wachstum anhalten</span></strong> eingeschaltet ist. Ansonsten braucht es nur Zeit: Standard sind <strong>90 Spieltage</strong>, und die Uhr läuft auch, wenn er weit weg ist. Ist die Frist längst um und er ist immer noch ein Welpe, geh zu ihm hin: Die Verwandlung passiert, sobald der Welpe geladen ist.</p>
+<p><strong><span class="ig">Der Hund steigt nicht mit mir ins Auto.</span></strong> Nur ein Hund auf <strong>Folgen</strong> steigt ein. Auf Bleib oder Bewachen bleibt er stehen.</p>
+<p><strong><span class="ig">Ich habe den Hund die Basis bewachen lassen und er hat nichts getan.</span></strong> Der Modus Bewachen <strong>funktioniert vorerst nur, solange du in der Nähe bist</strong>. Willst du einen Hund allein aus der Ferne arbeiten lassen, geht das ausschließlich mit <strong>Vieh versorgen</strong>, und dafür braucht er ein ausgewiesenes Gehege.</p>
+<p><strong><span class="ig">Der Hund lernt viel zu langsam.</span></strong> Der Standard der <strong><span class="ig">XP-Rate für Fähigkeiten</span></strong> ist <strong>0,5</strong>, also halbes Tempo. Stell sie in einer neuen Welt auf 1,0 oder höher.</p>
+<p><strong><span class="ig">Mein Hund ist gestorben.</span></strong> Das lässt sich nicht rückgängig machen, und ein Respawn gibt es nicht. Die einzige Ursache sind Hunger oder Durst, die auf die Spitze getrieben wurden. Satteltaschen und Ladung bleiben dort am Boden liegen, wo er gefallen ist.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Keine Treffer für <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' Treffer'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Anfang');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

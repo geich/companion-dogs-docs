@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="機能: 犬にできることと、指示の出し方">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: 機能">
+<meta property="og:description" content="機能: 犬にできることと、指示の出し方">
+<meta property="og:url" content="https://companiondogs.pet/docs/ja/features.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/features.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="ru" href="../ru/features.html">
+<link rel="alternate" hreflang="th" href="../th/features.html">
+<link rel="alternate" hreflang="uk" href="../uk/features.html">
+<link rel="alternate" hreflang="vi" href="../vi/features.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/features.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/features.html">
+<link rel="alternate" hreflang="x-default" href="../en/features.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: 機能</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 32px 120px; min-width:0;}
+.doc{max-width:70ch; margin:0 auto;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="目次を開く" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="ドキュメントのトップページに戻る"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">機能</em>
+  <div class="grow"></div>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>犬種マニュアルを見る</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="マニュアル内を検索…" aria-label="マニュアル内を検索" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="機械翻訳"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="テーマを切り替え">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>機械翻訳（未校正）.</b> このページはポルトガル語から機械翻訳したもので、校正はされていません。用語や数値が正しくない場合があります。内容に迷ったときは、英語版かポルトガル語の原文を確認してください。 <a href="../en/features.html">英語版を読む</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">目次 &middot; <b>機能</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-5分でわかる野良犬から相棒まで" data-id="1-5分でわかる野良犬から相棒まで">1. 5分でわかる：野良犬から相棒まで</a>
+</div>
+<div class="grp">
+<a class="s2" href="#2-犬を見つけて手懐ける" data-id="2-犬を見つけて手懐ける">2. 犬を見つけて手懐ける</a>
+<div class="sub">
+<a class="s3" href="#犬種ごとの出現場所" data-id="犬種ごとの出現場所">犬種ごとの出現場所</a>
+<a class="s3" href="#手懐け方" data-id="手懐け方">手懐け方</a>
+<a class="s3" href="#必要な食べ物の量" data-id="必要な食べ物の量">必要な食べ物の量</a>
+<a class="s3" href="#体に悪い食べ物" data-id="体に悪い食べ物">体に悪い食べ物</a>
+<a class="s3" href="#相棒になった瞬間に起きること" data-id="相棒になった瞬間に起きること">相棒になった瞬間に起きること</a>
+<a class="s3" href="#飼える頭数の上限" data-id="飼える頭数の上限">飼える頭数の上限</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-命令の出し方4つのやり方" data-id="3-命令の出し方4つのやり方">3. 命令の出し方：4つのやり方</a>
+<div class="sub">
+<a class="s3" href="#a-コンテキストメニュー犬を右クリック" data-id="a-コンテキストメニュー犬を右クリック">a) コンテキストメニュー（犬を右クリック）</a>
+<a class="s3" href="#b-ラジアルメニューqを長押し" data-id="b-ラジアルメニューqを長押し">b) ラジアルメニュー（Qを長押し）</a>
+<a class="s3" href="#c-ショートカットキー" data-id="c-ショートカットキー">c) ショートカットキー</a>
+<a class="s3" href="#d-犬のウィンドウのボタン" data-id="d-犬のウィンドウのボタン">d) 犬のウィンドウのボタン</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-3つのモード従う待て見張れ" data-id="4-3つのモード従う待て見張れ">4. 3つのモード：従う、待て、見張れ</a>
+<div class="sub">
+<a class="s3" href="#従う" data-id="従う">従う</a>
+<a class="s3" href="#待て" data-id="待て">待て</a>
+<a class="s3" href="#見張れ" data-id="見張れ">見張れ</a>
+<a class="s3" href="#呼び戻しの2つのコマンド" data-id="呼び戻しの2つのコマンド">呼び戻しの2つのコマンド</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-見張り警報としての犬" data-id="5-見張り警報としての犬">5. 見張り：警報としての犬</a>
+</div>
+<div class="grp">
+<a class="s2" href="#6-戦闘" data-id="6-戦闘">6. 戦闘</a>
+<div class="sub">
+<a class="s3" href="#犬が自分から戦うとき" data-id="犬が自分から戦うとき">犬が自分から戦うとき</a>
+<a class="s3" href="#壁越しには噛みつかない" data-id="壁越しには噛みつかない">壁越しには噛みつかない</a>
+<a class="s3" href="#与えるダメージ" data-id="与えるダメージ">与えるダメージ</a>
+<a class="s3" href="#自動護衛" data-id="自動護衛">自動護衛</a>
+<a class="s3" href="#あなたの銃弾は犬に当たらない" data-id="あなたの銃弾は犬に当たらない">あなたの銃弾は犬に当たらない</a>
+<a class="s3" href="#負傷後退パニック" data-id="負傷後退パニック">負傷、後退、パニック</a>
+<a class="s3" href="#回復" data-id="回復">回復</a>
+<a class="s3" href="#討伐数の記録" data-id="討伐数の記録">討伐数の記録</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-欲求と世話" data-id="7-欲求と世話">7. 欲求と世話</a>
+<div class="sub">
+<a class="s3" href="#ストレスはどこから来るか" data-id="ストレスはどこから来るか">ストレスはどこから来るか</a>
+<a class="s3" href="#手で餌をやる" data-id="手で餌をやる">手で餌をやる</a>
+<a class="s3" href="#水をやる" data-id="水をやる">水をやる</a>
+<a class="s3" href="#犬を撫でる" data-id="犬を撫でる">犬を撫でる</a>
+<a class="s3" href="#放置したときに起きること" data-id="放置したときに起きること">放置したときに起きること</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-忠誠度" data-id="8-忠誠度">8. 忠誠度</a>
+<div class="sub">
+<a class="s3" href="#不服従になるライン" data-id="不服従になるライン">不服従になるライン</a>
+<a class="s3" href="#犬が命令を拒否するとき" data-id="犬が命令を拒否するとき">犬が命令を拒否するとき</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-餌皿あなたがいなくても食事と水" data-id="9-餌皿あなたがいなくても食事と水">9. 餌皿：あなたがいなくても食事と水</a>
+<div class="sub">
+<a class="s3" href="#使い方" data-id="使い方">使い方</a>
+<a class="s3" href="#餌皿に入れられる食べ物" data-id="餌皿に入れられる食べ物">餌皿に入れられる食べ物</a>
+<a class="s3" href="#犬が餌皿を使う流れ" data-id="犬が餌皿を使う流れ">犬が餌皿を使う流れ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-スキル犬が持つ5つのスキル" data-id="10-スキル犬が持つ5つのスキル">10. スキル：犬が持つ5つのスキル</a>
+<div class="sub">
+<a class="s3" href="#経験値カーブについて" data-id="経験値カーブについて">経験値カーブについて</a>
+<a class="s3" href="#命令の無視" data-id="命令の無視">命令の無視</a>
+<a class="s3" href="#スキルと資質は別のもの" data-id="スキルと資質は別のもの">スキルと資質は別のもの</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#11-服従の芸" data-id="11-服従の芸">11. 服従の芸</a>
+<div class="sub">
+<a class="s3" href="#指定した場所へ行かせる服従1" data-id="指定した場所へ行かせる服従1">指定した場所へ行かせる（服従1）</a>
+<a class="s3" href="#気を引く服従3" data-id="気を引く服従3">気を引く（服従3）</a>
+<a class="s3" href="#アイテムを嗅ぎ出す服従5" data-id="アイテムを嗅ぎ出す服従5">アイテムを嗅ぎ出す（服従5）</a>
+<a class="s3" href="#寝ている間に探してくる服従10" data-id="寝ている間に探してくる服従10">寝ている間に探してくる（服従10）</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#12-狩り" data-id="12-狩り">12. 狩り</a>
+<div class="sub">
+<a class="s3" href="#何を狩るか" data-id="何を狩るか">何を狩るか</a>
+<a class="s3" href="#実際の動き" data-id="実際の動き">実際の動き</a>
+<a class="s3" href="#制限" data-id="制限">制限</a>
+<a class="s3" href="#代償" data-id="代償">代償</a>
+<a class="s3" href="#採集のボーナス" data-id="採集のボーナス">採集のボーナス</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#13-家畜の世話" data-id="13-家畜の世話">13. 家畜の世話</a>
+<div class="sub">
+<a class="s3" href="#割り当て方" data-id="割り当て方">割り当て方</a>
+<a class="s3" href="#囲いの中でやること" data-id="囲いの中でやること">囲いの中でやること</a>
+<a class="s3" href="#大事なルール" data-id="大事なルール">大事なルール</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#14-サドルバッグ犬を荷役に使う" data-id="14-サドルバッグ犬を荷役に使う">14. サドルバッグ：犬を荷役に使う</a>
+<div class="sub">
+<a class="s3" href="#装着のしかた" data-id="装着のしかた">装着のしかた</a>
+<a class="s3" href="#どれだけ積めるか" data-id="どれだけ積めるか">どれだけ積めるか</a>
+<a class="s3" href="#何を入れられるか" data-id="何を入れられるか">何を入れられるか</a>
+<a class="s3" href="#ウィンドウ" data-id="ウィンドウ">ウィンドウ</a>
+<a class="s3" href="#手に入れかた" data-id="手に入れかた">手に入れかた</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#15-繁殖と子犬" data-id="15-繁殖と子犬">15. 繁殖と子犬</a>
+<div class="sub">
+<a class="s3" href="#交配させるボタンはありません" data-id="交配させるボタンはありません">「交配させる」ボタンはありません</a>
+<a class="s3" href="#条件" data-id="条件">条件</a>
+<a class="s3" href="#交配と妊娠期間" data-id="交配と妊娠期間">交配と妊娠期間</a>
+<a class="s3" href="#出産" data-id="出産">出産</a>
+<a class="s3" href="#子犬が受け継ぐもの" data-id="子犬が受け継ぐもの">子犬が受け継ぐもの</a>
+<a class="s3" href="#子犬を育てる" data-id="子犬を育てる">子犬を育てる</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#16-複数の犬を同時に飼う" data-id="16-複数の犬を同時に飼う">16. 複数の犬を同時に飼う</a>
+<div class="sub">
+<a class="s3" href="#マイドッグタブ犬の登録簿" data-id="マイドッグタブ犬の登録簿">「マイドッグ」タブ：犬の登録簿</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#17-犬のウィンドウ" data-id="17-犬のウィンドウ">17. 犬のウィンドウ</a>
+<div class="sub">
+<a class="s3" href="#スキルと状態タブ" data-id="スキルと状態タブ">「スキルと状態」タブ</a>
+<a class="s3" href="#コマンドタブ" data-id="コマンドタブ">「コマンド」タブ</a>
+<a class="s3" href="#マイドッグタブ" data-id="マイドッグタブ">「マイドッグ」タブ</a>
+<a class="s3" href="#設定タブ" data-id="設定タブ">「設定」タブ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#18-画面に出るもの" data-id="18-画面に出るもの">18. 画面に出るもの</a>
+<div class="sub">
+<a class="s3" href="#犬のmoodle" data-id="犬のmoodle">犬のmoodle</a>
+<a class="s3" href="#頭の上に出る文字" data-id="頭の上に出る文字">頭の上に出る文字</a>
+<a class="s3" href="#マップ上のマーカー" data-id="マップ上のマーカー">マップ上のマーカー</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#19-modのアイテム" data-id="19-modのアイテム">19. modのアイテム</a>
+<div class="sub">
+<a class="s3" href="#犬用ボウル" data-id="犬用ボウル">犬用ボウル</a>
+<a class="s3" href="#犬用サドルバッグ" data-id="犬用サドルバッグ">犬用サドルバッグ</a>
+<a class="s3" href="#このmodに無いもの" data-id="このmodに無いもの">このmodに無いもの</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#20-マルチプレイ" data-id="20-マルチプレイ">20. マルチプレイ</a>
+<div class="sub">
+<a class="s3" href="#犬はあなたのもの" data-id="犬はあなたのもの">犬はあなたのもの</a>
+<a class="s3" href="#切断したとき" data-id="切断したとき">切断したとき</a>
+<a class="s3" href="#管理者向け" data-id="管理者向け">管理者向け</a>
+<a class="s3" href="#co-opで入れるときの注意" data-id="co-opで入れるときの注意">co-opで入れるときの注意</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#21-サンドボックス設定" data-id="21-サンドボックス設定">21. サンドボックス設定</a>
+<div class="sub">
+<a class="s3" href="#手懐けと出現" data-id="手懐けと出現">手懐けと出現</a>
+<a class="s3" href="#戦闘" data-id="戦闘">戦闘</a>
+<a class="s3" href="#世話と絆" data-id="世話と絆">世話と絆</a>
+<a class="s3" href="#行動" data-id="行動">行動</a>
+<a class="s3" href="#スキルと活動" data-id="スキルと活動">スキルと活動</a>
+<a class="s3" href="#サドルバッグ" data-id="サドルバッグ">サドルバッグ</a>
+<a class="s3" href="#子犬" data-id="子犬">子犬</a>
+<a class="s3" href="#インターフェースとマルチプレイ" data-id="インターフェースとマルチプレイ">インターフェースとマルチプレイ</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#22-よくあるトラブル" data-id="22-よくあるトラブル">22. よくあるトラブル</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs機能マニュアル">Companion Dogs：機能マニュアル</h1>
+<p>あなたの犬が何をしてくれるのか、どう指示を出すのか、どう世話をするのかをひと通り説明します。</p>
+<p>このマニュアルは<strong>modがやることすべて</strong>を扱います。<strong>犬種</strong>について知りたい場合（どれを選ぶか、 それぞれの得意分野、moodleや資質）は、もう一つのマニュアルを見てください： <a href="breeds.html" class="xlink">犬種</a>。</p>
+<blockquote class="quote"><strong>表記について：</strong> このマニュアルでカギ括弧に入っている文言は、すべて日本語版のゲーム内表記そのままです。 ゲームを英語で遊んでいる場合は名前が変わりますが、メニューの中での位置は同じです。</blockquote>
+<h2 id="1-5分でわかる野良犬から相棒まで">1. 5分でわかる：野良犬から相棒まで</h2>
+<p>とりあえず遊び始めたいだけなら、これだけです。</p>
+<ol>
+<li><strong>犬を見つける。</strong> 野良のカラーメロは街や住宅地をうろついています。探索していれば 遅かれ早かれ出会います。</li>
+<li><strong>食べ物をインベントリに入れておく。</strong> 腐っていなくて空腹を満たせるものなら何でも構いません。</li>
+<li><strong>犬を右クリック</strong>して、<strong>「食べ物やります (仲良くする)」</strong>を選びます。</li>
+<li><strong>懐くまで繰り返す。</strong> 一回あげるごとに信頼度が上がります。大袋のドッグフードならほぼ一発で 足りますし、小さなおやつなら4回ほどかかります。</li>
+<li><strong>名前を付ける。</strong> これでその犬はあなたのものです。あとは勝手についてきます。</li>
+</ol>
+<p>そのあと、忘れてはいけないことが3つあります。</p>
+<ul>
+<li><strong>毎日、餌と水をやる。</strong> 放置された犬は死にますし、二度と戻ってきません。</li>
+<li><strong>撫でてやる。</strong> 忠誠度を保てますし、あなたの退屈と悲しみも和らぎます。</li>
+<li><strong>犬のウィンドウを開く。</strong> 手持ちパネルの下にある肉球ボタンです。必要なものは全部その中にあります。</li>
+</ul>
+<h2 id="2-犬を見つけて手懐ける">2. 犬を見つけて手懐ける</h2>
+<h3 id="犬種ごとの出現場所">犬種ごとの出現場所</h3>
+<p>modは<strong>建物ごとに一度だけ</strong>その建物に犬がいるかどうかを判定し、その結果は保存されます。一度探索した 場所に戻っても、急に新しい犬が湧いていることはありません。</p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>探す場所</th>
+<th>建物ごとの確率</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>カラーメロ</strong></td>
+<td>街や住宅地の民家</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>ゴールデンレトリバー</strong></td>
+<td>民家（追加の抽選）</td>
+<td>5%</td>
+</tr>
+<tr>
+<td><strong>ジャーマンシェパード</strong></td>
+<td>警察署、刑務所、軍事基地、銃砲店</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>ハスキー</strong></td>
+<td>民家、<strong>冬だけ</strong></td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>ハスキー</strong></td>
+<td>ペットショップと動物病院、通年</td>
+<td>10%</td>
+</tr>
+<tr>
+<td><strong>ボーダー・コリー</strong></td>
+<td>田舎の納屋、厩舎、サイロ、鶏小屋</td>
+<td>15%</td>
+</tr>
+</tbody></table></div>
+<p>犬はたいてい建物の<strong>外側</strong>の空いたタイルに出現します。道路、庭、空き地などです。外に空きタイルが 一つも残っていない場合にだけ、建物の中に出現します。まずは道路と庭から探してください。</p>
+<p>サンドボックス設定の<strong>「犬の出現率倍率」</strong>は、これらの確率をまとめて増減させ、犬種ごとの相対的な 希少さはそのまま保ちます。0にすると出現しなくなります。</p>
+<blockquote class="quote"><strong>アドオンの犬種</strong>はSteamの別modとして配布されていて、それぞれ専用の出現場所を持っています： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>です。 それぞれの特徴は<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</blockquote>
+<h3 id="手懐け方">手懐け方</h3>
+<p>野良犬を右クリックします。出てくる選択肢は <strong>「食べ物やります (仲良くする)」</strong>の一つだけです。</p>
+<ul>
+<li><strong>食べ物さえあれば他には何も要りません。</strong> スキルの下限も、特性も、首輪も、道具も不要です。</li>
+<li>食べ物は<strong>バッグの中</strong>にあっても構いません。modが勝手に見つけます。</li>
+<li>何種類も食べ物を持っている場合は、アイコンと個数が付いたサブメニューになります。</li>
+<li>食べ物が一つもないと選択肢は灰色になり、<em>「インベントリに食料アイテムが必要です。」</em>と出ます。</li>
+</ul>
+<h3 id="必要な食べ物の量">必要な食べ物の量</h3>
+<p>一回あげるごとに、<strong>その食べ物が満たす空腹の量に比例した信頼度</strong>が入ります。空腹を60ポイント減らす アイテムなら、信頼度も60です。標準では<strong>信頼度100で手懐け成立</strong>です（サンドボックスの <em>「手懐けに必要な信頼度」</em>で変更できます）。</p>
+<p>実際のところ、こんな感じです。</p>
+<ul>
+<li>大袋の<strong>ドッグフード</strong>ならほぼ一発で足ります。</li>
+<li>小さなおやつだと<strong>4回ほど</strong>繰り返す必要があります。</li>
+</ul>
+<p>modは<strong>必要な一口分しか消費しません</strong>。残りはインベントリに戻ってくるので、最後の1ポイントのために 缶詰を半分無駄にする、ということにはなりません。</p>
+<p><strong>運の要素は一切ありません。</strong> 信頼度が100に届いた時点で、その犬はあなたのものです。それだけです。</p>
+<p>ゲージが満たされるまでは*「カラーメロがあなたに懐き始めています…」<em>と表示されます。 満たされると</em>「カラーメロがあなたの相棒になりました！」*と出て、名前を入力する画面が開きます。</p>
+<h3 id="体に悪い食べ物">体に悪い食べ物</h3>
+<p>犬にとって毒になる食べ物があり、modはそれを教えてくれます。メニューでは<strong>赤色</strong>で表示され、 <em>「犬に悪い食べ物です。食べると体調を崩し、信頼を損ないます。」</em>という注意書きが付きます。</p>
+<p>該当するのは次のものです。</p>
+<ul>
+<li><strong>種類で判定：</strong> 菓子、砂糖、コーヒー、紅茶、カカオ、チョコレート、唐辛子、ナッツ類。</li>
+<li><strong>名前で判定：</strong> タマネギ、ニンニク、リーキ、アサツキ、エシャロット、ブドウ、レーズン、 チョコレート、カカオ、コーヒー、ピーナッツ。（グレープフルーツは明示的に安全扱いです。）</li>
+</ul>
+<p><strong>野良犬</strong>に悪い食べ物を与えると信頼度が15下がり、加算されることはありません。<strong>相棒</strong>の場合は 忠誠度が20下がり、ストレスが上がって、<strong>ゲーム内120分のあいだ中毒</strong>になります。</p>
+<h3 id="相棒になった瞬間に起きること">相棒になった瞬間に起きること</h3>
+<ul>
+<li>犬は<strong>「従う」</strong>モードに入り、<strong>自動護衛</strong>がオンになります。</li>
+<li>空腹、喉の渇き、ストレスがゼロになります。</li>
+<li><strong>資質はこの瞬間に抽選され、一生変わりません</strong>。</li>
+<li><strong>無敵</strong>になります。ゾンビ、車、銃弾、炎では死にません。死ぬ原因は放置だけです。</li>
+<li><strong>「マイドッグ」</strong>の登録簿に入り、マップにも表示されるようになります。</li>
+</ul>
+<p><strong>新しい犬を手懐けても、前の犬を捨てることにはなりません。</strong> 新しい犬がアクティブになり、前の犬は 「待て」モードの控えに回ります。<a href="#16-複数の犬を同時に飼う">複数の犬を同時に飼う</a>を見てください。</p>
+<h3 id="飼える頭数の上限">飼える頭数の上限</h3>
+<p>サンドボックス設定の<strong>「プレイヤー1人あたりの最大頭数」</strong>は、初期値が<strong>0、つまり無制限</strong>です。 サーバー側で上限が設定されていて、そこに達すると、仲良くするオプションが赤くなって選べなくなります。 <em>「相棒の上限に達しています（5）。」</em>（数字は設定された上限です）犬を解放するか失えば枠が空きます。</p>
+<h2 id="3-命令の出し方4つのやり方">3. 命令の出し方：4つのやり方</h2>
+<p>犬に命令する方法は4つあります。どれも同じことができるので、自分がやりやすいものを使ってください。</p>
+<h3 id="a-コンテキストメニュー犬を右クリック">a) コンテキストメニュー（犬を右クリック）</h3>
+<p>すべては犬の名前が付いたサブメニューの中にまとまっています。並び順はいつも同じです。</p>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>何をするか</th>
+</tr></thead><tbody>
+<tr>
+<td><em>(1行目、クリックはできません)</em></td>
+<td>犬の身元：名前、性別、子犬かどうか、妊娠中かどうか、ミックスかどうか</td>
+</tr>
+<tr>
+<td><strong>繁殖を禁止</strong> / <strong>繁殖を許可</strong></td>
+<td>この犬の交配の許可をオン・オフします（成犬のみ）</td>
+</tr>
+<tr>
+<td><strong>成長を止める</strong> / <strong>成長を再開</strong></td>
+<td>子犬だけに出ます。成長を無期限に止めます</td>
+</tr>
+<tr>
+<td><strong>摂食</strong></td>
+<td>食べ物を与えます。種類ごとのサブメニュー</td>
+</tr>
+<tr>
+<td><strong>水をやります</strong></td>
+<td>水の入った容器が必要です</td>
+</tr>
+<tr>
+<td><strong>撫でる</strong></td>
+<td>スキンシップ</td>
+</tr>
+<tr>
+<td><strong>「そこにいて」と言います</strong> / <strong>「従うように」と言います</strong></td>
+<td>2つのモードを切り替えます</td>
+</tr>
+<tr>
+<td><strong>来て</strong></td>
+<td>犬を自分のところに呼びます</td>
+</tr>
+<tr>
+<td><strong>近くを攻撃</strong></td>
+<td>一番近いゾンビを攻撃させます</td>
+</tr>
+<tr>
+<td><strong>芸</strong> ▸</td>
+<td>4つの芸が入ったサブメニュー</td>
+</tr>
+<tr>
+<td><strong>Care for livestock here</strong> / <strong>Stop caring for livestock</strong></td>
+<td>農場モード</td>
+</tr>
+<tr>
+<td><strong>サドルバッグを装着</strong> / <strong>サドルバッグを開く</strong> / <strong>サドルバッグを外す</strong></td>
+<td>そのときの状態に応じて出ます</td>
+</tr>
+<tr>
+<td><strong>状態</strong></td>
+<td>犬のウィンドウを開きます</td>
+</tr>
+<tr>
+<td><strong>名前を変更...</strong></td>
+<td>最大30文字</td>
+</tr>
+<tr>
+<td><strong>抱き上げる</strong></td>
+<td>犬を抱えて運びます</td>
+</tr>
+<tr>
+<td><strong>相棒を解放する</strong></td>
+<td>野生に戻します（訓練とスキルは保ったままです）</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>「見張れ」はここにありません。</strong> このコマンドがあるのはラジアルメニュー、ショートカットキー、そして 「コマンド」タブのボタンだけです。</blockquote>
+<h3 id="b-ラジアルメニューqを長押し">b) ラジアルメニュー（Qを長押し）</h3>
+<p>このMODはゲームのエモートメニューに乗っかっています。<strong>Q</strong> を長押しすると、飼っている犬の犬種名と肉球の アイコンが付いた新しいカテゴリが出てきます。このカテゴリは、アクティブな犬が近くにいるときだけ表示され ます。</p>
+<p>スライスは <strong>来て</strong>、<strong>従う</strong>、<strong>待て</strong>、<strong>見張れ</strong>、<strong>警戒</strong>、<strong>静か</strong>、 <strong>無音</strong>、<strong>近くを攻撃</strong>、<strong>狩り</strong> / <strong>狩りをやめる</strong>、<strong>芸 ▸</strong>、そして <strong>サドルバッグを開く</strong>（装着している場合）です。</p>
+<p><strong>芸</strong> を選ぶと、4つの芸と <strong>戻る</strong> が並んだ3階層目のラジアルが開きます。まだ解放されていない芸は赤い アイコンになり、名前に必要なレベルが付きます。たとえば <em>「気を引く (服従 3)」</em> のように表示されます。</p>
+<p>コマンドによっては、あなたのキャラクター自身も身振りをします。呼ぶときは手を挙げ、待てと言うときは止まれ の仕草をし、攻撃を命じるときは指をさします。</p>
+<h3 id="c-ショートカットキー">c) ショートカットキー</h3>
+<p>割り当てられるアクションは <strong>14個</strong> で、何とも衝突しないように <strong>どれも初期状態ではキーが未設定</strong> です。 設定するのは犬のウィンドウの <strong>「設定」</strong> タブで、ゲームのオプション画面ではありません。</p>
+<div class="tw"><table><thead><tr>
+<th>アクション</th>
+<th>何をするか</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>来て</strong></td>
+<td>犬を呼びます</td>
+</tr>
+<tr>
+<td><strong>従う</strong></td>
+<td>従うモード</td>
+</tr>
+<tr>
+<td><strong>待て</strong></td>
+<td>待てモード</td>
+</tr>
+<tr>
+<td><strong>見張れ</strong></td>
+<td>見張れモード</td>
+</tr>
+<tr>
+<td><strong>呼び寄せる</strong></td>
+<td><strong>犬を瞬時にあなたのそばへ移動させます。</strong> 大きな口笛を吹くので、その音がゾンビを引き寄せます</td>
+</tr>
+<tr>
+<td><strong>近くを攻撃</strong></td>
+<td>命令による攻撃</td>
+</tr>
+<tr>
+<td><strong>警戒</strong> / <strong>静か</strong> / <strong>無音</strong></td>
+<td>見張りのモード</td>
+</tr>
+<tr>
+<td><strong>自動護衛</strong></td>
+<td>オンとオフの切り替え</td>
+</tr>
+<tr>
+<td><strong>狩り</strong></td>
+<td>オンとオフの切り替え</td>
+</tr>
+<tr>
+<td><strong>状態</strong></td>
+<td>犬のウィンドウの開け閉め</td>
+</tr>
+<tr>
+<td><strong>指定した場所へ行かせる</strong></td>
+<td>芸の照準カーソルを開きます</td>
+</tr>
+<tr>
+<td><strong>気を引く</strong></td>
+<td>芸を発動します</td>
+</tr>
+</tbody></table></div>
+<p>すでに使われているキーを選ぶと、MODが <em>「Fはすでに使用されています：待て」</em> と教えてくれます。キーが未設定 のときは、ボタンに <em>「未割り当て」</em> と表示されます。</p>
+<h3 id="d-犬のウィンドウのボタン">d) 犬のウィンドウのボタン</h3>
+<p><strong>「コマンド」</strong> タブには全部がボタンで並んでいます。モードの列、見張りの列、自動護衛と狩りのトグル、 4つの芸、サドルバッグ、そして行動の列 （<strong>呼び寄せる</strong> | <strong>名前を変更</strong> | <strong>解放する</strong>）です。</p>
+<h2 id="4-3つのモード従う待て見張れ">4. 3つのモード：従う、待て、見張れ</h2>
+<p>犬は <strong>必ずこの3つのどれか</strong> にいます。それ以外（見張り、狩り、自動護衛）は、モードの上に重ねる調整だと 思ってください。</p>
+<h3 id="従う">従う</h3>
+<p>標準のモードです。犬はあなたの後ろを歩きます。距離が2タイルになると動き出し、5タイルを超えると走り始め ます。</p>
+<ul>
+<li><strong>あなたを中心に半径5タイル以内のゾンビと戦います</strong>（犬の周りではありません）。8タイルで追うのをやめます。</li>
+<li>低いフェンスを跳び越え、階段を上り、あなたを追って階を移動します。</li>
+<li><strong>あなたと一緒に車に乗れる唯一のモードです。</strong></li>
+<li>離れすぎると（24タイル）、建物の反対側で立ち往生しないように、犬は自動であなたの後ろへ移されます。</li>
+</ul>
+<blockquote class="quote"><em>「カラーメロはあなたの後をついてきて、近づいたゾンビと戦います。見張り機能も働き続けます。標準設定で、 移動中の相棒の状態です。」</em></blockquote>
+<h3 id="待て">待て</h3>
+<p>その場に止まって、そこから動きません。1分ほど止まったままでいると伏せます。</p>
+<ul>
+<li><strong>においを嗅ぎ続けて、ゾンビを知らせます。</strong></li>
+<li>目の前にゾンビがいても、<strong>追いかけも戦いもしません。</strong></li>
+<li><strong>あなたが車に乗ると置いていかれます。</strong> 車に乗り込むのは従うモードの犬だけです。</li>
+</ul>
+<blockquote class="quote"><em>「カラーメロはその場にとどまり、ついてきません。ゾンビを察知して警告はしますが、追いかけたり戦ったり はせず、ただ座って見張るだけです。安全な場所に待機させておくのに向いています。」</em></blockquote>
+<h3 id="見張れ">見張れ</h3>
+<p>今いる場所をそのまま <strong>持ち場</strong> として記録して、その持ち場を守ります。</p>
+<ul>
+<li><strong>持ち場から半径10タイル</strong> のゾンビに立ち向かい、追いかけたあとは戻ってきます。</li>
+<li>手に負えなくなったら、あなたの後ろに下がります。</li>
+<li><strong>大事な制限：</strong> 今のところ <strong>あなたが近くにいるときだけ</strong> 働きます。拠点に犬を置いて見張らせたまま マップの外へ出ても意味がありません。</li>
+</ul>
+<blockquote class="quote"><em>「カラーメロはこの正確な地点に居座って守ります。より広い範囲のゾンビと交戦し、警告を発し、追跡の後は 持ち場に戻ります。囲まれた場合はあなたの後ろに下がります。」</em></blockquote>
+<h3 id="呼び戻しの2つのコマンド">呼び戻しの2つのコマンド</h3>
+<div class="tw"><table><thead><tr>
+<th>コマンド</th>
+<th>何をするか</th>
+<th>代償</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>来て</strong></td>
+<td><strong>歩いて</strong> 戻ってきて、従うモードに切り替わります</td>
+<td>なし</td>
+</tr>
+<tr>
+<td><strong>呼び寄せる</strong></td>
+<td><strong>その場であなたの隣に現れます</strong></td>
+<td>大きな口笛を吹くので、<strong>ゾンビを引き寄せます</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>呼び寄せる</strong> は、犬がフェンスの向こうで動けなくなったとき、建物に閉じ込められたとき、歩いて戻るには 遠すぎるときに使ってください。非常口であって、普段使いのコマンドではありません。</p>
+<h2 id="5-見張り警報としての犬">5. 見張り：警報としての犬</h2>
+<p>実のところ、これがMODで一番役に立つ機能です。<strong>犬はあなたに見えないゾンビを感じ取ります</strong>。</p>
+<p>見張りは3つのモード（従う、待て、見張れ）すべてで働きます。時間の早送り中と睡眠中は <strong>働きません</strong>。</p>
+<div class="tw"><table><thead><tr>
+<th>モード</th>
+<th>範囲</th>
+<th>知らせ方</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>警戒</strong></td>
+<td>18タイル（嗅覚が最大なら27タイルまで）</td>
+<td>遠かったり数が少なかったりするゾンビにはうなり声。近い、集団、または見えているゾンビには <strong>大きな吠え声</strong>。<strong>この吠え声は本当にゾンビを引き寄せます</strong></td>
+</tr>
+<tr>
+<td><strong>静か</strong></td>
+<td>10タイル固定</td>
+<td><strong>うなり声だけ。</strong> 決して吠えず、何も引き寄せません</td>
+</tr>
+<tr>
+<td><strong>無音</strong></td>
+<td>なし</td>
+<td>ゾンビの警告は一切なし</td>
+</tr>
+</tbody></table></div>
+<p>犬が「何か嗅ぎつけた」から「警報」に切り替わるのは、ゾンビが6タイル以内に来たとき、<strong>または</strong> 3体以上 いるとき、<strong>または</strong> 12タイルまで見通しが通っているときです。</p>
+<p>メッセージは犬の頭の上に浮かびます。</p>
+<ul>
+<li><em>「カラーメロが近くに何かを感じ取っています…」</em>（何かはいる、遠いか数が少ない）</li>
+<li><em>「カラーメロがゾンビを発見しました！」</em>（近いか数が多い、反応すべきとき）</li>
+</ul>
+<p><strong>トレードオフはこうです。</strong> 警戒は警告の範囲が一番広い代わりに、自分の位置を教えてしまいます。静かは音を 立てずに知らせてくれますが、近くしか分かりません。無音は、何がなんでも犬を黙らせたいときのためのものです。</p>
+<blockquote class="quote"><strong>ストレスが溜まった犬が勝手に吠えることはありません。</strong> ストレスによる吠えの仕組みは存在しましたが、 MODでは無効になっています。あなたの犬がゾンビを呼んでいるなら、原因は次の4つのどれかで、どれも自分で 制御できます。<strong>警戒モードの見張り</strong>、<strong>気を引く</strong> の芸、<strong>狩りでの追跡</strong>、そして <strong>戦闘</strong> です。</blockquote>
+<h2 id="6-戦闘">6. 戦闘</h2>
+<h3 id="犬が自分から戦うとき">犬が自分から戦うとき</h3>
+<p><strong>犬が勝手に襲いかかることはありません。</strong> きっかけがあって初めて動きます。</p>
+<ul>
+<li><strong>「従う」のとき:</strong> <strong>自動護衛がオン</strong>で、しかもゾンビがあなたか犬を狙っているか、あなたがすでに戦っている 場合だけです。さらにゾンビが<strong>あなたから5タイル以内</strong>にいる必要があります。</li>
+<li><strong>「見張れ」のとき:</strong> 持ち場から10タイル以内なら常に戦います。</li>
+<li><strong>コマンド「近くを攻撃」:</strong> 半径12タイルの範囲を探し、ゲーム内で2分間追いかけます。</li>
+</ul>
+<p>犬が攻撃するのは<strong>敵対的なゾンビ</strong>だけです。他のMOD（Bandits、A-Life）の味方NPCには手を出しません。</p>
+<h3 id="壁越しには噛みつかない">壁越しには噛みつかない</h3>
+<p>犬が相手にするのは、<strong>実際に歩いてたどり着けるゾンビ</strong>だけです。フェンスの向こう側にいるゾンビや、閉じた 部屋の中にいるゾンビは無視します。回り込むコストが高すぎるからです。向かおうとして2.5秒間まったく進めな かった場合は、その相手をあきらめて12秒間無視します。</p>
+<p>これは仕様です。届かない相手を追って犬が壁に張りつき続けるのを防いでいます。</p>
+<h3 id="与えるダメージ">与えるダメージ</h3>
+<p>ダメージは<strong>4つの要素の掛け算</strong>で決まります。犬種そのものの強さ、戦闘のレベル、筋力の資質、そして サンドボックスの倍率です。</p>
+<p>プレイヤーにとって大事なのはここです。</p>
+<ul>
+<li><strong>カラーメロは単独でゾンビを倒せません。</strong> ゾンビの体力を10%まで削ったところで止まります。これは仕様で、 サンドボックスをどういじっても変わりません。カラーメロの役目は<strong>ゾンビを転ばせて</strong>あなたに時間を作ることです。</li>
+<li>他の犬種はすべて<strong>とどめを刺せます</strong>。</li>
+</ul>
+<p>犬種ごとのダメージ表は<a href="breeds.html" class="xlink">犬種の手引き</a>にあります。</p>
+<p><strong>ゾンビを転ばせる:</strong> 一撃ごとに転倒させる確率があり、10%から始まって戦闘が最大レベルで50%に届きます。</p>
+<h3 id="自動護衛">自動護衛</h3>
+<p>犬ごとにオン・オフできます。オンにすると、<strong>あなたが無防備になっている間、犬が自動で護衛につきます</strong>。 対象になるのは次の行動です。</p>
+<ul>
+<li>睡眠</li>
+<li>読書</li>
+<li>地面に座る</li>
+<li>食事</li>
+<li>釣り</li>
+</ul>
+<p>犬はあなたのすぐそばに位置を固定して、近づいてくる相手を迎え撃ちます。あなたが移動すれば、その基準点も 一緒に動きます。行動が終われば、犬は自分から追従に戻ります。</p>
+<ul>
+<li><strong>「見張れ」で本当に持ち場についている犬が、これで持ち場を離れることは決してありません。</strong></li>
+<li><strong>この戦い方は犬にストレスを与え、忠誠度も上がりません。</strong> かわいがりではなく仕事だからです。</li>
+</ul>
+<p>犬を手懐けた時点では<strong>オン</strong>になっています。</p>
+<h3 id="あなたの銃弾は犬に当たらない">あなたの銃弾は犬に当たらない</h3>
+<p><strong>犬の頭越しに撃っても大丈夫です。</strong> コンパニオンドッグは、あなたの銃でも他のプレイヤーの銃でも、 <strong>どんな状況でも銃撃で体力を失いません</strong>。</p>
+<p>これを支えている仕組みが2つあります。</p>
+<ul>
+<li>犬は<strong>オートエイムの対象外</strong>なので、狙いをつけたときに照準が犬に吸いつきません。</li>
+<li>シングルプレイでは、発砲の瞬間にMODが<strong>犬を当たり判定から外します</strong>。弾はそのまま後ろのゾンビへ まっすぐ飛んでいきます。</li>
+</ul>
+<p>そのために<strong>犬が動く必要はありません</strong>し、犬が<strong>あなたに反撃することも絶対にありません</strong>。</p>
+<blockquote class="quote">マルチプレイで遠くから撃つと、他のプレイヤーの犬が<strong>あなたの画面上では反応して見える</strong>ことが ありますが、体力は減っていません。</blockquote>
+<h3 id="負傷後退パニック">負傷、後退、パニック</h3>
+<ul>
+<li><strong>戦っても犬は負傷しません。</strong> たまるのはストレスだけです。</li>
+<li>体力が減るのは<strong>放置</strong>（空腹か喉の渇きが0.8超え）、<strong>中毒を起こす食べ物</strong>、そして <strong>狩りでの鹿の反撃</strong>によるものです。死に至るのは放置だけです。</li>
+<li>負傷の状態は、体力30%未満で<strong>「負傷」</strong>、10%未満で<strong>「重傷」</strong>です。 重傷の犬は<strong>ついてくるだけで、戦いません</strong>。</li>
+<li><strong>後退:</strong> 体力が10%以下になると、犬はあなたの後ろへ下がります。</li>
+<li><strong>パニック:</strong> ストレスが高いと<strong>戦わず、見張らず、芸もしません</strong>。それでも呼べばあなたのところへは 駆け寄ってきます。</li>
+</ul>
+<h3 id="回復">回復</h3>
+<p>犬は自分で回復します。しかも<strong>かなり速い</strong>です。体力バーまるごと1本が<strong>ゲーム内で約8時間</strong>、つまり瀕死から 健康まで一晩で戻ります。<strong>ただし十分に食べて水も足りている場合だけ</strong>です。空腹<strong>か</strong>喉の渇きがバーの半分を 超えると、<strong>回復は完全に止まります</strong>。</p>
+<p>つまり傷ついた犬を治すには、<strong>餌をやり、水をやり、あとは時間を待つ</strong>だけです。</p>
+<h3 id="討伐数の記録">討伐数の記録</h3>
+<p>犬はそれぞれ自分のカウンターを持っていて、犬のウィンドウで見られます。<strong>「討伐数：ゾンビ 14体、獲物 3匹」</strong> のように表示されます。</p>
+<p>サンドボックスの<strong>「犬の討伐を自分に加算」</strong>をオンにしていると（初期値はオン）、犬が倒したゾンビは キャラクター情報画面の<strong>あなた自身のカウントにも加算されます</strong>。</p>
+<h2 id="7-欲求と世話">7. 欲求と世話</h2>
+<p>コンパニオンドッグは無敵で、そのせいでゲーム標準の空腹まわりの仕組みが止まってしまいます。だからこのMODは すべてを自前で管理しています。</p>
+<p>バーは<strong>4本</strong>あり、それに忠誠度が加わります。</p>
+<div class="tw"><table><thead><tr>
+<th>バー</th>
+<th>上がる / 下がる</th>
+<th>速さ</th>
+<th>困り始めるライン</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>空腹</strong></td>
+<td>時間とともに上がる</td>
+<td>空から満タンまで約<strong>3日</strong></td>
+<td>0.6より上</td>
+</tr>
+<tr>
+<td><strong>喉の渇き</strong></td>
+<td>時間とともに上がる</td>
+<td>空から満タンまで約<strong>1.7日</strong></td>
+<td>0.6より上</td>
+</tr>
+<tr>
+<td><strong>体力</strong></td>
+<td>放置したときだけ下がる</td>
+<td>空腹か喉の渇きが0.8超えで<strong>バー1本が約8時間</strong></td>
+<td>30%未満</td>
+</tr>
+<tr>
+<td><strong>ストレス</strong></td>
+<td>他のバーから計算される</td>
+<td>なし</td>
+<td>50%より上</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>睡眠や衛生のバーはありません。</strong> 犬は眠る必要がなく、汚れることもありません。</blockquote>
+<p>サンドボックスの<strong>「空腹と喉の渇きの速さ」</strong>は、この2つをまとめて調整します。0にすると完全に止まり、犬は 二度と食事も水も必要としません（忠誠度は変わらず下がるので、それでもかまってもらいたがります）。</p>
+<h3 id="ストレスはどこから来るか">ストレスはどこから来るか</h3>
+<p>ストレスは自分でためるバーではなく、他のバーの<strong>結果</strong>です。空腹、喉の渇き、体力の低下、忠誠度の低下、 そして<strong>戦闘で一撃やり取りするたび</strong>に上がります。</p>
+<p>段階は次のとおりです。</p>
+<div class="tw"><table><thead><tr>
+<th>段階</th>
+<th>この値から</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>緊張している</strong></td>
+<td>50%</td>
+</tr>
+<tr>
+<td><strong>パニック状態</strong></td>
+<td>80%</td>
+</tr>
+<tr>
+<td><strong>怯えている</strong></td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>パニック状態の犬は<strong>戦わず、見張らず、芸もしなくなります</strong>。それでも呼べばあなたのところへ駆け寄ってきます。</p>
+<p>いい知らせもあります。戦いが終われば<strong>戦闘のストレスはすぐ引いていきます</strong>。満タンのバーが <strong>ゲーム内で約2時間</strong>で空になります。<strong>撫でる、餌をやる、水をやると、さらに早く落ち着きます。</strong></p>
+<h3 id="手で餌をやる">手で餌をやる</h3>
+<p>犬を右クリック → <strong>「摂食」</strong>。</p>
+<ul>
+<li>腐っておらず空腹を満たせるものなら<strong>どんな食べ物でも</strong>使えます。肉やドッグフードに限る、といった制限は なく、中毒を起こす食べ物のリストだけが例外です。</li>
+<li>効果は、空腹が下がる、水分の多い食べ物なら喉の渇きも癒える、<strong>体力+0.10</strong>、ストレスの緩和、そして <strong>満たした空腹の量に比例した忠誠度の上昇</strong>です。</li>
+<li>必要な一口分しか消費されません。</li>
+<li>メッセージは <em>「カラーメロは満足しています。」</em> です。</li>
+</ul>
+<h3 id="水をやる">水をやる</h3>
+<p>右クリック → <strong>「水をやります」</strong>。インベントリに水の入った容器が必要です（MODはバッグの中まで探して くれます）。</p>
+<p>喉の渇きのバーが半分下がり、<strong>忠誠度+2</strong>、ストレスも和らぎます。 <em>「カラーメロは水を飲みました。」</em></p>
+<h3 id="犬を撫でる">犬を撫でる</h3>
+<p>右クリック → <strong>「撫でる」</strong>。</p>
+<ul>
+<li><strong>クールダウンはゲーム内で90分です。</strong> それより早いと <em>「カラーメロはもう十分に構ってもらいました。」</em> と出ます。</li>
+<li>犬への効果は、<strong>ストレスが和らぎ、忠誠度が+2される</strong>ことです。</li>
+<li><strong>あなたへの効果:</strong> <strong>退屈と不機嫌</strong>が和らぎます。できるときにやっておく価値があります。</li>
+</ul>
+<h3 id="放置したときに起きること">放置したときに起きること</h3>
+<p>犬をほったらかしにすると、次の順番で進んでいきます。</p>
+<ol>
+<li>空腹と喉の渇きが0.6を超えます。あなたの画面に<strong>「空腹」</strong> / <strong>「喉の渇き」</strong>のmoodleが出ます。</li>
+<li><strong>忠誠度の減りが3倍の速さ</strong>になります。</li>
+<li>半分を超えると、<strong>自然回復が止まります</strong>。</li>
+<li>0.8を超えると、<strong>体力がみるみる削られ始めます</strong>。満タンの犬でも <strong>ゲーム内で約8時間</strong>でゼロになります。</li>
+<li>忠誠度が下限を割り、犬は<strong>「不服従」</strong>になって言うことを聞かなくなります。</li>
+<li>ストレスが上がってパニックに入り、<strong>戦わず、見張らず、芸もしなくなります</strong>。</li>
+<li>体力がゼロになり、<strong>犬は死にます</strong>。</li>
+</ol>
+<p><strong>死は取り消せません。</strong> 復活はありません。 <em>「カラーメロが死亡しました。」</em> サドルバッグと中身は地面に 落ちます。他に犬がいれば、その犬が自動でアクティブな相棒になります。</p>
+<p>ゾンビはあなたの犬を殺しません。<strong>餌をやり忘れることが、犬を殺します。</strong></p>
+<h2 id="8-忠誠度">8. 忠誠度</h2>
+<p>忠誠度は0から100までの数値で、その犬があなたをどれだけ信頼しているかを表します。</p>
+<ul>
+<li><strong>放っておくと下がります。</strong> 1日あたり約12ポイント、空腹や喉の渇きがあると<strong>3倍の速さ</strong>で 減っていきます。</li>
+<li><strong>上げられるのは人の手だけです。</strong> 餌をやる、水をやる（+2）、撫でる（+2）の3つです。</li>
+<li><strong>いちばん速いのは断然、餌やりです。</strong> ただし上がる量は<strong>その一食が満たした空腹の量に比例します</strong>。 満腹の犬に食べ物をやってもほとんど効きません。腹をすかせた犬に食べさせれば、一度に数十ポイント 戻ることもあります。忠誠度が下がってしまったら、<strong>わざと空腹にしてから餌をやりましょう</strong>。</li>
+<li><strong>餌皿での自動的な食事では、忠誠度は絶対に上がりません。</strong> これは仕様です。餌皿で勝手に腹を満たす犬は、 あなたとの絆を結びません。忠実な犬が欲しいなら、自分で顔を出す必要があります。</li>
+</ul>
+<h3 id="不服従になるライン">不服従になるライン</h3>
+<p>ある値を下回ると、犬は<strong>「不服従」</strong>になり、追従も戦闘も芸も拒否するようになります。 <em>「カラーメロはもうあなたに信頼していません…」</em></p>
+<p>このラインは<strong>服従が上がるほど下がります</strong>。30から始まり、1レベルごとに1.5ずつ下がって、10より下には なりません。つまり<strong>服従10の犬は忠誠度15を割るまで不服従になりません</strong>が、訓練していない犬は30を 割った時点でもう言うことを聞かなくなります。</p>
+<p><strong>服従を鍛えれば、その分だけ忠誠度に余裕が生まれます。</strong></p>
+<h3 id="犬が命令を拒否するとき">犬が命令を拒否するとき</h3>
+<p>理由は4つあり、優先順位はこの順です。</p>
+<div class="tw"><table><thead><tr>
+<th>状況</th>
+<th>画面に出るもの</th>
+</tr></thead><tbody>
+<tr>
+<td>忠誠度がラインを下回っている</td>
+<td><em>「カラーメロ レックスはあなたを十分に信頼しておらず、従いません。」</em></td>
+</tr>
+<tr>
+<td>ストレスがパニック状態</td>
+<td><em>「カラーメロ レックスはパニック状態で戦えません。」</em></td>
+</tr>
+<tr>
+<td>体力が10%以下</td>
+<td><em>「カラーメロ レックスは重傷すぎて戦えません。」</em></td>
+</tr>
+<tr>
+<td>訓練不足による失敗</td>
+<td><em>「カラーメロ レックス は気を取られて言うことを聞かない。」</em></td>
+</tr>
+</tbody></table></div>
+<h2 id="9-餌皿あなたがいなくても食事と水">9. 餌皿：あなたがいなくても食事と水</h2>
+<p>餌皿は、あなたが別のことをしている間に<strong>アクティブな犬</strong>が自分で腹を満たすための仕組みです。</p>
+<blockquote class="quote"><strong>空腹と喉の渇きを感じるのはアクティブな犬だけで、餌皿を使うのもその犬だけです。</strong> 絆を結んだ他の犬は 止まった状態になります。空腹にも喉の渇きにもならず、餌皿を探すこともなく、忠誠度も減りません。 <strong>その犬たちのために餌皿を用意する必要はなく</strong>、待っている間に飢えることもありません。 <a href="#16-複数の犬を同時に飼う">複数の犬を同時に飼う</a>を見てください。</blockquote>
+<h3 id="使い方">使い方</h3>
+<ol>
+<li>餌皿を手に入れます（クラフトか拾い物です。<a href="#19-modのアイテム">modのアイテム</a>を見てください）。</li>
+<li>インベントリで右クリック → <strong>「餌皿を設置」</strong>。自由に位置を決められる配置カーソルが出ます。 <strong>Rで回転</strong>できます。</li>
+<li>地面に置いた餌皿を右クリック → <strong>「皿に食べ物を追加」</strong>または<strong>「皿に水を追加」</strong>。</li>
+</ol>
+<p>餌皿に入るのは<strong>食べ物か水のどちらか一方だけで、両方を同時には入れられません</strong>。入れ替えるときは <strong>「ボウルを空にする」</strong>を使います。</p>
+<p>見た目でも中身が分かります。空なら灰色、ドッグフードが入っていれば茶色、水なら青色です。</p>
+<h3 id="餌皿に入れられる食べ物">餌皿に入れられる食べ物</h3>
+<p><strong>腐っていなくて空腹を満たせるものなら、ほぼ何でも入ります。</strong> 肉、缶詰、調理済みの料理、野菜、果物、卵、 ドッグフード、それに草と干し草も使えます。</p>
+<p>除外されるのは、腐った食べ物、空腹を満たさないもの、そして <a href="#体に悪い食べ物">体に悪い食べ物のリスト</a>だけです。最後のものはメニューに赤色で表示されます。</p>
+<blockquote class="quote"><strong>未開封のドッグフード缶はリストに出ません。</strong> 先に缶を開けてください。</blockquote>
+<p>餌皿には<strong>100ポイント</strong>まで入ります。1個あたりの量はアイテムの大きさで決まります。</p>
+<div class="tw"><table><thead><tr>
+<th>アイテム</th>
+<th>ポイント</th>
+</tr></thead><tbody>
+<tr>
+<td>ドッグフードの袋</td>
+<td>60</td>
+</tr>
+<tr>
+<td>開封済みのドッグフード缶</td>
+<td>30</td>
+</tr>
+<tr>
+<td>干し草</td>
+<td>12</td>
+</tr>
+<tr>
+<td>草</td>
+<td>7</td>
+</tr>
+</tbody></table></div>
+<p><strong>アイテムの量が空きより多い場合は、餌皿が満杯になるまで入り、残りは手元に戻ります。</strong> 80ポイント入っている餌皿にドッグフードの袋を入れると、餌皿は100になり、袋は40ぶんの量でインベントリに 戻ってきます。 <em>「ボウルにはそれを全部入れる余裕がありません。」</em>というメッセージが出るのは、餌皿が <strong>完全に満杯</strong>のときだけです。</p>
+<h3 id="犬が餌皿を使う流れ">犬が餌皿を使う流れ</h3>
+<ul>
+<li><strong>空腹か喉の渇きが0.5に達すると</strong>、犬は自分で餌皿に向かいます（<strong>設定</strong>タブのスライダー <em>「空腹／喉の渇きがこの値に達すると食べる」</em>で、キャラクターごとに変えられます）。</li>
+<li>餌皿を探す範囲は<strong>半径16タイル</strong>です。modの餌皿でも、<strong>ゲーム標準の飼い葉桶</strong>でもかまいません。</li>
+<li>1回の食事で減るのはバーの半分です。食べている時間はゲーム内で3分ほどです。</li>
+<li>餌皿に向かっている間、犬は<strong>ゾンビも何もかも無視します</strong>。止められるのはあなたの命令だけです。これは むしろ好都合で、空腹でパニックになった犬が、食べることで自分のパニックから抜け出せます。</li>
+</ul>
+<p>頭の上には<strong>「食事へ向かっている」</strong>、<strong>「食事中」</strong>、<strong>「水へ向かっている」</strong>、<strong>「水を飲んでいる」</strong>と出ます。</p>
+<blockquote class="quote"><strong>忘れないでください。</strong> 餌皿から食べても<strong>忠誠度はまったく上がりません</strong>。餌皿は犬を生かしてくれますが、 犬をあなたのものにしておくのは撫でることです。</blockquote>
+<p>餌皿は<strong>あなたの飲み水にはまったく使えません</strong>し、雨がたまることもありません。</p>
+<h2 id="10-スキル犬が持つ5つのスキル">10. スキル：犬が持つ5つのスキル</h2>
+<p>どの犬も0から10までのスキルを5つ持っていて、これは意識して訓練するのではなく、<strong>実際にやること</strong>で 上がっていきます。</p>
+<div class="tw"><table><thead><tr>
+<th>スキル</th>
+<th>上がり方</th>
+<th>良くなること</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>嗅覚</strong></td>
+<td>見張りが新しく何かを見つけるたび。芸の嗅ぎ出しを使ったとき</td>
+<td><strong>見張りの範囲</strong>（18 → 27タイル）と、覚えた匂いを感知できる距離</td>
+</tr>
+<tr>
+<td><strong>戦闘</strong></td>
+<td>一撃ごと、そして1体倒すごと</td>
+<td><strong>ダメージ</strong>、転倒させる確率（10% → 50%）、戦闘のストレスへの耐性</td>
+</tr>
+<tr>
+<td><strong>服従</strong></td>
+<td>命令に従うたび（クールダウンあり）。<strong>レベル3未満では4倍の速さで上がります</strong></td>
+<td><strong>忠誠度のラインが下がる</strong>、<strong>4つの芸</strong>、そして命令を無視する確率が減る</td>
+</tr>
+<tr>
+<td><strong>狩り</strong></td>
+<td>獲物を指し示す、匂いを嗅ぐ、仕留める。それに<strong>あなた</strong>が犬のそばで獲物を仕留めたとき</td>
+<td><strong>Lv3：</strong>小型の獲物を仕留めます。<strong>Lv6：</strong>鹿に挑み、仕留めた獲物を持ち帰ります。あなたの採集範囲も広がります</td>
+</tr>
+<tr>
+<td><strong>Herding</strong></td>
+<td>囲いの世話をする、群れのパニックを抑える、囲いに来たゾンビを追い払う</td>
+<td><strong>群れを落ち着かせる</strong>効果の強さ</td>
+</tr>
+</tbody></table></div>
+<h3 id="経験値カーブについて">経験値カーブについて</h3>
+<p>レベル1はすぐ来ますが、レベル10は長い付き合いになる目標です。全体の速さはサンドボックスの <strong>「スキル経験値倍率」</strong>で決まります。</p>
+<blockquote class="quote"><strong>注意：</strong> この設定はファイル上の初期値が<strong>0.5</strong>、つまり半分の速さになっています。説明文には 「1.0が通常」と書いてあるのにです。犬の覚えが遅すぎると感じたら、原因はこれです。1.0以上に 上げてください。</blockquote>
+<h3 id="命令の無視">命令の無視</h3>
+<p>サンドボックスの<strong>「犬が命令を無視する」</strong>がオンだと（初期値はオン）、訓練していない犬はときどき そのままあなたを無視します。 <em>「カラーメロ レックス は気を取られて言うことを聞かない。」</em></p>
+<ul>
+<li>確率は<strong>服従0で30%</strong>から始まり、<strong>服従10で0%</strong>になります。</li>
+<li><strong>すぐに同じ命令を出し直せば必ず通ります。</strong> 2回続けて無視されることはありません。</li>
+<li><strong>無視された命令もちゃんと訓練になる</strong>ので、経験値が無駄になるわけではありません。</li>
+<li>対象になるのは<strong>直接の命令だけ</strong>です。従う、待て、見張れ、来て、近くを攻撃、それに芸です。摂食、 水やり、撫でる、サドルバッグ、<strong>呼び寄せる</strong>、そして動作の設定（見張り、自動護衛、狩り、家畜の世話）が 影響を受けることはありません。</li>
+</ul>
+<p>この仕組みが気に入らなければ、サンドボックスでこの設定をオフにしてください。</p>
+<h3 id="スキルと資質は別のもの">スキルと資質は別のもの</h3>
+<p>犬のウィンドウには似たリストが2つ並んでいます。混同しないようにしましょう。</p>
+<ul>
+<li><strong>スキル</strong>（嗅覚、戦闘、服従、狩り、Herding）は<strong>使うほど上がり</strong>、一生伸び続けます。この章で 扱っているのはこちらです。</li>
+<li><strong>資質</strong>（筋力、攻撃性、耐性）は<strong>犬を手懐けた瞬間に抽選され、その後は一切変わりません</strong>。訓練しても 動きません。</li>
+</ul>
+<blockquote class="quote"><strong>資質そのものの説明と、犬種ごとの数値の幅</strong>は <a href="breeds.html" class="xlink">犬種マニュアル</a>にまとめてあります。</blockquote>
+<h2 id="11-服従の芸">11. 服従の芸</h2>
+<p>芸は4つあり、<strong>服従</strong>のレベルで解放されます。どれも最初からメニューに並んでいて、まだ使えないものは赤く 表示されるので、この先に何が来るのか分かります。 <em>「服従レベル 3 で解放されます（現在：1）。」</em></p>
+<h3 id="指定した場所へ行かせる服従1">指定した場所へ行かせる（服従1）</h3>
+<p><strong>地面にカーソル</strong>が出ます。行ける場所は緑、行けない場所は赤です。左クリックで決定、右クリックで キャンセルです。</p>
+<ul>
+<li>最大距離は<strong>あなたから30タイル</strong>です。犬からではありません。</li>
+<li>犬はそこまで歩いていって、<strong>その場所を守ります</strong>（到着すると「待て」モードに入ります）。</li>
+<li>新しい命令を出すと、この移動はキャンセルされます。</li>
+</ul>
+<p>自分は動かずに犬だけを配置したいときに使います。通りの反対側へ送る、角に置いておく、部屋の中に入れて おく、といった使い方です。</p>
+<h3 id="気を引く服従3">気を引く（服従3）</h3>
+<p>犬がわざと大きな声で吠えます。半径24タイルに届いて、<strong>群れは犬のほうへ向かいます</strong>。そのあと犬は あなたのところまで下がってきます。</p>
+<ul>
+<li><strong>サンドボックスの「犬の物音がゾンビを引き寄せる」をわざと無視します。</strong> 音を出すことが芸の目的なので、 設定に関係なく必ず音が出ます。</li>
+<li>ストレスを消費します。</li>
+<li>犬の頭の上に赤いタグが出ます。<strong>「ゾンビを引きつけ中」</strong>です。</li>
+<li>クールダウンはゲーム内で10分です。</li>
+</ul>
+<p>これは<strong>道をこじ開けるための道具</strong>です。群れを片側に引っ張っておいて、あなたは反対側から入ります。 ただし犬のほうは群れを背負ったままになるので、その後の段取りを考えておいてください。</p>
+<h3 id="アイテムを嗅ぎ出す服従5">アイテムを嗅ぎ出す（服従5）</h3>
+<p><strong>アイテムを手に持って</strong>芸を使います。犬は<strong>そのアイテムの種類のにおい</strong>を覚えます。 <em>「カラーメロ は ハンマー の匂いを覚えた。」</em></p>
+<p>そこから先は裏で動き続けて、周囲12タイル（嗅覚が最大なら20タイル）を<strong>戸棚の中と地面まで</strong>探し、その アイテムを見つけようとします。見つけたときの動きはこうです。</p>
+<ol>
+<li>吠えます。</li>
+<li>そこまで行って、ポーズで示します。</li>
+<li><strong>そのアイテムがワールド上で緑色に光ります。</strong></li>
+</ol>
+<p>メッセージは <em>「カラーメロ が近くの ハンマー の匂いを嘆ぎつけた。」</em> と <em>「カラーメロ が ハンマー を示している。」</em> です。</p>
+<p>犬が覚えていられるにおいは<strong>1つだけ</strong>です。別のものを嗅がせると上書きされます。やめさせたいときは <strong>「ハンマー の追跡をやめる」</strong>（覚えたアイテムの名前が入ります）を使ってください。やめる操作が拒否される ことはありません。</p>
+<p>手に何も持っていないと <em>「犬に匂いを覚えさせたいアイテムを手に持ってください。」</em> と出ます。</p>
+<h3 id="寝ている間に探してくる服従10">寝ている間に探してくる（服従10）</h3>
+<p>最後の芸です。<strong>犬にサドルバッグが必要です。</strong></p>
+<p>アイテムを手に持って発動します。<em>「カラーメロは寝ている間にハンマーを探します。」</em> 犬の頭の上には <strong>「探索中: ハンマー」</strong>というタグがずっと残ります。</p>
+<p>仕組みはこうです。</p>
+<ul>
+<li><strong>ゲーム内の1日に1回だけです。</strong> あなたが目を覚ました直後に、犬が近くにいれば発動します。</li>
+<li><strong>成功率はアイテムの珍しさで決まり</strong>、<strong>確実ということはありません</strong>。ゲーム中で一番ありふれたアイテム でも<strong>一晩あたり最大50%</strong>で、平均すると2日ほど待つ計算です。斧くらいの珍しさで15%前後、日本刀のような 本当に希少なものは2%前後まで下がるので、何週間も挑戦することになります。</li>
+<li>うまくいくと <em>「眠っている間にカラーメロがハンマーを持ち帰りました。」</em> と出て、アイテムは <strong>サドルバッグの中</strong>に入り、緑のタグで<strong>「持ち帰り: ハンマー」</strong>と表示されます。</li>
+<li>駄目だったときは <em>「カラーメロはハンマーを持たずに戻りました。」</em> と出て、赤いタグで<strong>「手ぶらで帰還」</strong> になります。</li>
+</ul>
+<p>発動しようとした時点で止められる場合が2つあります。</p>
+<ul>
+<li>アイテムが重すぎるとき。<em>「カラーメロは金床を運べません。」</em></li>
+<li>ゲームのルートテーブルに存在しないアイテムのとき。<em>「カラーメロはそれをどこで探せばいいか分かりません。」</em></li>
+</ul>
+<h2 id="12-狩り">12. 狩り</h2>
+<p>狩りモードは初期状態で<strong>オフ</strong>で、犬ごとにオンにします。切り替えはラジアルメニュー、ショートカットキー、 「コマンド」タブのボタンのどれからでもできます。<em>「カラーメロは近くの獲物を狩ります。」</em></p>
+<h3 id="何を狩るか">何を狩るか</h3>
+<div class="tw"><table><thead><tr>
+<th>獲物</th>
+<th>必要な狩りレベル</th>
+</tr></thead><tbody>
+<tr>
+<td>ウサギ、アライグマ、ネズミ、リス</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>鹿（子鹿、雌鹿、雄鹿）</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody></table></div>
+<p>これ以外の野生動物は、場所を示すだけで狩りません。</p>
+<h3 id="実際の動き">実際の動き</h3>
+<p><strong>レベル0、1、2は、示すだけです。</strong> この段階の犬は<strong>獲物に一切触れません</strong>。一度吠えて、獲物の近くまで 小走りで寄り、止まって、においを追うポーズを取り、<strong>そこで数分間ずっと示し続けます</strong>。あなたに居場所を 教えるためです。そのあとは諦めて戻ってきます。通知はこう出ます。 <em>「犬が近くで獲物を見つけました…」</em></p>
+<p>これは無駄な時間ではありません。<strong>序盤はこうやって狩りのスキルを上げます。</strong> 獲物を見つけさせて、 示させておけば、レベルは上がっていきます。</p>
+<p><strong>レベル3から、小さな獲物を仕留めるようになります。</strong></p>
+<ul>
+<li><strong>お腹が空いていれば、獲物をその場で食べます。</strong> あなたの取り分はありませんが、犬の空腹は満たされます。</li>
+<li><strong>空いていなければ、あなたの手柄として仕留め</strong>、皮を剥げる死体を<strong>狩りが終わった場所にそのまま 残します</strong>。 <em>「犬が獲物を仕留めました！」</em> と知らせてはくれますが、<strong>拾いに行くのはあなたです</strong>。</li>
+</ul>
+<p><strong>レベル6から、仕留めた獲物をあなたのところまで運ぶようになります。</strong> タグは<strong>「獲物を運んでいる」</strong>、 メッセージは <em>「犬が仕留めた獲物をあなたのところへ運んできました。」</em> です。これは<strong>小さな獲物だけ</strong>の 話です。</p>
+<p><strong>レベル6では鹿も解放されます</strong>が、鹿はルールが別です。<strong>どのレベルでも、どの犬種でも、鹿は運びません。</strong> 犬は鹿を瀕死まで消耗させて、<strong>あなたがとどめを刺しに来るまで押さえ続けます</strong>。 <em>「犬が鹿を負傷させました。とどめを刺してください！」</em> と出て、タグは<strong>「獲物を押さえている」</strong>です。 ゲーム内で20分たってもあなたが来なければ、犬が自分で仕留めます（それでも手柄はあなたのものです）。鹿が 逃げた場合は追跡します。<em>「犬が手負いの獲物を追跡しています…」</em></p>
+<blockquote class="quote"><strong>ラブラドールだけは例外です。</strong> <strong>レベル3から</strong>、つまり最初に仕留められるようになった獲物から 運んできますし、途中で放り出すまでの粘りも長めです。詳しくは <a href="breeds.html" class="xlink">犬種の手引き</a>を見てください。</blockquote>
+<p><strong>鹿は反撃してきます。</strong> 4回に1回くらいの突進で犬が傷つき、ストレスもたまります。命に関わることは ありません。</p>
+<h3 id="制限">制限</h3>
+<ul>
+<li>狩りは<strong>田舎の活動</strong>です。獲物は森や郊外にいて、街にはいません。</li>
+<li><strong>「従う」モードのときだけ</strong>働きます。</li>
+<li><strong>32タイルのリードが付いています。</strong> それより離れると諦めて戻ってきて、ゲーム内で20分休みます （タグは<strong>「狩り：休憩中」</strong>）。</li>
+<li>時間の早送り中、あなたが寝ている間、車の中、そしてあなたが命令を出してからの5分間は狩りをしません。</li>
+<li><strong>すでにゾンビと戦っている犬は、狩りを始めません。</strong> ただし逆は成り立ちません。近くをゾンビが通り かかっても、<strong>それだけで犬が狩りをやめることはありません</strong>。犬が獲物を放すのは、あなたが戦闘に入った とき、自動護衛が働いたとき、あなたが命令したときです。<strong>あなたの命令なら何でも、その場で狩りは 打ち切られます。</strong></li>
+</ul>
+<h3 id="代償">代償</h3>
+<ul>
+<li>狩りをすると<strong>お腹が空きます</strong>。</li>
+<li>追跡中の吠え声が<strong>ゾンビを引き寄せます</strong>。これは固定で、オフにはできません。</li>
+<li>犬はあなたのそばを離れるので、無防備になります。</li>
+</ul>
+<h3 id="採集のボーナス">採集のボーナス</h3>
+<p>別々の2つの話で、<strong>どちらもゲームの探索モードをオンにしている間しか出てきません</strong>。</p>
+<p><strong>a) 採集ポイントを見つけてくれます（狩りモードのときだけ）。</strong> 近くに獲物がいないとき、犬は動物の 採集ポイントを探して、そこまで行って吠え、<strong>場所を示します</strong>。 <em>「犬が何かを見つけました！探索モードをオンにすると確認できます。」</em> タグは<strong>「採集物を探している」</strong>です。</p>
+<p><strong>犬があなたの代わりにアイテムを拾うことはありません。</strong> 犬は探す場所を教えるだけで、<strong>採るのはあなた</strong> です。探索モードをオンにして、その場所で採集してください。</p>
+<p><strong>b) あなたの探索範囲が広がります（犬種を問わず、いつでも）。</strong> 条件は、自分の犬が近くにいて、忠実で、 空腹も喉の渇きもひどくないことだけです。</p>
+<ul>
+<li>狩り0で<strong>+6タイル</strong>、狩り10なら<strong>+12タイル</strong>まで伸びます。</li>
+<li><strong>動物、昆虫、足跡、死骸</strong>のカテゴリが、かなり見つけやすくなります。</li>
+</ul>
+<p>これは<strong>どの犬種の専売特許でもありません</strong>。カラーメロでも効果があります。ゴールデンレトリバーは その上に<strong>さらに4タイル</strong>を足すだけです。</p>
+<h2 id="13-家畜の世話">13. 家畜の世話</h2>
+<p>このモードは犬を農場の働き手に変えます。犬は囲いの中に残って、<strong>あなたが遠くにいても自分で群れの面倒を 見ます</strong>。</p>
+<h3 id="割り当て方">割り当て方</h3>
+<ol>
+<li><strong>動物の指定ゾーン</strong>（ゲーム本体の家畜の囲い）を作ります。</li>
+<li>その中に犬を連れていきます。</li>
+<li>右クリック → <strong>「Care for livestock here」</strong>。</li>
+<li>確認します。<strong>犬の選択が外れて、もうあなたについてこなくなる</strong>とmodが警告してくれます。</li>
+</ol>
+<p>囲いがないと <em>「カラーメロ needs a designated animal pen here to care for livestock.」</em> と出ます。</p>
+<h3 id="囲いの中でやること">囲いの中でやること</h3>
+<ul>
+<li><strong>囲いを見回ります。</strong></li>
+<li><strong>群れを落ち着かせます。</strong> これが本命です。ストレスの高い動物は<strong>乳も羊毛も出さず</strong>、流産し、ゾンビが 現れると散り散りになります。犬は群れのストレスを危険なラインより下に抑えます。</li>
+<li>半径12タイルのゾンビを<strong>音を立てずに追い払います</strong>。</li>
+<li><strong>あなたがマップの反対側にいても</strong>働き続けます。</li>
+</ul>
+<p>通知は <em>「カラーメロ senses a zombie near the pen!」</em> と <em>「カラーメロ's herd is getting stressed!」</em> です。頭の上のタグは<strong>「Tending the livestock」</strong>になります。</p>
+<h3 id="大事なルール">大事なルール</h3>
+<ul>
+<li>任務についている間は、<strong>空腹、喉の渇き、忠誠度の低下が止まります。</strong> 犬は自分でどうにかします。</li>
+<li>その代わり<strong>ほかのことは一切しません</strong>。あなたのために戦わず、狩りもせず、見張りもせず、餌皿も使いません。</li>
+<li><strong>訓練不足の犬、不服従の犬、パニック状態の犬は、群れを落ち着かせるどころか逆にストレスを与えます。</strong> 訓練していない子犬に牛の世話を任せてはいけません。</li>
+<li><strong>その犬をもう一度選択すると、このモードは自動で解除されます。</strong></li>
+</ul>
+<p><strong>ボーダー・コリーは「Herding」を他の犬種の2倍の速さで覚えます</strong>が、この仕事はどの犬種でもできます。</p>
+<h2 id="14-サドルバッグ犬を荷役に使う">14. サドルバッグ：犬を荷役に使う</h2>
+<h3 id="装着のしかた">装着のしかた</h3>
+<ol>
+<li><strong>「犬用サドルバッグ」</strong>をインベントリに持ちます。</li>
+<li>犬を右クリック → <strong>「サドルバッグを装着」</strong>。 <em>「サドルバッグを装着した。」</em></li>
+<li>開くときは <strong>「サドルバッグを開く」</strong>（ラジアルメニューのスライスでも、「コマンド」タブのボタンでも 構いません）。</li>
+<li>外すときは <strong>「サドルバッグを外す」</strong>。サドルバッグは<strong>中身が入ったまま</strong>地面に落ちます。</li>
+</ol>
+<h3 id="どれだけ積めるか">どれだけ積めるか</h3>
+<p>積載量は<strong>固定の基本値に、その犬の筋力の資質を足したもの</strong>で決まります。初期設定だとこうなります。</p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>積載量（重さ）</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td><strong>4～5</strong></td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td>6～7</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード、ボーダー・コリー、ロットワイラー、ドーベルマン、ラブラドール</td>
+<td>6～8</td>
+</tr>
+<tr>
+<td><strong>ハスキー</strong></td>
+<td><strong>13～16</strong></td>
+</tr>
+</tbody></table></div>
+<p>サドルバッグに犬種ボーナスが付くのはハスキーだけです（50%増し）。ほかの犬はすべて筋力の資質だけで 決まるので、同じ犬種でも個体によって積める量が変わります。</p>
+<p>サーバー側は<strong>「サドルバッグの基本容量」</strong>と<strong>「筋力による積載ボーナス」</strong>でこの数字を動かせます。</p>
+<h3 id="何を入れられるか">何を入れられるか</h3>
+<p>ほとんど何でも入りますし、制限は<strong>重さ</strong>であって、アイテムの個数ではありません。例外は次のとおりです。</p>
+<ul>
+<li>別のサドルバッグ。</li>
+<li>装備中のアイテム（着ている服、手に持っている武器）。</li>
+<li><strong>リュックやバッグ類。</strong> バッグごとではなく、中身のほうを移してください。</li>
+</ul>
+<p><strong>地図の書き込みは残りません。</strong> 書き込みのある地図をしまうと、印は消えます。 <em>「地図の書き込みは鞍袋に保存されません。」</em></p>
+<h3 id="ウィンドウ">ウィンドウ</h3>
+<p>リストが左右に2つ並びます。左が<strong>「あなたの所持品」</strong>（クリックで入れる）、右がサドルバッグ （クリックで取り出す）です。下には<strong>「積載: 7/12」</strong>と出ます。</p>
+<h3 id="手に入れかた">手に入れかた</h3>
+<p><strong>クラフト:</strong> 革切れ2個 + 縫い針 + 手縫い糸（縫い針と手縫い糸は消費されません）。カテゴリは裁縫で、 <strong>裁縫レベル1</strong>が必要です。裁縫の経験値が15入ります。</p>
+<p><strong>入手場所:</strong> ペットショップ、ペット用品の箱、キャンプ用品店、狩猟用のロッカー、サバイバルキット、 ガレージの工具、農場の箱。</p>
+<blockquote class="quote"><strong>犬が死んだり野生に戻したりすると、サドルバッグも中身も全部地面に落ちます。</strong> 落ちる場所は、 その犬がいたところです。</blockquote>
+<h2 id="15-繁殖と子犬">15. 繁殖と子犬</h2>
+<h3 id="交配させるボタンはありません">「交配させる」ボタンはありません</h3>
+<p>繁殖は<strong>100%受け身</strong>です。2匹の犬に交配を命じることはできません。あなたがやるのは、条件を整えて待つ ことだけです。</p>
+<p>ゲーム内の1時間ごとに、条件を満たしたメスは、近くに条件を満たしたオスがいれば自分から受胎する判定を 受けます。初期値は<strong>1日あたり5%</strong>です（サンドボックスの<strong>「1日あたりの繁殖確率」</strong>）。</p>
+<h3 id="条件">条件</h3>
+<p>どれも必須で、2匹ともが満たしている必要があります。</p>
+<ol>
+<li>2匹とも<strong>同じ飼い主の相棒</strong>であること。</li>
+<li><strong>成犬のオスとメス</strong>であること。子犬は絶対に交配しません。</li>
+<li>どちらも<strong>「繁殖を禁止」</strong>がオンになっていないこと。</li>
+<li><strong>同じ階</strong>にいて、お互いの距離が<strong>40タイル以内</strong>であること。</li>
+<li>どちらも<strong>重傷</strong>でなく、<strong>中毒</strong>にもなっていないこと。</li>
+<li>2匹とも<strong>忠誠度が60以上</strong>であること。</li>
+<li><strong>よく食べていること。</strong> 2匹とも空腹<strong>と</strong>喉の渇きが半分未満であること。</li>
+<li>メスが<strong>妊娠中でなく</strong>、出産後の<strong>7日間のクールダウン</strong>中でもないこと。</li>
+<li>犬の上限に<strong>空き枠</strong>があること。</li>
+<li>そのエリアが<strong>あなたの近くで読み込まれている</strong>こと。</li>
+</ol>
+<p>つまり、<strong>よく世話をした2匹が一緒にいて、あなたもそばにいる</strong>という状態です。なかなか起きないときは、 たいてい空腹か喉の渇きか忠誠度が原因です。</p>
+<h3 id="交配と妊娠期間">交配と妊娠期間</h3>
+<p>メスが<strong>オスのところまで歩いていき</strong>（<em>「カラーメロ レックス が交配相手へ向かっています」</em>）、 そばに着いたところで受胎します。<em>「カラーメロ レックス が妊娠しました」</em>と出ます。</p>
+<ul>
+<li><strong>妊娠期間は初期設定でゲーム内4日</strong>です。</li>
+<li>この時計は、<strong>メスが遠くにいても、あなたがオフラインでも</strong>進みます。</li>
+<li>頭の上とメニューに表示が出ます。<strong>「妊娠中」</strong>、そして終わりが近づくと<strong>「出産間近」</strong>です。 どちらもピンク色で、ステータステキストを切っていても<strong>必ず</strong>出ます。</li>
+</ul>
+<h3 id="出産">出産</h3>
+<p>一度に生まれる数は、<strong>母犬</strong>の犬種で決まります。</p>
+<div class="tw"><table><thead><tr>
+<th>母犬の犬種</th>
+<th>ひと腹の数</th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td>2～4</td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td>1～3</td>
+</tr>
+<tr>
+<td>ジャーマンシェパード、ゴールデンレトリバー、ハスキー</td>
+<td>1～2</td>
+</tr>
+</tbody></table></div>
+<p><em>「カラーメロ レックス が子犬を産みました」</em>と出ます。そのあとは<strong>ゲーム内7日間の休養</strong>があり、その間は 次の妊娠ができません。</p>
+<blockquote class="quote">サーバーが<strong>犬の上限</strong>を設定していて空き枠が足りない場合、生まれる数は枠に収まるように減らされます （妊娠のほうはどちらにせよ終わります）。初期設定は<strong>上限なし</strong>なので、そのままなら起きません。</blockquote>
+<h3 id="子犬が受け継ぐもの">子犬が受け継ぐもの</h3>
+<ul>
+<li><strong>血統は両親の平均になります。</strong> カラーメロとジャーマンシェパードなら50/50です。そのミックスを 純血のジャーマンシェパードと掛ければ25/75になります。</li>
+<li><strong>見た目は血統の比率を重みにした抽選です。</strong> 75%がジャーマンシェパードの子犬は、たいてい ジャーマンシェパードらしい姿になります。</li>
+<li><strong>資質は両親の中間あたりに、プラスマイナス6%のばらつきが乗ります。</strong> 血統を良くしていくやり方は これです。手持ちで一番強い2匹を、何度も掛け合わせてください。</li>
+<li>2つ以上の犬種が混ざった犬には<strong>「ミックス」</strong>が付き、ウィンドウに内訳が出ます （「50% ハスキー, 50% ジャーマンシェパード」）。</li>
+<li><strong>血統書も残ります。</strong> 世代、そして父犬と母犬それぞれの名前と犬種です。</li>
+</ul>
+<h3 id="子犬を育てる">子犬を育てる</h3>
+<ul>
+<li>生まれたときは<strong>控え</strong>（「待て」モード）で、<strong>忠誠度は50</strong>（ゼロではありません）、 <strong>スキルはまったくのゼロ</strong>、見た目もはっきり小さいです。</li>
+<li><strong>生まれたその瞬間から犬の上限に数えられます。</strong></li>
+<li>成犬になるまで<strong>ゲーム内90日</strong>かかります。この時計は子犬が遠くにいて範囲の外でも<strong>常に進みます</strong>。 読み込まれていない間に期限が過ぎた場合は、あなたが近づいた時点で成犬になります。</li>
+<li>成長しても<strong>名前、絆、資質、スキルはそのまま残ります</strong>。 <em>「カラーメロ レックス が成犬になりました」</em></li>
+<li>小さいままの姿が気に入ったなら、<strong>「成長を止める」</strong>のトグルで永久に固定できます。 <em>「永遠に大人にならない犬？現実にもこの設定が欲しいよ :D」</em></li>
+</ul>
+<h2 id="16-複数の犬を同時に飼う">16. 複数の犬を同時に飼う</h2>
+<p>犬は何匹でも飼えますが、<strong>一緒に連れて歩けるのは一度に1匹だけ</strong>です。それが「アクティブ」な犬で、 残りは控えに回ります。</p>
+<blockquote class="quote"><strong>これは将来のバージョンで変わる予定です。</strong> 今のところは、1匹ずつ動かす前提で考えてください。</blockquote>
+<p><strong>控えの犬は完全に止まった状態になります。</strong> これは良いことで、世話し続けないといけない重荷には なりません。</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>アクティブな犬</th>
+<th>控えの犬</th>
+</tr></thead><tbody>
+<tr>
+<td>あなたについてくる</td>
+<td>はい</td>
+<td>いいえ。その場から動きません</td>
+</tr>
+<tr>
+<td><strong>空腹と喉の渇きを感じる</strong></td>
+<td>はい</td>
+<td><strong>いいえ。あとでまとめて来ることもありません</strong></td>
+</tr>
+<tr>
+<td><strong>餌皿から食べる</strong></td>
+<td>はい</td>
+<td><strong>いいえ。その必要もありません</strong></td>
+</tr>
+<tr>
+<td>放っておくと忠誠度が下がる</td>
+<td>はい</td>
+<td>いいえ</td>
+</tr>
+<tr>
+<td>戦う、見張る、狩る</td>
+<td>はい</td>
+<td>いいえ</td>
+</tr>
+<tr>
+<td>撫でると喜ぶ（忠誠度も上がる）</td>
+<td>はい</td>
+<td><strong>はい</strong></td>
+</tr>
+<tr>
+<td>交配して子犬を産める</td>
+<td>はい</td>
+<td><strong>はい</strong></td>
+</tr>
+<tr>
+<td>moodleと採集ボーナスの対象になる</td>
+<td>はい</td>
+<td><strong>はい。近くにいる場合</strong></td>
+</tr>
+</tbody></table></div>
+<p>日々の遊びで一番効いてくるのはここです。<strong>控えに回っている犬に餌をやる必要はありません。</strong> 待っている 間、腹は減らず、忠誠度も落ちず、放置で死ぬこともありません。その犬を選び直すと、空腹は <strong>止まったところから</strong>再開します。溜まった分がまとめて来ることはありません。</p>
+<p>入れ替えるときは、犬を右クリック → <strong>「選択」</strong>です。</p>
+<p>控えの犬のメニューがわざと短くなっているのもそのためです。餌やりも水やりも移動の命令も出てきません。 どれもその犬には効かないからです。</p>
+<h3 id="マイドッグタブ犬の登録簿">「マイドッグ」タブ：犬の登録簿</h3>
+<p>あなたの犬の一覧です。絆を結んだ犬が全部並び、顔アイコン、名前、犬種、性別、スキル、そして今の状態が 出ます。</p>
+<div class="tw"><table><thead><tr>
+<th>状態</th>
+<th>意味</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>アクティブ</strong></td>
+<td>今あなたが連れている犬です</td>
+</tr>
+<tr>
+<td><strong>近くにいる</strong></td>
+<td>あなたのそばで読み込まれています</td>
+</tr>
+<tr>
+<td><strong>抱えている</strong></td>
+<td>あなたが抱きかかえています</td>
+</tr>
+<tr>
+<td><strong>車両内</strong></td>
+<td>車の中に乗せてあります</td>
+</tr>
+<tr>
+<td><strong>遠くにいる</strong></td>
+<td>絆はあるが範囲の外です。「X時間前に確認」と出ます</td>
+</tr>
+<tr>
+<td><strong>行方不明</strong></td>
+<td>いなくなっています。ここから<strong>呼び寄せる</strong>を使ってください</td>
+</tr>
+<tr>
+<td><strong>記録なし</strong></td>
+<td>絆を結んだあと、一度もその犬に会いに行っていません</td>
+</tr>
+</tbody></table></div>
+<p>犬ごとにボタンが3つあります。<strong>呼び寄せる</strong> | <strong>状態</strong> | <strong>選択</strong> です。</p>
+<p>近くにいる犬に<strong>呼び寄せる</strong>を使うと、単にその場へ瞬間移動してきます。<strong>遠くにいる</strong>犬だと確認が入り、 <em>「カラーメロ レックスを遠くから呼び戻しますか？大きな口笛はゾンビを引き寄せます。」</em>と聞かれます。進めると 犬が再登場し、スキル、資質、名前、サドルバッグはそのまま保たれます。</p>
+<p><strong>クールダウンは1匹につきゲーム内2時間です。</strong> その間に呼ぶと <em>「カラーメロ レックスを呼んだばかりです。少し待ってからもう一度呼んでください。」</em>と出ます。</p>
+<blockquote class="quote"><strong>行方不明になった犬を取り戻す方法がこれです。</strong> 犬がいなくなると、modがこう知らせてくれます。 <em>「カラーメロ レックスが行方不明です！マイドッグ（肉球ボタン）から呼び戻せます。」</em></blockquote>
+<h2 id="17-犬のウィンドウ">17. 犬のウィンドウ</h2>
+<p>開き方は4通りあります。手持ちパネルのすぐ下にある<strong>肉球ボタン</strong>、<strong>「状態」</strong>のキー、 右クリックメニューの<strong>「状態」</strong>、そして「マイドッグ」タブのボタンです。</p>
+<p>ウィンドウは<strong>サイズを変えられ</strong>、置いた場所も覚えています。上部には名前と、 <strong>リアルタイムで動く犬の3Dアバター</strong>が出ます。車に乗っている間は<strong>「車両内」</strong>の帯が表示されます。</p>
+<h3 id="スキルと状態タブ">「スキルと状態」タブ</h3>
+<ul>
+<li><strong>忠誠度</strong>。バーと、カーソルを乗せたときの説明が出ます。</li>
+<li><strong>欲求:</strong> 空腹、喉の渇き、体力、ストレス。</li>
+<li><strong>スキル:</strong> 嗅覚、戦闘、服従、狩り、Herding。それぞれに進捗バーと<strong>「Lv X」</strong>が付きます。</li>
+<li><strong>資質:</strong> 筋力、攻撃性、耐性。低い / 普通 / 高いで表示されます。</li>
+<li><strong>犬種:</strong> 名前、年齢（成犬か子犬）、当てはまる場合は「（ミックス）」。 カーソルを乗せると犬種の説明が出ます。</li>
+<li><strong>討伐数:</strong> その犬がこれまでに倒したゾンビと獲物の数。</li>
+</ul>
+<p><strong>どれもカーソルを乗せれば説明が出ます。</strong> バーの意味がわからないときはマウスを乗せてください。</p>
+<h3 id="コマンドタブ">「コマンド」タブ</h3>
+<ul>
+<li><strong>モード:</strong> 従う | 待て | 見張れ</li>
+<li><strong>見張り:</strong> 警戒 | 静か | 無音</li>
+<li><strong>自動護衛</strong>（オンとオフ）</li>
+<li><strong>狩り</strong>（オンとオフ）</li>
+<li><strong>Care for livestock here</strong></li>
+<li><strong>芸:</strong> ボタン4つ（未解放のものは押せない状態になり、カーソルを乗せると理由が出ます）</li>
+<li><strong>サドルバッグを開く</strong></li>
+<li><strong>行動:</strong> 呼び寄せる | 名前を変更 | 解放する</li>
+</ul>
+<p>車に乗っている間は、犬が外にいることを前提にした操作がすべて押せなくなり （<em>「運転中は使用できません。相棒は一緒に乗っています。」</em>）、行動の列は <strong>摂食 | 名前を変更 | 水をやります</strong>に変わります。</p>
+<h3 id="マイドッグタブ">「マイドッグ」タブ</h3>
+<p><a href="#16-複数の犬を同時に飼う">複数の犬を同時に飼う</a>を見てください。</p>
+<h3 id="設定タブ">「設定」タブ</h3>
+<p>ここの設定は<strong>あなた個人のもの</strong>で、サーバーの他の人には何の影響もありません。</p>
+<ul>
+<li><strong>インターフェース:</strong> 「ステータステキスト：オン／オフ」（犬の頭の上に浮かぶ表示）と 「気分アイコン：オン／オフ」（犬のmoodle）。</li>
+<li><strong>サウンド:</strong> マスター音量、ミュート、そして<strong>鳴き声</strong>、<strong>効果音</strong>、<strong>環境音</strong>それぞれのスライダー。</li>
+<li><strong>自動給餌:</strong> 「空腹／喉の渇きがこの値に達すると食べる」のスライダー。</li>
+<li><strong>キー割り当て:</strong> 14個のアクションを<strong>再割り当て</strong>と<strong>クリア</strong>で設定します。</li>
+</ul>
+<blockquote class="quote">鳴き声がうるさいと感じたら、ここの<strong>鳴き声</strong>スライダーで解決できます。仕組みを何も切らずに済みます。</blockquote>
+<h2 id="18-画面に出るもの">18. 画面に出るもの</h2>
+<h3 id="犬のmoodle">犬のmoodle</h3>
+<p>専用のアイコン列が、<strong>ゲーム標準のmoodleの列の左側</strong>に出ます。犬種ごとに固有のものがあります。 詳しくは<a href="breeds.html" class="xlink">犬種の手引き</a>を見てください。</p>
+<p>どの犬でも出るものは次のとおりです。</p>
+<div class="tw"><table><thead><tr>
+<th>moodle</th>
+<th>出る条件</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>空腹</strong></td>
+<td>空腹が高い</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>喉の渇き</strong></td>
+<td>喉の渇きが高い</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>中毒</strong></td>
+<td>悪い食べ物を食べた</td>
+<td>知らせるだけ</td>
+</tr>
+<tr>
+<td><strong>ぐっすり休息</strong></td>
+<td>犬のそばで眠った</td>
+<td>パニック、ストレス、悲しみ、退屈が和らぎ、疲れにくくなる。標準ではゲーム内2時間持続</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>犬種のmoodleすべてに共通するルール:</strong> <strong>忠誠度が低い、体調が悪い、空腹や喉の渇きが高い、 そのどれかに当てはまる犬はボーナスを一切くれません</strong>。moodleがそのままオフになります。 よく世話をされた犬こそ役に立ちます。</blockquote>
+<h3 id="頭の上に出る文字">頭の上に出る文字</h3>
+<p>犬は頭の上に状態の行を何段も重ねて表示します。見えるのは14タイルまでで、同じ階にいるときだけです。 上から順に、見張りの警告、状態（<strong>怯えている</strong>、<strong>パニック状態</strong>、<strong>重傷</strong>、<strong>不服従</strong>、<strong>負傷</strong>、 <strong>緊張している</strong>）、そのとき何をしているか（食事、狩り、におい嗅ぎ、家畜の世話）、妊娠、 そして<strong>名前</strong>です。名前は必ず一番最後で、頭に一番近い位置に出ます。</p>
+<p><strong>「ステータステキスト：オフ」</strong>（「設定」タブ）にすると、名前以外がすべて消えます。 サンドボックス設定の<strong>「犬の名前タグを表示」</strong>をオフにすると、名前まで消えます。</p>
+<p><strong>他のプレイヤーの犬</strong>に出るのは、<strong>「飼い主：〇〇」</strong>と妊娠と名前だけです。</p>
+<h3 id="マップ上のマーカー">マップ上のマーカー</h3>
+<p>ワールドマップとミニマップに、<strong>絆を結んだ犬1匹につき肉球マークが1つ</strong>出ます。</p>
+<ul>
+<li><strong>茶色の肉球がアクティブな犬、灰色の肉球が控えの犬です。</strong></li>
+<li>ワールドマップでは肉球の横に犬の名前も出ます。ミニマップでは名前は出ず、犬が見えない位置にいるときは <strong>画面の端に貼りついて</strong>方向を示します。</li>
+<li>犬が読み込まれている間、マーカーはリアルタイムで犬を追います。読み込みが外れると、 <strong>最後に見た位置に留まります</strong>。</li>
+</ul>
+<p><strong>置いてきた犬や、自分が死んだあとにはぐれた犬を見つけられるのはこの仕組みです。</strong> マーカーは表示だけのもので、マップに保存される記号になることはありません。</p>
+<p>サンドボックス設定の<strong>「犬をマップに表示」</strong>で切れます。</p>
+<h2 id="19-modのアイテム">19. modのアイテム</h2>
+<p>このmodが追加するのは、<strong>あなたが使うアイテム2つ</strong>だけです。</p>
+<h3 id="犬用ボウル">犬用ボウル</h3>
+<p>食事の拠点になるアイテムです。重さ1.5。</p>
+<p><strong>レシピは2つ</strong>あり、どちらもスキルは不要で、その場で手作りできます。</p>
+<ul>
+<li><strong>調理器具1個</strong>（鍋、フライパン、天板、やかん、バケツ、マグカップ、瓶など）。使うと元のアイテムは なくなります。</li>
+<li><strong>ゲーム標準のペット用ボウル1個</strong>。これもなくなります。</li>
+</ul>
+<p><strong>入手場所:</strong> ペットショップの棚、ペット用品の箱、スーパーの日用品コーナー、園芸店、農場と園芸の箱、 スーパーの在庫、キッチン。</p>
+<h3 id="犬用サドルバッグ">犬用サドルバッグ</h3>
+<p><a href="#14-サドルバッグ犬を荷役に使う">サドルバッグ</a>を見てください。重さ1.0で、中に入れたものの 重さもしっかり軽くしてくれます。</p>
+<h3 id="このmodに無いもの">このmodに無いもの</h3>
+<p>無駄に探さずに済むように書いておきます。<strong>ボウルとサドルバッグ、modのアイテムはこの2つだけです。</strong> 首輪も、特別なおやつも、おもちゃも、犬小屋も、建てられるケージもありません。ゲーム標準のドッグフードは modがちゃんと認識しますが、あれはゲーム側のアイテムで、modのものではありません。</p>
+<h2 id="20-マルチプレイ">20. マルチプレイ</h2>
+<p>このmodは最初からマルチプレイ前提で作られていて、co-opでも専用サーバーでも同じように動きます。</p>
+<h3 id="犬はあなたのもの">犬はあなたのもの</h3>
+<p>所有権は<strong>あなたのアカウント</strong>に紐づいていて、キャラクターにも接続スロットにも紐づいていません。 サーバーを再起動しても、犬が他の人のものになることはありません。</p>
+<p><strong>他のプレイヤーにできること:</strong> 犬を見ることです。頭の上には名前と<strong>「飼い主：〇〇」</strong>が出ます。</p>
+<p><strong>他のプレイヤーにできないこと:</strong></p>
+<div class="tw"><table><thead><tr>
+<th>試すこと</th>
+<th>どうなるか</th>
+</tr></thead><tbody>
+<tr>
+<td>抱き上げる</td>
+<td><em>「この犬は他の生存者のものです。」</em></td>
+</tr>
+<tr>
+<td>餌をやる、手懐け直す</td>
+<td><em>「この犬はすでに他の生存者のものです。」</em> 相手の食べ物を消費する<strong>前</strong>にチェックされます</td>
+</tr>
+<tr>
+<td>命令する、名前を変える、解放する、サドルバッグをいじる</td>
+<td>サーバー側で弾かれます</td>
+</tr>
+<tr>
+<td>殺す</td>
+<td>選択肢自体が出ませんし、相棒は無敵です</td>
+</tr>
+</tbody></table></div>
+<h3 id="切断したとき">切断したとき</h3>
+<p><strong>「飼い主のオフライン中は犬をしまう」</strong>をオンにしている場合（初期値はオン）はこうなります。</p>
+<ul>
+<li>あなたの犬は<strong>ワールドの外にしまわれ</strong>、状態も欲求も<strong>凍結されます</strong>。</li>
+<li>戻ってくると、<strong>従う</strong>の犬はあなたのそばに現れます。<strong>待て</strong>と<strong>見張れ</strong>の犬、それに控えの犬は、 エリアが読み込まれ次第、<strong>置いてきた場所に</strong>現れます。</li>
+<li><strong>戻ったら犬が腹ぺこ、ということにはなりません。</strong> オフラインの時間は数えられません。</li>
+</ul>
+<p>オフにすると、犬はワールドに残り、無敵のままその場に留まります。</p>
+<h3 id="管理者向け">管理者向け</h3>
+<p><strong>「犬の登録簿（管理者）」</strong>があります。プレイヤー名で検索でき、オンラインかオフラインの状態、犬の数、 そして「更新」ボタンが並びます。<strong>サーバーのパフォーマンスをその場で調整する</strong>パネルもあります。 どちらも管理者専用です。</p>
+<h3 id="co-opで入れるときの注意">co-opで入れるときの注意</h3>
+<p><strong>犬のテクスチャが出ない、または形が潰れて見える場合:</strong> メインメニューの<strong>Modsのリスト</strong>で Companion Dogsを有効にして（co-opの選択画面だけでは足りません）、セーブを読み込む前に <strong>ゲームを完全に終了してください</strong>。co-opのホストも同じ手順を踏み、サーバーを再起動する必要があります。</p>
+<h2 id="21-サンドボックス設定">21. サンドボックス設定</h2>
+<p>ワールド設定の中にある<strong>「コンパニオンドッグ」</strong>のページです。項目は全部で33個あります。</p>
+<blockquote class="quote"><strong>注意：</strong> マルチプレイで効くのは<strong>サーバー側</strong>の設定です。そしてProject Zomboidのサンドボックス 設定は<strong>セーブに書き込まれる</strong>ので、あとから変えたい場合はセーブを直接いじるか、新しいワールドを 始めるしかありません。</blockquote>
+<h3 id="手懐けと出現">手懐けと出現</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>手懐けに必要な信頼度</td>
+<td>100</td>
+<td>犬が自分のものになるまでに必要な食べ物の量</td>
+</tr>
+<tr>
+<td>プレイヤー1人あたりの最大頭数</td>
+<td><strong>0（無制限）</strong></td>
+<td>絆を結べる犬の頭数の上限</td>
+</tr>
+<tr>
+<td>町に野良犬が出現する</td>
+<td>オン</td>
+<td>探索していると犬が自然に現れる</td>
+</tr>
+<tr>
+<td>犬の出現率倍率</td>
+<td>1.0</td>
+<td>出現全体をまとめて増減させる。0で無効</td>
+</tr>
+<tr>
+<td>野生の犬が無敵になる</td>
+<td><strong>オフ</strong></td>
+<td>手懐ける前に野良犬が死んでしまうのを防ぐ</td>
+</tr>
+<tr>
+<td>デバッグ出現を許可</td>
+<td>オン</td>
+<td>デバッグ用メニュー（マルチプレイでは管理者のみ）</td>
+</tr>
+</tbody></table></div>
+<h3 id="戦闘">戦闘</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>相棒がゾンビと戦う</td>
+<td>オン</td>
+<td>戦闘全体の主スイッチ</td>
+</tr>
+<tr>
+<td>犬のダメージ倍率</td>
+<td>1.0</td>
+<td>ダメージを増減させる。<strong>どれだけ上げてもカラーメロはゾンビにとどめを刺せない</strong></td>
+</tr>
+<tr>
+<td>犬の討伐を自分に加算</td>
+<td>オン</td>
+<td>犬が倒したゾンビが自分の討伐数に加算される</td>
+</tr>
+</tbody></table></div>
+<h3 id="世話と絆">世話と絆</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>欲求と世話</td>
+<td>オン</td>
+<td>空腹・喉の渇き・忠誠度・ストレスの主スイッチ</td>
+</tr>
+<tr>
+<td>空腹と喉の渇きの速さ</td>
+<td>1.0</td>
+<td>両方を増減させる。<strong>0にすると完全に止まり、犬は二度と食事を必要としない</strong></td>
+</tr>
+<tr>
+<td>1日あたりの忠誠度減少</td>
+<td>12.0</td>
+<td>1日で失われる忠誠度の量</td>
+</tr>
+<tr>
+<td>絆による癒し（撫でる・添い寝）</td>
+<td>オン</td>
+<td>撫でることと添い寝で自分の退屈と悲しみが和らぐ</td>
+</tr>
+<tr>
+<td>ぐっすり休息（犬のそばで睡眠）</td>
+<td>オン</td>
+<td>目覚めたときに付くバフ</td>
+</tr>
+<tr>
+<td>ぐっすり休息の持続時間（時間）</td>
+<td>2.0</td>
+<td>効果が続く時間</td>
+</tr>
+</tbody></table></div>
+<h3 id="行動">行動</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>見張り：ゾンビ警告</td>
+<td>オン</td>
+<td>見張り全体の主スイッチ</td>
+</tr>
+<tr>
+<td>自動護衛：作業中の護衛</td>
+<td>オン</td>
+<td>犬ごとの切り替えを使えるようにする</td>
+</tr>
+<tr>
+<td>犬の物音がゾンビを引き寄せる</td>
+<td>オン</td>
+<td>大きな吠え声は実際の物音になる。<strong>うなり声は決して引き寄せない</strong></td>
+</tr>
+<tr>
+<td>犬が命令を無視する</td>
+<td>オン</td>
+<td>レベル0で30%、レベル10で0%になる無視の確率</td>
+</tr>
+</tbody></table></div>
+<h3 id="スキルと活動">スキルと活動</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>スキルと訓練</td>
+<td>オン</td>
+<td>スキル全体の主スイッチ</td>
+</tr>
+<tr>
+<td>スキル経験値倍率</td>
+<td><strong>0.5</strong></td>
+<td>訓練の速さ。遅いと感じたら1.0以上に上げる</td>
+</tr>
+<tr>
+<td>狩りの補助</td>
+<td>オン</td>
+<td>狩り全体の主スイッチ</td>
+</tr>
+<tr>
+<td>Farm care (herding)</td>
+<td>オン</td>
+<td>囲いモードの主スイッチ</td>
+</tr>
+<tr>
+<td>服従の芸</td>
+<td>オン</td>
+<td>4つの芸の主スイッチ</td>
+</tr>
+</tbody></table></div>
+<h3 id="サドルバッグ">サドルバッグ</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>サドルバッグの基本容量</td>
+<td>4</td>
+<td>積載量の下限</td>
+</tr>
+<tr>
+<td>筋力による積載ボーナス</td>
+<td>8</td>
+<td>とても力の強い犬が上乗せする分</td>
+</tr>
+</tbody></table></div>
+<h3 id="子犬">子犬</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>繁殖と子犬</td>
+<td>オン</td>
+<td>主スイッチ</td>
+</tr>
+<tr>
+<td>妊娠期間（日）</td>
+<td>4</td>
+<td>出産までのゲーム内日数</td>
+</tr>
+<tr>
+<td>子犬の成長期間（日）</td>
+<td>90</td>
+<td>成犬になるまでの日数</td>
+</tr>
+<tr>
+<td>1日あたりの繁殖確率</td>
+<td>5.0</td>
+<td>つがいが自分たちで受胎する確率。0で無効</td>
+</tr>
+</tbody></table></div>
+<h3 id="インターフェースとマルチプレイ">インターフェースとマルチプレイ</h3>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>初期値</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>犬の名前タグを表示</td>
+<td>オン</td>
+<td>頭上に浮かぶ名前</td>
+</tr>
+<tr>
+<td>犬をマップに表示</td>
+<td>オン</td>
+<td>マップとミニマップに出る肉球マーカー</td>
+</tr>
+<tr>
+<td>飼い主のオフライン中は犬をしまう</td>
+<td>オン</td>
+<td>マルチプレイ：切断すると犬がワールドから外れる</td>
+</tr>
+</tbody></table></div>
+<h2 id="22-よくあるトラブル">22. よくあるトラブル</h2>
+<p><strong>「犬がテクスチャなしの、ぐしゃっと潰れた姿で出てきた」</strong> <strong>メインメニュー</strong>のMod一覧でmodを有効にして、セーブを読み込む前にゲームを完全に終了してください。 co-opで一番多いトラブルです。</p>
+<p><strong>「modを入れたのに自分のセーブに何も出てこない」</strong> Project Zomboidはmodを<strong>セーブごと</strong>に有効にします。あとから追加したmodは既存のワールドには入らず、 しかも<strong>エラーは一切出ません</strong>。セーブを読み込む画面で、そのワールドにmodのチェックが入っているか 確認してください。</p>
+<p><strong>「犬が言うことを聞かない」</strong> 出ているメッセージを見てください。<em>「あなたを十分に信頼しておらず、従いません」</em>なら忠誠度の問題です。 餌をやり、水をやり、撫でてあげてください。<em>「気を取られて言うことを聞かない」</em>なら訓練不足です。 <strong>同じ命令をもう一度出せば必ず通ります</strong>。パニックや負傷が原因なら、まずそちらを治してください。</p>
+<p><strong>「犬がゾンビを倒さず、転ばせるだけ」</strong> その犬が<strong>カラーメロ</strong>なら、それは仕様で、どこをいじっても変わりません。別の犬種を迎えるか、 ゾンビを転ばせてあなたがとどめを刺す、という役割分担として受け入れてください。</p>
+<p><strong>「犬がしょっちゅう吠えてゾンビを連れてくる」</strong> 考えられる原因は4つあり、どれも自分で制御できます。<strong>「警戒」の見張り</strong>（決して吠えない <strong>「静か」</strong>に変えてください）、芸の<strong>「気を引く」</strong>（吠えること自体が目的です）、<strong>狩り</strong> （「狩り」モードを切ってください）、そして<strong>戦闘</strong>です。ストレスが溜まった犬が自分から吠えることは <strong>ありません</strong>。</p>
+<p><strong>「犬が見当たらなくなった」</strong> 肉球ボタンでウィンドウを開き、<strong>「マイドッグ」</strong>タブから<strong>「呼び寄せる」</strong>を使ってください。 遠くにいる場合は確認を求められ、持ち物ごと呼び戻してくれます。クールダウンは1匹につきゲーム内2時間です。 マップのマーカーにも最後に確認された位置が残っています。</p>
+<p><strong>「犬がフェンスの向こうで動けなくなった」</strong> <strong>「呼び寄せる」</strong>（口笛）を使ってください。まさにそのための機能で、代わりにゾンビを引き寄せます。</p>
+<p><strong>「犬が妊娠しない」</strong> <a href="#15-繁殖と子犬">繁殖の条件</a>の一覧を確認してください。ほとんどの場合、どちらかの空腹か 喉の渇き、あるいは忠誠度が60未満なのが原因です。<strong>「繁殖を禁止」</strong>がオンになっていないかも確認して ください。</p>
+<p><strong>「子犬が大きくならない」</strong> その子犬に<strong>「成長を止める」</strong>が付いていないか確認してください。それ以外はただの時間の問題で、初期値は <strong>ゲーム内90日</strong>、しかも離れている間も時計は進みます。期限を過ぎても子犬のままなら、その子のそばまで 行ってみてください。成長は子犬が読み込まれた瞬間に起きます。</p>
+<p><strong>「犬が一緒に車に乗ってくれない」</strong> 車に乗るのは<strong>「従う」</strong>の犬だけです。「待て」や「見張れ」だと、その場に残ります。</p>
+<p><strong>「拠点を見張らせておいたのに何もしていなかった」</strong> 「見張れ」モードは今のところ<strong>あなたが近くにいるときだけ働きます</strong>。離れた場所で犬に単独で働かせたい なら、それができるのは<strong>「Care for livestock here」</strong>だけで、これには指定された動物の囲いが必要です。</p>
+<p><strong>「犬がなかなか覚えない」</strong> <strong>「スキル経験値倍率」</strong>の初期値は<strong>0.5</strong>で、通常の半分の速さです。新しいワールドで1.0以上に 上げてください。</p>
+<p><strong>「犬が死んでしまった」</strong> 取り返しはつきませんし、復活もありません。死因は極限まで放置された空腹か喉の渇きだけです。 サドルバッグと中身は、倒れた場所の地面に残ります。</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='features.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">見つかりませんでした： <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' 件'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'先頭');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>
