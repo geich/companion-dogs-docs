@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往功能手冊</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="搜尋手冊……" aria-label="搜尋手冊" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="語言"><optgroup label="已校閱"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="機器翻譯"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant" selected>繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="語言"><optgroup label="已校閱"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="機器翻譯"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant" selected>繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="切換主題">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>機器翻譯，尚未校閱.</b> 本頁是從葡萄牙文機器翻譯而來的，還沒有人校閱過，用詞和數字都可能有誤。有疑問時，請對照英文版或葡萄牙文原文。 <a href="../en/breeds.html">閱讀英文版</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#馱袋" data-id="馱袋">馱袋</a>
 <a class="s3" href="#每胎產仔數" data-id="每胎產仔數">每胎產仔數</a>
 <a class="s3" href="#各品種在哪裡找" data-id="各品種在哪裡找">各品種在哪裡找</a>
+<a class="s3" href="#品種的內部名稱" data-id="品種的內部名稱">品種的內部名稱</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>這些機率都會跟著沙盒選項<strong>「狗生成倍率」</strong>一起變。</p>
 <p>記住：這個判定<strong>每棟建築只做一次</strong>，而且會存進存檔。回到已經探索過的地方不會再刷出新的狗。</p>
+<h3 id="品種的內部名稱">品種的內部名稱</h3>
+<p>生成類 mod 和除錯模式要的是狗的<strong>內部名稱</strong>，不是畫面上顯示的名字。列表如下：</p>
+<div class="tw"><table><thead><tr>
+<th>品種</th>
+<th>公</th>
+<th>母</th>
+<th>幼犬</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>小卡犬</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>德國牧羊犬</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>黃金獵犬</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>邊境牧羊犬</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>羅威納犬</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>杜賓犬</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>公和母是<strong>兩個不同的類型</strong>，不是同一個類型下的選項。最後三行只有裝了對應品種的附加 mod 才存在。</p>
 <h2 id="6-moodle完整清單">6. moodle：完整清單</h2>
 <p>狗的 moodle 會顯示在<strong>單獨的一欄裡，就在你自己那排 moodle 的左邊</strong>。</p>
 <h3 id="所有品種-moodle-通用的規則">所有品種 moodle 通用的規則</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>「體型大的狗咬得比較痛嗎？」</strong> 不會。體型純粹是外觀。體型和力量之間的連動是刻意關掉的。</p>
 <p><strong>「杜賓犬要去哪裡找？」</strong> <strong>警察局。</strong>軍事建築的機率帳面上更高，但遊戲本體的地圖上幾乎沒有軍事建築。</p>
 <p><strong>「我裝了拉布拉多，可是一隻都找不到。」</strong> 先確認 Companion Dogs 本體的版本：拉布拉多<strong>要求 0.6.6 或更新版本</strong>，本體太舊的話牠既不會出現 也不會吭聲。另外也想想你是不是已經把那一帶的房子都翻過了：出現與否的判定是<strong>每棟建築一次，而且 是永久的</strong>。</p>
-<p><strong>「我的混血沒有兩個品種的 moodle。」</strong> 這是正常的。混血在機制上就是<strong>牠看起來的那個品種</strong>。混血只會改變後代的基因範圍，以及視窗裡的 百分比標籤。</p></article></main>
+<p><strong>「我的混血沒有兩個品種的 moodle。」</strong> 這是正常的。混血在機制上就是<strong>牠看起來的那個品種</strong>。混血只會改變後代的基因範圍，以及視窗裡的 百分比標籤。</p>
+<p><strong>「我想用別的 mod 生成一隻狗，要用哪個名字？」</strong> 用內部名稱，不是畫面上顯示的名字。列表在<a href="#5-對比表格">對比表格</a>的最後。</p></article></main>
 </div>
 
 <script>

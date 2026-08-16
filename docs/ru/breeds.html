@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Перейти к руководству «Возможности»</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="поиск по руководству..." aria-label="Поиск по руководству" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Язык"><optgroup label="Проверено"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Автоперевод"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru" selected>Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Язык"><optgroup label="Проверено"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Автоперевод"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru" selected>Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="Переключить тему">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>Автоперевод, без проверки.</b> Эта страница переведена машиной с португальского, и её никто не вычитывал. В терминах и числах возможны ошибки. Если сомневаетесь, сверьтесь с английской версией или с оригиналом на португальском. <a href="../en/breeds.html">Читать на английском</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#вьючные-сумки" data-id="вьючные-сумки">Вьючные сумки</a>
 <a class="s3" href="#помёт" data-id="помёт">Помёт</a>
 <a class="s3" href="#где-искать-каждую-породу" data-id="где-искать-каждую-породу">Где искать каждую породу</a>
+<a class="s3" href="#внутренние-имена-пород" data-id="внутренние-имена-пород">Внутренние имена пород</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Все эти шансы масштабируются вместе с опцией песочницы <strong>«Множитель появления собак»</strong>.</p>
 <p>Помните: решение принимается <strong>один раз на здание</strong> и сохраняется. Возвращение в уже обследованное место новую собаку не создаст.</p>
+<h3 id="внутренние-имена-пород">Внутренние имена пород</h3>
+<p>Моды на спавн и режим отладки просят <strong>внутреннее имя</strong> собаки, а не то, что показано на экране. Вот они:</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Самец</th>
+<th>Самка</th>
+<th>Щенок</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Дворняжка</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>Немецкая овчарка</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Золотистый ретривер</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Хаски</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Бордер-колли</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>Самец и самка это <strong>разные типы</strong>, а не опция одного типа. Последние три строки существуют только если установлен аддон этой породы.</p>
 <h2 id="6-moodles-полный-список">6. Moodles: полный список</h2>
 <p>Собачьи moodles показываются <strong>отдельной колонкой, слева от ваших обычных moodles</strong>.</p>
 <h3 id="правило-общее-для-всех-породных-moodles">Правило, общее для всех породных moodles</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>«Большая собака бьёт сильнее?»</strong> Нет. Размер чисто визуальный. Связь между габаритами и силой отключена намеренно.</p>
 <p><strong>«Где искать Добермана?»</strong> <strong>В полицейских участках.</strong> На бумаге шанс выше в военных зданиях, но на базовой карте игры военных зданий почти нет.</p>
 <p><strong>«Поставил Лабрадора и ни одного не нахожу.»</strong> Проверьте версию базового Companion Dogs: Лабрадору <strong>нужна версия 0.6.6 или новее</strong>, а на старой базе он остаётся невидимым и молчит. Проверьте ещё, не обошли ли вы уже все дома в округе: решение о появлении принимается <strong>один раз на здание и навсегда</strong>.</p>
-<p><strong>«У моего метиса нет moodle обеих пород.»</strong> Так и задумано. Механически метис это <strong>та порода, на которую он похож</strong>. Смесь меняет только диапазон генов у потомков и процентную пометку в окне.</p></article></main>
+<p><strong>«У моего метиса нет moodle обеих пород.»</strong> Так и задумано. Механически метис это <strong>та порода, на которую он похож</strong>. Смесь меняет только диапазон генов у потомков и процентную пометку в окне.</p>
+<p><strong>«Хочу заспавнить собаку другим модом, какое имя использовать?»</strong> Внутреннее имя, а не то, что видно на экране. Список в разделе <a href="#5-сравнительные-таблицы">Сравнительные таблицы</a>, в самом конце.</p></article></main>
 </div>
 
 <script>

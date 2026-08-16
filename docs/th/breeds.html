@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>ไปที่คู่มือ ฟีเจอร์</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="ค้นหาในคู่มือ..." aria-label="ค้นหาในคู่มือ" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="ภาษา"><optgroup label="ตรวจทานแล้ว"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="แปลอัตโนมัติ"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th" selected>ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="ภาษา"><optgroup label="ตรวจทานแล้ว"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="แปลอัตโนมัติ"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th" selected>ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="สลับธีม">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>แปลอัตโนมัติ ยังไม่ได้ตรวจทาน.</b> หน้านี้แปลจากภาษาโปรตุเกสด้วยเครื่อง และยังไม่มีใครตรวจทาน จึงอาจมีคำศัพท์หรือตัวเลขที่คลาดเคลื่อน หากไม่แน่ใจ ให้ดูฉบับภาษาอังกฤษหรือต้นฉบับภาษาโปรตุเกสประกอบ <a href="../en/breeds.html">อ่านฉบับภาษาอังกฤษ</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#กระเปาอาน" data-id="กระเปาอาน">กระเป๋าอาน</a>
 <a class="s3" href="#จำนวนลกตอครอก" data-id="จำนวนลกตอครอก">จำนวนลูกต่อครอก</a>
 <a class="s3" href="#หาสนขแตละสายพนธไดทไหน" data-id="หาสนขแตละสายพนธไดทไหน">หาสุนัขแต่ละสายพันธุ์ได้ที่ไหน</a>
+<a class="s3" href="#ชอภายในของสายพนธ" data-id="ชอภายในของสายพนธ">ชื่อภายในของสายพันธุ์</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>ทุกค่าจะขึ้นลงไปพร้อมกับตัวเลือกแซนด์บ็อกซ์ <strong><span class="ig">ตัวคูณสำหรับการเกิดของสุนัข</span></strong></p>
 <p>อย่าลืมว่าเกมตัดสินใจเรื่องนี้ <strong>ครั้งเดียวต่ออาคารหนึ่งหลัง</strong> แล้วบันทึกเก็บไว้ การกลับไปยังที่ที่สำรวจไปแล้วจะไม่ทำให้มีสุนัขตัวใหม่โผล่ขึ้นมา</p>
+<h3 id="ชอภายในของสายพนธ">ชื่อภายในของสายพันธุ์</h3>
+<p>ม็อดที่ใช้สปอว์นและโหมดดีบักจะถามหา<strong>ชื่อภายใน</strong>ของหมา ไม่ใช่ชื่อที่เห็นบนหน้าจอ มีดังนี้</p>
+<div class="tw"><table><thead><tr>
+<th>สายพันธุ์</th>
+<th>ตัวผู้</th>
+<th>ตัวเมีย</th>
+<th>ลูกสุนัข</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>ร็อตไวเลอร์</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>โดเบอร์แมน</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>ลาบราดอร์</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>ตัวผู้กับตัวเมียเป็น<strong>คนละไทป์กัน</strong> ไม่ใช่ตัวเลือกของไทป์เดียวกัน สามแถวสุดท้ายจะมีก็ต่อเมื่อติดตั้งแอดออนของสายพันธุ์นั้นแล้ว</p>
 <h2 id="6-moodles-รายการทงหมด">6. Moodles: รายการทั้งหมด</h2>
 <p>moodle ของสุนัขจะแสดงอยู่ใน <strong>คอลัมน์ของตัวเอง ทางซ้ายของ moodle ปกติของคุณ</strong></p>
 <h3 id="กฎทใชกบ-moodle-ประจำสายพนธทกตว">กฎที่ใช้กับ moodle ประจำสายพันธุ์ทุกตัว</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">สุนัขตัวใหญ่กัดแรงกว่าไหม?</span></strong> ไม่ ขนาดตัวเป็นเรื่องของภาพล้วน ๆ ความเชื่อมโยงระหว่างขนาดตัวกับความแข็งแกร่งถูกตัดออกโดยตั้งใจ</p>
 <p><strong><span class="ig">หาโดเบอร์แมนได้ที่ไหน?</span></strong> <strong>สถานีตำรวจ</strong> ในทางทฤษฎีอาคารทหารมีโอกาสสูงกว่า แต่แผนที่หลักของเกมแทบไม่มีอาคารทหารอยู่เลย</p>
 <p><strong><span class="ig">ติดตั้งลาบราดอร์แล้วหาไม่เจอสักตัว</span></strong> เช็กเวอร์ชันของ Companion Dogs ตัวหลักก่อน ลาบราดอร์<strong>ต้องใช้เวอร์ชัน 0.6.6 ขึ้นไป</strong> ถ้าตัวหลักเก่ากว่านั้น มันจะไม่โผล่มาให้เห็นและไม่มีเสียงอะไรเลย แล้วลองเช็กด้วยว่าคุณสำรวจบ้านแถวนั้นไปหมดแล้วหรือยัง เพราะการตัดสินใจเรื่องจุดเกิดเป็น<strong>ครั้งเดียวต่ออาคาร และเป็นแบบนั้นตลอดไป</strong></p>
-<p><strong><span class="ig">พันธุ์ผสมของผมไม่มี moodle ของทั้งสองสายพันธุ์</span></strong> เป็นแบบนั้นอยู่แล้ว ในเชิงกลไก พันธุ์ผสมคือ<strong>สายพันธุ์ที่มันหน้าตาเหมือน</strong> การผสมเปลี่ยนแค่ช่วงยีนของลูกหลานกับป้ายเปอร์เซ็นต์ในหน้าต่างเท่านั้น</p></article></main>
+<p><strong><span class="ig">พันธุ์ผสมของผมไม่มี moodle ของทั้งสองสายพันธุ์</span></strong> เป็นแบบนั้นอยู่แล้ว ในเชิงกลไก พันธุ์ผสมคือ<strong>สายพันธุ์ที่มันหน้าตาเหมือน</strong> การผสมเปลี่ยนแค่ช่วงยีนของลูกหลานกับป้ายเปอร์เซ็นต์ในหน้าต่างเท่านั้น</p>
+<p><strong><span class="ig">อยากสปอว์นหมาด้วยม็อดอื่น ต้องใช้ชื่ออะไร</span></strong> ชื่อภายใน ไม่ใช่ชื่อที่เห็นบนหน้าจอ รายชื่ออยู่ท้ายหัวข้อ <a href="#5-ตารางเปรยบเทยบ">ตารางเปรียบเทียบ</a></p></article></main>
 </div>
 
 <script>

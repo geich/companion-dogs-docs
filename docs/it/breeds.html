@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Vai al Manuale: Funzionalità</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="cerca nel manuale..." aria-label="Cerca nel manuale" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Lingua"><optgroup label="Revisionate"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Traduzione automatica"><option value="de">Deutsch</option><option value="es">Español</option><option value="it" selected>Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Lingua"><optgroup label="Revisionate"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Traduzione automatica"><option value="es">Español</option><option value="it" selected>Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="Cambia tema">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>Traduzione automatica, non revisionata.</b> Questa pagina è stata tradotta a macchina dal portoghese e nessuno l'ha revisionata. Potrebbe contenere errori nei termini e nei numeri. In caso di dubbio, controlla la versione inglese o l'originale in portoghese. <a href="../en/breeds.html">Leggi in inglese</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#bisacce" data-id="bisacce">Bisacce</a>
 <a class="s3" href="#cucciolata" data-id="cucciolata">Cucciolata</a>
 <a class="s3" href="#dove-trovare-ogni-razza" data-id="dove-trovare-ogni-razza">Dove trovare ogni razza</a>
+<a class="s3" href="#nomi-interni-delle-razze" data-id="nomi-interni-delle-razze">Nomi interni delle razze</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Tutte scalano insieme all'opzione sandbox <strong><span class="ig">Moltiplicatore tasso di spawn cani</span></strong>.</p>
 <p>Ricorda: la decisione viene presa <strong>una volta per edificio</strong> e resta salvata. Tornare in un posto già esplorato non fa comparire un cane nuovo.</p>
+<h3 id="nomi-interni-delle-razze">Nomi interni delle razze</h3>
+<p>Le mod di spawn e la modalità debug chiedono il <strong>nome interno</strong> del cane, che non è quello che vedi a schermo. Sono questi:</p>
+<div class="tw"><table><thead><tr>
+<th>Razza</th>
+<th>Maschio</th>
+<th>Femmina</th>
+<th>Cucciolo</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>Pastore Tedesco</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>Dobermann</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>Maschio e femmina sono <strong>tipi diversi</strong>, non un'opzione dello stesso tipo. Le ultime tre righe esistono solo se hai installato l'addon di quella razza.</p>
 <h2 id="6-moodles-la-lista-completa">6. Moodles: la lista completa</h2>
 <p>I moodle del cane compaiono in una <strong>colonna a parte, alla sinistra dei tuoi moodle normali</strong>.</p>
 <h3 id="la-regola-che-vale-per-tutti-i-moodle-di-razza">La regola che vale per tutti i moodle di razza</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Un cane grosso morde più forte?</span></strong> No. La taglia è solo estetica. Il legame tra stazza e forza è stato disattivato di proposito.</p>
 <p><strong><span class="ig">Dove trovo i Dobermann?</span></strong> <strong>Nelle stazioni di polizia.</strong> Sulla carta la probabilità negli edifici militari è più alta, ma di edifici militari nella mappa base del gioco non ce ne sono quasi.</p>
 <p><strong><span class="ig">Ho installato il Labrador e non ne trovo nessuno.</span></strong> Controlla la versione di Companion Dogs base: il Labrador <strong>richiede la 0.6.6 o più recente</strong> e su un base vecchio resta invisibile e silenzioso. Controlla anche di non aver già esplorato le case della zona: la decisione di comparsa è <strong>una per edificio, per sempre</strong>.</p>
-<p><strong><span class="ig">Il mio meticcio non ha il moodle di tutte e due le razze.</span></strong> È normale. Un meticcio è, dal punto di vista delle meccaniche, <strong>la razza a cui somiglia</strong>. La mescolanza cambia solo l'intervallo dei geni dei discendenti e l'etichetta in percentuale nella finestra.</p></article></main>
+<p><strong><span class="ig">Il mio meticcio non ha il moodle di tutte e due le razze.</span></strong> È normale. Un meticcio è, dal punto di vista delle meccaniche, <strong>la razza a cui somiglia</strong>. La mescolanza cambia solo l'intervallo dei geni dei discendenti e l'etichetta in percentuale nella finestra.</p>
+<p><strong><span class="ig">Voglio spawnare un cane con un'altra mod, che nome uso?</span></strong> Il nome interno, non quello che vedi a schermo. La lista è in <a href="#5-tabelle-comparative">Tabelle comparative</a>, in fondo alla sezione.</p></article></main>
 </div>
 
 <script>

@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Machine translated"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
 </header>
 
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#saddlebag" data-id="saddlebag">Saddlebag</a>
 <a class="s3" href="#litter-size" data-id="litter-size">Litter size</a>
 <a class="s3" href="#where-to-find-each-breed" data-id="where-to-find-each-breed">Where to find each breed</a>
+<a class="s3" href="#internal-breed-names" data-id="internal-breed-names">Internal breed names</a>
 </div>
 </div>
 <div class="grp">
@@ -632,7 +633,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Saddlebag:</strong> 6 to 7.</p>
 <p><strong>Moodle: <span class="ig">Keen Nose</span></strong></p>
 <blockquote class="quote quote-game"><em>"Your Golden Retriever works the ground with you. While it stays close, fed and loyal, you spot forage from farther away and learn Foraging, Trapping and Aiming faster."</em></blockquote>
-<p>Two effects:</p>
+<p>Three effects:</p>
 <ul>
 <li><strong>+20% XP</strong> in <strong>Foraging, Trapping and Aiming</strong>.</li>
 <li><strong>+4 tiles</strong> on your Search Mode vision radius, <strong>on top of</strong> the bonus any dog already gives.</li>
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>All of them scale with the sandbox option <strong><span class="ig">Dog spawn rate multiplier</span></strong>.</p>
 <p>Remember: the decision is made <strong>once per building</strong> and it stays saved. Going back to a place you already explored will not produce a new dog.</p>
+<h3 id="internal-breed-names">Internal breed names</h3>
+<p>Spawn mods and debug mode ask for the dog's <strong>internal name</strong>, which is not the name shown on screen. Here they are:</p>
+<div class="tw"><table><thead><tr>
+<th>Breed</th>
+<th>Male</th>
+<th>Female</th>
+<th>Puppy</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Caramelo</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>German Shepherd</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>Male and female are <strong>different types</strong>, not an option of the same type. The last three rows only exist if that breed's addon is installed.</p>
 <h2 id="6-moodles-the-complete-list">6. Moodles: the complete list</h2>
 <p>Dog moodles show up in <strong>a column of their own, to the left of your normal moodles</strong>.</p>
 <h3 id="the-rule-that-applies-to-every-breed-moodle">The rule that applies to every breed moodle</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Do big dogs hit harder?</span></strong> No. Size is purely visual. The link between body size and Strength was turned off on purpose.</p>
 <p><strong><span class="ig">Where do I find a Doberman?</span></strong> <strong>Police stations.</strong> The chance in a military building is higher on paper, but there is almost no military building on the game's base map.</p>
 <p><strong><span class="ig">I installed the Labrador and can't find any.</span></strong> Check your Companion Dogs base version: the Labrador <strong>requires 0.6.6 or newer</strong> and stays invisible and silent on an old base. Also check whether you have already explored the houses around there: the spawn decision is <strong>one per building, forever</strong>.</p>
-<p><strong><span class="ig">My mixed dog doesn't have the moodle of both breeds.</span></strong> That is expected. A mixed dog is, mechanically, <strong>the breed it looks like</strong>. The mixing only changes the gene range of its descendants and the percentage label in the window.</p></article></main>
+<p><strong><span class="ig">My mixed dog doesn't have the moodle of both breeds.</span></strong> That is expected. A mixed dog is, mechanically, <strong>the breed it looks like</strong>. The mixing only changes the gene range of its descendants and the percentage label in the window.</p>
+<p><strong><span class="ig">I want to spawn a dog with another mod, which name do I use?</span></strong> The internal name, not the one shown on screen. The list is in <a href="#5-comparison-tables">Comparison tables</a>, at the end of the section.</p></article></main>
 </div>
 
 <script>

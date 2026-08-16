@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>機能マニュアルを見る</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="マニュアル内を検索…" aria-label="マニュアル内を検索" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="機械翻訳"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="機械翻訳"><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="テーマを切り替え">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>機械翻訳（未校正）.</b> このページはポルトガル語から機械翻訳したもので、校正はされていません。用語や数値が正しくない場合があります。内容に迷ったときは、英語版かポルトガル語の原文を確認してください。 <a href="../en/breeds.html">英語版を読む</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#サドルバッグ" data-id="サドルバッグ">サドルバッグ</a>
 <a class="s3" href="#ひと腹の数" data-id="ひと腹の数">ひと腹の数</a>
 <a class="s3" href="#犬種ごとの出現場所" data-id="犬種ごとの出現場所">犬種ごとの出現場所</a>
+<a class="s3" href="#犬種の内部名" data-id="犬種の内部名">犬種の内部名</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>どの確率も、サンドボックス設定の<strong>「犬の出現率倍率」</strong>でまとめて増減します。</p>
 <p>覚えておいてください。この判定は<strong>建物ごとに1回だけ</strong>行われ、結果は保存されます。一度探索した 場所に戻っても、新しい犬は出てきません。</p>
+<h3 id="犬種の内部名">犬種の内部名</h3>
+<p>スポーン系のMODやデバッグモードが求めるのは、画面に出る名前ではなく<strong>内部名</strong>です。一覧はこちらです。</p>
+<div class="tw"><table><thead><tr>
+<th>犬種</th>
+<th>オス</th>
+<th>メス</th>
+<th>子犬</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>カラーメロ</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>ジャーマンシェパード</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>ゴールデンレトリバー</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>ハスキー</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>ボーダー・コリー</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>ロットワイラー</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>ドーベルマン</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>ラブラドール</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>オスとメスは同じタイプの選択肢ではなく、<strong>別々のタイプ</strong>です。下の3行は、その犬種のアドオンを入れている 場合だけ存在します。</p>
 <h2 id="6-moodle全リスト">6. moodle：全リスト</h2>
 <p>犬のmoodleは、<strong>あなた自身のmoodleの左側にある専用の列</strong>に出ます。</p>
 <h3 id="犬種moodleに共通するルール">犬種moodleに共通するルール</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>「体の大きい犬のほうが強く噛みますか？」</strong> 噛みません。大きさは完全に見た目だけの話です。体格と筋力のつながりは、意図的に切ってあります。</p>
 <p><strong>「ドーベルマンはどこにいますか？」</strong> <strong>警察署</strong>です。軍事施設のほうが確率は高い設定ですが、ゲームの基本マップには軍事施設がほとんど存在しません。</p>
 <p><strong>「ラブラドールを入れたのに1匹も見つかりません。」</strong> Companion Dogs本体のバージョンを確認してください。ラブラドールは<strong>0.6.6以降が必要</strong>で、古い本体では 姿も見えず鳴き声もしません。そのあたりの家をもう探索済みでないかも確認してください。出現の判定は <strong>建物ごとに1回、それきり</strong>です。</p>
-<p><strong>「うちのミックスに2犬種ぶんのmoodleが付きません。」</strong> そういうものです。ミックスは仕組みのうえでは<strong>見た目どおりの犬種</strong>です。混ざったことで変わるのは、子孫の 遺伝子の範囲と、ウィンドウに出る割合の表記だけです。</p></article></main>
+<p><strong>「うちのミックスに2犬種ぶんのmoodleが付きません。」</strong> そういうものです。ミックスは仕組みのうえでは<strong>見た目どおりの犬種</strong>です。混ざったことで変わるのは、子孫の 遺伝子の範囲と、ウィンドウに出る割合の表記だけです。</p>
+<p><strong>「別のMODで犬をスポーンさせたいのですが、どの名前を使いますか。」</strong> 画面に出る名前ではなく内部名です。一覧は<a href="#5-比較表">比較表</a>の最後にあります。</p></article></main>
 </div>
 
 <script>

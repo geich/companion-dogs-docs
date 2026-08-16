@@ -364,7 +364,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mở tài liệu Tính năng</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="tìm trong tài liệu..." aria-label="Tìm trong tài liệu" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Ngôn ngữ"><optgroup label="Đã duyệt"><option value="en">English</option><option value="pt-br">Português (Brasil)</option></optgroup><optgroup label="Dịch máy"><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi" selected>Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Ngôn ngữ"><optgroup label="Đã duyệt"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Dịch máy"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi" selected>Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="Đổi giao diện sáng/tối">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>Dịch máy, chưa được kiểm tra.</b> Trang này được dịch bằng máy từ bản tiếng Bồ Đào Nha và chưa có ai kiểm lại. Thuật ngữ và con số có thể sai. Nếu thấy chỗ nào chưa rõ, hãy đối chiếu với bản tiếng Anh hoặc bản gốc tiếng Bồ Đào Nha. <a href="../en/breeds.html">Đọc bản tiếng Anh</a></div>
@@ -413,6 +413,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#túi-yên" data-id="túi-yên">Túi yên</a>
 <a class="s3" href="#lứa-đẻ" data-id="lứa-đẻ">Lứa đẻ</a>
 <a class="s3" href="#tìm-từng-giống-ở-đâu" data-id="tìm-từng-giống-ở-đâu">Tìm từng giống ở đâu</a>
+<a class="s3" href="#tên-nội-bộ-của-các-giống" data-id="tên-nội-bộ-của-các-giống">Tên nội bộ của các giống</a>
 </div>
 </div>
 <div class="grp">
@@ -1139,6 +1140,73 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Tất cả các tỷ lệ trên đều thay đổi cùng lúc theo tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong>.</p>
 <p>Nhớ rằng: quyết định chỉ được đưa ra <strong>một lần cho mỗi tòa nhà</strong> và được lưu lại. Quay về một nơi đã khám phá rồi thì không có chó mới xuất hiện.</p>
+<h3 id="tên-nội-bộ-của-các-giống">Tên nội bộ của các giống</h3>
+<p>Mod spawn và chế độ debug hỏi <strong>tên nội bộ</strong> của chó, không phải cái tên hiện trên màn hình. Đây là danh sách:</p>
+<div class="tw"><table><thead><tr>
+<th>Giống</th>
+<th>Con đực</th>
+<th>Con cái</th>
+<th>Chó con</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Chó cỏ</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>Chó chăn cừu Đức</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Husky</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Border Collie</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>Doberman</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+</tbody></table></div>
+<p>Con đực và con cái là <strong>hai type khác nhau</strong>, không phải một tùy chọn của cùng một type. Ba dòng cuối chỉ tồn tại nếu bạn có cài addon của giống đó.</p>
 <h2 id="6-moodle-danh-sách-đầy-đủ">6. Moodle: danh sách đầy đủ</h2>
 <p>Moodle của chó hiện ở <strong>một cột riêng, bên trái các moodle bình thường của bạn</strong>.</p>
 <h3 id="quy-tắc-chung-cho-mọi-moodle-theo-giống">Quy tắc chung cho mọi moodle theo giống</h3>
@@ -1373,7 +1441,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Chó to thì cắn mạnh hơn à?</span></strong> Không. Kích thước chỉ là hình thức. Liên hệ giữa vóc dáng và sức mạnh đã bị tắt một cách có chủ ý.</p>
 <p><strong><span class="ig">Tìm Doberman ở đâu?</span></strong> <strong>Đồn cảnh sát.</strong> Trên giấy tờ thì tỷ lệ ở công trình quân sự cao hơn, nhưng bản đồ gốc của game gần như không có công trình quân sự nào.</p>
 <p><strong><span class="ig">Tôi cài Labrador mà không thấy con nào.</span></strong> Hãy kiểm tra phiên bản mod nền Companion Dogs: Labrador <strong>đòi bản 0.6.6 trở lên</strong> và sẽ im lặng biến mất trên một mod nền cũ. Cũng nên xem lại bạn đã lục hết nhà cửa trong vùng chưa: quyết định xuất hiện là <strong>một lần cho mỗi tòa nhà, và giữ mãi</strong>.</p>
-<p><strong><span class="ig">Chó lai của tôi không có moodle của cả hai giống.</span></strong> Đúng như thiết kế. Về mặt cơ chế, một con lai chính là <strong>giống mà nó trông giống</strong>. Việc pha máu chỉ thay đổi khoảng gen của đời sau và phần nhãn phần trăm trong cửa sổ.</p></article></main>
+<p><strong><span class="ig">Chó lai của tôi không có moodle của cả hai giống.</span></strong> Đúng như thiết kế. Về mặt cơ chế, một con lai chính là <strong>giống mà nó trông giống</strong>. Việc pha máu chỉ thay đổi khoảng gen của đời sau và phần nhãn phần trăm trong cửa sổ.</p>
+<p><strong><span class="ig">Tôi muốn spawn chó bằng mod khác, dùng tên nào?</span></strong> Tên nội bộ, không phải tên hiện trên màn hình. Danh sách nằm ở cuối phần <a href="#5-bảng-so-sánh">Bảng so sánh</a></p></article></main>
 </div>
 
 <script>
