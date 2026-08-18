@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-욕구와-관리" data-id="7-욕구와-관리">7. 욕구와 관리</a>
 <div class="sub">
 <a class="s3" href="#스트레스는-어디서-오나" data-id="스트레스는-어디서-오나">스트레스는 어디서 오나</a>
+<a class="s3" href="#단백질-개는-육식동물입니다" data-id="단백질-개는-육식동물입니다">단백질: 개는 육식동물입니다</a>
 <a class="s3" href="#직접-먹이-주기" data-id="직접-먹이-주기">직접 먹이 주기</a>
 <a class="s3" href="#물-주기" data-id="물-주기">물 주기</a>
 <a class="s3" href="#쓰다듬기" data-id="쓰다듬기">쓰다듬기</a>
 <a class="s3" href="#방치했을-때의-순서" data-id="방치했을-때의-순서">방치했을 때의 순서</a>
+<a class="s3" href="#상실" data-id="상실">상실</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>믹스견은 혼자서 좀비를 죽이지 못합니다.</strong> 좀비 체력을 10%에서 멈춰 세우고 거기서 그칩니다. 이건 의도한 설계라 샌드박스를 어떻게 바꿔도 달라지지 않습니다. 믹스견의 역할은 <strong>좀비를 넘어뜨려서</strong> 당신에게 시간을 벌어 주는 것입니다.</li>
 <li>나머지 견종은 전부 <strong>마무리를 지을 수 있습니다</strong>.</li>
+<li>단백질을 24시간 못 먹은 <strong><a href="#단백질-개는-육식동물입니다">쇠약함</a></strong> 상태의 개는 <strong>절반만 때립니다</strong>. 좀비를 끝내느냐, 거기에 붙들리느냐의 차이입니다.</li>
 </ul>
 <p>견종별 피해량 표는 <a href="breeds.html" class="xlink">견종 안내서</a>에 있습니다.</p>
 <p><strong>좀비 넘어뜨리기:</strong> 공격할 때마다 넘어뜨릴 확률이 있고, 10%에서 시작해 전투가 최대 레벨이면 50%에 이릅니다.</p>
@@ -987,6 +990,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>공포 상태에 빠진 개는 <strong>싸우지도, 경계하지도, 재주를 부리지도 않습니다</strong>. 그래도 부르면 당신에게 달려옵니다.</p>
 <p>좋은 소식도 있습니다. <strong>전투 스트레스는 싸움이 끝나면 금방 빠집니다.</strong> 가득 찬 바가 <strong>게임 내 2시간</strong> 정도면 비워집니다. <strong>쓰다듬기, 먹이, 물은 진정을 더 앞당깁니다.</strong></p>
+<h3 id="단백질-개는-육식동물입니다">단백질: 개는 육식동물입니다</h3>
+<p>배를 채우는 것과 제대로 먹이는 것은 다릅니다. 허기와 별개로 개에게는 <strong>두 번째 시계</strong>가 있습니다. 마지막 단백질 이후로 흐른 시간입니다. 단백질 없이 <strong>게임 내 24시간</strong>이 지나면 <strong>쇠약함</strong> 상태가 되고, 전용 무들이 화면에 뜨며 실질적인 페널티가 둘 붙습니다:</p>
+<ul>
+<li><strong>물기 피해가 절반.</strong> 네 번 때려 좀비를 죽이던 개가 여덟 번 필요해집니다.</li>
+<li><strong>명령을 무시할 확률 +25%</strong>, 평소 복종 확률 위에 더해집니다. 절대 불복하지 않는 복종 10의 개도 쇠약한 동안에는 다시 말을 안 듣습니다.</li>
+</ul>
+<p><strong>무엇이 단백질인가:</strong> 모든 짐승과 새와 사냥감의 고기, 생선과 해산물, 달걀, 소시지, 베이컨, 그리고 <strong>개 사료</strong>(마른 자루와 딴 통조림). 채소, 과일, 빵, 파스타, 유제품, 독성이나 상한 음식은 해당되지 않습니다.</p>
+<p><strong>있냐 없냐가 아니라 양의 문제입니다.</strong> 한 끼는 크기만큼 시계를 되돌립니다. 부스러기가 한 접시를 대신하지는 못하지만, 부스러기도 쌓입니다:</p>
+<div class="tw"><table><thead><tr>
+<th>무엇을 주었나</th>
+<th>시계를 얼마나 되돌리나</th>
+</tr></thead><tbody>
+<tr>
+<td>햄, 사료 자루</td>
+<td>24시간을 한 번에 초기화</td>
+</tr>
+<tr>
+<td>스테이크, 간 고기, 토끼, 닭, 딴 사료 통조림</td>
+<td>24시간 초기화</td>
+</tr>
+<tr>
+<td>육포</td>
+<td>24시간 초기화</td>
+</tr>
+<tr>
+<td>작은 동물의 고기</td>
+<td>18시간</td>
+</tr>
+<tr>
+<td>베이컨</td>
+<td>약 14시간</td>
+</tr>
+<tr>
+<td>달걀</td>
+<td>약 8시간</td>
+</tr>
+<tr>
+<td>얇게 썬 베이컨</td>
+<td>약 5시간</td>
+</tr>
+<tr>
+<td>베이컨 부스러기</td>
+<td>약 1시간</td>
+</tr>
+</tbody></table></div>
+<p><strong>네 가지 경로 모두 인정됩니다:</strong> 손으로 주기, 바닥에 둔 그릇, 견사(맡겨둔 개), 그리고 스스로 사냥해 먹은 먹이. 손으로 줄 때는 개가 거의 배불러 한 입만 베어물어도 <strong>아이템 전체</strong>로 칩니다.</p>
+<p><strong>시계는 세상에 살아 있는 개에게만 흐릅니다.</strong> 견사에 있거나, 안겨 있거나, 차 안에 있거나, 주인이 접속을 끊었거나, 농장 자리를 지키는 개는 그동안 <strong>아무것도 쌓지 않습니다</strong>. 허기와 갈증이 오르지 않는 것과 같습니다.</p>
+<p>샌드박스 옵션 <strong><span class="ig">개에게는 단백질이 필요함</span></strong>으로 끌 수 있습니다. 끄면 허기와 갈증만 중요해집니다.</p>
+<blockquote class="quote"><strong>채소만 먹는 개가 죽지는 않습니다</strong>, 다만 나쁜 개가 됩니다: 절반만 때리고 말을 듣지 않습니다. 그릇으로 플레이한다면 <strong>사료 자루를 그릇에</strong> 부어 두면 문제가 저절로 해결됩니다.</blockquote>
 <h3 id="직접-먹이-주기">직접 먹이 주기</h3>
 <p>개를 우클릭 → <strong><span class="ig">먹이 주기</span></strong>.</p>
 <ul>
@@ -1018,6 +1070,32 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>죽음은 되돌릴 수 없습니다.</strong> 리스폰은 없습니다. <em><span class="ig">당신의 믹스견이(가) 죽었습니다.</span></em> 안장 가방과 그 안에 들어 있던 것은 바닥에 떨어집니다. 다른 개가 있다면 그 개가 자동으로 활성 동반자가 됩니다.</p>
 <p>좀비는 당신의 개를 죽이지 않습니다. <strong>먹이 주는 것을 잊으면 죽습니다.</strong></p>
+<hr>
+<h3 id="상실">상실</h3>
+<p>유대를 맺은 개가 죽으면 캐릭터는 <strong>상실에 빠집니다</strong>. 개의 이름과 함께 <strong><span class="ig">상실감</span></strong> 무들이 뜼고 슬플이 한 번에 치솟습니다. 이를 끄는 옵션은 없습니다.</p>
+<p>무게는 유대에 따라 달라지며, 슬플은 기간이 끝날 때까지 <strong>저절로 가라앉습니다</strong>:</p>
+<div class="tw"><table><thead><tr>
+<th>개의 충성심</th>
+<th>죽는 순간의 슬플</th>
+<th>지속 시간</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (막 길들임)</td>
+<td>20 포인트</td>
+<td>게임 내 4시간</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 포인트</td>
+<td>게임 내 26시간</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 포인트</td>
+<td>게임 내 48시간</td>
+</tr>
+</tbody></table></div>
+<p>평범한 슬플이므로 캐릭터의 기분을 올리는 방법은 모두 그대로 통합니다: 독서, 좋은 음식, 그리고 <strong>다른 개 쓿다듬기</strong>. 직접 덜어낸 만큼은 되돌아오지 않습니다. 슬플이 높은 동안에는 게임 자체의 불행 무들이 <strong>모든 행동을 느리게</strong> 만듭니다.</p>
 <h2 id="8-충성도">8. 충성도</h2>
 <p>충성도는 0에서 100까지의 수치로, 개가 당신을 얼마나 믿는지를 나타냅니다.</p>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">개의 명령 불복종 허용</span></strong> 옵션이 켜져 있으면(기본값입니다) 훈련이 안 된 개가 가끔 그냥 당신을 무시합니다: <em><span class="ig">믹스견 렉스이(가) 딴짓을 하며 당신을 무시합니다.</span></em></p>
 <ul>
 <li>확률은 <strong>복종 0에서 30%로 시작</strong>해서 <strong>복종 10이 되면 0%까지 떨어집니다</strong>.</li>
+<li><strong><a href="#단백질-개는-육식동물입니다">쇠약함</a></strong> 상태의 개는 그 위에 <strong>+25%</strong>를 더합니다. 복종 10의 개가 다시 불복하게 만드는 유일한 요인입니다.</li>
 <li><strong>곧바로 같은 명령을 다시 내리면 반드시 통합니다.</strong> 연달아 두 번 무시하는 일은 없습니다.</li>
 <li><strong>무시당한 명령도 똑같이 훈련이 됩니다</strong>. 경험치를 버린 게 아닙니다.</li>
 <li><strong>직접 내리는 명령</strong>에만 적용됩니다. 따라오기, 기다리기, 경계, 이리 오기, 공격, 그리고 재주입니다. 먹이 주기, 물 주기, 쓰다듬기, 안장 가방, <strong>물어와</strong>, 행동 토글(경계 모드, 자동 보호, 사냥, 가축 관리)은 전혀 영향을 받지 않습니다.</li>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>알림만</td>
 </tr>
 <tr>
+<td><strong>쇠약함</strong></td>
+<td>24시간 단백질 없음</td>
+<td><strong>물기 피해 절반, 명령 무시 확률 +25%.</strong> <a href="#단백질-개는-육식동물입니다">단백질</a> 참조</td>
+</tr>
+<tr>
 <td><strong>푹 쉼</strong></td>
 <td>개 곁에서 잠을 잤을 때</td>
 <td>패닉, 스트레스, 슬픔, 지루함이 빠르게 가시고 덜 피로해집니다. 기본 지속 시간은 게임 내 2시간</td>
+</tr>
+<tr>
+<td><strong>상실감</strong></td>
+<td>유대를 맺은 개가 죽음</td>
+<td>무거운 슬플. 게임 내 최대 48시간에 걸촐 가라앉음. <a href="#상실">상실</a> 참조</td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>모든 견종 moodle에 똑같이 적용되는 규칙:</strong> <strong>충성도가 바닥이거나, 아프거나, 배고픔이나 목마름이 높은 개는 아무 보너스도 주지 않습니다</strong>. moodle이 그냥 꺼집니다. 잘 돌본 개가 제 몫을 합니다.</blockquote>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>배고픔 및 목마름 속도 배율</td>
 <td>1.0</td>
 <td>두 수치를 함께 조절합니다. <strong>0이면 완전히 멈춰서 개가 다시는 먹지 않아도 됩니다</strong></td>
+</tr>
+<tr>
+<td>개에게는 단백질이 필요함</td>
+<td>켜짐</td>
+<td>고기, 생선, 달걀, 사료 없이 24시간이면 개가 <strong>쇠약함</strong>: 피해 절반, 불복종 +25%</td>
 </tr>
 <tr>
 <td>일일 충성도 감소량</td>

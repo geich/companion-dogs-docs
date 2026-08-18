@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-nhu-cầu-và-chăm-sóc" data-id="7-nhu-cầu-và-chăm-sóc">7. Nhu cầu và chăm sóc</a>
 <div class="sub">
 <a class="s3" href="#căng-thẳng-đến-từ-đâu" data-id="căng-thẳng-đến-từ-đâu">Căng thẳng đến từ đâu</a>
+<a class="s3" href="#chất-đạm-chó-là-loài-ăn-thịt" data-id="chất-đạm-chó-là-loài-ăn-thịt">Chất đạm: chó là loài ăn thịt</a>
 <a class="s3" href="#cho-ăn-bằng-tay" data-id="cho-ăn-bằng-tay">Cho ăn bằng tay</a>
 <a class="s3" href="#cho-uống-nước" data-id="cho-uống-nước">Cho uống nước</a>
 <a class="s3" href="#vuốt-ve" data-id="vuốt-ve">Vuốt ve</a>
 <a class="s3" href="#nấc-thang-bỏ-bê" data-id="nấc-thang-bỏ-bê">Nấc thang bỏ bê</a>
+<a class="s3" href="#nỗi-đau-mất-mát" data-id="nỗi-đau-mất-mát">Nỗi đau mất mát</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>Chó cỏ không thể tự giết một con zombie.</strong> Nó ghim con zombie ở mức 10% máu rồi dừng lại. Đây là chủ ý và không có thiết lập sandbox nào thay đổi được. Vai trò của nó là <strong>quật ngã con zombie</strong> và câu giờ cho bạn.</li>
 <li>Tất cả các giống còn lại <strong>đều kết liễu được</strong>.</li>
+<li>Con chó <strong><a href="#chất-đạm-chó-là-loài-ăn-thịt">Suy nhược</a></strong>, đã 24 giờ không ăn đạm, <strong>đánh bằng nửa sức</strong>. Đó là khác biệt giữa việc kết liễu zombie và bị kẹt lại với nó.</li>
 </ul>
 <p>Bảng sát thương của từng giống nằm trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</p>
 <p><strong>Quật ngã zombie:</strong> mỗi cú đánh đều có khả năng quật ngã, bắt đầu ở 10% và lên tới 50% khi Chiến đấu đạt cấp tối đa.</p>
@@ -987,6 +990,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Một con chó đang hoảng loạn <strong>thì ngừng đánh nhau, ngừng canh gác và ngừng làm trò khéo</strong>. Nó vẫn chạy tới chỗ bạn khi được gọi.</p>
 <p>Tin tốt: <strong>căng thẳng do chiến đấu tan rất nhanh</strong> khi rời khỏi trận đánh. Một thanh đầy sẽ cạn trong khoảng <strong>2 giờ trong game</strong>. <strong>Vuốt ve, cho ăn và cho uống nước còn làm nó nhanh hơn nữa.</strong></p>
+<h3 id="chất-đạm-chó-là-loài-ăn-thịt">Chất đạm: chó là loài ăn thịt</h3>
+<p>Làm đầy bụng không giống với cho ăn tử tế. Ngoài cơn đói, chó còn có <strong>chiếc đồng hồ thứ hai</strong>: thời gian kể từ bữa đạm gần nhất. Sau <strong>24 giờ trong game</strong> không có đạm, nó trở nên <strong>Suy nhược</strong>, có moodle riêng trên màn hình và hai hình phạt có thật:</p>
+<ul>
+<li><strong>Sát thương cắn giảm một nửa.</strong> Con chó từng hạ một zombie sau bốn cú giờ cần tới tám cú.</li>
+<li><strong>+25% khả năng phớt lờ mệnh lệnh</strong>, cộng thêm vào khả năng thông thường của Vâng lời. Ngay cả con chó Vâng lời 10, vốn không bao giờ cãi, cũng lì trở lại khi đang Suy nhược.</li>
+</ul>
+<p><strong>Cái gì được tính là đạm:</strong> thịt của mọi loài thú, gia cầm, thú săn, cá và hải sản, trứng, xúc xích, thịt xông khói, và cả <strong>thức ăn cho chó</strong> (bao khô và hộp đã mở). Không tính rau, trái cây, bánh mì, mì ống, sản phẩm từ sữa, cũng như đồ ăn độc hại hay ôi thiu.</p>
+<p><strong>Không phải có hay không, mà là bao nhiêu.</strong> Mỗi bữa ăn trừ vào đồng hồ theo kích cỡ của nó. Một mẩu vụn không bằng một đĩa đầy, nhưng các mẩu vụn cộng dồn lại:</p>
+<div class="tw"><table><thead><tr>
+<th>Thứ bạn đã cho</th>
+<th>Trừ được bao nhiêu trên đồng hồ</th>
+</tr></thead><tbody>
+<tr>
+<td>Giăm bông, bao thức ăn cho chó</td>
+<td>Xóa sạch 24h trong một lần</td>
+</tr>
+<tr>
+<td>Bít tết, thịt xay, thỏ, gà, hộp thức ăn đã mở</td>
+<td>Xóa sạch 24h</td>
+</tr>
+<tr>
+<td>Thịt khô</td>
+<td>Xóa sạch 24h</td>
+</tr>
+<tr>
+<td>Thịt thú nhỏ</td>
+<td>18 giờ</td>
+</tr>
+<tr>
+<td>Thịt xông khói</td>
+<td>~14 giờ</td>
+</tr>
+<tr>
+<td>Trứng</td>
+<td>~8 giờ</td>
+</tr>
+<tr>
+<td>Lát thịt xông khói mỏng</td>
+<td>~5 giờ</td>
+</tr>
+<tr>
+<td>Vụn thịt xông khói</td>
+<td>~1 giờ</td>
+</tr>
+</tbody></table></div>
+<p><strong>Cả bốn con đường đều tính:</strong> cho ăn bằng tay, từ bát đặt dưới đất, từ cũi (chó đang cất), và con mồi nó tự săn và ăn. Cho ăn bằng tay tính <strong>cả món đồ</strong>, kể cả khi chó chỉ gặm một miếng vì đã gần no.</p>
+<p><strong>Đồng hồ chỉ chạy khi chó còn sống trong thế giới.</strong> Chó ở trong cũi, trên tay, trong xe, khi chủ mất kết nối hoặc đang trực trông nông trại thì <strong>không tích lũy gì cả</strong> trong lúc ở đó, hệt như đói và khát cũng không tăng.</p>
+<p>Tắt bằng tùy chọn sandbox <strong><span class="ig">Chó cần chất đạm</span></strong>. Khi tắt, chỉ còn đói và khát là quan trọng.</p>
+<blockquote class="quote"><strong>Con chó chỉ ăn rau sẽ không chết</strong>, nhưng thành một con chó tệ: đánh bằng nửa sức và không nghe lời. Nếu bạn chơi kiểu dùng bát, hãy đổ <strong>một bao thức ăn cho chó vào bát</strong> và vấn đề tự giải quyết.</blockquote>
 <h3 id="cho-ăn-bằng-tay">Cho ăn bằng tay</h3>
 <p>Nhấp chuột phải vào con chó → <strong><span class="ig">Cho ăn</span></strong>.</p>
 <ul>
@@ -1018,6 +1070,32 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>Cái chết là vĩnh viễn.</strong> Không có chuyện hồi sinh. <em><span class="ig">Chó cỏ của bạn đã chết.</span></em> Túi yên và mọi thứ bên trong rơi xuống đất. Nếu bạn còn con chó khác, con đó tự động trở thành con đang được chọn.</p>
 <p>Zombie không giết được con chó của bạn. <strong>Quên cho nó ăn thì có.</strong></p>
+<hr>
+<h3 id="nỗi-đau-mất-mát">Nỗi đau mất mát</h3>
+<p>Khi một con chó đã gắn bó với bạn chết, nhân vật sẽ <strong>chìm trong đau buồn</strong>: moodle <strong><span class="ig">Đau buồn</span></strong> hiện ra kèm tên con chó, và nỗi buồn tăng vọt ngay lập tức. Không có tùy chọn nào để tắt điều này.</p>
+<p>Mức độ nặng nhẹ tùy vào mối gắn bó, và nỗi buồn <strong>tự nguôi dần</strong> cho đến khi biến mất ở cuối khoảng thời gian:</p>
+<div class="tw"><table><thead><tr>
+<th>Lòng trung thành của chó</th>
+<th>Nỗi buồn lúc chết</th>
+<th>Kéo dài bao lâu</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (vừa thuần hóa)</td>
+<td>20 điểm</td>
+<td>4 giờ trong game</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 điểm</td>
+<td>26 giờ trong game</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 điểm</td>
+<td>48 giờ trong game</td>
+</tr>
+</tbody></table></div>
+<p>Đây là nỗi buồn thông thường, nên mọi thứ giúp nhân vật vui lên vẫn có tác dụng: đọc sách, ăn món ngon và <strong>vuốt ve một con chó khác</strong>. Phần bạn đã xoa dịu được sẽ không bao giờ bị lấy lại. Khi nỗi buồn còn cao, moodle bất hạnh của chính trò chơi khiến <strong>mọi hành động chậm hơn</strong>.</p>
 <h2 id="8-độ-trung-thành">8. Độ trung thành</h2>
 <p>Độ trung thành chạy từ 0 đến 100, cho biết con chó tin bạn tới mức nào.</p>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Khi tùy chọn <strong><span class="ig">Chó có thể không nghe lời</span></strong> đang bật (mặc định là bật), một con chó chưa huấn luyện đôi lúc sẽ phớt lờ bạn: <em><span class="ig">Chó cỏ Rex bị phân tâm và phớt lờ bạn.</span></em></p>
 <ul>
 <li>Tỷ lệ bắt đầu ở <strong>30% khi Vâng lời cấp 0</strong> và về <strong>0% khi Vâng lời cấp 10</strong>.</li>
+<li>Con chó <strong><a href="#chất-đạm-chó-là-loài-ăn-thịt">Suy nhược</a></strong> cộng thêm <strong>+25%</strong> lên trên đó. Đây là thứ duy nhất khiến con chó Vâng lời 10 cãi lời trở lại.</li>
 <li><strong>Ra lại mệnh lệnh ngay sau đó thì luôn ăn.</strong> Nó không bao giờ phớt lờ bạn hai lần liên tiếp.</li>
 <li><strong>Mệnh lệnh bị phớt lờ vẫn tính là huấn luyện</strong>, nên không phí XP đâu.</li>
 <li>Chỉ áp dụng cho <strong>mệnh lệnh trực tiếp</strong>: đi theo, đứng yên, canh gác, lại đây, tấn công và các trò khéo. Nó không bao giờ ảnh hưởng tới cho ăn, cho uống nước, vuốt ve, túi yên, <strong>Gọi về</strong>, hay các công tắc hành vi (cảnh giới, tự bảo vệ, săn mồi, vật nuôi).</li>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Chỉ để cảnh báo</td>
 </tr>
 <tr>
+<td><strong>Suy nhược</strong></td>
+<td>24h không ăn đạm</td>
+<td><strong>Sát thương cắn giảm nửa và +25% khả năng phớt lờ mệnh lệnh.</strong> Xem <a href="#chất-đạm-chó-là-loài-ăn-thịt">Chất đạm</a></td>
+</tr>
+<tr>
 <td><strong>Ngủ ngon</strong></td>
 <td>Bạn đã ngủ cạnh con chó</td>
 <td>Giảm hoảng loạn, căng thẳng, buồn bã và chán chường, đồng thời bạn mệt chậm hơn. Mặc định kéo dài 2 giờ trong game</td>
+</tr>
+<tr>
+<td><strong>Đau buồn</strong></td>
+<td>Một con chó đã gắn bó với bạn chết</td>
+<td>Nỗi buồn nặng nề, nguôi dần trong tối đa 48 giờ trong game. Xem <a href="#nỗi-đau-mất-mát">Nỗi đau mất mát</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>Quy tắc đúng với mọi moodle của các giống chó:</strong> một con chó <strong>không còn trung thành, đang bệnh, hoặc đang đói khát nặng thì không cho bạn lợi ích nào cả</strong>. Moodle chỉ đơn giản là tắt đi. Chó được chăm tốt mới là chó có ích.</blockquote>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Tốc độ đói và khát</td>
 <td>1,0</td>
 <td>Điều chỉnh cả hai. <strong>Đặt 0 là đóng băng, con chó không bao giờ cần ăn nữa</strong></td>
+</tr>
+<tr>
+<td>Chó cần chất đạm</td>
+<td>Bật</td>
+<td>24h không có thịt, cá, trứng hay thức ăn cho chó khiến chó <strong>Suy nhược</strong>: nửa sát thương và +25% không vâng lời</td>
 </tr>
 <tr>
 <td>Mức giảm trung thành mỗi ngày</td>

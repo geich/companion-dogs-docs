@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-necessidades-e-cuidado" data-id="7-necessidades-e-cuidado">7. Necessidades e cuidado</a>
 <div class="sub">
 <a class="s3" href="#de-onde-vem-o-estresse" data-id="de-onde-vem-o-estresse">De onde vem o estresse</a>
+<a class="s3" href="#proteína-ele-é-carnívoro" data-id="proteína-ele-é-carnívoro">Proteína: ele é carnívoro</a>
 <a class="s3" href="#alimentar-à-mão" data-id="alimentar-à-mão">Alimentar à mão</a>
 <a class="s3" href="#dar-água" data-id="dar-água">Dar água</a>
 <a class="s3" href="#carinho" data-id="carinho">Carinho</a>
 <a class="s3" href="#a-escada-da-negligência" data-id="a-escada-da-negligência">A escada da negligência</a>
+<a class="s3" href="#o-luto" data-id="o-luto">O luto</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>O <strong>Caramelo não consegue matar um zumbi sozinho</strong>. Ele trava o zumbi em 10% de vida e para. Isso é de propósito e nenhum ajuste de sandbox muda. O papel dele é <strong>derrubar o zumbi</strong> e te dar tempo.</li>
 <li>Todas as outras raças <strong>conseguem finalizar</strong>.</li>
+<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong>, de 24 horas sem comer proteína, <strong>bate pela metade</strong>. É a diferença entre finalizar o zumbi e ficar preso nele.</li>
 </ul>
 <p>A tabela de dano por raça está no <a href="breeds.html" class="xlink">manual de raças</a>.</p>
 <p><strong>Derrubar zumbi:</strong> cada golpe tem chance de derrubar, começando em 10% e chegando a 50% com Combate no máximo.</p>
@@ -987,10 +990,59 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Um cão em pânico <strong>para de lutar, de vigiar e de fazer truque</strong>. Ele ainda corre até você quando chamado.</p>
 <p>A boa notícia: <strong>o estresse de combate some rápido</strong> fora da luta. Uma barra cheia se esvazia em cerca de <strong>2 horas de jogo</strong>. <strong>Carinho, comida e água aceleram ainda mais.</strong></p>
+<h3 id="proteína-ele-é-carnívoro">Proteína: ele é carnívoro</h3>
+<p>Encher a barriga não é a mesma coisa que alimentar bem. Além da fome, o cão tem um <strong>segundo relógio</strong>: o tempo desde a última proteína. Passadas <strong>24 horas de jogo</strong> sem proteína ele fica <strong>Fraco</strong>, com moodle próprio na sua tela e duas penalidades reais:</p>
+<ul>
+<li><strong>Metade do dano de mordida.</strong> Um cão que matava um zumbi em quatro golpes passa a precisar de oito.</li>
+<li><strong>+25% de chance de ignorar uma ordem</strong>, somados por cima da chance normal de Obediência. Mesmo um cão de Obediência 10, que nunca desobedece, volta a teimar enquanto está Fraco.</li>
+</ul>
+<p><strong>O que conta como proteína:</strong> carne de qualquer bicho, ave, caça, peixe e frutos do mar, ovo, linguiça, bacon, e também <strong>ração de cachorro</strong> (o saco seco e a lata aberta). Não conta legume, fruta, pão, massa, laticínio, nem comida tóxica ou estragada.</p>
+<p><strong>Não é sim ou não, é quantidade.</strong> Cada refeição abate o relógio conforme o tamanho dela. Uma migalha não vale um prato, mas migalhas somam:</p>
+<div class="tw"><table><thead><tr>
+<th>O que você deu</th>
+<th>Quanto do relógio abate</th>
+</tr></thead><tbody>
+<tr>
+<td>Presunto, saco de ração</td>
+<td>Zera as 24h de uma vez</td>
+</tr>
+<tr>
+<td>Bife, carne moída, coelho, frango, lata de ração aberta</td>
+<td>Zera as 24h</td>
+</tr>
+<tr>
+<td>Jerky de carne</td>
+<td>Zera as 24h</td>
+</tr>
+<tr>
+<td>Carne de bicho pequeno</td>
+<td>18 horas</td>
+</tr>
+<tr>
+<td>Bacon</td>
+<td>~14 horas</td>
+</tr>
+<tr>
+<td>Ovo</td>
+<td>~8 horas</td>
+</tr>
+<tr>
+<td>Fatia fina de bacon</td>
+<td>~5 horas</td>
+</tr>
+<tr>
+<td>Farelo de bacon</td>
+<td>~1 hora</td>
+</tr>
+</tbody></table></div>
+<p><strong>Os quatro caminhos valem:</strong> na mão, da tigela largada, do canil (cão guardado), e a presa que ele mesmo caçou e comeu. Alimentar na mão conta o <strong>item inteiro</strong>, mesmo que o cão só mordisque um pedaço porque já estava quase saciado.</p>
+<p><strong>O relógio só corre com o cão vivo no mundo.</strong> Cão no canil, no colo, dentro de veículo, com o dono desconectado ou de posto cuidando da fazenda <strong>não acumula nada</strong> enquanto está ali, do mesmo jeito que fome e sede não sobem.</p>
+<p>Desliga na opção de sandbox <strong><span class="ig">Cães precisam de proteína</span></strong>. Desligada, só fome e sede importam.</p>
+<blockquote class="quote"><strong>Cão que só come vegetal não morre</strong>, mas vira um cão ruim: bate pela metade e não escuta. Se você joga de tigela, jogue <strong>um saco de ração dentro dela</strong> e o problema se resolve sozinho.</blockquote>
 <h3 id="alimentar-à-mão">Alimentar à mão</h3>
 <p>Botão direito no cão → <strong><span class="ig">Alimentar</span></strong>.</p>
 <ul>
-<li>Serve <strong>qualquer comida</strong> que não esteja podre e mate fome. Não existe restrição a carne ou ração, só a lista de comida tóxica.</li>
+<li>Serve <strong>qualquer comida</strong> que não esteja podre e mate fome. Para matar a fome não existe restrição a carne ou ração, só a lista de comida tóxica. Para o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a>, aí sim o tipo importa.</li>
 <li>Efeito: baixa a fome, hidrata se o item for suculento, <strong>+0,10 de vida</strong>, alívio de estresse e um <strong>ganho de lealdade proporcional ao tanto de fome que a porção matou</strong>.</li>
 <li>Só a mordida necessária é consumida.</li>
 <li>Mensagem: <em><span class="ig">O Caramelo está saciado.</span></em></li>
@@ -1018,6 +1070,31 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>A morte é permanente.</strong> Não existe respawn. <em><span class="ig">Seu Caramelo morreu.</span></em> O alforje e tudo que estava dentro caem no chão. Se você tiver outro cão, ele é promovido a ativo automaticamente.</p>
 <p>Zumbi não mata seu cão. <strong>Esquecer de alimentar, mata.</strong></p>
+<h3 id="o-luto">O luto</h3>
+<p>Quando um cão vinculado morre, o personagem <strong>entra de luto</strong>: aparece o moodle <strong><span class="ig">De luto</span></strong> com o nome dele, e a tristeza sobe de uma vez. Não existe opção para desligar isso.</p>
+<p>O peso depende do vínculo, e a tristeza <strong>cede sozinha</strong> até desaparecer no fim da janela:</p>
+<div class="tw"><table><thead><tr>
+<th>Lealdade do cão</th>
+<th>Tristeza no momento da morte</th>
+<th>Quanto dura</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (recém-domado)</td>
+<td>20 pontos</td>
+<td>4 horas de jogo</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 pontos</td>
+<td>26 horas de jogo</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 pontos</td>
+<td>48 horas de jogo</td>
+</tr>
+</tbody></table></div>
+<p>É tristeza comum, então tudo que anima o personagem continua valendo: ler, comer algo bom e <strong>fazer carinho em outro cão</strong>. O alívio que você conquistar não é desfeito. Enquanto a tristeza estiver alta, o moodle de tristeza do próprio jogo deixa <strong>toda ação mais lenta</strong>.</p>
 <h2 id="8-lealdade">8. Lealdade</h2>
 <p>A lealdade vai de 0 a 100 e é a medida de quanto o cão confia em você.</p>
 <ul>
@@ -1090,6 +1167,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>7</td>
 </tr>
 </tbody></table></div>
+<p>A tigela também <strong>lembra quanto do estoque dela é proteína</strong>. O que você despeja de carne, peixe, ovo ou ração fica marcado, e quando o cão come dali essa parte paga o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a> como se você tivesse alimentado na mão. Tigela cheia só de legume mata a fome dele e mais nada.</p>
 <p><strong>Se o item for maior que o espaço livre, a tigela enche até o topo e devolve o resto para você.</strong> Numa tigela em 80 pontos, um saco de ração leva ela a 100 e volta para o seu inventário valendo 40. A mensagem <em><span class="ig">A tigela não tem espaço para tudo isso.</span></em> só aparece com a tigela <strong>completamente cheia</strong>.</p>
 <h3 id="como-o-cão-usa">Como o cão usa</h3>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Com a opção <strong><span class="ig">Cães podem desobedecer</span></strong> ligada (é o padrão), um cão sem treino às vezes simplesmente ignora você: <em><span class="ig">Caramelo Rex se distrai e ignora você.</span></em></p>
 <ul>
 <li>A chance começa em <strong>30% na Obediência 0</strong> e chega a <strong>0% na Obediência 10</strong>.</li>
+<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong> soma <strong>+25%</strong> por cima disso. É a única coisa que faz um cão de Obediência 10 voltar a desobedecer.</li>
 <li><strong>Repetir a ordem em seguida sempre funciona.</strong> Ele nunca ignora duas vezes seguidas.</li>
 <li><strong>A ordem ignorada treina ele do mesmo jeito</strong>, então não é XP perdido.</li>
 <li>Vale só para <strong>ordens diretas</strong>: seguir, ficar, vigiar, vir, atacar e truques. Nunca afeta alimentar, dar água, carinho, alforje, <strong>Trazer</strong>, nem os ajustes de comportamento (sentinela, auto-proteção, caça, fazenda).</li>
@@ -1220,7 +1299,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Não é pouco: <strong>é assim que ele treina Caça no começo</strong>. Aponte, deixe ele apontar, e o nível sobe.</p>
 <p><strong>Nível 3: ele começa a matar caça pequena.</strong></p>
 <ul>
-<li><strong>Se estiver com fome, ele come a presa.</strong> Você não fica com nada, mas ele mata a fome.</li>
+<li><strong>Se estiver com fome, ele come a presa.</strong> Você não fica com nada, mas ele mata a fome, e como é um bicho inteiro de carne fresca, isso <strong>zera o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a></strong>. Um cão caçador se mantém sozinho.</li>
 <li><strong>Se não estiver, ele mata creditando você</strong> e deixa a carcaça esfolável <strong>caída no chão, onde a caçada terminou</strong>. Ele avisa: <em><span class="ig">Seu cão abateu uma caça!</span></em>, mas <strong>quem vai buscar é você</strong>.</li>
 </ul>
 <p><strong>Nível 6: ele passa a trazer o abate até você.</strong> Selo <strong><span class="ig">Trazendo o abate</span></strong> e a mensagem <em><span class="ig">Seu cão arrastou o abate até você.</span></em> Isso vale <strong>só para caça pequena</strong>.</p>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Só aviso</td>
 </tr>
 <tr>
+<td><strong>Fraco</strong></td>
+<td>24h sem comer proteína</td>
+<td><strong>Metade do dano de mordida e +25% de chance de ignorar ordem.</strong> Ver <a href="#proteína-ele-é-carnívoro">Proteína</a></td>
+</tr>
+<tr>
 <td><strong>Bem Descansado</strong></td>
 <td>Você dormiu ao lado do cão</td>
 <td>Alivia pânico, estresse, tristeza e tédio, e você cansa mais devagar. Dura 2 horas de jogo por padrão</td>
+</tr>
+<tr>
+<td><strong>De luto</strong></td>
+<td>Um cão vinculado morreu</td>
+<td>Tristeza pesada que cede ao longo de até 48 horas de jogo. Ver <a href="#o-luto">O luto</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>Regra que vale para todos os moodles de raça:</strong> um cão <strong>desleal, doente, ou com fome ou sede alta não dá bônus nenhum</strong>. O moodle simplesmente desliga. Cão bem cuidado é cão que rende.</blockquote>
@@ -1613,7 +1702,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="aviso-de-instalação-em-co-op">Aviso de instalação em co-op</h3>
 <p><strong>Se o cão aparecer sem textura ou <span class="ig">amassado</span>:</strong> ative o Companion Dogs na <strong>lista de Mods do menu principal</strong> (não só na seleção do co-op) e <strong>feche o jogo por completo</strong> antes de carregar o save. O host do co-op precisa fazer o mesmo e reiniciar o servidor.</p>
 <h2 id="21-opções-de-sandbox">21. Opções de sandbox</h2>
-<p>Página <strong><span class="ig">Cachorros Companheiros</span></strong> nas configurações do mundo. São 34 opções.</p>
+<p>Página <strong><span class="ig">Cachorros Companheiros</span></strong> nas configurações do mundo. São 35 opções.</p>
 <blockquote class="quote"><strong>Lembre:</strong> no multiplayer, quem manda é a configuração <strong>do servidor</strong>. E em Project Zomboid as opções de sandbox são gravadas <strong>no save</strong>, então mudar depois exige editar o save ou começar um mundo novo.</blockquote>
 <h3 id="domesticação-e-spawn">Domesticação e spawn</h3>
 <div class="tw"><table><thead><tr>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Ritmo de fome e sede</td>
 <td>1.0</td>
 <td>Escala as duas. <strong>0 congela e o cão nunca mais precisa comer</strong></td>
+</tr>
+<tr>
+<td>Cães precisam de proteína</td>
+<td>Ligado</td>
+<td>24h sem carne, peixe, ovo ou ração deixam o cão <strong>Fraco</strong>: metade do dano e +25% de desobediência</td>
 </tr>
 <tr>
 <td>Perda de lealdade por dia</td>
@@ -1845,6 +1939,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>"O cão apareceu sem textura, todo amassado."</strong> Ative o mod na lista de Mods <strong>do menu principal</strong> e feche o jogo por completo antes de carregar o save. É o problema número um em co-op.</p>
 <p><strong>"Adicionei o mod e não aparece nada no meu save."</strong> O Project Zomboid ativa mod <strong>por save</strong>. Um mod adicionado depois não entra num mundo já criado, e o jogo <strong>não dá erro nenhum</strong>. Confira na tela de carregar save se o mod está marcado para aquele mundo.</p>
 <p><strong>"Meu cão não obedece."</strong> Olhe a mensagem. Se for <em>"não confia em você o bastante"</em>, é lealdade: alimente, dê água e faça carinho. Se for <em>"se distrai e ignora você"</em>, é falta de treino: <strong>repita a ordem, que a segunda sempre passa</strong>. Se for pânico ou ferimento, cuide dele primeiro.</p>
+<p><strong>"Meu cão ficou Fraco e não sai."</strong> Ele está há mais de 24 horas de jogo sem proteína, e o que resolve é <strong>quantidade</strong>, não o gesto de alimentar: um farelo de bacon tira uma hora do relógio, um bife tira o dia inteiro. Dê uma refeição de verdade (bife, coelho, frango, presunto, um saco de ração) ou jogue ração na tigela dele. Se o cão está saciado e recusa a comida, não tem problema: <strong>alimentar na mão conta o item inteiro</strong> mesmo que ele só mordisque. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a>.</p>
 <p><strong>"Meu cão não mata os zumbis, só derruba."</strong> Se ele é um <strong>Caramelo</strong>, é assim mesmo, de propósito, e nenhum ajuste muda. Pegue outra raça ou aceite o papel dele de derrubar para você terminar.</p>
 <p><strong>"O cão late toda hora e traz zumbi."</strong> São quatro fontes possíveis, todas controláveis: a <strong>sentinela em Alerta</strong> (mude para <strong>Discreto</strong>, que nunca late), o truque <strong>Distrair</strong> (o barulho é o objetivo dele), a <strong>caça</strong> (desligue o modo Caça) e o <strong>combate</strong>. Um cão estressado <strong>não</strong> late sozinho.</p>
 <p><strong>"Meu cão sumiu."</strong> Abra a janela no botão de patinha, vá na aba <strong>"Meus Cães"</strong> e use <strong>Trazer</strong>. Se ele estiver longe, o mod pede confirmação e o traz de volta com tudo. Cooldown de 2 horas de jogo por cão. O marcador no mapa também mostra a última posição vista.</p>

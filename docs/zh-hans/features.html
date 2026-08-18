@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-需求与照料" data-id="7-需求与照料">7. 需求与照料</a>
 <div class="sub">
 <a class="s3" href="#压力从哪里来" data-id="压力从哪里来">压力从哪里来</a>
+<a class="s3" href="#蛋白质狗是食肉动物" data-id="蛋白质狗是食肉动物">蛋白质：狗是食肉动物</a>
 <a class="s3" href="#手动喂食" data-id="手动喂食">手动喂食</a>
 <a class="s3" href="#喂水" data-id="喂水">喂水</a>
 <a class="s3" href="#抚摸" data-id="抚摸">抚摸</a>
 <a class="s3" href="#疏于照顾的连锁反应" data-id="疏于照顾的连锁反应">疏于照顾的连锁反应</a>
+<a class="s3" href="#悲痛" data-id="悲痛">悲痛</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>小卡犬没办法单独杀死僵尸。</strong>它会把僵尸压在 10% 生命值上就停手。这是有意设计的，沙盒怎么调都改不了。它的任务是<strong>把僵尸撂倒</strong>，替你争取时间。</li>
 <li>其他所有品种<strong>都能补上最后一下</strong>。</li>
+<li>24 小时没吃到蛋白质的<strong><a href="#蛋白质狗是食肉动物">虚弱</a></strong>的狗，<strong>只能打出一半的伤害</strong>。 这就是能不能补掉丧尸、还是被它缠住的差别。</li>
 </ul>
 <p>各品种的伤害数值表在<a href="breeds.html" class="xlink">品种手册</a>里。</p>
 <p><strong>撂倒僵尸：</strong>每一次攻击都有撂倒的几率，从 10% 起步，战斗满级时到 50%。</p>
@@ -987,6 +990,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>恐慌中的狗<strong>不再战斗、守卫，也不做技巧</strong>。但你叫它的时候，它还是会跑到你身边。</p>
 <p>好消息是：离开战斗以后，<strong>战斗压力消得很快</strong>。整整一条大约 <strong>2 个游戏小时</strong>就清空。<strong>抚摸、喂食和喂水还能让它更快平静下来。</strong></p>
+<h3 id="蛋白质狗是食肉动物">蛋白质：狗是食肉动物</h3>
+<p>把肚子填满和喂得好不是一回事。除了饥饿，狗还有<strong>第二个时钟</strong>：距离上一次摄入蛋白质的时间。<strong>游戏内 24 小时</strong>没有蛋白质，它就会<strong>虚弱</strong>，屏幕上出现专属心情图标，并带来两项实打实的惩罚：</p>
+<ul>
+<li><strong>撕咬伤害减半。</strong> 原本四下就能咬死一只丧尸的狗，现在要八下。</li>
+<li><strong>忽略命令的概率 +25%</strong>，叠加在服从度本身的概率之上。哪怕是从不违抗的服从度 10 的狗，在虚弱期间也会重新装聋。</li>
+</ul>
+<p><strong>什么算蛋白质：</strong> 各种野兽、家禽和猎物的肉，鱼和海鲜，蛋，香肠，培根，以及<strong>狗粮</strong>（干粮袋和开封的罐头）。蔬菜、水果、面包、意面、乳制品，以及有毒或腐坏的食物都不算。</p>
+<p><strong>这不是有或没有，而是分量。</strong> 每一餐按自身大小抵扣时钟。一点碎屑比不上一整盘，但碎屑会累加：</p>
+<div class="tw"><table><thead><tr>
+<th>你喂了什么</th>
+<th>抵扣多少时钟</th>
+</tr></thead><tbody>
+<tr>
+<td>火腿、狗粮袋</td>
+<td>一次性清零 24 小时</td>
+</tr>
+<tr>
+<td>牛排、肉末、兔肉、鸡肉、开封的狗粮罐头</td>
+<td>清零 24 小时</td>
+</tr>
+<tr>
+<td>肉干</td>
+<td>清零 24 小时</td>
+</tr>
+<tr>
+<td>小动物的肉</td>
+<td>18 小时</td>
+</tr>
+<tr>
+<td>培根</td>
+<td>约 14 小时</td>
+</tr>
+<tr>
+<td>蛋</td>
+<td>约 8 小时</td>
+</tr>
+<tr>
+<td>薄培根片</td>
+<td>约 5 小时</td>
+</tr>
+<tr>
+<td>培根碎</td>
+<td>约 1 小时</td>
+</tr>
+</tbody></table></div>
+<p><strong>四条路都算数：</strong> 手喂、地上的食盆、犬舍里（收起来的狗），以及它自己猎到并吃掉的猎物。手喂按<strong>整件物品</strong>计算，哪怕狗已经快吃饱、只啃了一口。</p>
+<p><strong>只有活在世界里的狗，时钟才会走。</strong> 待在犬舍、被抱着、在车里、主人掉线，或者在农场岗位上的狗，在那期间<strong>完全不累积</strong>，就像饥饿和口渴也不会上涨一样。</p>
+<p>可以用沙盒选项<strong>“狗需要蛋白质”</strong>关闭。关闭后就只剩饥饿和口渴重要了。</p>
+<blockquote class="quote"><strong>只吃蔬菜的狗不会死</strong>，但会变成一条不中用的狗：只有一半的力气，还不听话。如果你走食盆流，往<strong>盆里倒一袋狗粮</strong>，问题就自己解决了。</blockquote>
 <h3 id="手动喂食">手动喂食</h3>
 <p>右键点狗 → <strong>“喂食”</strong>。</p>
 <ul>
@@ -1018,6 +1070,32 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>死亡是永久的。</strong>没有复活。<em>“你的小卡犬已经死了。”</em>驮袋和里面的所有东西都会掉在地上。如果你还有别的狗，它会自动被提升为当前同伴。</p>
 <p>僵尸杀不死你的狗。<strong>忘了喂它，才会。</strong></p>
+<hr>
+<h3 id="悲痛">悲痛</h3>
+<p>当与你结下羁绊的狗死去时，角色会<strong>陷入悲痛</strong>：屏幕上出现带着狗名字的<strong>“悲痛”</strong>心情图标，悲伤会一次性飙升。没有任何选项可以关闭它。</p>
+<p>轻重取决于羁绊，悲伤会在这段时间里<strong>自行消退</strong>，直到彻底消失：</p>
+<div class="tw"><table><thead><tr>
+<th>狗的忠诚度</th>
+<th>死亡瞬间的悲伤</th>
+<th>持续多久</th>
+</tr></thead><tbody>
+<tr>
+<td>0（刚驯服）</td>
+<td>20 点</td>
+<td>游戏内 4 小时</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 点</td>
+<td>游戏内 26 小时</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 点</td>
+<td>游戏内 48 小时</td>
+</tr>
+</tbody></table></div>
+<p>这是普通的悲伤，所以一切能让角色开心的手段依然有效：看书、吃点好的，以及<strong>抚摸另一条狗</strong>。你争取到的缓解永远不会被抵消。悲伤高的时候，游戏本身的不快心情图标会让<strong>所有动作都变慢</strong>。</p>
 <h2 id="8-忠诚度">8. 忠诚度</h2>
 <p>忠诚度从 0 到 100，衡量的是这只狗有多信任你。</p>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>“狗可能不服从”</strong>这个选项开着的时候（默认就是开着的），没受过训练的狗有时候就是会无视你： <em>“小卡犬 Rex 分心了，没听你的。”</em></p>
 <ul>
 <li>几率从<strong>服从 0 级的 30%</strong> 起步，到<strong>服从 10 级降为 0%</strong>。</li>
+<li><strong><a href="#蛋白质狗是食肉动物">虚弱</a></strong>的狗在此之上再加 <strong>+25%</strong>。这是唯一会让服从度 10 的狗重新 违抗命令的因素。</li>
 <li><strong>紧接着把同样的命令再下一次，一定管用。</strong> 它绝不会连着两次无视你。</li>
 <li><strong>被无视的那次命令照样在训练它</strong>，所以经验不算白费。</li>
 <li>只对<strong>直接命令</strong>有效：跟随、停留、守卫、过来、攻击和技巧。喂食、喂水、抚摸、驮袋、<strong>召回</strong>， 还有那些行为开关（哨兵、自动守护、狩猎、农场照料）都不受影响。</li>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>只是提醒</td>
 </tr>
 <tr>
+<td><strong>虚弱</strong></td>
+<td>24 小时没吃蛋白质</td>
+<td><strong>撕咬伤害减半，忽略命令的概率 +25%。</strong> 参见<a href="#蛋白质狗是食肉动物">蛋白质</a></td>
+</tr>
+<tr>
 <td><strong>精神饱满</strong></td>
 <td>你在狗身边睡了一觉</td>
 <td>缓解恐慌、压力、悲伤和无聊，还让你更慢感到疲惫。默认持续2个游戏小时</td>
+</tr>
+<tr>
+<td><strong>悲痛</strong></td>
+<td>与你结下羁绊的狗死去</td>
+<td>沉重的悲伤，最长在游戏内 48 小时里逐渐消退。参见<a href="#悲痛">悲痛</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>所有品种moodle都适用的一条规则：</strong>一只<strong>不忠诚、生病，或者饥饿、口渴很高的狗不会给任何加成</strong>。moodle会直接关掉。照顾得好的狗才是能干活的狗。</blockquote>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>饥饿与口渴速度</td>
 <td>1.0</td>
 <td>同时缩放这两项。<strong>设为 0 就冻结了，狗再也不用吃东西</strong></td>
+</tr>
+<tr>
+<td>狗需要蛋白质</td>
+<td>开启</td>
+<td>24 小时没有肉、鱼、蛋或狗粮会让狗<strong>虚弱</strong>：伤害减半，不服从 +25%</td>
 </tr>
 <tr>
 <td>每日忠诚度衰减</td>

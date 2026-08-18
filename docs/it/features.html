@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-bisogni-e-cure" data-id="7-bisogni-e-cure">7. Bisogni e cure</a>
 <div class="sub">
 <a class="s3" href="#da-dove-arriva-lo-stress" data-id="da-dove-arriva-lo-stress">Da dove arriva lo stress</a>
+<a class="s3" href="#proteine-è-un-carnivoro" data-id="proteine-è-un-carnivoro">Proteine: è un carnivoro</a>
 <a class="s3" href="#dare-da-mangiare-a-mano" data-id="dare-da-mangiare-a-mano">Dare da mangiare a mano</a>
 <a class="s3" href="#dare-acqua" data-id="dare-acqua">Dare acqua</a>
 <a class="s3" href="#coccole" data-id="coccole">Coccole</a>
 <a class="s3" href="#la-scala-dellincuria" data-id="la-scala-dellincuria">La scala dell'incuria</a>
+<a class="s3" href="#il-lutto" data-id="il-lutto">Il lutto</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>Il <strong>Caramelo non riesce a uccidere uno zombie da solo</strong>. Blocca lo zombie al 10% di vita e si ferma. È voluto e nessuna impostazione sandbox lo cambia. Il suo ruolo è <strong>buttare a terra lo zombie</strong> e darti tempo.</li>
 <li>Tutte le altre razze <strong>riescono a finire il lavoro</strong>.</li>
+<li>Un cane <strong><a href="#proteine-è-un-carnivoro">Debole</a></strong>, da 24 ore senza proteine, <strong>picchia a metà</strong>. È la differenza tra finire lo zombi e restarci attaccato.</li>
 </ul>
 <p>La tabella dei danni per razza si trova nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</p>
 <p><strong>Buttare a terra:</strong> ogni colpo ha una probabilità di far cadere lo zombie, dal 10% iniziale fino al 50% con Combattimento al massimo.</p>
@@ -987,6 +990,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Un cane nel panico <strong>smette di combattere, di fare la guardia e di eseguire trucchi</strong>. Corre ancora da te quando lo chiami.</p>
 <p>La buona notizia: <strong>lo stress da combattimento sparisce in fretta</strong> fuori dalla mischia. Una barra piena si svuota in circa <strong>2 ore di gioco</strong>. <strong>Coccole, cibo e acqua velocizzano ancora di più.</strong></p>
+<h3 id="proteine-è-un-carnivoro">Proteine: è un carnivoro</h3>
+<p>Riempire la pancia non è la stessa cosa che nutrire bene. Oltre alla fame, il cane ha un <strong>secondo orologio</strong>: il tempo dall'ultima proteina. Passate <strong>24 ore di gioco</strong> senza proteine diventa <strong>Debole</strong>, con un moodle tutto suo sullo schermo e due penalità reali:</p>
+<ul>
+<li><strong>Metà del danno del morso.</strong> Un cane che uccideva uno zombi in quattro colpi ora ne serve otto.</li>
+<li><strong>+25% di probabilità di ignorare un ordine</strong>, sommato alla probabilità normale di Obbedienza. Anche un cane con Obbedienza 10, che non disobbedisce mai, torna a fare il sordo finché è Debole.</li>
+</ul>
+<p><strong>Cosa conta come proteina:</strong> carne di qualsiasi animale, pollame, selvaggina, pesce e frutti di mare, uovo, salsiccia, bacon, e anche il <strong>cibo per cani</strong> (il sacco secco e la lattina aperta). Non contano verdura, frutta, pane, pasta, latticini, né cibo tossico o andato a male.</p>
+<p><strong>Non è sì o no, è quantità.</strong> Ogni pasto scala l'orologio in base alla sua dimensione. Una briciola non vale un piatto, ma le briciole si sommano:</p>
+<div class="tw"><table><thead><tr>
+<th>Cosa gli hai dato</th>
+<th>Quanto scala dall'orologio</th>
+</tr></thead><tbody>
+<tr>
+<td>Prosciutto, sacco di cibo per cani</td>
+<td>Azzera le 24h in una volta</td>
+</tr>
+<tr>
+<td>Bistecca, carne macinata, coniglio, pollo, lattina aperta</td>
+<td>Azzera le 24h</td>
+</tr>
+<tr>
+<td>Carne essiccata</td>
+<td>Azzera le 24h</td>
+</tr>
+<tr>
+<td>Carne di animale piccolo</td>
+<td>18 ore</td>
+</tr>
+<tr>
+<td>Bacon</td>
+<td>~14 ore</td>
+</tr>
+<tr>
+<td>Uovo</td>
+<td>~8 ore</td>
+</tr>
+<tr>
+<td>Fetta sottile di bacon</td>
+<td>~5 ore</td>
+</tr>
+<tr>
+<td>Briciole di bacon</td>
+<td>~1 ora</td>
+</tr>
+</tbody></table></div>
+<p><strong>Valgono tutte e quattro le strade:</strong> a mano, dalla ciotola per terra, dal canile (cane messo via) e la preda che ha cacciato e mangiato da solo. Dare da mangiare a mano conta l'<strong>oggetto intero</strong>, anche se il cane ne mordicchia solo un pezzo perché era già quasi sazio.</p>
+<p><strong>L'orologio corre solo con il cane vivo nel mondo.</strong> Un cane nel canile, in braccio, dentro un veicolo, con il padrone disconnesso o di guardia alla fattoria <strong>non accumula nulla</strong> mentre sta lì, allo stesso modo in cui fame e sete non salgono.</p>
+<p>Si disattiva con l'opzione sandbox <strong><span class="ig">I cani hanno bisogno di proteine</span></strong>. Disattivata, contano solo fame e sete.</p>
+<blockquote class="quote"><strong>Un cane che mangia solo verdura non muore</strong>, ma diventa un cane scadente: picchia a metà e non ascolta. Se giochi con la ciotola, buttaci <strong>un sacco di cibo per cani dentro</strong> e il problema si risolve da solo.</blockquote>
 <h3 id="dare-da-mangiare-a-mano">Dare da mangiare a mano</h3>
 <p>Tasto destro sul cane → <strong><span class="ig">Dai cibo</span></strong>.</p>
 <ul>
@@ -1018,6 +1070,32 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>La morte è definitiva.</strong> Non esiste respawn. <em><span class="ig">Il tuo Caramelo è morto.</span></em> Le bisacce e tutto quello che c'era dentro cadono per terra. Se hai un altro cane, viene promosso ad attivo in automatico.</p>
 <p>Gli zombie non uccidono il tuo cane. <strong>Dimenticarsi di dargli da mangiare, sì.</strong></p>
+<hr>
+<h3 id="il-lutto">Il lutto</h3>
+<p>Quando un cane legato a te muore, il personaggio <strong>entra in lutto</strong>: compare il moodle <strong><span class="ig">In lutto</span></strong> con il nome del cane e la tristezza sale di colpo. Non c'è un'opzione per disattivarlo.</p>
+<p>Quanto pesa dipende dal legame, e la tristezza <strong>cala da sola</strong> fino a sparire alla fine della finestra:</p>
+<div class="tw"><table><thead><tr>
+<th>Lealtà del cane</th>
+<th>Tristezza al momento della morte</th>
+<th>Quanto dura</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (appena addomesticato)</td>
+<td>20 punti</td>
+<td>4 ore di gioco</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 punti</td>
+<td>26 ore di gioco</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 punti</td>
+<td>48 ore di gioco</td>
+</tr>
+</tbody></table></div>
+<p>È tristezza normale, quindi tutto ciò che tira su il personaggio funziona ancora: leggere, mangiare qualcosa di buono e <strong>accarezzare un altro cane</strong>. Il sollievo che ottieni non viene mai annullato. Finché la tristezza è alta, il moodle di infelicità del gioco rende <strong>ogni azione più lenta</strong>.</p>
 <h2 id="8-lealtà">8. Lealtà</h2>
 <p>La lealtà va da 0 a 100 ed è la misura di quanta fiducia il cane ha in te.</p>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Con l'opzione <strong><span class="ig">I cani possono disobbedire</span></strong> attiva (è il predefinito), un cane senza addestramento ogni tanto ti ignora e basta: <em><span class="ig">Caramelo Rex si distrae e ti ignora.</span></em></p>
 <ul>
 <li>La probabilità parte dal <strong>30% a Obbedienza 0</strong> e arriva a <strong>0% a Obbedienza 10</strong>.</li>
+<li>Un cane <strong><a href="#proteine-è-un-carnivoro">Debole</a></strong> somma <strong>+25%</strong> sopra a questo. È l'unica cosa che fa disobbedire di nuovo un cane con Obbedienza 10.</li>
 <li><strong>Ripetere subito l'ordine funziona sempre.</strong> Non ti ignora mai due volte di fila.</li>
 <li><strong>L'ordine ignorato lo addestra lo stesso</strong>, quindi non è XP sprecato.</li>
 <li>Vale solo per gli <strong>ordini diretti</strong>: segui, resta, difendi, vieni, attacca e trucchi. Non tocca mai dare cibo, dare acqua, le coccole, le bisacce, <strong>Porta</strong>, né le impostazioni di comportamento (sentinella, auto-protezione, caccia, cura del bestiame).</li>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Solo un avviso</td>
 </tr>
 <tr>
+<td><strong>Debole</strong></td>
+<td>24h senza proteine</td>
+<td><strong>Metà del danno del morso e +25% di probabilità di ignorare un ordine.</strong> Vedi <a href="#proteine-è-un-carnivoro">Proteine</a></td>
+</tr>
+<tr>
 <td><strong>Ben Riposato</strong></td>
 <td>Hai dormito accanto al cane</td>
 <td>Allevia panico, stress, tristezza e noia, e ti stanchi più lentamente. Dura 2 ore di gioco di default</td>
+</tr>
+<tr>
+<td><strong>In lutto</strong></td>
+<td>Un cane legato a te è morto</td>
+<td>Tristezza pesante che cala nell'arco di un massimo di 48 ore di gioco. Vedi <a href="#il-lutto">Il lutto</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>Regola valida per tutti i moodle di razza:</strong> un cane <strong>sleale, malato, o molto affamato o assetato non dà nessun bonus</strong>. Il moodle si spegne e basta. Un cane curato bene è un cane che rende.</blockquote>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Ritmo di fame e sete</td>
 <td>1,0</td>
 <td>Scala entrambe. <strong>0 le congela e il cane non ha mai più bisogno di mangiare</strong></td>
+</tr>
+<tr>
+<td>I cani hanno bisogno di proteine</td>
+<td>Attivo</td>
+<td>24h senza carne, pesce, uovo o cibo per cani rendono il cane <strong>Debole</strong>: metà danno e +25% di disobbedienza</td>
 </tr>
 <tr>
 <td>Calo lealtà giornaliero</td>

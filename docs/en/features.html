@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-needs-and-care" data-id="7-needs-and-care">7. Needs and care</a>
 <div class="sub">
 <a class="s3" href="#where-stress-comes-from" data-id="where-stress-comes-from">Where stress comes from</a>
+<a class="s3" href="#protein-it-is-a-carnivore" data-id="protein-it-is-a-carnivore">Protein: it is a carnivore</a>
 <a class="s3" href="#feeding-by-hand" data-id="feeding-by-hand">Feeding by hand</a>
 <a class="s3" href="#giving-water" data-id="giving-water">Giving water</a>
 <a class="s3" href="#petting" data-id="petting">Petting</a>
 <a class="s3" href="#the-neglect-ladder" data-id="the-neglect-ladder">The neglect ladder</a>
+<a class="s3" href="#grief" data-id="grief">Grief</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>The <strong>Caramelo cannot kill a zombie on its own</strong>. It pins the zombie at 10% health and stops there. That is on purpose and no sandbox setting changes it. Its job is to <strong>knock the zombie down</strong> and buy you time.</li>
 <li>Every other breed <strong>can finish the job</strong>.</li>
+<li>A <strong><a href="#protein-it-is-a-carnivore">Weak</a></strong> dog, one that has gone 24 hours without protein, <strong>hits for half damage</strong>. That is the difference between finishing the zombie and getting stuck on it.</li>
 </ul>
 <p>The damage table per breed is in the <a href="breeds.html" class="xlink">breed manual</a>.</p>
 <p><strong>Knocking zombies down:</strong> every strike has a chance to knock one down, starting at 10% and reaching 50% with Combat maxed out.</p>
@@ -987,10 +990,59 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>A panicking dog <strong>stops fighting, keeping watch and doing tricks</strong>. It still runs to you when you call it.</p>
 <p>The good news: <strong>combat stress fades fast</strong> out of a fight. A full bar empties in about <strong>2 in-game hours</strong>. <strong>Petting, food and water make it even faster.</strong></p>
+<h3 id="protein-it-is-a-carnivore">Protein: it is a carnivore</h3>
+<p>Filling its belly is not the same as feeding it well. On top of hunger, the dog runs a <strong>second clock</strong>: the time since its last protein. After <strong>24 in-game hours</strong> without protein it turns <strong>Weak</strong>, with a moodle of its own on your screen and two real penalties:</p>
+<ul>
+<li><strong>Half its bite damage.</strong> A dog that killed a zombie in four strikes now needs eight.</li>
+<li><strong>+25% chance of ignoring an order</strong>, added on top of the normal Obedience chance. Even an Obedience 10 dog, which never disobeys, goes back to being stubborn while it is Weak.</li>
+</ul>
+<p><strong>What counts as protein:</strong> meat of any animal, poultry, game, fish and seafood, egg, sausage, bacon, and also <strong>dog food</strong> (the dry bag and the opened can). Vegetables, fruit, bread, pasta, dairy, toxic food and rotten food do not count.</p>
+<p><strong>It is not yes or no, it is quantity.</strong> Each meal pays the clock back according to its size. A crumb is not a plate, but crumbs do add up:</p>
+<div class="tw"><table><thead><tr>
+<th>What you gave it</th>
+<th>How much of the clock it pays back</th>
+</tr></thead><tbody>
+<tr>
+<td>Ham, bag of dog food</td>
+<td>Clears the whole 24h at once</td>
+</tr>
+<tr>
+<td>Steak, minced meat, rabbit, chicken fillet, opened dog food can</td>
+<td>Clears the whole 24h</td>
+</tr>
+<tr>
+<td>Beef jerky</td>
+<td>Clears the whole 24h</td>
+</tr>
+<tr>
+<td>Small animal meat</td>
+<td>18 hours</td>
+</tr>
+<tr>
+<td>Bacon</td>
+<td>~14 hours</td>
+</tr>
+<tr>
+<td>Egg</td>
+<td>~8 hours</td>
+</tr>
+<tr>
+<td>Bacon rashers</td>
+<td>~5 hours</td>
+</tr>
+<tr>
+<td>Bacon bits</td>
+<td>~1 hour</td>
+</tr>
+</tbody></table></div>
+<p><strong>All four routes count:</strong> by hand, from the dropped bowl, from the kennel (a stashed dog), and prey it hunted and ate itself. Hand-feeding counts the <strong>whole item</strong>, even if the dog only nibbles at it because it was already nearly full.</p>
+<p><strong>The clock only runs while the dog is alive in the world.</strong> A dog in the kennel, carried in your arms, inside a vehicle, with its owner logged off, or posted on farm care duty <strong>builds up nothing</strong> while it is there, exactly like hunger and thirst do not rise.</p>
+<p>Turn it off with the sandbox option <strong><span class="ig">Dogs need protein</span></strong>. Off, only hunger and thirst matter.</p>
+<blockquote class="quote"><strong>A dog living on vegetables will not die</strong>, but it becomes a bad dog: it hits for half and it does not listen. If you play with a bowl, drop <strong>a bag of dog food into it</strong> and the problem solves itself.</blockquote>
 <h3 id="feeding-by-hand">Feeding by hand</h3>
 <p>Right click the dog → <strong><span class="ig">Feed</span></strong>.</p>
 <ul>
-<li><strong>Any food</strong> works, as long as it is not rotten and actually fills hunger. There is no restriction to meat or dog food, only the toxic food list.</li>
+<li><strong>Any food</strong> works, as long as it is not rotten and actually fills hunger. For filling hunger there is no restriction to meat or dog food, only the toxic food list. For the <a href="#protein-it-is-a-carnivore">protein clock</a>, the type is what matters.</li>
 <li>Effect: lowers hunger, hydrates if the item is juicy, <strong>+0.10 health</strong>, stress relief and a <strong>loyalty gain proportional to how much hunger the portion took away</strong>.</li>
 <li>Only the bite it needs is consumed.</li>
 <li>Message: <em><span class="ig">The Caramelo is satisfied.</span></em></li>
@@ -1018,6 +1070,31 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>Death is permanent.</strong> There is no respawn. <em><span class="ig">Your Caramelo has died.</span></em> The saddlebags and everything inside them drop on the ground. If you have another dog, it is promoted to active automatically.</p>
 <p>Zombies don't kill your dog. <strong>Forgetting to feed it does.</strong></p>
+<h3 id="grief">Grief</h3>
+<p>When a bonded dog dies, your character <strong>goes into mourning</strong>: the <strong><span class="ig">Grieving</span></strong> moodle shows up with the dog's name, and sadness jumps all at once. There is no option to turn this off.</p>
+<p>How heavy it lands depends on the bond, and the sadness <strong>fades on its own</strong> until it is gone at the end of the window:</p>
+<div class="tw"><table><thead><tr>
+<th>Dog's loyalty</th>
+<th>Sadness at the moment of death</th>
+<th>How long it lasts</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (just tamed)</td>
+<td>20 points</td>
+<td>4 in-game hours</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 points</td>
+<td>26 in-game hours</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 points</td>
+<td>48 in-game hours</td>
+</tr>
+</tbody></table></div>
+<p>It is ordinary sadness, so everything that cheers your character up still works: reading, good food and <strong>petting another dog</strong>. Whatever relief you earn is never undone. While the sadness is high, the game's own unhappiness moodle makes <strong>every action slower</strong>.</p>
 <h2 id="8-loyalty">8. Loyalty</h2>
 <p>Loyalty runs from 0 to 100 and measures how much the dog trusts you.</p>
 <ul>
@@ -1090,6 +1167,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>7</td>
 </tr>
 </tbody></table></div>
+<p>The bowl also <strong>remembers how much of its stock is protein</strong>. Whatever meat, fish, egg or dog food you pour in stays marked, and when the dog eats from that part it pays the <a href="#protein-it-is-a-carnivore">protein clock</a> exactly as if you had fed it by hand. A bowl filled only with vegetables kills its hunger and nothing else.</p>
 <p><strong>If the item is bigger than the free space, the bowl fills to the top and hands the rest back to you.</strong> On a bowl sitting at 80 points, a bag of dog food takes it to 100 and returns to your inventory worth 40. The message <em><span class="ig">The bowl doesn't have room for all of that.</span></em> only shows up when the bowl is <strong>completely full</strong>.</p>
 <h3 id="how-the-dog-uses-it">How the dog uses it</h3>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>With the <strong><span class="ig">Dogs can disobey</span></strong> option on (that is the default), an untrained dog sometimes just ignores you: <em><span class="ig">Caramelo Rex gets distracted and ignores you.</span></em></p>
 <ul>
 <li>The chance starts at <strong>30% at Obedience 0</strong> and reaches <strong>0% at Obedience 10</strong>.</li>
+<li>A <strong><a href="#protein-it-is-a-carnivore">Weak</a></strong> dog adds <strong>+25%</strong> on top of that. It is the only thing that makes an Obedience 10 dog disobey again.</li>
 <li><strong>Repeating the order right away always works.</strong> It never ignores you twice in a row.</li>
 <li><strong>The ignored order trains it all the same</strong>, so it is not wasted XP.</li>
 <li>It only applies to <strong>direct orders</strong>: follow, stay, guard, come, attack and tricks. It never affects feeding, giving water, petting, the saddlebag, <strong>Bring</strong>, or the behaviour toggles (sentinel, auto-protect, hunting, farm care).</li>
@@ -1220,7 +1299,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>That is worth something: <strong>this is how it trains Hunting early on</strong>. Point it out, let it point, and the level goes up.</p>
 <p><strong>Level 3: it starts killing small game.</strong></p>
 <ul>
-<li><strong>If it is hungry, it eats the prey.</strong> You get nothing out of it, but the dog is fed.</li>
+<li><strong>If it is hungry, it eats the prey.</strong> You get nothing out of it, but the dog is fed, and since it is a whole animal of fresh meat, that <strong>clears the <a href="#protein-it-is-a-carnivore">protein clock</a></strong>. A hunting dog feeds itself.</li>
 <li><strong>If it is not, it kills and credits you</strong>, leaving the skinnable carcass <strong>on the ground where the chase ended</strong>. It tells you: <em><span class="ig">Your dog brought down game!</span></em>, but <strong>you are the one who fetches it</strong>.</li>
 </ul>
 <p><strong>Level 6: it starts bringing the kill to you.</strong> Tag <strong><span class="ig">Bringing the kill</span></strong> and the message <em><span class="ig">Your dog dragged its kill to you.</span></em> This applies to <strong>small game only</strong>.</p>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Warning only</td>
 </tr>
 <tr>
+<td><strong>Weak</strong></td>
+<td>24h without protein</td>
+<td><strong>Half its bite damage and +25% chance of ignoring an order.</strong> See <a href="#protein-it-is-a-carnivore">Protein</a></td>
+</tr>
+<tr>
 <td><strong>Well Rested</strong></td>
 <td>You slept next to the dog</td>
 <td>Eases panic, stress, sadness and boredom, and you tire more slowly. Lasts 2 in-game hours by default</td>
+</tr>
+<tr>
+<td><strong>Grieving</strong></td>
+<td>A bonded dog died</td>
+<td>Heavy sadness that fades over up to 48 in-game hours. See <a href="#grief">Grief</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>A rule that holds for every breed moodle:</strong> a dog that is <strong>disloyal, sick, or very hungry or thirsty gives no bonus at all</strong>. The moodle simply switches off. A well cared for dog is a dog that delivers.</blockquote>
@@ -1613,7 +1702,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="co-op-installation-warning">Co-op installation warning</h3>
 <p><strong>If the dog shows up with no texture or <span class="ig">squashed</span>:</strong> enable Companion Dogs in the <strong>Mods list on the main menu</strong> (not just in the co-op selection) and <strong>close the game completely</strong> before loading the save. The co-op host has to do the same and restart the server.</p>
 <h2 id="21-sandbox-options">21. Sandbox options</h2>
-<p>The <strong><span class="ig">Companion Dogs</span></strong> page in your world settings. There are 33 options.</p>
+<p>The <strong><span class="ig">Companion Dogs</span></strong> page in your world settings. There are 35 options.</p>
 <blockquote class="quote"><strong>Remember:</strong> in multiplayer, the one that counts is the <strong>server's</strong> setting. And in Project Zomboid sandbox options are baked <strong>into the save</strong>, so changing them later means editing the save or starting a new world.</blockquote>
 <h3 id="taming-and-spawning">Taming and spawning</h3>
 <div class="tw"><table><thead><tr>
@@ -1691,6 +1780,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Scales both. <strong>0 freezes them and the dog never needs to eat again</strong></td>
 </tr>
 <tr>
+<td>Dogs need protein</td>
+<td>On</td>
+<td>24h without meat, fish, egg or dog food turns the dog <strong>Weak</strong>: half damage and +25% disobedience</td>
+</tr>
+<tr>
 <td>Loyalty decay per day</td>
 <td>12.0</td>
 <td>How much loyalty drains away each day</td>
@@ -1736,6 +1830,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Dogs can disobey</td>
 <td>On</td>
 <td>The 30% chance at level 0 dropping to 0% at 10</td>
+</tr>
+<tr>
+<td>Dogs can trip you</td>
+<td>On</td>
+<td>Running into your own dog knocks you down, like bumping a zombie. Off, you <strong>walk straight through</strong> the companion: no trip, no shove, and it stops blocking the doorway</td>
 </tr>
 </tbody></table></div>
 <h3 id="skills-and-activities">Skills and activities</h3>
@@ -1840,6 +1939,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">The dog showed up with no texture, all mangled.</span></strong> Enable the mod in the Mods list <strong>on the main menu</strong> and close the game completely before loading the save. It is the number one problem in co-op.</p>
 <p><strong><span class="ig">I added the mod and nothing shows up in my save.</span></strong> Project Zomboid enables mods <strong>per save</strong>. A mod added later does not get into a world that already exists, and the game <strong>gives you no error at all</strong>. On the load-save screen, check that the mod is ticked for that world.</p>
 <p><strong><span class="ig">My dog won't obey.</span></strong> Look at the message. If it says <em><span class="ig">doesn't trust you enough to obey</span></em>, it is loyalty: feed it, give it water and pet it. If it says <em><span class="ig">gets distracted and ignores you</span></em>, it is a lack of training: <strong>repeat the order, the second one always goes through</strong>. If it is panic or a wound, take care of that first.</p>
+<p><strong><span class="ig">My dog went Weak and it won't go away.</span></strong> It has gone more than 24 in-game hours without protein, and what fixes it is <strong>quantity</strong>, not the act of feeding: bacon bits take an hour off the clock, a steak takes the whole day. Give it a real meal (steak, rabbit, chicken, ham, a bag of dog food) or drop dog food into its bowl. If the dog is full and refuses the food, that is fine: <strong>hand-feeding counts the whole item</strong> even if it only nibbles. See <a href="#protein-it-is-a-carnivore">Protein</a>.</p>
 <p><strong><span class="ig">My dog doesn't kill zombies, it only knocks them down.</span></strong> If it is a <strong>Caramelo</strong>, that is exactly how it works, on purpose, and no setting changes it. Get another breed or accept its job of knocking them down for you to finish.</p>
 <p><strong><span class="ig">The dog barks all the time and brings zombies over.</span></strong> There are four possible sources, all of them under your control: the <strong>sentinel on Alert</strong> (switch it to <strong>Quiet</strong>, which never barks), the <strong>Distract</strong> trick (the noise is the whole point of it), <strong>hunting</strong> (turn Hunting mode off) and <strong>combat</strong>. A stressed dog does <strong>not</strong> bark on its own.</p>
 <p><strong><span class="ig">My dog is gone.</span></strong> Open the window on the paw button, go to the <strong><span class="ig">My Dogs</span></strong> tab and use <strong>Bring</strong>. If it is far away, the mod asks for confirmation and brings it back with everything it carried. Cooldown of 2 in-game hours per dog. The map marker also shows the last position seen.</p>

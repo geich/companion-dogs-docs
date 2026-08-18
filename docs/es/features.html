@@ -424,10 +424,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#7-necesidades-y-cuidados" data-id="7-necesidades-y-cuidados">7. Necesidades y cuidados</a>
 <div class="sub">
 <a class="s3" href="#de-dónde-sale-el-estrés" data-id="de-dónde-sale-el-estrés">De dónde sale el estrés</a>
+<a class="s3" href="#proteína-es-carnívoro" data-id="proteína-es-carnívoro">Proteína: es carnívoro</a>
 <a class="s3" href="#alimentar-a-mano" data-id="alimentar-a-mano">Alimentar a mano</a>
 <a class="s3" href="#dar-agua" data-id="dar-agua">Dar agua</a>
 <a class="s3" href="#caricias" data-id="caricias">Caricias</a>
 <a class="s3" href="#la-escalera-del-descuido" data-id="la-escalera-del-descuido">La escalera del descuido</a>
+<a class="s3" href="#el-duelo" data-id="el-duelo">El duelo</a>
 </div>
 </div>
 <div class="grp">
@@ -888,6 +890,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>El <strong>Caramelo no puede matar a un zombi por sí solo</strong>. Deja al zombi clavado en un 10% de vida y ahí se detiene. Es a propósito y ningún ajuste de sandbox lo cambia. Su papel es <strong>derribar al zombi</strong> y darte tiempo.</li>
 <li>Todas las demás razas <strong>sí pueden rematarlo</strong>.</li>
+<li>Un perro <strong><a href="#proteína-es-carnívoro">Débil</a></strong>, con 24 horas sin comer proteína, <strong>pega la mitad</strong>. Es la diferencia entre rematar al zombi y quedarse atascado en él.</li>
 </ul>
 <p>La tabla de daño por raza está en el <a href="breeds.html" class="xlink">manual de razas</a>.</p>
 <p><strong>Derribar zombis:</strong> cada golpe tiene probabilidad de derribar, empezando en 10% y llegando al 50% con Combate al máximo.</p>
@@ -987,6 +990,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Un perro en pánico <strong>deja de pelear, de vigilar y de hacer trucos</strong>. Aun así corre hacia ti cuando lo llamas.</p>
 <p>La buena noticia: <strong>el estrés de combate se va rápido</strong> fuera de la pelea. Una barra llena se vacía en unas <strong>2 horas de juego</strong>. <strong>Las caricias, la comida y el agua lo aceleran todavía más.</strong></p>
+<h3 id="proteína-es-carnívoro">Proteína: es carnívoro</h3>
+<p>Llenar la barriga no es lo mismo que alimentar bien. Además del hambre, el perro tiene un <strong>segundo reloj</strong>: el tiempo desde la última proteína. Pasadas <strong>24 horas de juego</strong> sin proteína se queda <strong>Débil</strong>, con su propio moodle en pantalla y dos penalizaciones reales:</p>
+<ul>
+<li><strong>La mitad del daño de mordisco.</strong> Un perro que mataba a un zombi en cuatro golpes pasa a necesitar ocho.</li>
+<li><strong>+25% de probabilidad de ignorar una orden</strong>, sumado a la probabilidad normal de Obediencia. Incluso un perro de Obediencia 10, que nunca desobedece, vuelve a hacerse el sordo mientras está Débil.</li>
+</ul>
+<p><strong>Qué cuenta como proteína:</strong> carne de cualquier animal, ave, caza, pescado y marisco, huevo, salchicha, bacon, y también <strong>comida para perros</strong> (el saco seco y la lata abierta). No cuentan verduras, fruta, pan, pasta, lácteos, ni comida tóxica o en mal estado.</p>
+<p><strong>No es sí o no, es cantidad.</strong> Cada comida descuenta del reloj según su tamaño. Una migaja no vale un plato, pero las migajas suman:</p>
+<div class="tw"><table><thead><tr>
+<th>Lo que le diste</th>
+<th>Cuánto descuenta del reloj</th>
+</tr></thead><tbody>
+<tr>
+<td>Jamón, saco de comida para perros</td>
+<td>Pone a cero las 24h de una vez</td>
+</tr>
+<tr>
+<td>Filete, carne picada, conejo, pollo, lata de comida abierta</td>
+<td>Pone a cero las 24h</td>
+</tr>
+<tr>
+<td>Cecina de carne</td>
+<td>Pone a cero las 24h</td>
+</tr>
+<tr>
+<td>Carne de animal pequeño</td>
+<td>18 horas</td>
+</tr>
+<tr>
+<td>Bacon</td>
+<td>~14 horas</td>
+</tr>
+<tr>
+<td>Huevo</td>
+<td>~8 horas</td>
+</tr>
+<tr>
+<td>Loncha fina de bacon</td>
+<td>~5 horas</td>
+</tr>
+<tr>
+<td>Trocitos de bacon</td>
+<td>~1 hora</td>
+</tr>
+</tbody></table></div>
+<p><strong>Los cuatro caminos valen:</strong> a mano, del cuenco en el suelo, de la perrera (perro guardado), y la presa que él mismo cazó y comió. Alimentar a mano cuenta el <strong>objeto entero</strong>, aunque el perro solo mordisquee un trozo porque ya estaba casi saciado.</p>
+<p><strong>El reloj solo corre con el perro vivo en el mundo.</strong> Un perro en la perrera, en brazos, dentro de un vehículo, con el dueño desconectado o de puesto cuidando la granja <strong>no acumula nada</strong> mientras está ahí, igual que el hambre y la sed no suben.</p>
+<p>Se desactiva con la opción de sandbox <strong><span class="ig">Los perros necesitan proteína</span></strong>. Desactivada, solo importan el hambre y la sed.</p>
+<blockquote class="quote"><strong>Un perro que solo come verdura no se muere</strong>, pero se vuelve un mal perro: pega la mitad y no escucha. Si juegas con cuenco, echa <strong>un saco de comida para perros dentro</strong> y el problema se resuelve solo.</blockquote>
 <h3 id="alimentar-a-mano">Alimentar a mano</h3>
 <p>Clic derecho en el perro → <strong><span class="ig">Alimentar</span></strong>.</p>
 <ul>
@@ -1018,6 +1070,32 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ol>
 <p><strong>La muerte es permanente.</strong> No hay respawn. <em><span class="ig">Tu Caramelo ha muerto.</span></em> Las alforjas y todo lo que había dentro caen al suelo. Si tienes otro perro, pasa a ser el activo automáticamente.</p>
 <p>Los zombis no matan a tu perro. <strong>Olvidarte de darle de comer, sí.</strong></p>
+<hr>
+<h3 id="el-duelo">El duelo</h3>
+<p>Cuando un perro vinculado muere, tu personaje <strong>entra en duelo</strong>: aparece el moodle <strong><span class="ig">De luto</span></strong> con el nombre del perro y la tristeza sube de golpe. No hay opción para desactivarlo.</p>
+<p>Cuánto pesa depende del vínculo, y la tristeza <strong>baja sola</strong> hasta desaparecer al final de la ventana:</p>
+<div class="tw"><table><thead><tr>
+<th>Lealtad del perro</th>
+<th>Tristeza en el momento de la muerte</th>
+<th>Cuánto dura</th>
+</tr></thead><tbody>
+<tr>
+<td>0 (recién domesticado)</td>
+<td>20 puntos</td>
+<td>4 horas de juego</td>
+</tr>
+<tr>
+<td>50</td>
+<td>42 puntos</td>
+<td>26 horas de juego</td>
+</tr>
+<tr>
+<td>100</td>
+<td>65 puntos</td>
+<td>48 horas de juego</td>
+</tr>
+</tbody></table></div>
+<p>Es tristeza normal, así que todo lo que anima a tu personaje sigue funcionando: leer, comer algo bueno y <strong>acariciar a otro perro</strong>. El alivio que consigas nunca se deshace. Mientras la tristeza esté alta, el moodle de infelicidad del propio juego hace que <strong>toda acción sea más lenta</strong>.</p>
 <h2 id="8-lealtad">8. Lealtad</h2>
 <p>La lealtad va de 0 a 100 y mide cuánto confía el perro en ti.</p>
 <ul>
@@ -1141,6 +1219,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Con la opción <strong><span class="ig">Los perros pueden desobedecer</span></strong> activada (es lo predeterminado), un perro sin entrenar a veces simplemente te ignora: <em><span class="ig">Caramelo Rex se distrae y te ignora.</span></em></p>
 <ul>
 <li>La probabilidad empieza en <strong>30% con Obediencia 0</strong> y llega a <strong>0% con Obediencia 10</strong>.</li>
+<li>Un perro <strong><a href="#proteína-es-carnívoro">Débil</a></strong> suma <strong>+25%</strong> por encima de eso. Es lo único que hace que un perro de Obediencia 10 vuelva a desobedecer.</li>
 <li><strong>Repetir la orden enseguida siempre funciona.</strong> Nunca ignora dos veces seguidas.</li>
 <li><strong>La orden ignorada lo entrena igual</strong>, así que no es experiencia perdida.</li>
 <li>Vale solo para <strong>órdenes directas</strong>: seguir, quedarse, vigilar, ven, atacar y trucos. Nunca afecta a alimentar, dar agua, acariciar, alforjas, <strong>Traer</strong>, ni a los ajustes de comportamiento (centinela, protección automática, caza, granja).</li>
@@ -1540,9 +1619,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Solo aviso</td>
 </tr>
 <tr>
+<td><strong>Débil</strong></td>
+<td>24h sin comer proteína</td>
+<td><strong>La mitad del daño de mordisco y +25% de probabilidad de ignorar una orden.</strong> Ver <a href="#proteína-es-carnívoro">Proteína</a></td>
+</tr>
+<tr>
 <td><strong>Bien descansado</strong></td>
 <td>Dormiste junto al perro</td>
 <td>Alivia el pánico, el estrés, la tristeza y el aburrimiento, y te cansas más despacio. Dura 2 horas de juego por defecto</td>
+</tr>
+<tr>
+<td><strong>De luto</strong></td>
+<td>Un perro vinculado murió</td>
+<td>Tristeza pesada que baja a lo largo de hasta 48 horas de juego. Ver <a href="#el-duelo">El duelo</a></td>
 </tr>
 </tbody></table></div>
 <blockquote class="quote"><strong>Regla que vale para todos los moodles de raza:</strong> un perro <strong>desleal, enfermo, o con hambre o sed alta no da ningún bonus</strong>. El moodle simplemente se apaga. Perro bien cuidado es perro que rinde.</blockquote>
@@ -1689,6 +1778,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Ritmo de hambre y sed</td>
 <td>1,0</td>
 <td>Escala las dos. <strong>0 las congela y el perro no vuelve a necesitar comer</strong></td>
+</tr>
+<tr>
+<td>Los perros necesitan proteína</td>
+<td>Activado</td>
+<td>24h sin carne, pescado, huevo o comida para perros dejan al perro <strong>Débil</strong>: la mitad del daño y +25% de desobediencia</td>
 </tr>
 <tr>
 <td>Pérdida de lealtad por día</td>
