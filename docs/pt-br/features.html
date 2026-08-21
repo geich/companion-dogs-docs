@@ -558,6 +558,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#22-problemas-comuns" data-id="22-problemas-comuns">22. Problemas comuns</a>
+</div>
+<div class="grp">
+<a class="s2" href="#23-remover-o-mod-de-um-save-leia-antes" data-id="23-remover-o-mod-de-um-save-leia-antes">23. Remover o mod de um save (LEIA ANTES)</a>
+<div class="sub">
+<a class="s3" href="#por-que-acontece" data-id="por-que-acontece">Por que acontece</a>
+<a class="s3" href="#se-os-animais-já-sumiram" data-id="se-os-animais-já-sumiram">Se os animais já sumiram</a>
+<a class="s3" href="#como-remover-com-segurança" data-id="como-remover-com-segurança">Como remover com segurança</a>
+<a class="s3" href="#limpeza-completa-admin-modo-debug" data-id="limpeza-completa-admin-modo-debug">Limpeza completa (admin / modo debug)</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manual-de-funcionalidades">Companion Dogs: Manual de Funcionalidades</h1>
@@ -620,7 +629,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>O cão costuma nascer num tile livre <strong>do lado de fora</strong> do prédio: rua, quintal, terreno. Só quando não sobra nenhum tile externo livre é que ele acaba nascendo dentro do prédio. Procure na rua e no quintal primeiro.</p>
 <p>A opção de sandbox <strong><span class="ig">Multiplicador de spawn de cães</span></strong> escala todas essas chances de uma vez, mantendo a raridade relativa. Colocar em 0 desliga o spawn.</p>
-<blockquote class="quote"><strong>Raças de addon</strong> vêm em mods separados na Steam e têm os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
+<blockquote class="quote"><strong>Raças de addon</strong> vêm em mods separados na Steam e têm os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> e <strong>CD: Pug</strong>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
 <h3 id="como-domesticar">Como domesticar</h3>
 <p>Clique com o botão direito no cão selvagem. A única opção que ele oferece é <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</p>
 <ul>
@@ -890,7 +899,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>O <strong>Caramelo não consegue matar um zumbi sozinho</strong>. Ele trava o zumbi em 10% de vida e para. Isso é de propósito e nenhum ajuste de sandbox muda. O papel dele é <strong>derrubar o zumbi</strong> e te dar tempo.</li>
 <li>Todas as outras raças <strong>conseguem finalizar</strong>.</li>
-<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong>, de 24 horas sem comer proteína, <strong>bate pela metade</strong>. É a diferença entre finalizar o zumbi e ficar preso nele.</li>
+<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong>, de três dias sem comer proteína, <strong>bate pela metade</strong>. É a diferença entre finalizar o zumbi e ficar preso nele.</li>
 </ul>
 <p>A tabela de dano por raça está no <a href="breeds.html" class="xlink">manual de raças</a>.</p>
 <p><strong>Derrubar zumbi:</strong> cada golpe tem chance de derrubar, começando em 10% e chegando a 50% com Combate no máximo.</p>
@@ -991,7 +1000,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Um cão em pânico <strong>para de lutar, de vigiar e de fazer truque</strong>. Ele ainda corre até você quando chamado.</p>
 <p>A boa notícia: <strong>o estresse de combate some rápido</strong> fora da luta. Uma barra cheia se esvazia em cerca de <strong>2 horas de jogo</strong>. <strong>Carinho, comida e água aceleram ainda mais.</strong></p>
 <h3 id="proteína-ele-é-carnívoro">Proteína: ele é carnívoro</h3>
-<p>Encher a barriga não é a mesma coisa que alimentar bem. Além da fome, o cão tem um <strong>segundo relógio</strong>: o tempo desde a última proteína. Passadas <strong>24 horas de jogo</strong> sem proteína ele fica <strong>Fraco</strong>, com moodle próprio na sua tela e duas penalidades reais:</p>
+<p>Encher a barriga não é a mesma coisa que alimentar bem. Além da fome, o cão tem um <strong>segundo relógio</strong>: o tempo desde a última proteína. Passados <strong>três dias de jogo</strong> sem proteína ele fica <strong>Fraco</strong>, com moodle próprio na sua tela e duas penalidades reais:</p>
 <ul>
 <li><strong>Metade do dano de mordida.</strong> Um cão que matava um zumbi em quatro golpes passa a precisar de oito.</li>
 <li><strong>+25% de chance de ignorar uma ordem</strong>, somados por cima da chance normal de Obediência. Mesmo um cão de Obediência 10, que nunca desobedece, volta a teimar enquanto está Fraco.</li>
@@ -1004,37 +1013,38 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Presunto, saco de ração</td>
-<td>Zera as 24h de uma vez</td>
+<td>Zera as 72h de uma vez</td>
 </tr>
 <tr>
 <td>Bife, carne moída, coelho, frango, lata de ração aberta</td>
-<td>Zera as 24h</td>
+<td>Zera as 72h</td>
 </tr>
 <tr>
 <td>Jerky de carne</td>
-<td>Zera as 24h</td>
+<td>Zera as 72h</td>
 </tr>
 <tr>
 <td>Carne de bicho pequeno</td>
-<td>18 horas</td>
+<td>54 horas</td>
 </tr>
 <tr>
 <td>Bacon</td>
-<td>~14 horas</td>
+<td>~42 horas</td>
 </tr>
 <tr>
 <td>Ovo</td>
-<td>~8 horas</td>
+<td>~25 horas</td>
 </tr>
 <tr>
 <td>Fatia fina de bacon</td>
-<td>~5 horas</td>
+<td>~15 horas</td>
 </tr>
 <tr>
 <td>Farelo de bacon</td>
-<td>~1 hora</td>
+<td>~3 horas e meia</td>
 </tr>
 </tbody></table></div>
+<p><strong>O tamanho do relógio é seu.</strong> A opção de sandbox <strong>Horas sem proteína</strong> vai de 6 a 168 horas de jogo, com 72 (três dias) de padrão. Mexer nela reescala a tabela acima inteira, porque cada refeição paga uma <strong>fração</strong> do relógio, não um número fixo de horas.</p>
 <p><strong>Os quatro caminhos valem:</strong> na mão, da tigela largada, do canil (cão guardado), e a presa que ele mesmo caçou e comeu. Alimentar na mão conta o <strong>item inteiro</strong>, mesmo que o cão só mordisque um pedaço porque já estava quase saciado.</p>
 <p><strong>O relógio só corre com o cão vivo no mundo.</strong> Cão no canil, no colo, dentro de veículo, com o dono desconectado ou de posto cuidando da fazenda <strong>não acumula nada</strong> enquanto está ali, do mesmo jeito que fome e sede não sobem.</p>
 <p>Desliga na opção de sandbox <strong><span class="ig">Cães precisam de proteína</span></strong>. Desligada, só fome e sede importam.</p>
@@ -1371,6 +1381,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Carga (peso)</th>
 </tr></thead><tbody>
 <tr>
+<td><strong>Pug</strong></td>
+<td><strong>2 a 3</strong></td>
+</tr>
+<tr>
 <td>Caramelo</td>
 <td><strong>4 a 5</strong></td>
 </tr>
@@ -1387,7 +1401,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>13 a 16</strong></td>
 </tr>
 </tbody></table></div>
-<p>O Husky é o único cão com bônus de raça no alforje (50% a mais). Todos os outros dependem só do gene de Força, então dois cães da mesma raça podem carregar quantidades diferentes.</p>
+<p>Husky e Pug são os dois cães com bônus de raça no alforje, e em direções opostas: o Husky carrega 50% a mais, o Pug carrega 40% a menos. Todos os outros dependem só do gene de Força, então dois cães da mesma raça podem carregar quantidades diferentes.</p>
 <p>O servidor pode mexer nisso com <strong><span class="ig">Capacidade base do alforje</span></strong> e <strong><span class="ig">Bônus de carga por força</span></strong>.</p>
 <h3 id="o-que-dá-para-guardar">O que dá para guardar</h3>
 <p>Quase tudo, e o limite é de <strong>peso</strong>, não de quantidade de itens. As exceções:</p>
@@ -1620,7 +1634,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Fraco</strong></td>
-<td>24h sem comer proteína</td>
+<td>72h sem comer proteína</td>
 <td><strong>Metade do dano de mordida e +25% de chance de ignorar ordem.</strong> Ver <a href="#proteína-ele-é-carnívoro">Proteína</a></td>
 </tr>
 <tr>
@@ -1782,7 +1796,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Cães precisam de proteína</td>
 <td>Ligado</td>
-<td>24h sem carne, peixe, ovo ou ração deixam o cão <strong>Fraco</strong>: metade do dano e +25% de desobediência</td>
+<td>Ficar sem carne, peixe, ovo ou ração deixa o cão <strong>Fraco</strong>: metade do dano e +25% de desobediência</td>
+</tr>
+<tr>
+<td>Horas sem proteína</td>
+<td>72</td>
+<td>O tamanho desse relógio, em horas de jogo (72 = três dias). Vale de 6 a 168</td>
 </tr>
 <tr>
 <td>Perda de lealdade por dia</td>
@@ -1803,6 +1822,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Duração do Bem Descansado (horas)</td>
 <td>2.0</td>
 <td>Quanto tempo dura</td>
+</tr>
+<tr>
+<td>Moodles de raça</td>
+<td>Ligado</td>
+<td>O humor próprio de cada raça (Boa Companhia, Coragem, Faro Apurado, Aquecido e os outros). <strong>Desligado, some o ícone e o benefício junto</strong> — os moodles de fome, sede, doente e fraco continuam</td>
 </tr>
 </tbody></table></div>
 <h3 id="comportamento">Comportamento</h3>
@@ -1939,7 +1963,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>"O cão apareceu sem textura, todo amassado."</strong> Ative o mod na lista de Mods <strong>do menu principal</strong> e feche o jogo por completo antes de carregar o save. É o problema número um em co-op.</p>
 <p><strong>"Adicionei o mod e não aparece nada no meu save."</strong> O Project Zomboid ativa mod <strong>por save</strong>. Um mod adicionado depois não entra num mundo já criado, e o jogo <strong>não dá erro nenhum</strong>. Confira na tela de carregar save se o mod está marcado para aquele mundo.</p>
 <p><strong>"Meu cão não obedece."</strong> Olhe a mensagem. Se for <em>"não confia em você o bastante"</em>, é lealdade: alimente, dê água e faça carinho. Se for <em>"se distrai e ignora você"</em>, é falta de treino: <strong>repita a ordem, que a segunda sempre passa</strong>. Se for pânico ou ferimento, cuide dele primeiro.</p>
-<p><strong>"Meu cão ficou Fraco e não sai."</strong> Ele está há mais de 24 horas de jogo sem proteína, e o que resolve é <strong>quantidade</strong>, não o gesto de alimentar: um farelo de bacon tira uma hora do relógio, um bife tira o dia inteiro. Dê uma refeição de verdade (bife, coelho, frango, presunto, um saco de ração) ou jogue ração na tigela dele. Se o cão está saciado e recusa a comida, não tem problema: <strong>alimentar na mão conta o item inteiro</strong> mesmo que ele só mordisque. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a>.</p>
+<p><strong>"Meu cão ficou Fraco e não sai."</strong> Ele está há mais de três dias de jogo sem proteína, e o que resolve é <strong>quantidade</strong>, não o gesto de alimentar: um farelo de bacon tira umas três horas do relógio, um bife zera o relógio inteiro. Dê uma refeição de verdade (bife, coelho, frango, presunto, um saco de ração) ou jogue ração na tigela dele. Se o cão está saciado e recusa a comida, não tem problema: <strong>alimentar na mão conta o item inteiro</strong> mesmo que ele só mordisque. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a>.</p>
 <p><strong>"Meu cão não mata os zumbis, só derruba."</strong> Se ele é um <strong>Caramelo</strong>, é assim mesmo, de propósito, e nenhum ajuste muda. Pegue outra raça ou aceite o papel dele de derrubar para você terminar.</p>
 <p><strong>"O cão late toda hora e traz zumbi."</strong> São quatro fontes possíveis, todas controláveis: a <strong>sentinela em Alerta</strong> (mude para <strong>Discreto</strong>, que nunca late), o truque <strong>Distrair</strong> (o barulho é o objetivo dele), a <strong>caça</strong> (desligue o modo Caça) e o <strong>combate</strong>. Um cão estressado <strong>não</strong> late sozinho.</p>
 <p><strong>"Meu cão sumiu."</strong> Abra a janela no botão de patinha, vá na aba <strong>"Meus Cães"</strong> e use <strong>Trazer</strong>. Se ele estiver longe, o mod pede confirmação e o traz de volta com tudo. Cooldown de 2 horas de jogo por cão. O marcador no mapa também mostra a última posição vista.</p>
@@ -1949,7 +1973,35 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>"O cão não entra no carro comigo."</strong> Só o cão em <strong>Seguir</strong> embarca. Em Ficar ou Vigiar, ele fica.</p>
 <p><strong>"Deixei o cão vigiando a base e ele não fez nada."</strong> O modo Vigiar, por enquanto, <strong>só funciona com você por perto</strong>. Para deixar um cão trabalhando sozinho de longe, o único modo que faz isso é <strong>Cuidar do gado</strong>, e ele exige um curral designado.</p>
 <p><strong>"O cão aprende devagar demais."</strong> O padrão do <strong>"Multiplicador de XP de habilidade"</strong> é <strong>0,5</strong>, metade da velocidade. Suba para 1.0 ou mais em um mundo novo.</p>
-<p><strong>"Meu cão morreu."</strong> Não tem volta, e não tem respawn. A única causa é fome ou sede levadas ao extremo. O alforje e a carga ficam no chão onde ele caiu.</p></article></main>
+<p><strong>"Meu cão morreu."</strong> Não tem volta, e não tem respawn. A única causa é fome ou sede levadas ao extremo. O alforje e a carga ficam no chão onde ele caiu.</p>
+<p><strong>"Minha capacidade de carga mudou depois de instalar o mod."</strong> O Companion Dogs <strong>não</strong> mexe no seu peso máximo, em lugar nenhum. Se você usa um mod que aumenta carga, o número que vale é o dele, e os dois convivem sem ajuste. O husky também não carrega mais parte do seu peso: desde a 0.6.9 o moodle dele acelera a sua <strong>Força</strong>, e é a Força que aumenta a capacidade, de vez. Em servidor existe um detalhe que <strong>não</strong> vem do mod: o jogo base deixa a sua capacidade travada num valor baixo, ignorando a sua Força, até o personagem levar o primeiro dano. Se o número parecer pequeno antes do primeiro arranhão, é assim que o jogo se comporta sem mod nenhum instalado.</p>
+<h2 id="23-remover-o-mod-de-um-save-leia-antes">23. Remover o mod de um save (LEIA ANTES)</h2>
+<p>Esta seção é a mais importante do manual inteiro para quem pensa em desinstalar. <strong>Tirar o Companion Dogs de um save que tem cães faz sumir animais que não são do mod</strong>: o gado do curral, as galinhas, o que estiver naquela região do mapa. Não é bug do mod, é como o Project Zomboid guarda animais, e o mod não tem como se defender depois que já foi removido.</p>
+<h3 id="por-que-acontece">Por que acontece</h3>
+<p>O jogo guarda <strong>todos os animais vivos de uma região grande do mapa num arquivo só</strong>. Ao abrir esse arquivo sem o mod, ele encontra o cão, não sabe mais o que aquilo é, desiste de ler o resto do arquivo e repovoa a região como se você nunca tivesse passado por lá. Os seus animais somem junto porque estavam no mesmo arquivo que o cão.</p>
+<p>O estrago não é o mapa inteiro nem só o entorno do cão: a leitura para no cão e se perde <strong>tudo que vinha depois dele naquela região</strong>. Por isso o resultado varia tanto de save para save.</p>
+<p><strong>Vale igual para addon de raça.</strong> Desinscrever só o Rottweiler, o Doberman, o Labrador, o Pug (ou qualquer outro) e continuar jogando com o mod base causa exatamente o mesmo problema, porque os cães daquela raça continuam gravados no save.</p>
+<h3 id="se-os-animais-já-sumiram">Se os animais já sumiram</h3>
+<p><strong>Reinstale o mod agora, antes de continuar jogando ou salvar.</strong> Os animais provavelmente voltam. Uma vez que o jogo salve por cima, não há mais volta e não existe backup desse arquivo.</p>
+<h3 id="como-remover-com-segurança">Como remover com segurança</h3>
+<p><strong>Passo 1 — mantenha todos os addons ligados.</strong> Antes de mexer em qualquer coisa, confira que <strong>todo addon de raça que você já usou nesse save está marcado na lista de mods DAQUELE save</strong> (Load Game → o save → Mods). Um addon desativado já é o problema descrito acima.</p>
+<p><strong>Passo 2 — livre-se dos cães.</strong> Duas formas seguras:</p>
+<ul>
+<li><strong>Matar.</strong> O cadáver é gravado de outro jeito, num formato que o jogo sabe ler mesmo sem o mod.</li>
+<li><strong>Carregar no inventário.</strong> Item o jogo sabe pular com segurança: some só o cão, o resto fica.</li>
+</ul>
+<p>Soltar o cão ou levá-lo para longe <strong>não resolve</strong>: o registro dele continua no save, e levá-lo para outro lugar só muda qual região vai quebrar.</p>
+<p><strong>Passo 3 — salve o jogo.</strong> É o save que grava a limpeza.</p>
+<p><strong>Passo 4 — remova o mod.</strong></p>
+<h3 id="limpeza-completa-admin-modo-debug">Limpeza completa (admin / modo debug)</h3>
+<p>Os passos acima cobrem os seus cães, mas o mod também espalha <strong>vira-latas</strong> pelo mapa, e você não tem como achar todos na mão. Para limpar o save inteiro de uma vez existe um comando:</p>
+<ol>
+<li>Ligue a opção de sandbox <strong><span class="ig">Permitir spawn de debug</span></strong> nesse save.</li>
+<li>Entre como <strong>admin</strong> (multiplayer) ou com o jogo em <strong>modo debug</strong> (solo: adicione <code>-debug</code> nas opções de inicialização do Steam).</li>
+<li>Clique com o botão direito no chão → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
+<li>Espere a mensagem <code>sweep done</code> e <strong>salve o jogo</strong>.</li>
+</ol>
+<p>O comando apaga os cães carregados na hora e depois varre o resto do save em segundo plano, sem travar a partida. Se ele <strong>recusar</strong> citando uma raça, é o passo 1 acima: aquele addon não está ligado nesse save, e forçar a limpeza sem as definições é justamente o que destrói os animais.</p></article></main>
 </div>
 
 <script>

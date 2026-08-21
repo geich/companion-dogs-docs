@@ -558,6 +558,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#22-常见问题" data-id="22-常见问题">22. 常见问题</a>
+</div>
+<div class="grp">
+<a class="s2" href="#23-从存档中移除模组先读这一节" data-id="23-从存档中移除模组先读这一节">23. 从存档中移除模组（先读这一节）</a>
+<div class="sub">
+<a class="s3" href="#为什么会这样" data-id="为什么会这样">为什么会这样</a>
+<a class="s3" href="#如果动物已经消失了" data-id="如果动物已经消失了">如果动物已经消失了</a>
+<a class="s3" href="#如何安全移除" data-id="如何安全移除">如何安全移除</a>
+<a class="s3" href="#彻底清理管理员-调试模式" data-id="彻底清理管理员-调试模式">彻底清理（管理员 / 调试模式）</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs功能手册">Companion Dogs：功能手册</h1>
@@ -890,7 +899,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>小卡犬没办法单独杀死僵尸。</strong>它会把僵尸压在 10% 生命值上就停手。这是有意设计的，沙盒怎么调都改不了。它的任务是<strong>把僵尸撂倒</strong>，替你争取时间。</li>
 <li>其他所有品种<strong>都能补上最后一下</strong>。</li>
-<li>24 小时没吃到蛋白质的<strong><a href="#蛋白质狗是食肉动物">虚弱</a></strong>的狗，<strong>只能打出一半的伤害</strong>。 这就是能不能补掉丧尸、还是被它缠住的差别。</li>
+<li>三天没吃到蛋白质的<strong><a href="#蛋白质狗是食肉动物">虚弱</a></strong>的狗，<strong>只能打出一半的伤害</strong>。 这就是能不能补掉丧尸、还是被它缠住的差别。</li>
 </ul>
 <p>各品种的伤害数值表在<a href="breeds.html" class="xlink">品种手册</a>里。</p>
 <p><strong>撂倒僵尸：</strong>每一次攻击都有撂倒的几率，从 10% 起步，战斗满级时到 50%。</p>
@@ -991,7 +1000,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>恐慌中的狗<strong>不再战斗、守卫，也不做技巧</strong>。但你叫它的时候，它还是会跑到你身边。</p>
 <p>好消息是：离开战斗以后，<strong>战斗压力消得很快</strong>。整整一条大约 <strong>2 个游戏小时</strong>就清空。<strong>抚摸、喂食和喂水还能让它更快平静下来。</strong></p>
 <h3 id="蛋白质狗是食肉动物">蛋白质：狗是食肉动物</h3>
-<p>把肚子填满和喂得好不是一回事。除了饥饿，狗还有<strong>第二个时钟</strong>：距离上一次摄入蛋白质的时间。<strong>游戏内 24 小时</strong>没有蛋白质，它就会<strong>虚弱</strong>，屏幕上出现专属心情图标，并带来两项实打实的惩罚：</p>
+<p>把肚子填满和喂得好不是一回事。除了饥饿，狗还有<strong>第二个时钟</strong>：距离上一次摄入蛋白质的时间。<strong>游戏内三天</strong>没有蛋白质，它就会<strong>虚弱</strong>，屏幕上出现专属心情图标，并带来两项实打实的惩罚：</p>
 <ul>
 <li><strong>撕咬伤害减半。</strong> 原本四下就能咬死一只丧尸的狗，现在要八下。</li>
 <li><strong>忽略命令的概率 +25%</strong>，叠加在服从度本身的概率之上。哪怕是从不违抗的服从度 10 的狗，在虚弱期间也会重新装聋。</li>
@@ -1004,37 +1013,38 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>火腿、狗粮袋</td>
-<td>一次性清零 24 小时</td>
+<td>一次性清零 72 小时</td>
 </tr>
 <tr>
 <td>牛排、肉末、兔肉、鸡肉、开封的狗粮罐头</td>
-<td>清零 24 小时</td>
+<td>清零 72 小时</td>
 </tr>
 <tr>
 <td>肉干</td>
-<td>清零 24 小时</td>
+<td>清零 72 小时</td>
 </tr>
 <tr>
 <td>小动物的肉</td>
-<td>18 小时</td>
+<td>54 小时</td>
 </tr>
 <tr>
 <td>培根</td>
-<td>约 14 小时</td>
+<td>约 42 小时</td>
 </tr>
 <tr>
 <td>蛋</td>
-<td>约 8 小时</td>
+<td>约 25 小时</td>
 </tr>
 <tr>
 <td>薄培根片</td>
-<td>约 5 小时</td>
+<td>约 15 小时</td>
 </tr>
 <tr>
 <td>培根碎</td>
-<td>约 1 小时</td>
+<td>约 3 个半小时</td>
 </tr>
 </tbody></table></div>
+<p><strong>计时的长短由你决定。</strong> 沙盒选项“无蛋白质可撑的小时数”可设在游戏内 6 到 168 小时之间，默认 72 小时（三天）。改动它会让上面整张表一起伸缩，因为每一餐抵扣的是计时的<strong>比例</strong>，而不是固定的小时数。</p>
 <p><strong>四条路都算数：</strong> 手喂、地上的食盆、犬舍里（收起来的狗），以及它自己猎到并吃掉的猎物。手喂按<strong>整件物品</strong>计算，哪怕狗已经快吃饱、只啃了一口。</p>
 <p><strong>只有活在世界里的狗，时钟才会走。</strong> 待在犬舍、被抱着、在车里、主人掉线，或者在农场岗位上的狗，在那期间<strong>完全不累积</strong>，就像饥饿和口渴也不会上涨一样。</p>
 <p>可以用沙盒选项<strong>“狗需要蛋白质”</strong>关闭。关闭后就只剩饥饿和口渴重要了。</p>
@@ -1620,7 +1630,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>虚弱</strong></td>
-<td>24 小时没吃蛋白质</td>
+<td>72 小时没吃蛋白质</td>
 <td><strong>撕咬伤害减半，忽略命令的概率 +25%。</strong> 参见<a href="#蛋白质狗是食肉动物">蛋白质</a></td>
 </tr>
 <tr>
@@ -1782,7 +1792,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>狗需要蛋白质</td>
 <td>开启</td>
-<td>24 小时没有肉、鱼、蛋或狗粮会让狗<strong>虚弱</strong>：伤害减半，不服从 +25%</td>
+<td>一直没有肉、鱼、蛋或狗粮会让狗<strong>虚弱</strong>：伤害减半，不服从 +25%</td>
+</tr>
+<tr>
+<td>无蛋白质可撑的小时数</td>
+<td>72</td>
+<td>这个计时有多长，以游戏内小时计（72 = 三天）。可设 6 到 168</td>
 </tr>
 <tr>
 <td>每日忠诚度衰减</td>
@@ -1943,7 +1958,35 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">狗不跟我一起上车。</span></strong> 只有处在<strong>跟随</strong>的狗才会上车。停留或守卫的时候，它就留在原地了。</p>
 <p><strong><span class="ig">我留了一只狗看家，结果它什么都没干。</span></strong> 守卫模式目前<strong>只在你人就在附近的时候才起作用</strong>。想让一只狗在远处自己干活，唯一能做到这件事的模式是 <strong>Care for livestock here</strong>，而且它需要一个指定好的动物围栏。</p>
 <p><strong><span class="ig">狗学得太慢了。</span></strong> <strong><span class="ig">技能经验倍率</span></strong>的默认值是 <strong>0.5</strong>，只有正常速度的一半。开新世界的时候把它调到 1.0 或者更高。</p>
-<p><strong><span class="ig">我的狗死了。</span></strong> 没得挽回，也不会重新刷出来。唯一的死因是饥饿或口渴被拖到了极限。驮袋和里面的货物会留在它倒下的 那块地上。</p></article></main>
+<p><strong><span class="ig">我的狗死了。</span></strong> 没得挽回，也不会重新刷出来。唯一的死因是饥饿或口渴被拖到了极限。驮袋和里面的货物会留在它倒下的 那块地上。</p>
+<p><strong><span class="ig">装了模组以后我的负重变了。</span></strong> Companion Dogs <strong>不会</strong>在任何地方改动你的负重上限。如果你在用提高负重的模组，算数的是那个模组的数字， 两个一起装也不需要任何调整。哈士奇也不再替你分担负重了：从 0.6.9 起，它的 Moodle 加快的是你的<strong>力量</strong>， 而永久提高负重上限的正是力量。服务器上还有一个<strong>跟本模组无关</strong>的细节：原版游戏会把你的负重上限卡在一个 低值上、忽略你的力量，直到角色第一次受伤为止。如果在挨第一下之前数字看着偏小，那就是一个模组都不装时 游戏本来的表现。</p>
+<h2 id="23-从存档中移除模组先读这一节">23. 从存档中移除模组（先读这一节）</h2>
+<p>如果你在考虑卸载，这是整本手册里最重要的一节。<strong>把 Companion Dogs 从还有狗的存档里移除，会让与模组 无关的动物一起消失</strong>：你的牲畜、你的鸡，以及那片地图上住着的一切。这不是模组的 bug，而是 Project Zomboid 保存动物的方式，而模组一旦被移除就无能为力了。</p>
+<h3 id="为什么会这样">为什么会这样</h3>
+<p>游戏把 <strong>地图上一大片区域里所有活着的动物保存在同一个文件里</strong>。没有模组时打开这个文件，它撞上你的狗， 已经不知道那是什么，于是放弃读取文件的剩余部分，把这片区域当作你从未去过那样重新生成。你的动物跟着一起 消失，是因为它们和狗在同一个文件里。</p>
+<p>损失既不是整张地图，也不只是狗周围：读取停在狗那里，<strong>这片区域里排在它之后的一切都会丢失</strong>。这就是不同 存档结果差别巨大的原因。</p>
+<p><strong>品种扩展同理。</strong> 只退订罗威纳、杜宾或拉布拉多，继续用基础模组游玩，会造成完全一样的问题，因为那个品种 的狗仍然写在存档里。</p>
+<h3 id="如果动物已经消失了">如果动物已经消失了</h3>
+<p><strong>现在就把模组装回去，别继续游玩，也别保存。</strong> 动物多半会回来。一旦游戏覆盖保存，就再也找不回来了，而且 这个文件没有备份。</p>
+<h3 id="如何安全移除">如何安全移除</h3>
+<p><strong>第 1 步 - 让所有扩展保持启用。</strong> 在动任何东西之前，确认 <strong>你在那个存档里用过的每一个品种扩展，都在 那个存档的模组列表里被勾选</strong>（读取游戏，选中存档，Mods）。被停用的扩展本身就是上面描述的问题。</p>
+<p><strong>第 2 步 - 处理掉这些狗。</strong> 两种安全的做法：</p>
+<ul>
+<li><strong>杀掉。</strong> 尸体以另一种方式保存，格式是游戏没有模组也能读的。</li>
+<li><strong>放一只在背包里带着。</strong> 物品是游戏懂得安全跳过的东西：只丢这只狗，其余照旧。</li>
+</ul>
+<p>放生或者把狗带到很远 <strong>都没有用</strong>：它的记录仍然留在存档里，换个地方只是换成哪片区域出问题。</p>
+<p><strong>第 3 步 - 保存游戏。</strong> 是这次保存把清理写进文件。</p>
+<p><strong>第 4 步 - 移除模组。</strong></p>
+<h3 id="彻底清理管理员-调试模式">彻底清理（管理员 / 调试模式）</h3>
+<p>上面的步骤能处理你自己的狗，但模组还会把 <strong>流浪狗</strong> 撒在地图各处，靠手动根本找不完。要一次清空整个存档， 有一个命令：</p>
+<ol>
+<li>在该存档里打开沙盒选项 <strong><span class="ig">允许调试生成</span></strong>。</li>
+<li>以 <strong>管理员</strong> 身份进入（多人）或以 <strong>调试模式</strong> 启动游戏（单人：在 Steam 启动选项里加 <code>-debug</code>）。</li>
+<li>在地面上右键，依次选择 <strong>Companion Dogs (debug)</strong>、<strong>Tools</strong>、 <strong>Delete ALL dogs (whole save)</strong>。</li>
+<li>等待 <code>sweep done</code> 提示，然后 <strong>保存游戏</strong>。</li>
+</ol>
+<p>这个命令会立刻删除已加载的狗，随后在后台扫过存档的其余部分，不会卡住游戏。如果它 <strong>拒绝执行</strong> 并点名某个 品种，那就是上面的第 1 步：那个扩展在这个存档里没有启用，而在缺少它定义的情况下强行清理，正是毁掉动物的 那件事。</p></article></main>
 </div>
 
 <script>

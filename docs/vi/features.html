@@ -558,6 +558,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#22-sự-cố-thường-gặp" data-id="22-sự-cố-thường-gặp">22. Sự cố thường gặp</a>
+</div>
+<div class="grp">
+<a class="s2" href="#23-gỡ-mod-khỏi-file-save-đọc-trước" data-id="23-gỡ-mod-khỏi-file-save-đọc-trước">23. Gỡ mod khỏi file save (ĐỌC TRƯỚC)</a>
+<div class="sub">
+<a class="s3" href="#vì-sao-chuyện-này-xảy-ra" data-id="vì-sao-chuyện-này-xảy-ra">Vì sao chuyện này xảy ra</a>
+<a class="s3" href="#nếu-vật-nuôi-đã-biến-mất" data-id="nếu-vật-nuôi-đã-biến-mất">Nếu vật nuôi đã biến mất</a>
+<a class="s3" href="#cách-gỡ-an-toàn" data-id="cách-gỡ-an-toàn">Cách gỡ an toàn</a>
+<a class="s3" href="#dọn-sạch-hoàn-toàn-admin-chế-độ-debug" data-id="dọn-sạch-hoàn-toàn-admin-chế-độ-debug">Dọn sạch hoàn toàn (admin / chế độ debug)</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-sổ-tay-tính-năng">Companion Dogs: Sổ tay tính năng</h1>
@@ -890,7 +899,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>Chó cỏ không thể tự giết một con zombie.</strong> Nó ghim con zombie ở mức 10% máu rồi dừng lại. Đây là chủ ý và không có thiết lập sandbox nào thay đổi được. Vai trò của nó là <strong>quật ngã con zombie</strong> và câu giờ cho bạn.</li>
 <li>Tất cả các giống còn lại <strong>đều kết liễu được</strong>.</li>
-<li>Con chó <strong><a href="#chất-đạm-chó-là-loài-ăn-thịt">Suy nhược</a></strong>, đã 24 giờ không ăn đạm, <strong>đánh bằng nửa sức</strong>. Đó là khác biệt giữa việc kết liễu zombie và bị kẹt lại với nó.</li>
+<li>Con chó <strong><a href="#chất-đạm-chó-là-loài-ăn-thịt">Suy nhược</a></strong>, đã ba ngày không ăn đạm, <strong>đánh bằng nửa sức</strong>. Đó là khác biệt giữa việc kết liễu zombie và bị kẹt lại với nó.</li>
 </ul>
 <p>Bảng sát thương của từng giống nằm trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</p>
 <p><strong>Quật ngã zombie:</strong> mỗi cú đánh đều có khả năng quật ngã, bắt đầu ở 10% và lên tới 50% khi Chiến đấu đạt cấp tối đa.</p>
@@ -991,7 +1000,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Một con chó đang hoảng loạn <strong>thì ngừng đánh nhau, ngừng canh gác và ngừng làm trò khéo</strong>. Nó vẫn chạy tới chỗ bạn khi được gọi.</p>
 <p>Tin tốt: <strong>căng thẳng do chiến đấu tan rất nhanh</strong> khi rời khỏi trận đánh. Một thanh đầy sẽ cạn trong khoảng <strong>2 giờ trong game</strong>. <strong>Vuốt ve, cho ăn và cho uống nước còn làm nó nhanh hơn nữa.</strong></p>
 <h3 id="chất-đạm-chó-là-loài-ăn-thịt">Chất đạm: chó là loài ăn thịt</h3>
-<p>Làm đầy bụng không giống với cho ăn tử tế. Ngoài cơn đói, chó còn có <strong>chiếc đồng hồ thứ hai</strong>: thời gian kể từ bữa đạm gần nhất. Sau <strong>24 giờ trong game</strong> không có đạm, nó trở nên <strong>Suy nhược</strong>, có moodle riêng trên màn hình và hai hình phạt có thật:</p>
+<p>Làm đầy bụng không giống với cho ăn tử tế. Ngoài cơn đói, chó còn có <strong>chiếc đồng hồ thứ hai</strong>: thời gian kể từ bữa đạm gần nhất. Sau <strong>ba ngày trong game</strong> không có đạm, nó trở nên <strong>Suy nhược</strong>, có moodle riêng trên màn hình và hai hình phạt có thật:</p>
 <ul>
 <li><strong>Sát thương cắn giảm một nửa.</strong> Con chó từng hạ một zombie sau bốn cú giờ cần tới tám cú.</li>
 <li><strong>+25% khả năng phớt lờ mệnh lệnh</strong>, cộng thêm vào khả năng thông thường của Vâng lời. Ngay cả con chó Vâng lời 10, vốn không bao giờ cãi, cũng lì trở lại khi đang Suy nhược.</li>
@@ -1004,37 +1013,38 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Giăm bông, bao thức ăn cho chó</td>
-<td>Xóa sạch 24h trong một lần</td>
+<td>Xóa sạch 72h trong một lần</td>
 </tr>
 <tr>
 <td>Bít tết, thịt xay, thỏ, gà, hộp thức ăn đã mở</td>
-<td>Xóa sạch 24h</td>
+<td>Xóa sạch 72h</td>
 </tr>
 <tr>
 <td>Thịt khô</td>
-<td>Xóa sạch 24h</td>
+<td>Xóa sạch 72h</td>
 </tr>
 <tr>
 <td>Thịt thú nhỏ</td>
-<td>18 giờ</td>
+<td>54 giờ</td>
 </tr>
 <tr>
 <td>Thịt xông khói</td>
-<td>~14 giờ</td>
+<td>~42 giờ</td>
 </tr>
 <tr>
 <td>Trứng</td>
-<td>~8 giờ</td>
+<td>~25 giờ</td>
 </tr>
 <tr>
 <td>Lát thịt xông khói mỏng</td>
-<td>~5 giờ</td>
+<td>~15 giờ</td>
 </tr>
 <tr>
 <td>Vụn thịt xông khói</td>
-<td>~1 giờ</td>
+<td>~3,5 giờ</td>
 </tr>
 </tbody></table></div>
+<p><strong>Đồng hồ dài bao nhiêu là do bạn.</strong> Tuỳ chọn sandbox <strong>Số giờ không có chất đạm</strong> chạy từ 6 đến 168 giờ trong game, mặc định 72 (ba ngày). Đổi nó thì cả bảng phía trên co giãn theo, vì mỗi bữa ăn trả lại một <strong>phần</strong> của đồng hồ chứ không phải một số giờ cố định.</p>
 <p><strong>Cả bốn con đường đều tính:</strong> cho ăn bằng tay, từ bát đặt dưới đất, từ cũi (chó đang cất), và con mồi nó tự săn và ăn. Cho ăn bằng tay tính <strong>cả món đồ</strong>, kể cả khi chó chỉ gặm một miếng vì đã gần no.</p>
 <p><strong>Đồng hồ chỉ chạy khi chó còn sống trong thế giới.</strong> Chó ở trong cũi, trên tay, trong xe, khi chủ mất kết nối hoặc đang trực trông nông trại thì <strong>không tích lũy gì cả</strong> trong lúc ở đó, hệt như đói và khát cũng không tăng.</p>
 <p>Tắt bằng tùy chọn sandbox <strong><span class="ig">Chó cần chất đạm</span></strong>. Khi tắt, chỉ còn đói và khát là quan trọng.</p>
@@ -1620,7 +1630,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Suy nhược</strong></td>
-<td>24h không ăn đạm</td>
+<td>72h không ăn đạm</td>
 <td><strong>Sát thương cắn giảm nửa và +25% khả năng phớt lờ mệnh lệnh.</strong> Xem <a href="#chất-đạm-chó-là-loài-ăn-thịt">Chất đạm</a></td>
 </tr>
 <tr>
@@ -1782,7 +1792,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Chó cần chất đạm</td>
 <td>Bật</td>
-<td>24h không có thịt, cá, trứng hay thức ăn cho chó khiến chó <strong>Suy nhược</strong>: nửa sát thương và +25% không vâng lời</td>
+<td>Thiếu thịt, cá, trứng hay thức ăn cho chó sẽ khiến chó <strong>Suy nhược</strong>: nửa sát thương và +25% không vâng lời</td>
+</tr>
+<tr>
+<td>Số giờ không có chất đạm</td>
+<td>72</td>
+<td>Đồng hồ đó dài bao nhiêu, tính bằng giờ trong game (72 = ba ngày). Từ 6 đến 168</td>
 </tr>
 <tr>
 <td>Mức giảm trung thành mỗi ngày</td>
@@ -1943,7 +1958,35 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Con chó không lên xe cùng tôi.</span></strong> Chỉ con chó đang ở chế độ <strong>Đi theo</strong> mới lên xe. Ở chế độ Đứng yên hoặc Canh gác thì nó ở lại.</p>
 <p><strong><span class="ig">Tôi để chó canh gác căn cứ mà nó chẳng làm gì cả.</span></strong> Hiện tại chế độ Canh gác <strong>chỉ hoạt động khi bạn ở gần</strong>. Muốn để một con chó tự làm việc ở xa thì cách duy nhất là <strong>Chăm đàn vật nuôi</strong>, và chế độ đó cần một chuồng nuôi được chỉ định.</p>
 <p><strong><span class="ig">Con chó học chậm quá.</span></strong> Mặc định của <strong><span class="ig">Tốc độ nhận XP kỹ năng</span></strong> là <strong>0,5</strong>, tức là một nửa tốc độ. Hãy tăng lên 1,0 hoặc cao hơn trong một thế giới mới.</p>
-<p><strong><span class="ig">Chó của tôi chết rồi.</span></strong> Không có cách nào lấy lại, và cũng không có chuyện hồi sinh. Nguyên nhân duy nhất là để đói hoặc khát tới mức cùng cực. Túi yên và số hàng bên trong nằm lại trên mặt đất, ngay chỗ nó gục xuống.</p></article></main>
+<p><strong><span class="ig">Chó của tôi chết rồi.</span></strong> Không có cách nào lấy lại, và cũng không có chuyện hồi sinh. Nguyên nhân duy nhất là để đói hoặc khát tới mức cùng cực. Túi yên và số hàng bên trong nằm lại trên mặt đất, ngay chỗ nó gục xuống.</p>
+<p><strong><span class="ig">Sức chứa của tôi thay đổi sau khi cài mod.</span></strong> Companion Dogs <strong>không</strong> đụng vào khối lượng tối đa bạn mang được, ở bất cứ đâu. Nếu bạn dùng một mod nâng sức chứa thì con số của mod đó là con số có hiệu lực, và hai mod sống chung không cần chỉnh gì. Husky cũng không còn gánh bớt đồ cho bạn nữa: từ 0.6.9 moodle của nó tăng tốc <strong>Sức mạnh</strong> của bạn, và chính Sức mạnh mới là thứ nâng sức chứa một cách lâu dài. Trên server có một chi tiết <strong>không</strong> đến từ mod này: game gốc giữ sức chứa của bạn ở một giá trị thấp và bỏ qua Sức mạnh, cho tới khi nhân vật chịu sát thương đầu tiên. Nếu con số trông nhỏ trước vết xước đầu tiên, đó là cách game hoạt động khi không cài mod nào cả.</p>
+<h2 id="23-gỡ-mod-khỏi-file-save-đọc-trước">23. Gỡ mod khỏi file save (ĐỌC TRƯỚC)</h2>
+<p>Đây là phần quan trọng nhất trong toàn bộ sổ tay với ai đang tính gỡ mod. <strong>Gỡ Companion Dogs khỏi một file save vẫn còn chó sẽ làm biến mất những con vật không thuộc về mod</strong>: gia súc, gà, mọi thứ sống ở vùng đó của bản đồ. Đây không phải lỗi của mod, mà là cách Project Zomboid lưu động vật, và mod không thể tự bảo vệ một khi đã bị gỡ.</p>
+<h3 id="vì-sao-chuyện-này-xảy-ra">Vì sao chuyện này xảy ra</h3>
+<p>Trò chơi giữ <strong>toàn bộ động vật sống của một vùng lớn trên bản đồ trong một file duy nhất</strong>. Khi mở file đó mà không có mod, nó vấp phải con chó, không còn biết đó là gì, bỏ luôn phần còn lại của file và tạo lại vùng đó như thể bạn chưa từng đặt chân tới. Vật nuôi của bạn biến mất cùng vì chúng nằm trong cùng file với con chó.</p>
+<p>Thiệt hại không phải cả bản đồ, cũng không chỉ quanh con chó: việc đọc dừng lại ở con chó và <strong>mất tất cả những gì được lưu sau nó trong vùng đó</strong>. Vì vậy kết quả khác nhau rất nhiều giữa các file save.</p>
+<p><strong>Với addon giống chó cũng y hệt.</strong> Hủy đăng ký riêng Rottweiler, Doberman hay Labrador rồi tiếp tục chơi với mod gốc gây ra đúng vấn đề đó, vì chó của giống ấy vẫn còn được ghi trong file save.</p>
+<h3 id="nếu-vật-nuôi-đã-biến-mất">Nếu vật nuôi đã biến mất</h3>
+<p><strong>Cài lại mod ngay bây giờ, trước khi chơi tiếp hoặc lưu.</strong> Nhiều khả năng vật nuôi sẽ quay lại. Một khi trò chơi lưu đè lên, không còn cách nào lấy lại và file này không có bản sao lưu.</p>
+<h3 id="cách-gỡ-an-toàn">Cách gỡ an toàn</h3>
+<p><strong>Bước 1 - giữ mọi addon được bật.</strong> Trước khi động vào bất cứ thứ gì, hãy chắc rằng <strong>mọi addon giống chó bạn từng dùng trong file save đó đều được tick trong danh sách mod CỦA CHÍNH file save ấy</strong> (Load Game, chọn save, Mods). Một addon bị tắt chính là vấn đề mô tả ở trên.</p>
+<p><strong>Bước 2 - dọn sạch chó.</strong> Hai cách an toàn:</p>
+<ul>
+<li><strong>Giết chúng.</strong> Xác được lưu theo cách khác, ở định dạng trò chơi đọc được ngay cả khi không có mod.</li>
+<li><strong>Mang một con trong túi đồ.</strong> Vật phẩm là thứ trò chơi biết bỏ qua an toàn: chỉ mất con chó, phần còn lại vẫn nguyên.</li>
+</ul>
+<p>Thả chó ra hay dắt nó đi thật xa <strong>không giải quyết được gì</strong>: bản ghi của nó vẫn nằm trong file save, và chuyển nó đi chỉ đổi xem vùng nào sẽ hỏng.</p>
+<p><strong>Bước 3 - lưu game.</strong> Chính lần lưu mới ghi lại việc dọn dẹp.</p>
+<p><strong>Bước 4 - gỡ mod.</strong></p>
+<h3 id="dọn-sạch-hoàn-toàn-admin-chế-độ-debug">Dọn sạch hoàn toàn (admin / chế độ debug)</h3>
+<p>Các bước trên lo được đám chó của bạn, nhưng mod còn rải <strong>chó hoang</strong> khắp bản đồ, và không có cách nào tìm hết bằng tay. Để dọn cả file save một lần có một lệnh:</p>
+<ol>
+<li>Bật tùy chọn sandbox <strong><span class="ig">Cho phép spawn debug</span></strong> trong file save đó.</li>
+<li>Vào với quyền <strong>admin</strong> (nhiều người chơi) hoặc chạy game ở <strong>chế độ debug</strong> (một người chơi: thêm <code>-debug</code> vào launch options của Steam).</li>
+<li>Chuột phải xuống đất, rồi <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
+<li>Chờ thông báo <code>sweep done</code> rồi <strong>lưu game</strong>.</li>
+</ol>
+<p>Lệnh này xóa ngay những con chó đang được nạp, sau đó quét phần còn lại của file save ở nền, không làm treo game. Nếu nó <strong>từ chối</strong> và nêu tên một giống chó, đó là bước 1 ở trên: addon ấy không được bật trong file save này, và ép dọn dẹp khi thiếu định nghĩa của nó chính là thứ hủy hoại vật nuôi.</p></article></main>
 </div>
 
 <script>

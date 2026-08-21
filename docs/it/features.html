@@ -558,6 +558,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#22-problemi-comuni" data-id="22-problemi-comuni">22. Problemi comuni</a>
+</div>
+<div class="grp">
+<a class="s2" href="#23-rimuovere-la-mod-da-un-salvataggio-leggi-prima" data-id="23-rimuovere-la-mod-da-un-salvataggio-leggi-prima">23. Rimuovere la mod da un salvataggio (LEGGI PRIMA)</a>
+<div class="sub">
+<a class="s3" href="#perche-succede" data-id="perche-succede">Perche succede</a>
+<a class="s3" href="#se-gli-animali-sono-gia-spariti" data-id="se-gli-animali-sono-gia-spariti">Se gli animali sono gia spariti</a>
+<a class="s3" href="#come-rimuoverla-in-sicurezza" data-id="come-rimuoverla-in-sicurezza">Come rimuoverla in sicurezza</a>
+<a class="s3" href="#pulizia-completa-admin-modalita-debug" data-id="pulizia-completa-admin-modalita-debug">Pulizia completa (admin / modalita debug)</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manuale-delle-funzionalità">Companion Dogs: Manuale delle funzionalità</h1>
@@ -890,7 +899,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>Il <strong>Caramelo non riesce a uccidere uno zombie da solo</strong>. Blocca lo zombie al 10% di vita e si ferma. È voluto e nessuna impostazione sandbox lo cambia. Il suo ruolo è <strong>buttare a terra lo zombie</strong> e darti tempo.</li>
 <li>Tutte le altre razze <strong>riescono a finire il lavoro</strong>.</li>
-<li>Un cane <strong><a href="#proteine-è-un-carnivoro">Debole</a></strong>, da 24 ore senza proteine, <strong>picchia a metà</strong>. È la differenza tra finire lo zombi e restarci attaccato.</li>
+<li>Un cane <strong><a href="#proteine-è-un-carnivoro">Debole</a></strong>, da tre giorni senza proteine, <strong>picchia a metà</strong>. È la differenza tra finire lo zombi e restarci attaccato.</li>
 </ul>
 <p>La tabella dei danni per razza si trova nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</p>
 <p><strong>Buttare a terra:</strong> ogni colpo ha una probabilità di far cadere lo zombie, dal 10% iniziale fino al 50% con Combattimento al massimo.</p>
@@ -991,7 +1000,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Un cane nel panico <strong>smette di combattere, di fare la guardia e di eseguire trucchi</strong>. Corre ancora da te quando lo chiami.</p>
 <p>La buona notizia: <strong>lo stress da combattimento sparisce in fretta</strong> fuori dalla mischia. Una barra piena si svuota in circa <strong>2 ore di gioco</strong>. <strong>Coccole, cibo e acqua velocizzano ancora di più.</strong></p>
 <h3 id="proteine-è-un-carnivoro">Proteine: è un carnivoro</h3>
-<p>Riempire la pancia non è la stessa cosa che nutrire bene. Oltre alla fame, il cane ha un <strong>secondo orologio</strong>: il tempo dall'ultima proteina. Passate <strong>24 ore di gioco</strong> senza proteine diventa <strong>Debole</strong>, con un moodle tutto suo sullo schermo e due penalità reali:</p>
+<p>Riempire la pancia non è la stessa cosa che nutrire bene. Oltre alla fame, il cane ha un <strong>secondo orologio</strong>: il tempo dall'ultima proteina. Passati <strong>tre giorni di gioco</strong> senza proteine diventa <strong>Debole</strong>, con un moodle tutto suo sullo schermo e due penalità reali:</p>
 <ul>
 <li><strong>Metà del danno del morso.</strong> Un cane che uccideva uno zombi in quattro colpi ora ne serve otto.</li>
 <li><strong>+25% di probabilità di ignorare un ordine</strong>, sommato alla probabilità normale di Obbedienza. Anche un cane con Obbedienza 10, che non disobbedisce mai, torna a fare il sordo finché è Debole.</li>
@@ -1004,37 +1013,38 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Prosciutto, sacco di cibo per cani</td>
-<td>Azzera le 24h in una volta</td>
+<td>Azzera le 72h in una volta</td>
 </tr>
 <tr>
 <td>Bistecca, carne macinata, coniglio, pollo, lattina aperta</td>
-<td>Azzera le 24h</td>
+<td>Azzera le 72h</td>
 </tr>
 <tr>
 <td>Carne essiccata</td>
-<td>Azzera le 24h</td>
+<td>Azzera le 72h</td>
 </tr>
 <tr>
 <td>Carne di animale piccolo</td>
-<td>18 ore</td>
+<td>54 ore</td>
 </tr>
 <tr>
 <td>Bacon</td>
-<td>~14 ore</td>
+<td>~42 ore</td>
 </tr>
 <tr>
 <td>Uovo</td>
-<td>~8 ore</td>
+<td>~25 ore</td>
 </tr>
 <tr>
 <td>Fetta sottile di bacon</td>
-<td>~5 ore</td>
+<td>~15 ore</td>
 </tr>
 <tr>
 <td>Briciole di bacon</td>
-<td>~1 ora</td>
+<td>~3 ore e mezza</td>
 </tr>
 </tbody></table></div>
+<p><strong>La durata dell'orologio la scegli tu.</strong> L'opzione sandbox <strong>Ore senza proteine</strong> va da 6 a 168 ore di gioco, con 72 (tre giorni) di default. Cambiarla riscala tutta la tabella qui sopra, perché ogni pasto ripaga una <strong>frazione</strong> dell'orologio, non un numero fisso di ore.</p>
 <p><strong>Valgono tutte e quattro le strade:</strong> a mano, dalla ciotola per terra, dal canile (cane messo via) e la preda che ha cacciato e mangiato da solo. Dare da mangiare a mano conta l'<strong>oggetto intero</strong>, anche se il cane ne mordicchia solo un pezzo perché era già quasi sazio.</p>
 <p><strong>L'orologio corre solo con il cane vivo nel mondo.</strong> Un cane nel canile, in braccio, dentro un veicolo, con il padrone disconnesso o di guardia alla fattoria <strong>non accumula nulla</strong> mentre sta lì, allo stesso modo in cui fame e sete non salgono.</p>
 <p>Si disattiva con l'opzione sandbox <strong><span class="ig">I cani hanno bisogno di proteine</span></strong>. Disattivata, contano solo fame e sete.</p>
@@ -1620,7 +1630,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Debole</strong></td>
-<td>24h senza proteine</td>
+<td>72h senza proteine</td>
 <td><strong>Metà del danno del morso e +25% di probabilità di ignorare un ordine.</strong> Vedi <a href="#proteine-è-un-carnivoro">Proteine</a></td>
 </tr>
 <tr>
@@ -1782,7 +1792,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>I cani hanno bisogno di proteine</td>
 <td>Attivo</td>
-<td>24h senza carne, pesce, uovo o cibo per cani rendono il cane <strong>Debole</strong>: metà danno e +25% di disobbedienza</td>
+<td>Restare senza carne, pesce, uovo o cibo per cani rende il cane <strong>Debole</strong>: metà danno e +25% di disobbedienza</td>
+</tr>
+<tr>
+<td>Ore senza proteine</td>
+<td>72</td>
+<td>Quanto dura quell'orologio, in ore di gioco (72 = tre giorni). Va da 6 a 168</td>
 </tr>
 <tr>
 <td>Calo lealtà giornaliero</td>
@@ -1943,7 +1958,35 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Il cane non sale in macchina con me.</span></strong> Sale solo il cane in <strong>Segui</strong>. In Resta o Difendi rimane dov'è.</p>
 <p><strong><span class="ig">Ho lasciato il cane a sorvegliare la base e non ha fatto niente.</span></strong> La modalità Difendi, per ora, <strong>funziona solo con te nei paraggi</strong>. Per lasciare un cane a lavorare da solo e lontano, l'unica modalità che fa questo è <strong>Care for livestock here</strong>, e richiede un recinto designato.</p>
 <p><strong><span class="ig">Il cane impara troppo lentamente.</span></strong> Il valore predefinito di <strong><span class="ig">Rate XP abilità</span></strong> è <strong>0,5</strong>, cioè metà velocità. Alzalo a 1,0 o più in un mondo nuovo.</p>
-<p><strong><span class="ig">Il mio cane è morto.</span></strong> Non si torna indietro e non c'è respawn. L'unica causa è fame o sete portate all'estremo. Le bisacce e il carico restano a terra dove è caduto.</p></article></main>
+<p><strong><span class="ig">Il mio cane è morto.</span></strong> Non si torna indietro e non c'è respawn. L'unica causa è fame o sete portate all'estremo. Le bisacce e il carico restano a terra dove è caduto.</p>
+<p><strong><span class="ig">La mia capacità di carico è cambiata dopo aver installato la mod.</span></strong> Companion Dogs <strong>non</strong> tocca il tuo peso massimo da nessuna parte. Se usi una mod che alza la capacità, il numero che conta è il suo, e le due convivono senza alcun aggiustamento. Nemmeno l'husky si carica più una parte del tuo peso: dalla 0.6.9 il suo moodle accelera la tua <strong>Forza</strong>, ed è la Forza ad alzare la capacità, per sempre. Sul server c'è un dettaglio che <strong>non</strong> viene dalla mod: il gioco base lascia la tua capacità bloccata su un valore basso, ignorando la Forza, finché il personaggio non subisce il primo danno. Se il numero sembra piccolo prima del primo graffio, è così che si comporta il gioco senza nessuna mod installata.</p>
+<h2 id="23-rimuovere-la-mod-da-un-salvataggio-leggi-prima">23. Rimuovere la mod da un salvataggio (LEGGI PRIMA)</h2>
+<p>Questa e la sezione piu importante di tutto il manuale per chi pensa di disinstallare. <strong>Togliere Companion Dogs da un salvataggio che ha ancora dei cani fa sparire animali che non sono della mod</strong>: il tuo bestiame, le tue galline, tutto cio che viveva in quella zona della mappa. Non e un bug della mod, e il modo in cui Project Zomboid salva gli animali, e la mod non puo difendersi una volta rimossa.</p>
+<h3 id="perche-succede">Perche succede</h3>
+<p>Il gioco tiene <strong>tutti gli animali vivi di una grande regione della mappa in un solo file</strong>. Aprendo quel file senza la mod, incontra il tuo cane, non sa piu cosa sia, rinuncia al resto del file e ripopola la regione come se non ci fossi mai passato. I tuoi animali se ne vanno con lui perche stavano nello stesso file del cane.</p>
+<p>Il danno non e tutta la mappa ne solo i dintorni del cane: la lettura si ferma sul cane e <strong>si perde tutto cio che veniva dopo di lui in quella regione</strong>. Per questo il risultato cambia cosi tanto da un salvataggio all'altro.</p>
+<p><strong>Vale allo stesso modo per gli addon di razza.</strong> Disiscriversi solo dal Rottweiler, dal Doberman o dal Labrador e continuare a giocare con la mod base causa esattamente lo stesso problema, perche i cani di quella razza restano scritti nel salvataggio.</p>
+<h3 id="se-gli-animali-sono-gia-spariti">Se gli animali sono gia spariti</h3>
+<p><strong>Reinstalla la mod adesso, prima di continuare a giocare o salvare.</strong> Molto probabilmente gli animali tornano. Una volta che il gioco salva sopra, non si torna indietro e di quel file non esiste backup.</p>
+<h3 id="come-rimuoverla-in-sicurezza">Come rimuoverla in sicurezza</h3>
+<p><strong>Passo 1 - tieni tutti gli addon attivi.</strong> Prima di toccare qualsiasi cosa, verifica che <strong>ogni addon di razza che hai usato in quel salvataggio sia spuntato nella lista mod DI QUEL salvataggio</strong> (Carica partita, il salvataggio, Mods). Un addon disattivato e gia il problema descritto sopra.</p>
+<p><strong>Passo 2 - libera il salvataggio dai cani.</strong> Due modi sicuri:</p>
+<ul>
+<li><strong>Ucciderli.</strong> Il cadavere viene salvato in un altro modo, in un formato che il gioco sa leggere anche senza la mod.</li>
+<li><strong>Portarne uno nell'inventario.</strong> Un oggetto e qualcosa che il gioco sa saltare in sicurezza: si perde solo il cane, il resto rimane.</li>
+</ul>
+<p>Liberare il cane o portarlo lontano <strong>non risolve</strong>: il suo record resta nel salvataggio, e spostarlo altrove cambia soltanto quale regione si rompe.</p>
+<p><strong>Passo 3 - salva la partita.</strong> E il salvataggio che scrive la pulizia.</p>
+<p><strong>Passo 4 - rimuovi la mod.</strong></p>
+<h3 id="pulizia-completa-admin-modalita-debug">Pulizia completa (admin / modalita debug)</h3>
+<p>I passi sopra coprono i tuoi cani, ma la mod sparge anche <strong>randagi</strong> per la mappa, e non c'e modo di trovarli tutti a mano. Per pulire l'intero salvataggio in una volta c'e un comando:</p>
+<ol>
+<li>Attiva l'opzione sandbox <strong><span class="ig">Consenti spawn di debug</span></strong> in quel salvataggio.</li>
+<li>Entra come <strong>admin</strong> (multiplayer) oppure avvia il gioco in <strong>modalita debug</strong> (giocatore singolo: aggiungi <code>-debug</code> alle opzioni di avvio di Steam).</li>
+<li>Tasto destro sul terreno, poi <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
+<li>Aspetta il messaggio <code>sweep done</code> e <strong>salva la partita</strong>.</li>
+</ol>
+<p>Il comando cancella subito i cani caricati e poi setaccia il resto del salvataggio in background, senza bloccare il gioco. Se <strong>rifiuta</strong> citando una razza, e il passo 1 qui sopra: quell'addon non e attivo in quel salvataggio, e forzare la pulizia senza le sue definizioni e proprio cio che distrugge gli animali.</p></article></main>
 </div>
 
 <script>

@@ -558,6 +558,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#22-common-problems" data-id="22-common-problems">22. Common problems</a>
+</div>
+<div class="grp">
+<a class="s2" href="#23-removing-the-mod-from-a-save-read-this-first" data-id="23-removing-the-mod-from-a-save-read-this-first">23. Removing the mod from a save (READ THIS FIRST)</a>
+<div class="sub">
+<a class="s3" href="#why-it-happens" data-id="why-it-happens">Why it happens</a>
+<a class="s3" href="#if-your-animals-already-vanished" data-id="if-your-animals-already-vanished">If your animals already vanished</a>
+<a class="s3" href="#how-to-remove-it-safely" data-id="how-to-remove-it-safely">How to remove it safely</a>
+<a class="s3" href="#full-cleanup-admin-debug-mode" data-id="full-cleanup-admin-debug-mode">Full cleanup (admin / debug mode)</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-features-manual">Companion Dogs: Features Manual</h1>
@@ -890,7 +899,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li>The <strong>Caramelo cannot kill a zombie on its own</strong>. It pins the zombie at 10% health and stops there. That is on purpose and no sandbox setting changes it. Its job is to <strong>knock the zombie down</strong> and buy you time.</li>
 <li>Every other breed <strong>can finish the job</strong>.</li>
-<li>A <strong><a href="#protein-it-is-a-carnivore">Weak</a></strong> dog, one that has gone 24 hours without protein, <strong>hits for half damage</strong>. That is the difference between finishing the zombie and getting stuck on it.</li>
+<li>A <strong><a href="#protein-it-is-a-carnivore">Weak</a></strong> dog, one that has gone three days without protein, <strong>hits for half damage</strong>. That is the difference between finishing the zombie and getting stuck on it.</li>
 </ul>
 <p>The damage table per breed is in the <a href="breeds.html" class="xlink">breed manual</a>.</p>
 <p><strong>Knocking zombies down:</strong> every strike has a chance to knock one down, starting at 10% and reaching 50% with Combat maxed out.</p>
@@ -991,7 +1000,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>A panicking dog <strong>stops fighting, keeping watch and doing tricks</strong>. It still runs to you when you call it.</p>
 <p>The good news: <strong>combat stress fades fast</strong> out of a fight. A full bar empties in about <strong>2 in-game hours</strong>. <strong>Petting, food and water make it even faster.</strong></p>
 <h3 id="protein-it-is-a-carnivore">Protein: it is a carnivore</h3>
-<p>Filling its belly is not the same as feeding it well. On top of hunger, the dog runs a <strong>second clock</strong>: the time since its last protein. After <strong>24 in-game hours</strong> without protein it turns <strong>Weak</strong>, with a moodle of its own on your screen and two real penalties:</p>
+<p>Filling its belly is not the same as feeding it well. On top of hunger, the dog runs a <strong>second clock</strong>: the time since its last protein. After <strong>three in-game days</strong> without protein it turns <strong>Weak</strong>, with a moodle of its own on your screen and two real penalties:</p>
 <ul>
 <li><strong>Half its bite damage.</strong> A dog that killed a zombie in four strikes now needs eight.</li>
 <li><strong>+25% chance of ignoring an order</strong>, added on top of the normal Obedience chance. Even an Obedience 10 dog, which never disobeys, goes back to being stubborn while it is Weak.</li>
@@ -1004,37 +1013,38 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Ham, bag of dog food</td>
-<td>Clears the whole 24h at once</td>
+<td>Clears the whole 72h at once</td>
 </tr>
 <tr>
 <td>Steak, minced meat, rabbit, chicken fillet, opened dog food can</td>
-<td>Clears the whole 24h</td>
+<td>Clears the whole 72h</td>
 </tr>
 <tr>
 <td>Beef jerky</td>
-<td>Clears the whole 24h</td>
+<td>Clears the whole 72h</td>
 </tr>
 <tr>
 <td>Small animal meat</td>
-<td>18 hours</td>
+<td>54 hours</td>
 </tr>
 <tr>
 <td>Bacon</td>
-<td>~14 hours</td>
+<td>~42 hours</td>
 </tr>
 <tr>
 <td>Egg</td>
-<td>~8 hours</td>
+<td>~25 hours</td>
 </tr>
 <tr>
 <td>Bacon rashers</td>
-<td>~5 hours</td>
+<td>~15 hours</td>
 </tr>
 <tr>
 <td>Bacon bits</td>
-<td>~1 hour</td>
+<td>~3 and a half hours</td>
 </tr>
 </tbody></table></div>
+<p><strong>The clock length is up to you.</strong> The sandbox option <strong>Hours without protein</strong> runs from 6 to 168 in-game hours, 72 (three days) by default. Changing it rescales the whole table above, because each meal pays back a <strong>fraction</strong> of the clock, not a fixed number of hours.</p>
 <p><strong>All four routes count:</strong> by hand, from the dropped bowl, from the kennel (a stashed dog), and prey it hunted and ate itself. Hand-feeding counts the <strong>whole item</strong>, even if the dog only nibbles at it because it was already nearly full.</p>
 <p><strong>The clock only runs while the dog is alive in the world.</strong> A dog in the kennel, carried in your arms, inside a vehicle, with its owner logged off, or posted on farm care duty <strong>builds up nothing</strong> while it is there, exactly like hunger and thirst do not rise.</p>
 <p>Turn it off with the sandbox option <strong><span class="ig">Dogs need protein</span></strong>. Off, only hunger and thirst matter.</p>
@@ -1620,7 +1630,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Weak</strong></td>
-<td>24h without protein</td>
+<td>72h without protein</td>
 <td><strong>Half its bite damage and +25% chance of ignoring an order.</strong> See <a href="#protein-it-is-a-carnivore">Protein</a></td>
 </tr>
 <tr>
@@ -1782,7 +1792,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Dogs need protein</td>
 <td>On</td>
-<td>24h without meat, fish, egg or dog food turns the dog <strong>Weak</strong>: half damage and +25% disobedience</td>
+<td>Going without meat, fish, egg or dog food turns the dog <strong>Weak</strong>: half damage and +25% disobedience</td>
+</tr>
+<tr>
+<td>Hours without protein</td>
+<td>72</td>
+<td>How long that clock is, in in-game hours (72 = three days). Ranges from 6 to 168</td>
 </tr>
 <tr>
 <td>Loyalty decay per day</td>
@@ -1939,7 +1954,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">The dog showed up with no texture, all mangled.</span></strong> Enable the mod in the Mods list <strong>on the main menu</strong> and close the game completely before loading the save. It is the number one problem in co-op.</p>
 <p><strong><span class="ig">I added the mod and nothing shows up in my save.</span></strong> Project Zomboid enables mods <strong>per save</strong>. A mod added later does not get into a world that already exists, and the game <strong>gives you no error at all</strong>. On the load-save screen, check that the mod is ticked for that world.</p>
 <p><strong><span class="ig">My dog won't obey.</span></strong> Look at the message. If it says <em><span class="ig">doesn't trust you enough to obey</span></em>, it is loyalty: feed it, give it water and pet it. If it says <em><span class="ig">gets distracted and ignores you</span></em>, it is a lack of training: <strong>repeat the order, the second one always goes through</strong>. If it is panic or a wound, take care of that first.</p>
-<p><strong><span class="ig">My dog went Weak and it won't go away.</span></strong> It has gone more than 24 in-game hours without protein, and what fixes it is <strong>quantity</strong>, not the act of feeding: bacon bits take an hour off the clock, a steak takes the whole day. Give it a real meal (steak, rabbit, chicken, ham, a bag of dog food) or drop dog food into its bowl. If the dog is full and refuses the food, that is fine: <strong>hand-feeding counts the whole item</strong> even if it only nibbles. See <a href="#protein-it-is-a-carnivore">Protein</a>.</p>
+<p><strong><span class="ig">My dog went Weak and it won't go away.</span></strong> It has gone more than three in-game days without protein, and what fixes it is <strong>quantity</strong>, not the act of feeding: bacon bits take about three hours off the clock, a steak clears the whole thing. Give it a real meal (steak, rabbit, chicken, ham, a bag of dog food) or drop dog food into its bowl. If the dog is full and refuses the food, that is fine: <strong>hand-feeding counts the whole item</strong> even if it only nibbles. See <a href="#protein-it-is-a-carnivore">Protein</a>.</p>
 <p><strong><span class="ig">My dog doesn't kill zombies, it only knocks them down.</span></strong> If it is a <strong>Caramelo</strong>, that is exactly how it works, on purpose, and no setting changes it. Get another breed or accept its job of knocking them down for you to finish.</p>
 <p><strong><span class="ig">The dog barks all the time and brings zombies over.</span></strong> There are four possible sources, all of them under your control: the <strong>sentinel on Alert</strong> (switch it to <strong>Quiet</strong>, which never barks), the <strong>Distract</strong> trick (the noise is the whole point of it), <strong>hunting</strong> (turn Hunting mode off) and <strong>combat</strong>. A stressed dog does <strong>not</strong> bark on its own.</p>
 <p><strong><span class="ig">My dog is gone.</span></strong> Open the window on the paw button, go to the <strong><span class="ig">My Dogs</span></strong> tab and use <strong>Bring</strong>. If it is far away, the mod asks for confirmation and brings it back with everything it carried. Cooldown of 2 in-game hours per dog. The map marker also shows the last position seen.</p>
@@ -1949,7 +1964,35 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">The dog won't get in the car with me.</span></strong> Only a dog on <strong>Follow</strong> gets in. On Stay or Guard, it stays put.</p>
 <p><strong><span class="ig">I left the dog guarding the base and it did nothing.</span></strong> Guard mode, for now, <strong>only works with you nearby</strong>. To leave a dog working on its own from far away, the only mode that does that is <strong>Care for livestock</strong>, and it needs a designated pen.</p>
 <p><strong><span class="ig">The dog learns way too slowly.</span></strong> The default of the <strong><span class="ig">Skill XP rate</span></strong> is <strong>0.5</strong>, half speed. Raise it to 1.0 or more in a new world.</p>
-<p><strong><span class="ig">My dog died.</span></strong> There is no undo, and no respawn. The only cause is hunger or thirst taken to the extreme. The saddlebag and its cargo stay on the ground where it fell.</p></article></main>
+<p><strong><span class="ig">My dog died.</span></strong> There is no undo, and no respawn. The only cause is hunger or thirst taken to the extreme. The saddlebag and its cargo stay on the ground where it fell.</p>
+<p><strong><span class="ig">My carry capacity changed after installing the mod.</span></strong> Companion Dogs does <strong>not</strong> touch your maximum carry weight anywhere. If you use a mod that raises capacity, its number is the one that counts, and the two live together with no adjustment. The husky does not carry part of your load any more either: since 0.6.9 its moodle speeds up your <strong>Strength</strong>, and Strength is what raises capacity, for good. On a server there is one detail that does <strong>not</strong> come from the mod: the base game leaves your capacity stuck at a low value, ignoring your Strength, until your character takes the first damage. If the number looks small before the first scratch, that is how the game behaves with no mods installed at all.</p>
+<h2 id="23-removing-the-mod-from-a-save-read-this-first">23. Removing the mod from a save (READ THIS FIRST)</h2>
+<p>This is the most important section in the manual for anyone thinking about uninstalling. <strong>Removing Companion Dogs from a save that has dogs in it makes animals that are not from the mod disappear</strong>: your livestock, your chickens, whatever lived in that part of the map. It is not a mod bug, it is how Project Zomboid stores animals, and the mod cannot defend against it once it has been removed.</p>
+<h3 id="why-it-happens">Why it happens</h3>
+<p>The game keeps <strong>every living animal of a large map region in a single file</strong>. Opening that file without the mod, it hits your dog, no longer knows what that is, gives up on the rest of the file and repopulates the region as if you had never been there. Your animals go with it because they were in the same file as the dog.</p>
+<p>The damage is neither the whole map nor just the dog's surroundings: reading stops at the dog and <strong>everything stored after it in that region is lost</strong>. That is why the outcome varies so much between saves.</p>
+<p><strong>The same applies to breed addons.</strong> Unsubscribing from just the Rottweiler, the Doberman, the Labrador (or any other) and carrying on with the base mod causes exactly the same problem, because the dogs of that breed are still written in your save.</p>
+<h3 id="if-your-animals-already-vanished">If your animals already vanished</h3>
+<p><strong>Reinstall the mod right now, before playing on or saving.</strong> The animals will most likely come back. Once the game saves over it, they are gone for good and there is no backup of that file.</p>
+<h3 id="how-to-remove-it-safely">How to remove it safely</h3>
+<p><strong>Step 1 — keep every addon enabled.</strong> Before touching anything, make sure <strong>every breed addon you have ever used in that save is ticked in that save's mod list</strong> (Load Game → the save → Mods). A disabled addon is already the problem described above.</p>
+<p><strong>Step 2 — get rid of the dogs.</strong> Two safe ways:</p>
+<ul>
+<li><strong>Kill them.</strong> A corpse is stored differently, in a format the game can read without the mod.</li>
+<li><strong>Carry one in your inventory.</strong> An item is something the game knows how to skip safely: only the dog is lost, everything else stays.</li>
+</ul>
+<p>Releasing a dog or walking it far away <strong>does not help</strong>: its record stays in the save, and moving it somewhere else only changes which region breaks.</p>
+<p><strong>Step 3 — save the game.</strong> The save is what writes the cleanup down.</p>
+<p><strong>Step 4 — remove the mod.</strong></p>
+<h3 id="full-cleanup-admin-debug-mode">Full cleanup (admin / debug mode)</h3>
+<p>The steps above cover your own dogs, but the mod also spreads <strong>strays</strong> around the map, and there is no way to hunt all of them down by hand. To clean the whole save at once there is a command:</p>
+<ol>
+<li>Turn on the <strong><span class="ig">Allow debug spawn</span></strong> sandbox option in that save.</li>
+<li>Join as <strong>admin</strong> (multiplayer) or run the game in <strong>debug mode</strong> (singleplayer: add <code>-debug</code> to the Steam launch options).</li>
+<li>Right-click the ground → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
+<li>Wait for the <code>sweep done</code> message and <strong>save the game</strong>.</li>
+</ol>
+<p>The command deletes the loaded dogs immediately and then sweeps the rest of the save in the background, without freezing the game. If it <strong>refuses</strong> and names a breed, that is step 1 above: that addon is not enabled in this save, and forcing the cleanup without its definitions is exactly what destroys the animals.</p></article></main>
 </div>
 
 <script>
