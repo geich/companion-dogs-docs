@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="สายพันธุ์: ครบทั้ง 8 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
+<meta name="description" content="สายพันธุ์: ครบทั้ง 9 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: สายพันธุ์">
-<meta property="og:description" content="สายพันธุ์: ครบทั้ง 8 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
+<meta property="og:description" content="สายพันธุ์: ครบทั้ง 9 สายพันธุ์ พร้อม moodle และคุณลักษณะ">
 <meta property="og:url" content="https://companiondogs.pet/docs/th/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -396,11 +406,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#4-สามสายพนธจากมอดเสรม" data-id="4-สามสายพนธจากมอดเสรม">4. สามสายพันธุ์จากม็อดเสริม</a>
+<a class="s2" href="#4-สสายพนธจากมอดเสรม" data-id="4-สสายพนธจากมอดเสรม">4. สี่สายพันธุ์จากม็อดเสริม</a>
 <div class="sub">
 <a class="s3" href="#รอตไวเลอร" data-id="รอตไวเลอร">ร็อตไวเลอร์</a>
 <a class="s3" href="#โดเบอรแมน" data-id="โดเบอรแมน">โดเบอร์แมน</a>
 <a class="s3" href="#ลาบราดอร" data-id="ลาบราดอร">ลาบราดอร์</a>
+<a class="s3" href="#ปก" data-id="ปก">ปั๊ก</a>
 </div>
 </div>
 <div class="grp">
@@ -536,11 +547,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>เบื่อและเศร้าน้อยลง</strong></td>
-<td><strong>Caramelo</strong></td>
+<td><strong>ปั๊ก</strong> ส่วน <strong>Caramelo</strong> ได้มาฟรี ๆ</td>
+</tr>
+<tr>
+<td><strong>เครียดน้อยลง</strong></td>
+<td><strong>ปั๊ก</strong> หรือ <strong>โดเบอร์แมน</strong></td>
 </tr>
 <tr>
 <td><strong>ตื่นตระหนกน้อยลง</strong></td>
 <td><strong>German Shepherd</strong></td>
+</tr>
+<tr>
+<td><strong>รู้ตัวว่ามีซอมบี้เร็วขึ้น</strong></td>
+<td><strong>ปั๊ก</strong> ถ้าคุณทนเสียงเห่าไหว</td>
 </tr>
 <tr>
 <td><strong>หาของได้มากขึ้น</strong></td>
@@ -587,6 +606,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>ลาบราดอร์</strong></td>
 <td>ตัวคาบของ: นักสู้ที่แย่ที่สุดในม็อด แต่คาบเหยื่อกลับมาให้เก่งที่สุด</td>
+</tr>
+<tr>
+<td><strong>ปั๊ก</strong></td>
+<td>สุนัขประจำบ้าน ข้างนอกไม่มีประโยชน์อะไรเลย แต่เป็นเพื่อนที่ดีที่สุดเท่าที่มี</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-หาสายพนธในมอดหลก">3. ห้าสายพันธุ์ในม็อดหลัก</h2>
@@ -692,8 +715,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>เหมาะกับใคร:</strong> คนที่ทำฟาร์ม ถ้าคุณเลี้ยงวัว แกะ หรือไก่ นี่คือสายพันธุ์ที่ปกป้องผลผลิตของคุณ</p>
 <blockquote class="quote"><strong>หมายเหตุ:</strong> คำอธิบายในเกมยังบอกว่ามัน <span class="ig">เป็นสุนัขสารพัดประโยชน์ที่สมดุล ยังไม่มีความเชี่ยวชาญที่โดดเด่น</span> อันนี้เก่าไปแล้ว ตอนนี้ Herding สองเท่าและออร่าที่แรงขึ้นมีอยู่จริงแล้ว</blockquote>
-<h2 id="4-สามสายพนธจากมอดเสรม">4. สามสายพันธุ์จากม็อดเสริม</h2>
-<p>สามสายพันธุ์นี้มาใน <strong>ม็อดแยกต่างหากบน Steam</strong> ซึ่งต้องมี Companion Dogs ตัวหลักอยู่ด้วย ลิงก์ของแต่ละตัวอยู่ในข้อมูลด้านล่าง และรวมไว้ด้วยกันที่ <a href="#9-การตดตงแอดออน">การติดตั้งม็อดเสริม</a></p>
+<h2 id="4-สสายพนธจากมอดเสรม">4. สี่สายพันธุ์จากม็อดเสริม</h2>
+<p>สี่สายพันธุ์นี้มาใน <strong>ม็อดแยกต่างหากบน Steam</strong> ซึ่งต้องมี Companion Dogs ตัวหลักอยู่ด้วย ลิงก์ของแต่ละตัวอยู่ในข้อมูลด้านล่าง และรวมไว้ด้วยกันที่ <a href="#9-การตดตงแอดออน">การติดตั้งม็อดเสริม</a></p>
 <hr>
 <h3 id="รอตไวเลอร">ร็อตไวเลอร์</h3>
 <p><em>(ม็อด <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, ม็อดเสริมแยกต่างหาก)</em></p>
@@ -770,6 +793,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>+20% XP</strong> ใน <strong>การชำแหละและใบมีดสั้น</strong> ซึ่งเป็นทักษะสำหรับจัดการสิ่งที่มันคาบมาให้พอดี</li>
 </ul>
 <p><strong>เหมาะกับใคร:</strong> เหมาะกับชีวิตสายล่าสัตว์ Golden Retriever เรียนรู้การล่าได้เร็วพอ ๆ กัน แต่ <strong>ลาบราดอร์ส่งของให้ตั้งแต่ต้น</strong> และความต่างนี้เห็นได้ตั้งแต่สัปดาห์แรก ๆ ของเกม</p>
+<hr>
+<h3 id="ปก">ปั๊ก</h3>
+<p><em>(ม็อด <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, ม็อดเสริมแยกต่างหาก)</em></p>
+<p><strong>สุนัขประจำบ้าน</strong> สายพันธุ์อื่นทุกตัวมีค่าที่การต่อสู้ การล่า การต้อนสัตว์ หรือการบรรทุก ปั๊กไม่ทำ อะไรในนั้นเลย และเป็นเพื่อนที่ดีที่สุดในม็อด</p>
+<blockquote class="quote quote-game"><em>"สุนัขประจำบ้าน เพื่อนร่วมทางตัวแรกที่คุณค่าไม่ได้อยู่ที่การต่อสู้ การล่า การต้อนสัตว์ หรือการบรรทุก มันฝึกความเชื่อฟังเร็วเป็นสองเท่าของสายพันธุ์อื่น และความผูกพันไม่เคยลดลงเอง"</em></blockquote>
+<p><strong>หาได้ที่ไหน:</strong></p>
+<ul>
+<li><strong>บ้านพักอาศัย:</strong> <strong>10% ต่อหลัง</strong> พอ ๆ กับลาบราดอร์ ก็มันเป็นสุนัขประจำบ้านนี่นา</li>
+<li><strong>ร้านขายสัตว์เลี้ยงและคลินิกสัตวแพทย์:</strong> <strong>12% ต่ออาคาร</strong> ที่เดียวกับ Husky</li>
+</ul>
+<p><strong>เรียนรู้:</strong> <strong>ความเชื่อฟังเร็วสองเท่า</strong> เร็วกว่าสายพันธุ์ไหนในม็อด พร้อม <strong>ดมกลิ่นเร็วขึ้น 50%</strong> และการล่าสัตว์ 20% มันไต่สายท่า (ไปยังจุดที่กำหนด ล่อซอมบี้ ดมหาไอเทม คาบมาให้ตอนคุณหลับ) ได้เร็วกว่าสุนัขตัวไหนที่คุณจะมีได้</p>
+<p><strong>ความผูกพันไม่ลดลง</strong> สุนัขตัวอื่นจะเสียความภักดีไปเองเมื่อคุณหายไปนานหรือละเลยการดูแล ปั๊กไม่เสีย กลับมาหลังออกเดินทางหนึ่งเดือน มันก็ยังเป็นเหมือนตอนที่คุณจากไปเป๊ะ ๆ มีแค่สายพันธุ์นี้ที่เป็นแบบนี้</p>
+<p><strong>มันเตือนก่อนใคร</strong> ที่ระดับการดมกลิ่นเท่ากัน ปั๊กรู้ตัวว่ามีซอมบี้ <strong>ไกลกว่าสายพันธุ์อื่น 35%</strong> มันถูกเพาะมาเป็นสุนัขเฝ้าระวัง และยังทำหน้าที่นั้นได้อยู่</p>
+<p><strong>เรื่องสู้: อย่าไปหวังพึ่ง</strong> มันคือสุนัขที่อ่อนแอที่สุดในม็อด อ่อนกว่า Caramelo อีก</p>
+<ul>
+<li><strong>แรงกัดอ่อนที่สุด</strong> ในบรรดาทั้งหมด และทิ้งห่างพอสมควร</li>
+<li><strong>ฆ่าซอมบี้ไม่ได้</strong> และ <strong>ทำให้ล้มไม่ได้</strong> เป็นสุนัขตัวเดียวที่ปิดไว้ทั้งสองอย่าง</li>
+<li>สะสมความเครียดเร็วกว่าตัวไหน ๆ และ <strong>ตื่นตระหนกก่อนใครทั้งหมด</strong></li>
+</ul>
+<p><strong>และราคาที่ต้องจ่ายยังไม่หมดแค่นั้น:</strong></p>
+<ul>
+<li><strong>เสียงเห่าเปิดโปงคุณ และไม่มีทางทำให้เงียบ</strong> สัญญาณเดียวกันที่เตือนคุณก็เตือนพวกที่ตายแล้วด้วย ดังกว่าสายพันธุ์ไหน ๆ และปั๊กเป็น <strong>สุนัขตัวเดียวที่ตั้งเป็นส่งเสียงเบาๆ หรือระวังภัยแบบเงียบไม่ได้</strong> ปุ่มทั้งสองในหน้าต่างของมันจะเป็นสีจาง คุณเลือกเอาแต่ด้านดีของจมูกมันอย่างเดียวไม่ได้ (ถ้าปิดตัวเลือกแซนด์บ็อกซ์ที่ให้เสียงสุนัขดึงดูดซอมบี้ไว้ ปั๊กก็เหมือนตัวอื่นทั้งหมด เสียงเห่ายังดังอยู่ แต่ไม่ลากใครมา)</li>
+<li><strong>มันวิ่งตามไม่ทัน</strong> เวลาสปรินต์ ปั๊กจะตามหลังสุนัขตัวอื่นทุกตัว</li>
+<li><strong>หน้าร้อนทรมานมัน</strong> จมูกแบนระบายความร้อนไม่ได้ เกิน <strong>28 °C</strong> มันจะเริ่มเครียดและ <strong>หยุดปลอบใจคุณ</strong> ที่ <strong>36 °C</strong> บทลงโทษจะเต็มเพดาน ในร่มเย็นกว่า และมันก็กลับมาทำงานได้</li>
+<li><strong>กระเป๋าอาน 2 ถึง 3</strong> ใส่ได้อยู่ แต่ไม่ใช่สัตว์บรรทุกของ</li>
+</ul>
+<p><strong>แลกกันแล้ว มันกินและดื่มน้อย:</strong> หิวเพียงครึ่งเดียว และกระหายน้ำน้อยกว่าสุนัขขนาดกลางราวหนึ่งในสาม</p>
+<p><strong>คุณลักษณะ:</strong> <strong>ช่วงค่าความแข็งแกร่งและความอดทนแคบที่สุดในม็อด</strong> เกิดมาอ่อนแอและบอบบางเสมอ และนั่นไม่ใช่ดวงไม่ดีของลูกสุนัขตัวนั้น</p>
+<p><strong>จำนวนลูกต่อครอก:</strong> <strong>1 ถึง 2</strong></p>
+<p><strong>Moodle: <span class="ig">เงาของคุณ</span></strong></p>
+<blockquote class="quote quote-game"><em>"ปั๊กของคุณไม่ห่างจากคุณเลย ตราบใดที่มันอยู่ใกล้ อิ่ม และภักดี ความเศร้า ความเบื่อ และความเครียด จะลดลงเร็วกว่าสุนัขตัวอื่นใด ความร้อนทำลายทั้งหมดนี้ ปั๊กที่หอบไม่ปลอบใครได้ จนกว่าจะหาที่เย็นๆ ได้"</em></blockquote>
+<ul>
+<li><strong>ความเศร้าและความเบื่อลดเร็วขึ้น 60%</strong> เมื่อเทียบกับการอยู่ข้าง Caramelo</li>
+<li><strong>ความเครียดก็ลดด้วย</strong> ไม่มีสุนัขตัวอื่นในม็อดที่แตะความเครียดได้ด้วยการอยู่ใกล้เฉย ๆ อีกวิธีเดียวที่จะลดความเครียดด้วยสุนัขคือนอนข้าง ๆ มัน (<span class="ig">พักผ่อนเต็มที่</span>)</li>
+<li><strong>พออากาศร้อน moodle จะหายไป</strong> เกิน 28 °C มันจะหลุดออกจาก HUD จนกว่าสุนัขจะหาที่เย็น ๆ ได้ ตั้งใจให้เป็นแบบนั้น คุณจะรู้จุดอ่อนของสายพันธุ์นี้โดยไม่ต้องอ่านอะไรเลย</li>
+</ul>
+<p><strong>เหมาะกับใคร:</strong> เหมาะกับคนที่เล่นแบบตั้งฐาน เล่นยาว ๆ และคนที่เบื่อกับการเสียความภักดีเพราะออกไป นานเกินไป ถ้าจะออกนอกเมือง พาสุนัขเฝ้ายามไปด้วยสักตัว</p>
 <h2 id="5-ตารางเปรยบเทยบ">5. ตารางเปรียบเทียบ</h2>
 <h3 id="ความเรวในการเรยนร">ความเร็วในการเรียนรู้</h3>
 <p>ตัวเลขยิ่งสูง ยิ่งเรียนรู้เร็ว <strong>1.0 คือความเร็วปกติ</strong></p>
@@ -845,6 +905,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>2.0</strong></td>
 <td>1.0</td>
 </tr>
+<tr>
+<td>ปั๊ก</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
 </tbody></table></div>
 <p>ค่า <strong>0.8</strong> ของ Husky เป็นค่าปรับลดประจำสายพันธุ์เพียงค่าเดียวที่มีในม็อดทั้งหมด</p>
 <h3 id="การตอส">การต่อสู้</h3>
@@ -855,6 +923,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>ฆ่าเองได้ไหม</th>
 <th>ทำให้ล้มได้ไหม</th>
 </tr></thead><tbody>
+<tr>
+<td>ปั๊ก</td>
+<td><strong>อ่อนที่สุด</strong></td>
+<td><strong>0.65x</strong></td>
+<td><strong>ไม่ได้</strong></td>
+<td><strong>ไม่ได้</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>อ่อน</td>
@@ -956,6 +1031,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.80</td>
 </tr>
 <tr>
+<td>ปั๊ก</td>
+<td>0.90</td>
+<td><strong>0.70</strong> (ต่ำที่สุด)</td>
+</tr>
+<tr>
 <td>Caramelo</td>
 <td><strong>1.00</strong> (ตื่นง่ายที่สุด)</td>
 <td><strong>0.80</strong></td>
@@ -970,6 +1050,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>ความก้าวร้าว</th>
 <th>ความอดทน</th>
 </tr></thead><tbody>
+<tr>
+<td>ปั๊ก</td>
+<td><strong>0.00 ถึง 0.10</strong></td>
+<td>0.05 ถึง 0.20</td>
+<td><strong>0.00 ถึง 0.15</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>0.00 ถึง 0.15</td>
@@ -1022,6 +1108,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>อ่านแบบเร็ว ๆ</p>
 <ul>
 <li><strong>Caramelo ขึ้นว่า <span class="ig">ต่ำ</span> ครบทั้งสามค่าเสมอ</strong> ไม่มี Caramelo ตัวไหนที่ดี</li>
+<li><strong>ปั๊กก็เหมือนกัน</strong> และช่วงความแข็งแกร่งของมันแคบกว่าอีก ไม่มีปั๊กตัวไหนที่แข็งแรง</li>
 <li><strong>Husky เป็นตัวเดียวที่มักขึ้นว่า <span class="ig">สูง</span> ในความแข็งแกร่ง</strong></li>
 <li><strong>ความก้าวร้าวออกมาเป็น <span class="ig">ต่ำ</span> เสมอ</strong> ทั้งใน Golden, Husky และลาบราดอร์ นั่นคือธรรมชาติของพวกมัน ไม่ใช่ดวงไม่ดี</li>
 <li>Golden กับโดเบอร์แมนก็ตกไปอยู่ที่ <span class="ig">ต่ำ</span> บ่อยเหมือนกัน ทั้งความแข็งแกร่งและความอดทน</li>
@@ -1032,6 +1119,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>สายพันธุ์</th>
 <th>ความจุ</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>ปั๊ก</strong></td>
+<td><strong>2 ถึง 3</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>4 ถึง 5</td>
@@ -1067,7 +1158,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 ถึง 3</td>
 </tr>
 <tr>
-<td>German Shepherd, Golden Retriever, Husky, ร็อตไวเลอร์, โดเบอร์แมน</td>
+<td>German Shepherd, Golden Retriever, Husky, ร็อตไวเลอร์, โดเบอร์แมน, ปั๊ก</td>
 <td>1 ถึง 2</td>
 </tr>
 </tbody></table></div>
@@ -1112,6 +1203,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>ลาบราดอร์</td>
 <td>บ้านพักอาศัย</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>ปั๊ก</td>
+<td>บ้านพักอาศัย</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>ปั๊ก</td>
+<td>ร้านขายสัตว์เลี้ยง, คลินิกสัตวแพทย์</td>
+<td>12%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1206,6 +1307,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>labpup</code></td>
 <td><code>labrador</code></td>
 </tr>
+<tr>
+<td>ปั๊ก</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
 </tbody></table></div>
 <p>ตัวผู้กับตัวเมียเป็น<strong>คนละไทป์กัน</strong> ไม่ใช่ตัวเลือกของไทป์เดียวกัน สามแถวสุดท้ายจะมีก็ต่อเมื่อติดตั้งแอดออนของสายพันธุ์นั้นแล้ว</p>
 <h2 id="6-moodles-รายการทงหมด">6. Moodles: รายการทั้งหมด</h2>
@@ -1289,6 +1397,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>ปากนุ่ม</strong></td>
 <td>ลาบราดอร์</td>
 <td>คาบเหยื่อมาให้ <strong>ตั้งแต่การล่าสัตว์ระดับ 3</strong>, พยายามมากกว่าเดิม 3 เท่า, <strong>โอกาส 60% ที่จะได้ไอเทมแถม</strong>, <strong>+20% XP</strong> ในการชำแหละและอาวุธมีคมสั้น</td>
+</tr>
+<tr>
+<td><strong>เงาของคุณ</strong></td>
+<td>ปั๊ก</td>
+<td>ลด <strong>ความเศร้า ความเบื่อ และความเครียด</strong> และเร็วกว่าสุนัขตัวอื่นทั้งหมด <strong>ปิดตัวเองเมื่ออากาศร้อน</strong></td>
 </tr>
 </tbody></table></div>
 <h3 id="moodle-ททกสายพนธให">moodle ที่ทุกสายพันธุ์ให้</h3>
@@ -1399,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-การตดตงแอดออน">9. การติดตั้งแอดออน</h2>
-<p>ร็อตไวเลอร์ โดเบอร์แมน และลาบราดอร์ เป็น<strong>ม็อดแยกกันคนละตัวบน Steam</strong> แต่ละตัว:</p>
+<p>ร็อตไวเลอร์ โดเบอร์แมน ลาบราดอร์ และปั๊ก เป็น<strong>ม็อดแยกกันคนละตัวบน Steam</strong> แต่ละตัว:</p>
 <ul>
 <li><strong>ต้องมี Companion Dogs ตัวหลักติดตั้งและเปิดใช้งานอยู่</strong></li>
 <li>เพิ่มมาให้<strong>หนึ่งสายพันธุ์</strong> พร้อมโมเดล เท็กซ์เจอร์ moodle และจุดเกิดเป็นของตัวเอง</li>
-<li>มา<strong>พร้อมคำแปล 13 ภาษา</strong> เหมือนกับตัวหลัก</li>
+<li>มา<strong>พร้อมคำแปล 14 ภาษา</strong> เหมือนกับตัวหลัก</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>แอดออน</th>
@@ -1424,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">สมัครสมาชิก</a></td>
 <td><strong>0.6.6 ขึ้นไป</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">สมัครสมาชิก</a></td>
+<td><strong>0.6.8 ขึ้นไป</strong></td>
 </tr>
 </tbody></table></div>
 <p>ส่วนตัวหลัก ถ้าคุณยังไม่มี อยู่ที่นี่: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a></p>

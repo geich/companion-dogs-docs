@@ -11,7 +11,7 @@ every page.
 | Page | Covers |
 |---|---|
 | `<lang>/features.html` | commands, modes, combat, care, skills and sandbox options |
-| `<lang>/breeds.html` | the 8 breeds, moodles, genes and crossbreeds |
+| `<lang>/breeds.html` | the 9 breeds, moodles, genes and crossbreeds |
 
 ## These files are generated
 

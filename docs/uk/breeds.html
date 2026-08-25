@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Породи: Усі 8 порід, moodles і особливості">
+<meta name="description" content="Породи: Усі 9 порід, moodles і особливості">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Породи">
-<meta property="og:description" content="Породи: Усі 8 порід, moodles і особливості">
+<meta property="og:description" content="Породи: Усі 9 порід, moodles і особливості">
 <meta property="og:url" content="https://companiondogs.pet/docs/uk/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -396,11 +406,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#4-три-породи-з-доповнень" data-id="4-три-породи-з-доповнень">4. Три породи з доповнень</a>
+<a class="s2" href="#4-чотири-породи-з-доповнень" data-id="4-чотири-породи-з-доповнень">4. Чотири породи з доповнень</a>
 <div class="sub">
 <a class="s3" href="#ротвейлер" data-id="ротвейлер">Ротвейлер</a>
 <a class="s3" href="#доберман" data-id="доберман">Доберман</a>
 <a class="s3" href="#лабрадор" data-id="лабрадор">Лабрадор</a>
+<a class="s3" href="#мопс" data-id="мопс">Мопс</a>
 </div>
 </div>
 <div class="grp">
@@ -536,11 +547,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Менше нудьги й смутку</strong></td>
-<td><strong>Карамело</strong></td>
+<td><strong>Мопс</strong>, а <strong>Карамело</strong> й так задарма</td>
+</tr>
+<tr>
+<td><strong>Менше стресу</strong></td>
+<td><strong>Мопс</strong> або <strong>Доберман</strong></td>
 </tr>
 <tr>
 <td><strong>Менше паніки</strong></td>
 <td><strong>Німецька вівчарка</strong></td>
+</tr>
+<tr>
+<td><strong>Дізнаватися про зомбі раніше</strong></td>
+<td><strong>Мопс</strong>, якщо терпите гавкіт</td>
 </tr>
 <tr>
 <td><strong>Більше знаходити в Пошуку</strong></td>
@@ -587,6 +606,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Лабрадор</strong></td>
 <td>Подавальник: найгірший боєць у моді й найкращий постачальник здобичі</td>
+</tr>
+<tr>
+<td><strong>Мопс</strong></td>
+<td>Домашній пес. Надворі не годиться ні на що, а супутника кращого немає</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-пять-порід-базового-мода">3. П'ять порід базового мода</h2>
@@ -692,7 +715,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Кому підійде:</strong> тим, хто розбудовує ферму. Якщо у вас є корова, вівця чи курка, саме ця порода береже виробництво.</p>
 <blockquote class="quote"><strong>Примітка:</strong> опис у грі досі каже, що це <span class="ig">добре збалансована універсальна порода без яскраво вираженої спеціалізації</span>. Це застаріло: подвоєна Пастуша справа й посилена аура вже в грі.</blockquote>
-<h2 id="4-три-породи-з-доповнень">4. Три породи з доповнень</h2>
+<h2 id="4-чотири-породи-з-доповнень">4. Чотири породи з доповнень</h2>
 <p>Ці породи виходять <strong>окремими модами в Steam</strong>, які працюють поверх базового Companion Dogs. Посилання на кожен мод є в описі нижче, а всі разом вони зібрані в розділі <a href="#9-встановлення-доповнень">Встановлення доповнень</a>.</p>
 <hr>
 <h3 id="ротвейлер">Ротвейлер</h3>
@@ -770,6 +793,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>+20% досвіду</strong> до <strong>Розбирання та Коротких клинків</strong>, тобто саме до тих навичок, якими ви обробляєте принесене.</li>
 </ul>
 <p><strong>Кому підійде:</strong> для життя з полювання. Золотистий ретривер вчиться полювати так само швидко, але <strong>лабрадор приносить здобич із самого початку</strong>, і різниця відчувається вже в перші тижні гри.</p>
+<hr>
+<h3 id="мопс">Мопс</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, окремий аддон)</em></p>
+<p><strong>Домашній пес.</strong> Усі інші породи виправдовують себе бійкою, полюванням, випасанням або перенесенням вантажу. Мопс не робить нічого з цього і при цьому лишається найкращим супутником у моді.</p>
+<blockquote class="quote quote-game"><em>"Домашній пес: перший супутник, чия цінність не в бійці, полюванні, випасанні чи перенесенні вантажу. Він тренує Послух удвічі швидше за будь-яку іншу породу, а його прив'язаність ніколи не спадає сама."</em></blockquote>
+<p><strong>Де шукати:</strong></p>
+<ul>
+<li><strong>Житловий будинок:</strong> <strong>10% на будинок</strong>, так само легко, як лабрадора. Він же домашній пес.</li>
+<li><strong>Зоомагазин і ветеринарна клініка:</strong> <strong>12% на будівлю</strong>, там само, де й хаскі.</li>
+</ul>
+<p><strong>Вчиться:</strong> <strong>Послуху вдвічі швидше</strong> за будь-яку іншу породу в моді, плюс <strong>Нюх на 50% швидше</strong> і Полювання на 20%. Дерево трюків (іти в точку, відволікати зомбі, винюхувати предмет, приносити його, поки ви спите) він проходить раніше за будь-якого пса, якого ви можете мати.</p>
+<p><strong>Його прив'язаність не спадає.</strong> Будь-який інший пес сам втрачає відданість, коли вас немає або ви недбалі. Мопс не втрачає. Поверніться після місяця в дорозі, і він рівно такий, яким ви його лишили. Така порода одна.</p>
+<p><strong>Він попереджає першим.</strong> За однакового Нюху мопс помічає зомбі <strong>на 35% далі</strong> за будь-яку іншу породу. Його виводили як сторожа тривоги, і це працює й досі.</p>
+<p><strong>У бою на нього не розраховуйте.</strong> Це найслабший пес у моді, слабший за Карамело.</p>
+<ul>
+<li><strong>Найслабший укус</strong> з усіх, і з великим відривом.</li>
+<li><strong>Не вбиває зомбі</strong> і <strong>не збиває з ніг</strong>. Єдиний пес, у якого вимкнено і те, і те.</li>
+<li>Стрес набирає швидше за всіх і <strong>панікує раніше за всіх</strong>.</li>
+</ul>
+<p><strong>І ціна на цьому не закінчується:</strong></p>
+<ul>
+<li><strong>Його гавкіт вас видає, і змусити його замовкнути неможливо.</strong> Та сама тривога, що попереджає вас, попереджає й мерців, гучніше, ніж у будь-якої породи, і мопс це <strong>єдиний пес без режимів «Тихо» і «Повна тиша»</strong>: обидві кнопки в його вікні вимкнені. Взяти лише добру половину його нюху не вийде. (Якщо в пісочниці вимкнено, що шум собаки приваблює зомбі, для мопса це діє так само, як для всіх: гавкіт лишається гучним, але нікого не тягне.)</li>
+<li><strong>Він не встигає за бігом.</strong> На спринті мопс відстає від будь-якого іншого пса.</li>
+<li><strong>Літо йому шкодить.</strong> Приплюснута морда не віддає тепло. Вище <strong>28 °C</strong> він починає набирати стрес і <strong>перестає вас утішати</strong>; на <strong>36 °C</strong> штраф виходить на максимум. У приміщенні прохолодніше, і там він знову працює.</li>
+<li><strong>Сумки на 2 до 3.</strong> Носити їх він може, але в'ючна тварина з нього ніяка.</li>
+</ul>
+<p><strong>Зате їсть і п'є мало:</strong> удвічі менше голоду й на третину менше спраги, ніж у пса середнього розміру.</p>
+<p><strong>Риси:</strong> <strong>найвужчі діапазони Сили та Спротиву в моді</strong>. Народжується слабким і крихким завжди, і це не невдача конкретного цуценяти.</p>
+<p><strong>Виводок:</strong> <strong>від 1 до 2</strong>.</p>
+<p><strong>Moodle: «Твоя тінь»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш мопс не відходить ні на крок. Поки він поруч, ситий і відданий, смуток, нудьга і стрес спадають швидше, ніж з будь-яким іншим псом. Спека все зводить нанівець: захеканий мопс нікого не втішить, доки не знайде прохолоду."</em></blockquote>
+<ul>
+<li><strong>Смуток і нудьга спадають на 60% швидше</strong>, ніж поруч із Карамело.</li>
+<li><strong>Стрес теж спадає.</strong> Жоден інший пес у моді не чіпає стрес самою лише присутністю; єдиний інший спосіб зняти стрес псом це поспати поруч із ним («Добре відпочив»).</li>
+<li><strong>У спеку moodle зникає.</strong> Вище 28 °C він іде з екрана, доки пес не знайде прохолоду. Так задумано: ви помічаєте слабке місце породи, нічого не читаючи.</li>
+</ul>
+<p><strong>Кому підійде:</strong> тим, хто грає від бази, для довгої партії й для тих, кому набридло втрачати відданість через довгі відлучки. Якщо виїжджаєте з міста, візьміть із собою сторожового пса.</p>
 <h2 id="5-порівняльні-таблиці">5. Порівняльні таблиці</h2>
 <h3 id="швидкість-навчання">Швидкість навчання</h3>
 <p>Чим більше, тим швидше. <strong>1,0 це звичайна швидкість.</strong></p>
@@ -845,6 +905,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>2,0</strong></td>
 <td>1,0</td>
 </tr>
+<tr>
+<td>Мопс</td>
+<td>1,5</td>
+<td>1,0</td>
+<td><strong>2,0</strong></td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
 </tbody></table></div>
 <p><strong>0,8</strong> у Хаскі це єдиний породний штраф в усьому моді.</p>
 <h3 id="бій">Бій</h3>
@@ -855,6 +923,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Вбиває сам?</th>
 <th>Збиває з ніг?</th>
 </tr></thead><tbody>
+<tr>
+<td>Мопс</td>
+<td><strong>найслабший</strong></td>
+<td><strong>0,65x</strong></td>
+<td><strong>Ні</strong></td>
+<td><strong>Ні</strong></td>
+</tr>
 <tr>
 <td>Карамело</td>
 <td>слабкий</td>
@@ -956,6 +1031,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,80</td>
 </tr>
 <tr>
+<td>Мопс</td>
+<td>0,90</td>
+<td><strong>0,70</strong> (найнижчий)</td>
+</tr>
+<tr>
 <td>Карамело</td>
 <td><strong>1,00</strong> (найнервовіший)</td>
 <td><strong>0,80</strong></td>
@@ -970,6 +1050,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Агресивність</th>
 <th>Спротив</th>
 </tr></thead><tbody>
+<tr>
+<td>Мопс</td>
+<td><strong>0,00 до 0,10</strong></td>
+<td>0,05 до 0,20</td>
+<td><strong>0,00 до 0,15</strong></td>
+</tr>
 <tr>
 <td>Карамело</td>
 <td>0,00 до 0,15</td>
@@ -1022,6 +1108,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Коротко:</p>
 <ul>
 <li><strong>Карамело завжди показує «Низька» в усіх трьох.</strong> Хорошого Карамело не буває.</li>
+<li><strong>У Мопса так само</strong>, а діапазон Сили в нього ще вужчий. Сильного Мопса не буває.</li>
 <li><strong>Хаскі єдиний, хто зазвичай показує «Висока» в Силі.</strong></li>
 <li><strong>Агресивність завжди виходить «Низька»</strong> у Золотистого ретривера, Хаскі й Лабрадора. Це їхня норма, а не невдача.</li>
 <li>Золотистий ретривер і Доберман теж часто падають у «Низька» по Силі та Спротиву.</li>
@@ -1032,6 +1119,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Порода</th>
 <th>Вантаж</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>Мопс</strong></td>
+<td><strong>від 2 до 3</strong></td>
+</tr>
 <tr>
 <td>Карамело</td>
 <td>від 4 до 5</td>
@@ -1067,7 +1158,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>від 1 до 3</td>
 </tr>
 <tr>
-<td>Німецька вівчарка, Золотистий ретривер, Хаскі, Ротвейлер, Доберман</td>
+<td>Німецька вівчарка, Золотистий ретривер, Хаскі, Ротвейлер, Доберман, Мопс</td>
 <td>від 1 до 2</td>
 </tr>
 </tbody></table></div>
@@ -1112,6 +1203,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Лабрадор</td>
 <td>Житловий будинок</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>Житловий будинок</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>Зоомагазин, ветеринарна клініка</td>
+<td>12%</td>
 </tr>
 <tr>
 <td>Хаскі</td>
@@ -1206,6 +1307,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>labpup</code></td>
 <td><code>labrador</code></td>
 </tr>
+<tr>
+<td>Мопс</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
 </tbody></table></div>
 <p>Самець і самка це <strong>різні типи</strong>, а не опція одного типу. Останні три рядки існують тільки якщо встановлено аддон тієї породи.</p>
 <h2 id="6-moodles-повний-список">6. Moodles: повний список</h2>
@@ -1289,6 +1397,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>М'яка хватка</strong></td>
 <td>Лабрадор</td>
 <td>Приносить здобич <strong>уже з 3 рівня Полювання</strong>, наполягає втричі довше, <strong>60% шансу на додатковий предмет</strong>, <strong>+20% досвіду</strong> в Розбиранні та Коротких клинках</td>
+</tr>
+<tr>
+<td><strong>Твоя тінь</strong></td>
+<td>Мопс</td>
+<td>Знижує <strong>смуток, нудьгу і стрес</strong>, причому швидше за будь-якого іншого пса. <strong>У спеку вимикається</strong></td>
 </tr>
 </tbody></table></div>
 <h3 id="moodles-які-дає-будь-яка-порода">Moodles, які дає будь-яка порода</h3>
@@ -1399,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-встановлення-доповнень">9. Встановлення доповнень</h2>
-<p>Ротвейлер, Доберман і Лабрадор це <strong>окремі моди в Steam</strong>. Кожен із них:</p>
+<p>Ротвейлер, Доберман, Лабрадор і Мопс це <strong>окремі моди в Steam</strong>. Кожен із них:</p>
 <ul>
 <li><strong>Потребує встановленого й увімкненого базового Companion Dogs.</strong></li>
 <li>Додає <strong>одну породу</strong> з власною моделлю, текстурою, moodle і місцями появи.</li>
-<li>Має всі <strong>13 перекладів</strong>, такі самі, як у базового мода.</li>
+<li>Має всі <strong>14 перекладів</strong>, такі самі, як у базового мода.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Доповнення</th>
@@ -1424,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">підписатися</a></td>
 <td><strong>0.6.6 або новіша</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">підписатися</a></td>
+<td><strong>0.6.8 або новіша</strong></td>
 </tr>
 </tbody></table></div>
 <p>А ось база, якщо у вас її ще немає: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>

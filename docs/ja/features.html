@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -373,6 +383,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">目次 &middot; <b>機能</b></div>
     <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#インストール-まずここから" data-id="インストール-まずここから">インストール: まずここから</a>
+<div class="sub">
+<a class="s3" href="#インストール" data-id="インストール">インストール</a>
+<a class="s3" href="#すでにあるセーブの場合" data-id="すでにあるセーブの場合">すでにあるセーブの場合</a>
+<a class="s3" href="#専用サーバー" data-id="専用サーバー">専用サーバー</a>
+<a class="s3" href="#co-opのホスト" data-id="co-opのホスト">Co-opのホスト</a>
+</div>
+</div>
+<div class="grp">
 <a class="s2" href="#1-5分でわかる野良犬から相棒まで" data-id="1-5分でわかる野良犬から相棒まで">1. 5分でわかる：野良犬から相棒まで</a>
 </div>
 <div class="grp">
@@ -573,6 +592,76 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>あなたの犬が何をしてくれるのか、どう指示を出すのか、どう世話をするのかをひと通り説明します。</p>
 <p>このマニュアルは<strong>modがやることすべて</strong>を扱います。<strong>犬種</strong>について知りたい場合（どれを選ぶか、 それぞれの得意分野、moodleや資質）は、もう一つのマニュアルを見てください： <a href="breeds.html" class="xlink">犬種</a>。</p>
 <blockquote class="quote"><strong>表記について：</strong> このマニュアルでカギ括弧に入っている文言は、すべて日本語版のゲーム内表記そのままです。 ゲームを英語で遊んでいる場合は名前が変わりますが、メニューの中での位置は同じです。</blockquote>
+<h2 id="インストール-まずここから">インストール: まずここから</h2>
+<blockquote class="quote"><strong>最初に:</strong> このMODには <strong>Project Zomboid 42.19 以降</strong>（Build 42）が必要です。それより古い バージョンでは読み込まれません。</blockquote>
+<p><strong>MODがセーブに入っているかの見分け方:</strong> 画面左のバー、手のパネルのすぐ下にある <strong>肉球ボタン</strong> を 探してください。これです:</p>
+<figure class="shot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAzY0lEQVR4nO2dC5hVVfn/19r7HOQioKKZJKJomoGCmgJ5S9Es0/Kaillpamlaar8sL6GmoZampP69lKUGRWamqVgmXiBESSW84AUTEzUjirg5DOfsvf7PZ7G+p+VxZphzZgaGmPd5Nmc4Z++9Lu+73tt633cZ0wVd0AVd0AVd0AVd0AVd0AXrFlizFoBzTv3kc8PFixe/554+ffrwsdxau2w19Ce11mbOuTuMMYcbYzJjTBrdkhtjEmPMbGPMzsaYFb7z1jrTyWBtIYDEWps7524xxhzYxIS7MJbXjDG7W2tLEE1HTLgL73XO9czz/JUkSTZrbGzMly1bRh/53ay//vqmW7du6uOR1to7nHMFa225vfvzPw8gP3zu4CJYvHixW7Jkif9sbGyMfxoaP9cB/UnD516hvey4445zffv2dZtsson/3G233ehT2TmXZ1n2p47sz/88sHLC5w1MqHNuxejRo/M+ffrkG2+8sf8cNmxY3tjYuCL8flb8XEf1J8uyy2lv6dKlJRAfuFDlmjhxIn3Jy+UyhLBteLaLCGqcbC+iYLflcvmtPM/drFmzYK3vmfCZM2cy0a5cLk/tqMl2/+1Pt1Kp9CrtPfLII74/iIUddtjB9ezZ0yVJ4vbYYw9+RhQBp8bE05mgs1Ok+rdrmqaboQdcd911XtamaWqGDRtmevXqhXJlJk+ezL1M9nDn3NZBZ2jv8SWBCIanaboVyt6kSZN8G8Vi0XzkIx8xH/jAB0ye5+bxxx83L774on+oXC6PNJ0UOjsBSEndF+QuW7Ysv/fee72iteGGG5qRI0eanj17+v/fdddd3JsVCoWiMeYzHTU+a63L83w0RLdixYr817/+tf9+o402Mr179zbbbrutJ8hyuSyipH/DAjFiOXQqxbuzEwDmlCmVSnsw9zNmzLBvvfWW/+GDH/ygX/3vf//7/f9nzJhhXnnlFdRz5PPnwvOw5/bU/jPn3EZ5nh9DO48//ng6d+5c//sWW2zhP+kPxAlMnz7dI9taO9AY068zmoGdlgDChHsCMMZszj+TJ0/2E7reeuuZLbfckhXoP5Mk8X/ffffd2Oe5tXYn59xHw3tic7EtkIbPowqFQl9Mul/+8pe+P4VCwQwcOND3oUePHmazzTbzN86aNcuLgzRNe8MkwvNdHKBWQKni87HHHvP/33jjjc0GG2xgli9fbjbddFM5gcyECRP4yCGIPM9PbucVl8PG8zw/ldW/YMGCZOLEiZX+cMH2Yf/iSn/729/Mv/71L/9dY2Oj6YzQaTlADCh8wJtvvuk/WWGsuizL/IoT+/3LX/5ipk2blgZl8AjnHKy3zcqgW+nEgRsdmiTJEETB7bffnvznP//xv2+zzTa+P0H8VETAkiVLzL///W//dxcBtCOw6plsVhYTvvXWW3sxwHc//vGPvTKYpmkvY8wZgQvUTQBupdIGEdk8z8cEs9Ncf/31vv3u3bubQYMGoaf4PsDy0U26devmn+eezgxrBQcQgGCACWaimVwmHoLYZJNN/G+/+c1vzNy5c1N8Bnmef8E5976gfdc71iSs/uOTJNkRYrjjjjvS5557zvdnq622Mn379q2wf74D+egpawOsVQQg0GoH+MQG32677fz/ly5dasaNG2eTJMmSJIEXXxy4gG3D6n9/nueXQVS85+KLL/bIph+DBw/2XEgrnf7wPX1aG2CtJICYrcoCQA6zCcNvt912m3n77bfRBVi5X2J/IJhwSR2r3xljdkiSZBOU0Ztvvjl55plnPKLRPVD44EKdndX/TxFANbACEQsf/vCHPWIWLlxoxowZ41dvMN92bct4y/B3Y9zf//53c84553hkc+20005eFFUDfWjq+84IayUBiP1XcwHYMZ5BkPPTn/7UzJw50/++YsWKUhvaSpctWwYR2Weffdb885//9O2jePbv39+3W736oRe4wtoAayUBrFyQTXMB9gdkjv35z3/2v5VKJXz4HomtbcOtFBfe+2etfYfvMPVANkS21157VTgB7WnVI/tpGx9FeI/pzLBWEQArHWB1ScvWxMsk3Hnnnc373ofibyqmmHOuEUS21ifgVkb84FFkh/GYXr16jcuyDKvCu5ohwCeffBJnkCcK+sIF8pctW2Zmz57t+8J3kTnYKee6021PNgOVZQSiMcFwAGF+aYIhAiyAv/71r6ahoUHfpSCue/fu38GHj/kedgl9SJdpOdxra2PMjcaYUXJEsfJFgCiCzz//vDc/8URCGLSP5w+xIIIVMRYKhXc620ZQpwYmSxNWLpfn4tobNmzYu2IBNt54Y7fddtu5wYMHuy222ML16NHDfx9cx27ChAmuCh5zzu3Y3N68+2+0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" alt="左のバーにあるCompanion Dogsの肉球ボタン"></figure>
+<p>このボタンがなければ、そのセーブでCompanion Dogsは動いておらず、<strong>犬は1匹も出現しません</strong>。探しても 無駄なので、下の手順に戻ってください。</p>
+<h3 id="インストール">インストール</h3>
+<ol>
+<li>Steamでサブスクライブします: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>。</li>
+<li>Zomboidのメニューで「MOD」を開き、<strong>Companion Dogs</strong> を有効にします。</li>
+<li><strong>ゲームを完全に終了して</strong>（デスクトップまで戻る）、もう一度起動します。</li>
+</ol>
+<p>手順3は省略できません。再起動しないと、MODが入る前にゲームがモデルを読み込んでしまっているため、 犬がテクスチャなしや「つぶれた」姿で出ることがよくあります。</p>
+<h3 id="すでにあるセーブの場合">すでにあるセーブの場合</h3>
+<p>進行中のセーブに後から追加しても安全ですが、<strong>MODリストでの有効化が効くのは新しいセーブだけです</strong>。 すでにあるセーブは自分のリストを持っているので、そこにCompanion Dogsを入れる必要があります:</p>
+<ol>
+<li>メインメニュー &gt; 「ロード」。</li>
+<li><strong>セーブをクリック</strong> して選択します。</li>
+<li>右下の「詳細...」 &gt; 「MODの選択...」。</li>
+<li><strong>Companion Dogs</strong>（使っている犬種アドオンも）にチェックを入れて確定します。</li>
+<li>セーブを読み込み、犬を探しに行く前に肉球ボタンを確認してください。</li>
+</ol>
+<p>あなたの世界の建物はまだ1つも抽選されていないので、移動するにつれて犬が現れ始めます。すでに探索した 場所も同じです。</p>
+<p>追加は気軽にできますが、<strong>削除はそうではありません</strong>。いつかMODを外すときは、先に <a href="#23-セーブからmodを削除する先に読んでください">セクション23</a> を読んでください。</p>
+<h3 id="専用サーバー">専用サーバー</h3>
+<p><code>&lt;サーバー名&gt;.ini</code>（<code>Zomboid/Server/</code> にあります）に2行:</p>
+<pre><code>WorkshopItems=3740052292
+Mods=CompanionDogs</code></pre>
+<p>これは別々のリストで、両方とも必要です。<code>WorkshopItems</code> にはWorkshopアイテムの <strong>数字のID</strong>、<code>Mods</code> には <strong>MOD ID</strong> を書きます。複数書くときは <strong>セミコロン</strong> 区切りで、スペースは入れません。</p>
+<div class="tw"><table><thead><tr>
+<th>MOD</th>
+<th><code>Mods=</code></th>
+<th><code>WorkshopItems=</code></th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Companion Dogs</strong> （必須）</td>
+<td><code>CompanionDogs</code></td>
+<td><code>3740052292</code></td>
+</tr>
+<tr>
+<td>CD: Rottweiler</td>
+<td><code>CompanionDogsRottweiler</code></td>
+<td><code>3762296152</code></td>
+</tr>
+<tr>
+<td>CD: Doberman</td>
+<td><code>CompanionDogsDoberman</code></td>
+<td><code>3770795385</code></td>
+</tr>
+<tr>
+<td>CD: Labrador</td>
+<td><code>CompanionDogsLabrador</code></td>
+<td><code>3779327129</code></td>
+</tr>
+<tr>
+<td>CD: Pug</td>
+<td><code>CompanionDogsPug</code></td>
+<td><code>3787202559</code></td>
+</tr>
+</tbody></table></div>
+<p>ベースと4つの犬種アドオンを入れるとこうなります:</p>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
+<p>よくある落とし穴が3つあります:</p>
+<ul>
+<li><strong>どちらのリストでもベースがアドオンより先</strong> です。Companion Dogsより先に読み込まれた犬種アドオン は、その犬種を登録できません。</li>
+<li>.iniを編集したら <strong>サーバーを完全に再起動</strong> してください。</li>
+<li>プレイヤーは参加時に <strong>自動でMODをダウンロード</strong> します。手動でサブスクライブする必要はありません。 必要なのは、サーバーと同じバージョンのゲームです。</li>
+</ul>
+<h3 id="co-opのホスト">Co-opのホスト</h3>
+<p>Co-opには固有の落とし穴があります。<strong>Co-opの選択画面だけで有効にしても足りません</strong>。ホストはメイン メニューの「MOD」リストでもCompanion Dogsを有効にし、サーバーを立てる前に <strong>ゲームを完全に終了</strong> する必要があります。Co-opで犬がテクスチャなしやつぶれた姿で出るなら、これが抜けています。</p>
 <h2 id="1-5分でわかる野良犬から相棒まで">1. 5分でわかる：野良犬から相棒まで</h2>
 <p>とりあえず遊び始めたいだけなら、これだけです。</p>
 <ol>
@@ -629,7 +718,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>犬はたいてい建物の<strong>外側</strong>の空いたタイルに出現します。道路、庭、空き地などです。外に空きタイルが 一つも残っていない場合にだけ、建物の中に出現します。まずは道路と庭から探してください。</p>
 <p>サンドボックス設定の<strong>「犬の出現率倍率」</strong>は、これらの確率をまとめて増減させ、犬種ごとの相対的な 希少さはそのまま保ちます。0にすると出現しなくなります。</p>
-<blockquote class="quote"><strong>アドオンの犬種</strong>はSteamの別modとして配布されていて、それぞれ専用の出現場所を持っています： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>です。 それぞれの特徴は<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</blockquote>
+<blockquote class="quote"><strong>アドオンの犬種</strong>はSteamの別modとして配布されていて、それぞれ専用の出現場所を持っています： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>です。 それぞれの特徴は<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</blockquote>
 <h3 id="手懐け方">手懐け方</h3>
 <p>野良犬を右クリックします。出てくる選択肢は <strong>「食べ物やります (仲良くする)」</strong>の一つだけです。</p>
 <ul>
@@ -880,6 +969,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><em>「カラーメロがゾンビを発見しました！」</em>（近いか数が多い、反応すべきとき）</li>
 </ul>
 <p><strong>トレードオフはこうです。</strong> 警戒は警告の範囲が一番広い代わりに、自分の位置を教えてしまいます。静かは音を 立てずに知らせてくれますが、近くしか分かりません。無音は、何がなんでも犬を黙らせたいときのためのものです。</p>
+<p><strong>犬種によっては選べません。</strong> <strong>パグ</strong>（アドオン）は警戒から動かせません。ウィンドウでは静かと無音が 無効で表示され、ラジアルメニューからも消えます。番犬としての嗅覚と引き換えです。ほかにこういう犬種は なく、どの犬種もサンドボックスの物音設定を破りません。その設定を切れば、どんな吠え声もゾンビを 引き寄せません。</p>
 <blockquote class="quote"><strong>ストレスが溜まった犬が勝手に吠えることはありません。</strong> ストレスによる吠えの仕組みは存在しましたが、 MODでは無効になっています。あなたの犬がゾンビを呼んでいるなら、原因は次の4つのどれかで、どれも自分で 制御できます。<strong>警戒モードの見張り</strong>、<strong>気を引く</strong> の芸、<strong>狩りでの追跡</strong>、そして <strong>戦闘</strong> です。</blockquote>
 <h2 id="6-戦闘">6. 戦闘</h2>
 <h3 id="犬が自分から戦うとき">犬が自分から戦うとき</h3>
@@ -1381,6 +1471,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>積載量（重さ）</th>
 </tr></thead><tbody>
 <tr>
+<td><strong>パグ</strong></td>
+<td><strong>2～3</strong></td>
+</tr>
+<tr>
 <td>カラーメロ</td>
 <td><strong>4～5</strong></td>
 </tr>
@@ -1397,7 +1491,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>13～16</strong></td>
 </tr>
 </tbody></table></div>
-<p>サドルバッグに犬種ボーナスが付くのはハスキーだけです（50%増し）。ほかの犬はすべて筋力の資質だけで 決まるので、同じ犬種でも個体によって積める量が変わります。</p>
+<p>サドルバッグに犬種ボーナスが付くのはハスキーとパグの2種で、向きは逆です。ハスキーは50%増し、パグは 40%減ります。ほかの犬はすべて筋力の資質だけで決まるので、同じ犬種でも個体によって積める量が変わります。</p>
 <p>サーバー側は<strong>「サドルバッグの基本容量」</strong>と<strong>「筋力による積載ボーナス」</strong>でこの数字を動かせます。</p>
 <h3 id="何を入れられるか">何を入れられるか</h3>
 <p>ほとんど何でも入りますし、制限は<strong>重さ</strong>であって、アイテムの個数ではありません。例外は次のとおりです。</p>
@@ -1950,7 +2044,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>「modを入れたのに自分のセーブに何も出てこない」</strong> Project Zomboidはmodを<strong>セーブごと</strong>に有効にします。あとから追加したmodは既存のワールドには入らず、 しかも<strong>エラーは一切出ません</strong>。セーブを読み込む画面で、そのワールドにmodのチェックが入っているか 確認してください。</p>
 <p><strong>「犬が言うことを聞かない」</strong> 出ているメッセージを見てください。<em>「あなたを十分に信頼しておらず、従いません」</em>なら忠誠度の問題です。 餌をやり、水をやり、撫でてあげてください。<em>「気を取られて言うことを聞かない」</em>なら訓練不足です。 <strong>同じ命令をもう一度出せば必ず通ります</strong>。パニックや負傷が原因なら、まずそちらを治してください。</p>
 <p><strong>「犬がゾンビを倒さず、転ばせるだけ」</strong> その犬が<strong>カラーメロ</strong>なら、それは仕様で、どこをいじっても変わりません。別の犬種を迎えるか、 ゾンビを転ばせてあなたがとどめを刺す、という役割分担として受け入れてください。</p>
-<p><strong>「犬がしょっちゅう吠えてゾンビを連れてくる」</strong> 考えられる原因は4つあり、どれも自分で制御できます。<strong>「警戒」の見張り</strong>（決して吠えない <strong>「静か」</strong>に変えてください）、芸の<strong>「気を引く」</strong>（吠えること自体が目的です）、<strong>狩り</strong> （「狩り」モードを切ってください）、そして<strong>戦闘</strong>です。ストレスが溜まった犬が自分から吠えることは <strong>ありません</strong>。</p>
+<p><strong>「犬がしょっちゅう吠えてゾンビを連れてくる」</strong> 考えられる原因は4つあり、どれも自分で制御できます。<strong>「警戒」の見張り</strong>（決して吠えない <strong>「静か」</strong>に変えてください）、芸の<strong>「気を引く」</strong>（吠えること自体が目的です）、<strong>狩り</strong> （「狩り」モードを切ってください）、そして<strong>戦闘</strong>です。ストレスが溜まった犬が自分から吠えることは <strong>ありません</strong>。例外は<strong>パグ</strong>で、警戒から動かせないのが犬種の性質です。吠え声でゾンビを一切引き寄せたく ないなら、サンドボックス設定の<strong>犬の物音がゾンビを引き寄せる</strong>で解決します。これはすべての犬種に効きます。</p>
 <p><strong>「犬が見当たらなくなった」</strong> 肉球ボタンでウィンドウを開き、<strong>「マイドッグ」</strong>タブから<strong>「呼び寄せる」</strong>を使ってください。 遠くにいる場合は確認を求められ、持ち物ごと呼び戻してくれます。クールダウンは1匹につきゲーム内2時間です。 マップのマーカーにも最後に確認された位置が残っています。</p>
 <p><strong>「犬がフェンスの向こうで動けなくなった」</strong> <strong>「呼び寄せる」</strong>（口笛）を使ってください。まさにそのための機能で、代わりにゾンビを引き寄せます。</p>
 <p><strong>「犬が妊娠しない」</strong> <a href="#15-繁殖と子犬">繁殖の条件</a>の一覧を確認してください。ほとんどの場合、どちらかの空腹か 喉の渇き、あるいは忠誠度が60未満なのが原因です。<strong>「繁殖を禁止」</strong>がオンになっていないかも確認して ください。</p>
@@ -1965,19 +2059,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="なぜ起きるのか">なぜ起きるのか</h3>
 <p>ゲームは<strong>マップの広い一区画にいる生きた動物すべてを、ひとつのファイルにまとめて保存します</strong>。MODなしで そのファイルを開くと、犬のところで何なのか分からない状態になり、ファイルの残りを読むのをやめ、その区画を あなたが一度も行かなかったかのように作り直します。あなたの動物が一緒に消えるのは、犬と同じファイルに 入っていたからです。</p>
 <p>被害はマップ全体でもなければ犬の周囲だけでもありません。読み込みは犬で止まり、<strong>その区画でそれより後ろに 保存されていたものがすべて失われます</strong>。セーブごとに結果が大きく変わるのはこのためです。</p>
-<p><strong>犬種アドオンでも同じことが起きます。</strong> ロットワイラーやドーベルマン、ラブラドールだけを解除して base MOD で遊び続けると、その犬種の犬はセーブに残ったままなので、まったく同じ問題になります。</p>
+<p><strong>犬種アドオンでも同じことが起きます。</strong> ロットワイラーやドーベルマン、ラブラドール、パグだけを解除して base MOD で遊び続けると、その犬種の犬はセーブに残ったままなので、まったく同じ問題になります。</p>
 <h3 id="すでに動物が消えてしまった場合">すでに動物が消えてしまった場合</h3>
 <p><strong>遊び続ける前、セーブする前に、今すぐMODを入れ直してください。</strong> 動物はたいてい戻ります。ゲームが上書き 保存してしまうと元には戻せず、このファイルのバックアップは存在しません。</p>
 <h3 id="安全に外す手順">安全に外す手順</h3>
-<p><strong>手順1 - すべてのアドオンを有効のままにする。</strong> 何かを触る前に、<strong>そのセーブで一度でも使った犬種アドオン が、そのセーブのMODリストで有効になっているか</strong>を確認してください（ゲームをロード、該当セーブ、Mods）。 無効になっているアドオンは、上で説明した問題そのものです。</p>
-<p><strong>手順2 - 犬をいなくする。</strong> 安全な方法は2つです。</p>
+<p><strong>手順1：すべてのアドオンを有効のままにする。</strong> 何かを触る前に、<strong>そのセーブで一度でも使った犬種アドオン が、そのセーブのMODリストで有効になっているか</strong>を確認してください（ゲームをロード、該当セーブ、Mods）。 無効になっているアドオンは、上で説明した問題そのものです。</p>
+<p><strong>手順2：犬をいなくする。</strong> 安全な方法は2つです。</p>
 <ul>
 <li><strong>殺す。</strong> 死体は別の形式で保存され、MODがなくてもゲームが読める形になります。</li>
 <li><strong>インベントリに入れて持つ。</strong> アイテムはゲームが安全に読み飛ばせるものです。失われるのは犬だけで、 ほかは残ります。</li>
 </ul>
 <p>犬を手放したり遠くへ連れて行ったりしても<strong>解決しません</strong>。記録はセーブに残ったままで、別の場所へ移すのは どの区画が壊れるかが変わるだけです。</p>
-<p><strong>手順3 - セーブする。</strong> 片付けを書き込むのはセーブです。</p>
-<p><strong>手順4 - MODを外す。</strong></p>
+<p><strong>手順3：セーブする。</strong> 片付けを書き込むのはセーブです。</p>
+<p><strong>手順4：MODを外す。</strong></p>
 <h3 id="完全な掃除管理者-デバッグモード">完全な掃除（管理者 / デバッグモード）</h3>
 <p>上の手順で自分の犬は片付きますが、MODは<strong>野良犬</strong>もマップ中にばらまきます。手作業で全部見つけるのは無理 です。セーブ全体を一度に掃除するコマンドがあります。</p>
 <ol>

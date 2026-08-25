@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Raças: As 8 raças, moodles e características">
+<meta name="description" content="Raças: As 9 raças, moodles e características">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Raças">
-<meta property="og:description" content="Raças: As 8 raças, moodles e características">
+<meta property="og:description" content="Raças: As 9 raças, moodles e características">
 <meta property="og:url" content="https://companiondogs.pet/docs/pt-br/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -785,7 +795,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Para quem é:</strong> para uma vida de caça. O Golden aprende a caçar tão rápido quanto, mas <strong>o Labrador entrega desde o começo</strong>, e a diferença aparece nas primeiras semanas de jogo.</p>
 <hr>
 <h3 id="pug">Pug</h3>
-<p><em>(mod <strong>CD: Pug</strong>, addon separado)</em></p>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon separado)</em></p>
 <p><strong>O cão de casa.</strong> Todas as outras raças valem por lutar, caçar, pastorear ou carregar. O Pug não faz nada disso, e é o melhor companheiro do mod.</p>
 <blockquote class="quote quote-game"><em>"O cão de casa: o primeiro companheiro cujo valor não é lutar, caçar, pastorear nem carregar. Treina Obediência no dobro da velocidade de qualquer outra raça, e o vínculo dele nunca cai sozinho."</em></blockquote>
 <p><strong>Onde achar:</strong></p>
@@ -804,7 +814,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>E o preço não para aí:</strong></p>
 <ul>
-<li><strong>O latido entrega você.</strong> O mesmo alarme que te avisa avisa os mortos, mais alto que o de qualquer raça, e <strong>continua atraindo mesmo com o ruído de latido desligado nas opções</strong>. Isso é a troca, não um defeito.</li>
+<li><strong>O latido entrega você, e não tem como calar.</strong> O mesmo alarme que te avisa avisa os mortos, mais alto que o de qualquer raça, e o Pug é o <strong>único cão que não aceita os modos Discreto e Silencioso</strong>: os dois botões ficam desligados na janela dele. Você não escolhe só a metade boa do faro dele. (Se o barulho do cão atrai zumbis estiver desligado nas opções de sandbox, vale para o Pug como para todos: o latido continua alto, mas não puxa ninguém.)</li>
 <li><strong>Ele não acompanha corrida.</strong> Num sprint o Pug fica para trás de qualquer outro cão.</li>
 <li><strong>O verão machuca.</strong> Focinho achatado não troca calor. Acima de <strong>28 °C</strong> ele começa a estressar e <strong>para de te confortar</strong>; a <strong>36 °C</strong> a penalidade satura. Dentro de casa é mais fresco, e ele volta a funcionar.</li>
 <li><strong>Alforje de 2 a 3.</strong> Ele até usa, mas não é animal de carga.</li>
@@ -1502,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-instalando-os-addons">9. Instalando os addons</h2>
-<p>Rottweiler, Doberman e Labrador são <strong>mods separados na Steam</strong>. Cada um:</p>
+<p>Rottweiler, Doberman, Labrador e Pug são <strong>mods separados na Steam</strong>. Cada um:</p>
 <ul>
 <li><strong>Precisa do Companion Dogs base instalado e ativo.</strong></li>
 <li>Adiciona <strong>uma raça</strong>, com modelo, textura, moodle e locais de spawn próprios.</li>
-<li>Vem com as <strong>13 traduções</strong>, iguais às do base.</li>
+<li>Vem com as <strong>14 traduções</strong>, iguais às do base.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
@@ -1527,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">assinar</a></td>
 <td><strong>0.6.6 ou mais novo</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">assinar</a></td>
+<td><strong>0.6.8 ou mais novo</strong></td>
 </tr>
 </tbody></table></div>
 <p>E o base, se você ainda não tem: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>

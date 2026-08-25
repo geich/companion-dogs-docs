@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -373,6 +383,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">Зміст &middot; <b>Можливості</b></div>
     <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#встановлення-почніть-звідси" data-id="встановлення-почніть-звідси">Встановлення: почніть звідси</a>
+<div class="sub">
+<a class="s3" href="#встановити" data-id="встановити">Встановити</a>
+<a class="s3" href="#якщо-збереження-вже-існує" data-id="якщо-збереження-вже-існує">Якщо збереження вже існує</a>
+<a class="s3" href="#виділений-сервер" data-id="виділений-сервер">Виділений сервер</a>
+<a class="s3" href="#хост-кооперативу" data-id="хост-кооперативу">Хост кооперативу</a>
+</div>
+</div>
+<div class="grp">
 <a class="s2" href="#1-за-5-хвилин-від-безпритульного-до-компаньйона" data-id="1-за-5-хвилин-від-безпритульного-до-компаньйона">1. За 5 хвилин: від безпритульного до компаньйона</a>
 </div>
 <div class="grp">
@@ -573,6 +592,76 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Повний опис того, що вміє ваш пес, як ним командувати і як про нього дбати.</p>
 <p>Цей посібник охоплює <strong>все, що робить мод</strong>. Якщо вас цікавлять <strong>породи</strong> (яку вибрати, чим кожна особлива, moodle і риси), загляньте в інший посібник: <a href="breeds.html" class="xlink">Породи</a>.</p>
 <blockquote class="quote"><strong>Про назви:</strong> усі тексти в лапках у цьому посібнику наведені так, як вони виглядають у грі українською. Якщо ваша гра англійською, назви будуть іншими, але місце в меню те саме.</blockquote>
+<h2 id="встановлення-почніть-звідси">Встановлення: почніть звідси</h2>
+<blockquote class="quote"><strong>Найперше:</strong> моду потрібен <strong>Project Zomboid 42.19 або новіший</strong> (Build 42). На старішій версії він не завантажується.</blockquote>
+<p><strong>Як зрозуміти, що мод потрапив у ваше збереження:</strong> знайдіть <strong>кнопку з лапою</strong> на лівій панелі, одразу під панеллю рук. Ось вона:</p>
+<figure class="shot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAzY0lEQVR4nO2dC5hVVfn/19r7HOQioKKZJKJomoGCmgJ5S9Es0/Kaillpamlaar8sL6GmoZampP69lKUGRWamqVgmXiBESSW84AUTEzUjirg5DOfsvf7PZ7G+p+VxZphzZgaGmPd5Nmc4Z++9Lu+73tt633cZ0wVd0AVd0AVd0AVd0AVd0AXrFlizFoBzTv3kc8PFixe/554+ffrwsdxau2w19Ce11mbOuTuMMYcbYzJjTBrdkhtjEmPMbGPMzsaYFb7z1jrTyWBtIYDEWps7524xxhzYxIS7MJbXjDG7W2tLEE1HTLgL73XO9czz/JUkSTZrbGzMly1bRh/53ay//vqmW7du6uOR1to7nHMFa225vfvzPw8gP3zu4CJYvHixW7Jkif9sbGyMfxoaP9cB/UnD516hvey4445zffv2dZtsson/3G233ehT2TmXZ1n2p47sz/88sHLC5w1MqHNuxejRo/M+ffrkG2+8sf8cNmxY3tjYuCL8flb8XEf1J8uyy2lv6dKlJRAfuFDlmjhxIn3Jy+UyhLBteLaLCGqcbC+iYLflcvmtPM/drFmzYK3vmfCZM2cy0a5cLk/tqMl2/+1Pt1Kp9CrtPfLII74/iIUddtjB9ezZ0yVJ4vbYYw9+RhQBp8bE05mgs1Ok+rdrmqaboQdcd911XtamaWqGDRtmevXqhXJlJk+ezL1M9nDn3NZBZ2jv8SWBCIanaboVyt6kSZN8G8Vi0XzkIx8xH/jAB0ye5+bxxx83L774on+oXC6PNJ0UOjsBSEndF+QuW7Ysv/fee72iteGGG5qRI0eanj17+v/fdddd3JsVCoWiMeYzHTU+a63L83w0RLdixYr817/+tf9+o402Mr179zbbbrutJ8hyuSyipH/DAjFiOXQqxbuzEwDmlCmVSnsw9zNmzLBvvfWW/+GDH/ygX/3vf//7/f9nzJhhXnnlFdRz5PPnwvOw5/bU/jPn3EZ5nh9DO48//ng6d+5c//sWW2zhP+kPxAlMnz7dI9taO9AY068zmoGdlgDChHsCMMZszj+TJ0/2E7reeuuZLbfckhXoP5Mk8X/ffffd2Oe5tXYn59xHw3tic7EtkIbPowqFQl9Mul/+8pe+P4VCwQwcOND3oUePHmazzTbzN86aNcuLgzRNe8MkwvNdHKBWQKni87HHHvP/33jjjc0GG2xgli9fbjbddFM5gcyECRP4yCGIPM9PbucVl8PG8zw/ldW/YMGCZOLEiZX+cMH2Yf/iSn/729/Mv/71L/9dY2Oj6YzQaTlADCh8wJtvvuk/WWGsuizL/IoT+/3LX/5ipk2blgZl8AjnHKy3zcqgW+nEgRsdmiTJEETB7bffnvznP//xv2+zzTa+P0H8VETAkiVLzL///W//dxcBtCOw6plsVhYTvvXWW3sxwHc//vGPvTKYpmkvY8wZgQvUTQBupdIGEdk8z8cEs9Ncf/31vv3u3bubQYMGoaf4PsDy0U26devmn+eezgxrBQcQgGCACWaimVwmHoLYZJNN/G+/+c1vzNy5c1N8Bnmef8E5976gfdc71iSs/uOTJNkRYrjjjjvS5557zvdnq622Mn379q2wf74D+egpawOsVQQg0GoH+MQG32677fz/ly5dasaNG2eTJMmSJIEXXxy4gG3D6n9/nueXQVS85+KLL/bIph+DBw/2XEgrnf7wPX1aG2CtJICYrcoCQA6zCcNvt912m3n77bfRBVi5X2J/IJhwSR2r3xljdkiSZBOU0Ztvvjl55plnPKLRPVD44EKdndX/TxFANbACEQsf/vCHPWIWLlxoxowZ41dvMN92bct4y/B3Y9zf//53c84553hkc+20005eFFUDfWjq+84IayUBiP1XcwHYMZ5BkPPTn/7UzJw50/++YsWKUhvaSpctWwYR2Weffdb885//9O2jePbv39+3W736oRe4wtoAayUBrFyQTXMB9gdkjv35z3/2v5VKJXz4HomtbcOtFBfe+2etfYfvMPVANkS21157VTgB7WnVI/tpGx9FeI/pzLBWEQArHWB1ScvWxMsk3Hnnnc373ofibyqmmHOuEUS21ifgVkb84FFkh/GYXr16jcuyDKvCu5ohwCeffBJnkCcK+sIF8pctW2Zmz57t+8J3kTnYKee6021PNgOVZQSiMcFwAGF+aYIhAiyAv/71r6ahoUHfpSCue/fu38GHj/kedgl9SJdpOdxra2PMjcaYUXJEsfJFgCiCzz//vDc/8URCGLSP5w+xIIIVMRYKhXc620ZQpwYmSxNWLpfn4tobNmzYu2IBNt54Y7fddtu5wYMHuy222ML16NHDfx9cx27ChAmuCh5zzu3Y3N68+2+0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" alt="Кнопка з лапою Companion Dogs на лівій панелі"></figure>
+<p>Без цієї кнопки Companion Dogs у цьому збереженні не працює і <strong>у світі не з'явиться жодного собаки</strong>. Шукати марно: поверніться до кроків нижче.</p>
+<h3 id="встановити">Встановити</h3>
+<ol>
+<li>Підпишіться на мод у Steam: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</li>
+<li>У меню Zomboid відкрийте <strong><span class="ig">МОДИ</span></strong> та увімкніть <strong>Companion Dogs</strong>.</li>
+<li><strong>Повністю закрийте гру</strong> (вийдіть на робочий стіл) і запустіть її знову.</li>
+</ol>
+<p>Крок 3 не формальність: без перезапуску собака зазвичай з'являється без текстури або <em>зім'ятою</em>, бо гра встигла завантажити моделі до того, як підключився мод.</p>
+<h3 id="якщо-збереження-вже-існує">Якщо збереження вже існує</h3>
+<p>Мод безпечно додавати до гри, що вже триває, але <strong>увімкнення у списку модів діє лише на нові збереження</strong>. У наявного збереження свій список, і Companion Dogs треба додати саме до нього:</p>
+<ol>
+<li>Головне меню &gt; <strong><span class="ig">ЗАВАНТАЖИТИ</span></strong>.</li>
+<li><strong>Клацніть по збереженню</strong>, щоб вибрати його.</li>
+<li>Унизу праворуч: <strong><span class="ig">ДЕТАЛІ...</span></strong> &gt; <strong><span class="ig">Вибрати моди...</span></strong>.</li>
+<li>Позначте <strong>Companion Dogs</strong> (і додатки порід, якщо ви ними користуєтесь) та підтвердіть.</li>
+<li>Завантажте збереження і перевірте кнопку з лапою, перш ніж іти шукати собаку.</li>
+</ol>
+<p>Жодну будівлю вашого світу ще не розіграно, тож собаки почнуть з'являтися в міру того, як ви пересуваєтесь, зокрема й там, де ви вже були.</p>
+<p>Додати легко, <strong>прибрати ні</strong>. Якщо колись захочете вилучити мод, спершу прочитайте <a href="#23-видалення-мода-зі-збереження-прочитайте-спочатку">розділ 23</a>.</p>
+<h3 id="виділений-сервер">Виділений сервер</h3>
+<p>Два рядки у файлі <code>&lt;ім'я-сервера&gt;.ini</code> (лежить у <code>Zomboid/Server/</code>):</p>
+<pre><code>WorkshopItems=3740052292
+Mods=CompanionDogs</code></pre>
+<p>Це різні списки, і потрібні обидва: у <code>WorkshopItems</code> іде <strong>числовий ID</strong> предмета Workshop, у <code>Mods</code> іде <strong>ID мода</strong>. Кілька записів розділяються <strong>крапкою з комою</strong>, без пробілу.</p>
+<div class="tw"><table><thead><tr>
+<th>Мод</th>
+<th><code>Mods=</code></th>
+<th><code>WorkshopItems=</code></th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Companion Dogs</strong> (обов'язковий)</td>
+<td><code>CompanionDogs</code></td>
+<td><code>3740052292</code></td>
+</tr>
+<tr>
+<td>CD: Rottweiler</td>
+<td><code>CompanionDogsRottweiler</code></td>
+<td><code>3762296152</code></td>
+</tr>
+<tr>
+<td>CD: Doberman</td>
+<td><code>CompanionDogsDoberman</code></td>
+<td><code>3770795385</code></td>
+</tr>
+<tr>
+<td>CD: Labrador</td>
+<td><code>CompanionDogsLabrador</code></td>
+<td><code>3779327129</code></td>
+</tr>
+<tr>
+<td>CD: Pug</td>
+<td><code>CompanionDogsPug</code></td>
+<td><code>3787202559</code></td>
+</tr>
+</tbody></table></div>
+<p>З базовим модом і всіма чотирма додатками порід вийде так:</p>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
+<p>Три речі, на яких найчастіше спотикаються:</p>
+<ul>
+<li><strong>Базовий мод іде перед додатками</strong> в обох списках. Додаток породи, завантажений раніше за Companion Dogs, свою породу не реєструє.</li>
+<li><strong>Повністю перезапустіть сервер</strong> після правки .ini.</li>
+<li>Гравці <strong>завантажують мод самі</strong> під час входу; підписуватися вручну нікому не потрібно. Що їм справді потрібно, так це та сама версія гри, що й на сервері.</li>
+</ul>
+<h3 id="хост-кооперативу">Хост кооперативу</h3>
+<p>У кооперативу своя пастка: <strong>увімкнути мод лише на екрані вибору кооперативу недостатньо</strong>. Хост має ще увімкнути Companion Dogs у списку <strong><span class="ig">МОДИ</span></strong> головного меню і <strong>повністю закрити гру</strong> перед запуском сервера. Якщо в кооперативі собака з'являється без текстури або зім'ятою, забракло саме цього.</p>
 <h2 id="1-за-5-хвилин-від-безпритульного-до-компаньйона">1. За 5 хвилин: від безпритульного до компаньйона</h2>
 <p>Якщо ви просто хочете почати грати, ось коротка інструкція:</p>
 <ol>
@@ -629,7 +718,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>Зазвичай пес з'являється на вільній клітинці <strong>зовні</strong> будівлі: на вулиці, у дворі, на ділянці. Лише коли жодної вільної зовнішньої клітинки не лишилося, він опиняється всередині будівлі. Спершу шукайте на вулиці та у дворі.</p>
 <p>Налаштування пісочниці <strong>«Множник появи собак»</strong> масштабує всі ці шанси одразу, зберігаючи відносну рідкість порід. Значення 0 вимикає появу.</p>
-<blockquote class="quote"><strong>Породи з доповнень</strong> виходять окремими модами в Steam і мають власні місця появи: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> та <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>. Що вміє кожна з них, описано в <a href="breeds.html" class="xlink">посібнику з порід</a>.</blockquote>
+<blockquote class="quote"><strong>Породи з доповнень</strong> виходять окремими модами в Steam і мають власні місця появи: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> та <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>. Що вміє кожна з них, описано в <a href="breeds.html" class="xlink">посібнику з порід</a>.</blockquote>
 <h3 id="як-приручити">Як приручити</h3>
 <p>Клацніть правою кнопкою по дикому псу. Єдиний пункт, який він пропонує, це <strong>«Дати їжу (подружитися)»</strong>.</p>
 <ul>
@@ -880,6 +969,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><em>«Ваш Карамело виявив зомбі!»</em> (близько або багато, час реагувати)</li>
 </ul>
 <p><strong>Ось у чому обмін:</strong> Тривога дає найбільшу дальність попередження, але видає вашу позицію. Тихо попереджає без шуму, зате лише зблизька. Повна тиша потрібна тоді, коли ви хочете, щоб собака мовчала за будь-яку ціну.</p>
+<p><strong>У породи може не бути вибору.</strong> <strong>Мопс</strong> (аддон) намертво замкнений у режимі Тривога: «Тихо» і «Повна тиша» в його вікні вимкнені й зникають із радіального меню. Це плата за його сторожовий нюх. Інших таких порід немає, і жодна порода не обходить опцію пісочниці про шум: якщо її вимкнено, жоден гавкіт зомбі не приваблює.</p>
 <blockquote class="quote"><strong>Собака в стресі НЕ гавкає сама по собі.</strong> Система гавкоту від стресу колись була, але в моді вона вимкнена. Якщо ваша собака стягує зомбі, джерело одне з цих чотирьох, і всі вони під контролем: <strong>вартовий у режимі Тривога</strong>, трюк <strong>Відволікти</strong>, <strong>переслідування на полюванні</strong> або <strong>бій</strong>.</blockquote>
 <h2 id="6-бій">6. Бій</h2>
 <h3 id="коли-він-бється-сам">Коли він б'ється сам</h3>
@@ -1381,6 +1471,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Вантаж (вага)</th>
 </tr></thead><tbody>
 <tr>
+<td><strong>Мопс</strong></td>
+<td><strong>від 2 до 3</strong></td>
+</tr>
+<tr>
 <td>Карамело</td>
 <td><strong>від 4 до 5</strong></td>
 </tr>
@@ -1397,7 +1491,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>від 13 до 16</strong></td>
 </tr>
 </tbody></table></div>
-<p>Хаскі це єдиний пес із породним бонусом до сідельних сумок (на 50% більше). Усі інші залежать тільки від гена Сили, тож дві собаки однієї породи можуть нести різну вагу.</p>
+<p>Породний бонус до сідельних сумок є у двох псів, і в протилежні боки: хаскі несе на 50% більше, мопс на 40% менше. Усі інші залежать тільки від гена Сили, тож дві собаки однієї породи можуть нести різну вагу.</p>
 <p>Сервер може змінити це опціями <strong><span class="ig">Базова місткість сідельних сумок</span></strong> і <strong><span class="ig">Бонус сили для сідельних сумок</span></strong>.</p>
 <h3 id="що-можна-покласти">Що можна покласти</h3>
 <p>Майже все, і обмеження тут по <strong>вазі</strong>, а не по кількості предметів. Винятки:</p>
@@ -1950,7 +2044,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>«Додав мод, а в моєму збереженні нічого немає».</strong> Project Zomboid вмикає мод <strong>окремо для кожного збереження</strong>. Мод, доданий пізніше, не потрапляє у вже створений світ, і гра <strong>не показує жодної помилки</strong>. На екрані завантаження збереження перевірте, чи мод позначений для того світу.</p>
 <p><strong>«Мій пес не слухається».</strong> Подивіться на повідомлення. Якщо там <em>«недостатньо вам довіряє, щоб підкоритися»</em>, справа у відданості: погодуйте, дайте води й погладьте. Якщо там <em>«відволікається й не слухається»</em>, бракує тренування: <strong>повторіть наказ, вдруге він завжди спрацює</strong>. Якщо це паніка чи поранення, спершу подбайте про пса.</p>
 <p><strong>«Мій пес не вбиває зомбі, а лише збиває їх з ніг».</strong> Якщо це <strong>Карамело</strong>, так і задумано, і жодне налаштування цього не змінить. Візьміть іншу породу або прийміть його роль: він збиває, а ви добиваєте.</p>
-<p><strong>«Пес гавкає постійно і приводить зомбі».</strong> Джерел може бути чотири, і всі вони під контролем: <strong>вартовий у режимі Тривога</strong> (перемкніть на <strong>Тихо</strong>, у ньому пес ніколи не гавкає), трюк <strong>Відволікти</strong> (шум і є його метою), <strong>полювання</strong> (вимкніть режим Полювання) і <strong>бій</strong>. Пес у стресі <strong>не</strong> гавкає сам по собі.</p>
+<p><strong>«Пес гавкає постійно і приводить зомбі».</strong> Джерел може бути чотири, і всі вони під контролем: <strong>вартовий у режимі Тривога</strong> (перемкніть на <strong>Тихо</strong>, у ньому пес ніколи не гавкає), трюк <strong>Відволікти</strong> (шум і є його метою), <strong>полювання</strong> (вимкніть режим Полювання) і <strong>бій</strong>. Пес у стресі <strong>не</strong> гавкає сам по собі. Виняток це <strong>мопс</strong>: він ніколи не виходить із Тривоги, така порода. Якщо ви хочете, щоб жоден гавкіт не тягнув зомбі, це вирішує опція пісочниці <strong>Шум собаки приваблює зомбі</strong>, і вона діє для всіх порід.</p>
 <p><strong>«Мій пес зник».</strong> Відкрийте вікно кнопкою з лапою, перейдіть на вкладку <strong>«Мої собаки»</strong> і скористайтеся командою <strong>Принести</strong>. Якщо пес далеко, мод попросить підтвердження і поверне його з усіма речами. Перезарядка 2 ігрові години на кожного пса. Позначка на карті теж показує останнє місце, де його бачили.</p>
 <p><strong>«Пес застряг по той бік паркану».</strong> Скористайтеся командою <strong>Принести</strong> (свист). Вона саме для цього, ціною буде тільки увага зомбі.</p>
 <p><strong>«Моя собака не вагітніє».</strong> Перегляньте список <a href="#15-розведення-та-цуценята">умов розведення</a>. Майже завжди причина в голоді, спразі або відданості нижче 60 в однієї з двох собак. Перевірте також, чи не ввімкнено <strong>«Заблокувати розведення»</strong>.</p>
@@ -1964,20 +2058,20 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Це найважливіший розділ усього посібника для тих, хто думає видалити мод. <strong>Якщо прибрати Companion Dogs зі збереження, де ще є собаки, зникнуть тварини, які до мода не мають стосунку</strong>: ваша худоба, кури, усе, що жило в тій частині карти. Це не баг мода, а спосіб, у який Project Zomboid зберігає тварин, і мод уже нічим не зарадить після видалення.</p>
 <h3 id="чому-так-стається">Чому так стається</h3>
 <p>Гра тримає <strong>усіх живих тварин великої ділянки карти в одному файлі</strong>. Відкриваючи цей файл без мода, вона натрапляє на собаку, більше не розуміє, що це, кидає читання решти файлу й заново заселяє ділянку, наче вас там ніколи не було. Ваші тварини зникають разом із нею, бо лежали в тому самому файлі, що й собака.</p>
-<p>Шкода — це не вся карта й не лише околиці собаки: читання спиняється на собаці, і <strong>втрачається все, що зберігалося після неї в цій ділянці</strong>. Тому результат так сильно різниться від збереження до збереження.</p>
-<p><strong>Те саме з аддонами порід.</strong> Відписатися лише від ротвейлера, добермана чи лабрадора й далі грати з базовим модом — точно та сама проблема, бо собаки цієї породи лишаються записаними у збереженні.</p>
+<p>Шкода це не вся карта й не лише околиці собаки: читання спиняється на собаці, і <strong>втрачається все, що зберігалося після неї в цій ділянці</strong>. Тому результат так сильно різниться від збереження до збереження.</p>
+<p><strong>Те саме з аддонами порід.</strong> Відписатися лише від ротвейлера, добермана, лабрадора чи мопса й далі грати з базовим модом це точно та сама проблема, бо собаки цієї породи лишаються записаними у збереженні.</p>
 <h3 id="якщо-тварини-вже-зникли">Якщо тварини вже зникли</h3>
 <p><strong>Перевстановіть мод просто зараз, перш ніж грати далі або зберігатися.</strong> Найімовірніше тварини повернуться. Щойно гра збережеться поверх, повернути їх не вийде, і резервної копії цього файлу не існує.</p>
 <h3 id="як-видалити-безпечно">Як видалити безпечно</h3>
-<p><strong>Крок 1 — залиште всі аддони увімкненими.</strong> Перш ніж щось чіпати, переконайтеся, що <strong>кожен аддон породи, який ви використовували в цьому збереженні, позначений у списку модів САМЕ ЦЬОГО збереження</strong> (Завантажити гру, потрібне збереження, Mods). Вимкнений аддон — це вже описана вище проблема.</p>
-<p><strong>Крок 2 — позбудьтеся собак.</strong> Два безпечні способи:</p>
+<p><strong>Крок 1: залиште всі аддони увімкненими.</strong> Перш ніж щось чіпати, переконайтеся, що <strong>кожен аддон породи, який ви використовували в цьому збереженні, позначений у списку модів САМЕ ЦЬОГО збереження</strong> (Завантажити гру, потрібне збереження, Mods). Вимкнений аддон це вже описана вище проблема.</p>
+<p><strong>Крок 2: позбудьтеся собак.</strong> Два безпечні способи:</p>
 <ul>
 <li><strong>Убити.</strong> Труп зберігається інакше, у форматі, який гра читає й без мода.</li>
 <li><strong>Нести одну в інвентарі.</strong> Предмет гра вміє безпечно пропустити: втрачається лише собака, решта лишається.</li>
 </ul>
 <p>Відпустити собаку чи відвести її далеко <strong>не допоможе</strong>: її запис лишається у збереженні, а перенесення лише змінює те, яка ділянка зламається.</p>
-<p><strong>Крок 3 — збережіться.</strong> Саме збереження записує очищення.</p>
-<p><strong>Крок 4 — видаліть мод.</strong></p>
+<p><strong>Крок 3: збережіться.</strong> Саме збереження записує очищення.</p>
+<p><strong>Крок 4: видаліть мод.</strong></p>
 <h3 id="повне-очищення-адмін-режим-налагодження">Повне очищення (адмін / режим налагодження)</h3>
 <p>Кроки вище закривають ваших собак, але мод розкидає по карті ще й <strong>безпритульних</strong>, і знайти їх усіх вручну неможливо. Щоб вичистити все збереження за раз, є команда:</p>
 <ol>
@@ -1986,7 +2080,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>Правий клік по землі, далі <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Дочекайтеся повідомлення <code>sweep done</code> і <strong>збережіть гру</strong>.</li>
 </ol>
-<p>Команда одразу видаляє завантажених собак, а тоді у фоні обходить решту збереження, не підвішуючи гру. Якщо вона <strong>відмовляється</strong> й називає породу — це крок 1 вище: цей аддон не увімкнений у цьому збереженні, а примусове очищення без його визначень і є тим, що знищує тварин.</p></article></main>
+<p>Команда одразу видаляє завантажених собак, а тоді у фоні обходить решту збереження, не підвішуючи гру. Якщо вона <strong>відмовляється</strong> й називає породу, це крок 1 вище: цей аддон не увімкнений у цьому збереженні, а примусове очищення без його визначень і є тим, що знищує тварин.</p></article></main>
 </div>
 
 <script>

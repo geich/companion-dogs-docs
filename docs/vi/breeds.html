@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Giống chó: 8 giống chó, moodle và đặc tính">
+<meta name="description" content="Giống chó: 9 giống chó, moodle và đặc tính">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Giống chó">
-<meta property="og:description" content="Giống chó: 8 giống chó, moodle và đặc tính">
+<meta property="og:description" content="Giống chó: 9 giống chó, moodle và đặc tính">
 <meta property="og:url" content="https://companiondogs.pet/docs/vi/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -396,11 +406,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#4-ba-giống-chó-addon" data-id="4-ba-giống-chó-addon">4. Ba giống chó addon</a>
+<a class="s2" href="#4-bốn-giống-chó-addon" data-id="4-bốn-giống-chó-addon">4. Bốn giống chó addon</a>
 <div class="sub">
 <a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
 <a class="s3" href="#doberman" data-id="doberman">Doberman</a>
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+<a class="s3" href="#chó-pug" data-id="chó-pug">Chó Pug</a>
 </div>
 </div>
 <div class="grp">
@@ -536,11 +547,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Bớt chán chường và buồn bã</strong></td>
-<td><strong>Chó cỏ</strong></td>
+<td><strong>Chó Pug</strong>, còn <strong>Chó cỏ</strong> thì miễn phí</td>
+</tr>
+<tr>
+<td><strong>Bớt căng thẳng</strong></td>
+<td><strong>Chó Pug</strong> hoặc <strong>Doberman</strong></td>
 </tr>
 <tr>
 <td><strong>Bớt hoảng loạn</strong></td>
 <td><strong>Chó chăn cừu Đức</strong></td>
+</tr>
+<tr>
+<td><strong>Được báo có zombie sớm hơn</strong></td>
+<td><strong>Chó Pug</strong>, nếu bạn chịu nổi tiếng sủa</td>
 </tr>
 <tr>
 <td><strong>Kiếm đồ được nhiều hơn</strong></td>
@@ -587,6 +606,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Labrador</strong></td>
 <td>Chuyên gia tha đồ: đánh nhau tệ nhất mod, mang con mồi về giỏi nhất</td>
+</tr>
+<tr>
+<td><strong>Chó Pug</strong></td>
+<td>Con chó của nhà. Ra ngoài thì vô dụng, mà làm bạn thì không con nào bằng</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-năm-giống-chó-của-mod-gốc">3. Năm giống chó của mod gốc</h2>
@@ -692,8 +715,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Hợp với ai:</strong> hợp với người xây dựng nông trại. Nếu bạn nuôi bò, cừu hay gà, đây là giống bảo vệ sản lượng cho bạn.</p>
 <blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game vẫn nói nó <span class="ig">là giống chó cân bằng, làm được nhiều việc nhưng không có sở trường vượt trội</span>. Câu đó đã lỗi thời: Chăn đàn nhân đôi và vùng làm dịu được tăng cường đều đã có rồi.</blockquote>
-<h2 id="4-ba-giống-chó-addon">4. Ba giống chó addon</h2>
-<p>Ba giống này nằm trong <strong>các mod riêng trên Steam</strong>, và cần có mod Companion Dogs gốc mới chạy được. Link của từng giống nằm ngay trong phần giới thiệu bên dưới, và được gom lại ở mục <a href="#9-cài-đặt-các-addon">Cài đặt các mod addon</a>.</p>
+<h2 id="4-bốn-giống-chó-addon">4. Bốn giống chó addon</h2>
+<p>Bốn giống này nằm trong <strong>các mod riêng trên Steam</strong>, và cần có mod Companion Dogs gốc mới chạy được. Link của từng giống nằm ngay trong phần giới thiệu bên dưới, và được gom lại ở mục <a href="#9-cài-đặt-các-addon">Cài đặt các mod addon</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, mod addon riêng)</em></p>
@@ -770,6 +793,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>+20% XP</strong> cho <strong>Mổ xẻ và Đao ngắn</strong>, đúng hai kỹ năng dùng để xử lý thứ nó tha về.</li>
 </ul>
 <p><strong>Hợp với ai:</strong> hợp với một cuộc sống săn bắn. Golden Retriever học săn nhanh ngang vậy, nhưng <strong>Labrador tha về ngay từ đầu</strong>, và khác biệt đó lộ ra ngay trong những tuần chơi đầu tiên.</p>
+<hr>
+<h3 id="chó-pug">Chó Pug</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon riêng)</em></p>
+<p><strong>Con chó của nhà.</strong> Mọi giống khác đều đáng giá vì đánh nhau, đi săn, chăn gia súc hay chở đồ. Chó Pug không làm gì trong số đó, và nó là người bạn tốt nhất trong mod.</p>
+<blockquote class="quote quote-game"><em>"Chó nhà: người bạn đồng hành đầu tiên mà giá trị không nằm ở đánh nhau, đi săn, chăn gia súc hay chở đồ. Nó luyện Vâng lời nhanh gấp đôi bất kỳ giống nào khác, và mối gắn bó không bao giờ tự tụt xuống."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong></p>
+<ul>
+<li><strong>Nhà dân:</strong> <strong>10% mỗi căn</strong>, dễ ngang Labrador. Nó là chó của nhà mà.</li>
+<li><strong>Cửa hàng thú cưng và phòng khám thú y:</strong> <strong>12% mỗi công trình</strong>, cùng chỗ với Husky.</li>
+</ul>
+<p><strong>Nó học:</strong> <strong>Vâng lời nhanh gấp đôi</strong>, nhanh hơn mọi giống khác trong mod, kèm <strong>Đánh hơi nhanh hơn 50%</strong> và Săn mồi 20%. Nó leo hết cây kỹ năng trò (đi tới một điểm, đánh lạc hướng zombie, đánh hơi tìm vật phẩm, tha về trong lúc bạn ngủ) trước bất kỳ con chó nào bạn có thể có.</p>
+<p><strong>Mối gắn bó của nó không tụt.</strong> Con chó nào khác cũng tự mất lòng trung thành khi bạn đi vắng hoặc lơ là. Chó Pug thì không. Đi cả tháng rồi về, nó vẫn y nguyên như lúc bạn để lại. Chỉ giống này mới như vậy.</p>
+<p><strong>Nó báo trước tiên.</strong> Ở cùng mức Đánh hơi, chó Pug phát hiện zombie <strong>xa hơn 35%</strong> so với mọi giống khác. Nó được nuôi làm chó báo động, và điều đó vẫn còn hiệu lực.</p>
+<p><strong>Đánh nhau: đừng trông cậy vào nó.</strong> Đây là con chó yếu nhất mod, yếu hơn cả Chó cỏ.</p>
+<ul>
+<li><strong>Lực cắn yếu nhất</strong> trong tất cả, và cách biệt khá xa.</li>
+<li><strong>Không giết được zombie</strong> và <strong>không quật ngã được</strong>. Là con chó duy nhất bị tắt cả hai.</li>
+<li>Căng thẳng dồn lên nhanh hơn mọi con khác và <strong>hoảng loạn trước tất cả</strong>.</li>
+</ul>
+<p><strong>Và cái giá chưa dừng ở đó:</strong></p>
+<ul>
+<li><strong>Tiếng sủa của nó tố cáo bạn, và không có cách nào bắt im.</strong> Chính tiếng báo động giúp bạn cũng báo cho lũ xác sống, to hơn bất kỳ giống nào, và chó Pug là <strong>con chó duy nhất không có chế độ Nhẹ tiếng và Im lặng</strong>: cả hai nút đều bị làm mờ trong cửa sổ của nó. Bạn không thể chỉ giữ nửa tốt của cái mũi ấy. (Nếu tùy chọn sandbox cho tiếng chó thu hút zombie đang tắt, chó Pug cũng như mọi con khác: tiếng sủa vẫn to, nhưng không kéo ai tới.)</li>
+<li><strong>Nó không theo kịp khi chạy.</strong> Lúc chạy nước rút, chó Pug tụt lại sau mọi con chó khác.</li>
+<li><strong>Mùa hè hành nó.</strong> Cái mõm bẹt không thoát nhiệt được. Trên <strong>28 °C</strong> nó bắt đầu căng thẳng và <strong>ngừng an ủi bạn</strong>; tới <strong>36 °C</strong> thì mức phạt kịch trần. Trong nhà mát hơn, và nó lại hoạt động bình thường.</li>
+<li><strong>Túi yên 2 đến 3.</strong> Đeo thì được, nhưng nó không phải con thú chở đồ.</li>
+</ul>
+<p><strong>Bù lại, nó ăn ít uống ít:</strong> đói bằng một nửa và khát ít hơn khoảng một phần ba so với chó cỡ trung.</p>
+<p><strong>Đặc tính:</strong> <strong>khoảng Sức mạnh và Sức chịu đựng hẹp nhất mod</strong>. Lúc nào cũng sinh ra yếu ớt và mong manh, và đó không phải là do con chó con xui.</p>
+<p><strong>Lứa đẻ:</strong> <strong>1 đến 2</strong>.</p>
+<p><strong>Moodle: <span class="ig">Cái Bóng Của Bạn</span></strong></p>
+<blockquote class="quote quote-game"><em>"Chó Pug của bạn không rời bạn nửa bước. Khi nó ở gần, được ăn no và trung thành, nỗi buồn, sự chán chường và căng thẳng giảm nhanh hơn bất kỳ con chó nào khác. Cái nóng phá hỏng tất cả: một con Pug đang thở hổn hển không an ủi được ai cho tới khi tìm được chỗ mát."</em></blockquote>
+<ul>
+<li><strong>Buồn bã và Chán chường tan nhanh hơn 60%</strong> so với khi ở cạnh Chó cỏ.</li>
+<li><strong>Căng thẳng cũng giảm.</strong> Không con chó nào khác trong mod động tới căng thẳng chỉ bằng sự có mặt; cách duy nhất còn lại để hạ căng thẳng nhờ chó là ngủ cạnh nó (<span class="ig">Nghỉ ngơi đầy đủ</span>).</li>
+<li><strong>Trời nóng thì moodle biến mất.</strong> Trên 28 °C nó rời khỏi HUD cho tới khi con chó tìm được chỗ mát. Đó là cố ý: bạn nhận ra điểm yếu của giống mà không cần đọc gì cả.</li>
+</ul>
+<p><strong>Hợp với ai:</strong> hợp với lối chơi bám căn cứ, với ván chơi dài, và với ai đã chán cảnh mất lòng trung thành vì đi vắng quá lâu. Nếu rời thành phố thì mang theo một con chó gác.</p>
 <h2 id="5-bảng-so-sánh">5. Bảng so sánh</h2>
 <h3 id="tốc-độ-học">Tốc độ học</h3>
 <p>Số càng lớn thì học càng nhanh. <strong>1.0 là tốc độ bình thường.</strong></p>
@@ -845,6 +905,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>2.0</strong></td>
 <td>1.0</td>
 </tr>
+<tr>
+<td>Chó Pug</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
 </tbody></table></div>
 <p>Mức <strong>0.8</strong> của Husky là điểm trừ theo giống duy nhất trong cả mod.</p>
 <h3 id="chiến-đấu">Chiến đấu</h3>
@@ -855,6 +923,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Tự giết được zombie?</th>
 <th>Quật ngã?</th>
 </tr></thead><tbody>
+<tr>
+<td>Chó Pug</td>
+<td><strong>yếu nhất</strong></td>
+<td><strong>0,65x</strong></td>
+<td><strong>Không</strong></td>
+<td><strong>Không</strong></td>
+</tr>
 <tr>
 <td>Chó cỏ</td>
 <td>yếu</td>
@@ -956,6 +1031,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,80</td>
 </tr>
 <tr>
+<td>Chó Pug</td>
+<td>0,90</td>
+<td><strong>0,70</strong> (thấp nhất)</td>
+</tr>
+<tr>
 <td>Chó cỏ</td>
 <td><strong>1,00</strong> (dễ hoảng nhất)</td>
 <td><strong>0,80</strong></td>
@@ -970,6 +1050,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Độ hung hăng</th>
 <th>Sức chịu đựng</th>
 </tr></thead><tbody>
+<tr>
+<td>Chó Pug</td>
+<td><strong>0,00 đến 0,10</strong></td>
+<td>0,05 đến 0,20</td>
+<td><strong>0,00 đến 0,15</strong></td>
+</tr>
 <tr>
 <td>Chó cỏ</td>
 <td>0,00 đến 0,15</td>
@@ -1022,6 +1108,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Đọc nhanh:</p>
 <ul>
 <li><strong>Chó cỏ lúc nào cũng hiện <span class="ig">Thấp</span> ở cả ba.</strong> Không làm gì có Chó cỏ xịn.</li>
+<li><strong>Chó Pug cũng vậy</strong>, và khoảng Sức mạnh của nó còn hẹp hơn. Không làm gì có Chó Pug khỏe.</li>
 <li><strong>Husky là giống duy nhất thường hiện <span class="ig">Cao</span> ở Sức mạnh.</strong></li>
 <li><strong>Độ hung hăng luôn ra <span class="ig">Thấp</span></strong> ở Golden, Husky và Labrador. Đó là chuyện bình thường của giống, không phải bạn xui.</li>
 <li>Golden và Doberman cũng hay rơi vào <span class="ig">Thấp</span> ở Sức mạnh và Sức chịu đựng.</li>
@@ -1032,6 +1119,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Giống</th>
 <th>Sức chứa</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>Chó Pug</strong></td>
+<td><strong>2 đến 3</strong></td>
+</tr>
 <tr>
 <td>Chó cỏ</td>
 <td>4 đến 5</td>
@@ -1067,7 +1158,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 đến 3</td>
 </tr>
 <tr>
-<td>Chó chăn cừu Đức, Golden Retriever, Husky, Rottweiler, Doberman</td>
+<td>Chó chăn cừu Đức, Golden Retriever, Husky, Rottweiler, Doberman, Chó Pug</td>
 <td>1 đến 2</td>
 </tr>
 </tbody></table></div>
@@ -1112,6 +1203,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Labrador</td>
 <td>Nhà dân</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Chó Pug</td>
+<td>Nhà dân</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Chó Pug</td>
+<td>Cửa hàng thú cưng, phòng khám thú y</td>
+<td>12%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1206,6 +1307,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>labpup</code></td>
 <td><code>labrador</code></td>
 </tr>
+<tr>
+<td>Chó Pug</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
 </tbody></table></div>
 <p>Con đực và con cái là <strong>hai type khác nhau</strong>, không phải một tùy chọn của cùng một type. Ba dòng cuối chỉ tồn tại nếu bạn có cài addon của giống đó.</p>
 <h2 id="6-moodle-danh-sách-đầy-đủ">6. Moodle: danh sách đầy đủ</h2>
@@ -1289,6 +1397,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>Miệng Mềm</strong></td>
 <td>Labrador</td>
 <td>Tha con mồi về <strong>ngay từ Săn mồi cấp 3</strong>, kiên trì gấp 3 lần, <strong>60% cơ hội có thêm vật phẩm</strong>, <strong>+20% XP</strong> cho Mổ xẻ và Đao ngắn</td>
+</tr>
+<tr>
+<td><strong>Cái Bóng Của Bạn</strong></td>
+<td>Chó Pug</td>
+<td>Làm tan <strong>Buồn bã, Chán chường và Căng thẳng</strong>, nhanh hơn mọi con chó khác. <strong>Tắt khi trời nóng</strong></td>
 </tr>
 </tbody></table></div>
 <h3 id="các-moodle-mà-giống-nào-cũng-có">Các moodle mà giống nào cũng có</h3>
@@ -1399,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-cài-đặt-các-addon">9. Cài đặt các addon</h2>
-<p>Rottweiler, Doberman và Labrador là <strong>các mod riêng trên Steam</strong>. Mỗi mod:</p>
+<p>Rottweiler, Doberman, Labrador và Chó Pug là <strong>các mod riêng trên Steam</strong>. Mỗi mod:</p>
 <ul>
 <li><strong>Cần có mod nền Companion Dogs đã cài và đang bật.</strong></li>
 <li>Thêm <strong>một giống chó</strong>, kèm mô hình, texture, moodle và các nơi xuất hiện riêng.</li>
-<li>Đi kèm đủ <strong>13 bản dịch</strong>, giống như mod nền.</li>
+<li>Đi kèm đủ <strong>14 bản dịch</strong>, giống như mod nền.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
@@ -1424,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">đăng ký</a></td>
 <td><strong>0.6.6 trở lên</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">đăng ký</a></td>
+<td><strong>0.6.8 trở lên</strong></td>
 </tr>
 </tbody></table></div>
 <p>Và mod nền, nếu bạn chưa có: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>

@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -373,6 +383,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">目录 &middot; <b>功能</b></div>
     <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#安装从这里开始" data-id="安装从这里开始">安装：从这里开始</a>
+<div class="sub">
+<a class="s3" href="#安装" data-id="安装">安装</a>
+<a class="s3" href="#如果存档已经存在" data-id="如果存档已经存在">如果存档已经存在</a>
+<a class="s3" href="#专用服务器" data-id="专用服务器">专用服务器</a>
+<a class="s3" href="#联机主机" data-id="联机主机">联机主机</a>
+</div>
+</div>
+<div class="grp">
 <a class="s2" href="#1-5-分钟上手从流浪狗到同伴犬" data-id="1-5-分钟上手从流浪狗到同伴犬">1. 5 分钟上手：从流浪狗到同伴犬</a>
 </div>
 <div class="grp">
@@ -573,6 +592,76 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>一份完整的指南：你的狗能做什么、怎么指挥它、怎么照顾它。</p>
 <p>这份手册涵盖<strong>这个 mod 的全部内容</strong>。如果你想了解的是<strong>品种</strong>（该选哪一只、每个品种特别在哪、 moodle 和特性），请看另一份手册： <a href="breeds.html" class="xlink">品种</a>。</p>
 <blockquote class="quote"><strong>关于名称：</strong>本手册里所有带引号的文字，都和游戏简体中文界面里显示的完全一致。 如果你玩的是英文版，名称会不一样，但它们在菜单里的位置是相同的。</blockquote>
+<h2 id="安装从这里开始">安装：从这里开始</h2>
+<blockquote class="quote"><strong>首先：</strong>这个模组需要 <strong>Project Zomboid 42.19 或更新版本</strong>（Build 42）。更旧的版本加载不了。</blockquote>
+<p><strong>怎么确认模组进了你的存档：</strong>在左侧栏里找 <strong>爪印按钮</strong>，就在你的双手面板下面。就是这个：</p>
+<figure class="shot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAzY0lEQVR4nO2dC5hVVfn/19r7HOQioKKZJKJomoGCmgJ5S9Es0/Kaillpamlaar8sL6GmoZampP69lKUGRWamqVgmXiBESSW84AUTEzUjirg5DOfsvf7PZ7G+p+VxZphzZgaGmPd5Nmc4Z++9Lu+73tt633cZ0wVd0AVd0AVd0AVd0AVd0AXrFlizFoBzTv3kc8PFixe/554+ffrwsdxau2w19Ce11mbOuTuMMYcbYzJjTBrdkhtjEmPMbGPMzsaYFb7z1jrTyWBtIYDEWps7524xxhzYxIS7MJbXjDG7W2tLEE1HTLgL73XO9czz/JUkSTZrbGzMly1bRh/53ay//vqmW7du6uOR1to7nHMFa225vfvzPw8gP3zu4CJYvHixW7Jkif9sbGyMfxoaP9cB/UnD516hvey4445zffv2dZtsson/3G233ehT2TmXZ1n2p47sz/88sHLC5w1MqHNuxejRo/M+ffrkG2+8sf8cNmxY3tjYuCL8flb8XEf1J8uyy2lv6dKlJRAfuFDlmjhxIn3Jy+UyhLBteLaLCGqcbC+iYLflcvmtPM/drFmzYK3vmfCZM2cy0a5cLk/tqMl2/+1Pt1Kp9CrtPfLII74/iIUddtjB9ezZ0yVJ4vbYYw9+RhQBp8bE05mgs1Ok+rdrmqaboQdcd911XtamaWqGDRtmevXqhXJlJk+ezL1M9nDn3NZBZ2jv8SWBCIanaboVyt6kSZN8G8Vi0XzkIx8xH/jAB0ye5+bxxx83L774on+oXC6PNJ0UOjsBSEndF+QuW7Ysv/fee72iteGGG5qRI0eanj17+v/fdddd3JsVCoWiMeYzHTU+a63L83w0RLdixYr817/+tf9+o402Mr179zbbbrutJ8hyuSyipH/DAjFiOXQqxbuzEwDmlCmVSnsw9zNmzLBvvfWW/+GDH/ygX/3vf//7/f9nzJhhXnnlFdRz5PPnwvOw5/bU/jPn3EZ5nh9DO48//ng6d+5c//sWW2zhP+kPxAlMnz7dI9taO9AY068zmoGdlgDChHsCMMZszj+TJ0/2E7reeuuZLbfckhXoP5Mk8X/ffffd2Oe5tXYn59xHw3tic7EtkIbPowqFQl9Mul/+8pe+P4VCwQwcOND3oUePHmazzTbzN86aNcuLgzRNe8MkwvNdHKBWQKni87HHHvP/33jjjc0GG2xgli9fbjbddFM5gcyECRP4yCGIPM9PbucVl8PG8zw/ldW/YMGCZOLEiZX+cMH2Yf/iSn/729/Mv/71L/9dY2Oj6YzQaTlADCh8wJtvvuk/WWGsuizL/IoT+/3LX/5ipk2blgZl8AjnHKy3zcqgW+nEgRsdmiTJEETB7bffnvznP//xv2+zzTa+P0H8VETAkiVLzL///W//dxcBtCOw6plsVhYTvvXWW3sxwHc//vGPvTKYpmkvY8wZgQvUTQBupdIGEdk8z8cEs9Ncf/31vv3u3bubQYMGoaf4PsDy0U26devmn+eezgxrBQcQgGCACWaimVwmHoLYZJNN/G+/+c1vzNy5c1N8Bnmef8E5976gfdc71iSs/uOTJNkRYrjjjjvS5557zvdnq622Mn379q2wf74D+egpawOsVQQg0GoH+MQG32677fz/ly5dasaNG2eTJMmSJIEXXxy4gG3D6n9/nueXQVS85+KLL/bIph+DBw/2XEgrnf7wPX1aG2CtJICYrcoCQA6zCcNvt912m3n77bfRBVi5X2J/IJhwSR2r3xljdkiSZBOU0Ztvvjl55plnPKLRPVD44EKdndX/TxFANbACEQsf/vCHPWIWLlxoxowZ41dvMN92bct4y/B3Y9zf//53c84553hkc+20005eFFUDfWjq+84IayUBiP1XcwHYMZ5BkPPTn/7UzJw50/++YsWKUhvaSpctWwYR2Weffdb885//9O2jePbv39+3W736oRe4wtoAayUBrFyQTXMB9gdkjv35z3/2v5VKJXz4HomtbcOtFBfe+2etfYfvMPVANkS21157VTgB7WnVI/tpGx9FeI/pzLBWEQArHWB1ScvWxMsk3Hnnnc373ofibyqmmHOuEUS21ifgVkb84FFkh/GYXr16jcuyDKvCu5ohwCeffBJnkCcK+sIF8pctW2Zmz57t+8J3kTnYKee6021PNgOVZQSiMcFwAGF+aYIhAiyAv/71r6ahoUHfpSCue/fu38GHj/kedgl9SJdpOdxra2PMjcaYUXJEsfJFgCiCzz//vDc/8URCGLSP5w+xIIIVMRYKhXc620ZQpwYmSxNWLpfn4tobNmzYu2IBNt54Y7fddtu5wYMHuy222ML16NHDfx9cx27ChAmuCh5zzu3Y3N68+2+0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" alt="左侧栏上的 Companion Dogs 爪印按钮"></figure>
+<p>没有这个按钮，说明 Companion Dogs 在那个存档里没生效，<strong>世界上一条狗都不会刷出来</strong>。找也是白找， 回到下面的步骤。</p>
+<h3 id="安装">安装</h3>
+<ol>
+<li>在 Steam 上订阅模组： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>。</li>
+<li>在僵尸毁灭工程的菜单里进入 <strong><span class="ig">模组</span></strong>，启用 <strong>Companion Dogs</strong>。</li>
+<li><strong>完全关闭游戏</strong>（退回桌面）后重新打开。</li>
+</ol>
+<p>第 3 步不是走过场：不重启的话，狗常常会没有贴图或者一副压扁的样子，因为游戏在模组进来之前就已经 把模型加载完了。</p>
+<h3 id="如果存档已经存在">如果存档已经存在</h3>
+<p>把模组加进正在进行的存档是安全的，但 <strong>在模组列表里启用只对新存档有效</strong>。已有的存档保存着自己的 列表，Companion Dogs 必须加进那份列表里：</p>
+<ol>
+<li>主菜单 &gt; <strong><span class="ig">载入游戏</span></strong>。</li>
+<li><strong>点一下存档</strong> 把它选中。</li>
+<li>右下角：<strong><span class="ig">更多...</span></strong> &gt; <strong><span class="ig">选择模组...</span></strong>。</li>
+<li>勾选 <strong>Companion Dogs</strong>（还有你在用的犬种扩展），然后确认。</li>
+<li>载入存档，出门找狗之前先看看爪印按钮在不在。</li>
+</ol>
+<p>你世界里的建筑还一栋都没抽过，所以你走动的时候狗会陆续出现，包括你已经探索过的地方。</p>
+<p>加进来很轻松，<strong>移除就不是了</strong>。哪天想把模组撤掉，先读 <a href="#23-从存档中移除模组先读这一节">第 23 节</a>。</p>
+<h3 id="专用服务器">专用服务器</h3>
+<p>在 <code>&lt;服务器名&gt;.ini</code> 文件里（位于 <code>Zomboid/Server/</code>）加两行：</p>
+<pre><code>WorkshopItems=3740052292
+Mods=CompanionDogs</code></pre>
+<p>这是两份不同的列表，两行都要有：<code>WorkshopItems</code> 填创意工坊物品的 <strong>数字 ID</strong>，<code>Mods</code> 填 <strong>模组 ID</strong>。多个条目用 <strong>分号</strong> 隔开，不要加空格。</p>
+<div class="tw"><table><thead><tr>
+<th>模组</th>
+<th><code>Mods=</code></th>
+<th><code>WorkshopItems=</code></th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Companion Dogs</strong> （必需）</td>
+<td><code>CompanionDogs</code></td>
+<td><code>3740052292</code></td>
+</tr>
+<tr>
+<td>CD: Rottweiler</td>
+<td><code>CompanionDogsRottweiler</code></td>
+<td><code>3762296152</code></td>
+</tr>
+<tr>
+<td>CD: Doberman</td>
+<td><code>CompanionDogsDoberman</code></td>
+<td><code>3770795385</code></td>
+</tr>
+<tr>
+<td>CD: Labrador</td>
+<td><code>CompanionDogsLabrador</code></td>
+<td><code>3779327129</code></td>
+</tr>
+<tr>
+<td>CD: Pug</td>
+<td><code>CompanionDogsPug</code></td>
+<td><code>3787202559</code></td>
+</tr>
+</tbody></table></div>
+<p>装上本体和四个犬种扩展之后是这样：</p>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
+<p>三个常见的坑：</p>
+<ul>
+<li><strong>两份列表里本体都要排在扩展前面</strong>。比 Companion Dogs 先加载的犬种扩展注册不了自己的犬种。</li>
+<li>改完 .ini 之后 <strong>把服务器完全重启</strong>。</li>
+<li>玩家进服时 <strong>会自己下载模组</strong>，不需要谁手动订阅。他们需要的是和服务器同一个游戏版本。</li>
+</ul>
+<h3 id="联机主机">联机主机</h3>
+<p>联机有它自己的坑：<strong>只在联机的模组选择界面里启用是不够的</strong>。主机还得在主菜单的 <strong><span class="ig">模组</span></strong> 列表里 启用 Companion Dogs，并且在开服之前 <strong>完全关闭游戏</strong>。如果联机里狗没有贴图或者被压扁，缺的就是 这一步。</p>
 <h2 id="1-5-分钟上手从流浪狗到同伴犬">1. 5 分钟上手：从流浪狗到同伴犬</h2>
 <p>如果你只想赶紧开始玩，看这几步就够了：</p>
 <ol>
@@ -629,7 +718,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p>狗通常会出现在建筑<strong>外面</strong>的空格子上：马路、院子、空地。只有外面一个空格子都不剩时， 它才会出现在建筑里面。所以先找马路和院子。</p>
 <p>沙盒选项<strong>“狗生成倍率”</strong>会一次性缩放上面所有几率，同时保持各品种之间的相对稀有度。 设为 0 就彻底关掉生成。</p>
-<blockquote class="quote"><strong>附加品种</strong>是 Steam 上的独立 mod，各自有专属的出现地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> 和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>。 每个品种各有什么本事，见<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
+<blockquote class="quote"><strong>附加品种</strong>是 Steam 上的独立 mod，各自有专属的出现地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a> 和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> 和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>。 每个品种各有什么本事，见<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
 <h3 id="怎么驯服">怎么驯服</h3>
 <p>右键点这只野狗。它给出的选项只有一个： <strong>“喂食（结交）”</strong>。</p>
 <ul>
@@ -880,6 +969,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><em><span class="ig">你的小卡犬在朝什么东西吠叫！</span></em>（近了或者多了，该动手了）</li>
 </ul>
 <p><strong>取舍就在这里：</strong>警报给你最大的预警范围，但会暴露你的位置。静默安静地提醒你，可只覆盖近处。静音是给那种无论如何都要让狗闭嘴的场合用的。</p>
+<p><strong>有的品种没得选。</strong><strong>巴哥犬</strong>（附加模组）被锁死在警报上：它窗口里的静默和静音都是灰的，环形菜单里 也没有这两项。这是它那副警报鼻子的代价。没有别的品种是这样，也没有任何品种能绕过沙盒的噪音选项： 把那个选项关掉，任何吠叫都不会招来僵尸。</p>
 <blockquote class="quote"><strong>压力大的狗不会自己吠叫。</strong> 以前有过一套按压力吠叫的机制，但它在 mod 里是关掉的。如果你的狗在招僵尸，来源只可能是下面这四个之一，而且都能控制：<strong>警报模式的哨兵</strong>、<strong>引开注意</strong>这个技巧、<strong>狩猎时的追逐</strong>，或者<strong>战斗</strong>。</blockquote>
 <h2 id="6-战斗">6. 战斗</h2>
 <h3 id="它什么时候会自己动手">它什么时候会自己动手</h3>
@@ -1381,6 +1471,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>载货（重量）</th>
 </tr></thead><tbody>
 <tr>
+<td><strong>巴哥犬</strong></td>
+<td><strong>2～3</strong></td>
+</tr>
+<tr>
 <td>小卡犬</td>
 <td><strong>4～5</strong></td>
 </tr>
@@ -1397,7 +1491,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>13～16</strong></td>
 </tr>
 </tbody></table></div>
-<p>哈士奇是唯一在驮袋上有品种加成的狗（多 50%）。其他狗都只看力量基因，所以同一个品种的两只狗， 能驮的量也可能不一样。</p>
+<p>哈士奇和巴哥犬是仅有的两只在驮袋上有品种加成的狗，而且方向相反：哈士奇多驮 50%，巴哥犬少驮 40%。 其他狗都只看力量基因，所以同一个品种的两只狗，能驮的量也可能不一样。</p>
 <p>服务器可以用<strong>“驮袋基础容量”</strong>和<strong>“力量载货加成”</strong>来调整这两个数字。</p>
 <h3 id="能放什么">能放什么</h3>
 <p>几乎什么都行，而且限制的是<strong>重量</strong>，不是物品数量。例外有这些：</p>
@@ -1950,7 +2044,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">我装了 mod，可是存档里什么都没出现。</span></strong> Project Zomboid 是<strong>按存档</strong>启用 mod 的。后来才加进去的 mod 不会进到已经建好的世界里，而且游戏 <strong>完全不会报错</strong>。在读取存档的界面上确认一下，那个世界有没有把这个 mod 勾上。</p>
 <p><strong><span class="ig">我的狗不听话。</span></strong> 看一下弹出来的提示。如果写的是 <em><span class="ig">不够信任你，因此没有服从命令。</span></em>，那是忠诚度的问题：喂它、给它 水、多摸摸它。如果写的是 <em><span class="ig">分心了，没听你的。</span></em>，那是训练不够：<strong>把命令再下一遍，第二次一定会通 过</strong>。如果是恐慌或者受伤，那就先把它照顾好。</p>
 <p><strong><span class="ig">我的狗打不死僵尸，只会把它们撂倒。</span></strong> 如果它是<strong>小卡犬</strong>，那本来就是这样，是故意设计的，怎么调都不会变。要么换一个品种，要么接受它的 分工：它负责撂倒，你负责补刀。</p>
-<p><strong><span class="ig">狗一直叫，还把僵尸引过来了。</span></strong> 可能的来源有四个，而且全都能控制：<strong>处在警报的哨兵</strong>（改成<strong>静默</strong>，它就绝不会大声吠叫）、 <strong>引开注意</strong>这个技巧（制造噪音本来就是它的目的）、<strong>狩猎</strong>（把狩猎模式关掉），还有<strong>战斗</strong>。 压力大的狗<strong>不会</strong>自己乱叫。</p>
+<p><strong><span class="ig">狗一直叫，还把僵尸引过来了。</span></strong> 可能的来源有四个，而且全都能控制：<strong>处在警报的哨兵</strong>（改成<strong>静默</strong>，它就绝不会大声吠叫）、 <strong>引开注意</strong>这个技巧（制造噪音本来就是它的目的）、<strong>狩猎</strong>（把狩猎模式关掉），还有<strong>战斗</strong>。 压力大的狗<strong>不会</strong>自己乱叫。例外是<strong>巴哥犬</strong>：它永远脱不开警报，这就是它的品种。如果你想让任何吠叫 都不再招僵尸，靠的是沙盒选项<strong>狗的噪音吸引僵尸</strong>，而且它对所有品种都有效。</p>
 <p><strong><span class="ig">我的狗不见了。</span></strong> 点爪印按钮打开窗口，切到 <strong><span class="ig">我的狗</span></strong> 这个标签页，然后用<strong>召回</strong>。如果它在很远的地方，mod 会先让 你确认一下，再把它连同身上的东西一起带回来。每只狗有 2 个游戏小时的冷却。地图上的标记也会留着最后 一次看到它的位置。</p>
 <p><strong><span class="ig">狗卡在栅栏的另一边过不来。</span></strong> 用<strong>召回</strong>（也就是吹口哨）。这个功能就是为这种情况准备的，代价是会引来僵尸。</p>
 <p><strong><span class="ig">我的狗怀不上。</span></strong> 对着<a href="#15-繁殖与幼犬">繁殖条件</a>那份清单挨个查一遍。绝大多数时候是两只里有一只饿了、渴了， 或者忠诚度低于 60。另外也看看<strong><span class="ig">禁止繁殖</span></strong>是不是被打开了。</p>
@@ -1965,19 +2059,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="为什么会这样">为什么会这样</h3>
 <p>游戏把 <strong>地图上一大片区域里所有活着的动物保存在同一个文件里</strong>。没有模组时打开这个文件，它撞上你的狗， 已经不知道那是什么，于是放弃读取文件的剩余部分，把这片区域当作你从未去过那样重新生成。你的动物跟着一起 消失，是因为它们和狗在同一个文件里。</p>
 <p>损失既不是整张地图，也不只是狗周围：读取停在狗那里，<strong>这片区域里排在它之后的一切都会丢失</strong>。这就是不同 存档结果差别巨大的原因。</p>
-<p><strong>品种扩展同理。</strong> 只退订罗威纳、杜宾或拉布拉多，继续用基础模组游玩，会造成完全一样的问题，因为那个品种 的狗仍然写在存档里。</p>
+<p><strong>品种扩展同理。</strong> 只退订罗威纳、杜宾、拉布拉多或巴哥犬，继续用基础模组游玩，会造成完全一样的问题， 因为那个品种的狗仍然写在存档里。</p>
 <h3 id="如果动物已经消失了">如果动物已经消失了</h3>
 <p><strong>现在就把模组装回去，别继续游玩，也别保存。</strong> 动物多半会回来。一旦游戏覆盖保存，就再也找不回来了，而且 这个文件没有备份。</p>
 <h3 id="如何安全移除">如何安全移除</h3>
-<p><strong>第 1 步 - 让所有扩展保持启用。</strong> 在动任何东西之前，确认 <strong>你在那个存档里用过的每一个品种扩展，都在 那个存档的模组列表里被勾选</strong>（读取游戏，选中存档，Mods）。被停用的扩展本身就是上面描述的问题。</p>
-<p><strong>第 2 步 - 处理掉这些狗。</strong> 两种安全的做法：</p>
+<p><strong>第 1 步：让所有扩展保持启用。</strong> 在动任何东西之前，确认 <strong>你在那个存档里用过的每一个品种扩展，都在 那个存档的模组列表里被勾选</strong>（读取游戏，选中存档，Mods）。被停用的扩展本身就是上面描述的问题。</p>
+<p><strong>第 2 步：处理掉这些狗。</strong> 两种安全的做法：</p>
 <ul>
 <li><strong>杀掉。</strong> 尸体以另一种方式保存，格式是游戏没有模组也能读的。</li>
 <li><strong>放一只在背包里带着。</strong> 物品是游戏懂得安全跳过的东西：只丢这只狗，其余照旧。</li>
 </ul>
 <p>放生或者把狗带到很远 <strong>都没有用</strong>：它的记录仍然留在存档里，换个地方只是换成哪片区域出问题。</p>
-<p><strong>第 3 步 - 保存游戏。</strong> 是这次保存把清理写进文件。</p>
-<p><strong>第 4 步 - 移除模组。</strong></p>
+<p><strong>第 3 步：保存游戏。</strong> 是这次保存把清理写进文件。</p>
+<p><strong>第 4 步：移除模组。</strong></p>
 <h3 id="彻底清理管理员-调试模式">彻底清理（管理员 / 调试模式）</h3>
 <p>上面的步骤能处理你自己的狗，但模组还会把 <strong>流浪狗</strong> 撒在地图各处，靠手动根本找不完。要一次清空整个存档， 有一个命令：</p>
 <ol>

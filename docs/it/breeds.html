@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Razze: Le 8 razze, i moodle e le caratteristiche">
+<meta name="description" content="Razze: Le 9 razze, i moodle e le caratteristiche">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Razze">
-<meta property="og:description" content="Razze: Le 8 razze, i moodle e le caratteristiche">
+<meta property="og:description" content="Razze: Le 9 razze, i moodle e le caratteristiche">
 <meta property="og:url" content="https://companiondogs.pet/docs/it/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -396,11 +406,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#4-le-tre-razze-in-addon" data-id="4-le-tre-razze-in-addon">4. Le tre razze in addon</a>
+<a class="s2" href="#4-le-quattro-razze-in-addon" data-id="4-le-quattro-razze-in-addon">4. Le quattro razze in addon</a>
 <div class="sub">
 <a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
 <a class="s3" href="#dobermann" data-id="dobermann">Dobermann</a>
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+<a class="s3" href="#carlino" data-id="carlino">Carlino</a>
 </div>
 </div>
 <div class="grp">
@@ -536,11 +547,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Meno noia e tristezza</strong></td>
-<td><strong>Caramelo</strong></td>
+<td><strong>Carlino</strong>, e il <strong>Caramelo</strong> gratis</td>
+</tr>
+<tr>
+<td><strong>Meno stress</strong></td>
+<td><strong>Carlino</strong> o <strong>Dobermann</strong></td>
 </tr>
 <tr>
 <td><strong>Meno panico</strong></td>
 <td><strong>Pastore Tedesco</strong></td>
+</tr>
+<tr>
+<td><strong>Essere avvisato prima degli zombie</strong></td>
+<td><strong>Carlino</strong>, se reggi l'abbaio</td>
 </tr>
 <tr>
 <td><strong>Foraggiare di più</strong></td>
@@ -587,6 +606,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Labrador</strong></td>
 <td>Il riportatore: il peggior combattente del mod, il migliore a consegnarti la preda</td>
+</tr>
+<tr>
+<td><strong>Carlino</strong></td>
+<td>Il cane di casa. Là fuori non serve a niente ed è la miglior compagnia che ci sia</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-le-cinque-razze-del-mod-base">3. Le cinque razze del mod base</h2>
@@ -692,7 +715,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Per chi è:</strong> per chi mette su una fattoria. Se hai mucche, pecore o galline, questa è la razza che protegge la produzione.</p>
 <blockquote class="quote"><strong>Nota:</strong> la descrizione nel gioco dice ancora che <span class="ig">è un tuttofare equilibrato, senza una specialità di spicco</span>. È un testo superato: l'Herding raddoppiato e l'aura rinforzata ci sono già.</blockquote>
-<h2 id="4-le-tre-razze-in-addon">4. Le tre razze in addon</h2>
+<h2 id="4-le-quattro-razze-in-addon">4. Le quattro razze in addon</h2>
 <p>Queste arrivano in <strong>mod separate su Steam</strong>, che dipendono dal Companion Dogs base. I link di ognuna sono nella scheda qui sotto e tutti insieme in <a href="#9-installare-gli-addon">Installare gli addon</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
@@ -770,6 +793,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>+20% di XP</strong> in <strong>Macellazione e Lama Corta</strong>, esattamente le abilità che servono a lavorare quello che ti porta.</li>
 </ul>
 <p><strong>Per chi è:</strong> per una vita da cacciatore. Il Golden impara a cacciare altrettanto in fretta, ma <strong>il Labrador consegna fin dall'inizio</strong>, e la differenza si vede nelle prime settimane di gioco.</p>
+<hr>
+<h3 id="carlino">Carlino</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon separato)</em></p>
+<p><strong>Il cane di casa.</strong> Tutte le altre razze valgono per combattere, cacciare, condurre il bestiame o trasportare. Il Carlino non fa niente di tutto questo, ed è la miglior compagnia del mod.</p>
+<blockquote class="quote quote-game"><em>"Il cane di casa: il primo compagno il cui valore non sta nel combattere, cacciare, condurre il bestiame o trasportare. Allena Obbedienza al doppio della velocità di qualsiasi altra razza, e il suo legame non cala mai da solo."</em></blockquote>
+<p><strong>Dove trovarlo:</strong></p>
+<ul>
+<li><strong>Casa residenziale:</strong> <strong>10% per casa</strong>, la stessa facilità del Labrador. È il cane di casa, dopotutto.</li>
+<li><strong>Negozio di animali e veterinario:</strong> <strong>12% per edificio</strong>, lo stesso posto dell'Husky.</li>
+</ul>
+<p><strong>Impara:</strong> <strong>Obbedienza al doppio</strong>, più in fretta di qualsiasi altra razza del mod, con <strong>Fiuto più rapido del 50%</strong> e Caccia al 20%. Sale l'albero dei trucchi (andare in un punto, distrarre gli zombie, fiutare un oggetto, riportarlo mentre dormi) prima di qualunque altro cane tu possa avere.</p>
+<p><strong>Il suo legame non cala.</strong> Ogni altro cane perde lealtà da solo quando sparisci o ti trascuri. Il Carlino no. Torna dopo un mese in giro e lo ritrovi esattamente come l'avevi lasciato. È l'unica razza così.</p>
+<p><strong>Avvisa per primo.</strong> A parità di Fiuto, il Carlino sente gli zombie <strong>il 35% più lontano</strong> di qualsiasi altra razza. È stato allevato come cane d'allarme e funziona ancora.</p>
+<p><strong>In combattimento: non contarci.</strong> È il cane più debole del mod, sotto al Caramelo.</p>
+<ul>
+<li>Il <strong>morso più debole</strong> di tutti, con ampio margine.</li>
+<li><strong>Non uccide zombie</strong> e <strong>non li atterra</strong>. È l'unico cane con entrambe le cose disattivate.</li>
+<li>Accumula stress più in fretta di chiunque altro ed <strong>entra nel panico prima di tutti</strong>.</li>
+</ul>
+<p><strong>E il prezzo non finisce qui:</strong></p>
+<ul>
+<li><strong>Il suo abbaio ti tradisce, e non c'è modo di zittirlo.</strong> Lo stesso allarme che avvisa te avvisa i morti, più forte di qualsiasi razza, e il Carlino è l'<strong>unico cane che non accetta le modalità Discreto e Silenzioso</strong>: i due pulsanti restano disattivati nella sua finestra. Non puoi tenerti solo la metà buona del suo fiuto. (Se nelle opzioni di sandbox il rumore del cane che attira gli zombie è spento, vale per il Carlino come per tutti: l'abbaio resta forte, ma non tira nessuno.)</li>
+<li><strong>Non tiene il passo di corsa.</strong> In uno scatto il Carlino resta indietro rispetto a qualsiasi altro cane.</li>
+<li><strong>L'estate gli fa male.</strong> Un muso schiacciato non scambia calore. Sopra i <strong>28 °C</strong> comincia a stressarsi e <strong>smette di consolarti</strong>; a <strong>36 °C</strong> la penalità satura. In casa fa più fresco, e torna a funzionare.</li>
+<li><strong>Bisacce da 2 a 3.</strong> Le porta, ma non è una bestia da soma.</li>
+</ul>
+<p><strong>In compenso mangia e beve poco:</strong> metà della fame e un terzo di sete in meno di un cane di taglia media.</p>
+<p><strong>Caratteristiche:</strong> gli <strong>intervalli di Forza e Resistenza più bassi del mod</strong>. Nasce debole e fragile, sempre, e non è sfortuna del cucciolo.</p>
+<p><strong>Cucciolata:</strong> <strong>da 1 a 2</strong>.</p>
+<p><strong>Moodle: <span class="ig">La Tua Ombra</span></strong></p>
+<blockquote class="quote quote-game"><em>"Il tuo carlino non si stacca da te. Finché è vicino, sazio e leale, tristezza, noia e stress calano più in fretta che con qualsiasi altro cane. Il caldo annulla tutto: un carlino che ansima non consola nessuno finché non trova un posto fresco."</em></blockquote>
+<ul>
+<li><strong>Tristezza e Noia calano il 60% più in fretta</strong> che accanto a un Caramelo.</li>
+<li><strong>Cala anche lo stress.</strong> Nessun altro cane del mod tocca lo stress con la sola presenza; l'unico altro modo di abbassare lo stress con un cane è dormirgli accanto (<span class="ig">Ben Riposato</span>).</li>
+<li><strong>Col caldo il moodle sparisce.</strong> Sopra i 28 °C esce dall'HUD finché il cane non trova un posto fresco. È voluto: ti accorgi del problema della razza senza dover leggere niente.</li>
+</ul>
+<p><strong>Per chi è:</strong> per chi gioca dalla base, per le partite lunghe, e per chi è stufo di perdere lealtà perché resta fuori troppo a lungo. Portati dietro un cane da guardia se esci dalla città.</p>
 <h2 id="5-tabelle-comparative">5. Tabelle comparative</h2>
 <h3 id="velocità-di-apprendimento">Velocità di apprendimento</h3>
 <p>Più alto è il numero, più in fretta impara. <strong>1.0 è la velocità normale.</strong></p>
@@ -845,6 +905,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>2.0</strong></td>
 <td>1.0</td>
 </tr>
+<tr>
+<td>Carlino</td>
+<td>1.5</td>
+<td>1.0</td>
+<td><strong>2.0</strong></td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
 </tbody></table></div>
 <p>Lo <strong>0.8</strong> dell'Husky è l'unica penalità di razza di tutto il mod.</p>
 <h3 id="combattimento">Combattimento</h3>
@@ -855,6 +923,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Uccide da solo?</th>
 <th>Atterra?</th>
 </tr></thead><tbody>
+<tr>
+<td>Carlino</td>
+<td><strong>il più debole</strong></td>
+<td><strong>0,65x</strong></td>
+<td><strong>No</strong></td>
+<td><strong>No</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>debole</td>
@@ -956,6 +1031,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,80</td>
 </tr>
 <tr>
+<td>Carlino</td>
+<td>0,90</td>
+<td><strong>0,70</strong> (la più bassa)</td>
+</tr>
+<tr>
 <td>Caramelo</td>
 <td><strong>1,00</strong> (il più nervoso)</td>
 <td><strong>0,80</strong></td>
@@ -970,6 +1050,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Aggressività</th>
 <th>Resistenza</th>
 </tr></thead><tbody>
+<tr>
+<td>Carlino</td>
+<td><strong>0,00 a 0,10</strong></td>
+<td>0,05 a 0,20</td>
+<td><strong>0,00 a 0,15</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>0,00 a 0,15</td>
@@ -1022,6 +1108,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Lettura rapida:</p>
 <ul>
 <li><strong>Il Caramelo mostra sempre <span class="ig">Basso</span> in tutti e tre.</strong> Un buon Caramelo non esiste.</li>
+<li><strong>Anche il Carlino</strong>, e il suo intervallo di Forza è ancora più stretto. Un Carlino forte non esiste.</li>
 <li><strong>L'Husky è l'unico che di solito mostra <span class="ig">Alto</span> in Forza.</strong></li>
 <li><strong>L'Aggressività esce sempre <span class="ig">Basso</span></strong> nel Golden, nell'Husky e nel Labrador. Per loro è la norma, non sfortuna.</li>
 <li>Anche Golden e Dobermann finiscono spesso su <span class="ig">Basso</span> in Forza e Resistenza.</li>
@@ -1032,6 +1119,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Razza</th>
 <th>Carico</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>Carlino</strong></td>
+<td><strong>da 2 a 3</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>da 4 a 5</td>
@@ -1067,7 +1158,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>da 1 a 3</td>
 </tr>
 <tr>
-<td>Pastore Tedesco, Golden Retriever, Husky, Rottweiler, Dobermann</td>
+<td>Pastore Tedesco, Golden Retriever, Husky, Rottweiler, Dobermann, Carlino</td>
 <td>da 1 a 2</td>
 </tr>
 </tbody></table></div>
@@ -1112,6 +1203,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Labrador</td>
 <td>Casa residenziale</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Carlino</td>
+<td>Casa residenziale</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Carlino</td>
+<td>Negozio di animali, veterinario</td>
+<td>12%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1206,6 +1307,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>labpup</code></td>
 <td><code>labrador</code></td>
 </tr>
+<tr>
+<td>Carlino</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
 </tbody></table></div>
 <p>Maschio e femmina sono <strong>tipi diversi</strong>, non un'opzione dello stesso tipo. Le ultime tre righe esistono solo se hai installato l'addon di quella razza.</p>
 <h2 id="6-moodles-la-lista-completa">6. Moodles: la lista completa</h2>
@@ -1289,6 +1397,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>Bocca Morbida</strong></td>
 <td>Labrador</td>
 <td>Ti porta la preda <strong>già da Caccia 3</strong>, insiste 3 volte di più, <strong>60% di probabilità di un oggetto extra</strong>, <strong>+20% di XP</strong> in Macellazione e Lama Corta</td>
+</tr>
+<tr>
+<td><strong>La Tua Ombra</strong></td>
+<td>Carlino</td>
+<td>Abbassa <strong>Tristezza, Noia e Stress</strong>, e più in fretta di qualsiasi altro cane. <strong>Si spegne col caldo</strong></td>
 </tr>
 </tbody></table></div>
 <h3 id="i-moodle-che-dà-qualsiasi-razza">I moodle che dà qualsiasi razza</h3>
@@ -1399,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-installare-gli-addon">9. Installare gli addon</h2>
-<p>Rottweiler, Dobermann e Labrador sono <strong>mod separate su Steam</strong>. Ognuna:</p>
+<p>Rottweiler, Dobermann, Labrador e Carlino sono <strong>mod separate su Steam</strong>. Ognuna:</p>
 <ul>
 <li><strong>Richiede il Companion Dogs base installato e attivo.</strong></li>
 <li>Aggiunge <strong>una razza</strong>, con modello, texture, moodle e luoghi di comparsa suoi.</li>
-<li>Arriva con le <strong>13 traduzioni</strong>, le stesse del base.</li>
+<li>Arriva con le <strong>14 traduzioni</strong>, le stesse del base.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
@@ -1424,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">iscriviti</a></td>
 <td><strong>0.6.6 o più recente</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">iscriviti</a></td>
+<td><strong>0.6.8 o più recente</strong></td>
 </tr>
 </tbody></table></div>
 <p>E il base, se ancora non ce l'hai: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>

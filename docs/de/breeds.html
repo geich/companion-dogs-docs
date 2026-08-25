@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Rassen: Die 8 Rassen, Moodles und Eigenschaften">
+<meta name="description" content="Rassen: Die 9 Rassen, Moodles und Eigenschaften">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Rassen">
-<meta property="og:description" content="Rassen: Die 8 Rassen, Moodles und Eigenschaften">
+<meta property="og:description" content="Rassen: Die 9 Rassen, Moodles und Eigenschaften">
 <meta property="og:url" content="https://companiondogs.pet/docs/de/breeds.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,6 +217,16 @@ strong{font-weight:660; color:var(--text);}
 hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
 code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
   border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
 /* strings literais da interface do jogo */
 .ig{
@@ -396,11 +406,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#4-die-drei-addon-rassen" data-id="4-die-drei-addon-rassen">4. Die drei Addon-Rassen</a>
+<a class="s2" href="#4-die-vier-addon-rassen" data-id="4-die-vier-addon-rassen">4. Die vier Addon-Rassen</a>
 <div class="sub">
 <a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
 <a class="s3" href="#dobermann" data-id="dobermann">Dobermann</a>
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+<a class="s3" href="#mops" data-id="mops">Mops</a>
 </div>
 </div>
 <div class="grp">
@@ -536,11 +547,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Weniger Langeweile und Traurigkeit</strong></td>
-<td><strong>Caramelo</strong></td>
+<td><strong>Mops</strong>, und der <strong>Caramelo</strong> gratis</td>
+</tr>
+<tr>
+<td><strong>Weniger Stress</strong></td>
+<td><strong>Mops</strong> oder <strong>Dobermann</strong></td>
 </tr>
 <tr>
 <td><strong>Weniger Panik</strong></td>
 <td><strong>Deutscher Schäferhund</strong></td>
+</tr>
+<tr>
+<td><strong>Früher vor Zombies gewarnt werden</strong></td>
+<td><strong>Mops</strong>, wenn du das Bellen aushältst</td>
 </tr>
 <tr>
 <td><strong>Mehr bei der Nahrungssuche finden</strong></td>
@@ -587,6 +606,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Labrador</strong></td>
 <td>Der Apportierer: der schlechteste Kämpfer im Mod, der beste Beutebringer</td>
+</tr>
+<tr>
+<td><strong>Mops</strong></td>
+<td>Der Haushund. Draußen zu nichts zu gebrauchen und der beste Begleiter, den es gibt</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-die-fünf-rassen-des-basis-mods">3. Die fünf Rassen des Basis-Mods</h2>
@@ -692,7 +715,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Für wen er ist:</strong> für alle, die eine Farm aufbauen. Wenn du Kühe, Schafe oder Hühner hast, ist das die Rasse, die deine Produktion schützt.</p>
 <blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung im Spiel sagt noch, er sei <span class="ig">ein ausgewogener Allrounder ohne herausstechende Spezialisierung</span>. Das ist veraltet: Das verdoppelte Hüten und die verstärkte Aura gibt es längst.</blockquote>
-<h2 id="4-die-drei-addon-rassen">4. Die drei Addon-Rassen</h2>
+<h2 id="4-die-vier-addon-rassen">4. Die vier Addon-Rassen</h2>
 <p>Diese kommen als <strong>eigene Mods auf Steam</strong>, die das Basis-Mod Companion Dogs voraussetzen. Die Links zu jeder Rasse stehen unten im Steckbrief und gesammelt unter <a href="#9-die-addons-installieren">Addons installieren</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
@@ -770,6 +793,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>+20% XP</strong> in <strong>Schlachten und Kurzklingen</strong>, also genau in den Fähigkeiten, mit denen du verarbeitest, was er anschleppt.</li>
 </ul>
 <p><strong>Für wen er ist:</strong> für ein Leben von der Jagd. Der Golden Retriever lernt das Jagen genauso schnell, aber <strong>der Labrador liefert von Anfang an</strong>, und der Unterschied zeigt sich in den ersten Spielwochen.</p>
+<hr>
+<h3 id="mops">Mops</h3>
+<p><em>(Mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, eigenes Addon)</em></p>
+<p><strong>Der Haushund.</strong> Jede andere Rasse verdient sich ihren Platz durch Kämpfen, Jagen, Hüten oder Tragen. Der Mops macht nichts davon, und er ist der beste Begleiter im Mod.</p>
+<blockquote class="quote quote-game"><em>"Der Haushund: der erste Begleiter, dessen Wert nicht im Kämpfen, Jagen, Hüten oder Tragen liegt. Er trainiert Gehorsam doppelt so schnell wie jede andere Rasse, und seine Bindung verfällt nie von allein."</em></blockquote>
+<p><strong>Wo du ihn findest:</strong></p>
+<ul>
+<li><strong>Wohnhaus:</strong> <strong>10% pro Haus</strong>, genauso leicht wie der Labrador. Es ist eben der Haushund.</li>
+<li><strong>Tierhandlung und Tierarztpraxis:</strong> <strong>12% pro Gebäude</strong>, dieselbe Stelle wie beim Husky.</li>
+</ul>
+<p><strong>Er lernt:</strong> <strong>Gehorsam doppelt so schnell</strong> wie jede andere Rasse im Mod, dazu <strong>Spürsinn 50% schneller</strong> und Jagd mit 20%. Er klettert den Kunststückbaum (an einen Punkt gehen, Zombies ablenken, einen Gegenstand erschnüffeln, ihn holen, während du schläfst) schneller hoch als alles andere, was du haben kannst.</p>
+<p><strong>Seine Bindung fällt nicht.</strong> Jeder andere Hund verliert von allein Treue, wenn du weg bist oder nachlässig wirst. Der Mops nicht. Komm nach einem Monat auf der Straße zurück, und er ist genau so, wie du ihn verlassen hast. Er ist die einzige Rasse, bei der das so ist.</p>
+<p><strong>Er warnt zuerst.</strong> Bei gleichem Spürsinn nimmt der Mops Zombies <strong>35% weiter entfernt</strong> wahr als jede andere Rasse. Er wurde als Alarmhund gezüchtet, und das funktioniert noch immer.</p>
+<p><strong>Im Kampf: verlass dich nicht auf ihn.</strong> Er ist der schwächste Hund im Mod, unter dem Caramelo.</p>
+<ul>
+<li>Der <strong>schwächste Biss</strong> von allen, mit deutlichem Abstand.</li>
+<li><strong>Er tötet keine Zombies</strong> und <strong>wirft keine um</strong>. Er ist der einzige Hund, bei dem beides abgeschaltet ist.</li>
+<li>Er sammelt Stress schneller als jeder andere und <strong>gerät vor allen anderen in Panik</strong>.</li>
+</ul>
+<p><strong>Und der Preis hört da nicht auf:</strong></p>
+<ul>
+<li><strong>Sein Bellen verrät dich, und abstellen lässt es sich nicht.</strong> Derselbe Alarm, der dich warnt, warnt auch die Toten, lauter als bei jeder anderen Rasse, und der Mops ist der <strong>einzige Hund ohne die Wachmodi Leise und Still</strong>: beide Schalter sind in seinem Fenster ausgegraut. Die gute Hälfte seiner Nase gibt es nicht einzeln. (Ist in den Sandbox-Optionen abgeschaltet, dass Hundelärm Zombies anlockt, gilt das für den Mops wie für alle: das Bellen bleibt laut, zieht aber niemanden an.)</li>
+<li><strong>Beim Rennen hält er nicht mit.</strong> Im Sprint fällt der Mops hinter jeden anderen Hund zurück.</li>
+<li><strong>Der Sommer tut ihm weh.</strong> Eine flache Schnauze gibt keine Wärme ab. Über <strong>28 °C</strong> fängt er an zu stressen und <strong>hört auf, dich zu trösten</strong>; bei <strong>36 °C</strong> ist die Strafe am Anschlag. Drinnen ist es kühler, und dann funktioniert er wieder.</li>
+<li><strong>Satteltaschen von 2 bis 3.</strong> Er trägt sie, aber ein Lasttier ist er nicht.</li>
+</ul>
+<p><strong>Dafür frisst und trinkt er wenig:</strong> halb so viel Hunger und ein Drittel weniger Durst als ein Hund mittlerer Größe.</p>
+<p><strong>Anlagen:</strong> die <strong>kleinsten Spannen bei Stärke und Widerstandskraft im ganzen Mod</strong>. Er kommt immer schwach und zerbrechlich zur Welt, und das ist kein Pech beim Welpen.</p>
+<p><strong>Wurf:</strong> <strong>1 bis 2</strong>.</p>
+<p><strong>Moodle: <span class="ig">Dein Schatten</span></strong></p>
+<blockquote class="quote quote-game"><em>"Dein Mops weicht dir nicht von der Seite. Solange er in der Nähe, satt und treu ist, sinken Unglück, Langeweile und Stress schneller als bei jedem anderen Hund. Hitze macht das zunichte: ein hechelnder Mops tröstet niemanden, bis er es kühl hat."</em></blockquote>
+<ul>
+<li><strong>Unglücklich und Gelangweilt sinken 60% schneller</strong> als neben einem Caramelo.</li>
+<li><strong>Stress sinkt ebenfalls.</strong> Kein anderer Hund im Mod rührt allein durch seine Anwesenheit an den Stress; der einzige andere Weg, Stress mit einem Hund zu senken, ist, neben ihm zu schlafen (<span class="ig">Gut Erholt</span>).</li>
+<li><strong>In der Hitze verschwindet das Moodle.</strong> Über 28 °C geht es aus dem HUD, bis der Hund es kühl hat. Das ist Absicht: du merkst das Problem der Rasse, ohne etwas nachlesen zu müssen.</li>
+</ul>
+<p><strong>Für wen er ist:</strong> für das Spiel von der Basis aus, für lange Partien, und für alle, die es satt haben, Treue zu verlieren, weil sie zu lange weg waren. Nimm einen Wachhund mit, wenn du die Stadt verlässt.</p>
 <h2 id="5-vergleichstabellen">5. Vergleichstabellen</h2>
 <h3 id="lerngeschwindigkeit">Lerngeschwindigkeit</h3>
 <p>Je höher der Wert, desto schneller lernt der Hund. <strong>1,0 ist die normale Geschwindigkeit.</strong></p>
@@ -845,6 +905,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>2,0</strong></td>
 <td>1,0</td>
 </tr>
+<tr>
+<td>Mops</td>
+<td>1,5</td>
+<td>1,0</td>
+<td><strong>2,0</strong></td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
 </tbody></table></div>
 <p>Die <strong>0,8</strong> beim Husky ist der einzige Rassenmalus im ganzen Mod.</p>
 <h3 id="kampf">Kampf</h3>
@@ -855,6 +923,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Tötet allein?</th>
 <th>Wirft um?</th>
 </tr></thead><tbody>
+<tr>
+<td>Mops</td>
+<td><strong>der schwächste</strong></td>
+<td><strong>0,65x</strong></td>
+<td><strong>Nein</strong></td>
+<td><strong>Nein</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>schwach</td>
@@ -956,6 +1031,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,80</td>
 </tr>
 <tr>
+<td>Mops</td>
+<td>0,90</td>
+<td><strong>0,70</strong> (der niedrigste)</td>
+</tr>
+<tr>
 <td>Caramelo</td>
 <td><strong>1,00</strong> (am nervösesten)</td>
 <td><strong>0,80</strong></td>
@@ -970,6 +1050,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Aggressivität</th>
 <th>Widerstandskraft</th>
 </tr></thead><tbody>
+<tr>
+<td>Mops</td>
+<td><strong>0,00 bis 0,10</strong></td>
+<td>0,05 bis 0,20</td>
+<td><strong>0,00 bis 0,15</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>0,00 bis 0,15</td>
@@ -1022,6 +1108,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Kurz gefasst:</p>
 <ul>
 <li><strong>Der Caramelo zeigt in allen drei immer „Niedrig".</strong> Einen guten Caramelo gibt es nicht.</li>
+<li><strong>Der Mops ebenso</strong>, und seine Spanne bei Stärke ist noch kleiner. Einen starken Mops gibt es nicht.</li>
 <li><strong>Der Husky ist der Einzige, der bei Stärke meistens „Hoch" zeigt.</strong></li>
 <li><strong>Aggressivität kommt immer als „Niedrig" heraus</strong> beim Golden, beim Husky und beim Labrador. Das ist bei ihnen normal, kein Pech.</li>
 <li>Golden und Dobermann landen bei Stärke und Widerstandskraft ebenfalls oft auf „Niedrig".</li>
@@ -1032,6 +1119,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Rasse</th>
 <th>Ladung</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>Mops</strong></td>
+<td><strong>2 bis 3</strong></td>
+</tr>
 <tr>
 <td>Caramelo</td>
 <td>4 bis 5</td>
@@ -1067,7 +1158,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 bis 3</td>
 </tr>
 <tr>
-<td>Deutscher Schäferhund, Golden Retriever, Husky, Rottweiler, Dobermann</td>
+<td>Deutscher Schäferhund, Golden Retriever, Husky, Rottweiler, Dobermann, Mops</td>
 <td>1 bis 2</td>
 </tr>
 </tbody></table></div>
@@ -1112,6 +1203,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Labrador</td>
 <td>Wohnhaus</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Mops</td>
+<td>Wohnhaus</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Mops</td>
+<td>Tierhandlung, Tierarztpraxis</td>
+<td>12%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1206,8 +1307,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>labpup</code></td>
 <td><code>labrador</code></td>
 </tr>
+<tr>
+<td>Mops</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
 </tbody></table></div>
-<p>Rüde und Hündin sind <strong>verschiedene Typen</strong>, keine Option desselben Typs. Die letzten drei Zeilen gibt es nur, wenn das Addon der jeweiligen Rasse installiert ist.</p>
+<p>Rüde und Hündin sind <strong>verschiedene Typen</strong>, keine Option desselben Typs. Die letzten vier Zeilen gibt es nur, wenn das Addon der jeweiligen Rasse installiert ist.</p>
 <h2 id="6-moodles-die-komplette-liste">6. Moodles: die komplette Liste</h2>
 <p>Hunde-Moodles erscheinen in <strong>einer eigenen Spalte, links von deinen normalen Moodles</strong>.</p>
 <h3 id="die-regel-die-für-alle-rassen-moodles-gilt">Die Regel, die für alle Rassen-Moodles gilt</h3>
@@ -1289,6 +1397,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>Weiches Maul</strong></td>
 <td>Labrador</td>
 <td>Bringt die Beute <strong>schon ab Jagd 3</strong>, bleibt 3x hartnäckiger dran, <strong>60% Chance auf einen zusätzlichen Gegenstand</strong>, <strong>+20% XP</strong> auf Schlachten und Kurzklingen</td>
+</tr>
+<tr>
+<td><strong>Dein Schatten</strong></td>
+<td>Mops</td>
+<td>Senkt <strong>Unglücklich, Gelangweilt und Stress</strong>, und schneller als jeder andere Hund. <strong>Schaltet sich in der Hitze ab</strong></td>
 </tr>
 </tbody></table></div>
 <h3 id="die-moodles-die-jede-rasse-gibt">Die Moodles, die jede Rasse gibt</h3>
@@ -1399,11 +1512,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <h2 id="9-die-addons-installieren">9. Die Addons installieren</h2>
-<p>Rottweiler, Dobermann und Labrador sind <strong>eigene Mods im Steam Workshop</strong>. Jedes davon:</p>
+<p>Rottweiler, Dobermann, Labrador und Mops sind <strong>eigene Mods im Steam Workshop</strong>. Jedes davon:</p>
 <ul>
 <li><strong>Setzt voraus, dass Companion Dogs als Basis installiert und aktiv ist.</strong></li>
 <li>Fügt <strong>eine Rasse</strong> hinzu, mit eigenem Modell, eigener Textur, eigenem Moodle und eigenen Spawn-Orten.</li>
-<li>Bringt die <strong>13 Übersetzungen</strong> mit, dieselben wie in der Basis.</li>
+<li>Bringt die <strong>14 Übersetzungen</strong> mit, dieselben wie in der Basis.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
@@ -1424,6 +1537,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">abonnieren</a></td>
 <td><strong>0.6.6 oder neuer</strong></td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">abonnieren</a></td>
+<td><strong>0.6.8 oder neuer</strong></td>
 </tr>
 </tbody></table></div>
 <p>Und die Basis selbst, falls du sie noch nicht hast: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
