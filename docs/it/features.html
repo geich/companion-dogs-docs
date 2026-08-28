@@ -166,6 +166,19 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
 .other:hover .paw{opacity:1;}
 
+/* comunidade: a cor da propria marca do Discord, a mesma da home, para o botao ler como o mesmo
+   destino nas duas pontas do site em vez de competir com o acento do tema */
+.discord{
+  display:inline-flex; align-items:center; gap:8px; flex:none; text-decoration:none;
+  color:#fff; background:#5865F2; border:1px solid #5865F2; border-radius:6px;
+  padding:6px 12px 6px 10px; font-size:12.8px; font-weight:640; white-space:nowrap;
+  transition:background .15s, border-color .15s;
+}
+.discord svg{width:17px; height:17px; fill:currentColor; flex:none;}
+.discord:hover{background:#4752E0; border-color:#4752E0;}
+.discord:active{transform:translateY(1px);}
+.discord:focus-visible{outline:2px solid var(--accent-soft); outline-offset:2px;}
+
 /* ---------- estrutura ---------- */
 .wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
 .rail{
@@ -277,6 +290,9 @@ td code{background:transparent; border:0; padding:0;}
   /* sao dois links cruzados, um por manual irmao. Sem o rotulo eles viram duas pastinhas iguais,
      que nao dizem para onde levam: aqui fica so o primeiro. */
   .other + .other{display:none;}
+  /* o icone do Discord e reconhecido sozinho, entao aqui ele perde o rotulo em vez de sair */
+  .discord span{display:none;}
+  .discord{padding:6px 9px;}
 }
 @media (max-width:760px){
   #menu{display:grid;}
@@ -300,6 +316,9 @@ td code{background:transparent; border:0; padding:0;}
   .cur,.sl,.other{display:none;}
   .search{flex:1 1 auto; min-width:0;}
   .find,.find:focus{width:100%;}
+  /* a dica da tecla `/` fica em cima da direita do campo. Num campo desta largura ela come a
+     parte que ainda dava para ler, e num celular nem existe tecla para dizer. */
+  .kbd{display:none;}
 }
 /* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
    nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
@@ -378,6 +397,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Vai al Manuale: Razze</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Vai al Manuale: Modding</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="cerca nel manuale..." aria-label="Cerca nel manuale" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
   <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Lingua"><optgroup label="Revisionate"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Traduzione automatica"><option value="es">Español</option><option value="it" selected>Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Entra nel Discord" aria-label="Entra nel Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Entra nel Discord</span></a>
   <button class="iconbtn" id="theme" type="button" aria-label="Cambia tema">&#9789;</button>
 </header>
 <div class="mtwarn" role="note"><span class="mtdot"></span><b>Traduzione automatica, non revisionata.</b> Questa pagina è stata tradotta a macchina dal portoghese e nessuno l'ha revisionata. Potrebbe contenere errori nei termini e nei numeri. In caso di dubbio, controlla la versione inglese o l'originale in portoghese. <a href="../en/features.html">Leggi in inglese</a></div>
