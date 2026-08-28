@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Modding: How to build a breed or species add-on">
+<meta name="description" content="Mod制作: 犬種や種族のアドオンの作り方">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Companion Dogs: Modding">
-<meta property="og:description" content="Modding: How to build a breed or species add-on">
-<meta property="og:url" content="https://companiondogs.pet/docs/en/modding.html">
+<meta property="og:title" content="Companion Dogs: Mod制作">
+<meta property="og:description" content="Mod制作: 犬種や種族のアドオンの作り方">
+<meta property="og:url" content="https://companiondogs.pet/docs/ja/modding.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="../en/modding.html">
@@ -27,7 +27,7 @@
 <link rel="alternate" hreflang="x-default" href="../en/modding.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<title>Companion Dogs: Modding</title>
+<title>Companion Dogs: Mod制作</title>
 <style>
 :root{
   --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
@@ -372,122 +372,122 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
 
 <header class="top">
-  <button class="iconbtn" id="menu" type="button" aria-label="Open contents" aria-expanded="false" aria-controls="rail">&#9776;</button>
-  <a class="brand" href="../index.html" title="Back to the documentation home page"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Modding</em>
+  <button class="iconbtn" id="menu" type="button" aria-label="目次を開く" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="ドキュメントのトップページに戻る"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Mod制作</em>
   <div class="grow"></div>
-  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Breeds manual</span></a>
-  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
-  <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>機能マニュアルを見る</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>犬種マニュアルを見る</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="マニュアル内を検索…" aria-label="マニュアル内を検索" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="機械翻訳"><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="テーマを切り替え">&#9789;</button>
 </header>
-
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>機械翻訳（未校正）.</b> このページはポルトガル語から機械翻訳したもので、校正はされていません。用語や数値が正しくない場合があります。内容に迷ったときは、英語版かポルトガル語の原文を確認してください。 <a href="../en/modding.html">英語版を読む</a></div>
 
 <div class="wrap">
   <aside class="rail" id="rail">
-    <div class="railhead">Contents &middot; <b>Modding</b></div>
+    <div class="railhead">目次 &middot; <b>Mod制作</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-what-an-add-on-is" data-id="1-what-an-add-on-is">1. What an add-on is</a>
+<a class="s2" href="#1-アドオンとは何か" data-id="1-アドオンとは何か">1. アドオンとは何か</a>
 </div>
 <div class="grp">
-<a class="s2" href="#2-the-api-versions" data-id="2-the-api-versions">2. The API versions</a>
+<a class="s2" href="#2-api-のバージョン" data-id="2-api-のバージョン">2. API のバージョン</a>
 </div>
 <div class="grp">
-<a class="s2" href="#3-what-you-need-before-you-start" data-id="3-what-you-need-before-you-start">3. What you need before you start</a>
+<a class="s2" href="#3-始める前に必要なもの" data-id="3-始める前に必要なもの">3. 始める前に必要なもの</a>
 </div>
 <div class="grp">
-<a class="s2" href="#4-the-files-of-an-add-on" data-id="4-the-files-of-an-add-on">4. The files of an add-on</a>
+<a class="s2" href="#4-アドオンのファイル構成" data-id="4-アドオンのファイル構成">4. アドオンのファイル構成</a>
 </div>
 <div class="grp">
-<a class="s2" href="#5-the-version-guard" data-id="5-the-version-guard">5. The version guard</a>
+<a class="s2" href="#5-バージョンガード" data-id="5-バージョンガード">5. バージョンガード</a>
 </div>
 <div class="grp">
-<a class="s2" href="#6-registering-the-breed" data-id="6-registering-the-breed">6. Registering the breed</a>
+<a class="s2" href="#6-犬種を登録する" data-id="6-犬種を登録する">6. 犬種を登録する</a>
 <div class="sub">
-<a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
-<a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
-<a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
+<a class="s3" href="#必須フィールド" data-id="必須フィールド">必須フィールド</a>
+<a class="s3" href="#任意フィールド" data-id="任意フィールド">任意フィールド</a>
+<a class="s3" href="#声" data-id="声">声</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#7-turning-a-whole-system-off" data-id="7-turning-a-whole-system-off">7. Turning a whole system off</a>
+<a class="s2" href="#7-システムを丸ごと切る" data-id="7-システムを丸ごと切る">7. システムを丸ごと切る</a>
 </div>
 <div class="grp">
-<a class="s2" href="#8-the-animal-definitions" data-id="8-the-animal-definitions">8. The animal definitions</a>
+<a class="s2" href="#8-動物定義" data-id="8-動物定義">8. 動物定義</a>
 </div>
 <div class="grp">
-<a class="s2" href="#9-the-model-script" data-id="9-the-model-script">9. The model script</a>
+<a class="s2" href="#9-モデルスクリプト" data-id="9-モデルスクリプト">9. モデルスクリプト</a>
 </div>
 <div class="grp">
-<a class="s2" href="#10-where-the-animal-spawns" data-id="10-where-the-animal-spawns">10. Where the animal spawns</a>
+<a class="s2" href="#10-その動物が現れる場所" data-id="10-その動物が現れる場所">10. その動物が現れる場所</a>
 <div class="sub">
-<a class="s3" href="#the-building-classes" data-id="the-building-classes">The building classes</a>
-<a class="s3" href="#suffixes-already-taken" data-id="suffixes-already-taken">Suffixes already taken</a>
+<a class="s3" href="#建物クラス" data-id="建物クラス">建物クラス</a>
+<a class="s3" href="#すでに使われている接尾辞" data-id="すでに使われている接尾辞">すでに使われている接尾辞</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#11-the-breed-moodle" data-id="11-the-breed-moodle">11. The breed moodle</a>
+<a class="s2" href="#11-犬種の-moodle" data-id="11-犬種の-moodle">11. 犬種の moodle</a>
 </div>
 <div class="grp">
-<a class="s2" href="#12-hooks" data-id="12-hooks">12. Hooks</a>
+<a class="s2" href="#12-フック" data-id="12-フック">12. フック</a>
 </div>
 <div class="grp">
-<a class="s2" href="#13-translation-keys" data-id="13-translation-keys">13. Translation keys</a>
+<a class="s2" href="#13-翻訳キー" data-id="13-翻訳キー">13. 翻訳キー</a>
 </div>
 <div class="grp">
-<a class="s2" href="#14-what-the-save-remembers" data-id="14-what-the-save-remembers">14. What the save remembers</a>
+<a class="s2" href="#14-セーブが覚えているもの" data-id="14-セーブが覚えているもの">14. セーブが覚えているもの</a>
 </div>
 <div class="grp">
-<a class="s2" href="#15-before-you-publish" data-id="15-before-you-publish">15. Before you publish</a>
+<a class="s2" href="#15-公開する前に" data-id="15-公開する前に">15. 公開する前に</a>
 </div>
 <div class="grp">
-<a class="s2" href="#16-common-mistakes" data-id="16-common-mistakes">16. Common mistakes</a>
+<a class="s2" href="#16-よくある失敗" data-id="16-よくある失敗">16. よくある失敗</a>
 </div></nav>
   </aside>
-  <main><article class="doc"><h1 id="companion-dogs-modding-manual">Companion Dogs: Modding Manual</h1>
-<p>How to build your own add-on: a new breed, or a whole new species, as a separate Workshop mod that plugs into Companion Dogs.</p>
-<p>This manual is for people who write mods. If you only want to play, the other two manuals are the ones you want: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds themselves.</p>
-<p>It assumes you can already read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here; section 3 lists what the model file has to satisfy, and no more.</p>
-<blockquote class="quote"><strong>This is a public contract.</strong> Everything named in this manual is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
-<h2 id="1-what-an-add-on-is">1. What an add-on is</h2>
-<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds <strong>one breed</strong> (or several, if they share a body), and nothing else. Everything that makes the animal behave like a companion already lives in the base mod and is shared.</p>
-<p><strong>The base owns:</strong></p>
+  <main><article class="doc"><h1 id="companion-dogs-mod制作マニュアル">Companion Dogs: Mod制作マニュアル</h1>
+<p>自分のアドオンの作り方。新しい犬種、あるいは種族まるごとを、Companion Dogs に噛み合う別の Workshop Mod として作ります。</p>
+<p>このマニュアルは Mod を書く人向けです。遊ぶだけなら、必要なのは他の二冊のほうです。犬が何をするかは <a href="features.html" class="xlink">機能</a>、犬種そのものは <a href="breeds.html" class="xlink">犬種</a> を見てください。</p>
+<p>Lua が読めること、そして自分の動物のリグ付き・アニメーション付きモデルを持っていることを前提にして います。アート側のパイプラインはここには書きません。第 3 節がモデルファイルの満たすべき条件を挙げ ますが、それ以上には踏み込みません。</p>
+<blockquote class="quote"><strong>これは公開された契約です。</strong> このマニュアルが名前を挙げているものは、すべて Mod の外から呼ばれ るためにあります。ここに名前がないものは内部のもので、どのバージョンでも予告なく変わり得ます。</blockquote>
+<h2 id="1-アドオンとは何か">1. アドオンとは何か</h2>
+<p>アドオンは、<code>require=CompanionDogs</code> を宣言し、ロード時に関数をひとつ呼ぶだけの、ごく普通の Workshop Mod です。追加するのは<strong>犬種ひとつ</strong>（体を共有するなら複数）だけで、それ以外は何もしません。動物が 仲間らしく振る舞うために必要なものは、すでにベース Mod の中にあり、共有されています。</p>
+<p><strong>ベースが持っているもの:</strong></p>
 <ul>
-<li>the animation state machine, the animation set and the skeleton</li>
-<li>following, pathing, combat, hunting, herding, the sentinel, needs and upkeep</li>
-<li>the whole user interface: the dog window, the radial, the context menu, the kennel, the map marker</li>
-<li>taming, bonding, breeding, puppies and crossbreeds</li>
-<li>the sandbox options, and the multiplayer replication</li>
+<li>アニメーションのステートマシン、animset、スケルトン</li>
+<li>追従、パス探索、戦闘、狩り、家畜の世話、見張り、欲求、メンテナンス</li>
+<li>インターフェース一式。犬のウィンドウ、ラジアル、コンテキストメニュー、犬舎、マップの目印</li>
+<li>手なずけ、絆、繁殖、子犬、雑種</li>
+<li>サンドボックス設定と、マルチプレイの同期</li>
 </ul>
-<p><strong>Your add-on owns:</strong></p>
+<p><strong>あなたのアドオンが持つもの:</strong></p>
 <ul>
-<li>the numbers that make your animal different from a Caramelo</li>
-<li>its body model, its texture, its portrait and, if it has one, its moodle icon</li>
-<li>where it is found in the world</li>
-<li>its name and description, in every language you ship</li>
+<li>あなたの動物をカラメロと違うものにする数値</li>
+<li>体のモデル、テクスチャ、肖像、そして moodle があればそのアイコン</li>
+<li>世界のどこで見つかるか</li>
+<li>名前と説明文を、同梱するすべての言語で</li>
 </ul>
-<p>That split is the whole point. A breed pack is a few hundred lines of Lua, because the hard part is already running.</p>
-<p><strong>One breed, one look.</strong> A breed is a set of numbers plus one appearance. If you want two colours of the same animal to behave differently, those are two breeds. If you want two colours that behave the same, they are still two breeds to the base (two names, two entries in the kennel), and you write them from one shared table, the way CD: Cats does with its five coats.</p>
-<h2 id="2-the-api-versions">2. The API versions</h2>
-<p><code>CD.API_VERSION</code> is a plain number. It has only ever grown by adding things, so an add-on written against an older version keeps loading on a newer base without a single change.</p>
+<p>この分担がすべての要点です。犬種パックは数百行の Lua で済みます。難しいところはもう動いているから です。</p>
+<p><strong>ひとつの犬種にひとつの見た目。</strong> 犬種とは、数値の組と見た目ひとつのことです。同じ動物の二色に 違う振る舞いをさせたいなら、それは二つの犬種です。同じ振る舞いの二色が欲しい場合でも、ベースから 見ればやはり二つの犬種であり（名前が二つ、犬舎の項目も二つ）、CD: Cats が五つの毛色でやっているよう に、共有テーブルから書き起こします。</p>
+<h2 id="2-api-のバージョン">2. API のバージョン</h2>
+<p><code>CD.API_VERSION</code> はただの数値です。これまで追加だけで大きくなってきたので、古いバージョンに向けて 書かれたアドオンは、新しいベースでも一行も変えずにロードされ続けます。</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
-<th>Base version</th>
-<th>What it added</th>
+<th>ベースのバージョン</th>
+<th>追加されたもの</th>
 </tr></thead><tbody>
 <tr>
 <td>1</td>
 <td>0.6.3</td>
-<td><code>CD.registerBreed</code>, the spawn registry, breed moodles</td>
+<td><code>CD.registerBreed</code>、スポーンのレジストリ、犬種 moodle</td>
 </tr>
 <tr>
 <td>2</td>
 <td>0.6.6</td>
-<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, the <code>CD.onHuntDelivered</code> hook</td>
+<td><code>huntFetchLevel</code>、<code>huntDeliverTimeoutMin</code>、フック <code>CD.onHuntDelivered</code></td>
 </tr>
 <tr>
 <td>3</td>
 <td>0.6.8</td>
-<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, the <code>CD.onUpkeepStress</code> hook</td>
+<td><code>sentinelMult</code>、<code>barkNoiseMult</code>、<code>loyaltyDecayMult</code>、フック <code>CD.onUpkeepStress</code></td>
 </tr>
 <tr>
 <td>4</td>
@@ -497,19 +497,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>5</td>
 <td>0.7.0</td>
-<td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+<td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code>、<code>descKey</code>、<code>voices</code>、<code>CD.registerVoices</code></td>
 </tr>
 </tbody></table></div>
-<p>The number to guard on is the <strong>lowest API that your add-on actually needs</strong>, and the base version in that table is the one you name on your Workshop page. Take it from that table and not from whatever the base happened to be while you were writing: a field that exists only in the developer build is a field your players do not have.</p>
-<p><strong>A missing field is ignored in silence.</strong> That is fine when the field is a number: on an older base your animal simply barks at the normal volume. It is not fine when the field is a block, because then a cat that must never fight will happily fight. So: numbers can degrade, blocks cannot. If your animal depends on a block, guard on the API that introduced it and let the add-on stay inert on anything older.</p>
-<h2 id="3-what-you-need-before-you-start">3. What you need before you start</h2>
-<p><strong>The base mod, 0.6.3 or newer.</strong> Everything below is a call into it.</p>
-<p><strong>A skinned model.</strong> Your animal needs its own <code>.glb</code> under <code>media/models_X/Skinned/</code>, and that file has to carry the <strong>complete set of 21 <code>Rac_*</code> animation clips</strong>. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked to do one of the other six. The model also has to stay under <strong>60 bones</strong> and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear.</p>
-<p>If you do not have a model yet, you can still write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal will look like a Caramelo, but every system in this manual will run.</p>
-<p><strong>A texture</strong> for the body, and a <strong>portrait</strong> for the kennel window.</p>
-<p><strong>One decision, before any code:</strong> is your animal a <em>breed</em> or a <em>species</em>? A breed is a dog with different numbers. A species is an animal that does not have some of the jobs at all. The difference is not cosmetic, it changes which fields you write, and section 7 is about it.</p>
-<h2 id="4-the-files-of-an-add-on">4. The files of an add-on</h2>
-<p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
+<p>ガードに書く数値は、<strong>あなたのアドオンが実際に必要とする一番低い API</strong> です。そしてその表にある ベースのバージョンが、Workshop のページに書くべき数字です。書いていたときにベースがたまたま何だった かではなく、この表から取ってください。開発ビルドにしかないフィールドは、プレイヤーが持っていない フィールドです。</p>
+<p><strong>ないフィールドは黙って無視されます。</strong> それはフィールドが数値なら問題ありません。古いベースでは、 あなたの動物はただ普通の音量で吠えるだけです。フィールドが「禁止」の場合は問題です。決して戦っては いけない猫が、平気で戦い始めてしまいます。つまり、数値は劣化してよく、禁止は劣化してはいけません。 あなたの動物が禁止に依存しているなら、それを導入した API でガードし、それより古いものではアドオン ごと不活性のままにしてください。</p>
+<h2 id="3-始める前に必要なもの">3. 始める前に必要なもの</h2>
+<p><strong>ベース Mod、0.6.3 以降。</strong> ここから先はすべて、その中への呼び出しです。</p>
+<p><strong>スキン済みのモデル。</strong> あなたの動物には <code>media/models_X/Skinned/</code> に置く固有の <code>.glb</code> が必要で、 そのファイルは <strong>21 個の <code>Rac_*</code> クリップを完全に</strong>持っていなければなりません。クリップはモデル ファイル間で受け継がれません。クリップが十五個しかないモデルは、残り六個のどれかを要求された最初の 瞬間に固まる動物になります。モデルはさらに <strong>60 ボーン未満</strong>であり、最上位ノードが単位行列でなけれ ばなりません。そうでないとエンジンが毎フレーム例外を投げ、動物は黒い滲みとして描かれます。</p>
+<p>まだモデルがなくても、<code>CD.applyDogModel</code> をベースの体のどれかに向ければ、それ以外はすべて書いて 試せます。動物はカラメロの見た目になりますが、このマニュアルのすべてのシステムは動きます。</p>
+<p>体の<strong>テクスチャ</strong>と、犬舎ウィンドウ用の<strong>肖像</strong>。</p>
+<p><strong>コードを書く前に決めること:</strong> あなたの動物は*犬種*ですか、それとも*種族*ですか。犬種は数値の違う 犬です。種族は、いくつかの仕事をそもそも持っていない動物です。この違いは見た目の話ではなく、書く フィールドが変わります。第 7 節がその話です。</p>
+<h2 id="4-アドオンのファイル構成">4. アドオンのファイル構成</h2>
+<p>これは公開済みで最も小さいアドオン CD: Pug の、重要な部分だけです。</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -527,7 +527,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>And the <code>mod.info</code>:</p>
+<p>そして <code>mod.info</code>:</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -537,18 +537,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> is the important line. It guarantees that <strong>all</strong> of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
-<p><strong><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8".</strong> That field is the <em>game</em> build gate and nothing else, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section, and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
-<h2 id="5-the-version-guard">5. The version guard</h2>
-<p>Put this at the top of every Lua file of your add-on, with the number your add-on actually needs:</p>
+<p><code>require=CompanionDogs</code> が肝心な行です。これがあると、ベースの Lua が<strong>すべて</strong>あなたのものより先に 実行されることが、各フェーズで保証されます。まず shared、次に client、最後に server の順です。これが ないと、あなたのファイルが先にロードされることがあり、そうなると <code>CD.</code> の呼び出しはすべて nil への インデックスになります。</p>
+<p><strong><code>versionMin</code> では「Companion Dogs 0.6.8 が必要」と言えません。</strong> あのフィールドは*ゲーム*本体の バージョンのゲートであり、それ以外の何物でもありません。依存 Mod のバージョンを書く mod.info の フィールドは存在しません。ベース側の下限は次節のガードが強制し、プレイヤーには説明文で伝えます。 そこに言葉で書いてください。書かなければ、プレイヤーが受け取る唯一の症状は「動物が一向に現れない」 です。</p>
+<h2 id="5-バージョンガード">5. バージョンガード</h2>
+<p>これをアドオンのすべての Lua ファイルの先頭に、あなたのアドオンが実際に必要とする数値で置きます。</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>With the base missing or too old, the file returns at line two. The add-on then does nothing at all: no breed, no spawn, no moodle, not one line in the log. That silence is deliberate. An add-on that half loads is worse than one that does not load, because the player gets an animal with a name and no behaviour.</p>
-<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those instead:</p>
+<p>ベースが無い、あるいは古すぎる場合、ファイルは二行目で戻ります。アドオンはそのとき何もしません。 犬種もスポーンも moodle もなく、ログに一行も出ません。この沈黙は意図的なものです。半分だけロード されるアドオンは、まったくロードされないアドオンより悪い。名前はあるのに振る舞いのない動物が、 プレイヤーの手元に残るからです。</p>
+<p>ガードはファイル単位で、各ファイルは自分が使うものをガードします。<code>PugDefinitions.lua</code> はモデルの ヘルパーを使うので、そちらをガードします。</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Never create the global.</strong> <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table and every guard downstream passes when it should not. Read the global, never write it.</p>
-<h2 id="6-registering-the-breed">6. Registering the breed</h2>
-<p>One call, in a <strong>shared</strong> file:</p>
+<p><strong>グローバルを自分で作らないこと。</strong> アドオンの中の <code>CompanionDogs = CompanionDogs or {}</code> は、 存在しないベースを半端に組み上がったテーブルに変えてしまい、以降のガードが通ってはいけない場面で 通ります。グローバルは読むだけにして、決して書かないでください。</p>
+<h2 id="6-犬種を登録する">6. 犬種を登録する</h2>
+<p><strong>shared</strong> のファイルで、呼び出しはひとつだけです。</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -578,193 +578,193 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>That call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
-<p>A bad definition returns <code>nil</code> instead of throwing, so a mistake never takes the load down with it. Every rejection prints a named line, so <strong>read the log</strong> the first time you register a breed.</p>
-<h3 id="required-fields">Required fields</h3>
+<p>この呼び出しが犬種を登録し、三つの動物タイプを登録し、あなたの動物が交配に加わるように繁殖の順序を 組み直し、スポーンの手順を登録します。</p>
+<p>不正な定義は例外を投げずに <code>nil</code> を返すので、間違いがロード全体を巻き込むことはありません。拒否は 必ず名前付きの一行をログに出します。だから犬種をはじめて登録するときは<strong>ログを読んでください</strong>。</p>
+<h3 id="必須フィールド">必須フィールド</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What it is</th>
+<th>フィールド</th>
+<th>何であるか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>your breed identifier, unique across every mod. Never changed after release.</td>
+<td>あなたの犬種の識別子。すべての Mod をまたいで一意。公開後は決して変えません。</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Chooses the <strong>body mesh</strong>.</td>
+<td>三つの動物タイプの接頭辞。<code>&lt;接頭辞&gt;pup</code>、<code>&lt;接頭辞&gt;female</code>、<code>&lt;接頭辞&gt;male</code>。<strong>体のメッシュ</strong>を選びます。</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
-<td>translation key of the display name.</td>
+<td>表示名の翻訳キー。</td>
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>learning speed per skill: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 is normal.</td>
+<td>スキルごとの習得速度。<code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 が標準です。</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>how hard it hits. The Caramelo is 0.20, a fighting breed is above 1.0.</td>
+<td>打撃の重さ。カラメロは 0.20、戦う犬種は 1.0 を超えます。</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>, how the damage grows from Combat 0 to Combat 10.</td>
+<td><code>{ min, max }</code>。戦闘 0 から戦闘 10 までダメージがどう伸びるか。</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>birth range of the four genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Each is <code>{ low, high }</code> inside 0 to 1.</td>
+<td>四つの遺伝子の生まれつきの範囲。<code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。それぞれ 0 から 1 の中の <code>{ 下限, 上限 }</code> です。</td>
 </tr>
 </tbody></table></div>
-<h3 id="optional-fields">Optional fields</h3>
+<h3 id="任意フィールド">任意フィールド</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>Default</th>
-<th>What it does</th>
+<th>フィールド</th>
+<th>既定値</th>
+<th>何をするか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
-<td>the <code>key</code></td>
-<td>breed name given to the engine, which chooses the <strong>texture</strong>. Unique per breed.</td>
+<td><code>key</code> と同じ</td>
+<td>エンジンに渡す犬種名で、<strong>テクスチャ</strong>を選びます。犬種ごとに一意。</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>description key. Point several breeds at one key when they share a description.</td>
+<td>説明文のキー。説明を共有する犬種は、まとめて一つのキーに向けます。</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>base value</td>
-<td><code>{ min, max }</code> puppies per birth.</td>
+<td>ベースの値</td>
+<td>一回の出産あたりの子犬の <code>{ 下限, 上限 }</code>。</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false means it wears zombies down but never lands the killing blow.</td>
+<td>false は、ゾンビを削るが決してとどめを刺さない、という意味です。</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
 <td>false</td>
-<td>true lets it knock a zombie over.</td>
+<td>true でゾンビを倒せるようになります。</td>
 </tr>
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>how much a fight costs it in stress.</td>
+<td>一度の戦闘がその動物にとってどれだけストレスになるか。</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>base value</td>
-<td>stress level at which it stops fighting. <code>panicImmune = true</code> means never.</td>
+<td>ベースの値</td>
+<td>戦うのをやめるストレス値。<code>panicImmune = true</code> は「決してやめない」です。</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
 <td>1</td>
-<td>saddlebag capacity multiplier.</td>
+<td>サドルバッグ容量の倍率。</td>
 </tr>
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>absolute visual scale of the puppy. <strong>A small breed must set this</strong>, otherwise the puppy is born adult sized.</td>
+<td>子犬の見た目の絶対スケール。<strong>小型の犬種は必ず設定してください</strong>。しないと子犬が成犬の大きさで生まれます。</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>multiplies the final sentinel radius.</td>
+<td>最終的な見張り半径にかかる倍率。</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>scales the radius and volume of the alarm bark. It scales noise, it does not create it: with the sandbox noise option off, no breed attracts zombies with a bark.</td>
+<td>警戒吠えの半径と音量を拡大縮小します。音を大きくするだけで、音を作りはしません。サンドボックスの騒音設定が切ってあれば、どの犬種も吠えでゾンビを引き寄せません。</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>multiplies the daily loyalty decay. <code>0</code> means the bond never fades.</td>
+<td>忠誠心の日々の減少にかかる倍率。<code>0</code> なら絆は決して薄れません。</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>the animal is stuck on full alert: the owner cannot set quiet or silent, anywhere. Use it when the loud alarm <strong>is</strong> the design.</td>
+<td>その動物は完全警戒に固定されます。飼い主は静かにも無音にも、どこからも変えられません。うるさい警報こそが設計<strong>である</strong>ときに使ってください。</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>Hunt level from which it carries the kill back to its owner.</td>
+<td>獲物を飼い主のところへ運び始める狩りのレベル。</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game minutes it will keep trying to deliver before giving up.</td>
+<td>受け渡しを諦めるまで粘るゲーム内分数。</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>base value</td>
-<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, or the loop restarts and gets cut mid gesture.</td>
+<td>ベースの値</td>
+<td>待機アニメーションの窓の長さ、ミリ秒。あなたのクリップが犬のものより短いときに設定します。しないとループが再開して仕草の途中で切れます。</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false keeps the animal standing on Stay and Guard instead of lying down.</td>
+<td>false にすると、待機や警備のあいだ伏せずに立ったままになります。</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
-<td>dog sounds</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. See below.</td>
+<td>犬の音</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>。下を参照。</td>
 </tr>
 <tr>
-<td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
-<td>everything on</td>
-<td>the structural blocks. Section 7.</td>
+<td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code></td>
+<td>すべて有効</td>
+<td>構造的な禁止。第 7 節。</td>
 </tr>
 </tbody></table></div>
-<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
-<h3 id="the-voice">The voice</h3>
-<p>A different species does not speak the same language. Without <code>voices</code>, your cat barks:</p>
+<p>定義に足した数値やフラグは、<code>CD.breedNumber(animal, フィールド)</code> と <code>CD.breedFlag(animal, フィールド)</code> で読み戻せます。<code>CD.getBreedDef(animal).フィールド</code> を自分で読むより、この二つを使ってください。 欠けたフィールドの扱いをやってくれますし、ベース側が動いても動き続けます。</p>
+<h3 id="声">声</h3>
+<p>種族が違えば、同じ言葉は話しません。<code>voices</code> がないと、あなたの猫は吠えます。</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> is not optional decoration. Without it the sounds still play, but they ignore the player's category slider and the game's effect volume, which is a failure nobody reports because nothing looks broken. A key you leave out of <code>voices</code> falls back to the dog sound, which is what you want for a breed of dog and never what you want for another species.</p>
-<h2 id="7-turning-a-whole-system-off">7. Turning a whole system off</h2>
-<p>The five skills are the five systems, one for one:</p>
+<p><code>CD.registerVoices</code> は任意の飾りではありません。これがないと音は鳴りますが、プレイヤーのカテゴリ スライダーとゲームの効果音量を無視します。何も壊れて見えないので、誰も報告してくれない類の不具合 です。<code>voices</code> から外したキーは犬の音に落ちます。犬の犬種ならそれで正解ですが、別の種族では決して 正解になりません。</p>
+<h2 id="7-システムを丸ごと切る">7. システムを丸ごと切る</h2>
+<p>五つのスキルは、五つのシステムと一対一で対応します。</p>
 <div class="tw"><table><thead><tr>
-<th>Skill</th>
-<th>The system it is</th>
+<th>スキル</th>
+<th>対応するシステム</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>the sentinel: noticing zombies and warning you</td>
+<td>見張り。ゾンビに気づき、あなたに知らせる</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>fighting, the Guard mode and self defence</td>
+<td>戦うこと、警備モード、自衛</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>the trick tree</td>
+<td>芸のツリー</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>hunting, plus the foraging bonus it gives its owner</td>
+<td>狩り、および飼い主に与える採集ボーナス</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>tending livestock in a pen</td>
+<td>囲いの中の家畜の世話</td>
 </tr>
 </tbody></table></div>
-<p>A species is not a dog with worse numbers. It is an animal that does not have some of those jobs at all. So it declares what it does not have:</p>
+<p>種族は、数値の悪い犬ではありません。それらの仕事のいくつかを、そもそも持たない動物です。ですから、 持っていないものを宣言します。</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
-<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface. All three, together. Hiding only the bar would leave the skill growing where nobody can see it; blocking only the system would leave a bar stuck at zero forever.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
-<p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. A halo saying the order was ignored would be a lie, because this is not disobedience. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
-<h2 id="8-the-animal-definitions">8. The animal definitions</h2>
-<p>The engine binds the mesh to the <strong>animal type</strong>, not to the breed, so your breed needs its own three types. This is the mechanical part of an add-on, and the shortest path is to copy the file of an existing add-on and rename it.</p>
-<p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
+<p>書かないか <code>true</code> なら、その動物はそのスキルを持っています。だから取り除くものだけを書きます。</p>
+<p>スキルを切ると、<strong>三つのことが同時に</strong>起きます。システムが動かなくなり、そのスキルは経験値を得なく なり、バーとその指示がインターフェースから消えます。三つまとめてです。バーだけ隠せば、誰にも見えない ところでスキルが伸び続けます。システムだけ止めれば、バーが永遠にゼロで固まります。</p>
+<p><code>canBreed = false</code> がテーブルの外にあるのは、繁殖にはバーも経験値もないからです。そして全面的です。 その動物は身ごもらず、相手として選ばれず、同じ犬種とも交配しません。</p>
+<p><code>huntMaxPrey</code> は<strong>存在する狩りの中での上限</strong>であり、<code>hunt = false</code> とは別物です。<code>"tiny"</code>（ネズミ、 ドブネズミ、リス）、<code>"small"</code>（ウサギ、アライグマ）、<code>"large"</code>（シカ。既定で上限なし）を取ります。 上限より大きい獲物はあなたの動物には見えません。追いませんし、指し示しもしません。この段階から外れた 値は <code>"large"</code> に落ち、名前付きの一行をログに出します。</p>
+<p><strong>禁止された動物にグレーアウトのボタンは出ません。</strong> その項目はラジアルからもコンテキストメニュー からもウィンドウからも消え、サーバー側の拒否は無言です。「命令を無視した」と光って見せるのは嘘に なります。これは不服従ではないからです。設計は犬種の説明文で説明してください。これらのフィールドが 新しい翻訳キーを連れてこないのは、そのためです。</p>
+<h2 id="8-動物定義">8. 動物定義</h2>
+<p>エンジンはメッシュを犬種ではなく<strong>動物タイプ</strong>に結び付けます。ですからあなたの犬種には固有の三つの タイプが要ります。ここはアドオンの機械的な部分で、いちばんの近道は既存のアドオンのファイルをコピー して名前を変えることです。</p>
+<p><code>Definitions/animal/</code> の shared ファイルに置く三つの部品です。</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -790,48 +790,48 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>The helpers the base gives you:</p>
+<p>ベースが用意しているヘルパー:</p>
 <div class="tw"><table><thead><tr>
-<th>Helper</th>
-<th>What it fills in</th>
+<th>ヘルパー</th>
+<th>何を埋めるか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>body model, skeleton, butchered textures and the animation set</td>
+<td>体のモデル、スケルトン、解体用テクスチャ、animset</td>
 </tr>
 <tr>
 <td><code>CD.applyDogBehaviour(t)</code></td>
-<td>every engine behaviour flag a companion needs</td>
+<td>仲間に必要なエンジン側の挙動フラグ一式</td>
 </tr>
 <tr>
 <td><code>CD.applyDogAvatar(t)</code></td>
-<td>the portrait camera for the animal window</td>
+<td>動物ウィンドウの肖像カメラ</td>
 </tr>
 <tr>
 <td><code>CD.DOG_SOUNDS</code></td>
-<td>the shared footstep and foley table</td>
+<td>足音と効果音の共有テーブル</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>the value that stops a frightened stray from bleeding to death</td>
+<td>怯えた野良が出血死しないようにする値</td>
 </tr>
 <tr>
 <td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>the butchering parts of all three stages</td>
+<td>三つの成長段階すべての解体パーツ</td>
 </tr>
 </tbody></table></div>
-<p>Four rules that are not obvious:</p>
-<p><strong>The animation set has to stay <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> sets it. A forked animation set does not load its state machine, and an animal without a state machine is an animal frozen in place.</p>
-<p><strong>Reuse the genome:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Do not write your own.</p>
-<p><strong>Never declare <code>mate</code>.</strong> With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot as a safety net, but do not rely on that.</p>
-<p><strong>Parts are mandatory.</strong> Three lines in their own file:</p>
+<p>自明でない規則が四つあります。</p>
+<p><strong>animset は <code>"raccoon"</code> のままでなければなりません。</strong> <code>CD.applyDogModel</code> が設定します。フォークした animset はステートマシンを読み込まず、ステートマシンのない動物はその場で固まった動物です。</p>
+<p><strong>ゲノムは使い回してください:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>。自前で書かないこと。</p>
+<p><strong><code>mate</code> は決して宣言しないでください。</strong> これがあるとエンジンは、動物ゾーンの中で独自のネイティブ 交配を走らせます。それは Mod の繁殖禁止もサンドボックス設定も無視し、絆のない子を産みます。ベースは 安全網として起動時にこのフィールドを消しますが、それを当てにしないでください。</p>
+<p><strong>パーツは必須です。</strong> 専用ファイルに三行だけ。</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and walks into a nil.</p>
-<p><strong>Small animals need their avatar camera adjusted.</strong> The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
-<h2 id="9-the-model-script">9. The model script</h2>
-<p>One file under <code>media/scripts/</code>, which is what tells the game your model exists:</p>
+<p>これがないと、あなたの動物を解体したときにバニラのコードが落ちます。パーツ定義をタイプと犬種で 引きにいって nil を踏むからです。</p>
+<p><strong>小さい動物は肖像カメラの調整が要ります。</strong> <code>CD.applyDogAvatar</code> の肖像ズームは犬に合わせて調整 されていて、アバターのズームは倍率です。動物が小さいほど数値は大きくなります。犬に対する体格比で ズームを割り、同じ比をオフセットに掛けてください。でないとあなたの動物は、自分の肖像の下の隅で 極小になります。</p>
+<h2 id="9-モデルスクリプト">9. モデルスクリプト</h2>
+<p><code>media/scripts/</code> に置くファイルひとつが、あなたのモデルの存在をゲームに伝えます。</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -854,10 +854,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> is what keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
-<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Those numbers are found by looking at the animal in game and nudging them, not by measuring the model: a bag that is mathematically centred still looks wrong on a body with fur.</p>
-<h2 id="10-where-the-animal-spawns">10. Where the animal spawns</h2>
-<p>Strays are rolled per building, per chunk, the first time that chunk loads. You describe your rolls as a list of steps, either inside the breed definition as <code>spawns</code>, or with <code>CD.registerStraySpawns(list)</code>.</p>
+<p><code>keepMeshAnimations = true</code> が、モデルファイルの中のクリップを使える状態に保ちます。これがないと モデルは読み込まれても決して動きません。</p>
+<p><code>head</code> のアタッチメントは帽子などが載る場所です。サドルバッグをあなたの動物に合わせたいなら、同じ やり方で <code>saddlebags_l</code>、<code>saddlebags_r</code>、<code>saddlebags_c</code> を背骨のボーンに足してください。これらの 数値は、ゲームの中で動物を見ながら少しずつ動かして見つけるものです。モデルを測って出すものでは ありません。数学的に中央のバッグでも、毛のある体の上ではやはり傾いて見えます。</p>
+<h2 id="10-その動物が現れる場所">10. その動物が現れる場所</h2>
+<p>野良は、そのチャンクが最初に読み込まれるときに、建物ごと・チャンクごとに抽選されます。抽選は手順の リストとして書きます。犬種定義の <code>spawns</code> の中か、<code>CD.registerStraySpawns(リスト)</code> のどちらかです。</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -865,81 +865,81 @@ end</code></pre>
       chance = function() return CD.PUG_PETVET_CHANCE * CD.dogSpawnMultiplier() end },
 },</code></pre>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>What it is</th>
+<th>キー</th>
+<th>何であるか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>name of the step, for your own logs</td>
+<td>手順の名前。あなた自身のログ用です</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>the building class it rolls on</td>
+<td>抽選の対象になる建物クラス</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>a <strong>function</strong> returning a percentage. A function, not a number, so it can follow the sandbox multiplier live.</td>
+<td>パーセントを返す<strong>関数</strong>。数値ではなく関数なのは、サンドボックスの倍率にその場で追随できるようにするためです。</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>key of the persistent store. Unique in the whole ecosystem, and never changed.</td>
+<td>永続ストアのキー。エコシステム全体で一意、そして決して変えません。</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>the breed key to spawn</td>
+<td>出現させる犬種のキー</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>optional function returning a boolean, checked before the roll. The Husky uses <code>CD.isWinter</code>.</td>
+<td>真偽値を返す任意の関数。抽選の前に見られます。ハスキーは <code>CD.isWinter</code> を使っています。</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>percentage chance of being born inside the building instead of the street. Default 35.</td>
+<td>路上ではなく建物の中で生まれる確率。既定は 35 です。</td>
 </tr>
 </tbody></table></div>
-<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Either way the player's sandbox setting keeps working, which it will not if you write a bare number.</p>
-<p><code>indoor</code> is a preference and not a promise: a building with no free interior tile in that chunk falls back to a tile outside.</p>
-<h3 id="the-building-classes">The building classes</h3>
-<p>The base registers four, and you can use them directly:</p>
+<p>確率には <code>CD.dogSpawnMultiplier()</code> を掛けるか、<code>CD.strayChancePerHouse()</code> を自前の希少度で割って ください。どちらでもプレイヤーのサンドボックス設定が効き続けます。生の数値を書くと効きません。</p>
+<p><code>indoor</code> は好みであって約束ではありません。そのチャンクに空いた屋内タイルがない建物では、屋外の タイルに戻ります。</p>
+<h3 id="建物クラス">建物クラス</h3>
+<p>ベースは四つ登録しており、そのまま使えます。</p>
 <div class="tw"><table><thead><tr>
-<th>Class</th>
-<th>Matches</th>
+<th>クラス</th>
+<th>何に一致するか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
-<td>residential buildings that are not shops</td>
+<td>店舗ではない住宅</td>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>police stations and the like</td>
+<td>警察署とその類</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
-<td>pet shops and veterinary clinics</td>
+<td>ペットショップと動物病院</td>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>farm buildings, and it is allowed outside town</td>
+<td>農場の建物。町の外でも許されます</td>
 </tr>
 </tbody></table></div>
-<p>If none of them fits, register your own:</p>
+<p>どれも合わないなら、自分で登録します。</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>The match function receives the building definition and runs inside a protected call, so a mistake in it cannot take the chunk load down. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which is what a farm or a forest cabin needs. Leave <code>exclusive</code> alone: the base classes are exclusive between themselves, and an add-on class is meant to be additive, matching on top of them.</p>
-<h3 id="suffixes-already-taken">Suffixes already taken</h3>
-<p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
-<p>Every suffix starts with a vertical bar. These are already in use:</p>
+<p>一致関数は建物定義を受け取り、保護された呼び出しの中で走ります。ですからそこでの誤りがチャンクの 読み込みを巻き込むことはありません。<code>skipUrbanGate</code> は、市街地でないチャンクでもクラスが抽選される ようにします。農場や森の小屋にはこれが要ります。<code>exclusive</code> はそのままにしておいてください。ベースの クラス同士は排他ですが、アドオンのクラスは加算的で、その上に重ねて一致するように作られています。</p>
+<h3 id="すでに使われている接尾辞">すでに使われている接尾辞</h3>
+<p>接尾辞は「この建物はもう抽選済み」を保存するキーの一部です。同じ接尾辞を使う二つの Mod は、互いの 抽選を壊し合います。</p>
+<p>接尾辞はすべて縦棒で始まります。以下はすでに使用中です。</p>
 <ul>
-<li><strong>Base:</strong> the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Cats:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li><strong>ベース:</strong> 空の接尾辞と、<code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
+<li><strong>ロットワイラー:</strong> <code>rw</code>、<code>r</code></li>
+<li><strong>ドーベルマン:</strong> <code>db</code>、<code>dm</code></li>
+<li><strong>ラブラドール:</strong> <code>lb</code>、<code>lk</code></li>
+<li><strong>パグ:</strong> <code>pg</code>、<code>pv</code></li>
+<li><strong>猫:</strong> <code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
 </ul>
-<p>Pick something nobody else is using, then never touch it again.</p>
-<h2 id="11-the-breed-moodle">11. The breed moodle</h2>
-<p>A moodle is a <strong>client</strong> file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
+<p>誰も使っていないものを選び、そのあとは二度と触らないでください。</p>
+<h2 id="11-犬種の-moodle">11. 犬種の moodle</h2>
+<p>moodle は <strong>client</strong> のファイルです。<code>CD.DogMoodles</code> にテーブルを足せば、ベースが描画も追跡も後始末 もします。</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -958,47 +958,47 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> is called with the game minutes since the last call, so multiply your effect by <code>elapsedMin</code> instead of assuming a fixed tick.</p>
-<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square.</p>
-<p>Custom moodles are drawn as an overlay, not through the game's own moodle system, which does not accept new entries from a mod. That is handled for you, but it is why the moodle appears in the mod's own strip and not among the vanilla ones.</p>
-<h2 id="12-hooks">12. Hooks</h2>
-<p>Two lists of functions the base calls on the <strong>server</strong>. Append to them from a shared file. Each handler runs inside its own protected call, so a broken add-on cannot take the base down with it.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, from API 2, called right after the animal drops a kill at its owner's feet:</p>
+<p><code>condition</code> はレベルを返し、「表示しない」なら 0 を返します。<code>apply</code> には前回の呼び出しからのゲーム 内分数が渡されるので、固定の tick を前提にせず、効果に <code>elapsedMin</code> を掛けてください。</p>
+<p>アイコンは 32 から 128 ピクセルまで、<strong>六つのサイズ</strong>で同梱してください。インターフェースはプレイヤー のスケーリングに合わせてサイズを選ぶので、欠けたサイズは空の四角になります。</p>
+<p>独自 moodle はオーバーレイとして描かれます。ゲーム本体の moodle システムは Mod からの新規登録を受け 付けないからです。そこはこちらで処理済みですが、moodle が Mod 自身の帯に出てバニラのものと並ばない のはそのためです。</p>
+<h2 id="12-フック">12. フック</h2>
+<p>ベースが<strong>サーバー</strong>で呼ぶ、関数のリストが二つあります。shared のファイルから追加してください。各 ハンドラは自分専用の保護された呼び出しの中で走るので、壊れたアドオンがベースを巻き込むことは ありません。</p>
+<p><strong><code>CD.onHuntDelivered</code></strong> は API 2 から。動物が獲物を飼い主の足元に置いた直後に呼ばれます。</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, from API 3, called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
+<p><strong><code>CD.onUpkeepStress</code></strong> は API 3 から。メンテナンスのたびに、ベースが満たされない欲求のストレスを 足したあと、書き込む前に呼ばれます。数値を返すと、合計に加算されます。</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>This is the <strong>only</strong> way an add-on can influence the animal's continuous stress. Upkeep recomputes and overwrites the value every cycle, so anything you write from outside is lost on the next tick. It is the right tool for a condition that comes from the environment: heat, cold, rain.</p>
-<p><strong>The multiplayer rule, in one line: the client never writes mod data.</strong> A client side write clobbers the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks, which already run there.</p>
-<h2 id="13-translation-keys">13. Translation keys</h2>
-<p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>The keys a breed needs:</p>
+<p>これがアドオンから動物の継続的なストレスに影響できる<strong>唯一</strong>の方法です。メンテナンスは毎周期に値を 計算し直して上書きするので、外から書いたものは次の tick で消えます。環境から来る状態、つまり暑さ、 寒さ、雨のための正しい道具です。</p>
+<p><strong>マルチプレイの規則を一行で。client は決して ModData を書かない。</strong> client 側の書き込みは次の同期で server のコピーに上書きされ、症状は何分もあとに、まったく別の場所で出ます。作業は server のファイル で行うか、すでにそこで走っているこれらのフックの中で行ってください。</p>
+<h2 id="13-翻訳キー">13. 翻訳キー</h2>
+<p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> の言語フォルダごとに <code>IG_UI.json</code> をひとつ同梱します。ベースは 十四言語を同梱しています。EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
+<p>犬種に必要なキー:</p>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>Where it shows</th>
+<th>キー</th>
+<th>どこに出るか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>the breed name, everywhere in the mod's interface</td>
+<td>犬種名。Mod のインターフェース全体で</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>the description on the animal's card</td>
+<td>動物のカードに載る説明文</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>the breed name in the game's own screens</td>
+<td>ゲーム本体の画面での犬種名</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>one for each of your three types</td>
+<td>あなたの三つのタイプそれぞれにひとつ</td>
 </tr>
 <tr>
-<td>your moodle keys</td>
-<td>name and description, if you have a moodle</td>
+<td>moodle のキー</td>
+<td>moodle があれば、その名前と説明</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1009,44 +1009,44 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Two things that will bite you. A <strong>literal percent sign</strong> in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. And a language file with a <strong>byte order mark</strong> does not compile, with an error that names a different file than the broken one.</p>
-<h2 id="14-what-the-save-remembers">14. What the save remembers</h2>
-<p>Three of your identifiers are written into save files and read back forever:</p>
+<p>噛みつかれる点が二つあります。翻訳文字列の中の<strong>そのままのパーセント記号</strong>は、それを表示する画面を 落とします。フォーマッタがプレースホルダとして読むからです。そして<strong>バイトオーダーマーク</strong>のついた 言語ファイルはコンパイルされず、しかもエラーは壊れているのとは別のファイルの名前を挙げます。</p>
+<h2 id="14-セーブが覚えているもの">14. セーブが覚えているもの</h2>
+<p>あなたの識別子のうち三つは、セーブファイルに書かれ、その後ずっと読み戻されます。</p>
 <ul>
-<li><code>key</code>, the breed identifier stored on every animal of yours</li>
-<li><code>typePrefix</code>, which forms the animal types the engine stores</li>
-<li><code>suffix</code>, the key of the "already rolled" store, one per spawn step</li>
+<li><code>key</code>。あなたの動物一頭ごとに保存される犬種識別子</li>
+<li><code>typePrefix</code>。エンジンが保存する動物タイプを形づくるもの</li>
+<li><code>suffix</code>。「抽選済み」ストアのキーで、スポーン手順ごとにひとつ</li>
 </ul>
-<p><strong>None of the three can ever be renamed after release.</strong> Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world that had been played for months suddenly fills with your animal.</p>
-<p>The one time that re-roll is useful is when it is the point: CD: Cats gave its four new coats new suffixes on purpose, precisely so that they would start appearing in worlds that were already running, while the original black cat kept its historic suffix and did not re-roll.</p>
-<p><strong>Removing an add-on from a save that has living animals of that breed loses them.</strong> The engine discards an animal whose type it no longer knows. The base does not crash, the bond and the kennel degrade cleanly, but the animal is gone. Say so on your Workshop page, the way every published add-on does.</p>
-<p><strong>An unknown breed degrades instead of failing.</strong> If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
-<h2 id="15-before-you-publish">15. Before you publish</h2>
+<p><strong>この三つは公開後、決して名前を変えられません。</strong> <code>key</code> を変えると、その犬種の生きている動物が すべて迷子になります。<code>suffix</code> を変えると、既存のすべてのセーブのすべての建物が抽選をやり直し、 何か月も遊んできた世界が突然あなたの動物であふれます。</p>
+<p>その再抽選が役に立つ唯一の場面は、それこそが狙いのときです。CD: Cats は新しい四つの毛色にわざと新しい 接尾辞を与えました。すでに動いている世界にそれらが現れ始めるようにするためで、一方もとの黒猫は歴史的 な接尾辞を保ち、再抽選しませんでした。</p>
+<p><strong>その犬種の動物が生きているセーブからアドオンを外すと、その動物は失われます。</strong> エンジンは、もはや 知らないタイプの動物を捨てます。ベースは落ちませんし、絆も犬舎もきれいに劣化しますが、動物はいなく なります。公開済みのすべてのアドオンがそうしているように、Workshop のページにそう書いてください。</p>
+<p><strong>未知の犬種は失敗せずに劣化します。</strong> あなたのアドオンがなければ、ベースは何を訊かれても既定の犬種に 落とすので、あなたの Mod なしで開いたセーブも読めます。</p>
+<h2 id="15-公開する前に">15. 公開する前に</h2>
 <ul>
-<li>The guard is on <strong>every</strong> Lua file, and names the API you actually use.</li>
-<li>The base version floor is written in your description, in words. <code>versionMin</code> cannot say it.</li>
-<li>You read the log on first load. <code>CD.registerBreed</code> rejects in silence otherwise, and every rejection prints a named line.</li>
-<li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
-<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you are happy with them forever.</li>
-<li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
-<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, or it barks.</li>
-<li>The moodle icon exists in all six sizes.</li>
-<li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
-<li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
-<li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
+<li>ガードが<strong>すべての</strong> Lua ファイルにあり、実際に使っている API を書いている。</li>
+<li>ベースのバージョン下限が、説明文に言葉で書いてある。<code>versionMin</code> ではそれを言えない。</li>
+<li>最初のロードでログを読んだ。読まなければ <code>CD.registerBreed</code> は無言で拒否し、拒否のたびに名前付きの 一行が出る。</li>
+<li><code>CD.defineDogParts</code> を呼んでいる。自分の動物を一頭解体して、落ちないことを確かめる。</li>
+<li><code>key</code>、<code>typePrefix</code>、スポーンの接尾辞が一意で、この先ずっとそれでよいと思える。</li>
+<li>小型の犬種は <code>puppySize</code> を設定していて、子犬を実際に見て確かめた。</li>
+<li>別の種族なら <code>CD.registerVoices</code> を呼び、<code>voices</code> を埋めてある。でないと吠える。</li>
+<li>moodle のアイコンが六つのサイズすべてある。</li>
+<li>同梱するすべての言語フォルダにすべてのキーがある。キーが欠けると画面に生のキーが出る。</li>
+<li>単独プレイだけでなくマルチプレイで試した。位置も所有も ModData も、あちらでは違う振る舞いをする。</li>
+<li>Workshop のページに、生きた動物のいるセーブからアドオンを外さないよう警告してある。</li>
 </ul>
-<h2 id="16-common-mistakes">16. Common mistakes</h2>
-<p><strong>"My animal never appears."</strong> Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</p>
-<p><strong>"It appears, but it is frozen."</strong> The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</p>
-<p><strong>"It renders as a black smear and the log floods."</strong> More than 60 bones in the model.</p>
-<p><strong>"Butchering it crashes."</strong> <code>CD.defineDogParts</code> was not called.</p>
-<p><strong>"The puppy is born the size of an adult."</strong> A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</p>
-<p><strong>"Two of my breeds keep turning into each other."</strong> They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</p>
-<p><strong>"The sound plays but ignores the volume slider."</strong> <code>CD.registerVoices</code> was not called for that sound.</p>
-<p><strong>"It works in single player and misbehaves on a server."</strong> Something is writing mod data on the client. Move it to the server.</p>
-<p><strong>"It fought a zombie even though I turned combat off."</strong> The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</p>
+<h2 id="16-よくある失敗">16. よくある失敗</h2>
+<p><strong>「動物が一向に現れない」</strong> ほとんどの場合ガードです。あなたのアドオンが、入っているベースにない API を要求しているので、意図どおり不活性になっています。自分の API 番号を第 2 節の表と見比べてくだ さい。</p>
+<p><strong>「現れるが固まっている」</strong> animset が <code>"raccoon"</code> でないか、モデルにクリップが足りません。どちらも 永遠に立ち止まった動物として出ます。</p>
+<p><strong>「黒い滲みとして描かれ、ログがあふれる」</strong> モデルのボーンが 60 を超えています。</p>
+<p><strong>「解体すると落ちる」</strong> <code>CD.defineDogParts</code> を呼んでいません。</p>
+<p><strong>「子犬が成犬の大きさで生まれる」</strong> <code>puppySize</code> を設定していない小型の犬種です。この値は絶対値で、 掃引のたびに再適用されるので、タイプ側のサイズ範囲では助かりません。</p>
+<p><strong>「自分の犬種が二つ、互いに入れ替わり続ける」</strong> <code>engineBreed</code> を共有しています。接頭辞はメッシュを 選ぶもので一族で共有できますが、<code>engineBreed</code> はテクスチャを選び、その一族の中で決着をつけるもの なので、犬種ごとに一意でなければなりません。</p>
+<p><strong>「音は鳴るが音量スライダーを無視する」</strong> その音に対して <code>CD.registerVoices</code> を呼んでいません。</p>
+<p><strong>「単独プレイでは動くのにサーバーで挙動がおかしい」</strong> 何かが client 側で ModData を書いています。 server に移してください。</p>
+<p><strong>「戦闘を切ったのにゾンビと戦った」</strong> 動いているベースが API 5 より古く、そこではそのフィールドが まだ存在せず、無言で無視されました。これこそガードが劣化ではなく遮断をしなければならない場面です。</p>
 <hr>
-<p>Something in this manual wrong, or missing? Say so on <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
+<p>このマニュアルに誤りや抜けがありますか。 <a href="https://discord.gg/ndyTBFSuAT">Discord</a> で教えてください。</p></article></main>
 </div>
 
 <script>
@@ -1234,12 +1234,12 @@ end</code></pre>
 
   function render(qs){
     if(!hits.length){
-      results.innerHTML='<div class="rnone">No match for <b>'+esc(qs.trim())+'</b>.</div>';
+      results.innerHTML='<div class="rnone">見つかりませんでした： <b>'+esc(qs.trim())+'</b>.</div>';
     }else{
       var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
-             ' results'+'</div>'];
+             ' 件'+'</div>'];
       hits.forEach(function(r,i){
-        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Start');
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'先頭');
         h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
                '<span class="rcrumb">'+esc(crumb)+'</span>'+
                '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');

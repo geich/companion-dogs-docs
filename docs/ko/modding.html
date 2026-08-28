@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Modding: How to build a breed or species add-on">
+<meta name="description" content="모딩: 품종 또는 종 애드온을 만드는 법">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Companion Dogs: Modding">
-<meta property="og:description" content="Modding: How to build a breed or species add-on">
-<meta property="og:url" content="https://companiondogs.pet/docs/en/modding.html">
+<meta property="og:title" content="Companion Dogs: 모딩">
+<meta property="og:description" content="모딩: 품종 또는 종 애드온을 만드는 법">
+<meta property="og:url" content="https://companiondogs.pet/docs/ko/modding.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="../en/modding.html">
@@ -27,7 +27,7 @@
 <link rel="alternate" hreflang="x-default" href="../en/modding.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<title>Companion Dogs: Modding</title>
+<title>Companion Dogs: 모딩</title>
 <style>
 :root{
   --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
@@ -372,122 +372,122 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
 
 <header class="top">
-  <button class="iconbtn" id="menu" type="button" aria-label="Open contents" aria-expanded="false" aria-controls="rail">&#9776;</button>
-  <a class="brand" href="../index.html" title="Back to the documentation home page"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Modding</em>
+  <button class="iconbtn" id="menu" type="button" aria-label="목차 열기" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="가이드 홈으로 돌아가기"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">모딩</em>
   <div class="grow"></div>
-  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Breeds manual</span></a>
-  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
-  <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>기능 가이드로 이동</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>견종 가이드로 이동</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="가이드 검색..." aria-label="가이드 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="언어"><optgroup label="검수 완료"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="자동 번역"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko" selected>한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="테마 전환">&#9789;</button>
 </header>
-
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>검수되지 않은 자동 번역.</b> 이 페이지는 포르투갈어 원문을 기계로 번역한 것이며, 아직 사람이 검수하지 않았습니다. 용어나 수치가 정확하지 않을 수 있으니, 내용이 헷갈린다면 영어 버전이나 포르투갈어 원문을 확인해 주세요. <a href="../en/modding.html">영어로 보기</a></div>
 
 <div class="wrap">
   <aside class="rail" id="rail">
-    <div class="railhead">Contents &middot; <b>Modding</b></div>
+    <div class="railhead">목차 &middot; <b>모딩</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-what-an-add-on-is" data-id="1-what-an-add-on-is">1. What an add-on is</a>
+<a class="s2" href="#1-애드온이란-무엇인가" data-id="1-애드온이란-무엇인가">1. 애드온이란 무엇인가</a>
 </div>
 <div class="grp">
-<a class="s2" href="#2-the-api-versions" data-id="2-the-api-versions">2. The API versions</a>
+<a class="s2" href="#2-api-버전" data-id="2-api-버전">2. API 버전</a>
 </div>
 <div class="grp">
-<a class="s2" href="#3-what-you-need-before-you-start" data-id="3-what-you-need-before-you-start">3. What you need before you start</a>
+<a class="s2" href="#3-시작하기-전에-필요한-것" data-id="3-시작하기-전에-필요한-것">3. 시작하기 전에 필요한 것</a>
 </div>
 <div class="grp">
-<a class="s2" href="#4-the-files-of-an-add-on" data-id="4-the-files-of-an-add-on">4. The files of an add-on</a>
+<a class="s2" href="#4-애드온의-파일-구성" data-id="4-애드온의-파일-구성">4. 애드온의 파일 구성</a>
 </div>
 <div class="grp">
-<a class="s2" href="#5-the-version-guard" data-id="5-the-version-guard">5. The version guard</a>
+<a class="s2" href="#5-버전-가드" data-id="5-버전-가드">5. 버전 가드</a>
 </div>
 <div class="grp">
-<a class="s2" href="#6-registering-the-breed" data-id="6-registering-the-breed">6. Registering the breed</a>
+<a class="s2" href="#6-품종-등록하기" data-id="6-품종-등록하기">6. 품종 등록하기</a>
 <div class="sub">
-<a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
-<a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
-<a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
+<a class="s3" href="#필수-필드" data-id="필수-필드">필수 필드</a>
+<a class="s3" href="#선택-필드" data-id="선택-필드">선택 필드</a>
+<a class="s3" href="#목소리" data-id="목소리">목소리</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#7-turning-a-whole-system-off" data-id="7-turning-a-whole-system-off">7. Turning a whole system off</a>
+<a class="s2" href="#7-시스템-하나를-통째로-끄기" data-id="7-시스템-하나를-통째로-끄기">7. 시스템 하나를 통째로 끄기</a>
 </div>
 <div class="grp">
-<a class="s2" href="#8-the-animal-definitions" data-id="8-the-animal-definitions">8. The animal definitions</a>
+<a class="s2" href="#8-동물-정의" data-id="8-동물-정의">8. 동물 정의</a>
 </div>
 <div class="grp">
-<a class="s2" href="#9-the-model-script" data-id="9-the-model-script">9. The model script</a>
+<a class="s2" href="#9-모델-스크립트" data-id="9-모델-스크립트">9. 모델 스크립트</a>
 </div>
 <div class="grp">
-<a class="s2" href="#10-where-the-animal-spawns" data-id="10-where-the-animal-spawns">10. Where the animal spawns</a>
+<a class="s2" href="#10-동물이-나타나는-곳" data-id="10-동물이-나타나는-곳">10. 동물이 나타나는 곳</a>
 <div class="sub">
-<a class="s3" href="#the-building-classes" data-id="the-building-classes">The building classes</a>
-<a class="s3" href="#suffixes-already-taken" data-id="suffixes-already-taken">Suffixes already taken</a>
+<a class="s3" href="#건물-클래스" data-id="건물-클래스">건물 클래스</a>
+<a class="s3" href="#이미-쓰이는-접미사" data-id="이미-쓰이는-접미사">이미 쓰이는 접미사</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#11-the-breed-moodle" data-id="11-the-breed-moodle">11. The breed moodle</a>
+<a class="s2" href="#11-품종-무들" data-id="11-품종-무들">11. 품종 무들</a>
 </div>
 <div class="grp">
-<a class="s2" href="#12-hooks" data-id="12-hooks">12. Hooks</a>
+<a class="s2" href="#12-훅" data-id="12-훅">12. 훅</a>
 </div>
 <div class="grp">
-<a class="s2" href="#13-translation-keys" data-id="13-translation-keys">13. Translation keys</a>
+<a class="s2" href="#13-번역-키" data-id="13-번역-키">13. 번역 키</a>
 </div>
 <div class="grp">
-<a class="s2" href="#14-what-the-save-remembers" data-id="14-what-the-save-remembers">14. What the save remembers</a>
+<a class="s2" href="#14-세이브가-기억하는-것" data-id="14-세이브가-기억하는-것">14. 세이브가 기억하는 것</a>
 </div>
 <div class="grp">
-<a class="s2" href="#15-before-you-publish" data-id="15-before-you-publish">15. Before you publish</a>
+<a class="s2" href="#15-공개하기-전에" data-id="15-공개하기-전에">15. 공개하기 전에</a>
 </div>
 <div class="grp">
-<a class="s2" href="#16-common-mistakes" data-id="16-common-mistakes">16. Common mistakes</a>
+<a class="s2" href="#16-흔한-실수" data-id="16-흔한-실수">16. 흔한 실수</a>
 </div></nav>
   </aside>
-  <main><article class="doc"><h1 id="companion-dogs-modding-manual">Companion Dogs: Modding Manual</h1>
-<p>How to build your own add-on: a new breed, or a whole new species, as a separate Workshop mod that plugs into Companion Dogs.</p>
-<p>This manual is for people who write mods. If you only want to play, the other two manuals are the ones you want: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds themselves.</p>
-<p>It assumes you can already read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here; section 3 lists what the model file has to satisfy, and no more.</p>
-<blockquote class="quote"><strong>This is a public contract.</strong> Everything named in this manual is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
-<h2 id="1-what-an-add-on-is">1. What an add-on is</h2>
-<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds <strong>one breed</strong> (or several, if they share a body), and nothing else. Everything that makes the animal behave like a companion already lives in the base mod and is shared.</p>
-<p><strong>The base owns:</strong></p>
+  <main><article class="doc"><h1 id="companion-dogs-모딩-설명서">Companion Dogs: 모딩 설명서</h1>
+<p>나만의 애드온 만드는 법. 새로운 품종, 또는 종 전체를 Companion Dogs에 맞물리는 별도의 워크샵 모드로 만듭니다.</p>
+<p>이 설명서는 모드를 쓰는 사람을 위한 것입니다. 그냥 플레이하고 싶다면 필요한 것은 나머지 두 권입니다. 개가 무엇을 하는지는 <a href="features.html" class="xlink">기능</a>, 품종 자체는 <a href="breeds.html" class="xlink">견종</a>를 보세요.</p>
+<p>Lua를 읽을 줄 알고, 리그와 애니메이션이 붙은 동물 모델을 이미 가지고 있다고 가정합니다. 아트 파이프라인은 여기에 없습니다. 3절이 모델 파일이 만족해야 할 조건을 나열하고, 그 이상은 다루지 않습니다.</p>
+<blockquote class="quote"><strong>이것은 공개된 계약입니다.</strong> 이 설명서가 이름을 붙인 것은 모두 모드 바깥에서 호출되라고 있는 것입니다. 여기에 이름이 없는 것은 내부용이며, 어떤 버전에서든 예고 없이 바뀔 수 있습니다.</blockquote>
+<h2 id="1-애드온이란-무엇인가">1. 애드온이란 무엇인가</h2>
+<p>애드온은 <code>require=CompanionDogs</code>를 선언하고 로드 시점에 함수 하나를 호출하는 평범한 워크샵 모드입니다. 추가하는 것은 <strong>품종 하나</strong>(몸을 공유한다면 여럿)뿐이고, 그 외에는 아무것도 없습니다. 동물이 동반자처럼 행동하게 만드는 모든 것은 이미 베이스 모드 안에 있고, 공유됩니다.</p>
+<p><strong>베이스가 가진 것:</strong></p>
 <ul>
-<li>the animation state machine, the animation set and the skeleton</li>
-<li>following, pathing, combat, hunting, herding, the sentinel, needs and upkeep</li>
-<li>the whole user interface: the dog window, the radial, the context menu, the kennel, the map marker</li>
-<li>taming, bonding, breeding, puppies and crossbreeds</li>
-<li>the sandbox options, and the multiplayer replication</li>
+<li>애니메이션 상태 기계, 애님셋, 스켈레톤</li>
+<li>따라오기, 길찾기, 전투, 사냥, 가축 돌보기, 보초, 욕구, 유지 관리</li>
+<li>인터페이스 전체. 개 창, 방사형 메뉴, 상황 메뉴, 견사, 지도 표시</li>
+<li>길들이기, 유대, 번식, 강아지, 잡종</li>
+<li>샌드박스 옵션과 멀티플레이 동기화</li>
 </ul>
-<p><strong>Your add-on owns:</strong></p>
+<p><strong>여러분의 애드온이 가진 것:</strong></p>
 <ul>
-<li>the numbers that make your animal different from a Caramelo</li>
-<li>its body model, its texture, its portrait and, if it has one, its moodle icon</li>
-<li>where it is found in the world</li>
-<li>its name and description, in every language you ship</li>
+<li>여러분의 동물을 카라멜루와 다르게 만드는 숫자들</li>
+<li>몸 모델, 텍스처, 초상화, 그리고 있다면 무들 아이콘</li>
+<li>세계 어디에서 발견되는지</li>
+<li>이름과 설명을, 함께 배포하는 모든 언어로</li>
 </ul>
-<p>That split is the whole point. A breed pack is a few hundred lines of Lua, because the hard part is already running.</p>
-<p><strong>One breed, one look.</strong> A breed is a set of numbers plus one appearance. If you want two colours of the same animal to behave differently, those are two breeds. If you want two colours that behave the same, they are still two breeds to the base (two names, two entries in the kennel), and you write them from one shared table, the way CD: Cats does with its five coats.</p>
-<h2 id="2-the-api-versions">2. The API versions</h2>
-<p><code>CD.API_VERSION</code> is a plain number. It has only ever grown by adding things, so an add-on written against an older version keeps loading on a newer base without a single change.</p>
+<p>이 분담이 요점 전부입니다. 품종 팩은 Lua 몇백 줄이면 됩니다. 어려운 부분은 이미 돌아가고 있으니까요.</p>
+<p><strong>한 품종에 한 모습.</strong> 품종이란 숫자 묶음 하나에 모습 하나입니다. 같은 동물의 두 색깔이 서로 다르게 행동하길 원한다면 그것은 두 품종입니다. 똑같이 행동하는 두 색깔을 원해도, 베이스가 보기에는 여전히 두 품종이며(이름 둘, 견사 항목 둘), CD: Cats가 다섯 가지 털색으로 하는 것처럼 공유 테이블 하나에서 작성합니다.</p>
+<h2 id="2-api-버전">2. API 버전</h2>
+<p><code>CD.API_VERSION</code>은 단순한 숫자입니다. 지금까지 오직 더하는 방식으로만 커져 왔기 때문에, 예전 버전을 겨냥해 쓴 애드온도 더 새로운 베이스에서 한 줄도 고치지 않고 계속 로드됩니다.</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
-<th>Base version</th>
-<th>What it added</th>
+<th>베이스 버전</th>
+<th>무엇이 추가되었나</th>
 </tr></thead><tbody>
 <tr>
 <td>1</td>
 <td>0.6.3</td>
-<td><code>CD.registerBreed</code>, the spawn registry, breed moodles</td>
+<td><code>CD.registerBreed</code>, 스폰 레지스트리, 품종 무들</td>
 </tr>
 <tr>
 <td>2</td>
 <td>0.6.6</td>
-<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, the <code>CD.onHuntDelivered</code> hook</td>
+<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, 훅 <code>CD.onHuntDelivered</code></td>
 </tr>
 <tr>
 <td>3</td>
 <td>0.6.8</td>
-<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, the <code>CD.onUpkeepStress</code> hook</td>
+<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, 훅 <code>CD.onUpkeepStress</code></td>
 </tr>
 <tr>
 <td>4</td>
@@ -500,16 +500,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
 </tr>
 </tbody></table></div>
-<p>The number to guard on is the <strong>lowest API that your add-on actually needs</strong>, and the base version in that table is the one you name on your Workshop page. Take it from that table and not from whatever the base happened to be while you were writing: a field that exists only in the developer build is a field your players do not have.</p>
-<p><strong>A missing field is ignored in silence.</strong> That is fine when the field is a number: on an older base your animal simply barks at the normal volume. It is not fine when the field is a block, because then a cat that must never fight will happily fight. So: numbers can degrade, blocks cannot. If your animal depends on a block, guard on the API that introduced it and let the add-on stay inert on anything older.</p>
-<h2 id="3-what-you-need-before-you-start">3. What you need before you start</h2>
-<p><strong>The base mod, 0.6.3 or newer.</strong> Everything below is a call into it.</p>
-<p><strong>A skinned model.</strong> Your animal needs its own <code>.glb</code> under <code>media/models_X/Skinned/</code>, and that file has to carry the <strong>complete set of 21 <code>Rac_*</code> animation clips</strong>. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked to do one of the other six. The model also has to stay under <strong>60 bones</strong> and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear.</p>
-<p>If you do not have a model yet, you can still write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal will look like a Caramelo, but every system in this manual will run.</p>
-<p><strong>A texture</strong> for the body, and a <strong>portrait</strong> for the kennel window.</p>
-<p><strong>One decision, before any code:</strong> is your animal a <em>breed</em> or a <em>species</em>? A breed is a dog with different numbers. A species is an animal that does not have some of the jobs at all. The difference is not cosmetic, it changes which fields you write, and section 7 is about it.</p>
-<h2 id="4-the-files-of-an-add-on">4. The files of an add-on</h2>
-<p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
+<p>가드에 적을 숫자는 <strong>여러분의 애드온이 실제로 필요로 하는 가장 낮은 API</strong>입니다. 그리고 그 표에 적힌 베이스 버전이 워크샵 페이지에 밝힐 숫자입니다. 작성하던 시점에 베이스가 무엇이었는지가 아니라 이 표에서 가져오세요. 개발 빌드에만 있는 필드는 플레이어에게는 없는 필드입니다.</p>
+<p><strong>없는 필드는 조용히 무시됩니다.</strong> 필드가 숫자일 때는 괜찮습니다. 오래된 베이스에서는 여러분의 동물이 그냥 보통 음량으로 짖을 뿐입니다. 필드가 차단일 때는 괜찮지 않습니다. 절대 싸우면 안 되는 고양이가 태연히 싸우게 되니까요. 즉 숫자는 낮아져도 되지만 차단은 안 됩니다. 여러분의 동물이 차단에 의존한다면 그것을 도입한 API로 가드하고, 그보다 오래된 것에서는 애드온이 통째로 비활성으로 남게 두세요.</p>
+<h2 id="3-시작하기-전에-필요한-것">3. 시작하기 전에 필요한 것</h2>
+<p><strong>베이스 모드, 0.6.3 이상.</strong> 아래 내용은 전부 그 안으로 들어가는 호출입니다.</p>
+<p><strong>스킨이 입혀진 모델.</strong> 여러분의 동물에는 <code>media/models_X/Skinned/</code> 아래에 자기 <code>.glb</code>가 필요하고, 그 파일은 <strong>21개의 <code>Rac_*</code> 클립 전부</strong>를 담고 있어야 합니다. 클립은 모델 파일끼리 상속되지 않습니다. 클립이 열다섯 개인 모델은, 나머지 여섯 개 중 하나를 요구받는 첫 순간에 얼어붙는 동물이 됩니다. 모델은 또한 <strong>뼈 60개 미만</strong>이어야 하고 최상위 노드가 항등이어야 합니다. 아니면 엔진이 프레임마다 예외를 던지고 동물은 검은 얼룩으로 그려집니다.</p>
+<p>아직 모델이 없어도, <code>CD.applyDogModel</code>을 베이스의 몸 중 하나로 가리키면 나머지는 전부 쓰고 시험할 수 있습니다. 동물은 카라멜루처럼 보이겠지만, 이 설명서의 모든 시스템은 돌아갑니다.</p>
+<p>몸에 쓸 <strong>텍스처</strong>, 그리고 견사 창에 쓸 <strong>초상화</strong>.</p>
+<p><strong>코드를 쓰기 전에 내릴 결정 하나:</strong> 여러분의 동물은 <em>품종</em>입니까, <em>종</em>입니까? 품종은 숫자가 다른 개입니다. 종은 몇몇 일거리를 아예 가지고 있지 않은 동물입니다. 이 차이는 겉모습이 아니라 어떤 필드를 쓰는지를 바꾸며, 7절이 그 이야기입니다.</p>
+<h2 id="4-애드온의-파일-구성">4. 애드온의 파일 구성</h2>
+<p>이것이 공개된 애드온 중 가장 작은 CD: Pug의, 중요한 부분만 추린 모습입니다.</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -527,7 +527,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>And the <code>mod.info</code>:</p>
+<p>그리고 <code>mod.info</code>:</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -537,18 +537,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> is the important line. It guarantees that <strong>all</strong> of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
-<p><strong><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8".</strong> That field is the <em>game</em> build gate and nothing else, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section, and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
-<h2 id="5-the-version-guard">5. The version guard</h2>
-<p>Put this at the top of every Lua file of your add-on, with the number your add-on actually needs:</p>
+<p><code>require=CompanionDogs</code>가 핵심 줄입니다. 이 줄은 베이스의 Lua가 <strong>전부</strong> 여러분 것보다 먼저 실행되도록 각 단계에서 보장합니다. shared가 먼저, 그다음 client, 그다음 server입니다. 이것이 없으면 여러분의 파일이 먼저 로드될 수 있고, 그러면 모든 <code>CD.</code> 호출이 nil 인덱싱이 됩니다.</p>
+<p><strong><code>versionMin</code>으로는 "Companion Dogs 0.6.8이 필요함"을 말할 수 없습니다.</strong> 그 필드는 <em>게임</em> 빌드의 관문이고 그 이상은 아닙니다. 의존 모드의 버전을 적는 mod.info 필드는 존재하지 않습니다. 베이스의 하한은 다음 절의 가드가 강제하고, 플레이어에게는 설명문으로 알립니다. 거기에 말로 적으세요. 적지 않으면 플레이어가 받는 유일한 증상은 끝내 나타나지 않는 동물입니다.</p>
+<h2 id="5-버전-가드">5. 버전 가드</h2>
+<p>애드온의 모든 Lua 파일 맨 위에, 여러분의 애드온이 실제로 필요로 하는 숫자로 이것을 넣으세요.</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>With the base missing or too old, the file returns at line two. The add-on then does nothing at all: no breed, no spawn, no moodle, not one line in the log. That silence is deliberate. An add-on that half loads is worse than one that does not load, because the player gets an animal with a name and no behaviour.</p>
-<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those instead:</p>
+<p>베이스가 없거나 너무 오래되었다면 파일은 두 번째 줄에서 되돌아갑니다. 그러면 애드온은 아무것도 하지 않습니다. 품종도, 스폰도, 무들도 없고, 로그에 한 줄도 남지 않습니다. 이 침묵은 의도된 것입니다. 절반만 로드되는 애드온은 아예 로드되지 않는 애드온보다 나쁩니다. 플레이어에게 이름은 있는데 행동은 없는 동물이 남기 때문입니다.</p>
+<p>가드는 파일 단위이고, 각 파일은 자기가 쓰는 것을 가드합니다. <code>PugDefinitions.lua</code>는 모델 헬퍼가 필요하므로 그쪽을 가드합니다.</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Never create the global.</strong> <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table and every guard downstream passes when it should not. Read the global, never write it.</p>
-<h2 id="6-registering-the-breed">6. Registering the breed</h2>
-<p>One call, in a <strong>shared</strong> file:</p>
+<p><strong>전역을 직접 만들지 마세요.</strong> 애드온 안의 <code>CompanionDogs = CompanionDogs or {}</code>는 없는 베이스를 반쯤 지어진 테이블로 바꿔 버리고, 그 아래의 모든 가드가 통과하면 안 될 때 통과합니다. 전역은 읽기만 하고 절대 쓰지 마세요.</p>
+<h2 id="6-품종-등록하기">6. 품종 등록하기</h2>
+<p><strong>shared</strong> 파일에서 호출 하나면 됩니다.</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -578,193 +578,193 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>That call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
-<p>A bad definition returns <code>nil</code> instead of throwing, so a mistake never takes the load down with it. Every rejection prints a named line, so <strong>read the log</strong> the first time you register a breed.</p>
-<h3 id="required-fields">Required fields</h3>
+<p>이 호출이 품종을 등록하고, 그 품종의 동물 타입 셋을 등록하고, 여러분의 동물이 교배에 들어가도록 번식 순서를 다시 만들고, 스폰 단계를 등록합니다.</p>
+<p>잘못된 정의는 예외를 던지지 않고 <code>nil</code>을 돌려주므로, 실수가 로드 전체를 끌고 내려가는 일은 없습니다. 모든 거절은 이름이 붙은 한 줄을 출력하니, 품종을 처음 등록할 때는 <strong>로그를 읽으세요</strong>.</p>
+<h3 id="필수-필드">필수 필드</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What it is</th>
+<th>필드</th>
+<th>무엇인가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>your breed identifier, unique across every mod. Never changed after release.</td>
+<td>여러분 품종의 식별자. 모든 모드를 통틀어 유일. 출시 후에는 절대 바꾸지 않습니다.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Chooses the <strong>body mesh</strong>.</td>
+<td>동물 타입 셋의 접두사. <code>&lt;접두사&gt;pup</code>, <code>&lt;접두사&gt;female</code>, <code>&lt;접두사&gt;male</code>. <strong>몸의 메시</strong>를 고릅니다.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
-<td>translation key of the display name.</td>
+<td>표시 이름의 번역 키.</td>
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>learning speed per skill: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 is normal.</td>
+<td>기술별 학습 속도. <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0이 보통입니다.</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>how hard it hits. The Caramelo is 0.20, a fighting breed is above 1.0.</td>
+<td>얼마나 세게 때리는지. 카라멜루는 0.20, 싸우는 품종은 1.0을 넘습니다.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>, how the damage grows from Combat 0 to Combat 10.</td>
+<td><code>{ min, max }</code>. 전투 0에서 전투 10까지 피해가 어떻게 자라는지.</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>birth range of the four genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Each is <code>{ low, high }</code> inside 0 to 1.</td>
+<td>네 유전자의 출생 범위. <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. 각각 0에서 1 사이의 <code>{ 하한, 상한 }</code>입니다.</td>
 </tr>
 </tbody></table></div>
-<h3 id="optional-fields">Optional fields</h3>
+<h3 id="선택-필드">선택 필드</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>Default</th>
-<th>What it does</th>
+<th>필드</th>
+<th>기본값</th>
+<th>무엇을 하는가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
-<td>the <code>key</code></td>
-<td>breed name given to the engine, which chooses the <strong>texture</strong>. Unique per breed.</td>
+<td><code>key</code>와 같음</td>
+<td>엔진에 넘기는 품종 이름으로, <strong>텍스처</strong>를 고릅니다. 품종마다 유일.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>description key. Point several breeds at one key when they share a description.</td>
+<td>설명문의 키. 설명을 공유하는 품종들은 키 하나를 함께 가리키게 하세요.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>base value</td>
-<td><code>{ min, max }</code> puppies per birth.</td>
+<td>베이스 값</td>
+<td>한 배당 강아지 <code>{ 하한, 상한 }</code>.</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false means it wears zombies down but never lands the killing blow.</td>
+<td>false면 좀비를 깎기는 하되 마지막 일격은 절대 넣지 않습니다.</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
 <td>false</td>
-<td>true lets it knock a zombie over.</td>
+<td>true면 좀비를 넘어뜨릴 수 있습니다.</td>
 </tr>
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>how much a fight costs it in stress.</td>
+<td>싸움 한 번이 그 동물에게 얼마나 스트레스인지.</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>base value</td>
-<td>stress level at which it stops fighting. <code>panicImmune = true</code> means never.</td>
+<td>베이스 값</td>
+<td>싸움을 그만두는 스트레스 수준. <code>panicImmune = true</code>는 절대 그만두지 않음입니다.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
 <td>1</td>
-<td>saddlebag capacity multiplier.</td>
+<td>안장가방 용량 배수.</td>
 </tr>
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>absolute visual scale of the puppy. <strong>A small breed must set this</strong>, otherwise the puppy is born adult sized.</td>
+<td>강아지의 절대적인 시각 크기. <strong>작은 품종은 반드시 설정해야 합니다.</strong> 안 하면 강아지가 성체 크기로 태어납니다.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>multiplies the final sentinel radius.</td>
+<td>최종 보초 반경에 곱합니다.</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>scales the radius and volume of the alarm bark. It scales noise, it does not create it: with the sandbox noise option off, no breed attracts zombies with a bark.</td>
+<td>경보 짖음의 반경과 음량을 조절합니다. 소음을 키울 뿐 만들지는 않습니다. 샌드박스의 소음 옵션이 꺼져 있으면 어떤 품종도 짖어서 좀비를 끌어들이지 않습니다.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>multiplies the daily loyalty decay. <code>0</code> means the bond never fades.</td>
+<td>하루치 충성도 감소에 곱합니다. <code>0</code>이면 유대가 결코 옅어지지 않습니다.</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>the animal is stuck on full alert: the owner cannot set quiet or silent, anywhere. Use it when the loud alarm <strong>is</strong> the design.</td>
+<td>동물이 완전 경계에 고정됩니다. 주인은 어디에서도 조용히나 침묵으로 바꿀 수 없습니다. 시끄러운 경보가 곧 설계<strong>일 때</strong> 쓰세요.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>Hunt level from which it carries the kill back to its owner.</td>
+<td>사냥감을 주인에게 물어오기 시작하는 사냥 레벨.</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game minutes it will keep trying to deliver before giving up.</td>
+<td>전달을 포기하기 전까지 계속 시도하는 게임 분.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>base value</td>
-<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, or the loop restarts and gets cut mid gesture.</td>
+<td>베이스 값</td>
+<td>대기 애니메이션 창의 길이, 밀리초. 클립이 개의 것보다 짧을 때 설정하세요. 안 하면 루프가 다시 시작되어 동작 중간에 잘립니다.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false keeps the animal standing on Stay and Guard instead of lying down.</td>
+<td>false면 대기와 경비에서 엎드리지 않고 서 있습니다.</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
-<td>dog sounds</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. See below.</td>
+<td>개 소리</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>. 아래 참고.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
-<td>everything on</td>
-<td>the structural blocks. Section 7.</td>
+<td>전부 켜짐</td>
+<td>구조적 차단. 7절.</td>
 </tr>
 </tbody></table></div>
-<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
-<h3 id="the-voice">The voice</h3>
-<p>A different species does not speak the same language. Without <code>voices</code>, your cat barks:</p>
+<p>정의에 넣은 숫자와 플래그는 <code>CD.breedNumber(animal, 필드)</code>와 <code>CD.breedFlag(animal, 필드)</code>로 다시 읽습니다. <code>CD.getBreedDef(animal).필드</code>를 직접 읽는 것보다 이 둘을 쓰세요. 없는 필드를 대신 처리해 주고, 베이스가 움직여도 계속 동작합니다.</p>
+<h3 id="목소리">목소리</h3>
+<p>종이 다르면 같은 말을 하지 않습니다. <code>voices</code>가 없으면 여러분의 고양이는 짖습니다.</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> is not optional decoration. Without it the sounds still play, but they ignore the player's category slider and the game's effect volume, which is a failure nobody reports because nothing looks broken. A key you leave out of <code>voices</code> falls back to the dog sound, which is what you want for a breed of dog and never what you want for another species.</p>
-<h2 id="7-turning-a-whole-system-off">7. Turning a whole system off</h2>
-<p>The five skills are the five systems, one for one:</p>
+<p><code>CD.registerVoices</code>는 있어도 그만인 장식이 아닙니다. 이것이 없으면 소리는 나긴 하지만 플레이어의 카테고리 슬라이더와 게임의 효과음 볼륨을 무시합니다. 무엇도 고장 나 보이지 않기 때문에 아무도 신고하지 않는 종류의 결함입니다. <code>voices</code>에서 빠뜨린 키는 개 소리로 되돌아갑니다. 개 품종에서는 그게 원하는 바지만, 다른 종에서는 결코 원하는 바가 아닙니다.</p>
+<h2 id="7-시스템-하나를-통째로-끄기">7. 시스템 하나를 통째로 끄기</h2>
+<p>다섯 가지 기술은 다섯 가지 시스템과 하나씩 대응합니다.</p>
 <div class="tw"><table><thead><tr>
-<th>Skill</th>
-<th>The system it is</th>
+<th>기술</th>
+<th>그것이 곧 어떤 시스템인가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>the sentinel: noticing zombies and warning you</td>
+<td>보초. 좀비를 알아채고 여러분에게 알리는 일</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>fighting, the Guard mode and self defence</td>
+<td>싸움, 경비 모드, 자기방어</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>the trick tree</td>
+<td>재주 트리</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>hunting, plus the foraging bonus it gives its owner</td>
+<td>사냥, 그리고 주인에게 주는 채집 보너스</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>tending livestock in a pen</td>
+<td>우리 안 가축 돌보기</td>
 </tr>
 </tbody></table></div>
-<p>A species is not a dog with worse numbers. It is an animal that does not have some of those jobs at all. So it declares what it does not have:</p>
+<p>종은 숫자가 나쁜 개가 아닙니다. 그 일거리들 중 몇 가지를 아예 갖지 않은 동물입니다. 그래서 갖지 않은 것을 선언합니다.</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
-<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface. All three, together. Hiding only the bar would leave the skill growing where nobody can see it; blocking only the system would leave a bar stuck at zero forever.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
-<p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. A halo saying the order was ignored would be a lie, because this is not disobedience. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
-<h2 id="8-the-animal-definitions">8. The animal definitions</h2>
-<p>The engine binds the mesh to the <strong>animal type</strong>, not to the breed, so your breed needs its own three types. This is the mechanical part of an add-on, and the shortest path is to copy the file of an existing add-on and rename it.</p>
-<p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
+<p>없거나 <code>true</code>면 그 동물은 해당 기술을 가진 것이므로, 없애는 것만 적으면 됩니다.</p>
+<p>기술 하나를 끄면 <strong>세 가지가 한꺼번에</strong> 일어납니다. 시스템이 아예 돌지 않고, 그 기술은 경험치를 결코 얻지 않으며, 막대와 그 명령이 인터페이스에서 사라집니다. 셋이 함께입니다. 막대만 숨기면 아무도 못 보는 곳에서 기술이 자라고, 시스템만 막으면 막대가 영원히 0에 박혀 있게 됩니다.</p>
+<p><code>canBreed = false</code>가 테이블 밖에 있는 이유는 번식에는 막대도 경험치도 없기 때문입니다. 그리고 전면적입니다. 그 동물은 임신하지 않고, 짝으로 선택되지 않으며, 같은 품종끼리도 번식하지 않습니다.</p>
+<p><code>huntMaxPrey</code>는 <strong>존재하는 사냥 안에서의 상한</strong>이며, <code>hunt = false</code>와는 다른 것입니다. <code>"tiny"</code>(생쥐, 쥐, 다람쥐), <code>"small"</code>(토끼, 너구리), <code>"large"</code>(사슴. 기본값이며 상한 없음)를 받습니다. 상한보다 큰 사냥감은 여러분의 동물에게 보이지 않습니다. 쫓지도 않고 가리키지도 않습니다. 이 단계에서 벗어난 값은 <code>"large"</code>로 떨어지고 로그에 이름 붙은 한 줄을 남깁니다.</p>
+<p><strong>차단된 동물에게 비활성 버튼이 생기지는 않습니다.</strong> 해당 항목이 방사형 메뉴, 상황 메뉴, 창에서 사라지고, 서버 쪽 거절은 조용합니다. 명령을 무시했다는 표시가 뜬다면 거짓말입니다. 이것은 불복종이 아니니까요. 설계는 품종 설명문에서 설명하세요. 이 필드들이 새 번역 키를 데려오지 않는 이유가 그것입니다.</p>
+<h2 id="8-동물-정의">8. 동물 정의</h2>
+<p>엔진은 메시를 품종이 아니라 <strong>동물 타입</strong>에 묶습니다. 그래서 여러분의 품종에는 자기 타입 셋이 필요합니다. 여기가 애드온의 기계적인 부분이고, 가장 짧은 길은 기존 애드온의 파일을 복사해 이름을 바꾸는 것입니다.</p>
+<p><code>Definitions/animal/</code> 아래 shared 파일에 들어가는 세 조각입니다.</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -790,48 +790,48 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>The helpers the base gives you:</p>
+<p>베이스가 주는 헬퍼:</p>
 <div class="tw"><table><thead><tr>
-<th>Helper</th>
-<th>What it fills in</th>
+<th>헬퍼</th>
+<th>무엇을 채우는가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>body model, skeleton, butchered textures and the animation set</td>
+<td>몸 모델, 스켈레톤, 도축 텍스처, 애님셋</td>
 </tr>
 <tr>
 <td><code>CD.applyDogBehaviour(t)</code></td>
-<td>every engine behaviour flag a companion needs</td>
+<td>동반자에게 필요한 엔진 쪽 동작 플래그 전부</td>
 </tr>
 <tr>
 <td><code>CD.applyDogAvatar(t)</code></td>
-<td>the portrait camera for the animal window</td>
+<td>동물 창의 초상화 카메라</td>
 </tr>
 <tr>
 <td><code>CD.DOG_SOUNDS</code></td>
-<td>the shared footstep and foley table</td>
+<td>발소리와 효과음의 공유 테이블</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>the value that stops a frightened stray from bleeding to death</td>
+<td>겁먹은 유기견이 과다출혈로 죽지 않게 하는 값</td>
 </tr>
 <tr>
 <td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>the butchering parts of all three stages</td>
+<td>세 성장 단계 전부의 도축 부위</td>
 </tr>
 </tbody></table></div>
-<p>Four rules that are not obvious:</p>
-<p><strong>The animation set has to stay <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> sets it. A forked animation set does not load its state machine, and an animal without a state machine is an animal frozen in place.</p>
-<p><strong>Reuse the genome:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Do not write your own.</p>
-<p><strong>Never declare <code>mate</code>.</strong> With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot as a safety net, but do not rely on that.</p>
-<p><strong>Parts are mandatory.</strong> Three lines in their own file:</p>
+<p>뻔하지 않은 규칙이 넷 있습니다.</p>
+<p><strong>애님셋은 <code>"raccoon"</code>으로 남아야 합니다.</strong> <code>CD.applyDogModel</code>이 설정합니다. 갈라낸 애님셋은 자기 상태 기계를 불러오지 못하고, 상태 기계가 없는 동물은 그 자리에 얼어붙은 동물입니다.</p>
+<p><strong>게놈은 재사용하세요:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. 직접 쓰지 마세요.</p>
+<p><strong><code>mate</code>는 절대 선언하지 마세요.</strong> 이것이 있으면 엔진은 어떤 동물 구역 안에서든 자기 고유의 교미를 돌립니다. 그 교미는 모드의 번식 차단도 샌드박스 옵션도 무시하고, 유대 없는 새끼를 낳습니다. 베이스가 안전망으로 부팅 때 이 필드를 지우지만, 거기에 기대지는 마세요.</p>
+<p><strong>부위는 필수입니다.</strong> 전용 파일에 세 줄.</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and walks into a nil.</p>
-<p><strong>Small animals need their avatar camera adjusted.</strong> The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
-<h2 id="9-the-model-script">9. The model script</h2>
-<p>One file under <code>media/scripts/</code>, which is what tells the game your model exists:</p>
+<p>이것이 없으면 여러분의 동물을 도축할 때 바닐라 코드가 죽습니다. 부위 정의를 타입과 품종으로 찾다가 nil을 밟기 때문입니다.</p>
+<p><strong>작은 동물은 초상화 카메라를 손봐야 합니다.</strong> <code>CD.applyDogAvatar</code>의 초상화 줌은 개에 맞춰 보정되어 있고, 아바타 줌은 배율입니다. 동물이 작을수록 숫자가 커집니다. 개 대비 크기 비율로 줌을 나누고 오프셋에는 같은 비율을 곱하세요. 안 그러면 여러분의 동물은 자기 초상화 아래쪽에 아주 작게 앉아 있게 됩니다.</p>
+<h2 id="9-모델-스크립트">9. 모델 스크립트</h2>
+<p><code>media/scripts/</code> 아래의 파일 하나가, 여러분의 모델이 존재한다는 것을 게임에 알립니다.</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -854,10 +854,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> is what keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
-<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Those numbers are found by looking at the animal in game and nudging them, not by measuring the model: a bag that is mathematically centred still looks wrong on a body with fur.</p>
-<h2 id="10-where-the-animal-spawns">10. Where the animal spawns</h2>
-<p>Strays are rolled per building, per chunk, the first time that chunk loads. You describe your rolls as a list of steps, either inside the breed definition as <code>spawns</code>, or with <code>CD.registerStraySpawns(list)</code>.</p>
+<p><code>keepMeshAnimations = true</code>가 모델 파일 안의 클립을 쓸 수 있는 상태로 유지합니다. 이것이 없으면 모델은 로드되지만 결코 움직이지 않습니다.</p>
+<p><code>head</code> 어태치먼트는 모자 같은 것이 얹히는 자리입니다. 안장가방을 여러분의 동물에 맞추고 싶다면 <code>saddlebags_l</code>, <code>saddlebags_r</code>, <code>saddlebags_c</code>를 같은 방식으로 척추 뼈에 더하세요. 이 숫자들은 게임 안에서 동물을 보면서 조금씩 밀어 찾는 것이지, 모델을 재서 얻는 것이 아닙니다. 수학적으로 한가운데인 가방도 털 있는 몸 위에서는 여전히 비뚤어져 보입니다.</p>
+<h2 id="10-동물이-나타나는-곳">10. 동물이 나타나는 곳</h2>
+<p>유기 동물은 그 청크가 처음 로드될 때 건물마다, 청크마다 추첨됩니다. 추첨은 단계의 목록으로 적습니다. 품종 정의 안의 <code>spawns</code>에 넣거나, <code>CD.registerStraySpawns(목록)</code>으로 넘깁니다.</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -865,81 +865,81 @@ end</code></pre>
       chance = function() return CD.PUG_PETVET_CHANCE * CD.dogSpawnMultiplier() end },
 },</code></pre>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>What it is</th>
+<th>키</th>
+<th>무엇인가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>name of the step, for your own logs</td>
+<td>단계의 이름. 여러분 자신의 로그용입니다</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>the building class it rolls on</td>
+<td>추첨이 이루어지는 건물 클래스</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>a <strong>function</strong> returning a percentage. A function, not a number, so it can follow the sandbox multiplier live.</td>
+<td>백분율을 돌려주는 <strong>함수</strong>. 숫자가 아니라 함수인 이유는 샌드박스 배수를 실시간으로 따라가기 위해서입니다.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>key of the persistent store. Unique in the whole ecosystem, and never changed.</td>
+<td>영구 저장소의 키. 생태계 전체에서 유일하고, 절대 바뀌지 않습니다.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>the breed key to spawn</td>
+<td>나타나게 할 품종 키</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>optional function returning a boolean, checked before the roll. The Husky uses <code>CD.isWinter</code>.</td>
+<td>참거짓을 돌려주는 선택적 함수. 추첨 전에 확인합니다. 허스키가 <code>CD.isWinter</code>를 씁니다.</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>percentage chance of being born inside the building instead of the street. Default 35.</td>
+<td>길거리 대신 건물 안에서 태어날 백분율. 기본값 35.</td>
 </tr>
 </tbody></table></div>
-<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Either way the player's sandbox setting keeps working, which it will not if you write a bare number.</p>
-<p><code>indoor</code> is a preference and not a promise: a building with no free interior tile in that chunk falls back to a tile outside.</p>
-<h3 id="the-building-classes">The building classes</h3>
-<p>The base registers four, and you can use them directly:</p>
+<p>확률에는 <code>CD.dogSpawnMultiplier()</code>를 곱하거나, <code>CD.strayChancePerHouse()</code>를 여러분만의 희귀도로 나누세요. 어느 쪽이든 플레이어의 샌드박스 설정이 계속 작동합니다. 맨 숫자를 적으면 작동하지 않습니다.</p>
+<p><code>indoor</code>는 선호이지 약속이 아닙니다. 그 청크에서 빈 실내 타일이 없는 건물은 바깥 타일로 되돌아갑니다.</p>
+<h3 id="건물-클래스">건물 클래스</h3>
+<p>베이스가 넷을 등록해 두었고, 그대로 쓸 수 있습니다.</p>
 <div class="tw"><table><thead><tr>
-<th>Class</th>
-<th>Matches</th>
+<th>클래스</th>
+<th>무엇에 맞는가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
-<td>residential buildings that are not shops</td>
+<td>상점이 아닌 주거 건물</td>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>police stations and the like</td>
+<td>경찰서와 그 비슷한 것</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
-<td>pet shops and veterinary clinics</td>
+<td>애완동물 가게와 동물병원</td>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>farm buildings, and it is allowed outside town</td>
+<td>농장 건물. 도시 밖에서도 허용됩니다</td>
 </tr>
 </tbody></table></div>
-<p>If none of them fits, register your own:</p>
+<p>어느 것도 맞지 않으면 직접 등록하세요.</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>The match function receives the building definition and runs inside a protected call, so a mistake in it cannot take the chunk load down. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which is what a farm or a forest cabin needs. Leave <code>exclusive</code> alone: the base classes are exclusive between themselves, and an add-on class is meant to be additive, matching on top of them.</p>
-<h3 id="suffixes-already-taken">Suffixes already taken</h3>
-<p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
-<p>Every suffix starts with a vertical bar. These are already in use:</p>
+<p>일치 함수는 건물 정의를 받아 보호된 호출 안에서 돕니다. 그러니 그 안의 실수가 청크 로딩을 끌고 내려가지 않습니다. <code>skipUrbanGate</code>는 도시가 아닌 청크에서도 클래스가 추첨되게 합니다. 농장이나 숲속 오두막에 필요한 설정입니다. <code>exclusive</code>는 건드리지 마세요. 베이스 클래스들끼리는 배타적이지만, 애드온 클래스는 그 위에 겹쳐 맞는 가산적인 것으로 만들어졌습니다.</p>
+<h3 id="이미-쓰이는-접미사">이미 쓰이는 접미사</h3>
+<p>접미사는 "이 건물은 이미 추첨됨"이 저장되는 키의 일부입니다. 같은 접미사를 쓰는 두 모드는 서로의 추첨을 망가뜨립니다.</p>
+<p>접미사는 모두 세로 막대로 시작합니다. 다음은 이미 사용 중입니다.</p>
 <ul>
-<li><strong>Base:</strong> the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Cats:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li><strong>베이스:</strong> 빈 접미사, 그리고 <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li><strong>로트와일러:</strong> <code>rw</code>, <code>r</code></li>
+<li><strong>도베르만:</strong> <code>db</code>, <code>dm</code></li>
+<li><strong>래브라도:</strong> <code>lb</code>, <code>lk</code></li>
+<li><strong>퍼그:</strong> <code>pg</code>, <code>pv</code></li>
+<li><strong>고양이:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<p>Pick something nobody else is using, then never touch it again.</p>
-<h2 id="11-the-breed-moodle">11. The breed moodle</h2>
-<p>A moodle is a <strong>client</strong> file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
+<p>아무도 쓰지 않는 것을 고르고, 그다음에는 다시는 손대지 마세요.</p>
+<h2 id="11-품종-무들">11. 품종 무들</h2>
+<p>무들은 <strong>client</strong> 파일입니다. <code>CD.DogMoodles</code>에 테이블을 덧붙이면 베이스가 그리고, 추적하고, 정리합니다.</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -958,47 +958,47 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> is called with the game minutes since the last call, so multiply your effect by <code>elapsedMin</code> instead of assuming a fixed tick.</p>
-<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square.</p>
-<p>Custom moodles are drawn as an overlay, not through the game's own moodle system, which does not accept new entries from a mod. That is handled for you, but it is why the moodle appears in the mod's own strip and not among the vanilla ones.</p>
-<h2 id="12-hooks">12. Hooks</h2>
-<p>Two lists of functions the base calls on the <strong>server</strong>. Append to them from a shared file. Each handler runs inside its own protected call, so a broken add-on cannot take the base down with it.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, from API 2, called right after the animal drops a kill at its owner's feet:</p>
+<p><code>condition</code>은 단계를 돌려주고, "표시 안 함"이면 0을 돌려줍니다. <code>apply</code>에는 마지막 호출 이후의 게임 분이 넘어오므로, 고정된 틱을 가정하지 말고 효과에 <code>elapsedMin</code>을 곱하세요.</p>
+<p>아이콘은 32에서 128 픽셀까지 <strong>여섯 가지 크기</strong>로 함께 배포하세요. 인터페이스가 플레이어의 배율에 따라 크기를 고르므로, 빠진 크기는 빈 네모가 됩니다.</p>
+<p>직접 만든 무들은 오버레이로 그려집니다. 게임 자체의 무들 시스템은 모드가 넣는 새 항목을 받아 주지 않기 때문입니다. 그 부분은 이미 처리되어 있지만, 무들이 바닐라 것들 사이가 아니라 모드 자체의 띠에 나타나는 이유가 그것입니다.</p>
+<h2 id="12-훅">12. 훅</h2>
+<p>베이스가 <strong>서버</strong>에서 호출하는 함수 목록이 둘 있습니다. shared 파일에서 덧붙이세요. 각 핸들러는 자기만의 보호된 호출 안에서 돌기 때문에, 망가진 애드온이 베이스를 끌고 내려갈 수 없습니다.</p>
+<p><strong><code>CD.onHuntDelivered</code></strong>, API 2부터. 동물이 사냥감을 주인 발치에 내려놓은 직후에 호출됩니다.</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, from API 3, called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
+<p><strong><code>CD.onUpkeepStress</code></strong>, API 3부터. 유지 관리 주기마다, 베이스가 채워지지 않은 욕구에서 오는 스트레스를 더한 뒤 기록하기 전에 호출됩니다. 숫자를 돌려주면 합계에 더해집니다.</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>This is the <strong>only</strong> way an add-on can influence the animal's continuous stress. Upkeep recomputes and overwrites the value every cycle, so anything you write from outside is lost on the next tick. It is the right tool for a condition that comes from the environment: heat, cold, rain.</p>
-<p><strong>The multiplayer rule, in one line: the client never writes mod data.</strong> A client side write clobbers the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks, which already run there.</p>
-<h2 id="13-translation-keys">13. Translation keys</h2>
-<p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>The keys a breed needs:</p>
+<p>애드온이 동물의 지속적인 스트레스에 영향을 줄 수 있는 <strong>유일한</strong> 방법입니다. 유지 관리는 매 주기마다 값을 다시 계산해 덮어쓰므로, 바깥에서 쓴 것은 다음 틱에 사라집니다. 더위, 추위, 비처럼 환경에서 오는 상태를 다루기에 알맞은 도구입니다.</p>
+<p><strong>멀티플레이 규칙을 한 줄로. 클라이언트는 절대 모드 데이터를 쓰지 않는다.</strong> 클라이언트 쪽 쓰기는 다음 동기화에서 서버의 사본을 덮어 버리고, 증상은 몇 분 뒤 전혀 다른 곳에서 나타납니다. 작업은 서버 파일에서 하거나, 이미 그쪽에서 도는 이 훅들 안에서 하세요.</p>
+<h2 id="13-번역-키">13. 번역 키</h2>
+<p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> 아래, 언어 폴더마다 <code>IG_UI.json</code>을 하나씩 넣으세요. 베이스는 열넷을 넣습니다. EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
+<p>품종에 필요한 키:</p>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>Where it shows</th>
+<th>키</th>
+<th>어디에 나오는가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>the breed name, everywhere in the mod's interface</td>
+<td>품종 이름. 모드 인터페이스 전반에</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>the description on the animal's card</td>
+<td>동물 카드에 적히는 설명</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>the breed name in the game's own screens</td>
+<td>게임 자체 화면에서의 품종 이름</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>one for each of your three types</td>
+<td>여러분의 세 타입마다 하나씩</td>
 </tr>
 <tr>
-<td>your moodle keys</td>
-<td>name and description, if you have a moodle</td>
+<td>무들 키들</td>
+<td>무들이 있다면 그 이름과 설명</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1009,44 +1009,44 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Two things that will bite you. A <strong>literal percent sign</strong> in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. And a language file with a <strong>byte order mark</strong> does not compile, with an error that names a different file than the broken one.</p>
-<h2 id="14-what-the-save-remembers">14. What the save remembers</h2>
-<p>Three of your identifiers are written into save files and read back forever:</p>
+<p>물릴 만한 것이 둘 있습니다. 번역 문자열 안의 <strong>그대로의 퍼센트 기호</strong>는 그것을 보여 주는 화면을 죽입니다. 서식기가 자리표시자로 읽기 때문입니다. 그리고 <strong>바이트 순서 표식</strong>이 붙은 언어 파일은 컴파일되지 않으며, 그 오류는 정작 망가진 파일이 아닌 다른 파일의 이름을 댑니다.</p>
+<h2 id="14-세이브가-기억하는-것">14. 세이브가 기억하는 것</h2>
+<p>여러분의 식별자 중 셋은 세이브 파일에 기록되고 이후로 계속 다시 읽힙니다.</p>
 <ul>
-<li><code>key</code>, the breed identifier stored on every animal of yours</li>
-<li><code>typePrefix</code>, which forms the animal types the engine stores</li>
-<li><code>suffix</code>, the key of the "already rolled" store, one per spawn step</li>
+<li><code>key</code>. 여러분의 동물 하나하나에 저장되는 품종 식별자</li>
+<li><code>typePrefix</code>. 엔진이 저장하는 동물 타입을 이루는 것</li>
+<li><code>suffix</code>. "이미 추첨됨" 저장소의 키. 스폰 단계마다 하나</li>
 </ul>
-<p><strong>None of the three can ever be renamed after release.</strong> Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world that had been played for months suddenly fills with your animal.</p>
-<p>The one time that re-roll is useful is when it is the point: CD: Cats gave its four new coats new suffixes on purpose, precisely so that they would start appearing in worlds that were already running, while the original black cat kept its historic suffix and did not re-roll.</p>
-<p><strong>Removing an add-on from a save that has living animals of that breed loses them.</strong> The engine discards an animal whose type it no longer knows. The base does not crash, the bond and the kennel degrade cleanly, but the animal is gone. Say so on your Workshop page, the way every published add-on does.</p>
-<p><strong>An unknown breed degrades instead of failing.</strong> If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
-<h2 id="15-before-you-publish">15. Before you publish</h2>
+<p><strong>셋 다 출시 후에는 결코 이름을 바꿀 수 없습니다.</strong> <code>key</code>를 바꾸면 그 품종의 살아 있는 동물이 전부 고아가 됩니다. <code>suffix</code>를 바꾸면 기존 모든 세이브의 모든 건물이 다시 추첨되고, 몇 달을 플레이한 세계가 갑자기 여러분의 동물로 가득 찹니다.</p>
+<p>그 재추첨이 쓸모 있는 유일한 경우는 그것이 바로 목적일 때입니다. CD: Cats는 새 털색 넷에 일부러 새 접미사를 주었습니다. 이미 돌아가던 세계에도 그것들이 나타나기 시작하게 하려는 것이었고, 반면 원래의 검은 고양이는 역사적인 접미사를 지켜 재추첨하지 않았습니다.</p>
+<p><strong>그 품종의 동물이 살아 있는 세이브에서 애드온을 빼면 그 동물을 잃습니다.</strong> 엔진은 더 이상 알지 못하는 타입의 동물을 버립니다. 베이스는 죽지 않고 유대와 견사도 깔끔하게 낮아지지만, 동물은 사라집니다. 공개된 모든 애드온이 그러하듯, 워크샵 페이지에 그렇게 적으세요.</p>
+<p><strong>알 수 없는 품종은 실패하지 않고 낮아집니다.</strong> 여러분의 애드온이 없으면 베이스는 무엇을 묻든 기본 품종으로 되돌리므로, 여러분의 모드 없이 연 세이브도 읽을 수 있습니다.</p>
+<h2 id="15-공개하기-전에">15. 공개하기 전에</h2>
 <ul>
-<li>The guard is on <strong>every</strong> Lua file, and names the API you actually use.</li>
-<li>The base version floor is written in your description, in words. <code>versionMin</code> cannot say it.</li>
-<li>You read the log on first load. <code>CD.registerBreed</code> rejects in silence otherwise, and every rejection prints a named line.</li>
-<li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
-<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you are happy with them forever.</li>
-<li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
-<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, or it barks.</li>
-<li>The moodle icon exists in all six sizes.</li>
-<li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
-<li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
-<li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
+<li>가드가 <strong>모든</strong> Lua 파일에 있고, 실제로 쓰는 API를 적고 있다.</li>
+<li>베이스 버전의 하한이 설명문에 말로 적혀 있다. <code>versionMin</code>으로는 그것을 말할 수 없다.</li>
+<li>첫 로드에서 로그를 읽었다. 그러지 않으면 <code>CD.registerBreed</code>는 조용히 거절하고, 모든 거절이 이름 붙은 한 줄을 남긴다.</li>
+<li><code>CD.defineDogParts</code>를 호출하고 있다. 자기 동물을 한 마리 도축해 죽지 않는지 확인한다.</li>
+<li><code>key</code>, <code>typePrefix</code>, 스폰 접미사가 유일하고, 앞으로도 계속 그것으로 만족한다.</li>
+<li>작은 품종은 <code>puppySize</code>를 설정했고, 강아지를 직접 보고 확인했다.</li>
+<li>다른 종이라면 <code>CD.registerVoices</code>를 호출하고 <code>voices</code>를 채웠다. 아니면 짖는다.</li>
+<li>무들 아이콘이 여섯 크기 전부 있다.</li>
+<li>함께 배포하는 모든 언어 폴더에 모든 키가 있다. 빠진 키는 화면에 날것의 키를 보여 준다.</li>
+<li>싱글플레이만이 아니라 멀티플레이에서 시험했다. 위치, 소유, 모드 데이터는 그쪽에서 다르게 움직인다.</li>
+<li>워크샵 페이지가 살아 있는 동물이 있는 세이브에서 애드온을 빼지 말라고 경고한다.</li>
 </ul>
-<h2 id="16-common-mistakes">16. Common mistakes</h2>
-<p><strong>"My animal never appears."</strong> Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</p>
-<p><strong>"It appears, but it is frozen."</strong> The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</p>
-<p><strong>"It renders as a black smear and the log floods."</strong> More than 60 bones in the model.</p>
-<p><strong>"Butchering it crashes."</strong> <code>CD.defineDogParts</code> was not called.</p>
-<p><strong>"The puppy is born the size of an adult."</strong> A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</p>
-<p><strong>"Two of my breeds keep turning into each other."</strong> They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</p>
-<p><strong>"The sound plays but ignores the volume slider."</strong> <code>CD.registerVoices</code> was not called for that sound.</p>
-<p><strong>"It works in single player and misbehaves on a server."</strong> Something is writing mod data on the client. Move it to the server.</p>
-<p><strong>"It fought a zombie even though I turned combat off."</strong> The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</p>
+<h2 id="16-흔한-실수">16. 흔한 실수</h2>
+<p><strong>"내 동물이 도무지 나타나지 않아요."</strong> 거의 언제나 가드입니다. 여러분의 애드온이 설치된 베이스에 없는 API를 요구하고 있어서, 의도대로 비활성 상태입니다. 자기 API 번호를 2절의 표와 맞춰 보세요.</p>
+<p><strong>"나타나긴 하는데 얼어 있어요."</strong> 애님셋이 <code>"raccoon"</code>이 아니거나, 모델에 클립이 빠졌습니다. 둘 다 영원히 가만히 서 있는 동물로 나옵니다.</p>
+<p><strong>"검은 얼룩으로 그려지고 로그가 넘칩니다."</strong> 모델의 뼈가 60개를 넘습니다.</p>
+<p><strong>"도축하면 죽습니다."</strong> <code>CD.defineDogParts</code>를 호출하지 않았습니다.</p>
+<p><strong>"강아지가 성체 크기로 태어납니다."</strong> <code>puppySize</code>를 설정하지 않은 작은 품종입니다. 이 값은 절대값이고 매 스윕마다 다시 적용되므로, 타입 자체의 크기 범위로는 구제되지 않습니다.</p>
+<p><strong>"내 품종 둘이 자꾸 서로 바뀝니다."</strong> <code>engineBreed</code>를 공유하고 있습니다. 접두사는 메시를 고르는 것이라 한 가족이 공유할 수 있지만, <code>engineBreed</code>는 텍스처를 고르며 그 가족 안에서 승부를 가르는 것이므로 품종마다 유일해야 합니다.</p>
+<p><strong>"소리는 나는데 볼륨 조절을 무시합니다."</strong> 그 소리에 대해 <code>CD.registerVoices</code>를 호출하지 않았습니다.</p>
+<p><strong>"싱글에서는 되는데 서버에서 이상하게 굽니다."</strong> 무언가가 클라이언트에서 모드 데이터를 쓰고 있습니다. 서버로 옮기세요.</p>
+<p><strong>"전투를 껐는데 좀비와 싸웠어요."</strong> 돌아가고 있는 베이스가 API 5보다 오래되어, 거기에는 그 필드가 아직 없었고 조용히 무시되었습니다. 가드가 낮추지 말고 막아야 하는 경우가 바로 이것입니다.</p>
 <hr>
-<p>Something in this manual wrong, or missing? Say so on <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
+<p>이 설명서에 틀린 곳이나 빠진 곳이 있나요? <a href="https://discord.gg/ndyTBFSuAT">Discord</a>에서 알려 주세요.</p></article></main>
 </div>
 
 <script>
@@ -1234,12 +1234,12 @@ end</code></pre>
 
   function render(qs){
     if(!hits.length){
-      results.innerHTML='<div class="rnone">No match for <b>'+esc(qs.trim())+'</b>.</div>';
+      results.innerHTML='<div class="rnone">검색 결과가 없습니다: <b>'+esc(qs.trim())+'</b>.</div>';
     }else{
       var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
-             ' results'+'</div>'];
+             ' 개의 결과'+'</div>'];
       hits.forEach(function(r,i){
-        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Start');
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'맨 위');
         h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
                '<span class="rcrumb">'+esc(crumb)+'</span>'+
                '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');

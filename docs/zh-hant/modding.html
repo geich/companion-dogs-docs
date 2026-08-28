@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Modding: How to build a breed or species add-on">
+<meta name="description" content="模組製作: 如何製作品種或物種附加模組">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Companion Dogs: Modding">
-<meta property="og:description" content="Modding: How to build a breed or species add-on">
-<meta property="og:url" content="https://companiondogs.pet/docs/en/modding.html">
+<meta property="og:title" content="Companion Dogs: 模組製作">
+<meta property="og:description" content="模組製作: 如何製作品種或物種附加模組">
+<meta property="og:url" content="https://companiondogs.pet/docs/zh-hant/modding.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="../en/modding.html">
@@ -27,7 +27,7 @@
 <link rel="alternate" hreflang="x-default" href="../en/modding.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<title>Companion Dogs: Modding</title>
+<title>Companion Dogs: 模組製作</title>
 <style>
 :root{
   --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
@@ -372,122 +372,122 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
 
 <header class="top">
-  <button class="iconbtn" id="menu" type="button" aria-label="Open contents" aria-expanded="false" aria-controls="rail">&#9776;</button>
-  <a class="brand" href="../index.html" title="Back to the documentation home page"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Modding</em>
+  <button class="iconbtn" id="menu" type="button" aria-label="開啟目錄" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="回到說明文件首頁"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">模組製作</em>
   <div class="grow"></div>
-  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Breeds manual</span></a>
-  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
-  <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往功能手冊</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往品種手冊</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="搜尋手冊……" aria-label="搜尋手冊" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="語言"><optgroup label="已校閱"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="機器翻譯"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant" selected>繁體中文</option></optgroup></select></div>
+  <button class="iconbtn" id="theme" type="button" aria-label="切換主題">&#9789;</button>
 </header>
-
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>機器翻譯，尚未校閱.</b> 本頁是從葡萄牙文機器翻譯而來的，還沒有人校閱過，用詞和數字都可能有誤。有疑問時，請對照英文版或葡萄牙文原文。 <a href="../en/modding.html">閱讀英文版</a></div>
 
 <div class="wrap">
   <aside class="rail" id="rail">
-    <div class="railhead">Contents &middot; <b>Modding</b></div>
+    <div class="railhead">目錄 &middot; <b>模組製作</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-what-an-add-on-is" data-id="1-what-an-add-on-is">1. What an add-on is</a>
+<a class="s2" href="#1-附加模組是什麼" data-id="1-附加模組是什麼">1. 附加模組是什麼</a>
 </div>
 <div class="grp">
-<a class="s2" href="#2-the-api-versions" data-id="2-the-api-versions">2. The API versions</a>
+<a class="s2" href="#2-api-的各個版本" data-id="2-api-的各個版本">2. API 的各個版本</a>
 </div>
 <div class="grp">
-<a class="s2" href="#3-what-you-need-before-you-start" data-id="3-what-you-need-before-you-start">3. What you need before you start</a>
+<a class="s2" href="#3-動手之前要準備什麼" data-id="3-動手之前要準備什麼">3. 動手之前要準備什麼</a>
 </div>
 <div class="grp">
-<a class="s2" href="#4-the-files-of-an-add-on" data-id="4-the-files-of-an-add-on">4. The files of an add-on</a>
+<a class="s2" href="#4-一個附加模組的檔案" data-id="4-一個附加模組的檔案">4. 一個附加模組的檔案</a>
 </div>
 <div class="grp">
-<a class="s2" href="#5-the-version-guard" data-id="5-the-version-guard">5. The version guard</a>
+<a class="s2" href="#5-版本守衛" data-id="5-版本守衛">5. 版本守衛</a>
 </div>
 <div class="grp">
-<a class="s2" href="#6-registering-the-breed" data-id="6-registering-the-breed">6. Registering the breed</a>
+<a class="s2" href="#6-註冊品種" data-id="6-註冊品種">6. 註冊品種</a>
 <div class="sub">
-<a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
-<a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
-<a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
+<a class="s3" href="#必填欄位" data-id="必填欄位">必填欄位</a>
+<a class="s3" href="#選填欄位" data-id="選填欄位">選填欄位</a>
+<a class="s3" href="#聲音" data-id="聲音">聲音</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#7-turning-a-whole-system-off" data-id="7-turning-a-whole-system-off">7. Turning a whole system off</a>
+<a class="s2" href="#7-整套關掉一個系統" data-id="7-整套關掉一個系統">7. 整套關掉一個系統</a>
 </div>
 <div class="grp">
-<a class="s2" href="#8-the-animal-definitions" data-id="8-the-animal-definitions">8. The animal definitions</a>
+<a class="s2" href="#8-動物定義" data-id="8-動物定義">8. 動物定義</a>
 </div>
 <div class="grp">
-<a class="s2" href="#9-the-model-script" data-id="9-the-model-script">9. The model script</a>
+<a class="s2" href="#9-模型腳本" data-id="9-模型腳本">9. 模型腳本</a>
 </div>
 <div class="grp">
-<a class="s2" href="#10-where-the-animal-spawns" data-id="10-where-the-animal-spawns">10. Where the animal spawns</a>
+<a class="s2" href="#10-這隻動物會在哪裡出現" data-id="10-這隻動物會在哪裡出現">10. 這隻動物會在哪裡出現</a>
 <div class="sub">
-<a class="s3" href="#the-building-classes" data-id="the-building-classes">The building classes</a>
-<a class="s3" href="#suffixes-already-taken" data-id="suffixes-already-taken">Suffixes already taken</a>
+<a class="s3" href="#建築類別" data-id="建築類別">建築類別</a>
+<a class="s3" href="#已經被佔用的後綴" data-id="已經被佔用的後綴">已經被佔用的後綴</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#11-the-breed-moodle" data-id="11-the-breed-moodle">11. The breed moodle</a>
+<a class="s2" href="#11-品種-moodle" data-id="11-品種-moodle">11. 品種 moodle</a>
 </div>
 <div class="grp">
-<a class="s2" href="#12-hooks" data-id="12-hooks">12. Hooks</a>
+<a class="s2" href="#12-掛鉤" data-id="12-掛鉤">12. 掛鉤</a>
 </div>
 <div class="grp">
-<a class="s2" href="#13-translation-keys" data-id="13-translation-keys">13. Translation keys</a>
+<a class="s2" href="#13-翻譯鍵" data-id="13-翻譯鍵">13. 翻譯鍵</a>
 </div>
 <div class="grp">
-<a class="s2" href="#14-what-the-save-remembers" data-id="14-what-the-save-remembers">14. What the save remembers</a>
+<a class="s2" href="#14-存檔記住的東西" data-id="14-存檔記住的東西">14. 存檔記住的東西</a>
 </div>
 <div class="grp">
-<a class="s2" href="#15-before-you-publish" data-id="15-before-you-publish">15. Before you publish</a>
+<a class="s2" href="#15-發佈之前" data-id="15-發佈之前">15. 發佈之前</a>
 </div>
 <div class="grp">
-<a class="s2" href="#16-common-mistakes" data-id="16-common-mistakes">16. Common mistakes</a>
+<a class="s2" href="#16-常見錯誤" data-id="16-常見錯誤">16. 常見錯誤</a>
 </div></nav>
   </aside>
-  <main><article class="doc"><h1 id="companion-dogs-modding-manual">Companion Dogs: Modding Manual</h1>
-<p>How to build your own add-on: a new breed, or a whole new species, as a separate Workshop mod that plugs into Companion Dogs.</p>
-<p>This manual is for people who write mods. If you only want to play, the other two manuals are the ones you want: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds themselves.</p>
-<p>It assumes you can already read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here; section 3 lists what the model file has to satisfy, and no more.</p>
-<blockquote class="quote"><strong>This is a public contract.</strong> Everything named in this manual is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
-<h2 id="1-what-an-add-on-is">1. What an add-on is</h2>
-<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds <strong>one breed</strong> (or several, if they share a body), and nothing else. Everything that makes the animal behave like a companion already lives in the base mod and is shared.</p>
-<p><strong>The base owns:</strong></p>
+  <main><article class="doc"><h1 id="companion-dogs模組製作手冊">Companion Dogs：模組製作手冊</h1>
+<p>如何製作你自己的附加模組：一個新品種，或者一整個物種，作為獨立的創意工坊模組掛接到 Companion Dogs 上。</p>
+<p>這本手冊是寫給做模組的人看的。如果你只是想玩，你要看的是另外兩本： <a href="features.html" class="xlink">功能</a> 講狗狗能做什麼， <a href="breeds.html" class="xlink">品種</a> 講品種本身。</p>
+<p>本手冊假設你已經讀得懂 Lua，並且手上已經有一個附骨架與動畫的動物模型。美術流程不在這裡；第 3 節 列出模型檔案必須符合的條件，就到此為止。</p>
+<blockquote class="quote"><strong>這是一份公開的契約。</strong> 本手冊點名的一切，都是給模組外部呼叫用的。這裡沒有點名的東西屬於內部 實作，可能在任何版本裡不經通知就改掉。</blockquote>
+<h2 id="1-附加模組是什麼">1. 附加模組是什麼</h2>
+<p>附加模組就是一個普通的創意工坊模組，它宣告 <code>require=CompanionDogs</code>，並在載入時呼叫一個函式。它只 加入<strong>一個品種</strong>（若共用同一副身體，也可以是好幾個），除此之外什麼都不加。讓動物表現得像個夥伴的 一切，早就在基礎模組裡，而且是共用的。</p>
+<p><strong>基礎模組擁有：</strong></p>
 <ul>
-<li>the animation state machine, the animation set and the skeleton</li>
-<li>following, pathing, combat, hunting, herding, the sentinel, needs and upkeep</li>
-<li>the whole user interface: the dog window, the radial, the context menu, the kennel, the map marker</li>
-<li>taming, bonding, breeding, puppies and crossbreeds</li>
-<li>the sandbox options, and the multiplayer replication</li>
+<li>動畫狀態機、動畫組與骨架</li>
+<li>跟隨、尋路、戰鬥、狩獵、放牧、警戒、需求與日常照料</li>
+<li>全部介面：狗狗視窗、環形選單、右鍵選單、狗舍、地圖標記</li>
+<li>馴服、羈絆、繁殖、幼犬與混種</li>
+<li>沙盒選項，以及多人遊戲的同步</li>
 </ul>
-<p><strong>Your add-on owns:</strong></p>
+<p><strong>你的附加模組擁有：</strong></p>
 <ul>
-<li>the numbers that make your animal different from a Caramelo</li>
-<li>its body model, its texture, its portrait and, if it has one, its moodle icon</li>
-<li>where it is found in the world</li>
-<li>its name and description, in every language you ship</li>
+<li>讓你的動物有別於卡拉梅洛的那些數值</li>
+<li>牠的身體模型、材質、肖像，以及若有的話，moodle 圖示</li>
+<li>牠會在世界的哪裡被找到</li>
+<li>牠的名字與說明，在你隨附的每一種語言裡</li>
 </ul>
-<p>That split is the whole point. A breed pack is a few hundred lines of Lua, because the hard part is already running.</p>
-<p><strong>One breed, one look.</strong> A breed is a set of numbers plus one appearance. If you want two colours of the same animal to behave differently, those are two breeds. If you want two colours that behave the same, they are still two breeds to the base (two names, two entries in the kennel), and you write them from one shared table, the way CD: Cats does with its five coats.</p>
-<h2 id="2-the-api-versions">2. The API versions</h2>
-<p><code>CD.API_VERSION</code> is a plain number. It has only ever grown by adding things, so an add-on written against an older version keeps loading on a newer base without a single change.</p>
+<p>這個分工就是全部的重點。一個品種包只是幾百行 Lua，因為難的部分早就在跑了。</p>
+<p><strong>一個品種，一副樣貌。</strong> 品種就是一組數值加上一副樣貌。如果你想讓同一種動物的兩種顏色表現不同，那 就是兩個品種。如果你要兩種表現一模一樣的顏色，對基礎模組而言牠們仍然是兩個品種（兩個名字，狗舍裡 兩筆資料），而你會從一張共用的表把牠們寫出來，就像 CD: Cats 用牠五種毛色所做的那樣。</p>
+<h2 id="2-api-的各個版本">2. API 的各個版本</h2>
+<p><code>CD.API_VERSION</code> 就是一個單純的數字。它一直只靠增添而變大，所以針對舊版本寫的附加模組，在較新的基 礎模組上一行都不必改，照樣載入。</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
-<th>Base version</th>
-<th>What it added</th>
+<th>基礎模組版本</th>
+<th>增添了什麼</th>
 </tr></thead><tbody>
 <tr>
 <td>1</td>
 <td>0.6.3</td>
-<td><code>CD.registerBreed</code>, the spawn registry, breed moodles</td>
+<td><code>CD.registerBreed</code>、生成註冊表、品種 moodle</td>
 </tr>
 <tr>
 <td>2</td>
 <td>0.6.6</td>
-<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, the <code>CD.onHuntDelivered</code> hook</td>
+<td><code>huntFetchLevel</code>、<code>huntDeliverTimeoutMin</code>、掛鉤 <code>CD.onHuntDelivered</code></td>
 </tr>
 <tr>
 <td>3</td>
 <td>0.6.8</td>
-<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, the <code>CD.onUpkeepStress</code> hook</td>
+<td><code>sentinelMult</code>、<code>barkNoiseMult</code>、<code>loyaltyDecayMult</code>、掛鉤 <code>CD.onUpkeepStress</code></td>
 </tr>
 <tr>
 <td>4</td>
@@ -497,19 +497,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>5</td>
 <td>0.7.0</td>
-<td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+<td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code>、<code>descKey</code>、<code>voices</code>、<code>CD.registerVoices</code></td>
 </tr>
 </tbody></table></div>
-<p>The number to guard on is the <strong>lowest API that your add-on actually needs</strong>, and the base version in that table is the one you name on your Workshop page. Take it from that table and not from whatever the base happened to be while you were writing: a field that exists only in the developer build is a field your players do not have.</p>
-<p><strong>A missing field is ignored in silence.</strong> That is fine when the field is a number: on an older base your animal simply barks at the normal volume. It is not fine when the field is a block, because then a cat that must never fight will happily fight. So: numbers can degrade, blocks cannot. If your animal depends on a block, guard on the API that introduced it and let the add-on stay inert on anything older.</p>
-<h2 id="3-what-you-need-before-you-start">3. What you need before you start</h2>
-<p><strong>The base mod, 0.6.3 or newer.</strong> Everything below is a call into it.</p>
-<p><strong>A skinned model.</strong> Your animal needs its own <code>.glb</code> under <code>media/models_X/Skinned/</code>, and that file has to carry the <strong>complete set of 21 <code>Rac_*</code> animation clips</strong>. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked to do one of the other six. The model also has to stay under <strong>60 bones</strong> and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear.</p>
-<p>If you do not have a model yet, you can still write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal will look like a Caramelo, but every system in this manual will run.</p>
-<p><strong>A texture</strong> for the body, and a <strong>portrait</strong> for the kennel window.</p>
-<p><strong>One decision, before any code:</strong> is your animal a <em>breed</em> or a <em>species</em>? A breed is a dog with different numbers. A species is an animal that does not have some of the jobs at all. The difference is not cosmetic, it changes which fields you write, and section 7 is about it.</p>
-<h2 id="4-the-files-of-an-add-on">4. The files of an add-on</h2>
-<p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
+<p>守衛裡要寫的數字，是<strong>你的附加模組真正需要的最低 API</strong>，而那張表裡對應的基礎模組版本，就是你要寫在 創意工坊頁面上的版本。從這張表取，而不是從你寫程式時基礎模組剛好是哪一版：只存在於開發版裡的欄 位，就是你的玩家沒有的欄位。</p>
+<p><strong>缺少的欄位會被靜靜忽略。</strong> 當欄位是數值時這沒關係：在較舊的基礎模組上，你的動物只是用正常音量吠 叫而已。當欄位是一道封鎖時就有關係了，因為那樣一隻絕不該打架的貓會從容地衝上去打。也就是說：數值 可以退而求其次，封鎖不行。若你的動物仰賴某道封鎖，就用引進它的那個 API 來守衛，並讓附加模組在更舊 的一切上完全不動作。</p>
+<h2 id="3-動手之前要準備什麼">3. 動手之前要準備什麼</h2>
+<p><strong>基礎模組，0.6.3 或更新。</strong> 底下的一切都是往它裡面發出的呼叫。</p>
+<p><strong>一個蒙皮完成的模型。</strong> 你的動物需要自己的 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下，而那個檔案 必須帶著<strong>完整的 21 個 <code>Rac_*</code> 動畫片段</strong>。片段不會在模型檔案之間繼承：只有十五個片段的模型，會給 你一隻在第一次被要求做其餘六個動作時就僵住的動物。模型還必須維持在 <strong>60 根骨頭</strong>以下，且最上層節點 為單位矩陣，否則引擎每一格畫面都會擲出例外，動物會被畫成一團黑色污漬。</p>
+<p>如果你還沒有模型，仍然可以把 <code>CD.applyDogModel</code> 指向基礎模組的某一副身體，然後把其餘全部寫出來並測 試。動物看起來會像卡拉梅洛，但本手冊裡的每一個系統都跑得動。</p>
+<p>身體的<strong>一張材質</strong>，以及狗舍視窗用的<strong>一張肖像</strong>。</p>
+<p><strong>在寫任何程式碼之前先決定一件事：</strong> 你的動物是一個*品種*，還是一個*物種*？品種是數值不同的狗。物 種是根本沒有某些工作的動物。這個差別不是外觀問題，它會決定你要寫哪些欄位，而第 7 節談的正是它。</p>
+<h2 id="4-一個附加模組的檔案">4. 一個附加模組的檔案</h2>
+<p>這是 CD: Pug，已發佈的附加模組裡最小的一個，只留下要緊的部分：</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -527,7 +527,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>And the <code>mod.info</code>:</p>
+<p>還有 <code>mod.info</code>：</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -537,18 +537,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> is the important line. It guarantees that <strong>all</strong> of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
-<p><strong><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8".</strong> That field is the <em>game</em> build gate and nothing else, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section, and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
-<h2 id="5-the-version-guard">5. The version guard</h2>
-<p>Put this at the top of every Lua file of your add-on, with the number your add-on actually needs:</p>
+<p><code>require=CompanionDogs</code> 是關鍵的一行。它保證基礎模組的 Lua <strong>全部</strong>在你的之前跑完，每個階段都是如 此：先 shared，接著 client，接著 server。少了它，你的檔案可能先載入，那時每一次 <code>CD.</code> 呼叫都是在對 nil 取索引。</p>
+<p><strong><code>versionMin</code> 沒辦法表達「需要 Companion Dogs 0.6.8」。</strong> 那個欄位是*遊戲*版本的門檻，別無其他， 而 mod.info 裡並不存在寫相依模組版本的欄位。基礎模組的下限由下一節的守衛強制執行，並透過你的說明告 訴玩家。把它用文字寫在那裡，否則玩家得到的唯一徵狀，就是一隻永遠不出現的動物。</p>
+<h2 id="5-版本守衛">5. 版本守衛</h2>
+<p>把這段放在你附加模組每一個 Lua 檔案的最上面，數字換成你的附加模組真正需要的那個：</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>With the base missing or too old, the file returns at line two. The add-on then does nothing at all: no breed, no spawn, no moodle, not one line in the log. That silence is deliberate. An add-on that half loads is worse than one that does not load, because the player gets an animal with a name and no behaviour.</p>
-<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those instead:</p>
+<p>基礎模組不存在或太舊時，檔案在第二行就返回了。這時附加模組什麼都不做：沒有品種，沒有生成，沒有 moodle，日誌裡連一行都沒有。這份安靜是刻意的。載入到一半的附加模組比根本沒載入更糟，因為玩家會拿到 一隻有名字卻沒有行為的動物。</p>
+<p>守衛是逐檔案的，而每個檔案守衛自己要用的東西。<code>PugDefinitions.lua</code> 需要模型輔助函式，於是它守衛那 些：</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Never create the global.</strong> <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table and every guard downstream passes when it should not. Read the global, never write it.</p>
-<h2 id="6-registering-the-breed">6. Registering the breed</h2>
-<p>One call, in a <strong>shared</strong> file:</p>
+<p><strong>永遠不要自己建立那個全域變數。</strong> 附加模組裡的 <code>CompanionDogs = CompanionDogs or {}</code> 會把一個不存在 的基礎模組變成一張只搭了一半的表，於是下游每一道守衛都會在不該通過的時候通過。去讀那個全域變數，永 遠不要往裡面寫。</p>
+<h2 id="6-註冊品種">6. 註冊品種</h2>
+<p>一次呼叫，在一個 <strong>shared</strong> 檔案裡：</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -578,193 +578,193 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>That call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
-<p>A bad definition returns <code>nil</code> instead of throwing, so a mistake never takes the load down with it. Every rejection prints a named line, so <strong>read the log</strong> the first time you register a breed.</p>
-<h3 id="required-fields">Required fields</h3>
+<p>這次呼叫會把品種塞進去，註冊牠的三個動物類型，重建繁殖順序好讓你的動物參與雜交，並註冊生成步驟。</p>
+<p>有問題的定義會回傳 <code>nil</code> 而不是擲出錯誤，所以一個閃失絕不會把載入一起拖垮。每一次拒絕都會印出一行 點名的紀錄，所以你第一次註冊品種時<strong>要去讀日誌</strong>。</p>
+<h3 id="必填欄位">必填欄位</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What it is</th>
+<th>欄位</th>
+<th>是什麼</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>your breed identifier, unique across every mod. Never changed after release.</td>
+<td>你這個品種的識別字，在所有模組之間唯一。發佈之後永不更動。</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Chooses the <strong>body mesh</strong>.</td>
+<td>三個動物類型的前綴：<code>&lt;前綴&gt;pup</code>、<code>&lt;前綴&gt;female</code>、<code>&lt;前綴&gt;male</code>。它決定<strong>身體網格</strong>。</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
-<td>translation key of the display name.</td>
+<td>顯示名稱的翻譯鍵。</td>
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>learning speed per skill: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 is normal.</td>
+<td>每項技能的學習速度：<code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 是正常值。</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>how hard it hits. The Caramelo is 0.20, a fighting breed is above 1.0.</td>
+<td>牠下嘴有多重。卡拉梅洛是 0.20，能打的品種在 1.0 以上。</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>, how the damage grows from Combat 0 to Combat 10.</td>
+<td><code>{ min, max }</code>，傷害從戰鬥 0 級到戰鬥 10 級是怎麼成長的。</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>birth range of the four genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Each is <code>{ low, high }</code> inside 0 to 1.</td>
+<td>四個基因出生時的範圍：<code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。每個都是 0 到 1 之間的 <code>{ 下限, 上限 }</code>。</td>
 </tr>
 </tbody></table></div>
-<h3 id="optional-fields">Optional fields</h3>
+<h3 id="選填欄位">選填欄位</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>Default</th>
-<th>What it does</th>
+<th>欄位</th>
+<th>預設值</th>
+<th>作用</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
-<td>the <code>key</code></td>
-<td>breed name given to the engine, which chooses the <strong>texture</strong>. Unique per breed.</td>
+<td>與 <code>key</code> 相同</td>
+<td>交給引擎的品種名，它決定<strong>材質</strong>。每個品種唯一。</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>description key. Point several breeds at one key when they share a description.</td>
+<td>說明文字的鍵。當幾個品種共用一段說明時，把牠們指向同一個鍵。</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>base value</td>
-<td><code>{ min, max }</code> puppies per birth.</td>
+<td>基礎模組的值</td>
+<td>每一胎幼犬的 <code>{ 下限, 上限 }</code>。</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false means it wears zombies down but never lands the killing blow.</td>
+<td>false 表示牠能磨損喪屍，但永遠不會補上致命一擊。</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
 <td>false</td>
-<td>true lets it knock a zombie over.</td>
+<td>true 讓牠能把喪屍撞倒。</td>
 </tr>
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>how much a fight costs it in stress.</td>
+<td>一場打鬥對牠來說有多少壓力代價。</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>base value</td>
-<td>stress level at which it stops fighting. <code>panicImmune = true</code> means never.</td>
+<td>基礎模組的值</td>
+<td>牠停止戰鬥的壓力水準。<code>panicImmune = true</code> 表示永遠不停。</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
 <td>1</td>
-<td>saddlebag capacity multiplier.</td>
+<td>鞍袋容量的倍率。</td>
 </tr>
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>absolute visual scale of the puppy. <strong>A small breed must set this</strong>, otherwise the puppy is born adult sized.</td>
+<td>幼犬的絕對視覺縮放。<strong>小型品種一定要設定它</strong>，否則幼犬一出生就是成年體型。</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>multiplies the final sentinel radius.</td>
+<td>乘在最終的警戒半徑上。</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>scales the radius and volume of the alarm bark. It scales noise, it does not create it: with the sandbox noise option off, no breed attracts zombies with a bark.</td>
+<td>縮放警報吠叫的半徑與音量。它縮放噪音，而不是製造噪音：沙盒的噪音選項關掉之後，沒有哪個品種會用吠叫招來喪屍。</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>multiplies the daily loyalty decay. <code>0</code> means the bond never fades.</td>
+<td>乘在忠誠度每日的衰減上。<code>0</code> 表示羈絆永不淡去。</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>the animal is stuck on full alert: the owner cannot set quiet or silent, anywhere. Use it when the loud alarm <strong>is</strong> the design.</td>
+<td>動物被鎖在全面警戒：主人在任何地方都無法把牠切到安靜或靜音。當吵鬧的警報<strong>就是</strong>設計本身時才用。</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>Hunt level from which it carries the kill back to its owner.</td>
+<td>從這個狩獵等級起，牠會把獵物叼回給主人。</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game minutes it will keep trying to deliver before giving up.</td>
+<td>牠放棄交付之前還會再試多少遊戲分鐘。</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>base value</td>
-<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, or the loop restarts and gets cut mid gesture.</td>
+<td>基礎模組的值</td>
+<td>待機動畫視窗的長度，單位毫秒。當你的片段比狗的短時要設定它，否則循環會重新開始並在動作中途被切掉。</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false keeps the animal standing on Stay and Guard instead of lying down.</td>
+<td>false 讓動物在待命與守衛時保持站著，而不是趴下。</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
-<td>dog sounds</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. See below.</td>
+<td>狗的聲音</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>。見下文。</td>
 </tr>
 <tr>
-<td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
-<td>everything on</td>
-<td>the structural blocks. Section 7.</td>
+<td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code></td>
+<td>全部開啟</td>
+<td>結構性的封鎖。第 7 節。</td>
 </tr>
 </tbody></table></div>
-<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
-<h3 id="the-voice">The voice</h3>
-<p>A different species does not speak the same language. Without <code>voices</code>, your cat barks:</p>
+<p>你加進定義裡的數值與旗標，可以用 <code>CD.breedNumber(animal, 欄位)</code> 和 <code>CD.breedFlag(animal, 欄位)</code> 讀 回來。比起自己去讀 <code>CD.getBreedDef(animal).欄位</code>，優先用這兩個：牠們替你處理缺少的欄位，而且在基礎 模組挪動之後依然可用。</p>
+<h3 id="聲音">聲音</h3>
+<p>不同的物種不說同一種語言。少了 <code>voices</code>，你的貓會吠：</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> is not optional decoration. Without it the sounds still play, but they ignore the player's category slider and the game's effect volume, which is a failure nobody reports because nothing looks broken. A key you leave out of <code>voices</code> falls back to the dog sound, which is what you want for a breed of dog and never what you want for another species.</p>
-<h2 id="7-turning-a-whole-system-off">7. Turning a whole system off</h2>
-<p>The five skills are the five systems, one for one:</p>
+<p><code>CD.registerVoices</code> 不是可有可無的裝飾。少了它，聲音照樣會響，但會無視玩家的分類音量滑桿與遊戲本身 的音效音量，而這是一種沒人會回報的故障，因為什麼都不像壞掉。你在 <code>voices</code> 裡漏掉的鍵會退回狗的聲 音，那正是你在狗的品種上想要的，也永遠不是你在另一個物種上想要的。</p>
+<h2 id="7-整套關掉一個系統">7. 整套關掉一個系統</h2>
+<p>五項技能就是五個系統，一對一：</p>
 <div class="tw"><table><thead><tr>
-<th>Skill</th>
-<th>The system it is</th>
+<th>技能</th>
+<th>牠就是哪個系統</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>the sentinel: noticing zombies and warning you</td>
+<td>警戒：察覺喪屍並提醒你</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>fighting, the Guard mode and self defence</td>
+<td>打鬥、守衛模式與自衛</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>the trick tree</td>
+<td>才藝樹</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>hunting, plus the foraging bonus it gives its owner</td>
+<td>狩獵，外加牠給主人的採集加成</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>tending livestock in a pen</td>
+<td>照看柵欄裡的牲口</td>
 </tr>
 </tbody></table></div>
-<p>A species is not a dog with worse numbers. It is an animal that does not have some of those jobs at all. So it declares what it does not have:</p>
+<p>物種不是數值比較差的狗。牠是根本沒有其中某些工作的動物。所以牠宣告自己沒有什麼：</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
-<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface. All three, together. Hiding only the bar would leave the skill growing where nobody can see it; blocking only the system would leave a bar stuck at zero forever.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
-<p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. A halo saying the order was ignored would be a lie, because this is not disobedience. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
-<h2 id="8-the-animal-definitions">8. The animal definitions</h2>
-<p>The engine binds the mesh to the <strong>animal type</strong>, not to the breed, so your breed needs its own three types. This is the mechanical part of an add-on, and the shortest path is to copy the file of an existing add-on and rename it.</p>
-<p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
+<p>不寫或寫 <code>true</code>，都表示這隻動物擁有該技能，所以你只要寫出你要拿掉的那幾項。</p>
+<p>關掉一項技能會<strong>同時做三件事</strong>：系統永遠不執行，該技能永遠不獲得經驗，牠的長條連同指令一起從介面上 消失。三件一起。只把長條藏起來，技能還是會在沒人看得到的地方長；只鎖住系統，長條就會永遠卡在零。</p>
+<p><code>canBreed = false</code> 放在表外面，因為繁殖既沒有長條也沒有經驗。而且它是徹底的：這隻動物不會受孕，永遠 不會被選為配偶，連自己的品種也不會配。</p>
+<p><code>huntMaxPrey</code> 是<strong>一場確實存在的狩獵之內的上限</strong>，這和 <code>hunt = false</code> 是兩回事。它接受 <code>"tiny"</code>（小 鼠、大鼠、松鼠）、<code>"small"</code>（兔子、浣熊）或 <code>"large"</code>（鹿，預設值，沒有上限）。超過上限的獵物對你的 動物來說是看不見的：牠不會追，甚至不會去指。不在這個階梯上的值會退回 <code>"large"</code>，並在日誌裡印出一行 點名的紀錄。</p>
+<p><strong>被封鎖的動物不會拿到一顆變灰的按鈕。</strong> 那個選項會從環形選單、右鍵選單與視窗裡消失，伺服器端的拒絕 也是安靜的。一圈寫著「牠無視了命令」的光暈會是謊話，因為這並不是不服從。請在你的品種說明裡解釋這個 設計。這也正是這些欄位一個都不會帶來新翻譯鍵的原因。</p>
+<h2 id="8-動物定義">8. 動物定義</h2>
+<p>引擎把網格綁在<strong>動物類型</strong>上，而不是綁在品種上，所以你的品種需要自己的三個類型。這是附加模組裡機械 性的一塊，最短的路是複製一個現成附加模組的檔案再改名。</p>
+<p>三個部分，放在 <code>Definitions/animal/</code> 底下的一個 shared 檔案裡：</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -790,48 +790,48 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>The helpers the base gives you:</p>
+<p>基礎模組給你的輔助函式：</p>
 <div class="tw"><table><thead><tr>
-<th>Helper</th>
-<th>What it fills in</th>
+<th>輔助函式</th>
+<th>牠替你填好什麼</th>
 </tr></thead><tbody>
 <tr>
 <td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>body model, skeleton, butchered textures and the animation set</td>
+<td>身體模型、骨架、屠宰用材質與動畫組</td>
 </tr>
 <tr>
 <td><code>CD.applyDogBehaviour(t)</code></td>
-<td>every engine behaviour flag a companion needs</td>
+<td>一個夥伴所需的每一個引擎行為旗標</td>
 </tr>
 <tr>
 <td><code>CD.applyDogAvatar(t)</code></td>
-<td>the portrait camera for the animal window</td>
+<td>動物視窗的肖像鏡頭</td>
 </tr>
 <tr>
 <td><code>CD.DOG_SOUNDS</code></td>
-<td>the shared footstep and foley table</td>
+<td>腳步聲與擬音的共用表</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>the value that stops a frightened stray from bleeding to death</td>
+<td>讓受驚的流浪動物不至於失血而死的那個值</td>
 </tr>
 <tr>
 <td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>the butchering parts of all three stages</td>
+<td>三個成長階段的屠宰部位</td>
 </tr>
 </tbody></table></div>
-<p>Four rules that are not obvious:</p>
-<p><strong>The animation set has to stay <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> sets it. A forked animation set does not load its state machine, and an animal without a state machine is an animal frozen in place.</p>
-<p><strong>Reuse the genome:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Do not write your own.</p>
-<p><strong>Never declare <code>mate</code>.</strong> With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot as a safety net, but do not rely on that.</p>
-<p><strong>Parts are mandatory.</strong> Three lines in their own file:</p>
+<p>四條並不明顯的規則：</p>
+<p><strong>動畫組必須維持是 <code>"raccoon"</code>。</strong> <code>CD.applyDogModel</code> 會設定它。分支出去的動畫組不會載入它自己的狀態 機，而沒有狀態機的動物就是一隻釘在原地的動物。</p>
+<p><strong>重用基因組：</strong> <code>AnimalDefinitions.genome["dog"].genes</code>。不要自己另外寫一份。</p>
+<p><strong>永遠不要宣告 <code>mate</code>。</strong> 有了它，引擎會在任何動物區域內跑牠自己的原生交配，那套邏輯無視本模組的繁殖 封鎖與沙盒選項，並產出沒有羈絆的幼犬。基礎模組會在開機時清掉這個欄位當作安全網，但別倚賴它。</p>
+<p><strong>部位是必要的。</strong> 單獨一個檔案裡三行：</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and walks into a nil.</p>
-<p><strong>Small animals need their avatar camera adjusted.</strong> The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
-<h2 id="9-the-model-script">9. The model script</h2>
-<p>One file under <code>media/scripts/</code>, which is what tells the game your model exists:</p>
+<p>少了牠們，屠宰你的動物會讓原版程式碼當掉，因為它按類型與品種去索引部位定義，然後踩到 nil。</p>
+<p><strong>小型動物需要調整肖像鏡頭。</strong> <code>CD.applyDogAvatar</code> 裡的肖像縮放是照著狗校準的，而頭像的 zoom 是放大 倍率：動物越小，數字越大。把 zoom 除以相對於狗的體型比例，再把偏移量乘上這個比例，否則你的動物會小 小地縮在自己肖像的底部。</p>
+<h2 id="9-模型腳本">9. 模型腳本</h2>
+<p><code>media/scripts/</code> 底下的一個檔案，正是它告訴遊戲你的模型存在：</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -854,10 +854,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> is what keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
-<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Those numbers are found by looking at the animal in game and nudging them, not by measuring the model: a bag that is mathematically centred still looks wrong on a body with fur.</p>
-<h2 id="10-where-the-animal-spawns">10. Where the animal spawns</h2>
-<p>Strays are rolled per building, per chunk, the first time that chunk loads. You describe your rolls as a list of steps, either inside the breed definition as <code>spawns</code>, or with <code>CD.registerStraySpawns(list)</code>.</p>
+<p><code>keepMeshAnimations = true</code> 是讓你模型檔案裡的動畫片段保持可用的那一行。少了它，模型載得進來卻永遠 不會動。</p>
+<p><code>head</code> 附著點是帽子之類東西所在的位置。如果你想讓鞍袋合你的動物的身，就用同樣的方式在脊椎骨上加 <code>saddlebags_l</code>、<code>saddlebags_r</code> 與 <code>saddlebags_c</code>。這些數字是在遊戲裡看著動物一點一點挪出來的，而不 是量模型量出來的：一個數學上置中的袋子，放在有毛的身體上照樣看起來歪。</p>
+<h2 id="10-這隻動物會在哪裡出現">10. 這隻動物會在哪裡出現</h2>
+<p>流浪動物是按建築、按區塊抽出來的，就在那個區塊第一次載入的時候。你把自己的抽取寫成一串步驟，要嘛放 在品種定義裡的 <code>spawns</code>，要嘛透過 <code>CD.registerStraySpawns(清單)</code>。</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -865,81 +865,81 @@ end</code></pre>
       chance = function() return CD.PUG_PETVET_CHANCE * CD.dogSpawnMultiplier() end },
 },</code></pre>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>What it is</th>
+<th>鍵</th>
+<th>是什麼</th>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>name of the step, for your own logs</td>
+<td>這個步驟的名字，給你自己的日誌用</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>the building class it rolls on</td>
+<td>牠在哪個建築類別上抽</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>a <strong>function</strong> returning a percentage. A function, not a number, so it can follow the sandbox multiplier live.</td>
+<td>一個回傳百分比的<strong>函式</strong>。是函式而不是數字，這樣它才跟得上即時的沙盒倍率。</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>key of the persistent store. Unique in the whole ecosystem, and never changed.</td>
+<td>持久化儲存的鍵。在整個生態裡唯一，而且永不更動。</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>the breed key to spawn</td>
+<td>要生成的品種鍵</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>optional function returning a boolean, checked before the roll. The Husky uses <code>CD.isWinter</code>.</td>
+<td>選填函式，回傳布林值，會在抽取之前檢查。哈士奇用的是 <code>CD.isWinter</code>。</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>percentage chance of being born inside the building instead of the street. Default 35.</td>
+<td>在建築內部而不是街上出生的百分比。預設 35。</td>
 </tr>
 </tbody></table></div>
-<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Either way the player's sandbox setting keeps working, which it will not if you write a bare number.</p>
-<p><code>indoor</code> is a preference and not a promise: a building with no free interior tile in that chunk falls back to a tile outside.</p>
-<h3 id="the-building-classes">The building classes</h3>
-<p>The base registers four, and you can use them directly:</p>
+<p>把你的機率乘上 <code>CD.dogSpawnMultiplier()</code>，或者把 <code>CD.strayChancePerHouse()</code> 除以你自己的稀有度。無論 哪一種，玩家的沙盒設定都還有效，而你要是寫一個光禿禿的數字，它就失效了。</p>
+<p><code>indoor</code> 是偏好而不是承諾：那個區塊裡沒有空著的室內地磚的建築，會退回到外面的地磚。</p>
+<h3 id="建築類別">建築類別</h3>
+<p>基礎模組註冊了四個，你可以直接拿來用：</p>
 <div class="tw"><table><thead><tr>
-<th>Class</th>
-<th>Matches</th>
+<th>類別</th>
+<th>符合什麼</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
-<td>residential buildings that are not shops</td>
+<td>不是店面的住宅建築</td>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>police stations and the like</td>
+<td>警察局之類</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
-<td>pet shops and veterinary clinics</td>
+<td>寵物店與獸醫診所</td>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>farm buildings, and it is allowed outside town</td>
+<td>農場建築，而且允許出現在城鎮之外</td>
 </tr>
 </tbody></table></div>
-<p>If none of them fits, register your own:</p>
+<p>如果沒有一個合用，就註冊你自己的：</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>The match function receives the building definition and runs inside a protected call, so a mistake in it cannot take the chunk load down. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which is what a farm or a forest cabin needs. Leave <code>exclusive</code> alone: the base classes are exclusive between themselves, and an add-on class is meant to be additive, matching on top of them.</p>
-<h3 id="suffixes-already-taken">Suffixes already taken</h3>
-<p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
-<p>Every suffix starts with a vertical bar. These are already in use:</p>
+<p>比對函式會拿到建築定義，並在一次受保護的呼叫裡執行，所以它裡面的閃失沒辦法把區塊載入拖垮。 <code>skipUrbanGate</code> 讓這個類別可以在非城鎮的區塊裡抽，農場或林中小屋正需要這個。別去動 <code>exclusive</code>：基 礎模組的那幾個類別彼此互斥，而附加模組的類別在設計上是加成的，會疊在牠們之上再比對一次。</p>
+<h3 id="已經被佔用的後綴">已經被佔用的後綴</h3>
+<p>後綴是「這棟建築已經抽過了」這筆紀錄所用的鍵的一部分。兩個模組用同一個後綴，會互相毀掉對方的抽取結 果。</p>
+<p>每個後綴都以一根直線開頭。下面這些已經在用：</p>
 <ul>
-<li><strong>Base:</strong> the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Cats:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li><strong>基礎模組：</strong> 空後綴，以及 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
+<li><strong>羅威納：</strong> <code>rw</code>、<code>r</code></li>
+<li><strong>杜賓：</strong> <code>db</code>、<code>dm</code></li>
+<li><strong>拉布拉多：</strong> <code>lb</code>、<code>lk</code></li>
+<li><strong>巴哥：</strong> <code>pg</code>、<code>pv</code></li>
+<li><strong>貓：</strong> <code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
 </ul>
-<p>Pick something nobody else is using, then never touch it again.</p>
-<h2 id="11-the-breed-moodle">11. The breed moodle</h2>
-<p>A moodle is a <strong>client</strong> file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
+<p>挑一個沒人用的，然後再也別碰它。</p>
+<h2 id="11-品種-moodle">11. 品種 moodle</h2>
+<p>moodle 是一個 <strong>client</strong> 檔案。你往 <code>CD.DogMoodles</code> 裡追加一張表，基礎模組負責繪製、追蹤與清理：</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -958,47 +958,47 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> is called with the game minutes since the last call, so multiply your effect by <code>elapsedMin</code> instead of assuming a fixed tick.</p>
-<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square.</p>
-<p>Custom moodles are drawn as an overlay, not through the game's own moodle system, which does not accept new entries from a mod. That is handled for you, but it is why the moodle appears in the mod's own strip and not among the vanilla ones.</p>
-<h2 id="12-hooks">12. Hooks</h2>
-<p>Two lists of functions the base calls on the <strong>server</strong>. Append to them from a shared file. Each handler runs inside its own protected call, so a broken add-on cannot take the base down with it.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, from API 2, called right after the animal drops a kill at its owner's feet:</p>
+<p><code>condition</code> 回傳等級，或者回傳 0 表示「不顯示」。<code>apply</code> 被呼叫時會拿到距離上一次呼叫過了多少遊戲分 鐘，所以請把你的效果乘上 <code>elapsedMin</code>，不要假設有個固定節拍。</p>
+<p>圖示要隨附<strong>六種尺寸</strong>，從 32 到 128 像素。介面會依玩家的縮放挑尺寸，少一個尺寸就是一個空方塊。</p>
+<p>自訂 moodle 是當成疊加層繪製的，並沒有走遊戲本身的 moodle 系統，因為那個系統不接受來自模組的新項 目。這一塊已經替你處理好了，但這也是為什麼 moodle 出現在模組自己的橫條裡，而不是混在原版那幾個之 中。</p>
+<h2 id="12-掛鉤">12. 掛鉤</h2>
+<p>基礎模組在<strong>伺服器</strong>上呼叫的兩份函式清單。請從一個 shared 檔案往裡面追加。每個處理函式都在自己那一 次受保護的呼叫裡執行，所以壞掉的附加模組沒辦法把基礎模組一起拖垮。</p>
+<p><strong><code>CD.onHuntDelivered</code></strong>，從 API 2 起，在動物把獵物放到主人腳邊之後立刻呼叫：</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, from API 3, called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
+<p><strong><code>CD.onUpkeepStress</code></strong>，從 API 3 起，在每個照料週期呼叫，時機是基礎模組已經把未滿足需求帶來的壓力加 好、還沒寫回去之前。回傳一個數字，它會被加進總和：</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>This is the <strong>only</strong> way an add-on can influence the animal's continuous stress. Upkeep recomputes and overwrites the value every cycle, so anything you write from outside is lost on the next tick. It is the right tool for a condition that comes from the environment: heat, cold, rain.</p>
-<p><strong>The multiplayer rule, in one line: the client never writes mod data.</strong> A client side write clobbers the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks, which already run there.</p>
-<h2 id="13-translation-keys">13. Translation keys</h2>
-<p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>The keys a breed needs:</p>
+<p>這是附加模組能影響動物持續壓力的<strong>唯一</strong>途徑。照料會在每個週期重新計算並覆寫這個值，所以你從外面寫 進去的任何東西，下一個節拍就沒了。對於來自環境的狀態，像是炎熱、寒冷、下雨，這才是對的工具。</p>
+<p><strong>多人遊戲的規則，一句話：客戶端永遠不寫模組資料。</strong> 客戶端這邊的寫入會在下一次同步時蓋掉伺服器的副 本，而徵狀要過好幾分鐘才在毫不相干的地方冒出來。把這份工作放到伺服器端的檔案裡做，或者放進這些本來 就跑在伺服器上的掛鉤裡。</p>
+<h2 id="13-翻譯鍵">13. 翻譯鍵</h2>
+<p>每個語言資料夾底下隨附一份 <code>IG_UI.json</code>，路徑是 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。基礎模組隨附了 十四種：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
+<p>一個品種需要的鍵：</p>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>Where it shows</th>
+<th>鍵</th>
+<th>顯示在哪裡</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>the breed name, everywhere in the mod's interface</td>
+<td>品種名，出現在模組介面各處</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>the description on the animal's card</td>
+<td>動物卡片上的說明</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>the breed name in the game's own screens</td>
+<td>遊戲本身畫面裡的品種名</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>one for each of your three types</td>
+<td>你那三個類型各一個</td>
 </tr>
 <tr>
-<td>your moodle keys</td>
-<td>name and description, if you have a moodle</td>
+<td>你的 moodle 鍵</td>
+<td>名稱與說明，如果你有 moodle</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1009,44 +1009,44 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Two things that will bite you. A <strong>literal percent sign</strong> in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. And a language file with a <strong>byte order mark</strong> does not compile, with an error that names a different file than the broken one.</p>
-<h2 id="14-what-the-save-remembers">14. What the save remembers</h2>
-<p>Three of your identifiers are written into save files and read back forever:</p>
+<p>有兩件事會咬你。翻譯字串裡一個<strong>字面的百分號</strong>會讓顯示它的那個畫面當掉，因為格式化器把它讀成了佔位 符。還有，帶著<strong>位元組順序記號</strong>的語言檔案編譯不過，而且報出來的錯誤點名的是另一個檔案，不是真正壞 掉的那個。</p>
+<h2 id="14-存檔記住的東西">14. 存檔記住的東西</h2>
+<p>你的三個識別字會被寫進存檔檔案，並且從此一直被讀回來：</p>
 <ul>
-<li><code>key</code>, the breed identifier stored on every animal of yours</li>
-<li><code>typePrefix</code>, which forms the animal types the engine stores</li>
-<li><code>suffix</code>, the key of the "already rolled" store, one per spawn step</li>
+<li><code>key</code>，存在你每一隻動物身上的品種識別字</li>
+<li><code>typePrefix</code>，它構成了引擎所儲存的那些動物類型</li>
+<li><code>suffix</code>，「已經抽過了」這份儲存的鍵，每個生成步驟一個</li>
 </ul>
-<p><strong>None of the three can ever be renamed after release.</strong> Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world that had been played for months suddenly fills with your animal.</p>
-<p>The one time that re-roll is useful is when it is the point: CD: Cats gave its four new coats new suffixes on purpose, precisely so that they would start appearing in worlds that were already running, while the original black cat kept its historic suffix and did not re-roll.</p>
-<p><strong>Removing an add-on from a save that has living animals of that breed loses them.</strong> The engine discards an animal whose type it no longer knows. The base does not crash, the bond and the kennel degrade cleanly, but the animal is gone. Say so on your Workshop page, the way every published add-on does.</p>
-<p><strong>An unknown breed degrades instead of failing.</strong> If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
-<h2 id="15-before-you-publish">15. Before you publish</h2>
+<p><strong>這三個在發佈之後都不能再改名。</strong> 改掉一個 <code>key</code>，會讓那個品種所有還活著的動物變成孤兒。改掉一個 <code>suffix</code>，會讓每一份現有存檔裡的每一棟建築重新抽一次，一個玩了好幾個月的世界會突然塞滿你的動物。</p>
+<p>這種重抽唯一有用的時候，就是它本身正是目的：CD: Cats 刻意給牠四種新毛色配了新後綴，正是為了讓牠們在 已經在跑的世界裡開始出現，而原本那隻黑貓保留了自己的歷史後綴，沒有重抽。</p>
+<p><strong>從一份還有該品種活體動物的存檔裡移除附加模組，就等於把牠們弄丟。</strong> 引擎會丟棄自己不再認得其類型的 動物。基礎模組不會當掉，羈絆與狗舍都會乾淨地降級，但那隻動物沒了。像每一個已發佈的附加模組那樣，把 這件事寫在你的創意工坊頁面上。</p>
+<p><strong>未知的品種是降級而不是失敗。</strong> 如果你的附加模組不在，基礎模組面對所有相關的詢問都會退回預設品種， 所以一份沒有你的模組也照樣打得開的存檔是讀得出來的。</p>
+<h2 id="15-發佈之前">15. 發佈之前</h2>
 <ul>
-<li>The guard is on <strong>every</strong> Lua file, and names the API you actually use.</li>
-<li>The base version floor is written in your description, in words. <code>versionMin</code> cannot say it.</li>
-<li>You read the log on first load. <code>CD.registerBreed</code> rejects in silence otherwise, and every rejection prints a named line.</li>
-<li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
-<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you are happy with them forever.</li>
-<li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
-<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, or it barks.</li>
-<li>The moodle icon exists in all six sizes.</li>
-<li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
-<li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
-<li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
+<li>守衛在<strong>每一個</strong> Lua 檔案裡都有，而且寫的是你真正用到的那個 API。</li>
+<li>基礎模組的版本下限用文字寫在你的說明裡。<code>versionMin</code> 說不出這件事。</li>
+<li>你在第一次載入時讀了日誌。否則 <code>CD.registerBreed</code> 會安靜地拒絕，而每一次拒絕都會印出一行點名的紀 錄。</li>
+<li><code>CD.defineDogParts</code> 確實有被呼叫。屠宰一隻你自己的動物，看看不會當。</li>
+<li>你的 <code>key</code>、<code>typePrefix</code> 與生成後綴都是唯一的，而且你願意永遠用下去。</li>
+<li>小型品種設定了 <code>puppySize</code>，而且你親眼看過一隻幼犬來證明這一點。</li>
+<li>如果牠是另一個物種，<code>CD.registerVoices</code> 確實有被呼叫而且 <code>voices</code> 填好了，否則牠會吠。</li>
+<li>moodle 圖示六種尺寸都在。</li>
+<li>你隨附的每個語言資料夾都有全部的鍵。少一個鍵，畫面上就會顯示出光禿禿的鍵名。</li>
+<li>你在多人遊戲裡測過，而不只是單人。位置、歸屬與模組資料在那邊的表現是不一樣的。</li>
+<li>你的創意工坊頁面警告了不要從還有活體動物的存檔裡移除這個附加模組。</li>
 </ul>
-<h2 id="16-common-mistakes">16. Common mistakes</h2>
-<p><strong>"My animal never appears."</strong> Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</p>
-<p><strong>"It appears, but it is frozen."</strong> The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</p>
-<p><strong>"It renders as a black smear and the log floods."</strong> More than 60 bones in the model.</p>
-<p><strong>"Butchering it crashes."</strong> <code>CD.defineDogParts</code> was not called.</p>
-<p><strong>"The puppy is born the size of an adult."</strong> A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</p>
-<p><strong>"Two of my breeds keep turning into each other."</strong> They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</p>
-<p><strong>"The sound plays but ignores the volume slider."</strong> <code>CD.registerVoices</code> was not called for that sound.</p>
-<p><strong>"It works in single player and misbehaves on a server."</strong> Something is writing mod data on the client. Move it to the server.</p>
-<p><strong>"It fought a zombie even though I turned combat off."</strong> The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</p>
+<h2 id="16-常見錯誤">16. 常見錯誤</h2>
+<p><strong>「我的動物從來不出現。」</strong> 幾乎總是守衛：你的附加模組需要一個已安裝的基礎模組沒有的 API，所以牠照 設計處於不動的狀態。拿你的 API 數字和第 2 節的表對一下。</p>
+<p><strong>「牠出現了，但僵住不動。」</strong> 動畫組不是 <code>"raccoon"</code>，或者你的模型缺了片段。兩者都會表現成一隻永遠 站著不動的動物。</p>
+<p><strong>「牠被畫成一團黑色污漬，日誌灌爆。」</strong> 模型的骨頭超過 60 根。</p>
+<p><strong>「屠宰牠會當。」</strong> <code>CD.defineDogParts</code> 沒被呼叫。</p>
+<p><strong>「幼犬一出生就是成年體型。」</strong> 一個沒設定 <code>puppySize</code> 的小型品種。這個值是絕對的，而且每一輪掃描都 會重新套用，所以類型本身的尺寸範圍救不了你。</p>
+<p><strong>「我的兩個品種老是變成對方。」</strong> 牠們共用了 <code>engineBreed</code>。前綴挑的是網格，可以由一個家族共用； <code>engineBreed</code> 挑的是材質，正是它在那個家族內部做區分，所以它必須每個品種唯一。</p>
+<p><strong>「聲音有響，但無視音量滑桿。」</strong> 那個聲音沒有呼叫過 <code>CD.registerVoices</code>。</p>
+<p><strong>「單人裡沒問題，上了伺服器就亂來。」</strong> 有東西在客戶端寫模組資料。把它挪到伺服器端去。</p>
+<p><strong>「我明明關了戰鬥，牠還是跟喪屍打起來了。」</strong> 牠所執行的基礎模組比 API 5 更舊，那時這個欄位還不存 在，於是被安靜地忽略了。這正是守衛必須擋下來、而不是降級的那種情況。</p>
 <hr>
-<p>Something in this manual wrong, or missing? Say so on <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
+<p>這本手冊裡有哪裡寫錯了，或者漏了什麼？歡迎到 <a href="https://discord.gg/ndyTBFSuAT">Discord</a> 上說一聲。</p></article></main>
 </div>
 
 <script>
@@ -1234,12 +1234,12 @@ end</code></pre>
 
   function render(qs){
     if(!hits.length){
-      results.innerHTML='<div class="rnone">No match for <b>'+esc(qs.trim())+'</b>.</div>';
+      results.innerHTML='<div class="rnone">找不到符合的結果： <b>'+esc(qs.trim())+'</b>.</div>';
     }else{
       var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
-             ' results'+'</div>'];
+             ' 個結果'+'</div>'];
       hits.forEach(function(r,i){
-        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Start');
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'開頭');
         h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
                '<span class="rcrumb">'+esc(crumb)+'</span>'+
                '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
