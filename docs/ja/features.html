@@ -274,6 +274,9 @@ td code{background:transparent; border:0; padding:0;}
   main{padding:30px 22px 100px;}
   .other span{display:none;}
   .other{padding:6px 9px;}
+  /* sao dois links cruzados, um por manual irmao. Sem o rotulo eles viram duas pastinhas iguais,
+     que nao dizem para onde levam: aqui fica so o primeiro. */
+  .other + .other{display:none;}
 }
 @media (max-width:760px){
   #menu{display:grid;}
@@ -372,7 +375,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <button class="iconbtn" id="menu" type="button" aria-label="目次を開く" aria-expanded="false" aria-controls="rail">&#9776;</button>
   <a class="brand" href="../index.html" title="ドキュメントのトップページに戻る"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">機能</em>
   <div class="grow"></div>
-  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>犬種マニュアルを見る</span></a>
+  <a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>犬種マニュアルを見る</span></a><a class="other" href="../en/modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mod制作マニュアルを見る</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="マニュアル内を検索…" aria-label="マニュアル内を検索" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
   <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="言語"><optgroup label="校正済み"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="機械翻訳"><option value="es">Español</option><option value="it">Italiano</option><option value="ja" selected>日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="テーマを切り替え">&#9789;</button>

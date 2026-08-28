@@ -274,6 +274,9 @@ td code{background:transparent; border:0; padding:0;}
   main{padding:30px 22px 100px;}
   .other span{display:none;}
   .other{padding:6px 9px;}
+  /* sao dois links cruzados, um por manual irmao. Sem o rotulo eles viram duas pastinhas iguais,
+     que nao dizem para onde levam: aqui fica so o primeiro. */
+  .other + .other{display:none;}
 }
 @media (max-width:760px){
   #menu{display:grid;}
@@ -372,7 +375,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <button class="iconbtn" id="menu" type="button" aria-label="Open contents" aria-expanded="false" aria-controls="rail">&#9776;</button>
   <a class="brand" href="../index.html" title="Back to the documentation home page"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Breeds</em>
   <div class="grow"></div>
-  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Modding manual</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
   <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
   <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
@@ -415,7 +418,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#5-comparison-tables" data-id="5-comparison-tables">5. Comparison tables</a>
+<a class="s2" href="#5-the-cat-the-first-other-species" data-id="5-the-cat-the-first-other-species">5. The cat: the first other species</a>
+<div class="sub">
+<a class="s3" href="#what-it-does-not-do" data-id="what-it-does-not-do">What it does NOT do</a>
+<a class="s3" href="#what-it-does-better-than-any-dog" data-id="what-it-does-better-than-any-dog">What it does better than any dog</a>
+<a class="s3" href="#the-price" data-id="the-price">The price</a>
+<a class="s3" href="#the-five-coats" data-id="the-five-coats">The five coats</a>
+<a class="s3" href="#the-night-gift" data-id="the-night-gift">The night gift</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-comparison-tables" data-id="6-comparison-tables">6. Comparison tables</a>
 <div class="sub">
 <a class="s3" href="#learning-speed" data-id="learning-speed">Learning speed</a>
 <a class="s3" href="#combat" data-id="combat">Combat</a>
@@ -428,7 +441,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#6-moodles-the-complete-list" data-id="6-moodles-the-complete-list">6. Moodles: the complete list</a>
+<a class="s2" href="#7-moodles-the-complete-list" data-id="7-moodles-the-complete-list">7. Moodles: the complete list</a>
 <div class="sub">
 <a class="s3" href="#the-rule-that-applies-to-every-breed-moodle" data-id="the-rule-that-applies-to-every-breed-moodle">The rule that applies to every breed moodle</a>
 <a class="s3" href="#the-breed-moodles" data-id="the-breed-moodles">The breed moodles</a>
@@ -436,14 +449,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#7-traits-the-genes" data-id="7-traits-the-genes">7. Traits (the genes)</a>
+<a class="s2" href="#8-traits-the-genes" data-id="8-traits-the-genes">8. Traits (the genes)</a>
 <div class="sub">
 <a class="s3" href="#reading-the-labels" data-id="reading-the-labels">Reading the labels</a>
 <a class="s3" href="#how-much-this-really-matters" data-id="how-much-this-really-matters">How much this really matters</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#8-mixed-breeds-crossing-different-breeds" data-id="8-mixed-breeds-crossing-different-breeds">8. Mixed breeds: crossing different breeds</a>
+<a class="s2" href="#9-mixed-breeds-crossing-different-breeds" data-id="9-mixed-breeds-crossing-different-breeds">9. Mixed breeds: crossing different breeds</a>
 <div class="sub">
 <a class="s3" href="#what-happens-to-the-puppy" data-id="what-happens-to-the-puppy">What happens to the puppy</a>
 <a class="s3" href="#the-mixed-label" data-id="the-mixed-label">The "Mixed" label</a>
@@ -451,10 +464,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#9-installing-the-addons" data-id="9-installing-the-addons">9. Installing the addons</a>
+<a class="s2" href="#10-installing-the-addons" data-id="10-installing-the-addons">10. Installing the addons</a>
 </div>
 <div class="grp">
-<a class="s2" href="#10-breed-faq" data-id="10-breed-faq">10. Breed FAQ</a>
+<a class="s2" href="#11-breed-faq" data-id="11-breed-faq">11. Breed FAQ</a>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-breed-manual">Companion Dogs: Breed Manual</h1>
@@ -505,12 +518,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>Saddlebag capacity</strong>, except for the Husky, the only one with a breed bonus.</li>
 <li><strong>Body size is not Strength.</strong> They are two separate things, and they are easy to mix up because they travel together. See below.</li>
 </ul>
+<blockquote class="quote"><strong>There is one exception, and it is not a dog.</strong> The <a href="#5-the-cat-the-first-other-species">cat</a> changes an eighth thing that no dog breed touches: <strong>which jobs exist at all</strong>. It does not fight, does not mind livestock and does not breed — the mechanics don't get worse for it, they disappear. As long as you are comparing dogs, the list of seven above holds in full.</blockquote>
 <h3 id="size-and-strength-are-not-the-same-thing">Size and Strength are not the same thing</h3>
 <p><strong>Strength</strong> is a gene and it makes a real difference: it raises bite damage by up to <strong>30%</strong> and it is what sets saddlebag capacity.</p>
 <p><strong>Body size</strong> is something else. It comes from a gene of the game's own, which the mod neither rolls nor touches, plus the puppy's natural growth up to the breed's adult size. Two dogs of the same breed can end up different sizes with no difference in Strength at all, and a dog that is bigger than another one <strong>of the same breed</strong> does not bite harder for it.</p>
 <p>What confuses people is that the <strong>breed</strong> sets both things at once, each on its own track: a German Shepherd is big <strong>and</strong> born strong, a Caramelo is small <strong>and</strong> born weak. So, comparing breed with breed, the bigger dog usually does hit harder. Only the cause is the breed, not the size: looking at how big a dog is tells you nothing about that individual dog's Strength. That is what the Strength bar on the Genetics tab of the dog window is for.</p>
 <h3 id="one-breed-one-look">One breed, one look</h3>
 <p><strong>There is no colour variation inside a breed.</strong> Each breed has exactly one texture, and male and female use the same one. A Husky always looks like the same Husky.</p>
+<p>The <strong>five cats</strong> are no exception, however much they look like one: black, white, orange, calico and tuxedo are <strong>five breeds</strong>, each with its own single texture. It is not one cat that comes in five colours.</p>
 <p>A puppy of any breed is born at the same reduced size, and grows into the adult size of its breed.</p>
 <h2 id="2-quick-pick">2. Quick pick</h2>
 <div class="tw"><table><thead><tr>
@@ -562,8 +577,24 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>Pug</strong>, if you can live with the barking</td>
 </tr>
 <tr>
+<td><strong>To be warned as early as possible, and quietly</strong></td>
+<td><strong>Cat</strong></td>
+</tr>
+<tr>
 <td><strong>To forage more</strong></td>
 <td><strong>Golden Retriever</strong></td>
+</tr>
+<tr>
+<td><strong>To forage at night</strong></td>
+<td><strong>Cat</strong>, and there is no second place</td>
+</tr>
+<tr>
+<td><strong>A companion that does not give away your position</strong></td>
+<td><strong>Cat</strong></td>
+</tr>
+<tr>
+<td><strong>To clear out rats and mice</strong></td>
+<td><strong>Cat</strong></td>
 </tr>
 <tr>
 <td><strong>To not die of cold</strong></td>
@@ -611,6 +642,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>Pug</strong></td>
 <td>The house dog. No use at all out there, and the best company there is</td>
 </tr>
+<tr>
+<td><strong>Cat</strong></td>
+<td>Not a dog. Doesn't fight, doesn't breed, doesn't mind a pen: watches further than any of them, in silence, and sees in the dark for you</td>
+</tr>
 </tbody></table></div>
 <h2 id="3-the-five-breeds-in-the-base-mod">3. The five breeds in the base mod</h2>
 <p>These come with the main mod, nothing else to install.</p>
@@ -618,7 +653,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="caramelo">Caramelo</h3>
 <p><strong>The Brazilian street mutt.</strong> This is the first dog you will run into, and probably your first companion.</p>
 <blockquote class="quote quote-game"><em>"The caramelo is a basic, everyday breed, the mongrel you find all over the cities. It has no special skills and is weak by nature: it can't kill a zombie on its own, only knock one down to buy you time."</em></blockquote>
-<p><strong>Where to find it:</strong> residential houses, in towns and neighbourhoods. <strong>20% per house</strong>, the most common breed in the game.</p>
+<p><strong>Where to find it:</strong> residential houses, in towns and neighbourhoods. <strong>10% per house</strong>, the most common breed in the game.</p>
 <p><strong>Learns:</strong> everything at normal speed. Nothing it stands out at, and nothing it is bad at.</p>
 <p><strong>In a fight:</strong> it is the <strong>only dog that cannot finish a zombie off</strong>. Its bite pins the zombie just short of dead and stops there. That is deliberate and <strong>no sandbox setting changes it</strong>. What it does do is <strong>knock them down</strong>, and a zombie on the ground is exactly what buys you the time to run or swing.</p>
 <p>It is also the <strong>most nervous dog in the mod</strong>: it builds combat stress five times faster than a German Shepherd, and it is the first one to panic.</p>
@@ -648,7 +683,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="golden-retriever">Golden Retriever</h3>
 <p><strong>The gun dog with the fine nose.</strong> The breed that improves your foraging.</p>
 <blockquote class="quote quote-game"><em>"A friendly, keen-nosed gun dog and a natural hunter: it learns Hunting twice as fast and can bring a zombie down on its own (though it frays more easily than the German Shepherd). Its nose helps you forage and track game from farther away."</em></blockquote>
-<p><strong>Where to find it:</strong> residential houses, on a roll separate from the Caramelo. <strong>5% per house.</strong> Four times rarer than the mutt, but in the same houses: one house can have both.</p>
+<p><strong>Where to find it:</strong> residential houses, on a roll separate from the Caramelo. <strong>2.5% per house.</strong> Four times rarer than the mutt, but in the same houses: one house can have both.</p>
 <p><strong>Learns:</strong> <strong>Hunting at double speed</strong>, and Scent 50% faster. It is the breed that reaches Hunting level 6 earliest, which is when a dog starts taking on deer.</p>
 <p><strong>In a fight:</strong> average damage, <strong>kills on its own</strong>. It frays more than the Shepherd, less than the Caramelo.</p>
 <p><strong>Traits:</strong> a bit above the Caramelo, below the Shepherd. This is not a fighting dog.</p>
@@ -670,7 +705,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <blockquote class="quote quote-game"><em>"A hardy northern sled dog: by far the strongest breed, built to haul cargo (its saddlebag carries the most) and to survive the cold. Stubborn (slower to learn Obedience), friendly (a poor guard) and a big eater."</em></blockquote>
 <p><strong>Where to find it:</strong> two sources.</p>
 <ul>
-<li><strong>Residential houses, in winter only.</strong> 2.5% per house. The rarest breed in the game out of season.</li>
+<li><strong>Residential houses, in winter only.</strong> 1.25% per house. The rarest breed in the game out of season.</li>
 <li><strong>Pet shops and vet clinics.</strong> 10% per building, all year round. This is the reliable way to get one.</li>
 </ul>
 <p><strong>Learns:</strong> <strong>Scent at double speed</strong> (the best sentinel in the mod), Hunting 50% faster, and Combat a little above average. <strong>But it learns Obedience 20% more slowly</strong>, and that is <strong>the only breed penalty in the whole mod</strong>. It is deliberate: the dog is stubborn.</p>
@@ -716,7 +751,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Who it is for:</strong> anyone building a farm. If you keep cows, sheep or chickens, this is the breed that protects your output.</p>
 <blockquote class="quote"><strong>Note:</strong> the in-game description still says it <span class="ig">is a balanced all-rounder with no standout specialty</span>. That is out of date: the doubled Herding and the stronger aura are already in.</blockquote>
 <h2 id="4-the-four-addon-breeds">4. The four addon breeds</h2>
-<p>These come as <strong>separate mods on Steam</strong> that depend on the base Companion Dogs. The link for each one is in its entry below, and all of them together in <a href="#9-installing-the-addons">Installing the addons</a>.</p>
+<p>These come as <strong>separate mods on Steam</strong> that depend on the base Companion Dogs. The link for each one is in its entry below, and all of them together in <a href="#10-installing-the-addons">Installing the addons</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, separate addon)</em></p>
@@ -725,7 +760,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Where to find it:</strong></p>
 <ul>
 <li><strong>Industrial building</strong> (warehouse, shed, factory, junkyard, workshop, loading dock): <strong>10% per building</strong>.</li>
-<li><strong>Residential house:</strong> 5% per house, a rare chance.</li>
+<li><strong>Residential house:</strong> 2.5% per house, a rare chance.</li>
 </ul>
 <p><strong>Learns:</strong> <strong>Combat at double speed</strong>, and Scent 50% faster (the only fighting dog with a good nose). It gets no Obedience bonus.</p>
 <p><strong>In a fight:</strong> it ties with the German Shepherd on bite, and <strong>ties on nerve</strong>: it builds stress five times slower than the mutt and its panic point sits at the maximum. It knocks down and it kills.</p>
@@ -770,7 +805,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <blockquote class="quote quote-game"><em>"A hunting dog built to bring it back: it trains Hunting twice as fast, with Obedience close behind. By design it is the worst fighter in the family: the weakest bite, no knockdown, and a brawl leaves it badly rattled. Its gift is its mouth."</em></blockquote>
 <p><strong>Where to find it:</strong></p>
 <ul>
-<li><strong>Residential house:</strong> <strong>10% per house.</strong> It is the easiest addon to find, double the Golden's chance.</li>
+<li><strong>Residential house:</strong> <strong>5% per house.</strong> It is the easiest addon to find, double the Golden's chance.</li>
 <li><strong>Out in the wild:</strong> hunting cabin, campsite, boathouse, fishing spot, ranger station. <strong>20% per building.</strong></li>
 </ul>
 <p><strong>Learns:</strong> <strong>Hunting at double speed</strong> and <strong>Obedience 50% faster</strong>. It is the hunter package with discipline.</p>
@@ -800,7 +835,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <blockquote class="quote quote-game"><em>"The house dog: the first companion whose worth is not fighting, hunting, herding or hauling. It trains Obedience twice as fast as any other breed, and its bond never fades on its own."</em></blockquote>
 <p><strong>Where to find it:</strong></p>
 <ul>
-<li><strong>Residential house:</strong> <strong>10% per house</strong>, as easy as the Labrador. It is the house dog, after all.</li>
+<li><strong>Residential house:</strong> <strong>5% per house</strong>, as easy as the Labrador. It is the house dog, after all.</li>
 <li><strong>Pet shop and vet:</strong> <strong>12% per building</strong>, the same spot as the Husky.</li>
 </ul>
 <p><strong>It learns:</strong> <strong>Obedience at double speed</strong>, faster than any other breed in the mod, with <strong>Scent 50% faster</strong> and Hunting at 20%. It climbs the trick tree (go to a spot, distract zombies, sniff out an item, fetch it while you sleep) ahead of anything else you can own.</p>
@@ -830,7 +865,126 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li><strong>The moodle disappears in the heat.</strong> Above 28 °C it leaves the HUD until the dog finds somewhere cool. That is deliberate: you notice the breed problem without reading anything.</li>
 </ul>
 <p><strong>Who it is for:</strong> for base play, for a long run, and for anyone tired of losing loyalty by staying away too long. Take a guard dog along if you are leaving town.</p>
-<h2 id="5-comparison-tables">5. Comparison tables</h2>
+<h2 id="5-the-cat-the-first-other-species">5. The cat: the first other species</h2>
+<p><em>(mod <strong>CD: Cats</strong>, separate addon)</em></p>
+<p>Every breed up to here is a dog, and the difference between them is <strong>how much</strong> of each thing they do. The cat is the first real exception: what defines it is not having worse numbers, it is <strong>not having some of the jobs</strong>.</p>
+<blockquote class="quote quote-game"><em>"Not a dog with worse numbers: an animal that simply does not have some of the jobs. A cat never fights the dead, is never posted to a pen, and does not breed. It hunts mice and rats, and leaves rabbits, raccoons and deer alone. What it gives you instead is warning: it notices the dead further out than any other companion, and it is quiet about everything else."</em></blockquote>
+<h3 id="what-it-does-not-do">What it does NOT do</h3>
+<p>This is not weakness, it is absence. The mechanics do not exist for it, and the interface goes with them: you will not find the button greyed out, you will not find the button.</p>
+<div class="tw"><table><thead><tr>
+<th>What</th>
+<th>What disappears</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Does not fight</strong></td>
+<td>No Combat in the window, no <strong>Guard</strong> mode, no auto-protection. It will not attack a zombie even while you are being mauled in front of it</td>
+</tr>
+<tr>
+<td><strong>Does not mind livestock</strong></td>
+<td>No Herding, and the <strong>Tend livestock</strong> mode never appears in the menu</td>
+</tr>
+<tr>
+<td><strong>Does not breed</strong></td>
+<td>No heat, no pregnancy, no kittens. A cat will not breed with a dog or with another cat</td>
+</tr>
+<tr>
+<td><strong>Hunts nothing bigger than a rodent</strong></td>
+<td>Rabbits, raccoons and deer are <strong>invisible</strong> to it: it will not even point, let alone give chase</td>
+</tr>
+</tbody></table></div>
+<p><strong>Its prey is mice, rats and squirrels.</strong> Short on variety and long on competence: since no dog in the mod is limited to rodents, the cat is the <strong>best rat hunter there is</strong> without taking anything away from the Labrador or the Golden.</p>
+<h3 id="what-it-does-better-than-any-dog">What it does better than any dog</h3>
+<p><strong>It warns you before anyone else.</strong> With no fighting left over, warning <strong>is</strong> the job, and the cat has the longest sentinel range in the mod:</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Scent 0</th>
+<th>Scent 10</th>
+</tr></thead><tbody>
+<tr>
+<td>Ordinary dog</td>
+<td>18 tiles</td>
+<td>27 tiles</td>
+</tr>
+<tr>
+<td>Pug</td>
+<td>24 tiles</td>
+<td>36 tiles</td>
+</tr>
+<tr>
+<td><strong>Cat</strong></td>
+<td><strong>25 tiles</strong></td>
+<td><strong>38 tiles</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>And it is the quietest.</strong> The noise its meow spreads is <strong>half</strong> a dog's and <strong>a third</strong> of the Pug's bark. The Pug warns you early and gives away your position doing it; the cat warns you earlier still and stays quiet. It is the only companion in the mod that does both.</p>
+<p><strong>It learns Hunting at double speed</strong>, tied with the Golden and the Labrador, and <strong>Scent 50% faster</strong>.</p>
+<h3 id="the-price">The price</h3>
+<p><strong>It is the most stubborn animal in the mod.</strong> Obedience at <strong>0.7</strong> — the steepest learning penalty there is, worse than the Husky's 0.8, which until now was the only one. It does unlock all four tricks, but it gets there <strong>well after</strong> any dog.</p>
+<p><strong>And the most independent.</strong> Its bond fades <strong>50% faster</strong> than a dog's when you disappear or slack off on care. It is the exact opposite of the Pug, whose bond never fades at all. A cat demands presence.</p>
+<p><strong>Saddlebag of 2, full stop.</strong> It is not a range like the other breeds: the maths works out to <strong>2 for any cat</strong>, however strong it is born. Small animal.</p>
+<p><strong>Nervous.</strong> It has the second worst hidden stress gene in the mod, behind only the Caramelo. It does not fight, so this never shows up in combat — it shows up as fright: loud noise, shouting, injury. A panicking cat <strong>stops keeping watch and stops bringing the gift</strong>.</p>
+<p><strong>It does not lie down.</strong> On Stay, the cat stays on its feet. Cosmetic only, it changes nothing.</p>
+<p><strong>Traits:</strong> tied with the Pug for the <strong>smallest Strength range in the mod</strong>, with Aggressiveness and Resistance just as low. There is no such thing as a strong cat, and that is not puppy bad luck.</p>
+<h3 id="the-five-coats">The five coats</h3>
+<p>Black, white, orange, calico and tuxedo. To the mod they are <strong>five breeds</strong> — their own name, their own entry in the spawn menu and in the kennel — and for every practical purpose they are the <strong>same animal</strong>: same skills, same moodle, same voice, same trait ranges. The coat is <strong>appearance only</strong>.</p>
+<p><strong>Which coat you find is luck.</strong> Each one rolls for its own building, independently. They already come in with the chance divided by five, so the total amount of cat in the world is the same as when only the black one existed: five coats do not give you five times the cats.</p>
+<p><strong>Where to find them:</strong> <strong>1% per residential house</strong> and <strong>2.4% per pet shop or vet clinic</strong>, per coat. A cat is an indoors animal: when it turns up in a house, it is <strong>inside</strong> it, not in the yard.</p>
+<h3 id="the-night-gift">The night gift</h3>
+<p><strong>The most hidden mechanic the cat has.</strong> You wake up, and there is a dead animal at your feet.</p>
+<p>The cat <span class="ig">goes out</span> while you sleep and leaves the prey. There is no chase and nothing dies in the world — which is why the gift <strong>keeps working even with Hunting switched off</strong> in the sandbox options.</p>
+<p><strong>How it fires:</strong> on <strong>waking up from sleep</strong>, with the cat <strong>8 tiles or closer</strong>. Same radius as <span class="ig">Well Rested</span>, and for the same reason: whoever went out at night was the cat that was with you.</p>
+<p><strong>The chance is its Hunting</strong>, and it closes into certainty at the top:</p>
+<div class="tw"><table><thead><tr>
+<th>Hunting</th>
+<th>Chance of a gift</th>
+</tr></thead><tbody>
+<tr>
+<td>0</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>54.5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>67.5%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>87%</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>At level 10 there is no roll: it brings one every day.</strong></p>
+<p><strong>Hunting also decides WHAT arrives.</strong> It is not just frequency — the whole list inverts:</p>
+<div class="tw"><table><thead><tr>
+<th>Hunting</th>
+<th>What usually turns up</th>
+</tr></thead><tbody>
+<tr>
+<td>Low</td>
+<td>Worm, cricket, grasshopper, cockroach. Whatever any animal finds standing still</td>
+</tr>
+<tr>
+<td>High</td>
+<td><strong>Mice and rats</strong> become the common case, with frogs and centipedes in between</td>
+</tr>
+</tbody></table></div>
+<p>The difference is worth having: a worm is 3 calories, a rat is 324 and takes 22 off your hunger on top. And a frog doubles as fishing bait.</p>
+<p><strong>Once per day, per owner.</strong> With two cats nearby you get <strong>one</strong> gift, not two.</p>
+<p><strong>It gains Hunting XP every time the delivery succeeds</strong> — and that is how a well-kept cat trains itself up to the level where it never fails again.</p>
+<p><strong>When nothing turns up:</strong> a cat with <strong>hunger or thirst at 75% or more</strong>, sick, disobedient or panicking does not go out. It fails silently, with no message on screen. If the gifts stopped, check its bars.</p>
+<blockquote class="quote"><strong>This is not the <span class="ig">fetch while you sleep</span> trick</strong> (Obedience 10), which brings an <strong>item off the ground</strong>. Both fire on waking and they do not compete: a cat with Obedience 10 does <strong>both</strong> on the same morning.</blockquote>
+<p><strong>Moodle: <span class="ig">Cat's Eyes</span></strong></p>
+<blockquote class="quote quote-game"><em>"Your cat sees what you cannot. While it is fed, watered and bonded to you, the dark stops hiding what you are searching for: foraging at night works close to how it does by day."</em></blockquote>
+<p><strong>Foraging in the dark stops being pointless.</strong> In pitch dark the game drops your foraging range to <strong>1.5 tiles</strong> — in practice you have to be standing on top of the icon to see it. With the cat nearby, the small hours come up to roughly <strong>60% of the range you would have by day</strong>.</p>
+<p>Note that this is a <strong>step, not a gradual increase</strong>: without a cat you are on the wrong side of the cut-off and barely forage at night; with one you cross over to the other side. It is the difference between working and not working.</p>
+<p><strong>Who it is for:</strong> for anyone who plays the small hours, for anyone who wants the earliest possible warning without announcing their own position, and for anyone with rats in the house. It is <strong>not</strong> for anyone who wants a guard: take a dog along if you are leaving town.</p>
+<h2 id="6-comparison-tables">6. Comparison tables</h2>
 <h3 id="learning-speed">Learning speed</h3>
 <p>The higher the number, the faster it learns. <strong>1.0 is normal speed.</strong></p>
 <div class="tw"><table><thead><tr>
@@ -913,8 +1067,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.2</td>
 <td>1.0</td>
 </tr>
+<tr>
+<td>Cat</td>
+<td>1.5</td>
+<td>—</td>
+<td><strong>0.7</strong></td>
+<td><strong>2.0</strong></td>
+<td>—</td>
+</tr>
 </tbody></table></div>
-<p>The Husky's <strong>0.8</strong> is the only breed penalty in the whole mod.</p>
+<p>The dash on the Cat does not mean <span class="ig">learns slowly</span>, it means <strong>the skill does not exist</strong>: Combat and Herding are not there for it and never appear in its window.</p>
+<p>The only two breed penalties in the mod are the Husky's <strong>0.8</strong> and the Cat's <strong>0.7</strong>, which is the steeper of the two.</p>
 <h3 id="combat">Combat</h3>
 <div class="tw"><table><thead><tr>
 <th>Breed</th>
@@ -988,6 +1151,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <p>The Doberman reaches the top, but it starts from much lower: it begins with about <strong>two thirds</strong> of a Rottweiler's bite and only catches up at level 10.</p>
+<p><strong>The Cat is not in this table</strong>, and not because it is the weakest: it <strong>does not fight</strong>. There is no bite, there is no Guard mode, and it does not react to zombies even while you are being hit next to it.</p>
 <h3 id="nerve-in-a-fight">Nerve in a fight</h3>
 <p>The <strong>lower</strong> the number, the cooler the dog stays in a fight.</p>
 <div class="tw"><table><thead><tr>
@@ -1042,6 +1206,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <p>A dog that panics <strong>stops fighting, stops keeping watch and stops doing tricks</strong>. That is why this table matters as much as the damage: a hard bite is worth little if the dog freezes first.</p>
+<p><strong>The Cat is not here either</strong>, because it does not fight. But it <strong>does panic</strong>, and this is worth knowing: it has the <strong>second worst hidden stress gene in the mod</strong>, behind only the Caramelo. Since fighting is not what stresses it, what is left is fright — loud noise, shouting, injury, neglect. And a panicking cat <strong>stops keeping watch and stops bringing the night gift</strong>.</p>
 <h3 id="traits-birth-ranges">Traits (birth ranges)</h3>
 <p>The higher the range, the better the dog can be born. A value below 0.34 shows up as <strong>Low</strong> in the window, above 0.66 as <strong>High</strong>, and anything in between as <strong>Average</strong>.</p>
 <div class="tw"><table><thead><tr>
@@ -1054,6 +1219,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Pug</td>
 <td><strong>0.00 to 0.10</strong></td>
 <td>0.05 to 0.20</td>
+<td><strong>0.00 to 0.15</strong></td>
+</tr>
+<tr>
+<td>Cat</td>
+<td><strong>0.00 to 0.10</strong></td>
+<td><strong>0.00 to 0.15</strong></td>
 <td><strong>0.00 to 0.15</strong></td>
 </tr>
 <tr>
@@ -1109,6 +1280,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <ul>
 <li><strong>The Caramelo always shows <span class="ig">Low</span> in all three.</strong> There is no such thing as a good Caramelo.</li>
 <li><strong>So does the Pug</strong>, and its Strength range is smaller still. There is no such thing as a strong Pug.</li>
+<li><strong>The Cat ties the Pug for the smallest Strength in the mod.</strong> There is no such thing as a strong cat, and that is why its saddlebag is always 2.</li>
 <li><strong>The Husky is the only one that usually shows <span class="ig">High</span> in Strength.</strong></li>
 <li><strong>Aggressiveness always comes out <span class="ig">Low</span></strong> on the Golden, the Husky and the Labrador. That is how they are, not bad luck.</li>
 <li>The Golden and the Doberman also land on <span class="ig">Low</span> quite often in Strength and Resistance.</li>
@@ -1119,6 +1291,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Breed</th>
 <th>Cargo</th>
 </tr></thead><tbody>
+<tr>
+<td><strong>Cat</strong></td>
+<td><strong>2</strong> (fixed)</td>
+</tr>
 <tr>
 <td><strong>Pug</strong></td>
 <td><strong>2 to 3</strong></td>
@@ -1140,6 +1316,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>13 to 16</strong></td>
 </tr>
 </tbody></table></div>
+<p>The Cat is the only one with no range: the maths works out to <strong>2 for any cat</strong>, however strong it is born.</p>
 <h3 id="litter-size">Litter size</h3>
 <div class="tw"><table><thead><tr>
 <th>Mother's breed</th>
@@ -1163,6 +1340,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 </tbody></table></div>
 <p>Litter size follows the <strong>mother's breed</strong>, not the father's.</p>
+<p><strong>The Cat does not breed</strong>, so it has no row here: there is no heat, no pregnancy and no kitten is ever born. A cat only enters your game through the world, never through your breeding.</p>
 <h3 id="where-to-find-each-breed">Where to find each breed</h3>
 <div class="tw"><table><thead><tr>
 <th>Breed</th>
@@ -1170,9 +1348,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <th>Chance</th>
 </tr></thead><tbody>
 <tr>
-<td>Caramelo</td>
-<td>Residential house</td>
-<td>20%</td>
+<td>Doberman</td>
+<td>Military building</td>
+<td>22%</td>
 </tr>
 <tr>
 <td>German Shepherd</td>
@@ -1180,9 +1358,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>20%</td>
 </tr>
 <tr>
-<td>Doberman</td>
-<td>Military building</td>
-<td>22%</td>
+<td>Labrador</td>
+<td>Hunting cabin, campsite, boathouse, ranger station</td>
+<td>20%</td>
 </tr>
 <tr>
 <td>Doberman</td>
@@ -1195,24 +1373,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>15%</td>
 </tr>
 <tr>
-<td>Labrador</td>
-<td>Hunting cabin, campsite, boathouse, ranger station</td>
-<td>20%</td>
-</tr>
-<tr>
-<td>Labrador</td>
-<td>Residential house</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>Pug</td>
-<td>Residential house</td>
-<td>10%</td>
-</tr>
-<tr>
 <td>Pug</td>
 <td>Pet shop, vet</td>
 <td>12%</td>
+</tr>
+<tr>
+<td>Caramelo</td>
+<td>Residential house</td>
+<td>10%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1225,22 +1393,43 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>10%</td>
 </tr>
 <tr>
-<td>Golden Retriever</td>
+<td>Labrador</td>
 <td>Residential house</td>
 <td>5%</td>
+</tr>
+<tr>
+<td>Pug</td>
+<td>Residential house</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Residential house</td>
+<td>2.5%</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
 <td>Residential house</td>
-<td>5%</td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>Cat</strong></td>
+<td>Pet shop, vet</td>
+<td><strong>2.4%</strong> per coat</td>
 </tr>
 <tr>
 <td>Husky</td>
 <td>Residential house, <strong>winter only</strong></td>
-<td>2.5%</td>
+<td>1.25%</td>
+</tr>
+<tr>
+<td><strong>Cat</strong></td>
+<td>Residential house</td>
+<td><strong>1%</strong> per coat</td>
 </tr>
 </tbody></table></div>
 <p>All of them scale with the sandbox option <strong><span class="ig">Dog spawn rate multiplier</span></strong>.</p>
+<p>The cat's five coats each roll <strong>on their own</strong>, which is why the chance for any single one is so low: added up, they come to the same amount of cat a single breed would give. What changes is <strong>which</strong> coat you find.</p>
 <p>Remember: the decision is made <strong>once per building</strong> and it stays saved. Going back to a place you already explored will not produce a new dog.</p>
 <h3 id="internal-breed-names">Internal breed names</h3>
 <p>Spawn mods and debug mode ask for the dog's <strong>internal name</strong>, which is not the name shown on screen. Here they are:</p>
@@ -1314,9 +1503,45 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>pugpup</code></td>
 <td><code>pug</code></td>
 </tr>
+<tr>
+<td>Black Cat</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat</code></td>
+</tr>
+<tr>
+<td>White Cat</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_white</code></td>
+</tr>
+<tr>
+<td>Orange Cat</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_orange</code></td>
+</tr>
+<tr>
+<td>Calico Cat</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_calico</code></td>
+</tr>
+<tr>
+<td>Tuxedo Cat</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_tuxedo</code></td>
+</tr>
 </tbody></table></div>
-<p>Male and female are <strong>different types</strong>, not an option of the same type. The last four rows only exist if that breed's addon is installed.</p>
-<h2 id="6-moodles-the-complete-list">6. Moodles: the complete list</h2>
+<p>Male and female are <strong>different types</strong>, not an option of the same type. The five addon breeds only exist if that breed's addon is installed.</p>
+<p><strong>The five cat coats share the same type</strong> (<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>) and are told apart only by <code>breed</code>, because the model is the same and only the texture changes. Note that here the <code>breed</code> takes an underscore (<code>cat_white</code>), unlike the rest of the mod.</p>
+<h2 id="7-moodles-the-complete-list">7. Moodles: the complete list</h2>
 <p>Dog moodles show up in <strong>a column of their own, to the left of your normal moodles</strong>.</p>
 <h3 id="the-rule-that-applies-to-every-breed-moodle">The rule that applies to every breed moodle</h3>
 <p>The bonus <strong>only exists</strong> if <strong>all</strong> of these are true:</p>
@@ -1403,6 +1628,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Pug</td>
 <td>Drops <strong>Unhappiness, Boredom and Stress</strong>, and faster than any other dog. <strong>Switches off in the heat</strong></td>
 </tr>
+<tr>
+<td><strong>Cat's Eyes</strong></td>
+<td>Cat</td>
+<td><strong>Foraging in the dark stops being pointless</strong>: the small hours come up to about 60% of daytime range, against 1.5 tiles without it</td>
+</tr>
 </tbody></table></div>
 <h3 id="the-moodles-any-breed-gives">The moodles any breed gives</h3>
 <div class="tw"><table><thead><tr>
@@ -1433,7 +1663,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tbody></table></div>
 <p><strong><span class="ig">Well Rested</span> is the only one that doesn't depend on the dog staying close.</strong> It is a timer: once it is on, it lasts the full two hours even if you walk away. And it doesn't go through the care filter, so it works even with a mistreated dog. It is <strong>always</strong> worth sleeping next to your dog.</p>
 <p>The three warnings (hungry, thirsty, intoxicated) also ignore the care filter, which makes sense: they exist precisely to tell you the dog is <strong>not</strong> doing well.</p>
-<h2 id="7-traits-the-genes">7. Traits (the genes)</h2>
+<h2 id="8-traits-the-genes">8. Traits (the genes)</h2>
 <p>Beyond the breed, every dog has <strong>three traits</strong> shown in its window, in the <strong><span class="ig">Traits</span></strong> section. They are rolled <strong>the moment you tame the dog</strong>, within the breed's range, and they <strong>never change</strong>.</p>
 <blockquote class="quote quote-game"><em>"Inborn genes, fixed for life, rolled when the dog is tamed and varying from one to the next. Unlike skills they never change with training; they are the raw nature this dog was born with."</em></blockquote>
 <div class="tw"><table><thead><tr>
@@ -1476,8 +1706,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="how-much-this-really-matters">How much this really matters</h3>
 <p>The genes move damage and combat XP by <strong>up to 15% either way</strong>, and stress resistance by up to 10 percentage points. <strong>The breed counts for far more than the gene.</strong></p>
 <p>The exception is the <strong>saddlebag</strong>: there the Strength gene is the main factor, and the difference between a weak dog and a strong one of the same breed is real.</p>
-<p><strong>There is no way to train a gene.</strong> The only way to improve them is to <a href="#8-mixed-breeds-crossing-different-breeds">cross dogs</a>.</p>
-<h2 id="8-mixed-breeds-crossing-different-breeds">8. Mixed breeds: crossing different breeds</h2>
+<p><strong>There is no way to train a gene.</strong> The only way to improve them is to <a href="#9-mixed-breeds-crossing-different-breeds">cross dogs</a>.</p>
+<h2 id="9-mixed-breeds-crossing-different-breeds">9. Mixed breeds: crossing different breeds</h2>
 <p>When a male and a female of different breeds have puppies, you get a <strong>mixed breed</strong>.</p>
 <h3 id="what-happens-to-the-puppy">What happens to the puppy</h3>
 <p><strong>The lineage is the average of the parents.</strong> Caramelo with German Shepherd gives a 50/50 puppy. Crossing that puppy with a pure German Shepherd gives 25% Caramelo, 75% German Shepherd. And so on, generation after generation.</p>
@@ -1511,8 +1741,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Use a <strong>Caramelo as the mother</strong> (2 to 4 per litter)</td>
 </tr>
 </tbody></table></div>
-<h2 id="9-installing-the-addons">9. Installing the addons</h2>
-<p>Rottweiler, Doberman, Labrador and Pug are <strong>separate mods on Steam</strong>. Each one:</p>
+<h2 id="10-installing-the-addons">10. Installing the addons</h2>
+<p>Rottweiler, Doberman, Labrador, Pug and the cat are <strong>separate mods on Steam</strong>. Each one:</p>
 <ul>
 <li><strong>Requires the base Companion Dogs installed and enabled.</strong></li>
 <li>Adds <strong>one breed</strong>, with its own model, texture, moodle and spawn locations.</li>
@@ -1543,25 +1773,37 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">subscribe</a></td>
 <td><strong>0.6.8 or newer</strong></td>
 </tr>
+<tr>
+<td><strong>CD: Cats</strong></td>
+<td><em>(not published yet)</em></td>
+<td><strong>0.7.0 or newer</strong></td>
+</tr>
 </tbody></table></div>
 <p>And the base mod, if you don't have it yet: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
 <p>If the base is too old, the addon <strong>simply does nothing</strong>: no error, no crash, the breed just does not exist. If you installed the Labrador and never find one, <strong>check the base version first</strong>.</p>
 <blockquote class="quote"><strong>Don't remove an addon from a save that still has live dogs of that breed.</strong> The dog loses the model and the texture it refers to.</blockquote>
 <p>Installing an addon <strong>changes nothing about the breeds you already have</strong>. The new breeds join the breeding and mixing draws automatically.</p>
-<h2 id="10-breed-faq">10. Breed FAQ</h2>
+<h2 id="11-breed-faq">11. Breed FAQ</h2>
 <p><strong><span class="ig">Which breed is the best?</span></strong> Depends on what you do. For <strong>combat</strong>, German Shepherd or Rottweiler. For <strong>hunting</strong>, Labrador. For <strong>cargo</strong>, Husky. For <strong>the farm</strong>, Border Collie. For <strong>firearms</strong>, Doberman. And the <strong>Caramelo</strong> is still excellent for its moodle, even being the weakest one.</p>
 <p><strong><span class="ig">Can my Caramelo get strong with training?</span></strong> No. It will never kill a zombie, no matter how much you train it, and its traits are the worst by definition. What training improves is Obedience, Scent and Hunting, and in those it goes just as far as any other dog.</p>
 <p><strong><span class="ig">I found two dogs of the same breed, which one do I take?</span></strong> You <strong>have no way of knowing beforehand</strong>: the roll happens at the moment of taming. Tame it and look at the <strong><span class="ig">Traits</span></strong> section in the window.</p>
-<p><strong><span class="ig">I got a dog with bad traits. Do I release it and tame it again?</span></strong> <strong>That won't help.</strong> The genes are rolled <strong>once only, on the first taming</strong>, and the dog keeps them forever, even after being released and tamed again (just like it keeps its skills). To try another roll you need to <strong>tame a different dog</strong>. To improve for real over time, the way is to <a href="#8-mixed-breeds-crossing-different-breeds">cross them</a>.</p>
+<p><strong><span class="ig">I got a dog with bad traits. Do I release it and tame it again?</span></strong> <strong>That won't help.</strong> The genes are rolled <strong>once only, on the first taming</strong>, and the dog keeps them forever, even after being released and tamed again (just like it keeps its skills). To try another roll you need to <strong>tame a different dog</strong>. To improve for real over time, the way is to <a href="#9-mixed-breeds-crossing-different-breeds">cross them</a>.</p>
 <p><strong><span class="ig">Can I have two breed moodles at the same time?</span></strong> No. Only the <strong>closest dog</strong> counts. <strong><span class="ig">Well Rested</span></strong> is the exception, because it doesn't depend on proximity.</p>
 <p><strong><span class="ig">Why did the moodle disappear?</span></strong> Almost always hunger or thirst above 75%, or loyalty having dropped below the floor. Feed it, give it water and pet it. Also check that the dog is <strong>8 tiles or less away and on the same floor</strong>.</p>
 <p><strong><span class="ig">Is any breed faster?</span></strong> No. No breed runs faster than another.</p>
-<p><strong><span class="ig">Is there a Husky in another color?</span></strong> No. Each breed has a single texture, and males and females use the same one.</p>
+<p><strong><span class="ig">Is there a Husky in another color?</span></strong> No. Each breed has a single texture, and males and females use the same one. The cat looks like it contradicts this with five coats, but those are five separate <strong>breeds</strong>, not one multicoloured cat.</p>
 <p><strong><span class="ig">Do big dogs hit harder?</span></strong> No. Size is purely visual. The link between body size and Strength was turned off on purpose.</p>
 <p><strong><span class="ig">Where do I find a Doberman?</span></strong> <strong>Police stations.</strong> The chance in a military building is higher on paper, but there is almost no military building on the game's base map.</p>
 <p><strong><span class="ig">I installed the Labrador and can't find any.</span></strong> Check your Companion Dogs base version: the Labrador <strong>requires 0.6.6 or newer</strong> and stays invisible and silent on an old base. Also check whether you have already explored the houses around there: the spawn decision is <strong>one per building, forever</strong>.</p>
 <p><strong><span class="ig">My mixed dog doesn't have the moodle of both breeds.</span></strong> That is expected. A mixed dog is, mechanically, <strong>the breed it looks like</strong>. The mixing only changes the gene range of its descendants and the percentage label in the window.</p>
-<p><strong><span class="ig">I want to spawn a dog with another mod, which name do I use?</span></strong> The internal name, not the one shown on screen. The list is in <a href="#5-comparison-tables">Comparison tables</a>, at the end of the section.</p></article></main>
+<p><strong><span class="ig">Is a cat better than a dog?</span></strong> Neither better nor worse: it does something else. It watches further than any dog and in silence, and it is the only companion that fixes night foraging. In exchange it does not fight, does not breed and carries nothing. A cat <strong>does not replace</strong> a guard dog; it fills a place no dog was filling.</p>
+<p><strong><span class="ig">Why can't I put my cat on Guard?</span></strong> Because the mode does not exist for it, which is why the button isn't there at all. A cat has no Combat: it does not guard, does not protect you and will not attack a zombie even while you are being hit beside it. This is not adjustable.</p>
+<p><strong><span class="ig">My cat ignores a rabbit standing right in front of it.</span></strong> That's correct. The cat's hunting ceiling is <strong>rodents</strong>: mice, rats and squirrels. Rabbits, raccoons and deer are <strong>invisible</strong> to it — it will not even point. For real hunting, the dog is a Labrador or a Golden.</p>
+<p><strong><span class="ig">How do I get kittens?</span></strong> You don't. Cats do not breed, with dogs or with other cats. Every cat in your game came from the world.</p>
+<p><strong><span class="ig">Do the five coats have different numbers?</span></strong> No, none at all. Same skills, same moodle, same trait ranges, same voice. The coat is appearance only, and which one you find is luck.</p>
+<p><strong><span class="ig">My cat went disobedient far too fast.</span></strong> That is the breed. A cat's bond fades <strong>50% faster</strong> than a dog's when you disappear or slack off on care — the exact opposite of the Pug. A cat demands presence: petting, food and water, regularly.</p>
+<p><strong><span class="ig">I stopped waking up to gifts.</span></strong> Check its bars. A cat with <strong>hunger or thirst at 75% or more</strong>, sick, disobedient or panicking does not go out at night, and the failure is silent. Remember too that it is <strong>one per day, per owner</strong>: two cats do not give you two gifts.</p>
+<p><strong><span class="ig">I want to spawn a dog with another mod, which name do I use?</span></strong> The internal name, not the one shown on screen. The list is in <a href="#6-comparison-tables">Comparison tables</a>, at the end of the section.</p></article></main>
 </div>
 
 <script>
