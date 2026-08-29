@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#pflichtfelder" data-id="pflichtfelder">Pflichtfelder</a>
 <a class="s3" href="#optionale-felder" data-id="optionale-felder">Optionale Felder</a>
+<a class="s3" href="#instinkt-distract" data-id="instinkt-distract">Instinkt: distract</a>
 <a class="s3" href="#die-stimme" data-id="die-stimme">Die Stimme</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-ein-ganzes-system-abschalten" data-id="7-ein-ganzes-system-abschalten">7. Ein ganzes System abschalten</a>
+<div class="sub">
+<a class="s3" href="#die-art" data-id="die-art">Die Art</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-die-tierdefinitionen" data-id="8-die-tierdefinitionen">8. Die Tierdefinitionen</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>Die Zahl, auf die du prüfst, ist die <strong>niedrigste API, die dein Addon wirklich braucht</strong>, und die Basis-Version in dieser Tabelle ist die, die du auf deiner Workshop-Seite nennst. Nimm sie aus dieser Tabelle und nicht aus dem, was der Basis-Mod zufällig war, während du geschrieben hast: ein Feld, das nur im Entwicklungsstand existiert, ist ein Feld, das deine Spieler nicht haben.</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>Spielminuten, die es die Übergabe weiter versucht, bevor es aufgibt.</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>aus</td>
+<td><code>{ &lt;Art&gt; = { chance = 0..1, ... } }</code>. Die Rasse geht von selbst hinter Dingen her, ohne Modus und ohne Stufe. Siehe unten.</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>Basiswert</td>
 <td>Länge des Fensters für die Leerlaufanimation, in Millisekunden. Setz es, wenn deine Clips kürzer sind als die des Hundes, sonst startet die Schleife neu und wird mitten in der Geste abgeschnitten.</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>Zahlen und Flags, die du der Definition hinzufügst, liest du mit <code>CD.breedNumber(animal, feld)</code> und <code>CD.breedFlag(animal, feld)</code> wieder aus. Nimm lieber diese beiden, als <code>CD.getBreedDef(animal).feld</code> selbst zu lesen: sie behandeln das fehlende Feld für dich und funktionieren weiter, wenn der Basis-Mod sich bewegt.</p>
+<h3 id="instinkt-distract">Instinkt: <code>distract</code></h3>
+<p>Jedes andere Feld verlangt vom Tier, in etwas gut zu sein. Dieses verlangt von ihm, schlecht aufzupassen.</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>Eine Rasse, die es deklariert, bemerkt hin und wieder etwas und setzt ihm nach, wobei sie alles stehen lässt. Sie tut das mit <strong>keinem eingeschalteten Modus</strong>, aus <strong>Bleib</strong> genauso wie aus Folgen, und du hast in dem Moment nichts zu sagen: Befehle kommen mit derselben <code>distracted</code>-Meldung zurück, die der Gehorsamswurf schon benutzt. Der einzige Befehl, der durchkommt, ist Komm, und der bricht es ab.</p>
+<p>Behandle es als Kosten, die du deiner Rasse gibst, nicht als Bonus. Solange es läuft, ist das Tier nicht an der Seite des Besitzers und hält keine Wache. Es passt zu einer Rasse, deren Markenzeichen es ist, schwer zu halten zu sein. Es passt nicht zu einem Arbeitshund, auf den sich der Spieler verlassen können soll.</p>
+<p>Jede Art nimmt dieselben optionalen Stellschrauben, und was du weglässt, fällt auf die Standardwerte des Mods zurück:</p>
+<div class="tw"><table><thead><tr>
+<th>Feld</th>
+<th>Was es tut</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1, wird nur gewürfelt, wenn der Auslöser dieser Art tatsächlich etwas gefunden hat. <code>25</code> für "25%" zu schreiben wird mit einer benannten Zeile im Log abgelehnt</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>Kacheln, die der Auslöser absucht, sofern die Art überhaupt sucht</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>Spielminuten, die das Fenster läuft, bevor es von selbst abläuft</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>Spielminuten, bis dasselbe Tier sich wieder ablenken lassen kann</td>
+</tr>
+</tbody></table></div>
+<h4 id="die-art-prey">Die Art <code>prey</code></h4>
+<p>Die einzige Art, die der Basis-Mod mitbringt. Das Tier geht hinter Wildtieren her, und <code>classes</code> bestimmt, welche seine Aufmerksamkeit bekommen:</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>Zwei Grenzen gelten unabhängig davon, was du deklarierst:</p>
+<ul>
+<li><strong>Es reicht nie über dein <code>huntMaxPrey</code> hinaus.</strong> Hier greift derselbe Filter wie im Jagdsystem, also jagt eine auf <code>small</code> begrenzte Rasse kein Reh, auch wenn sie <code>large</code> deklariert.</li>
+<li><strong>Die Stufengrenze wird nur für <code>tiny</code> übersprungen.</strong> Nagetiere fängt ein frisch gezähmtes Tier mit Jagd 0, weil Mäusefangen keine Fähigkeit ist, für die man trainiert. Deklariere <code>small</code> und deine Rasse lässt alles stehen und rennt hinter dem Kaninchen her, aber um es tatsächlich zu <em>töten</em>, braucht sie weiterhin dieselbe Jagdstufe wie der Labrador. Der Instinkt entscheidet, was Aufmerksamkeit bekommt; das Training entscheidet weiter, was erlegt werden kann. Ohne diese zweite Grenze wäre <code>classes</code> eine Abkürzung, die die Jagdleiter auslöscht.</li>
+</ul>
+<p>Der Jagd-Schalter der Sandbox entscheidet weiter über den Abschuss, nicht über die Verfolgung: mit ausgeschalteter Jagd rennt das Tier trotzdem los, aber die Beute entkommt.</p>
+<p>Ein so erlegtes Tier durchläuft die normale Übergabe, also entscheidet der <code>huntFetchLevel</code> deiner Rasse, ob sie den Körper zum Besitzer trägt oder liegen lässt, wo er gefallen ist. Setz ihn auf <code>0</code>, und das Tier liefert vom ersten Tag an ab, was eine Katze dazu bringt, dir eine tote Ratte zu bringen. Die Übergabe überlebt das Ende des Ablenkungsfensters: Sobald die Beute tot ist, nimmt das Tier wieder Befehle an, und der Heimweg läuft mit seinem eigenen <code>huntDeliverTimeoutMin</code>. Lass <code>huntFetchLevel</code> in Ruhe, dann gilt der Standard von 6, und die Rasse jagt aus Instinkt, muss sich das Apportieren aber weiter verdienen.</p>
+<h4 id="eine-eigene-art-schreiben">Eine eigene Art schreiben</h4>
+<p><code>distract</code> ist ein Dispatcher, und <code>prey</code> ist nur die Art, die mitgeliefert wird. Registriere deine eigene:</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>Dann deklariere sie an der Rasse wie jede andere Art: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> läuft vor dem globalen Scan-Budget des Mods und ist der Ort für billige Ablehnungen. <code>find</code> läuft nach dem Budget, und dort steckt der Aufwand. <code>drive</code> gibt true zurück, solange es das Tier noch führt, und false, wenn es fertig ist, was das Fenster schließt. Dein Handler läuft in einem eigenen <code>pcall</code>: Wenn er wirft, schreibt der Mod eine benannte Zeile ins Log, meldet diese Art für die Sitzung ab und lässt den Rest des Begleiters weiterlaufen.</p>
+<p>Für künftige Basis-Arten reservierte Namen, noch nicht implementiert: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Du kannst heute eine Art unter einem dieser Namen registrieren, aber die Basis gewinnt den Namen an dem Tag, an dem sie ihre eigene mitbringt.</p>
 <h3 id="die-stimme">Die Stimme</h3>
 <p>Eine andere Art spricht nicht dieselbe Sprache. Ohne <code>voices</code> bellt deine Katze:</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Fehlend oder <code>true</code> heißt, das Tier hat diese Fertigkeit, du schreibst also nur die hin, die du wegnimmst.</p>
 <p>Eine Fertigkeit abzuschalten macht <strong>drei Dinge auf einmal</strong>: das System läuft nie, die Fertigkeit bekommt nie Erfahrung, und die Leiste samt ihren Befehlen verschwindet aus der Oberfläche. Alle drei zusammen. Nur die Leiste zu verstecken würde die Fertigkeit dort wachsen lassen, wo niemand sie sieht; nur das System zu sperren würde eine Leiste für immer auf null stehen lassen.</p>
-<p><code>canBreed = false</code> steht außerhalb der Tabelle, weil Zucht keine Leiste und keine Erfahrung hat. Und es ist total: das Tier empfängt nicht, wird nie als Partner gewählt und paart sich auch nicht mit der eigenen Rasse.</p>
+<p><code>canBreed = false</code> steht außerhalb der Tabelle, weil Zucht keine Leiste und keine Erfahrung hat. Und es ist total: das Tier empfängt nicht, wird nie als Partner gewählt und paart sich auch nicht mit der eigenen Rasse. Wenn du eigentlich ein Tier willst, das sich normal paart, aber nie mit einem Hund, dann ist das <code>species</code>, weiter unten, und nicht dies hier.</p>
+<h3 id="die-art">Die Art</h3>
+<p>Ein Addon, das ein anderes Tier statt eines weiteren Hundes hinzufügt, deklariert es so:</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>Das Feld fehlt bei jeder bisher veröffentlichten Rasse, und fehlen heißt <code>"dog"</code>. Nichts, was du schon geschrieben hast, ändert sich also.</p>
+<p>Es tut zwei Dinge. <strong>Zucht ist pro Art geschlossen:</strong> Ein Paar empfängt nur, wenn beide Seiten dieselbe Art sind, im Befehl, im stündlichen passiven Wurf und im Debug-Werkzeug gleichermaßen. Und die Oberfläche hört auf, dein Tier einen Hund zu nennen: <code>nounKey</code> ist das blanke Substantiv, das Sätze wie <em>"Dieses %1 gehört bereits einem anderen Überlebenden"</em> füllt, und <code>youngKey</code> ist die Bezeichnung, die der Nachwuchs deiner Art im Fenster, im Kontextmenü und im Zwinger trägt, wo ein Hund <em>Welpe</em> sagt.</p>
+<p><code>species</code> zu deklarieren, ohne es zu registrieren, ist nicht fatal: Dein Tier verweigert die Paarung außerhalb der eigenen Art weiterhin, weil die Sperre die rohe Zeichenkette vergleicht. Nur die beiden Substantive fallen auf die des Hundes zurück, und das Log sagt es beim Namen. Der Rückfall ist absichtlich einseitig, denn umgekehrt, eine nicht registrierte Art als Hund zu behandeln, würde dein Tier stillschweigend mit Hunden paaren lassen.</p>
+<p><strong>Das ist eine Sperre, also degradiert sie nicht.</strong> Auf einem Basis-Mod älter als API 6 wird das Feld stillschweigend ignoriert und dein Tier ist für die Zucht ein Hund. Wenn es sich niemals mit einem kreuzen darf, prüfe auf API 6, oder halte <code>canBreed = false</code>, solange der Basis-Mod älter ist, was die Katze macht.</p>
 <p><code>huntMaxPrey</code> ist eine <strong>Obergrenze innerhalb einer Jagd, die es gibt</strong>, und das ist etwas anderes als <code>hunt = false</code>. Es nimmt <code>"tiny"</code> (Mäuse, Ratten, Eichhörnchen), <code>"small"</code> (Kaninchen, Waschbären) oder <code>"large"</code> (Hirsche, der Standard, keine Grenze). Beute oberhalb der Grenze ist für dein Tier unsichtbar: es jagt sie nicht und zeigt sie nicht einmal an. Ein Wert außerhalb dieser Leiter fällt auf <code>"large"</code> zurück und schreibt eine benannte Zeile ins Log.</p>
 <p><strong>Ein gesperrtes Tier bekommt keinen ausgegrauten Knopf.</strong> Die Option verschwindet aus dem Radialmenü, dem Kontextmenü und dem Fenster, und die Ablehnung auf dem Server ist still. Ein Halo, der sagt, der Befehl sei ignoriert worden, wäre gelogen, denn das ist kein Ungehorsam. Erklär den Entwurf stattdessen in deiner Rassenbeschreibung. Deshalb bringt keines dieser Felder einen neuen Übersetzungsschlüssel mit.</p>
 <h2 id="8-die-tierdefinitionen">8. Die Tierdefinitionen</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>je einer für jeden deiner drei Typen</td>
+</tr>
+<tr>
+<td>deine Art-Schlüssel</td>
+<td>der <code>nounKey</code> und der <code>youngKey</code>, die du an <code>CD.registerSpecies</code> übergeben hast, falls du eine Art hinzugefügt hast</td>
 </tr>
 <tr>
 <td>deine Moodle-Schlüssel</td>

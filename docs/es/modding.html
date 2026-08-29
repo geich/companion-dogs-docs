@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#campos-obligatorios" data-id="campos-obligatorios">Campos obligatorios</a>
 <a class="s3" href="#campos-opcionales" data-id="campos-opcionales">Campos opcionales</a>
+<a class="s3" href="#instinto-distract" data-id="instinto-distract">Instinto: distract</a>
 <a class="s3" href="#la-voz" data-id="la-voz">La voz</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-apagar-un-sistema-entero" data-id="7-apagar-un-sistema-entero">7. Apagar un sistema entero</a>
+<div class="sub">
+<a class="s3" href="#la-especie" data-id="la-especie">La especie</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-las-definiciones-de-animal" data-id="8-las-definiciones-de-animal">8. Las definiciones de animal</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>El número a comprobar es la <strong>API más baja que tu addon necesita de verdad</strong>, y la versión del base de esa tabla es la que anuncias en tu página de la Workshop. Sácala de esa tabla y no de lo que fuera el base mientras escribías: un campo que solo existe en la versión de desarrollo es un campo que tus jugadores no tienen.</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>minutos de juego que seguirá intentando la entrega antes de rendirse.</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>apagado</td>
+<td><code>{ &lt;tipo&gt; = { chance = 0..1, ... } }</code>. La raza va sola tras las cosas, sin modo y sin nivel. Ver abajo.</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>valor del base</td>
 <td>duración de la ventana de la animación de reposo, en milisegundos. Ponlo cuando tus clips sean más cortos que los del perro, o el bucle reinicia y se corta a mitad del gesto.</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>Los números y flags que añadas a la definición se leen de vuelta con <code>CD.breedNumber(animal, campo)</code> y <code>CD.breedFlag(animal, campo)</code>. Prefiere esos dos a leer <code>CD.getBreedDef(animal).campo</code> a mano: se encargan del campo ausente por ti, y siguen funcionando cuando el base se mueva.</p>
+<h3 id="instinto-distract">Instinto: <code>distract</code></h3>
+<p>Todos los demás campos le piden al animal que sea bueno en algo. Este le pide que sea malo prestando atención.</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>Una raza que lo declara, cada tanto, se fija en algo y va tras ello, soltando lo que estaba haciendo. Lo hace <strong>sin ningún modo activado</strong>, desde <strong>Quieto</strong> igual que desde Seguir, y en ese momento no mandas tú: las órdenes vuelven rechazadas con el mismo mensaje <code>distracted</code> que la tirada de obediencia ya usa. La única orden que pasa es Ven, que lo cancela.</p>
+<p>Trátalo como un costo que le das a tu raza, no como un bono. Mientras corre, el animal no está al lado de su dueño y no vigila. Le queda bien a una raza cuya marca es ser difícil de retener. No le queda a un perro de trabajo del que quieres que el jugador dependa.</p>
+<p>Todos los tipos aceptan los mismos ajustes opcionales, y lo que dejes fuera cae en los valores por defecto del mod:</p>
+<div class="tw"><table><thead><tr>
+<th>Campo</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1, se tira solo cuando el disparador de ese tipo encontró algo de verdad. Escribir <code>25</code> por "25%" se rechaza con una línea nombrada en el log</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>casillas que barre el disparador, cuando ese tipo barre algo</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>minutos de juego que dura la ventana antes de expirar sola</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>minutos de juego hasta que el mismo animal pueda distraerse otra vez</td>
+</tr>
+</tbody></table></div>
+<h4 id="el-tipo-prey">El tipo <code>prey</code></h4>
+<p>El único tipo que trae el mod base. El animal va tras animales salvajes, y <code>classes</code> elige cuáles se llevan su atención:</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>Dos límites valen sin importar lo que declares:</p>
+<ul>
+<li><strong>Nunca llega por encima de tu <code>huntMaxPrey</code>.</strong> Aquí se aplica el mismo embudo del sistema de caza, así que una raza con techo <code>small</code> no persigue ciervos aunque declare <code>large</code>.</li>
+<li><strong>El nivel solo se salta para <code>tiny</code>.</strong> A los roedores los atrapa un animal recién domesticado con Caza 0, porque atrapar ratones no es una habilidad que se entrene. Declara <code>small</code> y tu raza soltará todo y correrá tras el conejo, pero para <em>matarlo</em> de verdad sigue necesitando el mismo nivel de Caza que necesita el Labrador. El instinto decide qué se lleva la atención; el entrenamiento sigue decidiendo qué puede abatir. Sin ese segundo límite, <code>classes</code> sería un atajo que borra la escalera de Caza.</li>
+</ul>
+<p>El interruptor de Caza del sandbox sigue mandando en el remate, no en la persecución: con la caza apagada el animal corre igual, pero la presa escapa.</p>
+<p>Un remate hecho así pasa por la entrega normal, así que es el <code>huntFetchLevel</code> de tu raza el que decide si lleva el cuerpo hasta el dueño o lo deja donde cayó. Ponlo en <code>0</code> y el animal entrega desde el primer día, que es lo que hace que un gato te traiga una rata muerta. La entrega sobrevive al final de la ventana de distracción: muerta la presa, el animal vuelve a aceptar órdenes, y el viaje de vuelta corre con su propio <code>huntDeliverTimeoutMin</code>. Deja <code>huntFetchLevel</code> como está y vale el valor por defecto de 6, así que la raza persigue por instinto y todavía tiene que ganarse el derecho a cobrar.</p>
+<h4 id="escribir-tu-propio-tipo">Escribir tu propio tipo</h4>
+<p><code>distract</code> es un despachador, y <code>prey</code> es solo el tipo que viene con él. Registra el tuyo:</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>Después decláralo en la raza como cualquier otro tipo: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> corre antes del presupuesto global de escaneo del mod, y es donde van los rechazos baratos. <code>find</code> corre después del presupuesto, y ahí vive el costo. <code>drive</code> devuelve true mientras siga conduciendo al animal, y false cuando terminó, lo que cierra la ventana. Tu handler corre en su propio <code>pcall</code>: si revienta, el mod escribe una línea nombrada en el log, da de baja ese tipo por la sesión y deja el resto del compañero funcionando.</p>
+<p>Nombres reservados para tipos futuros del base, aún sin implementar: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Puedes registrar un tipo con uno de esos nombres hoy, pero el base se queda con el nombre el día que traiga el suyo.</p>
 <h3 id="la-voz">La voz</h3>
 <p>Una especie distinta no habla el mismo idioma. Sin <code>voices</code>, tu gato ladra:</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Ausente o <code>true</code> significa que el animal tiene esa habilidad, así que solo escribes las que estás quitando.</p>
 <p>Apagar una habilidad hace <strong>tres cosas a la vez</strong>: el sistema no se ejecuta nunca, la habilidad nunca gana experiencia, y su barra y sus comandos desaparecen de la interfaz. Las tres juntas. Esconder solo la barra dejaría la habilidad creciendo donde nadie la ve; bloquear solo el sistema dejaría una barra clavada en cero para siempre.</p>
-<p><code>canBreed = false</code> va fuera de la tabla porque criar no tiene barra ni experiencia. Y es total: el animal no concibe, nunca se le elige como pareja, y tampoco cría con su propia raza.</p>
+<p><code>canBreed = false</code> va fuera de la tabla porque criar no tiene barra ni experiencia. Y es total: el animal no concibe, nunca se le elige como pareja, y tampoco cría con su propia raza. Si lo que quieres es un animal que críe con normalidad pero nunca con un perro, eso es <code>species</code>, más abajo, y no esto.</p>
+<h3 id="la-especie">La especie</h3>
+<p>Un add-on que añade otro animal, en vez de otro perro, lo declara así:</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>El campo está ausente en toda raza publicada hasta ahora, y ausente significa <code>"dog"</code>. Así que nada de lo que ya escribiste cambia de comportamiento.</p>
+<p>Hace dos cosas. <strong>La cría queda cerrada por especie:</strong> una pareja solo concibe cuando ambos lados son la misma especie, en el comando, en la tirada pasiva por hora y en la herramienta de depuración por igual. Y la interfaz deja de llamar perro a tu animal: <code>nounKey</code> es el sustantivo desnudo que rellena frases como <em>"Este %1 ya pertenece a otro superviviente"</em>, y <code>youngKey</code> es la etiqueta que lleva la cría de tu especie en la ventana, el menú contextual y la perrera, donde un perro dice <em>Cachorro</em>.</p>
+<p>Declarar <code>species</code> sin registrarlo no es fatal: tu animal sigue negándose a criar fuera de su propia especie, porque el filtro compara la cadena cruda. Solo los dos sustantivos caen en los del perro, y el log lo dice por su nombre. El respaldo es de un solo lado a propósito, porque lo contrario, tratar una especie no registrada como perro, dejaría a tu animal criar con perros en silencio.</p>
+<p><strong>Esto es un bloqueo, así que no degrada.</strong> En un mod base anterior a la API 6 el campo se ignora en silencio y tu animal es un perro a efectos de cría. Si nunca debe cruzarse con uno, comprueba la API 6, o mantén <code>canBreed = false</code> mientras el base sea antiguo, que es lo que hace el gato.</p>
 <p><code>huntMaxPrey</code> es un <strong>techo dentro de una caza que existe</strong>, que es algo distinto de <code>hunt = false</code>. Acepta <code>"tiny"</code> (ratones, ratas, ardillas), <code>"small"</code> (conejos, mapaches) o <code>"large"</code> (ciervos, el valor por defecto, sin techo). La presa por encima del techo es invisible para tu animal: no la persigue y ni siquiera la señala. Un valor fuera de esa escalera cae en <code>"large"</code> e imprime una línea con nombre en el log.</p>
 <p><strong>Un animal bloqueado no recibe un botón deshabilitado.</strong> La opción desaparece del radial, del menú contextual y de la ventana, y el rechazo en el servidor es silencioso. Un halo diciendo que ha ignorado la orden sería mentira, porque esto no es desobediencia. Explica el diseño en la descripción de tu raza. Por eso ninguno de estos campos trae una clave de traducción nueva consigo.</p>
 <h2 id="8-las-definiciones-de-animal">8. Las definiciones de animal</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>una por cada uno de tus tres tipos</td>
+</tr>
+<tr>
+<td>las claves de tu especie</td>
+<td>el <code>nounKey</code> y el <code>youngKey</code> que pasaste a <code>CD.registerSpecies</code>, si añadiste una especie</td>
 </tr>
 <tr>
 <td>las claves de tu moodle</td>

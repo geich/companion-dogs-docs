@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#必須フィールド" data-id="必須フィールド">必須フィールド</a>
 <a class="s3" href="#任意フィールド" data-id="任意フィールド">任意フィールド</a>
+<a class="s3" href="#本能distract" data-id="本能distract">本能：distract</a>
 <a class="s3" href="#声" data-id="声">声</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-システムを丸ごと切る" data-id="7-システムを丸ごと切る">7. システムを丸ごと切る</a>
+<div class="sub">
+<a class="s3" href="#種" data-id="種">種</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-動物定義" data-id="8-動物定義">8. 動物定義</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code>、<code>descKey</code>、<code>voices</code>、<code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>、<code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>ガードに書く数値は、<strong>あなたのアドオンが実際に必要とする一番低い API</strong> です。そしてその表にある ベースのバージョンが、Workshop のページに書くべき数字です。書いていたときにベースがたまたま何だった かではなく、この表から取ってください。開発ビルドにしかないフィールドは、プレイヤーが持っていない フィールドです。</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>受け渡しを諦めるまで粘るゲーム内分数。</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>オフ</td>
+<td><code>{ &lt;種類&gt; = { chance = 0..1, ... } }</code>。モードなしでも、レベルなしでも、勝手に何かを追いかけます。下記参照。</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>ベースの値</td>
 <td>待機アニメーションの窓の長さ、ミリ秒。あなたのクリップが犬のものより短いときに設定します。しないとループが再開して仕草の途中で切れます。</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>定義に足した数値やフラグは、<code>CD.breedNumber(animal, フィールド)</code> と <code>CD.breedFlag(animal, フィールド)</code> で読み戻せます。<code>CD.getBreedDef(animal).フィールド</code> を自分で読むより、この二つを使ってください。 欠けたフィールドの扱いをやってくれますし、ベース側が動いても動き続けます。</p>
+<h3 id="本能distract">本能：<code>distract</code></h3>
+<p>ほかのフィールドはどれも、動物に何かが上手であることを求めます。これだけは、注意力が散漫であることを 求めます。</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>これを宣言したブリードは、ときどき何かに気づいて、やっていたことを放り出して追いかけます。<strong>どのモードも 入っていない状態で</strong>やり、待機からでも追従からでも同じで、その間あなたに主導権はありません。命令は服従判定が すでに使っている <code>distracted</code> のメッセージで拒否されて返ります。通る命令は「おいで」だけで、それが打ち切ります。</p>
+<p>これはボーナスではなく、あなたがブリードに与えるコストとして扱ってください。走っているあいだ、動物は飼い主の そばにおらず、見張りもしません。つかまえておくのが難しいことが持ち味のブリードに合います。プレイヤーに 頼ってほしい使役犬には合いません。</p>
+<p>どの種類も同じ任意のつまみを取り、省いたものはMOD既定値に落ちます。</p>
+<div class="tw"><table><thead><tr>
+<th>フィールド</th>
+<th>何をするか</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1。その種類のトリガーが実際に何かを見つけたときだけ振られます。「25%」のつもりで <code>25</code> と書くとログに名前付きの行を出して拒否されます</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>トリガーが探すタイル数。その種類が探索を行う場合</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>窓が自然に切れるまでのゲーム内分数</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>同じ個体がふたたび気を逸らせるまでのゲーム内分数</td>
+</tr>
+</tbody></table></div>
+<h4 id="prey-の種類"><code>prey</code> の種類</h4>
+<p>ベースMODが同梱する唯一の種類です。動物は野生動物を追いかけ、<code>classes</code> がどれに注意を向けるかを選びます。</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>何を宣言しても、次の二つの制限は変わりません。</p>
+<ul>
+<li><strong>あなたの <code>huntMaxPrey</code> を超えることは決してありません。</strong>ここには狩りシステムと同じ絞り込みが効くので、 上限が <code>small</code> のブリードは <code>large</code> を宣言してもシカを追いません。</li>
+<li><strong>レベルの関門が飛ばされるのは <code>tiny</code> だけです。</strong>げっ歯類は狩り0の飼いならしたばかりの動物でも捕まえます。 ネズミ捕りは誰も訓練して身につける技能ではないからです。<code>small</code> を宣言すれば、あなたのブリードはすべてを 放り出してウサギを追いますが、実際に*仕留める*には、ラブラドールに必要なのと同じ狩りレベルが依然として要ります。 本能は何に注意が向くかを決め、訓練は何を倒せるかを決め続けます。この二つ目の制限がなければ、<code>classes</code> は 狩りの階段を消し去る抜け道になってしまいます。</li>
+</ul>
+<p>サンドボックスの狩りトグルは今も仕留めを決めるのであって、追跡を決めるのではありません。狩りをオフにしても 動物は走りますが、獲物は逃げます。</p>
+<p>こうして仕留めた獲物は通常の回収処理を通ります。つまり、死骸を飼い主のもとへ運ぶか倒れた場所に置いていくかを 決めるのは、あなたのブリードの <code>huntFetchLevel</code> です。<code>0</code> にすれば動物は初日から届けるようになり、これが猫が 死んだネズミを持ってくる理由です。この回収は気の逸れの時間が終わっても続きます。獲物が死んだ時点で動物は再び 命令を受け付けるようになり、帰り道はそのブリード自身の <code>huntDeliverTimeoutMin</code> で動きます。<code>huntFetchLevel</code> に触れなければ既定値の6が効くので、ブリードは本能で追いかけつつ、持ち帰る権利は自分で稼ぐことになります。</p>
+<h4 id="自分の種類を書く">自分の種類を書く</h4>
+<p><code>distract</code> はディスパッチャで、<code>prey</code> は同梱されている種類にすぎません。自分のものを登録してください。</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>あとはほかの種類と同じようにブリードで宣言します。<code>distract = { butterfly = { chance = 0.10 } }</code></p>
+<p><code>gate</code> はMODのグローバルなスキャン予算より前に走り、安価な却下はここに置きます。<code>find</code> は予算のあとに走り、 コストはそこにあります。<code>drive</code> は動物をまだ導いているあいだ true を返し、終わったら false を返して窓を 閉じます。あなたのハンドラは自前の <code>pcall</code> の中で走ります。例外を投げた場合、MODはログに名前付きの行を書き、 その種類をそのセッションのあいだ登録解除し、相棒の残りの部分は動いたままにします。</p>
+<p>将来のベース種類のために予約されている、まだ未実装の名前：<strong><code>drink</code></strong>、<strong><code>eat</code></strong>、<strong><code>play</code></strong>。今日これらの 名前で種類を登録することはできますが、ベースが自前のものを出す日にその名前はベースのものになります。</p>
 <h3 id="声">声</h3>
 <p>種族が違えば、同じ言葉は話しません。<code>voices</code> がないと、あなたの猫は吠えます。</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>書かないか <code>true</code> なら、その動物はそのスキルを持っています。だから取り除くものだけを書きます。</p>
 <p>スキルを切ると、<strong>三つのことが同時に</strong>起きます。システムが動かなくなり、そのスキルは経験値を得なく なり、バーとその指示がインターフェースから消えます。三つまとめてです。バーだけ隠せば、誰にも見えない ところでスキルが伸び続けます。システムだけ止めれば、バーが永遠にゼロで固まります。</p>
-<p><code>canBreed = false</code> がテーブルの外にあるのは、繁殖にはバーも経験値もないからです。そして全面的です。 その動物は身ごもらず、相手として選ばれず、同じ犬種とも交配しません。</p>
+<p><code>canBreed = false</code> がテーブルの外にあるのは、繁殖にはバーも経験値もないからです。そして全面的です。 その動物は身ごもらず、相手として選ばれず、同じ犬種とも交配しません。普通に繁殖するけれど犬とは決して交配しない動物が欲しいのなら、それはこれではなく、 下の <code>species</code> です。</p>
+<h3 id="種">種</h3>
+<p>犬ではなく別の動物を追加するアドオンは、こう宣言します。</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>このフィールドはこれまでに公開されたどのブリードにもなく、無い場合は <code>"dog"</code> として扱われます。つまり、 あなたがすでに書いたものの挙動は何も変わりません。</p>
+<p>これは2つのことをします。<strong>繁殖が種ごとに閉じます。</strong>つがいは双方が同じ種のときにだけ身ごもります。 コマンドでも、1時間ごとの受動的な抽選でも、デバッグ用ツールでも同じです。そしてUIがあなたの動物を犬と 呼ぶのをやめます。<code>nounKey</code> は*「この%1はすでに別の生存者のものです」<em>のような文を埋める裸の名詞で、 <code>youngKey</code> はあなたの種の子が、ウィンドウ、コンテキストメニュー、犬舎で背負うラベルです。犬ならそこは </em>子犬*になります。</p>
+<p><code>species</code> を登録せずに宣言しても致命的ではありません。ゲートは生の文字列を比較するので、動物は自分の種 以外との交配を拒み続けます。犬のものに落ちるのは2つの名詞だけで、ログがそれを名指しで伝えます。この フォールバックが片側だけなのは意図的です。逆に、登録されていない種を犬として扱えば、あなたの動物を黙って 犬と交配させてしまうからです。</p>
+<p><strong>これはブロックなので、劣化しません。</strong>API 6より古いベースではこのフィールドは黙って無視され、繁殖の うえであなたの動物は犬になります。決して犬と交わってはいけないなら、API 6をチェックするか、ベースが 古いあいだは <code>canBreed = false</code> にしておいてください。猫がやっているのがそれです。</p>
 <p><code>huntMaxPrey</code> は<strong>存在する狩りの中での上限</strong>であり、<code>hunt = false</code> とは別物です。<code>"tiny"</code>（ネズミ、 ドブネズミ、リス）、<code>"small"</code>（ウサギ、アライグマ）、<code>"large"</code>（シカ。既定で上限なし）を取ります。 上限より大きい獲物はあなたの動物には見えません。追いませんし、指し示しもしません。この段階から外れた 値は <code>"large"</code> に落ち、名前付きの一行をログに出します。</p>
 <p><strong>禁止された動物にグレーアウトのボタンは出ません。</strong> その項目はラジアルからもコンテキストメニュー からもウィンドウからも消え、サーバー側の拒否は無言です。「命令を無視した」と光って見せるのは嘘に なります。これは不服従ではないからです。設計は犬種の説明文で説明してください。これらのフィールドが 新しい翻訳キーを連れてこないのは、そのためです。</p>
 <h2 id="8-動物定義">8. 動物定義</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>あなたの三つのタイプそれぞれにひとつ</td>
+</tr>
+<tr>
+<td>種のキー</td>
+<td>種を追加したのなら、<code>CD.registerSpecies</code> に渡した <code>nounKey</code> と <code>youngKey</code></td>
 </tr>
 <tr>
 <td>moodle のキー</td>

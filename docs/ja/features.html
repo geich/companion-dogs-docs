@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>あなたと一緒に車に乗れる唯一のモードです。</strong></li>
 <li>離れすぎると（24タイル）、建物の反対側で立ち往生しないように、犬は自動であなたの後ろへ移されます。</li>
 </ul>
+<p><strong>間隔はあなたが決めます。</strong> 犬のウィンドウにある<strong>「追従距離」</strong>のスライダーは、<strong>2から8タイル</strong>まで0.5刻みで動きます。既定は2で、犬はぴったり足元に付きます。広げると台所や廊下、戸口で邪魔になりにくくなり、大型犬ほど効果があります。設定は犬ごとなので、群れの一頭ずつに好きな距離を持たせられます。値は犬に保存され、ログアウトしても、ケンネルに入れても、ワールドを移っても残ります。</p>
+<p>ひとつ言っておくべき結果があります。欠陥ではなく、あなたの選択です。自動戦闘は<strong>あなた</strong>を中心とした5タイル以内で起きるため、間隔を広く取ると犬は遠くから走り出すことになり、向かってくるゾンビに届くのが遅くなります。番犬を肩のそばに置きたいなら、スライダーは最小のままにしてください。</p>
 <blockquote class="quote"><em>「カラーメロはあなたの後をついてきて、近づいたゾンビと戦います。見張り機能も働き続けます。標準設定で、 移動中の相棒の状態です。」</em></blockquote>
 <h3 id="待て">待て</h3>
 <p>その場に止まって、そこから動きません。1分ほど止まったままでいると伏せます。</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>繁殖は<strong>100%受け身</strong>です。2匹の犬に交配を命じることはできません。あなたがやるのは、条件を整えて待つ ことだけです。</p>
 <p>ゲーム内の1時間ごとに、条件を満たしたメスは、近くに条件を満たしたオスがいれば自分から受胎する判定を 受けます。初期値は<strong>1日あたり5%</strong>です（サンドボックスの<strong>「1日あたりの繁殖確率」</strong>）。</p>
 <h3 id="条件">条件</h3>
+<p><strong>まず、種は種どうしです。</strong> 繁殖は種で閉じています。犬は犬とだけ、ネコはネコとだけ子をつくります。命令でも、世界の中で勝手に起きる抽選でも同じです。種の違う二頭は決して妊娠せず、生まれるのは必ず親と同じ種です。</p>
 <p>どれも必須で、2匹ともが満たしている必要があります。</p>
 <ol>
 <li>2匹とも<strong>同じ飼い主の相棒</strong>であること。</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>欲求:</strong> 空腹、喉の渇き、体力、ストレス。</li>
 <li><strong>スキル:</strong> 嗅覚、戦闘、服従、狩り、Herding。それぞれに進捗バーと<strong>「Lv X」</strong>が付きます。</li>
 <li><strong>資質:</strong> 筋力、攻撃性、耐性。低い / 普通 / 高いで表示されます。</li>
+<li><strong>種:</strong> 犬かネコか。「Calico Cat」は品種名であって種ではないので、品種の一行上に表示されます。ネコの幼体は<strong>子ネコ</strong>と出ます。</li>
 <li><strong>犬種:</strong> 名前、年齢（成犬か子犬）、当てはまる場合は「（ミックス）」。 カーソルを乗せると犬種の説明が出ます。</li>
 <li><strong>討伐数:</strong> その犬がこれまでに倒したゾンビと獲物の数。</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>見張り:</strong> 警戒 | 静か | 無音</li>
 <li><strong>自動護衛</strong>（オンとオフ）</li>
 <li><strong>狩り</strong>（オンとオフ）</li>
+<li><strong>追従距離:</strong> 2から8タイルまで0.5刻みのスライダー。横に数値が出ます</li>
 <li><strong>Care for livestock here</strong></li>
 <li><strong>芸:</strong> ボタン4つ（未解放のものは押せない状態になり、カーソルを乗せると理由が出ます）</li>
 <li><strong>サドルバッグを開く</strong></li>
@@ -2070,7 +2075,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong>「犬がしょっちゅう吠えてゾンビを連れてくる」</strong> 考えられる原因は4つあり、どれも自分で制御できます。<strong>「警戒」の見張り</strong>（決して吠えない <strong>「静か」</strong>に変えてください）、芸の<strong>「気を引く」</strong>（吠えること自体が目的です）、<strong>狩り</strong> （「狩り」モードを切ってください）、そして<strong>戦闘</strong>です。ストレスが溜まった犬が自分から吠えることは <strong>ありません</strong>。例外は<strong>パグ</strong>で、警戒から動かせないのが犬種の性質です。吠え声でゾンビを一切引き寄せたく ないなら、サンドボックス設定の<strong>犬の物音がゾンビを引き寄せる</strong>で解決します。これはすべての犬種に効きます。</p>
 <p><strong>「犬が見当たらなくなった」</strong> 肉球ボタンでウィンドウを開き、<strong>「マイドッグ」</strong>タブから<strong>「呼び寄せる」</strong>を使ってください。 遠くにいる場合は確認を求められ、持ち物ごと呼び戻してくれます。クールダウンは1匹につきゲーム内2時間です。 マップのマーカーにも最後に確認された位置が残っています。</p>
 <p><strong>「犬がフェンスの向こうで動けなくなった」</strong> <strong>「呼び寄せる」</strong>（口笛）を使ってください。まさにそのための機能で、代わりにゾンビを引き寄せます。</p>
-<p><strong>「犬が妊娠しない」</strong> <a href="#15-繁殖と子犬">繁殖の条件</a>の一覧を確認してください。ほとんどの場合、どちらかの空腹か 喉の渇き、あるいは忠誠度が60未満なのが原因です。<strong>「繁殖を禁止」</strong>がオンになっていないかも確認して ください。</p>
+<p><strong>「犬が妊娠しない」</strong> <a href="#15-繁殖と子犬">繁殖の条件</a>の一覧を確認してください。ほとんどの場合、どちらかの空腹か 喉の渇き、あるいは忠誠度が60未満なのが原因です。<strong>「繁殖を禁止」</strong>がオンになっていないかも確認して ください。 片方がネコでもう片方が犬なら、条件が足りないのではありません。種は自分の種としか繁殖しません。</p>
 <p><strong>「子犬が大きくならない」</strong> その子犬に<strong>「成長を止める」</strong>が付いていないか確認してください。それ以外はただの時間の問題で、初期値は <strong>ゲーム内90日</strong>、しかも離れている間も時計は進みます。期限を過ぎても子犬のままなら、その子のそばまで 行ってみてください。成長は子犬が読み込まれた瞬間に起きます。</p>
 <p><strong>「犬が一緒に車に乗ってくれない」</strong> 車に乗るのは<strong>「従う」</strong>の犬だけです。「待て」や「見張れ」だと、その場に残ります。</p>
 <p><strong>「拠点を見張らせておいたのに何もしていなかった」</strong> 「見張れ」モードは今のところ<strong>あなたが近くにいるときだけ働きます</strong>。離れた場所で犬に単独で働かせたい なら、それができるのは<strong>「Care for livestock here」</strong>だけで、これには指定された動物の囲いが必要です。</p>

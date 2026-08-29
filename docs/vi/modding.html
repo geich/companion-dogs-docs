@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#các-trường-bắt-buộc" data-id="các-trường-bắt-buộc">Các trường bắt buộc</a>
 <a class="s3" href="#các-trường-tùy-chọn" data-id="các-trường-tùy-chọn">Các trường tùy chọn</a>
+<a class="s3" href="#bản-năng-distract" data-id="bản-năng-distract">Bản năng: distract</a>
 <a class="s3" href="#giọng" data-id="giọng">Giọng</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-tắt-hẳn-một-hệ-thống" data-id="7-tắt-hẳn-một-hệ-thống">7. Tắt hẳn một hệ thống</a>
+<div class="sub">
+<a class="s3" href="#loài" data-id="loài">Loài</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-định-nghĩa-con-vật" data-id="8-định-nghĩa-con-vật">8. Định nghĩa con vật</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>Con số cần kiểm tra là <strong>API thấp nhất mà add-on của bạn thực sự cần</strong>, và phiên bản nền trong bảng đó là con số bạn ghi trên trang Workshop của mình. Lấy nó từ bảng này, chứ không phải từ việc mod nền tình cờ là bản nào lúc bạn đang viết: một trường chỉ tồn tại trong bản dựng phát triển là một trường mà người chơi của bạn không có.</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>số phút trong game mà nó còn cố giao con mồi trước khi bỏ cuộc.</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>tắt</td>
+<td><code>{ &lt;loại&gt; = { chance = 0..1, ... } }</code>. Giống loài tự đuổi theo mọi thứ, không cần chế độ và không cần cấp độ. Xem bên dưới.</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>giá trị của nền</td>
 <td>độ dài cửa sổ animation đứng yên, tính bằng mili giây. Đặt khi clip của bạn ngắn hơn clip của chó, nếu không vòng lặp sẽ khởi động lại và bị cắt giữa chừng động tác.</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>Những con số và cờ bạn thêm vào định nghĩa sẽ được đọc lại bằng <code>CD.breedNumber(animal, trường)</code> và <code>CD.breedFlag(animal, trường)</code>. Hãy ưu tiên hai hàm này thay vì tự đọc <code>CD.getBreedDef(animal).trường</code>: chúng xử lý trường thiếu giúp bạn, và vẫn chạy đúng khi mod nền thay đổi.</p>
+<h3 id="bản-năng-distract">Bản năng: <code>distract</code></h3>
+<p>Mọi trường khác đều đòi con vật giỏi một việc gì đó. Trường này đòi nó dở việc tập trung.</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>Một giống loài khai báo trường này, thỉnh thoảng, sẽ để ý thấy thứ gì đó và đuổi theo, bỏ dở việc đang làm. Nó làm vậy khi <strong>không có chế độ nào được bật</strong>, từ <strong>Ở yên</strong> cũng như từ Đi theo, và lúc đó bạn không phải người ra lệnh: mệnh lệnh trả về bị từ chối kèm đúng thông báo <code>distracted</code> mà lượt tung xúc xắc phục tùng đã dùng. Lệnh duy nhất lọt qua là Lại đây, và nó hủy trạng thái này.</p>
+<p>Hãy xem đây là cái giá bạn trao cho giống loài của mình, không phải phần thưởng. Trong lúc đó, con vật không ở bên chủ và không canh gác. Nó hợp với một giống loài mà đặc trưng là khó giữ. Nó không hợp với một con chó làm việc mà bạn muốn người chơi trông cậy vào.</p>
+<p>Mọi loại đều nhận cùng những tùy chọn sau, và thứ gì bạn bỏ trống sẽ lấy theo mặc định của mod:</p>
+<div class="tw"><table><thead><tr>
+<th>Trường</th>
+<th>Tác dụng</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1, chỉ được tung khi bộ kích hoạt của loại đó thực sự tìm thấy thứ gì. Viết <code>25</code> thay cho "25%" sẽ bị từ chối kèm một dòng có tên trong log</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>số ô mà bộ kích hoạt quét, khi loại đó có quét</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>số phút trong game mà cửa sổ kéo dài trước khi tự hết</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>số phút trong game trước khi cùng con vật đó có thể phân tâm lần nữa</td>
+</tr>
+</tbody></table></div>
+<h4 id="loại-prey">Loại <code>prey</code></h4>
+<p>Loại duy nhất mà mod nền mang sẵn. Con vật đuổi theo thú hoang, và <code>classes</code> chọn những con nào lấy được sự chú ý của nó:</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>Hai giới hạn luôn đúng bất kể bạn khai báo gì:</p>
+<ul>
+<li><strong>Nó không bao giờ vượt quá <code>huntMaxPrey</code> của bạn.</strong> Ở đây áp dụng đúng cái phễu của hệ thống săn, nên một giống loài trần <code>small</code> sẽ không đuổi hươu nai dù có khai báo <code>large</code>.</li>
+<li><strong>Cổng cấp độ chỉ được bỏ qua với <code>tiny</code>.</strong> Loài gặm nhấm thì một con vật vừa thuần hóa với Săn 0 vẫn bắt được, vì bắt chuột không phải kỹ năng người ta luyện. Khai báo <code>small</code> và giống loài của bạn sẽ bỏ hết mọi thứ để chạy theo con thỏ, nhưng để thật sự <em>giết</em> nó thì vẫn cần đúng cấp Săn mà Labrador cần. Bản năng quyết định thứ gì lấy được sự chú ý; việc huấn luyện vẫn quyết định thứ gì hạ được. Thiếu giới hạn thứ hai này, <code>classes</code> sẽ thành lối tắt xóa sạch nấc thang Săn.</li>
+</ul>
+<p>Công tắc Săn trong sandbox vẫn quyết định việc hạ mồi, không phải cuộc rượt đuổi: tắt săn thì con vật vẫn chạy, nhưng con mồi thoát.</p>
+<p>Một con mồi bị hạ theo cách này vẫn đi qua quy trình mang về bình thường, nên chính <code>huntFetchLevel</code> của giống loài quyết định nó tha cái xác về cho chủ hay bỏ lại đúng chỗ con mồi ngã xuống. Đặt <code>0</code> và con vật mang về ngay từ ngày đầu, đó là điều khiến một con mèo tha cho bạn một con chuột chết. Việc mang về sống lâu hơn cửa sổ phân tâm: con mồi vừa chết là con vật lại nhận lệnh, và chặng đường về chạy theo <code>huntDeliverTimeoutMin</code> của chính nó. Cứ để yên <code>huntFetchLevel</code> thì giá trị mặc định 6 được áp dụng, nên giống loài đó đuổi theo bằng bản năng nhưng vẫn phải tự giành lấy quyền tha mồi về.</p>
+<h4 id="tự-viết-loại-của-bạn">Tự viết loại của bạn</h4>
+<p><code>distract</code> là một bộ điều phối, và <code>prey</code> chỉ là loại đi kèm sẵn. Hãy đăng ký loại của bạn:</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>Rồi khai báo nó trên giống loài như mọi loại khác: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> chạy trước ngân sách quét toàn cục của mod, và đó là chỗ dành cho những lần từ chối rẻ tiền. <code>find</code> chạy sau ngân sách, và chi phí nằm ở đó. <code>drive</code> trả về true khi nó vẫn còn đang dẫn dắt con vật, và false khi đã xong, việc này đóng cửa sổ lại. Handler của bạn chạy trong <code>pcall</code> riêng: nếu nó ném lỗi, mod ghi một dòng có tên vào log, gỡ đăng ký loại đó cho cả phiên chơi và để phần còn lại của người bạn đồng hành tiếp tục hoạt động.</p>
+<p>Những tên được giữ chỗ cho các loại tương lai của mod nền, chưa được cài đặt: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Hôm nay bạn vẫn có thể đăng ký một loại mang một trong các tên đó, nhưng mod nền sẽ giành lấy cái tên vào ngày nó mang loại của chính nó tới.</p>
 <h3 id="giọng">Giọng</h3>
 <p>Một loài khác thì không nói cùng một thứ tiếng. Không có <code>voices</code>, con mèo của bạn sẽ sủa:</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Vắng mặt hoặc <code>true</code> nghĩa là con vật có kỹ năng ấy, nên bạn chỉ viết ra những kỹ năng đang gỡ bỏ.</p>
 <p>Tắt một kỹ năng làm <strong>ba việc cùng lúc</strong>: hệ thống không bao giờ chạy, kỹ năng không bao giờ nhận kinh nghiệm, và thanh của nó cùng các lệnh biến mất khỏi giao diện. Cả ba cùng nhau. Chỉ giấu thanh thì kỹ năng vẫn lớn lên ở chỗ không ai thấy; chỉ chặn hệ thống thì thanh sẽ mãi mãi kẹt ở số không.</p>
-<p><code>canBreed = false</code> nằm ngoài bảng vì việc sinh sản không có thanh cũng chẳng có kinh nghiệm. Và nó là tuyệt đối: con vật không thụ thai, không bao giờ được chọn làm bạn tình, và cũng không phối với chính giống của nó.</p>
+<p><code>canBreed = false</code> nằm ngoài bảng vì việc sinh sản không có thanh cũng chẳng có kinh nghiệm. Và nó là tuyệt đối: con vật không thụ thai, không bao giờ được chọn làm bạn tình, và cũng không phối với chính giống của nó. Nếu thứ bạn thực sự muốn là một con vật sinh sản bình thường nhưng không bao giờ phối với chó, thì đó là <code>species</code> ở dưới, không phải cái này.</p>
+<h3 id="loài">Loài</h3>
+<p>Một add-on thêm một con vật khác, thay vì thêm một giống chó, khai báo như sau:</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>Trường này vắng mặt ở mọi giống đã phát hành cho tới giờ, và vắng mặt nghĩa là <code>"dog"</code>. Nên không có gì bạn đã viết bị đổi hành vi.</p>
+<p>Nó làm hai việc. <strong>Việc sinh sản bị đóng theo loài:</strong> một cặp chỉ thụ thai khi cả hai bên cùng một loài, trong lệnh, trong lượt gieo bị động mỗi giờ và trong công cụ gỡ lỗi đều như nhau. Và giao diện thôi gọi con vật của bạn là chó: <code>nounKey</code> là danh từ trần lấp vào những câu như <em>"Con %1 này đã thuộc về một người sống sót khác"</em>, còn <code>youngKey</code> là nhãn mà con non của loài bạn mang trong cửa sổ, trong menu ngữ cảnh và trong cũi, chỗ mà một con chó ghi là <em>Chó con</em>.</p>
+<p>Khai báo <code>species</code> mà không đăng ký thì không chí mạng: con vật của bạn vẫn từ chối phối ngoài loài của chính nó, vì cổng chặn so sánh chuỗi thô. Chỉ hai danh từ rơi về của chó, và log nói rõ điều đó bằng tên. Việc dự phòng chỉ một chiều là cố ý, vì điều ngược lại, coi một loài chưa đăng ký là chó, sẽ lặng lẽ cho con vật của bạn phối với chó.</p>
+<p><strong>Đây là một chặn, nên nó không hạ cấp.</strong> Trên một bản base cũ hơn API 6, trường này bị bỏ qua trong im lặng và con vật của bạn là chó xét về sinh sản. Nếu nó tuyệt đối không được lai với chó, hãy kiểm tra API 6, hoặc giữ <code>canBreed = false</code> khi base còn cũ, đó là điều con mèo làm.</p>
 <p><code>huntMaxPrey</code> là <strong>trần bên trong một hoạt động săn vẫn tồn tại</strong>, khác với <code>hunt = false</code>. Nó nhận <code>"tiny"</code> (chuột nhắt, chuột cống, sóc), <code>"small"</code> (thỏ, gấu mèo) hoặc <code>"large"</code> (hươu, mặc định, không có trần). Con mồi vượt trần thì con vật của bạn không nhìn thấy: nó không đuổi và cũng không chỉ. Giá trị nằm ngoài bậc thang này sẽ rơi về <code>"large"</code> và in một dòng có nêu tên vào log.</p>
 <p><strong>Con vật bị chặn không nhận được nút bấm mờ đi.</strong> Tùy chọn ấy biến khỏi vòng lệnh, khỏi menu chuột phải và khỏi cửa sổ, còn phía server thì từ chối trong im lặng. Một vầng sáng nói rằng nó phớt lờ mệnh lệnh sẽ là nói dối, vì đây không phải sự bất tuân. Hãy giải thích thiết kế trong phần mô tả giống của bạn. Đó là lý do không trường nào trong số này mang theo khóa dịch mới.</p>
 <h2 id="8-định-nghĩa-con-vật">8. Định nghĩa con vật</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>mỗi kiểu trong ba kiểu của bạn một khóa</td>
+</tr>
+<tr>
+<td>các khóa loài của bạn</td>
+<td><code>nounKey</code> và <code>youngKey</code> mà bạn đã truyền cho <code>CD.registerSpecies</code>, nếu bạn có thêm một loài</td>
 </tr>
 <tr>
 <td>các khóa moodle của bạn</td>

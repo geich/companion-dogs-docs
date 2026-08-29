@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Es el único modo que sube al coche contigo.</strong></li>
 <li>Si te alejas demasiado (24 tiles), lo recoloca detrás de ti automáticamente, para que no se quede atascado al otro lado de un edificio.</li>
 </ul>
+<p><strong>Tú eliges la holgura.</strong> La barra <strong><span class="ig">Distancia al seguir</span></strong>, en la ventana del perro, va de <strong>2 a 8 casillas</strong>, de media en media. El 2 es el valor por defecto y deja al perro pegado a ti; más holgura lo saca de tu camino en la cocina, el pasillo y el vano de la puerta, que es donde más estorba un perro grande. La elección es por perro, así que en una jauría cada uno anda a la distancia que quieras, y queda guardada con el animal: sobrevive a salir y volver al juego, a la perrera y al cambio de mundo.</p>
+<p>Vale la pena decir una consecuencia, porque es decisión tuya y no un defecto: la pelea automática ocurre en un radio de 5 casillas a tu alrededor, así que con mucha holgura el perro arranca desde más lejos y tarda más en alcanzar a un zombi que va hacia ti. Quien quiera al perro guardián encima del hombro deja la barra al mínimo.</p>
 <blockquote class="quote quote-game"><em>"El Caramelo camina detrás de ti y lucha contra los zombis que se acercan. Su centinela sigue vigilando. El modo predeterminado: tu compañero en movimiento."</em></blockquote>
 <h3 id="quieto">Quieto</h3>
 <p>Se detiene donde está y no se mueve de ahí. Después de más o menos un minuto parado, se echa.</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>La cría es <strong>100% pasiva</strong>. Tú no mandas a dos perros aparearse. Montas las condiciones y esperas.</p>
 <p>Cada hora de juego, cada hembra elegible con un macho elegible cerca tiene una probabilidad de concebir por su cuenta. Por defecto es un <strong>5% al día</strong> (opción de sandbox <strong><span class="ig">Probabilidad de cría por día</span></strong>).</p>
 <h3 id="las-condiciones">Las condiciones</h3>
+<p><strong>Ante todo, especie con especie.</strong> La cría está cerrada por especie: un perro solo concibe con un perro y un gato solo con un gato, tanto con la orden como en el sorteo que ocurre solo por el mundo. Una pareja de especies distintas nunca queda preñada, y lo que nace es siempre de la especie de los padres.</p>
 <p>Todas obligatorias, en los dos perros:</p>
 <ol>
 <li>Los dos son <strong>compañeros del mismo dueño</strong>.</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Necesidades:</strong> Hambre, Sed, Salud, Estrés.</li>
 <li><strong>Habilidades:</strong> Olfato, Combate, Obediencia, Caza, Pastoreo, cada una con barra de progreso y <strong><span class="ig">Nv X</span></strong>.</li>
 <li><strong>Rasgos:</strong> Fuerza, Agresividad, Resistencia, mostrados como Baja / Media / Alta.</li>
+<li><strong>Especie:</strong> Perro o Gato, en una línea justo encima de la raza, porque <span class="ig">Calico Cat</span> es nombre de raza y no de especie. En el gato, la cría aparece como <strong>Gatito</strong>.</li>
 <li><strong>Raza:</strong> nombre, edad (Adulto o Cachorro), <span class="ig">(Mestizo)</span> cuando corresponde, con la descripción de la raza al pasar el ratón.</li>
 <li><strong>Bajas:</strong> cuántos zombis y cuántas presas ha matado ese perro.</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Centinela:</strong> Alerta | Silencioso | Mudo</li>
 <li><strong>Protección automática</strong> (activar/desactivar)</li>
 <li><strong>Caza</strong> (activar/desactivar)</li>
+<li><strong>Distancia al seguir:</strong> barra de 2 a 8 casillas, de media en media, con el número al lado</li>
 <li><strong>Cuidar del ganado aquí</strong></li>
 <li><strong>Trucos:</strong> cuatro botones (los bloqueados quedan desactivados, con el motivo al pasar el ratón)</li>
 <li><strong>Abrir alforjas</strong></li>
@@ -2070,7 +2075,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">El perro ladra todo el rato y me trae zombis.</span></strong> Hay cuatro fuentes posibles, todas controlables: el <strong>centinela en Alerta</strong> (cámbialo a <strong>Silencioso</strong>, que nunca ladra), el truco <strong>Distraer</strong> (el ruido es justo lo que busca), la <strong>caza</strong> (desactiva el modo Caza) y el <strong>combate</strong>. Un perro estresado <strong>no</strong> ladra por su cuenta. La excepción: el <strong>Carlino</strong> nunca sale de Alerta, es su raza. Si quieres que ningún ladrido atraiga zombis, lo resuelve la opción de sandbox <strong>El ruido del perro atrae zombis</strong>, y vale para todas las razas.</p>
 <p><strong><span class="ig">Mi perro desapareció.</span></strong> Abre la ventana con el botón de la pata, ve a la pestaña <strong><span class="ig">Mis Perros</span></strong> y usa <strong>Traer</strong>. Si está lejos, el mod te pide confirmación y lo trae de vuelta con todo lo que lleva. Tiene un enfriamiento de 2 horas de juego por perro. El marcador del mapa también muestra la última posición vista.</p>
 <p><strong><span class="ig">El perro se queda atrapado al otro lado de la valla.</span></strong> Usa <strong>Traer</strong> (el silbido). Es exactamente para eso, a cambio de atraer zombis.</p>
-<p><strong><span class="ig">Mi perra no se queda preñada.</span></strong> Repasa la lista de <a href="#15-cría-y-cachorros">condiciones de cría</a>. Casi siempre es hambre, sed o lealtad por debajo de 60 en alguno de los dos. Comprueba también que <strong><span class="ig">Bloquear cría</span></strong> no esté activado.</p>
+<p><strong><span class="ig">Mi perra no se queda preñada.</span></strong> Repasa la lista de <a href="#15-cría-y-cachorros">condiciones de cría</a>. Casi siempre es hambre, sed o lealtad por debajo de 60 en alguno de los dos. Comprueba también que <strong><span class="ig">Bloquear cría</span></strong> no esté activado. Si uno es gato y el otro perro, no falta ninguna condición: cada especie solo cruza con la suya.</p>
 <p><strong><span class="ig">Mi cachorro no crece.</span></strong> Comprueba que <strong><span class="ig">Pausar crecimiento</span></strong> no esté activado en él. Aparte de eso, es solo cuestión de tiempo: por defecto son <strong>90 días de juego</strong>, y el reloj corre aunque esté lejos. Si ya venció el plazo y sigue siendo cachorro, acércate a él: la transformación ocurre cuando el cachorro está cargado.</p>
 <p><strong><span class="ig">El perro no sube al coche conmigo.</span></strong> Solo sube el perro en <strong>Seguir</strong>. En Quieto o Vigilar se queda.</p>
 <p><strong><span class="ig">Dejé al perro vigilando la base y no hizo nada.</span></strong> El modo Vigilar, por ahora, <strong>solo funciona contigo cerca</strong>. Para dejar a un perro trabajando solo y lejos, el único modo que hace eso es <strong>Cuidar del ganado</strong>, y necesita un corral designado.</p>

@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#必填欄位" data-id="必填欄位">必填欄位</a>
 <a class="s3" href="#選填欄位" data-id="選填欄位">選填欄位</a>
+<a class="s3" href="#本能distract" data-id="本能distract">本能：distract</a>
 <a class="s3" href="#聲音" data-id="聲音">聲音</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-整套關掉一個系統" data-id="7-整套關掉一個系統">7. 整套關掉一個系統</a>
+<div class="sub">
+<a class="s3" href="#物種" data-id="物種">物種</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-動物定義" data-id="8-動物定義">8. 動物定義</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code>、<code>descKey</code>、<code>voices</code>、<code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>、<code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>守衛裡要寫的數字，是<strong>你的附加模組真正需要的最低 API</strong>，而那張表裡對應的基礎模組版本，就是你要寫在 創意工坊頁面上的版本。從這張表取，而不是從你寫程式時基礎模組剛好是哪一版：只存在於開發版裡的欄 位，就是你的玩家沒有的欄位。</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>牠放棄交付之前還會再試多少遊戲分鐘。</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>關閉</td>
+<td><code>{ &lt;種類&gt; = { chance = 0..1, ... } }</code>。該品種會自己去追東西，不需要模式，也不需要等級。見下文。</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>基礎模組的值</td>
 <td>待機動畫視窗的長度，單位毫秒。當你的片段比狗的短時要設定它，否則循環會重新開始並在動作中途被切掉。</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>你加進定義裡的數值與旗標，可以用 <code>CD.breedNumber(animal, 欄位)</code> 和 <code>CD.breedFlag(animal, 欄位)</code> 讀 回來。比起自己去讀 <code>CD.getBreedDef(animal).欄位</code>，優先用這兩個：牠們替你處理缺少的欄位，而且在基礎 模組挪動之後依然可用。</p>
+<h3 id="本能distract">本能：<code>distract</code></h3>
+<p>其他每一個欄位都在要求動物擅長某件事。只有這一個，要求牠不擅長專心。</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>宣告了它的品種會時不時注意到什麼，然後丟下手邊的事追上去。牠在<strong>沒有任何模式開啟</strong>的情況下這麼做，從<strong>待命</strong> 和從跟隨都一樣，那段時間說了算的不是你：命令會帶著服從判定已經在用的那條 <code>distracted</code> 訊息被拒絕返回。唯一能 通過的命令是「過來」，它會取消這個狀態。</p>
+<p>把它當成你給自己品種的代價，而不是加成。在它持續期間，動物不在主人身邊，也不放哨。牠適合一個以難以約束為 標誌的品種。牠不適合一隻你希望玩家能依靠的工作犬。</p>
+<p>每個種類都接受同一組選填參數，你沒寫的會落到模組的預設值：</p>
+<div class="tw"><table><thead><tr>
+<th>欄位</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1，只有當該種類的觸發器確實找到東西才會擲。把「25%」寫成 <code>25</code> 會被拒絕，並在日誌裡留下一行具名紀錄</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>觸發器搜尋的格數，如果該種類會搜尋的話</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>視窗自行到期前的遊戲分鐘數</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>同一隻動物再次分心之前的遊戲分鐘數</td>
+</tr>
+</tbody></table></div>
+<h4 id="prey-種類"><code>prey</code> 種類</h4>
+<p>基礎模組自帶的唯一種類。動物會去追野生動物，而 <code>classes</code> 決定哪些能得到牠的注意：</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>無論你宣告什麼，有兩條限制始終成立：</p>
+<ul>
+<li><strong>牠永遠不會超出你的 <code>huntMaxPrey</code>。</strong>這裡適用的是狩獵系統的同一個漏斗，所以上限為 <code>small</code> 的品種即使宣告 <code>large</code> 也不會去追鹿。</li>
+<li><strong>只有 <code>tiny</code> 會跳過等級門檻。</strong>齧齒動物是剛馴服、狩獵 0 的動物就能抓到的，因為抓老鼠不是誰訓練出來的技能。 宣告 <code>small</code>，你的品種就會丟下一切去追兔子，但要真正*殺死*牠，牠仍然需要拉布拉多所需要的那個狩獵等級。本能 決定什麼能吸引注意；訓練仍然決定什麼能被放倒。沒有這第二條限制，<code>classes</code> 就會成為抹掉狩獵階梯的捷徑。</li>
+</ul>
+<p>沙盒的狩獵開關管的仍然是最後一擊，而不是追逐：關掉狩獵，動物照樣會跑，但獵物會逃掉。</p>
+<p>這樣完成的獵殺會走正常的回收流程，所以決定牠把屍體叼回給主人還是留在倒下的地方的，是你品種的 <code>huntFetchLevel</code>。設成 <code>0</code>，動物從第一天起就會送回來，這正是貓會叼一隻死老鼠給你的原因。這段回收 比分心的視窗活得更久：獵物一死，動物就重新接受命令，而回程按牠自己的 <code>huntDeliverTimeoutMin</code> 走。 不碰 <code>huntFetchLevel</code> 就適用預設的 6，於是這個品種憑本能去追，但銜回來的資格仍然要自己掙。</p>
+<h4 id="撰寫你自己的種類">撰寫你自己的種類</h4>
+<p><code>distract</code> 是一個分派器，<code>prey</code> 只是隨它一起提供的那個種類。註冊你自己的：</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>然後像其他種類一樣在品種上宣告它：<code>distract = { butterfly = { chance = 0.10 } }</code></p>
+<p><code>gate</code> 在模組的全域掃描預算之前執行，廉價的拒絕應該放在這裡。<code>find</code> 在預算之後執行，開銷就在那裡。<code>drive</code> 在牠仍然驅動著動物時回傳 true，完成時回傳 false，這會關閉視窗。你的處理器在自己的 <code>pcall</code> 裡執行：如果它拋出 例外，模組會在日誌裡寫一行具名紀錄，把那個種類在本次工作階段中註銷，並讓夥伴的其餘部分繼續運作。</p>
+<p>為將來的基礎種類保留、尚未實作的名字：<strong><code>drink</code></strong>、<strong><code>eat</code></strong>、<strong><code>play</code></strong>。你今天可以用這些名字之一註冊一個 種類，但基礎模組推出自己的那天，這個名字歸它。</p>
 <h3 id="聲音">聲音</h3>
 <p>不同的物種不說同一種語言。少了 <code>voices</code>，你的貓會吠：</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>不寫或寫 <code>true</code>，都表示這隻動物擁有該技能，所以你只要寫出你要拿掉的那幾項。</p>
 <p>關掉一項技能會<strong>同時做三件事</strong>：系統永遠不執行，該技能永遠不獲得經驗，牠的長條連同指令一起從介面上 消失。三件一起。只把長條藏起來，技能還是會在沒人看得到的地方長；只鎖住系統，長條就會永遠卡在零。</p>
-<p><code>canBreed = false</code> 放在表外面，因為繁殖既沒有長條也沒有經驗。而且它是徹底的：這隻動物不會受孕，永遠 不會被選為配偶，連自己的品種也不會配。</p>
+<p><code>canBreed = false</code> 放在表外面，因為繁殖既沒有長條也沒有經驗。而且它是徹底的：這隻動物不會受孕，永遠 不會被選為配偶，連自己的品種也不會配。如果你真正想要的是一隻正常繁殖、但永遠不和狗配的動物，那是下面的 <code>species</code>，不是這個。</p>
+<h3 id="物種">物種</h3>
+<p>一個加入另一種動物、而不是另一個狗品種的附加模組，這樣宣告：</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>這個欄位在迄今發布的每個品種裡都不存在，而不存在就意味著 <code>"dog"</code>。所以你已經寫好的東西不會改變任何行為。</p>
+<p>它做兩件事。<strong>繁殖按物種封閉：</strong>只有雙方是同一物種時，一對才會懷上，指令裡、每小時的被動擲骰裡、除錯 工具裡都一樣。而且介面不再把你的動物叫做狗：<code>nounKey</code> 是填進*「這隻 %1 已經屬於另一位倖存者」<em>這類 句子的光禿名詞，<code>youngKey</code> 則是你這個物種的幼崽在視窗、右鍵選單和犬舍裡掛著的標籤，那個位置狗寫的是 </em>幼犬*。</p>
+<p>宣告了 <code>species</code> 卻不註冊並不致命：你的動物依然拒絕跨出自己物種繁殖，因為那道門比較的是原始字串。 只有那兩個名詞會退回狗的版本，日誌會指名道姓地說明。這個退回故意只做一邊，因為反過來，把未註冊的物種 當成狗，會悄悄讓你的動物跟狗繁殖。</p>
+<p><strong>這是一道封鎖，所以牠不會降級。</strong>在早於 API 6 的基礎模組上，這個欄位被靜默忽略，就繁殖而言你的動物 就是狗。如果牠絕對不能和狗雜交，就檢查 API 6，或者在基礎模組還舊的時候保持 <code>canBreed = false</code>，貓 就是這麼做的。</p>
 <p><code>huntMaxPrey</code> 是<strong>一場確實存在的狩獵之內的上限</strong>，這和 <code>hunt = false</code> 是兩回事。它接受 <code>"tiny"</code>（小 鼠、大鼠、松鼠）、<code>"small"</code>（兔子、浣熊）或 <code>"large"</code>（鹿，預設值，沒有上限）。超過上限的獵物對你的 動物來說是看不見的：牠不會追，甚至不會去指。不在這個階梯上的值會退回 <code>"large"</code>，並在日誌裡印出一行 點名的紀錄。</p>
 <p><strong>被封鎖的動物不會拿到一顆變灰的按鈕。</strong> 那個選項會從環形選單、右鍵選單與視窗裡消失，伺服器端的拒絕 也是安靜的。一圈寫著「牠無視了命令」的光暈會是謊話，因為這並不是不服從。請在你的品種說明裡解釋這個 設計。這也正是這些欄位一個都不會帶來新翻譯鍵的原因。</p>
 <h2 id="8-動物定義">8. 動物定義</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>你那三個類型各一個</td>
+</tr>
+<tr>
+<td>你的物種鍵</td>
+<td>如果你加了一個物種，就是你傳給 <code>CD.registerSpecies</code> 的 <code>nounKey</code> 和 <code>youngKey</code></td>
 </tr>
 <tr>
 <td>你的 moodle 鍵</td>

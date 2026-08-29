@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>It is the only mode that gets into the car with you.</strong></li>
 <li>If you get too far away (24 tiles), it is snapped in behind you automatically, so it does not end up stuck on the other side of a building.</li>
 </ul>
+<p><strong>You pick the gap.</strong> The <strong><span class="ig">Following distance</span></strong> slider, in the dog window, runs from <strong>2 to 8 tiles</strong>, in half steps. Two is the default and keeps the dog at your heels; more slack keeps it out of your way in the kitchen, the corridor and the doorway, which is where a big dog gets in the way the most. The choice is per dog, so in a pack each one walks at the distance you want, and it is saved with the animal: it survives logging out, the kennel and changing worlds.</p>
+<p>One consequence is worth saying, because it is your choice and not a defect: the automatic fighting happens within 5 tiles around <strong>you</strong>, so with a wide gap the dog starts its run from further away and takes longer to reach a zombie coming at you. If you want the guard dog on your shoulder, leave the slider at the minimum.</p>
 <blockquote class="quote quote-game"><em>"The Caramelo paths along behind you and fights zombies that get close. Its sentinel keeps watch. The default, your companion on the move."</em></blockquote>
 <h3 id="stay">Stay</h3>
 <p>It stops where it is and does not leave. After about a minute standing still, it lies down.</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Breeding is <strong>100% passive</strong>. You do not order two dogs to mate. You set up the conditions and you wait.</p>
 <p>Every in-game hour, each eligible female with an eligible male nearby has a chance to conceive on her own. The default is <strong>5% per day</strong> (sandbox option <strong><span class="ig">Breeding chance per day</span></strong>).</p>
 <h3 id="the-conditions">The conditions</h3>
+<p><strong>Species with species, first of all.</strong> Breeding is closed by species: a dog only conceives with a dog and a cat only with a cat, both from the command and from the roll that happens on its own out in the world. A pair of different species never gets pregnant, and what is born is always the species of the parents.</p>
 <p>All of them required, on both dogs:</p>
 <ol>
 <li>Both are <strong>companions of the same owner</strong>.</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Needs:</strong> Hunger, Thirst, Health, Stress.</li>
 <li><strong>Skills:</strong> Scent, Combat, Obedience, Hunting, Herding, each with a progress bar and <strong><span class="ig">Lv X</span></strong>.</li>
 <li><strong>Traits:</strong> Strength, Aggressiveness, Resistance, shown as Low / Average / High.</li>
+<li><strong>Species:</strong> Dog or Cat, on a line just above the breed, because <span class="ig">Calico Cat</span> is a breed name and not a species. On a cat, the young one shows as <strong>Kitten</strong>.</li>
 <li><strong>Breed:</strong> name, age (Adult or Puppy), <span class="ig">(Mixed)</span> when it applies, with the breed description on hover.</li>
 <li><strong>Kills:</strong> how many zombies and how much game that dog has taken down.</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Sentinel:</strong> Alert | Quiet | Silent</li>
 <li><strong>Auto-protect</strong> (on/off)</li>
 <li><strong>Hunting</strong> (on/off)</li>
+<li><strong>Following distance:</strong> a slider from 2 to 8 tiles, in half steps, with the number beside it</li>
 <li><strong>Care for livestock here</strong></li>
 <li><strong>Tricks:</strong> four buttons (locked ones are greyed out, with the reason on hover)</li>
 <li><strong>Open saddlebags</strong></li>
@@ -2076,7 +2081,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">The dog barks all the time and brings zombies over.</span></strong> There are four possible sources, all of them under your control: the <strong>sentinel on Alert</strong> (switch it to <strong>Quiet</strong>, which never barks), the <strong>Distract</strong> trick (the noise is the whole point of it), <strong>hunting</strong> (turn Hunting mode off) and <strong>combat</strong>. A stressed dog does <strong>not</strong> bark on its own. The exception: the <strong>Pug</strong> never leaves Alert, that is its breed. If you want no bark at all to pull zombies, the sandbox option <strong>Dog noise attracts zombies</strong> is what settles it, and it applies to every breed.</p>
 <p><strong><span class="ig">My dog is gone.</span></strong> Open the window on the paw button, go to the <strong><span class="ig">My Dogs</span></strong> tab and use <strong>Bring</strong>. If it is far away, the mod asks for confirmation and brings it back with everything it carried. Cooldown of 2 in-game hours per dog. The map marker also shows the last position seen.</p>
 <p><strong><span class="ig">The dog gets stuck on the other side of the fence.</span></strong> Use <strong>Bring</strong> (the whistle). That is exactly what it is for, at the cost of drawing zombies.</p>
-<p><strong><span class="ig">My dog won't get pregnant.</span></strong> Check the list of <a href="#15-breeding-and-puppies">breeding conditions</a>. Almost always it is hunger, thirst or loyalty below 60 on one of the two. Also check that <strong><span class="ig">Block breeding</span></strong> is not turned on.</p>
+<p><strong><span class="ig">My dog won't get pregnant.</span></strong> Check the list of <a href="#15-breeding-and-puppies">breeding conditions</a>. Almost always it is hunger, thirst or loyalty below 60 on one of the two. Also check that <strong><span class="ig">Block breeding</span></strong> is not turned on. If one of them is a cat and the other is a dog, no condition is missing: a species only breeds with its own.</p>
 <p><strong><span class="ig">My puppy won't grow.</span></strong> Check that <strong><span class="ig">Pause growth</span></strong> is not turned on for it. Other than that it is just time: the default is <strong>90 in-game days</strong>, and the clock runs even with the puppy far away. If the deadline has passed and it is still a puppy, get close to it: the change happens when the puppy is loaded.</p>
 <p><strong><span class="ig">The dog won't get in the car with me.</span></strong> Only a dog on <strong>Follow</strong> gets in. On Stay or Guard, it stays put.</p>
 <p><strong><span class="ig">I left the dog guarding the base and it did nothing.</span></strong> Guard mode, for now, <strong>only works with you nearby</strong>. To leave a dog working on its own from far away, the only mode that does that is <strong>Care for livestock</strong>, and it needs a designated pen.</p>

@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Es ist der einzige Modus, der mit dir ins Auto steigt.</strong></li>
 <li>Entfernst du dich zu weit (24 Felder), wird er automatisch hinter dir wieder eingesetzt, damit er nicht auf der anderen Seite eines Gebäudes festhängt.</li>
 </ul>
+<p><strong>Du bestimmst den Abstand.</strong> Der Regler <strong><span class="ig">Folgeabstand</span></strong> im Hundefenster geht von <strong>2 bis 8 Feldern</strong>, in halben Schritten. Zwei ist die Vorgabe und hält den Hund direkt bei dir; mehr Abstand hält ihn dir in Küche, Flur und Türrahmen aus dem Weg, und dort stört ein großer Hund am meisten. Die Einstellung gilt pro Hund, in einem Rudel läuft also jeder in dem Abstand, den du willst, und sie wird beim Tier gespeichert: sie übersteht das Ausloggen, den Zwinger und den Weltwechsel.</p>
+<p>Eine Folge gehört dazugesagt, denn sie ist deine Wahl und kein Fehler: der automatische Kampf passiert im Umkreis von 5 Feldern um <strong>dich</strong>, mit großem Abstand startet der Hund also weiter weg und braucht länger, um einen Zombie zu erreichen, der auf dich zukommt. Wer den Wachhund direkt neben sich will, lässt den Regler auf dem Minimum.</p>
 <blockquote class="quote quote-game"><em>"Der Caramelo läuft hinter dir her und bekämpft Zombies, die zu nah kommen. Sein Wachdienst bleibt aktiv. Die Voreinstellung, dein Begleiter unterwegs."</em></blockquote>
 <h3 id="bleib">Bleib</h3>
 <p>Er hält an, wo er gerade ist, und geht dort nicht weg. Nach ungefähr einer Minute im Stand legt er sich hin.</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Die Zucht läuft <strong>zu 100% passiv</strong>. Du befiehlst zwei Hunden nicht, sich zu paaren. Du schaffst die Bedingungen und wartest ab.</p>
 <p>Jede Spielstunde hat jede infrage kommende Hündin mit einem infrage kommenden Rüden in der Nähe eine Chance, von selbst zu empfangen. Der Standard sind <strong>5% pro Tag</strong> (Sandbox-Option <strong><span class="ig">Zuchtchance pro Tag</span></strong>).</p>
 <h3 id="die-bedingungen">Die Bedingungen</h3>
+<p><strong>Zuerst gilt: Art zu Art.</strong> Die Paarung ist nach Art geschlossen. Ein Hund zeugt nur mit einem Hund und eine Katze nur mit einer Katze, per Befehl genauso wie bei der Auslosung, die von allein in der Welt passiert. Ein Paar aus zwei Arten wird nie trächtig, und der Nachwuchs hat immer die Art der Eltern.</p>
 <p>Alle sind Pflicht, und zwar bei beiden Hunden:</p>
 <ol>
 <li>Beide sind <strong>Begleiter desselben Besitzers</strong>.</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Bedürfnisse:</strong> Hunger, Durst, Gesundheit, Stress.</li>
 <li><strong>Fähigkeiten:</strong> Spürsinn, Kampf, Gehorsam, Jagd, Hüten, jeweils mit Fortschrittsbalken und <strong><span class="ig">Lv X</span></strong>.</li>
 <li><strong>Anlagen:</strong> Stärke, Aggressivität, Widerstandskraft, angezeigt als Niedrig / Durchschnittlich / Hoch.</li>
+<li><strong>Art:</strong> Hund oder Katze, in einer Zeile direkt über der Rasse, denn <span class="ig">Calico Cat</span> ist ein Rassename und keine Art. Bei einer Katze steht beim Jungtier <strong>Kätzchen</strong>.</li>
 <li><strong>Rasse:</strong> Name, Alter (Erwachsen oder Welpe), <span class="ig">(Mischling)</span> wenn es zutrifft, mit der Rassenbeschreibung im Tooltip.</li>
 <li><strong>Erlegt:</strong> wie viele Zombies und wie viel Wild dieser Hund schon getötet hat.</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Wachdienst:</strong> Alarm | Leise | Still</li>
 <li><strong>Auto-Schutz</strong> (an/aus)</li>
 <li><strong>Jagd</strong> (an/aus)</li>
+<li><strong>Folgeabstand:</strong> ein Regler von 2 bis 8 Feldern, in halben Schritten, mit der Zahl daneben</li>
 <li><strong>Hier das Vieh versorgen</strong></li>
 <li><strong>Kunststücke:</strong> vier Schaltflächen (die gesperrten sind ausgegraut, der Grund steht im Tooltip)</li>
 <li><strong>Satteltaschen öffnen</strong></li>
@@ -2076,7 +2081,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Der Hund bellt ständig und zieht Zombies an.</span></strong> Dafür gibt es vier mögliche Quellen, und alle hast du im Griff: der <strong>Wachdienst auf Alarm</strong> (stell ihn auf <strong>Leise</strong>, dann bellt er nicht), das Kunststück <strong>Ablenken</strong> (der Lärm ist genau sein Zweck), die <strong>Jagd</strong> (schalte den Jagdmodus aus) und der <strong>Kampf</strong>. Ein gestresster Hund bellt <strong>nicht</strong> von selbst. Die Ausnahme: der <strong>Mops</strong> kommt nie von Alarm weg, das ist seine Rasse. Wenn gar kein Bellen mehr Zombies ziehen soll, regelt das die Sandbox-Option <strong>Hundelärm lockt Zombies an</strong>, und die gilt für alle Rassen.</p>
 <p><strong><span class="ig">Mein Hund ist weg.</span></strong> Öffne das Fenster über die Pfoten-Schaltfläche, geh auf den Reiter <strong><span class="ig">Meine Hunde</span></strong> und nutze <strong>Bring</strong>. Ist er weit weg, fragt der Mod nach einer Bestätigung und holt ihn samt allem zurück. Abklingzeit von 2 Spielstunden pro Hund. Auch die Markierung auf der Karte zeigt seine zuletzt gesehene Position.</p>
 <p><strong><span class="ig">Der Hund hängt auf der anderen Seite des Zauns fest.</span></strong> Nutze <strong>Bring</strong> (den Pfiff). Genau dafür ist er da, auch wenn dadurch Zombies angelockt werden.</p>
-<p><strong><span class="ig">Mein Hund wird nicht trächtig.</span></strong> Sieh dir die Liste der <a href="#15-zucht-und-welpen">Zuchtbedingungen</a> an. Fast immer sind es Hunger, Durst oder eine Loyalität unter 60 bei einem der beiden. Prüfe auch, ob <strong><span class="ig">Zucht verhindern</span></strong> nicht eingeschaltet ist.</p>
+<p><strong><span class="ig">Mein Hund wird nicht trächtig.</span></strong> Sieh dir die Liste der <a href="#15-zucht-und-welpen">Zuchtbedingungen</a> an. Fast immer sind es Hunger, Durst oder eine Loyalität unter 60 bei einem der beiden. Prüfe auch, ob <strong><span class="ig">Zucht verhindern</span></strong> nicht eingeschaltet ist. Wenn eines von beiden eine Katze ist und das andere ein Hund, fehlt keine Bedingung: eine Art paart sich nur mit der eigenen.</p>
 <p><strong><span class="ig">Mein Welpe wächst nicht.</span></strong> Prüfe, ob bei ihm <strong><span class="ig">Wachstum anhalten</span></strong> eingeschaltet ist. Ansonsten braucht es nur Zeit: Standard sind <strong>90 Spieltage</strong>, und die Uhr läuft auch, wenn er weit weg ist. Ist die Frist längst um und er ist immer noch ein Welpe, geh zu ihm hin: Die Verwandlung passiert, sobald der Welpe geladen ist.</p>
 <p><strong><span class="ig">Der Hund steigt nicht mit mir ins Auto.</span></strong> Nur ein Hund auf <strong>Folgen</strong> steigt ein. Auf Bleib oder Bewachen bleibt er stehen.</p>
 <p><strong><span class="ig">Ich habe den Hund die Basis bewachen lassen und er hat nichts getan.</span></strong> Der Modus Bewachen <strong>funktioniert vorerst nur, solange du in der Nähe bist</strong>. Willst du einen Hund allein aus der Ferne arbeiten lassen, geht das ausschließlich mit <strong>Vieh versorgen</strong>, und dafür braucht er ein ausgewiesenes Gehege.</p>

@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#campos-obrigatórios" data-id="campos-obrigatórios">Campos obrigatórios</a>
 <a class="s3" href="#campos-opcionais" data-id="campos-opcionais">Campos opcionais</a>
+<a class="s3" href="#instinto-distract" data-id="instinto-distract">Instinto: distract</a>
 <a class="s3" href="#a-voz" data-id="a-voz">A voz</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-desligando-um-sistema-inteiro" data-id="7-desligando-um-sistema-inteiro">7. Desligando um sistema inteiro</a>
+<div class="sub">
+<a class="s3" href="#a-espécie" data-id="a-espécie">A espécie</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-as-definições-de-animal" data-id="8-as-definições-de-animal">8. As definições de animal</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>O número em que guardar é a <strong>API mais baixa de que o seu addon realmente precisa</strong>, e a versão do base naquela tabela é a que você anuncia na sua página da Workshop. Tire dessa tabela, e não do que o base era enquanto você escrevia: um campo que só existe na versão de desenvolvimento é um campo que os seus jogadores não têm.</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>game-minutes que ele insiste na entrega antes de desistir.</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>desligado</td>
+<td><code>{ &lt;tipo&gt; = { chance = 0..1, ... } }</code>. A raça sai atrás de coisas sozinha, sem modo e sem nível. Ver abaixo.</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>valor do base</td>
 <td>duração da janela da animação ociosa, em milissegundos. Ajuste quando os seus clips forem mais curtos que os do cão, senão o clip em loop recomeça e é cortado no meio do gesto.</td>
@@ -736,6 +750,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <p>Número e flag que você acrescentar à definição são lidos de volta com <code>CD.breedNumber(animal, campo)</code> e <code>CD.breedFlag(animal, campo)</code>. Prefira essas duas a ler <code>CD.getBreedDef(animal).campo</code> na mão: elas tratam o campo ausente por você, e continuam funcionando quando o base mudar.</p>
+<h3 id="instinto-distract">Instinto: <code>distract</code></h3>
+<p>Todo outro campo pede que o bicho seja bom em alguma coisa. Este pede que ele seja ruim de prestar atenção.</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>Uma raça que declara isso, de tempos em tempos, repara em alguma coisa e vai atrás, largando o que estava fazendo. Ela faz isso com <strong>nenhum modo ligado</strong>, tanto em <strong>Ficar</strong> quanto em Seguir, e você não manda nela nessa hora: as ordens voltam recusadas com a mesma mensagem <code>distracted</code> que a rolagem de obediência já usa. O único comando que passa é o Vem, que cancela.</p>
+<p>Trate como um custo que você dá à sua raça, não como um bônus. Enquanto ela corre, o bicho não está do lado do dono e não está vigiando. Serve para uma raça cuja marca é ser difícil de segurar. Não serve para um cão de trabalho do qual você quer que o jogador dependa.</p>
+<p>Todo tipo aceita os mesmos ajustes opcionais, e o que você deixar de fora cai nos padrões do mod:</p>
+<div class="tw"><table><thead><tr>
+<th>Campo</th>
+<th>O que faz</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1, rolado só quando o gatilho daquele tipo de fato achou alguma coisa. Escrever <code>25</code> por "25%" é recusado com uma linha nomeada no log</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>tiles que o gatilho varre, quando aquele tipo varre alguma coisa</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>minutos de jogo que a janela dura antes de expirar sozinha</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>minutos de jogo até o mesmo bicho poder se distrair de novo</td>
+</tr>
+</tbody></table></div>
+<h4 id="o-tipo-prey">O tipo <code>prey</code></h4>
+<p>O único tipo que o mod base traz. O bicho vai atrás de animal selvagem, e <code>classes</code> escolhe quais chamam a atenção dele:</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>Dois limites valem independente do que você declarar:</p>
+<ul>
+<li><strong>Nunca alcança acima do seu <code>huntMaxPrey</code>.</strong> O funil é o mesmo do sistema de caça, então uma raça com teto <code>small</code> não persegue cervo nem declarando <code>large</code>.</li>
+<li><strong>O gate de nível só é furado para <code>tiny</code>.</strong> Roedor é pego por um bicho recém-domesticado com Caça 0, porque pegar camundongo não é habilidade que se treine. Declare <code>small</code> e a sua raça vai largar tudo e correr atrás do coelho, mas para de fato <em>matar</em> ele, ainda precisa do mesmo nível de Caça que o Labrador precisa. O instinto decide o que chama a atenção; o treino continua decidindo o que ele consegue abater. Sem esse segundo limite, <code>classes</code> seria um atalho que apaga a escada de Caça.</li>
+</ul>
+<p>O toggle de Caça do sandbox continua mandando no abate, não na corrida: com a caça desligada o bicho corre do mesmo jeito, mas a presa escapa.</p>
+<p>O abate feito assim passa pela entrega normal, então é o <code>huntFetchLevel</code> da sua raça que decide se ela carrega o corpo até o dono ou deixa onde caiu. Ponha <code>0</code> e o bicho entrega desde o primeiro dia, que é o que faz um gato te trazer um rato morto. A entrega sobrevive ao fim da janela de distração: morta a presa, o bicho volta a aceitar ordens, e a viagem de volta corre com o <code>huntDeliverTimeoutMin</code> dela. Sem declarar nada, vale o default de 6, e aí a raça corre por instinto mas ainda precisa merecer o direito de buscar.</p>
+<h4 id="escrevendo-o-seu-próprio-tipo">Escrevendo o seu próprio tipo</h4>
+<p><code>distract</code> é um dispatcher, e <code>prey</code> é só o tipo que vem junto com ele. Registre o seu:</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>Depois declare na raça como qualquer outro tipo: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p>O <code>gate</code> roda antes do orçamento global de scan do mod, e é onde ficam as recusas baratas. O <code>find</code> roda depois do orçamento, e é onde mora o custo. O <code>drive</code> devolve true enquanto ainda está conduzindo o bicho, e false quando terminou, o que fecha a janela. O seu handler roda em <code>pcall</code> próprio: se ele estourar, o mod escreve uma linha nomeada no log, desregistra aquele tipo pela sessão e deixa o resto do companheiro funcionando.</p>
+<p>Nomes reservados para tipos futuros do base, ainda não implementados: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Você pode registrar um tipo com um desses nomes hoje, mas o base vence o nome no dia em que trouxer o dele.</p>
 <h3 id="a-voz">A voz</h3>
 <p>Uma espécie diferente não fala a mesma língua. Sem <code>voices</code>, o seu gato late:</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +844,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Ausente ou <code>true</code> significa que o bicho tem aquela habilidade, então você só escreve as que está tirando.</p>
 <p>Desligar uma habilidade faz <strong>três coisas de uma vez</strong>: o sistema nunca roda, a habilidade nunca ganha experiência, e a barra e os comandos dela somem da interface. As três juntas. Esconder só a barra deixaria a habilidade crescendo onde ninguém vê; travar só o sistema deixaria uma barra presa em zero para sempre.</p>
-<p><code>canBreed = false</code> está fora da tabela porque cruzar não tem barra nem experiência. E é total: o bicho não concebe, nunca é escolhido como parceiro, e não cruza nem com a própria raça.</p>
+<p><code>canBreed = false</code> está fora da tabela porque cruzar não tem barra nem experiência. E é total: o bicho não concebe, nunca é escolhido como parceiro, e não cruza nem com a própria raça. Se o que você quer é um bicho que cruza normalmente mas nunca com cão, isso é <code>species</code>, logo abaixo, e não isto.</p>
+<h3 id="a-espécie">A espécie</h3>
+<p>Um addon que acrescenta outro animal, em vez de outro cão, declara isto:</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>O campo está ausente em toda raça publicada até aqui, e ausente quer dizer <code>"dog"</code>. Então nada do que você já escreveu muda de comportamento.</p>
+<p>Ele faz duas coisas. <strong>O cruzamento fica fechado por espécie:</strong> um par só concebe com os dois lados da mesma espécie, no comando, no sorteio passivo por hora e na ferramenta de debug igual. E a interface para de chamar o seu bicho de cão: <code>nounKey</code> é o substantivo cru que preenche frases como <em>"Este %1 já pertence a outro sobrevivente"</em>, e <code>youngKey</code> é o rótulo que o filhote da sua espécie carrega na janela, no menu de contexto e no canil, onde um cão diz <em>Filhote</em>.</p>
+<p>Declarar <code>species</code> sem registrar não é fatal: seu bicho continua recusando cruzar fora da própria espécie, porque o portão compara a string crua. Só os dois substantivos caem nos do cão, e o log diz isso pelo nome. O fallback é de um lado só de propósito, porque o contrário, tratar espécie não registrada como cão, deixaria seu bicho cruzar com cão caladamente.</p>
+<p><strong>Isso é um bloqueio, então não degrada.</strong> Num base anterior à API 6 o campo é ignorado em silêncio e seu bicho é cão para efeito de cruzamento. Se ele nunca pode cruzar com um, cheque a API 6, ou mantenha <code>canBreed = false</code> enquanto o base for antigo, que é o que o gato faz.</p>
 <p><code>huntMaxPrey</code> é um <strong>teto dentro de uma caça que existe</strong>, que é coisa diferente de <code>hunt = false</code>. Aceita <code>"tiny"</code> (camundongo, rato, esquilo), <code>"small"</code> (coelho, guaxinim) ou <code>"large"</code> (cervo, o padrão, sem teto). Presa acima do teto é invisível para o seu bicho: ele não persegue e nem sequer aponta. Valor fora dessa escada cai em <code>"large"</code> e imprime uma linha nomeada no log.</p>
 <p><strong>Bicho bloqueado não ganha botão desabilitado.</strong> A opção sai do radial, do menu de contexto e da janela, e a recusa no server é silenciosa. Um halo dizendo que a ordem foi ignorada seria mentira, porque isso não é desobediência. Explique o desenho na descrição da sua raça. É por isso que nenhum desses campos traz chave de tradução nova junto.</p>
 <h2 id="8-as-definições-de-animal">8. As definições de animal</h2>
@@ -1014,6 +1091,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>uma para cada um dos seus três tipos</td>
+</tr>
+<tr>
+<td>as chaves da sua espécie</td>
+<td>o <code>nounKey</code> e o <code>youngKey</code> que você passou para <code>CD.registerSpecies</code>, se você acrescentou uma espécie</td>
 </tr>
 <tr>
 <td>as chaves do seu moodle</td>

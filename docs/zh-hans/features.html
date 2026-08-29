@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>只有这个模式会跟你一起上车。</strong></li>
 <li>你要是离得太远（24 格），它会自动被挪到你身后，免得卡在某栋楼的另一边。</li>
 </ul>
+<p><strong>间距由你决定。</strong> 狗窗口里的<strong>“跟随距离”</strong>滑条可以从 <strong>2 格调到 8 格</strong>，每次半格。默认是 2 格，狗紧跟在你脚边。放宽之后，它在厨房、走廊和门口就不再挡路，狗越大差别越明显。这个设置按每只狗分开保存，所以一群狗里每只都能走你要的距离，数值跟着狗走：退出游戏、进犬舍、换世界都还在。</p>
+<p>有一个后果值得说清楚，它是你的选择，不是缺陷：自动开打的范围是以<strong>你</strong>为中心的 5 格，所以间距放得很宽时，狗从更远的地方起跑，扑向冲你而来的丧尸也就更慢。想要护卫犬贴在肩边的人，把滑条留在最小值。</p>
 <blockquote class="quote quote-game"><em><span class="ig">小卡犬会跟随在你身后，并警戒靠近的僵尸。其哨兵功能保持警戒。默认模式，你的同伴在移动中。</span></em></blockquote>
 <h3 id="停留">停留</h3>
 <p>它停在原地不动，也不会离开。停了大约一分钟以后，它会趴下。</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>繁殖是<strong>100% 被动</strong>的。你没法命令两只狗去交配，你只能把条件准备好，然后等。</p>
 <p>每个游戏小时，只要附近有一只符合条件的公犬，符合条件的母犬就会自己掷一次受孕判定。默认是 <strong>每天 5%</strong>（沙盒选项<strong>“每日繁殖几率”</strong>）。</p>
 <h3 id="需要满足的条件">需要满足的条件</h3>
+<p><strong>首先，物种要对得上。</strong> 繁殖按物种封闭：狗只和狗怀上，猫只和猫怀上，无论是你下命令还是世界里自己发生的抽选都一样。不同物种的一对永远不会怀孕，生下来的也永远和父母同一个物种。</p>
 <p>下面这些全都是必须的，而且两只狗都要满足：</p>
 <ol>
 <li>两只都是<strong>同一个主人的同伴犬</strong>。</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>需求：</strong>饥饿、口渴、生命值、压力。</li>
 <li><strong>技能：</strong>嗅觉、战斗、服从、狩猎、Herding，每一项都有进度条和<strong><span class="ig">Lv X</span></strong>。</li>
 <li><strong>特性：</strong>力量、攻击性、抗性，分成 低 / 平均 / 高 三档显示。</li>
+<li><strong>物种：</strong> 狗或猫，单独一行显示在品种上方，因为“Calico Cat”是品种名而不是物种名。猫的幼崽显示为<strong>小猫</strong>。</li>
 <li><strong>品种：</strong>名称、年龄（成年或幼犬），是混血的话还会标上<span class="ig">（混血）</span>，鼠标悬停能看到品种介绍。</li>
 <li><strong>击杀：</strong>这只狗到目前为止杀掉了多少丧尸、多少猎物。</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>哨兵：</strong>警报 | 静默 | 静音</li>
 <li><strong>自动守护</strong>（开/关）</li>
 <li><strong>狩猎</strong>（开/关）</li>
+<li><strong>跟随距离：</strong> 从 2 格到 8 格的滑条，每次半格，旁边显示数值</li>
 <li><strong>Care for livestock here</strong></li>
 <li><strong>技巧：</strong>四个按钮（没解锁的点不了，鼠标悬停会告诉你原因）</li>
 <li><strong>打开驮袋</strong></li>
@@ -2070,7 +2075,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">狗一直叫，还把僵尸引过来了。</span></strong> 可能的来源有四个，而且全都能控制：<strong>处在警报的哨兵</strong>（改成<strong>静默</strong>，它就绝不会大声吠叫）、 <strong>引开注意</strong>这个技巧（制造噪音本来就是它的目的）、<strong>狩猎</strong>（把狩猎模式关掉），还有<strong>战斗</strong>。 压力大的狗<strong>不会</strong>自己乱叫。例外是<strong>巴哥犬</strong>：它永远脱不开警报，这就是它的品种。如果你想让任何吠叫 都不再招僵尸，靠的是沙盒选项<strong>狗的噪音吸引僵尸</strong>，而且它对所有品种都有效。</p>
 <p><strong><span class="ig">我的狗不见了。</span></strong> 点爪印按钮打开窗口，切到 <strong><span class="ig">我的狗</span></strong> 这个标签页，然后用<strong>召回</strong>。如果它在很远的地方，mod 会先让 你确认一下，再把它连同身上的东西一起带回来。每只狗有 2 个游戏小时的冷却。地图上的标记也会留着最后 一次看到它的位置。</p>
 <p><strong><span class="ig">狗卡在栅栏的另一边过不来。</span></strong> 用<strong>召回</strong>（也就是吹口哨）。这个功能就是为这种情况准备的，代价是会引来僵尸。</p>
-<p><strong><span class="ig">我的狗怀不上。</span></strong> 对着<a href="#15-繁殖与幼犬">繁殖条件</a>那份清单挨个查一遍。绝大多数时候是两只里有一只饿了、渴了， 或者忠诚度低于 60。另外也看看<strong><span class="ig">禁止繁殖</span></strong>是不是被打开了。</p>
+<p><strong><span class="ig">我的狗怀不上。</span></strong> 对着<a href="#15-繁殖与幼犬">繁殖条件</a>那份清单挨个查一遍。绝大多数时候是两只里有一只饿了、渴了， 或者忠诚度低于 60。另外也看看<strong><span class="ig">禁止繁殖</span></strong>是不是被打开了。 如果一只是猫另一只是狗，那不是缺条件：物种只和自己的物种繁殖。</p>
 <p><strong><span class="ig">我的幼犬长不大。</span></strong> 先看看它身上是不是开着<strong><span class="ig">暂停成长</span></strong>。除此之外就只是时间问题：默认要 <strong>90 个游戏日</strong>，而且你不在 它身边的时候，这个时间照样在走。如果时间早就到了它还是幼犬，那就走近它一点：变成成犬这件事，只在 幼犬被加载出来的时候才会发生。</p>
 <p><strong><span class="ig">狗不跟我一起上车。</span></strong> 只有处在<strong>跟随</strong>的狗才会上车。停留或守卫的时候，它就留在原地了。</p>
 <p><strong><span class="ig">我留了一只狗看家，结果它什么都没干。</span></strong> 守卫模式目前<strong>只在你人就在附近的时候才起作用</strong>。想让一只狗在远处自己干活，唯一能做到这件事的模式是 <strong>Care for livestock here</strong>，而且它需要一个指定好的动物围栏。</p>

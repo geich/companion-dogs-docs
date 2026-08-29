@@ -926,6 +926,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>È l'unica modalità in cui sale in macchina con te.</strong></li>
 <li>Se ti allontani troppo (24 tile), viene riposizionato in automatico dietro di te, così non resta bloccato dall'altra parte di un edificio.</li>
 </ul>
+<p><strong>La distanza la scegli tu.</strong> La barra <strong><span class="ig">Distanza di seguito</span></strong>, nella finestra del cane, va da <strong>2 a 8 caselle</strong>, di mezzo in mezzo. Il 2 è il valore predefinito e tiene il cane attaccato a te; più spazio lo toglie di mezzo in cucina, nel corridoio e sulla porta, che è dove un cane grosso dà più fastidio. La scelta è per cane, quindi in un branco ognuno cammina alla distanza che vuoi, e resta salvata con l'animale: sopravvive all'uscita dal gioco, al canile e al cambio di mondo.</p>
+<p>Una conseguenza va detta, perché è una tua scelta e non un difetto: la lotta automatica avviene entro 5 caselle attorno a <strong>te</strong>, quindi con molto spazio il cane parte da più lontano e ci mette di più a raggiungere uno zombie che ti viene addosso. Chi vuole il cane da guardia a fianco lascia la barra al minimo.</p>
 <blockquote class="quote quote-game"><em><span class="ig">Il Caramelo ti segue e attacca gli zombie vicini.</span></em></blockquote>
 <h3 id="resta">Resta</h3>
 <p>Si ferma dov'è e non si muove da lì. Dopo circa un minuto fermo, si sdraia.</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>L'accoppiamento è <strong>100% passivo</strong>. Non sei tu a ordinare a due cani di accoppiarsi. Tu prepari le condizioni e aspetti.</p>
 <p>Ogni ora di gioco, ogni femmina idonea con un maschio idoneo nei paraggi ha una probabilità di concepire da sola. Il valore predefinito è <strong>5% al giorno</strong> (opzione sandbox <strong><span class="ig">Probabilità di accoppiamento al giorno</span></strong>).</p>
 <h3 id="le-condizioni">Le condizioni</h3>
+<p><strong>Prima di tutto, specie con specie.</strong> L'accoppiamento è chiuso per specie: un cane concepisce solo con un cane e un gatto solo con un gatto, sia con il comando sia nel sorteggio che avviene da solo nel mondo. Una coppia di specie diverse non resta mai incinta, e chi nasce è sempre della specie dei genitori.</p>
 <p>Tutte obbligatorie, in entrambi i cani:</p>
 <ol>
 <li>Sono tutti e due <strong>compagni dello stesso proprietario</strong>.</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Bisogni:</strong> Fame, Sete, Salute, Stress.</li>
 <li><strong>Abilità:</strong> Fiuto, Combattimento, Obbedienza, Caccia, Herding, ognuna con barra di avanzamento e <strong><span class="ig">Liv X</span></strong>.</li>
 <li><strong>Tratti:</strong> Forza, Aggressività, Resistenza, mostrati come Basso / Medio / Alto.</li>
+<li><strong>Specie:</strong> Cane o Gatto, su una riga sopra la razza, perché <span class="ig">Calico Cat</span> è un nome di razza e non di specie. Nel gatto il piccolo compare come <strong>Gattino</strong>.</li>
 <li><strong>Razza:</strong> nome, età (Adulto o Cucciolo), <span class="ig">(Meticcio)</span> quando è il caso, con la descrizione della razza al passaggio del mouse.</li>
 <li><strong>Uccisioni:</strong> quanti zombie e quante prede ha già abbattuto quel cane.</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Sentinella:</strong> Avviso | Discreto | Silenzioso</li>
 <li><strong>Auto-protezione</strong> (attiva/disattiva)</li>
 <li><strong>Caccia</strong> (attiva/disattiva)</li>
+<li><strong>Distanza di seguito:</strong> barra da 2 a 8 caselle, di mezzo in mezzo, con il numero di fianco</li>
 <li><strong>Care for livestock here</strong></li>
 <li><strong>Trucchi:</strong> quattro pulsanti (quelli bloccati restano disattivati, con il motivo al passaggio del mouse)</li>
 <li><strong>Apri le bisacce</strong></li>
@@ -2070,7 +2075,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Il cane abbaia in continuazione e mi porta gli zombie.</span></strong> Le fonti possibili sono quattro, tutte controllabili: la <strong>sentinella su Avviso</strong> (passa a <strong>Discreto</strong>, che non abbaia mai), il trucco <strong>Distrai</strong> (il rumore è proprio il suo scopo), la <strong>caccia</strong> (spegni la modalità Caccia) e il <strong>combattimento</strong>. Un cane stressato <strong>non</strong> abbaia da solo. L'eccezione: il <strong>Carlino</strong> non esce mai da Avviso, è la sua razza. Se vuoi che nessun abbaio tiri zombie, la cosa si risolve con l'opzione di sandbox <strong>Il rumore del cane attira gli zombie</strong>, e vale per tutte le razze.</p>
 <p><strong><span class="ig">Il mio cane è sparito.</span></strong> Apri la finestra con il pulsante a zampa, vai nella scheda <strong><span class="ig">I Miei Cani</span></strong> e usa <strong>Porta</strong>. Se è lontano, il mod chiede conferma e te lo riporta indietro con tutto quello che ha addosso. C'è un cooldown di 2 ore di gioco per cane. Anche il segnalino sulla mappa mostra l'ultima posizione vista.</p>
 <p><strong><span class="ig">Il cane resta bloccato dall'altra parte del recinto.</span></strong> Usa <strong>Porta</strong> (il fischio). Serve esattamente a questo, al prezzo di attirare zombie.</p>
-<p><strong><span class="ig">La mia cagna non resta incinta.</span></strong> Controlla la lista delle <a href="#15-accoppiamento-e-cuccioli">condizioni di accoppiamento</a>. Quasi sempre è fame, sete o lealtà sotto 60 in uno dei due. Controlla anche che <strong><span class="ig">Blocca accoppiamento</span></strong> non sia attivo.</p>
+<p><strong><span class="ig">La mia cagna non resta incinta.</span></strong> Controlla la lista delle <a href="#15-accoppiamento-e-cuccioli">condizioni di accoppiamento</a>. Quasi sempre è fame, sete o lealtà sotto 60 in uno dei due. Controlla anche che <strong><span class="ig">Blocca accoppiamento</span></strong> non sia attivo. Se uno dei due è un gatto e l'altro un cane, non manca una condizione: ogni specie si accoppia solo con la propria.</p>
 <p><strong><span class="ig">Il mio cucciolo non cresce.</span></strong> Controlla che su di lui non sia attivo <strong><span class="ig">Ferma la crescita</span></strong>. A parte questo è solo questione di tempo: il valore predefinito è di <strong>90 giorni di gioco</strong>, e l'orologio corre anche con il cane lontano. Se il termine è già passato e resta cucciolo, avvicinati a lui: la trasformazione avviene quando il cucciolo è caricato.</p>
 <p><strong><span class="ig">Il cane non sale in macchina con me.</span></strong> Sale solo il cane in <strong>Segui</strong>. In Resta o Difendi rimane dov'è.</p>
 <p><strong><span class="ig">Ho lasciato il cane a sorvegliare la base e non ha fatto niente.</span></strong> La modalità Difendi, per ora, <strong>funziona solo con te nei paraggi</strong>. Per lasciare un cane a lavorare da solo e lontano, l'unica modalità che fa questo è <strong>Care for livestock here</strong>, e richiede un recinto designato.</p>

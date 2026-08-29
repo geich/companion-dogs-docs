@@ -919,13 +919,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h2 id="4-os-três-modos-seguir-ficar-e-vigiar">4. Os três modos: Seguir, Ficar e Vigiar</h2>
 <p>O cão está <strong>sempre em um</strong> desses três. Todo o resto (sentinela, caça, auto-proteção) é um ajuste por cima do modo.</p>
 <h3 id="seguir">Seguir</h3>
-<p>O padrão. Ele anda atrás de você: começa a se mover quando você está a 2 tiles de distância e passa a correr acima de 5 tiles.</p>
+<p>O padrão. Ele anda atrás de você: começa a se mover quando você está a 2 tiles de distância e passa a correr acima de 6 tiles, ou assim que você sai correndo.</p>
 <ul>
 <li><strong>Luta contra zumbis num raio de 5 tiles ao redor de VOCÊ</strong> (não dele). Solta o alvo aos 8.</li>
 <li>Pula cerca baixa, sobe escada, muda de andar atrás de você.</li>
 <li><strong>É o único modo que entra no carro com você.</strong></li>
 <li>Se você se afastar demais (24 tiles), ele é encaixado atrás de você automaticamente, para não ficar travado do outro lado de um prédio.</li>
 </ul>
+<p><strong>Você escolhe a folga.</strong> A barra <strong><span class="ig">Distância ao seguir</span></strong>, na aba Comandos, vai de <strong>2 a 8 tiles</strong>, de meio em meio. Os 2 são o padrão e deixam o cão colado em você; mais folga tira ele do seu caminho na cozinha, no corredor e no vão de porta, que é onde um cão grande mais atrapalha. A escolha é por cão, então numa matilha cada um anda na distância que você quiser, e ela fica salva com o bicho: sobrevive a sair e voltar do jogo, ao canil e à troca de mundo.</p>
+<p>Uma consequência vale ser dita, porque ela é escolha sua e não defeito: a briga automática acontece num raio de 5 tiles ao redor de <strong>você</strong>, então com a folga bem aberta ele começa a corrida de mais longe e demora mais para alcançar um zumbi que vem em cima de você. Quem quer o cão de guarda em cima do ombro deixa a barra no mínimo.</p>
 <blockquote class="quote quote-game"><em>"O Caramelo anda atrás de você e luta contra zumbis que chegam perto. A sentinela segue vigiando. O padrão, seu companheiro em movimento."</em></blockquote>
 <h3 id="ficar">Ficar</h3>
 <p>Ele para onde está e não sai de lá. Depois de mais ou menos um minuto parado, ele deita.</p>
@@ -1535,6 +1537,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>O cruzamento é <strong>100% passivo</strong>. Você não manda dois cães acasalarem. Você monta as condições e espera.</p>
 <p>A cada hora de jogo, cada fêmea elegível com um macho elegível por perto tem uma chance de conceber sozinha. O padrão é <strong>5% ao dia</strong> (opção de sandbox <strong><span class="ig">Chance de cruzamento por dia</span></strong>).</p>
 <h3 id="as-condições">As condições</h3>
+<p><strong>Antes de tudo, espécie com espécie.</strong> O cruzamento é fechado por espécie: cão só concebe com cão e gato só com gato, tanto no comando quanto no sorteio que acontece sozinho pelo mundo. Um par de espécies diferentes nunca engravida, e o que nasce é sempre da espécie dos pais.</p>
 <p>Todas obrigatórias, nos dois cães:</p>
 <ol>
 <li>Os dois são <strong>companheiros do mesmo dono</strong>.</li>
@@ -1694,6 +1697,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Necessidades:</strong> Fome, Sede, Saúde, Estresse.</li>
 <li><strong>Habilidades:</strong> Faro, Combate, Obediência, Caça, Pastoreio, cada uma com barra de progresso e <strong><span class="ig">Nv X</span></strong>.</li>
 <li><strong>Características:</strong> Força, Agressividade, Resistência, mostradas como Baixa / Média / Alta.</li>
+<li><strong>Espécie:</strong> Cão ou Gato, numa linha logo acima da raça, porque <span class="ig">Calico Cat</span> é nome de raça e não de espécie. No gato, o filhote aparece como <strong>Gatinho</strong>.</li>
 <li><strong>Raça:</strong> nome, idade (Adulto ou Filhote), <span class="ig">(Mestiço)</span> quando for o caso, com a descrição da raça no hover.</li>
 <li><strong>Abates:</strong> quantos zumbis e quantas presas aquele cão já matou.</li>
 </ul>
@@ -1704,6 +1708,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Sentinela:</strong> Alerta | Discreto | Silencioso</li>
 <li><strong>Auto-proteção</strong> (liga/desliga)</li>
 <li><strong>Caça</strong> (liga/desliga)</li>
+<li><strong>Distância ao seguir:</strong> barra de 2 a 8 tiles, de meio em meio, com o número do lado</li>
 <li><strong>Cuidar do gado aqui</strong></li>
 <li><strong>Truques:</strong> quatro botões (os travados ficam desabilitados com o motivo no hover)</li>
 <li><strong>Abrir alforjes</strong></li>
@@ -2081,7 +2086,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong>"O cão late toda hora e traz zumbi."</strong> São quatro fontes possíveis, todas controláveis: a <strong>sentinela em Alerta</strong> (mude para <strong>Discreto</strong>, que nunca late), o truque <strong>Distrair</strong> (o barulho é o objetivo dele), a <strong>caça</strong> (desligue o modo Caça) e o <strong>combate</strong>. Um cão estressado <strong>não</strong> late sozinho. Exceção: o <strong>Pug</strong> não sai de Alerta, é a raça dele. Se você quer que latido nenhum puxe zumbi, é a opção de sandbox <strong>Barulho do cão atrai zumbis</strong> que resolve, e ela vale para todas as raças.</p>
 <p><strong>"Meu cão sumiu."</strong> Abra a janela no botão de patinha, vá na aba <strong>"Meus Cães"</strong> e use <strong>Trazer</strong>. Se ele estiver longe, o mod pede confirmação e o traz de volta com tudo. Cooldown de 2 horas de jogo por cão. O marcador no mapa também mostra a última posição vista.</p>
 <p><strong>"O cão fica preso do outro lado da cerca."</strong> Use <strong>Trazer</strong> (o assobio). É exatamente para isso, ao custo de atrair zumbis.</p>
-<p><strong>"Meu cão não engravida."</strong> Confira a lista de <a href="#15-cruzamento-e-filhotes">condições de cruzamento</a>. Quase sempre é fome, sede ou lealdade abaixo de 60 em um dos dois. Confira também se <strong>"Bloquear cruzamento"</strong> não está ligado.</p>
+<p><strong>"Meu cão não engravida."</strong> Confira a lista de <a href="#15-cruzamento-e-filhotes">condições de cruzamento</a>. Quase sempre é fome, sede ou lealdade abaixo de 60 em um dos dois. Confira também se <strong>"Bloquear cruzamento"</strong> não está ligado. Se um dos dois é gato e o outro é cão, não é falta de condição: espécie só cruza com a própria.</p>
 <p><strong>"Meu filhote não cresce."</strong> Confira se <strong>"Pausar crescimento"</strong> não está ligado nele. Fora isso, é só tempo: o padrão são <strong>90 dias de jogo</strong>, e o relógio corre mesmo com ele longe. Se o prazo já venceu e ele continua filhote, chegue perto dele: a transformação acontece quando o filhote é carregado.</p>
 <p><strong>"O cão não entra no carro comigo."</strong> Só o cão em <strong>Seguir</strong> embarca. Em Ficar ou Vigiar, ele fica.</p>
 <p><strong>"Deixei o cão vigiando a base e ele não fez nada."</strong> O modo Vigiar, por enquanto, <strong>só funciona com você por perto</strong>. Para deixar um cão trabalhando sozinho de longe, o único modo que faz isso é <strong>Cuidar do gado</strong>, e ele exige um curral designado.</p>

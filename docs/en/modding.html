@@ -425,11 +425,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
 <a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
+<a class="s3" href="#instinct-distract" data-id="instinct-distract">Instinct: distract</a>
 <a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-turning-a-whole-system-off" data-id="7-turning-a-whole-system-off">7. Turning a whole system off</a>
+<div class="sub">
+<a class="s3" href="#the-species" data-id="the-species">The species</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#8-the-animal-definitions" data-id="8-the-animal-definitions">8. The animal definitions</a>
@@ -518,6 +522,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>5</td>
 <td>0.7.0</td>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code>, <code>descKey</code>, <code>voices</code>, <code>CD.registerVoices</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.7.1</td>
+<td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
 </tbody></table></div>
 <p>The number to guard on is the <strong>lowest API that your add-on actually needs</strong>, and the base version in that table is the one you name on your Workshop page. Take it from that table and not from whatever the base happened to be while you were writing: a field that exists only in the developer build is a field your players do not have.</p>
@@ -715,6 +724,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>game minutes it will keep trying to deliver before giving up.</td>
 </tr>
 <tr>
+<td><code>distract</code></td>
+<td>off</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. The breed goes after things on its own, no mode and no level required. See below.</td>
+</tr>
+<tr>
 <td><code>idleAnimMs</code></td>
 <td>base value</td>
 <td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, or the loop restarts and gets cut mid gesture.</td>
@@ -730,12 +744,69 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>{ bark, growl, idle, wildbark, pet }</code>. See below.</td>
 </tr>
 <tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>which species the animal belongs to. Breeding is closed per species. Section 7.</td>
+</tr>
+<tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
 <td>everything on</td>
 <td>the structural blocks. Section 7.</td>
 </tr>
 </tbody></table></div>
 <p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
+<h3 id="instinct-distract">Instinct: <code>distract</code></h3>
+<p>Every other field asks the animal to be good at something. This one asks it to be bad at paying attention.</p>
+<pre><code>distract = {
+    prey = { chance = 0.25 },
+},</code></pre>
+<p>A breed that declares it will, every so often, notice something and go after it, dropping whatever it was doing. It does this with <strong>no mode switched on</strong>, from <strong>Stay</strong> as well as Follow, and you are not in charge while it lasts: orders come back refused with the <code>distracted</code> message the obedience roll already uses. The one command that gets through is Come, which cancels it.</p>
+<p>Treat it as a cost you are giving your breed, not a bonus. While it runs, the animal is not at the owner's side and is not keeping watch. It fits a breed whose defining trait is being hard to hold on to. It does not fit a working dog you want the player to rely on.</p>
+<p>Every kind takes the same optional knobs, and anything you leave out falls back to the mod's defaults:</p>
+<div class="tw"><table><thead><tr>
+<th>Field</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td><code>chance</code></td>
+<td>0..1, rolled only when the kind's trigger actually found something. Writing <code>25</code> for "25%" is rejected with a named line in the log</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>tiles the trigger searches, when the kind searches at all</td>
+</tr>
+<tr>
+<td><code>durationMin</code></td>
+<td>game minutes the window lasts before it expires on its own</td>
+</tr>
+<tr>
+<td><code>cooldownMin</code></td>
+<td>game minutes before the same animal can be distracted again</td>
+</tr>
+</tbody></table></div>
+<h4 id="the-prey-kind">The <code>prey</code> kind</h4>
+<p>The only kind the base mod ships. The animal goes after wild animals, and <code>classes</code> picks which ones get its attention:</p>
+<pre><code>distract = {
+    prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
+},</code></pre>
+<p>Two limits hold no matter what you declare:</p>
+<ul>
+<li><strong>It never reaches above your <code>huntMaxPrey</code>.</strong> The same funnel the hunting system uses applies here, so a breed capped at <code>small</code> will not chase deer even if it declares <code>large</code>.</li>
+<li><strong>The level gate is only skipped for <code>tiny</code>.</strong> Rodents get caught by a freshly tamed animal with Hunt 0, because catching mice is not a skill anything trains for. Declare <code>small</code> and your breed will drop everything and run after the rabbit, but to actually <em>kill</em> it, it still needs the same Hunt level the Labrador needs. Instinct decides what gets its attention; training still decides what it can bring down. Without that second limit, <code>classes</code> would be a shortcut that erases the Hunting ladder.</li>
+</ul>
+<p>The sandbox Hunting toggle still owns the kill, not the chase: with hunting off the animal still runs, but the prey gets away.</p>
+<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner or leaves it where it fell. Set it to <code>0</code> and the animal delivers from day one, which is what makes a cat bring you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>. Leave <code>huntFetchLevel</code> alone and the default of 6 applies, so the breed chases on instinct and still has to earn the right to fetch.</p>
+<h4 id="writing-your-own-kind">Writing your own kind</h4>
+<p><code>distract</code> is a dispatcher, and <code>prey</code> is just the kind that ships with it. Register your own:</p>
+<pre><code>CD.registerDistraction("butterfly", {
+    gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
+    find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
+    drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
+    stop  = function(animal, d) end,                               -- optional, cleanup
+})</code></pre>
+<p>Then declare it on the breed like any other kind: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> runs before the mod's global scan budget and is where cheap rejections belong. <code>find</code> runs after the budget and is where the cost lives. <code>drive</code> returns true while it is still driving the animal, and false when it is done, which closes the window. Your handler runs in its own <code>pcall</code>: if it throws, the mod logs a named line, unregisters that kind for the session and leaves the rest of the companion working.</p>
+<p>Names reserved for future base kinds, not implemented yet: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. You can register a kind under one of those names today, but the base will win the name when it ships its own.</p>
 <h3 id="the-voice">The voice</h3>
 <p>A different species does not speak the same language. Without <code>voices</code>, your cat barks:</p>
 <pre><code>CD.registerVoices({
@@ -778,7 +849,18 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
 <p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface. All three, together. Hiding only the bar would leave the skill growing where nobody can see it; blocking only the system would leave a bar stuck at zero forever.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
+<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either. If what you actually want is an animal that breeds normally but never with a dog, that is <code>species</code>, below, not this.</p>
+<h3 id="the-species">The species</h3>
+<p>An add-on that adds another animal, rather than another dog, declares it:</p>
+<pre><code>CD.registerSpecies({ key = "cat",
+                     nounKey  = "IGUI_PD_SpeciesNoun_cat",
+                     youngKey = "IGUI_PD_Young_cat" })
+
+CD.registerBreed({ ..., species = "cat" })</code></pre>
+<p>The field is absent on every breed published so far, and absent means <code>"dog"</code>. So nothing you already wrote changes behaviour.</p>
+<p>It does two things. <strong>Breeding is closed per species:</strong> a pair only conceives when both sides are the same species, in the command, in the passive hourly roll and in the debug tool alike. And the interface stops calling your animal a dog: <code>nounKey</code> is the bare noun that fills sentences like <em>"This %1 already belongs to another survivor"</em>, and <code>youngKey</code> is the label the young of your species carries in the window, the context menu and the kennel, where a dog says <em>Puppy</em>.</p>
+<p>Declaring <code>species</code> without registering it is not fatal: your animal still refuses to breed outside its own species, because the gate compares the raw string. Only the two nouns fall back to the dog's, and the log says so by name. The fallback is deliberately one-sided, because the opposite, treating an unregistered species as a dog, would quietly let your animal breed with dogs.</p>
+<p><strong>This is a block, so it does not degrade.</strong> On a base older than API 6 the field is ignored in silence and your animal is a dog for breeding purposes. If it must never cross with one, guard on API 6, or keep <code>canBreed = false</code> while the base is older, which is what the cat does.</p>
 <p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
 <p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. A halo saying the order was ignored would be a lie, because this is not disobedience. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
 <h2 id="8-the-animal-definitions">8. The animal definitions</h2>
@@ -1014,6 +1096,10 @@ end</code></pre>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
 <td>one for each of your three types</td>
+</tr>
+<tr>
+<td>your species keys</td>
+<td>the <code>nounKey</code> and <code>youngKey</code> you passed to <code>CD.registerSpecies</code>, if you added a species</td>
 </tr>
 <tr>
 <td>your moodle keys</td>
