@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>玩家進伺服器時 <strong>會自己下載模組</strong>，不需要誰手動訂閱。他們需要的是和伺服器同一個遊戲版本。</li>
 </ul>
 <h3 id="連線主機">連線主機</h3>
-<p>連線有它自己的坑：<strong>只在連線的模組選擇畫面裡啟用是不夠的</strong>。主機還得在主選單的 <strong><span class="ig">模組</span></strong> 列表裡 啟用 Companion Dogs，並且在開伺服器之前 <strong>完全關閉遊戲</strong>。如果連線裡狗沒有貼圖或者被壓扁，缺的 就是這一步。</p>
+<p>連線就是一台跑在你自己機器上的 <strong>真伺服器</strong>，它不會繼承主選單的模組列表。總共三步，漏掉第二步是最 常見的錯誤。</p>
+<p><strong>1. 在你自己的遊戲裡啟用模組。</strong> 主選單 &gt; <strong><span class="ig">模組</span></strong> &gt; 勾選 <strong>Companion Dogs</strong> 以及你要用的品種 附加包。<strong>完全關閉遊戲</strong> 再重新開啟。沒有這次重啟，狗通常會沒有貼圖或是 <em>被壓扁</em>。</p>
+<p><strong>2. 把模組寫進伺服器設定。</strong> 只在連線的模組選擇畫面裡勾選是 <strong>不夠的</strong>：</p>
+<ol>
+<li>主選單 &gt; <strong><span class="ig">主持遊戲</span></strong> &gt; <strong><span class="ig">管理設定....</span></strong>。</li>
+<li>選取你要用的那份設定，按 <strong><span class="ig">編輯已選擇的設定</span></strong>。</li>
+<li>在左邊的清單裡打開 <strong><span class="ig">SteamWorkshop</span></strong>（這個名稱在任何語言下都是英文）。在 <strong><span class="ig">添加一個已安裝的 工作坊項目至清單:</span></strong> 選 Companion Dogs；如果你還沒訂閱，就用 <strong><span class="ig">使用 ID 添加另一個工作坊項目至 清單:</span></strong>，輸入 <code>3740052292</code> 再按 Enter。</li>
+<li>一樣在左邊的清單裡，打開 <strong><span class="ig">Mods</span></strong>，用同樣的方式加上 <code>CompanionDogs</code>。</li>
+<li>按 <strong><span class="ig">儲存</span></strong>。</li>
+</ol>
+<p>這兩份清單就是專用伺服器的 <code>WorkshopItems=</code> 和 <code>Mods=</code>，只是改成用畫面來編輯：改動會寫進 <code>Zomboid\Server\&lt;設定名稱&gt;.ini</code>。ID 用上一節表格裡的那些，<strong>順序也一樣：基礎模組排在品種附加包 前面。</strong></p>
+<p><strong>3. 開伺服器</strong>，按 <strong><span class="ig">開始</span></strong> 按鈕。進來的人會自己下載模組，誰都不用手動訂閱。</p>
+<p><strong>出問題的時候：</strong> 狗沒有貼圖或是被壓扁，代表漏了第 1 步。所有人都看不到腳掌按鈕、世界裡也沒有狗， 代表漏了第 2 步。</p>
 <h2 id="1-5-分鐘上手從流浪狗到夥伴">1. 5 分鐘上手：從流浪狗到夥伴</h2>
 <p>如果你只想趕快開始玩，照這樣做就好：</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="給管理員">給管理員</h3>
 <p>有一個<strong>「犬隻登記（管理員）」</strong>面板：可以照玩家搜尋，看線上／離線狀態、狗的數量，還有「重新整理」 按鈕。另外還有一個能即時<strong>調整伺服器效能</strong>的面板。這兩個都只有管理員看得到。</p>
 <h3 id="合作模式的安裝提醒">合作模式的安裝提醒</h3>
-<p><strong>如果狗出現時沒有貼圖，或是整隻擠成一團：</strong>請到<strong>主選單的 Mods 清單</strong>裡啟用 Companion Dogs （不是只在合作模式的選單裡勾），然後<strong>完全關閉遊戲</strong>再載入存檔。合作模式的房主也要照做，並且重開 伺服器。</p>
+<p><strong>如果狗出現時沒有貼圖，或是整隻擠成一團：</strong>請到<strong>主選單的 Mods 清單</strong>裡啟用 Companion Dogs （不是只在合作模式的選單裡勾），然後<strong>完全關閉遊戲</strong>再載入存檔。合作模式的房主也要照做，並且重開 伺服器。而且光在選單裡啟用還不夠：房主還得照安裝那一節的步驟，把模組寫進<strong>伺服器設定</strong>。</p>
 <h2 id="21-沙盒選項">21. 沙盒選項</h2>
 <p>世界設定裡的 <strong><span class="ig">同伴犬</span></strong> 頁面，一共 33 個選項。</p>
 <blockquote class="quote"><strong>記住：</strong> 多人遊戲裡說了算的是<strong>伺服器</strong>那邊的設定。而且 Project Zomboid 的沙盒選項是寫進<strong>存檔</strong> 裡的，之後想改就得去編輯存檔，或者乾脆開一個新世界。</blockquote>

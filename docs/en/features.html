@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Players <strong>download the mod on their own</strong> when they join; nobody has to subscribe by hand. What they do need is the same game version as the server.</li>
 </ul>
 <h3 id="co-op-host">Co-op host</h3>
-<p>Co-op has a gotcha of its own: <strong>enabling the mod only in the co-op selection screen is not enough</strong>. The host also has to enable Companion Dogs in the main-menu <strong><span class="ig">MODS</span></strong> list and <strong>fully close the game</strong> before starting the server. If the dog shows up untextured or crumpled in co-op, that is what was missing.</p>
+<p>Co-op is a <strong>real server</strong> running on your machine, and it does not inherit the mod list from the main menu. There are three steps, and skipping the second one is the most common mistake.</p>
+<p><strong>1. Enable the mod in your own game.</strong> Main menu &gt; <strong><span class="ig">MODS</span></strong> &gt; tick <strong>Companion Dogs</strong> and any breed add-ons you plan to use. <strong>Fully close the game</strong> and open it again. Without that restart the dog usually shows up untextured or <em>crumpled</em>.</p>
+<p><strong>2. Put the mod in the server settings.</strong> Ticking it in the co-op selection screen is <strong>not enough</strong>:</p>
+<ol>
+<li>Main menu &gt; <strong><span class="ig">HOST GAME</span></strong> &gt; <strong><span class="ig">Manage settings...</span></strong>.</li>
+<li>Select the settings you are going to use and click <strong><span class="ig">Edit Selected Settings</span></strong>.</li>
+<li>In the list on the left, open <strong><span class="ig">SteamWorkshop</span></strong> (that name stays in English in every language). Under <strong><span class="ig">Add an installed Workshop item to the list:</span></strong> pick Companion Dogs; if you are not subscribed yet, use <strong><span class="ig">Add another Workshop item by ID to the list:</span></strong>, type <code>3740052292</code> and press Enter.</li>
+<li>Still in the list on the left, open <strong><span class="ig">Mods</span></strong> and add <code>CompanionDogs</code> the same way.</li>
+<li>Click <strong><span class="ig">SAVE</span></strong>.</li>
+</ol>
+<p>Those two lists are the dedicated server's <code>WorkshopItems=</code> and <code>Mods=</code>, only through a screen: the edit ends up in <code>Zomboid\Server\&lt;settings-name&gt;.ini</code>. The same IDs from the table in the previous section apply, and <strong>the same order: the base mod before the breed add-ons.</strong></p>
+<p><strong>3. Start the server</strong> with the <strong><span class="ig">START</span></strong> button. Whoever joins downloads the mods on their own; nobody has to subscribe by hand.</p>
+<p><strong>If something goes wrong:</strong> an untextured or crumpled dog means step 1 was missed. No paw button and no dogs in the world, for anybody, means step 2 was missed.</p>
 <h2 id="1-in-5-minutes-from-stray-to-companion">1. In 5 minutes: from stray to companion</h2>
 <p>If you just want to start playing, here it is:</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="for-administrators">For administrators</h3>
 <p>There is a <strong><span class="ig">Dog registry (admin)</span></strong>: search by player, Online/Offline status, dog count and a Refresh button. There is also a live <strong>server performance tuning</strong> panel. Both are admin only.</p>
 <h3 id="co-op-installation-warning">Co-op installation warning</h3>
-<p><strong>If the dog shows up with no texture or <span class="ig">squashed</span>:</strong> enable Companion Dogs in the <strong>Mods list on the main menu</strong> (not just in the co-op selection) and <strong>close the game completely</strong> before loading the save. The co-op host has to do the same and restart the server.</p>
+<p><strong>If the dog shows up with no texture or <span class="ig">squashed</span>:</strong> enable Companion Dogs in the <strong>Mods list on the main menu</strong> (not just in the co-op selection) and <strong>close the game completely</strong> before loading the save. The co-op host has to do the same and restart the server. And enabling it in the menu is not everything: the host also has to list the mod in the <strong>server settings</strong>, in the step-by-step of the installation section.</p>
 <h2 id="21-sandbox-options">21. Sandbox options</h2>
 <p>The <strong><span class="ig">Companion Dogs</span></strong> page in your world settings. There are 35 options.</p>
 <blockquote class="quote"><strong>Remember:</strong> in multiplayer, the one that counts is the <strong>server's</strong> setting. And in Project Zomboid sandbox options are baked <strong>into the save</strong>, so changing them later means editing the save or starting a new world.</blockquote>

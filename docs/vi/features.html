@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Người chơi <strong>tự tải mod về</strong> khi vào máy chủ; không ai cần đăng ký thủ công. Thứ họ cần là game cùng phiên bản với máy chủ.</li>
 </ul>
 <h3 id="chủ-phòng-co-op">Chủ phòng co-op</h3>
-<p>Co-op có cái bẫy riêng: <strong>chỉ bật mod ở màn hình chọn mod của co-op là chưa đủ</strong>. Chủ phòng còn phải bật Companion Dogs trong danh sách <strong><span class="ig">MODS</span></strong> ở menu chính và <strong>đóng hẳn game</strong> trước khi dựng máy chủ. Nếu trong co-op con chó hiện ra không có texture hoặc méo mó, chính là thiếu bước này.</p>
+<p>Co-op là một <strong>máy chủ thật sự</strong> chạy trên máy của bạn, và nó không kế thừa danh sách mod của menu chính. Có ba bước, và bỏ qua bước thứ hai là lỗi thường gặp nhất.</p>
+<p><strong>1. Bật mod trong game của chính bạn.</strong> Menu chính &gt; <strong><span class="ig">MODS</span></strong> &gt; tích <strong>Companion Dogs</strong> và các add-on giống chó bạn định dùng. <strong>Đóng hẳn game</strong> rồi mở lại. Không khởi động lại thì con chó thường hiện ra không có texture hoặc <em>méo mó</em>.</p>
+<p><strong>2. Đưa mod vào phần thiết lập máy chủ.</strong> Tích ở màn hình chọn mod của co-op là <strong>chưa đủ</strong>:</p>
+<ol>
+<li>Menu chính &gt; <strong><span class="ig">HOST GAME</span></strong> &gt; <strong><span class="ig">Manage settings...</span></strong>.</li>
+<li>Chọn bộ thiết lập bạn sẽ dùng rồi bấm <strong><span class="ig">Edit Selected Settings</span></strong>.</li>
+<li>Ở danh sách bên trái, mở <strong><span class="ig">SteamWorkshop</span></strong> (tên này giữ nguyên tiếng Anh ở mọi ngôn ngữ). Tại <strong><span class="ig">Add an installed Workshop item to the list:</span></strong> hãy chọn Companion Dogs; nếu bạn chưa đăng ký, dùng <strong><span class="ig">Add another Workshop item by ID to the list:</span></strong>, gõ <code>3740052292</code> rồi nhấn Enter.</li>
+<li>Vẫn ở danh sách bên trái, mở <strong><span class="ig">Mods</span></strong> và thêm <code>CompanionDogs</code> theo cách tương tự.</li>
+<li>Bấm <strong><span class="ig">SAVE</span></strong>.</li>
+</ol>
+<p>Hai danh sách đó chính là <code>WorkshopItems=</code> và <code>Mods=</code> của máy chủ riêng, chỉ khác là sửa qua giao diện: thay đổi sẽ nằm trong <code>Zomboid\Server\&lt;tên-thiết-lập&gt;.ini</code>. Vẫn là những ID trong bảng ở phần trước, và <strong>cùng một thứ tự: mod nền trước, add-on giống chó sau.</strong></p>
+<p><strong>3. Khởi động máy chủ</strong> bằng nút <strong><span class="ig">START</span></strong>. Ai vào cũng tự tải mod về; không ai phải đăng ký bằng tay.</p>
+<p><strong>Nếu có gì đó sai:</strong> chó không có texture hoặc méo mó nghĩa là thiếu bước 1. Không ai thấy nút bàn chân và trong thế giới không có con chó nào nghĩa là thiếu bước 2.</p>
 <h2 id="1-trong-5-phút-từ-chó-hoang-thành-bạn-đồng-hành">1. Trong 5 phút: từ chó hoang thành bạn đồng hành</h2>
 <p>Nếu bạn chỉ muốn bắt đầu chơi ngay, thì làm như sau:</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="dành-cho-quản-trị-viên">Dành cho quản trị viên</h3>
 <p>Có một <strong><span class="ig">Sổ đăng ký chó (quản trị viên)</span></strong>: tìm theo người chơi, trạng thái Trực tuyến/Ngoại tuyến, số lượng chó và nút Làm mới. Ngoài ra còn có một bảng <strong>chỉnh hiệu năng máy chủ</strong> ngay lúc đang chạy. Cả hai chỉ dành cho quản trị viên.</p>
 <h3 id="lưu-ý-khi-cài-đặt-trong-co-op">Lưu ý khi cài đặt trong co-op</h3>
-<p><strong>Nếu con chó hiện ra không có texture hoặc bị <span class="ig">bẹp dúm</span>:</strong> hãy bật Companion Dogs trong <strong>danh sách Mods ở menu chính</strong> (chứ không phải chỉ ở phần chọn mod của co-op) và <strong>thoát game hoàn toàn</strong> trước khi vào lại save. Người host co-op cũng phải làm y như vậy rồi khởi động lại máy chủ.</p>
+<p><strong>Nếu con chó hiện ra không có texture hoặc bị <span class="ig">bẹp dúm</span>:</strong> hãy bật Companion Dogs trong <strong>danh sách Mods ở menu chính</strong> (chứ không phải chỉ ở phần chọn mod của co-op) và <strong>thoát game hoàn toàn</strong> trước khi vào lại save. Người host co-op cũng phải làm y như vậy rồi khởi động lại máy chủ. Và bật ở menu vẫn chưa phải là tất cả: host còn phải khai báo mod trong <strong>phần thiết lập máy chủ</strong>, theo các bước ở phần cài đặt.</p>
 <h2 id="21-tùy-chọn-sandbox">21. Tùy chọn sandbox</h2>
 <p>Trang <strong><span class="ig">Chó đồng hành</span></strong> trong phần cài đặt thế giới. Tổng cộng có 33 tùy chọn.</p>
 <blockquote class="quote"><strong>Nhớ nhé:</strong> trong chế độ nhiều người chơi, cấu hình <strong>của máy chủ</strong> mới là cái quyết định. Và trong Project Zomboid, các tùy chọn sandbox được ghi thẳng <strong>vào file save</strong>, nên muốn đổi sau đó thì phải sửa file save hoặc tạo một thế giới mới.</blockquote>

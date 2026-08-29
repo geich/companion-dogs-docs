@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>プレイヤーは参加時に <strong>自動でMODをダウンロード</strong> します。手動でサブスクライブする必要はありません。 必要なのは、サーバーと同じバージョンのゲームです。</li>
 </ul>
 <h3 id="co-opのホスト">Co-opのホスト</h3>
-<p>Co-opには固有の落とし穴があります。<strong>Co-opの選択画面だけで有効にしても足りません</strong>。ホストはメイン メニューの「MOD」リストでもCompanion Dogsを有効にし、サーバーを立てる前に <strong>ゲームを完全に終了</strong> する必要があります。Co-opで犬がテクスチャなしやつぶれた姿で出るなら、これが抜けています。</p>
+<p>Co-opはあなたのマシンで動く <strong>本物のサーバー</strong> で、メインメニューのMODリストを引き継ぎません。手順は 3つあり、2つ目を飛ばすのがいちばんよくある失敗です。</p>
+<p><strong>1. 自分のゲームでMODを有効にする。</strong> メインメニュー &gt; <strong>「MOD」</strong> &gt; <strong>Companion Dogs</strong> と、使う つもりの犬種アドオンにチェックを入れます。<strong>ゲームを完全に終了</strong> して開き直してください。この再起動 がないと、犬はたいていテクスチャなしや <em>つぶれた</em> 姿で出ます。</p>
+<p><strong>2. サーバー設定にMODを入れる。</strong> Co-opの選択画面でチェックを入れるだけでは <strong>足りません</strong>。</p>
+<ol>
+<li>メインメニュー &gt; <strong>「ホストサーバー」</strong> &gt; <strong>「設定管理...」</strong>。</li>
+<li>これから使う設定を選び、<strong>「選択した設定を編集」</strong> をクリックします。</li>
+<li>左のリストで <strong>「SteamWorkshop」</strong>（この名前はどの言語でも英語のままです）を開きます。 <strong>「インストールされているWORKSHOPアイテムをリストに追加:」</strong> でCompanion Dogsを選びます。まだ サブスクライブしていなければ <strong>「別のWORKSHOPアイテムをIDでリストに追加:」</strong> に <code>3740052292</code> と 入力してEnterを押します。</li>
+<li>同じく左のリストで <strong>「Mods」</strong> を開き、<code>CompanionDogs</code> を同じ要領で追加します。</li>
+<li><strong>「保存」</strong> をクリックします。</li>
+</ol>
+<p>この2つのリストは専用サーバーの <code>WorkshopItems=</code> と <code>Mods=</code> そのもので、画面から編集するだけの違い です。変更は <code>Zomboid\Server\&lt;設定の名前&gt;.ini</code> に入ります。前の節の表と同じIDが使え、<strong>順番も同じで、 ベースMODが犬種アドオンより先</strong> です。</p>
+<p><strong>3. サーバーを起動します。</strong> <strong>「開始」</strong> ボタンです。参加した人はMODを自動で落としてくるので、手動で サブスクライブする必要はありません。</p>
+<p><strong>うまくいかないとき:</strong> 犬がテクスチャなしやつぶれた姿なら手順1が抜けています。誰の画面にも肉球ボタン が出ず、世界に犬も出ないなら手順2が抜けています。</p>
 <h2 id="1-5分でわかる野良犬から相棒まで">1. 5分でわかる：野良犬から相棒まで</h2>
 <p>とりあえず遊び始めたいだけなら、これだけです。</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="管理者向け">管理者向け</h3>
 <p><strong>「犬の登録簿（管理者）」</strong>があります。プレイヤー名で検索でき、オンラインかオフラインの状態、犬の数、 そして「更新」ボタンが並びます。<strong>サーバーのパフォーマンスをその場で調整する</strong>パネルもあります。 どちらも管理者専用です。</p>
 <h3 id="co-opで入れるときの注意">co-opで入れるときの注意</h3>
-<p><strong>犬のテクスチャが出ない、または形が潰れて見える場合:</strong> メインメニューの<strong>Modsのリスト</strong>で Companion Dogsを有効にして（co-opの選択画面だけでは足りません）、セーブを読み込む前に <strong>ゲームを完全に終了してください</strong>。co-opのホストも同じ手順を踏み、サーバーを再起動する必要があります。</p>
+<p><strong>犬のテクスチャが出ない、または形が潰れて見える場合:</strong> メインメニューの<strong>Modsのリスト</strong>で Companion Dogsを有効にして（co-opの選択画面だけでは足りません）、セーブを読み込む前に <strong>ゲームを完全に終了してください</strong>。co-opのホストも同じ手順を踏み、サーバーを再起動する必要があります。 さらに、メニューで有効にするだけでは足りません。ホストはインストールの節の手順どおり、<strong>サーバー設定</strong> にもMODを登録する必要があります。</p>
 <h2 id="21-サンドボックス設定">21. サンドボックス設定</h2>
 <p>ワールド設定の中にある<strong>「コンパニオンドッグ」</strong>のページです。項目は全部で33個あります。</p>
 <blockquote class="quote"><strong>注意：</strong> マルチプレイで効くのは<strong>サーバー側</strong>の設定です。そしてProject Zomboidのサンドボックス 設定は<strong>セーブに書き込まれる</strong>ので、あとから変えたい場合はセーブを直接いじるか、新しいワールドを 始めるしかありません。</blockquote>

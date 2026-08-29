@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Die Spieler <strong>laden den Mod von selbst herunter</strong>, wenn sie beitreten; niemand muss ihn von Hand abonnieren. Was sie brauchen, ist dieselbe Spielversion wie der Server.</li>
 </ul>
 <h3 id="co-op-host">Co-op-Host</h3>
-<p>Co-op hat seine eigene Falle: <strong>den Mod nur im Co-op-Auswahlbildschirm zu aktivieren, reicht nicht</strong>. Der Host muss Companion Dogs zusätzlich in der <strong><span class="ig">MODS</span></strong>-Liste des Hauptmenüs aktivieren und <strong>das Spiel vollständig schließen</strong>, bevor er den Server startet. Wenn der Hund im Co-op ohne Textur oder zerknittert erscheint, hat genau das gefehlt.</p>
+<p>Co-op ist ein <strong>echter Server</strong>, der auf deinem Rechner läuft, und er übernimmt die Mod-Liste des Hauptmenüs nicht. Es sind drei Schritte, und den zweiten zu überspringen ist der häufigste Fehler.</p>
+<p><strong>1. Aktiviere den Mod in deinem eigenen Spiel.</strong> Hauptmenü &gt; <strong><span class="ig">MODS</span></strong> &gt; hake <strong>Companion Dogs</strong> und die Rassen-Add-ons an, die du nutzen willst. <strong>Schließe das Spiel vollständig</strong> und starte es neu. Ohne diesen Neustart erscheint der Hund meist ohne Textur oder <em>zerknautscht</em>.</p>
+<p><strong>2. Trag den Mod in die Servereinstellungen ein.</strong> Ihn im Co-op-Auswahlbildschirm anzuhaken, reicht <strong>nicht</strong>:</p>
+<ol>
+<li>Hauptmenü &gt; <strong><span class="ig">SERVER ERSTELLEN</span></strong> &gt; <strong><span class="ig">Servereinstellungen</span></strong>.</li>
+<li>Wähle die Einstellung aus, die du benutzen wirst, und klick auf <strong><span class="ig">Bearbeiten</span></strong>.</li>
+<li>Öffne in der Liste links <strong><span class="ig">SteamWorkshop</span></strong> (dieser Name bleibt in jeder Sprache englisch). Unter <strong><span class="ig">Installierten Workshop-Artikel zur Liste hinzufügen:</span></strong> wählst du Companion Dogs; wenn du noch nicht abonniert hast, nimm <strong><span class="ig">Neuen Workshop-Artikel zur Liste hinzufügen:</span></strong>, tippe <code>3740052292</code> und drück Enter.</li>
+<li>Öffne, immer noch in der Liste links, <strong><span class="ig">Mods</span></strong> und füge <code>CompanionDogs</code> genauso hinzu.</li>
+<li>Klick auf <strong><span class="ig">SPEICHERN</span></strong>.</li>
+</ol>
+<p>Diese beiden Listen sind das <code>WorkshopItems=</code> und das <code>Mods=</code> des dedizierten Servers, nur eben über einen Bildschirm: die Änderung landet in <code>Zomboid\Server\&lt;Name-der-Einstellung&gt;.ini</code>. Es gelten dieselben IDs aus der Tabelle im vorigen Abschnitt und <strong>dieselbe Reihenfolge: der Basis-Mod vor den Rassen-Add-ons.</strong></p>
+<p><strong>3. Starte den Server</strong> über den Knopf <strong><span class="ig">STARTEN</span></strong>. Wer beitritt, lädt die Mods von selbst herunter; niemand muss sie von Hand abonnieren.</p>
+<p><strong>Wenn etwas schiefgeht:</strong> ein Hund ohne Textur oder zerknautscht heißt, Schritt 1 hat gefehlt. Kein Pfotenknopf und keine Hunde in der Welt, bei niemandem, heißt, Schritt 2 hat gefehlt.</p>
 <h2 id="1-in-5-minuten-vom-streuner-zum-begleiter">1. In 5 Minuten: vom Streuner zum Begleiter</h2>
 <p>Wenn du einfach nur loslegen willst, geht das so:</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="für-administratoren">Für Administratoren</h3>
 <p>Es gibt ein <strong><span class="ig">Hunderegister (Admin)</span></strong>: Suche nach Spieler, Status Online/Offline, Anzahl der Hunde und die Schaltfläche Aktualisieren. Dazu kommt ein Panel für die <strong>Leistungsanpassung des Servers</strong> im laufenden Betrieb. Beides ist nur für Admins.</p>
 <h3 id="installationshinweis-für-koop">Installationshinweis für Koop</h3>
-<p><strong>Wenn der Hund ohne Textur oder <span class="ig">zerknautscht</span> erscheint:</strong> aktiviere Companion Dogs in der <strong>Mod-Liste im Hauptmenü</strong> (nicht nur in der Koop-Auswahl) und <strong>beende das Spiel komplett</strong>, bevor du den Spielstand lädst. Der Koop-Host muss dasselbe tun und den Server neu starten.</p>
+<p><strong>Wenn der Hund ohne Textur oder <span class="ig">zerknautscht</span> erscheint:</strong> aktiviere Companion Dogs in der <strong>Mod-Liste im Hauptmenü</strong> (nicht nur in der Koop-Auswahl) und <strong>beende das Spiel komplett</strong>, bevor du den Spielstand lädst. Der Koop-Host muss dasselbe tun und den Server neu starten. Und im Menü zu aktivieren ist nicht alles: der Host muss den Mod außerdem in den <strong>Servereinstellungen</strong> eintragen, Schritt für Schritt im Installationsabschnitt.</p>
 <h2 id="21-sandbox-optionen">21. Sandbox-Optionen</h2>
 <p>Die Seite <strong><span class="ig">Companion Dogs</span></strong> in den Welteinstellungen. Es sind 35 Optionen.</p>
 <blockquote class="quote"><strong>Denk dran:</strong> im Mehrspieler zählt die Einstellung <strong>des Servers</strong>. Und in Project Zomboid werden die Sandbox-Optionen <strong>im Spielstand</strong> festgeschrieben, spätere Änderungen brauchen also einen Eingriff in den Spielstand oder eine neue Welt.</blockquote>

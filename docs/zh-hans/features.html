@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>玩家进服时 <strong>会自己下载模组</strong>，不需要谁手动订阅。他们需要的是和服务器同一个游戏版本。</li>
 </ul>
 <h3 id="联机主机">联机主机</h3>
-<p>联机有它自己的坑：<strong>只在联机的模组选择界面里启用是不够的</strong>。主机还得在主菜单的 <strong><span class="ig">模组</span></strong> 列表里 启用 Companion Dogs，并且在开服之前 <strong>完全关闭游戏</strong>。如果联机里狗没有贴图或者被压扁，缺的就是 这一步。</p>
+<p>联机就是一台跑在你自己机器上的 <strong>真服务器</strong>，它不会继承主菜单的模组列表。一共三步，漏掉第二步是最 常见的错误。</p>
+<p><strong>1. 在你自己的游戏里启用模组。</strong> 主菜单 &gt; <strong><span class="ig">模组</span></strong> &gt; 勾上 <strong>Companion Dogs</strong> 以及你要用的犬种 附加包。<strong>完全关闭游戏</strong> 再重新打开。不重启的话，狗通常会没有贴图或者 <em>被压扁</em>。</p>
+<p><strong>2. 把模组写进服务器配置。</strong> 只在联机的模组选择界面里勾上是 <strong>不够的</strong>：</p>
+<ol>
+<li>主菜单 &gt; <strong><span class="ig">建立主机</span></strong> &gt; <strong><span class="ig">服务器设置...</span></strong>。</li>
+<li>选中你要用的那份配置，点 <strong><span class="ig">编辑配置文件</span></strong>。</li>
+<li>在左边的列表里打开 <strong><span class="ig">SteamWorkshop</span></strong>（这个名字在任何语言下都是英文）。在 <strong><span class="ig">添加已安装的插件 到服务器列表:</span></strong> 里选 Companion Dogs；如果你还没订阅，就用 <strong><span class="ig">通过创意工坊 ID 添加插件到服务器 列表:</span></strong>，输入 <code>3740052292</code> 再按回车。</li>
+<li>还是在左边的列表里，打开 <strong><span class="ig">Mods</span></strong>，用同样的方式加上 <code>CompanionDogs</code>。</li>
+<li>点 <strong><span class="ig">保存</span></strong>。</li>
+</ol>
+<p>这两个列表就是专用服务器的 <code>WorkshopItems=</code> 和 <code>Mods=</code>，只是换成界面来改：改动会落到 <code>Zomboid\Server\&lt;配置名&gt;.ini</code>。ID 用上一节表格里的那些，<strong>顺序也一样：基础模组排在犬种附加包前面。</strong></p>
+<p><strong>3. 开服</strong>，按 <strong><span class="ig">启动</span></strong> 按钮。进来的人会自己下载模组，谁都不用手动订阅。</p>
+<p><strong>出问题的时候：</strong> 狗没有贴图或者被压扁，说明漏了第 1 步。所有人都看不到爪印按钮、世界里也没有狗， 说明漏了第 2 步。</p>
 <h2 id="1-5-分钟上手从流浪狗到同伴犬">1. 5 分钟上手：从流浪狗到同伴犬</h2>
 <p>如果你只想赶紧开始玩，看这几步就够了：</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="给管理员">给管理员</h3>
 <p>有一个<strong><span class="ig">犬只登记（管理员）</span></strong>：可以按玩家搜索，显示在线/离线状态、狗的数量，还有一个刷新按钮。另外还有一个可以实时<strong>调整服务器性能</strong>的面板。这两个都只有管理员能用。</p>
 <h3 id="联机合作的安装提醒">联机合作的安装提醒</h3>
-<p><strong>如果狗出现时没有贴图，或者看起来<span class="ig">被压扁了</span>：</strong>请在<strong>主菜单的Mod列表</strong>里启用Companion Dogs（光在联机合作的选择界面里勾上是不够的），然后在读取存档之前<strong>把游戏完全关掉重开</strong>。联机合作的房主也要照做一遍，并重启服务器。</p>
+<p><strong>如果狗出现时没有贴图，或者看起来<span class="ig">被压扁了</span>：</strong>请在<strong>主菜单的Mod列表</strong>里启用Companion Dogs（光在联机合作的选择界面里勾上是不够的），然后在读取存档之前<strong>把游戏完全关掉重开</strong>。联机合作的房主也要照做一遍，并重启服务器。而且光在菜单里启用还不够：房主还得按安装那一节的步骤，把模组写进<strong>服务器配置</strong>。</p>
 <h2 id="21-沙盒选项">21. 沙盒选项</h2>
 <p>世界设置里的 <strong><span class="ig">同伴犬</span></strong> 页面，一共 33 个选项。</p>
 <blockquote class="quote"><strong>记住：</strong> 多人游戏里说了算的是<strong>服务器</strong>那边的设置。而且 Project Zomboid 的沙盒选项是写进<strong>存档</strong> 里的，之后想改就得去编辑存档，或者干脆开一个新世界。</blockquote>

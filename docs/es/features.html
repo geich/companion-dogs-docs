@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Los jugadores <strong>descargan el mod solos</strong> al entrar; nadie tiene que suscribirse a mano. Lo que sí necesitan es la misma versión del juego que el servidor.</li>
 </ul>
 <h3 id="anfitrión-de-co-op">Anfitrión de co-op</h3>
-<p>El co-op tiene su propia trampa: <strong>activar el mod solo en la pantalla de selección del co-op no basta</strong>. El anfitrión también tiene que activar Companion Dogs en la lista <strong><span class="ig">MODS</span></strong> del menú principal y <strong>cerrar el juego por completo</strong> antes de levantar el servidor. Si el perro aparece sin textura o aplastado en co-op, eso es lo que faltó.</p>
+<p>El co-op es un <strong>servidor de verdad</strong> corriendo en tu máquina, y no hereda la lista de mods del menú principal. Son tres pasos, y saltarse el segundo es el error más común.</p>
+<p><strong>1. Activa el mod en tu propio juego.</strong> Menú principal &gt; <strong><span class="ig">MODS</span></strong> &gt; marca <strong>Companion Dogs</strong> y los add-ons de raza que vayas a usar. <strong>Cierra el juego por completo</strong> y ábrelo de nuevo. Sin ese reinicio el perro suele aparecer sin textura o <em>aplastado</em>.</p>
+<p><strong>2. Mete el mod en los ajustes del servidor.</strong> Marcarlo en la pantalla de selección del co-op <strong>no basta</strong>:</p>
+<ol>
+<li>Menú principal &gt; <strong><span class="ig">PARTIDA COOPERATIVA</span></strong> &gt; <strong><span class="ig">Configurar ajustes...</span></strong>.</li>
+<li>Selecciona los ajustes que vas a usar y pulsa <strong><span class="ig">Cambiar ajustes seleccionados</span></strong>.</li>
+<li>En la lista de la izquierda, abre <strong><span class="ig">SteamWorkshop</span></strong> (ese nombre queda en inglés en cualquier idioma). En <strong><span class="ig">Añadir artículo de la Workshop a la lista:</span></strong> elige Companion Dogs; si todavía no estás suscrito, usa <strong><span class="ig">Añadir otro artículo de la Workshop por ID a la lista:</span></strong>, escribe <code>3740052292</code> y pulsa Enter.</li>
+<li>Todavía en la lista de la izquierda, abre <strong><span class="ig">Mods</span></strong> y añade <code>CompanionDogs</code> de la misma forma.</li>
+<li>Pulsa <strong><span class="ig">GUARDAR</span></strong>.</li>
+</ol>
+<p>Esas dos listas son el <code>WorkshopItems=</code> y el <code>Mods=</code> del servidor dedicado, solo que por pantalla: la edición acaba en <code>Zomboid\Server\&lt;nombre-de-los-ajustes&gt;.ini</code>. Valen los mismos IDs de la tabla de la sección anterior, y <strong>el mismo orden: el mod base antes de los add-ons de raza.</strong></p>
+<p><strong>3. Levanta el servidor</strong> con el botón <strong><span class="ig">INICIAR</span></strong>. Quien entre descarga los mods por su cuenta; nadie tiene que suscribirse a mano.</p>
+<p><strong>Si algo sale mal:</strong> un perro sin textura o aplastado significa que faltó el paso 1. Ningún botón de pata y ningún perro en el mundo, para nadie, significa que faltó el paso 2.</p>
 <h2 id="1-en-5-minutos-del-callejero-al-compañero">1. En 5 minutos: del callejero al compañero</h2>
 <p>Si solo quieres empezar a jugar, es esto:</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="para-administradores">Para administradores</h3>
 <p>Existe un <strong><span class="ig">Registro de perros (admin)</span></strong>: búsqueda por jugador, estado En línea/Desconectado, número de perros y botón Actualizar. Existe también un panel de <strong>ajuste de rendimiento del servidor</strong> en vivo. Los dos son solo para admin.</p>
 <h3 id="aviso-de-instalación-en-co-op">Aviso de instalación en co-op</h3>
-<p>**Si el perro aparece sin textura o <em>aplastado</em>:<strong> activa Companion Dogs en la </strong>lista de Mods del menú principal<strong> (no solo en la selección del co-op) y </strong>cierra el juego por completo** antes de cargar la partida. El anfitrión del co-op tiene que hacer lo mismo y reiniciar el servidor.</p>
+<p>**Si el perro aparece sin textura o <em>aplastado</em>:<strong> activa Companion Dogs en la </strong>lista de Mods del menú principal<strong> (no solo en la selección del co-op) y </strong>cierra el juego por completo<strong> antes de cargar la partida. El anfitrión del co-op tiene que hacer lo mismo y reiniciar el servidor. Y activarlo en el menú no es todo: el anfitrión además tiene que listar el mod en los </strong>ajustes del servidor**, en el paso a paso de la sección de instalación.</p>
 <h2 id="21-opciones-de-sandbox">21. Opciones de sandbox</h2>
 <p>Página <strong><span class="ig">Perros compañeros</span></strong> en la configuración del mundo. Son 33 opciones.</p>
 <blockquote class="quote"><strong>Recuerda:</strong> en multijugador manda la configuración <strong>del servidor</strong>. Y en Project Zomboid las opciones de sandbox quedan grabadas <strong>en la partida</strong>, así que cambiarlas después obliga a editar el save o a empezar un mundo nuevo.</blockquote>

@@ -684,7 +684,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Os jogadores <strong>baixam o mod sozinhos</strong> ao entrar; ninguém precisa assinar na mão. O que eles precisam é do jogo na mesma versão do servidor.</li>
 </ul>
 <h3 id="host-de-co-op">Host de co-op</h3>
-<p>O co-op tem uma pegadinha própria: <strong>ativar o mod só na tela de seleção do co-op não basta</strong>. O host também tem que ativar o Companion Dogs na lista de <strong><span class="ig">MODS</span></strong> do menu principal e <strong>fechar o jogo por completo</strong> antes de subir o servidor. Se o cão aparecer sem textura ou amassado no co-op, foi isso que faltou.</p>
+<p>O co-op é um <strong>servidor de verdade</strong> rodando na sua máquina, e ele não herda a lista de mods do menu principal. São três passos, e pular o segundo é o erro mais comum.</p>
+<p><strong>1. Ative o mod no seu jogo.</strong> Menu principal &gt; <strong><span class="ig">MODS</span></strong> &gt; marque o <strong>Companion Dogs</strong> e os add-ons de raça que for usar. <strong>Feche o jogo por completo</strong> e abra de novo. Sem esse reinício o cão costuma aparecer sem textura ou <em>amassado</em>.</p>
+<p><strong>2. Coloque o mod na configuração do servidor.</strong> Marcar na tela de seleção do co-op <strong>não basta</strong>:</p>
+<ol>
+<li>Menu principal &gt; <strong><span class="ig">HOSPEDAR JOGO</span></strong> &gt; <strong><span class="ig">Gerenciar configurações...</span></strong>.</li>
+<li>Selecione a configuração que você vai usar e clique em <strong><span class="ig">Editar Configuração Selecionada</span></strong>.</li>
+<li>Na lista da esquerda, abra <strong><span class="ig">SteamWorkshop</span></strong> (esse nome fica em inglês em qualquer idioma). Em <strong><span class="ig">Adicionar um item da Oficina instalado à lista:</span></strong> escolha o Companion Dogs; se você ainda não é inscrito, use <strong><span class="ig">Adicionar outro item da Oficina por ID à lista:</span></strong>, digite <code>3740052292</code> e dê Enter.</li>
+<li>Ainda na lista da esquerda, abra <strong><span class="ig">Mods</span></strong> e adicione o <code>CompanionDogs</code> da mesma forma.</li>
+<li>Clique em <strong><span class="ig">SALVAR</span></strong>.</li>
+</ol>
+<p>Essas duas listas são o <code>WorkshopItems=</code> e o <code>Mods=</code> do servidor dedicado, só que por tela: a edição vai parar em <code>Zomboid\Server\&lt;nome-da-configuração&gt;.ini</code>. Valem os mesmos IDs da tabela da seção anterior, e <strong>a mesma ordem: o base antes dos add-ons de raça.</strong></p>
+<p><strong>3. Inicie o servidor</strong> pelo botão <strong><span class="ig">INICIAR</span></strong>. Quem entrar baixa os mods sozinho; ninguém precisa se inscrever na mão.</p>
+<p><strong>Se algo der errado:</strong> cão sem textura ou amassado significa que faltou o passo 1. Nenhum botão de pata e nenhum cão no mundo, para ninguém, significa que faltou o passo 2.</p>
 <h2 id="1-em-5-minutos-do-vira-lata-ao-companheiro">1. Em 5 minutos: do vira-lata ao companheiro</h2>
 <p>Se você só quer começar a jogar, é isto:</p>
 <ol>
@@ -1832,7 +1844,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="para-administradores">Para administradores</h3>
 <p>Existe um <strong><span class="ig">Registro de cães (admin)</span></strong>: busca por jogador, status Online/Offline, contagem de cães e botão Atualizar. Existe também um painel de <strong>ajuste de performance do servidor</strong> ao vivo. Os dois são só para admin.</p>
 <h3 id="aviso-de-instalação-em-co-op">Aviso de instalação em co-op</h3>
-<p>**Se o cão aparecer sem textura ou <em>amassado</em>:<strong> ative o Companion Dogs na </strong>lista de Mods do menu principal<strong> (não só na seleção do co-op) e </strong>feche o jogo por completo** antes de carregar o save. O host do co-op precisa fazer o mesmo e reiniciar o servidor.</p>
+<p>**Se o cão aparecer sem textura ou <em>amassado</em>:<strong> ative o Companion Dogs na </strong>lista de Mods do menu principal<strong> (não só na seleção do co-op) e </strong>feche o jogo por completo<strong> antes de carregar o save. O host do co-op precisa fazer o mesmo e reiniciar o servidor. E ativar no menu não é tudo: o host ainda tem que listar o mod na </strong>configuração do servidor**, no passo a passo da seção de instalação.</p>
 <h2 id="21-opções-de-sandbox">21. Opções de sandbox</h2>
 <p>Página <strong><span class="ig">Cachorros Companheiros</span></strong> nas configurações do mundo. São 35 opções.</p>
 <blockquote class="quote"><strong>Lembre:</strong> no multiplayer, quem manda é a configuração <strong>do servidor</strong>. E em Project Zomboid as opções de sandbox são gravadas <strong>no save</strong>, então mudar depois exige editar o save ou começar um mundo novo.</blockquote>
