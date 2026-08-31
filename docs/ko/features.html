@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#안전하게-제거하는-방법" data-id="안전하게-제거하는-방법">안전하게 제거하는 방법</a>
 <a class="s3" href="#완전-정리-관리자-디버그-모드" data-id="완전-정리-관리자-디버그-모드">완전 정리 (관리자 / 디버그 모드)</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-서버-성능-조정-관리자" data-id="24-서버-성능-조정-관리자">24. 서버 성능 조정 (관리자)</a>
+<div class="sub">
+<a class="s3" href="#패널-여는-방법" data-id="패널-여는-방법">패널 여는 방법</a>
+<a class="s3" href="#값이-저장되는-곳" data-id="값이-저장되는-곳">값이 저장되는 곳</a>
+<a class="s3" href="#손대기-전에-측정값부터-읽기" data-id="손대기-전에-측정값부터-읽기">손대기 전에 측정값부터 읽기</a>
+<a class="s3" href="#조정-항목-패스-주기" data-id="조정-항목-패스-주기">조정 항목: 패스 주기</a>
+<a class="s3" href="#조정-항목-도달-범위와-교전" data-id="조정-항목-도달-범위와-교전">조정 항목: 도달 범위와 교전</a>
+<a class="s3" href="#조정-항목-냄새-추적" data-id="조정-항목-냄새-추적">조정 항목: 냄새 추적</a>
+<a class="s3" href="#조정-항목-떠돌이-개-스폰" data-id="조정-항목-떠돌이-개-스폰">조정 항목: 떠돌이 개 스폰</a>
+<a class="s3" href="#조정-항목-네트워크-멀티플레이어-전용" data-id="조정-항목-네트워크-멀티플레이어-전용">조정 항목: 네트워크 (멀티플레이어 전용)</a>
+<a class="s3" href="#처방-증상과-손댈-곳" data-id="처방-증상과-손댈-곳">처방: 증상과 손댈 곳</a>
+<a class="s3" href="#이-패널이-하지-않는-것" data-id="이-패널이-하지-않는-것">이 패널이 하지 않는 것</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-기능-설명서">Companion Dogs: 기능 설명서</h1>
@@ -1842,7 +1857,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>꺼 두면 개들은 무적 상태로 월드에 그대로 서 있게 됩니다.</p>
 <h3 id="서버-관리자용">서버 관리자용</h3>
-<p><strong><span class="ig">개 등록부 (관리자)</span></strong>가 있습니다. 플레이어로 검색할 수 있고, 온라인/오프라인 상태와 개 마릿수, 새로고침 버튼이 나옵니다. 서버 성능을 실시간으로 조절하는 패널도 따로 있습니다. 둘 다 관리자 전용입니다.</p>
+<p><strong><span class="ig">개 등록부 (관리자)</span></strong>가 있습니다. 플레이어로 검색할 수 있고, 온라인/오프라인 상태와 개 마릿수, 새로고침 버튼이 나옵니다. 서버 성능을 실시간으로 조절하는 패널도 따로 있습니다. 계측 화면과 조정 항목이 함께 들어 있고, 24절 <a href="#24-서버-성능-조정-관리자">서버 성능 조정</a>에서 설명합니다. 둘 다 관리자 전용입니다.</p>
 <h3 id="코옵-설치-시-주의사항">코옵 설치 시 주의사항</h3>
 <p><strong>개가 텍스처 없이 나오거나 <span class="ig">찌그러져</span> 보인다면:</strong> 코옵 선택 화면에서만이 아니라 <strong>메인 메뉴의 모드 목록에서도</strong> Companion Dogs를 켜고, 세이브를 불러오기 전에 <strong>게임을 완전히 종료했다가 다시 켜세요.</strong> 코옵 호스트도 똑같이 하고 서버를 재시작해야 합니다. 그리고 메뉴에서 켜는 것이 전부는 아닙니다. 호스트는 설치 절의 단계대로 <strong>서버 설정</strong>에도 모드를 등록해야 합니다.</p>
 <h2 id="21-샌드박스-옵션">21. 샌드박스 옵션</h2>
@@ -2120,7 +2135,257 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>바닥에서 우클릭, <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li><code>sweep done</code> 메시지를 기다린 뒤 <strong>게임을 저장하세요</strong>.</li>
 </ol>
-<p>이 명령은 불러와진 개를 즉시 지우고, 나머지 세이브는 백그라운드에서 훑습니다. 게임은 멈추지 않습니다. 품종 이름을 대며 <strong>거부한다면</strong> 위의 1단계입니다. 그 애드온이 해당 세이브에서 꺼져 있고, 정의 없이 정리를 강행하는 것이 바로 동물을 파괴하는 행위입니다.</p></article></main>
+<p>이 명령은 불러와진 개를 즉시 지우고, 나머지 세이브는 백그라운드에서 훑습니다. 게임은 멈추지 않습니다. 품종 이름을 대며 <strong>거부한다면</strong> 위의 1단계입니다. 그 애드온이 해당 세이브에서 꺼져 있고, 정의 없이 정리를 강행하는 것이 바로 동물을 파괴하는 행위입니다.</p>
+<h2 id="24-서버-성능-조정-관리자">24. 서버 성능 조정 (관리자)</h2>
+<p><strong>이 절은 게임을 즐기는 데 필요하지 않습니다.</strong> 모드는 기본값 그대로 잘 돌아가고, 이유 없이 여기를 건드리면 오히려 나빠지기만 합니다. 사람도 많고 개도 많은 서버를 돌리면서 그 부하를 체감하고 있는 분을 위한 절입니다.</p>
+<p>패널 이름은 <strong><span class="ig">Server tuning / performance</span></strong>이고 위아래 두 부분으로 나뉩니다. 위쪽은 모드가 서버에서 쓰고 있는 비용을 실시간으로 보여 주는 계측 화면이고, 아래쪽은 그 비용을 바꾸는 입력란입니다.</p>
+<blockquote class="quote"><strong>이 패널은 게임 언어가 무엇이든 영어로 나옵니다.</strong> 표시 문구가 코드에 고정되어 있어서 번역을 거치지 않습니다. 그래서 아래 표는 화면에 나오는 문구를 그대로 적어 두었습니다.</blockquote>
+<h3 id="패널-여는-방법">패널 여는 방법</h3>
+<p><strong>멀티플레이어에서:</strong> <strong>관리자</strong>로 접속한 뒤 바닥에서 우클릭, <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong><span class="ig">Server tuning / performance</span></strong>.</p>
+<p><strong>싱글플레이에서:</strong> 경로는 같지만 게임이 <strong>디버그 모드</strong>여야 합니다. Steam 시작 옵션에 <code>-debug</code>를 추가하세요.</p>
+<p>메뉴에 이 항목이 안 보인다면, 그 서버의 관리자가 아니거나 게임이 디버그 모드가 아닌 것입니다.</p>
+<h3 id="값이-저장되는-곳">값이 저장되는 곳</h3>
+<p>21절의 샌드박스 옵션과 견줘서 중요한 차이가 여기에 있습니다:</p>
+<div class="tw"><table><thead><tr>
+<th>항목</th>
+<th>샌드박스 옵션</th>
+<th>조정 패널</th>
+</tr></thead><tbody>
+<tr>
+<td>언제 적용되나</td>
+<td>세이브에 구워집니다. 나중에 바꾸려면 세이브를 손보거나 새 월드를 시작해야 합니다</td>
+<td><strong>즉시</strong>, 아무것도 재시작하지 않습니다</td>
+</tr>
+<tr>
+<td>무엇을 다루나</td>
+<td>게임 규칙: 피해, 배고픔, 경험치, 월드에 존재하는 것</td>
+<td>처리 비용과 네트워크 주기만</td>
+</tr>
+<tr>
+<td>어디에 저장되나</td>
+<td>세이브 파일에</td>
+<td>마찬가지로 세이브에 저장되고, 서버를 재시작해도 남습니다</td>
+</tr>
+<tr>
+<td>누가 바꾸나</td>
+<td>월드를 만드는 사람</td>
+<td>게임이 돌아가는 중에 관리자만</td>
+</tr>
+</tbody></table></div>
+<p>시간을 아껴 주는 세 가지가 더 있습니다:</p>
+<ul>
+<li><strong>범위를 벗어난 값은 범위 안으로 당겨집니다.</strong> 최대가 60인 칸에 9000을 적으면 60이 저장됩니다.</li>
+<li><strong>초록색 이름은 <span class="ig">기본값과 다름</span>이라는 뜻입니다.</strong> 몇 달 뒤에 무엇을 건드렸는지 찾아내는 방법입니다.</li>
+<li><strong>모든 변경은 서버 로그에 남습니다.</strong> <code>[CD-TUNE]</code> 표시와 바꾼 사람의 이름이 함께 찍힙니다. 서버가 올라올 때는 적용 중인 목록 전체를 출력하고, 관리자가 바꾼 항목에는 <code>*</code>를 붙입니다.</li>
+</ul>
+<p><strong><span class="ig">Restore defaults</span></strong> 버튼은 계측과 <strong><span class="ig">Client authority</span></strong>까지 포함해 전부를 공장 기본값으로 되돌립니다.</p>
+<h3 id="손대기-전에-측정값부터-읽기">손대기 전에 측정값부터 읽기</h3>
+<p>규칙은 이것입니다. <strong>먼저 재고, 그다음에 바꾼다.</strong> 여기 있는 항목 중 여럿은 좋은 것 하나를 다른 좋은 것과 맞바꾸는 일이라, 화면에 숫자가 없으면 둘 중 무엇을 사고 있는지 알 수 없습니다.</p>
+<p><strong><span class="ig">Measurement: off (click to start)</span></strong>를 누르세요. 첫 측정 구간은 <strong>20초</strong> 안에 끝나고 패널 위쪽이 채워집니다. 핵심은 이 줄입니다:</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code>가 중요한 숫자입니다. 매초 중 몇 밀리초를 모드가 서버에서 가져가고 있는지를 뜻합니다. 값을 바꾼 뒤에 내려가는 것을 보고 싶은 숫자가 바로 이것입니다.</p>
+<p><strong>두 번째 줄</strong>은 월드에 로드된 개가 몇 마리인지, 그중 반려견이 몇 마리인지, 동물 훑기가 초당 몇 번 일어나는지를 셉니다. 비용은 로드된 개에서 나옵니다. 지도 곳곳에 흩어진 개 40마리가 같은 기지에 모여 있는 개 40마리보다 무겁습니다.</p>
+<p><strong>막대</strong>는 비용을 모드의 영역별로 쪼갭니다 (<code>srv.followmaint</code>, <code>srv.companion</code>, <code>dog.hunt</code>, <code>srv.netauth</code>, <code>srv.densesync</code> 등). 시간은 <strong>배타적</strong>입니다. 즉 1밀리초는 한 영역에만 기록되고, 그래서 막대를 다 더하면 합이 맞습니다. 가장 긴 막대가 손볼 가치가 있는 곳입니다.</p>
+<p><strong><code>counters:</code></strong> 줄은 시간 대신 초당 사건 수를 셉니다. 그중 둘은 그것만으로 답을 줍니다:</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong>이 0보다 크면, 떠돌이 개 스폰 대기열이 넘치고 있고 스폰 굴림이 버려지고 있습니다.</li>
+<li><strong><code>netauth.grant</code>와 <code>netauth.revoke</code>가 둘 다 높으면</strong>, 개의 제어권이 서버와 클라이언트 사이를 오가고 있다는 뜻이고 거리 설정이 잘못됐다는 증상입니다.</li>
+</ul>
+<p>주황색 <strong><code>COARSE CLOCK</code></strong> 경고가 뜬다면, 그 기계의 시계가 영역별 밀리초를 재기에는 거친 것입니다. 카운터는 그대로 믿어도 되고, 시간은 합계로만 봐야 합니다.</p>
+<p>아래쪽에 있는 나머지 버튼:</p>
+<div class="tw"><table><thead><tr>
+<th>버튼</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>2단계는 블록마다 그 안쪽 영역까지 펼쳐 보여 줍니다. 더 자세한 대신 계측 비용도 더 듭니다</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>측정값을 Zomboid 폴더의 <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code> 파일에 기록합니다. 나중에 스프레드시트로 열어 보기 위한 것입니다</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>600틱을 하나씩 기록해서 평균 대신 최고점을 찾습니다. 계측이 켜져 있어야 동작합니다</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>서버는 물론 <strong>모든 클라이언트</strong>에서도 상세한 피해 로그를 켭니다. 아주 시끄럽습니다. 물기가 안 먹히는 문제를 파헤칠 때만 켜고 곧바로 끄세요</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>계측에도 비용이 듭니다.</strong> 다 보고 나면 끄세요.</blockquote>
+<h3 id="조정-항목-패스-주기">조정 항목: 패스 주기</h3>
+<p>각 입력란은 이름 옆에 기본값과 범위를 보여 줍니다. 숫자를 적고 Enter를 누르거나 칸 밖을 클릭하면 서버 전체에 즉시 적용됩니다.</p>
+<p>모드는 두 가지 패스로 일합니다. 판단을 내리는 무거운 패스 (전투, 경계, 사냥, 관리)와, 무거운 패스 사이에 개를 계속 움직이게만 하는 값싼 패스입니다. 무거운 쪽을 올리는 것이 여기서 가장 효과가 큰 조정이고, 동시에 개의 반응을 가장 굼뜨게 만드는 조정이기도 합니다.</p>
+<div class="tw"><table><thead><tr>
+<th>화면 표시 이름</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5에서 60</td>
+<td>무거운 패스 사이의 틱 수. 10 fps에서 60틱이면 한 판단과 다음 판단 사이가 6초입니다</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1에서 10</td>
+<td>개를 계속 움직이게 하는 값싼 패스입니다. 이 값을 올리면 멀티플레이어에서 <span class="ig">따라와</span>가 끊겨 보입니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="조정-항목-도달-범위와-교전">조정 항목: 도달 범위와 교전</h3>
+<p>개는 좀비를 고르기 전에 <strong>걸어서 실제로 갈 수 있는지</strong>를 먼저 계산합니다. 반려견이 울타리 건너편 좀비를 쫓느라 담장을 빙빙 도는 것을 막아 주는 계산이 이것입니다. 아래 항목들은 그 계산의 크기와 유효 시간을 정합니다.</p>
+<div class="tw"><table><thead><tr>
+<th>화면 표시 이름</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100에서 5000</td>
+<td>다시 계산하기 전까지 그 결과가 유효한 시간</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0에서 12</td>
+<td>다시 계산하기 전까지 개가 걸어가도 되는 거리. 0이면 한 걸음마다 다시 계산하고, 그게 비싼 부분입니다</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4에서 20</td>
+<td>개가 좀비를 찾는 거리</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100에서 2000</td>
+<td>계산의 타일 상한. <strong>625 아래로 내리면 거의 매번 잘리고, 한 번 잘린 계산은 모든 것을 도달 가능한 것으로 취급합니다. 개가 울타리를 도는 것을 막아 주던 보호 장치를 그대로 끄는 셈입니다</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1에서 20</td>
+<td>개가 패스를 건너뛰기 시작하기까지, 연속으로 비어 있어야 하는 훑기 횟수. 위협의 낌새가 보이면 즉시 처음으로 돌아갑니다</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0에서 10</td>
+<td>그 휴식의 상한. 0이면 꺼지고 언제나 훑습니다</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1에서 120</td>
+<td>도달 불가로 표시된 좀비 목록을 청소하는 주기. 없으면 목록은 늘어나기만 합니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="조정-항목-냄새-추적">조정 항목: 냄새 추적</h3>
+<p>물건 냄새를 맡는 재주는 바닥을 고리 모양으로 훑습니다. 그 비용이 개의 수가 아니라 <strong>플레이어 수</strong>에 따라 커지는, 이 모드에서 유일한 부분입니다.</p>
+<div class="tw"><table><thead><tr>
+<th>화면 표시 이름</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50에서 2000</td>
+<td>개 한 마리가 한 패스에 훑는 양. 낮춰도 범위가 줄지는 않고 패스만 더 걸립니다</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100에서 10000</td>
+<td>틱당 서버 전체의 상한. 상한에 막힌 개는 차례를 잃지 않고 다음 패스에서 먼저 처리됩니다</td>
+</tr>
+</tbody></table></div>
+<h3 id="조정-항목-떠돌이-개-스폰">조정 항목: 떠돌이 개 스폰</h3>
+<p>지도의 한 조각이 로드될 때마다, 그 조각은 떠돌이 개가 나올 만한 자리인지 판정받으려고 대기열에 들어갑니다. 플레이어가 흩어져 있으면 혼자일 때보다 훨씬 많은 조각이 초당 도착하고, 대기열이 넘치는 지점이 거기입니다. <strong>아래 항목을 건드리기 전에 <code>spawn.qfull</code>부터 보세요.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>화면 표시 이름</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4에서 512</td>
+<td>대기열이 비워지는 속도로, 실제 초 기준입니다. 기본값은 플레이어 <strong>한 명</strong>이 걸어 다닐 때를 재서 잡은 값입니다</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1에서 16</td>
+<td>같은 틱에 들어올 수 있는 비싼 판정의 수. 이것은 속도가 아니라 끊김의 크기입니다. 위 항목을 먼저 바꾸세요</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256에서 16384</td>
+<td>대기열의 크기. 여기가 넘치는 것이 스폰 굴림이 버려지는 <strong>유일한</strong> 경로입니다</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1에서 32</td>
+<td>도로나 들판 조각은 값싼 검사 한 번에 걸러집니다. 이 숫자는 완전한 판정 하나의 비용에 그런 검사가 몇 개 들어가는지를 정합니다. 1이면 꺼집니다</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1에서 5</td>
+<td>지도 조각 하나를 판정 완료로 치기까지 필요한, 서로 일치하는 읽기의 횟수. 로드되는 순간은 거짓말을 하기도 해서, 주택가 한 블록이 통째로 떠돌이 개 없는 곳이 된 적도 있습니다. 떠돌이 개가 드물게 느껴지면 올리세요</td>
+</tr>
+</tbody></table></div>
+<h3 id="조정-항목-네트워크-멀티플레이어-전용">조정 항목: 네트워크 (멀티플레이어 전용)</h3>
+<div class="tw"><table><thead><tr>
+<th>화면 표시 이름</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0에서 1000</td>
+<td>지금 따라다니는 개가 <strong>아닌</strong> 개들의 위치 패킷 주기입니다. 비활성 개, 가축을 보는 개, 떠돌이 개, 야생 개가 여기에 들어갑니다. 실제로 움직인 개만 패킷을 씁니다. 0이면 꺼지고 게임 자체의 주기로 돌아가는데, 그 주기에서는 한 걸음 걷고 멈춥니다</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100에서 2000</td>
+<td>주인 발치에 <strong>가만히 서 있는</strong> 개도 살아 있다는 것을 알리려고 위치를 계속 보냅니다. 서 있는 개가 많은 서버에서 패킷을 줄이는 값싼 방법이 이 값을 올리는 것입니다. 새 값은 제어권이 다음에 넘어갈 때부터 적용되고, 넘어가는 도중에는 적용되지 않습니다</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2에서 28</td>
+<td>서버가 개의 제어권을 주인의 컴퓨터에 넘겨주는 거리입니다. 30보다 작아야 하고, 그렇지 않으면 제어권을 주자마자 같은 초에 도로 거둬들입니다</td>
+</tr>
+</tbody></table></div>
+<p>그리고 이 절에서 가장 큰 결정인 <strong><span class="ig">Client authority</span></strong> 스위치가 있습니다:</p>
+<ul>
+<li><strong>켜짐 (기본값):</strong> 주인의 컴퓨터가 개를 움직이고 위치를 보고하며, 서버는 그 보고를 하나하나 확인한 뒤에 다른 플레이어에게 전달합니다. 걷기와 달리기가 매끄러운 이유가 이것입니다.</li>
+<li><strong>꺼짐:</strong> 모든 개가 서버로 돌아갑니다. 클라이언트가 위치 패킷을 더 이상 보내지 않는데, 사람이 많은 서버에서 이 모드가 가장 자주 보내는 명령이 그것입니다. 대신 움직임이 모두에게 끊겨 보이고, 모든 개가 플레이어와 함께 쓰는 서버의 전역 길찾기 대기열로 다시 들어갑니다.</li>
+</ul>
+<h3 id="처방-증상과-손댈-곳">처방: 증상과 손댈 곳</h3>
+<p><strong>서버가 끊기고 가장 긴 막대가 <code>srv.companion</code> 또는 <code>srv.followmaint</code>일 때.</strong> <code>Heavy pass interval</code>을 30으로 올리세요. 그것으로 해결됐는데 개가 취향보다 굼뜨다면 되돌릴 값은 25. 그러고 나서야 <code>Follow maintainer interval</code>을 건드리세요. 화면에서 바로 보이는 쪽이 그것이기 때문입니다.</p>
+<p><strong>떠돌이 개가 드물 때.</strong> 계측을 켜고 <code>spawn.qfull</code>을 보세요. 0보다 크면 문제는 대기열입니다. <code>Stray spawn queue size</code>를 먼저 올리고, 그다음에 <code>Stray spawn scans per second</code>를 올리세요. <code>spawn.qfull</code>이 이미 0이라면 대기열은 병목이 아니니 <code>Agreeing reads before marking a chunk done</code>을 3으로 올리세요.</p>
+<p><strong>멀티플레이어에서 <span class="ig">따라와</span>가 끊길 때.</strong> <strong><span class="ig">Client authority</span></strong>가 켜져 있는지, 그리고 <code>Client authority grant distance</code>가 낮춰져 있지 않은지 확인하세요. 그다음 <code>Follow maintainer interval</code>을 1로 내리세요.</p>
+<p><strong>서 있는 개가 많아 대역폭을 먹는 서버.</strong> <code>Idle position report interval</code>을 800이나 1000으로 올리고, <code>Background dog sync interval</code>을 200으로 올리세요. 앞의 것은 가만히 서 있는 개에만 영향을 주고, 뒤의 것은 지금 따라다니는 개가 아닌 개들이 얼마나 매끄럽게 움직이는지를 정합니다.</p>
+<h3 id="이-패널이-하지-않는-것">이 패널이 하지 않는 것</h3>
+<p>이 패널은 <strong>게임 규칙을 전혀 바꾸지 않습니다.</strong> 피해, 배고픔, 경험치, 개 마릿수 제한, 월드에 존재하는 것은 여전히 21절의 <strong>샌드박스 옵션</strong>이 정합니다. 더 강한 개나 더 느린 배고픔을 원한다면 그쪽이고, 늘 하던 경고가 그대로 적용됩니다. 샌드박스는 세이브에 구워집니다.</p></article></main>
 </div>
 
 <script>

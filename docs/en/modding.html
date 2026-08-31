@@ -489,7 +489,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>where it is found in the world</li>
 <li>its name and description, in every language you ship</li>
 </ul>
-<p>That split is the whole point. A breed pack is a few hundred lines of Lua, because the hard part is already running.</p>
 <p><strong>One breed, one look.</strong> A breed is a set of numbers plus one appearance. If you want two colours of the same animal to behave differently, those are two breeds. If you want two colours that behave the same, they are still two breeds to the base (two names, two entries in the kennel), and you write them from one shared table, the way CD: Cats does with its five coats.</p>
 <h2 id="2-the-api-versions">2. The API versions</h2>
 <p><code>CD.API_VERSION</code> is a plain number. It has only ever grown by adding things, so an add-on written against an older version keeps loading on a newer base without a single change.</p>
@@ -756,12 +755,10 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tbody></table></div>
 <p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
 <h3 id="instinct-distract">Instinct: <code>distract</code></h3>
-<p>Every other field asks the animal to be good at something. This one asks it to be bad at paying attention.</p>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
 <p>A breed that declares it will, every so often, notice something and go after it, dropping whatever it was doing. It does this with <strong>no mode switched on</strong>, from <strong>Stay</strong> as well as Follow, and you are not in charge while it lasts: orders come back refused with the <code>distracted</code> message the obedience roll already uses. The one command that gets through is Come, which cancels it.</p>
-<p>Treat it as a cost you are giving your breed, not a bonus. While it runs, the animal is not at the owner's side and is not keeping watch. It fits a breed whose defining trait is being hard to hold on to. It does not fit a working dog you want the player to rely on.</p>
 <p>Every kind takes the same optional knobs, and anything you leave out falls back to the mod's defaults:</p>
 <div class="tw"><table><thead><tr>
 <th>Field</th>
@@ -792,10 +789,10 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <p>Two limits hold no matter what you declare:</p>
 <ul>
 <li><strong>It never reaches above your <code>huntMaxPrey</code>.</strong> The same funnel the hunting system uses applies here, so a breed capped at <code>small</code> will not chase deer even if it declares <code>large</code>.</li>
-<li><strong>The level gate is only skipped for <code>tiny</code>.</strong> Rodents get caught by a freshly tamed animal with Hunt 0, because catching mice is not a skill anything trains for. Declare <code>small</code> and your breed will drop everything and run after the rabbit, but to actually <em>kill</em> it, it still needs the same Hunt level the Labrador needs. Instinct decides what gets its attention; training still decides what it can bring down. Without that second limit, <code>classes</code> would be a shortcut that erases the Hunting ladder.</li>
+<li><strong>The level gate is only skipped for <code>tiny</code>.</strong> Rodents get caught by a freshly tamed animal with Hunt 0, because catching mice is not a skill anything trains for. Declare <code>small</code> and your breed will drop everything and run after the rabbit, but to actually <em>kill</em> it, it still needs the same Hunt level the Labrador needs.</li>
 </ul>
 <p>The sandbox Hunting toggle still owns the kill, not the chase: with hunting off the animal still runs, but the prey gets away.</p>
-<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner or leaves it where it fell. Set it to <code>0</code> and the animal delivers from day one, which is what makes a cat bring you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>. Leave <code>huntFetchLevel</code> alone and the default of 6 applies, so the breed chases on instinct and still has to earn the right to fetch.</p>
+<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner or leaves it where it fell. Set it to <code>0</code> and the animal delivers from day one, which is what makes a cat bring you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>.</p>
 <h4 id="writing-your-own-kind">Writing your own kind</h4>
 <p><code>distract</code> is a dispatcher, and <code>prey</code> is just the kind that ships with it. Register your own:</p>
 <pre><code>CD.registerDistraction("butterfly", {
@@ -843,12 +840,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>tending livestock in a pen</td>
 </tr>
 </tbody></table></div>
-<p>A species is not a dog with worse numbers. It is an animal that does not have some of those jobs at all. So it declares what it does not have:</p>
+<p>So a species declares what it does not have:</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
-<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface. All three, together. Hiding only the bar would leave the skill growing where nobody can see it; blocking only the system would leave a bar stuck at zero forever.</p>
+<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface.</p>
 <p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either. If what you actually want is an animal that breeds normally but never with a dog, that is <code>species</code>, below, not this.</p>
 <h3 id="the-species">The species</h3>
 <p>An add-on that adds another animal, rather than another dog, declares it:</p>
@@ -859,10 +856,10 @@ huntMaxPrey = "tiny",</code></pre>
 CD.registerBreed({ ..., species = "cat" })</code></pre>
 <p>The field is absent on every breed published so far, and absent means <code>"dog"</code>. So nothing you already wrote changes behaviour.</p>
 <p>It does two things. <strong>Breeding is closed per species:</strong> a pair only conceives when both sides are the same species, in the command, in the passive hourly roll and in the debug tool alike. And the interface stops calling your animal a dog: <code>nounKey</code> is the bare noun that fills sentences like <em>"This %1 already belongs to another survivor"</em>, and <code>youngKey</code> is the label the young of your species carries in the window, the context menu and the kennel, where a dog says <em>Puppy</em>.</p>
-<p>Declaring <code>species</code> without registering it is not fatal: your animal still refuses to breed outside its own species, because the gate compares the raw string. Only the two nouns fall back to the dog's, and the log says so by name. The fallback is deliberately one-sided, because the opposite, treating an unregistered species as a dog, would quietly let your animal breed with dogs.</p>
+<p>Declaring <code>species</code> without registering it is not fatal: your animal still refuses to breed outside its own species, because the gate compares the raw string. Only the two nouns fall back to the dog's, and the log says so by name.</p>
 <p><strong>This is a block, so it does not degrade.</strong> On a base older than API 6 the field is ignored in silence and your animal is a dog for breeding purposes. If it must never cross with one, guard on API 6, or keep <code>canBreed = false</code> while the base is older, which is what the cat does.</p>
 <p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. A halo saying the order was ignored would be a lie, because this is not disobedience. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
+<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
 <h2 id="8-the-animal-definitions">8. The animal definitions</h2>
 <p>The engine binds the mesh to the <strong>animal type</strong>, not to the breed, so your breed needs its own three types. This is the mechanical part of an add-on, and the shortest path is to copy the file of an existing add-on and rename it.</p>
 <p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
@@ -921,7 +918,6 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <td>the butchering parts of all three stages</td>
 </tr>
 </tbody></table></div>
-<p>Four rules that are not obvious:</p>
 <p><strong>The animation set has to stay <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> sets it. A forked animation set does not load its state machine, and an animal without a state machine is an animal frozen in place.</p>
 <p><strong>Reuse the genome:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Do not write your own.</p>
 <p><strong>Never declare <code>mate</code>.</strong> With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot as a safety net, but do not rely on that.</p>
@@ -1060,8 +1056,7 @@ end</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> is called with the game minutes since the last call, so multiply your effect by <code>elapsedMin</code> instead of assuming a fixed tick.</p>
-<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square.</p>
-<p>Custom moodles are drawn as an overlay, not through the game's own moodle system, which does not accept new entries from a mod. That is handled for you, but it is why the moodle appears in the mod's own strip and not among the vanilla ones.</p>
+<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
 <h2 id="12-hooks">12. Hooks</h2>
 <p>Two lists of functions the base calls on the <strong>server</strong>. Append to them from a shared file. Each handler runs inside its own protected call, so a broken add-on cannot take the base down with it.</p>
 <p><strong><code>CD.onHuntDelivered</code></strong>, from API 2, called right after the animal drops a kill at its owner's feet:</p>
@@ -1141,15 +1136,47 @@ end</code></pre>
 <li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
 </ul>
 <h2 id="16-common-mistakes">16. Common mistakes</h2>
-<p><strong>"My animal never appears."</strong> Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</p>
-<p><strong>"It appears, but it is frozen."</strong> The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</p>
-<p><strong>"It renders as a black smear and the log floods."</strong> More than 60 bones in the model.</p>
-<p><strong>"Butchering it crashes."</strong> <code>CD.defineDogParts</code> was not called.</p>
-<p><strong>"The puppy is born the size of an adult."</strong> A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</p>
-<p><strong>"Two of my breeds keep turning into each other."</strong> They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</p>
-<p><strong>"The sound plays but ignores the volume slider."</strong> <code>CD.registerVoices</code> was not called for that sound.</p>
-<p><strong>"It works in single player and misbehaves on a server."</strong> Something is writing mod data on the client. Move it to the server.</p>
-<p><strong>"It fought a zombie even though I turned combat off."</strong> The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</p>
+<div class="tw"><table><thead><tr>
+<th>Symptom</th>
+<th>What it is</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>"My animal never appears."</strong></td>
+<td>Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</td>
+</tr>
+<tr>
+<td><strong>"It appears, but it is frozen."</strong></td>
+<td>The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</td>
+</tr>
+<tr>
+<td><strong>"It renders as a black smear and the log floods."</strong></td>
+<td>More than 60 bones in the model.</td>
+</tr>
+<tr>
+<td><strong>"Butchering it crashes."</strong></td>
+<td><code>CD.defineDogParts</code> was not called.</td>
+</tr>
+<tr>
+<td><strong>"The puppy is born the size of an adult."</strong></td>
+<td>A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</td>
+</tr>
+<tr>
+<td><strong>"Two of my breeds keep turning into each other."</strong></td>
+<td>They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</td>
+</tr>
+<tr>
+<td><strong>"The sound plays but ignores the volume slider."</strong></td>
+<td><code>CD.registerVoices</code> was not called for that sound.</td>
+</tr>
+<tr>
+<td><strong>"It works in single player and misbehaves on a server."</strong></td>
+<td>Something is writing mod data on the client. Move it to the server.</td>
+</tr>
+<tr>
+<td><strong>"It fought a zombie even though I turned combat off."</strong></td>
+<td>The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</td>
+</tr>
+</tbody></table></div>
 <hr>
 <p>Something in this manual wrong, or missing? Say so on <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
 </div>

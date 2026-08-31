@@ -604,10 +604,25 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#23-quitar-el-mod-de-una-partida-lee-esto-primero" data-id="23-quitar-el-mod-de-una-partida-lee-esto-primero">23. Quitar el mod de una partida (LEE ESTO PRIMERO)</a>
 <div class="sub">
-<a class="s3" href="#por-que-pasa" data-id="por-que-pasa">Por que pasa</a>
+<a class="s3" href="#por-qué-pasa" data-id="por-qué-pasa">Por qué pasa</a>
 <a class="s3" href="#si-tus-animales-ya-desaparecieron" data-id="si-tus-animales-ya-desaparecieron">Si tus animales ya desaparecieron</a>
-<a class="s3" href="#como-quitarlo-con-seguridad" data-id="como-quitarlo-con-seguridad">Como quitarlo con seguridad</a>
+<a class="s3" href="#cómo-quitarlo-con-seguridad" data-id="cómo-quitarlo-con-seguridad">Cómo quitarlo con seguridad</a>
 <a class="s3" href="#limpieza-completa-admin-modo-debug" data-id="limpieza-completa-admin-modo-debug">Limpieza completa (admin / modo debug)</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-ajuste-fino-del-servidor-admin" data-id="24-ajuste-fino-del-servidor-admin">24. Ajuste fino del servidor (admin)</a>
+<div class="sub">
+<a class="s3" href="#cómo-abrir-el-panel" data-id="cómo-abrir-el-panel">Cómo abrir el panel</a>
+<a class="s3" href="#lo-que-vale-para-todos-los-campos" data-id="lo-que-vale-para-todos-los-campos">Lo que vale para todos los campos</a>
+<a class="s3" href="#leer-la-medición-antes-de-tocar-nada" data-id="leer-la-medición-antes-de-tocar-nada">Leer la medición antes de tocar nada</a>
+<a class="s3" href="#ajustes-ritmo-de-los-pases" data-id="ajustes-ritmo-de-los-pases">Ajustes: ritmo de los pases</a>
+<a class="s3" href="#ajustes-alcance-y-combate" data-id="ajustes-alcance-y-combate">Ajustes: alcance y combate</a>
+<a class="s3" href="#ajustes-olfato" data-id="ajustes-olfato">Ajustes: olfato</a>
+<a class="s3" href="#ajustes-aparición-de-callejeros" data-id="ajustes-aparición-de-callejeros">Ajustes: aparición de callejeros</a>
+<a class="s3" href="#ajustes-red-solo-multijugador" data-id="ajustes-red-solo-multijugador">Ajustes: red (solo multijugador)</a>
+<a class="s3" href="#recetas-el-síntoma-y-qué-tocar" data-id="recetas-el-síntoma-y-qué-tocar">Recetas: el síntoma y qué tocar</a>
+<a class="s3" href="#lo-que-este-panel-no-hace" data-id="lo-que-este-panel-no-hace">Lo que este panel no hace</a>
 </div>
 </div></nav>
   </aside>
@@ -1842,12 +1857,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>Desactivada, los perros se quedan en el mundo, invencibles y quietos.</p>
 <h3 id="para-administradores">Para administradores</h3>
-<p>Existe un <strong><span class="ig">Registro de perros (admin)</span></strong>: búsqueda por jugador, estado En línea/Desconectado, número de perros y botón Actualizar. Existe también un panel de <strong>ajuste de rendimiento del servidor</strong> en vivo. Los dos son solo para admin.</p>
+<p>Existe un <strong><span class="ig">Registro de perros (admin)</span></strong>: búsqueda por jugador, estado En línea/Desconectado, número de perros y botón Actualizar. Existe también un panel de <strong>ajuste de rendimiento del servidor</strong> en vivo, con la medición y los campos de ajuste, descrito en la sección <a href="#24-ajuste-fino-del-servidor-admin">24. Ajuste fino del servidor</a>. Los dos son solo para admin.</p>
 <h3 id="aviso-de-instalación-en-co-op">Aviso de instalación en co-op</h3>
 <p>**Si el perro aparece sin textura o <em>aplastado</em>:<strong> activa Companion Dogs en la </strong>lista de Mods del menú principal<strong> (no solo en la selección del co-op) y </strong>cierra el juego por completo<strong> antes de cargar la partida. El anfitrión del co-op tiene que hacer lo mismo y reiniciar el servidor. Y activarlo en el menú no es todo: el anfitrión además tiene que listar el mod en los </strong>ajustes del servidor**, en el paso a paso de la sección de instalación.</p>
 <h2 id="21-opciones-de-sandbox">21. Opciones de sandbox</h2>
 <p>Página <strong><span class="ig">Perros compañeros</span></strong> en la configuración del mundo. Son 33 opciones.</p>
-<blockquote class="quote"><strong>Recuerda:</strong> en multijugador manda la configuración <strong>del servidor</strong>. Y en Project Zomboid las opciones de sandbox quedan grabadas <strong>en la partida</strong>, así que cambiarlas después obliga a editar el save o a empezar un mundo nuevo.</blockquote>
+<blockquote class="quote"><strong>Recuerda:</strong> en multijugador manda la configuración <strong>del servidor</strong>, y cambiarla es cosa de admin: desde el panel de administración el cambio vale <strong>al momento</strong>, para todo el mundo, y queda grabado. En un jugador esa pantalla solo se abre con el juego en <strong>modo debug</strong> (<code>-debug</code> en las opciones de inicio de Steam), y allí también vale al momento. Sin debug, en un jugador, la forma de cambiarlas es empezar un mundo nuevo.</blockquote>
 <h3 id="domesticación-y-aparición">Domesticación y aparición</h3>
 <div class="tw"><table><thead><tr>
 <th>Opción</th>
@@ -2095,32 +2110,256 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Mi perro murió.</span></strong> No tiene vuelta atrás y no hay reaparición. La única causa es hambre o sed llevadas al extremo. Las alforjas y la carga se quedan en el suelo donde cayó.</p>
 <p><strong><span class="ig">Mi capacidad de carga cambió después de instalar el mod.</span></strong> Companion Dogs <strong>no</strong> toca tu peso máximo en ningún lado. Si usas un mod que sube la capacidad, el número que manda es el suyo, y los dos conviven sin ajuste alguno. El husky tampoco carga ya parte de tu peso: desde la 0.6.9 su moodle acelera tu <strong>Fuerza</strong>, y es la Fuerza la que sube la capacidad, para siempre. En servidor hay un detalle que <strong>no</strong> viene del mod: el juego base deja tu capacidad atascada en un valor bajo, ignorando tu Fuerza, hasta que el personaje recibe el primer daño. Si el número parece pequeño antes del primer arañazo, así se comporta el juego sin ningún mod instalado.</p>
 <h2 id="23-quitar-el-mod-de-una-partida-lee-esto-primero">23. Quitar el mod de una partida (LEE ESTO PRIMERO)</h2>
-<p>Esta es la seccion mas importante de todo el manual para quien piense en desinstalar. <strong>Quitar Companion Dogs de una partida que todavia tiene perros hace desaparecer animales que no son del mod</strong>: tu ganado, tus gallinas, lo que viviera en esa zona del mapa. No es un fallo del mod, es como Project Zomboid guarda los animales, y el mod no puede defenderse una vez que ya lo quitaste.</p>
-<h3 id="por-que-pasa">Por que pasa</h3>
-<p>El juego guarda <strong>todos los animales vivos de una region grande del mapa en un solo archivo</strong>. Al abrir ese archivo sin el mod, se topa con tu perro, ya no sabe que es, abandona el resto del archivo y repuebla la region como si nunca hubieras pasado por alli. Tus animales se van con el porque estaban en el mismo archivo que el perro.</p>
-<p>El dano no es el mapa entero ni solo el entorno del perro: la lectura se detiene en el perro y <strong>se pierde todo lo que venia despues de el en esa region</strong>. Por eso el resultado varia tanto de una partida a otra.</p>
+<p>Esta es la sección más importante de todo el manual para quien piense en desinstalar. <strong>Quitar Companion Dogs de una partida que todavía tiene perros hace desaparecer animales que no son del mod</strong>: tu ganado, tus gallinas, lo que viviera en esa zona del mapa. No es un fallo del mod, es como Project Zomboid guarda los animales, y el mod no puede defenderse una vez que ya lo quitaste.</p>
+<h3 id="por-qué-pasa">Por qué pasa</h3>
+<p>El juego guarda <strong>todos los animales vivos de una región grande del mapa en un solo archivo</strong>. Al abrir ese archivo sin el mod, se topa con tu perro, ya no sabe qué es, abandona el resto del archivo y repuebla la región como si nunca hubieras pasado por allí. Tus animales se van con él porque estaban en el mismo archivo que el perro.</p>
+<p>El daño no es el mapa entero ni solo el entorno del perro: la lectura se detiene en el perro y <strong>se pierde todo lo que venía después de él en esa región</strong>. Por eso el resultado varía tanto de una partida a otra.</p>
 <p><strong>Vale igual para los addons de raza.</strong> Desuscribirte solo del Rottweiler, el Doberman, el Labrador o el Carlino y seguir jugando con el mod base provoca exactamente el mismo problema, porque los perros de esa raza siguen guardados en tu partida.</p>
 <h3 id="si-tus-animales-ya-desaparecieron">Si tus animales ya desaparecieron</h3>
-<p><strong>Reinstala el mod ahora, antes de seguir jugando o guardar.</strong> Lo mas probable es que los animales vuelvan. Una vez que el juego guarde encima, no hay vuelta atras y no existe copia de seguridad de ese archivo.</p>
-<h3 id="como-quitarlo-con-seguridad">Como quitarlo con seguridad</h3>
-<p><strong>Paso 1: manten todos los addons activados.</strong> Antes de tocar nada, comprueba que <strong>todo addon de raza que hayas usado en esa partida este marcado en la lista de mods DE ESA partida</strong> (Cargar partida, la partida, Mods). Un addon desactivado ya es el problema descrito arriba.</p>
+<p><strong>Reinstala el mod ahora, antes de seguir jugando o guardar.</strong> Lo más probable es que los animales vuelvan. Una vez que el juego guarde encima, no hay vuelta atrás y no existe copia de seguridad de ese archivo.</p>
+<h3 id="cómo-quitarlo-con-seguridad">Cómo quitarlo con seguridad</h3>
+<p><strong>Paso 1: mantén todos los addons activados.</strong> Antes de tocar nada, comprueba que <strong>todo addon de raza que hayas usado en esa partida esté marcado en la lista de mods DE ESA partida</strong> (Cargar partida, la partida, Mods). Un addon desactivado ya es el problema descrito arriba.</p>
 <p><strong>Paso 2: deshazte de los perros.</strong> Dos formas seguras:</p>
 <ul>
-<li><strong>Matarlos.</strong> El cadaver se guarda de otra manera, en un formato que el juego sabe leer aunque el mod no este.</li>
-<li><strong>Llevar uno en el inventario.</strong> Un objeto es algo que el juego sabe saltarse con seguridad: solo se pierde el perro, lo demas se queda.</li>
+<li><strong>Matarlos.</strong> El cadáver se guarda de otra manera, en un formato que el juego sabe leer aunque el mod no esté.</li>
+<li><strong>Llevar uno en el inventario.</strong> Un objeto es algo que el juego sabe saltarse con seguridad: solo se pierde el perro, lo demás se queda.</li>
 </ul>
-<p>Soltar al perro o llevarlo lejos <strong>no sirve</strong>: su registro sigue en la partida, y llevarlo a otro sitio solo cambia que region se rompe.</p>
+<p>Soltar al perro o llevarlo lejos <strong>no sirve</strong>: su registro sigue en la partida, y llevarlo a otro sitio solo cambia qué región se rompe.</p>
 <p><strong>Paso 3: guarda la partida.</strong> Es el guardado lo que escribe la limpieza.</p>
 <p><strong>Paso 4: quita el mod.</strong></p>
 <h3 id="limpieza-completa-admin-modo-debug">Limpieza completa (admin / modo debug)</h3>
-<p>Los pasos de arriba cubren tus perros, pero el mod tambien reparte <strong>callejeros</strong> por el mapa, y no hay manera de encontrarlos todos a mano. Para limpiar la partida entera de una vez hay un comando:</p>
+<p>Los pasos de arriba cubren tus perros, pero el mod también reparte <strong>callejeros</strong> por el mapa, y no hay manera de encontrarlos todos a mano. Para limpiar la partida entera de una vez hay un comando:</p>
 <ol>
-<li>Activa la opcion de sandbox <strong><span class="ig">Permitir spawn de debug</span></strong> en esa partida.</li>
-<li>Entra como <strong>admin</strong> (multijugador) o abre el juego en <strong>modo debug</strong> (un jugador: anade <code>-debug</code> a las opciones de inicio de Steam).</li>
+<li>Activa la opción de sandbox <strong><span class="ig">Permitir spawn de debug</span></strong> en esa partida.</li>
+<li>Entra como <strong>admin</strong> (multijugador) o abre el juego en <strong>modo debug</strong> (un jugador: añade <code>-debug</code> a las opciones de inicio de Steam).</li>
 <li>Clic derecho en el suelo, luego <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Espera el mensaje <code>sweep done</code> y <strong>guarda la partida</strong>.</li>
 </ol>
-<p>El comando borra los perros cargados al instante y despues barre el resto de la partida en segundo plano, sin congelar el juego. Si <strong>se niega</strong> y nombra una raza, es el paso 1 de arriba: ese addon no esta activado en esa partida, y forzar la limpieza sin sus definiciones es justo lo que destruye a los animales.</p></article></main>
+<p>El comando borra los perros cargados al instante y después barre el resto de la partida en segundo plano, sin congelar el juego. Si <strong>se niega</strong> y nombra una raza, es el paso 1 de arriba: ese addon no está activado en esa partida, y forzar la limpieza sin sus definiciones es justo lo que destruye a los animales.</p>
+<h2 id="24-ajuste-fino-del-servidor-admin">24. Ajuste fino del servidor (admin)</h2>
+<p><strong>No necesitas esta sección para jugar.</strong> El mod funciona con sus valores de fábrica, y tocar aquí sin motivo solo empeora las cosas. Existe para quien lleva un servidor con mucha gente y muchos perros, y ya está notando el peso.</p>
+<p>El panel se llama <strong><span class="ig">Server tuning / performance</span></strong> y tiene dos mitades: arriba, un medidor en vivo de lo que el mod le está costando al servidor; abajo, los campos que cambian ese coste.</p>
+<blockquote class="quote"><strong>El panel está en inglés en cualquier idioma del juego.</strong> Sus rótulos están fijados en el código y no pasan por la traducción. Por eso las tablas de abajo citan cada uno tal y como aparece en pantalla.</blockquote>
+<h3 id="cómo-abrir-el-panel">Cómo abrir el panel</h3>
+<p><strong>En multijugador:</strong> entra como <strong>admin</strong>, haz clic derecho en el suelo y ve a <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>.</p>
+<p><strong>En un jugador:</strong> el mismo camino, pero el juego tiene que estar en <strong>modo debug</strong>. Añade <code>-debug</code> a las opciones de inicio de Steam.</p>
+<p>Si la opción no aparece, o no eres admin en ese servidor, o el juego no está en modo debug.</p>
+<h3 id="lo-que-vale-para-todos-los-campos">Lo que vale para todos los campos</h3>
+<p>El valor entra <strong>al momento</strong> y para el servidor entero, sin reiniciar nada, y queda grabado en la partida: sobrevive a un reinicio del servidor.</p>
+<p>Tres cosas más que ahorran tiempo:</p>
+<ul>
+<li><strong>Un valor fuera del rango se devuelve al rango.</strong> Escribir 9000 en un campo que llega hasta 60 guarda 60.</li>
+<li><strong>Un rótulo en verde significa <span class="ig">distinto del valor por defecto</span>.</strong> Así es como encuentras, meses después, lo que anduviste tocando.</li>
+<li><strong>Todo cambio sale en el log del servidor</strong> con la marca <code>[CD-TUNE]</code> y el nombre de quien lo hizo. Cuando el servidor arranca, imprime la lista entera en vigor y marca con <code>*</code> lo que cambió un admin.</li>
+</ul>
+<p>El botón <strong><span class="ig">Restore defaults</span></strong> devuelve todo a los valores de fábrica, incluidas la medición y la autoridad de cliente.</p>
+<h3 id="leer-la-medición-antes-de-tocar-nada">Leer la medición antes de tocar nada</h3>
+<p>La regla es esta: <strong>primero medir, después tocar.</strong> Varios de estos ajustes cambian una cosa buena por otra, y sin un número en pantalla no sabes cuál de las dos estás comprando.</p>
+<p>Haz clic en <strong><span class="ig">Measurement: off (click to start)</span></strong>. La primera ventana se cierra en un máximo de <strong>20 segundos</strong>, y la parte de arriba del panel se rellena. La línea principal es esta:</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> es el número que interesa: cuántos milisegundos de cada segundo le está consumiendo el mod al servidor. Es el que quieres ver bajar después de un ajuste.</p>
+<p>La <strong>segunda línea</strong> cuenta cuántos perros hay cargados en el mundo, cuántos de ellos son compañeros, y cuántos barridos de animales ocurren por segundo. Un perro cargado es lo que cuesta: 40 perros repartidos por el mapa pesan más que 40 perros en la misma base.</p>
+<p>Las <strong>barras</strong> desglosan el gasto por área del mod (<code>srv.followmaint</code>, <code>srv.companion</code>, <code>dog.hunt</code>, <code>srv.netauth</code>, <code>srv.densesync</code> y otras). El tiempo es <strong>exclusivo</strong>, es decir, cada milisegundo se apunta a una sola área, y por eso las barras suman. La barra más larga es donde vale la pena tocar.</p>
+<p>La línea <strong><code>counters:</code></strong> cuenta eventos por segundo en vez de tiempo. Dos de ellos responden una pregunta por sí solos:</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> por encima de cero: la cola de aparición de callejeros está desbordando, y se están perdiendo tiradas de aparición.</li>
+<li><strong><code>netauth.grant</code> y <code>netauth.revoke</code> altos a la vez</strong>: el control del perro va y viene entre servidor y cliente, síntoma de una distancia mal configurada.</li>
+</ul>
+<p>Si aparece el aviso naranja <strong><code>COARSE CLOCK</code></strong>, la máquina no tiene un reloj lo bastante fino para medir milisegundos por área. Los contadores siguen valiendo; los tiempos, solo en el agregado.</p>
+<p>Los otros botones de la parte de abajo:</p>
+<div class="tw"><table><thead><tr>
+<th>Botón</th>
+<th>Para qué sirve</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>El nivel 2 abre las áreas internas de cada bloque. Más detalle, y más coste de medición</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>Graba la medición en un archivo <code>CompanionDogs_perf_&lt;lado&gt;_&lt;sesión&gt;.txt</code> en la carpeta Zomboid, para abrirlo después en una hoja de cálculo</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>Graba 600 ticks uno a uno, para encontrar el pico en vez de la media. Solo funciona con la medición encendida</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>Enciende un log detallado de daño en el servidor <strong>y en todos los clientes</strong>. Es muy ruidoso: enciéndelo para investigar una mordida que no registra, y apágalo justo después</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Medir cuesta.</strong> Apágalo cuando termines de mirar.</blockquote>
+<h3 id="ajustes-ritmo-de-los-pases">Ajustes: ritmo de los pases</h3>
+<p>Cada campo muestra su valor por defecto y su rango al lado del nombre. Escribe el número y pulsa Enter, o haz clic fuera del campo: el valor entra al momento, para el servidor entero.</p>
+<p>El mod trabaja en dos pases: uno pesado, que decide (combate, centinela, caza, mantenimiento), y uno barato, que solo mantiene al perro andando entre un pesado y el siguiente. Subir el pesado es el ajuste más eficaz que hay aquí, y también el que más lento deja al perro para reaccionar.</p>
+<div class="tw"><table><thead><tr>
+<th>Rótulo en pantalla</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5 a 60</td>
+<td>Ticks entre un pase pesado y el siguiente. A 10 fps, 60 ticks son 6 segundos entre una decisión y la siguiente</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1 a 10</td>
+<td>El pase barato que mantiene al perro en movimiento. Subir esto es lo que hace que el <span class="ig">seguir</span> parezca trabado en multijugador</td>
+</tr>
+</tbody></table></div>
+<h3 id="ajustes-alcance-y-combate">Ajustes: alcance y combate</h3>
+<p>Antes de elegir un zombi, el perro calcula hasta dónde <strong>puede llegar a pie</strong>. Es ese cálculo el que impide que el compañero se quede dando vueltas a una valla detrás de un zombi del otro lado. Los campos de abajo controlan el tamaño y la validez de esa cuenta.</p>
+<div class="tw"><table><thead><tr>
+<th>Rótulo en pantalla</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100 a 5000</td>
+<td>Cuánto tiempo vale la cuenta antes de rehacerse</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0 a 12</td>
+<td>Cuánto puede andar el perro antes de rehacer la cuenta. 0 la rehace a cada paso, que es lo caro</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4 a 20</td>
+<td>Hasta dónde busca zombis el perro</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100 a 2000</td>
+<td>Techo de tiles de la cuenta. <strong>Por debajo de 625 se trunca casi siempre, y truncada pasa a tratar todo como alcanzable: la protección contra el perro dando vueltas a una valla es justo lo que apagas</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1 a 20</td>
+<td>Cuántos barridos vacíos seguidos hasta que el perro empieza a saltarse pases. Cualquier señal de amenaza pone esto a cero al instante</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0 a 10</td>
+<td>Techo de ese descanso. 0 lo desactiva y vuelve a barrer siempre</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1 a 120</td>
+<td>Limpieza de la lista de zombis marcados como inalcanzables. Sin ella la lista solo crece</td>
+</tr>
+</tbody></table></div>
+<h3 id="ajustes-olfato">Ajustes: olfato</h3>
+<p>El truco de olfatear un objeto barre el suelo en anillo, y es la única parte del mod cuyo coste crece con el <strong>número de jugadores</strong>, y no con el número de perros.</p>
+<div class="tw"><table><thead><tr>
+<th>Rótulo en pantalla</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50 a 2000</td>
+<td>Cuánto barre cada perro por pase. Bajarlo no acorta el alcance, solo hace que tarde más pases</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100 a 10000</td>
+<td>Techo del servidor entero por tick. El perro frenado por el techo no pierde su turno, entra el primero en el pase siguiente</td>
+</tr>
+</tbody></table></div>
+<h3 id="ajustes-aparición-de-callejeros">Ajustes: aparición de callejeros</h3>
+<p>Cada vez que se carga un trozo del mapa, entra en una cola para ser evaluado como posible sitio de callejero. Con los jugadores repartidos llegan muchos más trozos por segundo que con un solo jugador, y ahí es donde la cola revienta. <strong>Mira <code>spawn.qfull</code> antes de tocar cualquiera de estos.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Rótulo en pantalla</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4 a 512</td>
+<td>Ritmo al que se vacía la cola, en segundos reales. El valor por defecto se midió con <strong>un</strong> jugador andando</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1 a 16</td>
+<td>Cuántas evaluaciones caras pueden caer en el mismo tick. Esto es el tamaño del tirón, no el ritmo: toca antes el de arriba</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256 a 16384</td>
+<td>Tamaño de la cola. Desbordarla es la <strong>única</strong> forma de que se pierda una tirada de aparición</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1 a 32</td>
+<td>Un trozo de calle o de campo muere en una comprobación barata. Este número dice cuántas de esas caben en el coste de una evaluación completa. 1 lo desactiva</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1 a 5</td>
+<td>Cuántas lecturas coincidentes hasta dar por decidido un trozo del mapa. El instante de la carga sabe mentir, y una manzana entera se ha quedado ya sin callejeros por eso. Súbelo si los callejeros escasean</td>
+</tr>
+</tbody></table></div>
+<h3 id="ajustes-red-solo-multijugador">Ajustes: red (solo multijugador)</h3>
+<div class="tw"><table><thead><tr>
+<th>Rótulo en pantalla</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0 a 1000</td>
+<td>Ritmo de paquetes de posición de los perros que <strong>no</strong> son el seguidor activo: los pasivos, los que cuidan del ganado, los callejeros y los salvajes. Solo el perro que se ha movido cuesta un paquete. 0 lo desactiva y los devuelve al ritmo nativo del juego, con el que andan un paso y se paran</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100 a 2000</td>
+<td>Un perro <strong>parado</strong> al lado de su dueño sigue mandando su posición solo para demostrar que está vivo. Subir esto es la forma barata de recortar paquetes en un servidor lleno de perros parados. El valor nuevo vale a partir del siguiente cambio de control, no en mitad de uno</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2 a 28</td>
+<td>A qué distancia entrega el servidor el control del perro a la máquina del dueño. Tiene que quedarse por debajo de 30, o el control se da y se quita en el mismo segundo</td>
+</tr>
+</tbody></table></div>
+<p>Y el interruptor <strong><span class="ig">Client authority</span></strong>, que es la decisión más grande de esta sección:</p>
+<ul>
+<li><strong>Encendido (por defecto):</strong> la máquina del dueño mueve al perro y reporta su posición, y el servidor comprueba cada reporte antes de pasarlo a los demás jugadores. Es lo que deja finos el andar y el correr.</li>
+<li><strong>Apagado:</strong> todos los perros vuelven al servidor. Los clientes dejan de mandar paquetes de posición, que es el comando más frecuente del mod en un servidor lleno, pero el movimiento se vuelve entrecortado para todo el mundo, y cada perro vuelve a la cola de pathfinding del servidor, que es global y compartida con los jugadores.</li>
+</ul>
+<h3 id="recetas-el-síntoma-y-qué-tocar">Recetas: el síntoma y qué tocar</h3>
+<p><strong>El servidor se atasca y la barra más larga es <code>srv.companion</code> o <code>srv.followmaint</code>.</strong> Sube el <code>Heavy pass interval</code> a 30. Si eso lo arregla pero el perro se te queda demasiado lento, vuelve a 25. Solo después toca el <code>Follow maintainer interval</code>, porque ese es el que se ve en pantalla.</p>
+<p><strong>Callejeros escasos.</strong> Enciende la medición y mira <code>spawn.qfull</code>. Por encima de cero, el problema es la cola: sube primero el <code>Stray spawn queue size</code>, y solo entonces el <code>Stray spawn scans per second</code>. Si <code>spawn.qfull</code> ya está a cero, la cola no es el cuello de botella: sube el <code>Agreeing reads before marking a chunk done</code> a 3.</p>
+<p><strong><span class="ig">Seguir</span> entrecortado en multijugador.</strong> Comprueba que el <strong>Client authority</strong> está encendido y que el <code>Client authority grant distance</code> no se ha bajado. Después baja el <code>Follow maintainer interval</code> a 1.</p>
+<p><strong>Un servidor lleno de perros parados gastando ancho de banda.</strong> Sube el <code>Idle position report interval</code> a 800 o 1000, y el <code>Background dog sync interval</code> a 200. El primero solo afecta al perro parado; el segundo, a lo suave que se mueven los perros que no son el seguidor activo.</p>
+<h3 id="lo-que-este-panel-no-hace">Lo que este panel no hace</h3>
+<p>No cambia <strong>ninguna regla de juego</strong>. El daño, el hambre, la XP, el límite de perros y lo que existe en el mundo siguen siendo las <strong>opciones de sandbox</strong> de la sección 21. Si lo que quieres es un perro más fuerte o un hambre más lenta, es allí.</p></article></main>
 </div>
 
 <script>

@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#how-to-remove-it-safely" data-id="how-to-remove-it-safely">How to remove it safely</a>
 <a class="s3" href="#full-cleanup-admin-debug-mode" data-id="full-cleanup-admin-debug-mode">Full cleanup (admin / debug mode)</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-server-tuning-admin" data-id="24-server-tuning-admin">24. Server tuning (admin)</a>
+<div class="sub">
+<a class="s3" href="#opening-the-panel" data-id="opening-the-panel">Opening the panel</a>
+<a class="s3" href="#what-holds-for-every-field" data-id="what-holds-for-every-field">What holds for every field</a>
+<a class="s3" href="#read-the-measurement-before-you-touch-anything" data-id="read-the-measurement-before-you-touch-anything">Read the measurement before you touch anything</a>
+<a class="s3" href="#knobs-pass-rhythm" data-id="knobs-pass-rhythm">Knobs: pass rhythm</a>
+<a class="s3" href="#knobs-reach-and-combat" data-id="knobs-reach-and-combat">Knobs: reach and combat</a>
+<a class="s3" href="#knobs-scent" data-id="knobs-scent">Knobs: scent</a>
+<a class="s3" href="#knobs-stray-spawning" data-id="knobs-stray-spawning">Knobs: stray spawning</a>
+<a class="s3" href="#knobs-network-multiplayer-only" data-id="knobs-network-multiplayer-only">Knobs: network (multiplayer only)</a>
+<a class="s3" href="#recipes-the-symptom-and-what-to-change" data-id="recipes-the-symptom-and-what-to-change">Recipes: the symptom and what to change</a>
+<a class="s3" href="#what-this-panel-does-not-do" data-id="what-this-panel-does-not-do">What this panel does not do</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-features-manual">Companion Dogs: Features Manual</h1>
@@ -1842,12 +1857,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>Turned off, the dogs stay in the world, invincible and idle.</p>
 <h3 id="for-administrators">For administrators</h3>
-<p>There is a <strong><span class="ig">Dog registry (admin)</span></strong>: search by player, Online/Offline status, dog count and a Refresh button. There is also a live <strong>server performance tuning</strong> panel. Both are admin only.</p>
+<p>There is a <strong><span class="ig">Dog registry (admin)</span></strong>: search by player, Online/Offline status, dog count and a Refresh button. There is also a live <strong>server performance tuning</strong> panel, with the measurement and the tuning fields, described in section <a href="#24-server-tuning-admin">24. Server tuning</a>. Both are admin only.</p>
 <h3 id="co-op-installation-warning">Co-op installation warning</h3>
 <p><strong>If the dog shows up with no texture or <span class="ig">squashed</span>:</strong> enable Companion Dogs in the <strong>Mods list on the main menu</strong> (not just in the co-op selection) and <strong>close the game completely</strong> before loading the save. The co-op host has to do the same and restart the server. And enabling it in the menu is not everything: the host also has to list the mod in the <strong>server settings</strong>, in the step-by-step of the installation section.</p>
 <h2 id="21-sandbox-options">21. Sandbox options</h2>
 <p>The <strong><span class="ig">Companion Dogs</span></strong> page in your world settings. There are 35 options.</p>
-<blockquote class="quote"><strong>Remember:</strong> in multiplayer, the one that counts is the <strong>server's</strong> setting. And in Project Zomboid sandbox options are baked <strong>into the save</strong>, so changing them later means editing the save or starting a new world.</blockquote>
+<blockquote class="quote"><strong>Remember:</strong> in multiplayer the one that counts is the <strong>server's</strong> setting, and changing it is an admin job: from the admin panel the change applies <strong>immediately</strong>, for everyone, and is stored. In single player that screen only opens with the game in <strong>debug mode</strong> (<code>-debug</code> in the Steam launch options), and there too it applies immediately. Without debug, in single player, the way to change them is to start a new world.</blockquote>
 <h3 id="taming-and-spawning">Taming and spawning</h3>
 <div class="tw"><table><thead><tr>
 <th>Option</th>
@@ -2126,7 +2141,231 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Right-click the ground → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Wait for the <code>sweep done</code> message and <strong>save the game</strong>.</li>
 </ol>
-<p>The command deletes the loaded dogs immediately and then sweeps the rest of the save in the background, without freezing the game. If it <strong>refuses</strong> and names a breed, that is step 1 above: that addon is not enabled in this save, and forcing the cleanup without its definitions is exactly what destroys the animals.</p></article></main>
+<p>The command deletes the loaded dogs immediately and then sweeps the rest of the save in the background, without freezing the game. If it <strong>refuses</strong> and names a breed, that is step 1 above: that addon is not enabled in this save, and forcing the cleanup without its definitions is exactly what destroys the animals.</p>
+<h2 id="24-server-tuning-admin">24. Server tuning (admin)</h2>
+<p><strong>You do not need this section to play.</strong> The mod works on its defaults, and changing things here without a reason only makes them worse. This section exists for people running a server with a lot of players and a lot of dogs, and feeling the weight of it.</p>
+<p>The panel is called <strong><span class="ig">Server tuning / performance</span></strong> and it has two halves: on top, a live meter of what the mod is costing the server; below it, the fields that change that cost.</p>
+<blockquote class="quote"><strong>The panel is in English whatever language your game is in.</strong> Its labels are fixed in the code and do not go through the translation. That is why the tables below quote each one exactly as it appears on screen.</blockquote>
+<h3 id="opening-the-panel">Opening the panel</h3>
+<p><strong>In multiplayer:</strong> log in as <strong>admin</strong>, right-click the ground and go to <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>.</p>
+<p><strong>In single player:</strong> the same path, but the game has to be in <strong>debug mode</strong>. Add <code>-debug</code> to the launch options in Steam.</p>
+<p>If the option does not show up, either you are not an admin on that server, or the game is not in debug mode.</p>
+<h3 id="what-holds-for-every-field">What holds for every field</h3>
+<p>The value applies <strong>immediately</strong> and for the whole server, with nothing to restart, and it is stored in the save: it survives a server restart.</p>
+<p>Three more things that save time:</p>
+<ul>
+<li><strong>A value outside the range is pulled back into it.</strong> Typing 9000 into a field that goes up to 60 stores 60.</li>
+<li><strong>A green label means <span class="ig">different from the default</span>.</strong> That is how you find, months later, what you changed.</li>
+<li><strong>Every change is written to the server log</strong> with the <code>[CD-TUNE]</code> marker and the name of whoever made it. When the server starts, it prints the whole list in effect and marks with <code>*</code> anything an admin changed.</li>
+</ul>
+<p>The <strong><span class="ig">Restore defaults</span></strong> button puts everything back to factory settings, including the measurement and the client authority.</p>
+<h3 id="read-the-measurement-before-you-touch-anything">Read the measurement before you touch anything</h3>
+<p>The rule is this: <strong>measure first, change second.</strong> Several of these knobs trade one good thing for another, and without a number on screen you do not know which of the two you are buying.</p>
+<p>Click <strong><span class="ig">Measurement: off (click to start)</span></strong>. The first window closes within <strong>20 seconds</strong>, and the top of the panel fills in. This is the main line:</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> is the number that matters: how many milliseconds out of every second the mod is taking from the server. It is the one you want to see drop after a change.</p>
+<p>The <strong>second line</strong> counts how many dogs are loaded in the world, how many of those are companions, and how many animal sweeps happen per second. A loaded dog is what costs: 40 dogs spread across the map weigh more than 40 dogs in the same base.</p>
+<p>The <strong>bars</strong> break the cost down by area of the mod (<code>srv.followmaint</code>, <code>srv.companion</code>, <code>dog.hunt</code>, <code>srv.netauth</code>, <code>srv.densesync</code> and others). The time is <strong>exclusive</strong>, meaning every millisecond is credited to exactly one area, which is why the bars do add up. The longest bar is where it is worth looking.</p>
+<p>The <strong><code>counters:</code></strong> line counts events per second instead of time. Two of them answer a question on their own:</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> above zero: the stray spawn queue is overflowing, and spawn rolls are being lost.</li>
+<li><strong><code>netauth.grant</code> and <code>netauth.revoke</code> both high</strong>: control of the dog is bouncing between server and client, which is the symptom of a badly set distance.</li>
+</ul>
+<p>If the orange <strong><code>COARSE CLOCK</code></strong> warning shows up, the machine does not have a clock fine enough to measure milliseconds per area. The counters still hold; the times, only in aggregate.</p>
+<p>The other buttons at the bottom:</p>
+<div class="tw"><table><thead><tr>
+<th>Button</th>
+<th>What it is for</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>Level 2 opens up the inner areas of each block. More detail, and more measurement cost</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>Writes the measurement to a <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code> file in the Zomboid folder, to open later in a spreadsheet</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>Records 600 ticks one by one, to find the spike rather than the average. Only works with the measurement on</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>Turns on a detailed damage log on the server <strong>and on every client</strong>. It is very noisy: turn it on to investigate a bite that does not register, and turn it off afterwards</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Measuring costs.</strong> Turn it off when you are done looking.</blockquote>
+<h3 id="knobs-pass-rhythm">Knobs: pass rhythm</h3>
+<p>Each field shows its default and its range next to the name. Type the number and press Enter, or click outside the field: the value applies immediately, for the whole server.</p>
+<p>The mod works in two passes: a heavy one that decides things (combat, sentinel, hunting, upkeep), and a cheap one that just keeps the dog moving between two heavy passes. Raising the heavy one is the most effective change available here, and also the one that most makes the dog slow to react.</p>
+<div class="tw"><table><thead><tr>
+<th>Label on screen</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5 to 60</td>
+<td>Ticks between one heavy pass and the next. At 10 fps, 60 ticks are 6 seconds between one decision and the following one</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1 to 10</td>
+<td>The cheap pass that keeps the dog moving. Raising this is what makes <span class="ig">follow</span> look laggy in multiplayer</td>
+</tr>
+</tbody></table></div>
+<h3 id="knobs-reach-and-combat">Knobs: reach and combat</h3>
+<p>Before picking a zombie, the dog works out how far it <strong>can actually walk to</strong>. That calculation is what stops your companion from circling a fence after a zombie on the other side. The fields below control the size and the shelf life of that calculation.</p>
+<div class="tw"><table><thead><tr>
+<th>Label on screen</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100 to 5000</td>
+<td>How long the calculation is valid before it is redone</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0 to 12</td>
+<td>How far the dog may walk before redoing the calculation. 0 redoes it every step, which is the expensive part</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4 to 20</td>
+<td>How far out the dog looks for a zombie</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100 to 2000</td>
+<td>Tile ceiling for the calculation. <strong>Below 625 it truncates almost every time, and once truncated it treats everything as reachable: the protection against the dog circling a fence is exactly what you switch off</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1 to 20</td>
+<td>How many empty scans in a row before the dog starts skipping passes. Any sign of a threat resets this instantly</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0 to 10</td>
+<td>Ceiling on that rest. 0 disables it and goes back to scanning every time</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1 to 120</td>
+<td>Housekeeping for the list of zombies marked unreachable. Without it the list only grows</td>
+</tr>
+</tbody></table></div>
+<h3 id="knobs-scent">Knobs: scent</h3>
+<p>The sniff-for-an-item trick sweeps the ground in a ring, and it is the only part of the mod whose cost grows with the <strong>number of players</strong>, not with the number of dogs.</p>
+<div class="tw"><table><thead><tr>
+<th>Label on screen</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50 to 2000</td>
+<td>How much each dog sweeps per pass. Lowering it does not shorten the radius, it just takes more passes</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100 to 10000</td>
+<td>Ceiling for the whole server per tick. A dog held back by the ceiling does not lose its turn, it goes first on the next pass</td>
+</tr>
+</tbody></table></div>
+<h3 id="knobs-stray-spawning">Knobs: stray spawning</h3>
+<p>Every time a piece of the map loads, it joins a queue to be assessed as a possible stray spot. With players spread out, far more pieces arrive per second than with a single player, and that is where the queue overflows. <strong>Look at <code>spawn.qfull</code> before touching any of these.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Label on screen</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4 to 512</td>
+<td>The rate at which the queue is drained, in real seconds. The default was measured with <strong>one</strong> player walking</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1 to 16</td>
+<td>How many expensive assessments may land in the same tick. This is the size of the stutter, not the rate: change the one above first</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256 to 16384</td>
+<td>Size of the queue. Overflowing it is the <strong>only</strong> way a spawn roll gets lost</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1 to 32</td>
+<td>A piece of street or field dies on a cheap check. This number says how many of those fit in the cost of one full assessment. 1 disables it</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1 to 5</td>
+<td>How many agreeing reads before a piece of the map counts as decided. The loading instant can lie, and a whole residential block has gone stray-free because of it. Raise it if strays feel scarce</td>
+</tr>
+</tbody></table></div>
+<h3 id="knobs-network-multiplayer-only">Knobs: network (multiplayer only)</h3>
+<div class="tw"><table><thead><tr>
+<th>Label on screen</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0 to 1000</td>
+<td>Position packet rate for the dogs that are <strong>not</strong> the active follower: passive ones, the ones on livestock duty, strays and wild dogs. Only a dog that actually moved costs a packet. 0 disables it and hands them back to the game's native rate, on which they walk a step and stop</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100 to 2000</td>
+<td>A dog <strong>standing still</strong> at its owner's heel keeps sending its position purely to prove it is alive. Raising this is the cheap way to cut packets on a server full of parked dogs. The new value applies from the next handover of control, not in the middle of one</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2 to 28</td>
+<td>How close the owner has to be for the server to hand control of the dog to their machine. It has to stay under 30, otherwise control is granted and taken back in the same second</td>
+</tr>
+</tbody></table></div>
+<p>And the <strong><span class="ig">Client authority</span></strong> switch, which is the bigger decision in this section:</p>
+<ul>
+<li><strong>On (default):</strong> the owner's own machine moves the dog and reports its position, and the server checks every report before relaying it to the other players. This is what keeps walking and running smooth.</li>
+<li><strong>Off:</strong> every dog goes back to the server. Clients stop sending position packets, which is this mod's busiest command on a full server, but movement gets choppy for everyone, and every dog re-enters the server's pathfinding queue, which is global and shared with the players.</li>
+</ul>
+<h3 id="recipes-the-symptom-and-what-to-change">Recipes: the symptom and what to change</h3>
+<p><strong>The server stutters and the longest bar is <code>srv.companion</code> or <code>srv.followmaint</code>.</strong> Raise <code>Heavy pass interval</code> to 30. If that fixes it but the dog feels too slow for your taste, go back to 25. Only then touch <code>Follow maintainer interval</code>, because that one is the one you see on screen.</p>
+<p><strong>Strays are scarce.</strong> Turn the measurement on and look at <code>spawn.qfull</code>. Above zero, the problem is the queue: raise <code>Stray spawn queue size</code> first, and only then <code>Stray spawn scans per second</code>. If <code>spawn.qfull</code> is already zero, the queue is not the bottleneck: raise <code>Agreeing reads before marking a chunk done</code> to 3.</p>
+<p><strong><span class="ig">Follow</span> is choppy in multiplayer.</strong> Check that <strong>Client authority</strong> is on and that <code>Client authority grant distance</code> has not been lowered. Then drop <code>Follow maintainer interval</code> to 1.</p>
+<p><strong>A server full of parked dogs eating bandwidth.</strong> Raise <code>Idle position report interval</code> to 800 or 1000, and <code>Background dog sync interval</code> to 200. The first one only affects a dog standing still; the second, how smoothly the dogs that are not the active follower move.</p>
+<h3 id="what-this-panel-does-not-do">What this panel does not do</h3>
+<p>It changes <strong>no game rule at all</strong>. Damage, hunger, XP, the dog limit and what exists in the world are still the <strong>sandbox options</strong> in section 21. If what you want is a stronger dog or slower hunger, it is over there.</p></article></main>
 </div>
 
 <script>

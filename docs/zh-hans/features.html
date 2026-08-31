@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#如何安全移除" data-id="如何安全移除">如何安全移除</a>
 <a class="s3" href="#彻底清理管理员-调试模式" data-id="彻底清理管理员-调试模式">彻底清理（管理员 / 调试模式）</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-服务器调优管理员" data-id="24-服务器调优管理员">24. 服务器调优（管理员）</a>
+<div class="sub">
+<a class="s3" href="#怎么打开这个面板" data-id="怎么打开这个面板">怎么打开这个面板</a>
+<a class="s3" href="#这些数值存在哪里" data-id="这些数值存在哪里">这些数值存在哪里</a>
+<a class="s3" href="#动手之前先看测量" data-id="动手之前先看测量">动手之前先看测量</a>
+<a class="s3" href="#调整项两遍处理的节奏" data-id="调整项两遍处理的节奏">调整项：两遍处理的节奏</a>
+<a class="s3" href="#调整项可达范围与战斗" data-id="调整项可达范围与战斗">调整项：可达范围与战斗</a>
+<a class="s3" href="#调整项嗅探" data-id="调整项嗅探">调整项：嗅探</a>
+<a class="s3" href="#调整项流浪狗的生成" data-id="调整项流浪狗的生成">调整项：流浪狗的生成</a>
+<a class="s3" href="#调整项网络只有多人游戏" data-id="调整项网络只有多人游戏">调整项：网络（只有多人游戏）</a>
+<a class="s3" href="#对症下药症状与该动哪一项" data-id="对症下药症状与该动哪一项">对症下药：症状与该动哪一项</a>
+<a class="s3" href="#这个面板不做的事" data-id="这个面板不做的事">这个面板不做的事</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs功能手册">Companion Dogs：功能手册</h1>
@@ -1842,7 +1857,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>关掉之后，狗会留在世界里，无敌而且原地不动。</p>
 <h3 id="给管理员">给管理员</h3>
-<p>有一个<strong><span class="ig">犬只登记（管理员）</span></strong>：可以按玩家搜索，显示在线/离线状态、狗的数量，还有一个刷新按钮。另外还有一个可以实时<strong>调整服务器性能</strong>的面板。这两个都只有管理员能用。</p>
+<p>有一个<strong><span class="ig">犬只登记（管理员）</span></strong>：可以按玩家搜索，显示在线/离线状态、狗的数量，还有一个刷新按钮。另外还有一个可以实时<strong>调整服务器性能</strong>的面板，带着测量数据和各个调整字段，详见 <a href="#24-服务器调优管理员">24. 服务器调优</a> 这一节。这两个都只有管理员能用。</p>
 <h3 id="联机合作的安装提醒">联机合作的安装提醒</h3>
 <p><strong>如果狗出现时没有贴图，或者看起来<span class="ig">被压扁了</span>：</strong>请在<strong>主菜单的Mod列表</strong>里启用Companion Dogs（光在联机合作的选择界面里勾上是不够的），然后在读取存档之前<strong>把游戏完全关掉重开</strong>。联机合作的房主也要照做一遍，并重启服务器。而且光在菜单里启用还不够：房主还得按安装那一节的步骤，把模组写进<strong>服务器配置</strong>。</p>
 <h2 id="21-沙盒选项">21. 沙盒选项</h2>
@@ -2120,7 +2135,257 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>在地面上右键，依次选择 <strong>Companion Dogs (debug)</strong>、<strong>Tools</strong>、 <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li>等待 <code>sweep done</code> 提示，然后 <strong>保存游戏</strong>。</li>
 </ol>
-<p>这个命令会立刻删除已加载的狗，随后在后台扫过存档的其余部分，不会卡住游戏。如果它 <strong>拒绝执行</strong> 并点名某个 品种，那就是上面的第 1 步：那个扩展在这个存档里没有启用，而在缺少它定义的情况下强行清理，正是毁掉动物的 那件事。</p></article></main>
+<p>这个命令会立刻删除已加载的狗，随后在后台扫过存档的其余部分，不会卡住游戏。如果它 <strong>拒绝执行</strong> 并点名某个 品种，那就是上面的第 1 步：那个扩展在这个存档里没有启用，而在缺少它定义的情况下强行清理，正是毁掉动物的 那件事。</p>
+<h2 id="24-服务器调优管理员">24. 服务器调优（管理员）</h2>
+<p><strong>玩游戏用不上这一节。</strong>模组按默认设置就能好好运转，没来由地动这里，只会越弄越糟。它是写给那些 开着服务器、人多狗也多，已经感觉到压力的人看的。</p>
+<p>面板叫 <strong><span class="ig">Server tuning / performance</span></strong>，分上下两半：上面是一个实时仪表，显示模组在服务器上花掉了 多少；下面是改变这份花销的那些字段。</p>
+<blockquote class="quote"><strong>不管游戏用的是什么语言，这个面板都是英文的。</strong>它的标签写死在代码里，不经过翻译。所以下面的 表格里每一个名称，都和它在屏幕上的样子一模一样。</blockquote>
+<h3 id="怎么打开这个面板">怎么打开这个面板</h3>
+<p><strong>多人游戏里：</strong>用 <strong>管理员</strong> 身份登录，在地面上右键，然后 <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>。</p>
+<p><strong>单人游戏里：</strong>路径一样，但游戏得处于 <strong>调试模式</strong>。在 Steam 的启动选项里加上 <code>-debug</code>。</p>
+<p>如果这个选项没出现，要么你在那台服务器上不是管理员，要么游戏没在调试模式下运行。</p>
+<h3 id="这些数值存在哪里">这些数值存在哪里</h3>
+<p>这就是它和第 21 节那些沙盒选项之间，最要紧的一处区别：</p>
+<div class="tw"><table><thead><tr>
+<th>项目</th>
+<th>沙盒选项</th>
+<th>调优面板</th>
+</tr></thead><tbody>
+<tr>
+<td>什么时候生效</td>
+<td>写死在存档里；之后想改，就得编辑存档或者开一个新世界</td>
+<td><strong>立刻生效</strong>，什么都不用重启</td>
+</tr>
+<tr>
+<td>管的是什么</td>
+<td>游戏规则：伤害、饥饿、经验、世界上有些什么</td>
+<td>只管处理开销和网络节奏</td>
+</tr>
+<tr>
+<td>存在哪里</td>
+<td>存档文件里</td>
+<td>也在存档里，而且服务器重启之后还在</td>
+</tr>
+<tr>
+<td>谁能动</td>
+<td>创建世界的人</td>
+<td>只有管理员，而且是在游戏跑着的时候动</td>
+</tr>
+</tbody></table></div>
+<p>还有三件能省时间的事：</p>
+<ul>
+<li><strong>超出范围的数值会被拉回范围里。</strong>在一个最大只到 60 的字段里输入 9000，存下来的是 60。</li>
+<li><strong>标签是绿色，表示“和默认值不一样”。</strong>几个月之后，你就靠它找出自己动过哪些地方。</li>
+<li><strong>每一次改动都会写进服务器日志</strong>，带着 <code>[CD-TUNE]</code> 标记和动手那个人的名字。服务器启动的时候， 会把当前生效的整份清单打印一遍，管理员改过的项前面标一个 <code>*</code>。</li>
+</ul>
+<p><strong><span class="ig">Restore defaults</span></strong> 按钮把所有东西恢复成出厂默认，测量和客户端权威也一起恢复。</p>
+<h3 id="动手之前先看测量">动手之前先看测量</h3>
+<p>规矩只有一条：<strong>先测量，再动手。</strong>这里好几个调整项都是拿一样好处换另一样好处，屏幕上没有数字， 你就不知道自己买下的是哪一样。</p>
+<p>点 <strong><span class="ig">Measurement: off (click to start)</span></strong>。第一个窗口最多 <strong>20 秒</strong> 就结束，面板顶部随即填上数据。 最主要的是这一行：</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> 才是要紧的那个数字：模组每一秒从服务器手里拿走多少毫秒。动过一处之后，你希望看着往下 掉的就是它。</p>
+<p><strong>第二行</strong> 数的是世界上加载了多少只狗、其中多少只是同伴犬，以及每秒有多少次动物扫描。花钱的是 加载着的狗：散在地图各处的 40 只狗，比挤在同一个基地里的 40 只狗重得多。</p>
+<p><strong>那些条形</strong> 把花销按模组的各个部分拆开（<code>srv.followmaint</code>、<code>srv.companion</code>、<code>dog.hunt</code>、 <code>srv.netauth</code>、<code>srv.densesync</code> 等等）。时间是 <strong>独占</strong> 的，也就是说每一毫秒只算在一个部分头上， 所以这些条形是可以相加的。最长的那一条，就是值得动手的地方。</p>
+<p><strong><code>counters:</code></strong> 这一行数的是每秒发生多少次事件，而不是时间。其中两个，光靠自己就能回答问题：</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> 大于零：流浪狗的生成队列正在溢出，有生成判定被丢掉了。</li>
+<li><strong><code>netauth.grant</code> 和 <code>netauth.revoke</code> 同时都很高</strong>：狗的控制权在服务器和客户端之间来回跳，这是 距离没设好的症状。</li>
+</ul>
+<p>如果冒出橙色的 <strong><code>COARSE CLOCK</code></strong> 提示，说明这台机器的时钟不够精细，量不出每个部分各占多少毫秒。 计数照样算数；时间就只有总量还能看。</p>
+<p>下半部分的其他按钮：</p>
+<div class="tw"><table><thead><tr>
+<th>按钮</th>
+<th>有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>第 2 级会把每个块的内部再拆开。更细，测量本身也更花钱</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>把测量写进 Zomboid 文件夹里的 <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code>，之后可以用表格软件打开</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>一个一个地记下 600 个 tick，找的是尖峰而不是平均值。只有开着测量的时候才有用</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>在服务器 <strong>以及每一个客户端</strong> 上打开详细的伤害日志。它非常吵：要查一口咬下去却没算数的时候打开，查完马上关掉</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>测量本身也要花钱。</strong>看完就把它关掉。</blockquote>
+<h3 id="调整项两遍处理的节奏">调整项：两遍处理的节奏</h3>
+<p>每个字段的名字旁边都写着默认值和范围。输入数字后按回车，或者在字段外面点一下：数值立刻生效，整台 服务器一起生效。</p>
+<p>模组分两遍干活：一遍重的，负责做决定（战斗、哨兵、狩猎、日常照料）；一遍便宜的，只负责在两遍重的 之间让狗接着走。调高重的那一遍，是这里最管用的一处改动，同时也最容易让狗反应变迟钝。</p>
+<div class="tw"><table><thead><tr>
+<th>屏幕上的标签</th>
+<th>默认值</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5 到 60</td>
+<td>两遍重处理之间隔多少 tick。在 10 fps 下，60 个 tick 就是一次决定到下一次决定之间隔了 6 秒</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1 到 10</td>
+<td>那一遍让狗保持移动的便宜处理。多人游戏里“跟随”看着卡顿，就是调高了它</td>
+</tr>
+</tbody></table></div>
+<h3 id="调整项可达范围与战斗">调整项：可达范围与战斗</h3>
+<p>狗在挑僵尸之前，会先算清楚自己 <strong>靠走的能到哪里</strong>。就是这笔计算，才让同伴不至于绕着围栏去追一只 在另一边的僵尸。下面这些字段控制这笔计算的规模和保质期。</p>
+<div class="tw"><table><thead><tr>
+<th>屏幕上的标签</th>
+<th>默认值</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100 到 5000</td>
+<td>这笔计算在被重算之前还能用多久</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0 到 12</td>
+<td>狗走出多远之后要重算。填 0 就是每走一步都重算，那才是贵的地方</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4 到 20</td>
+<td>狗找僵尸能找多远</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100 到 2000</td>
+<td>这笔计算的格数上限。<strong>低于 625 时它几乎每次都会被截断，而一旦截断，它就把所有东西都当成能走到：防止狗绕着围栏打转的那道保护，正好就是你关掉的东西</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1 到 20</td>
+<td>连着扫空多少次之后，狗开始跳过一些处理。任何一点威胁迹象都会立刻把它清零</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0 到 10</td>
+<td>这份歇息的上限。填 0 就是关掉，回到每次都扫</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1 到 120</td>
+<td>清理那份“走不到”的僵尸名单。没有它，名单只会越来越长</td>
+</tr>
+</tbody></table></div>
+<h3 id="调整项嗅探">调整项：嗅探</h3>
+<p>嗅出物品这个技巧是绕着圈扫地面的，它也是模组里唯一一处花销跟着 <strong>玩家人数</strong> 涨、而不是跟着狗的 数量涨的地方。</p>
+<div class="tw"><table><thead><tr>
+<th>屏幕上的标签</th>
+<th>默认值</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50 到 2000</td>
+<td>每只狗一遍扫多少格。调低不会缩短范围，只是要多花几遍</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100 到 10000</td>
+<td>整台服务器每个 tick 的上限。被上限拦下的狗不会丢掉这一轮，它会在下一遍里排在前面</td>
+</tr>
+</tbody></table></div>
+<h3 id="调整项流浪狗的生成">调整项：流浪狗的生成</h3>
+<p>地图每加载进来一块，它就进一个队列，等着被评估成流浪狗可能出现的地点。玩家一散开，每秒到达的地块 就比只有一个玩家时多得多，队列也正是在这里溢出的。<strong>动下面任何一项之前，先看 <code>spawn.qfull</code>。</strong></p>
+<div class="tw"><table><thead><tr>
+<th>屏幕上的标签</th>
+<th>默认值</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4 到 512</td>
+<td>队列被清空的速度，按真实秒算。这个默认值是在只有 <strong>一个</strong> 玩家走动时量出来的</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1 到 16</td>
+<td>同一个 tick 里最多能落下几次贵的评估。这是卡顿的大小，不是速度：先动上面那一项</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256 到 16384</td>
+<td>队列的大小。溢出是一次生成判定丢失的 <strong>唯一</strong> 途径</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1 到 32</td>
+<td>街道或者田野这样的地块，一次便宜的检查就淘汰掉了。这个数字说的是一次完整评估的花销里，能塞进多少次这种检查。填 1 就是关掉</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1 到 5</td>
+<td>要有多少次读数一致，才算这块地图定下来了。加载的那一瞬间是会骗人的，已经有整整一个街区因此一只流浪狗都没有。要是觉得流浪狗太少，就调高它</td>
+</tr>
+</tbody></table></div>
+<h3 id="调整项网络只有多人游戏">调整项：网络（只有多人游戏）</h3>
+<div class="tw"><table><thead><tr>
+<th>屏幕上的标签</th>
+<th>默认值</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0 到 1000</td>
+<td><strong>不是</strong> 当前跟随者的那些狗的位置包节奏：待命的狗、在牲畜岗位上的狗、流浪狗和野狗。只有真的动过的狗才花掉一个包。填 0 就是关掉，把它们交还给游戏原本的节奏，那种节奏下它们走一步停一下</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100 到 2000</td>
+<td><strong>站着不动</strong> 待在主人脚边的狗，还是会一直报位置，只为证明自己还活着。在满是不动的狗的服务器上，调高它是省下网络包最便宜的办法。新数值从下一次控制权交接开始算，不会在一次交接的中途生效</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2 到 28</td>
+<td>服务器把狗的控制权交给主人那台机器时，主人得离多近。它必须留在 30 以下，否则控制权会在同一秒里发出去又收回来</td>
+</tr>
+</tbody></table></div>
+<p>还有 <strong><span class="ig">Client authority</span></strong> 这个开关，它是这一节里更大的那个决定：</p>
+<ul>
+<li><strong>打开（默认）：</strong>由主人自己的机器移动狗、上报位置，服务器在转给其他玩家之前会核对每一次上报。 走路和奔跑之所以顺滑，靠的就是它。</li>
+<li><strong>关掉：</strong>所有狗都回到服务器手上。客户端不再发位置包，而在人多的服务器上，那是本模组最频繁的 指令；但所有人看到的移动都会变得一顿一顿，而且每一只狗都重新排进服务器的寻路队列，那个队列是 全局的，还要和玩家共用。</li>
+</ul>
+<h3 id="对症下药症状与该动哪一项">对症下药：症状与该动哪一项</h3>
+<p><strong>服务器卡顿，而最长的那条是 <code>srv.companion</code> 或者 <code>srv.followmaint</code>。</strong>把 <code>Heavy pass interval</code> 调到 30。要是卡顿好了，但狗慢得不合你的口味， 就退回 25。之后再动 <code>Follow maintainer interval</code>，因为那一项是眼睛看得见的。</p>
+<p><strong>流浪狗太少。</strong>打开测量，看 <code>spawn.qfull</code>。大于零，问题就在队列：先调高 <code>Stray spawn queue size</code>， 然后才轮到 <code>Stray spawn scans per second</code>。如果 <code>spawn.qfull</code> 本来就是零，瓶颈就不是队列：把 <code>Agreeing reads before marking a chunk done</code> 调到 3。</p>
+<p><strong>多人游戏里“跟随”一顿一顿。</strong>先确认 <strong>Client authority</strong> 是开着的，而且 <code>Client authority grant distance</code> 没有被调低。然后把 <code>Follow maintainer interval</code> 降到 1。</p>
+<p><strong>服务器里全是不动的狗，在吃带宽。</strong>把 <code>Idle position report interval</code> 调到 800 或者 1000，把 <code>Background dog sync interval</code> 调到 200。前者只影响站着不动的狗；后者影响的是那些不当跟随者的狗 走起来有多顺。</p>
+<h3 id="这个面板不做的事">这个面板不做的事</h3>
+<p>它 <strong>一条游戏规则都不改</strong>。伤害、饥饿、经验、狗的数量上限，还有世界上存在什么，仍然归第 21 节的 <strong>沙盒选项</strong> 管。要是你想要的是更结实的狗或者更慢的饥饿，那得去那边，而且老话还是那句：沙盒选项 是写死在存档里的。</p></article></main>
 </div>
 
 <script>

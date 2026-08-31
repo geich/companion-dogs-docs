@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#如何安全移除" data-id="如何安全移除">如何安全移除</a>
 <a class="s3" href="#徹底清理管理員-除錯模式" data-id="徹底清理管理員-除錯模式">徹底清理（管理員 / 除錯模式）</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-伺服器微調管理員" data-id="24-伺服器微調管理員">24. 伺服器微調（管理員）</a>
+<div class="sub">
+<a class="s3" href="#如何開啟面板" data-id="如何開啟面板">如何開啟面板</a>
+<a class="s3" href="#這些數值存在哪裡" data-id="這些數值存在哪裡">這些數值存在哪裡</a>
+<a class="s3" href="#動手之前先讀量測數據" data-id="動手之前先讀量測數據">動手之前先讀量測數據</a>
+<a class="s3" href="#調整項目處理節奏" data-id="調整項目處理節奏">調整項目：處理節奏</a>
+<a class="s3" href="#調整項目可達範圍與戰鬥" data-id="調整項目可達範圍與戰鬥">調整項目：可達範圍與戰鬥</a>
+<a class="s3" href="#調整項目嗅聞" data-id="調整項目嗅聞">調整項目：嗅聞</a>
+<a class="s3" href="#調整項目流浪狗生成" data-id="調整項目流浪狗生成">調整項目：流浪狗生成</a>
+<a class="s3" href="#調整項目網路僅限多人遊戲" data-id="調整項目網路僅限多人遊戲">調整項目：網路（僅限多人遊戲）</a>
+<a class="s3" href="#對症下藥症狀與該動的地方" data-id="對症下藥症狀與該動的地方">對症下藥：症狀與該動的地方</a>
+<a class="s3" href="#這個面板不會做的事" data-id="這個面板不會做的事">這個面板不會做的事</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs功能手冊">Companion Dogs：功能手冊</h1>
@@ -1210,7 +1225,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <hr>
 <h3 id="悲痛">悲痛</h3>
 <p>當與你結下義絆的狗死去時，角色會<strong>陷入悲痛</strong>：螢幕上出現帶著狗名字的<strong>「悲痛」</strong>心情圖示，悲傷會一次性飆升。沒有任何選項可以關閉它。</p>
-<p>輕重取決於義絆，悲傷會在這段時間裡<strong>自行消退</strong>，直到彻底消失：</p>
+<p>輕重取決於義絆，悲傷會在這段時間裡<strong>自行消退</strong>，直到徹底消失：</p>
 <div class="tw"><table><thead><tr>
 <th>狗的忠誠度</th>
 <th>死亡瞬間的悲傷</th>
@@ -1842,7 +1857,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>關掉的話，狗會留在世界裡，無敵而且原地不動。</p>
 <h3 id="給管理員">給管理員</h3>
-<p>有一個<strong>「犬隻登記（管理員）」</strong>面板：可以照玩家搜尋，看線上／離線狀態、狗的數量，還有「重新整理」 按鈕。另外還有一個能即時<strong>調整伺服器效能</strong>的面板。這兩個都只有管理員看得到。</p>
+<p>有一個<strong>「犬隻登記（管理員）」</strong>面板：可以照玩家搜尋，看線上／離線狀態、狗的數量，還有「重新整理」 按鈕。另外還有一個能即時<strong>調整伺服器效能</strong>的面板，量測和調整欄位都在裡面，說明在 <a href="#24-伺服器微調管理員">第 24 節：伺服器微調</a>。這兩個都只有管理員看得到。</p>
 <h3 id="合作模式的安裝提醒">合作模式的安裝提醒</h3>
 <p><strong>如果狗出現時沒有貼圖，或是整隻擠成一團：</strong>請到<strong>主選單的 Mods 清單</strong>裡啟用 Companion Dogs （不是只在合作模式的選單裡勾），然後<strong>完全關閉遊戲</strong>再載入存檔。合作模式的房主也要照做，並且重開 伺服器。而且光在選單裡啟用還不夠：房主還得照安裝那一節的步驟，把模組寫進<strong>伺服器設定</strong>。</p>
 <h2 id="21-沙盒選項">21. 沙盒選項</h2>
@@ -2120,7 +2135,257 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>在地面上按右鍵，依序選擇 <strong>Companion Dogs (debug)</strong>、<strong>Tools</strong>、 <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li>等待 <code>sweep done</code> 提示，然後 <strong>存檔</strong>。</li>
 </ol>
-<p>這個指令會立刻刪除已載入的狗，隨後在背景掃過存檔的其餘部分，不會卡住遊戲。如果它 <strong>拒絕執行</strong> 並點名某個 品種，那就是上面的第 1 步：那個擴充在這個存檔裡沒有啟用，而在缺少它定義的情況下強行清理，正是毀掉動物的 那件事。</p></article></main>
+<p>這個指令會立刻刪除已載入的狗，隨後在背景掃過存檔的其餘部分，不會卡住遊戲。如果它 <strong>拒絕執行</strong> 並點名某個 品種，那就是上面的第 1 步：那個擴充在這個存檔裡沒有啟用，而在缺少它定義的情況下強行清理，正是毀掉動物的 那件事。</p>
+<h2 id="24-伺服器微調管理員">24. 伺服器微調（管理員）</h2>
+<p><strong>要玩這個 mod，你不需要這一節。</strong>模組照預設值就跑得好好的，沒有理由亂動只會更糟。這一節 是寫給開伺服器、人多狗也多，而且已經感覺到吃力的人看的。</p>
+<p>面板叫做 <strong><span class="ig">Server tuning / performance</span></strong>，分成上下兩半：上半是即時的量測，顯示模組在 伺服器上花掉多少；下半是能改變這個花費的欄位。</p>
+<blockquote class="quote"><strong>不管遊戲設定成哪一種語言，這個面板都是英文的。</strong>這些標籤寫死在程式碼裡，不會經過翻譯。 所以下面的表格會照著畫面上的樣子，原文引用每一個標籤。</blockquote>
+<h3 id="如何開啟面板">如何開啟面板</h3>
+<p><strong>多人遊戲：</strong>以 <strong>管理員</strong> 身分進入，在地面上按右鍵，依序選擇 <strong>Companion Dogs (debug)</strong>、 <strong>Tools</strong>、<strong><span class="ig">Server tuning / performance</span></strong>。</p>
+<p><strong>單人遊戲：</strong>路徑一樣，但遊戲必須處於 <strong>除錯模式</strong>。在 Steam 的啟動選項裡加上 <code>-debug</code>。</p>
+<p>如果找不到這個選項，要嗎是你在那台伺服器上不是管理員，要嗎是遊戲沒有進入除錯模式。</p>
+<h3 id="這些數值存在哪裡">這些數值存在哪裡</h3>
+<p>這是它和第 21 節那些沙盒選項最要緊的差別：</p>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>沙盒選項</th>
+<th>微調面板</th>
+</tr></thead><tbody>
+<tr>
+<td>什麼時候生效</td>
+<td>寫進存檔；之後想改就得編輯存檔，或是開一個新世界</td>
+<td><strong>當場生效</strong>，什麼都不用重開</td>
+</tr>
+<tr>
+<td>管的是什麼</td>
+<td>遊戲規則：傷害、飢餓、經驗值、世界上有什麼</td>
+<td>只管處理成本和網路節奏</td>
+</tr>
+<tr>
+<td>存在哪裡</td>
+<td>存檔檔案裡</td>
+<td>一樣在存檔裡，而且伺服器重開之後還在</td>
+</tr>
+<tr>
+<td>誰能動</td>
+<td>開這個世界的人</td>
+<td>只有管理員，而且遊戲要開著</td>
+</tr>
+</tbody></table></div>
+<p>還有三件能替你省下時間的事：</p>
+<ul>
+<li><strong>超出範圍的數值會被拉回範圍內。</strong>在一個最大到 60 的欄位裡輸入 9000，存下來的是 60。</li>
+<li><strong>綠色的標籤表示「和預設值不同」。</strong>幾個月之後，你就是靠這個找出自己動過哪些東西。</li>
+<li><strong>每一次改動都會寫進伺服器的 log</strong>，帶著 <code>[CD-TUNE]</code> 標記和動手的人的名字。伺服器啟動的 時候，它會把目前生效的整份清單印出來，並且用 <code>*</code> 標出管理員改過的項目。</li>
+</ul>
+<p><strong><span class="ig">Restore defaults</span></strong> 按鈕會把所有東西還原成出廠預設，量測和 <strong>Client authority</strong> 也一起。</p>
+<h3 id="動手之前先讀量測數據">動手之前先讀量測數據</h3>
+<p>規則只有一條：<strong>先量測，再動手。</strong>這裡好幾個項目都是拿一個好處去換另一個好處，畫面上沒有 數字，你根本不知道自己買到的是哪一個。</p>
+<p>點一下 <strong><span class="ig">Measurement: off (click to start)</span></strong>。第一段視窗會在 <strong>20 秒</strong>內結束，面板上半部 就填滿了。主要的那一行是這個：</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> 才是重點：模組每一秒從伺服器身上拿走幾毫秒。調整過後，你想看到往下掉的就是它。</p>
+<p><strong>第二行</strong>數的是世界上載入了幾隻狗、其中幾隻是同伴犬，以及每秒進行幾次動物掃描。花錢的是 載入中的狗：散在地圖各處的 40 隻狗，比擠在同一個基地裡的 40 隻重得多。</p>
+<p>那些<strong>長條</strong>把花費按照模組的區塊拆開（<code>srv.followmaint</code>、<code>srv.companion</code>、<code>dog.hunt</code>、 <code>srv.netauth</code>、<code>srv.densesync</code> 等等）。時間是<strong>互斥</strong>的，也就是每一毫秒只會算在一個區塊 頭上，所以這些長條加起來就是總和。最長的那一條才是值得動的地方。</p>
+<p><strong><code>counters:</code></strong> 那一行數的是每秒的事件數量，不是時間。其中兩個自己就能回答問題：</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> 大於零：流浪狗的生成佇列滿出來了，有些生成判定正在被丟掉。</li>
+<li><strong><code>netauth.grant</code> 和 <code>netauth.revoke</code> 同時偏高</strong>：狗的控制權在伺服器和客戶端之間來回跳， 這是距離沒設好的症狀。</li>
+</ul>
+<p>如果出現橘色的 <strong><code>COARSE CLOCK</code></strong> 警告，表示這台機器的時鐘精度不夠，量不到每個區塊的毫秒。 計數器還是算數的；時間就只有總量能看。</p>
+<p>下半部的其他按鈕：</p>
+<div class="tw"><table><thead><tr>
+<th>按鈕</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>第 2 層會把每個區塊裡面的細項展開。看得更細，量測本身也更貴</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>把量測寫進 Zomboid 資料夾裡的 <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code>，之後可以用試算表打開</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>一個一個記錄 600 個 tick，用來找尖峰而不是平均值。只有在量測開著的時候才有作用</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>在伺服器<strong>以及每一個客戶端</strong>上開啟詳細的傷害 log。它非常吵：要查咬擊沒判定的問題時打開，查完馬上關掉</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>量測本身是有成本的。</strong>看完就把它關掉。</blockquote>
+<h3 id="調整項目處理節奏">調整項目：處理節奏</h3>
+<p>每個欄位都在名稱旁邊寫著預設值和範圍。輸入數字之後按 Enter，或是點欄位外面：數值當場生效， 整台伺服器都一樣。</p>
+<p>模組的工作分成兩種處理：一種很重，負責做決定（戰鬥、哨兵、狩獵、日常維護）；另一種很便宜， 只負責在兩次重處理之間讓狗繼續走。把重的那個調高是這裡最有效的調整，同時也最會讓狗反應 變遲鈍。</p>
+<div class="tw"><table><thead><tr>
+<th>畫面上的標籤</th>
+<th>預設值</th>
+<th>範圍</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5 到 60</td>
+<td>兩次重處理之間隔幾個 tick。在 10 fps 之下，60 個 tick 就是一次決定到下一次決定之間隔了 6 秒</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1 到 10</td>
+<td>讓狗保持移動的那個便宜處理。把這個調高，就是多人遊戲裡「跟隨」看起來卡卡的原因</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目可達範圍與戰鬥">調整項目：可達範圍與戰鬥</h3>
+<p>在挑殭屍之前，狗會先算出自己<strong>用走的到底能走到哪裡</strong>。就是這個計算讓你的同伴犬不會為了圍籬 另一邊的殭屍繞著圍籬打轉。下面這些欄位控制這個計算的規模和有效期限。</p>
+<div class="tw"><table><thead><tr>
+<th>畫面上的標籤</th>
+<th>預設值</th>
+<th>範圍</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100 到 5000</td>
+<td>這個計算在重算之前還能用多久</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0 到 12</td>
+<td>狗能走多遠才要重算一次。0 表示每走一步都重算，那就是貴的地方</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4 到 20</td>
+<td>狗會在多遠的範圍內找殭屍</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100 到 2000</td>
+<td>這個計算的格數上限。<strong>低於 625 幾乎每次都會被截斷，而一旦截斷，它就把所有東西都當成走得到：防止狗繞著圍籬打轉的那道保護，正好就是你關掉的東西</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1 到 20</td>
+<td>連續幾次掃描都是空的之後，狗開始跳過處理。任何威脅的跡象都會立刻把它歸零</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0 到 10</td>
+<td>這段休息的上限。0 表示關閉，恢復成每次都掃</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1 到 120</td>
+<td>清理那份被標成走不到的殭屍名單。沒有它，名單只會越來越長</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目嗅聞">調整項目：嗅聞</h3>
+<p>嗅出物品的技巧會以環狀掃過地面，而它是模組裡唯一成本隨著<strong>玩家人數</strong>成長的部分，跟狗有 幾隻無關。</p>
+<div class="tw"><table><thead><tr>
+<th>畫面上的標籤</th>
+<th>預設值</th>
+<th>範圍</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50 到 2000</td>
+<td>每隻狗每次處理掃過多少格。調低不會縮短範圍，只是要花掉更多次處理</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100 到 10000</td>
+<td>整台伺服器每個 tick 的上限。被上限擋下來的狗不會失去這一輪，牠會在下一次處理排到前面</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目流浪狗生成">調整項目：流浪狗生成</h3>
+<p>地圖每載入一塊，這一塊就會排進一個佇列，等著被評估能不能當流浪狗的出沒點。玩家散得越開， 每秒抵達的區塊就比只有一個玩家的時候多得多，佇列也就是在這裡爆掉的。<strong>動下面任何一項之前， 先看 <code>spawn.qfull</code>。</strong></p>
+<div class="tw"><table><thead><tr>
+<th>畫面上的標籤</th>
+<th>預設值</th>
+<th>範圍</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4 到 512</td>
+<td>佇列被清空的速度，以真實秒數計算。這個預設值是在<strong>一個</strong>玩家走動的情況下量出來的</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1 到 16</td>
+<td>同一個 tick 裡最多能塞進幾次昂貴的評估。這是頓卡的大小，不是速度：先去動上面那一個</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256 到 16384</td>
+<td>佇列的大小。滿出來是生成判定會遺失的<strong>唯一</strong>方式</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1 到 32</td>
+<td>馬路或田野那種區塊，一次便宜的檢查就淘汰掉了。這個數字說的是一次完整評估的成本能裝下幾次便宜檢查。1 表示關閉</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1 到 5</td>
+<td>要幾次一致的讀取，才把地圖上的一塊當成已經決定好了。載入的那一瞬間是會騙人的，曾經有一整個住宅街區因此完全沒有流浪狗。覺得流浪狗變少就把它調高</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目網路僅限多人遊戲">調整項目：網路（僅限多人遊戲）</h3>
+<div class="tw"><table><thead><tr>
+<th>畫面上的標籤</th>
+<th>預設值</th>
+<th>範圍</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0 到 1000</td>
+<td>那些<strong>不是</strong>當前跟隨者的狗的位置封包速度：待命的狗、顧牲畜的狗、流浪狗和野狗。只有真的移動過的狗才花掉一個封包。0 表示關閉，把牠們交還給遊戲原本的速度，那個速度下牠們走一步停一下</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100 到 2000</td>
+<td><strong>站著不動</strong>待在主人腳邊的狗，還是會一直送出位置，純粹是為了證明自己還活著。在一台停滿了不動的狗的伺服器上，調高這個是最便宜的減封包做法。新數值要從下一次控制權交接開始才算數，不會在交接的中途生效</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2 到 28</td>
+<td>主人要多近，伺服器才會把狗的控制權交給他的機器。它必須留在 30 以下，否則控制權會在同一秒內給出去又收回來</td>
+</tr>
+</tbody></table></div>
+<p>還有 <strong><span class="ig">Client authority</span></strong> 這個開關，它是這一節裡比較大的那個決定：</p>
+<ul>
+<li><strong>開啟（預設）：</strong>由主人自己的機器移動狗、回報位置，伺服器在轉發給其他玩家之前會檢查每一 次回報。走路和奔跑之所以順，靠的就是這個。</li>
+<li><strong>關閉：</strong>所有的狗都回到伺服器身上。客戶端不再送出位置封包，而那是這個模組在滿載伺服器上 最頻繁的指令，但所有人看到的移動都會變得一頓一頓，而且每一隻狗都會重新排進伺服器的尋路 佇列，那個佇列是全域的，還要和玩家共用。</li>
+</ul>
+<h3 id="對症下藥症狀與該動的地方">對症下藥：症狀與該動的地方</h3>
+<p><strong>伺服器會頓，而最長的長條是 <code>srv.companion</code> 或 <code>srv.followmaint</code>。</strong>把 <code>Heavy pass interval</code> 調到 30。如果問題解決了，但狗慢得不合你的胃口， 就退回 25。這些都做完再去動 <code>Follow maintainer interval</code>，因為那一個是你在畫面上看得到的。</p>
+<p><strong>流浪狗很少。</strong>打開量測，看 <code>spawn.qfull</code>。大於零的話問題出在佇列：先調高 <code>Stray spawn queue size</code>，然後才輪到 <code>Stray spawn scans per second</code>。如果 <code>spawn.qfull</code> 本來 就是零，佇列就不是瓶頸：把 <code>Agreeing reads before marking a chunk done</code> 調到 3。</p>
+<p><strong>多人遊戲裡的「跟隨」一頓一頓。</strong>先確認 <strong>Client authority</strong> 是開著的，而且 <code>Client authority grant distance</code> 沒有被調低。然後把 <code>Follow maintainer interval</code> 降到 1。</p>
+<p><strong>一台停滿了不動的狗的伺服器在吃頻寬。</strong>把 <code>Idle position report interval</code> 調到 800 或 1000，<code>Background dog sync interval</code> 調到 200。前者只影響站著不動的狗；後者影響的是那些不是 當前跟隨者的狗走得順不順。</p>
+<h3 id="這個面板不會做的事">這個面板不會做的事</h3>
+<p>它<strong>完全不改任何遊戲規則</strong>。傷害、飢餓、經驗值、狗的數量上限，還有世界上有什麼，仍然是 第 21 節的<strong>沙盒選項</strong>。如果你要的是更強的狗或是更慢的飢餓，那要去那邊，而且老話一句： 沙盒是寫進存檔裡的。</p></article></main>
 </div>
 
 <script>

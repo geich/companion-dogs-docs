@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#安全に外す手順" data-id="安全に外す手順">安全に外す手順</a>
 <a class="s3" href="#完全な掃除管理者-デバッグモード" data-id="完全な掃除管理者-デバッグモード">完全な掃除（管理者 / デバッグモード）</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-サーバーの負荷調整管理者向け" data-id="24-サーバーの負荷調整管理者向け">24. サーバーの負荷調整（管理者向け）</a>
+<div class="sub">
+<a class="s3" href="#パネルの開き方" data-id="パネルの開き方">パネルの開き方</a>
+<a class="s3" href="#設定値がどこに保存されるか" data-id="設定値がどこに保存されるか">設定値がどこに保存されるか</a>
+<a class="s3" href="#いじる前に計測を読む" data-id="いじる前に計測を読む">いじる前に計測を読む</a>
+<a class="s3" href="#調整項目処理サイクルの間隔" data-id="調整項目処理サイクルの間隔">調整項目：処理サイクルの間隔</a>
+<a class="s3" href="#調整項目到達判定と戦闘" data-id="調整項目到達判定と戦闘">調整項目：到達判定と戦闘</a>
+<a class="s3" href="#調整項目においを嗅ぐ処理" data-id="調整項目においを嗅ぐ処理">調整項目：においを嗅ぐ処理</a>
+<a class="s3" href="#調整項目野良犬の出現" data-id="調整項目野良犬の出現">調整項目：野良犬の出現</a>
+<a class="s3" href="#調整項目通信マルチプレイのみ" data-id="調整項目通信マルチプレイのみ">調整項目：通信（マルチプレイのみ）</a>
+<a class="s3" href="#症状別どこをいじるか" data-id="症状別どこをいじるか">症状別：どこをいじるか</a>
+<a class="s3" href="#このパネルにできないこと" data-id="このパネルにできないこと">このパネルにできないこと</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs機能マニュアル">Companion Dogs：機能マニュアル</h1>
@@ -1842,7 +1857,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>オフにすると、犬はワールドに残り、無敵のままその場に留まります。</p>
 <h3 id="管理者向け">管理者向け</h3>
-<p><strong>「犬の登録簿（管理者）」</strong>があります。プレイヤー名で検索でき、オンラインかオフラインの状態、犬の数、 そして「更新」ボタンが並びます。<strong>サーバーのパフォーマンスをその場で調整する</strong>パネルもあります。 どちらも管理者専用です。</p>
+<p><strong>「犬の登録簿（管理者）」</strong>があります。プレイヤー名で検索でき、オンラインかオフラインの状態、犬の数、 そして「更新」ボタンが並びます。<strong>サーバーのパフォーマンスをその場で調整する</strong>パネルもあり、計測と 調整の各項目は<a href="#24-サーバーの負荷調整管理者向け">24. サーバーの負荷調整</a>で説明しています。 どちらも管理者専用です。</p>
 <h3 id="co-opで入れるときの注意">co-opで入れるときの注意</h3>
 <p><strong>犬のテクスチャが出ない、または形が潰れて見える場合:</strong> メインメニューの<strong>Modsのリスト</strong>で Companion Dogsを有効にして（co-opの選択画面だけでは足りません）、セーブを読み込む前に <strong>ゲームを完全に終了してください</strong>。co-opのホストも同じ手順を踏み、サーバーを再起動する必要があります。 さらに、メニューで有効にするだけでは足りません。ホストはインストールの節の手順どおり、<strong>サーバー設定</strong> にもMODを登録する必要があります。</p>
 <h2 id="21-サンドボックス設定">21. サンドボックス設定</h2>
@@ -2120,7 +2135,257 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>地面を右クリックして <strong>Companion Dogs (debug)</strong>、<strong>Tools</strong>、 <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li><code>sweep done</code> のメッセージを待ってから、<strong>セーブしてください</strong>。</li>
 </ol>
-<p>このコマンドは読み込み済みの犬をその場で削除し、その後セーブの残りをバックグラウンドで走査します。ゲームは 固まりません。犬種の名前を挙げて<strong>拒否された</strong>場合は上の手順1です。そのアドオンがそのセーブで有効になって おらず、定義がないまま掃除を強行することこそが動物を壊す行為です。</p></article></main>
+<p>このコマンドは読み込み済みの犬をその場で削除し、その後セーブの残りをバックグラウンドで走査します。ゲームは 固まりません。犬種の名前を挙げて<strong>拒否された</strong>場合は上の手順1です。そのアドオンがそのセーブで有効になって おらず、定義がないまま掃除を強行することこそが動物を壊す行為です。</p>
+<h2 id="24-サーバーの負荷調整管理者向け">24. サーバーの負荷調整（管理者向け）</h2>
+<p><strong>遊ぶだけならこの節は必要ありません。</strong> modは初期値のままで動きますし、理由もなくここをいじると かえって悪くなります。この節は、人数も犬も多いサーバーを運営していて、その重さを感じている人の ためのものです。</p>
+<p>パネルの名前は <strong>「Server tuning / performance」</strong> で、上下2つに分かれています。上半分はmodが サーバーでどれだけの負荷をかけているかを見せる計測、下半分はその負荷を変えるための項目です。</p>
+<blockquote class="quote"><strong>このパネルはゲームの言語に関係なく英語で表示されます。</strong> ラベルはコード側で固定されていて、 翻訳を通りません。そのため下の表では、画面に出るとおりの表記をそのまま載せています。</blockquote>
+<h3 id="パネルの開き方">パネルの開き方</h3>
+<p><strong>マルチプレイの場合：</strong> <strong>管理者</strong>としてログインし、地面を右クリックして <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>「Server tuning / performance」</strong> と進みます。</p>
+<p><strong>シングルプレイの場合：</strong> 道のりは同じですが、ゲームが<strong>デバッグモード</strong>で動いている必要が あります。Steamの起動オプションに <code>-debug</code> を追加してください。</p>
+<p>この項目が出てこない場合は、そのサーバーで管理者になっていないか、ゲームがデバッグモードで 動いていないかのどちらかです。</p>
+<h3 id="設定値がどこに保存されるか">設定値がどこに保存されるか</h3>
+<p>セクション21のサンドボックス設定との違いで、いちばん大事なのはここです。</p>
+<div class="tw"><table><thead><tr>
+<th>比べる点</th>
+<th>サンドボックス設定</th>
+<th>調整パネル</th>
+</tr></thead><tbody>
+<tr>
+<td>いつ効くか</td>
+<td>セーブに書き込まれる。あとから変えるにはセーブを直接いじるか、新しいワールドを始めるしかない</td>
+<td><strong>その場で</strong>効く。何も再起動しなくてよい</td>
+</tr>
+<tr>
+<td>何を決めるか</td>
+<td>ゲームのルール：ダメージ、空腹、XP、世界に何が存在するか</td>
+<td>処理の負荷と通信の間隔だけ</td>
+</tr>
+<tr>
+<td>どこに保存されるか</td>
+<td>セーブファイルの中</td>
+<td>こちらもセーブの中。サーバーを再起動しても残る</td>
+</tr>
+<tr>
+<td>誰が変えるか</td>
+<td>ワールドを作った人</td>
+<td>管理者だけ。ゲームを動かしたまま変えられる</td>
+</tr>
+</tbody></table></div>
+<p>時間の節約になる話がもう3つあります。</p>
+<ul>
+<li><strong>範囲の外の値は範囲内に引き戻されます。</strong> 上限が60の欄に9000と入れると60が保存されます。</li>
+<li><strong>緑色のラベルは「初期値と違う」という意味です。</strong> 数か月後に、自分がどこをいじったのかを 見つけられるのはこれのおかげです。</li>
+<li><strong>変更はすべてサーバーのログに残ります。</strong> <code>[CD-TUNE]</code> の印と、変えた人の名前つきです。 サーバーの起動時には、効いている一覧をまるごと出力し、管理者が変えたものに <code>*</code> を付けます。</li>
+</ul>
+<p><strong>「Restore defaults」</strong>ボタンは、計測と <code>Client authority</code> も含めて、すべてを工場出荷時の値に 戻します。</p>
+<h3 id="いじる前に計測を読む">いじる前に計測を読む</h3>
+<p>ルールはひとつです。<strong>先に測って、あとから変える。</strong> ここにある調整のいくつかは、良いことのひとつを 別の良いことと引き換えにします。画面に数字がないと、自分がどちらを買っているのか分かりません。</p>
+<p><strong>「Measurement: off (click to start)」</strong>をクリックします。最初の集計は<strong>20秒</strong>以内に閉じ、 パネルの上半分が埋まります。主役はこの行です。</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> が見るべき数字です。1秒のうち何ミリ秒をmodがサーバーから取っているかを表します。 調整のあとに下がってほしいのは、この数字です。</p>
+<p><strong>2行目</strong>は、ワールドに読み込まれている犬の数、そのうち何匹が相棒か、そして動物の走査が1秒に 何回走るかを数えます。負荷になるのは読み込まれている犬です。マップに散らばった40匹は、同じ拠点に いる40匹より重くなります。</p>
+<p><strong>バー</strong>は負荷をmodの領域ごとに分けて見せます（<code>srv.followmaint</code>、<code>srv.companion</code>、<code>dog.hunt</code>、 <code>srv.netauth</code>、<code>srv.densesync</code> など）。時間は<strong>排他</strong>で、1ミリ秒はどれかひとつの領域にだけ 計上されます。だからバーは足し算になります。いちばん長いバーが、いじる価値のある場所です。</p>
+<p><strong><code>counters:</code></strong> の行は、時間ではなく1秒あたりのイベント数を数えます。そのうち2つは、それだけで 答えになります。</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> がゼロより大きい：野良犬の出現待ち行列があふれていて、出現の抽選が 捨てられています。</li>
+<li><strong><code>netauth.grant</code> と <code>netauth.revoke</code> が両方とも高い</strong>：犬の制御がサーバーとクライアントの 間を行ったり来たりしています。距離の設定が合っていない症状です。</li>
+</ul>
+<p>オレンジ色の <strong><code>COARSE CLOCK</code></strong> という警告が出た場合、そのマシンには領域ごとにミリ秒を測れるだけの 細かい時計がありません。カウンターはそのまま使えます。時間のほうは、合計だけが使えます。</p>
+<p>下半分にある残りのボタンです。</p>
+<div class="tw"><table><thead><tr>
+<th>ボタン</th>
+<th>何をするもの</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>レベル2は各ブロックの内側の領域まで開きます。細かく見える分、計測そのものの負荷も増えます</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>計測をZomboidフォルダの <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code> に書き出します。あとから表計算ソフトで開くためのものです</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>600ティックを1つずつ記録します。平均ではなくピークを見つけるためのものです。計測を動かしているときだけ使えます</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>サーバー<strong>と全クライアント</strong>で、ダメージの詳細ログを有効にします。とても騒がしいので、噛みつきが記録されない件を調べるときだけ入れて、すぐ切ってください</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>計測にも負荷があります。</strong> 見終わったら切ってください。</blockquote>
+<h3 id="調整項目処理サイクルの間隔">調整項目：処理サイクルの間隔</h3>
+<p>どの欄も、名前の横に初期値と設定できる範囲が出ています。数字を入れてEnterを押すか、欄の外を クリックすると、その値がサーバー全体にすぐ反映されます。</p>
+<p>modは2種類の処理を回しています。ひとつは判断をする重い処理（戦い、見張り、狩り、世話）、 もうひとつは重い処理と重い処理の間、犬を歩かせ続けるだけの軽い処理です。重いほうの間隔を広げるのが ここでいちばん効く調整であり、同時に犬の反応をいちばん鈍くする調整でもあります。</p>
+<div class="tw"><table><thead><tr>
+<th>画面上のラベル</th>
+<th>初期値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>5～60</td>
+<td>重い処理から次の重い処理までのティック数。10fpsなら、60ティックは判断と判断の間が6秒ということです</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>1～10</td>
+<td>犬を動かし続ける軽いほうの処理。これを上げると、マルチプレイで「ついてこい」がカクついて見えるようになります</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目到達判定と戦闘">調整項目：到達判定と戦闘</h3>
+<p>ゾンビを選ぶ前に、犬は<strong>歩いてそこまで行けるか</strong>を計算します。この計算があるおかげで、相棒は フェンスの向こう側にいるゾンビを追ってぐるぐる回らずに済みます。下の欄は、その計算の大きさと 有効期間を決めます。</p>
+<div class="tw"><table><thead><tr>
+<th>画面上のラベル</th>
+<th>初期値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>100～5000</td>
+<td>一度出した計算結果が、作り直されるまで有効な時間</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>0～12</td>
+<td>計算をやり直すまでに犬が歩ける距離。0にすると1歩ごとにやり直すので、そこが重くなります</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>4～20</td>
+<td>犬がゾンビを探す範囲</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>100～2000</td>
+<td>計算に使うタイル数の上限。<strong>625を下回るとほぼ毎回打ち切られ、打ち切られた計算はすべてを到達できるものとして扱います。犬がフェンスの周りを回らないようにする保護そのものを、切ることになります</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>1～20</td>
+<td>何も見つからない走査が何回続いたら犬が処理を間引き始めるか。脅威の気配があれば即座にゼロに戻ります</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>0～10</td>
+<td>その休みの上限。0にすると休まず毎回走査に戻ります</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>1～120</td>
+<td>到達できない印を付けたゾンビの一覧を掃除する間隔。これがないと一覧は増える一方です</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目においを嗅ぐ処理">調整項目：においを嗅ぐ処理</h3>
+<p>アイテムを嗅ぎ当てる仕掛けは地面を輪の形に走査します。modの中で唯一、負荷が犬の数ではなく <strong>プレイヤーの人数</strong>で増える部分です。</p>
+<div class="tw"><table><thead><tr>
+<th>画面上のラベル</th>
+<th>初期値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>50～2000</td>
+<td>1回の処理で犬1匹が走査する量。下げても探せる範囲は狭くならず、回数が増えるだけです</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>100～10000</td>
+<td>1ティックあたりのサーバー全体の上限。上限で止められた犬は順番を失わず、次の処理で先頭に入ります</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目野良犬の出現">調整項目：野良犬の出現</h3>
+<p>マップの一部が読み込まれるたびに、そこが野良犬の居場所になりうるかを判定する待ち行列に入ります。 プレイヤーが散らばっていると、1人で遊ぶときよりずっと多くの区画が毎秒届き、そこで行列があふれます。 <strong>どれをいじる前にも、まず <code>spawn.qfull</code> を見てください。</strong></p>
+<div class="tw"><table><thead><tr>
+<th>画面上のラベル</th>
+<th>初期値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>4～512</td>
+<td>行列をさばく速さで、単位は実時間の秒です。初期値は<strong>1人</strong>のプレイヤーが歩いている状態で測りました</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>1～16</td>
+<td>重い判定が同じティックにいくつまで入ってよいか。これは引っかかりの大きさであって、速さではありません。先に上の項目をいじってください</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>256～16384</td>
+<td>行列の長さ。出現の抽選が失われるのは、ここがあふれた<strong>ときだけ</strong>です</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>1～32</td>
+<td>道路や野原の区画は安い判定で落ちます。この数字は、完全な判定1回分の費用に安い判定が何回入るかを表します。1にすると無効になります</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>1～5</td>
+<td>マップの区画を判定済みとみなすまでに、同じ結果が何回必要か。読み込んだ瞬間の情報は嘘をつくことがあり、そのせいで住宅街ひとつがまるごと野良犬なしになったこともあります。野良犬が少なく感じるなら上げてください</td>
+</tr>
+</tbody></table></div>
+<h3 id="調整項目通信マルチプレイのみ">調整項目：通信（マルチプレイのみ）</h3>
+<div class="tw"><table><thead><tr>
+<th>画面上のラベル</th>
+<th>初期値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>0～1000</td>
+<td>いま連れて歩いている犬<strong>以外</strong>の位置パケットの間隔です。控えの犬、家畜番の犬、野良犬、野生の犬が対象になります。実際に動いた犬だけがパケットを使います。0にすると無効になり、ゲーム本来の間隔に戻ります。その間隔だと犬は一歩進んでは止まります</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>100～2000</td>
+<td>飼い主の足元で<strong>止まっている</strong>犬も、生きている証拠として位置を送り続けます。止まっている犬だらけのサーバーでパケットを減らすなら、これを上げるのがいちばん安上がりです。新しい値は次の制御の受け渡しから効き、受け渡しの途中では変わりません</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>2～28</td>
+<td>サーバーが犬の制御を飼い主のマシンに渡す距離です。30より下に収める必要があります。超えると、同じ1秒のうちに制御を渡しては取り上げることになります</td>
+</tr>
+</tbody></table></div>
+<p>そして <strong>「Client authority」</strong> のスイッチです。この節でいちばん大きな判断になります。</p>
+<ul>
+<li><strong>オン（初期値）：</strong> 飼い主のマシンが犬を動かして位置を報告し、サーバーはその報告をひとつずつ 確かめてから他のプレイヤーに配ります。歩きも走りも滑らかに見えるのは、これのおかげです。</li>
+<li><strong>オフ：</strong> すべての犬がサーバーに戻ります。クライアントは位置パケットを送らなくなり、これは 混んだサーバーでこのmodがいちばん多く送っている命令です。そのかわり動きは全員にとってカクつき、 すべての犬がサーバーの経路探索の行列に戻ります。この行列は全体でひとつしかなく、プレイヤーとも 取り合いになります。</li>
+</ul>
+<h3 id="症状別どこをいじるか">症状別：どこをいじるか</h3>
+<p><strong>サーバーが引っかかり、いちばん長いバーが <code>srv.companion</code> か <code>srv.followmaint</code> の場合。</strong> <code>Heavy pass interval</code> を30に上げます。それで直ったものの犬が鈍すぎると感じるなら、 戻す先は25。そのあとで <code>Follow maintainer interval</code> に触ります。こちらは画面に出てしまう部分だからです。</p>
+<p><strong>野良犬が少ない場合。</strong> 計測を動かして <code>spawn.qfull</code> を見ます。ゼロより大きければ原因は行列です。 先に <code>Stray spawn queue size</code> を上げ、そのあとで <code>Stray spawn scans per second</code> を上げます。 <code>spawn.qfull</code> がすでにゼロなら行列は詰まりの原因ではないので、 <code>Agreeing reads before marking a chunk done</code> を3にします。</p>
+<p><strong>マルチプレイで「ついてこい」がカクつく場合。</strong> <strong>Client authority</strong> がオンになっていること、 <code>Client authority grant distance</code> が下げられていないことを確かめます。そのうえで <code>Follow maintainer interval</code> を1にします。</p>
+<p><strong>止まっている犬だらけのサーバーで帯域を食っている場合。</strong> <code>Idle position report interval</code> を800か 1000に、<code>Background dog sync interval</code> を200に上げます。前者は止まっている犬にだけ効き、後者は いま連れて歩いている犬以外の動きが、どれだけ滑らかかに効きます。</p>
+<h3 id="このパネルにできないこと">このパネルにできないこと</h3>
+<p>このパネルは<strong>ゲームのルールを何ひとつ変えません</strong>。ダメージ、空腹、XP、犬の頭数の上限、世界に何が 存在するかは、これまでどおりセクション21の<strong>サンドボックス設定</strong>が決めます。もっと強い犬や、もっと 遅い空腹が欲しいのなら行き先はそちらで、いつもの注意も付いてきます。サンドボックス設定はセーブに 書き込まれます。</p></article></main>
 </div>
 
 <script>

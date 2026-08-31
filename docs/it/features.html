@@ -609,6 +609,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#come-rimuoverla-in-sicurezza" data-id="come-rimuoverla-in-sicurezza">Come rimuoverla in sicurezza</a>
 <a class="s3" href="#pulizia-completa-admin-modalita-debug" data-id="pulizia-completa-admin-modalita-debug">Pulizia completa (admin / modalita debug)</a>
 </div>
+</div>
+<div class="grp">
+<a class="s2" href="#24-regolazione-del-server-admin" data-id="24-regolazione-del-server-admin">24. Regolazione del server (admin)</a>
+<div class="sub">
+<a class="s3" href="#aprire-il-pannello" data-id="aprire-il-pannello">Aprire il pannello</a>
+<a class="s3" href="#cosa-vale-per-tutti-i-campi" data-id="cosa-vale-per-tutti-i-campi">Cosa vale per tutti i campi</a>
+<a class="s3" href="#leggere-la-misurazione-prima-di-toccare-qualcosa" data-id="leggere-la-misurazione-prima-di-toccare-qualcosa">Leggere la misurazione prima di toccare qualcosa</a>
+<a class="s3" href="#regolazioni-ritmo-dei-passaggi" data-id="regolazioni-ritmo-dei-passaggi">Regolazioni: ritmo dei passaggi</a>
+<a class="s3" href="#regolazioni-raggio-e-combattimento" data-id="regolazioni-raggio-e-combattimento">Regolazioni: raggio e combattimento</a>
+<a class="s3" href="#regolazioni-fiuto" data-id="regolazioni-fiuto">Regolazioni: fiuto</a>
+<a class="s3" href="#regolazioni-spawn-dei-randagi" data-id="regolazioni-spawn-dei-randagi">Regolazioni: spawn dei randagi</a>
+<a class="s3" href="#regolazioni-rete-solo-multiplayer" data-id="regolazioni-rete-solo-multiplayer">Regolazioni: rete (solo multiplayer)</a>
+<a class="s3" href="#ricette-il-sintomo-e-cosa-toccare" data-id="ricette-il-sintomo-e-cosa-toccare">Ricette: il sintomo e cosa toccare</a>
+<a class="s3" href="#cosa-non-fa-questo-pannello" data-id="cosa-non-fa-questo-pannello">Cosa non fa questo pannello</a>
+</div>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manuale-delle-funzionalità">Companion Dogs: Manuale delle funzionalità</h1>
@@ -1842,12 +1857,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>Se la disattivi, i cani restano nel mondo, invincibili e fermi.</p>
 <h3 id="per-gli-amministratori">Per gli amministratori</h3>
-<p>C'è un <strong><span class="ig">Registro cani (admin)</span></strong>: ricerca per giocatore, stato Online/Offline, conteggio dei cani e pulsante Aggiorna. C'è anche un pannello per la <strong>regolazione delle prestazioni del server</strong> in tempo reale. Sono entrambi riservati agli admin.</p>
+<p>C'è un <strong><span class="ig">Registro cani (admin)</span></strong>: ricerca per giocatore, stato Online/Offline, conteggio dei cani e pulsante Aggiorna. C'è anche un pannello per la <strong>regolazione delle prestazioni del server</strong> in tempo reale, con la misurazione e i campi di regolazione, descritto nella sezione <a href="#24-regolazione-del-server-admin">24. Regolazione del server</a>. Sono entrambi riservati agli admin.</p>
 <h3 id="avviso-di-installazione-in-co-op">Avviso di installazione in co-op</h3>
 <p>**Se il cane compare senza texture o tutto <em>schiacciato</em>:<strong> attiva Companion Dogs nella </strong>lista dei Mod del menu principale<strong> (non solo nella selezione del co-op) e </strong>chiudi del tutto il gioco<strong> prima di caricare il salvataggio. Anche l'host del co-op deve fare lo stesso e riavviare il server. E attivarla nel menu non è tutto: l'host deve anche elencare la mod nelle </strong>impostazioni del server**, nel passo passo della sezione di installazione.</p>
 <h2 id="21-opzioni-di-sandbox">21. Opzioni di sandbox</h2>
 <p>Pagina <strong><span class="ig">Cani da compagnia</span></strong> nelle impostazioni del mondo. Sono 33 opzioni.</p>
-<blockquote class="quote"><strong>Ricorda:</strong> in multiplayer comanda la configurazione <strong>del server</strong>. E in Project Zomboid le opzioni di sandbox restano registrate <strong>nel salvataggio</strong>, quindi cambiarle dopo richiede di modificare il salvataggio o iniziare un mondo nuovo.</blockquote>
+<blockquote class="quote"><strong>Ricorda:</strong> in multiplayer comanda la configurazione <strong>del server</strong>, e cambiarla è cosa da admin: dal pannello di amministrazione la modifica vale <strong>subito</strong>, per tutti, e resta registrata. In giocatore singolo quella schermata si apre solo con il gioco in <strong>modalità debug</strong> (<code>-debug</code> nelle opzioni di avvio di Steam), e anche lì vale subito. Senza debug, in giocatore singolo, il modo per cambiarle è iniziare un mondo nuovo.</blockquote>
 <h3 id="addomesticamento-e-spawn">Addomesticamento e spawn</h3>
 <div class="tw"><table><thead><tr>
 <th>Opzione</th>
@@ -2120,7 +2135,231 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Tasto destro sul terreno, poi <strong>Companion Dogs (debug)</strong>, <strong>Tools</strong>, <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Aspetta il messaggio <code>sweep done</code> e <strong>salva la partita</strong>.</li>
 </ol>
-<p>Il comando cancella subito i cani caricati e poi setaccia il resto del salvataggio in background, senza bloccare il gioco. Se <strong>rifiuta</strong> citando una razza, e il passo 1 qui sopra: quell'addon non e attivo in quel salvataggio, e forzare la pulizia senza le sue definizioni e proprio cio che distrugge gli animali.</p></article></main>
+<p>Il comando cancella subito i cani caricati e poi setaccia il resto del salvataggio in background, senza bloccare il gioco. Se <strong>rifiuta</strong> citando una razza, e il passo 1 qui sopra: quell'addon non e attivo in quel salvataggio, e forzare la pulizia senza le sue definizioni e proprio cio che distrugge gli animali.</p>
+<h2 id="24-regolazione-del-server-admin">24. Regolazione del server (admin)</h2>
+<p><strong>Per giocare non ti serve questa sezione.</strong> La mod funziona con i valori predefiniti, e metterci le mani senza un motivo peggiora solo le cose. Questa sezione esiste per chi gestisce un server con tanta gente e tanti cani, e ne sta sentendo il peso.</p>
+<p>Il pannello si chiama <strong><span class="ig">Server tuning / performance</span></strong> ed è fatto di due metà: sopra, un misuratore in tempo reale di quanto la mod sta costando al server; sotto, i campi che cambiano quel costo.</p>
+<blockquote class="quote"><strong>Il pannello è in inglese qualunque sia la lingua del gioco.</strong> Le sue etichette sono fisse nel codice e non passano dalla traduzione. Per questo le tabelle qui sotto riportano ognuna di esse esattamente come appare sullo schermo.</blockquote>
+<h3 id="aprire-il-pannello">Aprire il pannello</h3>
+<p><strong>In multiplayer:</strong> entra come <strong>admin</strong>, tasto destro sul terreno e vai su <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>.</p>
+<p><strong>In giocatore singolo:</strong> stesso percorso, ma il gioco deve essere in <strong>modalità debug</strong>. Aggiungi <code>-debug</code> alle opzioni di avvio di Steam.</p>
+<p>Se la voce non compare, o non sei admin su quel server, oppure il gioco non è in modalità debug.</p>
+<h3 id="cosa-vale-per-tutti-i-campi">Cosa vale per tutti i campi</h3>
+<p>Il valore entra in vigore <strong>subito</strong> e per tutto il server, senza riavviare niente, e resta registrato nel salvataggio: sopravvive al riavvio del server.</p>
+<p>Altre tre cose che fanno risparmiare tempo:</p>
+<ul>
+<li><strong>Un valore fuori intervallo viene riportato dentro l'intervallo.</strong> Scrivere 9000 in un campo che arriva a 60 salva 60.</li>
+<li><strong>L'etichetta verde vuol dire <span class="ig">diverso dal predefinito</span>.</strong> È così che ritrovi, mesi dopo, quello che hai cambiato.</li>
+<li><strong>Ogni modifica finisce nel log del server</strong> con la sigla <code>[CD-TUNE]</code> e il nome di chi l'ha fatta. Quando il server si avvia, stampa tutta la lista in vigore e segna con <code>*</code> quello che un admin ha cambiato.</li>
+</ul>
+<p>Il pulsante <strong><span class="ig">Restore defaults</span></strong> riporta tutto ai valori di fabbrica, misurazione e autorità del client comprese.</p>
+<h3 id="leggere-la-misurazione-prima-di-toccare-qualcosa">Leggere la misurazione prima di toccare qualcosa</h3>
+<p>La regola è questa: <strong>prima misurare, poi cambiare.</strong> Parecchie di queste regolazioni scambiano una cosa buona con un'altra, e senza un numero sullo schermo non sai quale delle due stai comprando.</p>
+<p>Clicca su <strong><span class="ig">Measurement: off (click to start)</span></strong>. La prima finestra si chiude entro <strong>20 secondi</strong>, e la parte alta del pannello si riempie. La riga principale è questa:</p>
+<pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
+<p><code>ms/s load</code> è il numero che conta: quanti millisecondi di ogni secondo la mod sta prendendo al server. È quello che vuoi vedere scendere dopo una modifica.</p>
+<p>La <strong>seconda riga</strong> conta quanti cani sono caricati nel mondo, quanti di questi sono compagni e quante scansioni di animali avvengono ogni secondo. Il cane caricato è quello che costa: 40 cani sparsi per la mappa pesano più di 40 cani nella stessa base.</p>
+<p>Le <strong>barre</strong> dividono il costo per area della mod (<code>srv.followmaint</code>, <code>srv.companion</code>, <code>dog.hunt</code>, <code>srv.netauth</code>, <code>srv.densesync</code> e altre). Il tempo è <strong>esclusivo</strong>, cioè ogni millisecondo viene assegnato a una sola area, ed è per questo che le barre si sommano. La barra più lunga è dove vale la pena intervenire.</p>
+<p>La riga <strong><code>counters:</code></strong> conta eventi al secondo invece del tempo. Due di questi rispondono da soli a una domanda:</p>
+<ul>
+<li><strong><code>spawn.qfull</code></strong> sopra lo zero: la coda di spawn dei randagi sta straripando, e delle tirate di spawn vanno perse.</li>
+<li><strong><code>netauth.grant</code> e <code>netauth.revoke</code> alti insieme</strong>: il controllo del cane rimbalza tra server e client, il sintomo di una distanza impostata male.</li>
+</ul>
+<p>Se compare l'avviso arancione <strong><code>COARSE CLOCK</code></strong>, la macchina non ha un orologio abbastanza preciso per misurare i millisecondi area per area. I contatori restano validi; i tempi, solo nel totale.</p>
+<p>Gli altri pulsanti nella parte bassa:</p>
+<div class="tw"><table><thead><tr>
+<th>Pulsante</th>
+<th>A cosa serve</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Depth: 1 (blocks) / 2 (deep)</strong></td>
+<td>Il livello 2 apre le aree interne di ogni blocco. Più dettaglio, e più costo di misurazione</td>
+</tr>
+<tr>
+<td><strong>CSV log</strong></td>
+<td>Scrive la misurazione in un file <code>CompanionDogs_perf_&lt;side&gt;_&lt;session&gt;.txt</code> nella cartella Zomboid, da aprire poi in un foglio di calcolo</td>
+</tr>
+<tr>
+<td><strong>Trace 600 ticks</strong></td>
+<td>Registra 600 tick uno per uno, per trovare il picco invece della media. Funziona solo con la misurazione accesa</td>
+</tr>
+<tr>
+<td><strong>Damage diagnostics</strong></td>
+<td>Accende un log dettagliato del danno sul server <strong>e su tutti i client</strong>. È molto rumoroso: accendilo per indagare su un morso che non viene registrato, e subito dopo spegnilo</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote"><strong>Misurare costa.</strong> Spegni la misurazione quando hai finito di guardare.</blockquote>
+<h3 id="regolazioni-ritmo-dei-passaggi">Regolazioni: ritmo dei passaggi</h3>
+<p>Ogni campo mostra il predefinito e l'intervallo accanto al nome. Scrivi il numero e premi Invio, oppure clicca fuori dal campo: il valore entra in vigore subito, per tutto il server.</p>
+<p>La mod lavora con due passaggi: uno pesante, che decide (combattimento, sorveglianza, caccia, manutenzione), e uno economico, che tiene solo il cane in movimento tra un pesante e l'altro. Alzare quello pesante è la modifica più efficace che c'è qui, ed è anche quella che rende il cane più lento a reagire.</p>
+<div class="tw"><table><thead><tr>
+<th>Etichetta sullo schermo</th>
+<th>Predefinito</th>
+<th>Intervallo</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Heavy pass interval (ticks)</td>
+<td>20</td>
+<td>da 5 a 60</td>
+<td>Tick tra un passaggio pesante e il successivo. A 10 fps, 60 tick sono 6 secondi tra una decisione e quella dopo</td>
+</tr>
+<tr>
+<td>Follow maintainer interval (ticks)</td>
+<td>2</td>
+<td>da 1 a 10</td>
+<td>Il passaggio economico che tiene il cane in movimento. Alzarlo è quello che fa sembrare il <span class="ig">segui</span> a scatti in multiplayer</td>
+</tr>
+</tbody></table></div>
+<h3 id="regolazioni-raggio-e-combattimento">Regolazioni: raggio e combattimento</h3>
+<p>Prima di scegliere uno zombie, il cane calcola fin dove <strong>riesce ad arrivare a piedi</strong>. È questo calcolo che impedisce al compagno di girare intorno a una recinzione dietro a uno zombie che sta dall'altra parte. I campi qui sotto controllano la dimensione e la validità di quel conto.</p>
+<div class="tw"><table><thead><tr>
+<th>Etichetta sullo schermo</th>
+<th>Predefinito</th>
+<th>Intervallo</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Reach region cache TTL (ms)</td>
+<td>300</td>
+<td>da 100 a 5000</td>
+<td>Per quanto tempo il conto vale prima di essere rifatto</td>
+</tr>
+<tr>
+<td>Reach region reuse radius (tiles)</td>
+<td>4</td>
+<td>da 0 a 12</td>
+<td>Quanto può camminare il cane prima di rifare il conto. 0 lo rifà a ogni passo, ed è la parte cara</td>
+</tr>
+<tr>
+<td>Combat reach radius (tiles)</td>
+<td>12</td>
+<td>da 4 a 20</td>
+<td>Fin dove il cane cerca uno zombie</td>
+</tr>
+<tr>
+<td>Combat reach max tiles</td>
+<td>700</td>
+<td>da 100 a 2000</td>
+<td>Tetto di caselle del conto. <strong>Sotto 625 il conto viene troncato quasi sempre, e una volta troncato tratta tutto come raggiungibile: la protezione contro il cane che gira intorno alla recinzione è esattamente quello che stai spegnendo</strong></td>
+</tr>
+<tr>
+<td>Empty scans before backing off</td>
+<td>4</td>
+<td>da 1 a 20</td>
+<td>Quante scansioni vuote di fila prima che il cane cominci a saltare passaggi. Qualsiasi segnale di minaccia azzera tutto all'istante</td>
+</tr>
+<tr>
+<td>Passes skipped when quiet</td>
+<td>3</td>
+<td>da 0 a 10</td>
+<td>Il tetto di quel riposo. 0 lo disattiva e si torna a scansionare sempre</td>
+</tr>
+<tr>
+<td>Unreachable cooldown prune (game minutes)</td>
+<td>10</td>
+<td>da 1 a 120</td>
+<td>Pulizia della lista degli zombie segnati come irraggiungibili. Senza, la lista cresce e basta</td>
+</tr>
+</tbody></table></div>
+<h3 id="regolazioni-fiuto">Regolazioni: fiuto</h3>
+<p>Il trucco che fiuta un oggetto setaccia il terreno ad anello, ed è l'unica parte della mod il cui costo cresce con il <strong>numero di giocatori</strong>, e non con il numero di cani.</p>
+<div class="tw"><table><thead><tr>
+<th>Etichetta sullo schermo</th>
+<th>Predefinito</th>
+<th>Intervallo</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Sniff squares per pass (per dog)</td>
+<td>500</td>
+<td>da 50 a 2000</td>
+<td>Quanto setaccia ogni cane a ogni passaggio. Abbassarlo non accorcia il raggio, fa solo impiegare più passaggi</td>
+</tr>
+<tr>
+<td>Sniff squares per tick (all dogs)</td>
+<td>1500</td>
+<td>da 100 a 10000</td>
+<td>Il tetto di tutto il server a ogni tick. Un cane fermato dal tetto non perde il turno, passa per primo al giro seguente</td>
+</tr>
+</tbody></table></div>
+<h3 id="regolazioni-spawn-dei-randagi">Regolazioni: spawn dei randagi</h3>
+<p>Ogni volta che un pezzo di mappa si carica, entra in una coda per essere valutato come possibile posto da randagio. Con i giocatori sparsi arrivano molti più pezzi al secondo che con un giocatore solo, ed è lì che la coda straripa. <strong>Guarda <code>spawn.qfull</code> prima di toccare uno di questi campi.</strong></p>
+<div class="tw"><table><thead><tr>
+<th>Etichetta sullo schermo</th>
+<th>Predefinito</th>
+<th>Intervallo</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Stray spawn scans per second</td>
+<td>32</td>
+<td>da 4 a 512</td>
+<td>Il ritmo con cui la coda viene svuotata, in secondi reali. Il predefinito è stato misurato con <strong>un</strong> giocatore che camminava</td>
+</tr>
+<tr>
+<td>Stray spawn scans per tick (burst)</td>
+<td>4</td>
+<td>da 1 a 16</td>
+<td>Quante valutazioni care possono capitare nello stesso tick. Questa è la dimensione dello scatto, non il ritmo: tocca prima quello qui sopra</td>
+</tr>
+<tr>
+<td>Stray spawn queue size</td>
+<td>4096</td>
+<td>da 256 a 16384</td>
+<td>La dimensione della coda. Farla straripare è l'<strong>unico</strong> modo in cui una tirata di spawn va persa</td>
+</tr>
+<tr>
+<td>Cheap detect passes per credit</td>
+<td>8</td>
+<td>da 1 a 32</td>
+<td>Un pezzo di strada o di campagna muore su un controllo economico. Questo numero dice quanti di quei controlli stanno nel costo di una valutazione completa. 1 lo disattiva</td>
+</tr>
+<tr>
+<td>Agreeing reads before marking a chunk done</td>
+<td>2</td>
+<td>da 1 a 5</td>
+<td>Quante letture concordi prima di dare per deciso un pezzo di mappa. L'istante del caricamento sa mentire, e per colpa di questo un isolato intero è già rimasto senza randagi. Alzalo se i randagi ti sembrano scarsi</td>
+</tr>
+</tbody></table></div>
+<h3 id="regolazioni-rete-solo-multiplayer">Regolazioni: rete (solo multiplayer)</h3>
+<div class="tw"><table><thead><tr>
+<th>Etichetta sullo schermo</th>
+<th>Predefinito</th>
+<th>Intervallo</th>
+<th>Cosa fa</th>
+</tr></thead><tbody>
+<tr>
+<td>Background dog sync interval (ms)</td>
+<td>100</td>
+<td>da 0 a 1000</td>
+<td>Il ritmo dei pacchetti di posizione dei cani che <strong>non</strong> sono il cane attivo al tuo seguito: i passivi, quelli in modalità recinto, i randagi e i selvatici. Solo un cane che si è mosso costa un pacchetto. 0 lo disattiva e li restituisce al ritmo nativo del gioco, con cui fanno un passo e si fermano</td>
+</tr>
+<tr>
+<td>Idle position report interval (ms)</td>
+<td>400</td>
+<td>da 100 a 2000</td>
+<td>Un cane <strong>fermo</strong> al fianco del padrone continua a mandare la posizione solo per dimostrare che è vivo. Alzarlo è il modo economico di tagliare pacchetti su un server pieno di cani fermi. Il valore nuovo vale dal passaggio di controllo successivo, non nel mezzo di uno</td>
+</tr>
+<tr>
+<td>Client authority grant distance (tiles)</td>
+<td>20</td>
+<td>da 2 a 28</td>
+<td>A che distanza il server consegna il controllo del cane alla macchina del padrone. Deve restare sotto 30, altrimenti il controllo viene dato e tolto nello stesso secondo</td>
+</tr>
+</tbody></table></div>
+<p>E l'interruttore <strong><span class="ig">Client authority</span></strong>, che è la decisione più grossa di questa sezione:</p>
+<ul>
+<li><strong>Acceso (predefinito):</strong> la macchina del padrone muove il cane e ne riporta la posizione, e il server verifica ogni segnalazione prima di passarla agli altri giocatori. È questo che rende fluidi il camminare e il correre.</li>
+<li><strong>Spento:</strong> ogni cane torna al server. I client smettono di mandare pacchetti di posizione, che sono il comando più frequente di questa mod su un server pieno, ma il movimento diventa a scatti per tutti, e ogni cane rientra nella coda di pathfinding del server, che è globale e condivisa con i giocatori.</li>
+</ul>
+<h3 id="ricette-il-sintomo-e-cosa-toccare">Ricette: il sintomo e cosa toccare</h3>
+<p><strong>Il server singhiozza e la barra più lunga è <code>srv.companion</code> oppure <code>srv.followmaint</code>.</strong> Alza <code>Heavy pass interval</code> a 30. Se così si risolve ma il cane ti sembra troppo lento, torna a 25. Solo dopo tocca <code>Follow maintainer interval</code>, perché è quello che si vede sullo schermo.</p>
+<p><strong>Randagi scarsi.</strong> Accendi la misurazione e guarda <code>spawn.qfull</code>. Sopra lo zero il problema è la coda: alza prima <code>Stray spawn queue size</code>, e solo dopo <code>Stray spawn scans per second</code>. Se <code>spawn.qfull</code> è già a zero, la coda non è il collo di bottiglia: alza <code>Agreeing reads before marking a chunk done</code> a 3.</p>
+<p><strong>Il <span class="ig">segui</span> va a scatti in multiplayer.</strong> Verifica che <strong>Client authority</strong> sia acceso e che <code>Client authority grant distance</code> non sia stato abbassato. Poi abbassa <code>Follow maintainer interval</code> a 1.</p>
+<p><strong>Un server pieno di cani fermi che consuma banda.</strong> Alza <code>Idle position report interval</code> a 800 o 1000, e <code>Background dog sync interval</code> a 200. Il primo tocca solo il cane fermo; il secondo, quanto sono fluidi i cani che non sono il cane attivo al tuo seguito.</p>
+<h3 id="cosa-non-fa-questo-pannello">Cosa non fa questo pannello</h3>
+<p>Non cambia <strong>nessuna regola di gioco</strong>. Danno, fame, XP, il limite di cani e cosa esiste nel mondo restano le <strong>opzioni di sandbox</strong> della sezione 21. Se quello che vuoi è un cane più forte o una fame più lenta, è di là che si va.</p></article></main>
 </div>
 
 <script>
