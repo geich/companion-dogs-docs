@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -490,25 +490,25 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manual-de-raças">Companion Dogs: Manual de Raças</h1>
 <p>Guia de todas as raças: o que cada uma faz de melhor, os moodles, as características e como escolher a certa para o seu jogo.</p>
-<p>Para saber <strong>como o mod funciona</strong> (domesticar, comandos, comida, alforje, truques, caça), veja o outro manual: <a href="features.html" class="xlink">Funcionalidades</a>.</p>
-<blockquote class="quote"><strong>Os números deste manual assumem as opções padrão.</strong> Se o servidor desligar <strong><span class="ig">Habilidades e treino</span></strong>, as raças param de <strong>evoluir</strong>: as habilidades ficam travadas em zero, a curva de dano por nível vira genérica, e os quatro truques destravam todos de uma vez (o mod passa a tratar todo cão como Obediência 10). O que a raça dá <strong>de nascença</strong> continua valendo: força base da mordida, derrubada, nervo na luta, moodle exclusivo, alforje e ninhada. Quem esconde os truques é a opção separada <strong><span class="ig">Truques de obediência</span></strong>.</blockquote>
+<p>Para saber como o mod funciona (domesticar, comandos, comida, alforje, truques, caça), veja o outro manual: <a href="features.html" class="xlink">Funcionalidades</a>.</p>
+<blockquote class="quote">Os números deste manual assumem as opções padrão. Se o servidor desligar <strong><span class="ig">Habilidades e treino</span></strong>, as raças param de evoluir: as habilidades ficam travadas em zero, a curva de dano por nível vira genérica e os quatro truques destravam de uma vez (o mod trata todo cão como Obediência 10). O que a raça dá de nascença continua valendo: força base da mordida, derrubada, nervo na luta, moodle exclusivo, alforje e ninhada. Quem esconde os truques é a opção separada <strong><span class="ig">Truques de obediência</span></strong>.</blockquote>
 <h2 id="1-o-que-uma-raça-muda-de-fato">1. O que uma raça muda de fato</h2>
-<p>Uma raça mexe em <strong>sete coisas</strong>, e nada além disso:</p>
+<p>Uma raça mexe em sete coisas:</p>
 <div class="tw"><table><thead><tr>
 <th>O que muda</th>
 <th>Explicando</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Velocidade de aprender</strong></td>
-<td>Cada raça aprende cada uma das 5 habilidades numa velocidade diferente. É o que mais define a raça</td>
+<td>Cada raça sobe cada uma das 5 habilidades num ritmo próprio. É a maior diferença entre raças</td>
 </tr>
 <tr>
 <td><strong>Força da mordida</strong></td>
-<td>Quanto dano por mordida, e quanto disso é conquistado com treino</td>
+<td>Quanto dano por mordida, e quanto disso vem com treino</td>
 </tr>
 <tr>
 <td><strong>Nervo na luta</strong></td>
-<td>Quanto estresse ele acumula brigando e em que ponto ele entra em pânico e para</td>
+<td>Quanto estresse ele acumula brigando e em que ponto entra em pânico e para</td>
 </tr>
 <tr>
 <td><strong>As características (genes)</strong></td>
@@ -516,7 +516,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Moodle exclusivo</strong></td>
-<td>Um bônus para <strong>você</strong>, enquanto o cão estiver perto, alimentado e leal</td>
+<td>Um bônus para você, enquanto o cão estiver perto, alimentado e leal</td>
 </tr>
 <tr>
 <td><strong>Ninhada</strong></td>
@@ -527,23 +527,23 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Cada raça tem os próprios lugares</td>
 </tr>
 </tbody></table></div>
-<p>E o que <strong>NÃO</strong> muda por raça, apesar do que muita gente imagina:</p>
+<p>O que não muda por raça:</p>
 <ul>
-<li><strong>Velocidade de correr.</strong> Não existe raça mais rápida. Todos correm igual.</li>
-<li><strong>Alcance da sentinela, do faro e da caça.</strong> Dependem só do nível da habilidade. A raça muda a velocidade de chegar lá, não o teto.</li>
-<li><strong>Os truques.</strong> Os quatro destravam por nível de Obediência, iguais para todos.</li>
-<li><strong>Fome e sede.</strong> O ritmo é o mesmo para todas as raças (mesmo o Husky, veja a ficha dele).</li>
-<li><strong>Capacidade do alforje</strong>, exceto o Husky, que é o único com bônus de raça.</li>
-<li><strong>O tamanho do corpo não é a Força.</strong> São duas coisas separadas, e é fácil confundir porque andam juntas. Veja abaixo.</li>
+<li>Velocidade de correr. Todas as raças correm igual.</li>
+<li>Alcance da sentinela, do faro e da caça. Dependem só do nível da habilidade.</li>
+<li>Os truques. Os quatro destravam por nível de Obediência, iguais para todos.</li>
+<li>Fome e sede. O ritmo é o mesmo para todas as raças, Husky incluído (veja a ficha dele).</li>
+<li>Capacidade do alforje, exceto o Husky.</li>
+<li>Tamanho do corpo. É separado da Força.</li>
 </ul>
-<blockquote class="quote"><strong>Há uma exceção, e ela não é um cão.</strong> O <a href="#5-o-gato-a-primeira-outra-espécie">gato</a> mexe numa oitava coisa que nenhuma raça de cão mexe: <strong>quais trabalhos existem</strong>. Ele não luta, não cuida do gado e só cruza com outro gato. As mecânicas não ficam piores para ele, elas somem. Enquanto você estiver comparando cães, a lista de sete acima vale inteira.</blockquote>
+<blockquote class="quote">O <a href="#5-o-gato-a-primeira-outra-espécie">gato</a> é a exceção. Além dessas sete coisas, ele muda quais trabalhos existem: não luta, não cuida do gado e só cruza com outro gato. A interface nem mostra o botão.</blockquote>
 <h3 id="tamanho-e-força-não-são-a-mesma-coisa">Tamanho e Força não são a mesma coisa</h3>
-<p>A <strong>Força</strong> é um gene e faz diferença de verdade: aumenta o dano da mordida em até <strong>30%</strong> e é ela que define a capacidade do alforje.</p>
-<p>O <strong>tamanho do corpo</strong> é outra coisa. Ele vem de um gene próprio do jogo, que o mod não sorteia nem mexe, mais o crescimento natural do filhote até o porte adulto. Dois cães da mesma raça podem ter tamanhos diferentes sem nenhuma diferença de Força, e um cão maior que outro <strong>da mesma raça</strong> não bate mais forte por isso.</p>
-<p>O que confunde é que a <strong>raça</strong> define as duas coisas ao mesmo tempo, cada uma pelo seu lado: um Pastor Alemão é grande <strong>e</strong> nasce forte, um Caramelo é pequeno <strong>e</strong> nasce fraco. Então, comparando raça com raça, o cão maior costuma mesmo bater mais forte. Só que a causa é a raça, não o tamanho: olhar o porte não diz nada sobre a Força de um cão individual. Para isso existe a barra de Força na aba de Genética da janela do cão.</p>
+<p>A Força é um gene. Ela aumenta o dano da mordida em até 30% e define a capacidade do alforje.</p>
+<p>O tamanho do corpo vem de um gene próprio do jogo, que o mod não sorteia nem mexe, mais o crescimento do filhote até o porte adulto. Dois cães da mesma raça podem ter tamanhos diferentes com a mesma Força, e o maior não bate mais forte por isso.</p>
+<p>A raça define as duas coisas ao mesmo tempo, cada uma pelo seu lado: um Pastor Alemão é grande e nasce forte, um Caramelo é pequeno e nasce fraco. A Força de um cão individual aparece na barra de Força, na seção Características da janela do cão.</p>
 <h3 id="uma-raça-uma-aparência">Uma raça, uma aparência</h3>
-<p><strong>Não existe variação de cor dentro de uma raça.</strong> Cada raça tem exatamente uma textura, e macho e fêmea usam a mesma. Um Husky sempre parece o mesmo Husky, e os cinco gatos são <a href="#as-cinco-pelagens">cinco raças</a>, não um gato em cinco cores.</p>
-<p>Filhote de qualquer raça nasce no mesmo tamanho reduzido, e cresce para o porte adulto da raça dele.</p>
+<p>Cada raça tem uma textura só, e macho e fêmea usam a mesma. Os cinco gatos são <a href="#as-cinco-pelagens">cinco raças</a>, não um gato em cinco cores.</p>
+<p>Filhote de qualquer raça nasce no mesmo tamanho reduzido e cresce até o porte adulto da raça dele.</p>
 <h2 id="2-escolha-rápida">2. Escolha rápida</h2>
 <div class="tw"><table><thead><tr>
 <th>Se você quer...</th>
@@ -551,67 +551,67 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Sobreviver aos primeiros dias com o que aparecer</strong></td>
-<td><strong>Caramelo</strong></td>
+<td>Caramelo</td>
 </tr>
 <tr>
 <td><strong>Um cão que segura a linha e mata zumbi sozinho</strong></td>
-<td><strong>Pastor Alemão</strong> ou <strong>Rottweiler</strong></td>
+<td>Pastor Alemão ou Rottweiler</td>
 </tr>
 <tr>
 <td><strong>Caçar carne</strong></td>
-<td><strong>Golden Retriever</strong> ou <strong>Labrador</strong></td>
+<td>Golden Retriever ou Labrador</td>
 </tr>
 <tr>
 <td><strong>Carregar loot</strong></td>
-<td><strong>Husky</strong>, sem discussão</td>
+<td>Husky</td>
 </tr>
 <tr>
 <td><strong>Cuidar da fazenda enquanto você viaja</strong></td>
-<td><strong>Border Collie</strong></td>
+<td>Border Collie</td>
 </tr>
 <tr>
 <td><strong>Atirar melhor</strong></td>
-<td><strong>Doberman</strong></td>
+<td>Doberman</td>
 </tr>
 <tr>
 <td><strong>Bater mais tempo no corpo a corpo</strong></td>
-<td><strong>Rottweiler</strong></td>
+<td>Rottweiler</td>
 </tr>
 <tr>
 <td><strong>Menos tédio e tristeza</strong></td>
-<td><strong>Pug</strong>, e o <strong>Caramelo</strong> de graça</td>
+<td>Pug, ou o Caramelo, que já vem no mod base</td>
 </tr>
 <tr>
 <td><strong>Menos estresse</strong></td>
-<td><strong>Pug</strong> ou <strong>Doberman</strong></td>
+<td>Pug ou Doberman</td>
 </tr>
 <tr>
 <td><strong>Menos pânico</strong></td>
-<td><strong>Pastor Alemão</strong></td>
+<td>Pastor Alemão</td>
 </tr>
 <tr>
 <td><strong>Ser avisado de zumbi mais cedo</strong></td>
-<td><strong>Pug</strong>, se você aguentar o latido</td>
+<td>Pug (o aviso é latido)</td>
 </tr>
 <tr>
 <td><strong>Ser avisado o mais cedo possível, e em silêncio</strong></td>
-<td><strong>Gato</strong></td>
+<td>Gato</td>
 </tr>
 <tr>
 <td><strong>Forragear mais</strong></td>
-<td><strong>Golden Retriever</strong></td>
+<td>Golden Retriever</td>
 </tr>
 <tr>
 <td><strong>Forragear de madrugada</strong></td>
-<td><strong>Gato</strong>, e não há segundo lugar</td>
+<td>Gato</td>
 </tr>
 <tr>
 <td><strong>Um companheiro que não entrega sua posição</strong></td>
-<td><strong>Gato</strong></td>
+<td>Gato</td>
 </tr>
 <tr>
 <td><strong>Não morrer de frio</strong></td>
-<td><strong>Husky</strong></td>
+<td>Husky</td>
 </tr>
 </tbody></table></div>
 <h3 id="o-resumo-em-uma-linha-cada">O resumo em uma linha cada</h3>
@@ -621,283 +621,280 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Caramelo</strong></td>
-<td>O vira-lata humilde. Fraco, mas derruba zumbi e faz companhia de verdade</td>
+<td>Vira-lata mais comum do mapa. Mordida fraca, mas derruba zumbi</td>
 </tr>
 <tr>
 <td><strong>Pastor Alemão</strong></td>
-<td>O soldado. Bate forte e quase não entra em pânico</td>
+<td>Raça de combate do mod base. Bate forte</td>
 </tr>
 <tr>
 <td><strong>Golden Retriever</strong></td>
-<td>O caçador de faro fino, que também melhora o seu forrageio</td>
+<td>Caçador de faro fino</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td>A mula de carga que te aquece no inverno. Teimoso</td>
+<td>Cão de carga que aprende devagar</td>
 </tr>
 <tr>
 <td><strong>Border Collie</strong></td>
-<td>O funcionário da fazenda</td>
+<td>Cuida do gado da fazenda sozinho</td>
 </tr>
 <tr>
 <td><strong>Rottweiler</strong></td>
-<td>O guerreiro que economiza o seu fôlego no corpo a corpo</td>
+<td>Lutador de corpo a corpo</td>
 </tr>
 <tr>
 <td><strong>Doberman</strong></td>
-<td>O cão de tiro: menos recuo, recarga mais rápida, nervos calmos</td>
+<td>Raça de tiro: menos recuo e recarga mais rápida</td>
 </tr>
 <tr>
 <td><strong>Labrador</strong></td>
-<td>O cobrador: o pior lutador do mod, o melhor entregador de caça</td>
+<td>Um dos piores lutadores do mod e o melhor em trazer caça</td>
 </tr>
 <tr>
 <td><strong>Pug</strong></td>
-<td>O cão de casa. Não serve para nada lá fora e é o melhor companheiro que existe</td>
+<td>Cão de casa. Não serve para luta nem trabalho fora</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
-<td>Não é cão. Não briga, não vai ao curral, só cruza com gato: vigia mais longe que todos, em silêncio, e enxerga no escuro por você</td>
+<td>Outra espécie. Não briga, não vai ao curral e só cruza com gato. Vigia mais longe que todos, em silêncio</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-as-cinco-raças-do-mod-base">3. As cinco raças do mod base</h2>
 <p>Estas vêm junto com o mod principal, sem instalar mais nada.</p>
 <hr>
 <h3 id="caramelo">Caramelo</h3>
-<p><strong>O vira-lata brasileiro.</strong> É o cão que você vai encontrar primeiro, e provavelmente o seu primeiro companheiro.</p>
+<p>Vira-lata do mod base.</p>
 <blockquote class="quote quote-game"><em>"O caramelo é uma raça básica do dia a dia, o vira-lata que se encontra por todas as cidades. Não tem habilidades especiais e é fraco por natureza: não consegue matar um zumbi sozinho, só derrubar pra te dar tempo."</em></blockquote>
-<p><strong>Onde achar:</strong> casa residencial, em cidade ou bairro. <strong>10% por casa</strong>, a raça mais comum do jogo.</p>
-<p><strong>Aprende:</strong> tudo na velocidade normal. Não tem nada em que se destaque, e nada em que seja ruim.</p>
-<p><strong>Na luta:</strong> é o <strong>único cão que não consegue finalizar um zumbi</strong>. A mordida trava o zumbi quase morto e para por aí. Isso é de propósito e <strong>nenhum ajuste de sandbox muda</strong>. Em compensação, ele <strong>derruba</strong>, e derrubar zumbi é exatamente o que compra o seu tempo para fugir ou bater.</p>
-<p>Ele também é o <strong>cão mais nervoso do mod</strong>: acumula estresse na luta cinco vezes mais rápido que um Pastor Alemão, e é o primeiro a entrar em pânico.</p>
-<p><strong>Características:</strong> as mais fracas do mod, <strong>Baixa</strong> nas três, sempre.</p>
-<p><strong>Ninhada:</strong> <strong>2 a 4 filhotes</strong>, a maior do mod: se o objetivo é montar um plantel, é a raça que mais produz. <strong>Alforje:</strong> 4 a 5 de carga, o menor.</p>
+<p><strong>Onde achar:</strong> casa residencial, em cidade ou bairro. 3% por casa, a raça mais comum do jogo.</p>
+<p><strong>Aprende:</strong> tudo na velocidade normal.</p>
+<p><strong>Na luta:</strong> é o único cão que não finaliza zumbi. A mordida leva o zumbi até quase morto e para aí, e nenhum ajuste de sandbox muda isso.</p>
+<p>É também o cão mais nervoso do mod: acumula estresse na luta cinco vezes mais rápido que um Pastor Alemão e é o primeiro a entrar em pânico.</p>
+<p><strong>Características:</strong> as mais fracas do mod, Baixa nas três, sempre.</p>
+<p><strong>Ninhada:</strong> 2 a 4 filhotes, a maior do mod. <strong>Alforje:</strong> 4 a 5 de carga, o menor.</p>
 <p><strong>Moodle: <span class="ig">Boa Companhia</span></strong></p>
 <blockquote class="quote quote-game"><em>"O Caramelo é um cão muito carinhoso e carismático. A companhia leal dele levanta o ânimo, então tristeza e tédio passam mais rápido com ele por perto."</em></blockquote>
-<p>Reduz <strong>Infelicidade e Tédio</strong> continuamente enquanto ele estiver perto.</p>
-<p><strong>Para quem é:</strong> para todo mundo, no começo. E continua bom depois, porque o moodle dele resolve um problema que nenhuma outra raça resolve. Só não conte com ele para matar nada.</p>
+<p>Reduz Infelicidade e Tédio continuamente enquanto ele estiver perto.</p>
+<p><strong>Para quem é:</strong> todo mundo, no começo. Depois continua útil pelo moodle, que nenhuma outra raça tem.</p>
 <hr>
 <h3 id="pastor-alemão">Pastor Alemão</h3>
-<p><strong>O cão de guerra.</strong> A raça de combate do mod base.</p>
+<p>Raça de combate do mod base.</p>
 <blockquote class="quote quote-game"><em>"Um cão de trabalho forte e inteligente. Nasce bem mais forte e resistente que o caramelo, aprende Combate e Obediência rápido, mal se abala numa luta, segura a horda sem entrar em pânico e derruba um zumbi sozinho."</em></blockquote>
-<p><strong>Onde achar:</strong> delegacia, prisão, cadeia, base militar, quartel, loja de armas, paiol. <strong>20% por prédio.</strong> Não aparece em casa. Você precisa ir atrás.</p>
-<p><strong>Aprende:</strong> <strong>Combate no dobro da velocidade</strong>, e Obediência 50% mais rápido. Caça um pouco mais rápido também. É a raça que fica forte mais depressa.</p>
-<p><strong>Na luta:</strong> a mordida mais forte do mod base, e <strong>mata zumbi sozinho</strong>. Mas o diferencial dele nem é o dano: é o <strong>nervo</strong>. Ele acumula estresse <strong>cinco vezes mais devagar</strong> que o Caramelo, e o ponto em que ele entra em pânico é o mais alto do mod. Na prática: <strong>ele continua lutando em situações onde qualquer outra raça já teria travado</strong>.</p>
-<p><strong>Características:</strong> <strong>Média</strong> nas três.</p>
+<p><strong>Onde achar:</strong> delegacia, prisão, cadeia, base militar, quartel, loja de armas, paiol. 20% por prédio. Não aparece em casa.</p>
+<p><strong>Aprende:</strong> Combate no dobro da velocidade e Obediência 50% mais rápido. Caça um pouco mais rápido também.</p>
+<p><strong>Na luta:</strong> a mordida mais forte do mod base, e mata zumbi sozinho. Acumula estresse cinco vezes mais devagar que o Caramelo, e o ponto em que entra em pânico é o mais alto do mod.</p>
+<p><strong>Características:</strong> Média nas três.</p>
 <p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Coragem</span></strong></p>
 <blockquote class="quote quote-game"><em>"Um Pastor Alemão corajoso ao seu lado acalma os nervos: a presença destemida dele reduz seu pânico enquanto fica por perto."</em></blockquote>
-<p>Derruba <strong>Pânico</strong> continuamente. É o moodle mais forte em números do mod base, e resolve um problema sério: pânico estraga a sua mira e a sua eficiência no corpo a corpo.</p>
-<p><strong>Para quem é:</strong> para quem luta. Se você joga na porrada e no meio da cidade, é a raça.</p>
-<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz <span class="ig">um terço do estresse</span>, mas o número real é <strong>um quinto</strong>. O texto é conservador demais, o cão é ainda melhor do que promete.</blockquote>
+<p>Reduz Pânico continuamente. É o moodle com o número mais forte do mod base. Pânico atrapalha a mira e o corpo a corpo.</p>
+<p><strong>Para quem é:</strong> quem luta corpo a corpo, principalmente em cidade.</p>
+<blockquote class="quote">A descrição no jogo diz <span class="ig">um terço do estresse</span>, mas o número real é um quinto.</blockquote>
 <hr>
 <h3 id="golden-retriever">Golden Retriever</h3>
-<p><strong>O cão de caça de faro fino.</strong> A raça que melhora o seu forrageio.</p>
+<p>Raça de faro do mod base.</p>
 <blockquote class="quote quote-game"><em>"Um cão de caça simpático e de faro aguçado, caçador nato: aprende Caça duas vezes mais rápido e derruba um zumbi sozinho (mas se abala mais fácil que o Pastor Alemão). O faro dele ajuda a forragear e farejar caça de mais longe."</em></blockquote>
-<p><strong>Onde achar:</strong> casa residencial, num sorteio à parte do Caramelo. <strong>2,5% por casa.</strong> Quatro vezes mais raro que o vira-lata, mas na mesma casa: uma casa pode ter os dois.</p>
-<p><strong>Aprende:</strong> <strong>Caça no dobro da velocidade</strong>, e Faro 50% mais rápido. É a raça que chega mais cedo ao nível 6 de Caça, que é quando o cão passa a enfrentar cervo.</p>
-<p><strong>Na luta:</strong> dano médio, <strong>mata sozinho</strong>. Se estressa mais que o Pastor, menos que o Caramelo.</p>
-<p><strong>Características:</strong> um pouco acima do Caramelo, abaixo do Pastor. Não é um cão de briga.</p>
+<p><strong>Onde achar:</strong> casa residencial, num sorteio à parte do Caramelo. 1% por casa, um terço da chance do Caramelo. Uma casa pode ter os dois.</p>
+<p><strong>Aprende:</strong> Caça no dobro da velocidade e Faro 50% mais rápido. É a raça que chega mais cedo ao nível 6 de Caça, quando o cão passa a enfrentar cervo.</p>
+<p><strong>Na luta:</strong> dano médio, mata sozinho. Se estressa mais que o Pastor e menos que o Caramelo.</p>
+<p><strong>Características:</strong> um pouco acima do Caramelo, abaixo do Pastor.</p>
 <p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 7.</p>
 <p><strong>Moodle: <span class="ig">Faro Apurado</span></strong></p>
 <blockquote class="quote quote-game"><em>"O Golden Retriever trabalha o terreno junto com você. Enquanto fica por perto, alimentado e leal, você enxerga itens de forrageio de mais longe e aprende Forrageio, Armadilhas e Mira mais rápido."</em></blockquote>
 <p>Dois efeitos:</p>
 <ul>
-<li><strong>+20% de XP</strong> em <strong>Forrageio, Armadilhas e Mira</strong>.</li>
-<li><strong>+4 tiles</strong> no seu raio de visão do Modo Busca, <strong>além</strong> do bônus que qualquer cão já dá.</li>
+<li>+20% de XP em Forrageio, Armadilhas e Mira.</li>
+<li>+4 tiles no raio de visão do Modo Busca, somados ao bônus que qualquer cão já dá.</li>
 </ul>
-<p><strong>Para quem é:</strong> para quem vive de caça, forrageio e armadilha. Combina com uma base rural.</p>
-<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz que ele aprende Combate <span class="ig">um pouco mais rápido que o caramelo</span>. Não é verdade: ele aprende Combate na mesma velocidade que o vira-lata.</blockquote>
+<p><strong>Para quem é:</strong> quem vive de caça, forrageio e armadilha, em geral com base rural.</p>
+<blockquote class="quote">A descrição no jogo diz que ele aprende Combate <span class="ig">um pouco mais rápido que o caramelo</span>. Ele aprende Combate na mesma velocidade que o Caramelo.</blockquote>
 <hr>
 <h3 id="husky">Husky</h3>
-<p><strong>A mula de carga.</strong> O cão mais forte do mod, e o único que aquece.</p>
 <blockquote class="quote quote-game"><em>"Um resistente cão de trenó do norte: de longe a raça mais forte, feita para carregar carga (o alforje dele leva mais que o de qualquer outro) e sobreviver ao frio. Teimoso (demora a aprender Obediência), simpático (péssimo de guarda) e comilão."</em></blockquote>
 <p><strong>Onde achar:</strong> duas fontes.</p>
 <ul>
-<li><strong>Casa residencial, só no inverno.</strong> 1,25% por casa. A raça mais rara do jogo fora de temporada.</li>
-<li><strong>Pet shop e clínica veterinária.</strong> 10% por prédio, o ano todo. Esta é a forma confiável de conseguir um.</li>
+<li>Casa residencial, só no inverno, 1,25% por casa. Fora do inverno não aparece em casa.</li>
+<li>Pet shop e clínica veterinária, 10% por prédio, o ano todo. É a fonte mais confiável.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Faro no dobro da velocidade</strong> (o melhor sentinela do mod), Caça 50% mais rápido, e Combate um pouco acima da média. <strong>Mas aprende Obediência 20% mais devagar</strong>, e essa é <strong>a única penalidade de raça entre os cães</strong>. É de propósito: ele é teimoso.</p>
-<p>Consequência prática do Obediência lento: ele demora mais para destravar os truques, desobedece mais tempo, e o piso de lealdade dele desce mais devagar.</p>
-<p><strong>Na luta:</strong> dano acima da média, <strong>mata sozinho</strong>, mas não é um guerreiro. Se estressa bem mais que um Pastor.</p>
-<p><strong>Características:</strong> a <strong>maior faixa de Força do mod</strong>, com folga: costuma sair <strong>Alta</strong>.</p>
+<p><strong>Aprende:</strong> Faro no dobro da velocidade (o Faro que sobe mais rápido do mod), Caça 50% mais rápido e Combate um pouco acima da média. Obediência 20% mais devagar, a única penalidade de raça entre os cães.</p>
+<p>Ele demora mais para destravar os truques, desobedece por mais tempo e o piso de lealdade dele desce mais devagar.</p>
+<p><strong>Na luta:</strong> dano acima da média, mata sozinho. Se estressa bem mais que um Pastor.</p>
+<p><strong>Características:</strong> a maior faixa de Força do mod, com folga: costuma sair Alta.</p>
 <p><strong>Ninhada:</strong> 1 a 2.</p>
-<p><strong>Alforje: 13 a 16 de carga.</strong> É a única raça com bônus de alforje (+50%), e a diferença é enorme: ele carrega <strong>duas a três vezes mais</strong> que qualquer outro cão.</p>
+<p><strong>Alforje:</strong> 13 a 16 de carga. É a única raça com bônus de alforje (+50%) e carrega duas a três vezes mais que qualquer outro cão.</p>
 <p><strong>Moodle: <span class="ig">Aquecido</span></strong></p>
 <blockquote class="quote quote-game"><em>"O husky puxa o peso ao seu lado. Enquanto fica por perto, alimentado e leal, acompanhar o ritmo dele faz sua Força subir mais rápido e ele te ajuda a segurar o fôlego, então você cansa mais devagar; e quando o frio aperta, o pelo grosso dele te mantém aquecido."</em></blockquote>
 <p>Três efeitos:</p>
 <ul>
-<li><strong>Força sobe 50% mais rápido</strong> enquanto ele estiver por perto. Força é a perícia mais lenta do jogo, e é ela que decide quanto você carrega e quanto dano você dá no corpo a corpo.</li>
-<li><strong>Fôlego se recupera continuamente</strong>, você cansa mais devagar.</li>
-<li><strong>Fonte de calor móvel</strong>, que <strong>liga sozinha quando você começa a esfriar</strong> e desliga quando você aquece. Ela só entra em <strong>frio de verdade</strong> (abaixo de -3 °C ao ar livre) e vale mais quanto mais colado no cão você estiver. É um alívio que segura a queda da sua temperatura, não um agasalho: roupa de inverno continua obrigatória.</li>
+<li>Força sobe 50% mais rápido enquanto ele estiver por perto. Força é a perícia mais lenta do jogo e decide quanto você carrega e quanto dano dá no corpo a corpo.</li>
+<li>Fôlego se recupera continuamente, então você cansa mais devagar.</li>
+<li>Fonte de calor móvel, que liga sozinha quando você começa a esfriar e desliga quando você aquece. Só entra em frio de verdade (abaixo de -3 °C ao ar livre) e vale mais quanto mais perto do cão você estiver. Segura a queda da temperatura, mas não substitui roupa de inverno.</li>
 </ul>
-<p><strong>O ganho de Força é sobre o que você já ganharia:</strong> o husky acelera, não regala. Ele rende enquanto você se exercita, viaja carregado e briga; cão deitado ao seu lado com você parado não treina nada.</p>
-<p><strong>Para quem é:</strong> para quem faz viagens longas de saque e volta carregado, e para quem joga inverno pesado. É o cão logístico.</p>
-<blockquote class="quote"><strong>Nota:</strong> a descrição diz <span class="ig">comilão (fica com fome rápido)</span>. <strong>Isso não vale para o cão já domesticado.</strong> O ritmo de fome dos companheiros é o mesmo para todas as raças. O apetite maior só existe enquanto ele é um cão selvagem.</blockquote>
+<p>O ganho de Força vale sobre o XP que você já ganharia: ele acelera o treino, não dá XP sozinho. Rende enquanto você se exercita, viaja carregado ou briga.</p>
+<p><strong>Para quem é:</strong> quem faz viagens longas de saque e volta carregado, e quem joga inverno pesado.</p>
+<blockquote class="quote">A descrição diz <span class="ig">comilão (fica com fome rápido)</span>. Isso só vale enquanto ele é selvagem. Depois de domesticado, o ritmo de fome é o mesmo de todas as raças.</blockquote>
 <hr>
 <h3 id="border-collie">Border Collie</h3>
-<p><strong>O cão de fazenda.</strong> A raça de pastoreio.</p>
+<p>Raça de pastoreio do mod base.</p>
 <blockquote class="quote quote-game"><em>"Um cão de pastoreio brilhante e incansável, o clássico companheiro de fazenda, valorizado acima de tudo pela inteligência."</em></blockquote>
-<p><strong>Onde achar:</strong> celeiro, estábulo, silo, galinheiro, curral, na <strong>zona rural</strong>. <strong>15% por prédio</strong>, e esse sorteio <strong>ignora o filtro urbano</strong>, então uma fazenda perdida no meio do nada conta.</p>
-<p><strong>Aprende:</strong> <strong>Pastoreio no dobro da velocidade</strong>, Obediência 50% mais rápido, e Faro um pouco acima da média.</p>
-<p><strong>Na luta:</strong> dano médio, igual ao Golden. <strong>Mata sozinho.</strong> Se estressa menos que o Caramelo, mas bem mais que um Pastor. Ele não é um cão de briga, é um cão de trabalho.</p>
+<p><strong>Onde achar:</strong> celeiro, estábulo, silo, galinheiro, curral, na zona rural. 15% por prédio. Esse sorteio ignora o filtro urbano, então uma fazenda isolada no meio do nada conta.</p>
+<p><strong>Aprende:</strong> Pastoreio no dobro da velocidade, Obediência 50% mais rápido e Faro um pouco acima da média.</p>
+<p><strong>Na luta:</strong> dano médio, igual ao Golden. Mata sozinho. Se estressa menos que o Caramelo e bem mais que um Pastor.</p>
 <p><strong>Características:</strong> faixas médias, um pouco acima do Golden.</p>
-<p><strong>Ninhada:</strong> <strong>1 a 3</strong>, a segunda maior do mod base. <strong>Alforje:</strong> 6 a 8.</p>
-<p><strong>A especialidade real:</strong> ele é <strong>50% mais eficiente na aura de calma por nível</strong> que qualquer outra raça, tanto no modo <strong><span class="ig">Cuidar do gado aqui</span></strong> quanto no moodle dele.</p>
-<p>Como animal estressado não dá leite nem lã, aborta e debanda, um Border Collie treinado é literalmente a diferença entre uma fazenda que produz e uma que não produz.</p>
+<p><strong>Ninhada:</strong> 1 a 3, a segunda maior do mod base. <strong>Alforje:</strong> 6 a 8.</p>
+<p>A especialidade dele é a aura de calma: rende 50% mais por nível que a de qualquer outra raça, tanto no modo <strong><span class="ig">Cuidar dos animais aqui</span></strong> quanto no moodle.</p>
+<p>Animal estressado não dá leite nem lã, aborta e debanda.</p>
 <p><strong>Moodle: <span class="ig">Instinto de Pastor</span></strong></p>
 <blockquote class="quote quote-game"><em>"O border collie trabalha o rebanho junto com você. Enquanto fica por perto, alimentado e leal, os animais ao seu redor se acalmam, e você aprende Cuidado Animal e Agricultura mais rápido."</em></blockquote>
 <p>Dois efeitos:</p>
 <ul>
-<li><strong>+20% de XP</strong> em <strong>Cuidado Animal e Agricultura</strong>.</li>
-<li><strong>Acalma o gado num raio ao seu redor</strong>, automaticamente, enquanto você trabalha.</li>
+<li>+20% de XP em Cuidado Animal e Agricultura.</li>
+<li>Acalma o gado num raio ao seu redor, automaticamente, enquanto você trabalha.</li>
 </ul>
-<p><strong>Para quem é:</strong> para quem monta fazenda. Se você tem vaca, ovelha ou galinha, esta é a raça que protege a produção.</p>
-<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo ainda diz que ele <span class="ig">é um generalista equilibrado, sem especialidade que se destaque</span>. Isso está desatualizado: o Pastoreio dobrado e a aura reforçada já existem.</blockquote>
+<p><strong>Para quem é:</strong> quem monta fazenda com vaca, ovelha ou galinha.</p>
+<blockquote class="quote">A descrição no jogo ainda diz que ele <span class="ig">é um generalista equilibrado, sem especialidade que se destaque</span>. Está desatualizada: o Pastoreio dobrado e a aura reforçada já existem.</blockquote>
 <h2 id="4-as-quatro-raças-de-addon">4. As quatro raças de addon</h2>
-<p>Estas vêm em <strong>mods separados na Steam</strong>, que dependem do Companion Dogs base. Os links de cada uma estão na ficha abaixo e juntos em <a href="#10-instalando-os-addons">Instalando os addons</a>.</p>
+<p>Estas quatro vêm em mods separados na Steam e dependem do Companion Dogs base. O link de cada uma está na ficha abaixo, e todos juntos em <a href="#10-instalando-os-addons">Instalando os addons</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, addon separado)</em></p>
-<p><strong>O guerreiro que economiza o seu fôlego.</strong></p>
+<p>Raça de combate com um moodle que devolve fôlego na briga corpo a corpo.</p>
 <blockquote class="quote quote-game"><em>"Um poderoso cão de guarda criado para proteção, um guerreiro pleno à altura do Pastor Alemão: aprende Combate duas vezes mais rápido, bate forte em nível alto, derruba zumbis e continua lutando onde a maioria das raças entra em pânico."</em></blockquote>
 <p><strong>Onde achar:</strong></p>
 <ul>
-<li><strong>Prédio industrial</strong> (depósito, galpão, fábrica, ferro-velho, oficina, doca de carga): <strong>10% por prédio</strong>.</li>
-<li><strong>Casa residencial:</strong> 2,5% por casa, uma chance rara.</li>
+<li>Prédio industrial (depósito, galpão, fábrica, ferro-velho, oficina, doca de carga): 10% por prédio.</li>
+<li>Casa residencial: 1% por casa.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Combate no dobro</strong>, e Faro 50% mais rápido (o único cão de combate com faro bom). Não tem bônus de Obediência.</p>
-<p><strong>Na luta:</strong> empata com o Pastor Alemão na mordida, e <strong>empata no nervo</strong>: ele acumula estresse cinco vezes mais devagar que o vira-lata e tem o ponto de pânico no máximo. Derruba e mata.</p>
+<p><strong>Aprende:</strong> Combate no dobro e Faro 50% mais rápido (o único cão de combate com faro bom). Não tem bônus de Obediência.</p>
+<p><strong>Na luta:</strong> empata com o Pastor Alemão na mordida e no nervo: acumula estresse cinco vezes mais devagar que o vira-lata e tem o ponto de pânico no máximo. Derruba e mata.</p>
 <p><strong>Características:</strong> iguais às do Pastor Alemão.</p>
 <p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Linha de Frente</span></strong></p>
 <blockquote class="quote quote-game"><em>"Seu Rottweiler está lutando ao seu lado. Enquanto ele estiver engajado em combate perto de você, alimentado e leal, seus golpes corpo a corpo gastam menos fôlego."</em></blockquote>
-<p><strong>Devolve 35% do fôlego gasto em cada golpe corpo a corpo.</strong></p>
-<p>Este é o moodle mais condicional do mod: o ícone aparece sempre que o Rottweiler está por perto, mas <strong>o efeito só vale enquanto ele está de fato brigando</strong>. E vale <strong>só para corpo a corpo</strong>, arma de fogo não ganha nada.</p>
-<p>Na prática, é enorme. Fôlego é o que limita quantos zumbis você aguenta bater seguidos. Com um Rottweiler brigando ao seu lado, você bate quase um terço a mais antes de ficar sem ar.</p>
-<p><strong>Para quem é:</strong> para quem limpa horda no corpo a corpo. É a raça mais sinérgica do mod com um estilo de jogo agressivo.</p>
+<p>Devolve 35% do fôlego gasto em cada golpe corpo a corpo.</p>
+<p>O ícone aparece sempre que o Rottweiler está por perto, mas o efeito só vale enquanto ele está brigando de fato.</p>
+<p><strong>Para quem é:</strong> quem limpa horda no corpo a corpo.</p>
 <hr>
 <h3 id="doberman">Doberman</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, addon separado)</em></p>
-<p><strong>O cão de tiro.</strong></p>
+<p>Raça de combate com um moodle voltado para arma de fogo.</p>
 <blockquote class="quote quote-game"><em>"Um cão de guarda esguio e vigilante, e o mais rápido de todos para aprender. Na briga é só fio e nada de armadura: fraco sem treino, mas com Combate no máximo morde forte, embora aguente menos pancada que um Rottweiler."</em></blockquote>
 <p><strong>Onde achar:</strong></p>
 <ul>
-<li><strong>Delegacia:</strong> 18% por prédio.</li>
-<li><strong>Prédio militar</strong> (paiol, quartel, bunker, posto de guarda, checkpoint): 22% por prédio.</li>
+<li>Delegacia: 18% por prédio.</li>
+<li>Prédio militar (paiol, quartel, bunker, posto de guarda, checkpoint): 22% por prédio.</li>
 </ul>
-<blockquote class="quote"><strong>Aviso prático:</strong> prédios militares são <strong>raríssimos</strong> no mapa base do jogo (existem só uns cinco cômodos assim no Kentucky inteiro). Na prática, procure em <strong>delegacia</strong>.</blockquote>
-<p><strong>Aprende:</strong> <strong>Combate no dobro</strong> e <strong>Obediência 50% mais rápido</strong>, exatamente o mesmo pacote do Pastor Alemão. O que separa os dois não é a velocidade de treino, é a <strong>curva de dano</strong>.</p>
-<p><strong>Na luta:</strong> ele tem a <strong>curva mais íngreme do mod</strong>. Sem treino ele bate bem menos que um Rottweiler, mas no Combate 10 ele <strong>alcança o topo</strong>. É um investimento: o Doberman que você acabou de domesticar é fraco, o Doberman treinado é de primeira linha.</p>
-<p>Nervo alto (ponto de pânico no máximo), mas <strong>aguenta menos pancada</strong>: a Resistência dele é a mais baixa entre os cães de briga.</p>
-<p><strong>Características:</strong> a <strong>maior faixa de Agressividade do mod</strong>, o que significa que ele ganha XP de combate mais rápido ainda. Força e Resistência um pouco abaixo do Rottweiler.</p>
+<blockquote class="quote">Prédio militar é raro no mapa base do jogo (uns cinco cômodos assim no Kentucky inteiro). Procure em delegacia.</blockquote>
+<p><strong>Aprende:</strong> Combate no dobro e Obediência 50% mais rápido, o mesmo pacote do Pastor Alemão.</p>
+<p><strong>Na luta:</strong> tem a curva de dano mais íngreme do mod. Sem treino bate bem menos que um Rottweiler; no Combate 10 chega ao mesmo dano de topo.</p>
+<p>Nervo alto (ponto de pânico no máximo), mas aguenta menos pancada: a Resistência dele é a mais baixa entre os cães de briga.</p>
+<p><strong>Características:</strong> a maior faixa de Agressividade do mod, o que faz ele ganhar XP de combate ainda mais rápido. Força e Resistência um pouco abaixo do Rottweiler.</p>
 <p><strong>Ninhada:</strong> 1 a 2. <strong>Alforje:</strong> 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Mira Firme</span></strong></p>
 <blockquote class="quote quote-game"><em>"Seu Doberman está guardando suas costas. Enquanto ele estiver por perto, alimentado e leal, seu estresse diminui, sua mira reassenta mais rápido depois de cada tiro e você recarrega mais depressa."</em></blockquote>
-<p>Três efeitos, todos para <strong>arma de fogo</strong>:</p>
+<p>Vale só para arma de fogo:</p>
 <ul>
-<li><strong>Seu estresse drena continuamente</strong> (estresse alto piora a mira em Zomboid).</li>
-<li><strong>O recuo se recupera 45% mais rápido</strong> depois de cada tiro. Você volta a mirar antes.</li>
-<li><strong>Recarga 15% mais rápida.</strong></li>
+<li>Seu estresse drena continuamente (estresse alto piora a mira).</li>
+<li>O recuo se recupera 45% mais rápido depois de cada tiro.</li>
+<li>Recarga 15% mais rápida.</li>
 </ul>
-<p><strong>Para quem é:</strong> para quem joga de arma de fogo. Os três efeitos empilham no mesmo problema, que é <span class="ig">quanto tempo eu perco entre um tiro e o próximo</span>.</p>
-<blockquote class="quote"><strong>Nota:</strong> a descrição no jogo diz que ele treina Obediência <span class="ig">mais rápido até que o Pastor Alemão</span> e que no Combate máximo <span class="ig">morde mais forte que qualquer outro cão</span>. Nos dois casos é <strong>empate</strong>, não vantagem: ele iguala o Pastor em Obediência e iguala o Rottweiler no dano de nível 10.</blockquote>
+<p><strong>Para quem é:</strong> quem joga de arma de fogo.</p>
+<blockquote class="quote">A descrição no jogo diz que ele treina Obediência <span class="ig">mais rápido até que o Pastor Alemão</span> e que no Combate máximo <span class="ig">morde mais forte que qualquer outro cão</span>. Nos dois casos é empate: ele iguala o Pastor em Obediência e iguala o Rottweiler no dano de nível 10.</blockquote>
 <hr>
 <h3 id="labrador">Labrador</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, addon separado)</em></p>
-<p><strong>O cobrador.</strong> O melhor cão de caça e, de propósito, o pior lutador do mod.</p>
-<blockquote class="quote quote-game"><em>"Um cão de caça feito para trazer de volta: treina Caça no dobro da velocidade, com Obediência logo atrás. É, de propósito, o pior lutador da família: a mordida mais fraca, sem derrubada, e uma briga o abala demais. O dom dele é a boca."</em></blockquote>
+<p>Raça de caça. O melhor cão para trazer abate.</p>
+<blockquote class="quote quote-game"><em>"Um cão de caça feito para trazer de volta: treina Caça no dobro da velocidade, com Obediência logo atrás. É, de propósito, um dos piores lutadores da família: só o Pug morde mais fraco, sem derrubada, e uma briga o abala demais. O dom dele é a boca."</em></blockquote>
 <p><strong>Onde achar:</strong></p>
 <ul>
-<li><strong>Casa residencial:</strong> <strong>5% por casa.</strong> É o addon mais fácil de encontrar, o dobro da chance do Golden.</li>
-<li><strong>Mato:</strong> cabana de caça, acampamento, casa de barco, pesqueiro, posto de guarda-florestal. <strong>20% por prédio.</strong></li>
+<li>Casa residencial: 1% por casa, a mesma chance do Golden.</li>
+<li>Mato (cabana de caça, acampamento, casa de barco, pesqueiro, posto de guarda-florestal): 20% por prédio.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Caça no dobro</strong> e <strong>Obediência 50% mais rápido</strong>. É o pacote de caçador com disciplina.</p>
-<p><strong>Na luta:</strong> o <strong>pior do mod, de propósito</strong>.</p>
+<p><strong>Aprende:</strong> Caça no dobro e Obediência 50% mais rápido.</p>
+<p><strong>Na luta:</strong> um dos piores do mod.</p>
 <ul>
-<li>A <strong>mordida mais fraca</strong> de todas.</li>
-<li><strong>Não derruba zumbi.</strong> É a única raça sem essa capacidade.</li>
-<li>Acumula estresse <strong>três vezes e meia mais rápido</strong> que um Rottweiler, e entra em pânico no mesmo ponto baixo do vira-lata.</li>
+<li>Mordida mais fraca de todas, só acima do Pug.</li>
+<li>Não derruba zumbi. Só ele e o Pug não derrubam.</li>
+<li>Acumula estresse três vezes e meia mais rápido que um Rottweiler e entra em pânico no mesmo ponto baixo do vira-lata.</li>
 </ul>
-<p>Ele <strong>mata</strong> um zumbi se você insistir, mas não mande esse cão brigar.</p>
-<p><strong>Características:</strong> a <strong>menor faixa de Agressividade do mod</strong>. Ele é o cão mais dócil que existe aqui, e demora mais para aprender a lutar por isso.</p>
-<p><strong>Ninhada:</strong> <strong>1 a 3</strong>, o único addon que passa de 2. <strong>Alforje:</strong> 6 a 8.</p>
+<p>Ele mata um zumbi se você insistir.</p>
+<p><strong>Características:</strong> a menor faixa de Agressividade do mod. Demora mais para aprender a lutar por isso.</p>
+<p><strong>Ninhada:</strong> 1 a 3, o único addon que passa de 2. <strong>Alforje:</strong> 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Boca Macia</span></strong></p>
 <blockquote class="quote quote-game"><em>"Seu Labrador traz todo abate desde a primeira caçada, e muitas vezes um extra. Enquanto ele estiver por perto, alimentado e leal, você também aprende Açougue e Lâmina Curta mais rápido."</em></blockquote>
-<p>Quatro efeitos, e este é o moodle mais completo do mod:</p>
 <ul>
-<li><strong>Ele traz o abate a partir do Caça 3</strong>, ou seja, <strong>desde que consegue caçar</strong>. Todas as outras raças só passam a trazer no Caça 6. Isso é meio jogo de diferença.</li>
-<li><strong>Ele insiste três vezes mais tempo</strong> na entrega antes de largar a carcaça no caminho.</li>
-<li><strong>60% das entregas vêm com um item extra</strong> largado no chão do seu lado: osso de bicho pequeno, pena de galinha, gravetos ou ovo selvagem. <em><span class="ig">Seu Labrador trouxe mais uma coisa: ...</span></em></li>
-<li><strong>+20% de XP</strong> em <strong>Açougue e Lâmina Curta</strong>, exatamente as habilidades de processar o que ele traz.</li>
+<li>Traz o abate a partir do Caça 3, ou seja, desde que consegue caçar. As outras raças só passam a trazer no Caça 6.</li>
+<li>Insiste três vezes mais tempo na entrega antes de largar a carcaça no caminho.</li>
+<li>60% das entregas vêm com um item extra largado no chão do seu lado: osso de bicho pequeno, pena de galinha, gravetos ou ovo selvagem. <em><span class="ig">Seu Labrador trouxe mais uma coisa: ...</span></em></li>
+<li>+20% de XP em Açougue e Lâmina Curta, as habilidades de processar o que ele traz.</li>
 </ul>
-<p><strong>Para quem é:</strong> para uma vida de caça. O Golden aprende a caçar tão rápido quanto, mas <strong>o Labrador entrega desde o começo</strong>, e a diferença aparece nas primeiras semanas de jogo.</p>
+<p><strong>Para quem é:</strong> quem vive de caça. O Golden aprende a caçar tão rápido quanto, mas o Labrador entrega desde o começo.</p>
 <hr>
 <h3 id="pug">Pug</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon separado)</em></p>
-<p><strong>O cão de casa.</strong> Todas as outras raças valem por lutar, caçar, pastorear ou carregar. O Pug não faz nada disso, e é o melhor companheiro do mod.</p>
+<p>Cão de companhia, com um moodle de humor.</p>
 <blockquote class="quote quote-game"><em>"O cão de casa: o primeiro companheiro cujo valor não é lutar, caçar, pastorear nem carregar. Treina Obediência no dobro da velocidade de qualquer outra raça, e o vínculo dele nunca cai sozinho."</em></blockquote>
 <p><strong>Onde achar:</strong></p>
 <ul>
-<li><strong>Casa residencial:</strong> <strong>5% por casa</strong>, a mesma facilidade do Labrador. É o cão de casa, afinal.</li>
-<li><strong>Pet shop e veterinário:</strong> <strong>12% por prédio</strong>, o mesmo lugar do Husky.</li>
+<li>Casa residencial: 3% por casa, o triplo do Labrador e do Rottweiler e a mesma chance do Caramelo. É o addon mais fácil de achar em casa.</li>
+<li>Pet shop e veterinário: 12% por prédio, o mesmo lugar do Husky.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Obediência no dobro</strong>, mais rápido que qualquer outra raça do mod, com <strong>Faro 50% mais rápido</strong> e Caça 20%. Ele sobe a árvore de truques (ir a um ponto, distrair zumbi, farejar item, buscar enquanto você dorme) na frente de tudo o que você pode ter.</p>
-<p><strong>O vínculo dele não cai.</strong> Todo outro cão perde lealdade sozinho quando você some ou relaxa no cuidado. O Pug não perde. Volte de um mês na estrada e ele está exatamente como você deixou. É a única raça assim.</p>
-<p><strong>Ele avisa primeiro.</strong> No mesmo nível de Faro, o Pug percebe zumbi de <strong>35% mais longe</strong> que qualquer outra raça. Foi criado como cão de alarme e ainda funciona.</p>
-<p><strong>Na luta: não conte com ele.</strong> É o cão mais fraco do mod, abaixo do Caramelo.</p>
+<p><strong>Aprende:</strong> Obediência no dobro, com Faro 50% mais rápido e Caça 20%. Ele sobe a árvore de truques (ir a um ponto, distrair zumbi, farejar item, buscar enquanto você dorme) antes de qualquer outro cão.</p>
+<p>Todo outro cão perde lealdade quando você some ou relaxa no cuidado; o Pug não. Volte de um mês na estrada e ele está como você deixou.</p>
+<p>No mesmo nível de Faro, o Pug percebe zumbi de 35% mais longe que qualquer outra raça.</p>
+<p><strong>Na luta:</strong> é o cão mais fraco do mod, abaixo do Caramelo.</p>
 <ul>
-<li>A <strong>mordida mais fraca</strong> de todas, por uma margem larga.</li>
-<li><strong>Não mata zumbi</strong> e <strong>não derruba</strong>. É o único cão com as duas coisas desligadas.</li>
-<li>Acumula estresse mais rápido que qualquer outro e <strong>entra em pânico antes de todos</strong>.</li>
+<li>Mordida mais fraca de todas, por uma margem larga.</li>
+<li>Não mata zumbi e não derruba. É o único cão com as duas coisas desligadas.</li>
+<li>Acumula estresse mais rápido que qualquer outro e entra em pânico antes de todos.</li>
 </ul>
-<p><strong>E o preço não para aí:</strong></p>
+<p>Outros pontos fracos:</p>
 <ul>
-<li><strong>O latido entrega você, e não tem como calar.</strong> O mesmo alarme que te avisa avisa os mortos, mais alto que o de qualquer raça, e o Pug é o <strong>único cão que não aceita os modos Discreto e Silencioso</strong>: os dois botões ficam desligados na janela dele. Você não escolhe só a metade boa do faro dele. (Se o barulho do cão atrai zumbis estiver desligado nas opções de sandbox, vale para o Pug como para todos: o latido continua alto, mas não puxa ninguém.)</li>
-<li><strong>Ele não acompanha corrida.</strong> Num sprint o Pug fica para trás de qualquer outro cão.</li>
-<li><strong>O verão machuca.</strong> Focinho achatado não troca calor. Acima de <strong>28 °C</strong> ele começa a estressar, <strong>para de te confortar</strong> e o moodle sai do HUD; a <strong>36 °C</strong> a penalidade satura. Dentro de casa é mais fresco, e ele volta a funcionar.</li>
-<li><strong>Alforje de 2 a 3.</strong> Ele até usa, mas não é animal de carga.</li>
+<li>O latido dele é o mais alto de todas as raças e atrai zumbi do mesmo jeito que avisa você. O Pug é o único cão que não aceita os modos Discreto e Silencioso: os dois botões ficam desligados na janela dele. (Com o barulho do cão desligado nas opções de sandbox, vale para o Pug como para todos: o latido continua alto, mas não puxa ninguém.)</li>
+<li>Não acompanha corrida. Num sprint fica para trás de qualquer outro cão.</li>
+<li>Sofre com calor. Acima de 28 °C ele começa a estressar, para de te confortar e o moodle sai do HUD; a 36 °C a penalidade satura. Dentro de casa é mais fresco e ele volta a funcionar.</li>
+<li>Alforje de 2 a 3. Ele usa, mas não é animal de carga.</li>
 </ul>
-<p><strong>Em compensação, ele come e bebe pouco:</strong> metade da fome e um terço a menos de sede que um cão de porte médio.</p>
-<p><strong>Características:</strong> as <strong>menores faixas de Força e Resistência do mod</strong>. Nasce fraco e frágil, sempre, e isso não é azar de filhote.</p>
-<p><strong>Ninhada:</strong> <strong>1 a 2</strong>.</p>
+<p>Em compensação come e bebe pouco: metade da fome e um terço a menos de sede que um cão de porte médio.</p>
+<p><strong>Características:</strong> as menores faixas de Força e Resistência do mod. Nasce fraco e frágil em qualquer ninhada.</p>
+<p><strong>Ninhada:</strong> 1 a 2.</p>
 <p><strong>Moodle: <span class="ig">Sua Sombra</span></strong></p>
 <blockquote class="quote quote-game"><em>"Seu Pug não sai do seu pé. Enquanto ele estiver por perto, alimentado e leal, tristeza, tédio e estresse caem mais rápido que com qualquer outro cão. O calor desfaz isso: um pug ofegante não conforta ninguém até achar um lugar fresco."</em></blockquote>
 <ul>
-<li><strong>Tristeza e Tédio caem 60% mais rápido</strong> que perto de um Caramelo.</li>
-<li><strong>Estresse também cai.</strong> Nenhum outro cão do mod mexe em estresse pela simples presença; o único outro jeito de baixar estresse com cão é dormir do lado dele (<span class="ig">Bem Descansado</span>).</li>
+<li>Tristeza e Tédio caem 60% mais rápido que perto de um Caramelo.</li>
+<li>Estresse também cai. Só ele e o Doberman mexem em estresse pela presença, e o Doberman drena mais rápido. Fora esses dois, o único jeito de baixar estresse com cão é dormir do lado dele (<span class="ig">Bem Descansado</span>).</li>
 </ul>
-<p><strong>Para quem é:</strong> para quem joga em base, para partida longa, e para quem cansou de perder lealdade por ficar fora tempo demais. Leve um cão de guarda junto se for sair da cidade.</p>
+<p><strong>Para quem é:</strong> quem joga em base, partida longa, ou cansou de perder lealdade por ficar fora tempo demais. Leve um cão de guarda junto se for sair da cidade.</p>
 <h2 id="5-o-gato-a-primeira-outra-espécie">5. O gato: a primeira outra espécie</h2>
 <p><em>(mod <strong>CD: Cats</strong>, addon separado)</em></p>
-<p>Todas as raças até aqui são cães. O gato é a primeira exceção de verdade.</p>
+<p>Todas as raças até aqui são cães.</p>
 <blockquote class="quote quote-game"><em>"Não é um cão com números piores: é um bicho que simplesmente não tem alguns dos trabalhos. Gato não briga com os mortos, não é estacionado em curral e só cruza com outro gato. Caça roedor e coelho, e deixa cervo em paz. Bicho seu nunca é presa: ele não encosta em galinha, nem em nada que esteja no curral. O que ele entrega no lugar é aviso: percebe os mortos mais longe que qualquer outro companheiro, e é discreto em todo o resto."</em></blockquote>
 <h3 id="o-que-ele-não-faz">O que ele NÃO faz</h3>
-<p>Isto não é fraqueza, é ausência. As mecânicas não existem para ele, e a interface some junto: você não vai encontrar o botão desligado, você não vai encontrar o botão.</p>
+<p>Essas mecânicas não existem para o gato, e a interface não mostra o botão, nem desligado.</p>
 <div class="tw"><table><thead><tr>
 <th>O que</th>
 <th>O que some</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Não luta</strong></td>
-<td>Sem Combate na janela, sem modo <strong>Vigiar</strong>, sem auto-proteção. Ele não ataca zumbi nem quando você apanha na frente dele</td>
+<td>Sem Combate na janela, sem modo <strong>Vigiar</strong>, sem auto-proteção</td>
 </tr>
 <tr>
 <td><strong>Não cuida do gado</strong></td>
-<td>Sem Pastoreio, e o modo <strong>Cuidar do gado</strong> não aparece no menu</td>
+<td>Sem Pastoreio, e a opção <strong><span class="ig">Cuidar dos animais aqui</span></strong> não aparece no menu</td>
 </tr>
 <tr>
 <td><strong>Não cruza com cão</strong></td>
-<td>O cruzamento é por espécie: gato só forma par com gato, e o que nasce é gatinho. Não existe cruzar as duas coisas</td>
+<td>Gato só forma par com gato, e o que nasce é gatinho</td>
 </tr>
 <tr>
 <td><strong>Não caça nada maior que coelho</strong></td>
-<td>Cervo fica <strong>invisível</strong> para ele: ele nem aponta, nem sai atrás. E bicho da sua criação nunca é presa: ele não encosta em galinha, em vaca, nem em nada que esteja no curral</td>
+<td>Cervo é invisível para ele: nem aponta, nem sai atrás</td>
 </tr>
 </tbody></table></div>
-<p><strong>A caça dele para no coelho</strong>, o mesmo teto do Labrador e do Golden na parte pequena. E ele late ao perseguir: caçar com o gato <strong>não</strong> é silencioso, o silêncio dele é o resto do tempo.</p>
+<p>O teto dele na caça pequena é o mesmo do Labrador e do Golden. Ele late ao perseguir, então caçar com o gato faz barulho. Fora da caça ele fica quieto.</p>
 <h3 id="o-que-ele-faz-melhor-que-qualquer-cão">O que ele faz melhor que qualquer cão</h3>
-<p><strong>Ele avisa antes de todo mundo.</strong> Sem luta sobrando, avisar <strong>é</strong> o trabalho, e o gato tem o maior alcance de sentinela do mod:</p>
+<p>Como não luta, avisar é o trabalho dele, e o gato tem o maior alcance de sentinela do mod:</p>
 <div class="tw"><table><thead><tr>
 <th></th>
 <th>Faro 0</th>
@@ -915,32 +912,31 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
-<td><strong>25 tiles</strong></td>
-<td><strong>38 tiles</strong></td>
+<td>25 tiles</td>
+<td>38 tiles</td>
 </tr>
 </tbody></table></div>
-<p><strong>E é o mais discreto.</strong> O ruído que o miado dele espalha é <strong>metade</strong> do de um cão e <strong>um terço</strong> do latido do Pug. O Pug te avisa cedo e entrega sua posição junto; o gato te avisa mais cedo ainda e fica quieto. É o único companheiro do mod que faz as duas coisas.</p>
-<p><strong>Caça no dobro da velocidade</strong>, empatado com Golden e Labrador, e <strong>Faro 50% mais rápido</strong>.</p>
+<p>Também é o mais discreto. O ruído do miado dele é metade do de um cão e um terço do latido do Pug.</p>
+<p>Caça no dobro da velocidade, empatado com Golden e Labrador, e o Faro dele sobe 50% mais rápido.</p>
 <h3 id="o-preço">O preço</h3>
-<p><strong>Ele é o mais teimoso do mod.</strong> Obediência a <strong>0,7</strong>, a maior penalidade de aprendizado que existe, pior que o 0,8 do Husky, que até aqui era a única. Ele destrava os quatro truques, mas chega lá <strong>bem depois</strong> de qualquer cão.</p>
-<p><strong>E ele se distrai com rato.</strong> De vez em quando o gato avista um roedor por perto e simplesmente vai atrás, largando o que estava fazendo. Ele caça e mata o roedor sozinho, sem você mandar nada. Não importa o modo em que ele está, não importa o nível de Caça dele, e você não manda nele nessa hora: qualquer ordem que você der é recusada com <em><span class="ig">se distraiu e te ignora</span></em>, que é a única vez em que essa mensagem diz exatamente o que aconteceu. <strong>Chamar com o Vem cancela</strong>, e é o único comando que atravessa. Enquanto isso, você está sem vigia.</p>
-<p><strong>E ele te traz o rato.</strong> Quando mata, o gato volta até a carcaça, carrega até você e larga aos seus pés. Não precisa de nível nenhum: entregar a presa morta é instinto, não treino, e ele faz isso desde o primeiro dia. O outro que entrega sem treino é o Labrador, e a diferença é que o Labrador traz porque você pediu.</p>
-<p>A distração vale para <strong>rato e camundongo</strong>; coelho só com o modo Caça ligado e o nível para isso.</p>
-<p><strong>E o mais independente.</strong> O vínculo dele cai <strong>50% mais rápido</strong> que o de um cão quando você some ou relaxa no cuidado. É o oposto exato do Pug, cujo vínculo não cai nunca. Gato exige presença.</p>
-<p><strong>Alforje de 2, e ponto.</strong> Não é uma faixa como nas outras raças: a conta dá <strong>2 em qualquer gato</strong>, por mais forte que ele nasça. Bicho pequeno.</p>
-<p><strong>Nervoso.</strong> Ele tem o segundo pior gene oculto de estresse do mod, atrás só do Caramelo. Ele não briga, então isso não aparece em combate. Aparece em susto: barulho alto, grito, ferimento. Um gato em pânico <strong>para de vigiar e para de trazer presente</strong>.</p>
-<p><strong>Ele não deita.</strong> No modo Ficar, o gato fica em pé. É só aparência, não muda nada.</p>
-<p><strong>Características:</strong> empata com o Pug na <strong>menor faixa de Força do mod</strong>, com Agressividade e Resistência igualmente baixas. Não existe gato forte, e isso não é azar de filhote.</p>
+<p>É o mais teimoso do mod. Obediência a 0,7, a maior penalidade de aprendizado que existe (o Husky, a única outra raça com penalidade, tem 0,8). Ele destrava os quatro truques, mas chega lá bem depois de qualquer cão.</p>
+<p>Ele se distrai com rato. De vez em quando o gato vê um roedor por perto e vai atrás, largando o que estava fazendo. Caça e mata o roedor sozinho. Isso acontece em qualquer modo e em qualquer nível de Caça, e nessa hora ele não obedece: qualquer ordem volta com <em><span class="ig">se distraiu e te ignora</span></em>. Só o <strong><span class="ig">Vir aqui</span></strong> passa e cancela a perseguição. Enquanto isso, você está sem vigia.</p>
+<p>Depois de matar, o gato volta até a carcaça, carrega até você e larga aos seus pés. Ele entrega a presa desde o primeiro dia. O Labrador também entrega sem treino, mas só quando você pede.</p>
+<p>A distração vale para rato e camundongo. Coelho só com o modo Caça ligado e o nível para isso.</p>
+<p>Ele também é o mais independente. O vínculo dele cai 50% mais rápido que o de um cão quando você some ou relaxa no cuidado (o Pug é o extremo oposto: o vínculo dele não cai).</p>
+<p><strong>Alforje:</strong> 2 em qualquer gato. Nas outras raças o alforje é uma faixa; no gato a conta dá 2 por mais forte que ele nasça.</p>
+<p>Ele é nervoso: tem o segundo pior gene oculto de estresse do mod, atrás só do Caramelo. Como não briga, isso não aparece em combate, e sim em susto: barulho alto, grito, ferimento. Um gato em pânico para de vigiar e para de trazer presente.</p>
+<p>No modo Ficar o gato fica em pé em vez de deitar. É só aparência.</p>
+<p><strong>Características:</strong> empata com o Pug na menor faixa de Força do mod, com Agressividade e Resistência igualmente baixas.</p>
 <h3 id="as-cinco-pelagens">As cinco pelagens</h3>
-<p>Preto, Branco, Laranja, Tricolor e Smoking. Para o mod são <strong>cinco raças</strong> (nome próprio, entrada própria no menu de spawn e no canil) e para todo efeito prático são o <strong>mesmo bicho</strong>: mesmos números, mesmo moodle, mesma voz, mesmas faixas de característica. A pelagem é <strong>só aparência</strong>.</p>
-<p><strong>A pelagem que você acha é sorte.</strong> Cada uma sorteia o próprio prédio, de forma independente. Elas já entram com a chance dividida por cinco, então a quantidade total de gato no mundo é a mesma de quando só existia o preto: você não ganha cinco vezes mais gato por elas serem cinco.</p>
-<p><strong>Onde achar:</strong> <strong>2% por casa residencial</strong>, <strong>2% por loja, mercado ou lanchonete</strong> e <strong>2,4% por pet shop ou veterinário</strong>, por pelagem. Gato fica em prédio, não em mata, mas não fica só do lado de dentro: <strong>metade das vezes ele nasce dentro do prédio e metade no terreno dele</strong>: quintal, calçada, estacionamento ou o beco atrás da loja.</p>
-<p>O gato tem o <strong>próprio multiplicador de spawn</strong> no sandbox, <strong><span class="ig">Multiplicador de spawn de gatos</span></strong>, separado do de cães: um mundo com pouco ou nenhum cachorro vira-lata continua tendo gato na mesma quantidade.</p>
+<p>Preto, Branco, Laranja, Tricolor e Smoking. Para o mod são cinco raças (nome próprio, entrada própria no menu de spawn e no canil), mas os números, o moodle, a voz e as faixas de característica são os mesmos. A pelagem é só aparência.</p>
+<p>Cada pelagem sorteia o próprio prédio, de forma independente. A chance já entra dividida por cinco, então a quantidade total de gato no mundo é a mesma de quando só existia o preto.</p>
+<p><strong>Onde achar:</strong> 2% por casa residencial, 2% por loja, mercado ou lanchonete e 2,4% por pet shop ou veterinário, por pelagem. Gato nasce em prédio, não em mata: metade das vezes dentro do prédio, metade no terreno dele (quintal, calçada, estacionamento ou o beco atrás da loja).</p>
+<p>O gato tem o próprio multiplicador de spawn no sandbox, <strong><span class="ig">Multiplicador de spawn de gatos</span></strong>, separado do de cães. Um mundo com pouco ou nenhum vira-lata continua com a mesma quantidade de gato.</p>
 <h3 id="o-presente-noturno">O presente noturno</h3>
-<p><strong>A mecânica mais escondida do gato.</strong> Você acorda, e tem um bicho morto aos seus pés.</p>
-<p>O gato <span class="ig">sai</span> enquanto você dorme e deixa a presa. Não há perseguição e nada morre no mundo, e por isso o presente <strong>continua funcionando mesmo com a Caça desligada</strong> nas opções de sandbox.</p>
-<p><strong>Como dispara:</strong> ao <strong>acordar de um sono</strong>, com o gato a <strong>8 tiles ou menos</strong>. Mesmo raio do <span class="ig">Bem Descansado</span>, e pela mesma razão: quem saiu de noite foi o gato que estava com você.</p>
-<p><strong>A chance é a Caça dele</strong>, e ela fecha em certeza no topo:</p>
+<p>Você acorda e tem um bicho morto aos seus pés. O gato <span class="ig">sai</span> enquanto você dorme e deixa a presa. Não tem perseguição e nada morre no mundo, então o presente continua funcionando com a Caça desligada nas opções de sandbox.</p>
+<p>Dispara ao acordar de um sono, com o gato a 8 tiles ou menos, o mesmo raio do <span class="ig">Bem Descansado</span>.</p>
+<p>A chance é o nível de Caça dele:</p>
 <div class="tw"><table><thead><tr>
 <th>Caça</th>
 <th>Chance de vir presente</th>
@@ -962,11 +958,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>87%</td>
 </tr>
 <tr>
-<td><strong>10</strong></td>
-<td><strong>100%</strong></td>
+<td>10</td>
+<td>100%</td>
 </tr>
 </tbody></table></div>
-<p><strong>A Caça também decide O QUE vem.</strong> Não é só frequência: é a lista inteira que se inverte:</p>
+<p>A Caça também decide o que vem:</p>
 <div class="tw"><table><thead><tr>
 <th>Caça</th>
 <th>O que costuma vir</th>
@@ -977,22 +973,22 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Alta</td>
-<td><strong>Camundongo e rato</strong> viram o caso comum, com sapo e lacraia no meio</td>
+<td>Camundongo e rato viram o caso comum, com sapo e lacraia no meio</td>
 </tr>
 </tbody></table></div>
-<p>Vale a diferença: minhoca são 3 calorias, rato são 324 e ainda tiram 22 de fome. E sapo serve de isca de pesca.</p>
-<p><strong>Uma vez por dia, por dono.</strong> Com dois gatos perto, você ganha <strong>um</strong> presente, não dois.</p>
-<p><strong>Ele ganha XP de Caça toda vez que a entrega dá certo</strong>, e é assim que um gato bem cuidado se treina sozinho até o nível em que nunca mais falha.</p>
-<p><strong>Quando não vem nada:</strong> gato com <strong>fome ou sede em 75% ou mais</strong>, doente, desobediente ou em pânico não sai. Falha calada, sem aviso na tela. Se o presente parou, olhe as barras dele.</p>
-<blockquote class="quote"><strong>É diferente do truque <span class="ig">Buscar enquanto você dorme</span></strong> (Obediência 10), que traz um <strong>item do chão</strong>. Os dois disparam ao acordar e não competem: um gato de Obediência 10 faz <strong>os dois</strong> na mesma manhã.</blockquote>
+<p>A diferença pesa: minhoca são 3 calorias, rato são 324 e ainda tira 22 de fome. Sapo serve de isca de pesca.</p>
+<p>Vem um presente por dia, por dono. Com dois gatos perto, você ganha um, não dois.</p>
+<p>O gato ganha XP de Caça toda vez que a entrega dá certo, então um gato bem cuidado sobe sozinho.</p>
+<p>Gato com fome ou sede em 75% ou mais, doente, desobediente ou em pânico não sai. A falha é calada, sem aviso na tela. Se o presente parou, olhe as barras dele.</p>
+<blockquote class="quote">O truque <strong><span class="ig">Buscar enquanto você dorme</span></strong> (Obediência 10) é outra coisa: traz um item do chão. Os dois disparam ao acordar e não competem. Um gato de Obediência 10 faz os dois na mesma manhã.</blockquote>
 <p><strong>Moodle: <span class="ig">Olho de Gato</span></strong></p>
 <blockquote class="quote quote-game"><em>"Seu gato enxerga o que você não enxerga. Enquanto estiver alimentado, com água e ligado a você, o escuro deixa de esconder o que você procura: forragear de noite passa a render quase como de dia."</em></blockquote>
-<p><strong>Forragear no escuro deixa de ser inútil.</strong> No breu, o jogo derruba o seu alcance de forrageio para <strong>1,5 tile</strong>: na prática você precisa estar em cima do ícone para vê-lo. Com o gato por perto, a madrugada passa a render cerca de <strong>60% do alcance que você teria de dia</strong>.</p>
-<p>Repare que isso é um <strong>degrau, não um aumento gradual</strong>: sem gato você está do lado ruim do corte e praticamente não forrageia à noite; com gato você atravessa para o outro lado. É a diferença entre não dar e dar.</p>
-<p><strong>Para quem é:</strong> para quem joga de madrugada, para quem quer ser avisado o mais cedo possível sem anunciar a própria posição, e para quem quer carne pequena sem levar um cão grande junto. <strong>Não</strong> é para quem quer um guarda: leve um cão junto se for sair da cidade.</p>
+<p>No breu, o jogo derruba o alcance de forrageio para 1,5 tile, e você precisa estar quase em cima do ícone para vê-lo. Com o gato por perto, a madrugada rende cerca de 60% do alcance que você teria de dia.</p>
+<p>O ganho vem de uma vez, não aos poucos.</p>
+<p><strong>Para quem é:</strong> quem joga de madrugada, quem quer o aviso mais cedo possível sem denunciar a própria posição e quem quer carne pequena sem carregar um cão grande. Não serve de guarda: leve um cão junto se for sair da cidade.</p>
 <h2 id="6-tabelas-comparativas">6. Tabelas comparativas</h2>
 <h3 id="velocidade-de-aprender">Velocidade de aprender</h3>
-<p>Quanto maior, mais rápido. <strong>1.0 é a velocidade normal.</strong></p>
+<p>Quanto maior o número, mais rápido o cão aprende. A velocidade normal é 1.0.</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Faro</th>
@@ -1012,7 +1008,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Pastor Alemão</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
@@ -1022,14 +1018,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.5</td>
 <td>1.0</td>
 <td>1.2</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
-<td><strong>0.8</strong></td>
+<td>0.8</td>
 <td>1.5</td>
 <td>1.0</td>
 </tr>
@@ -1039,12 +1035,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.0</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 <td>1.0</td>
 <td>1.2</td>
@@ -1052,7 +1048,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Doberman</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
@@ -1062,14 +1058,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.2</td>
 <td>1.0</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>Pug</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
 <td>1.0</td>
 </tr>
@@ -1077,12 +1073,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Gato</td>
 <td>1.5</td>
 <td>-</td>
-<td><strong>0.7</strong></td>
-<td><strong>2.0</strong></td>
+<td>0.7</td>
+<td>2.0</td>
 <td>-</td>
 </tr>
 </tbody></table></div>
-<p>O traço no Gato não é <span class="ig">aprende devagar</span>, é <strong>não tem a habilidade</strong>: Combate e Pastoreio não existem para ele e nem aparecem na janela.</p>
+<p>O traço no Gato quer dizer que ele não tem a habilidade: Combate e Pastoreio não aparecem na janela dele.</p>
 <h3 id="combate">Combate</h3>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
@@ -1093,16 +1089,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Pug</td>
-<td><strong>a mais fraca</strong></td>
-<td><strong>0,65x</strong></td>
-<td><strong>Não</strong></td>
-<td><strong>Não</strong></td>
+<td>a mais fraca</td>
+<td>0,65x</td>
+<td>Não</td>
+<td>Não</td>
 </tr>
 <tr>
 <td>Caramelo</td>
 <td>fraca</td>
-<td><strong>1x</strong> (referência)</td>
-<td><strong>Não</strong></td>
+<td>1x (referência)</td>
+<td>Não</td>
 <td>Sim</td>
 </tr>
 <tr>
@@ -1110,7 +1106,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>fraca</td>
 <td>1,3x</td>
 <td>Sim</td>
-<td><strong>Não</strong></td>
+<td>Não</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1136,29 +1132,29 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Doberman</td>
 <td>média</td>
-<td><strong>2,6x</strong></td>
+<td>2,6x</td>
 <td>Sim</td>
 <td>Sim</td>
 </tr>
 <tr>
 <td>Pastor Alemão</td>
-<td><strong>forte</strong></td>
-<td><strong>2,6x</strong></td>
+<td>forte</td>
+<td>2,6x</td>
 <td>Sim</td>
 <td>Sim</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>forte</strong></td>
-<td><strong>2,6x</strong></td>
+<td>forte</td>
+<td>2,6x</td>
 <td>Sim</td>
 <td>Sim</td>
 </tr>
 </tbody></table></div>
-<p>O Doberman chega ao topo, mas parte de bem mais baixo: ele começa com cerca de <strong>dois terços</strong> da mordida de um Rottweiler e só empata no nível 10.</p>
-<p><strong>O Gato fica fora desta tabela</strong> porque não luta.</p>
+<p>O Doberman começa com cerca de dois terços da mordida de um Rottweiler.</p>
+<p>O Gato fica fora desta tabela porque não luta.</p>
 <h3 id="nervo-na-luta">Nervo na luta</h3>
-<p>Quanto <strong>menor</strong> o número, mais frio o cão fica brigando.</p>
+<p>Quanto menor o número, mais frio o cão fica brigando.</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Estresse acumulado brigando</th>
@@ -1166,18 +1162,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Pastor Alemão</td>
-<td><strong>0,20</strong> (o mais frio)</td>
-<td><strong>0,90</strong> (o mais alto)</td>
+<td>0,20 (o mais frio)</td>
+<td>0,90 (o mais alto)</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>0,20</strong></td>
-<td><strong>0,90</strong></td>
+<td>0,20</td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25</td>
-<td><strong>0,90</strong></td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1202,18 +1198,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Pug</td>
 <td>0,90</td>
-<td><strong>0,70</strong> (o mais baixo)</td>
+<td>0,70 (o mais baixo)</td>
 </tr>
 <tr>
 <td>Caramelo</td>
-<td><strong>1,00</strong> (o mais nervoso)</td>
-<td><strong>0,80</strong></td>
+<td>1,00 (o mais nervoso)</td>
+<td>0,80</td>
 </tr>
 </tbody></table></div>
-<p>Um cão que entra em pânico <strong>para de lutar, de vigiar e de fazer truque</strong>. Por isso esta tabela importa tanto quanto o dano: adianta pouco morder forte se ele trava antes.</p>
-<p><strong>O Gato também fica fora</strong>, porque não briga, mas ele tem o <strong>segundo pior gene oculto de estresse do mod</strong>, atrás só do Caramelo. Um gato em pânico <strong>para de vigiar e para de trazer o presente</strong>.</p>
+<p>Um cão em pânico para de lutar, de vigiar e de fazer truque. Um cão de mordida forte que entra em pânico cedo rende menos que um cão mais fraco que aguenta a briga inteira.</p>
+<p>O Gato também fica fora da tabela, mas o estresse dele é o segundo pior do mod, atrás só do Caramelo. Um gato em pânico para de vigiar e de trazer o presente.</p>
 <h3 id="características-faixas-de-nascimento">Características (faixas de nascimento)</h3>
-<p>Quanto maior a faixa, melhor o cão pode nascer. Um valor abaixo de 0,34 aparece como <strong>Baixa</strong> na janela, acima de 0,66 como <strong>Alta</strong>, e o meio como <strong>Média</strong>.</p>
+<p>Quanto maior a faixa, melhor o cão pode nascer. Abaixo de 0,34 a janela mostra <span class="ig">Baixa</span>, acima de 0,66 mostra <span class="ig">Alta</span>, e o meio aparece como <span class="ig">Média</span>.</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Força</th>
@@ -1222,15 +1218,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Pug</td>
-<td><strong>0,00 a 0,10</strong></td>
+<td>0,00 a 0,10</td>
 <td>0,05 a 0,20</td>
-<td><strong>0,00 a 0,15</strong></td>
+<td>0,00 a 0,15</td>
 </tr>
 <tr>
 <td>Gato</td>
-<td><strong>0,00 a 0,10</strong></td>
-<td><strong>0,00 a 0,15</strong></td>
-<td><strong>0,00 a 0,15</strong></td>
+<td>0,00 a 0,10</td>
+<td>0,00 a 0,15</td>
+<td>0,00 a 0,15</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1253,13 +1249,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Labrador</td>
 <td>0,25 a 0,45</td>
-<td><strong>0,10 a 0,25</strong></td>
+<td>0,10 a 0,25</td>
 <td>0,25 a 0,45</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25 a 0,45</td>
-<td><strong>0,35 a 0,55</strong></td>
+<td>0,35 a 0,55</td>
 <td>0,20 a 0,40</td>
 </tr>
 <tr>
@@ -1276,20 +1272,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>0,55 a 0,80</strong></td>
+<td>0,55 a 0,80</td>
 <td>0,10 a 0,30</td>
 <td>0,40 a 0,60</td>
 </tr>
 </tbody></table></div>
-<p>Leitura rápida:</p>
 <ul>
-<li><strong>O Caramelo sempre mostra <span class="ig">Baixa</span> nas três.</strong> Não existe Caramelo bom.</li>
-<li><strong>O Pug também</strong>, e a faixa de Força dele é ainda menor. Não existe Pug forte.</li>
-<li><strong>O Gato empata com o Pug na menor Força do mod.</strong> Não existe gato forte, e é por isso que o alforje dele é sempre 2.</li>
-<li><strong>O Husky é o único que costuma mostrar <span class="ig">Alta</span> em Força.</strong></li>
-<li><strong>Agressividade sai sempre <span class="ig">Baixa</span></strong> no Golden, no Husky e no Labrador. É o normal deles, não azar.</li>
+<li>O Caramelo mostra <span class="ig">Baixa</span> nas três.</li>
+<li>O Pug também, e a faixa de Força dele é ainda menor.</li>
+<li>O Gato empata com o Pug na menor Força do mod.</li>
+<li>O Husky é o único que costuma mostrar <span class="ig">Alta</span> em Força.</li>
+<li>Agressividade sai <span class="ig">Baixa</span> no Golden, no Husky e no Labrador.</li>
 <li>Golden e Doberman também caem em <span class="ig">Baixa</span> com frequência em Força e Resistência.</li>
-<li><strong>Pastor Alemão e Rottweiler</strong> são os únicos que mostram <span class="ig">Média</span> nas três quase sempre.</li>
+<li>Pastor Alemão e Rottweiler são os únicos que mostram <span class="ig">Média</span> nas três quase sempre.</li>
 </ul>
 <h3 id="alforje">Alforje</h3>
 <div class="tw"><table><thead><tr>
@@ -1298,11 +1293,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Gato</strong></td>
-<td><strong>2</strong> (fixo)</td>
+<td>2 (fixo)</td>
 </tr>
 <tr>
 <td><strong>Pug</strong></td>
-<td><strong>2 a 3</strong></td>
+<td>2 a 3</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1318,7 +1313,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td><strong>13 a 16</strong></td>
+<td>13 a 16</td>
 </tr>
 </tbody></table></div>
 <h3 id="ninhada">Ninhada</h3>
@@ -1328,7 +1323,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Caramelo</strong>, Gato</td>
-<td><strong>2 a 4</strong></td>
+<td>2 a 4</td>
 </tr>
 <tr>
 <td>Border Collie</td>
@@ -1343,7 +1338,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 a 2</td>
 </tr>
 </tbody></table></div>
-<p>O tamanho da ninhada segue a <strong>raça da mãe</strong>, não a do pai.</p>
+<p>A raça do pai não conta.</p>
 <h3 id="onde-encontrar-cada-raça">Onde encontrar cada raça</h3>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
@@ -1381,11 +1376,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>12%</td>
 </tr>
 <tr>
-<td>Caramelo</td>
-<td>Casa residencial</td>
-<td>10%</td>
-</tr>
-<tr>
 <td>Husky</td>
 <td>Pet shop, veterinário</td>
 <td>10%</td>
@@ -1396,50 +1386,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>10%</td>
 </tr>
 <tr>
-<td>Labrador</td>
+<td>Caramelo</td>
 <td>Casa residencial</td>
-<td>5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td>Pug</td>
 <td>Casa residencial</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>Golden Retriever</td>
-<td>Casa residencial</td>
-<td>2,5%</td>
-</tr>
-<tr>
-<td>Rottweiler</td>
-<td>Casa residencial</td>
-<td>2,5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
 <td>Pet shop, veterinário</td>
-<td><strong>2,4%</strong> por pelagem</td>
+<td>2,4% por pelagem</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
 <td>Loja, mercado, lanchonete</td>
-<td><strong>2%</strong> por pelagem</td>
+<td>2% por pelagem</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
 <td>Casa residencial</td>
-<td><strong>2%</strong> por pelagem</td>
+<td>2% por pelagem</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td>Casa residencial, <strong>só no inverno</strong></td>
+<td>Casa residencial, só no inverno</td>
 <td>1,25%</td>
 </tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
 </tbody></table></div>
-<p>As chances de cão escalam junto com a opção de sandbox <strong><span class="ig">Multiplicador de spawn de cães</span></strong>. As de gato não: ele tem o próprio controle, <strong><span class="ig">Multiplicador de spawn de gatos</span></strong>, então baixar ou desligar os cães vira-lata não mexe mais na quantidade de gato do mundo.</p>
-<p>Lembre: a decisão é tomada <strong>uma vez por prédio</strong> e fica salva. Voltar num lugar já explorado não gera cão novo.</p>
+<p>As chances de cão escalam com a opção de sandbox <strong><span class="ig">Multiplicador de spawn de animais</span></strong>. As de gato seguem outra opção, <strong><span class="ig">Multiplicador de spawn de gatos</span></strong>, então baixar ou desligar os cães vira-lata não muda a quantidade de gato no mundo.</p>
+<p>O sorteio acontece uma vez por prédio e o resultado fica salvo.</p>
 <h3 id="nomes-internos-das-raças">Nomes internos das raças</h3>
-<p>Mods de spawn e o modo debug pedem o <strong>nome interno</strong> do cão, que não é o nome que aparece na tela. São estes:</p>
+<p>Mods de spawn e o modo debug pedem o nome interno do cão, que é diferente do nome que aparece na tela:</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Macho</th>
@@ -1546,44 +1541,44 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_tuxedo</code></td>
 </tr>
 </tbody></table></div>
-<p>Macho e fêmea são <strong>tipos diferentes</strong>, não uma opção do mesmo tipo. As cinco raças de addon só existem se o addon daquela raça estiver instalado.</p>
-<p><strong>As cinco pelagens de gato dividem o mesmo tipo</strong> (<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>) e se distinguem só pelo <code>breed</code>, porque o modelo é o mesmo e só a textura muda. Repare que aqui o <code>breed</code> leva sublinhado (<code>cat_white</code>), diferente do resto do mod.</p>
+<p>Macho e fêmea são tipos diferentes, não uma opção do mesmo tipo. As cinco raças de addon só existem com o addon daquela raça instalado.</p>
+<p>As cinco pelagens de gato dividem o mesmo tipo e se distinguem só pelo <code>breed</code>: o modelo é o mesmo e só a textura muda. Aqui o <code>breed</code> leva sublinhado (<code>cat_white</code>), diferente do resto do mod.</p>
 <h2 id="7-moodles-a-lista-completa">7. Moodles: a lista completa</h2>
-<p>Os moodles de cão aparecem numa <strong>coluna própria, à esquerda dos seus moodles normais</strong>.</p>
+<p>Os moodles de cão aparecem numa coluna própria, à esquerda dos seus moodles normais.</p>
 <h3 id="a-regra-que-vale-para-todos-os-moodles-de-raça">A regra que vale para todos os moodles de raça</h3>
-<p>O bônus <strong>só existe</strong> se <strong>todas</strong> estas condições forem verdade:</p>
+<p>O bônus só existe quando todas estas condições valem ao mesmo tempo:</p>
 <div class="tw"><table><thead><tr>
 <th>Condição</th>
 <th>Detalhe</th>
 </tr></thead><tbody>
 <tr>
-<td>O cão está <strong>perto</strong></td>
-<td>Dentro de <strong>8 tiles</strong> e <strong>no mesmo andar</strong></td>
+<td><strong>O cão está perto</strong></td>
+<td>Dentro de 8 tiles e no mesmo andar</td>
 </tr>
 <tr>
-<td>Ele é <strong>seu</strong></td>
+<td><strong>Ele é seu</strong></td>
 <td>Cão de outro jogador não dá nada</td>
 </tr>
 <tr>
-<td>Ele <strong>não está desobediente</strong></td>
+<td><strong>Ele não está desobediente</strong></td>
 <td>Lealdade acima do piso</td>
 </tr>
 <tr>
-<td>Ele <strong>não está intoxicado</strong></td>
+<td><strong>Ele não está intoxicado</strong></td>
 <td>Nada de comida ruim</td>
 </tr>
 <tr>
-<td>Ele <strong>não está com fome</strong></td>
+<td><strong>Ele não está com fome</strong></td>
 <td>Barra de fome abaixo de 75%</td>
 </tr>
 <tr>
-<td>Ele <strong>não está com sede</strong></td>
+<td><strong>Ele não está com sede</strong></td>
 <td>Barra de sede abaixo de 75%</td>
 </tr>
 </tbody></table></div>
-<p><strong>Falhando qualquer uma, o moodle desliga.</strong> Cão maltratado não rende bônus nenhum. Este é o mecanismo central do mod: <strong>você não ganha nada de graça de um cão que você não cuida.</strong></p>
-<blockquote class="quote"><strong>Com vários cães perto, só conta o mais próximo.</strong> O mod escolhe um cão só e mostra o moodle daquela raça. Não dá para empilhar Coragem do Pastor com Aquecido do Husky ao mesmo tempo.</blockquote>
-<p>O moodle continua valendo enquanto o cão viaja <strong>no seu colo ou no carro com você</strong>.</p>
+<p>Se qualquer uma falhar, o moodle desliga.</p>
+<blockquote class="quote">Com vários cães perto, só conta o mais próximo, então Coragem do Pastor e Aquecido do Husky não somam.</blockquote>
+<p>O moodle continua valendo enquanto o cão viaja no seu colo ou no carro com você.</p>
 <h3 id="os-moodles-de-raça">Os moodles de raça</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
@@ -1593,52 +1588,52 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Boa Companhia</strong></td>
 <td>Caramelo</td>
-<td>Derruba <strong>Infelicidade e Tédio</strong></td>
+<td>Derruba Infelicidade e Tédio</td>
 </tr>
 <tr>
 <td><strong>Coragem</strong></td>
 <td>Pastor Alemão</td>
-<td>Derruba <strong>Pânico</strong> (o efeito mais forte do mod base)</td>
+<td>Derruba Pânico (o efeito mais forte do mod base)</td>
 </tr>
 <tr>
 <td><strong>Faro Apurado</strong></td>
 <td>Golden Retriever</td>
-<td><strong>+20% de XP</strong> em Forrageio, Armadilhas e Mira, <strong>+4 tiles</strong> de visão de forrageio</td>
+<td>+20% de XP em Forrageio, Armadilhas e Mira, +4 tiles de visão de forrageio</td>
 </tr>
 <tr>
 <td><strong>Aquecido</strong></td>
 <td>Husky</td>
-<td><strong>+50% de XP</strong> em Força, recupera fôlego, e vira <strong>fonte de calor</strong> no frio extremo</td>
+<td>+50% de XP em Força, recupera fôlego e vira fonte de calor no frio extremo</td>
 </tr>
 <tr>
 <td><strong>Instinto de Pastor</strong></td>
 <td>Border Collie</td>
-<td><strong>+20% de XP</strong> em Cuidado Animal e Agricultura, e <strong>acalma o gado ao seu redor</strong></td>
+<td>+20% de XP em Cuidado Animal e Agricultura, e acalma o gado ao seu redor</td>
 </tr>
 <tr>
 <td><strong>Linha de Frente</strong></td>
 <td>Rottweiler</td>
-<td>Devolve <strong>35% do fôlego</strong> de cada golpe corpo a corpo. <strong>Só enquanto ele estiver brigando</strong></td>
+<td>Devolve 35% do fôlego de cada golpe corpo a corpo, só enquanto ele estiver brigando</td>
 </tr>
 <tr>
 <td><strong>Mira Firme</strong></td>
 <td>Doberman</td>
-<td>Drena seu <strong>estresse</strong>, <strong>-45% de recuo</strong> por tiro, <strong>+15% de velocidade de recarga</strong></td>
+<td>Drena seu estresse, -45% de recuo por tiro, +15% de velocidade de recarga</td>
 </tr>
 <tr>
 <td><strong>Boca Macia</strong></td>
 <td>Labrador</td>
-<td>Entrega o abate <strong>desde o Caça 3</strong>, insiste 3x mais, <strong>60% de chance de item extra</strong>, <strong>+20% de XP</strong> em Açougue e Lâmina Curta</td>
+<td>Entrega o abate desde o Caça 3, insiste 3x mais, 60% de chance de item extra, +20% de XP em Açougue e Lâmina Curta</td>
 </tr>
 <tr>
 <td><strong>Sua Sombra</strong></td>
 <td>Pug</td>
-<td>Derruba <strong>Tristeza, Tédio e Estresse</strong>, e mais rápido que qualquer outro cão. <strong>Desliga no calor</strong></td>
+<td>Derruba Tristeza, Tédio e Estresse, mais rápido que qualquer outro cão. Desliga no calor</td>
 </tr>
 <tr>
 <td><strong>Olho de Gato</strong></td>
 <td>Gato</td>
-<td><strong>Forragear no escuro deixa de ser inútil</strong>: a madrugada rende cerca de 60% do alcance de dia, contra 1,5 tile sem ele</td>
+<td>Forrageio no escuro passa a funcionar: a madrugada rende cerca de 60% do alcance de dia, contra 1,5 tile sem ele</td>
 </tr>
 </tbody></table></div>
 <h3 id="os-moodles-que-qualquer-raça-dá">Os moodles que qualquer raça dá</h3>
@@ -1664,54 +1659,54 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Bem Descansado</strong></td>
-<td>Você acordou tendo dormido a <strong>8 tiles ou menos</strong> do cão</td>
-<td>Derruba <strong>Pânico, Estresse, Cansaço, Tristeza e Tédio</strong> por <strong>2 horas de jogo</strong></td>
+<td>Você acordou tendo dormido a 8 tiles ou menos do cão</td>
+<td>Derruba Pânico, Estresse, Cansaço, Tristeza e Tédio por 2 horas de jogo</td>
 </tr>
 </tbody></table></div>
-<p><strong><span class="ig">Bem Descansado</span> é o único que não depende do cão continuar perto.</strong> É um cronômetro: uma vez ligado, vale as duas horas mesmo que você saia. E ele não passa pelo filtro de cuidado, então funciona até com um cão maltratado. Vale a pena dormir do lado do cão <strong>sempre</strong>. Os três avisos de fome, sede e intoxicação também ignoram o filtro de cuidado.</p>
+<p><strong><span class="ig">Bem Descansado</span></strong> é o único que não depende do cão continuar perto. Ele também ignora o filtro de cuidado, então funciona até com um cão maltratado. Os três avisos de fome, sede e intoxicação ignoram o filtro do mesmo jeito.</p>
 <h2 id="8-características-os-genes">8. Características (os genes)</h2>
-<p>Além da raça, cada cão tem <strong>três características</strong> mostradas na janela, na seção <strong><span class="ig">Características</span></strong>. Elas são sorteadas <strong>no momento em que você domestica o cão</strong>, dentro da faixa da raça, e <strong>nunca mudam</strong>.</p>
-<blockquote class="quote quote-game"><em>"Genes inatos, fixos para a vida toda, sorteados quando o cão é domesticado e variando de um para outro. Diferente das habilidades, nunca mudam com o treino; são a natureza bruta com que este cão nasceu."</em></blockquote>
+<p>Além da raça, cada cão tem três características, mostradas na janela dele na seção <strong><span class="ig">Características</span></strong>. Elas são sorteadas quando você domestica o cão, dentro da faixa da raça, e não mudam depois.</p>
+<blockquote class="quote quote-game"><em><span class="ig">Os genes variam de um animal para outro, mesmo dentro da mesma raça. Nunca sobem.</span></em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>Característica</th>
 <th>O que faz</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Força</strong></td>
-<td>Aumenta a <strong>força da mordida</strong> e, principalmente, a <strong>capacidade do alforje</strong></td>
+<td>Aumenta a força da mordida e, principalmente, a capacidade do alforje</td>
 </tr>
 <tr>
 <td><strong>Agressividade</strong></td>
-<td>Faz ele <strong>ganhar XP de Combate mais rápido</strong>. <strong>Não</strong> muda quando ele decide lutar ou fugir</td>
+<td>Faz ele ganhar XP de Combate mais rápido. Não muda quando ele decide lutar ou fugir</td>
 </tr>
 <tr>
 <td><strong>Resistência</strong></td>
-<td>Faz ele <strong>acumular menos estresse</strong> na luta</td>
+<td>Faz ele acumular menos estresse na luta</td>
 </tr>
 </tbody></table></div>
-<p>Existe ainda um <strong>quarto gene, de estresse geral, que não aparece na janela</strong>. Ele multiplica todo o estresse que o cão pega brigando. O Caramelo tem o pior de todos, o Pastor Alemão e o Husky os melhores.</p>
-<p><strong>Atenção:</strong> abaixo de 34% o rótulo é <strong>Baixa</strong>, entre 34% e 66% é <strong>Média</strong> e acima de 66% é <strong>Alta</strong>, numa escala absoluta, <strong>não</strong> relativa à raça. Por isso um Caramelo mostra <span class="ig">Baixa</span> nas três <strong>sempre</strong>, e não existe Caramelo excepcional. E por isso o Husky é praticamente o único cão que você vai ver com <span class="ig">Alta</span> em Força.</p>
+<p>Existe ainda um quarto gene, de estresse geral, que não aparece na janela. Ele multiplica todo o estresse que o cão pega brigando. O Caramelo tem o pior de todos, o Pastor Alemão e o Husky os melhores.</p>
+<p>O rótulo da janela usa a mesma escala para todas as raças: abaixo de 34% é <strong><span class="ig">Baixa</span></strong>, entre 34% e 66% é <strong><span class="ig">Média</span></strong> e acima de 66% é <strong><span class="ig">Alta</span></strong>. Por isso um Caramelo mostra <span class="ig">Baixa</span> nas três, sempre.</p>
 <h3 id="quanto-isso-importa-de-verdade">Quanto isso importa de verdade</h3>
-<p>Os genes mexem em <strong>até 15% para cada lado</strong> no dano e no XP de combate, e em até 10 pontos percentuais na resistência ao estresse. <strong>A raça pesa muito mais que o gene.</strong></p>
-<p>A exceção é o <strong>alforje</strong>: aí o gene de Força é o fator principal, e a diferença entre um cão fraco e um forte da mesma raça é real.</p>
-<p><strong>Não existe como treinar um gene.</strong> A única forma de melhorar é <a href="#9-mestiços-cruzando-raças-diferentes">cruzar cães</a>.</p>
+<p>Os genes mexem em até 15% para cada lado no dano e no XP de combate, e em até 10 pontos percentuais na resistência ao estresse. A diferença entre uma raça e outra é bem maior que isso.</p>
+<p>A exceção é o alforje: aí o gene de Força é o fator principal.</p>
+<p>A única forma de melhorar um gene é <a href="#9-mestiços-cruzando-raças-diferentes">cruzar cães</a>.</p>
 <h2 id="9-mestiços-cruzando-raças-diferentes">9. Mestiços: cruzando raças diferentes</h2>
-<p>Quando um macho e uma fêmea de raças diferentes têm filhotes, sai um <strong>mestiço</strong>.</p>
+<p>Quando um macho e uma fêmea de raças diferentes têm filhotes, sai um mestiço.</p>
 <h3 id="o-que-acontece-com-o-filhote">O que acontece com o filhote</h3>
-<p><strong>A linhagem é a média dos pais.</strong> Caramelo com Pastor Alemão dá um filhote 50/50. Cruzar esse filhote com um Pastor puro dá 25% Caramelo, 75% Pastor. E assim por diante, geração após geração.</p>
-<p><strong>A aparência é UMA das raças, sorteada com peso na linhagem.</strong> Um filhote 50/50 nasce com a cara de um Pastor <strong>ou</strong> de um Caramelo, nunca de uma mistura visual. Quanto mais a linhagem pende para um lado, maior a chance de sair com a cara daquele lado.</p>
-<blockquote class="quote"><strong>E aqui está o ponto que confunde todo mundo:</strong> a raça que saiu no sorteio é a raça <strong>funcional</strong> do cão. Um mestiço 50% Husky / 50% Pastor que nasceu com cara de Husky <strong>é um Husky para todos os efeitos</strong>: moodle Aquecido, velocidade de aprender do Husky, alforje de Husky. A mistura não faz ele ficar no meio-termo em nada disso.</blockquote>
-<p><strong>Os genes ficam no meio-termo dos pais</strong>, com uma variação de mais ou menos 6% para cada lado.</p>
-<p><strong>E é aqui que a mestiçagem realmente vale a pena:</strong> a faixa de gene do filhote passa a ser a <strong>união</strong> das faixas das raças na linhagem. Um mestiço Caramelo + Husky pode nascer com qualquer Força entre 0,00 e 0,80, ou seja, ele <strong>pode furar o teto do Caramelo</strong>. Cruzando os cães mais fortes de cada ninhada, você sobe a linhagem inteira ao longo das gerações.</p>
-<p><strong>O que o filhote NÃO herda:</strong> nada de habilidade. Ele nasce com <strong>nível 0 nas cinco</strong>, sempre. O que ele herda da raça é a <strong>velocidade de aprender</strong>, não o aprendizado.</p>
+<p>A linhagem é a média dos pais. Caramelo com Pastor Alemão dá um filhote 50/50. Cruzar esse filhote com um Pastor puro dá 25% Caramelo, 75% Pastor, e assim por diante a cada geração.</p>
+<p>A aparência é uma das raças da linhagem, sorteada com peso na porcentagem. Um filhote 50/50 nasce com a cara de um Pastor ou de um Caramelo, nunca com uma mistura visual.</p>
+<blockquote class="quote">A raça que saiu no sorteio é a raça funcional do cão. Um mestiço 50% Husky / 50% Pastor que nasceu com cara de Husky é um Husky para todos os efeitos: moodle Aquecido, velocidade de aprender do Husky, alforje de Husky.</blockquote>
+<p>Os genes ficam no meio-termo dos pais, com uma variação de mais ou menos 6% para cada lado.</p>
+<p>A faixa de gene do filhote passa a ser a união das faixas das raças na linhagem. Um mestiço Caramelo + Husky pode nascer com qualquer Força entre 0,00 e 0,80, acima do teto do Caramelo. Cruzando os cães mais fortes de cada ninhada, a linhagem sobe ao longo das gerações.</p>
+<p>O filhote nasce com nível 0 nas cinco habilidades, sempre. O que ele herda da raça é a velocidade de aprender.</p>
 <h3 id="o-rótulo-mestiço">O rótulo "Mestiço"</h3>
-<p>Um cão com mais de uma raça na linhagem ganha <strong><span class="ig">(Mestiço)</span></strong> ao lado do nome da raça, na janela e no menu de contexto. O <strong>detalhamento percentual</strong> (<span class="ig">50% Husky, 50% Pastor Alemão</span>) aparece <strong>passando o mouse na linha <span class="ig">Raça</span></strong> da janela do cão, junto com a descrição da raça dominante.</p>
+<p>Um cão com mais de uma raça na linhagem ganha <strong><span class="ig">(Mestiço)</span></strong> ao lado do nome da raça, na janela e no menu de contexto. O detalhamento percentual (<span class="ig">50% Husky, 50% Pastor Alemão</span>) aparece passando o mouse na linha <strong><span class="ig">Raça</span></strong> da janela do cão, junto com a descrição da raça dominante.</p>
 <h2 id="10-instalando-os-addons">10. Instalando os addons</h2>
-<p>Rottweiler, Doberman, Labrador, Pug e o gato são <strong>mods separados na Steam</strong>. Cada um:</p>
+<p>Rottweiler, Doberman, Labrador, Pug e o gato são mods separados na Steam. Cada um:</p>
 <ul>
-<li><strong>Precisa do Companion Dogs base instalado e ativo.</strong></li>
-<li>Adiciona <strong>uma raça</strong>, com modelo, textura, moodle e locais de spawn próprios.</li>
-<li>Vem com as <strong>14 traduções</strong>, iguais às do base.</li>
+<li>Precisa do Companion Dogs base instalado e ativo.</li>
+<li>Adiciona uma raça, com modelo, textura, moodle e locais de spawn próprios.</li>
+<li>Vem com as 14 traduções, iguais às do base.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
@@ -1731,45 +1726,45 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">assinar</a></td>
-<td><strong>0.6.6 ou mais novo</strong></td>
+<td>0.6.6 ou mais novo</td>
 </tr>
 <tr>
 <td><strong>CD: Pug</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">assinar</a></td>
-<td><strong>0.6.8 ou mais novo</strong></td>
+<td>0.6.8 ou mais novo</td>
 </tr>
 <tr>
 <td><strong>CD: Cats</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">assinar</a></td>
-<td><strong>0.7.0 ou mais novo</strong></td>
+<td>0.7.0 ou mais novo</td>
 </tr>
 </tbody></table></div>
-<p>E o base, se você ainda não tem: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
-<p>Se o base for antigo demais, o addon <strong>simplesmente não faz nada</strong>: ele não dá erro, não trava o jogo, a raça só não existe. Se você instalou o Labrador e nunca acha um, <strong>confira a versão do base primeiro</strong>.</p>
-<blockquote class="quote"><strong>Não remova um addon de um save que tenha cães vivos daquela raça.</strong> O cão perde o modelo e a textura de referência.</blockquote>
-<p>Instalar um addon <strong>não muda nada nas raças que já existem</strong>. As raças novas entram no sorteio de cruzamento e de mestiçagem automaticamente.</p>
-<p><strong>O gato é a exceção também aqui.</strong> Ele adiciona <strong>cinco</strong> entradas (uma por pelagem) em vez de uma, e o cruzamento dele é <strong>fechado por espécie</strong>: as cinco pelagens cruzam entre si e a ninhada mistura as duas como qualquer mestiçagem, mas nenhuma delas forma par com cão.</p>
+<p>E o base, se você ainda não tem: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>
+<p>Se o base for antigo demais, o addon não faz nada: sem erro, sem travar o jogo, a raça só não existe. Se você instalou o Labrador e nunca acha um, confira a versão do base primeiro.</p>
+<blockquote class="quote">Não remova um addon de um save que tenha cães vivos daquela raça. O cão perde o modelo e a textura de referência.</blockquote>
+<p>Instalar um addon não muda nada nas raças que já existem. As raças novas entram no sorteio de cruzamento e de mestiçagem sozinhas.</p>
+<p>O gato é diferente nisso. Ele adiciona cinco entradas (uma por pelagem) em vez de uma, e o cruzamento dele é fechado por espécie: as cinco pelagens cruzam entre si e a ninhada mistura as duas como qualquer mestiçagem.</p>
 <h2 id="11-perguntas-frequentes-de-raça">11. Perguntas frequentes de raça</h2>
-<p><strong>"Qual é a melhor raça?"</strong> Depende do que você faz. Para <strong>combate</strong>, Pastor Alemão ou Rottweiler. Para <strong>caça</strong>, Labrador. Para <strong>carga</strong>, Husky. Para <strong>fazenda</strong>, Border Collie. Para <strong>arma de fogo</strong>, Doberman. E o <strong>Caramelo</strong> continua sendo excelente pelo moodle, mesmo sendo o mais fraco.</p>
-<p><strong>"Meu Caramelo pode virar forte com treino?"</strong> Não. Ele nunca vai matar um zumbi, por mais que você treine, e as características dele são as piores por definição. O que o treino melhora é a Obediência, o Faro e a Caça, e nisso ele vai igual a qualquer um.</p>
-<p><strong>"Achei dois cães da mesma raça, qual eu pego?"</strong> Você <strong>não tem como saber antes</strong>: o sorteio acontece no momento da domesticação. Domestique e olhe a seção <strong>"Características"</strong> na janela.</p>
-<p><strong>"Peguei um cão com características ruins. Solto e domestico de novo?"</strong> <strong>Não adianta.</strong> Os genes são sorteados <strong>uma vez só, na primeira domesticação</strong>, e o cão os mantém para sempre, mesmo depois de solto e re-domesticado (assim como mantém as habilidades). Para tentar outra rolagem, você precisa <strong>domesticar um cão diferente</strong>. Para melhorar de verdade ao longo do tempo, o caminho é <a href="#9-mestiços-cruzando-raças-diferentes">cruzar</a>.</p>
-<p><strong>"Posso ter dois moodles de raça ao mesmo tempo?"</strong> Não. Só o <strong>cão mais próximo</strong> conta. O <strong>"Bem Descansado"</strong> é a exceção, porque não depende de proximidade.</p>
-<p><strong>"Por que o moodle sumiu?"</strong> Quase sempre é fome ou sede acima de 75%, ou a lealdade tendo caído abaixo do piso. Alimente, dê água e faça carinho. Confira também se o cão está a <strong>8 tiles ou menos e no mesmo andar</strong>.</p>
-<p><strong>"Existe raça mais rápida?"</strong> Não. Nenhuma raça corre mais que outra.</p>
-<p><strong>"Existe Husky de outra cor?"</strong> Não. Cada raça tem uma textura só, e macho e fêmea usam a mesma. O gato parece contrariar isso com cinco pelagens, mas são cinco <strong>raças</strong> separadas, não um gato multicolorido.</p>
-<p><strong>"Cão grande bate mais forte?"</strong> Não. O tamanho é puramente visual. A ligação entre porte e força foi desligada de propósito.</p>
-<p><strong>"Onde acho Doberman?"</strong> <strong>Delegacia.</strong> A chance em prédio militar é maior no papel, mas quase não existe prédio militar no mapa base do jogo.</p>
-<p><strong>"Instalei o Labrador e não acho nenhum."</strong> Confira a versão do Companion Dogs base: o Labrador <strong>exige 0.6.6 ou mais novo</strong> e fica invisível e silencioso num base antigo. Confira também se você já não explorou as casas da região: a decisão de spawn é <strong>uma por prédio, para sempre</strong>.</p>
-<p><strong>"Meu mestiço não tem o moodle das duas raças."</strong> Isso é esperado. Um mestiço é, mecanicamente, <strong>a raça que ele aparenta</strong>. A mistura só muda a faixa de genes dos descendentes e o rótulo percentual na janela.</p>
-<p><strong>"Gato é melhor que cão?"</strong> Nem melhor nem pior: faz outra coisa. Ele vigia mais longe que qualquer cão e em silêncio, e é o único companheiro que resolve forrageio noturno. Em troca, não briga, não carrega quase nada e só cruza com outro gato. Um gato <strong>não substitui</strong> um cão de guarda; ele ocupa um lugar que nenhum cão ocupava.</p>
-<p><strong>"Por que não consigo mandar meu gato vigiar?"</strong> Porque o modo não existe para ele, e por isso o botão nem aparece. Gato não tem Combate: não vigia, não protege você e não ataca zumbi nem quando você apanha do lado dele. Isso não é ajustável.</p>
-<p><strong>"Meu gato saiu correndo sozinho e parou de me obedecer."</strong> Ele viu um rato, e isso é comportamento da raça, não bug. Enquanto corre ele recusa ordem, <strong>menos o Vem</strong>. Volta sozinho, em geral <strong>com o rato</strong>, e não há como desligar.</p>
-<p><strong>"O gato caça o quê, exatamente?"</strong> Roedor e <strong>coelho</strong>, e nada acima disso. Cervo é <strong>invisível</strong> para ele: ele nem aponta. E bicho da sua criação nunca entra na conta: galinha, vaca e qualquer coisa no curral estão fora para todo companheiro, cão ou gato. Para caça grande e para entrega, o cão é Labrador ou Golden.</p>
-<p><strong>"Como faço filhote de gato?"</strong> Do mesmo jeito que se faz filhote de cão: um macho e uma fêmea seus, adultos, leais, bem alimentados e perto um do outro. O que não dá é cruzar gato com cão: o par é por espécie.</p>
-<p><strong>"As cinco pelagens têm números diferentes?"</strong> Não, nenhum. Mesmas habilidades, mesmo moodle, mesmas faixas de característica, mesma voz. A pelagem é só aparência, e qual delas você acha é sorte.</p>
-<p><strong>"Meu gato virou desobediente rápido demais."</strong> É a raça. O vínculo do gato cai <strong>50% mais rápido</strong> que o de um cão quando você some ou relaxa no cuidado, o oposto exato do Pug. Gato exige presença: carinho, comida e água com regularidade.</p>
-<p><strong>"Parei de acordar com presente."</strong> Olhe as barras dele. Gato com <strong>fome ou sede em 75% ou mais</strong>, doente, desobediente ou em pânico não sai de noite, e a falha é silenciosa. Lembre também que é <strong>um por dia e por dono</strong>: dois gatos não rendem dois presentes.</p>
+<p><strong>"Qual é a melhor raça?"</strong> Depende do que você faz. Para combate, Pastor Alemão ou Rottweiler. Para caça, Labrador. Para carga, Husky. Para fazenda, Border Collie. Para arma de fogo, Doberman. O Caramelo tem os piores números, mas o moodle dele continua útil.</p>
+<p><strong>"Meu Caramelo pode virar forte com treino?"</strong> Não. Ele nunca mata zumbi, por mais que treine. O treino sobe Obediência, Faro e Caça, e nisso ele evolui como qualquer outro.</p>
+<p><strong>"Achei dois cães da mesma raça, qual eu pego?"</strong> Não dá para saber antes: as características são sorteadas na hora da domesticação. Domestique e olhe a seção <strong>"Características"</strong> na janela.</p>
+<p><strong>"Peguei um cão com características ruins. Solto e domestico de novo?"</strong> Não adianta. Os genes são sorteados uma vez, na primeira domesticação, e o cão mantém os mesmos depois de solto e domesticado de novo (as habilidades também ficam). Para outra rolagem, domestique um cão diferente. Para melhorar ao longo do tempo, o caminho é <a href="#9-mestiços-cruzando-raças-diferentes">cruzar</a>.</p>
+<p><strong>"Posso ter dois moodles de raça ao mesmo tempo?"</strong> Não. Só o cão mais próximo conta. O <strong>"Bem Descansado"</strong> é a exceção, porque não depende de proximidade.</p>
+<p><strong>"Por que o moodle sumiu?"</strong> Quase sempre é fome ou sede acima de 75%, ou lealdade abaixo do piso. Alimente, dê água e faça carinho. Confira também se o cão está a 8 tiles ou menos e no mesmo andar.</p>
+<p><strong>"Existe raça mais rápida?"</strong> Não.</p>
+<p><strong>"Existe Husky de outra cor?"</strong> Não. Cada raça tem uma textura só, e macho e fêmea usam a mesma. O gato tem cinco pelagens, mas cada uma é uma raça separada.</p>
+<p><strong>"Cão grande bate mais forte?"</strong> Não. O tamanho é só visual e não entra na conta de dano.</p>
+<p><strong>"Onde acho Doberman?"</strong> Delegacia. Prédio militar tem chance um pouco maior, mas quase não existe prédio militar no mapa base do jogo.</p>
+<p><strong>"Instalei o Labrador e não acho nenhum."</strong> Confira a versão do Companion Dogs base: o Labrador precisa da 0.6.6 ou mais nova. Confira também se as casas da região já foram exploradas: o sorteio de spawn acontece uma vez por prédio e não repete.</p>
+<p><strong>"Meu mestiço não tem o moodle das duas raças."</strong> É o esperado. Para as mecânicas, um mestiço é a raça que ele aparenta. A mistura só muda a faixa de genes dos filhotes e o rótulo percentual na janela.</p>
+<p><strong>"Gato é melhor que cão?"</strong> Ele faz outra coisa. Vigia mais longe que qualquer cão, em silêncio, e é o único companheiro que forrageia de noite. Em troca, não briga, carrega quase nada e só cruza com outro gato.</p>
+<p><strong>"Por que não consigo mandar meu gato vigiar?"</strong> O modo não existe para o gato, então o botão não aparece. Gato não tem Combate: não vigia, não protege e não ataca zumbi, nem quando você apanha do lado dele.</p>
+<p><strong>"Meu gato saiu correndo sozinho e parou de me obedecer."</strong> Ele viu um rato. Enquanto corre, ele recusa qualquer ordem, menos o <strong>"Vir aqui"</strong>. Volta sozinho, em geral com o rato, e não tem como desligar isso.</p>
+<p><strong>"O gato caça o quê, exatamente?"</strong> Roedor e coelho. Cervo ele nem aponta. Bicho de criação (galinha, vaca, qualquer coisa no curral) fica fora para todo companheiro, cão ou gato. Para caça grande e para entrega, use Labrador ou Golden.</p>
+<p><strong>"Como faço filhote de gato?"</strong> Do mesmo jeito que filhote de cão: um macho e uma fêmea seus, adultos, leais, bem alimentados e perto um do outro. Gato só cruza com gato.</p>
+<p><strong>"As cinco pelagens têm números diferentes?"</strong> Não. Mesmas habilidades, mesmo moodle, mesmas faixas de característica, mesma voz. Qual delas aparece é sorteio.</p>
+<p><strong>"Meu gato virou desobediente rápido demais."</strong> O vínculo do gato cai 50% mais rápido que o de um cão quando você some ou deixa o cuidado de lado (o Pug é o contrário). Carinho, comida e água com regularidade seguram a lealdade.</p>
+<p><strong>"Parei de acordar com presente."</strong> Olhe as barras dele. Gato com fome ou sede em 75% ou mais, doente, desobediente ou em pânico não sai de noite, e o jogo não avisa. É um presente por dia e por dono.</p>
 <p><strong>"Quero spawnar um cão com outro mod, que nome eu uso?"</strong> O nome interno, não o que aparece na tela. A lista está em <a href="#6-tabelas-comparativas">Tabelas comparativas</a>, no fim da seção.</p></article></main>
 </div>
 

@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -423,16 +423,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#6-犬種を登録する" data-id="6-犬種を登録する">6. 犬種を登録する</a>
 <div class="sub">
-<a class="s3" href="#必須フィールド" data-id="必須フィールド">必須フィールド</a>
-<a class="s3" href="#任意フィールド" data-id="任意フィールド">任意フィールド</a>
-<a class="s3" href="#本能distract" data-id="本能distract">本能：distract</a>
-<a class="s3" href="#声" data-id="声">声</a>
+<a class="s3" href="#必須の項目" data-id="必須の項目">必須の項目</a>
+<a class="s3" href="#任意の項目" data-id="任意の項目">任意の項目</a>
+<a class="s3" href="#本能-distract" data-id="本能-distract">本能: distract</a>
+<a class="s3" href="#鳴き声" data-id="鳴き声">鳴き声</a>
+<a class="s3" href="#食性" data-id="食性">食性</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#7-システムを丸ごと切る" data-id="7-システムを丸ごと切る">7. システムを丸ごと切る</a>
 <div class="sub">
-<a class="s3" href="#種" data-id="種">種</a>
+<a class="s3" href="#種族" data-id="種族">種族</a>
 </div>
 </div>
 <div class="grp">
@@ -444,7 +445,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#10-その動物が現れる場所" data-id="10-その動物が現れる場所">10. その動物が現れる場所</a>
 <div class="sub">
-<a class="s3" href="#建物クラス" data-id="建物クラス">建物クラス</a>
+<a class="s3" href="#建物のクラス" data-id="建物のクラス">建物のクラス</a>
 <a class="s3" href="#すでに使われている接尾辞" data-id="すでに使われている接尾辞">すでに使われている接尾辞</a>
 </div>
 </div>
@@ -469,12 +470,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-mod制作マニュアル">Companion Dogs: Mod制作マニュアル</h1>
 <p>自分のアドオンの作り方。新しい犬種、あるいは種族まるごとを、Companion Dogs に噛み合う別の Workshop Mod として作ります。</p>
-<p>このマニュアルは Mod を書く人向けです。遊ぶだけなら、必要なのは他の二冊のほうです。犬が何をするかは <a href="features.html" class="xlink">機能</a>、犬種そのものは <a href="breeds.html" class="xlink">犬種</a> を見てください。</p>
-<p>Lua が読めること、そして自分の動物のリグ付き・アニメーション付きモデルを持っていることを前提にして います。アート側のパイプラインはここには書きません。第 3 節がモデルファイルの満たすべき条件を挙げ ますが、それ以上には踏み込みません。</p>
-<blockquote class="quote"><strong>これは公開された契約です。</strong> このマニュアルが名前を挙げているものは、すべて Mod の外から呼ばれ るためにあります。ここに名前がないものは内部のもので、どのバージョンでも予告なく変わり得ます。</blockquote>
+<p>このマニュアルは Mod を書く人向けです。遊ぶだけなら、他の二冊を読んでください。犬が何をするかは <a href="features.html" class="xlink">機能</a>、犬種は <a href="breeds.html" class="xlink">犬種</a> です。</p>
+<p>Lua が読めること、動物のリグ付き・アニメーション付きモデルを持っていることを前提にします。アート側 のパイプラインはここでは扱いません。モデルファイルが満たすべき条件は第 3 節に挙げます。</p>
+<blockquote class="quote">このマニュアルが名前を挙げているものはすべて公開された契約であり、Mod の外から呼ばれるためにあり ます。ここに名前がないものは内部のもので、どのリリースでも予告なく変わり得ます。</blockquote>
 <h2 id="1-アドオンとは何か">1. アドオンとは何か</h2>
-<p>アドオンは、<code>require=CompanionDogs</code> を宣言し、ロード時に関数をひとつ呼ぶだけの、ごく普通の Workshop Mod です。追加するのは<strong>犬種ひとつ</strong>（体を共有するなら複数）だけで、それ以外は何もしません。動物が 仲間らしく振る舞うために必要なものは、すでにベース Mod の中にあり、共有されています。</p>
-<p><strong>ベースが持っているもの:</strong></p>
+<p>アドオンは、<code>require=CompanionDogs</code> を宣言し、ロード時に関数をひとつ呼ぶだけの普通の Workshop Mod です。追加するのは犬種ひとつ（体を共有するなら複数）だけで、それ以外は何もしません。</p>
+<p>ベースが持っているもの:</p>
 <ul>
 <li>アニメーションのステートマシン、animset、スケルトン</li>
 <li>追従、パス探索、戦闘、狩り、家畜の世話、見張り、欲求、メンテナンス</li>
@@ -482,17 +483,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>手なずけ、絆、繁殖、子犬、雑種</li>
 <li>サンドボックス設定と、マルチプレイの同期</li>
 </ul>
-<p><strong>あなたのアドオンが持つもの:</strong></p>
+<p>あなたのアドオンが持つもの:</p>
 <ul>
 <li>あなたの動物をカラメロと違うものにする数値</li>
 <li>体のモデル、テクスチャ、肖像、そして moodle があればそのアイコン</li>
 <li>世界のどこで見つかるか</li>
 <li>名前と説明文を、同梱するすべての言語で</li>
 </ul>
-<p>この分担がすべての要点です。犬種パックは数百行の Lua で済みます。難しいところはもう動いているから です。</p>
-<p><strong>ひとつの犬種にひとつの見た目。</strong> 犬種とは、数値の組と見た目ひとつのことです。同じ動物の二色に 違う振る舞いをさせたいなら、それは二つの犬種です。同じ振る舞いの二色が欲しい場合でも、ベースから 見ればやはり二つの犬種であり（名前が二つ、犬舎の項目も二つ）、CD: Cats が五つの毛色でやっているよう に、共有テーブルから書き起こします。</p>
+<p>同じ振る舞いの二色でも、ベースから見れば犬種は二つです（名前が二つ、犬舎の項目も二つ）。CD: Cats が 五つの毛色でやっているように、共有テーブルひとつから書き起こします。</p>
 <h2 id="2-api-のバージョン">2. API のバージョン</h2>
-<p><code>CD.API_VERSION</code> はただの数値です。これまで追加だけで大きくなってきたので、古いバージョンに向けて 書かれたアドオンは、新しいベースでも一行も変えずにロードされ続けます。</p>
+<p><code>CD.API_VERSION</code> はただの数値です。追加だけで大きくなるので、古いバージョンに向けて書かれたアドオン は、新しいベースでも変更なしでロードされ続けます。</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>ベースのバージョン</th>
@@ -528,16 +528,26 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>、<code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>種族ごとのテキストキー（<code>&lt;key&gt;_&lt;species&gt;</code>）、<code>CD.defineGenome</code>、種族に依らない名前</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
 </tbody></table></div>
-<p>ガードに書く数値は、<strong>あなたのアドオンが実際に必要とする一番低い API</strong> です。そしてその表にある ベースのバージョンが、Workshop のページに書くべき数字です。書いていたときにベースがたまたま何だった かではなく、この表から取ってください。開発ビルドにしかないフィールドは、プレイヤーが持っていない フィールドです。</p>
-<p><strong>ないフィールドは黙って無視されます。</strong> それはフィールドが数値なら問題ありません。古いベースでは、 あなたの動物はただ普通の音量で吠えるだけです。フィールドが「禁止」の場合は問題です。決して戦っては いけない猫が、平気で戦い始めてしまいます。つまり、数値は劣化してよく、禁止は劣化してはいけません。 あなたの動物が禁止に依存しているなら、それを導入した API でガードし、それより古いものではアドオン ごと不活性のままにしてください。</p>
+<p>アドオンが必要とする最も低い API でガードし、その表にある対応バージョンを Workshop ページに書いて ください。書いているときにたまたま動かしていたベースの番号を採ってはいけません。開発ビルドにしか ない項目は、プレイヤーの手元にはない項目です。</p>
+<p>ない項目はエラーなしで無視されます。数値の項目ならそれで無害で、古いベースではあなたの動物が普通の 音量で吠えるだけです。ブロックの項目だと問題になります。戦闘ブロックのない猫は、古いベースでは戦い ます。</p>
 <h2 id="3-始める前に必要なもの">3. 始める前に必要なもの</h2>
-<p><strong>スキン済みのモデル。</strong> あなたの動物には <code>media/models_X/Skinned/</code> に置く固有の <code>.glb</code> が必要で、 そのファイルは <strong>21 個の <code>Rac_*</code> クリップを完全に</strong>持っていなければなりません。クリップはモデル ファイル間で受け継がれません。クリップが十五個しかないモデルは、残り六個のどれかを要求された最初の 瞬間に固まる動物になります。モデルはさらに <strong>60 ボーン未満</strong>であり、最上位ノードが単位行列でなけれ ばなりません。そうでないとエンジンが毎フレーム例外を投げ、動物は黒い滲みとして描かれます。</p>
-<p>まだモデルがなくても、<code>CD.applyDogModel</code> をベースの体のどれかに向ければ、それ以外はすべて書いて 試せます。動物はカラメロの見た目になりますが、このマニュアルのすべてのシステムは動きます。</p>
-<p>体の<strong>テクスチャ</strong>と、犬舎ウィンドウ用の<strong>肖像</strong>。</p>
-<p><strong>コードを書く前に決めること:</strong> あなたの動物は*犬種*ですか、それとも*種族*ですか。犬種は数値の違う 犬です。種族は、いくつかの仕事をそもそも持っていない動物です。この違いは見た目の話ではなく、書く フィールドが変わります。第 7 節がその話です。</p>
+<p>動物には <code>media/models_X/Skinned/</code> の下に自分用のスキン付き <code>.glb</code> が要り、21 本の <code>Rac_*</code> アニメー ションクリップが全部そろっている必要があります。クリップはモデルファイル間で継承されません。15 本 しかないモデルは、残り 6 本のどれかを求められた瞬間に固まる動物になります。モデルはさらにボーン 60 本以下で、トップノードが単位行列でなければなりません。そうでないとエンジンが毎フレーム例外を投げ、 動物は黒い染みとして描画されます。任意のクリップがもう 2 本あります。<code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（足を引きずる歩行サイクル）で、犬種定義で <code>limpAnim = true</code> にしたときだけ意味 を持ちます。</p>
+<p>モデルがまだないなら、<code>CD.applyDogModel</code> をベースの体のどれかに向けておけば、それ以外は全部書いて 試せます。動物の見た目はカラメロですが、このマニュアルにあるシステムはすべて動きます。</p>
+<p>体のテクスチャと、犬舎ウィンドウ用の肖像も要ります。</p>
+<p>コードを書き始める前に、あなたの動物が犬種なのか種族なのかを決めてください。犬種は数値の違う犬です。 種族は、いくつかの仕事をそもそも持たない動物です。この選択で書く項目が変わります。第 7 節で扱います。</p>
 <h2 id="4-アドオンのファイル構成">4. アドオンのファイル構成</h2>
-<p>これは公開済みで最も小さいアドオン CD: Pug の、重要な部分だけです。</p>
+<p>これは公開済みで最小のアドオン、CD: Pug の、要点だけを抜いたものです:</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -565,18 +575,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> が肝心な行です。これがあると、ベースの Lua が<strong>すべて</strong>あなたのものより先に 実行されることが、各フェーズで保証されます。まず shared、次に client、最後に server の順です。これが ないと、あなたのファイルが先にロードされることがあり、そうなると <code>CD.</code> の呼び出しはすべて nil への インデックスになります。</p>
-<p><strong><code>versionMin</code> では「Companion Dogs 0.6.8 が必要」と言えません。</strong> あのフィールドは*ゲーム*本体の バージョンのゲートであり、それ以外の何物でもありません。依存 Mod のバージョンを書く mod.info の フィールドは存在しません。ベース側の下限は次節のガードが強制し、プレイヤーには説明文で伝えます。 そこに言葉で書いてください。書かなければ、プレイヤーが受け取る唯一の症状は「動物が一向に現れない」 です。</p>
+<p>大事なのは <code>require=CompanionDogs</code> の行です。これがあると、ベースの Lua がすべて、あなたのどの ファイルよりも先に走ることが保証されます。shared、client、server のどの段階でもです。これがないと あなたのファイルが先にロードされ、<code>CD.</code> の呼び出しはすべて nil への添字になります。</p>
+<p><code>versionMin</code> では「Companion Dogs 0.6.8 以上が必要」と書けません。あの項目はゲーム本体のビルドしか 見ませんし、依存 Mod のバージョンを書く項目は mod.info にありません。ベースの下限は次の節のガードで 強制し、説明文で言葉にしてプレイヤーへ伝えます。そこに書いておかないと、プレイヤーに出る症状は 「動物がいつまでも現れない」だけになります。</p>
 <h2 id="5-バージョンガード">5. バージョンガード</h2>
-<p>これをアドオンのすべての Lua ファイルの先頭に、あなたのアドオンが実際に必要とする数値で置きます。</p>
+<p>アドオンのすべての Lua ファイルの先頭に、あなたのアドオンが必要とする番号を入れて置きます:</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>ベースが無い、あるいは古すぎる場合、ファイルは二行目で戻ります。アドオンはそのとき何もしません。 犬種もスポーンも moodle もなく、ログに一行も出ません。この沈黙は意図的なものです。半分だけロード されるアドオンは、まったくロードされないアドオンより悪い。名前はあるのに振る舞いのない動物が、 プレイヤーの手元に残るからです。</p>
-<p>ガードはファイル単位で、各ファイルは自分が使うものをガードします。<code>PugDefinitions.lua</code> はモデルの ヘルパーを使うので、そちらをガードします。</p>
+<p>ベースがない、または古すぎる場合、ファイルは 2 行目で戻り、アドオンは何もしません。犬種も、スポーン も、moodle も、ログの 1 行も出ません。</p>
+<p>ガードはファイルごとで、各ファイルは自分が使うものでガードします。<code>PugDefinitions.lua</code> はモデルの ヘルパーを使うので、それでガードします:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>グローバルを自分で作らないこと。</strong> アドオンの中の <code>CompanionDogs = CompanionDogs or {}</code> は、 存在しないベースを半端に組み上がったテーブルに変えてしまい、以降のガードが通ってはいけない場面で 通ります。グローバルは読むだけにして、決して書かないでください。</p>
+<p>グローバルを作ってはいけません。アドオンの中の <code>CompanionDogs = CompanionDogs or {}</code> は、ベースが ないという状態を半分だけできたテーブルに変えてしまい、以降のガードが通ってはいけない場面で全部通り ます。</p>
 <h2 id="6-犬種を登録する">6. 犬種を登録する</h2>
-<p><strong>shared</strong> のファイルで、呼び出しはひとつだけです。</p>
+<p>shared のファイルで、呼び出しはひとつだけです:</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -606,20 +616,20 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>この呼び出しが犬種を登録し、三つの動物タイプを登録し、あなたの動物が交配に加わるように繁殖の順序を 組み直し、スポーンの手順を登録します。</p>
-<p>不正な定義は例外を投げずに <code>nil</code> を返すので、間違いがロード全体を巻き込むことはありません。拒否は 必ず名前付きの一行をログに出します。だから犬種をはじめて登録するときは<strong>ログを読んでください</strong>。</p>
-<h3 id="必須フィールド">必須フィールド</h3>
+<p>この呼び出しが犬種を挿入し、その三つの動物タイプを登録し、あなたの動物が交雑に参加できるように繁殖 の順序を組み直し、スポーンの手順を登録します。</p>
+<p>定義が不正なとき、呼び出しは例外を投げずに <code>nil</code> を返すので、ロードはそのまま進みます。却下ごとに、 名前入りの行がログに出ます。</p>
+<h3 id="必須の項目">必須の項目</h3>
 <div class="tw"><table><thead><tr>
-<th>フィールド</th>
-<th>何であるか</th>
+<th>項目</th>
+<th>中身</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>あなたの犬種の識別子。すべての Mod をまたいで一意。公開後は決して変えません。</td>
+<td>犬種の識別子。すべての Mod をまたいで一意。リリース後に変えてはいけません。</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>三つの動物タイプの接頭辞。<code>&lt;接頭辞&gt;pup</code>、<code>&lt;接頭辞&gt;female</code>、<code>&lt;接頭辞&gt;male</code>。<strong>体のメッシュ</strong>を選びます。</td>
+<td>三つの動物タイプの接頭辞: <code>&lt;prefix&gt;pup</code>、<code>&lt;prefix&gt;female</code>、<code>&lt;prefix&gt;male</code>。体のメッシュを選びます。</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
@@ -627,11 +637,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>スキルごとの習得速度。<code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 が標準です。</td>
+<td>スキルごとの習得速度: <code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 が標準。</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>打撃の重さ。カラメロは 0.20、戦う犬種は 1.0 を超えます。</td>
+<td>打撃の重さ。カラメロは 0.20、闘犬種は 1.0 超。</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
@@ -639,49 +649,49 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>四つの遺伝子の生まれつきの範囲。<code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。それぞれ 0 から 1 の中の <code>{ 下限, 上限 }</code> です。</td>
+<td>四つの遺伝子の生まれつきの範囲: <code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。それぞれ 0 から 1 の中の <code>{ low, high }</code>。</td>
 </tr>
 </tbody></table></div>
-<h3 id="任意フィールド">任意フィールド</h3>
+<h3 id="任意の項目">任意の項目</h3>
 <div class="tw"><table><thead><tr>
-<th>フィールド</th>
+<th>項目</th>
 <th>既定値</th>
-<th>何をするか</th>
+<th>効果</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
 <td><code>key</code> と同じ</td>
-<td>エンジンに渡す犬種名で、<strong>テクスチャ</strong>を選びます。犬種ごとに一意。</td>
+<td>エンジンに渡す犬種名。テクスチャを選びます。犬種ごとに一意。</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>説明文のキー。説明を共有する犬種は、まとめて一つのキーに向けます。</td>
+<td>説明文のキー。複数の犬種でひとつのキーを共有できます。</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
 <td>ベースの値</td>
-<td>一回の出産あたりの子犬の <code>{ 下限, 上限 }</code>。</td>
+<td>一度の出産の子の数 <code>{ min, max }</code>。</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false は、ゾンビを削るが決してとどめを刺さない、という意味です。</td>
+<td>false ならゾンビを削りはするが、とどめは決して刺しません。</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
 <td>false</td>
-<td>true でゾンビを倒せるようになります。</td>
+<td>true でゾンビを転ばせられます。</td>
 </tr>
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>一度の戦闘がその動物にとってどれだけストレスになるか。</td>
+<td>戦闘一回で受けるストレスの量。</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
 <td>ベースの値</td>
-<td>戦うのをやめるストレス値。<code>panicImmune = true</code> は「決してやめない」です。</td>
+<td>戦うのをやめるストレスの水準。<code>panicImmune = true</code> なら決してやめません。</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
@@ -691,139 +701,203 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>子犬の見た目の絶対スケール。<strong>小型の犬種は必ず設定してください</strong>。しないと子犬が成犬の大きさで生まれます。</td>
+<td>子の見た目の絶対スケール。小型犬種は設定が必須で、しないと子が成体の大きさで生まれます。</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>最終的な見張り半径にかかる倍率。</td>
+<td>最終的な見張りの半径にかかる倍率。</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>警戒吠えの半径と音量を拡大縮小します。音を大きくするだけで、音を作りはしません。サンドボックスの騒音設定が切ってあれば、どの犬種も吠えでゾンビを引き寄せません。</td>
+<td>警戒吠えの半径と音量にかかる倍率。サンドボックスの騒音設定を切ると、値が何であれどの犬種の吠えもゾンビを引きません。</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>忠誠心の日々の減少にかかる倍率。<code>0</code> なら絆は決して薄れません。</td>
+<td>一日あたりの忠誠の減りにかかる倍率。<code>0</code> なら絆は決して薄れません。</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>その動物は完全警戒に固定されます。飼い主は静かにも無音にも、どこからも変えられません。うるさい警報こそが設計<strong>である</strong>ときに使ってください。</td>
+<td>動物が常に全開の警戒のまま。飼い主はどこでも静かモードや無音モードにできません。</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>獲物を飼い主のところへ運び始める狩りのレベル。</td>
+<td>獲物を飼い主のところまで運ぶようになる狩りレベル。</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>受け渡しを諦めるまで粘るゲーム内分数。</td>
+<td>届けるのを諦めるまで粘るゲーム内の分数。</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
-<td>オフ</td>
-<td><code>{ &lt;種類&gt; = { chance = 0..1, ... } }</code>。モードなしでも、レベルなしでも、勝手に何かを追いかけます。下記参照。</td>
+<td>切</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>。モードもレベルも要らずに、犬種が自分から何かを追いかけます。</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
 <td>ベースの値</td>
-<td>待機アニメーションの窓の長さ、ミリ秒。あなたのクリップが犬のものより短いときに設定します。しないとループが再開して仕草の途中で切れます。</td>
+<td>待機アニメーションの窓の長さ、ミリ秒。犬より短いクリップのときは設定してください。しないとループが再開して仕草が途中で切れます。</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false にすると、待機や警備のあいだ伏せずに立ったままになります。</td>
+<td>false なら待機と警護で伏せずに立ったままになります。</td>
+</tr>
+<tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true で、傷ついた動物が歩くとき足を引きずります。任意のクリップ <code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（<code>Rac_Walk</code> と同じルートモーションを持つ 1.0 秒の歩行サイクル）がモデルにあるときだけ設定してください。クリップがないと動物はその場で固まったまま歩きます。</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
 <td>犬の音</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>。下を参照。</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>。</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>犬のリスト</td>
+<td>食べさせてはいけないもの、その動物にとって肉に数えるもの、飼い葉桶から自分で食べるもの。</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>繁殖は種族ごとに閉じています。第 7 節。</td>
 </tr>
 <tr>
 <td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code></td>
 <td>すべて有効</td>
-<td>構造的な禁止。第 7 節。</td>
+<td>構造そのものを切るブロック。第 7 節。</td>
 </tr>
 </tbody></table></div>
-<p>定義に足した数値やフラグは、<code>CD.breedNumber(animal, フィールド)</code> と <code>CD.breedFlag(animal, フィールド)</code> で読み戻せます。<code>CD.getBreedDef(animal).フィールド</code> を自分で読むより、この二つを使ってください。 欠けたフィールドの扱いをやってくれますし、ベース側が動いても動き続けます。</p>
-<h3 id="本能distract">本能：<code>distract</code></h3>
-<p>ほかのフィールドはどれも、動物に何かが上手であることを求めます。これだけは、注意力が散漫であることを 求めます。</p>
+<p>定義に足した数値やフラグは、<code>CD.getBreedDef(animal).field</code> ではなく <code>CD.breedNumber(animal, field)</code> と <code>CD.breedFlag(animal, field)</code> で読み戻します。この二つは項目がない場合を面倒みますし、ベースが 変わっても動き続けます。</p>
+<h3 id="本能-distract">本能: <code>distract</code></h3>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>これを宣言したブリードは、ときどき何かに気づいて、やっていたことを放り出して追いかけます。<strong>どのモードも 入っていない状態で</strong>やり、待機からでも追従からでも同じで、その間あなたに主導権はありません。命令は服従判定が すでに使っている <code>distracted</code> のメッセージで拒否されて返ります。通る命令は「おいで」だけで、それが打ち切ります。</p>
-<p>これはボーナスではなく、あなたがブリードに与えるコストとして扱ってください。走っているあいだ、動物は飼い主の そばにおらず、見張りもしません。つかまえておくのが難しいことが持ち味のブリードに合います。プレイヤーに 頼ってほしい使役犬には合いません。</p>
-<p>どの種類も同じ任意のつまみを取り、省いたものはMOD既定値に落ちます。</p>
+<p>これを宣言した犬種は、ときどき何かに気づいて、やりかけのことを放り出して追いかけます。追従中だけで なく待機中にもやります。その間、命令は服従判定がすでに使っている <code>distracted</code> の返事で拒まれます。 通るのは「来い」だけで、これは気の散った状態を打ち切ります。</p>
+<p>どの種類も同じ任意のつまみを取ります。書かなかったものは Mod の既定値になります:</p>
 <div class="tw"><table><thead><tr>
-<th>フィールド</th>
-<th>何をするか</th>
+<th>項目</th>
+<th>効果</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1。その種類のトリガーが実際に何かを見つけたときだけ振られます。「25%」のつもりで <code>25</code> と書くとログに名前付きの行を出して拒否されます</td>
+<td>0..1。その種類のきっかけが何かを見つけたときだけ振られます。「25%」のつもりで <code>25</code> と書くと、名前入りの行をログに出して却下されます</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
-<td>トリガーが探すタイル数。その種類が探索を行う場合</td>
+<td>きっかけが探す範囲のタイル数。そもそも探す種類の場合</td>
 </tr>
 <tr>
 <td><code>durationMin</code></td>
-<td>窓が自然に切れるまでのゲーム内分数</td>
+<td>窓がひとりでに切れるまでのゲーム内の分数</td>
 </tr>
 <tr>
 <td><code>cooldownMin</code></td>
-<td>同じ個体がふたたび気を逸らせるまでのゲーム内分数</td>
+<td>同じ動物がまた気を散らせるようになるまでのゲーム内の分数</td>
 </tr>
 </tbody></table></div>
 <h4 id="prey-の種類"><code>prey</code> の種類</h4>
-<p>ベースMODが同梱する唯一の種類です。動物は野生動物を追いかけ、<code>classes</code> がどれに注意を向けるかを選びます。</p>
+<p>ベース Mod が同梱する唯一の種類です。動物は野生動物を追いかけ、どれを数えるかは <code>classes</code> が選び ます:</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>何を宣言しても、次の二つの制限は変わりません。</p>
+<p>何を宣言しようと、二つの制限がかかります:</p>
 <ul>
-<li><strong>あなたの <code>huntMaxPrey</code> を超えることは決してありません。</strong>ここには狩りシステムと同じ絞り込みが効くので、 上限が <code>small</code> のブリードは <code>large</code> を宣言してもシカを追いません。</li>
-<li><strong>レベルの関門が飛ばされるのは <code>tiny</code> だけです。</strong>げっ歯類は狩り0の飼いならしたばかりの動物でも捕まえます。 ネズミ捕りは誰も訓練して身につける技能ではないからです。<code>small</code> を宣言すれば、あなたのブリードはすべてを 放り出してウサギを追いますが、実際に*仕留める*には、ラブラドールに必要なのと同じ狩りレベルが依然として要ります。 本能は何に注意が向くかを決め、訓練は何を倒せるかを決め続けます。この二つ目の制限がなければ、<code>classes</code> は 狩りの階段を消し去る抜け道になってしまいます。</li>
+<li>あなたの <code>huntMaxPrey</code> を超えることは決してありません。<code>small</code> で頭打ちの犬種は、<code>large</code> を宣言し ていても鹿を追いません。</li>
+<li>レベルの門が飛ばされるのは <code>tiny</code> だけです。手なずけたばかりの狩り 0 の動物でも、もうネズミを捕り ます。<code>small</code> を宣言すれば犬種はレベルを問わずウサギを追いますが、仕留めるにはラブラドールと同じ 狩りレベルが要ります。</li>
 </ul>
-<p>サンドボックスの狩りトグルは今も仕留めを決めるのであって、追跡を決めるのではありません。狩りをオフにしても 動物は走りますが、獲物は逃げます。</p>
-<p>こうして仕留めた獲物は通常の回収処理を通ります。つまり、死骸を飼い主のもとへ運ぶか倒れた場所に置いていくかを 決めるのは、あなたのブリードの <code>huntFetchLevel</code> です。<code>0</code> にすれば動物は初日から届けるようになり、これが猫が 死んだネズミを持ってくる理由です。この回収は気の逸れの時間が終わっても続きます。獲物が死んだ時点で動物は再び 命令を受け付けるようになり、帰り道はそのブリード自身の <code>huntDeliverTimeoutMin</code> で動きます。<code>huntFetchLevel</code> に触れなければ既定値の6が効くので、ブリードは本能で追いかけつつ、持ち帰る権利は自分で稼ぐことになります。</p>
+<p>サンドボックスの狩りの切り替えが効くのはとどめだけです。動物は追いはしますが、獲物は逃げます。</p>
+<p>こうして仕留めた獲物は普通の回収に乗るので、飼い主のところへ運ぶかどうかは犬種の <code>huntFetchLevel</code> が決めます。<code>0</code> なら初日から届けます。猫が死んだネズミを持ってくるのはこれです。届ける動きは気が 散った窓より長く続きます。獲物が死んだ時点で動物はまた命令を聞くようになり、帰り道は自分の <code>huntDeliverTimeoutMin</code> で走ります。</p>
 <h4 id="自分の種類を書く">自分の種類を書く</h4>
-<p><code>distract</code> はディスパッチャで、<code>prey</code> は同梱されている種類にすぎません。自分のものを登録してください。</p>
+<p><code>distract</code> はディスパッチャです。自分のものを登録します:</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
     drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
-<p>あとはほかの種類と同じようにブリードで宣言します。<code>distract = { butterfly = { chance = 0.10 } }</code></p>
-<p><code>gate</code> はMODのグローバルなスキャン予算より前に走り、安価な却下はここに置きます。<code>find</code> は予算のあとに走り、 コストはそこにあります。<code>drive</code> は動物をまだ導いているあいだ true を返し、終わったら false を返して窓を 閉じます。あなたのハンドラは自前の <code>pcall</code> の中で走ります。例外を投げた場合、MODはログに名前付きの行を書き、 その種類をそのセッションのあいだ登録解除し、相棒の残りの部分は動いたままにします。</p>
-<p>将来のベース種類のために予約されている、まだ未実装の名前：<strong><code>drink</code></strong>、<strong><code>eat</code></strong>、<strong><code>play</code></strong>。今日これらの 名前で種類を登録することはできますが、ベースが自前のものを出す日にその名前はベースのものになります。</p>
-<h3 id="声">声</h3>
-<p>種族が違えば、同じ言葉は話しません。<code>voices</code> がないと、あなたの猫は吠えます。</p>
+<p>あとは他の種類と同じように犬種で宣言します: <code>distract = { butterfly = { chance = 0.10 } }</code>。</p>
+<p><code>gate</code> は Mod の全体スキャン予算の前に走ります。<code>find</code> は予算のあとに走り、重い探索をします。<code>drive</code> はまだ動物を動かしている間 true を返し、終わったら false を返して窓を閉じます。あなたのハンドラは 自分の <code>pcall</code> の中で走ります。例外を投げると、Mod は名前入りの行をログに出し、そのセッションの間だけ その種類の登録を外し、仲間の残りの機能はそのまま動かします。</p>
+<p>今後ベースが使う予定の名前: <code>drink</code>、<code>eat</code>、<code>play</code>。今日この名前で種類を登録することはできますが、 ベースが自前のものを出したときに名前を取られます。</p>
+<h3 id="鳴き声">鳴き声</h3>
+<p><code>voices</code> がないと、どの犬種も犬の音を使うので、猫が吠えます。まず自分の音を登録します:</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>そのうえで犬種をそこへ向けます:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> は任意の飾りではありません。これがないと音は鳴りますが、プレイヤーのカテゴリ スライダーとゲームの効果音量を無視します。何も壊れて見えないので、誰も報告してくれない類の不具合 です。<code>voices</code> から外したキーは犬の音に落ちます。犬の犬種ならそれで正解ですが、別の種族では決して 正解になりません。</p>
+<p><code>CD.registerVoices</code> がなくても音は鳴りますが、プレイヤーのカテゴリ別スライダーもゲームの効果音量も 無視され、それを指すものはログのどこにも出ません。<code>voices</code> から抜いたキーは犬の音に落ちます。</p>
+<p>第三引数は各サウンドの可聴距離、単位はタイルです。自分のサウンドスクリプトに書いた <code>distanceMax</code> と そろえてください:</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>サーバーでは、ベースはその範囲の中にいるプレイヤーにしか音を送りません。範囲を省くと、鳴き声は カテゴリごとの汎用の範囲をもらいます。10 タイル届くはずのシャーが 30 タイル以内の全員に飛びます。 <code>distanceMax</code> を超えると FMOD の逆二乗の減衰は無音へ向かわずに止まるので、素の <code>.ogg</code> はどんな距離 でも <code>distanceMin / distanceMax</code> の音量で鳴り続けます。同じ理由で、大きな鳴き声ほど <code>distanceMin</code> は小さく保ってください。</p>
+<h3 id="食性">食性</h3>
+<p><code>diet</code> がないと、どの犬種も犬と同じものを食べます。中毒を起こす食べ物も、肉に数える食べ物も、飼い葉桶 から食む食べ物も同じです。この項目は、その三つのリストをあなたの犬種にだけ差し替えます。</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>書き方が二通りあるのは、ゲーム自身のカテゴリで届く範囲が限られているからです。<code>Cheese</code> は本物の <code>FoodType</code> なので、キーひとつでゲーム内のチーズ全部と、そのカテゴリを使い回す食べ物 Mod のチーズも まとめて覆えます。マグロは違います。開けた缶は他の魚と一緒くたの <code>FoodType = Fish</code> で、未開封の缶は 食べ物のタイプを何も宣言しません。そこへ届くための手が <code>badParts</code> と <code>proteinParts</code> です。</p>
+<p>どの項目も <code>&lt;key&gt; = true</code>（追加）か <code>&lt;key&gt; = false</code>（ベースにあったものを外す）のテーブルです。 <code>true</code> でも <code>false</code> でもない値は、名前入りの行をログに出して捨てられます。</p>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>キーが何か</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td>動物に中毒を起こし、忠誠を減らし、給餌メニューで赤く出る食べ物の <code>FoodType</code></td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>アイテムタイプの一部、小文字。どこに含まれていても一致します</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td>動物の肉の不足を埋める <code>FoodType</code>。衰弱の moodle が見ているもの</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>アイテムタイプの一部。一致のしかたは <code>badParts</code> と同じ</td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td>肉ではないと分かっている <code>FoodType</code>。初めて見る食べ物のタイプにベースが出すログ行を黙らせるだけの項目</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td>飼い葉桶から動物が自分で食べる <code>FoodType</code> と <code>AnimalFeedType</code></td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>アイテムタイプそのもの。飼い葉桶に入る、自分の飼料タイプを持たないアイテム用</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code> にすると、犬のリストではなく空のリストから始まります。あなたの動物が犬とほとんど 何も共有しないときに使ってください。猫なら、たいていは足し引きを数個書くほうが楽です。</p>
+<p>三つのリストは動物についてくるので、同じ飼い葉桶に並んだ犬と猫は別のものを食べます。例外は Mod 自身 の食器で、これは中身のアイテムではなく食事のポイントを溜めるので、満たすときの判定は誰でもベースの リストで行われます。そもそも毒になるものは食器に入れられません。</p>
 <h2 id="7-システムを丸ごと切る">7. システムを丸ごと切る</h2>
-<p>五つのスキルは、五つのシステムと一対一で対応します。</p>
+<p>五つのスキルが、そのまま五つのシステムです:</p>
 <div class="tw"><table><thead><tr>
 <th>スキル</th>
 <th>対応するシステム</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>見張り。ゾンビに気づき、あなたに知らせる</td>
+<td>見張り。ゾンビに気づいて知らせる</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>戦うこと、警備モード、自衛</td>
+<td>戦闘、警護モード、自衛</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
@@ -831,36 +905,38 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>狩り、および飼い主に与える採集ボーナス</td>
+<td>狩りと、飼い主に付く採集の補正</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
 <td>囲いの中の家畜の世話</td>
 </tr>
 </tbody></table></div>
-<p>種族は、数値の悪い犬ではありません。それらの仕事のいくつかを、そもそも持たない動物です。ですから、 持っていないものを宣言します。</p>
+<p>なので種族は、持っていないものを宣言します:</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>書かないか <code>true</code> なら、その動物はそのスキルを持っています。だから取り除くものだけを書きます。</p>
-<p>スキルを切ると、<strong>三つのことが同時に</strong>起きます。システムが動かなくなり、そのスキルは経験値を得なく なり、バーとその指示がインターフェースから消えます。三つまとめてです。バーだけ隠せば、誰にも見えない ところでスキルが伸び続けます。システムだけ止めれば、バーが永遠にゼロで固まります。</p>
-<p><code>canBreed = false</code> がテーブルの外にあるのは、繁殖にはバーも経験値もないからです。そして全面的です。 その動物は身ごもらず、相手として選ばれず、同じ犬種とも交配しません。普通に繁殖するけれど犬とは決して交配しない動物が欲しいのなら、それはこれではなく、 下の <code>species</code> です。</p>
-<h3 id="種">種</h3>
-<p>犬ではなく別の動物を追加するアドオンは、こう宣言します。</p>
+<p>書かない、または <code>true</code> なら、その動物はそのスキルを持っています。</p>
+<p>スキルを切ると経験も入らなくなり、バーとそれに紐づく命令がインターフェースから消えます。</p>
+<p><code>canBreed = false</code> がテーブルの外にあるのは、繁殖にはバーも経験もないからです。この動物は身ごもらず、 相手として選ばれることもなく、同じ種類どうしでも繁殖しません。</p>
+<h3 id="種族">種族</h3>
+<p>犬ではなく別の動物を足すアドオンは、それを宣言します:</p>
 <pre><code>CD.registerSpecies({ key = "cat",
                      nounKey  = "IGUI_PD_SpeciesNoun_cat",
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>このフィールドはこれまでに公開されたどのブリードにもなく、無い場合は <code>"dog"</code> として扱われます。つまり、 あなたがすでに書いたものの挙動は何も変わりません。</p>
-<p>これは2つのことをします。<strong>繁殖が種ごとに閉じます。</strong>つがいは双方が同じ種のときにだけ身ごもります。 コマンドでも、1時間ごとの受動的な抽選でも、デバッグ用ツールでも同じです。そしてUIがあなたの動物を犬と 呼ぶのをやめます。<code>nounKey</code> は*「この%1はすでに別の生存者のものです」<em>のような文を埋める裸の名詞で、 <code>youngKey</code> はあなたの種の子が、ウィンドウ、コンテキストメニュー、犬舎で背負うラベルです。犬ならそこは </em>子犬*になります。</p>
-<p><code>species</code> を登録せずに宣言しても致命的ではありません。ゲートは生の文字列を比較するので、動物は自分の種 以外との交配を拒み続けます。犬のものに落ちるのは2つの名詞だけで、ログがそれを名指しで伝えます。この フォールバックが片側だけなのは意図的です。逆に、登録されていない種を犬として扱えば、あなたの動物を黙って 犬と交配させてしまうからです。</p>
-<p><strong>これはブロックなので、劣化しません。</strong>API 6より古いベースではこのフィールドは黙って無視され、繁殖の うえであなたの動物は犬になります。決して犬と交わってはいけないなら、API 6をチェックするか、ベースが 古いあいだは <code>canBreed = false</code> にしておいてください。猫がやっているのがそれです。</p>
-<p><code>huntMaxPrey</code> は<strong>存在する狩りの中での上限</strong>であり、<code>hunt = false</code> とは別物です。<code>"tiny"</code>（ネズミ、 ドブネズミ、リス）、<code>"small"</code>（ウサギ、アライグマ）、<code>"large"</code>（シカ。既定で上限なし）を取ります。 上限より大きい獲物はあなたの動物には見えません。追いませんし、指し示しもしません。この段階から外れた 値は <code>"large"</code> に落ち、名前付きの一行をログに出します。</p>
-<p><strong>禁止された動物にグレーアウトのボタンは出ません。</strong> その項目はラジアルからもコンテキストメニュー からもウィンドウからも消え、サーバー側の拒否は無言です。「命令を無視した」と光って見せるのは嘘に なります。これは不服従ではないからです。設計は犬種の説明文で説明してください。これらのフィールドが 新しい翻訳キーを連れてこないのは、そのためです。</p>
+<p>この項目は、これまで公開されたどの犬種にもありません。ないときは <code>"dog"</code> です。</p>
+<p>繁殖は種族ごとに閉じています。命令でも、毎時の受動的な判定でも、デバッグ用のツールでも、両方が同じ 種族のときにしか身ごもりません。そしてインターフェースはあなたの動物を犬と呼ばなくなります。 <code>nounKey</code> は <em>"この%1はすでに他の生存者のものです。"</em> のような文に入る裸の名詞で、<code>youngKey</code> は、 犬なら <em>子犬</em> と出るところに、あなたの種族の子が背負うラベルです。</p>
+<p>この二つの名詞が覆うのは <code>%1</code> を組み込んだ文だけです。<em>dog</em> という語が文そのものに書き込まれている 他の文（<em>"犬を調べる"</em>、<em>"犬がお腹を空かせています"</em>、<em>"犬がわざと吠える"</em>）は、API 7 から種族ごとの キーを取ります。翻訳ファイルに <code>IGUI_PD_ScanStray_cat</code> を同梱すれば、画面上の動物が猫のときベースは <code>IGUI_PD_ScanStray</code> の代わりにそちらを出します。同梱しなかったキーは犬の文に落ちます。接尾辞を受け るキーは次のとおり。<code>ScanStray</code>、<code>ScanTitle</code>、<code>PauseGrowthTip</code>、<code>BadFood</code>、<code>AlertFullDesc</code>、 <code>AlertQuietDesc</code>、<code>AlertLockedTip</code>、<code>HuntModeDesc</code>、すべての <code>Trick*Desc</code>、<code>TrickDistractDone</code>、 <code>TrickNeedsBag</code>、<code>TrickGotoPick</code>、<code>TrickSniffNoItem</code>、<code>TrickFetchNoItem</code>、<code>AlertGroup</code>、<code>DogLost</code>、 すべての <code>Refused_*</code>、<code>KennelStatusNoData</code>、そして世話の moodle（病気、衰弱、空腹、渇き、休息、 悲しみ）の <code>Moodle_*_desc</code>。画面に動物が出ていない文（登録簿のタブ、 <em>"まず動物と仲良くなってください"</em>）は、ベースの時点ですでに種族に依らない書き方です。猫はこれを 14 言語ぶん全部同梱しています。その <code>IG_UI.json</code> をひな型にコピーしてください。</p>
+<p>動物の <code>group</code> を読むのは、デバッグのスポーンメニューとクリップビューアだけで、 <code>IGUI_Animal_Group_&lt;group&gt;</code> を通します。振る舞いのヘルパーのあとに <code>t.group = "cat"</code> を置き、その キーを同梱してください。しないと、あなたの種族はそこに犬の名前で並びます。</p>
+<p><code>species</code> を登録せずに宣言しても致命的ではありません。門は生の文字列を比べるので、あなたの動物は自分 の種族の外では繁殖を断り続けます。犬のほうへ落ちるのは二つの名詞だけで、ログがそれを名指しで書き ます。</p>
+<p>API 6 より古いベースでは、この項目はログ行も出さずに無視され、あなたの動物は犬として繁殖します。犬と 決して交わらせたくないなら、API 6 でガードするか、ベースが古い間は <code>canBreed = false</code> のままにして ください。猫がやっているのが後者です。</p>
+<p><code>huntMaxPrey</code> は、存在している狩りの中で獲物の大きさに上限をかけるもので、<code>hunt = false</code> の代わりに はなりません。取る値は <code>"tiny"</code>（マウス、ネズミ、リス）、<code>"small"</code>（ウサギ、アライグマ）、<code>"large"</code> （鹿。既定で、上限なし）です。上限より大きい獲物を、あなたの動物は追いも指しもしません。この段の外の 値は <code>"large"</code> に落ち、名前入りの行をログに出します。</p>
+<p>塞いだ選択肢はラジアルからもコンテキストメニューからもウィンドウからも消え、サーバーはメッセージ なしでそれを断ります。ここに挙げた項目はどれも翻訳キーを増やさないので、何ができないかは犬種の説明文 で伝えてください。</p>
 <h2 id="8-動物定義">8. 動物定義</h2>
-<p>エンジンはメッシュを犬種ではなく<strong>動物タイプ</strong>に結び付けます。ですからあなたの犬種には固有の三つの タイプが要ります。ここはアドオンの機械的な部分で、いちばんの近道は既存のアドオンのファイルをコピー して名前を変えることです。</p>
-<p><code>Definitions/animal/</code> の shared ファイルに置く三つの部品です。</p>
+<p>エンジンはメッシュを犬種ではなく動物タイプに結び付けるので、あなたの犬種には自分用のタイプが三つ要り ます。近道は、既存のアドオンのファイルをコピーして名前を変えることです。</p>
+<p>三つの部品を、<code>Definitions/animal/</code> の下の shared のファイルひとつに:</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -889,45 +965,49 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <p>ベースが用意しているヘルパー:</p>
 <div class="tw"><table><thead><tr>
 <th>ヘルパー</th>
-<th>何を埋めるか</th>
+<th>埋めてくれるもの</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>体のモデル、スケルトン、解体用テクスチャ、animset</td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
+<td>体のモデル、スケルトン、解体後のテクスチャ、animset</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
-<td>仲間に必要なエンジン側の挙動フラグ一式</td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
+<td>仲間に必要なエンジン側の振る舞いフラグ一式</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
-<td>動物ウィンドウの肖像カメラ</td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
+<td>動物ウィンドウの肖像用カメラ</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
-<td>足音と効果音の共有テーブル</td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
+<td>足音と動作音の共有テーブル</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>新しい種族のゲノム。標準の遺伝子リスト付き（API 7）</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>怯えた野良が出血死しないようにする値</td>
+<td>おびえた野良が出血死しないようにする値</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>三つの成長段階すべての解体パーツ</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>三つの段階すべての解体部位。<code>meat</code> は任意で <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>。省くとベースの犬肉が取れます。エンジンは部位ごとの個数も満腹度も死体の大きさで掛けるので、大きなサイズを持つ種族（猫は見た目のスケールに 2.5 から 3.5 を使います）は、基礎の満腹度が小さく個数の少ない自前のアイテムが要ります</td>
 </tr>
 </tbody></table></div>
-<p>自明でない規則が四つあります。</p>
-<p><strong>animset は <code>"raccoon"</code> のままでなければなりません。</strong> <code>CD.applyDogModel</code> が設定します。フォークした animset はステートマシンを読み込まず、ステートマシンのない動物はその場で固まった動物です。</p>
-<p><strong>ゲノムは使い回してください:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>。自前で書かないこと。</p>
-<p><strong><code>mate</code> は決して宣言しないでください。</strong> これがあるとエンジンは、動物ゾーンの中で独自のネイティブ 交配を走らせます。それは Mod の繁殖禁止もサンドボックス設定も無視し、絆のない子を産みます。ベースは 安全網として起動時にこのフィールドを消しますが、それを当てにしないでください。</p>
-<p><strong>パーツは必須です。</strong> 専用ファイルに三行だけ。</p>
+<p>種族に依らない名前は API 7 で入りました。古いほうの <code>CD.applyDogModel</code>、<code>CD.applyDogBehaviour</code>、 <code>CD.applyDogAvatar</code>、<code>CD.DOG_SOUNDS</code>、<code>CD.defineDogParts</code>、<code>CD.DogMoodles</code> は、同じ関数とテーブルの 最初の名前です。0.7.3 より古いベースでもロードしたいアドオンは、古い名前でガードして、新しいほうが あればそちらを取ります: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>。</p>
+<p>animset は <code>"raccoon"</code> のままにしてください。分岐させた animset はステートマシンをロードしないので、 動物はその場で固まったまま立っています。</p>
+<p>ゲノムは使い回します。犬種はベースのリストを指します: <code>AnimalDefinitions.genome["dog"].genes</code>。新しい 種族は <code>CD.defineGenome("cat")</code> を一度呼び、返ってきたテーブルをすべての段階に渡します。エンジンが読む のは各段階の <code>genes</code> のリストだけで、ゲノムのキーは決めごとに過ぎないので、あなたの種族は自分の遺伝子 リストを持たずに自分の項目を得られます。</p>
+<p><code>mate</code> を宣言してはいけません。あると、エンジンはどの動物ゾーンの中でも自前の交配を回します。これは Mod の繁殖ブロックもサンドボックス設定も無視し、絆のない子犬を作ります。ベースは起動時にこの項目を 消しますが、それを当てにしないでください。</p>
+<p>部位の定義は必須です。専用のファイルに 3 行:</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>これがないと、あなたの動物を解体したときにバニラのコードが落ちます。パーツ定義をタイプと犬種で 引きにいって nil を踏むからです。</p>
-<p><strong>小さい動物は肖像カメラの調整が要ります。</strong> <code>CD.applyDogAvatar</code> の肖像ズームは犬に合わせて調整 されていて、アバターのズームは倍率です。動物が小さいほど数値は大きくなります。犬に対する体格比で ズームを割り、同じ比をオフセットに掛けてください。でないとあなたの動物は、自分の肖像の下の隅で 極小になります。</p>
+<p>これがないと、あなたの動物を解体したときにバニラのコードが落ちます。部位の定義をタイプと犬種で引いて、 nil に当たるからです。</p>
+<p><code>CD.applyDogAvatar</code> の肖像のズームは犬に合わせてあり、アバターのズームは倍率です。動物が小さいほど数値 は大きくなります。犬に対する大きさの比でズームを割り、オフセットには掛けてください。しないと、動物は 自分の肖像の下のほうに小さく写ります。</p>
 <h2 id="9-モデルスクリプト">9. モデルスクリプト</h2>
-<p><code>media/scripts/</code> に置くファイルひとつが、あなたのモデルの存在をゲームに伝えます。</p>
+<p><code>media/scripts/</code> の下のファイルひとつが、あなたのモデルの存在をゲームに伝えます:</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -950,10 +1030,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> が、モデルファイルの中のクリップを使える状態に保ちます。これがないと モデルは読み込まれても決して動きません。</p>
-<p><code>head</code> のアタッチメントは帽子などが載る場所です。サドルバッグをあなたの動物に合わせたいなら、同じ やり方で <code>saddlebags_l</code>、<code>saddlebags_r</code>、<code>saddlebags_c</code> を背骨のボーンに足してください。これらの 数値は、ゲームの中で動物を見ながら少しずつ動かして見つけるものです。モデルを測って出すものでは ありません。数学的に中央のバッグでも、毛のある体の上ではやはり傾いて見えます。</p>
+<p><code>keepMeshAnimations = true</code> は、モデルファイルの中のクリップを使える状態に保ちます。これがないと モデルはロードされますが、決してアニメーションしません。</p>
+<p><code>head</code> のアタッチメントは、帽子などが載る場所です。サドルバッグをあなたの動物に合わせたいなら、 <code>saddlebags_l</code>、<code>saddlebags_r</code>、<code>saddlebags_c</code> を同じやり方で背骨のボーンに足します。この数値は、 ゲーム内で動物を見ながら少しずつ動かして出してください。モデルから測った値はバッグをメッシュの幾何 中心に置きますが、体の上で見栄えがする位置はそこではありません。</p>
 <h2 id="10-その動物が現れる場所">10. その動物が現れる場所</h2>
-<p>野良は、そのチャンクが最初に読み込まれるときに、建物ごと・チャンクごとに抽選されます。抽選は手順の リストとして書きます。犬種定義の <code>spawns</code> の中か、<code>CD.registerStraySpawns(リスト)</code> のどちらかです。</p>
+<p>野良の判定は建物ごと、チャンクごとに、そのチャンクが初めてロードされたときに振られます。判定は手順 のリストとして書き、犬種定義の中の <code>spawns</code> に置くか、<code>CD.registerStraySpawns(list)</code> に渡します。</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -962,44 +1042,44 @@ end</code></pre>
 },</code></pre>
 <div class="tw"><table><thead><tr>
 <th>キー</th>
-<th>何であるか</th>
+<th>中身</th>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>手順の名前。あなた自身のログ用です</td>
+<td>手順の名前。あなた自身のログのため</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>抽選の対象になる建物クラス</td>
+<td>判定をかける建物のクラス</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>パーセントを返す<strong>関数</strong>。数値ではなく関数なのは、サンドボックスの倍率にその場で追随できるようにするためです。</td>
+<td>パーセントを返す関数。判定の時点でサンドボックスの倍率を読めるようにするためです。</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>永続ストアのキー。エコシステム全体で一意、そして決して変えません。</td>
+<td>永続ストアのキー。すべての Mod をまたいで一意で、決して変えません。</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>出現させる犬種のキー</td>
+<td>スポーンさせる犬種のキー</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>真偽値を返す任意の関数。抽選の前に見られます。ハスキーは <code>CD.isWinter</code> を使っています。</td>
+<td>任意。真偽値を返す関数で、判定の前に見られます。ハスキーは <code>CD.isWinter</code> を使っています。</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>路上ではなく建物の中で生まれる確率。既定は 35 です。</td>
+<td>路上ではなく建物の中で生まれる確率のパーセント。既定は 35。</td>
 </tr>
 </tbody></table></div>
-<p>確率には <code>CD.dogSpawnMultiplier()</code> を掛けるか、<code>CD.strayChancePerHouse()</code> を自前の希少度で割って ください。どちらでもプレイヤーのサンドボックス設定が効き続けます。生の数値を書くと効きません。</p>
-<p><code>indoor</code> は好みであって約束ではありません。そのチャンクに空いた屋内タイルがない建物では、屋外の タイルに戻ります。</p>
-<h3 id="建物クラス">建物クラス</h3>
-<p>ベースは四つ登録しており、そのまま使えます。</p>
+<p>自分の確率には <code>CD.dogSpawnMultiplier()</code> を掛けるか、<code>CD.strayChancePerHouse()</code> を自分の珍しさで 割ってください。どちらもプレイヤーのサンドボックス設定を効かせたままにします。</p>
+<p><code>indoor</code> は好みの指定です。そのチャンクの中に空いた屋内タイルがない建物では、外のタイルに落ちます。</p>
+<h3 id="建物のクラス">建物のクラス</h3>
+<p>ベースは四つ登録しています:</p>
 <div class="tw"><table><thead><tr>
 <th>クラス</th>
-<th>何に一致するか</th>
+<th>一致するもの</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
@@ -1018,24 +1098,23 @@ end</code></pre>
 <td>農場の建物。町の外でも許されます</td>
 </tr>
 </tbody></table></div>
-<p>どれも合わないなら、自分で登録します。</p>
+<p>どれも合わないなら、自分で登録します:</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>一致関数は建物定義を受け取り、保護された呼び出しの中で走ります。ですからそこでの誤りがチャンクの 読み込みを巻き込むことはありません。<code>skipUrbanGate</code> は、市街地でないチャンクでもクラスが抽選される ようにします。農場や森の小屋にはこれが要ります。<code>exclusive</code> はそのままにしておいてください。ベースの クラス同士は排他ですが、アドオンのクラスは加算的で、その上に重ねて一致するように作られています。</p>
+<p>一致の関数は建物の定義を受け取り、保護された呼び出しの中で走るので、その中のエラーでチャンクのロード が止まることはありません。<code>skipUrbanGate</code> は、市街ではないチャンクでもそのクラスの判定を通します。 農場や森の小屋にはこれが要ります。<code>exclusive</code> は設定しないでください。ベースのクラスどうしは排他です が、アドオンのクラスはその上に重ねて一致します。</p>
 <h3 id="すでに使われている接尾辞">すでに使われている接尾辞</h3>
-<p>接尾辞は「この建物はもう抽選済み」を保存するキーの一部です。同じ接尾辞を使う二つの Mod は、互いの 抽選を壊し合います。</p>
-<p>接尾辞はすべて縦棒で始まります。以下はすでに使用中です。</p>
+<p>接尾辞は、「この建物はもう判定済み」を保存するキーの一部です。同じ接尾辞を使う二つの Mod は、互いの 判定を壊します。</p>
+<p>どの接尾辞も縦棒で始まります。使用中のものは次のとおり:</p>
 <ul>
-<li><strong>ベース:</strong> 空の接尾辞と、<code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
-<li><strong>ロットワイラー:</strong> <code>rw</code>、<code>r</code></li>
-<li><strong>ドーベルマン:</strong> <code>db</code>、<code>dm</code></li>
-<li><strong>ラブラドール:</strong> <code>lb</code>、<code>lk</code></li>
-<li><strong>パグ:</strong> <code>pg</code>、<code>pv</code></li>
-<li><strong>猫:</strong> <code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
+<li>ベース: 空の接尾辞と、<code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
+<li>ロットワイラー: <code>rw</code>、<code>r</code></li>
+<li>ドーベルマン: <code>db</code>、<code>dm</code></li>
+<li>ラブラドール: <code>lb</code>、<code>lk</code></li>
+<li>パグ: <code>pg</code>、<code>pv</code></li>
+<li>猫: <code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
 </ul>
-<p>誰も使っていないものを選び、そのあとは二度と触らないでください。</p>
 <h2 id="11-犬種の-moodle">11. 犬種の moodle</h2>
-<p>moodle は <strong>client</strong> のファイルです。<code>CD.DogMoodles</code> にテーブルを足せば、ベースが描画も追跡も後始末 もします。</p>
+<p>moodle は client のファイルです。<code>CD.DogMoodles</code> にテーブルを足すと、ベースがそれを描き、追跡し、 後始末します:</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1054,51 +1133,50 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> はレベルを返し、「表示しない」なら 0 を返します。<code>apply</code> には前回の呼び出しからのゲーム 内分数が渡されるので、固定の tick を前提にせず、効果に <code>elapsedMin</code> を掛けてください。</p>
-<p>アイコンは 32 から 128 ピクセルまで、<strong>六つのサイズ</strong>で同梱してください。インターフェースはプレイヤー のスケーリングに合わせてサイズを選ぶので、欠けたサイズは空の四角になります。</p>
-<p>独自 moodle はオーバーレイとして描かれます。ゲーム本体の moodle システムは Mod からの新規登録を受け 付けないからです。そこはこちらで処理済みですが、moodle が Mod 自身の帯に出てバニラのものと並ばない のはそのためです。</p>
+<p><code>condition</code> は段階を返し、出さないときは 0 を返します。<code>apply</code> は前回の呼び出しからのゲーム内の分数 を受け取るので、効果にはそれを掛けてください。</p>
+<p>アイコンは 32 から 128 ピクセルまで、6 サイズ同梱します。インターフェースはプレイヤーの拡大率で サイズを選ぶので、足りないサイズは空の四角として出ます。アイコンはバニラの moodle の列ではなく、Mod 自身の列に出ます。</p>
 <h2 id="12-フック">12. フック</h2>
-<p>ベースが<strong>サーバー</strong>で呼ぶ、関数のリストが二つあります。shared のファイルから追加してください。各 ハンドラは自分専用の保護された呼び出しの中で走るので、壊れたアドオンがベースを巻き込むことは ありません。</p>
-<p><strong><code>CD.onHuntDelivered</code></strong> は API 2 から。動物が獲物を飼い主の足元に置いた直後に呼ばれます。</p>
+<p>ベースがサーバー側で呼ぶ関数のリストが二つあります。shared のファイルから足してください。ハンドラは それぞれ自分の保護された呼び出しの中で走るので、あるアドオンのエラーでベースが止まることはありません。</p>
+<p><code>CD.onHuntDelivered</code> は API 2 からで、動物が仕留めた獲物を飼い主の足元に落とした直後に呼ばれます:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong> は API 3 から。メンテナンスのたびに、ベースが満たされない欲求のストレスを 足したあと、書き込む前に呼ばれます。数値を返すと、合計に加算されます。</p>
+<p><code>CD.onUpkeepStress</code> は API 3 からで、メンテナンスの周期ごとに、満たされない欲求ぶんのストレスをベース が足したあと、それが書き込まれる前に呼ばれます。返した数値が合計に足されます:</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>これがアドオンから動物の継続的なストレスに影響できる<strong>唯一</strong>の方法です。メンテナンスは毎周期に値を 計算し直して上書きするので、外から書いたものは次の tick で消えます。環境から来る状態、つまり暑さ、 寒さ、雨のための正しい道具です。</p>
-<p><strong>マルチプレイの規則を一行で。client は決して ModData を書かない。</strong> client 側の書き込みは次の同期で server のコピーに上書きされ、症状は何分もあとに、まったく別の場所で出ます。作業は server のファイル で行うか、すでにそこで走っているこれらのフックの中で行ってください。</p>
+<p>メンテナンスは周期ごとに値を計算し直して上書きするので、外から書いたものは次のティックで消えます。 暑さ、寒さ、雨のように環境から来る条件には、このフックを使ってください。</p>
+<p>マルチプレイでは、client は Mod データを決して書きません。client 側で書くと次の同期でサーバーの写し を上書きしてしまい、症状は数分後に無関係なところに出ます。作業は server のファイルか、この二つの フックの中で行ってください。</p>
 <h2 id="13-翻訳キー">13. 翻訳キー</h2>
-<p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> の言語フォルダごとに <code>IG_UI.json</code> をひとつ同梱します。ベースは 十四言語を同梱しています。EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
-<p>犬種に必要なキー:</p>
+<p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> の下に、言語フォルダごとに <code>IG_UI.json</code> をひとつ同梱します。 ベースは 14 言語ぶん同梱しています。EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI です。</p>
+<p>犬種に要るキー:</p>
 <div class="tw"><table><thead><tr>
 <th>キー</th>
 <th>どこに出るか</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>犬種名。Mod のインターフェース全体で</td>
+<td>犬種名。Mod のインターフェースのあらゆる場所</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>動物のカードに載る説明文</td>
+<td>動物のカードに出る説明文</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>ゲーム本体の画面での犬種名</td>
+<td>ゲーム自身の画面に出る犬種名</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>あなたの三つのタイプそれぞれにひとつ</td>
+<td>三つのタイプそれぞれにひとつ</td>
 </tr>
 <tr>
-<td>種のキー</td>
-<td>種を追加したのなら、<code>CD.registerSpecies</code> に渡した <code>nounKey</code> と <code>youngKey</code></td>
+<td>種族のキー</td>
+<td><code>CD.registerSpecies</code> に渡した <code>nounKey</code> と <code>youngKey</code></td>
 </tr>
 <tr>
 <td>moodle のキー</td>
-<td>moodle があれば、その名前と説明</td>
+<td>名前と説明文</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,44 +1187,76 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>噛みつかれる点が二つあります。翻訳文字列の中の<strong>そのままのパーセント記号</strong>は、それを表示する画面を 落とします。フォーマッタがプレースホルダとして読むからです。そして<strong>バイトオーダーマーク</strong>のついた 言語ファイルはコンパイルされず、しかもエラーは壊れているのとは別のファイルの名前を挙げます。</p>
+<p>翻訳した文字列の中のパーセント記号そのものは、それを出す画面を落とします。フォーマッタがプレース ホルダとして読むからです。バイトオーダーマークの付いた言語ファイルはコンパイルされず、しかもエラー は壊れているファイルとは別のファイルを名指しします。</p>
 <h2 id="14-セーブが覚えているもの">14. セーブが覚えているもの</h2>
-<p>あなたの識別子のうち三つは、セーブファイルに書かれ、その後ずっと読み戻されます。</p>
+<p>あなたの識別子のうち三つは、セーブファイルに書き込まれ、以後ずっと読み戻されます:</p>
 <ul>
-<li><code>key</code>。あなたの動物一頭ごとに保存される犬種識別子</li>
-<li><code>typePrefix</code>。エンジンが保存する動物タイプを形づくるもの</li>
-<li><code>suffix</code>。「抽選済み」ストアのキーで、スポーン手順ごとにひとつ</li>
+<li><code>key</code>。あなたの犬種の動物すべてに保存される犬種の識別子</li>
+<li><code>typePrefix</code>。エンジンが保存する動物タイプを組み立てるもの</li>
+<li><code>suffix</code>。「判定済み」ストアのキー。スポーンの手順ごとにひとつ</li>
 </ul>
-<p><strong>この三つは公開後、決して名前を変えられません。</strong> <code>key</code> を変えると、その犬種の生きている動物が すべて迷子になります。<code>suffix</code> を変えると、既存のすべてのセーブのすべての建物が抽選をやり直し、 何か月も遊んできた世界が突然あなたの動物であふれます。</p>
-<p>その再抽選が役に立つ唯一の場面は、それこそが狙いのときです。CD: Cats は新しい四つの毛色にわざと新しい 接尾辞を与えました。すでに動いている世界にそれらが現れ始めるようにするためで、一方もとの黒猫は歴史的 な接尾辞を保ち、再抽選しませんでした。</p>
-<p><strong>その犬種の動物が生きているセーブからアドオンを外すと、その動物は失われます。</strong> エンジンは、もはや 知らないタイプの動物を捨てます。ベースは落ちませんし、絆も犬舎もきれいに劣化しますが、動物はいなく なります。公開済みのすべてのアドオンがそうしているように、Workshop のページにそう書いてください。</p>
-<p><strong>未知の犬種は失敗せずに劣化します。</strong> あなたのアドオンがなければ、ベースは何を訊かれても既定の犬種に 落とすので、あなたの Mod なしで開いたセーブも読めます。</p>
+<p>三つとも、リリース後には改名できません。<code>key</code> を改名すると、その犬種の生きている動物が全部みなしごに なります。<code>suffix</code> を改名すると、既存のどのセーブでも全部の建物がもう一度判定され、何ヶ月も遊んだ世界 があなたの動物で埋まります。</p>
+<p>新しい接尾辞は、すでに動いている世界へ新しい犬種を届ける手でもあります。CD: Cats は新しい四つの毛色に 新しい接尾辞を与えたので、既存のセーブにも出るようになり、元からいた黒猫は古い接尾辞のままで再判定 されませんでした。</p>
+<p>その犬種の動物が生きているセーブからアドオンを外すと、その動物は失われます。エンジンは、もう知らない タイプの動物を捨てるからです。ベースは落ちず、絆も犬舎もきれいに畳まれます。それを Workshop ページに 書いてください。</p>
+<p>あなたのアドオンがない場合、ベースは訊かれたものすべてについて既定の犬種に落ちるので、あなたの Mod なしで開いたセーブも読めます。</p>
 <h2 id="15-公開する前に">15. 公開する前に</h2>
 <ul>
-<li>ガードが<strong>すべての</strong> Lua ファイルにあり、実際に使っている API を書いている。</li>
-<li>ベースのバージョン下限が、説明文に言葉で書いてある。<code>versionMin</code> ではそれを言えない。</li>
-<li>最初のロードでログを読んだ。読まなければ <code>CD.registerBreed</code> は無言で拒否し、拒否のたびに名前付きの 一行が出る。</li>
-<li><code>CD.defineDogParts</code> を呼んでいる。自分の動物を一頭解体して、落ちないことを確かめる。</li>
-<li><code>key</code>、<code>typePrefix</code>、スポーンの接尾辞が一意で、この先ずっとそれでよいと思える。</li>
-<li>小型の犬種は <code>puppySize</code> を設定していて、子犬を実際に見て確かめた。</li>
-<li>別の種族なら <code>CD.registerVoices</code> を呼び、<code>voices</code> を埋めてある。でないと吠える。</li>
-<li>moodle のアイコンが六つのサイズすべてある。</li>
-<li>同梱するすべての言語フォルダにすべてのキーがある。キーが欠けると画面に生のキーが出る。</li>
-<li>単独プレイだけでなくマルチプレイで試した。位置も所有も ModData も、あちらでは違う振る舞いをする。</li>
-<li>Workshop のページに、生きた動物のいるセーブからアドオンを外さないよう警告してある。</li>
+<li>ガードがすべての Lua ファイルにあり、実際に使う API を書いている。</li>
+<li>ベースのバージョンの下限が、説明文に言葉で書いてある。<code>versionMin</code> では言えません。</li>
+<li>初回ロードのログを読んだ。読まないと <code>CD.registerBreed</code> は黙って却下しますが、却下ごとに名前入りの 行が出ます。</li>
+<li><code>CD.defineDogParts</code> を呼んでいる。自分の動物を一頭解体して、落ちないことを見た。</li>
+<li><code>key</code>、<code>typePrefix</code>、スポーンの接尾辞が一意で、今後も変える必要がない。</li>
+<li>小型犬種は <code>puppySize</code> を設定し、実際に子を見て確かめた。</li>
+<li>別の種族なら、<code>CD.registerVoices</code> を呼び <code>voices</code> を埋めた。そうでないと吠えます。</li>
+<li>moodle のアイコンが 6 サイズすべてある。</li>
+<li>同梱するどの言語フォルダにも全部のキーがある。キーが欠けると画面にキーがそのまま出ます。</li>
+<li>シングルプレイだけでなくマルチプレイでも試した。位置、所有権、Mod データは、どれもあちらでは挙動が 違います。</li>
+<li>動物が生きているセーブからアドオンを外さないよう、Workshop ページで警告している。</li>
 </ul>
 <h2 id="16-よくある失敗">16. よくある失敗</h2>
-<p><strong>「動物が一向に現れない」</strong> ほとんどの場合ガードです。あなたのアドオンが、入っているベースにない API を要求しているので、意図どおり不活性になっています。自分の API 番号を第 2 節の表と見比べてくだ さい。</p>
-<p><strong>「現れるが固まっている」</strong> animset が <code>"raccoon"</code> でないか、モデルにクリップが足りません。どちらも 永遠に立ち止まった動物として出ます。</p>
-<p><strong>「黒い滲みとして描かれ、ログがあふれる」</strong> モデルのボーンが 60 を超えています。</p>
-<p><strong>「解体すると落ちる」</strong> <code>CD.defineDogParts</code> を呼んでいません。</p>
-<p><strong>「子犬が成犬の大きさで生まれる」</strong> <code>puppySize</code> を設定していない小型の犬種です。この値は絶対値で、 掃引のたびに再適用されるので、タイプ側のサイズ範囲では助かりません。</p>
-<p><strong>「自分の犬種が二つ、互いに入れ替わり続ける」</strong> <code>engineBreed</code> を共有しています。接頭辞はメッシュを 選ぶもので一族で共有できますが、<code>engineBreed</code> はテクスチャを選び、その一族の中で決着をつけるもの なので、犬種ごとに一意でなければなりません。</p>
-<p><strong>「音は鳴るが音量スライダーを無視する」</strong> その音に対して <code>CD.registerVoices</code> を呼んでいません。</p>
-<p><strong>「単独プレイでは動くのにサーバーで挙動がおかしい」</strong> 何かが client 側で ModData を書いています。 server に移してください。</p>
-<p><strong>「戦闘を切ったのにゾンビと戦った」</strong> 動いているベースが API 5 より古く、そこではそのフィールドが まだ存在せず、無言で無視されました。これこそガードが劣化ではなく遮断をしなければならない場面です。</p>
+<div class="tw"><table><thead><tr>
+<th>症状</th>
+<th>正体</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>「動物が全然出てこない」</strong></td>
+<td>ほぼ必ずガードです。アドオンが要求する API を入っているベースが持っていないので、早々に戻って何も登録していません。自分の API 番号を第 2 節の表と突き合わせてください。</td>
+</tr>
+<tr>
+<td><strong>「出てくるが固まっている」</strong></td>
+<td>animset が <code>"raccoon"</code> ではないか、モデルにクリップが足りていません。</td>
+</tr>
+<tr>
+<td><strong>「黒い染みで描画されてログが溢れる」</strong></td>
+<td>モデルのボーンが 60 本を超えています。</td>
+</tr>
+<tr>
+<td><strong>「解体するとクラッシュする」</strong></td>
+<td><code>CD.defineDogParts</code> を呼んでいません。</td>
+</tr>
+<tr>
+<td><strong>「子が成体の大きさで生まれる」</strong></td>
+<td>小型犬種が <code>puppySize</code> を設定していません。この値は絶対値で、掃き出しのたびに当て直されるので、タイプの大きさの範囲では覆えません。</td>
+</tr>
+<tr>
+<td><strong>「自分の二つの犬種が入れ替わり続ける」</strong></td>
+<td><code>engineBreed</code> を共有しています。接頭辞はメッシュを選ぶもので、同じ系統なら共有できます。<code>engineBreed</code> はテクスチャを選び、その系統の中で犬種を見分けるものなので、犬種ごとに一意でなければなりません。</td>
+</tr>
+<tr>
+<td><strong>「音は鳴るが音量スライダーを無視する」</strong></td>
+<td>その音について <code>CD.registerVoices</code> を呼んでいません。</td>
+</tr>
+<tr>
+<td><strong>「シングルプレイでは動くのにサーバーだとおかしい」</strong></td>
+<td>どこかが client で Mod データを書いています。server へ移してください。</td>
+</tr>
+<tr>
+<td><strong>「戦闘を切ったのにゾンビと戦った」</strong></td>
+<td>動いているベースが API 5 より古いのです。そのベースはこの項目を知らず、無視します。項目が無視されたままロードさせるのではなく、ガードでそのベースを弾いてください。</td>
+</tr>
+</tbody></table></div>
 <hr>
-<p>このマニュアルに誤りや抜けがありますか。 <a href="https://discord.gg/ndyTBFSuAT">Discord</a> で教えてください。</p></article></main>
+<p>このマニュアルに間違いや足りないものがありますか。 <a href="https://discord.gg/ndyTBFSuAT">Discord</a> で教えてください。</p></article></main>
 </div>
 
 <script>

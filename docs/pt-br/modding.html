@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -426,7 +426,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#campos-obrigatórios" data-id="campos-obrigatórios">Campos obrigatórios</a>
 <a class="s3" href="#campos-opcionais" data-id="campos-opcionais">Campos opcionais</a>
 <a class="s3" href="#instinto-distract" data-id="instinto-distract">Instinto: distract</a>
+<a class="s3" href="#poses-de-descanso" data-id="poses-de-descanso">Poses de descanso</a>
 <a class="s3" href="#a-voz" data-id="a-voz">A voz</a>
+<a class="s3" href="#a-dieta" data-id="a-dieta">A dieta</a>
 </div>
 </div>
 <div class="grp">
@@ -469,12 +471,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manual-de-modding">Companion Dogs: Manual de Modding</h1>
 <p>Como fazer o seu addon: uma raça nova, ou uma espécie inteira, como mod separado da Workshop que se encaixa no Companion Dogs.</p>
-<p>Este manual é para quem escreve mod. Se você só quer jogar, os outros dois manuais é que servem: <a href="features.html" class="xlink">Funcionalidades</a> para o que o cão faz, e <a href="breeds.html" class="xlink">Raças</a> para as raças.</p>
-<p>Ele assume que você já lê Lua e que tem um modelo com rig e animação para o seu bicho. O pipeline de arte não está aqui; a seção 3 lista o que o arquivo de modelo tem de cumprir, e nada além disso.</p>
-<blockquote class="quote"><strong>Isto é contrato público.</strong> Tudo que este manual nomeia existe para ser chamado de fora do mod. O que não está nomeado aqui é interno e pode mudar em qualquer versão, sem aviso.</blockquote>
+<p>Este manual é para quem escreve mod. Se você só quer jogar, leia os outros dois manuais: <a href="features.html" class="xlink">Funcionalidades</a> para o que o cão faz, e <a href="breeds.html" class="xlink">Raças</a> para as raças.</p>
+<p>Ele assume que você lê Lua e que tem um modelo com rig e animação para o seu bicho. O pipeline de arte não está aqui. A seção 3 lista o que o arquivo de modelo tem de cumprir.</p>
+<blockquote class="quote">Tudo que este manual nomeia é contrato público e existe para ser chamado de fora do mod. O que não está nomeado aqui é interno e pode mudar em qualquer versão, sem aviso.</blockquote>
 <h2 id="1-o-que-é-um-addon">1. O que é um addon</h2>
-<p>Um addon é um mod comum da Workshop que declara <code>require=CompanionDogs</code> e chama uma função no carregamento. Ele acrescenta <strong>uma raça</strong> (ou várias, se dividirem o mesmo corpo), e nada mais. Tudo que faz o bicho se comportar como companheiro já mora no mod base e é compartilhado.</p>
-<p><strong>O base é dono de:</strong></p>
+<p>Um addon é um mod comum da Workshop que declara <code>require=CompanionDogs</code> e chama uma função no carregamento. Ele acrescenta uma raça (ou várias, se dividirem o mesmo corpo) e nada mais.</p>
+<p>O base é dono de:</p>
 <ul>
 <li>a máquina de estados de animação, o animset e o esqueleto</li>
 <li>seguir, pathing, combate, caça, pastoreio, sentinela, necessidades e upkeep</li>
@@ -482,17 +484,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>domesticação, vínculo, cruzamento, filhotes e mestiços</li>
 <li>as opções de sandbox e a replicação de multiplayer</li>
 </ul>
-<p><strong>O seu addon é dono de:</strong></p>
+<p>O seu addon é dono de:</p>
 <ul>
 <li>os números que fazem o seu bicho ser diferente de um caramelo</li>
 <li>o modelo do corpo, a textura, o retrato e, se tiver, o ícone do moodle</li>
 <li>onde ele é encontrado no mundo</li>
 <li>o nome e a descrição, em cada idioma que você entregar</li>
 </ul>
-<p>Essa divisão é o ponto todo. Um pacote de raça são algumas centenas de linhas de Lua, porque a parte difícil já está rodando.</p>
-<p><strong>Uma raça, uma aparência.</strong> Uma raça é um conjunto de números mais uma aparência. Se você quer duas cores do mesmo bicho se comportando de formas diferentes, são duas raças. Se quer duas cores que se comportam igual, ainda são duas raças para o base (dois nomes, duas entradas no canil), e você as escreve a partir de uma tabela compartilhada, como o CD: Cats faz com as cinco pelagens dele.</p>
+<p>Duas cores que se comportam igual ainda são duas raças para o base (dois nomes, duas entradas no canil); você as escreve a partir de uma tabela compartilhada, como o CD: Cats faz com as cinco pelagens dele.</p>
 <h2 id="2-as-versões-da-api">2. As versões da API</h2>
-<p><code>CD.API_VERSION</code> é um número simples. Ele só cresceu acrescentando coisa, então um addon escrito contra uma versão antiga continua carregando num base mais novo sem uma única mudança.</p>
+<p><code>CD.API_VERSION</code> é um número simples. Ele só cresce acrescentando coisa, então um addon escrito contra uma versão antiga continua carregando num base mais novo sem mudança.</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>Versão do base</th>
@@ -528,14 +529,29 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>chaves de texto por espécie (<code>&lt;chave&gt;_&lt;species&gt;</code>), <code>CD.defineGenome</code>, os nomes neutros dos helpers</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.7.5</td>
+<td><code>restPoses</code></td>
+</tr>
 </tbody></table></div>
-<p>O número em que guardar é a <strong>API mais baixa de que o seu addon realmente precisa</strong>, e a versão do base naquela tabela é a que você anuncia na sua página da Workshop. Tire dessa tabela, e não do que o base era enquanto você escrevia: um campo que só existe na versão de desenvolvimento é um campo que os seus jogadores não têm.</p>
-<p><strong>Campo ausente é ignorado em silêncio.</strong> Isso está bom quando o campo é um número: num base antigo o seu bicho simplesmente late no volume normal. Não está bom quando o campo é um bloqueio, porque aí um gato que nunca deveria brigar sai brigando. Ou seja: número pode degradar, bloqueio não. Se o seu bicho depende de um bloqueio, guarde na API que o trouxe e deixe o addon ficar inerte em qualquer coisa mais velha.</p>
+<p>Guarde na API mais baixa de que o seu addon precisa, e anuncie na sua página da Workshop a versão do base correspondente naquela tabela. Não tire o número do base que você estava rodando enquanto escrevia: um campo que só existe na versão de desenvolvimento é um campo que os seus jogadores não têm.</p>
+<p>Campo ausente é ignorado sem erro. Para um campo numérico isso não faz mal: num base antigo o seu bicho late no volume normal. Para um campo de bloqueio é problema: um gato sem bloqueio de combate briga num base antigo.</p>
 <h2 id="3-o-que-você-precisa-antes-de-começar">3. O que você precisa antes de começar</h2>
-<p><strong>Um modelo skinado.</strong> O seu bicho precisa do <code>.glb</code> dele em <code>media/models_X/Skinned/</code>, e esse arquivo tem de carregar o <strong>conjunto COMPLETO dos 21 clips <code>Rac_*</code></strong>. Clip não é herdado entre arquivos de modelo: um modelo com quinze clips dá um bicho que congela na primeira vez que alguém pedir um dos outros seis. O modelo também tem de ficar abaixo de <strong>60 ossos</strong> e ter o nó de topo em identidade, senão a engine estoura uma vez por frame e o bicho aparece como um borrão preto.</p>
-<p>Se você ainda não tem modelo, dá para escrever e testar todo o resto apontando o <code>CD.applyDogModel</code> para um dos corpos do base. O bicho vai parecer um caramelo, mas todo sistema deste manual roda.</p>
-<p><strong>Uma textura</strong> de corpo, e um <strong>retrato</strong> para a janela do canil.</p>
-<p><strong>Uma decisão, antes de qualquer linha:</strong> o seu bicho é uma <em>raça</em> ou uma <em>espécie</em>? Raça é um cão com números diferentes. Espécie é um bicho que simplesmente não tem alguns dos trabalhos. A diferença não é cosmética, ela muda quais campos você escreve, e a seção 7 é sobre isso.</p>
+<p>O seu bicho precisa do próprio <code>.glb</code> skinado em <code>media/models_X/Skinned/</code>, com o conjunto completo dos 21 clips de animação <code>Rac_*</code>. Clip não é herdado entre arquivos de modelo: um modelo com quinze clips dá um bicho que congela na primeira vez que alguém pedir um dos outros seis. O modelo também tem de ficar abaixo de 60 ossos e ter o nó de topo em identidade, senão a engine estoura uma vez por frame e o bicho aparece como um borrão preto. Mais dois clips são opcionais, <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (ciclos de andar mancando); eles só importam se você marcar <code>limpAnim = true</code> na definição da raça.</p>
+<p>Se você ainda não tem modelo, dá para escrever e testar todo o resto apontando o <code>CD.applyDogModel</code> para um dos corpos do base. O bicho parece um caramelo, mas todo sistema deste manual roda.</p>
+<p>Você também precisa de uma textura para o corpo e de um retrato para a janela do canil.</p>
+<p>Decida se o seu bicho é uma raça ou uma espécie antes de escrever qualquer código. Raça é um cão com números diferentes. Espécie é um bicho que não tem alguns dos trabalhos. A escolha muda quais campos você escreve; a seção 7 cobre isso.</p>
 <h2 id="4-os-arquivos-de-um-addon">4. Os arquivos de um addon</h2>
 <p>Este é o CD: Pug, o menor addon publicado, com as partes que importam:</p>
 <pre><code>CompanionDogsPug/
@@ -565,18 +581,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> é a linha importante. Ela garante que <strong>todo</strong> o Lua do base rodou antes do seu, em cada fase: shared primeiro, depois client, depois server. Sem ela os seus arquivos podem carregar primeiro, e aí toda chamada <code>CD.</code> é índice em nil.</p>
-<p><strong>O <code>versionMin</code> não consegue dizer "precisa do Companion Dogs 0.6.8".</strong> Aquele campo é o gate da versão do <em>jogo</em> e nada mais, e não existe campo de mod.info para versão de dependência. O piso do base é garantido pela guarda da seção seguinte, e anunciado ao jogador na sua descrição. Escreva lá, por extenso, ou o único sintoma que o jogador recebe é um bicho que nunca aparece.</p>
+<p><code>require=CompanionDogs</code> é a linha importante. Ela garante que todo o Lua do base rodou antes do seu, em cada fase: shared primeiro, depois client, depois server. Sem ela os seus arquivos podem carregar primeiro, e toda chamada <code>CD.</code> vira índice em nil.</p>
+<p>O <code>versionMin</code> não consegue dizer "precisa do Companion Dogs 0.6.8". Aquele campo só confere a versão do jogo, e não existe campo de mod.info para versão de dependência. O piso do base é garantido pela guarda da seção seguinte e anunciado ao jogador na sua descrição. Escreva lá, por extenso, ou o único sintoma que o jogador recebe é um bicho que nunca aparece.</p>
 <h2 id="5-a-guarda-de-versão">5. A guarda de versão</h2>
 <p>Ponha isto no topo de todo arquivo Lua do seu addon, com o número de que o seu addon precisa:</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>Com o base ausente ou velho demais, o arquivo retorna na linha dois. O addon então não faz nada: sem raça, sem spawn, sem moodle, sem uma linha no log. Esse silêncio é deliberado. Um addon que carrega pela metade é pior que um que não carrega, porque o jogador fica com um bicho que tem nome e não tem comportamento.</p>
+<p>Com o base ausente ou velho demais, o arquivo retorna na linha dois e o addon não faz nada: sem raça, sem spawn, sem moodle, sem linha no log.</p>
 <p>A guarda é por arquivo, e cada arquivo guarda no que usa. O <code>PugDefinitions.lua</code> precisa dos helpers de modelo, então guarda neles:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Nunca crie o global.</strong> <code>CompanionDogs = CompanionDogs or {}</code> num addon transforma um base ausente numa tabela meio construída, e toda guarda dali para baixo passa quando não deveria. Leia o global, nunca escreva nele.</p>
+<p>Não crie o global. <code>CompanionDogs = CompanionDogs or {}</code> num addon transforma um base ausente numa tabela meio construída, e toda guarda dali para baixo passa quando não deveria.</p>
 <h2 id="6-registrando-a-raça">6. Registrando a raça</h2>
-<p>Uma chamada, num arquivo <strong>shared</strong>:</p>
+<p>Uma chamada, num arquivo shared:</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -607,7 +623,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     },
 })</code></pre>
 <p>Essa chamada insere a raça, registra os três tipos de animal dela, reconstrói a ordem de cruzamento para o seu bicho entrar na mestiçagem, e registra os passos de spawn.</p>
-<p>Definição inválida devolve <code>nil</code> em vez de estourar, então um erro nunca derruba o load junto. Toda recusa imprime uma linha nomeada, então <strong>leia o log</strong> na primeira vez que registrar uma raça.</p>
+<p>Definição inválida faz a chamada devolver <code>nil</code> em vez de estourar, então o carregamento continua. Cada recusa imprime uma linha nomeada no log.</p>
 <h3 id="campos-obrigatórios">Campos obrigatórios</h3>
 <div class="tw"><table><thead><tr>
 <th>Campo</th>
@@ -615,11 +631,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>o identificador da sua raça, único em todo o ecossistema. Nunca muda depois do release.</td>
+<td>o identificador da sua raça, único entre todos os mods. Não mude depois do release.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefixo dos três tipos de animal: <code>&lt;prefixo&gt;pup</code>, <code>&lt;prefixo&gt;female</code>, <code>&lt;prefixo&gt;male</code>. Escolhe a <strong>mesh do corpo</strong>.</td>
+<td>prefixo dos três tipos de animal: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Escolhe a mesh do corpo.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
@@ -627,11 +643,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>velocidade de aprender por habilidade: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 é o normal.</td>
+<td>velocidade de aprendizado por habilidade: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 é o normal.</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>o quanto ele bate. O caramelo é 0.20, uma raça de briga passa de 1.0.</td>
+<td>o quanto ele bate. O Caramelo é 0.20, uma raça de briga passa de 1.0.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
@@ -639,7 +655,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>faixa de nascimento dos quatro genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Cada um é <code>{ mínimo, máximo }</code> dentro de 0 a 1.</td>
+<td>faixa de nascimento dos quatro genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Cada um é <code>{ low, high }</code> dentro de 0 a 1.</td>
 </tr>
 </tbody></table></div>
 <h3 id="campos-opcionais">Campos opcionais</h3>
@@ -651,22 +667,22 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>engineBreed</code></td>
 <td>o <code>key</code></td>
-<td>nome de raça entregue à engine, que escolhe a <strong>textura</strong>. Único por raça.</td>
+<td>nome de raça entregue à engine. Ele escolhe a textura. Único por raça.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>chave da descrição. Aponte várias raças para uma chave só quando elas dividem a descrição.</td>
+<td>chave da descrição. Várias raças podem dividir uma chave.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
 <td>valor do base</td>
-<td><code>{ mínimo, máximo }</code> de filhotes por parto.</td>
+<td><code>{ min, max }</code> de filhotes por parto.</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false faz ele desgastar zumbi mas nunca desferir o golpe final.</td>
+<td>false faz ele desgastar zumbi mas nunca dar o golpe final.</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
@@ -681,7 +697,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>panicThreshold</code></td>
 <td>valor do base</td>
-<td>nível de estresse em que ele para de lutar. <code>panicImmune = true</code> significa nunca.</td>
+<td>nível de estresse em que ele para de lutar. <code>panicImmune = true</code> significa que ele nunca para.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
@@ -691,7 +707,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>escala visual absoluta do filhote. <strong>Raça pequena tem de setar isto</strong>, senão o filhote nasce do tamanho de adulto.</td>
+<td>escala visual absoluta do filhote. Raça pequena tem de definir isto, senão o filhote nasce do tamanho de adulto.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
@@ -701,7 +717,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>escala o raio e o volume do latido de alarme. Ele escala o ruído, não cria ruído: com a opção de sandbox desligada, nenhuma raça atrai zumbi com latido.</td>
+<td>escala o raio e o volume do latido de alarme. Com a opção de ruído do sandbox desligada, nenhuma raça atrai zumbi com latido, seja qual for o valor.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
@@ -711,7 +727,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>o bicho fica preso em alerta total: o dono não consegue pôr em quieto nem em silencioso, por lugar nenhum. Use quando o alarme alto <strong>for</strong> o desenho.</td>
+<td>o bicho fica em alerta total: o dono não consegue pôr em Discreto nem em Silencioso por lugar nenhum.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
@@ -721,27 +737,47 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game-minutes que ele insiste na entrega antes de desistir.</td>
+<td>minutos de jogo que ele insiste na entrega antes de desistir.</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
 <td>desligado</td>
-<td><code>{ &lt;tipo&gt; = { chance = 0..1, ... } }</code>. A raça sai atrás de coisas sozinha, sem modo e sem nível. Ver abaixo.</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. A raça sai atrás de coisas sozinha, sem modo e sem nível.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
 <td>valor do base</td>
-<td>duração da janela da animação ociosa, em milissegundos. Ajuste quando os seus clips forem mais curtos que os do cão, senão o clip em loop recomeça e é cortado no meio do gesto.</td>
+<td>duração da janela da animação ociosa, em milissegundos. Ajuste quando os seus clips forem mais curtos que os do cão, senão o loop recomeça e corta o gesto no meio.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false mantém o bicho em pé no Ficar e no Guarda, em vez de deitado.</td>
+<td>false mantém o bicho em pé no Ficar e no Vigiar, em vez de deitado.</td>
+</tr>
+<tr>
+<td><code>restPoses</code></td>
+<td>deitar</td>
+<td>lista de poses de descanso que o bicho sorteia toda vez que se acomoda, com transições e variações opcionais. Precisa de clips e nós de animação seus.</td>
+</tr>
+<tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true faz o bicho ferido mancar ao andar. Só ligue quando o seu modelo tiver os dois clips opcionais <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (ciclos de andar de 1.0 s com o mesmo root motion do <code>Rac_Walk</code>). Sem os clips o bicho anda congelado no lugar.</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
 <td>sons de cão</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. Ver abaixo.</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>as listas do cão</td>
+<td>o que o bicho não pode comer, o que conta como carne para ele e o que ele come sozinho de um cocho.</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>o cruzamento é fechado por espécie. Seção 7.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
@@ -749,22 +785,20 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>os bloqueios estruturais. Seção 7.</td>
 </tr>
 </tbody></table></div>
-<p>Número e flag que você acrescentar à definição são lidos de volta com <code>CD.breedNumber(animal, campo)</code> e <code>CD.breedFlag(animal, campo)</code>. Prefira essas duas a ler <code>CD.getBreedDef(animal).campo</code> na mão: elas tratam o campo ausente por você, e continuam funcionando quando o base mudar.</p>
+<p>Número e flag que você acrescentar à definição podem ser lidos de volta com <code>CD.breedNumber(animal, field)</code> e <code>CD.breedFlag(animal, field)</code>, não com <code>CD.getBreedDef(animal).field</code>. Elas tratam o campo ausente e continuam funcionando quando o base mudar.</p>
 <h3 id="instinto-distract">Instinto: <code>distract</code></h3>
-<p>Todo outro campo pede que o bicho seja bom em alguma coisa. Este pede que ele seja ruim de prestar atenção.</p>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>Uma raça que declara isso, de tempos em tempos, repara em alguma coisa e vai atrás, largando o que estava fazendo. Ela faz isso com <strong>nenhum modo ligado</strong>, tanto em <strong>Ficar</strong> quanto em Seguir, e você não manda nela nessa hora: as ordens voltam recusadas com a mesma mensagem <code>distracted</code> que a rolagem de obediência já usa. O único comando que passa é o Vem, que cancela.</p>
-<p>Trate como um custo que você dá à sua raça, não como um bônus. Enquanto ela corre, o bicho não está do lado do dono e não está vigiando. Serve para uma raça cuja marca é ser difícil de segurar. Não serve para um cão de trabalho do qual você quer que o jogador dependa.</p>
-<p>Todo tipo aceita os mesmos ajustes opcionais, e o que você deixar de fora cai nos padrões do mod:</p>
+<p>Uma raça que declara isso, de tempos em tempos, repara em alguma coisa e vai atrás, largando o que estava fazendo. Ela faz isso tanto em Ficar quanto em Seguir. Enquanto dura, as ordens voltam recusadas com a mesma mensagem <code>distracted</code> que a rolagem de obediência já usa. O Vir aqui é o único comando que passa, e ele cancela a distração.</p>
+<p>Todo tipo aceita os mesmos ajustes opcionais. O que você deixar de fora usa os padrões do mod:</p>
 <div class="tw"><table><thead><tr>
 <th>Campo</th>
 <th>O que faz</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1, rolado só quando o gatilho daquele tipo de fato achou alguma coisa. Escrever <code>25</code> por "25%" é recusado com uma linha nomeada no log</td>
+<td>0..1, rolado só quando o gatilho daquele tipo achou alguma coisa. Escrever <code>25</code> por "25%" é recusado com uma linha nomeada no log</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
@@ -780,19 +814,19 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <h4 id="o-tipo-prey">O tipo <code>prey</code></h4>
-<p>O único tipo que o mod base traz. O bicho vai atrás de animal selvagem, e <code>classes</code> escolhe quais chamam a atenção dele:</p>
+<p>O único tipo que o mod base traz. O bicho vai atrás de animal selvagem, e <code>classes</code> escolhe quais contam:</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
 <p>Dois limites valem independente do que você declarar:</p>
 <ul>
-<li><strong>Nunca alcança acima do seu <code>huntMaxPrey</code>.</strong> O funil é o mesmo do sistema de caça, então uma raça com teto <code>small</code> não persegue cervo nem declarando <code>large</code>.</li>
-<li><strong>O gate de nível só é furado para <code>tiny</code>.</strong> Roedor é pego por um bicho recém-domesticado com Caça 0, porque pegar camundongo não é habilidade que se treine. Declare <code>small</code> e a sua raça vai largar tudo e correr atrás do coelho, mas para de fato <em>matar</em> ele, ainda precisa do mesmo nível de Caça que o Labrador precisa. O instinto decide o que chama a atenção; o treino continua decidindo o que ele consegue abater. Sem esse segundo limite, <code>classes</code> seria um atalho que apaga a escada de Caça.</li>
+<li>Nunca passa do seu <code>huntMaxPrey</code>: uma raça com teto <code>small</code> não persegue cervo nem declarando <code>large</code>.</li>
+<li>O gate de nível só é pulado para <code>tiny</code>. Um bicho recém-domesticado com Caça 0 já pega roedor. Com <code>small</code> declarado, a raça persegue o coelho em qualquer nível, mas o abate precisa do mesmo nível de Caça que o Labrador precisa.</li>
 </ul>
-<p>O toggle de Caça do sandbox continua mandando no abate, não na corrida: com a caça desligada o bicho corre do mesmo jeito, mas a presa escapa.</p>
-<p>O abate feito assim passa pela entrega normal, então é o <code>huntFetchLevel</code> da sua raça que decide se ela carrega o corpo até o dono ou deixa onde caiu. Ponha <code>0</code> e o bicho entrega desde o primeiro dia, que é o que faz um gato te trazer um rato morto. A entrega sobrevive ao fim da janela de distração: morta a presa, o bicho volta a aceitar ordens, e a viagem de volta corre com o <code>huntDeliverTimeoutMin</code> dela. Sem declarar nada, vale o default de 6, e aí a raça corre por instinto mas ainda precisa merecer o direito de buscar.</p>
+<p>O toggle de Caça do sandbox só afeta o abate: o bicho corre do mesmo jeito, mas a presa escapa.</p>
+<p>O abate feito assim passa pela entrega normal, então o <code>huntFetchLevel</code> da sua raça decide se ela carrega o corpo até o dono. Em <code>0</code> o bicho entrega desde o primeiro dia, que é o que faz um gato te trazer um rato morto. A entrega sobrevive à janela de distração: morta a presa, o bicho volta a aceitar ordens, e a viagem de volta corre com o <code>huntDeliverTimeoutMin</code> dela.</p>
 <h4 id="escrevendo-o-seu-próprio-tipo">Escrevendo o seu próprio tipo</h4>
-<p><code>distract</code> é um dispatcher, e <code>prey</code> é só o tipo que vem junto com ele. Registre o seu:</p>
+<p><code>distract</code> é um dispatcher. Registre o seu:</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
@@ -800,19 +834,83 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
 <p>Depois declare na raça como qualquer outro tipo: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
-<p>O <code>gate</code> roda antes do orçamento global de scan do mod, e é onde ficam as recusas baratas. O <code>find</code> roda depois do orçamento, e é onde mora o custo. O <code>drive</code> devolve true enquanto ainda está conduzindo o bicho, e false quando terminou, o que fecha a janela. O seu handler roda em <code>pcall</code> próprio: se ele estourar, o mod escreve uma linha nomeada no log, desregistra aquele tipo pela sessão e deixa o resto do companheiro funcionando.</p>
-<p>Nomes reservados para tipos futuros do base, ainda não implementados: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Você pode registrar um tipo com um desses nomes hoje, mas o base vence o nome no dia em que trouxer o dele.</p>
+<p>O <code>gate</code> roda antes do orçamento global de scan do mod. O <code>find</code> roda depois do orçamento e faz a busca cara. O <code>drive</code> devolve true enquanto ainda está conduzindo o bicho e false quando terminou, o que fecha a janela. O seu handler roda em <code>pcall</code> próprio. Se ele estourar, o mod escreve uma linha nomeada no log, desregistra aquele tipo pela sessão e deixa o resto do companheiro funcionando.</p>
+<p>Nomes reservados para tipos futuros do base: <code>drink</code>, <code>eat</code>, <code>play</code>. Você pode registrar um tipo com um desses nomes hoje, mas o base toma o nome quando trouxer o dele.</p>
+<h3 id="poses-de-descanso">Poses de descanso</h3>
+<p>Bicho descansando deita. O <code>restPoses</code> troca essa pose única por uma lista que ele sorteia toda vez que se acomoda:</p>
+<pre><code>restPoses = {
+    "cdRest",                                          -- o deitar do base
+    { var = "cdSit", enter = "cdSitIn", exit = "cdSitOut",
+      variation = { "cdSitGroom", "cdSitGroom2" } },
+},</code></pre>
+<p>Cada entrada é o nome de uma variável de animação ou uma tabela. O <code>var</code> é o booleano que fica aceso a pausa inteira. O <code>enter</code> e o <code>exit</code> são pulsos de uma vez só, na hora de se acomodar e na hora de levantar. O <code>variation</code> é uma lista de pulsos que ele toca de vez em quando enquanto segura a pose, no mesmo relógio da variação ociosa. Só o <code>var</code> é obrigatório.</p>
+<p>O sorteio é uniforme e acontece a cada entrada em descanso, então duas entradas dão 50% cada e o bicho pode tirar a mesma duas vezes seguidas. Não é alternância.</p>
+<p>Cada pulso dura o que o <code>idleAnimMs</code> disser para aquela variável, então passe a forma de tabela e dê a duração de todas elas, inclusive as de ociosidade que você já usava. Ponha a <strong>duração real do clip</strong>: um nó de animação repete o clip enquanto a variável estiver acesa, e o base já encurta um pouco as duas transições, para que um tick atrasado do servidor não deixe uma delas dar uma volta inteira antes de a variável apagar.</p>
+<pre><code>idleAnimMs = { cdIdle2 = 3800, cdIdle3 = 3800, cdSitIn = 1375, cdSitOut = 1417,
+               cdSitGroom = 19833, cdSitGroom2 = 25167 },</code></pre>
+<p>Os clips e os nós são seus, não do base. Cada variável precisa de um arquivo de nó no seu addon, em <code>media/AnimSets/raccoon/idle/</code>, e o clip que o <code>m_AnimName</code> dele aponta tem que existir no seu modelo. Nó apontando para clip que o modelo não tem falha em silêncio e o bicho fica na ociosidade do base. Dê ao nó da pose um <code>m_ConditionPriority</code> de 10, como os do base, e um número maior para tudo que precisa tocar por cima dele: 11 para uma variação, 12 para as duas transições. Mantenha todos só em <code>idle/</code>. Nó de pose em <code>pathfind/</code> toca um clip sem root motion e congela o bicho onde ele está.</p>
 <h3 id="a-voz">A voz</h3>
-<p>Uma espécie diferente não fala a mesma língua. Sem <code>voices</code>, o seu gato late:</p>
+<p>Sem <code>voices</code> toda raça usa os sons de cão, então um gato latiria. Registre os seus sons primeiro:</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>Depois aponte a raça para eles:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> não é enfeite opcional. Sem ele os sons até tocam, mas ignoram o slider de categoria do jogador e o volume de efeitos do jogo, que é uma falha que ninguém reporta porque nada parece quebrado. Chave que você deixar de fora de <code>voices</code> cai no som de cão, que é o que você quer numa raça de cão e nunca é o que você quer em outra espécie.</p>
+<p>Sem o <code>CD.registerVoices</code> os sons até tocam, mas ignoram o slider de categoria do jogador e o volume de efeitos do jogo, e nada no log aponta para isso. Chave que você deixar de fora de <code>voices</code> cai no som de cão.</p>
+<p>O terceiro argumento é o alcance audível de cada som em tiles. Ele deve bater com o <code>distanceMax</code> que você escreveu no seu próprio script de som:</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>Num servidor o base manda o som só para os jogadores dentro desse alcance. Sem o alcance a voz cai num alcance genérico por categoria: um bufo que alcança dez tiles sai para todo mundo num raio de trinta. Passado o <code>distanceMax</code> o rolloff inverso do FMOD para de atenuar em vez de silenciar, então um <code>.ogg</code> solto segue tocando em <code>distanceMin / distanceMax</code> do volume a qualquer distância. Pelo mesmo motivo, mantenha o <code>distanceMin</code> baixo nas suas vozes altas.</p>
+<h3 id="a-dieta">A dieta</h3>
+<p>Sem <code>diet</code> toda raça come como cão: a mesma comida que o envenena, a mesma que conta como carne e a mesma que ele come de um cocho. O campo sobrescreve essas três listas só para a sua raça.</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>As duas formas existem porque as categorias do jogo só vão até certo ponto. <code>Cheese</code> é um <code>FoodType</code> de verdade, então uma chave cobre todo queijo do jogo e de qualquer mod de comida que reuse a categoria. Atum não: a lata aberta é <code>FoodType = Fish</code>, junto com todo peixe, e a lata fechada não declara tipo de comida nenhum. <code>badParts</code> e <code>proteinParts</code> são como você alcança esses casos.</p>
+<p>Todo campo é uma tabela de <code>&lt;chave&gt; = true</code> (acrescenta) ou <code>&lt;chave&gt; = false</code> (tira o que o base tinha). Valor que não é <code>true</code> nem <code>false</code> é descartado com uma linha nomeada no log.</p>
+<div class="tw"><table><thead><tr>
+<th>Campo</th>
+<th>O que são as chaves</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td><code>FoodType</code> de comida que passa mal, custa lealdade e sai em vermelho no menu de alimentar</td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>um pedaço do tipo do item, em minúsculo, procurado em qualquer posição</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td><code>FoodType</code> que paga a dívida de carne do bicho, a que o moodle Fraco acompanha</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>um pedaço do tipo do item, mesma busca do <code>badParts</code></td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td><code>FoodType</code> que você sabe que não é carne. Só cala a linha de log que o base escreve para um tipo de comida que ele nunca viu</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td><code>FoodType</code> e <code>AnimalFeedType</code> que o bicho come sozinho de um cocho</td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>tipo cheio do item, para item no cocho que não tem tipo de ração próprio</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code> começa de uma lista vazia em vez da do cão. Use quando o seu bicho não divide quase nada com um cachorro; um gato costuma sair mais fácil como um punhado de adições e remoções.</p>
+<p>As três listas seguem o bicho, então um cão e um gato no mesmo cocho comem coisas diferentes dele. A tigela do mod é a exceção: ela guarda pontos de comida, não o item que a encheu, então encher segue a lista do base para todo mundo. Nada venenoso entra numa tigela de qualquer jeito.</p>
 <h2 id="7-desligando-um-sistema-inteiro">7. Desligando um sistema inteiro</h2>
-<p>As cinco habilidades são os cinco sistemas, um para um:</p>
+<p>As cinco habilidades são os cinco sistemas:</p>
 <div class="tw"><table><thead><tr>
 <th>Habilidade</th>
 <th>O sistema que ela é</th>
@@ -823,7 +921,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>brigar, o modo Guarda e a autoproteção</td>
+<td>brigar, o modo Vigiar e a auto-proteção</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
@@ -838,13 +936,13 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>cuidar de gado num curral</td>
 </tr>
 </tbody></table></div>
-<p>Espécie não é um cão com números piores. É um bicho que não tem alguns daqueles trabalhos. Então ela declara o que não tem:</p>
+<p>Então uma espécie declara o que não tem:</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Ausente ou <code>true</code> significa que o bicho tem aquela habilidade, então você só escreve as que está tirando.</p>
-<p>Desligar uma habilidade faz <strong>três coisas de uma vez</strong>: o sistema nunca roda, a habilidade nunca ganha experiência, e a barra e os comandos dela somem da interface. As três juntas. Esconder só a barra deixaria a habilidade crescendo onde ninguém vê; travar só o sistema deixaria uma barra presa em zero para sempre.</p>
-<p><code>canBreed = false</code> está fora da tabela porque cruzar não tem barra nem experiência. E é total: o bicho não concebe, nunca é escolhido como parceiro, e não cruza nem com a própria raça. Se o que você quer é um bicho que cruza normalmente mas nunca com cão, isso é <code>species</code>, logo abaixo, e não isto.</p>
+<p>Ausente ou <code>true</code> significa que o bicho tem aquela habilidade.</p>
+<p>Desligar uma habilidade também para o ganho de experiência e tira a barra e os comandos dela da interface.</p>
+<p><code>canBreed = false</code> fica fora da tabela porque cruzar não tem barra nem experiência. O bicho não concebe, nunca é escolhido como parceiro e não cruza nem com a própria raça.</p>
 <h3 id="a-espécie">A espécie</h3>
 <p>Um addon que acrescenta outro animal, em vez de outro cão, declara isto:</p>
 <pre><code>CD.registerSpecies({ key = "cat",
@@ -852,14 +950,16 @@ huntMaxPrey = "tiny",</code></pre>
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>O campo está ausente em toda raça publicada até aqui, e ausente quer dizer <code>"dog"</code>. Então nada do que você já escreveu muda de comportamento.</p>
-<p>Ele faz duas coisas. <strong>O cruzamento fica fechado por espécie:</strong> um par só concebe com os dois lados da mesma espécie, no comando, no sorteio passivo por hora e na ferramenta de debug igual. E a interface para de chamar o seu bicho de cão: <code>nounKey</code> é o substantivo cru que preenche frases como <em>"Este %1 já pertence a outro sobrevivente"</em>, e <code>youngKey</code> é o rótulo que o filhote da sua espécie carrega na janela, no menu de contexto e no canil, onde um cão diz <em>Filhote</em>.</p>
-<p>Declarar <code>species</code> sem registrar não é fatal: seu bicho continua recusando cruzar fora da própria espécie, porque o portão compara a string crua. Só os dois substantivos caem nos do cão, e o log diz isso pelo nome. O fallback é de um lado só de propósito, porque o contrário, tratar espécie não registrada como cão, deixaria seu bicho cruzar com cão caladamente.</p>
-<p><strong>Isso é um bloqueio, então não degrada.</strong> Num base anterior à API 6 o campo é ignorado em silêncio e seu bicho é cão para efeito de cruzamento. Se ele nunca pode cruzar com um, cheque a API 6, ou mantenha <code>canBreed = false</code> enquanto o base for antigo, que é o que o gato faz.</p>
-<p><code>huntMaxPrey</code> é um <strong>teto dentro de uma caça que existe</strong>, que é coisa diferente de <code>hunt = false</code>. Aceita <code>"tiny"</code> (camundongo, rato, esquilo), <code>"small"</code> (coelho, guaxinim) ou <code>"large"</code> (cervo, o padrão, sem teto). Presa acima do teto é invisível para o seu bicho: ele não persegue e nem sequer aponta. Valor fora dessa escada cai em <code>"large"</code> e imprime uma linha nomeada no log.</p>
-<p><strong>Bicho bloqueado não ganha botão desabilitado.</strong> A opção sai do radial, do menu de contexto e da janela, e a recusa no server é silenciosa. Um halo dizendo que a ordem foi ignorada seria mentira, porque isso não é desobediência. Explique o desenho na descrição da sua raça. É por isso que nenhum desses campos traz chave de tradução nova junto.</p>
+<p>O campo está ausente em toda raça publicada até aqui, e ausente quer dizer <code>"dog"</code>.</p>
+<p>O cruzamento fica fechado por espécie: um par só concebe com os dois lados da mesma espécie, no comando, no sorteio passivo por hora e na ferramenta de debug. E a interface para de chamar o seu bicho de cão: <code>nounKey</code> é o substantivo cru que preenche frases como <em>"Este %1 já pertence a outro sobrevivente"</em>, e <code>youngKey</code> é o rótulo que o filhote da sua espécie carrega na janela, no menu de contexto e no canil, onde um cão diz <em>Filhote</em>.</p>
+<p>Esses dois substantivos só cobrem as frases montadas em volta de um <code>%1</code>. Toda outra frase que tem a palavra <em>cão</em> escrita no texto (<em>"Inspecionar cão"</em>, <em>"Seu cão está com fome"</em>, <em>"O cão late de propósito"</em>) recebe uma chave por espécie a partir da API 7: entregue <code>IGUI_PD_ScanStray_cat</code> nos seus arquivos de tradução e o base mostra ela no lugar de <code>IGUI_PD_ScanStray</code> sempre que o bicho na tela é um gato. Chave que você não entregou cai no texto do cão. As chaves que aceitam o sufixo: <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, todo <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, todo <code>Refused_*</code>, <code>KennelStatusNoData</code> e os <code>Moodle_*_desc</code> dos moodles de cuidado (Sick, Weak, Hunger, Thirst, Rested, Grief). Frase sem bicho na tela (a aba do registro, <em>"Faça amizade com um animal antes"</em>) já é neutra de espécie no base. O gato entrega todas elas em catorze línguas; copie o <code>IG_UI.json</code> dele como gabarito.</p>
+<p>O <code>group</code> do bicho só é lido pelo menu de spawn do debug e pelo visualizador de clips, pela chave <code>IGUI_Animal_Group_&lt;group&gt;</code>. Defina <code>t.group = "cat"</code> depois do helper de comportamento e entregue essa chave, ou sua espécie aparece lá com o nome do cão.</p>
+<p>Declarar <code>species</code> sem registrar não é fatal: seu bicho continua recusando cruzar fora da própria espécie, porque o portão compara a string crua. Só os dois substantivos caem nos do cão, e o log diz isso pelo nome.</p>
+<p>Num base anterior à API 6 o campo é ignorado sem linha de log, e seu bicho cruza como cão. Se ele nunca pode cruzar com um, guarde na API 6, ou mantenha <code>canBreed = false</code> enquanto o base for antigo, que é o que o gato faz.</p>
+<p><code>huntMaxPrey</code> é um teto de tamanho de presa dentro de uma caça que continua existindo; ele não substitui <code>hunt = false</code>. Aceita <code>"tiny"</code> (camundongo, rato, esquilo), <code>"small"</code> (coelho, guaxinim) ou <code>"large"</code> (cervo, o padrão, sem teto). Seu bicho não persegue nem aponta presa acima do teto. Valor fora dessa escada cai em <code>"large"</code> e imprime uma linha nomeada no log.</p>
+<p>Opção bloqueada some do radial, do menu de contexto e da janela, e o server recusa sem mensagem. Nenhum desses campos traz chave de tradução, então explique os limites na descrição da sua raça.</p>
 <h2 id="8-as-definições-de-animal">8. As definições de animal</h2>
-<p>A engine amarra a mesh ao <strong>tipo de animal</strong>, e não à raça, então a sua raça precisa dos três tipos dela. Esta é a parte mecânica de um addon, e o caminho mais curto é copiar o arquivo de um addon que já existe e renomear.</p>
+<p>A engine amarra a mesh ao tipo de animal, e não à raça, então a sua raça precisa de três tipos próprios. O caminho mais curto é copiar o arquivo de um addon que já existe e renomear.</p>
 <p>As três peças, num arquivo shared dentro de <code>Definitions/animal/</code>:</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
@@ -892,42 +992,46 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <th>O que ele preenche</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
 <td>modelo do corpo, esqueleto, texturas de abate e o animset</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
 <td>toda flag de comportamento da engine que um companheiro precisa</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
 <td>a câmera do retrato na janela do bicho</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
 <td>a tabela compartilhada de passos e foley</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>o genoma de uma espécie nova, com a lista padrão de genes (API 7)</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
 <td>o valor que impede um vira-lata assustado de sangrar até morrer</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>as parts de abate dos três estágios</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>as parts de abate dos três estágios. <code>meat</code> é opcional: <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>, e sem ele o animal rende a carne de cão do base. A engine multiplica a contagem e a fome de cada peça pelo tamanho da carcaça, então uma espécie com size alto (o gato usa 2,5 a 3,5 como escala visual) precisa de item próprio com fome base menor e contagem baixa</td>
 </tr>
 </tbody></table></div>
-<p>Quatro regras que não são óbvias:</p>
-<p><strong>O animset tem de continuar <code>"raccoon"</code>.</strong> O <code>CD.applyDogModel</code> seta isso. Um animset forkado não carrega a máquina de estados dele, e um bicho sem máquina de estados é um bicho congelado no lugar.</p>
-<p><strong>Reaproveite o genoma:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Não escreva o seu.</p>
-<p><strong>Nunca declare <code>mate</code>.</strong> Com ele a engine roda o acasalamento nativo dela dentro de qualquer zona de animais, que ignora o bloqueio de cruzamento do mod e as opções de sandbox, e produz filhote sem vínculo. O base limpa o campo no boot como rede de segurança, mas não conte com isso.</p>
-<p><strong>As parts são obrigatórias.</strong> Três linhas num arquivo só delas:</p>
+<p>Os nomes neutros de espécie chegaram com a API 7. Os antigos, <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code> e <code>CD.DogMoodles</code>, são as mesmas funções e tabelas com o primeiro nome delas. Addon que quer carregar num base anterior a 0.7.3 checa pelos nomes velhos e pega o novo quando ele existe: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
+<p>O animset tem de continuar <code>"raccoon"</code>. Um animset forkado não carrega a máquina de estados dele, e o bicho fica parado congelado no lugar.</p>
+<p>Reaproveite o genoma. Raça de cão aponta para a lista do base: <code>AnimalDefinitions.genome["dog"].genes</code>. Espécie nova chama <code>CD.defineGenome("cat")</code> uma vez e dá a todo estágio a tabela que ele devolve. A engine só lê a lista <code>genes</code> de cada estágio, e a chave do genome é convenção, então sua espécie ganha entrada própria sem lista de genes própria.</p>
+<p>Não declare <code>mate</code>. Com ele a engine roda o acasalamento nativo dela dentro de qualquer zona de animais, que ignora o bloqueio de cruzamento do mod e as opções de sandbox, e produz filhote sem vínculo. O base limpa o campo na inicialização, mas não conte com isso.</p>
+<p>As parts são obrigatórias. Três linhas num arquivo só delas:</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
 <p>Sem elas, abater o seu bicho derruba o código vanilla, porque ele indexa a definição de parts por tipo e raça e cai num nil.</p>
-<p><strong>Bicho pequeno precisa da câmera do retrato ajustada.</strong> O zoom do retrato no <code>CD.applyDogAvatar</code> é calibrado para cão, e zoom de avatar é magnificação: quanto menor o bicho, maior o número. Divida o zoom pela razão de porte contra um cão e multiplique os offsets por ela, senão o seu bicho fica minúsculo no rodapé do próprio retrato.</p>
+<p>O zoom do retrato no <code>CD.applyDogAvatar</code> é calibrado para cão, e zoom de avatar é magnificação: quanto menor o bicho, maior o número. Divida o zoom pela razão de porte contra um cão e multiplique os offsets por ela, senão o seu bicho fica minúsculo no rodapé do próprio retrato.</p>
 <h2 id="9-o-script-do-modelo">9. O script do modelo</h2>
-<p>Um arquivo em <code>media/scripts/</code>, que é o que conta ao jogo que o seu modelo existe:</p>
+<p>Um arquivo em <code>media/scripts/</code> conta ao jogo que o seu modelo existe:</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -950,8 +1054,8 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> é o que mantém utilizáveis os clips que estão dentro do seu arquivo de modelo. Sem isso o modelo carrega e nunca anima.</p>
-<p>O attachment <code>head</code> é onde chapéu e afins ficam. Se você quer que o alforje sirva no seu bicho, acrescente <code>saddlebags_l</code>, <code>saddlebags_r</code> e <code>saddlebags_c</code> do mesmo jeito, no osso da coluna. Esses números se acham olhando o bicho em jogo e cutucando os valores, e não medindo o modelo: uma bolsa matematicamente centralizada continua parecendo torta num corpo com pelo.</p>
+<p><code>keepMeshAnimations = true</code> mantém utilizáveis os clips que estão dentro do seu arquivo de modelo. Sem isso o modelo carrega e nunca anima.</p>
+<p>O attachment <code>head</code> é onde chapéu e afins ficam. Se você quer que o alforje sirva no seu bicho, acrescente <code>saddlebags_l</code>, <code>saddlebags_r</code> e <code>saddlebags_c</code> do mesmo jeito, no osso da coluna. Esses números se acham olhando o bicho em jogo e cutucando os valores. Valor medido do modelo põe a bolsa no centro geométrico da mesh, que não é onde ela fica bem no corpo.</p>
 <h2 id="10-onde-o-bicho-aparece">10. Onde o bicho aparece</h2>
 <p>Vira-lata é sorteado por prédio, por chunk, na primeira vez que aquele chunk carrega. Você descreve os seus sorteios como uma lista de passos, ou dentro da definição da raça em <code>spawns</code>, ou com <code>CD.registerStraySpawns(lista)</code>.</p>
 <pre><code>spawns = {
@@ -974,11 +1078,11 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>uma <strong>função</strong> que devolve uma porcentagem. Função, e não número, para poder acompanhar o multiplicador de sandbox ao vivo.</td>
+<td>uma função que devolve uma porcentagem, para poder ler o multiplicador de sandbox na hora do sorteio.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>chave do store persistido. Única em todo o ecossistema, e nunca muda.</td>
+<td>chave do store persistido. Única entre todos os mods, e nunca muda.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
@@ -993,10 +1097,10 @@ end</code></pre>
 <td>porcentagem de chance de nascer dentro do prédio em vez da rua. Padrão 35.</td>
 </tr>
 </tbody></table></div>
-<p>Multiplique a sua chance por <code>CD.dogSpawnMultiplier()</code>, ou divida <code>CD.strayChancePerHouse()</code> por uma raridade sua. De um jeito ou de outro a opção de sandbox do jogador continua valendo, o que não acontece se você escrever um número cru.</p>
-<p><code>indoor</code> é preferência e não promessa: prédio sem tile interno livre naquele chunk cai de volta num tile lá fora.</p>
+<p>Multiplique a sua chance por <code>CD.dogSpawnMultiplier()</code>, ou divida <code>CD.strayChancePerHouse()</code> por uma raridade sua. Dos dois jeitos a opção de sandbox do jogador continua valendo.</p>
+<p><code>indoor</code> é preferência: prédio sem tile interno livre naquele chunk cai de volta num tile lá fora.</p>
 <h3 id="as-classes-de-prédio">As classes de prédio</h3>
-<p>O base registra quatro, e você pode usá-las direto:</p>
+<p>O base registra quatro:</p>
 <div class="tw"><table><thead><tr>
 <th>Classe</th>
 <th>O que casa</th>
@@ -1021,21 +1125,20 @@ end</code></pre>
 <p>Se nenhuma servir, registre a sua:</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>A função de match recebe a definição do prédio e roda dentro de uma chamada protegida, então um erro nela não derruba a carga do chunk. <code>skipUrbanGate</code> deixa a classe sortear em chunk que não é urbano, que é o que uma fazenda ou uma cabana de floresta precisa. Deixe <code>exclusive</code> quieto: as classes do base são exclusivas entre si, e classe de addon existe para ser aditiva, casando por cima delas.</p>
+<p>A função de match recebe a definição do prédio e roda dentro de uma chamada protegida, então um erro nela não derruba a carga do chunk. <code>skipUrbanGate</code> deixa a classe sortear em chunk que não é urbano, que é o que uma fazenda ou uma cabana de floresta precisa. Não defina <code>exclusive</code>. As classes do base são exclusivas entre si, e classe de addon casa por cima delas.</p>
 <h3 id="sufixos-já-tomados">Sufixos já tomados</h3>
 <p>O sufixo é parte da chave sob a qual fica salvo "este prédio já foi sorteado". Dois mods usando o mesmo sufixo corrompem o sorteio um do outro.</p>
 <p>Todo sufixo começa com uma barra vertical. Estes já estão em uso:</p>
 <ul>
-<li><strong>Base:</strong> o sufixo vazio, e <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Cats:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li>Base: o sufixo vazio, e <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li>Rottweiler: <code>rw</code>, <code>r</code></li>
+<li>Doberman: <code>db</code>, <code>dm</code></li>
+<li>Labrador: <code>lb</code>, <code>lk</code></li>
+<li>Pug: <code>pg</code>, <code>pv</code></li>
+<li>Cats: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<p>Escolha um que ninguém esteja usando, e depois nunca mais toque nele.</p>
 <h2 id="11-o-moodle-da-raça">11. O moodle da raça</h2>
-<p>Moodle é arquivo de <strong>client</strong>. Você acrescenta uma tabela em <code>CD.DogMoodles</code>, e o base desenha, acompanha e limpa:</p>
+<p>Moodle é arquivo de client. Você acrescenta uma tabela em <code>CD.DogMoodles</code>, e o base desenha, acompanha e limpa:</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1054,21 +1157,20 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> devolve o nível, ou 0 para "não aparece". <code>apply</code> é chamada com os game-minutes desde a última chamada, então multiplique o seu efeito por <code>elapsedMin</code> em vez de supor um tick fixo.</p>
-<p>Entregue o ícone em <strong>seis tamanhos</strong>, de 32 a 128 pixels. A interface escolhe o tamanho pela escala do jogador, e tamanho faltando é um quadrado vazio.</p>
-<p>Moodle próprio é desenhado como overlay, e não pelo sistema de moodle do jogo, que não aceita entrada nova vinda de mod. Isso já está resolvido para você, mas é por isso que o moodle aparece na faixa do próprio mod e não entre os do vanilla.</p>
+<p><code>condition</code> devolve o nível, ou 0 para "não aparece". <code>apply</code> recebe os game-minutes desde a última chamada, então multiplique o seu efeito por <code>elapsedMin</code>.</p>
+<p>Entregue o ícone em seis tamanhos, de 32 a 128 pixels. A interface escolhe o tamanho pela escala do jogador, e tamanho faltando aparece como um quadrado vazio. O ícone aparece na faixa do próprio mod, e não entre os moodles do vanilla.</p>
 <h2 id="12-hooks">12. Hooks</h2>
-<p>Duas listas de funções que o base chama no <strong>server</strong>. Acrescente nelas a partir de um arquivo shared. Cada handler roda dentro da própria chamada protegida, então um addon quebrado não derruba o base junto.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, da API 2, chamada logo depois de o bicho largar o abate aos pés do dono:</p>
+<p>Duas listas de funções que o base chama no server. Acrescente nelas a partir de um arquivo shared. Cada handler roda dentro da própria chamada protegida, então um erro num addon não derruba o base.</p>
+<p><code>CD.onHuntDelivered</code>, da API 2, é chamada logo depois de o bicho largar o abate aos pés do dono:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, da API 3, chamada a cada ciclo de upkeep, depois de o base somar o estresse das necessidades e antes de gravar. Devolva um número, que é somado ao total:</p>
+<p><code>CD.onUpkeepStress</code>, da API 3, é chamada a cada ciclo de upkeep, depois de o base somar o estresse das necessidades não atendidas e antes de gravar. Devolva um número, que é somado ao total:</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>Este é o <strong>único</strong> jeito de um addon influir no estresse contínuo do bicho. O upkeep recomputa e sobrescreve o valor todo ciclo, então qualquer coisa que você escreva por fora se perde no tick seguinte. É a ferramenta certa para condição que vem do ambiente: calor, frio, chuva.</p>
-<p><strong>A regra de multiplayer, numa linha: o client nunca escreve ModData.</strong> Escrita do lado do client atropela a cópia do server no sync seguinte, e o sintoma aparece minutos depois, em outro lugar. Faça o trabalho num arquivo de server, ou num destes hooks, que já rodam lá.</p>
+<p>O upkeep recomputa e sobrescreve o valor todo ciclo, então qualquer coisa escrita por fora se perde no tick seguinte. Use o hook para condição que vem do ambiente, como calor, frio ou chuva.</p>
+<p>Em multiplayer, o client nunca escreve ModData. Escrita do lado do client sobrescreve a cópia do server no sync seguinte, e o sintoma aparece minutos depois, em outro lugar sem relação. Faça o trabalho num arquivo de server, ou num destes hooks.</p>
 <h2 id="13-chaves-de-tradução">13. Chaves de tradução</h2>
 <p>Entregue um <code>IG_UI.json</code> por pasta de idioma, em <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. O base entrega quatorze: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>As chaves de que uma raça precisa:</p>
@@ -1094,11 +1196,11 @@ end</code></pre>
 </tr>
 <tr>
 <td>as chaves da sua espécie</td>
-<td>o <code>nounKey</code> e o <code>youngKey</code> que você passou para <code>CD.registerSpecies</code>, se você acrescentou uma espécie</td>
+<td>o <code>nounKey</code> e o <code>youngKey</code> que você passou para <code>CD.registerSpecies</code></td>
 </tr>
 <tr>
 <td>as chaves do seu moodle</td>
-<td>nome e descrição, se você tiver moodle</td>
+<td>o nome e a descrição</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,7 +1211,7 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Duas coisas que vão te morder. Um <strong>sinal de porcentagem literal</strong> numa string traduzida derruba a tela que a mostra, porque o formatador o lê como placeholder. E um arquivo de idioma com <strong>byte order mark</strong> não compila, com um erro que nomeia um arquivo diferente do que está quebrado.</p>
+<p>Um sinal de porcentagem literal numa string traduzida derruba a tela que a mostra, porque o formatador o lê como placeholder. Um arquivo de idioma com byte order mark não compila, e o erro nomeia um arquivo diferente do que está quebrado.</p>
 <h2 id="14-o-que-o-save-guarda">14. O que o save guarda</h2>
 <p>Três dos seus identificadores são escritos em arquivo de save e lidos de volta para sempre:</p>
 <ul>
@@ -1117,18 +1219,18 @@ end</code></pre>
 <li><code>typePrefix</code>, que forma os tipos de animal que a engine guarda</li>
 <li><code>suffix</code>, a chave do store de "já foi sorteado", um por passo de spawn</li>
 </ul>
-<p><strong>Nenhum dos três pode ser renomeado depois do release.</strong> Renomear um <code>key</code> deixa órfão todo bicho vivo daquela raça. Renomear um <code>suffix</code> faz todo prédio de todo save existente sortear de novo, e um mundo jogado por meses de repente enche do seu bicho.</p>
-<p>A única vez em que esse re-sorteio é útil é quando ele é o ponto: o CD: Cats deu sufixos novos às quatro pelagens novas de propósito, justamente para elas começarem a aparecer em mundos que já estavam rodando, enquanto o gato preto original manteve o sufixo histórico e não re-sorteou.</p>
-<p><strong>Remover um addon de um save que tem bicho vivo daquela raça perde o bicho.</strong> A engine descarta um animal cujo tipo ela não conhece mais. O base não crasha, o vínculo e o canil degradam limpo, mas o bicho se foi. Avise na sua página da Workshop, como todo addon publicado faz.</p>
-<p><strong>Raça desconhecida degrada em vez de falhar.</strong> Se o seu addon estiver ausente, o base cai na raça padrão para qualquer pergunta que lhe façam, então um save aberto sem o seu mod é legível.</p>
+<p>Nenhum dos três pode ser renomeado depois do release. Renomear um <code>key</code> deixa órfão todo bicho vivo daquela raça. Renomear um <code>suffix</code> faz todo prédio de todo save existente sortear de novo, e um mundo jogado por meses enche do seu bicho.</p>
+<p>Um sufixo novo também é o jeito de uma raça nova chegar a mundos que já estão rodando. O CD: Cats deu sufixos novos às quatro pelagens novas, então elas começaram a aparecer em saves existentes, enquanto o gato preto original manteve o sufixo antigo e não sorteou de novo.</p>
+<p>Remover um addon de um save que tem bicho vivo daquela raça perde o bicho. A engine descarta um animal cujo tipo ela não conhece mais. O base não crasha, e o vínculo e o canil degradam sem erro. Avise na sua página da Workshop.</p>
+<p>Se o seu addon estiver ausente, o base cai na raça padrão para qualquer pergunta que lhe façam, então um save aberto sem o seu mod é legível.</p>
 <h2 id="15-antes-de-publicar">15. Antes de publicar</h2>
 <ul>
-<li>A guarda está em <strong>todo</strong> arquivo Lua, e nomeia a API que você de fato usa.</li>
+<li>A guarda está em todo arquivo Lua, e nomeia a API que você de fato usa.</li>
 <li>O piso de versão do base está escrito na sua descrição, por extenso. O <code>versionMin</code> não diz isso.</li>
-<li>Você leu o log no primeiro load. Fora isso o <code>CD.registerBreed</code> recusa em silêncio, e toda recusa imprime uma linha nomeada.</li>
+<li>Você leu o log no primeiro carregamento. Fora isso o <code>CD.registerBreed</code> recusa em silêncio, e toda recusa imprime uma linha nomeada.</li>
 <li>O <code>CD.defineDogParts</code> está sendo chamado. Abata um bicho seu e veja que não crasha.</li>
-<li>O seu <code>key</code>, o <code>typePrefix</code> e os sufixos de spawn são únicos, e você está feliz com eles para sempre.</li>
-<li>Raça pequena seta <code>puppySize</code>, e você viu um filhote para provar.</li>
+<li>O seu <code>key</code>, o <code>typePrefix</code> e os sufixos de spawn são únicos, e você não vai precisar mudar eles.</li>
+<li>Raça pequena define <code>puppySize</code>, e você viu um filhote para provar.</li>
 <li>Se for outra espécie, o <code>CD.registerVoices</code> está sendo chamado e o <code>voices</code> está preenchido, senão ela late.</li>
 <li>O ícone do moodle existe nos seis tamanhos.</li>
 <li>Toda pasta de idioma que você entrega tem todas as chaves. Chave faltando mostra a chave crua na tela.</li>
@@ -1136,15 +1238,47 @@ end</code></pre>
 <li>A sua página da Workshop avisa para não remover o addon de um save com bicho vivo.</li>
 </ul>
 <h2 id="16-erros-comuns">16. Erros comuns</h2>
-<p><strong>"O meu bicho nunca aparece."</strong> Quase sempre a guarda: o seu addon precisa de uma API que o base instalado não tem, então ele está inerte de propósito. Confira o seu número de API contra a tabela da seção 2.</p>
-<p><strong>"Ele aparece, mas fica congelado."</strong> O animset não é <code>"raccoon"</code>, ou faltam clips no seu modelo. Os dois saem como um bicho parado para sempre.</p>
-<p><strong>"Ele vira um borrão preto e o log enche."</strong> Mais de 60 ossos no modelo.</p>
-<p><strong>"Abater ele crasha."</strong> O <code>CD.defineDogParts</code> não foi chamado.</p>
-<p><strong>"O filhote nasce do tamanho de um adulto."</strong> Raça pequena que não setou <code>puppySize</code>. O valor é absoluto e é reaplicado a cada sweep, então a faixa de tamanho do tipo não te salva.</p>
-<p><strong>"Duas raças minhas vivem virando uma na outra."</strong> Elas dividem o <code>engineBreed</code>. O prefixo escolhe a mesh e pode ser dividido por uma família; o <code>engineBreed</code> escolhe a textura e é o que desempata dentro daquela família, então tem de ser único por raça.</p>
-<p><strong>"O som toca mas ignora o controle de volume."</strong> O <code>CD.registerVoices</code> não foi chamado para aquele som.</p>
-<p><strong>"Funciona em single player e se comporta mal em servidor."</strong> Alguma coisa está escrevendo ModData no client. Mova para o server.</p>
-<p><strong>"Ele brigou com zumbi mesmo eu tendo desligado o combate."</strong> O base em que ele está rodando é mais velho que a API 5, onde o campo ainda não existia e foi ignorado em silêncio. Este é exatamente o caso em que a guarda tem de bloquear, e não degradar.</p>
+<div class="tw"><table><thead><tr>
+<th>Sintoma</th>
+<th>O que é</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>"O meu bicho nunca aparece."</strong></td>
+<td>Quase sempre a guarda: o addon precisa de uma API que o base instalado não tem, então ele retorna cedo e não registra nada. Confira o seu número de API contra a tabela da seção 2.</td>
+</tr>
+<tr>
+<td><strong>"Ele aparece, mas fica congelado."</strong></td>
+<td>O animset não é <code>"raccoon"</code>, ou faltam clips no modelo.</td>
+</tr>
+<tr>
+<td><strong>"Ele vira um borrão preto e o log enche."</strong></td>
+<td>O modelo tem mais de 60 ossos.</td>
+</tr>
+<tr>
+<td><strong>"Abater ele crasha."</strong></td>
+<td>O <code>CD.defineDogParts</code> não foi chamado.</td>
+</tr>
+<tr>
+<td><strong>"O filhote nasce do tamanho de um adulto."</strong></td>
+<td>Raça pequena que não definiu <code>puppySize</code>. O valor é absoluto e é reaplicado a cada sweep, então a faixa de tamanho do tipo não cobre isso.</td>
+</tr>
+<tr>
+<td><strong>"Duas raças minhas vivem virando uma na outra."</strong></td>
+<td>Elas dividem o <code>engineBreed</code>. O prefixo escolhe a mesh e pode ser dividido por uma família. O <code>engineBreed</code> escolhe a textura e separa as raças daquela família, então tem de ser único por raça.</td>
+</tr>
+<tr>
+<td><strong>"O som toca mas ignora o controle de volume."</strong></td>
+<td>O <code>CD.registerVoices</code> não foi chamado para aquele som.</td>
+</tr>
+<tr>
+<td><strong>"Funciona em single player e se comporta mal em servidor."</strong></td>
+<td>Alguma coisa está escrevendo ModData no client. Mova para o server.</td>
+</tr>
+<tr>
+<td><strong>"Ele brigou com zumbi mesmo eu tendo desligado o combate."</strong></td>
+<td>O base em que ele roda é mais velho que a API 5. Esse base não conhece o campo e ignora ele. A guarda tem de bloquear nesse base em vez de carregar com o campo faltando.</td>
+</tr>
+</tbody></table></div>
 <hr>
 <p>Alguma coisa deste manual está errada, ou faltando? Fale no <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
 </div>

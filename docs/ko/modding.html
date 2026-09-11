@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -421,12 +421,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#5-버전-가드" data-id="5-버전-가드">5. 버전 가드</a>
 </div>
 <div class="grp">
-<a class="s2" href="#6-품종-등록하기" data-id="6-품종-등록하기">6. 품종 등록하기</a>
+<a class="s2" href="#6-품종-등록" data-id="6-품종-등록">6. 품종 등록</a>
 <div class="sub">
 <a class="s3" href="#필수-필드" data-id="필수-필드">필수 필드</a>
 <a class="s3" href="#선택-필드" data-id="선택-필드">선택 필드</a>
 <a class="s3" href="#본능-distract" data-id="본능-distract">본능: distract</a>
 <a class="s3" href="#목소리" data-id="목소리">목소리</a>
+<a class="s3" href="#식단" data-id="식단">식단</a>
 </div>
 </div>
 <div class="grp">
@@ -444,7 +445,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#10-동물이-나타나는-곳" data-id="10-동물이-나타나는-곳">10. 동물이 나타나는 곳</a>
 <div class="sub">
-<a class="s3" href="#건물-클래스" data-id="건물-클래스">건물 클래스</a>
+<a class="s3" href="#건물-분류" data-id="건물-분류">건물 분류</a>
 <a class="s3" href="#이미-쓰이는-접미사" data-id="이미-쓰이는-접미사">이미 쓰이는 접미사</a>
 </div>
 </div>
@@ -468,13 +469,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-모딩-설명서">Companion Dogs: 모딩 설명서</h1>
-<p>나만의 애드온 만드는 법. 새로운 품종, 또는 종 전체를 Companion Dogs에 맞물리는 별도의 워크샵 모드로 만듭니다.</p>
-<p>이 설명서는 모드를 쓰는 사람을 위한 것입니다. 그냥 플레이하고 싶다면 필요한 것은 나머지 두 권입니다. 개가 무엇을 하는지는 <a href="features.html" class="xlink">기능</a>, 품종 자체는 <a href="breeds.html" class="xlink">견종</a>를 보세요.</p>
-<p>Lua를 읽을 줄 알고, 리그와 애니메이션이 붙은 동물 모델을 이미 가지고 있다고 가정합니다. 아트 파이프라인은 여기에 없습니다. 3절이 모델 파일이 만족해야 할 조건을 나열하고, 그 이상은 다루지 않습니다.</p>
-<blockquote class="quote"><strong>이것은 공개된 계약입니다.</strong> 이 설명서가 이름을 붙인 것은 모두 모드 바깥에서 호출되라고 있는 것입니다. 여기에 이름이 없는 것은 내부용이며, 어떤 버전에서든 예고 없이 바뀔 수 있습니다.</blockquote>
+<p>애드온을 직접 만드는 법. 새 품종 하나, 또는 종 전체를, Companion Dogs에 물리는 별도의 워크샵 모드로 만듭니다.</p>
+<p>이 설명서는 모드를 만드는 사람을 위한 것입니다. 플레이만 할 생각이라면 나머지 두 권을 읽으세요. 개가 무엇을 하는지는 <a href="features.html" class="xlink">기능</a>, 품종은 <a href="breeds.html" class="xlink">견종</a>입니다.</p>
+<p>Lua를 읽을 줄 알고, 리그와 애니메이션이 붙은 동물 모델이 있다고 가정합니다. 아트 파이프라인은 여기서 다루지 않습니다. 모델 파일이 만족해야 하는 조건은 3절에 있습니다.</p>
+<blockquote class="quote">이 설명서에 이름이 나오는 것은 모두 공개 계약이며, 모드 바깥에서 호출하라고 있는 것입니다. 여기에 이름이 없는 것은 내부용이고, 어떤 버전에서든 예고 없이 바뀝니다.</blockquote>
 <h2 id="1-애드온이란-무엇인가">1. 애드온이란 무엇인가</h2>
-<p>애드온은 <code>require=CompanionDogs</code>를 선언하고 로드 시점에 함수 하나를 호출하는 평범한 워크샵 모드입니다. 추가하는 것은 <strong>품종 하나</strong>(몸을 공유한다면 여럿)뿐이고, 그 외에는 아무것도 없습니다. 동물이 동반자처럼 행동하게 만드는 모든 것은 이미 베이스 모드 안에 있고, 공유됩니다.</p>
-<p><strong>베이스가 가진 것:</strong></p>
+<p>애드온은 <code>require=CompanionDogs</code>를 선언하고 로드 시점에 함수 하나를 호출하는 평범한 워크샵 모드입니다. 품종 하나(몸을 공유한다면 여럿)를 추가하고, 그 외에는 아무것도 하지 않습니다.</p>
+<p>베이스가 가진 것:</p>
 <ul>
 <li>애니메이션 상태 기계, 애님셋, 스켈레톤</li>
 <li>따라오기, 길찾기, 전투, 사냥, 가축 돌보기, 보초, 욕구, 유지 관리</li>
@@ -482,21 +483,20 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>길들이기, 유대, 번식, 강아지, 잡종</li>
 <li>샌드박스 옵션과 멀티플레이 동기화</li>
 </ul>
-<p><strong>여러분의 애드온이 가진 것:</strong></p>
+<p>여러분의 애드온이 가진 것:</p>
 <ul>
-<li>여러분의 동물을 카라멜루와 다르게 만드는 숫자들</li>
+<li>여러분의 동물을 믹스와 다르게 만드는 숫자들</li>
 <li>몸 모델, 텍스처, 초상화, 그리고 있다면 무들 아이콘</li>
 <li>세계 어디에서 발견되는지</li>
 <li>이름과 설명을, 함께 배포하는 모든 언어로</li>
 </ul>
-<p>이 분담이 요점 전부입니다. 품종 팩은 Lua 몇백 줄이면 됩니다. 어려운 부분은 이미 돌아가고 있으니까요.</p>
-<p><strong>한 품종에 한 모습.</strong> 품종이란 숫자 묶음 하나에 모습 하나입니다. 같은 동물의 두 색깔이 서로 다르게 행동하길 원한다면 그것은 두 품종입니다. 똑같이 행동하는 두 색깔을 원해도, 베이스가 보기에는 여전히 두 품종이며(이름 둘, 견사 항목 둘), CD: Cats가 다섯 가지 털색으로 하는 것처럼 공유 테이블 하나에서 작성합니다.</p>
+<p>행동이 똑같은 두 색깔도 베이스에게는 서로 다른 두 품종입니다(이름 둘, 견사 항목 둘). 공유 테이블 하나에서 둘을 뽑아 쓰면 되고, CD: Cats가 다섯 가지 털색으로 그렇게 합니다.</p>
 <h2 id="2-api-버전">2. API 버전</h2>
-<p><code>CD.API_VERSION</code>은 단순한 숫자입니다. 지금까지 오직 더하는 방식으로만 커져 왔기 때문에, 예전 버전을 겨냥해 쓴 애드온도 더 새로운 베이스에서 한 줄도 고치지 않고 계속 로드됩니다.</p>
+<p><code>CD.API_VERSION</code>은 그냥 숫자입니다. 추가로만 커지므로, 예전 버전을 기준으로 쓴 애드온은 더 새로운 베이스에서도 고치지 않고 계속 로드됩니다.</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>베이스 버전</th>
-<th>무엇이 추가되었나</th>
+<th>추가된 것</th>
 </tr></thead><tbody>
 <tr>
 <td>1</td>
@@ -506,12 +506,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>2</td>
 <td>0.6.6</td>
-<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, 훅 <code>CD.onHuntDelivered</code></td>
+<td><code>huntFetchLevel</code>, <code>huntDeliverTimeoutMin</code>, <code>CD.onHuntDelivered</code> 훅</td>
 </tr>
 <tr>
 <td>3</td>
 <td>0.6.8</td>
-<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, 훅 <code>CD.onUpkeepStress</code></td>
+<td><code>sentinelMult</code>, <code>barkNoiseMult</code>, <code>loyaltyDecayMult</code>, <code>CD.onUpkeepStress</code> 훅</td>
 </tr>
 <tr>
 <td>4</td>
@@ -528,16 +528,26 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>종별 텍스트 키(<code>&lt;key&gt;_&lt;species&gt;</code>), <code>CD.defineGenome</code>, 종 중립 헬퍼 이름</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
 </tbody></table></div>
-<p>가드에 적을 숫자는 <strong>여러분의 애드온이 실제로 필요로 하는 가장 낮은 API</strong>입니다. 그리고 그 표에 적힌 베이스 버전이 워크샵 페이지에 밝힐 숫자입니다. 작성하던 시점에 베이스가 무엇이었는지가 아니라 이 표에서 가져오세요. 개발 빌드에만 있는 필드는 플레이어에게는 없는 필드입니다.</p>
-<p><strong>없는 필드는 조용히 무시됩니다.</strong> 필드가 숫자일 때는 괜찮습니다. 오래된 베이스에서는 여러분의 동물이 그냥 보통 음량으로 짖을 뿐입니다. 필드가 차단일 때는 괜찮지 않습니다. 절대 싸우면 안 되는 고양이가 태연히 싸우게 되니까요. 즉 숫자는 낮아져도 되지만 차단은 안 됩니다. 여러분의 동물이 차단에 의존한다면 그것을 도입한 API로 가드하고, 그보다 오래된 것에서는 애드온이 통째로 비활성으로 남게 두세요.</p>
+<p>애드온에 필요한 가장 낮은 API로 가드를 걸고, 위 표에서 그에 맞는 베이스 버전을 골라 워크샵 페이지에 적으세요. 작업하다 마침 돌리고 있던 베이스에서 숫자를 가져오면 안 됩니다. 개발 빌드에만 있는 필드는 플레이어에게는 없는 필드입니다.</p>
+<p>없는 필드는 오류 없이 무시됩니다. 숫자 필드라면 그래도 괜찮습니다. 옛 베이스에서는 동물이 평범한 크기로 짖을 뿐입니다. 블록 필드라면 문제가 됩니다. 전투 블록이 없는 고양이는 옛 베이스에서 싸웁니다.</p>
 <h2 id="3-시작하기-전에-필요한-것">3. 시작하기 전에 필요한 것</h2>
-<p><strong>스킨이 입혀진 모델.</strong> 여러분의 동물에는 <code>media/models_X/Skinned/</code> 아래에 자기 <code>.glb</code>가 필요하고, 그 파일은 <strong>21개의 <code>Rac_*</code> 클립 전부</strong>를 담고 있어야 합니다. 클립은 모델 파일끼리 상속되지 않습니다. 클립이 열다섯 개인 모델은, 나머지 여섯 개 중 하나를 요구받는 첫 순간에 얼어붙는 동물이 됩니다. 모델은 또한 <strong>뼈 60개 미만</strong>이어야 하고 최상위 노드가 항등이어야 합니다. 아니면 엔진이 프레임마다 예외를 던지고 동물은 검은 얼룩으로 그려집니다.</p>
-<p>아직 모델이 없어도, <code>CD.applyDogModel</code>을 베이스의 몸 중 하나로 가리키면 나머지는 전부 쓰고 시험할 수 있습니다. 동물은 카라멜루처럼 보이겠지만, 이 설명서의 모든 시스템은 돌아갑니다.</p>
-<p>몸에 쓸 <strong>텍스처</strong>, 그리고 견사 창에 쓸 <strong>초상화</strong>.</p>
-<p><strong>코드를 쓰기 전에 내릴 결정 하나:</strong> 여러분의 동물은 <em>품종</em>입니까, <em>종</em>입니까? 품종은 숫자가 다른 개입니다. 종은 몇몇 일거리를 아예 가지고 있지 않은 동물입니다. 이 차이는 겉모습이 아니라 어떤 필드를 쓰는지를 바꾸며, 7절이 그 이야기입니다.</p>
+<p>동물에게는 <code>media/models_X/Skinned/</code> 아래에 자기 스킨드 <code>.glb</code>가 필요하고, 그 안에 <code>Rac_*</code> 애니메이션 클립 21개가 전부 들어 있어야 합니다. 클립은 모델 파일끼리 상속되지 않습니다. 클립이 열다섯 개뿐인 모델은 나머지 여섯 개 중 하나가 요구되는 순간 얼어붙는 동물이 됩니다. 모델은 또한 본 60개 아래여야 하고 최상위 노드가 항등이어야 합니다. 아니면 엔진이 프레임마다 예외를 던지고 동물은 검은 얼룩으로 그려집니다. 선택 클립이 둘 더 있습니다. <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>(절뚝이는 걷기 사이클)인데, 품종 정의에서 <code>limpAnim = true</code>를 켤 때만 의미가 있습니다.</p>
+<p>아직 모델이 없다면, <code>CD.applyDogModel</code>을 베이스의 몸 중 하나로 겨누어 놓고 나머지 전부를 쓰고 시험할 수 있습니다. 동물은 믹스처럼 보이지만, 이 설명서의 모든 시스템이 돌아갑니다.</p>
+<p>몸에 쓸 텍스처와 견사 창에 쓸 초상화도 필요합니다.</p>
+<p>코드를 쓰기 전에 여러분의 동물이 품종인지 종인지부터 정하세요. 품종은 숫자가 다른 개입니다. 종은 어떤 일거리 자체가 없는 동물입니다. 이 선택이 무슨 필드를 쓰는지를 바꿉니다. 7절이 다룹니다.</p>
 <h2 id="4-애드온의-파일-구성">4. 애드온의 파일 구성</h2>
-<p>이것이 공개된 애드온 중 가장 작은 CD: Pug의, 중요한 부분만 추린 모습입니다.</p>
+<p>공개된 애드온 중 가장 작은 CD: Pug입니다. 중요한 부분만 추렸습니다.</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -555,7 +565,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>그리고 <code>mod.info</code>:</p>
+<p>그리고 <code>mod.info</code>입니다.</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -565,18 +575,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code>가 핵심 줄입니다. 이 줄은 베이스의 Lua가 <strong>전부</strong> 여러분 것보다 먼저 실행되도록 각 단계에서 보장합니다. shared가 먼저, 그다음 client, 그다음 server입니다. 이것이 없으면 여러분의 파일이 먼저 로드될 수 있고, 그러면 모든 <code>CD.</code> 호출이 nil 인덱싱이 됩니다.</p>
-<p><strong><code>versionMin</code>으로는 "Companion Dogs 0.6.8이 필요함"을 말할 수 없습니다.</strong> 그 필드는 <em>게임</em> 빌드의 관문이고 그 이상은 아닙니다. 의존 모드의 버전을 적는 mod.info 필드는 존재하지 않습니다. 베이스의 하한은 다음 절의 가드가 강제하고, 플레이어에게는 설명문으로 알립니다. 거기에 말로 적으세요. 적지 않으면 플레이어가 받는 유일한 증상은 끝내 나타나지 않는 동물입니다.</p>
+<p>중요한 줄은 <code>require=CompanionDogs</code>입니다. 이 줄이 베이스 Lua 전부가 여러분 것보다 먼저 돌았음을 보장합니다. shared, client, server 모든 단계에서 그렇습니다. 이 줄이 없으면 여러분 파일이 먼저 로드될 수 있고, 그러면 모든 <code>CD.</code> 호출이 nil 인덱싱입니다.</p>
+<p><code>versionMin</code>으로는 "Companion Dogs 0.6.8 이상이 필요하다"를 표현할 수 없습니다. 그 필드는 게임 빌드만 막고, 의존 모드의 버전을 적을 mod.info 필드는 없습니다. 베이스 하한선은 다음 절의 가드가 강제하고, 플레이어에게는 여러분의 설명으로 알립니다. 거기에 말로 적으세요. 아니면 플레이어가 겪는 증상은 끝내 나타나지 않는 동물 하나뿐입니다.</p>
 <h2 id="5-버전-가드">5. 버전 가드</h2>
-<p>애드온의 모든 Lua 파일 맨 위에, 여러분의 애드온이 실제로 필요로 하는 숫자로 이것을 넣으세요.</p>
+<p>애드온의 모든 Lua 파일 맨 위에, 애드온이 필요로 하는 숫자와 함께 이것을 넣으세요.</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>베이스가 없거나 너무 오래되었다면 파일은 두 번째 줄에서 되돌아갑니다. 그러면 애드온은 아무것도 하지 않습니다. 품종도, 스폰도, 무들도 없고, 로그에 한 줄도 남지 않습니다. 이 침묵은 의도된 것입니다. 절반만 로드되는 애드온은 아예 로드되지 않는 애드온보다 나쁩니다. 플레이어에게 이름은 있는데 행동은 없는 동물이 남기 때문입니다.</p>
-<p>가드는 파일 단위이고, 각 파일은 자기가 쓰는 것을 가드합니다. <code>PugDefinitions.lua</code>는 모델 헬퍼가 필요하므로 그쪽을 가드합니다.</p>
+<p>베이스가 없거나 너무 낡았으면 파일은 둘째 줄에서 반환되고 애드온은 아무것도 하지 않습니다. 품종도, 스폰도, 무들도, 로그 한 줄도 없습니다.</p>
+<p>가드는 파일마다 걸고, 파일마다 자기가 쓰는 것으로 겁니다. <code>PugDefinitions.lua</code>는 모델 헬퍼가 필요하므로 그것으로 겁니다.</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>전역을 직접 만들지 마세요.</strong> 애드온 안의 <code>CompanionDogs = CompanionDogs or {}</code>는 없는 베이스를 반쯤 지어진 테이블로 바꿔 버리고, 그 아래의 모든 가드가 통과하면 안 될 때 통과합니다. 전역은 읽기만 하고 절대 쓰지 마세요.</p>
-<h2 id="6-품종-등록하기">6. 품종 등록하기</h2>
-<p><strong>shared</strong> 파일에서 호출 하나면 됩니다.</p>
+<p>전역을 만들지 마세요. 애드온 안의 <code>CompanionDogs = CompanionDogs or {}</code>는 없는 베이스를 반쯤 만들어진 테이블로 바꿔 놓고, 그 뒤의 모든 가드가 통과하면 안 될 때 통과합니다.</p>
+<h2 id="6-품종-등록">6. 품종 등록</h2>
+<p>shared 파일에서 호출 하나면 됩니다.</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -606,8 +616,8 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>이 호출이 품종을 등록하고, 그 품종의 동물 타입 셋을 등록하고, 여러분의 동물이 교배에 들어가도록 번식 순서를 다시 만들고, 스폰 단계를 등록합니다.</p>
-<p>잘못된 정의는 예외를 던지지 않고 <code>nil</code>을 돌려주므로, 실수가 로드 전체를 끌고 내려가는 일은 없습니다. 모든 거절은 이름이 붙은 한 줄을 출력하니, 품종을 처음 등록할 때는 <strong>로그를 읽으세요</strong>.</p>
+<p>이 호출은 품종을 집어넣고, 동물 타입 세 개를 등록하고, 여러분의 동물이 잡종 교배에 끼도록 번식 순서를 다시 만들고, 스폰 단계를 등록합니다.</p>
+<p>정의가 잘못되어 있으면 호출은 예외를 던지지 않고 <code>nil</code>을 반환하므로 로드는 계속됩니다. 거부될 때마다 로그에 이름이 붙은 줄이 찍힙니다.</p>
 <h3 id="필수-필드">필수 필드</h3>
 <div class="tw"><table><thead><tr>
 <th>필드</th>
@@ -615,11 +625,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>여러분 품종의 식별자. 모든 모드를 통틀어 유일. 출시 후에는 절대 바꾸지 않습니다.</td>
+<td>품종 식별자. 모든 모드를 통틀어 유일해야 합니다. 출시한 뒤에는 바꾸지 마세요.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>동물 타입 셋의 접두사. <code>&lt;접두사&gt;pup</code>, <code>&lt;접두사&gt;female</code>, <code>&lt;접두사&gt;male</code>. <strong>몸의 메시</strong>를 고릅니다.</td>
+<td>동물 타입 세 개의 접두사. <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. 몸 메시를 고릅니다.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
@@ -627,46 +637,46 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>기술별 학습 속도. <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0이 보통입니다.</td>
+<td>스킬별 학습 속도. <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0이 보통입니다.</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>얼마나 세게 때리는지. 카라멜루는 0.20, 싸우는 품종은 1.0을 넘습니다.</td>
+<td>때리는 세기. 믹스가 0.20이고, 싸움용 품종은 1.0을 넘습니다.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>. 전투 0에서 전투 10까지 피해가 어떻게 자라는지.</td>
+<td><code>{ min, max }</code>. 전투 0에서 전투 10까지 피해가 자라는 모양입니다.</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>네 유전자의 출생 범위. <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. 각각 0에서 1 사이의 <code>{ 하한, 상한 }</code>입니다.</td>
+<td>유전자 네 개의 출생 범위. <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. 각각 0에서 1 사이의 <code>{ low, high }</code>입니다.</td>
 </tr>
 </tbody></table></div>
 <h3 id="선택-필드">선택 필드</h3>
 <div class="tw"><table><thead><tr>
 <th>필드</th>
 <th>기본값</th>
-<th>무엇을 하는가</th>
+<th>하는 일</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
 <td><code>key</code>와 같음</td>
-<td>엔진에 넘기는 품종 이름으로, <strong>텍스처</strong>를 고릅니다. 품종마다 유일.</td>
+<td>엔진에 넘기는 품종 이름. 텍스처를 고릅니다. 품종마다 유일해야 합니다.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>설명문의 키. 설명을 공유하는 품종들은 키 하나를 함께 가리키게 하세요.</td>
+<td>설명 키. 여러 품종이 키 하나를 같이 쓸 수 있습니다.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
 <td>베이스 값</td>
-<td>한 배당 강아지 <code>{ 하한, 상한 }</code>.</td>
+<td>한 배에 나오는 강아지 수 <code>{ min, max }</code>.</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false면 좀비를 깎기는 하되 마지막 일격은 절대 넣지 않습니다.</td>
+<td>false면 좀비를 깎기만 하고 마지막 일격은 넣지 않습니다.</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
@@ -676,12 +686,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>싸움 한 번이 그 동물에게 얼마나 스트레스인지.</td>
+<td>싸움 한 번이 스트레스를 얼마나 먹는지.</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
 <td>베이스 값</td>
-<td>싸움을 그만두는 스트레스 수준. <code>panicImmune = true</code>는 절대 그만두지 않음입니다.</td>
+<td>싸움을 그만두는 스트레스 수위. <code>panicImmune = true</code>면 절대 그만두지 않습니다.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
@@ -691,7 +701,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>강아지의 절대적인 시각 크기. <strong>작은 품종은 반드시 설정해야 합니다.</strong> 안 하면 강아지가 성체 크기로 태어납니다.</td>
+<td>강아지의 절대 시각 크기. 작은 품종은 반드시 넣어야 하고, 없으면 강아지가 성체 크기로 태어납니다.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
@@ -701,37 +711,37 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>경보 짖음의 반경과 음량을 조절합니다. 소음을 키울 뿐 만들지는 않습니다. 샌드박스의 소음 옵션이 꺼져 있으면 어떤 품종도 짖어서 좀비를 끌어들이지 않습니다.</td>
+<td>경보 짖음의 반경과 음량을 조절합니다. 샌드박스 소음 옵션이 꺼져 있으면 값이 무엇이든 어떤 품종도 짖어서 좀비를 끌지 않습니다.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>하루치 충성도 감소에 곱합니다. <code>0</code>이면 유대가 결코 옅어지지 않습니다.</td>
+<td>하루치 충성도 감소에 곱합니다. <code>0</code>이면 유대가 절대 식지 않습니다.</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>동물이 완전 경계에 고정됩니다. 주인은 어디에서도 조용히나 침묵으로 바꿀 수 없습니다. 시끄러운 경보가 곧 설계<strong>일 때</strong> 쓰세요.</td>
+<td>동물이 항상 완전 경계 상태입니다. 주인이 어디서도 조용히나 침묵으로 바꿀 수 없습니다.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>사냥감을 주인에게 물어오기 시작하는 사냥 레벨.</td>
+<td>사냥감을 주인에게 물어다 주기 시작하는 사냥 레벨.</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>전달을 포기하기 전까지 계속 시도하는 게임 분.</td>
+<td>배달을 포기하기까지 계속 시도하는 게임 내 분.</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
 <td>꺼짐</td>
-<td><code>{ &lt;종류&gt; = { chance = 0..1, ... } }</code>. 모드 없이도, 레벨 없이도 알아서 무언가를 쫓습니다. 아래 참조.</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. 품종이 모드도 레벨도 필요 없이 스스로 무언가를 쫓습니다.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
 <td>베이스 값</td>
-<td>대기 애니메이션 창의 길이, 밀리초. 클립이 개의 것보다 짧을 때 설정하세요. 안 하면 루프가 다시 시작되어 동작 중간에 잘립니다.</td>
+<td>대기 애니메이션 구간의 길이, 밀리초. 클립이 개의 것보다 짧을 때 넣으세요. 안 넣으면 루프가 다시 시작하면서 동작을 중간에 자릅니다.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
@@ -739,95 +749,159 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>false면 대기와 경비에서 엎드리지 않고 서 있습니다.</td>
 </tr>
 <tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true면 다친 동물이 걸을 때 절뚝입니다. 모델에 선택 클립 <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>이 있을 때만 켜세요(<code>Rac_Walk</code>와 같은 루트 모션을 가진 1.0초 걷기 사이클). 클립이 없으면 동물이 제자리에 굳은 채 걷습니다.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>개 소리</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. 아래 참고.</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>개의 목록</td>
+<td>동물이 먹으면 안 되는 것, 동물에게 고기로 치는 것, 여물통에서 스스로 먹는 것.</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>번식은 종 안에서만 이루어집니다. 7절을 보세요.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
 <td>전부 켜짐</td>
-<td>구조적 차단. 7절.</td>
+<td>구조를 정하는 블록들. 7절을 보세요.</td>
 </tr>
 </tbody></table></div>
-<p>정의에 넣은 숫자와 플래그는 <code>CD.breedNumber(animal, 필드)</code>와 <code>CD.breedFlag(animal, 필드)</code>로 다시 읽습니다. <code>CD.getBreedDef(animal).필드</code>를 직접 읽는 것보다 이 둘을 쓰세요. 없는 필드를 대신 처리해 주고, 베이스가 움직여도 계속 동작합니다.</p>
+<p>정의에 넣은 숫자와 플래그는 <code>CD.getBreedDef(animal).field</code>가 아니라 <code>CD.breedNumber(animal, field)</code>와 <code>CD.breedFlag(animal, field)</code>로 다시 읽으세요. 이 둘은 없는 필드를 알아서 처리하고, 베이스가 바뀌어도 계속 돌아갑니다.</p>
 <h3 id="본능-distract">본능: <code>distract</code></h3>
-<p>다른 모든 필드는 동물에게 무언가를 잘하라고 요구합니다. 이것만은 주의를 기울이는 데 서투르라고 요구합니다.</p>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>이것을 선언한 품종은 이따금 무언가를 알아채고, 하던 일을 내던지고 쫓아갑니다. <strong>어떤 모드도 켜지지 않은 상태에서</strong> 그렇게 하며, 대기에서도 따라오기에서도 마찬가지이고, 그동안 주도권은 당신에게 없습니다. 명령은 복종 판정이 이미 쓰고 있는 <code>distracted</code> 메시지와 함께 거부되어 돌아옵니다. 통하는 명령은 이리 와 하나뿐이고, 그것이 취소합니다.</p>
-<p>보너스가 아니라 당신이 품종에게 주는 대가로 다루세요. 그것이 진행되는 동안 동물은 주인 곁에 없고 경계하지도 않습니다. 붙잡아 두기 어렵다는 것이 특징인 품종에 어울립니다. 플레이어가 의지하기를 바라는 사역견에는 어울리지 않습니다.</p>
-<p>모든 종류는 같은 선택 항목을 받고, 빠뜨린 것은 모드의 기본값으로 떨어집니다.</p>
+<p>이것을 선언한 품종은 이따금 무언가를 발견하고 하던 일을 버린 채 쫓아갑니다. 따라오기에서도 하고 대기에서도 합니다. 그동안 명령은 순종 판정이 이미 쓰고 있는 <code>distracted</code> 메시지와 함께 거부됩니다. 유일하게 통하는 명령은 이리 오기이고, 그것이 산만함을 끝냅니다.</p>
+<p>모든 종류가 같은 선택 손잡이를 받습니다. 빼먹은 것은 모드의 기본값을 씁니다.</p>
 <div class="tw"><table><thead><tr>
 <th>필드</th>
 <th>하는 일</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1. 해당 종류의 트리거가 실제로 무언가를 찾았을 때만 굴립니다. "25%"를 뜻하려고 <code>25</code>를 쓰면 로그에 이름이 적힌 줄과 함께 거부됩니다</td>
+<td>0에서 1 사이. 그 종류의 방아쇠가 무언가를 찾았을 때만 굴립니다. "25%"를 뜻하려고 <code>25</code>라고 쓰면 로그에 이름이 붙은 줄과 함께 거부됩니다</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
-<td>트리거가 뒤지는 타일 수. 그 종류가 탐색을 한다면</td>
+<td>방아쇠가 훑는 타일 수. 그 종류가 훑기를 할 때만</td>
 </tr>
 <tr>
 <td><code>durationMin</code></td>
-<td>창이 저절로 만료되기까지의 게임 분</td>
+<td>창이 저절로 닫히기까지의 게임 내 분</td>
 </tr>
 <tr>
 <td><code>cooldownMin</code></td>
-<td>같은 동물이 다시 산만해질 수 있기까지의 게임 분</td>
+<td>같은 동물이 다시 산만해지기까지의 게임 내 분</td>
 </tr>
 </tbody></table></div>
 <h4 id="prey-종류"><code>prey</code> 종류</h4>
-<p>베이스 모드가 함께 제공하는 유일한 종류입니다. 동물은 야생 동물을 쫓고, <code>classes</code>가 어떤 것이 주의를 끄는지 고릅니다.</p>
+<p>베이스 모드가 싣고 나오는 유일한 종류입니다. 동물이 야생 동물을 쫓고, 어떤 것이 대상인지는 <code>classes</code>가 고릅니다.</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>무엇을 선언하든 두 가지 한계는 그대로입니다.</p>
+<p>무엇을 선언하든 한계 두 가지가 걸립니다.</p>
 <ul>
-<li><strong>당신의 <code>huntMaxPrey</code>를 결코 넘지 않습니다.</strong> 여기에는 사냥 시스템과 같은 깔때기가 적용되므로, 상한이 <code>small</code>인 품종은 <code>large</code>를 선언해도 사슴을 쫓지 않습니다.</li>
-<li><strong>레벨 관문은 <code>tiny</code>에서만 건너뜁니다.</strong> 설치류는 사냥 0의 갓 길들인 동물도 잡습니다. 쥐 잡기는 누구도 훈련해서 얻는 기술이 아니기 때문입니다. <code>small</code>을 선언하면 당신의 품종은 모든 것을 내던지고 토끼를 쫓아가지만, 실제로 <em>죽이려면</em> 래브라도에게 필요한 것과 같은 사냥 레벨이 여전히 필요합니다. 본능은 무엇이 주의를 끄는지 정하고, 훈련은 무엇을 쓰러뜨릴 수 있는지를 계속 정합니다. 이 두 번째 한계가 없으면 <code>classes</code>는 사냥 사다리를 지워버리는 지름길이 됩니다.</li>
+<li>여러분의 <code>huntMaxPrey</code>를 절대 넘지 않습니다. <code>small</code>에서 잘린 품종은 <code>large</code>를 선언해도 사슴을 쫓지 않습니다.</li>
+<li>레벨 관문은 <code>tiny</code>에서만 생략됩니다. 갓 길들인 사냥 0짜리 동물도 설치류는 이미 잡습니다. <code>small</code>을 선언하면 품종이 레벨과 무관하게 토끼를 쫓지만, 잡는 데는 래브라도가 필요로 하는 사냥 레벨이 똑같이 필요합니다.</li>
 </ul>
-<p>샌드박스의 사냥 토글은 여전히 마무리를 결정하지, 추격을 결정하지 않습니다. 사냥을 꺼도 동물은 달리지만 사냥감은 달아납니다.</p>
-<p>이렇게 잡은 사냥감은 일반 회수 절차를 그대로 거칩니다. 즉, 사체를 주인에게 물고 갈지 쓰러진 자리에 둘지는 품종의 <code>huntFetchLevel</code>이 결정합니다. <code>0</code>으로 두면 동물은 첫날부터 가져다주며, 고양이가 죽은 쥐를 물어다 주는 것이 바로 이 때문입니다. 회수는 산만함의 창이 닫힌 뒤에도 계속됩니다. 사냥감이 죽는 순간 동물은 다시 명령을 받아들이고, 돌아오는 길은 그 품종 자신의 <code>huntDeliverTimeoutMin</code>으로 돌아갑니다. <code>huntFetchLevel</code>을 건드리지 않으면 기본값 6이 적용되므로, 품종은 본능으로 쫓아가되 물어 오는 권리는 따로 얻어야 합니다.</p>
-<h4 id="자신만의-종류-작성하기">자신만의 종류 작성하기</h4>
-<p><code>distract</code>는 디스패처이고, <code>prey</code>는 그저 함께 제공되는 종류일 뿐입니다. 자신의 것을 등록하세요.</p>
+<p>샌드박스 사냥 스위치는 잡는 것에만 걸립니다. 동물은 여전히 쫓지만 사냥감이 달아납니다.</p>
+<p>이렇게 잡은 것도 평범한 회수 절차를 타므로, 몸을 주인에게 물어다 줄지는 품종의 <code>huntFetchLevel</code>이 정합니다. <code>0</code>이면 첫날부터 배달하고, 고양이가 죽은 쥐를 물어다 주는 것이 그것입니다. 배달은 산만함의 창보다 오래 갑니다. 사냥감이 죽는 순간 동물은 다시 명령을 받고, 돌아오는 길은 자기 <code>huntDeliverTimeoutMin</code>으로 돕니다.</p>
+<h4 id="직접-종류-만들기">직접 종류 만들기</h4>
+<p><code>distract</code>는 디스패처입니다. 여러분 것을 등록하세요.</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
     drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
-<p>그런 다음 다른 종류와 똑같이 품종에 선언합니다: <code>distract = { butterfly = { chance = 0.10 } }</code></p>
-<p><code>gate</code>는 모드의 전역 스캔 예산보다 먼저 돌고, 값싼 거부가 있을 자리입니다. <code>find</code>는 예산 뒤에 돌고, 비용은 거기 있습니다. <code>drive</code>는 아직 동물을 이끄는 동안 true를, 끝났을 때 false를 돌려주며 그것이 창을 닫습니다. 당신의 핸들러는 자체 <code>pcall</code> 안에서 돕니다. 예외를 던지면 모드는 로그에 이름이 적힌 줄을 쓰고, 그 종류를 이번 세션 동안 등록 해제하며, 동반자의 나머지는 계속 작동하게 둡니다.</p>
-<p>앞으로의 베이스 종류를 위해 예약된, 아직 구현되지 않은 이름: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. 오늘 그 이름으로 종류를 등록할 수는 있지만, 베이스가 자기 것을 내놓는 날 그 이름은 베이스의 것이 됩니다.</p>
+<p>그런 다음 다른 종류와 똑같이 품종에 선언합니다. <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code>는 모드의 전역 훑기 예산보다 먼저 돕니다. <code>find</code>는 예산 뒤에 돌면서 비싼 탐색을 합니다. <code>drive</code>는 아직 동물을 몰고 있으면 true를, 끝났으면 false를 반환하고, false가 창을 닫습니다. 여러분의 핸들러는 자기 <code>pcall</code> 안에서 돕니다. 예외를 던지면 모드가 이름이 붙은 줄을 로그에 남기고 그 세션 동안 그 종류를 등록 해제하며, 동반자의 나머지는 그대로 돌아갑니다.</p>
+<p>앞으로 베이스가 쓸 예약된 이름은 <code>drink</code>, <code>eat</code>, <code>play</code>입니다. 오늘 그 이름으로 종류를 등록할 수는 있지만, 베이스가 자기 것을 내면 이름을 가져갑니다.</p>
 <h3 id="목소리">목소리</h3>
-<p>종이 다르면 같은 말을 하지 않습니다. <code>voices</code>가 없으면 여러분의 고양이는 짖습니다.</p>
+<p><code>voices</code>가 없으면 모든 품종이 개 소리를 쓰므로 고양이가 짖습니다. 먼저 여러분의 소리를 등록하세요.</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>그다음 품종이 그것을 가리키게 합니다.</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code>는 있어도 그만인 장식이 아닙니다. 이것이 없으면 소리는 나긴 하지만 플레이어의 카테고리 슬라이더와 게임의 효과음 볼륨을 무시합니다. 무엇도 고장 나 보이지 않기 때문에 아무도 신고하지 않는 종류의 결함입니다. <code>voices</code>에서 빠뜨린 키는 개 소리로 되돌아갑니다. 개 품종에서는 그게 원하는 바지만, 다른 종에서는 결코 원하는 바가 아닙니다.</p>
-<h2 id="7-시스템-하나를-통째로-끄기">7. 시스템 하나를 통째로 끄기</h2>
-<p>다섯 가지 기술은 다섯 가지 시스템과 하나씩 대응합니다.</p>
+<p><code>CD.registerVoices</code> 없이도 소리는 나지만, 플레이어의 분류별 슬라이더와 게임의 효과음 음량을 무시하고, 로그에는 그것을 가리키는 것이 아무것도 없습니다. <code>voices</code>에서 빼먹은 키는 개 소리로 떨어집니다.</p>
+<p>세 번째 인자는 각 소리가 들리는 거리로, 타일 단위입니다. 여러분의 사운드 스크립트에 쓴 <code>distanceMax</code>와 같아야 합니다.</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>서버에서 베이스는 그 거리 안의 플레이어에게만 소리를 보냅니다. 거리를 빼면 목소리는 분류별 일반 거리를 받습니다. 열 타일 나가는 하악질이 서른 타일 안 모두에게 나가는 식입니다. <code>distanceMax</code>를 넘어가면 FMOD의 역제곱 감쇠가 무음으로 가지 않고 감쇠를 멈추므로, 그냥 놓아둔 <code>.ogg</code>는 아무리 멀어도 제 음량의 <code>distanceMin / distanceMax</code>로 계속 납니다. 같은 이유로 큰 목소리에는 <code>distanceMin</code>을 작게 두세요.</p>
+<h3 id="식단">식단</h3>
+<p><code>diet</code>가 없으면 모든 품종이 개처럼 먹습니다. 개를 병들게 하는 음식이 같고, 고기로 치는 음식이 같고, 여물통에서 뜯어 먹는 음식이 같습니다. 이 필드는 그 목록 셋을 여러분의 품종에만 덮어씁니다.</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>형태가 둘인 이유는 게임 자체의 분류가 거기까지만 닿기 때문입니다. <code>Cheese</code>는 진짜 <code>FoodType</code>이라 키 하나로 게임 안의 모든 치즈와 그 분류를 재사용하는 음식 모드의 치즈까지 덮습니다. 참치는 아닙니다. 딴 생선 전부와 함께 딴 통조림이 <code>FoodType = Fish</code>이고, 안 딴 통조림은 음식 타입을 아예 선언하지 않습니다. <code>badParts</code>와 <code>proteinParts</code>가 그런 것에 닿는 방법입니다.</p>
+<p>모든 필드는 <code>&lt;key&gt; = true</code>(추가) 또는 <code>&lt;key&gt; = false</code>(베이스에 있던 것 제거) 테이블입니다. <code>true</code>도 <code>false</code>도 아닌 값은 로그에 이름이 붙은 줄을 남기고 버려집니다.</p>
 <div class="tw"><table><thead><tr>
-<th>기술</th>
-<th>그것이 곧 어떤 시스템인가</th>
+<th>필드</th>
+<th>키가 무엇인가</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td>동물을 병들게 하고, 충성도를 깎고, 먹이 메뉴에서 빨간 항목이 되는 음식의 <code>FoodType</code></td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>아이템 타입의 조각. 소문자로, 어디에 있든 걸립니다</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td>동물의 고기 빚을 갚는 <code>FoodType</code>. 쇠약 무들이 지켜보는 그것입니다</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>아이템 타입의 조각. <code>badParts</code>와 같은 방식으로 걸립니다</td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td>고기가 아님을 여러분이 아는 <code>FoodType</code>. 처음 보는 음식 타입에 베이스가 남기는 로그 줄을 잠재우기만 합니다</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td>동물이 여물통에서 스스로 먹는 <code>FoodType</code>과 <code>AnimalFeedType</code></td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>여물통에 든 아이템 중 자기 사료 타입이 없는 것을 위한 전체 아이템 타입</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code>는 개의 목록이 아니라 빈 목록에서 시작합니다. 여러분의 동물이 개와 공유하는 것이 거의 없을 때 쓰세요. 고양이는 보통 몇 개의 추가와 제거로 쓰는 편이 더 쉽습니다.</p>
+<p>목록 셋은 동물을 따라다니므로, 같은 여물통 앞에 선 개와 고양이는 거기서 서로 다른 것을 먹습니다. 모드 자체의 밥그릇은 예외입니다. 밥그릇은 채운 아이템이 아니라 음식 점수를 저장하므로, 채우는 판정은 누구에게나 베이스 목록으로 갑니다. 어차피 밥그릇에는 해로운 것을 넣을 수 없습니다.</p>
+<h2 id="7-시스템-하나를-통째로-끄기">7. 시스템 하나를 통째로 끄기</h2>
+<p>스킬 다섯 개가 곧 시스템 다섯 개입니다.</p>
+<div class="tw"><table><thead><tr>
+<th>스킬</th>
+<th>어떤 시스템인가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>보초. 좀비를 알아채고 여러분에게 알리는 일</td>
+<td>보초. 좀비를 알아채고 여러분에게 알립니다</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>싸움, 경비 모드, 자기방어</td>
+<td>싸움, 경비 모드, 자기 방어</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>재주 트리</td>
+<td>재주 계통</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
@@ -835,32 +909,34 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>우리 안 가축 돌보기</td>
+<td>울타리 안 가축 돌보기</td>
 </tr>
 </tbody></table></div>
-<p>종은 숫자가 나쁜 개가 아닙니다. 그 일거리들 중 몇 가지를 아예 갖지 않은 동물입니다. 그래서 갖지 않은 것을 선언합니다.</p>
+<p>그래서 종은 자기에게 없는 것을 선언합니다.</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>없거나 <code>true</code>면 그 동물은 해당 기술을 가진 것이므로, 없애는 것만 적으면 됩니다.</p>
-<p>기술 하나를 끄면 <strong>세 가지가 한꺼번에</strong> 일어납니다. 시스템이 아예 돌지 않고, 그 기술은 경험치를 결코 얻지 않으며, 막대와 그 명령이 인터페이스에서 사라집니다. 셋이 함께입니다. 막대만 숨기면 아무도 못 보는 곳에서 기술이 자라고, 시스템만 막으면 막대가 영원히 0에 박혀 있게 됩니다.</p>
-<p><code>canBreed = false</code>가 테이블 밖에 있는 이유는 번식에는 막대도 경험치도 없기 때문입니다. 그리고 전면적입니다. 그 동물은 임신하지 않고, 짝으로 선택되지 않으며, 같은 품종끼리도 번식하지 않습니다. 정상적으로 번식하되 개와는 절대 교배하지 않는 동물을 원한다면, 그것은 이것이 아니라 아래의 <code>species</code>입니다.</p>
+<p>없거나 <code>true</code>면 동물이 그 스킬을 가집니다.</p>
+<p>스킬을 끄면 그 경험치도 쌓이지 않고, 인터페이스에서 그 막대와 명령도 사라집니다.</p>
+<p><code>canBreed = false</code>가 테이블 밖에 따로 있는 것은 번식에 막대도 경험치도 없기 때문입니다. 그 동물은 새끼를 배지 않고, 짝으로 뽑히지도 않으며, 제 동족과도 번식하지 않습니다.</p>
 <h3 id="종">종</h3>
-<p>개가 아니라 다른 동물을 추가하는 애드온은 이렇게 선언합니다.</p>
+<p>개가 아니라 다른 동물을 넣는 애드온은 이렇게 선언합니다.</p>
 <pre><code>CD.registerSpecies({ key = "cat",
                      nounKey  = "IGUI_PD_SpeciesNoun_cat",
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>이 필드는 지금까지 공개된 모든 품종에 없으며, 없으면 <code>"dog"</code>로 간주됩니다. 따라서 이미 작성한 것의 동작은 아무것도 바뀌지 않습니다.</p>
-<p>이 필드는 두 가지 일을 합니다. <strong>번식이 종 단위로 닫힙니다.</strong> 명령에서든, 시간당 수동 굴림에서든, 디버그 도구에서든 똑같이, 한 쌍은 양쪽이 같은 종일 때만 임신합니다. 그리고 인터페이스가 당신의 동물을 개라고 부르지 않게 됩니다. <code>nounKey</code>는 <em>"이 %1은(는) 이미 다른 생존자의 것입니다"</em> 같은 문장을 채우는 맨 명사이고, <code>youngKey</code>는 당신 종의 새끼가 창과 맥락 메뉴와 견사에서 달고 다니는 이름표로, 개라면 그 자리에 <em>강아지</em>가 들어갑니다.</p>
-<p><code>species</code>를 등록하지 않고 선언해도 치명적이지는 않습니다. 관문이 원본 문자열을 비교하므로 동물은 여전히 자기 종 밖의 번식을 거부합니다. 개의 것으로 떨어지는 것은 두 명사뿐이고, 로그가 그것을 이름으로 알려줍니다. 이 대체가 한쪽으로만 작동하는 것은 의도적입니다. 반대로 등록되지 않은 종을 개로 취급하면 당신의 동물이 조용히 개와 번식하게 되기 때문입니다.</p>
-<p><strong>이것은 차단이므로 degrade되지 않습니다.</strong> API 6보다 오래된 베이스에서는 이 필드가 조용히 무시되고, 번식에 관한 한 당신의 동물은 개입니다. 개와 절대 교배해서는 안 된다면 API 6을 확인하거나, 베이스가 오래된 동안에는 <code>canBreed = false</code>를 유지하세요. 고양이가 하는 것이 그것입니다.</p>
-<p><code>huntMaxPrey</code>는 <strong>존재하는 사냥 안에서의 상한</strong>이며, <code>hunt = false</code>와는 다른 것입니다. <code>"tiny"</code>(생쥐, 쥐, 다람쥐), <code>"small"</code>(토끼, 너구리), <code>"large"</code>(사슴. 기본값이며 상한 없음)를 받습니다. 상한보다 큰 사냥감은 여러분의 동물에게 보이지 않습니다. 쫓지도 않고 가리키지도 않습니다. 이 단계에서 벗어난 값은 <code>"large"</code>로 떨어지고 로그에 이름 붙은 한 줄을 남깁니다.</p>
-<p><strong>차단된 동물에게 비활성 버튼이 생기지는 않습니다.</strong> 해당 항목이 방사형 메뉴, 상황 메뉴, 창에서 사라지고, 서버 쪽 거절은 조용합니다. 명령을 무시했다는 표시가 뜬다면 거짓말입니다. 이것은 불복종이 아니니까요. 설계는 품종 설명문에서 설명하세요. 이 필드들이 새 번역 키를 데려오지 않는 이유가 그것입니다.</p>
+<p>지금까지 나온 품종에는 이 필드가 하나도 없고, 없으면 <code>"dog"</code>입니다.</p>
+<p>번식은 종 안에서만 이루어집니다. 명령에서도, 시간마다 도는 수동 판정에서도, 디버그 도구에서도, 양쪽이 같은 종일 때만 새끼를 뱁니다. 그리고 인터페이스가 여러분의 동물을 개라고 부르기를 그만둡니다. <code>nounKey</code>는 <em>"이 %1는 이미 다른 생존자의 소유입니다."</em> 같은 문장을 채우는 맨 명사이고, <code>youngKey</code>는 여러분 종의 새끼가 창과 상황 메뉴와 견사에서 다는 이름표로, 개라면 <em>강아지</em>라고 나오는 자리입니다.</p>
+<p>이 명사 둘은 <code>%1</code>을 두고 지은 문장만 덮습니다. <em>개</em>라는 단어가 박혀 있는 다른 모든 문장(<em>"개 살펴보기"</em>, <em>"개가 배고파합니다"</em>, <em>"개가 일부러 짖어"</em>)은 API 7부터 종별 키를 받습니다. 번역 파일에 <code>IGUI_PD_ScanStray_cat</code>을 실으면, 화면에 있는 동물이 고양이일 때 베이스가 <code>IGUI_PD_ScanStray</code> 대신 그것을 보여줍니다. 싣지 않은 키는 개의 문구로 떨어집니다. 접미사를 받는 키는 이렇습니다. <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, 모든 <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, 모든 <code>Refused_*</code>, <code>KennelStatusNoData</code>, 그리고 돌봄 무들(질병, 쇠약, 배고픔, 갈증, 휴식, 상실)의 <code>Moodle_*_desc</code>. 화면에 동물이 없는 문장(등록부 탭, <em>"먼저 동물과 친해지세요."</em>)은 베이스에서 이미 종 중립입니다. 고양이는 그 전부를 열네 개 언어로 싣고 나오니, 그 <code>IG_UI.json</code>을 본으로 삼아 베끼세요.</p>
+<p>동물의 <code>group</code>은 디버그 스폰 메뉴와 클립 뷰어만 <code>IGUI_Animal_Group_&lt;group&gt;</code>을 통해 읽습니다. 행동 헬퍼 다음에 <code>t.group = "cat"</code>을 넣고 그 키를 실으세요. 안 그러면 거기서 여러분의 종이 개 이름으로 나옵니다.</p>
+<p><code>species</code>를 등록하지 않고 선언하는 것은 치명적이지 않습니다. 관문이 문자열을 그대로 비교하므로 동물은 여전히 제 종 밖과는 번식하지 않습니다. 명사 둘만 개의 것으로 떨어지고, 로그가 그 사실을 이름을 붙여 말합니다.</p>
+<p>API 6보다 낡은 베이스에서는 이 필드가 로그 한 줄도 없이 무시되고, 여러분의 동물은 개로 번식합니다. 개와 절대 섞이면 안 된다면 API 6으로 가드를 걸거나, 베이스가 낡은 동안은 <code>canBreed = false</code>로 두세요. 고양이가 그렇게 합니다.</p>
+<p><code>huntMaxPrey</code>는 여전히 존재하는 사냥 안에서 사냥감 크기에 상한을 씌우는 것이지, <code>hunt = false</code>를 대신하지 않습니다. <code>"tiny"</code>(생쥐, 쥐, 다람쥐), <code>"small"</code>(토끼, 너구리), <code>"large"</code>(사슴. 기본값이고 상한 없음)를 받습니다. 상한 위의 사냥감은 여러분의 동물이 쫓지도 가리키지도 않습니다. 그 사다리 밖의 값은 <code>"large"</code>로 떨어지고 로그에 이름이 붙은 줄을 찍습니다.</p>
+<p>막힌 선택지는 방사형 메뉴와 상황 메뉴와 창에서 사라지고, 서버는 메시지 없이 거부합니다. 이 필드들은 번역 키를 하나도 만들지 않으니, 한계는 품종 설명에 적어 두세요.</p>
 <h2 id="8-동물-정의">8. 동물 정의</h2>
-<p>엔진은 메시를 품종이 아니라 <strong>동물 타입</strong>에 묶습니다. 그래서 여러분의 품종에는 자기 타입 셋이 필요합니다. 여기가 애드온의 기계적인 부분이고, 가장 짧은 길은 기존 애드온의 파일을 복사해 이름을 바꾸는 것입니다.</p>
-<p><code>Definitions/animal/</code> 아래 shared 파일에 들어가는 세 조각입니다.</p>
+<p>엔진은 메시를 품종이 아니라 동물 타입에 묶으므로, 여러분의 품종에는 자기 타입 세 개가 필요합니다. 가장 빠른 길은 기존 애드온의 파일을 복사해 이름을 바꾸는 것입니다.</p>
+<p>세 조각이고, <code>Definitions/animal/</code> 아래 shared 파일 하나에 들어갑니다.</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -886,48 +962,52 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>베이스가 주는 헬퍼:</p>
+<p>베이스가 주는 헬퍼입니다.</p>
 <div class="tw"><table><thead><tr>
 <th>헬퍼</th>
-<th>무엇을 채우는가</th>
+<th>무엇을 채워 주는가</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>몸 모델, 스켈레톤, 도축 텍스처, 애님셋</td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
+<td>몸 모델, 스켈레톤, 해체 텍스처, 애님셋</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
-<td>동반자에게 필요한 엔진 쪽 동작 플래그 전부</td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
+<td>동반자에게 필요한 엔진 행동 플래그 전부</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
 <td>동물 창의 초상화 카메라</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
-<td>발소리와 효과음의 공유 테이블</td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
+<td>공유 발소리와 폴리 테이블</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>표준 유전자 목록을 갖춘 새 종의 게놈(API 7)</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>겁먹은 유기견이 과다출혈로 죽지 않게 하는 값</td>
+<td>겁먹은 떠돌이가 출혈로 죽지 않게 하는 값</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>세 성장 단계 전부의 도축 부위</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>세 단계 전부의 해체 부위. <code>meat</code>는 선택이고 <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code> 형태이며, 없으면 동물은 베이스의 개고기를 냅니다. 엔진이 부위마다 개수와 허기를 사체 크기로 곱하므로, 크기가 큰 종(고양이는 시각 크기로 2.5에서 3.5를 씁니다)은 기본 허기가 작고 개수가 적은 자기 아이템이 필요합니다</td>
 </tr>
 </tbody></table></div>
-<p>뻔하지 않은 규칙이 넷 있습니다.</p>
-<p><strong>애님셋은 <code>"raccoon"</code>으로 남아야 합니다.</strong> <code>CD.applyDogModel</code>이 설정합니다. 갈라낸 애님셋은 자기 상태 기계를 불러오지 못하고, 상태 기계가 없는 동물은 그 자리에 얼어붙은 동물입니다.</p>
-<p><strong>게놈은 재사용하세요:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. 직접 쓰지 마세요.</p>
-<p><strong><code>mate</code>는 절대 선언하지 마세요.</strong> 이것이 있으면 엔진은 어떤 동물 구역 안에서든 자기 고유의 교미를 돌립니다. 그 교미는 모드의 번식 차단도 샌드박스 옵션도 무시하고, 유대 없는 새끼를 낳습니다. 베이스가 안전망으로 부팅 때 이 필드를 지우지만, 거기에 기대지는 마세요.</p>
-<p><strong>부위는 필수입니다.</strong> 전용 파일에 세 줄.</p>
+<p>종 중립 이름은 API 7에 왔습니다. 옛 이름인 <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code>, <code>CD.DogMoodles</code>는 같은 함수와 테이블의 첫 이름입니다. 0.7.3보다 낡은 베이스에서도 로드되고 싶은 애드온은 옛 이름으로 가드를 걸고 새 이름이 있으면 그것을 고릅니다. <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
+<p>애님셋은 <code>"raccoon"</code>으로 두어야 합니다. 갈라낸 애님셋은 자기 상태 기계를 로드하지 않고, 동물은 제자리에 굳어 섭니다.</p>
+<p>게놈은 재사용하세요. 개 품종은 베이스의 목록을 가리킵니다. <code>AnimalDefinitions.genome["dog"].genes</code>. 새 종은 <code>CD.defineGenome("cat")</code>을 한 번 부르고 그것이 돌려준 테이블을 모든 단계에 줍니다. 엔진은 각 단계의 <code>genes</code> 목록만 읽고 게놈 키는 관례일 뿐이므로, 여러분의 종은 자기 유전자 목록 없이도 자기 항목을 갖습니다.</p>
+<p><code>mate</code>는 선언하지 마세요. 그것이 있으면 엔진이 동물 구역 안에서 자기 짝짓기를 돌리는데, 그것은 모드의 번식 블록과 샌드박스 옵션을 무시하고 유대 없는 강아지를 만듭니다. 베이스가 부팅 때 이 필드를 지우기는 하지만, 거기에 기대지 마세요.</p>
+<p>부위는 필수입니다. 자기 파일에 세 줄이면 됩니다.</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>이것이 없으면 여러분의 동물을 도축할 때 바닐라 코드가 죽습니다. 부위 정의를 타입과 품종으로 찾다가 nil을 밟기 때문입니다.</p>
-<p><strong>작은 동물은 초상화 카메라를 손봐야 합니다.</strong> <code>CD.applyDogAvatar</code>의 초상화 줌은 개에 맞춰 보정되어 있고, 아바타 줌은 배율입니다. 동물이 작을수록 숫자가 커집니다. 개 대비 크기 비율로 줌을 나누고 오프셋에는 같은 비율을 곱하세요. 안 그러면 여러분의 동물은 자기 초상화 아래쪽에 아주 작게 앉아 있게 됩니다.</p>
+<p>이것이 없으면 여러분의 동물을 해체할 때 바닐라 코드가 죽습니다. 부위 정의를 타입과 품종으로 인덱싱하다 nil을 만나기 때문입니다.</p>
+<p><code>CD.applyDogAvatar</code>의 초상화 줌은 개에 맞춰 잡혀 있고, 아바타 줌은 배율입니다. 동물이 작을수록 숫자가 커집니다. 개 대비 크기 비율로 줌을 나누고 오프셋에는 곱하세요. 안 그러면 여러분의 동물이 제 초상화 바닥에 조그맣게 앉아 있습니다.</p>
 <h2 id="9-모델-스크립트">9. 모델 스크립트</h2>
-<p><code>media/scripts/</code> 아래의 파일 하나가, 여러분의 모델이 존재한다는 것을 게임에 알립니다.</p>
+<p><code>media/scripts/</code> 아래 파일 하나가 여러분의 모델이 있다고 게임에 알립니다.</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -950,10 +1030,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code>가 모델 파일 안의 클립을 쓸 수 있는 상태로 유지합니다. 이것이 없으면 모델은 로드되지만 결코 움직이지 않습니다.</p>
-<p><code>head</code> 어태치먼트는 모자 같은 것이 얹히는 자리입니다. 안장가방을 여러분의 동물에 맞추고 싶다면 <code>saddlebags_l</code>, <code>saddlebags_r</code>, <code>saddlebags_c</code>를 같은 방식으로 척추 뼈에 더하세요. 이 숫자들은 게임 안에서 동물을 보면서 조금씩 밀어 찾는 것이지, 모델을 재서 얻는 것이 아닙니다. 수학적으로 한가운데인 가방도 털 있는 몸 위에서는 여전히 비뚤어져 보입니다.</p>
+<p><code>keepMeshAnimations = true</code>는 모델 파일 안의 클립을 계속 쓸 수 있게 합니다. 이것이 없으면 모델은 로드되고 영영 움직이지 않습니다.</p>
+<p><code>head</code> 어태치먼트는 모자 같은 것이 앉는 자리입니다. 안장가방을 여러분의 동물에 맞추고 싶으면 <code>saddlebags_l</code>, <code>saddlebags_r</code>, <code>saddlebags_c</code>를 같은 방식으로 척추 본에 붙이세요. 그 숫자는 게임 안에서 동물을 보며 조금씩 밀어 찾으세요. 모델에서 재어 나온 값은 가방을 메시의 기하학적 중심에 놓는데, 몸에서 보기 좋은 자리는 거기가 아닙니다.</p>
 <h2 id="10-동물이-나타나는-곳">10. 동물이 나타나는 곳</h2>
-<p>유기 동물은 그 청크가 처음 로드될 때 건물마다, 청크마다 추첨됩니다. 추첨은 단계의 목록으로 적습니다. 품종 정의 안의 <code>spawns</code>에 넣거나, <code>CD.registerStraySpawns(목록)</code>으로 넘깁니다.</p>
+<p>떠돌이는 건물마다, 청크마다, 그 청크가 처음 로드될 때 굴립니다. 여러분은 그 굴림을 단계 목록으로 적습니다. 품종 정의 안에 <code>spawns</code>로 넣거나, <code>CD.registerStraySpawns(list)</code>로 넣습니다.</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -966,40 +1046,40 @@ end</code></pre>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>단계의 이름. 여러분 자신의 로그용입니다</td>
+<td>단계의 이름. 여러분 자신의 로그를 위한 것입니다</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>추첨이 이루어지는 건물 클래스</td>
+<td>굴림이 걸리는 건물 분류</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>백분율을 돌려주는 <strong>함수</strong>. 숫자가 아니라 함수인 이유는 샌드박스 배수를 실시간으로 따라가기 위해서입니다.</td>
+<td>백분율을 돌려주는 함수. 굴리는 시점에 샌드박스 배수를 읽을 수 있습니다.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>영구 저장소의 키. 생태계 전체에서 유일하고, 절대 바뀌지 않습니다.</td>
+<td>영구 저장소의 키. 모든 모드를 통틀어 유일해야 하고, 절대 바뀌면 안 됩니다.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>나타나게 할 품종 키</td>
+<td>스폰할 품종 키</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>참거짓을 돌려주는 선택적 함수. 추첨 전에 확인합니다. 허스키가 <code>CD.isWinter</code>를 씁니다.</td>
+<td>불리언을 돌려주는 선택 함수. 굴리기 전에 검사합니다. 허스키가 <code>CD.isWinter</code>를 씁니다.</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>길거리 대신 건물 안에서 태어날 백분율. 기본값 35.</td>
+<td>거리가 아니라 건물 안에서 태어날 백분율 확률. 기본값 35.</td>
 </tr>
 </tbody></table></div>
-<p>확률에는 <code>CD.dogSpawnMultiplier()</code>를 곱하거나, <code>CD.strayChancePerHouse()</code>를 여러분만의 희귀도로 나누세요. 어느 쪽이든 플레이어의 샌드박스 설정이 계속 작동합니다. 맨 숫자를 적으면 작동하지 않습니다.</p>
-<p><code>indoor</code>는 선호이지 약속이 아닙니다. 그 청크에서 빈 실내 타일이 없는 건물은 바깥 타일로 되돌아갑니다.</p>
-<h3 id="건물-클래스">건물 클래스</h3>
-<p>베이스가 넷을 등록해 두었고, 그대로 쓸 수 있습니다.</p>
+<p>여러분의 확률에 <code>CD.dogSpawnMultiplier()</code>를 곱하거나, <code>CD.strayChancePerHouse()</code>를 여러분이 정한 희귀도로 나누세요. 둘 다 플레이어의 샌드박스 설정을 살려 둡니다.</p>
+<p><code>indoor</code>는 선호일 뿐입니다. 그 청크에 빈 실내 타일이 없는 건물은 바깥 타일로 떨어집니다.</p>
+<h3 id="건물-분류">건물 분류</h3>
+<p>베이스가 네 개를 등록합니다.</p>
 <div class="tw"><table><thead><tr>
-<th>클래스</th>
-<th>무엇에 맞는가</th>
+<th>분류</th>
+<th>걸리는 것</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
@@ -1007,7 +1087,7 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>경찰서와 그 비슷한 것</td>
+<td>경찰서 같은 곳</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
@@ -1018,24 +1098,23 @@ end</code></pre>
 <td>농장 건물. 도시 밖에서도 허용됩니다</td>
 </tr>
 </tbody></table></div>
-<p>어느 것도 맞지 않으면 직접 등록하세요.</p>
+<p>어느 것도 맞지 않으면 여러분 것을 등록하세요.</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>일치 함수는 건물 정의를 받아 보호된 호출 안에서 돕니다. 그러니 그 안의 실수가 청크 로딩을 끌고 내려가지 않습니다. <code>skipUrbanGate</code>는 도시가 아닌 청크에서도 클래스가 추첨되게 합니다. 농장이나 숲속 오두막에 필요한 설정입니다. <code>exclusive</code>는 건드리지 마세요. 베이스 클래스들끼리는 배타적이지만, 애드온 클래스는 그 위에 겹쳐 맞는 가산적인 것으로 만들어졌습니다.</p>
+<p>판정 함수는 건물 정의를 받고 보호 호출 안에서 도므로, 거기서 난 오류가 청크 로드를 멈추지 않습니다. <code>skipUrbanGate</code>는 도시가 아닌 청크에서도 그 분류가 굴게 하며, 농장이나 숲속 오두막에는 그것이 필요합니다. <code>exclusive</code>는 켜지 마세요. 베이스 분류들은 자기들끼리 배타적이고, 애드온 분류는 그 위에 겹쳐서 걸립니다.</p>
 <h3 id="이미-쓰이는-접미사">이미 쓰이는 접미사</h3>
-<p>접미사는 "이 건물은 이미 추첨됨"이 저장되는 키의 일부입니다. 같은 접미사를 쓰는 두 모드는 서로의 추첨을 망가뜨립니다.</p>
-<p>접미사는 모두 세로 막대로 시작합니다. 다음은 이미 사용 중입니다.</p>
+<p>접미사는 "이 건물은 이미 굴렸다"를 저장하는 키의 일부입니다. 같은 접미사를 쓰는 두 모드는 서로의 굴림을 망가뜨립니다.</p>
+<p>접미사는 모두 세로 막대로 시작합니다. 이미 쓰이고 있는 것들입니다.</p>
 <ul>
-<li><strong>베이스:</strong> 빈 접미사, 그리고 <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>로트와일러:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>도베르만:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>래브라도:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>퍼그:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>고양이:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li>베이스: 빈 접미사, 그리고 <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li>로트와일러: <code>rw</code>, <code>r</code></li>
+<li>도베르만: <code>db</code>, <code>dm</code></li>
+<li>래브라도: <code>lb</code>, <code>lk</code></li>
+<li>퍼그: <code>pg</code>, <code>pv</code></li>
+<li>고양이: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<p>아무도 쓰지 않는 것을 고르고, 그다음에는 다시는 손대지 마세요.</p>
 <h2 id="11-품종-무들">11. 품종 무들</h2>
-<p>무들은 <strong>client</strong> 파일입니다. <code>CD.DogMoodles</code>에 테이블을 덧붙이면 베이스가 그리고, 추적하고, 정리합니다.</p>
+<p>무들은 클라이언트 파일입니다. <code>CD.DogMoodles</code>에 테이블 하나를 덧붙이면 베이스가 그것을 그리고, 추적하고, 치웁니다.</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1054,51 +1133,50 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code>은 단계를 돌려주고, "표시 안 함"이면 0을 돌려줍니다. <code>apply</code>에는 마지막 호출 이후의 게임 분이 넘어오므로, 고정된 틱을 가정하지 말고 효과에 <code>elapsedMin</code>을 곱하세요.</p>
-<p>아이콘은 32에서 128 픽셀까지 <strong>여섯 가지 크기</strong>로 함께 배포하세요. 인터페이스가 플레이어의 배율에 따라 크기를 고르므로, 빠진 크기는 빈 네모가 됩니다.</p>
-<p>직접 만든 무들은 오버레이로 그려집니다. 게임 자체의 무들 시스템은 모드가 넣는 새 항목을 받아 주지 않기 때문입니다. 그 부분은 이미 처리되어 있지만, 무들이 바닐라 것들 사이가 아니라 모드 자체의 띠에 나타나는 이유가 그것입니다.</p>
+<p><code>condition</code>은 단계를 돌려주고, 안 보일 때는 0을 돌려줍니다. <code>apply</code>는 지난 호출 이후의 게임 내 분을 받으므로, 효과에 <code>elapsedMin</code>을 곱하세요.</p>
+<p>아이콘은 32픽셀부터 128픽셀까지 여섯 크기로 실으세요. 인터페이스가 플레이어의 배율에 따라 크기를 고르고, 없는 크기는 빈 사각형으로 나옵니다. 아이콘은 바닐라 무들 사이가 아니라 모드 자체의 줄에 나타납니다.</p>
 <h2 id="12-훅">12. 훅</h2>
-<p>베이스가 <strong>서버</strong>에서 호출하는 함수 목록이 둘 있습니다. shared 파일에서 덧붙이세요. 각 핸들러는 자기만의 보호된 호출 안에서 돌기 때문에, 망가진 애드온이 베이스를 끌고 내려갈 수 없습니다.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, API 2부터. 동물이 사냥감을 주인 발치에 내려놓은 직후에 호출됩니다.</p>
+<p>베이스가 서버에서 호출하는 함수 목록 둘입니다. shared 파일에서 덧붙이세요. 각 핸들러는 자기 보호 호출 안에서 도므로, 애드온 하나에서 난 오류가 베이스를 멈추지 않습니다.</p>
+<p>API 2부터 있는 <code>CD.onHuntDelivered</code>는 동물이 사냥감을 주인 발치에 내려놓은 직후에 호출됩니다.</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, API 3부터. 유지 관리 주기마다, 베이스가 채워지지 않은 욕구에서 오는 스트레스를 더한 뒤 기록하기 전에 호출됩니다. 숫자를 돌려주면 합계에 더해집니다.</p>
+<p>API 3부터 있는 <code>CD.onUpkeepStress</code>는 유지 관리 주기마다, 베이스가 채우지 못한 욕구에서 나온 스트레스를 더한 뒤 그것을 쓰기 전에 호출됩니다. 숫자를 돌려주면 합계에 더해집니다.</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>애드온이 동물의 지속적인 스트레스에 영향을 줄 수 있는 <strong>유일한</strong> 방법입니다. 유지 관리는 매 주기마다 값을 다시 계산해 덮어쓰므로, 바깥에서 쓴 것은 다음 틱에 사라집니다. 더위, 추위, 비처럼 환경에서 오는 상태를 다루기에 알맞은 도구입니다.</p>
-<p><strong>멀티플레이 규칙을 한 줄로. 클라이언트는 절대 모드 데이터를 쓰지 않는다.</strong> 클라이언트 쪽 쓰기는 다음 동기화에서 서버의 사본을 덮어 버리고, 증상은 몇 분 뒤 전혀 다른 곳에서 나타납니다. 작업은 서버 파일에서 하거나, 이미 그쪽에서 도는 이 훅들 안에서 하세요.</p>
+<p>유지 관리는 주기마다 값을 다시 계산해 덮어쓰므로, 바깥에서 쓴 것은 다음 틱에 사라집니다. 더위나 추위나 비처럼 환경에서 오는 조건에는 이 훅을 쓰세요.</p>
+<p>멀티플레이에서 클라이언트는 모드 데이터를 절대 쓰지 않습니다. 클라이언트 쪽에서 쓴 값은 다음 동기화에 서버의 사본을 덮어쓰고, 증상은 몇 분 뒤 상관없는 곳에서 나타납니다. 그 일은 서버 파일에서 하거나 이 훅 안에서 하세요.</p>
 <h2 id="13-번역-키">13. 번역 키</h2>
-<p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> 아래, 언어 폴더마다 <code>IG_UI.json</code>을 하나씩 넣으세요. 베이스는 열넷을 넣습니다. EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>품종에 필요한 키:</p>
+<p>언어 폴더마다 <code>IG_UI.json</code> 하나씩을 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code> 아래에 실으세요. 베이스는 열네 개를 싣습니다. EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
+<p>품종에 필요한 키입니다.</p>
 <div class="tw"><table><thead><tr>
 <th>키</th>
 <th>어디에 나오는가</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>품종 이름. 모드 인터페이스 전반에</td>
+<td>품종 이름. 모드 인터페이스 전체</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>동물 카드에 적히는 설명</td>
+<td>동물 카드의 설명</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>게임 자체 화면에서의 품종 이름</td>
+<td>게임 자체 화면에 나오는 품종 이름</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>여러분의 세 타입마다 하나씩</td>
+<td>여러분의 타입 세 개마다 하나씩</td>
 </tr>
 <tr>
-<td>종 키들</td>
-<td>종을 추가했다면 <code>CD.registerSpecies</code>에 넘긴 <code>nounKey</code>와 <code>youngKey</code></td>
+<td>여러분의 종 키</td>
+<td><code>CD.registerSpecies</code>에 넘긴 <code>nounKey</code>와 <code>youngKey</code></td>
 </tr>
 <tr>
-<td>무들 키들</td>
-<td>무들이 있다면 그 이름과 설명</td>
+<td>여러분의 무들 키</td>
+<td>이름과 설명</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,44 +1187,76 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>물릴 만한 것이 둘 있습니다. 번역 문자열 안의 <strong>그대로의 퍼센트 기호</strong>는 그것을 보여 주는 화면을 죽입니다. 서식기가 자리표시자로 읽기 때문입니다. 그리고 <strong>바이트 순서 표식</strong>이 붙은 언어 파일은 컴파일되지 않으며, 그 오류는 정작 망가진 파일이 아닌 다른 파일의 이름을 댑니다.</p>
+<p>번역 문자열 안의 퍼센트 기호 하나가 그것을 보여주는 화면을 죽입니다. 포매터가 그것을 자리표시자로 읽기 때문입니다. 바이트 순서 표시가 붙은 언어 파일은 컴파일되지 않고, 오류는 망가진 파일이 아닌 다른 파일의 이름을 댑니다.</p>
 <h2 id="14-세이브가-기억하는-것">14. 세이브가 기억하는 것</h2>
-<p>여러분의 식별자 중 셋은 세이브 파일에 기록되고 이후로 계속 다시 읽힙니다.</p>
+<p>여러분의 식별자 셋은 세이브 파일에 쓰이고 영원히 다시 읽힙니다.</p>
 <ul>
-<li><code>key</code>. 여러분의 동물 하나하나에 저장되는 품종 식별자</li>
+<li><code>key</code>. 여러분 동물 하나하나에 저장되는 품종 식별자</li>
 <li><code>typePrefix</code>. 엔진이 저장하는 동물 타입을 이루는 것</li>
-<li><code>suffix</code>. "이미 추첨됨" 저장소의 키. 스폰 단계마다 하나</li>
+<li><code>suffix</code>. "이미 굴렸다" 저장소의 키. 스폰 단계마다 하나</li>
 </ul>
-<p><strong>셋 다 출시 후에는 결코 이름을 바꿀 수 없습니다.</strong> <code>key</code>를 바꾸면 그 품종의 살아 있는 동물이 전부 고아가 됩니다. <code>suffix</code>를 바꾸면 기존 모든 세이브의 모든 건물이 다시 추첨되고, 몇 달을 플레이한 세계가 갑자기 여러분의 동물로 가득 찹니다.</p>
-<p>그 재추첨이 쓸모 있는 유일한 경우는 그것이 바로 목적일 때입니다. CD: Cats는 새 털색 넷에 일부러 새 접미사를 주었습니다. 이미 돌아가던 세계에도 그것들이 나타나기 시작하게 하려는 것이었고, 반면 원래의 검은 고양이는 역사적인 접미사를 지켜 재추첨하지 않았습니다.</p>
-<p><strong>그 품종의 동물이 살아 있는 세이브에서 애드온을 빼면 그 동물을 잃습니다.</strong> 엔진은 더 이상 알지 못하는 타입의 동물을 버립니다. 베이스는 죽지 않고 유대와 견사도 깔끔하게 낮아지지만, 동물은 사라집니다. 공개된 모든 애드온이 그러하듯, 워크샵 페이지에 그렇게 적으세요.</p>
-<p><strong>알 수 없는 품종은 실패하지 않고 낮아집니다.</strong> 여러분의 애드온이 없으면 베이스는 무엇을 묻든 기본 품종으로 되돌리므로, 여러분의 모드 없이 연 세이브도 읽을 수 있습니다.</p>
+<p>셋 중 무엇도 출시 뒤에는 이름을 바꿀 수 없습니다. <code>key</code>를 바꾸면 그 품종의 살아 있는 동물이 전부 미아가 됩니다. <code>suffix</code>를 바꾸면 기존 세이브의 모든 건물이 다시 굴려지고, 몇 달을 플레이한 세계가 여러분의 동물로 가득 찹니다.</p>
+<p>새 접미사는 이미 돌아가고 있는 세계에 새 품종이 닿는 방법이기도 합니다. CD: Cats는 새 털색 넷에 새 접미사를 주었고, 그래서 기존 세이브에도 나타나기 시작했습니다. 원래의 검은 고양이는 옛 접미사를 유지해 다시 굴려지지 않았습니다.</p>
+<p>그 품종의 동물이 살아 있는 세이브에서 애드온을 빼면 그 동물들을 잃습니다. 엔진은 자기가 더 이상 모르는 타입의 동물을 버립니다. 베이스는 죽지 않고, 유대와 견사는 깔끔하게 정리됩니다. 이 사실을 워크샵 페이지에 적으세요.</p>
+<p>여러분의 애드온이 없으면 베이스는 물어보는 모든 것에 기본 품종으로 답하므로, 여러분의 모드 없이 연 세이브도 읽힙니다.</p>
 <h2 id="15-공개하기-전에">15. 공개하기 전에</h2>
 <ul>
-<li>가드가 <strong>모든</strong> Lua 파일에 있고, 실제로 쓰는 API를 적고 있다.</li>
-<li>베이스 버전의 하한이 설명문에 말로 적혀 있다. <code>versionMin</code>으로는 그것을 말할 수 없다.</li>
-<li>첫 로드에서 로그를 읽었다. 그러지 않으면 <code>CD.registerBreed</code>는 조용히 거절하고, 모든 거절이 이름 붙은 한 줄을 남긴다.</li>
-<li><code>CD.defineDogParts</code>를 호출하고 있다. 자기 동물을 한 마리 도축해 죽지 않는지 확인한다.</li>
-<li><code>key</code>, <code>typePrefix</code>, 스폰 접미사가 유일하고, 앞으로도 계속 그것으로 만족한다.</li>
-<li>작은 품종은 <code>puppySize</code>를 설정했고, 강아지를 직접 보고 확인했다.</li>
-<li>다른 종이라면 <code>CD.registerVoices</code>를 호출하고 <code>voices</code>를 채웠다. 아니면 짖는다.</li>
+<li>가드가 모든 Lua 파일에 있고, 실제로 쓰는 API를 댄다.</li>
+<li>베이스 버전 하한선이 설명에 말로 적혀 있다. <code>versionMin</code>으로는 그것을 말할 수 없다.</li>
+<li>첫 로드에서 로그를 읽었다. 그러지 않으면 <code>CD.registerBreed</code>는 조용히 거부하며, 거부마다 이름이 붙은 줄이 찍힌다.</li>
+<li><code>CD.defineDogParts</code>를 부른다. 동물 하나를 해체해 죽지 않는지 본다.</li>
+<li><code>key</code>와 <code>typePrefix</code>와 스폰 접미사가 유일하고, 앞으로 바꿀 일이 없다.</li>
+<li>작은 품종이면 <code>puppySize</code>를 넣었고, 강아지를 직접 보고 확인했다.</li>
+<li>다른 종이면 <code>CD.registerVoices</code>를 부르고 <code>voices</code>를 채웠다. 안 그러면 짖는다.</li>
 <li>무들 아이콘이 여섯 크기 전부 있다.</li>
-<li>함께 배포하는 모든 언어 폴더에 모든 키가 있다. 빠진 키는 화면에 날것의 키를 보여 준다.</li>
-<li>싱글플레이만이 아니라 멀티플레이에서 시험했다. 위치, 소유, 모드 데이터는 그쪽에서 다르게 움직인다.</li>
+<li>함께 싣는 언어 폴더마다 모든 키가 있다. 빠진 키는 화면에 키 문자열 그대로 나온다.</li>
+<li>싱글플레이만이 아니라 멀티플레이에서도 시험했다. 위치와 소유권과 모드 데이터는 거기서 다르게 굴러간다.</li>
 <li>워크샵 페이지가 살아 있는 동물이 있는 세이브에서 애드온을 빼지 말라고 경고한다.</li>
 </ul>
 <h2 id="16-흔한-실수">16. 흔한 실수</h2>
-<p><strong>"내 동물이 도무지 나타나지 않아요."</strong> 거의 언제나 가드입니다. 여러분의 애드온이 설치된 베이스에 없는 API를 요구하고 있어서, 의도대로 비활성 상태입니다. 자기 API 번호를 2절의 표와 맞춰 보세요.</p>
-<p><strong>"나타나긴 하는데 얼어 있어요."</strong> 애님셋이 <code>"raccoon"</code>이 아니거나, 모델에 클립이 빠졌습니다. 둘 다 영원히 가만히 서 있는 동물로 나옵니다.</p>
-<p><strong>"검은 얼룩으로 그려지고 로그가 넘칩니다."</strong> 모델의 뼈가 60개를 넘습니다.</p>
-<p><strong>"도축하면 죽습니다."</strong> <code>CD.defineDogParts</code>를 호출하지 않았습니다.</p>
-<p><strong>"강아지가 성체 크기로 태어납니다."</strong> <code>puppySize</code>를 설정하지 않은 작은 품종입니다. 이 값은 절대값이고 매 스윕마다 다시 적용되므로, 타입 자체의 크기 범위로는 구제되지 않습니다.</p>
-<p><strong>"내 품종 둘이 자꾸 서로 바뀝니다."</strong> <code>engineBreed</code>를 공유하고 있습니다. 접두사는 메시를 고르는 것이라 한 가족이 공유할 수 있지만, <code>engineBreed</code>는 텍스처를 고르며 그 가족 안에서 승부를 가르는 것이므로 품종마다 유일해야 합니다.</p>
-<p><strong>"소리는 나는데 볼륨 조절을 무시합니다."</strong> 그 소리에 대해 <code>CD.registerVoices</code>를 호출하지 않았습니다.</p>
-<p><strong>"싱글에서는 되는데 서버에서 이상하게 굽니다."</strong> 무언가가 클라이언트에서 모드 데이터를 쓰고 있습니다. 서버로 옮기세요.</p>
-<p><strong>"전투를 껐는데 좀비와 싸웠어요."</strong> 돌아가고 있는 베이스가 API 5보다 오래되어, 거기에는 그 필드가 아직 없었고 조용히 무시되었습니다. 가드가 낮추지 말고 막아야 하는 경우가 바로 이것입니다.</p>
+<div class="tw"><table><thead><tr>
+<th>증상</th>
+<th>무엇인가</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>"동물이 아예 나타나지 않는다."</strong></td>
+<td>거의 항상 가드입니다. 애드온이 요구하는 API가 설치된 베이스에 없어서 일찍 반환하고 아무것도 등록하지 않은 것입니다. 2절의 표와 여러분의 API 숫자를 맞춰 보세요.</td>
+</tr>
+<tr>
+<td><strong>"나타나기는 하는데 굳어 있다."</strong></td>
+<td>애님셋이 <code>"raccoon"</code>이 아니거나, 모델에 클립이 빠져 있습니다.</td>
+</tr>
+<tr>
+<td><strong>"검은 얼룩으로 그려지고 로그가 넘친다."</strong></td>
+<td>모델의 본이 60개를 넘습니다.</td>
+</tr>
+<tr>
+<td><strong>"해체하면 게임이 죽는다."</strong></td>
+<td><code>CD.defineDogParts</code>를 부르지 않았습니다.</td>
+</tr>
+<tr>
+<td><strong>"강아지가 성체 크기로 태어난다."</strong></td>
+<td>작은 품종이 <code>puppySize</code>를 넣지 않았습니다. 이 값은 절대값이고 훑을 때마다 다시 적용되므로, 타입의 크기 범위로는 덮이지 않습니다.</td>
+</tr>
+<tr>
+<td><strong>"내 품종 둘이 자꾸 서로로 변한다."</strong></td>
+<td><code>engineBreed</code>를 같이 쓰고 있습니다. 접두사는 메시를 고르므로 한 계열이 공유해도 됩니다. <code>engineBreed</code>는 텍스처를 고르고 그 계열 안에서 품종을 구별하므로, 품종마다 유일해야 합니다.</td>
+</tr>
+<tr>
+<td><strong>"소리는 나는데 음량 슬라이더를 무시한다."</strong></td>
+<td>그 소리에 <code>CD.registerVoices</code>를 부르지 않았습니다.</td>
+</tr>
+<tr>
+<td><strong>"싱글플레이에서는 되는데 서버에서 이상하게 논다."</strong></td>
+<td>무언가가 클라이언트에서 모드 데이터를 쓰고 있습니다. 서버로 옮기세요.</td>
+</tr>
+<tr>
+<td><strong>"전투를 껐는데도 좀비와 싸웠다."</strong></td>
+<td>돌아가고 있는 베이스가 API 5보다 낡았습니다. 그 베이스는 이 필드를 몰라서 무시합니다. 가드가 필드 없이 로드되게 두지 말고 그런 베이스에서 막아야 합니다.</td>
+</tr>
+</tbody></table></div>
 <hr>
-<p>이 설명서에 틀린 곳이나 빠진 곳이 있나요? <a href="https://discord.gg/ndyTBFSuAT">Discord</a>에서 알려 주세요.</p></article></main>
+<p>이 설명서에 틀린 것이 있거나 빠진 것이 있나요? <a href="https://discord.gg/ndyTBFSuAT">디스코드</a>에서 알려 주세요.</p></article></main>
 </div>
 
 <script>

@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -459,6 +459,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#ele-não-leva-tiro-seu" data-id="ele-não-leva-tiro-seu">Ele não leva tiro seu</a>
 <a class="s3" href="#ferimento-recuo-e-pânico" data-id="ferimento-recuo-e-pânico">Ferimento, recuo e pânico</a>
 <a class="s3" href="#cura" data-id="cura">Cura</a>
+<a class="s3" href="#ferida-e-curativo" data-id="ferida-e-curativo">Ferida e curativo</a>
+<a class="s3" href="#infecção-febre-crítico-e-morte" data-id="infecção-febre-crítico-e-morte">Infecção: febre, crítico e morte</a>
+<a class="s3" href="#entorse" data-id="entorse">Entorse</a>
+<a class="s3" href="#estômago-virado-e-vermes" data-id="estômago-virado-e-vermes">Estômago virado e vermes</a>
+<a class="s3" href="#remédios-onde-achar-e-como-dar" data-id="remédios-onde-achar-e-como-dar">Remédios: onde achar e como dar</a>
 <a class="s3" href="#contagem-de-abates" data-id="contagem-de-abates">Contagem de abates</a>
 </div>
 </div>
@@ -543,7 +548,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#16-vários-cães-ao-mesmo-tempo" data-id="16-vários-cães-ao-mesmo-tempo">16. Vários cães ao mesmo tempo</a>
 <div class="sub">
-<a class="s3" href="#a-aba-meus-cães-o-registro" data-id="a-aba-meus-cães-o-registro">A aba "Meus Cães": o registro</a>
+<a class="s3" href="#a-aba-meus-companheiros-o-registro" data-id="a-aba-meus-companheiros-o-registro">A aba "Meus Companheiros": o registro</a>
 </div>
 </div>
 <div class="grp">
@@ -551,7 +556,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#aba-habilidades-e-status" data-id="aba-habilidades-e-status">Aba "Habilidades e Status"</a>
 <a class="s3" href="#aba-comandos" data-id="aba-comandos">Aba "Comandos"</a>
-<a class="s3" href="#aba-meus-cães" data-id="aba-meus-cães">Aba "Meus Cães"</a>
+<a class="s3" href="#aba-meus-companheiros" data-id="aba-meus-companheiros">Aba "Meus Companheiros"</a>
 <a class="s3" href="#aba-configurações" data-id="aba-configurações">Aba "Configurações"</a>
 </div>
 </div>
@@ -619,37 +624,37 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manual-de-funcionalidades">Companion Dogs: Manual de Funcionalidades</h1>
-<p>Guia completo do que o seu cão faz, como mandar nele e como cuidar dele.</p>
-<p>Este manual cobre <strong>tudo que o mod faz</strong>. Se você quer saber sobre as <strong>raças</strong> (qual escolher, o que cada uma tem de especial, moodles e características), veja o outro manual: <a href="breeds.html" class="xlink">Raças</a>.</p>
-<blockquote class="quote"><strong>Sobre os nomes:</strong> todos os textos entre aspas neste manual são exatamente como aparecem no jogo em português. Se o seu jogo estiver em inglês, os nomes mudam, mas a posição no menu é a mesma.</blockquote>
+<p>Guia do que o seu cão faz, como mandar nele e como cuidar dele.</p>
+<p>As raças (qual escolher, o que cada uma tem de especial, moodles e características) estão no outro manual: <a href="breeds.html" class="xlink">Raças</a>.</p>
+<blockquote class="quote">Todos os textos entre aspas neste manual são como aparecem no jogo em português. Com o jogo em inglês os nomes mudam, mas a posição no menu é a mesma.</blockquote>
 <h2 id="instalação-comece-por-aqui">Instalação: comece por aqui</h2>
-<blockquote class="quote"><strong>Antes de tudo:</strong> o mod pede <strong>Project Zomboid 42.19 ou mais novo</strong> (Build 42). Em versão mais antiga ele não carrega.</blockquote>
-<p><strong>Como saber se o mod entrou no seu save:</strong> procure o <strong>botão de pata</strong> na barra da esquerda, logo abaixo do painel das suas mãos. É este:</p>
+<blockquote class="quote">O mod pede Project Zomboid 42.19 ou mais novo (Build 42). Em versão mais antiga ele não carrega.</blockquote>
+<p>Para saber se o mod entrou no seu save, procure o botão de pata na barra da esquerda:</p>
 <figure class="shot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAzY0lEQVR4nO2dC5hVVfn/19r7HOQioKKZJKJomoGCmgJ5S9Es0/Kaillpamlaar8sL6GmoZampP69lKUGRWamqVgmXiBESSW84AUTEzUjirg5DOfsvf7PZ7G+p+VxZphzZgaGmPd5Nmc4Z++9Lu+73tt633cZ0wVd0AVd0AVd0AVd0AVd0AXrFlizFoBzTv3kc8PFixe/554+ffrwsdxau2w19Ce11mbOuTuMMYcbYzJjTBrdkhtjEmPMbGPMzsaYFb7z1jrTyWBtIYDEWps7524xxhzYxIS7MJbXjDG7W2tLEE1HTLgL73XO9czz/JUkSTZrbGzMly1bRh/53ay//vqmW7du6uOR1to7nHMFa225vfvzPw8gP3zu4CJYvHixW7Jkif9sbGyMfxoaP9cB/UnD516hvey4445zffv2dZtsson/3G233ehT2TmXZ1n2p47sz/88sHLC5w1MqHNuxejRo/M+ffrkG2+8sf8cNmxY3tjYuCL8flb8XEf1J8uyy2lv6dKlJRAfuFDlmjhxIn3Jy+UyhLBteLaLCGqcbC+iYLflcvmtPM/drFmzYK3vmfCZM2cy0a5cLk/tqMl2/+1Pt1Kp9CrtPfLII74/iIUddtjB9ezZ0yVJ4vbYYw9+RhQBp8bE05mgs1Ok+rdrmqaboQdcd911XtamaWqGDRtmevXqhXJlJk+ezL1M9nDn3NZBZ2jv8SWBCIanaboVyt6kSZN8G8Vi0XzkIx8xH/jAB0ye5+bxxx83L774on+oXC6PNJ0UOjsBSEndF+QuW7Ysv/fee72iteGGG5qRI0eanj17+v/fdddd3JsVCoWiMeYzHTU+a63L83w0RLdixYr817/+tf9+o402Mr179zbbbrutJ8hyuSyipH/DAjFiOXQqxbuzEwDmlCmVSnsw9zNmzLBvvfWW/+GDH/ygX/3vf//7/f9nzJhhXnnlFdRz5PPnwvOw5/bU/jPn3EZ5nh9DO48//ng6d+5c//sWW2zhP+kPxAlMnz7dI9taO9AY068zmoGdlgDChHsCMMZszj+TJ0/2E7reeuuZLbfckhXoP5Mk8X/ffffd2Oe5tXYn59xHw3tic7EtkIbPowqFQl9Mul/+8pe+P4VCwQwcOND3oUePHmazzTbzN86aNcuLgzRNe8MkwvNdHKBWQKni87HHHvP/33jjjc0GG2xgli9fbjbddFM5gcyECRP4yCGIPM9PbucVl8PG8zw/ldW/YMGCZOLEiZX+cMH2Yf/iSn/729/Mv/71L/9dY2Oj6YzQaTlADCh8wJtvvuk/WWGsuizL/IoT+/3LX/5ipk2blgZl8AjnHKy3zcqgW+nEgRsdmiTJEETB7bffnvznP//xv2+zzTa+P0H8VETAkiVLzL///W//dxcBtCOw6plsVhYTvvXWW3sxwHc//vGPvTKYpmkvY8wZgQvUTQBupdIGEdk8z8cEs9Ncf/31vv3u3bubQYMGoaf4PsDy0U26devmn+eezgxrBQcQgGCACWaimVwmHoLYZJNN/G+/+c1vzNy5c1N8Bnmef8E5976gfdc71iSs/uOTJNkRYrjjjjvS5557zvdnq622Mn379q2wf74D+egpawOsVQQg0GoH+MQG32677fz/ly5dasaNG2eTJMmSJIEXXxy4gG3D6n9/nueXQVS85+KLL/bIph+DBw/2XEgrnf7wPX1aG2CtJICYrcoCQA6zCcNvt912m3n77bfRBVi5X2J/IJhwSR2r3xljdkiSZBOU0Ztvvjl55plnPKLRPVD44EKdndX/TxFANbACEQsf/vCHPWIWLlxoxowZ41dvMN92bct4y/B3Y9zf//53c84553hkc+20005eFFUDfWjq+84IayUBiP1XcwHYMZ5BkPPTn/7UzJw50/++YsWKUhvaSpctWwYR2Weffdb885//9O2jePbv39+3W736oRe4wtoAayUBrFyQTXMB9gdkjv35z3/2v5VKJXz4HomtbcOtFBfe+2etfYfvMPVANkS21157VTgB7WnVI/tpGx9FeI/pzLBWEQArHWB1ScvWxMsk3Hnnnc373ofibyqmmHOuEUS21ifgVkb84FFkh/GYXr16jcuyDKvCu5ohwCeffBJnkCcK+sIF8pctW2Zmz57t+8J3kTnYKee6021PNgOVZQSiMcFwAGF+aYIhAiyAv/71r6ahoUHfpSCue/fu38GHj/kedgl9SJdpOdxra2PMjcaYUXJEsfJFgCiCzz//vDc/8URCGLSP5w+xIIIVMRYKhXc620ZQpwYmSxNWLpfn4tobNmzYu2IBNt54Y7fddtu5wYMHuy222ML16NHDfx9cx27ChAmuCh5zzu3Y3N68+2+0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" alt="O botão de pata do Companion Dogs, na barra lateral esquerda"></figure>
-<p>Sem esse botão, o Companion Dogs não está ativo nesse save e <strong>nenhum cão vai nascer no mundo</strong>. Não adianta procurar: volte para os passos abaixo.</p>
+<p>Sem esse botão o Companion Dogs não está ativo nesse save e nenhum cão nasce no mundo.</p>
 <h3 id="instalar">Instalar</h3>
 <ol>
 <li>Assine o mod na Steam: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</li>
-<li>No menu do Zomboid, entre em <strong><span class="ig">MODS</span></strong> e ative o <strong>Companion Dogs</strong>.</li>
-<li><strong>Feche o jogo por completo</strong> (sair para a área de trabalho) e abra de novo.</li>
+<li>No menu do Zomboid, entre em <strong><span class="ig">MODS</span></strong> e ative o Companion Dogs.</li>
+<li>Feche o jogo por completo (sair para a área de trabalho) e abra de novo.</li>
 </ol>
-<p>O passo 3 não é frescura: sem o reinício o cão costuma aparecer sem textura ou <em>amassado</em>, porque o jogo já tinha carregado os modelos antes de o mod entrar.</p>
+<p>Sem o reinício o cão costuma aparecer sem textura ou amassado, porque o jogo carregou os modelos antes de o mod entrar.</p>
 <h3 id="se-o-save-já-existe">Se o save já existe</h3>
-<p>O mod é seguro de adicionar a um save em andamento, mas <strong>ativar na lista de mods vale só para saves novos</strong>. Um save que já existe guarda a própria lista, e o Companion Dogs precisa entrar nela:</p>
+<p>Dá para adicionar o mod a um save em andamento. Um save que já existe guarda a própria lista, e o Companion Dogs precisa entrar nela:</p>
 <ol>
 <li>Menu principal &gt; <strong><span class="ig">CARREGAR</span></strong>.</li>
-<li><strong>Clique no save</strong> para selecioná-lo.</li>
+<li>Clique no save para selecioná-lo.</li>
 <li>Canto inferior direito: <strong><span class="ig">MAIS...</span></strong> &gt; <strong><span class="ig">Escolher Mods...</span></strong>.</li>
-<li>Marque o <strong>Companion Dogs</strong> (e os add-ons de raça que você usa) e confirme.</li>
+<li>Marque o Companion Dogs (e os add-ons de raça que você usa) e confirme.</li>
 <li>Carregue o save e confira o botão de pata antes de sair procurando cão.</li>
 </ol>
 <p>Nenhum prédio do seu mundo foi sorteado ainda, então os cães começam a aparecer conforme você circula, inclusive em lugares que você já explorou.</p>
-<p>Adicionar é tranquilo; <strong>remover não é</strong>. Se um dia quiser tirar o mod, leia antes a <a href="#23-remover-o-mod-de-um-save-leia-antes">seção 23</a>.</p>
+<p>Antes de tirar o mod de um save, leia a <a href="#23-remover-o-mod-de-um-save-leia-antes">seção 23</a>.</p>
 <h3 id="servidor-dedicado">Servidor dedicado</h3>
 <p>Duas linhas no arquivo <code>&lt;nome-do-servidor&gt;.ini</code> (fica em <code>Zomboid/Server/</code>):</p>
 <pre><code>WorkshopItems=3740052292
 Mods=CompanionDogs</code></pre>
-<p>São listas diferentes e as duas precisam existir: <code>WorkshopItems</code> leva o <strong>ID numérico</strong> do item da Workshop, e <code>Mods</code> leva o <strong>ID do mod</strong>. Vários itens vão separados por <strong>ponto e vírgula</strong>, sem espaço.</p>
+<p>São listas diferentes e as duas precisam existir: <code>WorkshopItems</code> leva o ID numérico do item da Workshop e <code>Mods</code> leva o ID do mod. Vários itens vão separados por ponto e vírgula, sem espaço.</p>
 <div class="tw"><table><thead><tr>
 <th>Mod</th>
 <th><code>Mods=</code></th>
@@ -684,16 +689,15 @@ Mods=CompanionDogs</code></pre>
 <p>Com o base e os quatro add-ons de raça, fica assim:</p>
 <pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
 Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
-<p>Três detalhes que costumam morder:</p>
 <ul>
-<li><strong>O base vem antes dos add-ons</strong> nas duas listas. Um add-on de raça carregado antes do Companion Dogs não registra a raça.</li>
-<li><strong>Reinicie o servidor por completo</strong> depois de mexer no .ini.</li>
-<li>Os jogadores <strong>baixam o mod sozinhos</strong> ao entrar; ninguém precisa assinar na mão. O que eles precisam é do jogo na mesma versão do servidor.</li>
+<li>O base vem antes dos add-ons nas duas listas. Um add-on de raça carregado antes do Companion Dogs não registra a raça.</li>
+<li>Reinicie o servidor por completo depois de mexer no .ini.</li>
+<li>Os jogadores baixam o mod sozinhos ao entrar; ninguém precisa assinar na mão. Eles só precisam do jogo na mesma versão do servidor.</li>
 </ul>
 <h3 id="host-de-co-op">Host de co-op</h3>
-<p>O co-op é um <strong>servidor de verdade</strong> rodando na sua máquina, e ele não herda a lista de mods do menu principal. São três passos, e pular o segundo é o erro mais comum.</p>
-<p><strong>1. Ative o mod no seu jogo.</strong> Menu principal &gt; <strong><span class="ig">MODS</span></strong> &gt; marque o <strong>Companion Dogs</strong> e os add-ons de raça que for usar. <strong>Feche o jogo por completo</strong> e abra de novo. Sem esse reinício o cão costuma aparecer sem textura ou <em>amassado</em>.</p>
-<p><strong>2. Coloque o mod na configuração do servidor.</strong> Marcar na tela de seleção do co-op <strong>não basta</strong>:</p>
+<p>O co-op é um servidor rodando na sua máquina, e ele não herda a lista de mods do menu principal.</p>
+<p>Passo 1: ative o mod no seu jogo. Menu principal &gt; <strong><span class="ig">MODS</span></strong> &gt; marque o Companion Dogs e os add-ons de raça que for usar. Feche o jogo por completo e abra de novo.</p>
+<p>Passo 2: coloque o mod na configuração do servidor:</p>
 <ol>
 <li>Menu principal &gt; <strong><span class="ig">HOSPEDAR JOGO</span></strong> &gt; <strong><span class="ig">Gerenciar configurações...</span></strong>.</li>
 <li>Selecione a configuração que você vai usar e clique em <strong><span class="ig">Editar Configuração Selecionada</span></strong>.</li>
@@ -701,27 +705,26 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Ainda na lista da esquerda, abra <strong><span class="ig">Mods</span></strong> e adicione o <code>CompanionDogs</code> da mesma forma.</li>
 <li>Clique em <strong><span class="ig">SALVAR</span></strong>.</li>
 </ol>
-<p>Essas duas listas são o <code>WorkshopItems=</code> e o <code>Mods=</code> do servidor dedicado, só que por tela: a edição vai parar em <code>Zomboid\Server\&lt;nome-da-configuração&gt;.ini</code>. Valem os mesmos IDs da tabela da seção anterior, e <strong>a mesma ordem: o base antes dos add-ons de raça.</strong></p>
-<p><strong>3. Inicie o servidor</strong> pelo botão <strong><span class="ig">INICIAR</span></strong>. Quem entrar baixa os mods sozinho; ninguém precisa se inscrever na mão.</p>
-<p><strong>Se algo der errado:</strong> cão sem textura ou amassado significa que faltou o passo 1. Nenhum botão de pata e nenhum cão no mundo, para ninguém, significa que faltou o passo 2.</p>
+<p>Essas duas listas são o <code>WorkshopItems=</code> e o <code>Mods=</code> do servidor dedicado, só que por tela: a edição vai parar em <code>Zomboid\Server\&lt;nome-da-configuração&gt;.ini</code>. Valem os mesmos IDs da tabela da seção anterior e a mesma ordem, o base antes dos add-ons de raça.</p>
+<p>Passo 3: inicie o servidor pelo botão <strong><span class="ig">INICIAR</span></strong>. Quem entrar baixa os mods sozinho.</p>
+<p>Se algo der errado: cão sem textura ou amassado é sinal de que faltou o passo 1. Nenhum botão de pata e nenhum cão no mundo, para ninguém, é sinal de que faltou o passo 2.</p>
 <h2 id="1-em-5-minutos-do-vira-lata-ao-companheiro">1. Em 5 minutos: do vira-lata ao companheiro</h2>
-<p>Se você só quer começar a jogar, é isto:</p>
 <ol>
-<li><strong>Ache um cão.</strong> Vira-latas caramelo andam soltos por cidades e bairros residenciais. Você vai topar com um cedo ou tarde só explorando.</li>
-<li><strong>Tenha comida no inventário.</strong> Qualquer comida serve, contanto que não esteja podre e mate fome.</li>
-<li><strong>Clique com o botão direito no cão</strong> e escolha <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</li>
-<li><strong>Repita até ele confiar.</strong> Cada porção sobe a confiança. Um saco de ração grande resolve quase de uma vez; biscoitinhos levam umas quatro repetições.</li>
-<li><strong>Dê um nome.</strong> Pronto, ele é seu. A partir daí ele te segue sozinho.</li>
+<li>Ache um cão. Vira-latas caramelo andam soltos por cidades e bairros residenciais.</li>
+<li>Tenha comida no inventário. Qualquer comida serve, desde que não esteja podre e mate fome.</li>
+<li>Clique com o botão direito no cão e escolha <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</li>
+<li>Repita até ele confiar. Um saco de ração grande resolve quase de uma vez; biscoitinhos levam umas quatro repetições.</li>
+<li>Dê um nome. A partir daí ele te segue sozinho.</li>
 </ol>
-<p>Depois disso, três coisas para não esquecer:</p>
+<p>Depois disso, o dia a dia:</p>
 <ul>
-<li><strong>Alimente e dê água todo dia.</strong> O cão morre de negligência, e não volta.</li>
-<li><strong>Faça carinho.</strong> Isso segura a lealdade e ainda alivia o seu tédio e tristeza.</li>
-<li><strong>Abra a janela dele</strong> no botão de patinha, abaixo do painel das suas mãos. Tudo está lá dentro.</li>
+<li>Alimente e dê água todo dia. O cão morre de negligência e não volta.</li>
+<li>Faça carinho. Isso segura a lealdade e ainda alivia o seu tédio e tristeza.</li>
+<li>Abra a janela dele no botão de patinha, abaixo do painel das suas mãos. Tudo do cão fica lá dentro.</li>
 </ul>
 <h2 id="2-encontrar-e-domesticar-um-cão">2. Encontrar e domesticar um cão</h2>
 <h3 id="onde-cada-raça-aparece">Onde cada raça aparece</h3>
-<p>O mod decide <strong>uma vez por prédio</strong> se aquele prédio tem um cão, e essa decisão fica salva. Você não vai voltar num lugar já explorado e achar um cão novo do nada.</p>
+<p>O mod decide uma vez por prédio se aquele prédio tem um cão, e a decisão fica salva.</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Onde procurar</th>
@@ -730,12 +733,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Caramelo</strong></td>
 <td>Casa residencial, em cidade ou bairro</td>
-<td>20%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td><strong>Golden Retriever</strong></td>
-<td>Casa residencial (sorteio extra)</td>
-<td>5%</td>
+<td>Casa residencial (sorteio à parte, um terço do Caramelo)</td>
+<td>1%</td>
 </tr>
 <tr>
 <td><strong>Pastor Alemão</strong></td>
@@ -744,8 +747,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td>Casa residencial, <strong>só no inverno</strong></td>
-<td>2,5%</td>
+<td>Casa residencial, só no inverno</td>
+<td>1,25%</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -758,64 +761,63 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>15%</td>
 </tr>
 </tbody></table></div>
-<p>O cão costuma nascer num tile livre <strong>do lado de fora</strong> do prédio: rua, quintal, terreno. Só quando não sobra nenhum tile externo livre é que ele acaba nascendo dentro do prédio. Procure na rua e no quintal primeiro.</p>
-<p>A opção de sandbox <strong><span class="ig">Multiplicador de spawn de cães</span></strong> escala todas essas chances de uma vez, mantendo a raridade relativa. Colocar em 0 desliga o spawn.</p>
-<blockquote class="quote"><strong>Raças de addon</strong> vêm em mods separados na Steam e têm os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
+<p>O cão costuma nascer num tile livre do lado de fora do prédio: rua, quintal, terreno. Ele só nasce dentro quando não sobra nenhum tile externo livre.</p>
+<p>A opção de sandbox <strong><span class="ig">Multiplicador de spawn de animais</span></strong> escala todas essas chances de uma vez. Em 0 o spawn desliga.</p>
+<blockquote class="quote">As raças de addon vêm em mods separados na Steam, cada uma com os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
 <h3 id="como-domesticar">Como domesticar</h3>
-<p>Clique com o botão direito no cão selvagem. A única opção que ele oferece é <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</p>
+<p>Clique com o botão direito no cão selvagem. A única opção que aparece é <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</p>
 <ul>
-<li><strong>Não precisa de nada além de comida.</strong> Sem skill mínima, sem trait, sem coleira, sem ferramenta.</li>
-<li>A comida pode estar <strong>dentro de uma mochila</strong>, o mod acha sozinho.</li>
-<li>Se você tiver mais de um tipo de comida, vira um submenu com ícone e quantidade de cada.</li>
+<li>Só precisa de comida. Nenhuma skill mínima, trait, coleira ou ferramenta.</li>
+<li>A comida pode estar dentro de uma mochila, o mod acha sozinho.</li>
+<li>Com mais de um tipo de comida, abre um submenu com ícone e quantidade de cada.</li>
 <li>Sem comida nenhuma, a opção fica cinza: <em><span class="ig">Você precisa de um item de comida no inventário.</span></em></li>
 </ul>
 <h3 id="quanta-comida-é-preciso">Quanta comida é preciso</h3>
-<p>Cada porção dá <strong>confiança proporcional ao tanto de fome que aquela comida mataria</strong>. Um item que tira 60 pontos de fome dá 60 de confiança. O padrão é <strong>100 de confiança para domesticar</strong> (configurável no sandbox em <em><span class="ig">Confiança para domesticar</span></em>).</p>
-<p>O mod <strong>só consome a mordida necessária</strong> e devolve o resto do item ao seu inventário, então você não desperdiça meia lata de comida para dar o último ponto de confiança.</p>
-<p><strong>Não existe sorte envolvida.</strong> Chegou aos 100 de confiança, o cão é seu. Ponto.</p>
-<p>Enquanto a barra não enche, você vê: <em><span class="ig">O Caramelo está confiando em você...</span></em> Quando enche: <em><span class="ig">O Caramelo agora é seu companheiro!</span></em> e abre a caixa para dar o nome.</p>
+<p>Cada porção dá confiança igual à fome que aquela comida mataria. Um item que tira 60 pontos de fome dá 60 de confiança. O padrão é 100 de confiança para domesticar (opção de sandbox <em><span class="ig">Confiança para domesticar</span></em>).</p>
+<p>O mod consome só a mordida necessária e devolve o resto do item ao inventário.</p>
+<p>O processo não depende de sorte.</p>
+<p>Enquanto a barra não enche, aparece: <em><span class="ig">O Caramelo está confiando em você...</span></em> Quando enche: <em><span class="ig">O Caramelo agora é seu companheiro!</span></em> e abre a caixa para dar o nome.</p>
 <h3 id="comida-que-faz-mal">Comida que faz mal</h3>
-<p>Algumas comidas são venenosas para cão, e o mod avisa: elas aparecem <strong>em vermelho</strong> no menu, com o aviso <em><span class="ig">Faz mal para cães. Comer isso deixa o cão doente e quebra a confiança dele.</span></em></p>
-<p>São elas:</p>
+<p>As comidas ruins aparecem em vermelho no menu, com o aviso <em><span class="ig">Faz mal para cães. Comer isso deixa o pet doente.</span></em></p>
 <ul>
-<li><strong>Por tipo:</strong> doce, açúcar, café, chá, cacau, chocolate, pimenta, castanha/noz.</li>
-<li><strong>Por nome:</strong> cebola, alho, alho-poró, cebolinha, chalota, uva, uva-passa, chocolate, cacau, café, amendoim. (Toranja/grapefruit está explicitamente liberada.)</li>
+<li>Por tipo: doce, açúcar, café, chá, cacau, chocolate, pimenta, castanha/noz.</li>
+<li>Por nome: cebola, alho, alho-poró, cebolinha, chalota, uva, uva-passa, chocolate, cacau, café, amendoim. Toranja/grapefruit está liberada.</li>
 </ul>
-<p>Dar comida ruim para um <strong>cão selvagem</strong> tira 15 de confiança e nunca soma. Para um <strong>companheiro</strong>, tira 20 de lealdade, sobe o estresse e deixa ele <strong>intoxicado por 120 minutos de jogo</strong>.</p>
+<p>Dar comida ruim a um cão selvagem tira 15 de confiança e não soma nada. Num companheiro, tira 20 de lealdade, sobe o estresse e deixa ele intoxicado por 120 minutos de jogo.</p>
 <h3 id="o-que-acontece-no-momento-em-que-ele-vira-seu">O que acontece no momento em que ele vira seu</h3>
 <ul>
-<li>Ele entra em modo <strong>Seguir</strong> e liga a <strong>auto-proteção</strong>.</li>
+<li>Ele entra em modo Seguir com a auto-proteção ligada.</li>
 <li>Fome, sede e estresse zeram.</li>
-<li>As <strong>características genéticas são sorteadas agora e ficam fixas para a vida toda</strong>.</li>
-<li>Ele passa a ser <strong>invencível</strong>: zumbi, carro, tiro e fogo não o matam. Só a negligência mata.</li>
-<li>Ele entra no registro <strong><span class="ig">Meus Cães</span></strong>, e passa a aparecer no mapa.</li>
+<li>As características genéticas são sorteadas nessa hora e não mudam mais.</li>
+<li>Ele fica invencível: zumbi, carro, tiro e fogo não o matam. Ele morre de negligência ou de ferida infeccionada sem tratamento (ver Ferida e curativo, na seção 6).</li>
+<li>Ele entra no registro <strong><span class="ig">Meus Companheiros</span></strong> e passa a aparecer no mapa.</li>
 </ul>
-<p><strong>Domesticar um cão novo não abandona o anterior.</strong> O novo vira o cão ativo, e o antigo vira passivo em modo Ficar. Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
+<p>Domesticar outro cão não solta o anterior. O novo vira o cão ativo e o antigo vira passivo em modo Ficar. Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
 <h3 id="limite-de-cães">Limite de cães</h3>
-<p>A opção de sandbox <strong><span class="ig">Máximo de cães por jogador</span></strong> vem em <strong>0, que significa sem limite</strong>. Se o servidor colocar um teto, ao atingi-lo a opção de fazer amizade fica vermelha e bloqueada: <em><span class="ig">Limite de 5 cães atingido.</span></em> (o número é o teto configurado) Soltar ou perder um cão libera a vaga.</p>
+<p>A opção de sandbox <strong><span class="ig">Máximo de pets por jogador</span></strong> vem em 0, que é sem limite. Se o servidor colocar um teto, ao atingi-lo a opção de fazer amizade fica vermelha e bloqueada: <em><span class="ig">Limite de 5 pets atingido.</span></em> (o número é o teto configurado). Soltar ou perder um cão libera a vaga.</p>
 <h2 id="3-como-dar-ordens-os-quatro-caminhos">3. Como dar ordens: os quatro caminhos</h2>
-<p>Existem quatro maneiras de comandar o cão. Todas fazem a mesma coisa, use a que for mais confortável.</p>
+<p>Os quatro fazem a mesma coisa, use o que preferir.</p>
 <h3 id="a-menu-de-contexto-botão-direito-no-cão">a) Menu de contexto (botão direito no cão)</h3>
-<p>Tudo fica dentro de um submenu com o nome do cão. A ordem é sempre a mesma:</p>
+<p>Tudo fica num submenu com o nome do cão:</p>
 <div class="tw"><table><thead><tr>
 <th>Opção</th>
 <th>O que faz</th>
 </tr></thead><tbody>
 <tr>
 <td><em>(primeira linha, sem clique)</em></td>
-<td>A identidade do cão: nome, sexo, se é filhote, se está grávida, se é mestiço</td>
+<td>Identidade do cão: nome, sexo, se é filhote, se está grávida, se é mestiço</td>
 </tr>
 <tr>
 <td><strong>Bloquear cruzamento</strong> / <strong>Permitir cruzamento</strong></td>
-<td>Liga e desliga a permissão desse cão cruzar (só adultos)</td>
+<td>Só adulto</td>
 </tr>
 <tr>
 <td><strong>Pausar crescimento</strong> / <strong>Retomar crescimento</strong></td>
-<td>Só em filhotes. Congela o crescimento indefinidamente</td>
+<td>Só em filhote</td>
 </tr>
 <tr>
 <td><strong>Alimentar</strong></td>
-<td>Dá comida. Submenu por tipo</td>
+<td>Submenu por tipo</td>
 </tr>
 <tr>
 <td><strong>Dar água</strong></td>
@@ -823,15 +825,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td><strong>Acariciar</strong></td>
-<td>Carinho</td>
+<td>Alivia estresse e sobe lealdade</td>
 </tr>
 <tr>
 <td><strong>Mandar ficar</strong> / <strong>Mandar seguir</strong></td>
-<td>Alterna entre os dois modos</td>
+<td>Troca entre os dois modos</td>
 </tr>
 <tr>
 <td><strong>Vir aqui</strong></td>
-<td>Chama o cão até você</td>
+<td>Chama o cão até você, sem trocar de modo</td>
 </tr>
 <tr>
 <td><strong>Atacar mais próximo</strong></td>
@@ -842,12 +844,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Submenu com os quatro truques</td>
 </tr>
 <tr>
-<td><strong>Cuidar do gado aqui</strong> / <strong>Parar de cuidar do gado</strong></td>
-<td>Modo fazenda</td>
+<td><strong>Cuidar dos animais aqui</strong> / <strong>Parar de cuidar dos animais</strong></td>
+<td>Liga e desliga o modo fazenda</td>
 </tr>
 <tr>
 <td><strong>Colocar alforjes</strong> / <strong>Abrir alforjes</strong> / <strong>Tirar alforjes</strong></td>
-<td>Conforme o estado</td>
+<td>Muda conforme o cão está com ou sem alforje</td>
 </tr>
 <tr>
 <td><strong>Status</strong></td>
@@ -859,28 +861,28 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td><strong>Pegar no colo</strong></td>
-<td>Carrega o cão</td>
+<td>Só cão pequeno e filhote</td>
 </tr>
 <tr>
 <td><strong>Soltar companheiro</strong></td>
-<td>Devolve à natureza (ele mantém treino e habilidades)</td>
+<td>Ele guarda treino e habilidades</td>
 </tr>
 </tbody></table></div>
-<blockquote class="quote"><strong><span class="ig">Vigiar</span> não está aqui.</strong> Esse comando só existe no menu radial, na tecla de atalho e no botão da aba Comandos.</blockquote>
+<blockquote class="quote quote-game"><span class="ig">Vigiar</span> não aparece nesse menu. O comando só existe no menu radial, na tecla de atalho e no botão da aba Comandos.</blockquote>
 <h3 id="b-menu-radial-segurar-q">b) Menu radial (segurar Q)</h3>
-<p>O mod se pendura no menu de emotes do jogo. Segure <strong>Q</strong> e vai aparecer uma categoria nova com o nome da raça do seu cão e um ícone de patinha. A categoria só aparece se você tiver um cão ativo por perto.</p>
+<p>O mod entra no menu de emotes do jogo. Segure Q e aparece uma categoria nova com o nome da raça do seu cão e um ícone de patinha. A categoria só aparece com um cão ativo por perto.</p>
 <p>As fatias são: <strong>Vir aqui</strong>, <strong>Seguir</strong>, <strong>Ficar</strong>, <strong>Vigiar</strong>, <strong>Alerta</strong>, <strong>Discreto</strong>, <strong>Silencioso</strong>, <strong>Atacar mais próximo</strong>, <strong>Caçar</strong> / <strong>Parar de caçar</strong>, <strong>Truques ▸</strong> e <strong>Abrir alforjes</strong> (se ele estiver com alforje).</p>
 <p>Escolher <strong>Truques</strong> abre um terceiro nível do radial com os quatro truques e um <strong>Voltar</strong>. Truque ainda não destravado aparece com ícone vermelho e o nível exigido no nome, tipo <em><span class="ig">Distrair (Obediência 3)</span></em>.</p>
 <p>Alguns comandos também fazem o seu personagem gesticular: chamar levanta a mão, mandar ficar faz o gesto de parar, mandar atacar aponta.</p>
 <h3 id="c-teclas-de-atalho">c) Teclas de atalho</h3>
-<p>São <strong>14 ações bindáveis</strong>, e <strong>todas vêm sem tecla definida</strong> de propósito, para não conflitar com nada. Você configura na aba <strong><span class="ig">Configurações</span></strong> da janela do cão, não no menu de opções do jogo.</p>
+<p>São 14 ações bindáveis e nenhuma vem com tecla definida. Você configura na aba <strong><span class="ig">Configurações</span></strong> da janela do cão.</p>
 <div class="tw"><table><thead><tr>
 <th>Ação</th>
 <th>O que faz</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Vir aqui</strong></td>
-<td>Chama o cão</td>
+<td>Chama o cão até você</td>
 </tr>
 <tr>
 <td><strong>Seguir</strong></td>
@@ -896,7 +898,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td><strong>Trazer</strong></td>
-<td><strong>Teleporta o cão para o seu lado.</strong> Você assobia alto, e o assobio atrai zumbis</td>
+<td>Teleporta o cão para o seu lado. O personagem assobia alto, e o assobio atrai zumbis</td>
 </tr>
 <tr>
 <td><strong>Atacar mais próximo</strong></td>
@@ -931,31 +933,31 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="d-botões-na-janela-do-cão">d) Botões na janela do cão</h3>
 <p>A aba Comandos tem tudo em botão. A lista completa está em <a href="#17-a-janela-do-cão">A janela do cão</a>.</p>
 <h2 id="4-os-três-modos-seguir-ficar-e-vigiar">4. Os três modos: Seguir, Ficar e Vigiar</h2>
-<p>O cão está <strong>sempre em um</strong> desses três. Todo o resto (sentinela, caça, auto-proteção) é um ajuste por cima do modo.</p>
+<p>O cão está sempre em um desses três. Sentinela, caça e auto-proteção são ajustes por cima do modo.</p>
 <h3 id="seguir">Seguir</h3>
-<p>O padrão. Ele anda atrás de você: começa a se mover quando você está a 2 tiles de distância e passa a correr acima de 6 tiles, ou assim que você sai correndo.</p>
+<p>O padrão. Ele anda atrás de você: começa a andar quando você está a 2 tiles de distância e passa a correr acima de 6 tiles, ou assim que você sai correndo.</p>
 <ul>
-<li><strong>Luta contra zumbis num raio de 5 tiles ao redor de VOCÊ</strong> (não dele). Solta o alvo aos 8.</li>
-<li>Pula cerca baixa, sobe escada, muda de andar atrás de você.</li>
-<li><strong>É o único modo que entra no carro com você.</strong></li>
-<li>Se você se afastar demais (24 tiles), ele é encaixado atrás de você automaticamente, para não ficar travado do outro lado de um prédio.</li>
+<li>Luta contra zumbis num raio de 5 tiles ao redor de você (não dele) e solta o alvo aos 8.</li>
+<li>Pula cerca baixa, sobe escada e muda de andar atrás de você.</li>
+<li>É o único modo em que ele entra no carro com você.</li>
+<li>Se você se afastar mais de 24 tiles, ele é trazido para trás de você, para não ficar travado do outro lado de um prédio.</li>
 </ul>
-<p><strong>Você escolhe a folga.</strong> A barra <strong><span class="ig">Distância ao seguir</span></strong>, na aba Comandos, vai de <strong>2 a 8 tiles</strong>, de meio em meio. Os 2 são o padrão e deixam o cão colado em você; mais folga tira ele do seu caminho na cozinha, no corredor e no vão de porta, que é onde um cão grande mais atrapalha. A escolha é por cão, então numa matilha cada um anda na distância que você quiser, e ela fica salva com o bicho: sobrevive a sair e voltar do jogo, ao canil e à troca de mundo. Com a folga bem aberta ele começa a corrida de mais longe e demora mais para alcançar o zumbi, então quem quer o cão de guarda no ombro deixa a barra no mínimo.</p>
+<p>A barra <strong><span class="ig">Distância ao seguir</span></strong>, na aba Comandos, vai de 2 a 8 tiles, de meio em meio. O padrão é 2 e deixa o cão colado em você; mais folga tira ele do seu caminho na cozinha, no corredor e no vão de porta, onde um cão grande mais atrapalha. A escolha é por cão, e ela fica salva com o bicho: sobrevive a sair e voltar do jogo, ao canil e à troca de mundo. Com a folga aberta ele começa a corrida de mais longe e demora mais para alcançar o zumbi.</p>
 <blockquote class="quote quote-game"><em>"O Caramelo anda atrás de você e luta contra zumbis que chegam perto. A sentinela segue vigiando. O padrão, seu companheiro em movimento."</em></blockquote>
 <h3 id="ficar">Ficar</h3>
 <p>Ele para onde está e não sai de lá. Depois de mais ou menos um minuto parado, ele deita.</p>
 <ul>
-<li><strong>Continua farejando e avisando</strong> sobre zumbis.</li>
-<li><strong>Não persegue e não luta</strong>, mesmo com zumbi na cara.</li>
-<li><strong>Fica para trás quando você entra num carro.</strong> Só o cão em modo Seguir embarca.</li>
+<li>Continua farejando e avisando sobre zumbis.</li>
+<li>Não persegue e não luta, mesmo com zumbi na cara.</li>
+<li>Fica para trás quando você entra num carro.</li>
 </ul>
 <blockquote class="quote quote-game"><em>"O Caramelo fica parado na posição e não segue. Ainda fareja e avisa sobre zumbis, mas não persegue nem luta: só senta e observa. Bom pra deixá-lo num lugar seguro."</em></blockquote>
 <h3 id="vigiar">Vigiar</h3>
-<p>Ele grava o lugar exato onde está como <strong>posto</strong> e defende esse posto.</p>
+<p>Ele grava o lugar exato onde está como posto e defende esse posto.</p>
 <ul>
-<li>Enfrenta zumbis num <strong>raio de 10 tiles do posto</strong>, persegue e depois volta.</li>
+<li>Enfrenta zumbis num raio de 10 tiles do posto, persegue e depois volta.</li>
 <li>Se ficar em apuros, recua para trás de você.</li>
-<li><strong>Limitação importante:</strong> por enquanto só funciona <strong>com você por perto</strong>. Não adianta deixar um cão vigiando a base e sair do mapa.</li>
+<li>Por enquanto só funciona com você por perto.</li>
 </ul>
 <blockquote class="quote quote-game"><em>"O Caramelo se fixa neste ponto exato e o defende, engajando zumbis num raio maior, alertando, e voltando ao posto depois de perseguir. Recua pra trás de você se for cercado."</em></blockquote>
 <h3 id="os-dois-comandos-de-chamada">Os dois comandos de chamada</h3>
@@ -966,19 +968,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr></thead><tbody>
 <tr>
 <td><strong>Vir aqui</strong></td>
-<td>Ele volta <strong>andando</strong> e passa para o modo Seguir</td>
+<td>Ele volta andando e passa para o modo Seguir</td>
 <td>Nenhum</td>
 </tr>
 <tr>
 <td><strong>Trazer</strong></td>
-<td>Ele <strong>aparece do seu lado na hora</strong></td>
-<td>Você assobia alto, e isso <strong>atrai zumbis</strong></td>
+<td>Ele aparece do seu lado na hora</td>
+<td>Você assobia alto, e isso atrai zumbis</td>
 </tr>
 </tbody></table></div>
-<p>Use <strong>Trazer</strong> quando o cão travou atrás de uma cerca, ficou preso num prédio ou está longe demais para voltar a pé. É a saída de emergência, não o comando do dia a dia.</p>
+<p>Use <strong>Trazer</strong> quando o cão travou atrás de uma cerca, ficou preso num prédio ou está longe demais para voltar a pé. Para o dia a dia, <strong>Vir aqui</strong>.</p>
 <h2 id="5-sentinela-o-cão-como-alarme">5. Sentinela: o cão como alarme</h2>
-<p>Esta é, na prática, a função mais útil do mod: <strong>o cão sente zumbis que você não consegue ver</strong>.</p>
-<p>A sentinela funciona nos três modos (Seguir, Ficar e Vigiar). Ela <strong>não funciona</strong> durante avanço rápido de tempo nem enquanto você dorme.</p>
+<p>O cão sente zumbis que você ainda não vê e avisa.</p>
+<p>A sentinela funciona nos três modos. Não funciona durante avanço rápido de tempo nem enquanto você dorme.</p>
 <div class="tw"><table><thead><tr>
 <th>Modo</th>
 <th>Alcance</th>
@@ -987,12 +989,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Alerta</strong></td>
 <td>18 tiles (chega a 27 com Faro no máximo)</td>
-<td>Rosnado para zumbi distante ou pouco numeroso. <strong>Latido alto</strong> para zumbi perto, em grupo ou à vista. <strong>O latido atrai zumbis de verdade</strong></td>
+<td>Rosnado para zumbi distante ou pouco numeroso. Latido alto para zumbi perto, em grupo ou à vista. O latido atrai zumbis de verdade</td>
 </tr>
 <tr>
 <td><strong>Discreto</strong></td>
 <td>10 tiles fixos</td>
-<td><strong>Só rosnado.</strong> Nunca late, nunca atrai nada</td>
+<td>Só rosnado. Nunca late, nunca atrai nada</td>
 </tr>
 <tr>
 <td><strong>Silencioso</strong></td>
@@ -1000,36 +1002,36 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Nenhum aviso de zumbi</td>
 </tr>
 </tbody></table></div>
-<p>O cão passa de <span class="ig">farejou algo</span> para <span class="ig">alarme</span> quando o zumbi está a 6 tiles ou menos, <strong>ou</strong> quando há 3 ou mais zumbis, <strong>ou</strong> quando há linha de visão livre até 12 tiles.</p>
+<p>O cão passa de <span class="ig">farejou algo</span> para <span class="ig">alarme</span> quando o zumbi está a 6 tiles ou menos, quando há 3 ou mais zumbis, ou quando há linha de visão livre até 12 tiles.</p>
 <p>As mensagens flutuam acima da cabeça dele:</p>
 <ul>
-<li><em><span class="ig">Seu Caramelo fareja algo por perto...</span></em> (algo existe, longe ou pouco)</li>
-<li><em><span class="ig">Seu Caramelo detecta zumbis!</span></em> (perto ou em número, hora de reagir)</li>
+<li><em><span class="ig">Seu Caramelo fareja zumbis por perto</span></em></li>
+<li><em><span class="ig">Seu Caramelo rosna, zumbi bem perto!</span></em></li>
 </ul>
-<p><strong>Uma raça pode não ter escolha.</strong> O <strong>Pug</strong> (addon) fica preso em Alerta: Discreto e Silencioso aparecem desligados na janela dele e somem do menu radial. É o preço do faro de alarme dele. Nenhuma outra raça é assim, e nenhuma raça fura a opção de sandbox de barulho: com ela desligada, latido nenhum atrai zumbi.</p>
-<blockquote class="quote"><strong>Um cão estressado NÃO late sozinho.</strong> Existia um sistema de latido por estresse, mas ele está desligado no mod. Se o seu cão está chamando zumbi, a fonte é uma destas quatro, todas controláveis: a <strong>sentinela em Alerta</strong>, o truque <strong>Distrair</strong>, a <strong>perseguição na caça</strong>, ou o <strong>combate</strong>.</blockquote>
+<p>O Pug (addon) fica preso em Alerta: Discreto e Silencioso aparecem desligados na janela dele e somem do menu radial. A opção de sandbox de barulho vale para todas as raças: com ela desligada, latido nenhum atrai zumbi.</p>
+<blockquote class="quote">Estresse não faz o cão latir. Se o seu cão está chamando zumbi, a fonte é uma destas quatro: a sentinela em Alerta, o truque <strong>Distrair</strong>, a perseguição na caça ou o combate.</blockquote>
 <h2 id="6-combate">6. Combate</h2>
 <h3 id="quando-ele-luta-sozinho">Quando ele luta sozinho</h3>
-<p><strong>O cão não sai atacando por conta própria.</strong> Ele espera um gatilho:</p>
+<p>O cão não sai atacando por conta própria. Ele espera um gatilho:</p>
 <ul>
-<li><strong>Em Seguir:</strong> só com a <strong>auto-proteção ligada</strong> e só se o zumbi mirar você ou o cão, ou você já estiver lutando. E o zumbi precisa estar a <strong>5 tiles ou menos de você</strong>.</li>
-<li><strong>Em Vigiar:</strong> sempre, dentro dos 10 tiles do posto.</li>
-<li><strong>Comando <span class="ig">Atacar mais próximo</span>:</strong> ele busca num raio de 12 tiles e persegue por 2 minutos de jogo.</li>
+<li>Em Seguir, só com a auto-proteção ligada e só se o zumbi mirar você ou o cão, ou se você já estiver lutando. O zumbi precisa estar a 5 tiles ou menos de você.</li>
+<li>Em Vigiar, sempre, dentro dos 10 tiles do posto.</li>
+<li>Com o comando <strong><span class="ig">Atacar mais próximo</span></strong>, ele busca num raio de 12 tiles e persegue por 2 minutos de jogo.</li>
 </ul>
-<p>Ele só ataca <strong>zumbis hostis</strong>. NPCs aliados de outros mods (Bandits, A-Life) são poupados.</p>
+<p>Ele só ataca zumbis hostis. NPCs aliados de outros mods (Bandits, A-Life) são poupados.</p>
 <h3 id="ele-não-morde-através-de-parede">Ele não morde através de parede</h3>
-<p>O cão só engaja zumbi que ele consegue <strong>realmente alcançar a pé</strong>. Um zumbi do outro lado de uma cerca, ou dentro de um cômodo fechado, é ignorado, porque dar a volta sairia caro demais. Se ele tentar e travar por dois segundos e meio sem progresso, ele desiste daquele alvo e o ignora por 12 segundos.</p>
+<p>O cão só engaja zumbi que consegue alcançar a pé. Zumbi do outro lado de uma cerca ou dentro de um cômodo fechado é ignorado. Se ele tentar e travar por dois segundos e meio sem progresso, desiste daquele alvo e o ignora por 12 segundos.</p>
 <h3 id="quanto-ele-machuca">Quanto ele machuca</h3>
-<p>O dano depende de <strong>quatro coisas multiplicadas</strong>: a força natural da raça, o nível de Combate, o gene de Força e o multiplicador de sandbox.</p>
+<p>O dano é o produto de quatro coisas: a força natural da raça, o nível de Combate, o gene de Força e o multiplicador de sandbox.</p>
 <ul>
-<li>O <strong>Caramelo não consegue matar um zumbi sozinho</strong>. Ele trava o zumbi em 10% de vida e para. Isso é de propósito e nenhum ajuste de sandbox muda. O papel dele é <strong>derrubar o zumbi</strong> e te dar tempo.</li>
-<li>Todas as outras raças <strong>conseguem finalizar</strong>.</li>
-<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong>, de três dias sem comer proteína, <strong>bate pela metade</strong>. É a diferença entre finalizar o zumbi e ficar preso nele.</li>
+<li>O Caramelo não mata zumbi sozinho. Ele deixa o zumbi em 10% de vida e para, e nenhum ajuste de sandbox muda isso.</li>
+<li>Todas as outras raças conseguem finalizar.</li>
+<li>Um cão <a href="#proteína-ele-é-carnívoro">Fraco</a>, de três dias sem comer proteína, bate pela metade. Com isso ele costuma não finalizar e fica preso no zumbi.</li>
 </ul>
 <p>A tabela de dano por raça está no <a href="breeds.html" class="xlink">manual de raças</a>.</p>
-<p><strong>Derrubar zumbi:</strong> cada golpe tem chance de derrubar, começando em 10% e chegando a 50% com Combate no máximo.</p>
+<p>Cada golpe tem chance de derrubar o zumbi, começando em 10% e chegando a 50% com Combate no máximo.</p>
 <h3 id="auto-proteção">Auto-proteção</h3>
-<p>Liga e desliga por cão. Quando ligada, o cão <strong>vira guarda automaticamente enquanto você está indefeso</strong>:</p>
+<p>Liga e desliga por cão. Quando ligada, o cão vira guarda enquanto você está indefeso:</p>
 <ul>
 <li>dormindo</li>
 <li>lendo</li>
@@ -1039,33 +1041,70 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <p>Ele se ancora ao seu lado e enfrenta o que chegar. Se você anda, a âncora acompanha. Quando você termina a ação, ele volta a te seguir sozinho.</p>
 <ul>
-<li>Um cão em <strong>Vigiar de verdade nunca abandona o posto</strong> por causa disso.</li>
-<li><strong>Lutar assim estressa o cão e não dá lealdade.</strong> É trabalho, não carinho.</li>
+<li>Um cão em Vigiar não abandona o posto por causa disso.</li>
+<li>Lutar assim estressa o cão e não dá lealdade.</li>
 </ul>
-<p>Vem <strong>ligada</strong> quando você domestica o cão.</p>
+<p>Vem ligada quando você domestica o cão.</p>
 <h3 id="ele-não-leva-tiro-seu">Ele não leva tiro seu</h3>
-<p><strong>Você pode atirar por cima do cão sem medo.</strong> Um cão companheiro <strong>não perde vida por tiro em situação nenhuma</strong>, seu ou de outro jogador.</p>
+<p>Um cão companheiro não perde vida por tiro, seu ou de outro jogador, em situação nenhuma.</p>
 <ul>
-<li>Ele fica de fora da <strong>mira automática</strong>, então o alvo não gruda nele quando você aponta.</li>
-<li>No jogo solo, no instante do disparo, o mod <strong>tira o cão da conta do tiro</strong>: a bala segue direto para o zumbi atrás dele.</li>
+<li>Ele fica de fora da mira automática, então o alvo não gruda nele quando você aponta.</li>
+<li>No jogo solo, no instante do disparo, o mod tira o cão da conta do tiro e a bala segue direto para o zumbi atrás dele.</li>
 </ul>
-<p><strong>O cão não sai do lugar</strong> para isso acontecer, e ele <strong>nunca revida contra você</strong>.</p>
-<blockquote class="quote">Em multiplayer, se você atirar de longe, o cão de outro jogador pode até <strong>aparecer reagindo na sua tela</strong>, mas ele não perde vida.</blockquote>
+<p>O cão não sai do lugar para isso acontecer e nunca revida contra você.</p>
+<blockquote class="quote">Em multiplayer, se você atirar de longe, o cão de outro jogador pode aparecer reagindo na sua tela, mas ele não perde vida.</blockquote>
 <h3 id="ferimento-recuo-e-pânico">Ferimento, recuo e pânico</h3>
 <ul>
-<li><strong>Lutar não fere o cão.</strong> Só estressa.</li>
-<li>A vida dele cai por <strong>negligência</strong> (fome ou sede acima de 0,8), por <strong>comida tóxica</strong> e por <strong>contra-ataque de cervo na caça</strong>. Só a negligência pode matar.</li>
-<li>Estados de ferimento: <strong><span class="ig">Ferido</span></strong> abaixo de 30% de vida, <strong><span class="ig">Muito ferido</span></strong> abaixo de 10%. Um cão muito ferido <strong>só segue você, não luta</strong>.</li>
-<li><strong>Recuo:</strong> ele corre para trás de você quando a vida cai a 10% ou menos.</li>
-<li><strong>Pânico:</strong> com estresse alto ele <strong>não luta, não vigia e não obedece truque</strong>. Mas ainda corre até você quando chamado.</li>
+<li>Lutar não tira vida do cão na hora, só estressa. Cada mordida tem uma chance pequena de deixá-lo sangrando.</li>
+<li>A vida dele cai por negligência (fome ou sede acima de 0,8), por comida tóxica, por contra-ataque de cervo na caça e pelas condições da seção Saúde. Negligência e infecção sem tratamento matam.</li>
+<li>Estados de ferimento: <strong><span class="ig">Ferido</span></strong> abaixo de 30% de vida, <strong><span class="ig">Muito ferido</span></strong> abaixo de 10%. Um cão muito ferido só segue você, não luta.</li>
+<li>Ele recua para trás de você quando a vida cai a 10% ou menos.</li>
+<li>Com estresse alto ele entra em pânico: não luta, não vigia e não obedece truque. Ainda corre até você quando chamado. Ele só sai do pânico quando o estresse cai bem abaixo do limiar.</li>
 </ul>
 <h3 id="cura">Cura</h3>
-<p>O cão se cura sozinho, e <strong>bem rápido</strong>: uma barra cheia de vida em cerca de <strong>8 horas de jogo</strong>, ou seja, de quase morto a saudável em uma noite. <strong>Mas só se estiver bem alimentado e hidratado</strong>: passando da metade da barra de fome <strong>ou</strong> de sede, <strong>a cura para completamente</strong>.</p>
+<p>O cão se cura sozinho: uma barra cheia de vida em cerca de 8 horas de jogo. A cura para passando da metade da barra de fome ou de sede.</p>
+<h3 id="ferida-e-curativo">Ferida e curativo</h3>
+<ul>
+<li>A cada mordida que o cão dá num zumbi há 0,4% de chance de ele sair com uma ferida aberta. A chance sobe com o cão já machucado ou estressado, e nunca vem mais de uma ferida a cada 2 horas de jogo. Uma queda de vida que o mod não explica (um mod de arma que fere o cão, por exemplo) também vira ferida.</li>
+<li>O cão manca ao andar (Caramelo, Pastor Alemão, Golden e Husky; as outras raças ainda andam normal) e fica um pouco mais lento em todas as raças: anda 10% mais devagar e corre 25% mais devagar. Aparece o selo <strong><span class="ig">Sangrando</span></strong> no nome, na janela e no moodle, e vira <strong><span class="ig">Machucado</span></strong> assim que o curativo está posto. A seção Saúde na aba Status diz a condição, o curativo e o que fazer; com Criação de Animais 5 ou mais mostra também o progresso da cura.</li>
+<li>Ferido, ele recusa Caçar e Guardar até sarar. Seguir, Ficar e Atacar continuam.</li>
+<li>Se o cão continua lutando com a ferida aberta, cada mordida pode quebrar a pata, com o dobro da chance da ferida. Aviso <em><span class="ig">quebrou a pata!</span></em>, selo e moodle <strong><span class="ig">Pata quebrada</span></strong>, e o cão anda na metade do passo e não corre mais, em nenhuma situação. A cura passa a levar 3 dias, mesmo com curativo.</li>
+<li>Sangrando e sem curativo, a vida cai (90% da barra por dia, uma barra cheia em pouco mais de um dia) e não recupera até você enfaixar. Chegando a zero, o cão morre. Vale em qualquer estágio: ferida infeccionada sem bandagem sangra e infecciona ao mesmo tempo.</li>
+<li>Sem curativo o sangramento para sozinho em 12 horas e a ficha passa a dizer <strong><span class="ig">Ferida aberta</span></strong>; a ferida continua aberta e pode infeccionar. O curativo para o sangramento na hora.</li>
+<li>Ferida sem curativo tem 20% de infeccionar a cada hora de jogo; com curativo comum, 2% por hora; com bandagem suja, 5%; com curativo esterilizado, zero. Ferida infeccionada aparece como <strong><span class="ig">Infeccionado</span></strong> e trava a cura da vida e o cruzamento enquanto durar.</li>
+<li>Para tratar, use <strong><span class="ig">Tratar ferimento</span></strong> no botão direito do cão, ou botão direito na condição na seção Saúde da ficha, com qualquer bandagem ou lençol rasgado no inventário. O curativo sai esterilizado se a bandagem for de álcool, ou se você tiver desinfetante, lenço ou algodão com álcool no inventário (é gasto junto). Primeiros Socorros encurta a ação. Tratar dá lealdade. A bandagem fica no cão e volta ao seu inventário, suja, quando você usa <strong><span class="ig">Remover curativo</span></strong> ou quando a ferida fecha. A pata ferida mostra cortes vermelhos enquanto sangra e uma faixa de gaze com o curativo, em todas as raças do mod base e nos addons de raça, que também mancam da pata ferida. Bandagem suja também serve.</li>
+<li>Ferida limpa fecha em 2 dias, 1 com curativo. Cão parado (Ficar, ou passivo em casa) cura no ritmo cheio, cão trabalhando cura na metade e cão em combate não cura. Cão guardado no canil ou cuidando da fazenda fica em pausa.</li>
+<li>No sandbox, <strong><span class="ig">Cuidado veterinário</span></strong> liga e desliga tudo isso (desligar no meio destrava o cão na hora), <strong><span class="ig">Chance de ferimento por mordida (%)</span></strong> define a chance por mordida em zumbi (padrão 0,4), <strong><span class="ig">Chance de entorse por pulo de cerca (%)</span></strong> (padrão 5), <strong><span class="ig">Chance de vermes por estômago virado (%)</span></strong> (padrão 10) e <strong><span class="ig">Doença por comida e água ruim</span></strong> (multiplicador, padrão 1) fazem o mesmo com as outras doenças, e <strong><span class="ig">Infecção pode matar</span></strong> (padrão ligada) decide se a vida chega a zero.</li>
+</ul>
+<h3 id="infecção-febre-crítico-e-morte">Infecção: febre, crítico e morte</h3>
+<ul>
+<li>A infecção piora sozinha. Depois de 12 horas infeccionado, com ou sem bandagem, vem a febre: selo <strong><span class="ig">Febre</span></strong>, o cão anda 20% mais devagar e a vida drena mais rápido (infeccionado, um quarto da barra por dia; com febre, a metade). O estado crítico depende só da vida: infeccionado e com a vida abaixo de 10%, o cão deita, não se levanta e recusa Seguir, Vir e Atacar. Se a vida chega a zero, morre. Com <strong><span class="ig">Infecção pode matar</span></strong> desligada nenhuma doença tira a vida de 10%.</li>
+<li>Bandagem não cura infecção nem segura a febre. Sozinha, a infecção passa em 2 dias contados do contágio. O <strong><span class="ig">Companion Dogs Antibiótico</span></strong> encurta para 12 horas e o antibiótico do jogo base para 24 (o aviso na tela diz qual foi); enquanto age, a febre não avança. Curada a infecção, a ferida continua aberta e fecha no ritmo normal.</li>
+<li>A <strong><span class="ig">Companion Dogs Vacina</span></strong> dá 90 dias em que a ferida não infecciona e comida ruim ou água contaminada não viram o estômago. Moodle <strong><span class="ig">Vacinado</span></strong>.</li>
+</ul>
+<h3 id="entorse">Entorse</h3>
+<ul>
+<li>Cada pulo de cerca tem 5% de chance de o cão torcer a pata (mais com o cão machucado ou estressado). Ele manca e fica lento como na ferida (anda -10%, corre -25%), mas ainda luta; recusa Caçar e Guardar.</li>
+<li>Cura só com repouso: meio dia com o cão em Ficar ou passivo, um dia inteiro se ele continuar te acompanhando. Em combate a recuperação para. Pata quebrada é outro caso: não pula cerca nem luta.</li>
+</ul>
+<h3 id="estômago-virado-e-vermes">Estômago virado e vermes</h3>
+<ul>
+<li>Comida podre dada na mão sempre vira o estômago; comida passada, em 15% das vezes. Água contaminada do jogo (a que envenena você) tem 50% a cada gole, tanto na tigela quanto dada na mão, com uma rolagem a cada 12 horas por cão. Encha com água limpa e passa.</li>
+<li>Dura de 1 a 2 dias e o relógio só anda com o cão bebendo (sede abaixo da metade). Enquanto isso fome e sede drenam o dobro, a vida não recupera, ele não cruza e recusa Caçar e Guardar. Selo <strong><span class="ig">Estômago virado</span></strong>.</li>
+<li>Um tufo de grama do jogo dado pelo menu <strong><span class="ig">Tratar ferimento</span></strong> corta 8 horas do estômago virado e também encurta a intoxicação por comida errada.</li>
+<li>Um em cada dez estômagos virados deixa vermes. A fome drena 40% mais rápido. Nunca passa sozinho: uma dose do <strong><span class="ig">Companion Dogs Vermífugo</span></strong> resolve.</li>
+</ul>
+<h3 id="remédios-onde-achar-e-como-dar">Remédios: onde achar e como dar</h3>
+<ul>
+<li>Antibiótico e vermífugo aparecem em armário de remédios, farmácia, pet shop, caixa de suprimentos de pet, banheiro de casa, garagem e fazenda. A vacina, só na clínica veterinária.</li>
+<li>Tudo se dá pelo mesmo submenu <strong><span class="ig">Tratar ferimento</span></strong>, ou pela seção Saúde da ficha: botão direito na condição e aparece o que dá para fazer com o que você carrega.</li>
+<li>Dono dormindo por perto dobra a recuperação de vida do cão são. Não faz nada por um cão infeccionado.</li>
+</ul>
 <h3 id="contagem-de-abates">Contagem de abates</h3>
 <p>Cada cão tem o próprio contador, visível na janela dele: <strong><span class="ig">Abates: 14 zumbis, 3 caças</span></strong>.</p>
-<p>Com a opção de sandbox <strong><span class="ig">Kills do cão contam para você</span></strong> ligada (é o padrão), os zumbis que ele mata <strong>também somam ao seu contador</strong> na tela de personagem.</p>
+<p>Com a opção de sandbox <strong><span class="ig">Kills do cão contam para você</span></strong> ligada (é o padrão), os zumbis que ele mata também somam ao seu contador na tela de personagem.</p>
 <h2 id="7-necessidades-e-cuidado">7. Necessidades e cuidado</h2>
-<p>São <strong>quatro barras</strong>, mais a lealdade, controladas à mão pelo mod porque o cão companheiro é invencível e isso congela os sistemas de fome do jogo.</p>
+<p>São quatro barras, mais a lealdade. O mod controla todas à mão, porque o cão companheiro é invencível e isso congela o sistema de fome do jogo.</p>
 <div class="tw"><table><thead><tr>
 <th>Barra</th>
 <th>Sobe / desce</th>
@@ -1075,19 +1114,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Fome</strong></td>
 <td>Sobe com o tempo</td>
-<td>De vazia a cheia em cerca de <strong>3 dias</strong></td>
+<td>De vazia a cheia em cerca de 3 dias</td>
 <td>Acima de 0,6</td>
 </tr>
 <tr>
 <td><strong>Sede</strong></td>
 <td>Sobe com o tempo</td>
-<td>De vazia a cheia em cerca de <strong>1,7 dia</strong></td>
+<td>De vazia a cheia em cerca de 1,7 dia</td>
 <td>Acima de 0,6</td>
 </tr>
 <tr>
 <td><strong>Saúde</strong></td>
-<td>Cai só por negligência</td>
-<td><strong>Barra cheia em ~8 horas</strong> com fome ou sede acima de 0,8</td>
+<td>Cai por negligência, ferida e doença</td>
+<td>Barra cheia em ~8 horas com fome ou sede acima de 0,8</td>
 <td>Abaixo de 30%</td>
 </tr>
 <tr>
@@ -1097,11 +1136,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Acima de 50%</td>
 </tr>
 </tbody></table></div>
-<blockquote class="quote"><strong>Não existe sono nem higiene.</strong> O cão não precisa dormir e não fica sujo.</blockquote>
-<p>A opção de sandbox <strong><span class="ig">Ritmo de fome e sede</span></strong> escala as duas juntas. Em 0, elas congelam de vez e o cão nunca mais precisa comer nem beber (a lealdade continua caindo, então ele ainda quer sua atenção).</p>
+<blockquote class="quote">Não existe sono nem higiene.</blockquote>
+<p>A opção de sandbox <strong><span class="ig">Ritmo de fome e sede</span></strong> escala as duas juntas. Em 0, as duas congelam. A lealdade continua caindo, então ele ainda precisa de atenção.</p>
 <h3 id="de-onde-vem-o-estresse">De onde vem o estresse</h3>
-<p>O estresse não é uma barra que você enche, é o <strong>resultado</strong> das outras. Ele sobe com fome, com sede, com vida baixa, com lealdade baixa e com <strong>cada golpe trocado numa luta</strong>.</p>
-<p>Níveis:</p>
+<p>O estresse sobe com fome, sede, vida baixa, lealdade baixa e com cada golpe trocado numa luta.</p>
 <div class="tw"><table><thead><tr>
 <th>Nível</th>
 <th>A partir de</th>
@@ -1119,15 +1157,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>100%</td>
 </tr>
 </tbody></table></div>
-<p>A boa notícia: <strong>o estresse de combate some rápido</strong> fora da luta. Uma barra cheia se esvazia em cerca de <strong>2 horas de jogo</strong>. <strong>Carinho, comida e água aceleram ainda mais.</strong></p>
+<p>Fora da luta, o estresse de combate cai rápido: uma barra cheia se esvazia em cerca de 2 horas de jogo. Carinho, comida e água aceleram a queda.</p>
 <h3 id="proteína-ele-é-carnívoro">Proteína: ele é carnívoro</h3>
-<p>Encher a barriga não é a mesma coisa que alimentar bem. Além da fome, o cão tem um <strong>segundo relógio</strong>: o tempo desde a última proteína. Passados <strong>três dias de jogo</strong> sem proteína ele fica <strong>Fraco</strong>, com moodle próprio na sua tela e duas penalidades reais:</p>
+<p>Além da fome, o mod conta as horas desde a última proteína. Com três dias de jogo sem proteína o cão fica Fraco, com moodle próprio na sua tela e duas penalidades:</p>
 <ul>
-<li><strong>Metade do dano de mordida.</strong> Um cão que matava um zumbi em quatro golpes passa a precisar de oito.</li>
-<li><strong>+25% de chance de ignorar uma ordem</strong>, somados por cima da chance normal de Obediência. Mesmo um cão de Obediência 10, que nunca desobedece, volta a teimar enquanto está Fraco.</li>
+<li>Metade do dano de mordida. Um cão que matava um zumbi em quatro golpes passa a precisar de oito.</li>
+<li>+25% de chance de ignorar uma ordem, somados por cima da chance normal de Obediência. Até um cão de Obediência 10, que nunca desobedece, volta a teimar enquanto está Fraco.</li>
 </ul>
-<p><strong>O que conta como proteína:</strong> carne de qualquer bicho, ave, caça, peixe e frutos do mar, ovo, linguiça, bacon, e também <strong>ração de cachorro</strong> (o saco seco e a lata aberta). Não conta legume, fruta, pão, massa, laticínio, nem comida tóxica ou estragada.</p>
-<p><strong>Não é sim ou não, é quantidade.</strong> Cada refeição abate o relógio conforme o tamanho dela. Uma migalha não vale um prato, mas migalhas somam:</p>
+<p>Conta como proteína: carne de qualquer bicho, ave, caça, peixe e frutos do mar, ovo, linguiça, bacon e ração de cachorro (o saco seco e a lata aberta). Não conta legume, fruta, pão, massa, laticínio, nem comida tóxica ou estragada.</p>
+<p>Quanto maior a refeição, mais horas sem proteína ela desconta:</p>
 <div class="tw"><table><thead><tr>
 <th>O que você deu</th>
 <th>Quanto do relógio abate</th>
@@ -1157,11 +1195,11 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>~3 horas e meia</td>
 </tr>
 </tbody></table></div>
-<p><strong>O tamanho do relógio é seu.</strong> A opção de sandbox <strong>Horas sem proteína</strong> vai de 6 a 168 horas de jogo, com 72 (três dias) de padrão. Mexer nela reescala a tabela acima inteira, porque cada refeição paga uma <strong>fração</strong> do relógio, não um número fixo de horas.</p>
-<p><strong>Os quatro caminhos valem:</strong> na mão, da tigela largada, do canil (cão guardado), e a presa que ele mesmo caçou e comeu. Alimentar na mão conta o <strong>item inteiro</strong>, mesmo que o cão só mordisque um pedaço porque já estava quase saciado.</p>
-<p><strong>O relógio só corre com o cão vivo no mundo.</strong> Cão no canil, no colo, dentro de veículo, com o dono desconectado ou de posto cuidando da fazenda <strong>não acumula nada</strong> enquanto está ali, do mesmo jeito que fome e sede não sobem.</p>
-<p>Desliga na opção de sandbox <strong><span class="ig">Cães precisam de proteína</span></strong>. Desligada, só fome e sede importam.</p>
-<blockquote class="quote"><strong>Cão que só come vegetal não morre</strong>, mas vira um cão ruim: bate pela metade e não escuta. Se você joga de tigela, jogue <strong>um saco de ração dentro dela</strong> e o problema se resolve sozinho.</blockquote>
+<p>A opção de sandbox <strong><span class="ig">Horas sem proteína</span></strong> vai de 6 a 168 horas de jogo, com 72 (três dias) de padrão. Mudar esse valor reescala a tabela inteira.</p>
+<p>A proteína conta pelos quatro caminhos: na mão, na tigela, no canil (cão guardado) e a presa que ele mesmo caçou e comeu. Alimentar na mão conta o item inteiro, mesmo que o cão só mordisque um pedaço.</p>
+<p>As horas só contam com o cão vivo no mundo. Cão no canil, no colo, dentro de veículo, com o dono desconectado ou de posto cuidando da fazenda não acumula nada enquanto está ali, do mesmo jeito que fome e sede não sobem.</p>
+<p>Desliga na opção de sandbox <strong><span class="ig">Pets precisam de proteína</span></strong>. Desligada, só fome e sede importam.</p>
+<blockquote class="quote">Cão que só come vegetal não morre, mas bate pela metade e não escuta. Se você joga de tigela, deixe um saco de ração dentro dela.</blockquote>
 <h3 id="alimentar-dar-água-e-fazer-carinho">Alimentar, dar água e fazer carinho</h3>
 <p>Botão direito no cão → <strong><span class="ig">Alimentar</span></strong>, <strong><span class="ig">Dar água</span></strong> ou <strong><span class="ig">Acariciar</span></strong>.</p>
 <div class="tw"><table><thead><tr>
@@ -1171,40 +1209,40 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr></thead><tbody>
 <tr>
 <td><strong>Alimentar</strong></td>
-<td>Baixa a fome, hidrata se o item for suculento, <strong>+0,10 de vida</strong>, alivia estresse e dá um <strong>ganho de lealdade proporcional ao tanto de fome que a porção matou</strong></td>
+<td>Baixa a fome, hidrata se o item for suculento, +0,10 de vida, alivia estresse e dá um ganho de lealdade proporcional ao tanto de fome que a porção matou</td>
 <td><em><span class="ig">O Caramelo está saciado.</span></em></td>
 </tr>
 <tr>
 <td><strong>Dar água</strong></td>
-<td>Baixa <strong>metade da barra de sede</strong>, alivia estresse e dá <strong>+2 de lealdade</strong></td>
+<td>Baixa metade da barra de sede, alivia estresse e dá +2 de lealdade</td>
 <td><em><span class="ig">O Caramelo bebe água.</span></em></td>
 </tr>
 <tr>
 <td><strong>Acariciar</strong></td>
-<td>Alivia estresse e dá <strong>+2 de lealdade</strong>. Em <strong>você</strong>, alivia <strong>Tédio e Infelicidade</strong></td>
-<td>Dentro do cooldown: <em><span class="ig">Seu Caramelo já recebeu carinho há pouco.</span></em></td>
+<td>Alivia estresse e dá +2 de lealdade. No seu personagem, alivia Tédio e Infelicidade</td>
+<td>Dentro do cooldown: <em><span class="ig">O Caramelo já recebeu carinho há pouco.</span></em></td>
 </tr>
 </tbody></table></div>
 <ul>
-<li><strong>Alimentar</strong> serve <strong>qualquer comida</strong> que não esteja podre e mate fome: para matar a fome só a lista de comida tóxica é proibida. Para o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a>, aí sim o tipo importa. <strong>Só a mordida necessária é consumida.</strong></li>
-<li><strong>Dar água</strong> precisa de qualquer recipiente com água no inventário (o mod procura dentro das mochilas também).</li>
-<li><strong>Carinho tem cooldown de 90 minutos de jogo</strong>, e vale a pena fazer sempre que der.</li>
+<li>Alimentar aceita qualquer comida que não esteja podre e mate fome; só a lista de comida tóxica é proibida. Para as <a href="#proteína-ele-é-carnívoro">horas sem proteína</a> o tipo importa. Só a mordida necessária é consumida.</li>
+<li>Dar água precisa de qualquer recipiente com água no inventário (o mod procura dentro das mochilas também).</li>
+<li>Carinho tem cooldown de 90 minutos de jogo.</li>
 </ul>
 <h3 id="a-escada-da-negligência">A escada da negligência</h3>
-<p>Se você largar o cão, é isto que acontece, nesta ordem:</p>
+<p>Se você largar o cão:</p>
 <ol>
 <li>Fome e sede passam de 0,6. Aparece moodle <strong><span class="ig">Com fome</span></strong> / <strong><span class="ig">Com sede</span></strong> na sua tela.</li>
-<li>A <strong>lealdade passa a cair três vezes mais rápido</strong>.</li>
-<li>Passando da metade, <strong>a cura natural para</strong>.</li>
-<li>Passando de 0,8, a <strong>vida começa a drenar rápido</strong>: um cão com vida cheia chega a zero em cerca de <strong>8 horas de jogo</strong>.</li>
-<li>A lealdade fura o piso, o cão fica <strong><span class="ig">Desobediente</span></strong> e para de obedecer.</li>
-<li>O estresse sobe e ele entra em pânico: <strong>para de lutar, de vigiar e de fazer truque</strong>.</li>
-<li>A vida chega a zero e <strong>ele morre</strong>.</li>
+<li>A lealdade passa a cair três vezes mais rápido.</li>
+<li>Passando da metade, a cura natural para.</li>
+<li>Passando de 0,8, a vida drena até zero em cerca de 8 horas de jogo.</li>
+<li>A lealdade fura o piso e o cão fica <strong><span class="ig">Desobediente</span></strong>.</li>
+<li>O estresse sobe e ele entra em pânico: para de lutar, de vigiar e de fazer truque.</li>
+<li>A vida chega a zero e ele morre.</li>
 </ol>
-<p><strong>A morte é permanente.</strong> Não existe respawn. <em><span class="ig">Seu Caramelo morreu.</span></em> O alforje e tudo que estava dentro caem no chão. Se você tiver outro cão, ele é promovido a ativo automaticamente.</p>
+<p>A morte é permanente. <em><span class="ig">Seu companheiro Caramelo morreu.</span></em> O alforje e tudo que estava dentro caem no chão. Se você tiver outro cão, ele vira o ativo automaticamente.</p>
 <h3 id="o-luto">O luto</h3>
-<p>Quando um cão vinculado morre, o personagem <strong>entra de luto</strong>: aparece o moodle <strong><span class="ig">De luto</span></strong> com o nome dele, e a tristeza sobe de uma vez. Não existe opção para desligar isso.</p>
-<p>O peso depende do vínculo, e a tristeza <strong>cede sozinha</strong> até desaparecer no fim da janela:</p>
+<p>Quando um cão vinculado morre, o personagem entra de luto: aparece o moodle <strong><span class="ig">De luto</span></strong> com o nome dele e a tristeza sobe de uma vez. Não tem opção para desligar isso.</p>
+<p>A tristeza cede sozinha até sumir no fim da janela:</p>
 <div class="tw"><table><thead><tr>
 <th>Lealdade do cão</th>
 <th>Tristeza no momento da morte</th>
@@ -1226,18 +1264,18 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>48 horas de jogo</td>
 </tr>
 </tbody></table></div>
-<p>É tristeza comum, então tudo que anima o personagem continua valendo: ler, comer algo bom e <strong>fazer carinho em outro cão</strong>. O alívio que você conquistar não é desfeito. Enquanto a tristeza estiver alta, o moodle de tristeza do próprio jogo deixa <strong>toda ação mais lenta</strong>.</p>
+<p>É tristeza comum, então tudo que anima o personagem continua valendo: ler, comer algo bom e fazer carinho em outro cão. Enquanto a tristeza estiver alta, o moodle de tristeza do próprio jogo deixa toda ação mais lenta.</p>
 <h2 id="8-lealdade">8. Lealdade</h2>
-<p>A lealdade vai de 0 a 100 e é a medida de quanto o cão confia em você.</p>
+<p>A lealdade vai de 0 a 100 e mede quanto o cão confia em você.</p>
 <ul>
-<li><strong>Cai sozinha</strong>, cerca de 12 pontos por dia, e <strong>três vezes mais rápido</strong> se ele estiver com fome ou sede.</li>
-<li><strong>Só sobe por mão humana:</strong> alimentar, dar água (+2) e carinho (+2).</li>
-<li><strong>Alimentar é de longe a forma mais rápida</strong>, mas o ganho é <strong>proporcional à fome que a porção matou</strong>. Dar comida a um cão já saciado quase não faz efeito; alimentar um cão faminto pode devolver dezenas de pontos de uma vez. Se a lealdade caiu, <strong>deixe ele com fome antes de alimentar</strong>.</li>
-<li><strong>A tigela automática NUNCA dá lealdade.</strong> Isso é de propósito: um cão que se vira sozinho na tigela não cria vínculo com você. Se você quer um cão leal, precisa aparecer.</li>
+<li>Cai sozinha, cerca de 12 pontos por dia, e três vezes mais rápido se ele estiver com fome ou sede.</li>
+<li>Só sobe com alimentar, dar água (+2) e carinho (+2).</li>
+<li>Alimentar é a forma mais rápida, mas o ganho é proporcional à fome que a porção matou: alimentar um cão faminto pode devolver dezenas de pontos de uma vez. Se a lealdade caiu, deixe ele ficar com fome antes de alimentar.</li>
+<li>Comer da tigela não sobe lealdade.</li>
 </ul>
 <h3 id="o-piso-de-desobediência">O piso de desobediência</h3>
-<p>Abaixo de um certo ponto, o cão fica <strong><span class="ig">Desobediente</span></strong> e recusa seguir, lutar e fazer truque: <em><span class="ig">Seu Caramelo não confia mais em você...</span></em></p>
-<p>Esse piso <strong>desce conforme a Obediência sobe</strong>: começa em 30 e cai 1,5 por nível, nunca abaixo de 10. Ou seja, um cão com <strong>Obediência 10 só fica desobediente abaixo de 15 de lealdade</strong>, enquanto um cão sem treino já dá problema abaixo de 30.</p>
+<p>Abaixo de um certo ponto, o cão fica <strong><span class="ig">Desobediente</span></strong> e recusa seguir, lutar e fazer truque: <em><span class="ig">O Caramelo não confia mais em você...</span></em></p>
+<p>Esse piso desce conforme a Obediência sobe: começa em 30 e cai 1,5 por nível, nunca abaixo de 10. Um cão com Obediência 10 só fica desobediente abaixo de 15 de lealdade.</p>
 <h3 id="quando-o-cão-recusa-uma-ordem">Quando o cão recusa uma ordem</h3>
 <p>Existem quatro motivos, nesta prioridade:</p>
 <div class="tw"><table><thead><tr>
@@ -1246,7 +1284,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr></thead><tbody>
 <tr>
 <td>Lealdade abaixo do piso</td>
-<td><em><span class="ig">Caramelo Rex não confia em você o bastante e ignora o comando.</span></em></td>
+<td><em><span class="ig">Caramelo Rex não confia em você e ignora o comando.</span></em></td>
 </tr>
 <tr>
 <td>Estresse em pânico</td>
@@ -1262,21 +1300,21 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 </tbody></table></div>
 <h2 id="9-a-tigela-comida-e-água-sem-você">9. A tigela: comida e água sem você</h2>
-<p>A tigela é a forma de o <strong>cão ativo</strong> se virar sozinho enquanto você faz outra coisa.</p>
-<blockquote class="quote"><strong>Só o cão ativo sente fome e sede, e só ele usa a tigela.</strong> Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</blockquote>
+<p>Com a tigela o cão ativo come e bebe sozinho.</p>
+<blockquote class="quote">Só o cão ativo sente fome e sede. Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</blockquote>
 <h3 id="como-usar">Como usar</h3>
 <ol>
 <li>Consiga uma tigela (receita ou loot, veja <a href="#19-itens-do-mod">Itens do mod</a>).</li>
-<li>No inventário, botão direito → <strong><span class="ig">Colocar tigela</span></strong>. Abre um cursor de posicionamento livre, com <strong>R para girar</strong>.</li>
-<li>Com a tigela no chão, botão direito nela → <strong><span class="ig">Colocar comida na tigela</span></strong> ou <strong><span class="ig">Colocar água na tigela</span></strong>.</li>
+<li>No inventário, botão direito → <strong><span class="ig">Colocar tigela</span></strong>. Abre um cursor de posicionamento livre, e a tecla R gira a tigela.</li>
+<li>Botão direito na tigela → <strong><span class="ig">Colocar comida na tigela</span></strong> ou <strong><span class="ig">Colocar água na tigela</span></strong>.</li>
 </ol>
-<p>A tigela guarda <strong>comida OU água, nunca as duas ao mesmo tempo</strong>. Para trocar, use <strong><span class="ig">Esvaziar a tigela</span></strong>.</p>
-<p>Visualmente ela mostra o conteúdo: cinza vazia, marrom com ração, azul com água.</p>
+<p>A tigela guarda comida ou água, nunca as duas ao mesmo tempo. Para trocar, use <strong><span class="ig">Esvaziar a tigela</span></strong>.</p>
+<p>O modelo mostra o conteúdo: cinza vazia, marrom com ração, azul com água.</p>
 <h3 id="o-que-vale-como-comida-de-tigela">O que vale como comida de tigela</h3>
-<p><strong>Praticamente qualquer comida que mate fome e não esteja estragada:</strong> carne, enlatado, refeição cozida, legume, fruta, ovo, ração de cachorro, e também capim e feno.</p>
-<p>Ficam de fora só a comida estragada, o que não alimenta, e a <a href="#comida-que-faz-mal">lista do que faz mal ao cão</a>, que aparece em vermelho no menu.</p>
-<blockquote class="quote">A <strong>lata de ração fechada não aparece</strong> na lista. Abra a lata primeiro.</blockquote>
-<p>A tigela guarda até <strong>100 pontos</strong>. Cada item rende conforme o tamanho:</p>
+<p>Quase qualquer comida que mate fome e não esteja estragada: carne, enlatado, refeição cozida, legume, fruta, ovo, ração de cachorro, e também capim e feno.</p>
+<p>Fica de fora a <a href="#comida-que-faz-mal">lista do que faz mal ao cão</a>, que aparece em vermelho no menu.</p>
+<blockquote class="quote">A lata de ração fechada não aparece na lista. Abra a lata primeiro.</blockquote>
+<p>A tigela guarda até 100 pontos:</p>
 <div class="tw"><table><thead><tr>
 <th>Item</th>
 <th>Pontos</th>
@@ -1298,20 +1336,20 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>7</td>
 </tr>
 </tbody></table></div>
-<p>A tigela também <strong>lembra quanto do estoque dela é proteína</strong>. O que você despeja de carne, peixe, ovo ou ração fica marcado, e quando o cão come dali essa parte paga o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a> como se você tivesse alimentado na mão. Tigela cheia só de legume mata a fome dele e mais nada.</p>
-<p><strong>Se o item for maior que o espaço livre, a tigela enche até o topo e devolve o resto para você.</strong> Numa tigela em 80 pontos, um saco de ração leva ela a 100 e volta para o seu inventário valendo 40. A mensagem <em><span class="ig">A tigela não tem espaço para tudo isso.</span></em> só aparece com a tigela <strong>completamente cheia</strong>.</p>
+<p>O que você despeja de carne, peixe, ovo ou ração fica marcado como proteína, e quando o cão come essa parte ela conta para o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a> como se você tivesse alimentado na mão. Tigela cheia só de legume mata a fome dele e mais nada.</p>
+<p>Se o item for maior que o espaço livre, a tigela enche até o topo e devolve o resto para você. Numa tigela em 80 pontos, um saco de ração leva a tigela a 100 e volta para o seu inventário valendo 40. A mensagem <em><span class="ig">A tigela não tem espaço para tudo isso.</span></em> só aparece com a tigela completamente cheia.</p>
 <h3 id="como-o-cão-usa">Como o cão usa</h3>
 <ul>
-<li>Ele vai sozinho quando a <strong>fome ou a sede chegam em 0,5</strong> (ajustável por personagem no slider <em><span class="ig">Come quando a fome/sede atinge</span></em>, na aba Configurações).</li>
-<li>Ele procura tigela num raio de <strong>16 tiles</strong>. Serve tanto a tigela do mod quanto o <strong>cocho vanilla do jogo</strong>.</li>
+<li>Ele vai sozinho quando a fome ou a sede chegam em 0,5 (ajustável por personagem no slider <em><span class="ig">Come quando a fome/sede atinge</span></em>, na aba Configurações).</li>
+<li>Ele procura tigela num raio de 16 tiles. Serve tanto a tigela do mod quanto o cocho vanilla do jogo.</li>
 <li>Cada visita mata metade da barra. Ele fica uns 3 minutos de jogo comendo.</li>
-<li>Enquanto está comprometido com a tigela, ele <strong>ignora zumbi e ignora tudo</strong>. Só um comando seu interrompe. Isso é bom: um cão em pânico de fome consegue quebrar o próprio pânico comendo.</li>
+<li>Enquanto está indo à tigela ou comendo, ele ignora zumbi e tudo mais. Só um comando seu interrompe. Um cão em pânico por fome sai do pânico quando come.</li>
 </ul>
 <p>Acima da cabeça dele aparece <strong><span class="ig">Indo comer</span></strong>, <strong><span class="ig">Comendo</span></strong>, <strong><span class="ig">Indo beber</span></strong>, <strong><span class="ig">Bebendo</span></strong>.</p>
-<blockquote class="quote"><strong>Lembre-se:</strong> comer da tigela <strong>não dá lealdade nenhuma</strong>. A tigela mantém o cão vivo, o carinho mantém o cão seu.</blockquote>
-<p>A tigela <strong>nunca serve como fonte de água potável para você</strong>, e a chuva não a enche.</p>
+<blockquote class="quote">Comer da tigela não dá lealdade.</blockquote>
+<p>A tigela não serve como fonte de água potável para você, e a chuva não a enche.</p>
 <h2 id="10-habilidades-as-cinco-skills-do-cão">10. Habilidades: as cinco skills do cão</h2>
-<p>Cada cão tem cinco habilidades, de 0 a 10, que sobem <strong>fazendo</strong>, não treinando de propósito.</p>
+<p>Cada cão tem cinco habilidades, de 0 a 10, que sobem com o uso.</p>
 <div class="tw"><table><thead><tr>
 <th>Habilidade</th>
 <th>Como sobe</th>
@@ -1320,79 +1358,78 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Faro</strong></td>
 <td>Cada detecção nova da sentinela; usar o truque de farejar</td>
-<td><strong>Alcance da sentinela</strong> (18 → 27 tiles) e alcance do faro memorizado</td>
+<td>Alcance da sentinela (18 → 27 tiles) e alcance do faro memorizado</td>
 </tr>
 <tr>
 <td><strong>Combate</strong></td>
 <td>Cada golpe e cada abate</td>
-<td><strong>Dano</strong>, chance de derrubar (10% → 50%) e resistência ao estresse da luta</td>
+<td>Dano, chance de derrubar (10% → 50%) e resistência ao estresse da luta</td>
 </tr>
 <tr>
 <td><strong>Obediência</strong></td>
-<td>Cada ordem obedecida (com cooldown). <strong>Sobe 4x mais rápido abaixo do nível 3</strong></td>
-<td><strong>Piso de lealdade menor</strong>, <strong>os quatro truques</strong>, e menos chance de desobedecer</td>
+<td>Cada ordem obedecida (com cooldown). Sobe 4x mais rápido abaixo do nível 3</td>
+<td>Piso de lealdade menor, os quatro truques, e menos chance de desobedecer</td>
 </tr>
 <tr>
 <td><strong>Caça</strong></td>
-<td>Apontar caça, farejar, abater, e quando <strong>você</strong> mata caça perto dele</td>
-<td><strong>Nível 3:</strong> abate caça pequena. <strong>Nível 6:</strong> enfrenta cervo e traz o abate. Também aumenta seu raio de forrageio</td>
+<td>Apontar caça, farejar, abater, e quando você mata caça perto dele</td>
+<td>Nível 3: abate caça pequena. Nível 6: enfrenta cervo e traz o abate. Também aumenta seu raio de forrageio</td>
 </tr>
 <tr>
 <td><strong>Pastoreio</strong></td>
 <td>Cuidar de um curral, segurar o pânico do rebanho, despachar zumbi no curral</td>
-<td>Força da aura que <strong>acalma o rebanho</strong></td>
+<td>Força da aura que acalma o rebanho</td>
 </tr>
 </tbody></table></div>
-<p>Não confunda com as <strong>Características</strong> (Força, Agressividade, Resistência), sorteadas quando você domestica o cão e fixas para sempre.</p>
-<blockquote class="quote"><strong>As características, o que cada uma faz e as faixas de cada raça</strong> estão no <a href="breeds.html" class="xlink">Manual de Raças</a>.</blockquote>
+<p>As Características (Força, Agressividade, Resistência) são outra coisa: sorteadas quando você domestica o cão e fixas para sempre.</p>
+<blockquote class="quote">As características, o que cada uma faz e as faixas de cada raça estão no <a href="breeds.html" class="xlink">Manual de Raças</a>.</blockquote>
 <p>A opção de sandbox <strong><span class="ig">Multiplicador de XP de habilidade</span></strong> controla a velocidade de tudo.</p>
-<blockquote class="quote"><strong>Atenção:</strong> o padrão dessa opção no arquivo é <strong>0,5</strong>, ou seja, metade da velocidade, apesar do texto de ajuda dizer que <span class="ig">1.0 é normal</span>. Se você achar que seu cão aprende devagar demais, é isso. Suba para 1.0 ou mais.</blockquote>
+<blockquote class="quote">O padrão dessa opção no arquivo é 0,5, metade da velocidade, embora o texto de ajuda diga que <span class="ig">1.0 é normal</span>. Se o cão parece aprender devagar, suba para 1.0 ou mais.</blockquote>
 <h3 id="desobediência">Desobediência</h3>
-<p>Com a opção <strong><span class="ig">Cães podem desobedecer</span></strong> ligada (é o padrão), um cão sem treino às vezes simplesmente ignora você: <em><span class="ig">Caramelo Rex se distrai e ignora você.</span></em></p>
+<p>Com a opção <strong><span class="ig">Cães podem desobedecer</span></strong> ligada (é o padrão), um cão sem treino às vezes ignora a ordem: <em><span class="ig">Caramelo Rex se distrai e ignora você.</span></em></p>
 <ul>
-<li>A chance começa em <strong>30% na Obediência 0</strong> e chega a <strong>0% na Obediência 10</strong>.</li>
-<li>Um cão <strong><a href="#proteína-ele-é-carnívoro">Fraco</a></strong> soma <strong>+25%</strong> por cima disso. É a única coisa que faz um cão de Obediência 10 voltar a desobedecer.</li>
-<li><strong>Repetir a ordem em seguida sempre funciona.</strong> Ele nunca ignora duas vezes seguidas.</li>
-<li><strong>A ordem ignorada treina ele do mesmo jeito</strong>, então não é XP perdido.</li>
-<li>Vale só para <strong>ordens diretas</strong>: seguir, ficar, vigiar, vir, atacar e truques. Nunca afeta alimentar, dar água, carinho, alforje, <strong>Trazer</strong>, nem os ajustes de comportamento (sentinela, auto-proteção, caça, fazenda).</li>
+<li>A chance começa em 30% na Obediência 0 e chega a 0% na Obediência 10.</li>
+<li>Um cão <a href="#proteína-ele-é-carnívoro">Fraco</a> soma +25% por cima disso.</li>
+<li>Repetir a ordem em seguida sempre funciona.</li>
+<li>A ordem ignorada dá XP de Obediência do mesmo jeito.</li>
+<li>Vale só para ordens diretas: seguir, ficar, vigiar, vir, atacar e truques. Não afeta alimentar, dar água, carinho, alforje, Trazer, nem os ajustes de comportamento (sentinela, auto-proteção, caça, fazenda).</li>
 </ul>
 <h2 id="11-truques-de-obediência">11. Truques de obediência</h2>
-<p>Quatro truques, destravados pelo nível de <strong>Obediência</strong>. Todos aparecem no menu desde o começo, os travados em vermelho, para você ver o que vem pela frente: <em><span class="ig">Desbloqueado no nível 3 de Obediência (atual: 1).</span></em></p>
+<p>Quatro truques, destravados pelo nível de Obediência. Todos aparecem no menu desde o começo, os travados em vermelho, com o nível que falta: <em><span class="ig">Desbloqueado no nível 3 de Obediência (atual: 1).</span></em></p>
 <h3 id="ir-até-um-ponto-obediência-1">Ir até um ponto (Obediência 1)</h3>
-<p>Abre um <strong>cursor no chão</strong>: verde onde dá, vermelho onde não dá. Clique esquerdo escolhe, direito cancela.</p>
+<p>Abre um cursor no chão: verde onde dá, vermelho onde não dá. Clique esquerdo escolhe, direito cancela.</p>
 <ul>
-<li>Alcance máximo: <strong>30 tiles a partir de VOCÊ</strong>, não do cão.</li>
-<li>Ele anda até lá e <strong>segura o ponto</strong> (entra em modo Ficar ao chegar).</li>
+<li>Alcance máximo de 30 tiles a partir de você, não do cão.</li>
+<li>Ele anda até lá e segura o ponto (entra em modo Ficar ao chegar).</li>
 <li>Qualquer ordem nova cancela a viagem.</li>
 </ul>
 <h3 id="distrair-obediência-3">Distrair (Obediência 3)</h3>
-<p>O cão late de propósito, bem alto, num raio de 24 tiles, e <strong>a horda vai em cima dele</strong>. Depois ele recua para você.</p>
+<p>O cão late alto num raio de 24 tiles e a horda vai em cima dele. Depois ele recua para você.</p>
 <ul>
-<li><strong>Ignora de propósito a opção <span class="ig">Barulho do cão atrai zumbis</span></strong>: o truque é fazer barulho, então ele sempre faz.</li>
+<li>O truque late mesmo com a opção <strong><span class="ig">Barulho atrai zumbis</span></strong> desligada.</li>
 <li>Custa estresse.</li>
 <li>Selo vermelho na cabeça dele: <strong><span class="ig">Atraindo zumbis</span></strong>.</li>
 <li>Cooldown de 10 minutos de jogo.</li>
 </ul>
-<p>É a ferramenta para <strong>abrir passagem</strong>: puxa o grupo para um lado enquanto você entra pelo outro.</p>
+<p>Serve para abrir passagem.</p>
 <h3 id="farejar-item-obediência-5">Farejar item (Obediência 5)</h3>
-<p><strong>Segure um item na mão</strong> e use o truque. O cão memoriza o <strong>cheiro daquele tipo de item</strong>: <em><span class="ig">Caramelo memorizou o cheiro de Martelo.</span></em></p>
-<p>A partir daí, em segundo plano, ele varre o entorno (12 tiles, chegando a 20 com Faro no máximo) procurando esse item <strong>dentro de armários e no chão</strong>. Quando acha:</p>
+<p>Segure um item na mão e use o truque. O cão memoriza o cheiro daquele tipo de item: <em><span class="ig">Caramelo memorizou o cheiro de Martelo.</span></em></p>
+<p>A partir daí, em segundo plano, ele varre o entorno (12 tiles, chegando a 20 com Faro no máximo) procurando esse item dentro de armários e no chão. Quando acha:</p>
 <ol>
 <li>Late.</li>
 <li>Vai até lá e aponta.</li>
-<li><strong>O item ganha destaque verde no mundo.</strong></li>
+<li>O item ganha destaque verde no mundo.</li>
 </ol>
 <p>Mensagens: <em><span class="ig">Caramelo sente cheiro de Martelo por perto.</span></em> e <em><span class="ig">Caramelo aponta para Martelo.</span></em></p>
-<p>O cão guarda <strong>um cheiro só</strong>. Farejar outra coisa substitui. Para cancelar, use <strong><span class="ig">Parar de farejar Martelo</span></strong> (com o nome do item que ele memorizou) (cancelar nunca é bloqueado).</p>
+<p>O cão guarda um cheiro só. Para cancelar, use <strong><span class="ig">Parar de farejar Martelo</span></strong> (com o nome do item que ele memorizou). Cancelar sempre funciona.</p>
 <p>Sem item na mão: <em><span class="ig">Segure na mão o item que o cão deve farejar.</span></em></p>
 <h3 id="buscar-um-item-enquanto-você-dorme-obediência-10">Buscar um item enquanto você dorme (Obediência 10)</h3>
-<p>O truque final. <strong>Precisa de alforje no cão.</strong></p>
+<p>Precisa de alforje no cão.</p>
 <p>Segure um item na mão e arme: <em><span class="ig">Caramelo vai procurar Martelo enquanto você dorme.</span></em> Fica um selo permanente na cabeça dele: <strong><span class="ig">Procurando: Martelo</span></strong>.</p>
-<p>Como funciona:</p>
 <ul>
-<li><strong>Uma vez por dia de jogo.</strong> Dispara logo depois de você acordar, com o cão por perto.</li>
-<li>A <strong>chance de sucesso depende de quão raro o item é</strong>, e <strong>nada é garantido</strong>. Mesmo o item mais banal do jogo tem no máximo <strong>50% de chance por noite</strong> (uns 2 dias de espera, em média). Um item incomum como um machado fica perto de 15%, e algo realmente raro como uma katana fica em torno de 2%, ou seja, semanas de tentativas.</li>
-<li>Se der certo: <em><span class="ig">Caramelo trouxe Martelo enquanto você dormia.</span></em>, o item aparece <strong>dentro do alforje</strong>, e um selo verde <strong><span class="ig">Trouxe: Martelo</span></strong>.</li>
+<li>Uma vez por dia de jogo. Dispara logo depois de você acordar, com o cão por perto.</li>
+<li>A chance de sucesso depende de quão raro o item é, e nunca chega a 100%. O item mais banal do jogo tem no máximo 50% por noite (uns 2 dias de espera, em média). Um item incomum como um machado fica perto de 15%, e algo raro como uma katana fica em torno de 2%.</li>
+<li>Se der certo: <em><span class="ig">Caramelo trouxe Martelo enquanto você dormia.</span></em>, o item aparece dentro do alforje, e um selo verde <strong><span class="ig">Trouxe: Martelo</span></strong>.</li>
 <li>Se não: <em><span class="ig">Caramelo voltou sem Martelo.</span></em> e um selo vermelho <strong><span class="ig">Voltou sem nada</span></strong>.</li>
 </ul>
 <p>Dois bloqueios no momento de armar:</p>
@@ -1401,7 +1438,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Item que não existe nas tabelas de loot do jogo: <em><span class="ig">Caramelo não saberia onde procurar isso.</span></em></li>
 </ul>
 <h2 id="12-caça">12. Caça</h2>
-<p>O modo Caça vem <strong>desligado</strong> e você liga por cão: menu radial, tecla, ou o botão na aba Comandos. <em><span class="ig">Caramelo Rex vai caçar a presa por perto.</span></em></p>
+<p>O modo Caça vem desligado e você liga por cão: menu radial, tecla, ou o botão na aba Comandos. <em><span class="ig">Caramelo Rex vai caçar a presa por perto.</span></em></p>
 <h3 id="o-que-ele-caça">O que ele caça</h3>
 <div class="tw"><table><thead><tr>
 <th>Presa</th>
@@ -1409,151 +1446,150 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr></thead><tbody>
 <tr>
 <td>Coelho, guaxinim, rato, esquilo</td>
-<td><strong>3</strong></td>
+<td>3</td>
 </tr>
 <tr>
 <td>Cervo (filhote, corça, veado)</td>
-<td><strong>6</strong></td>
+<td>6</td>
 </tr>
 </tbody></table></div>
 <p>Outros animais selvagens ele só aponta, não caça.</p>
 <h3 id="como-funciona-na-prática">Como funciona na prática</h3>
-<p><strong>Níveis 0, 1 e 2: ele aponta, e só.</strong> O cão <strong>nunca encosta na presa</strong> nesta fase. Ele late uma vez, trota até perto do bicho, para, faz a pose de faro e <strong>segura ali alguns minutos apontando</strong>, para você ver onde está. Depois desiste e volta. Aviso: <em><span class="ig">Seu cão farejou uma caça por perto...</span></em></p>
-<p>Não é pouco: <strong>é assim que ele treina Caça no começo</strong>. Aponte, deixe ele apontar, e o nível sobe.</p>
-<p><strong>Nível 3: ele começa a matar caça pequena.</strong></p>
+<p>Nos níveis 0, 1 e 2 ele só aponta e não encosta na presa. Ele late uma vez, trota até perto do bicho, para, faz a pose de faro e fica ali alguns minutos apontando. Depois desiste e volta. Aviso: <em><span class="ig">Seu cão farejou uma caça por perto...</span></em></p>
+<p>É assim que ele treina Caça no começo.</p>
+<p>No nível 3 ele começa a matar caça pequena.</p>
 <ul>
-<li><strong>Se estiver com fome, ele come a presa.</strong> Você não fica com nada, mas ele mata a fome, e como é um bicho inteiro de carne fresca, isso <strong>zera o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a></strong>. Um cão caçador se mantém sozinho.</li>
-<li><strong>Se não estiver, ele mata creditando você</strong> e deixa a carcaça esfolável <strong>caída no chão, onde a caçada terminou</strong>. Ele avisa: <em><span class="ig">Seu cão abateu uma caça!</span></em>, mas <strong>quem vai buscar é você</strong>.</li>
+<li>Se estiver com fome, ele come a presa. Você não fica com nada, mas ele mata a fome e, como é um bicho inteiro de carne fresca, isso zera o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a>.</li>
+<li>Se não estiver com fome, ele mata creditando você e deixa a carcaça esfolável no chão, onde a caçada terminou. Ele avisa: <em><span class="ig">Seu cão abateu uma caça!</span></em></li>
 </ul>
-<p><strong>Nível 6: ele passa a trazer o abate até você.</strong> Selo <strong><span class="ig">Trazendo o abate</span></strong> e a mensagem <em><span class="ig">Seu cão arrastou o abate até você.</span></em> Isso vale <strong>só para caça pequena</strong>.</p>
-<p><strong>Nível 6 também libera o cervo</strong>, e aí a regra é outra: ele <strong>não arrasta cervo, em nível nenhum e raça nenhuma</strong>. Ele desgasta o cervo até quase morrer e <strong>segura a presa esperando você dar o golpe final</strong>: <em><span class="ig">Seu cão feriu um cervo, finalize o abate!</span></em>, com o selo <strong><span class="ig">Segurando a presa</span></strong>. Se você não aparecer em 20 minutos de jogo, ele termina sozinho (e você continua sendo creditado). Se o cervo fugir, ele rastreia: <em><span class="ig">Seu cão está rastreando a caça ferida...</span></em></p>
-<blockquote class="quote"><strong>O Labrador é exceção:</strong> ele entrega o abate <strong>desde o nível 3</strong>, ou seja, desde a primeira presa que consegue matar, e insiste mais tempo antes de largar no caminho. Detalhes no <a href="breeds.html" class="xlink">Manual de Raças</a>.</blockquote>
-<p><strong>Cervo revida.</strong> Cerca de uma em cada quatro investidas machuca o cão e o estressa. Nunca é letal.</p>
+<p>No nível 6 ele passa a trazer o abate até você, com o selo <strong><span class="ig">Trazendo o abate</span></strong> e a mensagem <em><span class="ig">Seu cão arrastou o abate até você.</span></em></p>
+<p>Com o cervo a regra é outra: cervo ele não arrasta, em nível nenhum e em raça nenhuma. Ele desgasta o cervo até quase morrer e segura a presa esperando você dar o golpe final: <em><span class="ig">Seu cão feriu um cervo, finalize o abate!</span></em>, com o selo <strong><span class="ig">Segurando a presa</span></strong>. Se você não aparecer em 20 minutos de jogo, ele termina sozinho e você continua sendo creditado. Se o cervo fugir, ele rastreia: <em><span class="ig">Seu cão está rastreando a caça ferida...</span></em></p>
+<blockquote class="quote">O Labrador entrega o abate desde o nível 3, e insiste mais tempo antes de largar no caminho. Detalhes no <a href="breeds.html" class="xlink">Manual de Raças</a>.</blockquote>
+<p>O cervo se defende: cerca de uma em cada quatro investidas machuca o cão e sobe o estresse dele, mas não chega a matar.</p>
 <h3 id="limites">Limites</h3>
 <ul>
-<li>Caçar é <strong>atividade rural</strong>. A caça vive em floresta e no campo, não na cidade.</li>
-<li>Só funciona no modo <strong>Seguir</strong>.</li>
-<li><strong>Coleira de 32 tiles.</strong> Se ele se afastar demais, desiste, volta e descansa 20 minutos de jogo (selo <strong><span class="ig">Caça: descansando</span></strong>).</li>
+<li>A caça vive em floresta e no campo, não na cidade.</li>
+<li>Só funciona no modo Seguir.</li>
+<li>Raio de 32 tiles. Se ele se afastar demais, desiste, volta e descansa 20 minutos de jogo (selo <strong><span class="ig">Caça: descansando</span></strong>).</li>
 <li>Não caça durante avanço rápido de tempo, com você dormindo, dentro de veículo, nem nos 5 minutos seguintes a uma ordem sua.</li>
-<li><strong>Se ele já está brigando com um zumbi, ele não considera caçar.</strong> Mas o contrário não vale sozinho: um zumbi passando perto <strong>não tira o cão da caçada</strong>. Ele larga a presa se você entrar em luta, se a auto-proteção disparar, ou se você mandar. <strong>Qualquer ordem sua cancela a caça na hora.</strong></li>
-<li>Caçar <strong>dá fome</strong> nele.</li>
-<li>O latido da perseguição <strong>atrai zumbis</strong>, e isso é fixo, não tem como desligar.</li>
+<li>Se ele já está brigando com um zumbi, ele não considera caçar. Um zumbi passando perto, por outro lado, não tira o cão da caçada. Ele larga a presa se você entrar em luta ou se a auto-proteção disparar. Qualquer ordem sua cancela a caça na hora.</li>
+<li>Caçar dá fome nele.</li>
+<li>O latido da perseguição atrai zumbis e não tem como desligar.</li>
 </ul>
 <h3 id="bônus-de-forrageio">Bônus de forrageio</h3>
-<p>São duas coisas diferentes, e <strong>as duas só aparecem com o Modo Busca do jogo ligado</strong>.</p>
-<p><strong>a) Ele acha o ponto de coleta (só no modo Caça).</strong> Quando não há presa por perto, o cão procura um ponto de forrageio de bicho, vai até lá, late e <strong>aponta o lugar</strong>: <em><span class="ig">Seu cão achou algo! Ligue o Modo Busca para ver.</span></em> Selo: <strong><span class="ig">Farejando</span></strong>.</p>
-<p><strong>O cão nunca pega o item para você: quem colhe é você.</strong></p>
-<p><strong>b) Ele aumenta o seu alcance de busca (qualquer raça, sempre).</strong> Basta ter um cão seu por perto, leal e sem fome nem sede altas:</p>
+<p>Os dois bônus só aparecem com o Modo Busca do jogo ligado.</p>
+<p>a) Ele acha o ponto de coleta (só no modo Caça). Quando não há presa por perto, o cão procura um ponto de forrageio de bicho, vai até lá, late e aponta o lugar: <em><span class="ig">Seu cão achou algo! Ligue o Modo Busca para ver.</span></em> Selo: <strong><span class="ig">Farejando</span></strong>.</p>
+<p>Quem colhe o item é você.</p>
+<p>b) Ele aumenta o seu alcance de busca (qualquer raça, sempre). Basta ter um cão seu por perto, leal e sem fome nem sede altas:</p>
 <ul>
-<li><strong>+6 tiles</strong> de alcance com Caça 0, chegando a <strong>+12 tiles</strong> com Caça 10.</li>
-<li>As categorias de <strong>animais, insetos, rastros e carcaças</strong> ficam bem mais fáceis de achar.</li>
+<li>+6 tiles de alcance com Caça 0, chegando a +12 tiles com Caça 10.</li>
+<li>As categorias de animais, insetos, rastros e carcaças ficam bem mais fáceis de achar.</li>
 </ul>
-<p>O Golden Retriever <strong>soma mais 4 tiles</strong> por cima disso.</p>
+<p>O Golden Retriever soma mais 4 tiles por cima disso.</p>
 <h2 id="13-cuidar-do-gado">13. Cuidar do gado</h2>
-<p>Este modo transforma o cão num funcionário da fazenda: ele fica no curral, <strong>cuida do rebanho sozinho mesmo com você longe</strong>.</p>
+<p>Neste modo o cão fica no curral e cuida do rebanho sozinho.</p>
 <h3 id="como-atribuir">Como atribuir</h3>
 <ol>
-<li>Faça uma <strong>zona de animais designada</strong> (o curral do jogo base).</li>
+<li>Faça uma zona de animais designada (o curral do jogo base).</li>
 <li>Leve o cão para dentro dela.</li>
-<li>Botão direito → <strong><span class="ig">Cuidar do gado aqui</span></strong>.</li>
-<li>Confirme. O mod avisa que <strong>o cão vai ser desselecionado e não vai mais te seguir</strong>.</li>
+<li>Botão direito → <strong><span class="ig">Cuidar dos animais aqui</span></strong>.</li>
+<li>Confirme. O mod avisa que o cão deixa de ser o ativo e não vai mais te seguir.</li>
 </ol>
 <p>Sem curral: <em><span class="ig">Caramelo Rex precisa de uma zona de animais designada aqui para cuidar do gado.</span></em></p>
 <h3 id="o-que-ele-faz-lá">O que ele faz lá</h3>
 <ul>
-<li><strong>Patrulha o curral.</strong></li>
-<li><strong>Acalma o rebanho.</strong> Isso é o principal: animal estressado <strong>não dá leite nem lã</strong>, aborta e debanda quando um zumbi aparece. O cão segura o estresse do rebanho abaixo do ponto crítico.</li>
-<li><strong>Despacha zumbis em silêncio</strong> num raio de 12 tiles.</li>
-<li>Trabalha <strong>mesmo com você do outro lado do mapa</strong>.</li>
+<li>Patrulha o curral.</li>
+<li>Acalma o rebanho, que é a parte principal do serviço: segura o estresse abaixo do ponto crítico. Animal estressado não dá leite nem lã, aborta e debanda quando um zumbi aparece.</li>
+<li>Despacha zumbis em silêncio num raio de 12 tiles.</li>
+<li>Trabalha mesmo com você do outro lado do mapa.</li>
 </ul>
 <p>Avisos: <em><span class="ig">Caramelo Rex sentiu um zumbi perto do curral!</span></em> e <em><span class="ig">O rebanho do Caramelo Rex está ficando estressado!</span></em> Selo na cabeça: <strong><span class="ig">Cuidando do gado</span></strong>.</p>
 <h3 id="regras-importantes">Regras importantes</h3>
 <ul>
-<li>Enquanto está de serviço, <strong>fome, sede e perda de lealdade ficam congeladas</strong>. Ele se vira.</li>
-<li>Ele fica <strong>fora de tudo o mais</strong>: não luta por você, não caça, não vigia, não usa tigela.</li>
-<li><strong>Um cão sem treino, desleal ou em pânico ESTRESSA o rebanho em vez de acalmar.</strong> Não coloque um filhote destreinado tomando conta das vacas.</li>
-<li><strong>Selecionar o cão de novo cancela o modo</strong> automaticamente.</li>
+<li>Enquanto está de serviço, fome, sede e perda de lealdade ficam congeladas.</li>
+<li>Ele fica fora de todo o resto: não luta por você, não caça, não vigia, não usa tigela.</li>
+<li>Um cão sem treino, desleal ou em pânico estressa o rebanho em vez de acalmar.</li>
+<li>Selecionar o cão de novo cancela o modo.</li>
 </ul>
-<p>O <strong>Border Collie aprende Pastoreio duas vezes mais rápido</strong> que as outras raças, mas qualquer raça pode fazer o trabalho.</p>
+<p>O Border Collie aprende Pastoreio duas vezes mais rápido que as outras raças, mas qualquer raça pode fazer o trabalho.</p>
 <h2 id="14-alforjes-o-cão-como-mula-de-carga">14. Alforjes: o cão como mula de carga</h2>
 <h3 id="como-equipar">Como equipar</h3>
 <ol>
 <li>Tenha os <strong><span class="ig">Alforjes Companion Dogs</span></strong> no inventário.</li>
 <li>Botão direito no cão → <strong><span class="ig">Colocar alforjes</span></strong>. <em><span class="ig">Alforjes afivelados no cão.</span></em></li>
 <li>Para abrir: <strong><span class="ig">Abrir alforjes</span></strong> (ou a fatia do radial, ou o botão na aba Comandos).</li>
-<li>Para tirar: <strong><span class="ig">Tirar alforjes</span></strong>. O alforje <strong>com a carga dentro</strong> cai no chão.</li>
+<li>Para tirar: <strong><span class="ig">Tirar alforjes</span></strong>. O alforje cai no chão com a carga dentro.</li>
 </ol>
 <h3 id="quanta-carga-ele-leva">Quanta carga ele leva</h3>
-<p>A capacidade sai de <strong>uma base fixa mais o gene de Força do cão</strong>. Com os valores padrão:</p>
+<p>A capacidade sai de uma base fixa mais o gene de Força do cão. Com os valores padrão:</p>
 <div class="tw"><table><thead><tr>
 <th>Raça</th>
 <th>Carga (peso)</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Pug</strong></td>
-<td><strong>2 a 3</strong></td>
+<td>2 a 3</td>
 </tr>
 <tr>
-<td>Caramelo</td>
-<td><strong>4 a 5</strong></td>
+<td><strong>Caramelo</strong></td>
+<td>4 a 5</td>
 </tr>
 <tr>
-<td>Golden Retriever</td>
+<td><strong>Golden Retriever</strong></td>
 <td>6 a 7</td>
 </tr>
 <tr>
-<td>Pastor Alemão, Border Collie, Rottweiler, Doberman, Labrador</td>
+<td><strong>Pastor Alemão, Border Collie, Rottweiler, Doberman, Labrador</strong></td>
 <td>6 a 8</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td><strong>13 a 16</strong></td>
+<td>13 a 16</td>
 </tr>
 </tbody></table></div>
-<p>Husky e Pug são os dois cães com bônus de raça no alforje, e em direções opostas: o Husky carrega 50% a mais, o Pug carrega 40% a menos. Todos os outros dependem só do gene de Força, então dois cães da mesma raça podem carregar quantidades diferentes.</p>
+<p>O Husky e o Pug são os dois cães com bônus de raça no alforje: o Husky carrega 50% a mais e o Pug carrega 40% a menos. Dois cães da mesma raça podem carregar quantidades diferentes.</p>
 <p>O servidor pode mexer nisso com <strong><span class="ig">Capacidade base do alforje</span></strong> e <strong><span class="ig">Bônus de carga por força</span></strong>.</p>
 <h3 id="o-que-dá-para-guardar">O que dá para guardar</h3>
-<p>Quase tudo, e o limite é de <strong>peso</strong>, não de quantidade de itens. As exceções:</p>
+<p>Quase tudo. O limite é de peso, não de quantidade de itens. As exceções:</p>
 <ul>
 <li>Outro alforje.</li>
 <li>Item equipado (roupa vestida, arma na mão).</li>
-<li><strong>Mochilas e bolsas.</strong> Guarde os itens de dentro delas, não a bolsa.</li>
+<li>Mochilas e bolsas. Guarde os itens de dentro delas, não a bolsa.</li>
 </ul>
-<p><strong>Anotação de mapa não é preservada.</strong> Se você guardar um mapa anotado, as marcas se perdem: <em><span class="ig">Anotações do mapa não ficam guardadas no alforje.</span></em></p>
+<p>Se você guardar um mapa anotado, as marcas se perdem: <em><span class="ig">Anotações do mapa não ficam guardadas no alforje.</span></em></p>
 <h3 id="a-janela">A janela</h3>
 <p>Duas listas lado a lado: <strong><span class="ig">Seu inventário</span></strong> à esquerda (clique deposita) e o alforje à direita (clique retira). No rodapé: <strong><span class="ig">Carga: 7/12</span></strong>.</p>
 <h3 id="onde-conseguir">Onde conseguir</h3>
-<p><strong>Craft:</strong> 2x Tiras de Couro + Agulha + Linha (agulha e linha não são consumidas). Serve qualquer agulha de costura (comum, de osso, de latão ou forjada) e qualquer linha (comum, aramida ou de tendão), então dá pra fazer o alforje sem depender de loot de cidade. Categoria Costura, exige <strong>Costura nível 1</strong>. Dá 15 de XP de Costura.</p>
-<p><strong>Loot:</strong> pet shop, caixas de suprimento de pet, lojas de camping, armários de caça, kits de sobrevivência, ferramentas de garagem e caixas de fazenda.</p>
-<blockquote class="quote"><strong>Se o cão morrer ou for solto, o alforje e toda a carga caem no chão</strong> no lugar onde ele estava.</blockquote>
+<p>Craft: 2x Tiras de Couro + Agulha + Linha (agulha e linha não são consumidas). Serve qualquer agulha de costura (comum, de osso, de latão ou forjada) e qualquer linha (comum, aramida ou de tendão). Categoria Costura, exige Costura nível 1. Dá 15 de XP de Costura.</p>
+<p>Loot: pet shop, caixas de suprimento de pet, lojas de camping, armários de caça, kits de sobrevivência, ferramentas de garagem e caixas de fazenda.</p>
+<blockquote class="quote">Se o cão morrer ou for solto, o alforje e toda a carga caem no chão no lugar onde ele estava.</blockquote>
 <h2 id="15-cruzamento-e-filhotes">15. Cruzamento e filhotes</h2>
 <h3 id="não-existe-botão-de-cruzar">Não existe botão de "cruzar"</h3>
-<p>O cruzamento é <strong>100% passivo</strong>: você monta as condições e espera.</p>
-<p>A cada hora de jogo, cada fêmea elegível com um macho elegível por perto tem uma chance de conceber sozinha. O padrão é <strong>5% ao dia</strong> (opção de sandbox <strong><span class="ig">Chance de cruzamento por dia</span></strong>).</p>
+<p>O cruzamento é passivo: você monta as condições e espera.</p>
+<p>A cada hora de jogo, cada fêmea elegível com um macho elegível por perto tem uma chance de conceber. O padrão é 5% ao dia (opção de sandbox <strong><span class="ig">Chance de cruzamento por dia</span></strong>).</p>
 <h3 id="as-condições">As condições</h3>
 <p>Todas obrigatórias, nos dois cães:</p>
 <ol>
-<li>Os dois são da <strong>mesma espécie</strong>: cão com cão, gato com gato, e o filhote nasce da espécie dos pais.</li>
-<li>Os dois são <strong>companheiros do mesmo dono</strong>.</li>
-<li>Um <strong>macho e uma fêmea adultos</strong>. Filhote nunca cruza.</li>
+<li>Os dois são da mesma espécie: cão com cão, gato com gato.</li>
+<li>Os dois são companheiros do mesmo dono.</li>
+<li>Um macho e uma fêmea, os dois adultos.</li>
 <li>Nenhum dos dois com <strong><span class="ig">Bloquear cruzamento</span></strong> ligado.</li>
-<li><strong>Mesmo andar</strong> e a <strong>40 tiles ou menos</strong> um do outro.</li>
-<li>Nenhum dos dois <strong>muito ferido</strong> nem <strong>intoxicado</strong>.</li>
-<li><strong>Lealdade de 60 ou mais</strong> nos dois.</li>
-<li><strong>Bem alimentados:</strong> fome <strong>e</strong> sede abaixo da metade nos dois.</li>
-<li>A fêmea <strong>não está grávida</strong> nem no <strong>cooldown de 7 dias</strong> depois de um parto.</li>
-<li>Existe <strong>vaga livre</strong> no limite de cães.</li>
-<li>A área precisa estar <strong>carregada perto de você</strong>.</li>
+<li>Mesmo andar e a 40 tiles ou menos um do outro.</li>
+<li>Nenhum dos dois muito ferido nem intoxicado.</li>
+<li>Lealdade de 60 ou mais nos dois.</li>
+<li>Fome e sede abaixo da metade nos dois.</li>
+<li>A fêmea não está grávida nem nos 7 dias de descanso depois de um parto.</li>
+<li>Existe vaga livre no limite de cães.</li>
+<li>A área está carregada perto de você.</li>
 </ol>
 <h3 id="o-ritual-e-a-gestação">O ritual e a gestação</h3>
-<p>A fêmea <strong>anda até o macho</strong> (<em><span class="ig">Caramelo Rex está indo até o parceiro</span></em>) e concebe ao chegar perto. <em><span class="ig">Caramelo Rex está grávida</span></em>.</p>
+<p>A fêmea anda até o macho (<em><span class="ig">Caramelo Rex está indo até o parceiro</span></em>) e concebe ao chegar perto: <em><span class="ig">Caramelo Rex está grávida</span></em>.</p>
 <ul>
-<li><strong>Gestação: 4 dias de jogo</strong> por padrão.</li>
-<li>O relógio corre <strong>mesmo com a cadela longe ou você offline</strong>.</li>
-<li>Indicadores na cabeça e no menu: <strong><span class="ig">Grávida</span></strong> e, no fim, <strong><span class="ig">Parto próximo</span></strong>. Aparecem em rosa e <strong>sempre</strong>, mesmo com os textos de status desligados.</li>
+<li>A gestação dura 4 dias de jogo por padrão.</li>
+<li>O relógio corre mesmo com a cadela longe ou com você offline.</li>
+<li>Na cabeça dela e no menu aparecem <strong><span class="ig">Grávida</span></strong> e, no fim, <strong><span class="ig">Parto próximo</span></strong>, em rosa. Esses dois avisos aparecem mesmo com os textos de status desligados.</li>
 </ul>
 <h3 id="o-parto">O parto</h3>
-<p>Tamanho da ninhada depende da raça <strong>da mãe</strong>:</p>
 <div class="tw"><table><thead><tr>
 <th>Raça da mãe</th>
 <th>Ninhada</th>
@@ -1571,28 +1607,28 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>1 a 2</td>
 </tr>
 </tbody></table></div>
-<p><em><span class="ig">Caramelo Rex teve uma ninhada</span></em>. Depois disso, <strong>7 dias de jogo de descanso</strong> antes de poder engravidar de novo.</p>
-<blockquote class="quote">Se o servidor tiver definido um <strong>limite de cães</strong> e não houver vaga, a ninhada é cortada para caber (e a gravidez termina do mesmo jeito). Com o padrão de fábrica, que é <strong>sem limite</strong>, isso nunca acontece.</blockquote>
+<p><em><span class="ig">Caramelo Rex teve uma ninhada</span></em>. Depois disso a mãe descansa 7 dias de jogo antes de poder engravidar de novo.</p>
+<blockquote class="quote">Se o servidor tiver um limite de cães e não houver vaga, a ninhada é cortada para caber, e a gravidez termina do mesmo jeito. O padrão é sem limite.</blockquote>
 <h3 id="o-que-o-filhote-herda">O que o filhote herda</h3>
 <ul>
-<li><strong>A linhagem é a média dos pais.</strong> Caramelo com Pastor Alemão dá 50/50. Esse mestiço com um Pastor puro dá 25/75.</li>
-<li><strong>A aparência é sorteada com peso na linhagem.</strong> Um filhote 75% Pastor provavelmente vai parecer um Pastor.</li>
-<li><strong>Os genes ficam no meio-termo dos pais, com uma variação de mais ou menos 6%.</strong> É assim que você melhora uma linhagem: cruze os dois cães mais fortes que tiver, repetidamente.</li>
-<li>Um cão com mais de uma raça é marcado <strong><span class="ig">Mestiço</span></strong>, e a janela mostra o detalhamento (<span class="ig">50% Husky, 50% Pastor Alemão</span>).</li>
-<li><strong>O pedigree fica gravado:</strong> geração, nome e raça do pai e da mãe.</li>
+<li>A linhagem é a média dos pais. Caramelo com Pastor Alemão dá 50/50. Esse mestiço com um Pastor puro dá 25/75.</li>
+<li>A aparência é sorteada com peso na linhagem. Um filhote 75% Pastor provavelmente vai parecer um Pastor.</li>
+<li>Os genes ficam no meio-termo dos pais, com uma variação de mais ou menos 6%. Cruzar os dois cães mais fortes que você tiver, e repetir a cada geração, sobe a média da linhagem aos poucos.</li>
+<li>Um cão com mais de uma raça aparece como <strong><span class="ig">Mestiço</span></strong>, e a janela mostra a proporção (<span class="ig">50% Husky, 50% Pastor Alemão</span>).</li>
+<li>O pedigree fica gravado: geração, nome e raça do pai e da mãe.</li>
 </ul>
 <h3 id="criando-o-filhote">Criando o filhote</h3>
 <ul>
-<li>Nasce <strong>passivo</strong> (em modo Ficar), com <strong>50 de lealdade</strong> (não zero), <strong>sem nenhuma habilidade</strong>, e visivelmente menor.</li>
-<li><strong>Conta no limite de cães desde o nascimento.</strong></li>
-<li>Leva <strong>90 dias de jogo</strong> para virar adulto. O relógio <strong>corre sempre</strong>, mesmo com o filhote longe e fora de alcance. Se o prazo vencer com ele descarregado, ele vira adulto assim que você chegar perto de novo.</li>
-<li>Ao crescer, <strong>mantém nome, vínculo, genes e habilidades</strong>: <em><span class="ig">Caramelo Rex cresceu e virou adulto</span></em>.</li>
-<li>Se você gostou do filhote pequeno, o toggle <strong><span class="ig">Pausar crescimento</span></strong> congela ele para sempre. <em><span class="ig">Cães que nunca crescem? Queria ter essa opção na vida real :D</span></em></li>
+<li>Nasce passivo (em modo Ficar), com 50 de lealdade, sem nenhuma habilidade e visivelmente menor.</li>
+<li>Conta no limite de cães desde o nascimento.</li>
+<li>Leva 90 dias de jogo para virar adulto. Se o prazo vencer com ele descarregado, ele vira adulto assim que você chegar perto de novo.</li>
+<li>Ao crescer mantém nome, vínculo, genes e habilidades: <em><span class="ig">Caramelo Rex cresceu e virou adulto</span></em>.</li>
+<li>O toggle <strong><span class="ig">Pausar crescimento</span></strong> congela o filhote nesse tamanho enquanto estiver ligado. <em><span class="ig">Cães que nunca crescem? Queria ter essa opção na vida real :D</span></em></li>
 </ul>
 <h2 id="16-vários-cães-ao-mesmo-tempo">16. Vários cães ao mesmo tempo</h2>
-<p>Você pode ter vários cães, mas <strong>só um sai com você por vez</strong>: é o cão <span class="ig">ativo</span>. Os outros ficam em espera.</p>
-<blockquote class="quote"><strong>Isso está previsto mudar numa versão futura.</strong> Por enquanto, planeje com um cão de cada vez.</blockquote>
-<p><strong>Um cão passivo fica em pausa total.</strong></p>
+<p>Você pode ter vários cães, mas só um sai com você por vez: é o cão <span class="ig">ativo</span>. Os outros ficam em espera.</p>
+<blockquote class="quote">Isso deve mudar numa versão futura.</blockquote>
+<p>Um cão passivo fica em pausa:</p>
 <div class="tw"><table><thead><tr>
 <th></th>
 <th>Cão ativo</th>
@@ -1604,14 +1640,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Não, fica parado onde está</td>
 </tr>
 <tr>
-<td><strong>Sente fome e sede</strong></td>
+<td>Sente fome e sede</td>
 <td>Sim</td>
-<td><strong>Não. Nem acumula para depois</strong></td>
+<td>Não, e não acumula para depois</td>
 </tr>
 <tr>
-<td><strong>Come na tigela</strong></td>
+<td>Come na tigela</td>
 <td>Sim</td>
-<td><strong>Não, e não precisa</strong></td>
+<td>Não, e não precisa</td>
 </tr>
 <tr>
 <td>Perde lealdade sozinho</td>
@@ -1626,23 +1662,22 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Aceita carinho (e ganha lealdade)</td>
 <td>Sim</td>
-<td><strong>Sim</strong></td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>Pode cruzar e ter filhotes</td>
 <td>Sim</td>
-<td><strong>Sim</strong></td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>Conta para os moodles e o bônus de busca</td>
 <td>Sim</td>
-<td><strong>Sim, se estiver perto</strong></td>
+<td>Sim, se estiver perto</td>
 </tr>
 </tbody></table></div>
-<p>Quando você seleciona um cão em espera, a fome dele recomeça <strong>de onde parou</strong>, sem susto acumulado.</p>
-<p>Para trocar, botão direito no cão → <strong><span class="ig">Selecionar</span></strong>. O menu de um cão passivo é reduzido de propósito: sem alimentar, sem água, sem ordens de movimento, porque nada disso faz efeito nele.</p>
-<h3 id="a-aba-meus-cães-o-registro">A aba "Meus Cães": o registro</h3>
-<p>É o seu registro de cães. Lista todos os cães vinculados com avatar, nome, raça, sexo, habilidades e o estado atual:</p>
+<p>Para trocar, botão direito no cão → <strong><span class="ig">Selecionar</span></strong>. O menu do cão passivo só mostra o que funciona nele.</p>
+<h3 id="a-aba-meus-companheiros-o-registro">A aba "Meus Companheiros": o registro</h3>
+<p>Lista todos os cães vinculados a você, com avatar, nome, raça, sexo, habilidades e o estado atual:</p>
 <div class="tw"><table><thead><tr>
 <th>Estado</th>
 <th>O que significa</th>
@@ -1677,23 +1712,23 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 </tbody></table></div>
 <p>Três botões por cão: <strong>Trazer</strong> | <strong>Status</strong> | <strong>Selecionar</strong>.</p>
-<p><strong>Trazer</strong> num cão perto é um teleporte simples. Num cão <strong>longe</strong>, ele pede confirmação: <em><span class="ig">Chamar Caramelo Rex de volta de longe? O assobio alto atrai zumbis.</span></em> e faz o cão reaparecer, mantendo habilidades, genes, nome e alforje.</p>
-<p><strong>Cooldown de 2 horas de jogo por cão.</strong> Fora dele: <em><span class="ig">Caramelo Rex foi chamado há pouco, espere um pouco antes de chamar de novo.</span></em></p>
-<blockquote class="quote"><strong>É assim que você recupera um cão perdido.</strong> Se o cão sumiu, o mod avisa: <em><span class="ig">Caramelo Rex se perdeu! Abra Meus Cães (botão da patinha) para chamá-lo de volta.</span></em></blockquote>
+<p><strong>Trazer</strong> num cão perto é um teleporte simples. Num cão longe, ele pede confirmação (<em><span class="ig">Chamar Caramelo Rex de volta de longe? O assobio alto atrai zumbis.</span></em>) e faz o cão reaparecer com habilidades, genes, nome e alforje.</p>
+<p>Cada cão tem um cooldown de 2 horas de jogo. Dentro dele: <em><span class="ig">Caramelo Rex foi chamado há pouco, espere um pouco antes de chamar de novo.</span></em></p>
+<blockquote class="quote">Quando um cão some, o mod avisa: <em><span class="ig">Caramelo Rex se perdeu! Abra Meus Companheiros (botão da patinha) para chamá-lo de volta.</span></em></blockquote>
 <h2 id="17-a-janela-do-cão">17. A janela do cão</h2>
-<p>Você abre de quatro jeitos: o <strong>botão de patinha</strong> logo abaixo do painel das suas mãos, a tecla <strong>Status</strong>, a opção <strong><span class="ig">Status</span></strong> no menu de contexto, ou o botão na aba Meus Cães.</p>
-<p>A janela é <strong>redimensionável</strong> e lembra onde você deixou. No topo fica o <strong>avatar 3D do cão ao vivo</strong> com o nome. Dentro do carro, aparece a faixa <strong><span class="ig">No veículo</span></strong>.</p>
+<p>Você abre de quatro jeitos: o botão de patinha logo abaixo do painel das suas mãos, a tecla <strong>Status</strong>, a opção <strong><span class="ig">Status</span></strong> no menu de contexto, ou o botão na aba Meus Companheiros.</p>
+<p>A janela é redimensionável e lembra onde você deixou. No topo fica o avatar 3D do cão ao vivo, com o nome. Dentro do carro aparece a faixa <strong><span class="ig">No veículo</span></strong>.</p>
 <h3 id="aba-habilidades-e-status">Aba "Habilidades e Status"</h3>
 <ul>
-<li><strong>Lealdade</strong> com barra e explicação no hover.</li>
+<li><strong>Lealdade</strong>, com barra.</li>
 <li><strong>Necessidades:</strong> Fome, Sede, Saúde, Estresse.</li>
 <li><strong>Habilidades:</strong> Faro, Combate, Obediência, Caça, Pastoreio, cada uma com barra de progresso e <strong><span class="ig">Nv X</span></strong>.</li>
 <li><strong>Características:</strong> Força, Agressividade, Resistência, mostradas como Baixa / Média / Alta.</li>
-<li><strong>Espécie:</strong> Cão ou Gato, numa linha logo acima da raça. No gato, o filhote aparece como <strong>Gatinho</strong>.</li>
-<li><strong>Raça:</strong> nome, idade (Adulto ou Filhote), <span class="ig">(Mestiço)</span> quando for o caso, com a descrição da raça no hover.</li>
-<li><strong>Abates:</strong> quantos zumbis e quantas presas aquele cão já matou.</li>
+<li><strong>Espécie:</strong> Cão ou Gato. O filhote de gato aparece como <strong>Gatinho</strong>.</li>
+<li><strong>Raça:</strong> nome, idade (Adulto ou Filhote) e <span class="ig">(Mestiço)</span> quando for o caso, com a descrição da raça no hover.</li>
+<li><strong>Abates:</strong> quantos zumbis e quantas presas o cão já matou.</li>
 </ul>
-<p><strong>Tudo tem explicação no hover.</strong></p>
+<p>Tudo na aba tem explicação no hover.</p>
 <h3 id="aba-comandos">Aba "Comandos"</h3>
 <ul>
 <li><strong>Modo:</strong> Seguir | Ficar | Vigiar</li>
@@ -1701,26 +1736,26 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Auto-proteção</strong> (liga/desliga)</li>
 <li><strong>Caça</strong> (liga/desliga)</li>
 <li><strong>Distância ao seguir:</strong> barra de 2 a 8 tiles, de meio em meio, com o número do lado</li>
-<li><strong>Cuidar do gado aqui</strong></li>
-<li><strong>Truques:</strong> quatro botões (os travados ficam desabilitados com o motivo no hover)</li>
+<li><strong>Cuidar dos animais aqui</strong></li>
+<li><strong>Truques:</strong> quatro botões (os travados ficam desabilitados, com o motivo no hover)</li>
 <li><strong>Abrir alforjes</strong></li>
 <li><strong>Ações:</strong> Trazer | Renomear | Soltar</li>
 </ul>
 <p>Dentro de um veículo, tudo que exige o cão no mundo fica desabilitado (<em><span class="ig">Indisponível enquanto dirige, seu companheiro está viajando com você.</span></em>) e a linha de ações vira <strong>Alimentar | Renomear | Dar água</strong>.</p>
-<h3 id="aba-meus-cães">Aba "Meus Cães"</h3>
+<h3 id="aba-meus-companheiros">Aba "Meus Companheiros"</h3>
 <p>Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
 <h3 id="aba-configurações">Aba "Configurações"</h3>
-<p>Estas opções são <strong>suas</strong>, por jogador, e não afetam mais ninguém no servidor:</p>
+<p>Estas opções são por jogador e não afetam mais ninguém no servidor:</p>
 <ul>
 <li><strong>Interface:</strong> <span class="ig">Textos de status: ligados/desligados</span> (os avisos flutuantes na cabeça do cão) e <span class="ig">Imagem de humor: ligada/desligada</span> (os moodles de cão).</li>
 <li><strong>Som:</strong> volume geral, mudo, e sliders separados para <strong>Latido</strong>, <strong>Efeitos</strong> e <strong>Ambiente</strong>.</li>
 <li><strong>Auto-alimentação:</strong> o slider <span class="ig">Come quando a fome/sede atinge</span>.</li>
 <li><strong>Teclas:</strong> as 14 ações, com <strong>Alterar</strong> e <strong>Limpar</strong>.</li>
 </ul>
-<blockquote class="quote">Se o latido está te incomodando, o slider de <strong>Latido</strong> aqui resolve sem desligar mecânica nenhuma.</blockquote>
+<blockquote class="quote">Se o latido incomoda, o slider de <strong>Latido</strong> abaixa só ele, sem desligar nenhuma mecânica.</blockquote>
 <h2 id="18-o-que-aparece-na-tela">18. O que aparece na tela</h2>
 <h3 id="moodles-de-cão">Moodles de cão</h3>
-<p>Uma coluna própria de ícones, <strong>à esquerda da coluna normal de moodles do jogo</strong>. Cada raça tem o seu. Detalhe completo no <a href="breeds.html" class="xlink">manual de raças</a>.</p>
+<p>Os moodles de cão ficam à esquerda da coluna normal de moodles do jogo. Cada raça tem o seu. Detalhe completo no <a href="breeds.html" class="xlink">manual de raças</a>.</p>
 <p>Os que qualquer cão pode dar:</p>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
@@ -1745,7 +1780,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Fraco</strong></td>
 <td>72h sem comer proteína</td>
-<td><strong>Metade do dano de mordida e +25% de chance de ignorar ordem.</strong> Ver <a href="#proteína-ele-é-carnívoro">Proteína</a></td>
+<td>Metade do dano de mordida e +25% de chance de ignorar ordem. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a></td>
 </tr>
 <tr>
 <td><strong>Bem Descansado</strong></td>
@@ -1758,38 +1793,39 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Tristeza pesada que cede ao longo de até 48 horas de jogo. Ver <a href="#o-luto">O luto</a></td>
 </tr>
 </tbody></table></div>
-<blockquote class="quote"><strong>Regra que vale para todos os moodles de raça:</strong> um cão <strong>desleal, doente, ou com fome ou sede alta não dá bônus nenhum</strong>. O moodle simplesmente desliga. Cão bem cuidado é cão que rende.</blockquote>
+<blockquote class="quote">Vale para todos os moodles de raça: em cão desleal, doente, ou com fome ou sede alta, o moodle desliga até ele estar cuidado de novo.</blockquote>
 <h3 id="textos-acima-da-cabeça">Textos acima da cabeça</h3>
-<p>O cão empilha várias linhas de status acima da cabeça, visíveis a 14 tiles e só no mesmo andar. De cima para baixo: alerta da sentinela, estado (<strong>Apavorado</strong>, <strong>Em pânico</strong>, <strong>Muito ferido</strong>, <strong>Desobediente</strong>, <strong>Ferido</strong>, <strong>Nervoso</strong>), o que ele está fazendo (comendo, caçando, farejando, cuidando do gado), gravidez, e <strong>o nome</strong>, sempre por último e mais perto da cabeça.</p>
-<p>A opção <strong><span class="ig">Textos de status: desligados</span></strong> (aba Configurações) apaga tudo menos o nome. A opção de sandbox <strong><span class="ig">Mostrar nome acima do cão</span></strong> desliga até o nome.</p>
-<p><strong>Cão de outro jogador</strong> mostra só <strong><span class="ig">Dono: Fulano</span></strong>, a gravidez e o nome.</p>
+<p>O cão empilha várias linhas de status acima da cabeça, visíveis a 14 tiles e só no mesmo andar. De cima para baixo: alerta da sentinela, estado (<strong>Apavorado</strong>, <strong>Em pânico</strong>, <strong>Muito ferido</strong>, <strong>Desobediente</strong>, <strong>Ferido</strong>, <strong>Nervoso</strong>), o que ele está fazendo (comendo, caçando, farejando, cuidando do gado), gravidez, e o nome, sempre por último.</p>
+<p>A opção <strong><span class="ig">Textos de status: desligados</span></strong> (aba Configurações) apaga tudo menos o nome. A opção de sandbox <strong><span class="ig">Mostrar nome acima do pet</span></strong> desliga até o nome.</p>
+<p>Cão de outro jogador mostra só <strong><span class="ig">Dono: Fulano</span></strong>, a gravidez e o nome.</p>
 <h3 id="marcador-no-mapa">Marcador no mapa</h3>
-<p>Uma <strong>patinha por cão vinculado</strong>, no mapa do mundo e no minimapa.</p>
+<p>Cada cão vinculado ganha uma patinha no mapa do mundo e no minimapa.</p>
 <ul>
-<li><strong>Patinha marrom = cão ativo. Patinha cinza = cães passivos.</strong></li>
-<li>No mapa do mundo, a patinha vem com o nome do cão ao lado. No minimapa não, e ela <strong>gruda na borda</strong> apontando a direção quando o cão está fora de vista.</li>
-<li>Enquanto o cão está carregado, o marcador segue ele ao vivo. Quando descarrega, <strong>fica na última posição vista</strong>.</li>
+<li>Patinha marrom é o cão ativo. Patinha cinza são os cães passivos.</li>
+<li>No mapa do mundo, a patinha vem com o nome do cão ao lado. No minimapa não, e ela gruda na borda apontando a direção quando o cão está fora de vista.</li>
+<li>Enquanto o cão está carregado, o marcador segue ele ao vivo. Quando descarrega, fica na última posição vista.</li>
 </ul>
-<p><strong>É assim que você acha um cão que ficou para trás, ou o seu cão depois de morrer.</strong> O marcador é overlay puro, nunca vira símbolo salvo no mapa.</p>
+<p>Serve para achar um cão que ficou para trás, ou o seu cão depois de morrer. O marcador nunca vira símbolo salvo no mapa.</p>
 <p>Desliga com a opção de sandbox <strong><span class="ig">Mostrar cão no mapa</span></strong>.</p>
 <h2 id="19-itens-do-mod">19. Itens do mod</h2>
-<p>O mod adiciona <strong>dois itens que você usa</strong>, a tigela e o alforje, e mais nada: não existe coleira, petisco especial, brinquedo, casinha nem canil construível. A ração normal do jogo base é reconhecida pelo mod, mas é item do jogo, não dele.</p>
+<p>O mod adiciona cinco itens: a tigela, o alforje e três remédios. Não existe coleira, petisco especial, brinquedo, casinha nem canil construível. A ração normal do jogo base é reconhecida pelo mod, mas não é item dele.</p>
+<p>Os remédios são o <strong><span class="ig">Companion Dogs Antibiótico</span></strong>, o <strong><span class="ig">Companion Dogs Vermífugo</span></strong> e a <strong><span class="ig">Companion Dogs Vacina</span></strong>, todos com peso 0,1. Onde achar e como dar está na seção 6, em Remédios.</p>
 <h3 id="tigela-companion-dogs">Tigela Companion Dogs</h3>
 <p>A estação de alimentação. Peso 1,5.</p>
-<p><strong>Duas receitas</strong>, as duas sem exigir skill nenhuma e feitas na mão:</p>
+<p>Tem duas receitas, as duas feitas na mão e sem exigir skill:</p>
 <ul>
-<li><strong>1 utensílio de cozinha</strong> (panela, frigideira, assadeira, chaleira, balde, caneca, garrafa...), que é destruído.</li>
-<li><strong>1 tigela de pet do jogo base</strong>, destruída.</li>
+<li>1 utensílio de cozinha (panela, frigideira, assadeira, chaleira, balde, caneca, garrafa...), que é destruído.</li>
+<li>1 tigela de pet do jogo base, destruída.</li>
 </ul>
-<p><strong>Loot:</strong> prateleira de pet shop, caixa de suprimento de pet, seção de utilidades de mercado, loja de jardinagem, caixas de fazenda e jardinagem, estoque de mercado, cozinha.</p>
+<p>Aparece como loot em prateleira de pet shop, caixa de suprimento de pet, seção de utilidades de mercado, loja de jardinagem, caixas de fazenda e jardinagem, estoque de mercado e cozinha.</p>
 <h3 id="alforjes-companion-dogs">Alforjes Companion Dogs</h3>
 <p>Veja <a href="#14-alforjes-o-cão-como-mula-de-carga">Alforjes</a>. Peso 1,0, com boa redução de peso interno.</p>
 <h2 id="20-multiplayer">20. Multiplayer</h2>
-<p>O mod foi feito para multiplayer desde o começo, e funciona igual em co-op e servidor dedicado.</p>
+<p>O mod funciona igual em co-op e servidor dedicado.</p>
 <h3 id="seu-cão-é-seu">Seu cão é seu</h3>
-<p>A posse é amarrada à <strong>sua conta</strong>, não ao personagem nem ao slot de conexão. Reiniciar o servidor não passa seu cão para outra pessoa.</p>
-<p><strong>Outros jogadores podem:</strong> ver o cão, com o nome e <strong><span class="ig">Dono: Fulano</span></strong> acima da cabeça.</p>
-<p><strong>Outros jogadores não podem:</strong></p>
+<p>A posse fica amarrada à sua conta, não ao personagem nem ao slot de conexão.</p>
+<p>Outros jogadores podem ver o cão, com o nome e <strong><span class="ig">Dono: Fulano</span></strong> acima da cabeça.</p>
+<p>O que outros jogadores não conseguem fazer:</p>
 <div class="tw"><table><thead><tr>
 <th>Tentativa</th>
 <th>O que acontece</th>
@@ -1800,7 +1836,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td>Alimentar ou re-domesticar</td>
-<td><em><span class="ig">Este cão já pertence a outro sobrevivente.</span></em> Checado <strong>antes</strong> de gastar a comida da pessoa</td>
+<td><em><span class="ig">Este cão já pertence a outro sobrevivente.</span></em> A checagem vem antes de gastar a comida da pessoa</td>
 </tr>
 <tr>
 <td>Comandar, renomear, soltar, mexer no alforje</td>
@@ -1812,18 +1848,18 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 </tbody></table></div>
 <h3 id="quando-você-desconecta">Quando você desconecta</h3>
-<p>Com a opção <strong><span class="ig">Guardar cães com o dono offline</span></strong> ligada (é o padrão):</p>
+<p>Com a opção <strong><span class="ig">Guardar pets com o dono offline</span></strong> ligada (é o padrão):</p>
 <ul>
-<li>Seus cães são <strong>guardados fora do mundo</strong>, com estado e necessidades <strong>congelados</strong>.</li>
-<li>Quando você volta, o cão em <strong>Seguir</strong> reaparece ao seu lado; os em <strong>Ficar</strong> e <strong>Vigiar</strong> e os passivos reaparecem <strong>onde você deixou</strong>, assim que a área carregar.</li>
-<li><strong>Você não volta com o cão faminto.</strong> O tempo offline não conta.</li>
+<li>Seus cães saem do mundo, com estado e necessidades congelados.</li>
+<li>Quando você volta, o cão em <strong>Seguir</strong> reaparece ao seu lado; os em <strong>Ficar</strong> e <strong>Vigiar</strong> e os passivos reaparecem onde você deixou, assim que a área carregar.</li>
+<li>O cão não volta com fome.</li>
 </ul>
 <p>Desligada, os cães ficam no mundo, invencíveis e parados.</p>
 <h3 id="para-administradores">Para administradores</h3>
-<p>Existe um <strong><span class="ig">Registro de cães (admin)</span></strong>: busca por jogador, status Online/Offline, contagem de cães e botão Atualizar. Existe também um painel de <strong>ajuste de performance do servidor</strong> ao vivo, com medição e os campos de ajuste, descrito na seção <a href="#24-ajuste-fino-do-servidor-admin">24. Ajuste fino do servidor</a>. Os dois são só para admin.</p>
+<p>Existe um <strong><span class="ig">Registro de cães (admin)</span></strong>: busca por jogador, status Online/Offline, contagem de cães e botão Atualizar. Existe também um painel de ajuste de performance do servidor ao vivo, descrito na seção <a href="#24-ajuste-fino-do-servidor-admin">24. Ajuste fino do servidor</a>.</p>
 <h2 id="21-opções-de-sandbox">21. Opções de sandbox</h2>
 <p>Página <strong><span class="ig">Cachorros Companheiros</span></strong> nas configurações do mundo. São 35 opções.</p>
-<blockquote class="quote"><strong>Lembre:</strong> no multiplayer, quem manda é a configuração <strong>do servidor</strong>, e mudar é coisa de admin: pelo painel de administração a mudança vale <strong>na hora</strong>, para todo mundo, e fica gravada. No solo essa tela só abre com o jogo em <strong>modo debug</strong> (<code>-debug</code> nas opções de inicialização do Steam), e ali também vale na hora. Sem debug, no solo, o jeito de mudar é começar um mundo novo.</blockquote>
+<blockquote class="quote">No multiplayer vale a configuração do servidor: pelo painel de administração a mudança vale na hora, para todo mundo, e fica gravada. No solo essa tela só abre com o jogo em modo debug (<code>-debug</code> nas opções de inicialização do Steam), e ali também vale na hora. Sem debug, no solo, o jeito de mudar é começar um mundo novo.</blockquote>
 <h3 id="domesticação-e-spawn">Domesticação e spawn</h3>
 <div class="tw"><table><thead><tr>
 <th>Opção</th>
@@ -1836,8 +1872,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Quanta comida até o cão ser seu</td>
 </tr>
 <tr>
-<td>Máximo de cães por jogador</td>
-<td><strong>0 (sem limite)</strong></td>
+<td>Máximo de pets por jogador</td>
+<td>0 (sem limite)</td>
 <td>Teto de cães vinculados</td>
 </tr>
 <tr>
@@ -1846,13 +1882,13 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Cães aparecem sozinhos conforme você explora</td>
 </tr>
 <tr>
-<td>Multiplicador de spawn de cães</td>
+<td>Multiplicador de spawn de animais</td>
 <td>1.0</td>
 <td>Escala todos os spawns. 0 desliga</td>
 </tr>
 <tr>
 <td>Cães selvagens são invencíveis</td>
-<td><strong>Desligado</strong></td>
+<td>Desligado</td>
 <td>Protege cães soltos de morrer antes de você domesticar</td>
 </tr>
 <tr>
@@ -1875,7 +1911,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Multiplicador de dano do cão</td>
 <td>1.0</td>
-<td>Escala o dano. <strong>O Caramelo continua sem finalizar zumbi, por mais alto que você coloque</strong></td>
+<td>Escala o dano. O Caramelo continua sem finalizar zumbi, em qualquer valor</td>
 </tr>
 <tr>
 <td>Kills do cão contam para você</td>
@@ -1897,22 +1933,22 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Ritmo de fome e sede</td>
 <td>1.0</td>
-<td>Escala as duas. <strong>0 congela e o cão nunca mais precisa comer</strong></td>
+<td>Escala as duas. 0 congela</td>
 </tr>
 <tr>
-<td>Cães precisam de proteína</td>
+<td>Pets precisam de proteína</td>
 <td>Ligado</td>
 <td>Ficar sem carne, peixe, ovo ou ração deixa o cão <strong>Fraco</strong>: metade do dano e +25% de desobediência</td>
 </tr>
 <tr>
 <td>Horas sem proteína</td>
 <td>72</td>
-<td>O tamanho desse relógio, em horas de jogo (72 = três dias). Vale de 6 a 168</td>
+<td>Em horas de jogo: 72 são três dias. Vale de 6 a 168</td>
 </tr>
 <tr>
 <td>Perda de lealdade por dia</td>
 <td>12.0</td>
-<td>Quanto de lealdade some por dia</td>
+<td>Quanto mais alto, mais atenção o cão exige</td>
 </tr>
 <tr>
 <td>Vínculo (carinho e sono)</td>
@@ -1927,12 +1963,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Duração do Bem Descansado (horas)</td>
 <td>2.0</td>
-<td>Quanto tempo dura</td>
+<td>Quanto o buff dura depois de você acordar</td>
 </tr>
 <tr>
 <td>Moodles de raça</td>
 <td>Ligado</td>
-<td>O humor próprio de cada raça (Boa Companhia, Coragem, Faro Apurado, Aquecido e os outros). <strong>Desligado, some o ícone e o benefício junto</strong>, e os moodles de fome, sede, doente e fraco continuam</td>
+<td>O humor próprio de cada raça (Boa Companhia, Coragem, Faro Apurado, Aquecido e os outros). Desligado, some o ícone e o benefício junto; os moodles de fome, sede, doente e fraco continuam</td>
 </tr>
 </tbody></table></div>
 <h3 id="comportamento">Comportamento</h3>
@@ -1952,9 +1988,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Habilita o toggle por cão</td>
 </tr>
 <tr>
-<td>Barulho do cão atrai zumbis</td>
+<td>Barulho atrai zumbis</td>
 <td>Ligado</td>
-<td>Latido alto é barulho real. <strong>Rosnado nunca atrai</strong></td>
+<td>Latido alto é barulho real. Rosnado não atrai</td>
 </tr>
 <tr>
 <td>Cães podem desobedecer</td>
@@ -1964,7 +2000,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Cães podem te derrubar</td>
 <td>Ligado</td>
-<td>Esbarrar correndo no cão derruba, como esbarrar num zumbi. Desligado, você <strong>atravessa</strong> o companheiro: sem tombo, sem empurrão e ele não trava mais a porta</td>
+<td>Esbarrar correndo no cão derruba, como esbarrar num zumbi. Desligado, você atravessa o companheiro: sem empurrão e ele não trava mais a porta</td>
 </tr>
 </tbody></table></div>
 <h3 id="habilidades-e-atividades">Habilidades e atividades</h3>
@@ -1976,17 +2012,17 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Habilidades e treino</td>
 <td>Ligado</td>
-<td>Chave-mestra das skills</td>
+<td>Sem isso, o cão não ganha nível</td>
 </tr>
 <tr>
 <td>Multiplicador de XP de habilidade</td>
-<td><strong>0.5</strong></td>
+<td>0.5</td>
 <td>Velocidade de treino. Suba para 1.0+ se achar lento</td>
 </tr>
 <tr>
 <td>Caça assistida</td>
 <td>Ligado</td>
-<td>Chave-mestra da caça</td>
+<td>Sem isso, o cão não caça</td>
 </tr>
 <tr>
 <td>Cuidados de fazenda (pastoreio)</td>
@@ -2008,7 +2044,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Capacidade base do alforje</td>
 <td>4</td>
-<td>O piso de carga</td>
+<td>Quanto cabe antes do bônus de força</td>
 </tr>
 <tr>
 <td>Bônus de carga por força</td>
@@ -2025,7 +2061,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Cruzamento e filhotes</td>
 <td>Ligado</td>
-<td>Chave-mestra</td>
+<td>Desligado, não nasce filhote nenhum</td>
 </tr>
 <tr>
 <td>Tempo de gestação (dias)</td>
@@ -2050,9 +2086,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>O que faz</th>
 </tr></thead><tbody>
 <tr>
-<td>Mostrar nome acima do cão</td>
+<td>Mostrar nome acima do pet</td>
 <td>Ligado</td>
-<td>O nome flutuante</td>
+<td>Desligado, ninguém vê o nome na tela</td>
 </tr>
 <tr>
 <td>Mostrar cão no mapa</td>
@@ -2060,70 +2096,70 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>A patinha no mapa e minimapa</td>
 </tr>
 <tr>
-<td>Guardar cães com o dono offline</td>
+<td>Guardar pets com o dono offline</td>
 <td>Ligado</td>
 <td>MP: cães saem do mundo quando você desconecta</td>
 </tr>
 </tbody></table></div>
 <h2 id="22-problemas-comuns">22. Problemas comuns</h2>
-<p><strong>"O cão apareceu sem textura, todo amassado."</strong> Ative o mod na lista de Mods <strong>do menu principal</strong> e feche o jogo por completo antes de carregar o save. É o problema número um em co-op.</p>
-<p><strong>"Adicionei o mod e não aparece nada no meu save."</strong> O Project Zomboid ativa mod <strong>por save</strong>. Um mod adicionado depois não entra num mundo já criado, e o jogo <strong>não dá erro nenhum</strong>. Confira na tela de carregar save se o mod está marcado para aquele mundo.</p>
-<p><strong>"Meu cão não obedece."</strong> Olhe a mensagem. Se for <em>"não confia em você o bastante"</em>, é lealdade: alimente, dê água e faça carinho. Se for <em>"se distrai e ignora você"</em>, é falta de treino: <strong>repita a ordem, que a segunda sempre passa</strong>. Se for pânico ou ferimento, cuide dele primeiro.</p>
-<p><strong>"Meu cão ficou Fraco e não sai."</strong> Ele está há mais de três dias de jogo sem proteína, e o que resolve é <strong>quantidade</strong>, não o gesto: dê uma refeição de verdade ou jogue ração na tigela. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a>.</p>
-<p><strong>"Meu cão não mata os zumbis, só derruba."</strong> Se ele é um <strong>Caramelo</strong>, é assim mesmo, de propósito, e nenhum ajuste muda. Pegue outra raça ou aceite o papel dele de derrubar para você terminar.</p>
-<p><strong>"O cão late toda hora e traz zumbi."</strong> Mude a sentinela para <strong>Discreto</strong>, que nunca late. Se você quer que latido nenhum puxe zumbi, é a opção de sandbox <strong>Barulho do cão atrai zumbis</strong> que resolve, e ela vale para todas as raças.</p>
-<p><strong>"Meu cão sumiu."</strong> / <strong>"O cão fica preso do outro lado da cerca."</strong> Os dois se resolvem com <strong>Trazer</strong>: abra a janela no botão de patinha, vá na aba <strong>"Meus Cães"</strong> e chame o cão de volta, ao custo do assobio que atrai zumbis. Detalhes em <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
-<p><strong>"Meu cão não engravida."</strong> Confira a lista de <a href="#15-cruzamento-e-filhotes">condições de cruzamento</a>. Quase sempre é fome, sede ou lealdade abaixo de 60 em um dos dois. Confira também se <strong>"Bloquear cruzamento"</strong> não está ligado. Se um dos dois é gato e o outro é cão, não é falta de condição: espécie só cruza com a própria.</p>
-<p><strong>"Meu filhote não cresce."</strong> Confira se <strong>"Pausar crescimento"</strong> não está ligado nele. Fora isso, é só tempo: o padrão são <strong>90 dias de jogo</strong>, e o relógio corre mesmo com ele longe. Se o prazo já venceu e ele continua filhote, chegue perto dele: a transformação acontece quando o filhote é carregado.</p>
-<p><strong>"O cão não entra no carro comigo."</strong> Só o cão em <strong>Seguir</strong> embarca. Em Ficar ou Vigiar, ele fica.</p>
-<p><strong>"Deixei o cão vigiando a base e ele não fez nada."</strong> O modo Vigiar, por enquanto, <strong>só funciona com você por perto</strong>. Para deixar um cão trabalhando sozinho de longe, o único modo que faz isso é <strong>Cuidar do gado</strong>, e ele exige um curral designado.</p>
-<p><strong>"O cão aprende devagar demais."</strong> O padrão do <strong>"Multiplicador de XP de habilidade"</strong> é <strong>0,5</strong>, metade da velocidade. Suba para 1.0 ou mais em um mundo novo.</p>
-<p><strong>"Meu cão morreu."</strong> Não tem volta, e não tem respawn. A única causa é fome ou sede levadas ao extremo. O alforje e a carga ficam no chão onde ele caiu.</p>
-<p><strong>"Minha capacidade de carga mudou depois de instalar o mod."</strong> O Companion Dogs <strong>não</strong> mexe no seu peso máximo, em lugar nenhum. Em servidor existe um detalhe que <strong>não</strong> vem do mod: o jogo base deixa a sua capacidade travada num valor baixo, ignorando a sua Força, até o personagem levar o primeiro dano. Se o número parecer pequeno antes do primeiro arranhão, é assim que o jogo se comporta sem mod nenhum instalado.</p>
+<p><strong>"O cão apareceu sem textura, todo amassado."</strong> Ative o mod na lista de Mods do menu principal e feche o jogo por completo antes de carregar o save. É o problema mais comum em co-op.</p>
+<p><strong>"Adicionei o mod e não aparece nada no meu save."</strong> Um mod adicionado depois não entra num mundo já criado, e o jogo não avisa. Confira na tela de carregar save se o mod está marcado para aquele mundo.</p>
+<p><strong>"Meu cão não obedece."</strong> Olhe a mensagem. Se for <em>"não confia em você"</em>, é lealdade: alimente, dê água e faça carinho. Se for <em>"se distrai e ignora você"</em>, é falta de treino: repita a ordem, que a segunda passa. Se for pânico ou ferimento, cuide dele primeiro.</p>
+<p><strong>"Meu cão ficou Fraco e não sai."</strong> Ele está há mais de três dias de jogo sem proteína. Dê uma refeição de verdade ou jogue ração na tigela: o que conta é a quantidade. Ver <a href="#proteína-ele-é-carnívoro">Proteína</a>.</p>
+<p><strong>"Meu cão não mata os zumbis, só derruba."</strong> O Caramelo só derruba, e nenhum ajuste muda isso. Você termina o zumbi. As outras raças matam sozinhas.</p>
+<p><strong>"O cão late toda hora e traz zumbi."</strong> Mude a sentinela para <strong>Discreto</strong>, que não late. Para latido nenhum puxar zumbi, desligue a opção de sandbox <strong>"Barulho atrai zumbis"</strong>; ela vale para todas as raças.</p>
+<p><strong>"Meu cão sumiu."</strong> / <strong>"O cão fica preso do outro lado da cerca."</strong> Os dois se resolvem com <strong>Trazer</strong>: abra a janela no botão de patinha e vá na aba <strong>"Meus Companheiros"</strong>. O assobio atrai zumbis. Detalhes em <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
+<p><strong>"Meu cão não engravida."</strong> Confira a lista de <a href="#15-cruzamento-e-filhotes">condições de cruzamento</a>. Quase sempre é fome, sede ou lealdade abaixo de 60 em um dos dois. Confira também se <strong>"Bloquear cruzamento"</strong> não está ligado. Cão só cruza com cão e gato só com gato.</p>
+<p><strong>"Meu filhote não cresce."</strong> Confira se <strong>"Pausar crescimento"</strong> não está ligado nele. Fora isso é só tempo: o padrão são 90 dias de jogo, e o relógio corre mesmo com ele longe. Se o prazo já venceu, chegue perto dele: a transformação acontece quando o filhote é carregado.</p>
+<p><strong>"O cão não entra no carro comigo."</strong> Só o cão em <strong>Seguir</strong> embarca.</p>
+<p><strong>"Deixei o cão vigiando a base e ele não fez nada."</strong> O modo Vigiar, por enquanto, só funciona com você por perto. O único modo que trabalha sozinho de longe é <strong>"Cuidar dos animais aqui"</strong>, e ele exige um curral designado.</p>
+<p><strong>"O cão aprende devagar demais."</strong> O padrão do <strong>"Multiplicador de XP de habilidade"</strong> é 0,5. Suba para 1.0 ou mais em um mundo novo.</p>
+<p><strong>"Meu cão morreu."</strong> Cão morto não volta. As causas são fome ou sede levadas ao extremo e infecção sem tratamento. O alforje e a carga ficam no chão onde ele caiu.</p>
+<p><strong>"Minha capacidade de carga mudou depois de instalar o mod."</strong> O Companion Dogs não mexe no seu peso máximo. Em servidor existe um detalhe do jogo base: a sua capacidade fica travada num valor baixo, ignorando a Força, até o personagem levar o primeiro dano.</p>
 <h2 id="23-remover-o-mod-de-um-save-leia-antes">23. Remover o mod de um save (LEIA ANTES)</h2>
-<p>Esta seção é a mais importante do manual inteiro para quem pensa em desinstalar. <strong>Tirar o Companion Dogs de um save que tem cães faz sumir animais que não são do mod</strong>: o gado do curral, as galinhas, o que estiver naquela região do mapa. Não é bug do mod, é como o Project Zomboid guarda animais, e o mod não tem como se defender depois que já foi removido.</p>
+<p><strong>Tirar o Companion Dogs de um save que tem cães faz sumir animais que não são do mod</strong>: o gado do curral, as galinhas, o que estiver naquela região do mapa. É assim que o Project Zomboid guarda animais, e o mod não tem como se defender depois de removido.</p>
 <h3 id="por-que-acontece">Por que acontece</h3>
-<p>O jogo guarda <strong>todos os animais vivos de uma região grande do mapa num arquivo só</strong>. Ao abrir esse arquivo sem o mod, ele encontra o cão, não sabe mais o que aquilo é, desiste de ler o resto do arquivo e repovoa a região como se você nunca tivesse passado por lá. Os seus animais somem junto porque estavam no mesmo arquivo que o cão.</p>
-<p>O estrago não é o mapa inteiro nem só o entorno do cão: a leitura para no cão e se perde <strong>tudo que vinha depois dele naquela região</strong>. Por isso o resultado varia tanto de save para save.</p>
-<p><strong>Vale igual para addon de raça.</strong> Desinscrever só o Rottweiler, o Doberman, o Labrador, o Pug (ou qualquer outro) e continuar jogando com o mod base causa exatamente o mesmo problema, porque os cães daquela raça continuam gravados no save.</p>
+<p>O jogo guarda todos os animais vivos de uma região grande do mapa num arquivo só. Ao abrir esse arquivo sem o mod, ele encontra o cão, não reconhece o tipo, desiste de ler o resto do arquivo e repovoa a região como se você nunca tivesse passado por lá. Os seus animais somem porque estavam no mesmo arquivo que o cão.</p>
+<p>Perde-se tudo que vinha depois do cão naquela região, nada além disso. Por isso o resultado varia de save para save.</p>
+<p>Desinscrever só o Rottweiler, o Doberman, o Labrador, o Pug (ou qualquer outro) e continuar jogando com o mod base causa o mesmo problema, porque os cães daquela raça continuam gravados no save.</p>
 <h3 id="se-os-animais-já-sumiram">Se os animais já sumiram</h3>
-<p><strong>Reinstale o mod agora, antes de continuar jogando ou salvar.</strong> Os animais provavelmente voltam. Uma vez que o jogo salve por cima, não há mais volta e não existe backup desse arquivo.</p>
+<p><strong>Reinstale o mod agora, antes de continuar jogando ou salvar.</strong> Os animais provavelmente voltam. Depois que o jogo salva por cima, o arquivo está perdido e não existe backup dele.</p>
 <h3 id="como-remover-com-segurança">Como remover com segurança</h3>
-<p><strong>Passo 1: mantenha todos os addons ligados.</strong> Antes de mexer em qualquer coisa, confira que <strong>todo addon de raça que você já usou nesse save está marcado na lista de mods DAQUELE save</strong> (Load Game → o save → Mods). Um addon desativado já é o problema descrito acima.</p>
-<p><strong>Passo 2: livre-se dos cães.</strong> Duas formas seguras:</p>
+<p>Passo 1: mantenha todos os addons ligados. Confira que todo addon de raça que você já usou nesse save está marcado na lista de mods daquele save (<strong><span class="ig">CARREGAR</span></strong> &gt; o save &gt; <strong><span class="ig">Escolher Mods...</span></strong>). Um addon desativado já causa o problema descrito acima.</p>
+<p>Passo 2: livre-se dos cães. Duas formas seguras:</p>
 <ul>
-<li><strong>Matar.</strong> O cadáver é gravado de outro jeito, num formato que o jogo sabe ler mesmo sem o mod.</li>
-<li><strong>Carregar no inventário.</strong> Item o jogo sabe pular com segurança: some só o cão, o resto fica.</li>
+<li>Matar. O cadáver é gravado em outro formato, que o jogo lê mesmo sem o mod.</li>
+<li>Carregar no inventário. O jogo sabe pular esse item: some só o cão, o resto fica.</li>
 </ul>
-<p>Soltar o cão ou levá-lo para longe <strong>não resolve</strong>: o registro dele continua no save, e levá-lo para outro lugar só muda qual região vai quebrar.</p>
-<p><strong>Passo 3: salve o jogo.</strong> É o save que grava a limpeza.</p>
-<p><strong>Passo 4: remova o mod.</strong></p>
+<p>Soltar o cão ou levá-lo para longe não resolve: o registro dele continua no save, e levá-lo para outro lugar só muda qual região vai quebrar.</p>
+<p>Passo 3: salve o jogo. É o save que grava a limpeza.</p>
+<p>Passo 4: remova o mod.</p>
 <h3 id="limpeza-completa-admin-modo-debug">Limpeza completa (admin / modo debug)</h3>
-<p>Os passos acima cobrem os seus cães, mas o mod também espalha <strong>vira-latas</strong> pelo mapa, e você não tem como achar todos na mão. Para limpar o save inteiro de uma vez existe um comando:</p>
+<p>Os passos acima cobrem os seus cães, mas o mod também espalha vira-latas pelo mapa, e não dá para achar todos na mão. Para limpar o save inteiro de uma vez existe um comando:</p>
 <ol>
 <li>Ligue a opção de sandbox <strong><span class="ig">Permitir spawn de debug</span></strong> nesse save.</li>
-<li>Entre como <strong>admin</strong> (multiplayer) ou com o jogo em <strong>modo debug</strong> (solo: adicione <code>-debug</code> nas opções de inicialização do Steam).</li>
+<li>Entre como admin (multiplayer) ou com o jogo em modo debug (solo: adicione <code>-debug</code> nas opções de inicialização do Steam).</li>
 <li>Clique com o botão direito no chão → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
-<li>Espere a mensagem <code>sweep done</code> e <strong>salve o jogo</strong>.</li>
+<li>Espere a mensagem <code>sweep done</code> e salve o jogo.</li>
 </ol>
-<p>O comando apaga os cães carregados na hora e depois varre o resto do save em segundo plano, sem travar a partida. Se ele <strong>recusar</strong> citando uma raça, é o passo 1 acima: aquele addon não está ligado nesse save, e forçar a limpeza sem as definições é justamente o que destrói os animais.</p>
+<p>O comando apaga os cães carregados na hora e depois varre o resto do save em segundo plano, sem travar a partida. Se ele recusar citando uma raça, volte ao passo 1: aquele addon não está ligado nesse save, e limpar sem as definições dele apaga os animais da região.</p>
 <h2 id="24-ajuste-fino-do-servidor-admin">24. Ajuste fino do servidor (admin)</h2>
-<p><strong>Você não precisa desta seção para jogar.</strong> O painel é para quem roda servidor com muita gente e muito cão. Ele se chama <strong><span class="ig">Server tuning / performance</span></strong>: em cima, um medidor ao vivo do que o mod gasta no servidor; embaixo, os campos que mudam esse gasto. Ele não mexe em regra de jogo: dano, fome, XP e limite de cães continuam sendo opção de sandbox, na seção 21.</p>
-<blockquote class="quote"><strong>O painel é em inglês em qualquer idioma do jogo.</strong> Os rótulos são fixos no código, então as tabelas abaixo citam cada um como ele aparece na tela.</blockquote>
+<p>Esta seção é para quem roda servidor com muita gente e muito cão. O painel se chama <strong><span class="ig">Server tuning / performance</span></strong>: em cima, um medidor ao vivo do que o mod gasta no servidor; embaixo, os campos que mudam esse gasto. Regra de jogo (dano, fome, XP, limite de cães) não fica aqui, continua sendo opção de sandbox, na seção 21.</p>
+<blockquote class="quote">O painel fica em inglês em qualquer idioma do jogo, porque os rótulos são fixos no código. As tabelas abaixo citam cada um como ele aparece na tela.</blockquote>
 <h3 id="como-abrir-o-painel">Como abrir o painel</h3>
-<p>Botão direito no chão → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>. No multiplayer é preciso ser <strong>admin</strong>; no solo, ter o jogo em <strong>modo debug</strong> (<code>-debug</code> nas opções de inicialização do Steam). Se a opção não aparece, é uma dessas duas coisas que está faltando.</p>
+<p>Botão direito no chão → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>. No multiplayer é preciso ser admin; no solo, rodar o jogo em modo debug (<code>-debug</code> nas opções de inicialização do Steam).</p>
 <h3 id="o-que-vale-para-todos-os-campos">O que vale para todos os campos</h3>
 <ul>
-<li>O valor entra <strong>na hora</strong>, para o servidor inteiro, e fica gravado no save.</li>
-<li>Valor fora da faixa é puxado para dentro dela: 9000 num campo que vai até 60 grava 60.</li>
-<li><strong>Rótulo em verde</strong> quer dizer <span class="ig">diferente do padrão</span>.</li>
+<li>O valor entra na hora, para o servidor inteiro, e fica gravado no save.</li>
+<li>Valor fora da faixa é puxado para dentro dela.</li>
+<li>Rótulo em verde é campo com valor diferente do padrão.</li>
 <li>Toda mudança sai no log com a marca <code>[CD-TUNE]</code> e o nome de quem mexeu. No boot o servidor imprime a lista em vigor, com <code>*</code> no que um admin mudou.</li>
 <li><strong><span class="ig">Restore defaults</span></strong> volta tudo ao padrão, inclusive a medição e a autoridade de client.</li>
 </ul>
 <h3 id="ler-a-medição-antes-de-mexer">Ler a medição antes de mexer</h3>
 <p>Clique em <strong><span class="ig">Measurement: off (click to start)</span></strong> e espere até 20 segundos pela primeira janela. A linha principal é esta:</p>
 <pre><code>companionTick: 12.40 ms/s load   0.062 ms/tick   200.0 ticks/s   (4000 ticks in 20s)</code></pre>
-<p><code>ms/s load</code> é o que interessa: quantos milissegundos de cada segundo o mod consome do servidor, e é ele que tem que cair depois de um ajuste. Abaixo vêm os cães carregados, as <strong>barras</strong> de gasto por área do mod (o tempo é exclusivo, então elas somam, e a mais comprida é onde vale mexer) e a linha <strong><code>counters:</code></strong>, com eventos por segundo. Dois contadores respondem pergunta sozinhos: <strong><code>spawn.qfull</code></strong> acima de zero é fila de spawn transbordando, e <strong><code>netauth.grant</code> e <code>netauth.revoke</code> altos juntos</strong> é o controle do cão indo e voltando entre servidor e cliente. Se aparecer o aviso laranja <strong><code>COARSE CLOCK</code></strong>, confie nos contadores e não nos tempos: o relógio da máquina não é fino o bastante.</p>
+<p><code>ms/s load</code> é o número que importa: quantos milissegundos de cada segundo o mod consome do servidor. Depois de um ajuste, é ele que tem que cair. Abaixo vêm os cães carregados, as barras de gasto por área do mod (o tempo é exclusivo, então elas somam, e a mais comprida é onde vale mexer) e a linha <code>counters:</code>, com eventos por segundo. Dois contadores já dizem bastante sozinhos: <code>spawn.qfull</code> acima de zero é fila de spawn transbordando, e <code>netauth.grant</code> e <code>netauth.revoke</code> altos ao mesmo tempo é o controle do cão indo e voltando entre servidor e cliente. Se aparecer o aviso laranja <code>COARSE CLOCK</code>, o relógio da máquina não tem resolução para os tempos: leia os contadores e ignore as medidas de tempo.</p>
 <div class="tw"><table><thead><tr>
 <th>Botão</th>
 <th>Para que serve</th>
@@ -2138,16 +2174,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td><strong>Trace 600 ticks</strong></td>
-<td>Grava 600 ticks um a um, para achar o pico em vez da média</td>
+<td>Para achar o pico em vez da média</td>
 </tr>
 <tr>
 <td><strong>Damage diagnostics</strong></td>
-<td>Log detalhado de dano no servidor e em todos os clientes. Muito barulhento</td>
+<td>Log detalhado de dano no servidor e em todos os clientes. Gera muito log</td>
 </tr>
 </tbody></table></div>
-<blockquote class="quote"><strong>A medição custa.</strong> Desligue quando terminar de olhar.</blockquote>
+<blockquote class="quote">A medição também gasta servidor. Desligue quando terminar de olhar.</blockquote>
 <h3 id="ajustes-ritmo-dos-passes">Ajustes: ritmo dos passes</h3>
-<p>Digite o número e aperte Enter, ou clique fora do campo. O mod trabalha em dois passes: um pesado, que decide, e um barato, que mantém o cão andando entre um pesado e outro. Subir o pesado é o ajuste mais eficaz daqui, e também o que mais deixa o cão lerdo para reagir.</p>
+<p>Digite o número e aperte Enter, ou clique fora do campo. O mod trabalha em dois passes: um pesado, que decide o que o cão faz, e um barato, que mantém o cão andando entre um pesado e outro. Subir o pesado é o ajuste que mais alivia o servidor, e também o que mais atrasa a reação do cão.</p>
 <div class="tw"><table><thead><tr>
 <th>Rótulo na tela</th>
 <th>Padrão</th>
@@ -2158,17 +2194,17 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Heavy pass interval (ticks)</td>
 <td>20</td>
 <td>5 a 60</td>
-<td>Ticks entre um passe pesado e outro. A 10 fps, 60 ticks são 6 segundos entre uma decisão e a seguinte</td>
+<td>A 10 fps, 60 ticks são 6 segundos entre uma decisão e a seguinte</td>
 </tr>
 <tr>
 <td>Follow maintainer interval (ticks)</td>
 <td>2</td>
 <td>1 a 10</td>
-<td>O passe barato que mantém o cão em movimento. Subir isto é o que faz o <span class="ig">seguir</span> parecer travado no multiplayer</td>
+<td>Subir isto deixa o <span class="ig">seguir</span> travado no multiplayer</td>
 </tr>
 </tbody></table></div>
 <h3 id="ajustes-alcance-e-combate">Ajustes: alcance e combate</h3>
-<p>Antes de escolher um zumbi, o cão calcula até onde consegue chegar a pé. É o que impede o companheiro de orbitar uma cerca atrás de um zumbi do outro lado.</p>
+<p>Antes de escolher um zumbi, o cão calcula até onde consegue chegar a pé. Sem essa conta o cão fica orbitando uma cerca atrás de um zumbi do outro lado.</p>
 <div class="tw"><table><thead><tr>
 <th>Rótulo na tela</th>
 <th>Padrão</th>
@@ -2185,7 +2221,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Reach region reuse radius (tiles)</td>
 <td>4</td>
 <td>0 a 12</td>
-<td>Quanto o cão pode andar antes de refazer a conta. 0 refaz a cada passo, que é o caro</td>
+<td>Quanto o cão pode andar antes de refazer a conta. 0 refaz a cada passo, que é o caso caro</td>
 </tr>
 <tr>
 <td>Combat reach radius (tiles)</td>
@@ -2197,29 +2233,29 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Combat reach max tiles</td>
 <td>700</td>
 <td>100 a 2000</td>
-<td>Teto de tiles da conta. <strong>Abaixo de 625 ela trunca quase sempre, e truncada passa a tratar tudo como alcançável: a proteção contra o cão orbitar cerca é exatamente o que você desliga</strong></td>
+<td>Abaixo de 625 a conta trunca quase sempre, e truncada trata todo zumbi como alcançável</td>
 </tr>
 <tr>
 <td>Empty scans before backing off</td>
 <td>4</td>
 <td>1 a 20</td>
-<td>Quantas varreduras vazias seguidas até o cão começar a pular passes. Qualquer sinal de ameaça zera isso na hora</td>
+<td>Quantas varreduras vazias seguidas até o cão começar a pular passes. Qualquer sinal de ameaça zera a contagem</td>
 </tr>
 <tr>
 <td>Passes skipped when quiet</td>
 <td>3</td>
 <td>0 a 10</td>
-<td>Teto desse descanso. 0 desliga e volta a varrer sempre</td>
+<td>0 desliga e volta a varrer sempre</td>
 </tr>
 <tr>
 <td>Unreachable cooldown prune (game minutes)</td>
 <td>10</td>
 <td>1 a 120</td>
-<td>Faxina da lista de zumbis marcados como inalcançáveis. Sem ela a lista só cresce</td>
+<td>Sem a faxina a lista de zumbis inalcançáveis só cresce</td>
 </tr>
 </tbody></table></div>
 <h3 id="ajustes-faro">Ajustes: faro</h3>
-<p>Farejar item varre o chão em anel, e é a única parte do mod cujo custo cresce com o <strong>número de jogadores</strong>, não com o de cães.</p>
+<p>Farejar item varre o chão em anel. É a única parte do mod cujo custo cresce com o número de jogadores, e não com o de cães.</p>
 <div class="tw"><table><thead><tr>
 <th>Rótulo na tela</th>
 <th>Padrão</th>
@@ -2230,17 +2266,17 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Sniff squares per pass (per dog)</td>
 <td>500</td>
 <td>50 a 2000</td>
-<td>Quanto cada cão varre por passe. Baixar não encurta o alcance, só faz demorar mais passes</td>
+<td>Baixar não encurta o alcance, só faz a varredura levar mais passes</td>
 </tr>
 <tr>
 <td>Sniff squares per tick (all dogs)</td>
 <td>1500</td>
 <td>100 a 10000</td>
-<td>Teto do servidor inteiro por tick. Cão barrado pelo teto não perde a vez, ele entra na frente no passe seguinte</td>
+<td>Teto do servidor inteiro por tick. Cão barrado pelo teto não perde a vez: entra na frente no passe seguinte</td>
 </tr>
 </tbody></table></div>
 <h3 id="ajustes-spawn-de-vira-lata">Ajustes: spawn de vira-lata</h3>
-<p>Cada pedaço do mapa que carrega entra numa fila para ser avaliado como possível lugar de vira-lata. Com os jogadores espalhados chega muito mais pedaço por segundo, e é aí que a fila estoura.</p>
+<p>Cada pedaço do mapa que carrega entra numa fila para ser avaliado como possível lugar de vira-lata. Com os jogadores espalhados chega muito mais pedaço por segundo, e a fila pode estourar.</p>
 <div class="tw"><table><thead><tr>
 <th>Rótulo na tela</th>
 <th>Padrão</th>
@@ -2251,31 +2287,31 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Stray spawn scans per second</td>
 <td>32</td>
 <td>4 a 512</td>
-<td>Ritmo com que a fila é esvaziada, em segundos reais. O padrão foi medido com <strong>um</strong> jogador andando</td>
+<td>Ritmo com que a fila é esvaziada, em segundos reais. O padrão foi medido com um jogador andando</td>
 </tr>
 <tr>
 <td>Stray spawn scans per tick (burst)</td>
 <td>4</td>
 <td>1 a 16</td>
-<td>Quantas avaliações caras podem cair no mesmo tick. Isto é o tamanho do engasgo, não o ritmo: mexa no de cima primeiro</td>
+<td>Controla o tamanho do pico num tick, não o ritmo: mexa no de cima primeiro</td>
 </tr>
 <tr>
 <td>Stray spawn queue size</td>
 <td>4096</td>
 <td>256 a 16384</td>
-<td>Tamanho da fila. Transbordar é a <strong>única</strong> forma de uma rolada de spawn se perder</td>
+<td>Uma rolada de spawn só se perde quando a fila transborda</td>
 </tr>
 <tr>
 <td>Cheap detect passes per credit</td>
 <td>8</td>
 <td>1 a 32</td>
-<td>Pedaço de rua ou de campo morre numa checagem barata. Este número diz quantas dessas cabem no custo de uma avaliação completa. 1 desliga</td>
+<td>Pedaço de rua ou de campo é descartado numa checagem barata. Este número diz quantas dessas cabem no custo de uma avaliação completa. 1 desliga</td>
 </tr>
 <tr>
 <td>Agreeing reads before marking a chunk done</td>
 <td>2</td>
 <td>1 a 5</td>
-<td>Quantas leituras concordantes até dar um pedaço do mapa por decidido. O instante do carregamento sabe mentir, e um quarteirão inteiro já ficou sem vira-lata por causa disso</td>
+<td>A leitura no instante do carregamento às vezes vem errada, e um quarteirão inteiro já ficou sem vira-lata por causa disso</td>
 </tr>
 </tbody></table></div>
 <h3 id="ajustes-rede-só-multiplayer">Ajustes: rede (só multiplayer)</h3>
@@ -2289,13 +2325,13 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Background dog sync interval (ms)</td>
 <td>100</td>
 <td>0 a 1000</td>
-<td>Ritmo de pacote de posição dos cães que <strong>não</strong> são o seguidor ativo: passivos, os do curral, vira-latas e selvagens. Só cão que se moveu custa pacote. 0 desliga e devolve todos ao ritmo nativo do jogo, no qual eles andam um passo e param</td>
+<td>Ritmo de pacote de posição dos cães que não são o seguidor ativo: passivos, os do curral, vira-latas e selvagens. Só cão que se moveu custa pacote. 0 desliga e devolve todos ao ritmo nativo do jogo, em que eles andam um passo e param</td>
 </tr>
 <tr>
 <td>Idle position report interval (ms)</td>
 <td>400</td>
 <td>100 a 2000</td>
-<td>Cão <strong>parado</strong> ao pé do dono continua mandando posição só para provar que está vivo. Subir isto é a forma barata de cortar pacote num servidor cheio de cão parado. O valor novo vale a partir da próxima troca de controle, não no meio de uma</td>
+<td>Cão parado ao pé do dono continua mandando posição para provar que está vivo. Subir isto é o jeito barato de cortar pacote num servidor cheio de cão parado. O valor novo vale a partir da próxima troca de controle, não no meio de uma</td>
 </tr>
 <tr>
 <td>Client authority grant distance (tiles)</td>
@@ -2304,7 +2340,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>A que distância o servidor entrega o controle do cão para a máquina do dono. Precisa ficar abaixo de 30, senão o controle é dado e tomado no mesmo segundo</td>
 </tr>
 </tbody></table></div>
-<p>E o interruptor <strong><span class="ig">Client authority</span></strong>, a decisão maior desta seção. <strong>Ligado</strong> (padrão), a máquina do dono move o cão e reporta a posição, e o servidor confere antes de repassar: é o que deixa o andar e o correr lisos. <strong>Desligado</strong>, todo cão volta para o servidor, os clientes param de mandar posição, que é o comando mais frequente do mod num servidor cheio, mas o movimento fica picotado para todo mundo e todo cão volta para a fila de pathfinding do servidor, que é global e dividida com os jogadores.</p>
+<p>O interruptor <strong><span class="ig">Client authority</span></strong> é o ajuste de maior efeito desta seção. Ligado (padrão), a máquina do dono move o cão e reporta a posição, e o servidor confere antes de repassar; é o que deixa o andar e o correr lisos. Desligado, todo cão volta para o servidor e os clientes param de mandar posição, que é o comando mais frequente do mod num servidor cheio. Em troca o movimento fica picotado para todo mundo e todo cão volta para a fila de pathfinding do servidor, que é global e dividida com os jogadores.</p>
 <h3 id="receitas-o-sintoma-e-o-que-mexer">Receitas: o sintoma e o que mexer</h3>
 <div class="tw"><table><thead><tr>
 <th>Sintoma</th>
@@ -2314,7 +2350,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Servidor engasgando</td>
 <td>A barra mais comprida, se for <code>srv.companion</code> ou <code>srv.followmaint</code></td>
-<td><code>Heavy pass interval</code> para 30, e para 25 se o cão ficar lerdo demais. Só então o <code>Follow maintainer interval</code></td>
+<td><code>Heavy pass interval</code> para 30, e para 25 se o cão ficar lerdo demais. Só depois o <code>Follow maintainer interval</code></td>
 </tr>
 <tr>
 <td>Vira-lata escasso</td>

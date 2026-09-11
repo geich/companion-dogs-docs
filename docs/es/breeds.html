@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -415,7 +415,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#2-elección-rápida" data-id="2-elección-rápida">2. Elección rápida</a>
 <div class="sub">
-<a class="s3" href="#el-resumen-una-línea-por-raza" data-id="el-resumen-una-línea-por-raza">El resumen, una línea por raza</a>
+<a class="s3" href="#el-resumen-en-una-línea-cada-uno" data-id="el-resumen-en-una-línea-cada-uno">El resumen en una línea cada uno</a>
 </div>
 </div>
 <div class="grp">
@@ -471,46 +471,44 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#8-rasgos-los-genes" data-id="8-rasgos-los-genes">8. Rasgos (los genes)</a>
 <div class="sub">
-<a class="s3" href="#cómo-leer-las-etiquetas" data-id="cómo-leer-las-etiquetas">Cómo leer las etiquetas</a>
 <a class="s3" href="#cuánto-importa-esto-de-verdad" data-id="cuánto-importa-esto-de-verdad">Cuánto importa esto de verdad</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#9-mestizos-cruzando-razas-diferentes" data-id="9-mestizos-cruzando-razas-diferentes">9. Mestizos: cruzando razas diferentes</a>
+<a class="s2" href="#9-mestizos-cruzar-razas-distintas" data-id="9-mestizos-cruzar-razas-distintas">9. Mestizos: cruzar razas distintas</a>
 <div class="sub">
-<a class="s3" href="#qué-pasa-con-el-cachorro" data-id="qué-pasa-con-el-cachorro">Qué pasa con el cachorro</a>
+<a class="s3" href="#qué-le-pasa-al-cachorro" data-id="qué-le-pasa-al-cachorro">Qué le pasa al cachorro</a>
 <a class="s3" href="#la-etiqueta-mestizo" data-id="la-etiqueta-mestizo">La etiqueta "Mestizo"</a>
-<a class="s3" href="#vale-la-pena-cruzar-razas-diferentes" data-id="vale-la-pena-cruzar-razas-diferentes">¿Vale la pena cruzar razas diferentes?</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#10-instalando-los-addons" data-id="10-instalando-los-addons">10. Instalando los addons</a>
+<a class="s2" href="#10-instalar-los-addons" data-id="10-instalar-los-addons">10. Instalar los addons</a>
 </div>
 <div class="grp">
 <a class="s2" href="#11-preguntas-frecuentes-de-raza" data-id="11-preguntas-frecuentes-de-raza">11. Preguntas frecuentes de raza</a>
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-manual-de-razas">Companion Dogs: Manual de Razas</h1>
-<p>Guía de todas las razas: qué hace mejor cada una, los moodles, los rasgos y cómo elegir la adecuada para tu partida.</p>
-<p>Para saber <strong>cómo funciona el mod</strong> (domesticar, órdenes, comida, alforjas, trucos, caza), mira el otro manual: <a href="features.html" class="xlink">Funciones</a>.</p>
-<blockquote class="quote"><strong>Los números de este manual asumen las opciones por defecto.</strong> Si el servidor desactiva <strong><span class="ig">Habilidades y entrenamiento</span></strong>, las razas dejan de <strong>evolucionar</strong>: las habilidades quedan trabadas en cero, la curva de daño por nivel se vuelve genérica, y los cuatro trucos se desbloquean todos de golpe (el mod pasa a tratar a cualquier perro como Obediencia 10). Lo que la raza da <strong>de nacimiento</strong> sigue valiendo: fuerza base de la mordida, derribo, temple en la pelea, moodle exclusivo, alforjas y camada. La que esconde los trucos es la opción aparte <strong><span class="ig">Trucos de obediencia</span></strong>.</blockquote>
+<p>Guía de todas las razas: en qué destaca cada una, los moodles, los rasgos y cómo elegir la adecuada para tu partida.</p>
+<p>Para saber cómo funciona el mod (domesticar, órdenes, comida, alforjas, trucos, caza), mira el otro manual: <a href="features.html" class="xlink">Funciones</a>.</p>
+<blockquote class="quote">Los números de este manual dan por hechas las opciones por defecto. Si el servidor apaga <strong><span class="ig">Habilidades y entrenamiento</span></strong>, las razas dejan de evolucionar: las habilidades quedan clavadas en cero, la curva de daño por nivel se vuelve genérica y los cuatro trucos se desbloquean de golpe (el mod trata a todo perro como Obediencia 10). Lo que la raza trae de nacimiento sigue valiendo: fuerza base del mordisco, derribo, temple en la pelea, moodle exclusivo, alforjas y camada. Quien esconde los trucos es la opción aparte <strong><span class="ig">Trucos de obediencia</span></strong>.</blockquote>
 <h2 id="1-lo-que-una-raza-cambia-de-verdad">1. Lo que una raza cambia de verdad</h2>
-<p>Una raza toca <strong>siete cosas</strong>, y nada más:</p>
+<p>Una raza toca siete cosas:</p>
 <div class="tw"><table><thead><tr>
 <th>Qué cambia</th>
 <th>Explicación</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Velocidad de aprendizaje</strong></td>
-<td>Cada raza aprende cada una de las 5 habilidades a una velocidad distinta. Es lo que más define a la raza</td>
+<td>Cada raza sube cada una de las 5 habilidades a su propio ritmo. Es la mayor diferencia entre razas</td>
 </tr>
 <tr>
-<td><strong>Fuerza de la mordida</strong></td>
-<td>Cuánto daño por mordida, y cuánto de eso se consigue con entrenamiento</td>
+<td><strong>Fuerza del mordisco</strong></td>
+<td>Cuánto daño hace cada mordisco, y cuánto de eso llega con el entrenamiento</td>
 </tr>
 <tr>
 <td><strong>Temple en la pelea</strong></td>
-<td>Cuánto estrés acumula peleando y en qué punto entra en pánico y se para</td>
+<td>Cuánto estrés acumula peleando y en qué punto entra en pánico y para</td>
 </tr>
 <tr>
 <td><strong>Los rasgos (genes)</strong></td>
@@ -518,7 +516,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Moodle exclusivo</strong></td>
-<td>Un bono para <strong>ti</strong>, mientras el perro esté cerca, alimentado y leal</td>
+<td>Una ventaja para ti mientras el perro esté cerca, alimentado y leal</td>
 </tr>
 <tr>
 <td><strong>Camada</strong></td>
@@ -529,396 +527,381 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Cada raza tiene sus propios sitios</td>
 </tr>
 </tbody></table></div>
-<p>Y lo que <strong>NO</strong> cambia según la raza, aunque mucha gente se lo imagine:</p>
+<p>Lo que no cambia según la raza:</p>
 <ul>
-<li><strong>Velocidad de carrera.</strong> No existe una raza más rápida. Todos corren igual.</li>
-<li><strong>Alcance del centinela, del olfato y de la caza.</strong> Dependen solo del nivel de la habilidad. La raza cambia lo que tarda en llegar ahí, no el techo.</li>
-<li><strong>Los trucos.</strong> Los cuatro se desbloquean por nivel de Obediencia, iguales para todos.</li>
-<li><strong>Hambre y sed.</strong> El ritmo es el mismo para todas las razas (incluso el Husky, mira su ficha).</li>
-<li><strong>Capacidad de las alforjas</strong>, salvo el Husky, que es el único con bono de raza.</li>
-<li><strong>El tamaño del cuerpo no es la Fuerza.</strong> Son dos cosas separadas, y es fácil confundirlas porque van juntas. Mira abajo.</li>
+<li>La velocidad al correr. Todas las razas corren igual.</li>
+<li>El alcance del centinela, del olfato y de la caza. Dependen solo del nivel de la habilidad.</li>
+<li>Los trucos. Los cuatro se desbloquean por nivel de Obediencia, iguales para todos.</li>
+<li>El hambre y la sed. El ritmo es el mismo para todas las razas, husky incluido (mira su ficha).</li>
+<li>La capacidad de las alforjas, salvo en el husky.</li>
+<li>El tamaño del cuerpo. Va aparte de la Fuerza.</li>
 </ul>
-<blockquote class="quote"><strong>Hay una excepción, y no es un perro.</strong> El <a href="#5-el-gato-la-primera-otra-especie">gato</a> cambia una octava cosa que ninguna raza de perro toca: <strong>qué trabajos existen siquiera</strong>. No pelea, no cuida ganado y no se cruza. Las mecánicas no empeoran para él, desaparecen. Mientras compares perros entre sí, la lista de siete de arriba vale entera.</blockquote>
+<blockquote class="quote">El <a href="#5-el-gato-la-primera-otra-especie">gato</a> es la excepción. Además de esas siete cosas, cambia qué trabajos existen: no pelea, no cuida del ganado y solo se cruza con otro gato. La interfaz ni siquiera muestra el botón.</blockquote>
 <h3 id="tamaño-y-fuerza-no-son-lo-mismo">Tamaño y Fuerza no son lo mismo</h3>
-<p>La <strong>Fuerza</strong> es un gen y marca diferencia de verdad: sube el daño de la mordida hasta un <strong>30%</strong> y es la que define la capacidad de las alforjas.</p>
-<p>El <strong>tamaño del cuerpo</strong> es otra cosa. Viene de un gen propio del juego, que el mod ni sortea ni toca, más el crecimiento natural del cachorro hasta el porte adulto. Dos perros de la misma raza pueden tener tamaños distintos sin ninguna diferencia de Fuerza, y un perro más grande que otro <strong>de la misma raza</strong> no muerde más fuerte por eso.</p>
-<p>Lo que confunde es que la <strong>raza</strong> define las dos cosas a la vez, cada una por su lado: un Pastor Alemán es grande <strong>y</strong> nace fuerte, un Caramelo es pequeño <strong>y</strong> nace débil. Así que, comparando raza con raza, el perro más grande suele pegar más fuerte de verdad. Solo que la causa es la raza, no el tamaño: mirar el porte no dice nada sobre la Fuerza de un perro concreto. Para eso está la barra de Fuerza en la sección de genética de la ventana del perro.</p>
+<p>La Fuerza es un gen. Sube el daño del mordisco hasta un 30% y decide la capacidad de las alforjas.</p>
+<p>El tamaño del cuerpo viene de un gen propio del juego, que el mod ni sortea ni toca, más lo que crece el cachorro hasta el porte adulto. Dos perros de la misma raza pueden tener tamaños distintos con la misma Fuerza, y el más grande no pega más fuerte por eso.</p>
+<p>La raza decide las dos cosas a la vez, cada una por su lado: un Pastor Alemán es grande y nace fuerte, un caramelo es pequeño y nace flojo. La Fuerza de un perro concreto aparece en la barra de Fuerza, en la sección Rasgos de su ventana.</p>
 <h3 id="una-raza-un-aspecto">Una raza, un aspecto</h3>
-<p><strong>No existe variación de color dentro de una raza.</strong> Cada raza tiene exactamente una textura, y macho y hembra usan la misma. Un Husky siempre parece el mismo Husky.</p>
-<p>El cachorro de cualquier raza nace con el mismo tamaño reducido, y crece hasta el porte adulto de su raza.</p>
-<hr>
-<p>Los <strong>cinco gatos</strong> no son una excepción, por mucho que lo parezcan: negro, blanco, naranja, carey y esmoquin son <strong>cinco razas</strong>, cada una con su única textura propia. No es un gato que viene en cinco colores.</p>
+<p>Cada raza tiene una sola textura, y macho y hembra usan la misma. Los cinco gatos son <a href="#los-cinco-pelajes">cinco razas</a>, no un gato en cinco colores.</p>
+<p>El cachorro de cualquier raza nace con el mismo tamaño reducido y crece hasta el porte adulto de su raza.</p>
 <h2 id="2-elección-rápida">2. Elección rápida</h2>
 <div class="tw"><table><thead><tr>
 <th>Si quieres...</th>
-<th>Elige</th>
+<th>Llévate</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Sobrevivir a los primeros días con lo que aparezca</strong></td>
-<td><strong>Caramelo</strong></td>
+<td>Caramelo</td>
 </tr>
 <tr>
 <td><strong>Un perro que aguanta la línea y mata zombis solo</strong></td>
-<td><strong>Pastor Alemán</strong> o <strong>Rottweiler</strong></td>
+<td>Pastor Alemán o Rottweiler</td>
 </tr>
 <tr>
 <td><strong>Cazar carne</strong></td>
-<td><strong>Golden Retriever</strong> o <strong>Labrador</strong></td>
+<td>Golden Retriever o Labrador</td>
 </tr>
 <tr>
 <td><strong>Cargar botín</strong></td>
-<td><strong>Husky</strong>, sin discusión</td>
+<td>Husky</td>
 </tr>
 <tr>
 <td><strong>Cuidar de la granja mientras viajas</strong></td>
-<td><strong>Border Collie</strong></td>
+<td>Border Collie</td>
 </tr>
 <tr>
 <td><strong>Disparar mejor</strong></td>
-<td><strong>Doberman</strong></td>
+<td>Doberman</td>
 </tr>
 <tr>
 <td><strong>Aguantar más en el cuerpo a cuerpo</strong></td>
-<td><strong>Rottweiler</strong></td>
+<td>Rottweiler</td>
 </tr>
 <tr>
 <td><strong>Menos aburrimiento y tristeza</strong></td>
-<td><strong>Carlino</strong>, y el <strong>Caramelo</strong> gratis</td>
+<td>Carlino, o el caramelo, que ya viene en el mod base</td>
 </tr>
 <tr>
 <td><strong>Menos estrés</strong></td>
-<td><strong>Carlino</strong> o <strong>Doberman</strong></td>
+<td>Carlino o Doberman</td>
 </tr>
 <tr>
 <td><strong>Menos pánico</strong></td>
-<td><strong>Pastor Alemán</strong></td>
+<td>Pastor Alemán</td>
 </tr>
 <tr>
-<td><strong>Que te avisen antes de los zombis</strong></td>
-<td><strong>Carlino</strong>, si aguantas los ladridos</td>
-</tr>
-<tr>
-<td><strong>Recolectar más</strong></td>
-<td><strong>Golden Retriever</strong></td>
+<td><strong>Que te avisen de los zombis antes</strong></td>
+<td>Carlino (el aviso es un ladrido)</td>
 </tr>
 <tr>
 <td><strong>Que te avisen lo antes posible, y en silencio</strong></td>
-<td><strong>Gato</strong></td>
+<td>Gato</td>
 </tr>
 <tr>
-<td><strong>Recolectar de noche</strong></td>
-<td><strong>Gato</strong>, y no hay segundo puesto</td>
+<td><strong>Recolectar más</strong></td>
+<td>Golden Retriever</td>
+</tr>
+<tr>
+<td><strong>Recolectar de madrugada</strong></td>
+<td>Gato</td>
 </tr>
 <tr>
 <td><strong>Un compañero que no delate tu posición</strong></td>
-<td><strong>Gato</strong></td>
+<td>Gato</td>
 </tr>
 <tr>
 <td><strong>No morirte de frío</strong></td>
-<td><strong>Husky</strong></td>
+<td>Husky</td>
 </tr>
 </tbody></table></div>
-<h3 id="el-resumen-una-línea-por-raza">El resumen, una línea por raza</h3>
+<h3 id="el-resumen-en-una-línea-cada-uno">El resumen en una línea cada uno</h3>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
 <th>En una línea</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Caramelo</strong></td>
-<td>El mestizo humilde. Débil, pero derriba zombis y hace compañía de verdad</td>
+<td>El mestizo más común del mapa. Mordisco flojo, pero derriba zombis</td>
 </tr>
 <tr>
 <td><strong>Pastor Alemán</strong></td>
-<td>El soldado. Pega fuerte y casi nunca entra en pánico</td>
+<td>La raza de combate del mod base. Pega fuerte</td>
 </tr>
 <tr>
 <td><strong>Golden Retriever</strong></td>
-<td>El cazador de olfato fino, que además mejora tu recolección</td>
+<td>Cazador de olfato fino</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td>La mula de carga que te da calor en invierno. Testarudo</td>
+<td>Perro de carga que aprende despacio</td>
 </tr>
 <tr>
 <td><strong>Border Collie</strong></td>
-<td>El empleado de la granja</td>
+<td>Cuida solo del ganado de la granja</td>
 </tr>
 <tr>
 <td><strong>Rottweiler</strong></td>
-<td>El guerrero que te ahorra aliento en el cuerpo a cuerpo</td>
+<td>Luchador de cuerpo a cuerpo</td>
 </tr>
 <tr>
 <td><strong>Doberman</strong></td>
-<td>El perro de tiro: menos retroceso, recarga más rápida, nervios calmos</td>
+<td>La raza de tiro: menos retroceso y recarga más rápida</td>
 </tr>
 <tr>
 <td><strong>Labrador</strong></td>
-<td>El cobrador: el peor luchador del mod, el mejor entregador de caza</td>
+<td>Uno de los peores luchadores del mod y el mejor trayendo la caza</td>
 </tr>
 <tr>
 <td><strong>Carlino</strong></td>
-<td>El perro de casa. No sirve para nada ahí fuera y es la mejor compañía que existe</td>
+<td>Perro de casa. No sirve ni para pelear ni para trabajar fuera</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
-<td>No es un perro. No pelea, no se cruza, no cuida corrales: vigila más lejos que todos, en silencio, y ve en la oscuridad por ti</td>
+<td>Otra especie. No pelea, no va al corral y solo cruza con gato. Vigila más lejos que todos, en silencio</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-las-cinco-razas-del-mod-base">3. Las cinco razas del mod base</h2>
-<p>Estas vienen junto con el mod principal, sin instalar nada más.</p>
+<p>Estas vienen con el mod principal, sin instalar nada más.</p>
 <hr>
 <h3 id="caramelo">Caramelo</h3>
-<p><strong>El mestizo brasileño.</strong> Es el perro que vas a encontrar primero, y seguramente tu primer compañero.</p>
+<p>El mestizo del mod base.</p>
 <blockquote class="quote quote-game"><em>"El caramelo es una raza básica y común: el mestizo que se encuentra por todas las ciudades. No tiene habilidades especiales y es débil por naturaleza: no puede matar a un zombi por sí solo, solo derribarlo para ganarte tiempo."</em></blockquote>
-<p><strong>Dónde encontrarlo:</strong> casa residencial, en ciudad o en barrio. <strong>10% por casa</strong>, la raza más común del juego.</p>
-<p><strong>Aprende:</strong> todo a velocidad normal. No destaca en nada, y tampoco es malo en nada.</p>
-<p><strong>En la pelea:</strong> es el <strong>único perro que no puede rematar a un zombi</strong>. El mordisco deja al zombi casi muerto y ahí se queda. Es a propósito y <strong>ningún ajuste de sandbox lo cambia</strong>. A cambio, él <strong>derriba</strong>, y derribar a un zombi es justo lo que te compra tiempo para huir o para golpear.</p>
-<p>También es el <strong>perro más nervioso del mod</strong>: acumula estrés en la pelea cinco veces más rápido que un Pastor Alemán, y es el primero en entrar en pánico.</p>
-<p><strong>Rasgos:</strong> los más flojos de todos. En la ventana del perro va a mostrar <strong>Baja</strong> en Fuerza, Agresividad y Resistencia, <strong>siempre</strong>, en cualquier Caramelo que domestiques. No sirve de nada buscar un Caramelo <span class="ig">bueno</span>.</p>
-<p><strong>Camada:</strong> <strong>2 a 4 cachorros</strong>, la más grande del mod. Si tu objetivo es montar una jauría, es la raza que más produce.</p>
-<p><strong>Alforjas:</strong> 4 a 5 de carga. La menor.</p>
+<p><strong>Dónde encontrarlo:</strong> casa residencial, en ciudad o en barrio. 3% por casa, la raza más común del juego.</p>
+<p><strong>Aprende:</strong> todo a velocidad normal.</p>
+<p><strong>En la pelea:</strong> es el único perro que no remata al zombi. El mordisco lo deja casi muerto y ahí se para, y ninguna opción de sandbox cambia eso.</p>
+<p>También es el perro más nervioso del mod: acumula estrés peleando cinco veces más rápido que un Pastor Alemán y es el primero en entrar en pánico.</p>
+<p><strong>Rasgos:</strong> los más flojos del mod, Baja en los tres, siempre.</p>
+<p><strong>Camada:</strong> de 2 a 4 cachorros, la mayor del mod. <strong>Alforjas:</strong> de 4 a 5 de carga, la menor.</p>
 <p><strong>Moodle: <span class="ig">Buena compañía</span></strong></p>
 <blockquote class="quote quote-game"><em>"El caramelo es un mestizo maravillosamente cariñoso y carismático; su compañía leal te levanta el ánimo, así que la tristeza y el aburrimiento se desvanecen más rápido mientras está cerca."</em></blockquote>
-<p>Reduce <strong>Infelicidad y Aburrimiento</strong> de forma continua mientras esté cerca. Es uno de los moodles más útiles del mod en el día a día, porque el aburrimiento y la tristeza son problemas constantes en Zomboid y caros de resolver de otra manera.</p>
-<p><strong>Para quién es:</strong> para todo el mundo, al principio. Y sigue siendo bueno después, porque su moodle resuelve un problema que ninguna otra raza resuelve. Eso sí, no cuentes con él para matar nada.</p>
+<p>Baja Tristeza y Aburrimiento sin parar mientras esté cerca.</p>
+<p><strong>Para quién es:</strong> para todo el mundo, al principio. Después sigue sirviendo por el moodle, que ninguna otra raza tiene.</p>
 <hr>
 <h3 id="pastor-alemán">Pastor Alemán</h3>
-<p><strong>El perro de guerra.</strong> La raza de combate del mod base.</p>
+<p>La raza de combate del mod base.</p>
 <blockquote class="quote quote-game"><em>"Un perro de trabajo poderoso e inteligente. Nace mucho más fuerte y resistente que el caramelo, aprende Combate y Obediencia rápidamente, apenas se altera en la pelea, resiste el asedio de una horda sin entrar en pánico y puede acabar con un zombi por sí solo."</em></blockquote>
-<p><strong>Dónde encontrarlo:</strong> comisaría, prisión, calabozo, base militar, cuartel, armería, polvorín. <strong>20% por edificio.</strong> No aparece en casas. Tienes que ir a buscarlo.</p>
-<p><strong>Aprende:</strong> <strong>Combate al doble de velocidad</strong>, y Obediencia un 50% más rápido. Caza un poco más rápido también. Es la raza que se vuelve fuerte más deprisa.</p>
-<p><strong>En la pelea:</strong> el mordisco más fuerte del mod base, y <strong>mata al zombi por sí solo</strong>. Pero su diferencial ni siquiera es el daño: son los <strong>nervios</strong>. Acumula estrés <strong>cinco veces más despacio</strong> que el Caramelo, y el punto en el que entra en pánico es el más alto del mod. En la práctica: <strong>sigue peleando en situaciones donde cualquier otra raza ya se habría bloqueado</strong>.</p>
-<p><strong>Rasgos:</strong> rango medio en todo, muy por encima del Caramelo. Un Pastor Alemán va a mostrar <strong>Media</strong> en los tres rasgos.</p>
-<p><strong>Camada:</strong> 1 a 2.</p>
-<p><strong>Alforjas:</strong> 6 a 8.</p>
+<p><strong>Dónde encontrarlo:</strong> comisaría, prisión, calabozo, base militar, cuartel, armería, polvorín. 20% por edificio. No aparece en casas.</p>
+<p><strong>Aprende:</strong> Combate al doble de velocidad y Obediencia un 50% más rápido. Caza también un poco más rápido.</p>
+<p><strong>En la pelea:</strong> el mordisco más fuerte del mod base, y mata al zombi solo. Acumula estrés cinco veces más despacio que el caramelo, y su punto de pánico es el más alto del mod.</p>
+<p><strong>Rasgos:</strong> Media en los tres.</p>
+<p><strong>Camada:</strong> de 1 a 2. <strong>Alforjas:</strong> de 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Valentía</span></strong></p>
 <blockquote class="quote quote-game"><em>"Un valiente pastor alemán a tu lado calma tus nervios; su presencia intrépida alivia tu pánico mientras se mantiene cerca."</em></blockquote>
-<p>Baja el <strong>Pánico</strong> de forma continua. Es el moodle más fuerte en números del mod base, y resuelve un problema serio: el pánico te estropea la puntería y tu eficacia en el cuerpo a cuerpo. Con un Pastor cerca, peleas con el pulso más firme.</p>
-<p><strong>Para quién es:</strong> para quien pelea. Si juegas a los golpes y en mitad de la ciudad, esta es la raza.</p>
-<blockquote class="quote"><strong>Nota:</strong> la descripción en el juego dice <span class="ig">un tercio del estrés</span>, pero el número real es <strong>un quinto</strong>. El texto es demasiado conservador, el perro es todavía mejor de lo que promete.</blockquote>
+<p>Baja el Pánico sin parar. Es el moodle con el número más fuerte del mod base. El pánico estropea la puntería y el cuerpo a cuerpo.</p>
+<p><strong>Para quién es:</strong> para quien pelea cuerpo a cuerpo, sobre todo en ciudad.</p>
+<blockquote class="quote">La descripción del juego dice <span class="ig">un tercio del estrés</span>, pero el número real es un quinto.</blockquote>
 <hr>
 <h3 id="golden-retriever">Golden Retriever</h3>
-<p><strong>El perro de caza de olfato fino.</strong> La raza que mejora tu recolección.</p>
+<p>La raza de olfato del mod base.</p>
 <blockquote class="quote quote-game"><em>"Un perro de caza amigable y de olfato agudo, cazador nato: aprende Caza al doble de velocidad y puede acabar con un zombi por sí solo (aunque se altera con más facilidad que el pastor alemán). Su olfato te ayuda a recolectar y rastrear presas desde más lejos."</em></blockquote>
-<p><strong>Dónde encontrarlo:</strong> casa residencial, en un sorteo aparte del Caramelo. <strong>2,5% por casa.</strong> Cuatro veces más raro que el mestizo, pero en la misma casa: una casa puede tener a los dos.</p>
-<p><strong>Aprende:</strong> <strong>Caza al doble de velocidad</strong>, y Olfato un 50% más rápido. Es la raza que llega antes al nivel 6 de Caza, que es cuando el perro pasa a enfrentarse al ciervo.</p>
-<p><strong>En la pelea:</strong> daño medio, <strong>mata por sí solo</strong>. Se estresa más que el Pastor, menos que el Caramelo.</p>
-<p><strong>Rasgos:</strong> un poco por encima del Caramelo, por debajo del Pastor. No es un perro de pelea.</p>
-<p><strong>Camada:</strong> 1 a 2.</p>
-<p><strong>Alforjas:</strong> 6 a 7.</p>
+<p><strong>Dónde encontrarlo:</strong> casa residencial, en un sorteo aparte del caramelo. 1% por casa, un tercio de la probabilidad del caramelo. Una misma casa puede tener los dos.</p>
+<p><strong>Aprende:</strong> Caza al doble de velocidad y Olfato un 50% más rápido. Es la raza que antes llega al nivel 6 de Caza, que es cuando el perro empieza a plantarle cara al ciervo.</p>
+<p><strong>En la pelea:</strong> daño medio, mata solo. Se estresa más que el Pastor y menos que el caramelo.</p>
+<p><strong>Rasgos:</strong> un poco por encima del caramelo, por debajo del Pastor.</p>
+<p><strong>Camada:</strong> de 1 a 2. <strong>Alforjas:</strong> de 6 a 7.</p>
 <p><strong>Moodle: <span class="ig">Olfato agudo</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu Golden Retriever recorre el terreno contigo. Mientras se mantiene cerca, alimentado y leal, detectas alimentos silvestres desde más lejos y aprendes Recolección, Trampeo y Puntería más rápido."</em></blockquote>
-<p>Tres efectos:</p>
+<p>Dos efectos:</p>
 <ul>
-<li><strong>+20% de XP</strong> en <strong>Recolección, Trampeo y Puntería</strong>.</li>
-<li><strong>+4 tiles</strong> en tu radio de visión del Modo Búsqueda, <strong>además</strong> del bono que ya da cualquier perro.</li>
+<li>+20% de XP en Recolección, Trampeo y Puntería.</li>
+<li>+4 casillas al radio de visión del Modo Búsqueda, que se suman a lo que ya da cualquier perro.</li>
 </ul>
-<p>Este es el moodle que más cambia el ritmo de un personaje de campo. Recolección y Trampeo son habilidades lentas de subir, y Puntería es cara.</p>
-<p><strong>Para quién es:</strong> para quien vive de la caza, la recolección y las trampas. Combina con una base rural.</p>
-<blockquote class="quote"><strong>Nota:</strong> la descripción en el juego dice que aprende Combate <span class="ig">un poco más rápido que el caramelo</span>. No es verdad: aprende Combate a la misma velocidad que el mestizo.</blockquote>
+<p><strong>Para quién es:</strong> para quien vive de la caza, la recolección y las trampas, casi siempre con base rural.</p>
+<blockquote class="quote">La descripción del juego dice que aprende Combate <span class="ig">un poco más rápido que el caramelo</span>. Aprende Combate a la misma velocidad que el caramelo.</blockquote>
 <hr>
 <h3 id="husky">Husky</h3>
-<p><strong>La mula de carga.</strong> El perro más fuerte del mod, y el único que da calor.</p>
 <blockquote class="quote quote-game"><em>"Un resistente perro de trineo nórdico: por mucho la raza más fuerte, hecho para acarrear carga (su alforja lleva la mayor cantidad) y sobrevivir al frío. Testarudo (más lento para aprender Obediencia), amigable (mal guardián) y comilón."</em></blockquote>
 <p><strong>Dónde encontrarlo:</strong> dos fuentes.</p>
 <ul>
-<li><strong>Casa residencial, solo en invierno.</strong> 1,25% por casa. La raza más rara del juego fuera de temporada.</li>
-<li><strong>Tienda de mascotas y clínica veterinaria.</strong> 10% por edificio, todo el año. Esta es la forma fiable de conseguir uno.</li>
+<li>Casa residencial, solo en invierno, 1,25% por casa. Fuera del invierno no aparece en casas.</li>
+<li>Tienda de mascotas y clínica veterinaria, 10% por edificio, todo el año. Es la fuente más fiable.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Olfato al doble de velocidad</strong> (el mejor centinela del mod), Caza un 50% más rápido, y Combate un poco por encima de la media. <strong>Pero aprende Obediencia un 20% más despacio</strong>, y esa es <strong>la única penalización de raza de todo el mod</strong>. Es a propósito: es testarudo.</p>
-<p>Consecuencia práctica de la Obediencia lenta: tarda más en desbloquear los trucos, desobedece durante más tiempo, y su suelo de lealtad baja más despacio. Un Husky exige más paciencia.</p>
-<p><strong>En la pelea:</strong> daño por encima de la media, <strong>mata por sí solo</strong>, pero no es un guerrero. Se estresa bastante más que un Pastor.</p>
-<p><strong>Rasgos:</strong> el <strong>mayor rango de Fuerza del mod, con holgura</strong>. Un Husky va a mostrar <strong>Media o Alta</strong> en Fuerza, donde las otras razas se quedan en Media o Baja.</p>
-<p><strong>Camada:</strong> 1 a 2.</p>
-<p><strong>Alforjas: 13 a 16 de carga.</strong> Es la única raza con bono de alforjas (+50%), y la diferencia es enorme: carga <strong>dos o tres veces más</strong> que cualquier otro perro.</p>
+<p><strong>Aprende:</strong> Olfato al doble de velocidad (el Olfato que más rápido sube del mod), Caza un 50% más rápido y Combate un poco por encima de la media. Obediencia un 20% más despacio, la única penalización de raza entre los perros.</p>
+<p>Tarda más en desbloquear los trucos, desobedece durante más tiempo y su suelo de lealtad baja más despacio.</p>
+<p><strong>En la pelea:</strong> daño por encima de la media, mata solo. Se estresa bastante más que un Pastor.</p>
+<p><strong>Rasgos:</strong> el mayor rango de Fuerza del mod, con holgura: suele salirle Alta.</p>
+<p><strong>Camada:</strong> de 1 a 2.</p>
+<p><strong>Alforjas:</strong> de 13 a 16 de carga. Es la única raza con bonus de alforjas (+50%) y carga dos o tres veces más que cualquier otro perro.</p>
 <p><strong>Moodle: <span class="ig">Abrigado</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu husky carga con su parte a tu lado. Mientras se mantiene cerca, alimentado y leal, seguirle el ritmo hace que tu Fuerza suba más rápido y te ayuda a mantener el aliento, así te cansas más despacio; y cuando llega el frío, su pelaje grueso te mantiene abrigado."</em></blockquote>
 <p>Tres efectos:</p>
 <ul>
-<li><strong>La Fuerza sube un 50% más rápido</strong> mientras él esté cerca. La Fuerza es la habilidad más lenta del juego, y es la que decide cuánto cargas y cuánto daño haces cuerpo a cuerpo.</li>
-<li><strong>El aliento se recupera de forma continua</strong>, te cansas más despacio.</li>
-<li><strong>Fuente de calor móvil</strong>, que <strong>se enciende sola cuando empiezas a enfriarte</strong> y se apaga cuando entras en calor. Solo actúa con <strong>frío de verdad</strong> (por debajo de -3 °C a la intemperie) y rinde más cuanto más pegado al perro estés. Frena la caída de tu temperatura, no es un abrigo: la ropa de invierno sigue siendo obligatoria.</li>
+<li>La Fuerza sube un 50% más rápido mientras él esté cerca. La Fuerza es la habilidad más lenta del juego y decide cuánto cargas y cuánto daño haces cuerpo a cuerpo.</li>
+<li>El aliento se recupera sin parar, así que te cansas más despacio.</li>
+<li>Fuente de calor móvil, que se enciende sola en cuanto empiezas a enfriarte y se apaga cuando entras en calor. Solo entra con frío de verdad (por debajo de -3 °C al aire libre) y rinde más cuanto más cerca del perro estés. Frena la caída de temperatura, pero no sustituye a la ropa de invierno.</li>
 </ul>
-<p><strong>La ganancia de Fuerza va sobre lo que ya ibas a ganar:</strong> el husky acelera, no regala. Rinde mientras te mueves, viajas cargado y peleas; un perro tumbado a tu lado contigo quieto no entrena nada. A cambio, lo que acelera es permanente: la Fuerza se queda contigo mucho después de que el perro se vaya, y cada nivel sube tu capacidad de carga para siempre.</p>
-<p><strong>Para quién es:</strong> para quien hace viajes largos de saqueo y vuelve cargado, y para quien juega inviernos duros. Es el perro logístico.</p>
-<blockquote class="quote"><strong>Nota:</strong> la descripción dice <span class="ig">comilón (se le da hambre rápido)</span>. <strong>Eso no aplica al perro ya domesticado.</strong> El ritmo de hambre de los compañeros es el mismo para todas las razas. El apetito mayor solo existe mientras es un perro salvaje.</blockquote>
+<p>La ganancia de Fuerza va sobre el XP que ya ibas a llevarte: acelera el entrenamiento, no da XP por su cuenta. Rinde mientras te ejercitas, viajas cargado o peleas.</p>
+<p><strong>Para quién es:</strong> para quien hace viajes largos de saqueo y vuelve cargado, y para quien juega con invierno duro.</p>
+<blockquote class="quote">La descripción dice <span class="ig">comilón (se le da hambre rápido)</span>. Eso solo vale mientras es salvaje. Ya domesticado, su ritmo de hambre es el mismo que el de todas las razas.</blockquote>
 <hr>
 <h3 id="border-collie">Border Collie</h3>
-<p><strong>El perro de granja.</strong> La raza de pastoreo.</p>
+<p>La raza de pastoreo del mod base.</p>
 <blockquote class="quote quote-game"><em><span class="ig">Un pastor despierto e incansable, el compañero clásico de granja, valorado sobre todo por su inteligencia.</span></em></blockquote>
-<p><strong>Dónde encontrarlo:</strong> granero, establo, silo, gallinero, corral, en la <strong>zona rural</strong>. <strong>15% por edificio</strong>, y ese sorteo <strong>ignora el filtro urbano</strong>, así que una granja perdida en mitad de la nada cuenta.</p>
-<p><strong>Aprende:</strong> <strong>Pastoreo al doble de velocidad</strong>, Obediencia un 50% más rápido, y Olfato un poco por encima de la media.</p>
-<p><strong>En la pelea:</strong> daño medio, igual que el Golden. <strong>Mata por sí solo.</strong> Se estresa menos que el Caramelo, pero bastante más que un Pastor. No es un perro de pelea, es un perro de trabajo.</p>
+<p><strong>Dónde encontrarlo:</strong> granero, establo, silo, gallinero, corral, en el campo. 15% por edificio. Ese sorteo se salta el filtro urbano, así que una granja aislada en mitad de la nada cuenta.</p>
+<p><strong>Aprende:</strong> Pastoreo al doble de velocidad, Obediencia un 50% más rápido y Olfato un poco por encima de la media.</p>
+<p><strong>En la pelea:</strong> daño medio, igual que el Golden. Mata solo. Se estresa menos que el caramelo y bastante más que un Pastor.</p>
 <p><strong>Rasgos:</strong> rangos medios, un poco por encima del Golden.</p>
-<p><strong>Camada:</strong> <strong>1 a 3</strong>, la segunda más grande del mod base.</p>
-<p><strong>Alforjas:</strong> 6 a 8.</p>
-<p><strong>La especialidad de verdad:</strong> es un <strong>50% más eficiente en el aura de calma por nivel</strong> que cualquier otra raza. Eso vale en los dos sitios donde existe el aura:</p>
-<ul>
-<li>en el modo <strong><span class="ig">Cuidar del ganado aquí</span></strong>, donde se queda de guardia en el corral;</li>
-<li>en su moodle, que calma al ganado alrededor de <strong>ti</strong>.</li>
-</ul>
-<p>Como un animal estresado no da leche ni lana, aborta y se dispersa, un Border Collie entrenado es literalmente la diferencia entre una granja que produce y una que no produce.</p>
+<p><strong>Camada:</strong> de 1 a 3, la segunda mayor del mod base. <strong>Alforjas:</strong> de 6 a 8.</p>
+<p>Su especialidad es el aura de calma: rinde un 50% más por nivel que la de cualquier otra raza, tanto en el modo <strong><span class="ig">Cuidar del ganado aquí</span></strong> como en el moodle.</p>
+<p>Un animal estresado no da leche ni lana, aborta y se desbanda.</p>
 <p><strong>Moodle: <span class="ig">Instinto pastor</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu border collie maneja el rebaño contigo. Mientras siga cerca, bien alimentado y leal, los animales a tu alrededor se calman y aprendes Cuidado animal y Agricultura más rápido."</em></blockquote>
 <p>Dos efectos:</p>
 <ul>
-<li><strong>+20% de XP</strong> en <strong>Cuidado animal y Agricultura</strong>.</li>
-<li><strong>Calma al ganado en un radio a tu alrededor</strong>, de forma automática, mientras trabajas.</li>
+<li>+20% de XP en Cuidado animal y Agricultura.</li>
+<li>Calma al ganado en un radio a tu alrededor, automáticamente, mientras trabajas.</li>
 </ul>
-<p><strong>Para quién es:</strong> para quien monta una granja. Si tienes vacas, ovejas o gallinas, esta es la raza que protege la producción.</p>
-<blockquote class="quote"><strong>Nota:</strong> la descripción en el juego todavía dice que <span class="ig">es un perro equilibrado y polivalente, sin una especialidad destacada</span>. Eso está desactualizado: el Pastoreo doblado y el aura reforzada ya existen.</blockquote>
+<p><strong>Para quién es:</strong> para quien monta una granja con vacas, ovejas o gallinas.</p>
+<blockquote class="quote">La descripción del juego todavía dice que <span class="ig">es un perro equilibrado y polivalente, sin una especialidad destacada</span>. Está desactualizada: el Pastoreo doblado y el aura reforzada ya existen.</blockquote>
 <h2 id="4-las-cuatro-razas-de-addon">4. Las cuatro razas de addon</h2>
-<p>Estas vienen en <strong>mods aparte en Steam</strong>, que dependen del Companion Dogs base. Los enlaces de cada una están en su ficha, aquí abajo, y todos juntos en <a href="#10-instalando-los-addons">Instalando los addons</a>.</p>
+<p>Estas cuatro vienen en mods aparte en Steam y dependen del Companion Dogs base. El enlace de cada una está en su ficha, y todos juntos en <a href="#10-instalar-los-addons">Instalar los addons</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, addon aparte)</em></p>
-<p><strong>El guerrero que te ahorra resistencia.</strong></p>
+<p>Raza de combate con un moodle que devuelve aliento en la pelea cuerpo a cuerpo.</p>
 <blockquote class="quote quote-game"><em>"Un poderoso perro guardián criado para el trabajo de protección, un auténtico guerrero a la altura del Pastor Alemán: aprende Combate el doble de rápido, golpea fuerte con habilidad alta, derriba zombis y sigue peleando donde otras razas entran en pánico."</em></blockquote>
 <p><strong>Dónde encontrarlo:</strong></p>
 <ul>
-<li><strong>Edificio industrial</strong> (almacén, nave, fábrica, desguace, taller, muelle de carga): <strong>10% por edificio</strong>.</li>
-<li><strong>Casa residencial:</strong> 2,5% por casa, una posibilidad rara.</li>
+<li>Edificio industrial (almacén, nave, fábrica, desguace, taller, muelle de carga): 10% por edificio.</li>
+<li>Casa residencial: 1% por casa.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Combate al doble</strong>, y Olfato 50% más rápido (el único perro de combate con buen olfato). No tiene bonificación de Obediencia.</p>
-<p><strong>En la pelea:</strong> empata con el Pastor Alemán en el mordisco, y <strong>empata en temple</strong>: acumula estrés cinco veces más despacio que el caramelo y tiene el punto de pánico al máximo. Derriba y mata.</p>
+<p><strong>Aprende:</strong> Combate al doble y Olfato un 50% más rápido (el único perro de combate con buen olfato). No tiene bonus de Obediencia.</p>
+<p><strong>En la pelea:</strong> empata con el Pastor Alemán en mordisco y en temple: acumula estrés cinco veces más despacio que el mestizo y tiene el punto de pánico al máximo. Derriba y mata.</p>
 <p><strong>Rasgos:</strong> iguales a los del Pastor Alemán.</p>
-<p><strong>Camada:</strong> 1 a 2. <strong>Alforjas:</strong> 6 a 8.</p>
+<p><strong>Camada:</strong> de 1 a 2. <strong>Alforjas:</strong> de 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Primera Línea</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu Rottweiler pelea a tu lado. Mientras esté en combate cerca de ti, bien alimentado y leal, tus golpes cuerpo a cuerpo gastan menos resistencia."</em></blockquote>
-<p><strong>Te devuelve el 35% de la resistencia gastada en cada golpe cuerpo a cuerpo.</strong></p>
-<p>Este es el moodle más condicional del mod: el icono aparece siempre que el Rottweiler está cerca, pero <strong>el efecto solo cuenta mientras él está peleando de verdad</strong>. Y vale <strong>solo para cuerpo a cuerpo</strong>, las armas de fuego no ganan nada.</p>
-<p>En la práctica es enorme. La resistencia es lo que limita cuántos zombis aguantas golpeando seguidos. Con un Rottweiler peleando a tu lado, golpeas casi un tercio más antes de quedarte sin aire.</p>
-<p><strong>Para quién es:</strong> para quien limpia hordas cuerpo a cuerpo. Es la raza del mod que mejor acompaña un estilo de juego agresivo.</p>
+<p>Devuelve el 35% del aliento que gasta cada golpe cuerpo a cuerpo.</p>
+<p>El icono sale siempre que el Rottweiler está cerca, pero el efecto solo vale mientras está peleando de verdad.</p>
+<p><strong>Para quién es:</strong> para quien limpia hordas cuerpo a cuerpo.</p>
 <hr>
 <h3 id="doberman">Doberman</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, addon aparte)</em></p>
-<p><strong>El perro de tiro.</strong></p>
+<p>Raza de combate con un moodle pensado para las armas de fuego.</p>
 <blockquote class="quote quote-game"><em>"Un perro guardián esbelto y atento, y el más listo de todas las razas. En la pelea es todo filo y nada de armadura: flojo sin entrenar, pero con Combate al máximo muerde fuerte, aunque aguanta menos castigo que un Rottweiler."</em></blockquote>
 <p><strong>Dónde encontrarlo:</strong></p>
 <ul>
-<li><strong>Comisaría:</strong> 18% por edificio.</li>
-<li><strong>Edificio militar</strong> (polvorín, cuartel, búnker, puesto de guardia, control): 22% por edificio.</li>
+<li>Comisaría: 18% por edificio.</li>
+<li>Edificio militar (polvorín, cuartel, búnker, garita, control): 22% por edificio.</li>
 </ul>
-<blockquote class="quote"><strong>Aviso práctico:</strong> los edificios militares son <strong>rarísimos</strong> en el mapa base del juego (hay apenas unas cinco habitaciones así en todo Kentucky). En la práctica, búscalo en <strong>comisarías</strong>.</blockquote>
-<p><strong>Aprende:</strong> <strong>Combate al doble</strong> y <strong>Obediencia 50% más rápido</strong>, exactamente el mismo paquete que el Pastor Alemán. Lo que separa a los dos no es la velocidad de entrenamiento, es la <strong>curva de daño</strong>.</p>
-<p><strong>En la pelea:</strong> tiene la <strong>curva más empinada del mod</strong>. Sin entrenar golpea bastante menos que un Rottweiler, pero con Combate 10 <strong>llega a la cima</strong>. Es una inversión: el Doberman que acabas de domesticar es flojo, el Doberman entrenado es de primer nivel.</p>
-<p>Mucho temple (punto de pánico al máximo), pero <strong>aguanta menos castigo</strong>: su Resistencia es la más baja entre los perros de pelea.</p>
-<p><strong>Rasgos:</strong> el <strong>mayor rango de Agresividad del mod</strong>, lo que significa que gana experiencia de combate todavía más rápido. Fuerza y Resistencia un poco por debajo del Rottweiler.</p>
-<p><strong>Camada:</strong> 1 a 2. <strong>Alforjas:</strong> 6 a 8.</p>
+<blockquote class="quote">El edificio militar es raro en el mapa base del juego (unas cinco habitaciones así en todo Kentucky). Búscalo en comisarías.</blockquote>
+<p><strong>Aprende:</strong> Combate al doble y Obediencia un 50% más rápido, el mismo paquete que el Pastor Alemán.</p>
+<p><strong>En la pelea:</strong> tiene la curva de daño más empinada del mod. Sin entrenar pega bastante menos que un Rottweiler; con Combate 10 llega al mismo daño de techo.</p>
+<p>Temple alto (punto de pánico al máximo), pero aguanta menos castigo: su Resistencia es la más baja entre los perros de pelea.</p>
+<p><strong>Rasgos:</strong> el mayor rango de Agresividad del mod, lo que hace que gane XP de combate aún más rápido. Fuerza y Resistencia un poco por debajo del Rottweiler.</p>
+<p><strong>Camada:</strong> de 1 a 2. <strong>Alforjas:</strong> de 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Pulso Firme</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu Doberman te cubre las espaldas. Mientras esté cerca, bien alimentado y leal, tu estrés se disipa, tu puntería se recupera antes después de cada disparo y recargas más rápido."</em></blockquote>
-<p>Tres efectos, todos para <strong>armas de fuego</strong>:</p>
+<p>Vale solo para las armas de fuego:</p>
 <ul>
-<li><strong>Tu estrés baja continuamente</strong> (el estrés alto empeora la puntería en Zomboid).</li>
-<li><strong>El retroceso se recupera un 45% más rápido</strong> después de cada disparo. Vuelves a apuntar antes.</li>
-<li><strong>Recarga un 15% más rápida.</strong></li>
+<li>Tu estrés baja sin parar (el estrés alto empeora la puntería).</li>
+<li>El retroceso se recupera un 45% más rápido después de cada disparo.</li>
+<li>La recarga es un 15% más rápida.</li>
 </ul>
-<p><strong>Para quién es:</strong> para quien juega con armas de fuego. Los tres efectos apuntan al mismo problema: <span class="ig">cuánto tiempo pierdo entre un disparo y el siguiente</span>.</p>
-<blockquote class="quote"><strong>Nota:</strong> la descripción en el juego dice que entrena Obediencia <span class="ig">más rápido incluso que el Pastor Alemán</span> y que con Combate al máximo <span class="ig">muerde más fuerte que cualquier otro perro de la manada</span>. En los dos casos es <strong>empate</strong>, no ventaja: iguala al Pastor en Obediencia y al Rottweiler en el daño de nivel 10.</blockquote>
+<p><strong>Para quién es:</strong> para quien juega con armas de fuego.</p>
+<blockquote class="quote">La descripción del juego dice que entrena Obediencia <span class="ig">más rápido incluso que el Pastor Alemán</span> y que con Combate al máximo <span class="ig">muerde más fuerte que cualquier otro perro</span>. En los dos casos es empate: iguala al Pastor en Obediencia e iguala al Rottweiler en el daño de nivel 10.</blockquote>
 <hr>
 <h3 id="labrador">Labrador</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, addon aparte)</em></p>
-<p><strong>El cobrador.</strong> El mejor perro de caza y, a propósito, el peor luchador del mod.</p>
-<blockquote class="quote quote-game"><em>"Un perro de caza hecho para traerla de vuelta: entrena Caza al doble de velocidad, con Obediencia justo detrás. A propósito es el peor luchador de la familia: el mordisco más débil, sin derribo, y una pelea lo deja muy alterado. Su don es la boca."</em></blockquote>
+<p>Raza de caza. El mejor perro para traerte la presa.</p>
+<blockquote class="quote quote-game"><em>"Un perro de caza hecho para traerla de vuelta: entrena Caza al doble de velocidad, con Obediencia justo detrás. A propósito es uno de los peores luchadores de la familia: solo el Carlino muerde más flojo, sin derribo, y una pelea lo deja muy alterado. Su don es la boca."</em></blockquote>
 <p><strong>Dónde encontrarlo:</strong></p>
 <ul>
-<li><strong>Casa residencial:</strong> <strong>5% por casa.</strong> Es el addon más fácil de encontrar, el doble de probabilidad que el Golden.</li>
-<li><strong>Monte:</strong> cabaña de caza, campamento, cobertizo de barcos, pesquero, puesto de guardabosques. <strong>20% por edificio.</strong></li>
+<li>Casa residencial: 1% por casa, la misma probabilidad que el Golden.</li>
+<li>El monte (cabaña de caza, campamento, cobertizo de barcos, embarcadero, puesto de guardabosques): 20% por edificio.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Caza al doble</strong> y <strong>Obediencia 50% más rápido</strong>. Es el paquete de cazador con disciplina.</p>
-<p><strong>En la pelea:</strong> el <strong>peor del mod, a propósito</strong>.</p>
+<p><strong>Aprende:</strong> Caza al doble y Obediencia un 50% más rápido.</p>
+<p><strong>En la pelea:</strong> uno de los peores del mod.</p>
 <ul>
-<li>El <strong>mordisco más débil</strong> de todos.</li>
-<li><strong>No derriba zombis.</strong> Es la única raza sin esa capacidad.</li>
-<li>Acumula estrés <strong>tres veces y media más rápido</strong> que un Rottweiler, y entra en pánico en el mismo punto bajo que el caramelo.</li>
+<li>El mordisco más flojo de todos, solo por encima del Carlino.</li>
+<li>No derriba al zombi. Solo él y el Carlino no derriban.</li>
+<li>Acumula estrés tres veces y media más rápido que un Rottweiler y entra en pánico en el mismo punto bajo que el mestizo.</li>
 </ul>
-<p><strong>Mata</strong> un zombi si insistes, pero no mandes a este perro a pelear.</p>
-<p><strong>Rasgos:</strong> el <strong>menor rango de Agresividad del mod</strong>. Es el perro más dócil que hay aquí, y por eso tarda más en aprender a pelear.</p>
-<p><strong>Camada:</strong> <strong>1 a 3</strong>, el único addon que pasa de 2. <strong>Alforjas:</strong> 6 a 8.</p>
+<p>Mata a un zombi si insistes.</p>
+<p><strong>Rasgos:</strong> el menor rango de Agresividad del mod. Por eso tarda más en aprender a pelear.</p>
+<p><strong>Camada:</strong> de 1 a 3, el único addon que pasa de 2. <strong>Alforjas:</strong> de 6 a 8.</p>
 <p><strong>Moodle: <span class="ig">Boca Blanda</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu Labrador te trae cada presa desde su primera cacería, y a menudo algo extra. Mientras esté cerca, alimentado y leal, además aprendes Carnicería y Hoja Corta más rápido."</em></blockquote>
-<p>Cuatro efectos, y este es el moodle más completo del mod:</p>
 <ul>
-<li><strong>Trae la presa a partir de Caza 3</strong>, es decir, <strong>desde que es capaz de cazar</strong>. Todas las demás razas solo empiezan a traerla en Caza 6. Eso es media partida de diferencia.</li>
-<li><strong>Insiste tres veces más tiempo</strong> en la entrega antes de soltar la carcasa por el camino.</li>
-<li><strong>El 60% de las entregas viene con un objeto extra</strong> tirado en el suelo a tu lado: hueso de animal pequeño, pluma de gallina, ramitas o huevo silvestre. <em><span class="ig">Tu Labrador te trajo algo más: ...</span></em></li>
-<li><strong>+20% de XP</strong> en <strong>Carnicería y Hoja Corta</strong>, justo las habilidades para procesar lo que él trae.</li>
+<li>Te trae la presa a partir de Caza 3, o sea, desde que sabe cazar. Las demás razas no empiezan a traerla hasta Caza 6.</li>
+<li>Insiste tres veces más tiempo en la entrega antes de soltar la carcasa por el camino.</li>
+<li>El 60% de las entregas llegan con un objeto extra tirado en el suelo a tu lado: hueso de bicho pequeño, pluma de gallina, ramitas o huevo silvestre. <em><span class="ig">Tu Labrador te trajo algo más: ...</span></em></li>
+<li>+20% de XP en Carnicería y Hoja Corta, las habilidades con las que procesas lo que te trae.</li>
 </ul>
-<p><strong>Para quién es:</strong> para una vida de caza. El Golden aprende a cazar igual de rápido, pero <strong>el Labrador entrega desde el principio</strong>, y la diferencia se nota en las primeras semanas de partida.</p>
+<p><strong>Para quién es:</strong> para quien vive de la caza. El Golden aprende a cazar igual de rápido, pero el Labrador entrega desde el principio.</p>
 <hr>
 <h3 id="carlino">Carlino</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon aparte)</em></p>
-<p><strong>El perro de casa.</strong> Todas las demás razas valen por pelear, cazar, pastorear o cargar. El Carlino no hace nada de eso, y es la mejor compañía del mod.</p>
+<p>Perro de compañía, con un moodle de humor.</p>
 <blockquote class="quote quote-game"><em>"El perro de casa: el primer compañero cuyo valor no es pelear, cazar, pastorear ni cargar. Entrena Obediencia al doble de velocidad que cualquier otra raza, y su vínculo nunca baja solo."</em></blockquote>
 <p><strong>Dónde encontrarlo:</strong></p>
 <ul>
-<li><strong>Casa residencial:</strong> <strong>5% por casa</strong>, la misma facilidad que el Labrador. Para eso es el perro de casa.</li>
-<li><strong>Tienda de mascotas y veterinaria:</strong> <strong>12% por edificio</strong>, el mismo sitio que el Husky.</li>
+<li>Casa residencial: 3% por casa, el triple que el Labrador y el Rottweiler y la misma probabilidad que el caramelo. Es el addon más fácil de encontrar en casas.</li>
+<li>Tienda de mascotas y veterinaria: 12% por edificio, el mismo sitio que el husky.</li>
 </ul>
-<p><strong>Aprende:</strong> <strong>Obediencia al doble</strong>, más rápido que cualquier otra raza del mod, con <strong>Olfato un 50% más rápido</strong> y Caza un 20%. Sube el árbol de trucos (ir a un punto, distraer zombis, olfatear un objeto, traerlo mientras duermes) antes que cualquier otro perro que puedas tener.</p>
-<p><strong>Su vínculo no baja.</strong> Cualquier otro perro pierde lealtad solo cuando desapareces o te descuidas. El Carlino no. Vuelve tras un mes en la carretera y está exactamente como lo dejaste. Es la única raza así.</p>
-<p><strong>Avisa primero.</strong> Al mismo nivel de Olfato, el Carlino detecta zombis <strong>un 35% más lejos</strong> que cualquier otra raza. Fue criado como perro de alarma y todavía funciona.</p>
-<p><strong>En la pelea: no cuentes con él.</strong> Es el perro más débil del mod, por debajo del Caramelo.</p>
+<p><strong>Aprende:</strong> Obediencia al doble, con Olfato un 50% más rápido y Caza un 20%. Sube el árbol de trucos (ir a un punto, distraer zombis, olfatear un objeto, traer algo mientras duermes) antes que cualquier otro perro.</p>
+<p>Todos los demás perros pierden lealtad cuando desapareces o descuidas el cuidado; el carlino no. Vuelve de un mes en la carretera y sigue como lo dejaste.</p>
+<p>Con el mismo nivel de Olfato, el carlino detecta a los zombis un 35% más lejos que cualquier otra raza.</p>
+<p><strong>En la pelea:</strong> es el perro más flojo del mod, por debajo del caramelo.</p>
 <ul>
-<li>La <strong>mordida más débil</strong> de todas, por mucho margen.</li>
-<li><strong>No mata zombis</strong> y <strong>no derriba</strong>. Es el único perro con las dos cosas desactivadas.</li>
-<li>Acumula estrés más rápido que ningún otro y <strong>entra en pánico antes que todos</strong>.</li>
+<li>El mordisco más flojo de todos, por un margen amplio.</li>
+<li>No mata al zombi y no lo derriba. Es el único perro con las dos cosas apagadas.</li>
+<li>Acumula estrés más rápido que ningún otro y entra en pánico antes que todos.</li>
 </ul>
-<p><strong>Y el precio no acaba ahí:</strong></p>
+<p>Otros puntos flojos:</p>
 <ul>
-<li><strong>Su ladrido te delata, y no hay manera de callarlo.</strong> La misma alarma que te avisa avisa a los muertos, más fuerte que la de cualquier raza, y el Carlino es el <strong>único perro que no acepta los modos Silencioso y Mudo</strong>: los dos botones salen desactivados en su ventana. No puedes quedarte solo con la mitad buena de su olfato. (Si el ruido del perro atrae zombis está desactivado en las opciones de sandbox, vale para el Carlino como para todos: el ladrido sigue siendo fuerte, pero no arrastra a nadie.)</li>
-<li><strong>No aguanta una carrera.</strong> En un esprint el Carlino se queda atrás de cualquier otro perro.</li>
-<li><strong>El verano le hace daño.</strong> Un hocico chato no intercambia calor. Por encima de <strong>28 °C</strong> empieza a estresarse y <strong>deja de consolarte</strong>; a <strong>36 °C</strong> la penalización se satura. Dentro de casa hace más fresco, y vuelve a funcionar.</li>
-<li><strong>Alforjas de 2 a 3.</strong> Las lleva, pero no es animal de carga.</li>
+<li>Su ladrido es el más fuerte de todas las razas y atrae zombis igual que te avisa a ti. El carlino es el único perro que no acepta los modos Silencioso y Mudo: los dos botones salen apagados en su ventana. (Con el ruido del perro apagado en las opciones de sandbox, al carlino le pasa lo mismo que a todos: el ladrido sigue siendo fuerte, pero ya no arrastra a nadie.)</li>
+<li>No aguanta la carrera. En un esprint se queda atrás de cualquier otro perro.</li>
+<li>Sufre con el calor. Por encima de 28 °C empieza a estresarse, deja de reconfortarte y el moodle se va del HUD; a 36 °C la penalización se satura. Dentro de casa hace más fresco y vuelve a funcionar.</li>
+<li>Alforjas de 2 a 3. Las usa, pero no es un animal de carga.</li>
 </ul>
-<p><strong>A cambio, come y bebe poco:</strong> la mitad de hambre y un tercio menos de sed que un perro de tamaño medio.</p>
-<p><strong>Rasgos:</strong> los <strong>rangos de Fuerza y Resistencia más pequeños del mod</strong>. Nace débil y frágil, siempre, y eso no es mala suerte del cachorro.</p>
-<p><strong>Camada:</strong> <strong>1 a 2</strong>.</p>
+<p>A cambio come y bebe poco: la mitad de hambre y un tercio menos de sed que un perro de porte medio.</p>
+<p><strong>Rasgos:</strong> los menores rangos de Fuerza y Resistencia del mod. Nace flojo y frágil en cualquier camada.</p>
+<p><strong>Camada:</strong> de 1 a 2.</p>
 <p><strong>Moodle: <span class="ig">Tu Sombra</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu carlino no se separa de ti. Mientras esté cerca, alimentado y leal, la tristeza, el aburrimiento y el estrés bajan más rápido que con cualquier otro perro. El calor lo deshace: un carlino jadeando no consuela a nadie hasta encontrar un sitio fresco."</em></blockquote>
 <ul>
-<li><strong>Tristeza y Aburrimiento bajan un 60% más rápido</strong> que junto a un Caramelo.</li>
-<li><strong>El estrés también baja.</strong> Ningún otro perro del mod toca el estrés por su simple presencia; la única otra manera de bajar estrés con un perro es dormir a su lado (<span class="ig">Bien descansado</span>).</li>
-<li><strong>El moodle desaparece con el calor.</strong> Por encima de 28 °C se va del HUD hasta que el perro encuentre un sitio fresco. Es a propósito: notas el problema de la raza sin tener que leer nada.</li>
+<li>La Tristeza y el Aburrimiento bajan un 60% más rápido que al lado de un caramelo.</li>
+<li>El Estrés también baja. Solo él y el Doberman tocan el estrés por su presencia, y el Doberman lo drena más rápido. Aparte de esos dos, la única forma de bajar el estrés con un perro es dormir a su lado (<span class="ig">Bien descansado</span>).</li>
 </ul>
-<p><strong>Para quién es:</strong> para quien juega desde una base, para partidas largas, y para quien está harto de perder lealtad por pasar demasiado tiempo fuera. Llévate un perro de guardia si sales de la ciudad.</p>
+<p><strong>Para quién es:</strong> para quien juega desde su base, en partidas largas, o se cansó de perder lealtad por estar fuera demasiado tiempo. Llévate un perro de guarda si vas a salir de la ciudad.</p>
 <h2 id="5-el-gato-la-primera-otra-especie">5. El gato: la primera otra especie</h2>
 <p><em>(mod <strong>CD: Cats</strong>, addon aparte)</em></p>
-<p>Todas las razas hasta aquí son perros, y la diferencia entre ellas es <strong>cuánto</strong> hace cada una de cada cosa. El gato es la primera excepción de verdad: lo que lo define no es tener números peores, es <strong>no tener algunos de los trabajos</strong>.</p>
-<blockquote class="quote quote-game"><em>"No es un perro con números peores: es un animal que sencillamente no tiene algunos de los trabajos. Un gato nunca pelea contra los muertos, nunca se destina a un corral y no se cruza. Caza roedores y conejos, y deja en paz a los ciervos. Tus propios animales nunca son presa: no toca una gallina ni nada que esté en un corral. Lo que te da a cambio es aviso: nota a los muertos más lejos que cualquier otro compañero, y calla sobre todo lo demás."</em></blockquote>
+<p>Todas las razas hasta aquí son perros.</p>
+<blockquote class="quote quote-game"><em>"No es un perro con peores números: es un animal que sencillamente no tiene algunos de los trabajos. Un gato nunca pelea con los muertos, nunca se destina a un corral y solo se reproduce con otros gatos. Caza roedores y conejos, y deja en paz a los ciervos. Tus propios animales nunca son presa: no toca una gallina ni nada que esté en un corral. Lo que entrega a cambio es aviso: percibe a los muertos más lejos que cualquier otro compañero, y es discreto en todo lo demás."</em></blockquote>
 <h3 id="lo-que-no-hace">Lo que NO hace</h3>
-<p>Esto no es debilidad, es ausencia. Las mecánicas no existen para él, y la interfaz se va con ellas: no vas a encontrar el botón desactivado, no vas a encontrar el botón.</p>
+<p>Estas mecánicas no existen para el gato, y la interfaz no muestra el botón, ni siquiera apagado.</p>
 <div class="tw"><table><thead><tr>
 <th>Qué</th>
 <th>Qué desaparece</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>No pelea</strong></td>
-<td>Sin Combate en la ventana, sin modo <strong>Vigilar</strong>, sin autoprotección. No ataca a un zombi ni mientras te destrozan delante de él</td>
+<td>Sin Combate en su ventana, sin modo <strong>Vigilar</strong>, sin autoprotección</td>
 </tr>
 <tr>
-<td><strong>No cuida ganado</strong></td>
-<td>Sin Pastoreo, y el modo <strong>Cuidar del ganado</strong> no aparece nunca en el menú</td>
+<td><strong>No cuida del ganado</strong></td>
+<td>Sin Pastoreo, y el modo <strong>Cuidar del ganado aquí</strong> no sale en el menú</td>
 </tr>
 <tr>
-<td><strong>No se cruza</strong></td>
-<td>Sin celo, sin gestación, sin gatitos. Un gato no se cruza con un perro ni con otro gato</td>
+<td><strong>No cruza con perro</strong></td>
+<td>El gato solo hace pareja con otro gato, y lo que nace es gatito</td>
 </tr>
 <tr>
 <td><strong>No caza nada mayor que un conejo</strong></td>
-<td>El ciervo le es <strong>invisible</strong>: ni lo señala, mucho menos lo persigue. Y los animales de tu corral nunca son presa: no toca una gallina, ni una vaca, ni nada que esté en un corral</td>
+<td>El ciervo es invisible para él: ni lo señala ni sale detrás</td>
 </tr>
 </tbody></table></div>
-<p><strong>Su caza se detiene en el conejo.</strong> Es el mismo techo que el del Labrador y el Golden en la pieza pequeña. Lo que no hace es el ciervo: la caza mayor hiere a quien caza, y el gato no tiene con qué devolver el golpe. Y maúlla al perseguir, como cualquier compañero: cazar con el gato <strong>no</strong> es silencioso, su silencio es el resto del tiempo.</p>
+<p>Su techo en la caza menor es el mismo que el del Labrador y el Golden. Maúlla al perseguir, así que cazar con el gato hace ruido. Fuera de la caza se queda callado.</p>
 <h3 id="lo-que-hace-mejor-que-cualquier-perro">Lo que hace mejor que cualquier perro</h3>
-<p><strong>Avisa antes que nadie.</strong> Sin pelea de por medio, avisar <strong>es</strong> el trabajo, y el gato tiene el mayor alcance de centinela del mod:</p>
+<p>Como no pelea, avisar es su trabajo, y el gato tiene el mayor alcance de centinela del mod:</p>
 <div class="tw"><table><thead><tr>
 <th></th>
 <th>Olfato 0</th>
 <th>Olfato 10</th>
 </tr></thead><tbody>
 <tr>
-<td>Perro corriente</td>
+<td>Perro normal</td>
 <td>18 casillas</td>
 <td>27 casillas</td>
 </tr>
@@ -929,32 +912,31 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
-<td><strong>25 casillas</strong></td>
-<td><strong>38 casillas</strong></td>
+<td>25 casillas</td>
+<td>38 casillas</td>
 </tr>
 </tbody></table></div>
-<p><strong>Y es el más discreto.</strong> El ruido que esparce su maullido es <strong>la mitad</strong> que el de un perro y <strong>un tercio</strong> del ladrido del Carlino. El Carlino te avisa pronto y delata tu posición al hacerlo; el gato te avisa aún antes y se queda callado. Es el único compañero del mod que hace las dos cosas.</p>
-<p><strong>Aprende Caza al doble de velocidad</strong>, empatado con el Golden y el Labrador, y <strong>Olfato un 50% más rápido</strong>.</p>
+<p>También es el más discreto. El ruido de su maullido es la mitad que el de un perro y un tercio que el ladrido del carlino.</p>
+<p>Caza al doble de velocidad, empatado con el Golden y el Labrador, y su Olfato sube un 50% más rápido.</p>
 <h3 id="el-precio">El precio</h3>
-<p><strong>Es el animal más terco del mod.</strong> Obediencia a <strong>0,7</strong>, la mayor penalización de aprendizaje que existe, peor que el 0,8 del Husky, que hasta ahora era la única. Sí desbloquea los cuatro trucos, pero llega ahí <strong>bastante después</strong> que cualquier perro.</p>
-<p><strong>Y se distrae con las ratas.</strong> Cada tanto el gato ve un roedor cerca y sencillamente va tras él, soltando lo que estuviera haciendo. Caza y mata al roedor él solo, sin que se lo pidas. Da igual en qué modo esté, da igual su nivel de Caza, y en ese momento no mandas tú: cualquier orden que des vuelve como <em><span class="ig">se distrae y te ignora</span></em>, que es la única vez en que ese mensaje dice exactamente lo que pasó. <strong>Llamarlo con Ven lo cancela</strong>, y es la única orden que pasa. Mientras tanto, te quedas sin vigía.</p>
-<p><strong>Y te trae la rata.</strong> Cuando mata, el gato vuelve hasta el cuerpo, lo lleva hasta ti y lo suelta a tus pies. No necesita nivel para eso: entregar la presa muerta es instinto, no entrenamiento, y lo hace desde el primer día. El otro que entrega sin entrenar es el Labrador, y la diferencia es que el Labrador la trae porque se lo pediste.</p>
-<p>Fíjate que es solo <strong>roedores</strong>. Conejos sí los caza, pero cazando de verdad, con el modo Caza activado y el mismo nivel que necesita el Labrador. La distracción es instinto, y el instinto llega hasta la rata y el ratón, que es lo que un gato atrapa sin haber entrenado nunca. Es su Obediencia 0,7 dejando de ser un número en la ficha.</p>
-<p><strong>Y el más independiente.</strong> Su vínculo cae un <strong>50% más rápido</strong> que el de un perro cuando desapareces o te relajas con el cuidado. Es lo contrario exacto del Carlino, cuyo vínculo no cae nunca. Un gato exige presencia.</p>
-<p><strong>Alforja de 2, y punto.</strong> No es un rango como en las demás razas: la cuenta da <strong>2 en cualquier gato</strong>, por fuerte que nazca. Animal pequeño.</p>
-<p><strong>Nervioso.</strong> Tiene el segundo peor gen oculto de estrés del mod, solo por detrás del Caramelo. No pelea, así que esto nunca se ve en combate. Se ve como susto: ruido fuerte, gritos, heridas. Un gato en pánico <strong>deja de vigilar y deja de traer el regalo</strong>.</p>
-<p><strong>No se tumba.</strong> En Quieto, el gato se queda de pie. Solo aspecto, no cambia nada.</p>
-<p><strong>Características:</strong> empata con el Carlino en el <strong>menor rango de Fuerza del mod</strong>, con Agresividad y Resistencia igual de bajas. No existe el gato fuerte, y eso no es mala suerte de cachorro.</p>
+<p>Es el más terco del mod. Obediencia a 0,7, la mayor penalización de aprendizaje que existe (el husky, la única otra raza con penalización, tiene 0,8). Desbloquea los cuatro trucos, pero llega ahí bastante después que cualquier perro.</p>
+<p>Se distrae con las ratas. De vez en cuando el gato ve un roedor cerca y sale detrás, soltando lo que estaba haciendo. Caza y mata al roedor él solo. Pasa en cualquier modo y con cualquier nivel de Caza, y en ese rato no obedece: cualquier orden vuelve con un <em><span class="ig">se distrae y te ignora</span></em>. Solo el <strong><span class="ig">Ven aquí</span></strong> atraviesa eso y cancela la persecución. Mientras tanto, te quedas sin vigilancia.</p>
+<p>Después de matar, el gato vuelve hasta la carcasa, la carga hasta ti y la suelta a tus pies. Entrega la presa desde el primer día. El Labrador también entrega sin entrenar, pero solo cuando se lo pides.</p>
+<p>La distracción vale para ratas y ratones. El conejo solo con el modo Caza activado y el nivel para ello.</p>
+<p>También es el más independiente. Su vínculo cae un 50% más rápido que el de un perro cuando desapareces o descuidas el cuidado (el carlino es el extremo opuesto: su vínculo no cae).</p>
+<p><strong>Alforjas:</strong> 2 en cualquier gato. En las demás razas las alforjas son un rango; en el gato la cuenta da 2 por muy fuerte que nazca.</p>
+<p>Es nervioso: tiene el segundo peor gen oculto de estrés del mod, solo por detrás del caramelo. Como no pelea, eso no sale en combate, sino en los sustos: ruido fuerte, un grito, una herida. Un gato en pánico deja de vigilar y deja de traer regalos.</p>
+<p>En el modo Quieto el gato se queda de pie en vez de tumbarse. Es solo aspecto.</p>
+<p><strong>Rasgos:</strong> empata con el carlino en el menor rango de Fuerza del mod, con Agresividad y Resistencia igual de bajas.</p>
 <h3 id="los-cinco-pelajes">Los cinco pelajes</h3>
-<p>Negro, blanco, naranja, carey y esmoquin. Para el mod son <strong>cinco razas</strong> (nombre propio, entrada propia en el menú de spawn y en la perrera) y a todos los efectos prácticos son el <strong>mismo animal</strong>: mismas habilidades, mismo moodle, misma voz, mismos rangos de característica. El pelaje es <strong>solo aspecto</strong>.</p>
-<p><strong>Qué pelaje encuentras es suerte.</strong> Cada uno tira por su propio edificio, de forma independiente. Ya entran con la probabilidad dividida entre cinco, así que la cantidad total de gato en el mundo es la misma que cuando solo existía el negro: cinco pelajes no te dan cinco veces más gatos.</p>
-<p><strong>Dónde encontrarlos:</strong> <strong>2% por casa residencial</strong>, <strong>2% por tienda, supermercado o restaurante</strong> y <strong>2,4% por tienda de mascotas o clínica veterinaria</strong>, por pelaje. El gato se queda en los edificios, no en el monte, pero no solo dentro de ellos: <strong>la mitad de las veces nace dentro del edificio y la otra mitad en su terreno</strong>: jardín, acera, aparcamiento o el callejón detrás de la tienda.</p>
-<p>El gato tiene su <strong>propio multiplicador de aparición</strong> en el sandbox, <strong><span class="ig">Multiplicador de aparición de gatos</span></strong>, separado del de perros: un mundo con pocos o ningún perro callejero sigue teniendo la misma cantidad de gatos.</p>
+<p>Negro, Blanco, Naranja, Tricolor y Esmoquin. Para el mod son cinco razas (nombre propio, entrada propia en el menú de aparición y en la perrera), pero los números, el moodle, la voz y los rangos de rasgos son los mismos. El pelaje es solo aspecto.</p>
+<p>Cada pelaje sortea su propio edificio, de forma independiente. La probabilidad ya entra dividida entre cinco, así que la cantidad total de gatos en el mundo es la misma que cuando solo existía el negro.</p>
+<p><strong>Dónde encontrarlo:</strong> 2% por casa residencial, 2% por tienda, supermercado o bar y 2,4% por tienda de mascotas o veterinaria, por cada pelaje. El gato nace en edificios, no en el monte: la mitad de las veces dentro del edificio, la otra mitad en su terreno (jardín, acera, aparcamiento o el callejón de detrás de la tienda).</p>
+<p>El gato tiene su propio multiplicador de aparición en el sandbox, <strong><span class="ig">Multiplicador de aparición de gatos</span></strong>, aparte del de los perros. Un mundo con pocos mestizos o ninguno sigue teniendo la misma cantidad de gatos.</p>
 <h3 id="el-regalo-nocturno">El regalo nocturno</h3>
-<p><strong>La mecánica más escondida que tiene el gato.</strong> Te despiertas, y hay un animal muerto a tus pies.</p>
-<p>El gato sale mientras duermes y deja la presa. No hay persecución y no muere nada en el mundo, y por eso el regalo <strong>sigue funcionando aunque la Caza esté desactivada</strong> en las opciones de sandbox.</p>
-<p><strong>Cómo se dispara:</strong> al <strong>despertar de un sueño</strong>, con el gato a <strong>8 casillas o menos</strong>. El mismo radio que «Bien Descansado», y por la misma razón: quien salió de noche fue el gato que estaba contigo.</p>
-<p><strong>La probabilidad es su Caza</strong>, y arriba se cierra en certeza:</p>
+<p>Te despiertas y tienes un bicho muerto a tus pies. El gato <span class="ig">sale</span> mientras duermes y deja la presa. No hay persecución y nada muere en el mundo, así que el regalo sigue funcionando con la Caza apagada en las opciones de sandbox.</p>
+<p>Salta al despertar de un sueño, con el gato a 8 casillas o menos, el mismo radio que el <span class="ig">Bien descansado</span>.</p>
+<p>La probabilidad es su nivel de Caza:</p>
 <div class="tw"><table><thead><tr>
 <th>Caza</th>
 <th>Probabilidad de regalo</th>
@@ -976,37 +958,37 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>87%</td>
 </tr>
 <tr>
-<td><strong>10</strong></td>
-<td><strong>100%</strong></td>
+<td>10</td>
+<td>100%</td>
 </tr>
 </tbody></table></div>
-<p><strong>En el nivel 10 no hay sorteo: trae uno todos los días.</strong></p>
-<p><strong>La Caza también decide QUÉ llega.</strong> No es solo frecuencia: la lista entera se invierte:</p>
+<p>La Caza también decide qué llega:</p>
 <div class="tw"><table><thead><tr>
 <th>Caza</th>
 <th>Qué suele llegar</th>
 </tr></thead><tbody>
 <tr>
 <td>Baja</td>
-<td>Lombriz, grillo, saltamontes, cucaracha. Lo que cualquier animal encuentra parado en el sitio</td>
+<td>Lombriz, grillo, saltamontes, cucaracha. Lo que cualquier bicho encuentra sin moverse del sitio</td>
 </tr>
 <tr>
 <td>Alta</td>
-<td><strong>Ratones y ratas</strong> pasan a ser el caso común, con ranas y ciempiés por medio</td>
+<td>El ratón y la rata pasan a ser lo normal, con alguna rana y algún ciempiés de por medio</td>
 </tr>
 </tbody></table></div>
-<p>La diferencia vale la pena: una lombriz son 3 calorías, una rata son 324 y encima te quitan 22 de hambre. Y una rana sirve además de cebo de pesca.</p>
-<p><strong>Una vez al día, por dueño.</strong> Con dos gatos cerca recibes <strong>un</strong> regalo, no dos.</p>
-<p><strong>Gana XP de Caza cada vez que la entrega sale bien</strong>, y así es como un gato bien cuidado se entrena solo hasta el nivel en el que ya no falla nunca.</p>
-<p><strong>Cuando no llega nada:</strong> un gato con <strong>hambre o sed al 75% o más</strong>, enfermo, desobediente o en pánico no sale. Falla en silencio, sin mensaje en pantalla. Si los regalos se pararon, mira sus barras.</p>
-<blockquote class="quote"><strong>No es el truco «Buscar mientras duermes»</strong> (Obediencia 10), que trae un <strong>objeto del suelo</strong>. Los dos se disparan al despertar y no compiten: un gato con Obediencia 10 hace <strong>los dos</strong> la misma mañana.</blockquote>
-<p><strong>Moodle: «Ojos de Gato»</strong></p>
+<p>La diferencia pesa: una lombriz son 3 calorías, una rata son 324 y encima quita 22 de hambre. La rana sirve de cebo de pesca.</p>
+<p>Llega un regalo al día, por dueño. Con dos gatos cerca, te llevas uno, no dos.</p>
+<p>El gato gana XP de Caza cada vez que la entrega sale bien, así que un gato bien cuidado sube solo.</p>
+<p>Un gato con hambre o sed al 75% o más, enfermo, desobediente o en pánico no sale. El fallo es callado, sin aviso en pantalla. Si el regalo se acabó, mira sus barras.</p>
+<blockquote class="quote">El truco <strong><span class="ig">Traer un objeto mientras duermes</span></strong> (Obediencia 10) es otra cosa: trae un objeto del suelo. Los dos saltan al despertar y no compiten. Un gato con Obediencia 10 hace los dos en la misma mañana.</blockquote>
+<p><strong>Moodle: <span class="ig">Ojos de Gato</span></strong></p>
 <blockquote class="quote quote-game"><em>"Tu gato ve lo que tú no ves. Mientras esté alimentado, con agua y unido a ti, la oscuridad deja de esconder lo que buscas: recolectar de noche rinde casi como de día."</em></blockquote>
-<p><strong>Recolectar en la oscuridad deja de ser inútil.</strong> En oscuridad total el juego baja tu alcance de recolección a <strong>1,5 casillas</strong>: en la práctica tienes que estar encima del icono para verlo. Con el gato cerca, la madrugada sube a cerca del <strong>60% del alcance que tendrías de día</strong>.</p>
-<p>Fíjate en que esto es un <strong>escalón, no un aumento gradual</strong>: sin gato estás del lado malo del corte y prácticamente no recolectas de noche; con uno cruzas al otro lado. Es la diferencia entre que funcione y que no.</p>
-<p><strong>Para quién es:</strong> para quien juega de madrugada, para quien quiere el aviso más temprano posible sin anunciar su propia posición, y para quien quiere carne pequeña sin llevarse un perro grande. <strong>No</strong> es para quien quiere un guardián: llévate un perro si vas a salir de la ciudad.</p>
+<p>En plena oscuridad, el juego baja el alcance de recolección a 1,5 casillas, y tienes que estar casi encima del icono para verlo. Con el gato cerca, la madrugada rinde alrededor del 60% del alcance que tendrías de día.</p>
+<p>La ganancia llega de golpe, no poco a poco.</p>
+<p><strong>Para quién es:</strong> para quien juega de madrugada, para quien quiere el aviso lo antes posible sin delatar su propia posición y para quien quiere carne pequeña sin cargar con un perro grande. No sirve de guarda: llévate un perro si vas a salir de la ciudad.</p>
 <h2 id="6-tablas-comparativas">6. Tablas comparativas</h2>
 <h3 id="velocidad-de-aprendizaje">Velocidad de aprendizaje</h3>
+<p>Cuanto mayor es el número, más rápido aprende el perro. La velocidad normal es 1.0.</p>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
 <th>Olfato</th>
@@ -1017,182 +999,181 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Caramelo</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Pastor Alemán</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,5</td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
-<td>1,5</td>
-<td>1,0</td>
-<td>1,2</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td>2.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>2,0</strong></td>
-<td>1,2</td>
-<td><strong>0,8</strong></td>
-<td>1,5</td>
-<td>1,0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>0.8</td>
+<td>1.5</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Border Collie</td>
-<td>1,2</td>
-<td>1,0</td>
-<td>1,5</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td>1,5</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,2</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
 </tr>
 <tr>
 <td>Doberman</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,5</td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Labrador</td>
-<td>1,2</td>
-<td>1,0</td>
-<td>1,5</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Carlino</td>
-<td>1,5</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Gato</td>
-<td>1,5</td>
+<td>1.5</td>
 <td>-</td>
-<td><strong>0,7</strong></td>
-<td><strong>2,0</strong></td>
+<td>0.7</td>
+<td>2.0</td>
 <td>-</td>
 </tr>
 </tbody></table></div>
-<p>El guion del Gato no significa «aprende despacio», significa <strong>que la habilidad no existe</strong>: Combate y Pastoreo no están ahí para él y ni siquiera aparecen en su ventana.</p>
-<p>Las dos únicas penalizaciones de raza del mod son el <strong>0,8</strong> del Husky y el <strong>0,7</strong> del Gato, que es la más dura de las dos.</p>
+<p>El guion en el Gato quiere decir que no tiene esa habilidad: Combate y Pastoreo no salen en su ventana.</p>
 <h3 id="combate">Combate</h3>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
-<th>Mordida sin entrenamiento</th>
-<th>Mordida en el nivel 10</th>
+<th>Mordisco sin entrenar</th>
+<th>Mordisco al nivel 10</th>
 <th>¿Mata solo?</th>
 <th>¿Derriba?</th>
 </tr></thead><tbody>
 <tr>
 <td>Carlino</td>
-<td><strong>la más débil</strong></td>
-<td><strong>0,65x</strong></td>
-<td><strong>No</strong></td>
-<td><strong>No</strong></td>
+<td>el más flojo</td>
+<td>0,65x</td>
+<td>No</td>
+<td>No</td>
 </tr>
 <tr>
 <td>Caramelo</td>
-<td>débil</td>
-<td><strong>1x</strong> (referencia)</td>
-<td><strong>No</strong></td>
+<td>flojo</td>
+<td>1x (referencia)</td>
+<td>No</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Labrador</td>
-<td>débil</td>
+<td>flojo</td>
 <td>1,3x</td>
 <td>Sí</td>
-<td><strong>No</strong></td>
+<td>No</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
-<td>débil</td>
+<td>flojo</td>
 <td>1,5x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Border Collie</td>
-<td>débil</td>
+<td>flojo</td>
 <td>1,5x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td>media</td>
+<td>medio</td>
 <td>1,9x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Doberman</td>
-<td>media</td>
-<td><strong>2,6x</strong></td>
+<td>medio</td>
+<td>2,6x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Pastor Alemán</td>
-<td><strong>fuerte</strong></td>
-<td><strong>2,6x</strong></td>
+<td>fuerte</td>
+<td>2,6x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>fuerte</strong></td>
-<td><strong>2,6x</strong></td>
+<td>fuerte</td>
+<td>2,6x</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
 </tbody></table></div>
-<p>El Doberman llega a lo más alto, pero parte de mucho más abajo: empieza con cerca de <strong>dos tercios</strong> de la mordida de un Rottweiler y solo lo iguala en el nivel 10.</p>
-<p><strong>El Gato no está en esta tabla</strong>, y no por ser el más débil: <strong>no pelea</strong>. No hay mordisco, no hay modo Vigilar, y no reacciona a los zombis ni aunque te estén moliendo a golpes a su lado.</p>
+<p>El Doberman empieza con unos dos tercios del mordisco de un Rottweiler.</p>
+<p>El Gato queda fuera de esta tabla porque no pelea.</p>
 <h3 id="temple-en-la-pelea">Temple en la pelea</h3>
-<p>Cuanto <strong>más bajo</strong> sea el número, más frío se mantiene el perro peleando.</p>
+<p>Cuanto menor es el número, más frío se mantiene el perro peleando.</p>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
-<th>Estrés acumulado al pelear</th>
+<th>Estrés acumulado peleando</th>
 <th>Punto de pánico</th>
 </tr></thead><tbody>
 <tr>
 <td>Pastor Alemán</td>
-<td><strong>0,20</strong> (el más frío)</td>
-<td><strong>0,90</strong> (el más alto)</td>
+<td>0,20 (el más frío)</td>
+<td>0,90 (el más alto)</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>0,20</strong></td>
-<td><strong>0,90</strong></td>
+<td>0,20</td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25</td>
-<td><strong>0,90</strong></td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1217,18 +1198,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Carlino</td>
 <td>0,90</td>
-<td><strong>0,70</strong> (el más bajo)</td>
+<td>0,70 (el más bajo)</td>
 </tr>
 <tr>
 <td>Caramelo</td>
-<td><strong>1,00</strong> (el más nervioso)</td>
-<td><strong>0,80</strong></td>
+<td>1,00 (el más nervioso)</td>
+<td>0,80</td>
 </tr>
 </tbody></table></div>
-<p>Un perro que entra en pánico <strong>deja de luchar, de vigilar y de hacer trucos</strong>. Por eso esta tabla importa tanto como el daño: de poco sirve morder fuerte si se bloquea antes.</p>
-<p><strong>El Gato tampoco está aquí</strong>, porque no pelea. Pero <strong>sí entra en pánico</strong>, y conviene saberlo: tiene el <strong>segundo peor gen oculto de estrés del mod</strong>, solo por detrás del Caramelo. Como no es la pelea lo que lo estresa, queda el susto: ruido fuerte, gritos, heridas, descuido. Y un gato en pánico <strong>deja de vigilar y deja de traer el regalo nocturno</strong>.</p>
+<p>Un perro en pánico deja de pelear, de vigilar y de hacer trucos. Un perro de mordisco fuerte que entra en pánico pronto rinde menos que uno más flojo que aguanta la pelea entera.</p>
+<p>El Gato también queda fuera de la tabla, pero su estrés es el segundo peor del mod, solo por detrás del caramelo. Un gato en pánico deja de vigilar y de traer el regalo.</p>
 <h3 id="rasgos-rangos-de-nacimiento">Rasgos (rangos de nacimiento)</h3>
-<p>Cuanto más alto sea el rango, mejor puede nacer el perro. Un valor por debajo de 0,34 aparece como <strong>Baja</strong> en la ventana, por encima de 0,66 como <strong>Alta</strong>, y el resto como <strong>Media</strong>.</p>
+<p>Cuanto mayor es el rango, mejor puede nacer el perro. Por debajo de 0,34 la ventana muestra <span class="ig">Baja</span>, por encima de 0,66 muestra <span class="ig">Alta</span>, y lo de en medio sale como <span class="ig">Media</span>.</p>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
 <th>Fuerza</th>
@@ -1237,15 +1218,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Carlino</td>
-<td><strong>0,00 a 0,10</strong></td>
+<td>0,00 a 0,10</td>
 <td>0,05 a 0,20</td>
-<td><strong>0,00 a 0,15</strong></td>
+<td>0,00 a 0,15</td>
 </tr>
 <tr>
 <td>Gato</td>
-<td><strong>0,00 a 0,10</strong></td>
-<td><strong>0,00 a 0,15</strong></td>
-<td><strong>0,00 a 0,15</strong></td>
+<td>0,00 a 0,10</td>
+<td>0,00 a 0,15</td>
+<td>0,00 a 0,15</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1268,13 +1249,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Labrador</td>
 <td>0,25 a 0,45</td>
-<td><strong>0,10 a 0,25</strong></td>
+<td>0,10 a 0,25</td>
 <td>0,25 a 0,45</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25 a 0,45</td>
-<td><strong>0,35 a 0,55</strong></td>
+<td>0,35 a 0,55</td>
 <td>0,20 a 0,40</td>
 </tr>
 <tr>
@@ -1291,22 +1272,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>0,55 a 0,80</strong></td>
+<td>0,55 a 0,80</td>
 <td>0,10 a 0,30</td>
 <td>0,40 a 0,60</td>
 </tr>
 </tbody></table></div>
-<p>Lectura rápida:</p>
 <ul>
-<li><strong>El Caramelo siempre muestra <span class="ig">Baja</span> en las tres.</strong> No existe un Caramelo bueno.</li>
-<li><strong>El Carlino también</strong>, y su rango de Fuerza es aún menor. No existe un Carlino fuerte.</li>
-<li><strong>El Husky es el único que suele mostrar <span class="ig">Alta</span> en Fuerza.</strong></li>
-<li><strong>La Agresividad sale siempre <span class="ig">Baja</span></strong> en el Golden, en el Husky y en el Labrador. En ellos es lo normal, no mala suerte.</li>
-<li>El Golden y el Doberman también caen en <span class="ig">Baja</span> con frecuencia en Fuerza y Resistencia.</li>
-<li><strong>El Pastor Alemán y el Rottweiler</strong> son los únicos que muestran <span class="ig">Media</span> en las tres casi siempre.</li>
-</ul>
-<ul>
-<li><strong>El Gato empata con el Carlino en la menor Fuerza del mod.</strong> No existe el gato fuerte, y por eso su alforja es siempre 2.</li>
+<li>El caramelo muestra <span class="ig">Baja</span> en los tres.</li>
+<li>El carlino también, y su rango de Fuerza es aún menor.</li>
+<li>El gato empata con el carlino en la menor Fuerza del mod.</li>
+<li>El husky es el único que suele mostrar <span class="ig">Alta</span> en Fuerza.</li>
+<li>La Agresividad sale <span class="ig">Baja</span> en el Golden, en el husky y en el Labrador.</li>
+<li>El Golden y el Doberman también caen a menudo en <span class="ig">Baja</span> en Fuerza y Resistencia.</li>
+<li>El Pastor Alemán y el Rottweiler son los únicos que muestran <span class="ig">Media</span> en los tres casi siempre.</li>
 </ul>
 <h3 id="alforjas">Alforjas</h3>
 <div class="tw"><table><thead><tr>
@@ -1315,11 +1293,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Gato</strong></td>
-<td><strong>2</strong> (fijo)</td>
+<td>2 (fijo)</td>
 </tr>
 <tr>
 <td><strong>Carlino</strong></td>
-<td><strong>2 a 3</strong></td>
+<td>2 a 3</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1335,18 +1313,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td><strong>13 a 16</strong></td>
+<td>13 a 16</td>
 </tr>
 </tbody></table></div>
-<p>El Gato es el único sin rango: la cuenta da <strong>2 en cualquier gato</strong>, por fuerte que nazca.</p>
 <h3 id="camada">Camada</h3>
 <div class="tw"><table><thead><tr>
 <th>Raza de la madre</th>
 <th>Cachorros por parto</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>Caramelo</strong></td>
-<td><strong>2 a 4</strong></td>
+<td><strong>Caramelo</strong>, Gato</td>
+<td>2 a 4</td>
 </tr>
 <tr>
 <td>Border Collie</td>
@@ -1361,12 +1338,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 a 2</td>
 </tr>
 </tbody></table></div>
-<p>El tamaño de la camada sigue la <strong>raza de la madre</strong>, no la del padre.</p>
-<p><strong>El Gato no se cruza</strong>, así que no tiene fila aquí: no hay celo, no hay gestación y no nace ningún gatito. Un gato solo entra en tu partida por el mundo, nunca por tu cría.</p>
+<p>La raza del padre no cuenta.</p>
 <h3 id="dónde-encontrar-cada-raza">Dónde encontrar cada raza</h3>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
-<th>Lugar</th>
+<th>Sitio</th>
 <th>Probabilidad</th>
 </tr></thead><tbody>
 <tr>
@@ -1376,12 +1352,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Pastor Alemán</td>
-<td>Comisaría, prisión, base militar, armería</td>
+<td>Comisaría, prisión, militar, armería</td>
 <td>20%</td>
 </tr>
 <tr>
 <td>Labrador</td>
-<td>Cabaña de caza, campamento, cobertizo de barcos, puesto de guardabosques</td>
+<td>Cabaña de caza, camping, embarcadero, puesto forestal</td>
 <td>20%</td>
 </tr>
 <tr>
@@ -1391,18 +1367,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Border Collie</td>
-<td>Granero, establo, granja (zona rural)</td>
+<td>Granero, establo, granja (campo)</td>
 <td>15%</td>
 </tr>
 <tr>
 <td>Carlino</td>
 <td>Tienda de mascotas, veterinaria</td>
 <td>12%</td>
-</tr>
-<tr>
-<td>Caramelo</td>
-<td>Casa residencial</td>
-<td>10%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1415,51 +1386,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>10%</td>
 </tr>
 <tr>
-<td>Labrador</td>
+<td>Caramelo</td>
 <td>Casa residencial</td>
-<td>5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td>Carlino</td>
 <td>Casa residencial</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>Golden Retriever</td>
-<td>Casa residencial</td>
-<td>2,5%</td>
-</tr>
-<tr>
-<td>Rottweiler</td>
-<td>Casa residencial</td>
-<td>2,5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
 <td>Tienda de mascotas, veterinaria</td>
-<td><strong>2,4%</strong> por pelaje</td>
+<td>2,4% por pelaje</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
-<td>Tienda, mercado, cafetería</td>
-<td><strong>2%</strong> por pelaje</td>
+<td>Tienda, supermercado, bar</td>
+<td>2% por pelaje</td>
 </tr>
 <tr>
 <td><strong>Gato</strong></td>
 <td>Casa residencial</td>
-<td><strong>2%</strong> por pelaje</td>
+<td>2% por pelaje</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td>Casa residencial, <strong>solo en invierno</strong></td>
+<td>Casa residencial, solo en invierno</td>
 <td>1,25%</td>
 </tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Casa residencial</td>
+<td>1%</td>
+</tr>
 </tbody></table></div>
-<p>Las probabilidades de perro escalan con la opción de sandbox <strong><span class="ig">Multiplicador de aparición de perros</span></strong>. Las de gato no: tiene su propio control, <strong><span class="ig">Multiplicador de aparición de gatos</span></strong>, así que bajar o apagar los perros callejeros ya no toca la cantidad de gatos del mundo.</p>
-<p>Recuerda: la decisión se toma <strong>una vez por edificio</strong> y queda guardada. Volver a un lugar ya explorado no genera un perro nuevo.</p>
-<p>Los cinco pelajes del gato tiran <strong>cada uno por su cuenta</strong>, y por eso la probabilidad de cada uno es tan baja: sumados, dan la misma cantidad de gato que daría una sola raza. Lo que cambia es <strong>cuál</strong> pelaje encuentras.</p>
+<p>Las probabilidades de perro escalan con la opción de sandbox <strong><span class="ig">Multiplicador de aparición de perros</span></strong>. Las de gato siguen otra opción, <strong><span class="ig">Multiplicador de aparición de gatos</span></strong>, así que bajar o apagar los perros mestizos no cambia la cantidad de gatos del mundo.</p>
+<p>El sorteo ocurre una vez por edificio y el resultado queda guardado.</p>
 <h3 id="nombres-internos-de-las-razas">Nombres internos de las razas</h3>
-<p>Los mods de spawn y el modo debug piden el <strong>nombre interno</strong> del perro, que no es el que se ve en pantalla. Son estos:</p>
+<p>Los mods de aparición y el modo debug piden el nombre interno del perro, que no es el nombre que sale en pantalla:</p>
 <div class="tw"><table><thead><tr>
 <th>Raza</th>
 <th>Macho</th>
@@ -1552,7 +1527,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_orange</code></td>
 </tr>
 <tr>
-<td>Gato Carey</td>
+<td>Gato Tricolor</td>
 <td><code>catmale</code></td>
 <td><code>catfemale</code></td>
 <td><code>catpup</code></td>
@@ -1566,32 +1541,31 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_tuxedo</code></td>
 </tr>
 </tbody></table></div>
-<p>El macho y la hembra son <strong>tipos distintos</strong>, no una opción del mismo tipo. Las tres últimas filas solo existen si tienes instalado el addon de esa raza.</p>
-<hr>
-<p><strong>Los cinco pelajes de gato comparten el mismo tipo</strong> (<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>) y solo se distinguen por <code>breed</code>, porque el modelo es el mismo y solo cambia la textura. Fíjate en que aquí el <code>breed</code> lleva guion bajo (<code>cat_white</code>), a diferencia del resto del mod.</p>
+<p>Macho y hembra son tipos distintos, no una opción del mismo tipo. Las cinco razas de addon solo existen con el addon de esa raza instalado.</p>
+<p>Los cinco pelajes de gato comparten el mismo tipo y se distinguen solo por el <code>breed</code>: el modelo es el mismo y solo cambia la textura. Aquí el <code>breed</code> lleva guion bajo (<code>cat_white</code>), a diferencia del resto del mod.</p>
 <h2 id="7-moodles-la-lista-completa">7. Moodles: la lista completa</h2>
-<p>Los moodles de perro aparecen en una <strong>columna propia, a la izquierda de tus moodles normales</strong>.</p>
+<p>Los moodles de perro salen en una columna propia, a la izquierda de tus moodles normales.</p>
 <h3 id="la-regla-que-vale-para-todos-los-moodles-de-raza">La regla que vale para todos los moodles de raza</h3>
-<p>El bono <strong>solo existe</strong> si <strong>todas</strong> estas condiciones se cumplen:</p>
+<p>El bonus solo existe cuando todas estas condiciones se cumplen a la vez:</p>
 <div class="tw"><table><thead><tr>
 <th>Condición</th>
 <th>Detalle</th>
 </tr></thead><tbody>
 <tr>
-<td>El perro está <strong>cerca</strong></td>
-<td>A <strong>8 casillas</strong> o menos y <strong>en el mismo piso</strong></td>
+<td><strong>El perro está cerca</strong></td>
+<td>A 8 casillas o menos y en el mismo piso</td>
 </tr>
 <tr>
-<td>Es <strong>tuyo</strong></td>
+<td><strong>Es tuyo</strong></td>
 <td>El perro de otro jugador no da nada</td>
 </tr>
 <tr>
 <td><strong>No está desobediente</strong></td>
-<td>Lealtad por encima del mínimo</td>
+<td>Lealtad por encima del suelo</td>
 </tr>
 <tr>
 <td><strong>No está intoxicado</strong></td>
-<td>Nada de comida en mal estado</td>
+<td>Nada de comida mala</td>
 </tr>
 <tr>
 <td><strong>No tiene hambre</strong></td>
@@ -1602,9 +1576,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Barra de sed por debajo del 75%</td>
 </tr>
 </tbody></table></div>
-<p><strong>Si falla cualquiera de ellas, el moodle se apaga.</strong> Un perro maltratado no rinde ningún bono. Este es el mecanismo central del mod: <strong>de un perro que no cuidas no ganas nada gratis.</strong></p>
-<blockquote class="quote"><strong>Con varios perros cerca, solo cuenta el más cercano.</strong> El mod elige un único perro y muestra el moodle de esa raza. No se puede acumular la Valentía del Pastor con el Abrigado del Husky a la vez.</blockquote>
-<p>El moodle sigue valiendo mientras el perro viaja <strong>en tus brazos o en el vehículo contigo</strong>.</p>
+<p>Si falla cualquiera, el moodle se apaga.</p>
+<blockquote class="quote">Con varios perros cerca, solo cuenta el más próximo, así que la Valentía del Pastor y el Abrigado del husky no se suman.</blockquote>
+<p>El moodle sigue valiendo mientras el perro viaja en tus brazos o en el coche contigo.</p>
 <h3 id="los-moodles-de-raza">Los moodles de raza</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
@@ -1614,52 +1588,52 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Buena compañía</strong></td>
 <td>Caramelo</td>
-<td>Reduce <strong>Infelicidad y Aburrimiento</strong></td>
+<td>Baja la Tristeza y el Aburrimiento</td>
 </tr>
 <tr>
 <td><strong>Valentía</strong></td>
 <td>Pastor Alemán</td>
-<td>Reduce el <strong>Pánico</strong> (el efecto más fuerte del mod base)</td>
+<td>Baja el Pánico (el efecto más fuerte del mod base)</td>
 </tr>
 <tr>
 <td><strong>Olfato agudo</strong></td>
 <td>Golden Retriever</td>
-<td><strong>+20% de XP</strong> en Recolección, Trampeo y Puntería, <strong>+4 casillas</strong> de visión de recolección</td>
+<td>+20% de XP en Recolección, Trampeo y Puntería, +4 casillas de visión de recolección</td>
 </tr>
 <tr>
 <td><strong>Abrigado</strong></td>
 <td>Husky</td>
-<td><strong>+50% de XP</strong> en Fuerza, recupera el aliento y se vuelve <strong>fuente de calor</strong> con frío extremo</td>
+<td>+50% de XP en Fuerza, recupera aliento y hace de fuente de calor en frío extremo</td>
 </tr>
 <tr>
 <td><strong>Instinto pastor</strong></td>
 <td>Border Collie</td>
-<td><strong>+20% de XP</strong> en Cuidado animal y Agricultura, y <strong>calma al ganado a tu alrededor</strong></td>
+<td>+20% de XP en Cuidado animal y Agricultura, y calma al ganado a tu alrededor</td>
 </tr>
 <tr>
 <td><strong>Primera Línea</strong></td>
 <td>Rottweiler</td>
-<td>Devuelve el <strong>35% de la resistencia</strong> de cada golpe cuerpo a cuerpo. <strong>Solo mientras él pelea</strong></td>
+<td>Devuelve el 35% del aliento de cada golpe cuerpo a cuerpo, solo mientras él esté peleando</td>
 </tr>
 <tr>
 <td><strong>Pulso Firme</strong></td>
 <td>Doberman</td>
-<td>Drena tu <strong>estrés</strong>, <strong>-45% de retroceso</strong> por disparo, <strong>+15% de velocidad de recarga</strong></td>
+<td>Drena tu estrés, -45% de retroceso por disparo, +15% de velocidad de recarga</td>
 </tr>
 <tr>
 <td><strong>Boca Blanda</strong></td>
 <td>Labrador</td>
-<td>Entrega la presa <strong>desde Caza 3</strong>, insiste 3x más, <strong>60% de probabilidad de objeto extra</strong>, <strong>+20% de XP</strong> en Carnicería y Hoja Corta</td>
+<td>Entrega la presa desde Caza 3, insiste 3x más, 60% de probabilidad de objeto extra, +20% de XP en Carnicería y Hoja Corta</td>
 </tr>
 <tr>
 <td><strong>Tu Sombra</strong></td>
 <td>Carlino</td>
-<td>Baja <strong>Tristeza, Aburrimiento y Estrés</strong>, y más rápido que cualquier otro perro. <strong>Se apaga con el calor</strong></td>
+<td>Baja Tristeza, Aburrimiento y Estrés, más rápido que cualquier otro perro. Se apaga con el calor</td>
 </tr>
 <tr>
 <td><strong>Ojos de Gato</strong></td>
 <td>Gato</td>
-<td><strong>Recolectar en la oscuridad deja de ser inútil</strong>: la madrugada llega a cerca del 60% del alcance diurno, frente a 1,5 casillas sin él</td>
+<td>La recolección a oscuras pasa a funcionar: la madrugada rinde cerca del 60% del alcance de día, frente a 1,5 casillas sin él</td>
 </tr>
 </tbody></table></div>
 <h3 id="los-moodles-que-da-cualquier-raza">Los moodles que da cualquier raza</h3>
@@ -1671,170 +1645,127 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Hambriento</strong></td>
 <td>Hambre del perro al 60% o más</td>
-<td>Solo un aviso</td>
+<td>Solo aviso</td>
 </tr>
 <tr>
 <td><strong>Sediento</strong></td>
 <td>Sed del perro al 60% o más</td>
-<td>Solo un aviso</td>
+<td>Solo aviso</td>
 </tr>
 <tr>
 <td><strong>Intoxicado</strong></td>
 <td>Comió algo que le hace mal</td>
-<td>Solo un aviso</td>
+<td>Solo aviso</td>
 </tr>
 <tr>
 <td><strong>Bien descansado</strong></td>
-<td>Te despertaste habiendo dormido a <strong>8 casillas o menos</strong> del perro</td>
-<td>Reduce <strong>Pánico, Estrés, Cansancio, Tristeza y Aburrimiento</strong> durante <strong>2 horas de juego</strong></td>
+<td>Te despertaste tras dormir a 8 casillas o menos del perro</td>
+<td>Baja Pánico, Estrés, Cansancio, Tristeza y Aburrimiento durante 2 horas de juego</td>
 </tr>
 </tbody></table></div>
-<p><strong><span class="ig">Bien descansado</span> es el único que no depende de que el perro siga cerca.</strong> Es un cronómetro: una vez activo, dura las dos horas aunque te vayas. Y no pasa por el filtro de cuidados, así que funciona incluso con un perro maltratado. Dormir al lado del perro vale la pena <strong>siempre</strong>.</p>
-<p>Los tres avisos (hambre, sed, intoxicado) también ignoran el filtro de cuidados, y tiene sentido: existen justamente para avisarte de que el perro <strong>no</strong> está bien.</p>
+<p><strong><span class="ig">Bien descansado</span></strong> es el único que no depende de que el perro siga cerca. También se salta el filtro de cuidado, así que funciona incluso con un perro maltratado. Los tres avisos de hambre, sed e intoxicación se saltan el filtro igual.</p>
 <h2 id="8-rasgos-los-genes">8. Rasgos (los genes)</h2>
-<p>Además de la raza, cada perro tiene <strong>tres rasgos</strong> que se muestran en la ventana, en la sección <strong><span class="ig">Rasgos</span></strong>. Se sortean <strong>en el momento en que domesticas al perro</strong>, dentro del rango de la raza, y <strong>nunca cambian</strong>.</p>
-<blockquote class="quote quote-game"><em>"Genes innatos, fijos de por vida: se determinan al domesticar al perro y varían de uno a otro. A diferencia de las habilidades, nunca cambian con el entrenamiento; son la naturaleza en bruto con la que nació este perro."</em></blockquote>
+<p>Además de la raza, cada perro tiene tres rasgos, que salen en su ventana en la sección <strong><span class="ig">Rasgos</span></strong>. Se sortean cuando domesticas al perro, dentro del rango de la raza, y no cambian después.</p>
+<blockquote class="quote quote-game"><em>"Genes innatos, fijos de por vida: ya están decididos antes de que encuentres al perro y varían de uno a otro. A diferencia de las habilidades, nunca cambian con el entrenamiento; son la naturaleza en bruto con la que nació este perro."</em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>Rasgo</th>
 <th>Qué hace</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Fuerza</strong></td>
-<td>Aumenta la <strong>fuerza del mordisco</strong> y, sobre todo, la <strong>capacidad de las alforjas</strong></td>
+<td>Sube la fuerza del mordisco y, sobre todo, la capacidad de las alforjas</td>
 </tr>
 <tr>
 <td><strong>Agresividad</strong></td>
-<td>Hace que <strong>gane XP de Combate más rápido</strong>. <strong>No</strong> cambia cuándo decide pelear o huir</td>
+<td>Le hace ganar XP de Combate más rápido. No cambia cuándo decide pelear o huir</td>
 </tr>
 <tr>
 <td><strong>Resistencia</strong></td>
-<td>Hace que <strong>acumule menos estrés</strong> en la pelea</td>
+<td>Le hace acumular menos estrés en la pelea</td>
 </tr>
 </tbody></table></div>
-<p>Existe además un <strong>cuarto gen, de estrés general, que no aparece en la ventana</strong>. Multiplica todo el estrés que el perro acumula peleando. El Caramelo tiene el peor de todos; el Pastor Alemán y el Husky, los mejores.</p>
-<h3 id="cómo-leer-las-etiquetas">Cómo leer las etiquetas</h3>
-<div class="tw"><table><thead><tr>
-<th>Etiqueta</th>
-<th>Qué significa</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Baja</strong></td>
-<td>Por debajo del 34% de la escala</td>
-</tr>
-<tr>
-<td><strong>Media</strong></td>
-<td>Entre el 34% y el 66%</td>
-</tr>
-<tr>
-<td><strong>Alta</strong></td>
-<td>Por encima del 66%</td>
-</tr>
-</tbody></table></div>
-<p><strong>Atención:</strong> las etiquetas van en una escala absoluta, <strong>no</strong> relativa a la raza. Por eso un Caramelo muestra <span class="ig">Baja</span> en los tres <strong>siempre</strong>, y no existe un Caramelo excepcional. Y por eso el Husky es prácticamente el único perro al que verás con <span class="ig">Alta</span> en Fuerza.</p>
+<p>Hay además un cuarto gen, de estrés general, que no sale en la ventana. Multiplica todo el estrés que el perro coge peleando. El caramelo tiene el peor de todos, y el Pastor Alemán y el husky los mejores.</p>
+<p>La etiqueta de la ventana usa la misma escala para todas las razas: por debajo del 34% es <strong><span class="ig">Baja</span></strong>, entre el 34% y el 66% es <strong><span class="ig">Media</span></strong> y por encima del 66% es <strong><span class="ig">Alta</span></strong>. Por eso un caramelo muestra <span class="ig">Baja</span> en los tres, siempre.</p>
 <h3 id="cuánto-importa-esto-de-verdad">Cuánto importa esto de verdad</h3>
-<p>Los genes mueven <strong>hasta un 15% hacia cada lado</strong> en el daño y en el XP de combate, y hasta 10 puntos porcentuales en la resistencia al estrés. <strong>La raza pesa mucho más que el gen.</strong></p>
-<p>La excepción son las <strong>alforjas</strong>: ahí el gen de Fuerza es el factor principal, y la diferencia entre un perro débil y uno fuerte de la misma raza se nota de verdad.</p>
-<p><strong>No hay forma de entrenar un gen.</strong> La única manera de mejorarlo es <a href="#9-mestizos-cruzando-razas-diferentes">cruzar perros</a>.</p>
-<h2 id="9-mestizos-cruzando-razas-diferentes">9. Mestizos: cruzando razas diferentes</h2>
-<p>Cuando un macho y una hembra de razas diferentes tienen cachorros, sale un <strong>mestizo</strong>.</p>
-<h3 id="qué-pasa-con-el-cachorro">Qué pasa con el cachorro</h3>
-<p><strong>El linaje es el promedio de los padres.</strong> Caramelo con Pastor Alemán da un cachorro 50/50. Cruzar ese cachorro con un Pastor puro da 25% Caramelo, 75% Pastor. Y así sucesivamente, generación tras generación.</p>
-<p><strong>El aspecto es UNA de las razas, sorteada con peso según el linaje.</strong> Un cachorro 50/50 nace con la cara de un Pastor <strong>o</strong> de un Caramelo, nunca con una mezcla visual. Cuanto más se inclina el linaje hacia un lado, mayor es la probabilidad de que salga con la cara de ese lado.</p>
-<blockquote class="quote"><strong>Y aquí está el punto que confunde a todo el mundo:</strong> la raza que salió en el sorteo es la raza <strong>funcional</strong> del perro. Un mestizo 50% Husky / 50% Pastor que nació con cara de Husky <strong>es un Husky a todos los efectos</strong>: moodle Abrigado, velocidad de aprendizaje del Husky, alforjas de Husky. La mezcla no lo deja a medio camino en nada de eso.</blockquote>
-<p><strong>Los genes quedan a medio camino entre los padres</strong>, con una variación de más o menos un 6% hacia cada lado.</p>
-<p><strong>Y aquí es donde el mestizaje de verdad vale la pena:</strong> el rango de gen del cachorro pasa a ser la <strong>unión</strong> de los rangos de las razas del linaje. Un mestizo Caramelo + Husky puede nacer con cualquier Fuerza entre 0,00 y 0,80, o sea que <strong>puede superar el techo del Caramelo</strong>. Cruzando a los perros más fuertes de cada camada, subes el linaje entero a lo largo de las generaciones.</p>
-<p><strong>Lo que el cachorro NO hereda:</strong> nada de habilidades. Nace con <strong>nivel 0 en las cinco</strong>, siempre. Lo que hereda de la raza es la <strong>velocidad de aprendizaje</strong>, no lo aprendido.</p>
+<p>Los genes mueven hasta un 15% para cada lado en el daño y en el XP de combate, y hasta 10 puntos porcentuales en la resistencia al estrés. La diferencia entre una raza y otra es bastante mayor que eso.</p>
+<p>La excepción son las alforjas: ahí el gen de Fuerza es el factor principal.</p>
+<p>La única forma de mejorar un gen es <a href="#9-mestizos-cruzar-razas-distintas">cruzar perros</a>.</p>
+<h2 id="9-mestizos-cruzar-razas-distintas">9. Mestizos: cruzar razas distintas</h2>
+<p>Cuando un macho y una hembra de razas distintas tienen cachorros, sale un mestizo.</p>
+<h3 id="qué-le-pasa-al-cachorro">Qué le pasa al cachorro</h3>
+<p>El linaje es la media de los padres. Un caramelo con un Pastor Alemán da un cachorro 50/50. Cruzar ese cachorro con un Pastor puro da 25% caramelo, 75% Pastor, y así en cada generación.</p>
+<p>El aspecto es el de una de las razas del linaje, sorteado con peso según el porcentaje. Un cachorro 50/50 nace con la cara de un Pastor o con la de un caramelo, nunca con una mezcla visual.</p>
+<blockquote class="quote">La raza que salió en el sorteo es la raza funcional del perro. Un mestizo 50% husky / 50% Pastor que nació con cara de husky es un husky a todos los efectos: moodle Abrigado, velocidad de aprendizaje del husky, alforjas de husky.</blockquote>
+<p>Los genes quedan a medio camino entre los padres, con una variación de más o menos el 6% para cada lado.</p>
+<p>El rango de genes del cachorro pasa a ser la unión de los rangos de las razas del linaje. Un mestizo de caramelo y husky puede nacer con cualquier Fuerza entre 0,00 y 0,80, por encima del techo del caramelo. Cruzando los perros más fuertes de cada camada, el linaje sube a lo largo de las generaciones.</p>
+<p>El cachorro nace con nivel 0 en las cinco habilidades, siempre. Lo que hereda de la raza es la velocidad de aprendizaje.</p>
 <h3 id="la-etiqueta-mestizo">La etiqueta "Mestizo"</h3>
-<p>Un perro con más de una raza en el linaje recibe <strong><span class="ig">(Mestizo)</span></strong> junto al nombre de la raza, en la ventana y en el menú contextual.</p>
-<p>El <strong>desglose porcentual</strong> (<span class="ig">50% Husky, 50% Pastor Alemán</span>) aparece <strong>al pasar el ratón por la línea <span class="ig">Raza</span></strong> de la ventana del perro, junto con la descripción de la raza dominante.</p>
-<h3 id="vale-la-pena-cruzar-razas-diferentes">¿Vale la pena cruzar razas diferentes?</h3>
-<div class="tw"><table><thead><tr>
-<th>Objetivo</th>
-<th>Respuesta</th>
-</tr></thead><tbody>
-<tr>
-<td>Mejorar genes a lo largo de generaciones</td>
-<td><strong>Sí</strong>, es la única forma que existe</td>
-</tr>
-<tr>
-<td>Conseguir el moodle de dos razas</td>
-<td><strong>No.</strong> El perro tiene un solo moodle, el de la raza en la que se convirtió</td>
-</tr>
-<tr>
-<td>Combinar las velocidades de aprendizaje</td>
-<td><strong>No.</strong> Usa la tabla de la raza en la que se convirtió</td>
-</tr>
-<tr>
-<td>Tener muchos cachorros rápido</td>
-<td>Usa una <strong>Caramelo como madre</strong> (2 a 4 por camada)</td>
-</tr>
-</tbody></table></div>
-<h2 id="10-instalando-los-addons">10. Instalando los addons</h2>
-<p>Rottweiler, Doberman, Labrador y Carlino son <strong>mods separados en Steam</strong>. Cada uno:</p>
+<p>Un perro con más de una raza en el linaje se lleva un <strong><span class="ig">(Mestizo)</span></strong> al lado del nombre de la raza, en la ventana y en el menú contextual. El desglose en porcentaje (<span class="ig">50% husky, 50% Pastor Alemán</span>) sale al pasar el ratón por la línea <strong><span class="ig">Raza</span></strong> de la ventana del perro, junto con la descripción de la raza dominante.</p>
+<h2 id="10-instalar-los-addons">10. Instalar los addons</h2>
+<p>Rottweiler, Doberman, Labrador, Carlino y el gato son mods aparte en Steam. Cada uno:</p>
 <ul>
-<li><strong>Necesita el Companion Dogs base instalado y activo.</strong></li>
-<li>Añade <strong>una raza</strong>, con modelo, textura, moodle y lugares de aparición propios.</li>
-<li>Viene con las <strong>14 traducciones</strong>, iguales a las del base.</li>
+<li>Necesita el Companion Dogs base instalado y activo.</li>
+<li>Añade una raza, con modelo, textura, moodle y sitios de aparición propios.</li>
+<li>Viene con las 14 traducciones, iguales que las del base.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
-<th>Página de Steam</th>
+<th>Página en Steam</th>
 <th>Versión mínima del base</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>CD: Rottweiler</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">suscribirse</a></td>
-<td>0.6.3 o más nuevo</td>
+<td>0.6.3 o más nueva</td>
 </tr>
 <tr>
 <td><strong>CD: Doberman</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">suscribirse</a></td>
-<td>0.6.3 o más nuevo</td>
+<td>0.6.3 o más nueva</td>
 </tr>
 <tr>
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">suscribirse</a></td>
-<td><strong>0.6.6 o más nuevo</strong></td>
+<td>0.6.6 o más nueva</td>
 </tr>
 <tr>
 <td><strong>CD: Pug</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">suscribirse</a></td>
-<td><strong>0.6.8 o más nuevo</strong></td>
+<td>0.6.8 o más nueva</td>
 </tr>
 <tr>
 <td><strong>CD: Cats</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">suscribirse</a></td>
-<td><strong>0.7.0 o más nuevo</strong></td>
+<td>0.7.0 o más nueva</td>
 </tr>
 </tbody></table></div>
-<p>Y el base, si todavía no lo tienes: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
-<p>Si el base es demasiado antiguo, el addon <strong>simplemente no hace nada</strong>: no da error, no cuelga el juego, la raza sencillamente no existe. Si instalaste el Labrador y nunca encuentras ninguno, <strong>revisa primero la versión del base</strong>.</p>
-<blockquote class="quote"><strong>No quites un addon de una partida que tenga perros vivos de esa raza.</strong> El perro pierde el modelo y la textura de referencia.</blockquote>
-<p>Instalar un addon <strong>no cambia nada en las razas que ya existen</strong>. Las razas nuevas entran automáticamente en el sorteo de cría y de mestizaje.</p>
-<hr>
-<p><strong>El gato también es la excepción aquí.</strong> Añade <strong>cinco</strong> entradas (una por pelaje) en vez de una, y <strong>no</strong> entra en el sorteo de cruce ni de mestizaje: no existe cruce con gato, ni entre dos gatos. El resto vale igual: necesita el mod base activo, trae las 14 traducciones, y en un base demasiado antiguo se queda inerte en lugar de dar error.</p>
+<p>Y el base, si todavía no lo tienes: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>
+<p>Si el base es demasiado antiguo, el addon no hace nada: sin error, sin colgar el juego, la raza simplemente no existe. Si instalaste el Labrador y nunca encuentras uno, mira primero la versión del base.</p>
+<blockquote class="quote">No quites un addon de una partida que tenga perros vivos de esa raza. El perro pierde el modelo y la textura de referencia.</blockquote>
+<p>Instalar un addon no cambia nada en las razas que ya existen. Las razas nuevas entran solas en el sorteo de cruce y de mestizaje.</p>
+<p>El gato es distinto en esto. Añade cinco entradas (una por pelaje) en vez de una, y su cruce está cerrado por especie: los cinco pelajes se cruzan entre sí y la camada mezcla los dos como cualquier mestizaje.</p>
 <h2 id="11-preguntas-frecuentes-de-raza">11. Preguntas frecuentes de raza</h2>
-<p><strong><span class="ig">¿Cuál es la mejor raza?</span></strong> Depende de lo que hagas. Para <strong>combate</strong>, Pastor Alemán o Rottweiler. Para <strong>caza</strong>, Labrador. Para <strong>carga</strong>, Husky. Para <strong>granja</strong>, Border Collie. Para <strong>armas de fuego</strong>, Doberman. Y el <strong>Caramelo</strong> sigue siendo excelente por su moodle, aunque sea el más débil.</p>
-<p><strong><span class="ig">¿Mi Caramelo puede volverse fuerte con entrenamiento?</span></strong> No. Nunca va a matar a un zombi, por mucho que lo entrenes, y sus rasgos son los peores por definición. Lo que el entrenamiento mejora es la Obediencia, el Olfato y la Caza, y en eso rinde igual que cualquier otro.</p>
-<p><strong><span class="ig">Encontré dos perros de la misma raza, ¿cuál me llevo?</span></strong> <strong>No hay manera de saberlo antes</strong>: el sorteo ocurre en el momento de la domesticación. Domestícalo y mira la sección <strong><span class="ig">Rasgos</span></strong> en la ventana.</p>
-<p><strong><span class="ig">Me tocó un perro con rasgos malos. ¿Lo suelto y lo domestico otra vez?</span></strong> <strong>No sirve de nada.</strong> Los genes se sortean <strong>una sola vez, en la primera domesticación</strong>, y el perro los conserva para siempre, incluso después de soltarlo y volver a domesticarlo (igual que conserva las habilidades). Para intentar otra tirada tienes que <strong>domesticar a un perro distinto</strong>. Para mejorar de verdad con el tiempo, el camino es <a href="#9-mestizos-cruzando-razas-diferentes">cruzar</a>.</p>
-<p><strong><span class="ig">¿Puedo tener dos moodles de raza a la vez?</span></strong> No. Solo cuenta el <strong>perro más cercano</strong>. El <strong><span class="ig">Bien descansado</span></strong> es la excepción, porque no depende de la cercanía.</p>
-<p><strong><span class="ig">¿Por qué desapareció el moodle?</span></strong> Casi siempre es hambre o sed por encima del 75%, o la lealtad que cayó por debajo del mínimo. Dale de comer, dale agua y acarícialo. Comprueba también que el perro esté a <strong>8 tiles o menos y en el mismo piso</strong>.</p>
-<p><strong><span class="ig">¿Hay alguna raza más rápida?</span></strong> No. Ninguna raza corre más que otra.</p>
-<p><strong><span class="ig">¿Hay Husky de otro color?</span></strong> No. Cada raza tiene una sola textura, y el macho y la hembra usan la misma.</p>
-<p><strong><span class="ig">¿Un perro grande pega más fuerte?</span></strong> No. El tamaño es puramente visual. La relación entre tamaño y fuerza se desactivó a propósito.</p>
-<p><strong><span class="ig">¿Dónde encuentro Doberman?</span></strong> <strong>En las comisarías.</strong> La probabilidad en edificios militares es mayor sobre el papel, pero casi no hay edificios militares en el mapa base del juego.</p>
-<p><strong><span class="ig">Instalé el Labrador y no encuentro ninguno.</span></strong> Revisa la versión del Companion Dogs base: el Labrador <strong>exige 0.6.6 o más nuevo</strong> y queda invisible y silencioso con un base antiguo. Comprueba también si no habías explorado ya las casas de la zona: la decisión de aparición es <strong>una por edificio, para siempre</strong>.</p>
-<p><strong><span class="ig">Mi mestizo no tiene el moodle de las dos razas.</span></strong> Es lo esperado. Un mestizo es, mecánicamente, <strong>la raza que aparenta</strong>. La mezcla solo cambia el rango de genes de los descendientes y la etiqueta porcentual de la ventana.</p>
-<p><strong><span class="ig">Quiero spawnear un perro con otro mod, ¿qué nombre uso?</span></strong> El nombre interno, no el que aparece en pantalla. La lista está en <a href="#6-tablas-comparativas">Tablas comparativas</a>, al final de la sección.</p>
-<p><strong>«¿Es mejor un gato que un perro?»</strong> Ni mejor ni peor: hace otra cosa. Vigila más lejos que cualquier perro y en silencio, y es el único compañero que resuelve la recolección nocturna. A cambio no pelea, no se cruza y no carga nada. Un gato <strong>no sustituye</strong> a un perro de guardia; ocupa un lugar que ningún perro ocupaba.</p>
-<p><strong>«¿Por qué no puedo poner a mi gato a Vigilar?»</strong> Porque el modo no existe para él, y por eso el botón ni siquiera está. El gato no tiene Combate: no vigila, no te protege y no ataca a un zombi ni aunque te estén golpeando a su lado. Esto no es ajustable.</p>
-<p><strong>«Mi gato salió corriendo solo y dejó de obedecerme.»</strong> Vio una rata. Eso es comportamiento de la raza, no un fallo: cada tanto el gato suelta todo y va tras un roedor, sin que se lo pidas y sin necesitar ningún nivel de Caza. Dura poco, y vuelve solo, casi siempre <strong>con la rata</strong>, que suelta a tus pies. Mientras corre rechaza órdenes, <strong>menos Ven</strong>, que cancela la distracción al instante. Después de matar vuelve a obedecer con normalidad: la carrera es instinto, la entrega es solo entrega. Ninguna raza de perro del mod se distrae así, y no hay interruptor: es lo que cuesta tener un gato.</p>
-<p><strong>«¿Qué caza el gato, exactamente?»</strong> Roedores y <strong>conejos</strong>, y nada por encima de eso. El ciervo es <strong>invisible</strong> para él: ni siquiera lo señala. Y los animales de tu corral nunca entran en la cuenta: gallinas, vacas y cualquier cosa en un corral están fuera para todo compañero, perro o gato. Para la caza mayor y para el cobro, el perro es un Labrador o un Golden.</p>
-<p><strong>«¿Cómo consigo gatitos?»</strong> No los consigues. Los gatos no se cruzan, ni con perros ni con otros gatos. Todos los gatos de tu partida vinieron del mundo.</p>
-<p><strong>«¿Los cinco pelajes tienen números distintos?»</strong> No, ninguno. Mismas habilidades, mismo moodle, mismos rangos de característica, misma voz. El pelaje es solo aspecto, y cuál encuentras es cuestión de suerte.</p>
-<p><strong>«Mi gato se volvió desobediente demasiado rápido.»</strong> Es la raza. El vínculo del gato cae un <strong>50% más rápido</strong> que el de un perro cuando desapareces o te relajas con el cuidado, lo contrario exacto del Carlino. Un gato exige presencia: caricias, comida y agua, con regularidad.</p>
-<p><strong>«He dejado de despertarme con regalos.»</strong> Mira sus barras. Un gato con <strong>hambre o sed al 75% o más</strong>, enfermo, desobediente o en pánico no sale de noche, y el fallo es silencioso. Recuerda además que es <strong>uno al día y por dueño</strong>: dos gatos no dan dos regalos.</p></article></main>
+<p><strong><span class="ig">¿Cuál es la mejor raza?</span></strong> Depende de lo que hagas. Para combate, Pastor Alemán o Rottweiler. Para caza, Labrador. Para carga, husky. Para granja, Border Collie. Para armas de fuego, Doberman. El caramelo tiene los peores números, pero su moodle sigue sirviendo.</p>
+<p><strong><span class="ig">¿Mi caramelo puede volverse fuerte con entrenamiento?</span></strong> No. Nunca mata a un zombi, por mucho que entrene. El entrenamiento le sube Obediencia, Olfato y Caza, y en eso avanza como cualquier otro.</p>
+<p><strong><span class="ig">Encontré dos perros de la misma raza, ¿cuál me llevo?</span></strong> No hay forma de saberlo antes: los rasgos se sortean en el momento de la domesticación. Domestícalo y mira la sección <strong><span class="ig">Rasgos</span></strong> en su ventana.</p>
+<p><strong><span class="ig">Me tocó un perro con rasgos malos. ¿Lo suelto y lo domestico otra vez?</span></strong> No sirve de nada. Los genes se sortean una vez, en la primera domesticación, y el perro conserva los mismos después de soltarlo y volver a domesticarlo (las habilidades también se quedan). Para otra tirada, domestica un perro distinto. Para mejorar con el tiempo, el camino es <a href="#9-mestizos-cruzar-razas-distintas">cruzar</a>.</p>
+<p><strong><span class="ig">¿Puedo tener dos moodles de raza a la vez?</span></strong> No. Solo cuenta el perro más cercano. El <strong><span class="ig">Bien descansado</span></strong> es la excepción, porque no depende de la proximidad.</p>
+<p><strong><span class="ig">¿Por qué desapareció el moodle?</span></strong> Casi siempre es hambre o sed por encima del 75%, o lealtad por debajo del suelo. Dale de comer, dale agua y hazle caricias. Mira también si el perro está a 8 casillas o menos y en el mismo piso.</p>
+<p><strong><span class="ig">¿Hay alguna raza más rápida?</span></strong> No.</p>
+<p><strong><span class="ig">¿Hay husky de otro color?</span></strong> No. Cada raza tiene una sola textura, y macho y hembra usan la misma. El gato tiene cinco pelajes, pero cada uno es una raza aparte.</p>
+<p><strong><span class="ig">¿Un perro grande pega más fuerte?</span></strong> No. El tamaño es solo visual y no entra en la cuenta del daño.</p>
+<p><strong><span class="ig">¿Dónde encuentro un Doberman?</span></strong> En comisarías. El edificio militar tiene algo más de probabilidad, pero casi no hay edificios militares en el mapa base del juego.</p>
+<p><strong><span class="ig">Instalé el Labrador y no encuentro ninguno.</span></strong> Mira la versión del Companion Dogs base: el Labrador necesita la 0.6.6 o más nueva. Mira también si las casas de la zona ya están exploradas: el sorteo de aparición ocurre una vez por edificio y no se repite.</p>
+<p><strong><span class="ig">Mi mestizo no tiene el moodle de las dos razas.</span></strong> Es lo esperado. Para las mecánicas, un mestizo es la raza a la que se parece. La mezcla solo cambia el rango de genes de los cachorros y la etiqueta de porcentaje en la ventana.</p>
+<p><strong><span class="ig">¿El gato es mejor que un perro?</span></strong> Hace otra cosa. Vigila más lejos que cualquier perro, en silencio, y es el único compañero que recolecta de noche. A cambio, no pelea, casi no carga nada y solo cruza con otro gato.</p>
+<p><strong><span class="ig">¿Por qué no puedo mandar a mi gato a vigilar?</span></strong> Ese modo no existe para el gato, así que el botón no sale. El gato no tiene Combate: no vigila, no protege y no ataca zombis, ni cuando te están pegando a su lado.</p>
+<p><strong><span class="ig">Mi gato salió corriendo solo y dejó de obedecerme.</span></strong> Vio una rata. Mientras corre rechaza cualquier orden, menos el <strong><span class="ig">Ven aquí</span></strong>. Vuelve solo, casi siempre con la rata, y no hay forma de desactivarlo.</p>
+<p><strong><span class="ig">¿Qué caza el gato, exactamente?</span></strong> Roedores y conejos. Al ciervo ni lo señala. Los animales de cría (gallina, vaca, cualquier cosa que esté en el corral) quedan fuera para todo compañero, perro o gato. Para la caza grande y para la entrega, usa un Labrador o un Golden.</p>
+<p><strong><span class="ig">¿Cómo consigo un gatito?</span></strong> Igual que un cachorro de perro: un macho y una hembra tuyos, adultos, leales, bien alimentados y cerca el uno del otro. El gato solo cruza con gato.</p>
+<p><strong><span class="ig">¿Los cinco pelajes tienen números distintos?</span></strong> No. Mismas habilidades, mismo moodle, mismos rangos de rasgos, misma voz. Cuál de ellos te sale es sorteo.</p>
+<p><strong><span class="ig">Mi gato se volvió desobediente demasiado rápido.</span></strong> El vínculo del gato cae un 50% más rápido que el de un perro cuando desapareces o dejas de lado el cuidado (el carlino es lo contrario). Caricias, comida y agua con regularidad sostienen la lealtad.</p>
+<p><strong><span class="ig">Dejé de despertarme con regalo.</span></strong> Mira sus barras. Un gato con hambre o sed al 75% o más, enfermo, desobediente o en pánico no sale de noche, y el juego no avisa. Es un regalo al día y por dueño.</p>
+<p><strong><span class="ig">Quiero hacer aparecer un perro con otro mod, ¿qué nombre uso?</span></strong> El nombre interno, no el que sale en pantalla. La lista está en <a href="#6-tablas-comparativas">Tablas comparativas</a>, al final de la sección.</p></article></main>
 </div>
 
 <script>

@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -406,16 +406,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">目錄 &middot; <b>品種</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-品種到底改變了什麼" data-id="1-品種到底改變了什麼">1. 品種到底改變了什麼</a>
+<a class="s2" href="#1-品種真正改變了什麼" data-id="1-品種真正改變了什麼">1. 品種真正改變了什麼</a>
 <div class="sub">
 <a class="s3" href="#體型和力量不是同一回事" data-id="體型和力量不是同一回事">體型和力量不是同一回事</a>
-<a class="s3" href="#一個品種一種長相" data-id="一個品種一種長相">一個品種，一種長相</a>
+<a class="s3" href="#一個品種一種外觀" data-id="一個品種一種外觀">一個品種，一種外觀</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#2-快速選擇" data-id="2-快速選擇">2. 快速選擇</a>
 <div class="sub">
-<a class="s3" href="#每個品種一句話" data-id="每個品種一句話">每個品種一句話</a>
+<a class="s3" href="#一句話總結" data-id="一句話總結">一句話總結</a>
 </div>
 </div>
 <div class="grp">
@@ -423,7 +423,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#小卡犬" data-id="小卡犬">小卡犬</a>
 <a class="s3" href="#德國牧羊犬" data-id="德國牧羊犬">德國牧羊犬</a>
-<a class="s3" href="#黃金獵犬" data-id="黃金獵犬">黃金獵犬</a>
+<a class="s3" href="#金毛尋回犬" data-id="金毛尋回犬">金毛尋回犬</a>
 <a class="s3" href="#哈士奇" data-id="哈士奇">哈士奇</a>
 <a class="s3" href="#邊境牧羊犬" data-id="邊境牧羊犬">邊境牧羊犬</a>
 </div>
@@ -440,11 +440,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#5-貓第一個別的物種" data-id="5-貓第一個別的物種">5. 貓：第一個別的物種</a>
 <div class="sub">
-<a class="s3" href="#牠不做的事" data-id="牠不做的事">牠不做的事</a>
+<a class="s3" href="#牠不做什麼" data-id="牠不做什麼">牠不做什麼</a>
 <a class="s3" href="#牠比任何狗都做得好的事" data-id="牠比任何狗都做得好的事">牠比任何狗都做得好的事</a>
 <a class="s3" href="#代價" data-id="代價">代價</a>
 <a class="s3" href="#五種毛色" data-id="五種毛色">五種毛色</a>
-<a class="s3" href="#夜禮" data-id="夜禮">夜禮</a>
+<a class="s3" href="#夜裡的禮物" data-id="夜裡的禮物">夜裡的禮物</a>
 </div>
 </div>
 <div class="grp">
@@ -471,7 +471,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#8-特性基因" data-id="8-特性基因">8. 特性（基因）</a>
 <div class="sub">
-<a class="s3" href="#標籤怎麼看" data-id="標籤怎麼看">標籤怎麼看</a>
 <a class="s3" href="#這到底有多重要" data-id="這到底有多重要">這到底有多重要</a>
 </div>
 </div>
@@ -480,7 +479,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#幼犬會變成什麼樣子" data-id="幼犬會變成什麼樣子">幼犬會變成什麼樣子</a>
 <a class="s3" href="#混血這個標籤" data-id="混血這個標籤">「混血」這個標籤</a>
-<a class="s3" href="#讓不同品種配種划算嗎" data-id="讓不同品種配種划算嗎">讓不同品種配種划算嗎？</a>
 </div>
 </div>
 <div class="grp">
@@ -491,34 +489,34 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs品種手冊">Companion Dogs：品種手冊</h1>
-<p>所有品種的指南：每個品種最擅長什麼、有哪些 moodle、有哪些特性，以及怎麼挑一隻適合你這局 遊戲的狗。</p>
-<p>想知道<strong>模組是怎麼運作的</strong>（馴服、指令、食物、馱袋、技巧、狩獵），請看另一本手冊： <a href="features.html" class="xlink">功能</a>。</p>
-<blockquote class="quote"><strong>本手冊裡的數值都以預設選項為準。</strong> 如果伺服器關掉了 <strong>「技能與訓練」</strong>，品種就不再<strong>成長</strong>：技能鎖死在零，每級傷害的曲線變成通用的，四個技巧 會一次全部解鎖（模組開始把每隻狗都當成服從 10 級）。品種<strong>天生</strong>給的東西照樣有效： 基礎咬合力、擊倒、打架時的膽量、專屬 moodle、馱袋和產仔數。 把技巧藏起來的，是另一個獨立的選項<strong>「服從技巧」</strong>。</blockquote>
-<h2 id="1-品種到底改變了什麼">1. 品種到底改變了什麼</h2>
-<p>一個品種只影響<strong>七件事</strong>，除此之外什麼都不變：</p>
+<p>所有品種的指南：每一種最擅長什麼、有哪些心情圖示、有哪些特性，以及怎麼挑出適合你這局的那一隻。</p>
+<p>想知道模組怎麼運作（馴服、指令、餵食、馱袋、技巧、狩獵），請看另一本手冊： <a href="features.html" class="xlink">功能</a>。</p>
+<blockquote class="quote">本手冊的數字都以預設選項為準。如果伺服器關掉<strong>「技能與訓練」</strong>，品種就不再成長：技能鎖在 零，每級的傷害曲線變成通用值，四個技巧一次全部解鎖（模組把每隻狗都當成服從 10）。品種天生 帶來的東西照舊有效：基礎咬合力、擊倒、戰鬥時的膽量、專屬心情圖示、馱袋和產仔數。 把技巧藏起來的是另一個選項<strong>「服從技巧」</strong>。</blockquote>
+<h2 id="1-品種真正改變了什麼">1. 品種真正改變了什麼</h2>
+<p>品種只動七件事：</p>
 <div class="tw"><table><thead><tr>
 <th>改變了什麼</th>
 <th>說明</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>學習速度</strong></td>
-<td>每個品種學那 5 項技能，每一項的速度都不一樣。這是最能決定品種特色的地方</td>
+<td>每個品種學那 5 項技能各有自己的節奏。這是品種之間最大的差別</td>
 </tr>
 <tr>
 <td><strong>咬合力</strong></td>
-<td>每一口造成多少傷害，其中有多少要靠訓練掙來</td>
+<td>每一口造成多少傷害，其中有多少要靠訓練換來</td>
 </tr>
 <tr>
-<td><strong>打架時的膽量</strong></td>
-<td>打架時會累積多少壓力，以及到哪一步會陷入恐慌而停手</td>
+<td><strong>戰鬥時的膽量</strong></td>
+<td>打架時累積多少壓力，以及到哪一步會陷入恐慌而停手</td>
 </tr>
 <tr>
 <td><strong>特性（基因）</strong></td>
 <td>牠出生時力量、攻擊性和抗性可能落在的範圍</td>
 </tr>
 <tr>
-<td><strong>專屬 moodle</strong></td>
-<td>只要狗在身邊、吃飽且忠誠，就給<strong>你</strong>一份加成</td>
+<td><strong>專屬心情圖示</strong></td>
+<td>只要狗在身邊、吃飽且忠誠，就給你一份加成</td>
 </tr>
 <tr>
 <td><strong>產仔數</strong></td>
@@ -529,389 +527,374 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>每個品種都有自己的出沒地點</td>
 </tr>
 </tbody></table></div>
-<p>而下面這些<strong>不會</strong>因為品種而改變，儘管很多人以為會：</p>
+<p>不會因為品種而改變的：</p>
 <ul>
-<li><strong>奔跑速度。</strong> 沒有哪個品種跑得比較快，所有狗跑起來都一樣。</li>
-<li><strong>哨兵、嗅覺和狩獵的範圍。</strong> 只取決於技能等級。品種改變的是練到那個等級的快慢，不是 上限。</li>
-<li><strong>技巧。</strong> 四個技巧都按服從等級解鎖，對所有狗都一樣。</li>
-<li><strong>飢餓和口渴。</strong> 所有品種的速度都一樣（哈士奇也不例外，看牠那一節）。</li>
-<li><strong>馱袋容量</strong>，只有哈士奇例外，牠是唯一有品種加成的。</li>
-<li><strong>體型不等於力量。</strong> 這是兩件不同的事，因為總是一起出現，特別容易搞混。往下看。</li>
+<li>奔跑速度。所有品種跑起來都一樣。</li>
+<li>哨兵、嗅覺和狩獵的範圍。只取決於技能等級。</li>
+<li>技巧。四個技巧都按服從等級解鎖，對所有狗都一樣。</li>
+<li>饑餓和口渴。所有品種的速度相同，哈士奇也不例外（看牠那一節）。</li>
+<li>馱袋容量，哈士奇除外。</li>
+<li>體型。它和力量是分開的兩件事。</li>
 </ul>
-<blockquote class="quote"><strong>有一個例外，而牠不是狗。</strong><a href="#5-貓第一個別的物種">貓</a>改變了任何犬種都不會觸及的第八件事：<strong>哪些工作 根本存在</strong>。牠不打架、不看管牲畜、不繁殖。這些機制對牠不是變差，而是消失。只要你還在拿狗跟狗比較， 上面那七條清單就完全成立。</blockquote>
+<blockquote class="quote"><a href="#5-貓第一個別的物種">貓</a>是例外。除了這七件事，牠還改變了哪些工作存在：不 打架、不看管牲畜，也只和另一隻貓繁殖。介面連按鈕都不會顯示。</blockquote>
 <h3 id="體型和力量不是同一回事">體型和力量不是同一回事</h3>
-<p><strong>力量</strong>是一個基因，而且是真的有用：最多能把咬合傷害提高 <strong>30%</strong>，馱袋的容量也是由它 決定的。</p>
-<p><strong>體型</strong>是另一回事。它來自遊戲本身的一個基因，模組既不隨機也不去動它，再加上幼犬長到成年 體型的自然生長。同一個品種的兩隻狗可能體型不同，力量卻毫無差別；<strong>同一個品種</strong>裡體型比較 大的那隻，也不會因此咬得比較狠。</p>
-<p>讓人搞混的是，<strong>品種</strong>同時決定了這兩樣，各走各的路：德國牧羊犬體型大<strong>而且</strong>天生強壯， 小卡犬體型小<strong>而且</strong>天生就弱。所以拿品種跟品種比，體型大的那隻確實通常咬得比較狠。只是 原因出在品種，不在體型：光看個頭，說明不了某一隻狗的力量。要看這個，就去狗狗視窗的特性 分頁，那裡有一條力量的進度條。</p>
-<h3 id="一個品種一種長相">一個品種，一種長相</h3>
-<p><strong>同一個品種裡不會有毛色變化。</strong> 每個品種就只有一套貼圖，公犬和母犬共用同一套。哈士奇永遠 是同一隻哈士奇的樣子。</p>
-<p>不管哪個品種，幼犬出生時都是同樣的縮小體型，之後長成自己品種的成年體型。</p>
-<hr>
-<p><strong>五隻貓</strong>也不是例外，儘管看起來像：黑、白、橘、玳瑁和燕尾是<strong>五個品種</strong>，各自只有一張自己的貼圖。 不是一隻貓出五種顏色。</p>
+<p>力量是一個基因。它讓咬合傷害最多提高 30%，並決定馱袋容量。</p>
+<p>體型來自遊戲自己的一個基因，模組既不抽也不改，再加上幼犬長到成年體型的過程。同一品種的兩隻 狗可以力量一樣而體型不同，體型大的並不因此咬得更重。</p>
+<p>品種同時決定這兩件事，但各走各的：德國牧羊犬體型大又天生力氣大，小卡犬體型小又天生力氣小。 單獨一隻狗的力量顯示在狗狗視窗<strong>「特性」</strong>那一區的力量條上。</p>
+<h3 id="一個品種一種外觀">一個品種，一種外觀</h3>
+<p>每個品種只有一種貼圖，公母共用。五種貓是<a href="#五種毛色">五個品種</a>，不是一隻貓的五種 顏色。</p>
+<p>任何品種的幼犬出生時都是同樣的縮小體型，再長到自己品種的成年體型。</p>
 <h2 id="2-快速選擇">2. 快速選擇</h2>
 <div class="tw"><table><thead><tr>
-<th>如果你想……</th>
+<th>如果你想要⋯</th>
 <th>就選</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>用碰上什麼算什麼的狗撐過頭幾天</strong></td>
-<td><strong>小卡犬</strong></td>
+<td><strong>靠手邊有什麼撐過最初幾天</strong></td>
+<td>小卡犬</td>
 </tr>
 <tr>
-<td><strong>一隻能頂住陣線、獨自殺死殭屍的狗</strong></td>
-<td><strong>德國牧羊犬</strong>或<strong>羅威納犬</strong></td>
+<td><strong>一隻能守住陣線、獨自殺死殭屍的狗</strong></td>
+<td>德國牧羊犬或羅威納犬</td>
 </tr>
 <tr>
-<td><strong>打獵弄肉吃</strong></td>
-<td><strong>黃金獵犬</strong>或<strong>拉布拉多</strong></td>
+<td><strong>打獵取肉</strong></td>
+<td>金毛尋回犬或拉布拉多</td>
 </tr>
 <tr>
-<td><strong>馱戰利品</strong></td>
-<td><strong>哈士奇</strong>，沒得討論</td>
+<td><strong>幫忙揹戰利品</strong></td>
+<td>哈士奇</td>
 </tr>
 <tr>
-<td><strong>你出門在外時有狗顧著農場</strong></td>
-<td><strong>邊境牧羊犬</strong></td>
+<td><strong>你出門時有人顧農場</strong></td>
+<td>邊境牧羊犬</td>
 </tr>
 <tr>
 <td><strong>槍打得更準</strong></td>
-<td><strong>杜賓犬</strong></td>
+<td>杜賓犬</td>
 </tr>
 <tr>
-<td><strong>近戰能多揮幾下</strong></td>
-<td><strong>羅威納犬</strong></td>
+<td><strong>近戰能撐更久</strong></td>
+<td>羅威納犬</td>
 </tr>
 <tr>
 <td><strong>少一點無聊和悲傷</strong></td>
-<td><strong>巴哥犬</strong>，順帶<strong>小卡犬</strong>是白送的</td>
+<td>巴哥犬，或基礎模組就有的小卡犬</td>
 </tr>
 <tr>
 <td><strong>少一點壓力</strong></td>
-<td><strong>巴哥犬</strong>或<strong>杜賓犬</strong></td>
+<td>巴哥犬或杜賓犬</td>
 </tr>
 <tr>
 <td><strong>少一點恐慌</strong></td>
-<td><strong>德國牧羊犬</strong></td>
+<td>德國牧羊犬</td>
 </tr>
 <tr>
-<td><strong>更早知道有殭屍</strong></td>
-<td><strong>巴哥犬</strong>，前提是你受得了牠叫</td>
+<td><strong>更早收到殭屍警報</strong></td>
+<td>巴哥犬（警報是吠叫）</td>
 </tr>
 <tr>
-<td><strong>多採集一些</strong></td>
-<td><strong>黃金獵犬</strong></td>
+<td><strong>盡可能早收到警報，而且安靜</strong></td>
+<td>貓</td>
 </tr>
 <tr>
-<td><strong>盡可能早、並且安靜地得到警告</strong></td>
-<td><strong>貓</strong></td>
+<td><strong>採集更多東西</strong></td>
+<td>金毛尋回犬</td>
 </tr>
 <tr>
-<td><strong>夜裡採集</strong></td>
-<td><strong>貓</strong>，沒有第二名</td>
+<td><strong>半夜也能採集</strong></td>
+<td>貓</td>
 </tr>
 <tr>
-<td><strong>一個不會洩漏你位置的夥伴</strong></td>
-<td><strong>貓</strong></td>
+<td><strong>一個不會暴露你位置的夥伴</strong></td>
+<td>貓</td>
 </tr>
 <tr>
-<td><strong>別被凍死</strong></td>
-<td><strong>哈士奇</strong></td>
+<td><strong>不被凍死</strong></td>
+<td>哈士奇</td>
 </tr>
 </tbody></table></div>
-<h3 id="每個品種一句話">每個品種一句話</h3>
+<h3 id="一句話總結">一句話總結</h3>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
 <th>一句話</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>小卡犬</strong></td>
-<td>樸實的流浪狗。弱，但能把殭屍撂倒，也是真正的陪伴</td>
+<td>地圖上最常見的流浪狗。咬合弱，但能撞倒殭屍</td>
 </tr>
 <tr>
 <td><strong>德國牧羊犬</strong></td>
-<td>士兵。咬得狠，而且幾乎不會恐慌</td>
+<td>基礎模組的戰鬥品種。咬得重</td>
 </tr>
 <tr>
-<td><strong>黃金獵犬</strong></td>
-<td>鼻子靈的獵手，順帶還能提升你的採集</td>
+<td><strong>金毛尋回犬</strong></td>
+<td>鼻子靈的獵手</td>
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
-<td>馱貨的騾子，冬天還幫你保暖。固執</td>
+<td>學得慢的馱貨犬</td>
 </tr>
 <tr>
 <td><strong>邊境牧羊犬</strong></td>
-<td>農場裡的長工</td>
+<td>能獨自照顧農場牲畜</td>
 </tr>
 <tr>
 <td><strong>羅威納犬</strong></td>
-<td>戰士，近戰時替你省耐力</td>
+<td>近身肉搏的鬥犬</td>
 </tr>
 <tr>
 <td><strong>杜賓犬</strong></td>
-<td>槍手的狗：後座力更小、裝彈更快、心神安定</td>
+<td>槍手的品種：後座力更小，裝彈更快</td>
 </tr>
 <tr>
 <td><strong>拉布拉多</strong></td>
-<td>銜取犬：模組裡最差的鬥犬，卻是最會把獵物叼回來的那隻</td>
+<td>模組裡最差的鬥犬之一，也是叼回獵物最強的</td>
 </tr>
 <tr>
 <td><strong>巴哥犬</strong></td>
-<td>居家犬。在外頭一無是處，當夥伴卻沒有比牠更好的</td>
+<td>居家犬。不適合打架，也不適合外出幹活</td>
 </tr>
 <tr>
 <td><strong>貓</strong></td>
-<td>不是狗。不打架、不繁殖、不進圍欄：比誰都望得遠，安靜無聲，替你看清黑暗</td>
+<td>另一個物種。不打架、不進畜欄，只和貓繁殖。警戒範圍全模組最遠，而且安靜</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-基礎模組的五個品種">3. 基礎模組的五個品種</h2>
-<p>這五個品種隨主模組一起提供，不用另外再裝別的東西。</p>
+<p>這幾個跟著主模組一起來，不用再裝任何東西。</p>
 <hr>
 <h3 id="小卡犬">小卡犬</h3>
-<p><strong>巴西的土狗。</strong> 這是你最先會遇到的狗，多半也會是你的第一個同伴。</p>
-<blockquote class="quote"><em>「小卡犬是一種基礎、常見的品種，你在城市各處都能找到的狗。它沒有特殊技能，天性較弱： 無法獨自殺死殭屍，只能擊倒它們為你爭取時間。」</em></blockquote>
-<p><strong>去哪裡找：</strong> 城區或住宅區的民宅。<strong>每棟房子 10%</strong>，是遊戲裡最常見的品種。</p>
-<p><strong>學習速度：</strong> 全部都是正常速度。沒有哪一項特別突出，也沒有哪一項特別差。</p>
-<p><strong>打起來：</strong> 牠是<strong>唯一一種沒辦法給殭屍補上最後一下的狗</strong>。咬下去只能把殭屍壓到快死，然後 就到此為止。這是故意設計的，<strong>任何沙盒選項都改不了</strong>。作為補償，牠能把殭屍<strong>擊倒</strong>，而擊倒 殭屍剛好就是在替你爭取逃跑或者動手的時間。</p>
-<p>牠也是<strong>模組裡最容易緊張的狗</strong>：戰鬥中累積壓力的速度是德國牧羊犬的五倍，也總是第一隻陷入 恐慌的。</p>
-<p><strong>特性：</strong> 全場最弱。在狗狗視窗裡，牠的力量、攻擊性和抗性<strong>永遠</strong>都顯示<strong>低</strong>，你馴服的每一 隻小卡犬都是這樣。想找一隻「好」的小卡犬是白費工夫。</p>
-<p><strong>產仔數：</strong> <strong>2 到 4 隻幼犬</strong>，模組裡最多的。如果你的目標是攢出一群狗，這個品種產量最高。</p>
-<p><strong>馱袋：</strong> 載貨 4 到 5。最小的。</p>
+<p>基礎模組的土狗。</p>
+<blockquote class="quote quote-game"><em><span class="ig">小卡犬是一種基礎、常見的品種，你在城市各處都能找到的狗。它沒有特殊技能，天性較弱： 無法獨自殺死殭屍，只能擊倒它們為你爭取時間。</span></em></blockquote>
+<p><strong>在哪裡找：</strong> 民宅，市區或住宅區都算。每戶 3%，是遊戲裡最常見的品種。</p>
+<p><strong>學習速度：</strong> 全部都是正常速度。</p>
+<p><strong>打起來：</strong> 牠是唯一收不了尾的狗。咬到殭屍剩一口氣就停在那裡，任何沙盒設定都改不了。</p>
+<p>牠也是模組裡最容易慌的狗：打架時累積壓力比德國牧羊犬快五倍，而且第一個陷入恐慌。</p>
+<p><strong>特性：</strong> 模組裡最弱的，三項永遠都是低。</p>
+<p><strong>每胎產仔數：</strong> 2 到 4 隻，模組裡最多的。<strong>馱袋：</strong> 4 到 5 的載貨量，最少的。</p>
 <p><strong>Moodle：「好夥伴」</strong></p>
-<blockquote class="quote"><em>「小卡犬是一隻非常親人、充滿魅力的狗狗，牠忠誠的陪伴讓你振作精神，牠在身邊時悲傷和無聊 都消退得更快。」</em></blockquote>
-<p>只要牠在身邊，就會持續降低你的<strong>不開心和無聊</strong>。這是模組裡日常最實用的 moodle 之一，因為 無聊和悲傷在 Zomboid 裡是一直會有的麻煩，換別的辦法解決都很費事。</p>
-<p><strong>適合誰：</strong> 開局階段適合所有人。往後也一直好用，因為牠的 moodle 解決了一個別的品種都解決 不了的問題。只是別指望牠能殺死什麼東西。</p>
+<blockquote class="quote quote-game"><em><span class="ig">小卡犬是一隻非常親人、充滿魅力的狗狗，它忠誠的陪伴讓你振作精神， 它在身邊時悲傷和無聊都消退得更快。</span></em></blockquote>
+<p>只要牠在附近，就持續降低不開心和無聊。</p>
+<p><strong>適合誰：</strong> 剛開始的每一個人。之後也還有用，因為那個 moodle 是別的品種都沒有的。</p>
 <hr>
 <h3 id="德國牧羊犬">德國牧羊犬</h3>
-<p><strong>戰犬。</strong> 基礎模組裡主打戰鬥的品種。</p>
-<blockquote class="quote"><em>「強壯而聰明的工作犬。天生就比小卡犬更強壯、更結實，學習戰鬥和服從都很快，戰鬥時幾乎 不會慌亂，面對成群的殭屍也能穩住陣腳而不驚慌，並且能獨自撂倒一隻殭屍。」</em></blockquote>
-<p><strong>去哪裡找：</strong> 警察局、監獄、看守所、軍事基地、兵營、槍械店、彈藥庫。 <strong>每棟建築 20%。</strong> 民宅裡不會有，得你自己找上門去。</p>
-<p><strong>學習速度：</strong> <strong>戰鬥是兩倍速</strong>，服從快 50%。狩獵也稍微快一點。牠是變強最快的品種。</p>
-<p><strong>打起來：</strong> 基礎模組裡咬合最狠的狗，而且<strong>能獨自殺死殭屍</strong>。不過牠真正的過人之處不是傷害， 而是<strong>膽量</strong>。牠累積壓力的速度比小卡犬<strong>慢五倍</strong>，進入恐慌的臨界點是模組裡最高的。實際 效果就是：<strong>換成別的品種早就僵住不動的場面，牠還在繼續打</strong>。</p>
-<p><strong>特性：</strong> 各項都在中等區間，明顯高於小卡犬。德國牧羊犬的三項特性都會顯示<strong>平均</strong>。</p>
-<p><strong>產仔數：</strong> 1 到 2 隻。</p>
-<p><strong>馱袋：</strong> 6 到 8。</p>
+<p>基礎模組的戰鬥品種。</p>
+<blockquote class="quote quote-game"><em><span class="ig">強壯而聰明的工作犬。天生就比小卡犬更強壯、更結實，學習戰鬥和服從都很快，戰鬥時幾乎不會慌亂， 面對成群的喪屍也能穩住陣腳而不驚慌，並且能獨自撂倒一隻喪屍。</span></em></blockquote>
+<p><strong>在哪裡找：</strong> 警察局、監獄、拘留所、軍事基地、營房、槍械店、彈藥庫。每棟 20%。民宅不會出現。</p>
+<p><strong>學習速度：</strong> 戰鬥兩倍，服從快 50%。狩獵也稍微快一點。</p>
+<p><strong>打起來：</strong> 基礎模組裡最強的咬合，而且能獨自殺死殭屍。累積壓力比小卡犬慢五倍， 而牠陷入恐慌的那個點是模組裡最高的。</p>
+<p><strong>特性：</strong> 三項都是平均。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。<strong>馱袋：</strong> 6 到 8。</p>
 <p><strong>Moodle：「勇氣」</strong></p>
-<blockquote class="quote"><em>「身旁有一隻勇敢的德國牧羊犬讓你鎮定下來，它無畏的存在會在靠近你時減輕你的恐慌。」</em></blockquote>
-<p>持續壓低你的<strong>恐慌</strong>。就數字而言這是基礎模組裡最強的 moodle，而且解決了一個很要命的問題： 恐慌會毀掉你的槍法和近戰效率。有一隻德國牧羊犬在旁邊，你下手會穩得多。</p>
-<p><strong>適合誰：</strong> 適合要打架的人。如果你喜歡正面硬幹、往市中心鑽，那就是這個品種。</p>
-<blockquote class="quote"><strong>注意：</strong> 遊戲裡的說明寫的是「壓力只有三分之一」，但真實數字是<strong>五分之一</strong>。這段描述寫得 太保守了，這隻狗比牠承諾的還要好。</blockquote>
+<blockquote class="quote quote-game"><em><span class="ig">身旁有一隻勇敢的德國牧羊犬讓你鎮定下來，它無畏的存在會在靠近你時減輕你的恐慌。</span></em></blockquote>
+<p>持續降低恐慌。這是基礎模組裡數值最強的 moodle。恐慌會干擾瞄準和近戰。</p>
+<p><strong>適合誰：</strong> 打近戰的人，尤其是在城裡。</p>
+<blockquote class="quote">遊戲裡的描述說「壓力只有三分之一」，但實際的數字是五分之一。</blockquote>
 <hr>
-<h3 id="黃金獵犬">黃金獵犬</h3>
-<p><strong>鼻子靈的獵犬。</strong> 能把你的採集水準往上抬的品種。</p>
-<blockquote class="quote"><em>「友善且嗅覺靈敏的獵犬，天生的獵手：學習狩獵的速度是小卡犬的兩倍，並且能獨自撂倒一隻 殭屍（不過比德國牧羊犬更容易慌亂）。牠靈敏的鼻子能幫你在更遠的距離搜尋食物和追蹤獵物。」</em></blockquote>
-<p><strong>去哪裡找：</strong> 民宅，跟小卡犬是分開抽的。<strong>每棟房子 2.5%。</strong> 比小卡犬稀有四倍，但抽的是同一批 房子：一棟房子裡兩種都有也是有可能的。</p>
-<p><strong>學習速度：</strong> <strong>狩獵是兩倍速</strong>，嗅覺快 50%。牠是最早摸到狩獵 6 級的品種，而 6 級正是狗 開始能對付鹿的那條線。</p>
-<p><strong>打起來：</strong> 傷害中等，<strong>能獨自殺死殭屍</strong>。壓力累積比德國牧羊犬快，比小卡犬慢。</p>
-<p><strong>特性：</strong> 比小卡犬高一點，比德國牧羊犬低。牠不是打架的狗。</p>
-<p><strong>產仔數：</strong> 1 到 2 隻。</p>
-<p><strong>馱袋：</strong> 6 到 7。</p>
+<h3 id="金毛尋回犬">金毛尋回犬</h3>
+<p>基礎模組的嗅覺品種。</p>
+<blockquote class="quote quote-game"><em><span class="ig">友善且嗅覺靈敏的獵犬，天生的獵手：學習狩獵的速度是小卡犬的兩倍，並且能獨自撂倒一隻喪屍 （不過比德國牧羊犬更容易慌亂）。它靈敏的鼻子能幫你在更遠的距離搜尋食物和追蹤獵物。</span></em></blockquote>
+<p><strong>在哪裡找：</strong> 民宅，和小卡犬分開抽。每戶 1%，是小卡犬機率的三分之一。同一戶可以兩種都有。</p>
+<p><strong>學習速度：</strong> 狩獵兩倍，嗅覺快 50%。牠是最早練到狩獵 6 級的品種，也就是狗開始敢碰鹿的那一級。</p>
+<p><strong>打起來：</strong> 中等傷害，能自己收尾。比德國牧羊犬容易有壓力，比小卡犬不容易。</p>
+<p><strong>特性：</strong> 比小卡犬高一點，比德國牧羊犬低。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。<strong>馱袋：</strong> 6 到 7。</p>
 <p><strong>Moodle：「靈敏嗅覺」</strong></p>
-<blockquote class="quote"><em>「你的黃金獵犬用靈敏的嗅覺與你一同搜尋。當牠餵飽、忠誠且在身邊時，你能更遠地發現可採集 之物，並更快提升採集、製陷和瞄準。」</em></blockquote>
-<p>三個效果：</p>
-<ul>
-<li><strong>採集、製陷和瞄準</strong>的<strong>經驗值 +20%</strong>。</li>
-<li>搜尋模式的視野半徑<strong>+4 格</strong>，這是在任何狗都會給的加成之上<strong>額外</strong>再加的。</li>
-</ul>
-<p>對一個在野外討生活的角色來說，這是最能改變節奏的 moodle。採集和製陷都是升得很慢的技能， 瞄準也很難練。</p>
-<p><strong>適合誰：</strong> 適合靠打獵、採集和陷阱過日子的人。跟鄉下的基地很搭。</p>
-<blockquote class="quote"><strong>注意：</strong> 遊戲裡的說明寫著牠「學習戰鬥也稍快一些」。這不是真的：牠學戰鬥的速度和小卡犬 完全一樣。</blockquote>
-<hr>
-<h3 id="哈士奇">哈士奇</h3>
-<p><strong>馱貨的騾子。</strong> 模組裡力氣最大的狗，也是唯一能給你取暖的。</p>
-<blockquote class="quote"><em>「一隻皮實的北方雪橇犬：迄今為止最強壯的犬種，天生用來馱運貨物（牠的馱包裝得最多）並在 嚴寒中生存。固執（學習服從較慢）、友善（不擅看家），而且食量大。」</em></blockquote>
-<p><strong>去哪裡找：</strong> 兩個來源。</p>
-<ul>
-<li><strong>民宅，只在冬天。</strong> 每棟房子 1.25%。不在這個季節的話，牠就是遊戲裡最稀有的品種。</li>
-<li><strong>寵物店和獸醫診所。</strong> 每棟建築 10%，全年都有。想穩妥弄到一隻，走這條路。</li>
-</ul>
-<p><strong>學習速度：</strong> <strong>嗅覺是兩倍速</strong>（模組裡最好的哨兵），狩獵快 50%，戰鬥略高於平均。<strong>但服從 學得慢 20%</strong>，這也是<strong>整個模組裡唯一的品種減益</strong>。這是故意的：牠就是固執。</p>
-<p>服從學得慢的實際後果是：技巧解鎖得更晚，不聽話的階段拖得更久，牠不服從的忠誠度門檻也降得 更慢。養哈士奇要更有耐心。</p>
-<p><strong>打起來：</strong> 傷害高於平均，<strong>能獨自殺死殭屍</strong>，但牠不是戰士。壓力累積比德國牧羊犬快得多。</p>
-<p><strong>特性：</strong> <strong>力量區間是模組裡最大的，而且甩開一大截</strong>。哈士奇的力量會顯示<strong>平均或高</strong>， 別的品種在這一項上只有平均或低。</p>
-<p><strong>產仔數：</strong> 1 到 2 隻。</p>
-<p><strong>馱袋：載貨 13 到 16。</strong> 牠是唯一有馱袋加成（+50%）的品種，差距非常大：牠能裝的東西是 別的狗的<strong>兩到三倍</strong>。</p>
-<p><strong>Moodle：「溫暖」</strong></p>
-<blockquote class="quote"><em>「你的哈士奇在身邊與你並肩出力。當牠餵飽、忠誠且在身邊時，跟上牠的步伐會讓你的力量提升得 更快，還幫你保留體力，使你更不易疲累；而當寒意襲來時，牠厚實的皮毛會為你保暖。」</em></blockquote>
-<p>三個效果：</p>
-<ul>
-<li><strong>力量提升速度加快 50%</strong>，只要牠在身邊就一直生效。力量是遊戲裡漲得最慢的技能，也正是它決定你能背多少、近戰打多痛。</li>
-<li><strong>體力會持續回復</strong>，你更不容易累。</li>
-<li><strong>一個會走路的熱源</strong>，<strong>你開始覺得冷的時候牠自己就會啟動</strong>，暖起來就關掉。但牠只在<strong>真正的嚴寒</strong> 裡才有用（室外低於 -3 °C），而且你離狗越近效果越強。牠只是延緩你體溫的下降，不能當衣服穿：冬裝 仍舊是必需品。</li>
-</ul>
-<p><strong>力量加成是加在你本來就能拿到的經驗上的：</strong> 哈士奇只是加速，不會白送。你活動、負重趕路、打架的時候牠才生效；你站著不動、狗趴在旁邊，是練不出任何東西的。作為交換，牠加速出來的東西是永久的：狗走了以後力量還在你身上，而每升一級都會實打實地提高你的負重上限。</p>
-<p><strong>適合誰：</strong> 適合跑遠路搜刮、滿載而歸的人，也適合玩嚴冬的人。這是搞後勤的狗。</p>
-<blockquote class="quote"><strong>注意：</strong> 說明裡寫著「食量大（很快就餓）」。<strong>這一條對已經馴服的狗不成立。</strong> 同伴犬的 飢餓速度所有品種都一樣。食量比較大，只有在牠還是流浪狗的時候才有。</blockquote>
-<hr>
-<h3 id="邊境牧羊犬">邊境牧羊犬</h3>
-<p><strong>農場犬。</strong> 主打放牧的品種。</p>
-<blockquote class="quote"><em>「一隻聰慧而不知疲倦的牧羊犬，經典的農場夥伴，尤以聰明著稱。」</em></blockquote>
-<p><strong>去哪裡找：</strong> <strong>鄉下</strong>的穀倉、馬廄、筒倉、雞舍和畜欄。<strong>每棟建築 15%</strong>，而且這次抽取<strong>不看 城市判定</strong>，所以荒郊野外孤零零的一處農場也算數。</p>
-<p><strong>學習速度：</strong> <strong>Herding 是兩倍速</strong>，服從快 50%，嗅覺略高於平均。</p>
-<p><strong>打起來：</strong> 傷害中等，和黃金獵犬一樣。<strong>能獨自殺死殭屍。</strong> 壓力累積比小卡犬慢，但比德國 牧羊犬快不少。牠不是打架的狗，是幹活的狗。</p>
-<p><strong>特性：</strong> 中等區間，比黃金獵犬略高一點。</p>
-<p><strong>產仔數：</strong> <strong>1 到 3 隻</strong>，基礎模組裡第二多的。</p>
-<p><strong>馱袋：</strong> 6 到 8。</p>
-<p><strong>真正的專長：</strong> 牠每一級的安撫光環效率比其他任何品種都<strong>高 50%</strong>。這在光環起作用的兩個 地方都成立：</p>
-<ul>
-<li>在 <strong>「Care for livestock here」</strong> 模式下，牠會常駐在畜欄裡值班；</li>
-<li>在牠自己的 moodle 裡，安撫<strong>你</strong>周圍的牲畜。</li>
-</ul>
-<p>因為壓力大的牲畜不產奶也不產毛，還會流產、走散，所以有沒有一隻訓練好的邊境牧羊犬，字面 意義上就是一座農場產得出東西和產不出東西的區別。</p>
-<p><strong>Moodle：「牧羊本能」</strong></p>
-<blockquote class="quote"><em>「你的邊境牧羊犬與你一起看顧畜群。當牠餵飽、忠誠且在身邊時，你周圍的牲畜會安定下來，你 學習畜牧與農業也會更快。」</em></blockquote>
+<blockquote class="quote quote-game"><em><span class="ig">你的金毛尋回犬用靈敏的嗅覺與你一同搜尋。當它餵飽、忠誠且在身邊時，你能更遠地發現可採集之物， 並更快提升採集、製陷和瞄準。</span></em></blockquote>
 <p>兩個效果：</p>
 <ul>
-<li><strong>畜牧與農業</strong>的<strong>經驗值 +20%</strong>。</li>
-<li>你在幹活的時候，<strong>自動安撫你周圍一定範圍內的牲畜</strong>。</li>
+<li>採集、製陷和瞄準經驗 +20%。</li>
+<li>搜尋模式的視野半徑 +4 格，疊在任何一隻狗本來就給的加成上。</li>
 </ul>
-<p><strong>適合誰：</strong> 適合經營農場的人。如果你養了牛、羊或者雞，就是這個品種在保住你的產量。</p>
-<blockquote class="quote"><strong>注意：</strong> 遊戲裡的說明還寫著牠「是一隻均衡的多面手，還沒有突出的專長」。這已經過時了： 兩倍速的 Herding 和加強過的光環都已經做進去了。</blockquote>
+<p><strong>適合誰：</strong> 靠打獵、採集和陷阱過活的人，通常是把基地設在鄉下的那種。</p>
+<blockquote class="quote">遊戲裡的描述說牠學戰鬥「也稍快一些」。牠學戰鬥的速度和小卡犬完全一樣。</blockquote>
+<hr>
+<h3 id="哈士奇">哈士奇</h3>
+<blockquote class="quote quote-game"><em><span class="ig">一隻皮實的北方雪橇犬：迄今為止最強壯的犬種，天生用來馱運貨物（它的馱包裝得最多） 並在嚴寒中生存。固執（學習服從較慢）、友善（不擅看家），而且食量大。</span></em></blockquote>
+<p><strong>在哪裡找：</strong> 兩個來源。</p>
+<ul>
+<li>民宅，只在冬天，每戶 1.25%。不是冬天就不會出現在住家裡。</li>
+<li>寵物店和獸醫診所，每棟 10%，一年到頭都有。這是比較可靠的來源。</li>
+</ul>
+<p><strong>學習速度：</strong> 嗅覺兩倍（模組裡升得最快的嗅覺），狩獵快 50%，戰鬥略高於平均。服從慢 20%， 是所有狗裡唯一的品種減益。</p>
+<p>牠解鎖技巧要更久，不服從的時間更長，忠誠度的下限也降得比較慢。</p>
+<p><strong>打起來：</strong> 傷害高於平均，能自己收尾。比德國牧羊犬容易有壓力得多。</p>
+<p><strong>特性：</strong> 模組裡最寬的力量區間，而且領先很多：通常會出「高」。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。</p>
+<p><strong>馱袋：</strong> 13 到 16 的載貨量。牠是唯一有馱袋加成（+50%）的品種，裝得下別的狗的兩到三倍。</p>
+<p><strong>Moodle：「溫暖」</strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的哈士奇在身邊與你並肩出力。當它餵飽、忠誠且在身邊時，跟上它的步伐會讓你的力量提升得更快， 它還幫你保留體力，使你更不容易疲憊；而當寒意襲來時，它厚實的皮毛會為你保暖。</span></em></blockquote>
+<p>三個效果：</p>
+<ul>
+<li>只要牠在附近，力量提升快 50%。力量是遊戲裡練得最慢的技能，決定你背得動多少、近戰打得多痛。</li>
+<li>體力持續回復，所以你累得更慢。</li>
+<li>一個會移動的熱源，你開始變冷時它自己啟動，你暖回來就關掉。只有真的冷（室外低於 -3 °C） 才作用，而且你離狗越近效果越好。它拖慢體溫下降，但取代不了冬衣。</li>
+</ul>
+<p>力量的加成是加在你本來就會拿到的經驗上：它加快訓練，本身不給經驗。 你在運動、負重趕路或者打架的時候才吃得到。</p>
+<p><strong>適合誰：</strong> 出遠門搜刮、滿載而歸的人，還有玩嚴冬的人。</p>
+<blockquote class="quote">描述說牠「食量大（很快就餓）」。這只在牠還是野狗的時候成立。馴服之後，牠的飢餓速度和所有品種一樣。</blockquote>
+<hr>
+<h3 id="邊境牧羊犬">邊境牧羊犬</h3>
+<p>基礎模組的牧羊品種。</p>
+<blockquote class="quote quote-game"><em><span class="ig">一隻聰慧而不知疲倦的牧羊犬，經典的農場夥伴，尤以聰明著稱。</span></em></blockquote>
+<p><strong>在哪裡找：</strong> 穀倉、馬廄、筒倉、雞舍、畜欄，在鄉下。每棟 15%。這次抽取會跳過市區篩選， 所以荒郊野外一座孤零零的農場也算數。</p>
+<p><strong>學習速度：</strong> 放牧兩倍，服從快 50%，嗅覺略高於平均。</p>
+<p><strong>打起來：</strong> 中等傷害，和金毛尋回犬一樣。能自己收尾。比小卡犬不容易有壓力，比德國牧羊犬容易得多。</p>
+<p><strong>特性：</strong> 中等區間，比金毛尋回犬略高一點。</p>
+<p><strong>每胎產仔數：</strong> 1 到 3，基礎模組裡第二多的。<strong>馱袋：</strong> 6 到 8。</p>
+<p>牠的專長是那圈安撫的氣場：每一級的效果比任何別的品種高 50%， <strong><span class="ig">照看這裡的牲畜</span></strong>模式和 moodle 都算。</p>
+<p>有壓力的牲畜不產奶不長毛，會流產，還會走散。</p>
+<p><strong>Moodle：「牧羊本能」</strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的邊境牧羊犬與你一起看顧畜群。當它餵飽、忠誠且在身邊時，你周圍的牲畜會安定下來， 你學習畜牧和農業也會更快。</span></em></blockquote>
+<p>兩個效果：</p>
+<ul>
+<li>畜牧和農業經驗 +20%。</li>
+<li>在你周圍一圈範圍內自動安撫牲畜，你幹活的時候一直生效。</li>
+</ul>
+<p><strong>適合誰：</strong> 要弄一座養牛、養羊或者養雞的農場的人。</p>
+<blockquote class="quote">遊戲裡的描述還寫著牠「是一隻均衡的多面手，還沒有突出的專長」。這句過時了： 翻倍的放牧和加強的氣場都已經在了。</blockquote>
 <h2 id="4-附加模組的四個品種">4. 附加模組的四個品種</h2>
-<p>這四種狗各自是<strong>Steam 上的獨立模組</strong>，都要先裝 Companion Dogs 本體才能用。每一種的連結都在 下面的介紹裡，也統一列在<a href="#10-安裝擴充模組">安裝附加模組</a>。</p>
+<p>這四個來自 Steam 上各自獨立的模組，都要靠基礎版 Companion Dogs。每一個的連結都在下面的卡片裡， 全部放在一起則在<a href="#10-安裝擴充模組">安裝擴充模組</a>。</p>
 <hr>
 <h3 id="羅威納犬">羅威納犬</h3>
 <p><em>(模組 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>，獨立附加模組)</em></p>
-<p><strong>替你省耐力的戰士。</strong></p>
-<blockquote class="quote"><em>「為護衛工作培育的強壯看門犬，是與德國牧羊犬比肩的真正戰士：戰鬥技能學習速度翻倍，高等級時 下口兇狠，能撲倒殭屍，在大多數犬種驚慌失措時仍繼續戰鬥。」</em></blockquote>
+<p>戰鬥品種，帶一個在近戰中回體力的 moodle。</p>
+<blockquote class="quote quote-game"><em><span class="ig">為護衛工作培育的強壯看門犬，是與德國牧羊犬比肩的真正戰士：戰鬥技能學習速度翻倍， 高等級時下口兇狠，能撲倒殭屍，在大多數犬種驚慌失措時仍繼續戰鬥。</span></em></blockquote>
 <p><strong>在哪裡找：</strong></p>
 <ul>
-<li><strong>工業建築</strong>（倉庫、貨棚、工廠、廢車場、修理廠、裝卸區）： <strong>每棟 10%</strong>。</li>
-<li><strong>民宅：</strong> 每棟 2.5%，屬於少見的運氣。</li>
+<li>工業建築（倉庫、棚屋、工廠、廢車場、修車廠、卸貨碼頭）：每棟 10%。</li>
+<li>民宅：每戶 1%。</li>
 </ul>
-<p><strong>學習速度：</strong> <strong>戰鬥翻倍</strong>，嗅覺快 50%（唯一鼻子好使的戰鬥犬）。沒有服從 加成。</p>
-<p><strong>戰鬥時：</strong> 咬合力和德國牧羊犬打平，<strong>膽量也打平</strong>：牠累積壓力的速度只有小卡犬的五分之一， 恐慌閾值也拉到了上限。能擊倒，也能咬死。</p>
-<p><strong>特性：</strong> 和德國牧羊犬一樣。</p>
-<p><strong>產仔數：</strong> 1 到 2 隻。<strong>馱袋：</strong> 6 到 8。</p>
-<p><strong>moodle：「前線」</strong></p>
-<blockquote class="quote"><em>「你的羅威納犬正在你身旁作戰。只要牠在附近交戰、吃飽且忠誠，你的近戰攻擊就消耗更少 耐力。」</em></blockquote>
-<p><strong>每次近戰揮擊花掉的耐力，會還給你 35%。</strong></p>
-<p>這是模組裡條件最挑的 moodle：只要羅威納犬在附近，圖示就會亮，但<strong>效果只在牠真的動手打的 時候才算數</strong>。而且<strong>只對近戰有效</strong>，用槍一點好處都拿不到。</p>
-<p>實際用起來非常猛。你能連著砍多少隻殭屍，卡住你的就是耐力。有羅威納犬在旁邊一起打，你在喘不 過氣之前能多揮將近三分之一的次數。</p>
-<p><strong>適合誰：</strong> 適合用近戰清屍群的人。在整個模組裡，牠是和激進打法配合得最好的品種。</p>
+<p><strong>學習速度：</strong> 戰鬥兩倍，嗅覺快 50%（唯一鼻子好的戰鬥犬）。沒有服從加成。</p>
+<p><strong>打起來：</strong> 咬合和膽量都和德國牧羊犬打平：累積壓力比土狗慢五倍，驚慌門檻拉到最高。能撲倒也能收尾。</p>
+<p><strong>特性：</strong> 和德國牧羊犬相同。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。<strong>馱袋：</strong> 6 到 8。</p>
+<p><strong>Moodle：「前線」</strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的羅威納犬正在你身旁作戰。只要牠在附近交戰、吃飽且忠誠，你的近戰攻擊就消耗更少耐力。</span></em></blockquote>
+<p>每一次近戰揮擊返還所耗耐力的 35%。</p>
+<p>只要羅威納犬在附近，圖示就會出現，但效果只在牠真的在打架的時候才算數。</p>
+<p><strong>適合誰：</strong> 靠近戰清屍潮的人。</p>
 <hr>
 <h3 id="杜賓犬">杜賓犬</h3>
 <p><em>(模組 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>，獨立附加模組)</em></p>
-<p><strong>槍手的狗。</strong></p>
-<blockquote class="quote"><em>「身形精瘦、警覺性極高的看門犬，也是所有犬種中學得最快的一個。牠在戰鬥中全是鋒刃而無護甲： 未受訓練時很弱，但戰鬥技能滿級後咬合力兇狠，只是比羅威納犬更不耐打。」</em></blockquote>
+<p>戰鬥品種，帶一個偏向槍械的 moodle。</p>
+<blockquote class="quote quote-game"><em><span class="ig">身形精瘦、警覺性極高的看門犬，也是所有犬種中學得最快的一個：服從技能的訓練速度甚至超過德國牧羊犬。 牠在戰鬥中全是鋒刃而無護甲：未受訓練時很弱，但戰鬥技能滿級後咬合力超過模組中任何一條狗， 只是比羅威納犬更不耐打。</span></em></blockquote>
 <p><strong>在哪裡找：</strong></p>
 <ul>
-<li><strong>警察局：</strong> 每棟 18%。</li>
-<li><strong>軍事建築</strong>（彈藥庫、營房、地堡、崗哨、檢查站）：每棟 22%。</li>
+<li>警察局：每棟 18%。</li>
+<li>軍事建築（彈藥庫、營房、地堡、崗哨、檢查哨）：每棟 22%。</li>
 </ul>
-<blockquote class="quote"><strong>實用提醒：</strong> 軍事建築在遊戲原版地圖上<strong>極其稀少</strong>（整個肯塔基州也就五個左右這樣的房間）。 所以實際要找的時候，還是去<strong>警察局</strong>。</blockquote>
-<p><strong>學習速度：</strong> <strong>戰鬥翻倍</strong>、<strong>服從快 50%</strong>，和德國牧羊犬完全是同一套。分出這兩種狗的不是 訓練速度，而是<strong>傷害曲線</strong>。</p>
-<p><strong>戰鬥時：</strong> 牠的<strong>曲線是模組裡最陡的</strong>。沒練過的時候咬得比羅威納犬弱不少，但戰鬥練到 10 級 就<strong>追上頂點</strong>。這是一筆投資：剛馴服的杜賓犬很弱，練出來的杜賓犬是一線戰力。</p>
-<p>膽子大（恐慌閾值拉滿），但<strong>更不耐打</strong>：牠的抗性是所有戰鬥犬裡最低的。</p>
-<p><strong>特性：</strong> <strong>攻擊性區間是模組裡最高的</strong>，也就是說牠賺戰鬥經驗還要更快。力量和抗性比羅威納犬 低一點。</p>
-<p><strong>產仔數：</strong> 1 到 2 隻。<strong>馱袋：</strong> 6 到 8。</p>
-<p><strong>moodle：「穩定瞄準」</strong></p>
-<blockquote class="quote"><em>「你的杜賓犬正在為你警戒。只要牠在附近、吃飽且忠誠，你的壓力就會消退，每次射擊後瞄準恢復 更快，裝彈也更迅速。」</em></blockquote>
-<p>三個效果，全都是給<strong>槍械</strong>用的：</p>
+<blockquote class="quote">軍事建築在遊戲的基礎地圖上很少（整個肯塔基大概只有五個這樣的房間）。去警察局找。</blockquote>
+<p><strong>學習速度：</strong> 戰鬥兩倍，服從快 50%，和德國牧羊犬同一套。</p>
+<p><strong>打起來：</strong> 牠的傷害曲線是模組裡最陡的。沒受訓時打得比羅威納犬弱得多；到戰鬥 10 級就追上同樣的最高傷害。</p>
+<p>膽量高（驚慌門檻拉到最高），但更不耐打：牠的抗性在戰鬥犬裡最低。</p>
+<p><strong>特性：</strong> 模組裡最寬的攻擊性區間，這讓牠拿戰鬥經驗更快。力量和抗性比羅威納犬略低一些。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。<strong>馱袋：</strong> 6 到 8。</p>
+<p><strong>Moodle：「穩定瞄準」</strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的杜賓犬正在為你警戒。只要牠在附近、吃飽且忠誠，你的壓力就會消退，每次射擊後瞄準恢復更快， 裝彈也更迅速。</span></em></blockquote>
+<p>只對槍械有效：</p>
 <ul>
-<li><strong>你的壓力會持續下降</strong>（壓力一高，Zomboid 裡的準頭就會變差）。</li>
-<li><strong>每開一槍之後，後座力恢復快 45%</strong>。你能更早重新瞄準。</li>
-<li><strong>裝彈快 15%。</strong></li>
+<li>你的壓力持續消退（壓力高會讓準頭變差）。</li>
+<li>每一槍之後後座力恢復快 45%。</li>
+<li>裝彈快 15%。</li>
 </ul>
-<p><strong>適合誰：</strong> 適合玩槍的人。這三個效果全都疊在同一個問題上，就是「從這一槍到下一槍，我要浪費 多少時間」。</p>
-<blockquote class="quote"><strong>注意：</strong> 遊戲裡的品種描述說牠訓練服從「甚至超過德國牧羊犬」，還說戰鬥滿級時「咬合力超過 模組中任何一條狗」。這兩處其實都是<strong>打平</strong>，不是優勢：服從上牠和德國牧羊犬持平，10 級的傷害和羅威納犬持平。</blockquote>
+<p><strong>適合誰：</strong> 玩槍的人。</p>
+<blockquote class="quote">遊戲裡的描述說牠訓練服從「甚至超過德國牧羊犬」，而且戰鬥滿級時「咬合力超過模組中任何一條狗」。 這兩處其實都是打平：牠在服從上和德國牧羊犬相同，在 10 級傷害上和羅威納犬相同。</blockquote>
 <hr>
 <h3 id="拉布拉多">拉布拉多</h3>
 <p><em>(模組 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>，獨立附加模組)</em></p>
-<p><strong>銜取犬。</strong> 模組裡最好的獵犬，同時也是刻意做成最差的鬥犬。</p>
-<blockquote class="quote"><em>「為銜回獵物而生的獵犬：訓練狩獵的速度是別的狗的兩倍，服從緊隨其後。作為代價，牠是本家族中 最差的鬥犬：咬合最弱，無法擊倒，打一架就會讓牠相當不安。牠真正的天賦在於那張嘴。」</em></blockquote>
+<p>狩獵品種。銜回獵物最好的一條狗。</p>
+<blockquote class="quote quote-game"><em><span class="ig">為銜回獵物而生的獵犬：訓練狩獵的速度是別的狗的兩倍，服從緊隨其後。 作為代價，牠是本家族中最差的鬥犬之一：只有巴哥犬咬合更弱，無法擊倒，打一架就會讓牠相當不安。 牠真正的天賦在於那張嘴。</span></em></blockquote>
 <p><strong>在哪裡找：</strong></p>
 <ul>
-<li><strong>民宅：</strong> <strong>每棟 5%。</strong> 牠是最好找的附加品種，機率是黃金獵犬的 兩倍。</li>
-<li><strong>野外：</strong> 獵人小屋、露營地、船屋、釣點、護林站。 <strong>每棟 20%。</strong></li>
+<li>民宅：每戶 1%，和金毛尋回犬一樣的機率。</li>
+<li>野外（獵人小屋、露營地、船屋、釣魚點、護林站）：每棟 20%。</li>
 </ul>
-<p><strong>學習速度：</strong> <strong>狩獵翻倍</strong>、<strong>服從快 50%</strong>。就是獵手加上紀律的組合。</p>
-<p><strong>戰鬥時：</strong> <strong>故意做成了模組裡最差的</strong>。</p>
+<p><strong>學習速度：</strong> 狩獵兩倍，服從快 50%。</p>
+<p><strong>打起來：</strong> 模組裡最差的幾個之一。</p>
 <ul>
-<li><strong>咬合是所有品種裡最弱的</strong>。</li>
-<li><strong>牠不會把殭屍擊倒。</strong> 是唯一沒有這個能力的品種。</li>
-<li>累積壓力的速度是羅威納犬的<strong>三點五倍</strong>，而且和小卡犬一樣，在很低的閾值 就會恐慌。</li>
+<li>咬合是全部裡最弱的，只比巴哥犬高。</li>
+<li>不會撞倒殭屍。只有牠和巴哥犬撞不倒。</li>
+<li>累積壓力比羅威納犬快三倍半，而且和土狗一樣在很低的點就驚慌。</li>
 </ul>
-<p>你要是硬讓牠上，牠<strong>確實能</strong>咬死殭屍，但別派這條狗去打架。</p>
-<p><strong>特性：</strong> <strong>攻擊性區間是模組裡最低的</strong>。牠是這裡最溫馴的狗，也正因為這樣，學打架比誰 都慢。</p>
-<p><strong>產仔數：</strong> <strong>1 到 3 隻</strong>，是唯一超過 2 隻的附加品種。<strong>馱袋：</strong> 6 到 8。</p>
-<p><strong>moodle：「軟口銜取」</strong></p>
-<blockquote class="quote"><em>「你的拉布拉多從第一次狩獵起就會把每一次獵物叼回來，還常常額外帶回點什麼。只要牠在身邊、 吃飽且忠誠，你的屠宰與短刃也學得更快。」</em></blockquote>
-<p>四個效果，這也是模組裡內容最全的 moodle：</p>
+<p>你肯磨的話牠殺得死一隻殭屍。</p>
+<p><strong>特性：</strong> 模組裡最窄的攻擊性區間。牠因此學打架學得比較慢。</p>
+<p><strong>每胎產仔數：</strong> 1 到 3，是唯一超過 2 的附加品種。<strong>馱袋：</strong> 6 到 8。</p>
+<p><strong>Moodle：「軟口銜取」</strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的拉布拉多從第一次狩獵起就會把每一次獵物叼回來，還常常額外帶回點什麼。 只要牠在身邊、吃飽且忠誠，你的屠宰與短刃也學得更快。</span></em></blockquote>
 <ul>
-<li><strong>狩獵 3 級起牠就會把獵物叼回來</strong>，也就是<strong>從牠能打獵的那一刻開始</strong>。別的品種都要等到 狩獵 6 級才會往回叼。這中間差的是半場遊戲的時間。</li>
-<li><strong>叼回來的路上牠堅持的時間是別的狗的三倍</strong>，才會把屍體丟在半路。</li>
-<li><strong>60% 的銜取還會附帶一件額外物品</strong>，掉在你腳邊：小動物骨頭、雞毛、樹枝或者野禽蛋。 <em>「你的拉布拉多還給你叼回了：……」</em></li>
-<li><strong>屠宰和短刃</strong>的經驗 <strong>+20%</strong>，正好就是處理牠叼回來的東西要用的技能。</li>
+<li>從狩獵 3 級起就把獵物叼回來，也就是從牠會打獵的那一刻起。其他品種要到狩獵 6 級才開始叼。</li>
+<li>在半路放下屍體之前，牠堅持送達的時間是別的狗的三倍。</li>
+<li>60% 的送達會在你腳邊地上多丟一件東西：小動物的骨頭、雞毛、樹枝或者野鳥蛋。 <em><span class="ig">你的拉布拉多還帶回了一樣東西：...</span></em></li>
+<li>屠宰和短刃經驗 +20%，正是處理牠帶回來的東西要用的技能。</li>
 </ul>
-<p><strong>適合誰：</strong> 適合以打獵為生的玩法。黃金獵犬學狩獵一樣快，但<strong>拉布拉多從一開始就會往回送</strong>， 這個差距在開局的頭幾週就看得出來。</p>
+<p><strong>適合誰：</strong> 靠打獵過日子的人。金毛尋回犬學打獵一樣快，但拉布拉多從一開始就會叼回來。</p>
 <hr>
 <h3 id="巴哥犬">巴哥犬</h3>
-<p><em>(模組 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>，獨立擴充模組)</em></p>
-<p><strong>居家犬。</strong>其他每個品種都靠打架、狩獵、牧畜或負重來體現價值。巴哥犬一樣都不做，卻是模組裡最好的夥伴。</p>
+<p><em>(模組 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>，獨立附加模組)</em></p>
+<p>陪伴犬，帶一個管情緒的 moodle。</p>
 <blockquote class="quote quote-game"><em><span class="ig">居家犬：第一隻價值不在戰鬥、狩獵、牧畜或負重的夥伴。牠的服從訓練速度是其他犬種的兩倍， 而且羈絆永遠不會自行下降。</span></em></blockquote>
 <p><strong>在哪裡找：</strong></p>
 <ul>
-<li><strong>民宅：</strong>每棟 <strong>5%</strong>，和拉布拉多一樣容易。畢竟是居家犬。</li>
-<li><strong>寵物店和獸醫：</strong>每棟 <strong>12%</strong>，和哈士奇同一個地方。</li>
+<li>民宅：每戶 3%，是拉布拉多和羅威納犬的三倍，和小卡犬一樣。是在住家裡最容易找到的附加品種。</li>
+<li>寵物店和獸醫診所：每棟 12%，和哈士奇同一個地方。</li>
 </ul>
-<p><strong>牠學得快：</strong><strong>服從翻倍</strong>，比模組裡任何品種都快，外加<strong>嗅覺快 50%</strong>、狩獵 20%。技巧樹（去指定地點、 引開殭屍、聞出物品、在你睡覺時叼回來）牠比你能養的任何狗都先爬完。</p>
-<p><strong>牠的羈絆不會掉。</strong>別的狗在你離開或疏於照顧時會自己掉忠誠。巴哥犬不會。在外奔波一個月回來，牠還是 你走時的樣子。只有這個品種是這樣。</p>
-<p><strong>牠先示警。</strong>在同樣的嗅覺等級下，巴哥犬比任何品種都<strong>遠 35%</strong> 就察覺到殭屍。牠本來就是當警報犬養的， 這一點到現在還管用。</p>
-<p><strong>打架：別指望牠。</strong>這是模組裡最弱的狗，比小卡犬還弱。</p>
+<p><strong>學習速度：</strong> 服從兩倍，嗅覺快 50%，狩獵快 20%。 牠爬完那棵才藝樹（前往某個地點、引開殭屍、嗅出物品、趁你睡覺去撿東西）比任何一條狗都早。</p>
+<p>其他每一條狗都會因為你消失或者疏於照料而掉忠誠度；巴哥犬不會。在外面跑一個月回來，牠還是你留下時的樣子。</p>
+<p>在同樣的嗅覺等級上，巴哥犬察覺殭屍的距離比任何品種都遠 35%。</p>
+<p><strong>打起來：</strong> 是模組裡最弱的狗，比小卡犬還弱。</p>
 <ul>
-<li><strong>咬合是所有狗裡最弱的</strong>，而且差距不小。</li>
-<li><strong>殺不死殭屍</strong>，也<strong>撞不倒</strong>。牠是唯一兩項都關掉的狗。</li>
-<li>壓力漲得比任何狗都快，而且<strong>比誰都先陷入恐慌</strong>。</li>
+<li>咬合是全部裡最弱的，而且差距很大。</li>
+<li>殺不死殭屍，也撞不倒。牠是唯一兩樣都被關掉的狗。</li>
+<li>累積壓力比任何一條狗都快，而且比所有狗都先驚慌。</li>
 </ul>
-<p><strong>代價還不止這些：</strong></p>
+<p>其他弱點：</p>
 <ul>
-<li><strong>牠的吠叫會暴露你，而且沒辦法讓牠閉嘴。</strong>給你示警的同一聲警報也在給死人示警，還比任何品種都響， 而且巴哥犬是<strong>唯一不能切到靜默和靜音的狗</strong>：牠視窗裡的這兩個按鈕都是灰的。你沒辦法只留下牠鼻子好 的那一半。（如果沙盒選項裡關掉了狗的噪音吸引殭屍，那對巴哥犬和對別的狗一樣有效：叫聲照樣響，但不 會引來任何人。）</li>
-<li><strong>牠跟不上跑。</strong>衝刺的時候巴哥犬會落在任何一隻狗後面。</li>
-<li><strong>夏天很折磨牠。</strong>扁臉散不了熱。超過 <strong>28 °C</strong> 牠就開始累積壓力，並且<strong>不再安慰你</strong>；到 <strong>36 °C</strong> 懲罰到頂。室內比較涼快，在那裡牠又能正常發揮。</li>
-<li><strong>馱袋 2 到 3。</strong>戴是能戴，但牠不是馱貨的料。</li>
+<li>牠的叫聲在所有品種裡最大，招殭屍招得跟提醒你一樣有效。 巴哥犬是唯一不接受靜默和靜音模式的狗：這兩個按鈕在牠的視窗裡是關著的。 （沙盒選項把狗的噪音關掉的話，巴哥犬和別的狗一樣：叫聲還是很大，但招不來任何人。）</li>
+<li>跟不上跑步。衝刺時牠會落在任何一條狗後面。</li>
+<li>怕熱。超過 28 °C 牠開始有壓力，不再安慰你，moodle 也從 HUD 上消失；到 36 °C 懲罰到頂。 室內比較涼快，牠就恢復正常。</li>
+<li>馱袋 2 到 3。牠背得動，但不是馱獸。</li>
 </ul>
-<p><strong>換來的是牠吃得少喝得少：</strong>飢餓只有中型犬的一半，口渴少三分之一左右。</p>
-<p><strong>特性：</strong><strong>模組裡力量和抗性範圍最窄的品種。</strong>永遠生來就弱、就脆，這不是幼犬運氣差。</p>
-<p><strong>每胎：</strong><strong>1 到 2</strong>。</p>
+<p>作為補償，牠吃得少喝得也少：飢餓是中型犬的一半，口渴少三分之一。</p>
+<p><strong>特性：</strong> 模組裡最窄的力量和抗性區間。不管哪一窩，生下來都又弱又脆。</p>
+<p><strong>每胎產仔數：</strong> 1 到 2。</p>
 <p><strong>Moodle：「你的影子」</strong></p>
 <blockquote class="quote quote-game"><em><span class="ig">你的巴哥犬寸步不離。只要牠在身邊、吃飽且忠誠，沮喪、無聊和壓力下降得比任何其他狗都快。 高溫會讓這一切失效：一隻喘氣的巴哥犬安慰不了任何人，直到牠找到涼快的地方。</span></em></blockquote>
 <ul>
-<li><strong>悲傷和無聊下降得比待在小卡犬旁邊快 60%。</strong></li>
-<li><strong>壓力也會降。</strong>模組裡沒有別的狗單靠在場就能動到壓力；用狗降壓力的另一個辦法只有睡在牠旁邊 （「休息充分」）。</li>
-<li><strong>一熱 moodle 就消失。</strong>超過 28 °C 牠會從 HUD 上撤下來，直到狗找到涼快的地方。這是故意的：你不用讀 任何說明就能察覺這個品種的短板。</li>
+<li>悲傷和無聊下降得比待在小卡犬旁邊快 60%。</li>
+<li>壓力也會降。只有牠和杜賓犬靠待在旁邊就動得了壓力，而杜賓犬消得更快。 除了這兩隻，用狗降壓力的唯一辦法就是睡在牠旁邊（「精神飽滿」）。</li>
 </ul>
-<p><strong>適合誰：</strong>適合據點流的玩法、適合長局，也適合那些受夠了因為出門太久而掉忠誠的人。要出城的話， 帶一隻看家犬一起走。</p>
+<p><strong>適合誰：</strong> 玩基地流、玩長局，或者受夠了因為出門太久而掉忠誠度的人。要出城的話帶一條看門犬一起走。</p>
 <h2 id="5-貓第一個別的物種">5. 貓：第一個別的物種</h2>
-<p><em>(模組 <strong>CD: Cats</strong>，獨立附加模組)</em></p>
-<p>到這裡為止的品種全都是狗，牠們之間的差別在於每件事各做得<strong>多少</strong>。貓是第一個真正的例外：定義牠的不是數值 更差，而是<strong>有些工作牠根本沒有</strong>。</p>
-<blockquote class="quote quote-game"><em>"不是一隻數值更差的狗：是一種乾脆就沒有某些工作的動物。貓從不與死者搏鬥，從不被安排進圍欄，也不繁殖。 牠獵齧齒動物和兔子，放過鹿。你自己養的牲畜永遠不是獵物：牠不會碰雞，也不會碰圍欄裡的任何動物。牠給你的是警告：牠比任何其他夥伴都更早察覺死者，而對其餘一切保持 沉默。"</em></blockquote>
-<h3 id="牠不做的事">牠不做的事</h3>
-<p>這不是弱，而是缺席。這些機制對牠並不存在，介面也一同消失：你不會看到按鈕變灰，你會看不到按鈕。</p>
+<p><em>（模組 <strong>CD: Cats</strong>，獨立附加包）</em></p>
+<p>到這裡為止的所有品種都是狗。</p>
+<blockquote class="quote quote-game"><em>"牠不是數值更差的狗，而是一種本來就沒有某些職責的動物。貓從不與喪屍搏鬥，不能被派去看管畜欄， 也只和其他貓繁殖。牠捕獵鼠類和兔子，對鹿視而不見。你自己養的牲畜永遠不是獵物：牠不會碰雞， 也不會碰畜欄裡的任何動物。牠給你的是預警：比任何其他同伴都更早察覺喪屍， 而在其他所有事情上都很安靜。"</em></blockquote>
+<h3 id="牠不做什麼">牠不做什麼</h3>
+<p>這些機制對貓來說並不存在，介面上連灰掉的按鈕都不會出現。</p>
 <div class="tw"><table><thead><tr>
 <th>什麼</th>
-<th>什麼消失了</th>
+<th>消失了什麼</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>不打架</strong></td>
-<td>視窗裡沒有戰鬥，沒有<strong>警戒</strong>模式，沒有自我保護。哪怕你就在牠面前被撕咬，牠也不會攻擊喪屍</td>
+<td><strong>不戰鬥</strong></td>
+<td>視窗裡沒有戰鬥，沒有<strong>守衛</strong>模式，沒有自我保護</td>
 </tr>
 <tr>
-<td><strong>不看管牲畜</strong></td>
-<td>沒有牧養，<strong>照料牲畜</strong>模式永遠不會出現在選單裡</td>
+<td><strong>不照顧牲畜</strong></td>
+<td>沒有放牧，<strong>照顧牲畜</strong>模式也不出現在選單裡</td>
 </tr>
 <tr>
-<td><strong>不繁殖</strong></td>
-<td>沒有發情，沒有懷孕，沒有小貓。貓既不與狗交配，也不與別的貓交配</td>
+<td><strong>不與狗繁殖</strong></td>
+<td>貓只和貓配對，生下來的是小貓</td>
 </tr>
 <tr>
 <td><strong>不獵比兔子更大的東西</strong></td>
-<td>鹿對牠是<strong>看不見的</strong>：別說追了，牠連指示都不會做。而且你自己養的牲畜永遠不是獵物：牠不會碰雞，不會碰牛，也不會碰圍欄裡的任何動物</td>
+<td>鹿對牠來說是隱形的：既不指示，也不追上去</td>
 </tr>
 </tbody></table></div>
-<p><strong>牠的狩獵止於兔子。</strong>在小獵物這一段，這和拉布拉多、黃金獵犬是同一個上限。牠不做的是鹿：大獵物會傷到獵 牠的一方，而貓沒有什麼可以還手。而且牠在追逐時會叫，和任何夥伴一樣：帶貓狩獵<strong>並不</strong>安靜，牠的安靜是其 餘的時間。</p>
+<p>牠在小型獵物上的上限和拉布拉多、金毛尋回犬一樣。牠追獵時會叫，所以帶貓打獵是有聲音的。不打獵的時候牠很安靜。</p>
 <h3 id="牠比任何狗都做得好的事">牠比任何狗都做得好的事</h3>
-<p><strong>牠比誰都先發出警告。</strong>既然戰鬥已經不剩下什麼，警告<strong>就是</strong>牠的工作，而貓擁有模組中最大的哨戒範圍：</p>
+<p>既然牠不戰鬥，預警就是牠的工作，而貓擁有模組裡最大的哨兵半徑：</p>
 <div class="tw"><table><thead><tr>
 <th></th>
 <th>嗅覺 0</th>
@@ -923,41 +906,40 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>27 格</td>
 </tr>
 <tr>
-<td>巴哥</td>
+<td>巴哥犬</td>
 <td>24 格</td>
 <td>36 格</td>
 </tr>
 <tr>
 <td><strong>貓</strong></td>
-<td><strong>25 格</strong></td>
-<td><strong>38 格</strong></td>
+<td>25 格</td>
+<td>38 格</td>
 </tr>
 </tbody></table></div>
-<p><strong>而且牠最安靜。</strong>牠的叫聲散出的噪音是狗的<strong>一半</strong>，是巴哥吠聲的<strong>三分之一</strong>。巴哥早早警告你，同時也把 你的位置洩漏出去；貓警告得更早，而且一聲不響。牠是模組裡唯一兩件事都做到的夥伴。</p>
-<p><strong>狩獵的學習速度是兩倍</strong>，與黃金獵犬和拉布拉多並列，<strong>嗅覺快 50%</strong>。</p>
+<p>牠也是最安靜的。牠喵叫的噪音是狗的一半，是巴哥犬吠叫的三分之一。</p>
+<p>狩獵漲速翻倍，與金毛尋回犬和拉布拉多並列，而牠的嗅覺漲得快 50%。</p>
 <h3 id="代價">代價</h3>
-<p><strong>牠是模組中最倔的動物。</strong>服從 <strong>0.7</strong>，現存最狠的學習懲罰，比迄今唯一的哈士奇 0.8 還狠。四個技巧牠確實 都能解鎖，但抵達那裡要比任何狗<strong>晚得多</strong>。</p>
-<p><strong>牠還會被老鼠分心。</strong>貓時不時會看見附近有隻齧齒動物，然後就這麼追上去，把手邊的事全丟下。不用你叫，牠自己就會把那隻齧齒動物獵殺掉。牠在什麼模式 無所謂，狩獵等級是多少也無所謂，那段時間說了算的不是你：你下的任何命令都會以*「分心了，無視你」*返回，而 那是這條訊息唯一一次說的就是實際發生的事。<strong>用「過來」呼喚牠就能取消</strong>，那也是唯一能通過的命令。在這期間， 你沒有哨兵。</p>
-<p><strong>而且牠會把老鼠叼給你。</strong>獵殺之後，貓會走回屍體那裡，把牠一路叼到你面前，放在你腳邊。這不需要任何 等級：把獵物送回來是本能，不是訓練，貓從第一天起就這麼做。另一個不用訓練就送東西回來的是拉布拉多， 區別在於拉布拉多是因為你叫牠才帶回來的。</p>
-<p>請注意這只限<strong>齧齒動物</strong>。兔子牠是會獵的，但那是正經狩獵，要開著狩獵模式，要有拉布拉多同樣需要的等級。這種 分心是本能，而本能的範圍就是大鼠和小鼠，也就是貓不曾訓練過也能抓到的東西。這是牠的服從 0.7 終於不再只是卡片 上的一個數字。</p>
-<p><strong>也是最獨立的。</strong>當你消失或疏於照料時，牠的羈絆下降得比狗<strong>快 50%</strong>。這與羈絆根本不會下降的巴哥正好 相反。貓要求你在場。</p>
-<p><strong>鞍袋 2，就這樣。</strong>這不是別的品種那樣的區間：算下來<strong>任何貓都是 2</strong>，無論出生時多強壯。小動物。</p>
-<p><strong>神經質。</strong>牠擁有模組中第二差的隱藏壓力基因，只比卡拉梅羅好。牠不打架，所以這一點在戰鬥中永遠看不出來， 牠表現為驚嚇：巨響、尖叫、受傷。恐慌中的貓會<strong>停止警戒，也不再帶回禮物</strong>。</p>
-<p><strong>牠不趴下。</strong>在待命狀態下，貓是站著的。純外觀，不改變任何東西。</p>
-<p><strong>資質：</strong>與巴哥並列擁有<strong>模組中最窄的力量區間</strong>，攻擊性和抗性同樣低。不存在強壯的貓，這不是幼崽的運氣 不好。</p>
+<p>牠是模組裡最犟的。服從係數 0.7，是現有最大的學習懲罰（哈士奇是唯一另一個帶懲罰的品種，為 0.8）。 牠照樣能解鎖四個技巧，但比任何狗都晚得多才到得了。</p>
+<p>牠會被老鼠帶走注意力。貓時不時會看見附近有鼠類就追上去，把手上的事丟下。牠自己獵殺這隻鼠類。 這在任何模式、任何狩獵等級下都會發生，而那段時間牠不聽話：任何命令都會以 <em><span class="ig">分心了，沒聽你的</span></em>返回。只有<strong><span class="ig">過來</span></strong>能穿過去並取消這場追逐。在此期間，你沒有哨兵。</p>
+<p>殺完之後，貓會回到屍體旁，把牠叼到你身邊扔在你腳下。牠從第一天起就會送獵物。拉布拉多也不用訓練就送， 但只在你要求時送。</p>
+<p>這種分心只針對大鼠和小鼠。兔子要開著狩獵模式並達到相應等級才行。</p>
+<p>牠也是最獨立的。當你消失或在照料上鬆懈時，牠的羈絆掉得比狗快 50%（巴哥犬正好相反：牠的羈絆不掉）。</p>
+<p><strong>馱袋：</strong>任何貓都是 2。別的品種馱袋是一個區間；在貓身上算下來就是 2，無論牠出生時多強壯。</p>
+<p>牠很神經：擁有模組裡第二差的隱藏壓力基因，只比小卡犬好一點。因為牠不打架，這一點不體現在戰鬥裡， 而體現在受驚時：巨響、喊叫、受傷。陷入恐慌的貓會停止放哨，也停止送禮物。</p>
+<p>在待命模式下，貓是站著而不是趴著。這只是外觀。</p>
+<p><strong>特性：</strong>與巴哥犬並列擁有模組裡最小的力量區間，攻擊性和抗性同樣低。</p>
 <h3 id="五種毛色">五種毛色</h3>
-<p>黑、白、橘、玳瑁和燕尾。對模組來說牠們是<strong>五個品種</strong>（各自的名字，在生成選單和犬舍裡各自的條目）而在 所有實際意義上牠們是<strong>同一種動物</strong>：相同的技能、相同的 moodle、相同的叫聲、相同的資質區間。毛色<strong>只是 外觀</strong>。</p>
-<p><strong>遇到哪種毛色全看運氣。</strong>每一種都獨立地為自己的建築擲骰。牠們進來時機率已經除以五了，所以世界上貓的總量 和只有黑貓時是一樣的：五種毛色不會讓你的貓多五倍。</p>
-<p><strong>在哪裡找到牠們：</strong>每種毛色<strong>每棟住宅 2%</strong>，<strong>每家商店、雜貨店或餐館 2%</strong>，<strong>每家寵物店或獸醫診所 2.4%</strong>。貓依附的是建築而不是野外，但也不只是建築的裡面：<strong>一半出現在屋內，一半出現在牠的地界上</strong>：院子、 人行道、停車場，或者店鋪後面的巷子。</p>
-<p>貓在沙盒裡有<strong>自己的生成倍率</strong>，就是<strong>“貓咪生成倍率”</strong>，和狗的分開：流浪狗很少甚至沒有的世界，貓還是一樣多。</p>
-<h3 id="夜禮">夜禮</h3>
-<p><strong>貓身上最隱蔽的機制。</strong>你醒來，腳邊放著一隻死去的小動物。</p>
-<p>貓在你睡覺時出門，把獵物留下。沒有追逐，世界上也沒有任何東西死去，正因如此，即使在沙盒選項裡<strong>關掉了 狩獵，這份禮物依然照常運作</strong>。</p>
-<p><strong>觸發條件：</strong>在貓處於<strong>8 格以內</strong>時<strong>從睡眠中醒來</strong>。與「休息充分」相同的半徑，理由也相同：夜裡出門的， 是那隻當時在你身邊的貓。</p>
-<p><strong>機率就是牠的狩獵</strong>，並在頂端收攏為確定：</p>
+<p>黑貓、白貓、橘貓、三花貓和賓士貓。對模組來說這是五個品種（各有名字、各有生成選單和犬舍裡的條目）， 但數值、心情圖示、叫聲和特性區間都一樣。毛色只是外觀。</p>
+<p>每種毛色都獨立地為自己抽建築。機率已經是除以五之後的，所以世界裡貓的總量和只有黑貓時一樣。</p>
+<p><strong>在哪找：</strong>住宅每棟 2%，商店、超市或快餐店每棟 2%，寵物店或獸醫診所每棟 2.4%，按毛色分別計算。 貓出生在建築裡，不在野外：一半在建築內部，一半在牠的地塊上（院子、人行道、停車場或店後的巷子）。</p>
+<p>貓在沙盒裡有自己的生成倍率，<strong><span class="ig">貓咪生成倍率</span></strong>，與狗的那個分開。一個流浪狗很少或沒有的世界， 貓的數量照舊。</p>
+<h3 id="夜裡的禮物">夜裡的禮物</h3>
+<p>你醒來，腳邊有一隻死掉的小動物。貓在你睡覺時<span class="ig">出門</span>並留下獵物。沒有追逐，世界裡也沒有東西死去， 所以即使在沙盒選項裡關掉狩獵，這份禮物照樣有效。</p>
+<p>在你從睡眠中醒來時觸發，貓在 8 格以內，和<span class="ig">精神飽滿</span>是同一個半徑。</p>
+<p>機率就是牠的狩獵等級：</p>
 <div class="tw"><table><thead><tr>
 <th>狩獵</th>
-<th>出現禮物的機率</th>
+<th>送來禮物的機率</th>
 </tr></thead><tbody>
 <tr>
 <td>0</td>
@@ -976,44 +958,44 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>87%</td>
 </tr>
 <tr>
-<td><strong>10</strong></td>
-<td><strong>100%</strong></td>
+<td>10</td>
+<td>100%</td>
 </tr>
 </tbody></table></div>
-<p><strong>在 10 級不再有擲骰：牠每天都會帶一份回來。</strong></p>
-<p><strong>狩獵還決定送來的是什麼。</strong>這不只是頻率的問題，整張清單都會翻轉：</p>
+<p>狩獵還決定送來什麼：</p>
 <div class="tw"><table><thead><tr>
 <th>狩獵</th>
 <th>通常送來什麼</th>
 </tr></thead><tbody>
 <tr>
 <td>低</td>
-<td>蚯蚓、蟋蟀、蚱蜢、蟑螂。任何動物站著不動就能找到的東西</td>
+<td>蚯蚓、蟋蟀、蝗蟲、蟑螂。任何動物站在原地就能找到的東西</td>
 </tr>
 <tr>
 <td>高</td>
-<td><strong>小鼠和大鼠</strong>成為常態，中間夾著青蛙和蜈蚣</td>
+<td>小鼠和大鼠成了常見情況，中間夾著青蛙和蜈蚣</td>
 </tr>
 </tbody></table></div>
-<p>這個差別很值：蚯蚓是 3 卡路里，大鼠是 324 卡路里，還能再降 22 點飢餓。青蛙還能當釣餌。</p>
-<p><strong>每天一次，按主人計。</strong>身邊有兩隻貓，你得到的是<strong>一份</strong>禮物，不是兩份。</p>
-<p><strong>每次成功送達牠都會獲得狩獵經驗</strong>。一隻被照料得好的貓，就是這樣自己練到再也不會失手的等級。</p>
-<p><strong>什麼都沒有的時候：</strong><strong>飢餓或口渴達到 75% 以上</strong>、生病、不聽話或恐慌中的貓不會出門。牠無聲地失敗，螢幕 上不會有任何提示。如果禮物停了，去看牠的條。</p>
-<blockquote class="quote"><strong>這不是「你睡覺時取回」技巧</strong>（服從 10），那個帶回來的是<strong>地上的物品</strong>。兩者都在醒來時觸發，互不衝突： 一隻服從 10 的貓會在同一個早晨<strong>兩件都做</strong>。</blockquote>
-<p><strong>moodle：「貓眼」</strong></p>
-<blockquote class="quote quote-game"><em><span class="ig">你的貓看得見你看不見的東西。只要牠吃飽喝足並與你相連，黑暗就不再藏起你正在找的東西：夜裡採集的效果 幾乎和白天一樣。</span></em></blockquote>
-<p><strong>黑暗中的採集不再毫無意義。</strong>在全黑之中，遊戲會把你的採集範圍壓到 <strong>1.5 格</strong>，實際上你得站在圖示正上方 才看得見。有貓在旁邊，深夜可以回到<strong>你在白天所能擁有範圍的約 60%</strong>。</p>
-<p>請注意這是一道<strong>臺階，而不是漸進的提升</strong>：沒有貓，你在分界線的壞的一側，夜裡幾乎採不到東西；有貓，你就 跨到了另一側。這是「能用」和「不能用」的差別。</p>
-<p><strong>牠適合誰：</strong>適合在深夜遊玩的人，適合想要盡可能早的警告又不願暴露自己位置的人，以及想要一點小肉又不想 帶上一隻大狗的人。牠 <strong>不</strong>適合想要一個看守的人：要出城的話，帶上一隻狗。</p>
+<p>差別很大：蚯蚓是 3 卡路里，大鼠是 324，還能消掉 22 點飢餓。青蛙可以當釣魚餌。</p>
+<p>每天每位主人一份禮物。身邊有兩隻貓，你得到一份，不是兩份。</p>
+<p>每次成功送達，貓都會獲得狩獵經驗，所以照料得好的貓會自己漲。</p>
+<p>飢餓或口渴在 75% 及以上、生病、不服從或陷入恐慌的貓不會出門。失敗是無聲的，螢幕上沒有提示。 如果禮物停了，去看牠的槽。</p>
+<blockquote class="quote">技巧<strong><span class="ig">睡覺時尋找物品</span></strong>（服從 10）是另一回事：它帶回地上的一件物品。兩者都在你醒來時觸發， 並不互相競爭。服從 10 的貓會在同一個早上把兩件都做完。</blockquote>
+<p><strong>心情圖示：<span class="ig">貓眼</span></strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的貓能看見你看不見的東西。只要牠吃飽喝足並與你親近，黑暗就藏不住你要找的東西： 夜間搜尋的效果接近白天。</span></em></blockquote>
+<p>在漆黑裡，遊戲把搜尋範圍壓到 1.5 格，你幾乎得站在圖示上才能看見它。有貓在附近， 深夜大約能拿到你白天該有範圍的 60%。</p>
+<p>這個增益是一次性給足的，不是慢慢累積。</p>
+<p><strong>適合誰：</strong>適合深夜玩的人，適合想要最早預警又不暴露自己位置的人，以及想要小塊肉又不想帶一隻大狗的人。 牠當不了警衛：要出城就帶一隻狗一起走。</p>
 <h2 id="6-對比表格">6. 對比表格</h2>
 <h3 id="學習速度">學習速度</h3>
+<p>數字越大，狗學得越快。正常速度是 1.0。</p>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
 <th>嗅覺</th>
 <th>戰鬥</th>
 <th>服從</th>
 <th>狩獵</th>
-<th>Herding</th>
+<th>放牧</th>
 </tr></thead><tbody>
 <tr>
 <td>小卡犬</td>
@@ -1026,24 +1008,24 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>德國牧羊犬</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td>1.5</td>
 <td>1.0</td>
 <td>1.2</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>哈士奇</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
-<td><strong>0.8</strong></td>
+<td>0.8</td>
 <td>1.5</td>
 <td>1.0</td>
 </tr>
@@ -1053,12 +1035,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.0</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>羅威納犬</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 <td>1.0</td>
 <td>1.2</td>
@@ -1066,7 +1048,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>杜賓犬</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
@@ -1076,14 +1058,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.2</td>
 <td>1.0</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>巴哥犬</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
 <td>1.0</td>
 </tr>
@@ -1091,13 +1073,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>貓</td>
 <td>1.5</td>
 <td>-</td>
-<td><strong>0.7</strong></td>
-<td><strong>2.0</strong></td>
+<td>0.7</td>
+<td>2.0</td>
 <td>-</td>
 </tr>
 </tbody></table></div>
-<p>貓那一欄的破折號不是「學得慢」，而是<strong>這個技能不存在</strong>：戰鬥和牧養對牠並不存在，連牠的視窗裡都不會 出現。</p>
-<p>模組裡僅有的兩個品種減益是哈士奇的 <strong>0.8</strong> 和貓的 <strong>0.7</strong>，後者更狠。</p>
+<p>貓那一欄的破折號表示牠沒有這個技能：戰鬥和牧養不會出現在牠的視窗裡。</p>
 <h3 id="戰鬥">戰鬥</h3>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
@@ -1108,16 +1089,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>巴哥犬</td>
-<td><strong>最弱</strong></td>
-<td><strong>0.65 倍</strong></td>
-<td><strong>不能</strong></td>
-<td><strong>不能</strong></td>
+<td>最弱</td>
+<td>0.65 倍</td>
+<td>不能</td>
+<td>不能</td>
 </tr>
 <tr>
 <td>小卡犬</td>
 <td>弱</td>
-<td><strong>1 倍</strong>（基準）</td>
-<td><strong>不能</strong></td>
+<td>1 倍（基準）</td>
+<td>不能</td>
 <td>能</td>
 </tr>
 <tr>
@@ -1125,10 +1106,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>弱</td>
 <td>1.3 倍</td>
 <td>能</td>
-<td><strong>不能</strong></td>
+<td>不能</td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td>弱</td>
 <td>1.5 倍</td>
 <td>能</td>
@@ -1151,51 +1132,51 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>杜賓犬</td>
 <td>中等</td>
-<td><strong>2.6 倍</strong></td>
+<td>2.6 倍</td>
 <td>能</td>
 <td>能</td>
 </tr>
 <tr>
 <td>德國牧羊犬</td>
-<td><strong>強</strong></td>
-<td><strong>2.6 倍</strong></td>
+<td>強</td>
+<td>2.6 倍</td>
 <td>能</td>
 <td>能</td>
 </tr>
 <tr>
 <td>羅威納犬</td>
-<td><strong>強</strong></td>
-<td><strong>2.6 倍</strong></td>
+<td>強</td>
+<td>2.6 倍</td>
 <td>能</td>
 <td>能</td>
 </tr>
 </tbody></table></div>
-<p>杜賓犬最後能站上頂點，但牠的起點低得多：一開始牠的咬合大約只有羅威納犬的<strong>三分之二</strong>， 要到 10 級才追平。</p>
-<p><strong>貓不在這張表裡</strong>，不是因為牠最弱，而是因為牠<strong>不打架</strong>。沒有撕咬，沒有警戒模式，哪怕你就在牠旁邊挨 打，牠也不會對喪屍做出反應。</p>
+<p>杜賓犬起步大約是羅威納犬咬合的三分之二。</p>
+<p>貓不在這張表裡，因為牠不打架。</p>
 <h3 id="戰鬥時的膽量">戰鬥時的膽量</h3>
-<p>數字<strong>越小</strong>，這隻狗打起架來越沉得住氣。</p>
+<p>數字越小，狗打架時越沉得住氣。</p>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
-<th>戰鬥累積的壓力</th>
-<th>恐慌臨界點</th>
+<th>打架累積的壓力</th>
+<th>驚慌門檻</th>
 </tr></thead><tbody>
 <tr>
 <td>德國牧羊犬</td>
-<td><strong>0.20</strong>（最沉穩）</td>
-<td><strong>0.90</strong>（最高）</td>
+<td>0.20（最沉穩）</td>
+<td>0.90（最高）</td>
 </tr>
 <tr>
 <td>羅威納犬</td>
-<td><strong>0.20</strong></td>
-<td><strong>0.90</strong></td>
+<td>0.20</td>
+<td>0.90</td>
 </tr>
 <tr>
 <td>杜賓犬</td>
 <td>0.25</td>
-<td><strong>0.90</strong></td>
+<td>0.90</td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td>0.33</td>
 <td>0.85</td>
 </tr>
@@ -1217,18 +1198,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>巴哥犬</td>
 <td>0.90</td>
-<td><strong>0.70</strong>（最低）</td>
+<td>0.70（最低）</td>
 </tr>
 <tr>
 <td>小卡犬</td>
-<td><strong>1.00</strong>（最容易緊張）</td>
-<td><strong>0.80</strong></td>
+<td>1.00（最容易慌）</td>
+<td>0.80</td>
 </tr>
 </tbody></table></div>
-<p>陷入恐慌的狗<strong>不會再戰鬥、守衛，也不會做技巧</strong>。所以這張表和傷害那張一樣重要：要是牠動手前 就先僵住了，咬得再狠也沒什麼用。</p>
-<p><strong>貓在這裡也沒有</strong>，因為牠不打架。但牠<strong>會陷入恐慌</strong>，這一點值得知道：牠擁有模組中<strong>第二差的隱藏壓力 基因</strong>，只比卡拉梅羅好。既然讓牠緊張的不是戰鬥，剩下的就是驚嚇：巨響、尖叫、受傷、疏於照料。而恐慌中的 貓會<strong>停止警戒，也不再帶回夜禮</strong>。</p>
+<p>驚慌的狗會停止戰鬥、停止警戒、停止表演。一隻咬合強卻早早驚慌的狗，產出比一隻更弱但撐完整場架的狗還少。</p>
+<p>貓同樣不在表裡，但牠的壓力值是模組裡第二差的，只比小卡犬好。驚慌的貓會停止警戒，也不再帶禮物回來。</p>
 <h3 id="特性出生範圍">特性（出生範圍）</h3>
-<p>範圍越高，狗出生時的資質就可能越好。在視窗裡，低於 0.34 的數值顯示為<strong>低</strong>，高於 0.66 顯示 為<strong>高</strong>，中間的顯示為<strong>平均</strong>。</p>
+<p>區間越高，狗出生時可能越好。低於 0.34 視窗顯示“低”，高於 0.66 顯示“高”，中間顯示“平均”。</p>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
 <th>力量</th>
@@ -1237,15 +1218,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>巴哥犬</td>
-<td><strong>0.00 到 0.10</strong></td>
+<td>0.00 到 0.10</td>
 <td>0.05 到 0.20</td>
-<td><strong>0.00 到 0.15</strong></td>
+<td>0.00 到 0.15</td>
 </tr>
 <tr>
 <td>貓</td>
-<td><strong>0.00 到 0.10</strong></td>
-<td><strong>0.00 到 0.15</strong></td>
-<td><strong>0.00 到 0.15</strong></td>
+<td>0.00 到 0.10</td>
+<td>0.00 到 0.15</td>
+<td>0.00 到 0.15</td>
 </tr>
 <tr>
 <td>小卡犬</td>
@@ -1254,7 +1235,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.00 到 0.15</td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td>0.20 到 0.40</td>
 <td>0.10 到 0.30</td>
 <td>0.20 到 0.40</td>
@@ -1268,13 +1249,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>拉布拉多</td>
 <td>0.25 到 0.45</td>
-<td><strong>0.10 到 0.25</strong></td>
+<td>0.10 到 0.25</td>
 <td>0.25 到 0.45</td>
 </tr>
 <tr>
 <td>杜賓犬</td>
 <td>0.25 到 0.45</td>
-<td><strong>0.35 到 0.55</strong></td>
+<td>0.35 到 0.55</td>
 <td>0.20 到 0.40</td>
 </tr>
 <tr>
@@ -1291,22 +1272,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>哈士奇</td>
-<td><strong>0.55 到 0.80</strong></td>
+<td>0.55 到 0.80</td>
 <td>0.10 到 0.30</td>
 <td>0.40 到 0.60</td>
 </tr>
 </tbody></table></div>
-<p>快速看懂：</p>
 <ul>
-<li><strong>小卡犬三項永遠都顯示「低」。</strong>不存在資質好的小卡犬。</li>
-<li><strong>巴哥犬也一樣</strong>，而且力量範圍更窄。不存在力氣大的巴哥犬。</li>
-<li><strong>哈士奇是唯一一個力量經常顯示「高」的品種。</strong></li>
-<li>黃金獵犬、哈士奇和拉布拉多的<strong>攻擊性永遠是「低」</strong>。這是牠們的常態，不是你運氣差。</li>
-<li>黃金獵犬和杜賓犬的力量與抗性也經常落在「低」。</li>
-<li><strong>德國牧羊犬和羅威納犬</strong>是僅有的兩個三項幾乎總是「平均」的品種。</li>
-</ul>
-<ul>
-<li><strong>貓與巴哥並列模組中最低的力量。</strong>不存在強壯的貓，所以牠的鞍袋永遠是 2。</li>
+<li>小卡犬三項都顯示“低”。</li>
+<li>巴哥犬也一樣，而且牠的力量區間更窄。</li>
+<li>貓和巴哥犬並列模組裡最低的力量。</li>
+<li>哈士奇是唯一常在力量上顯示“高”的品種。</li>
+<li>攻擊性在金毛尋回犬、哈士奇和拉布拉多身上都出“低”。</li>
+<li>金毛尋回犬和杜賓犬的力量與抗性也經常落在“低”。</li>
+<li>德國牧羊犬和羅威納犬是僅有的兩個幾乎總是三項都顯示“平均”的品種。</li>
 </ul>
 <h3 id="馱袋">馱袋</h3>
 <div class="tw"><table><thead><tr>
@@ -1315,18 +1293,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>貓</strong></td>
-<td><strong>2</strong> (固定)</td>
+<td>2（固定）</td>
 </tr>
 <tr>
 <td><strong>巴哥犬</strong></td>
-<td><strong>2 到 3</strong></td>
+<td>2 到 3</td>
 </tr>
 <tr>
 <td>小卡犬</td>
 <td>4 到 5</td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td>6 到 7</td>
 </tr>
 <tr>
@@ -1335,18 +1313,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
-<td><strong>13 到 16</strong></td>
+<td>13 到 16</td>
 </tr>
 </tbody></table></div>
-<p>貓是唯一沒有區間的：算下來<strong>任何貓都是 2</strong>，無論出生時多強壯。</p>
 <h3 id="每胎產仔數">每胎產仔數</h3>
 <div class="tw"><table><thead><tr>
-<th>母犬的品種</th>
+<th>母犬品種</th>
 <th>每胎幼犬數</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>小卡犬</strong></td>
-<td><strong>2 到 4</strong></td>
+<td><strong>小卡犬</strong>、貓</td>
+<td>2 到 4</td>
 </tr>
 <tr>
 <td>邊境牧羊犬</td>
@@ -1357,12 +1334,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 到 3</td>
 </tr>
 <tr>
-<td>德國牧羊犬、黃金獵犬、哈士奇、羅威納犬、杜賓犬、巴哥犬</td>
+<td>德國牧羊犬、金毛尋回犬、哈士奇、羅威納犬、杜賓犬、巴哥犬</td>
 <td>1 到 2</td>
 </tr>
 </tbody></table></div>
-<p>一胎生幾隻看<strong>母親的品種</strong>，跟父親無關。</p>
-<p><strong>貓不繁殖</strong>，所以這裡沒有牠的一行：沒有發情，沒有懷孕，也永遠不會有小貓出生。貓進入你遊戲的途徑只有 世界，絕不會來自你的繁育。</p>
+<p>父親的品種不算數。</p>
 <h3 id="各品種在哪裡找">各品種在哪裡找</h3>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
@@ -1400,11 +1376,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>12%</td>
 </tr>
 <tr>
-<td>小卡犬</td>
-<td>民宅</td>
-<td>10%</td>
-</tr>
-<tr>
 <td>哈士奇</td>
 <td>寵物店、獸醫</td>
 <td>10%</td>
@@ -1415,51 +1386,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>10%</td>
 </tr>
 <tr>
-<td>拉布拉多</td>
+<td>小卡犬</td>
 <td>民宅</td>
-<td>5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td>巴哥犬</td>
 <td>民宅</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>黃金獵犬</td>
-<td>民宅</td>
-<td>2.5%</td>
-</tr>
-<tr>
-<td>羅威納犬</td>
-<td>民宅</td>
-<td>2.5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td><strong>貓</strong></td>
 <td>寵物店、獸醫</td>
-<td><strong>2.4%</strong> 每種毛色</td>
+<td>2.4% 每種毛色</td>
 </tr>
 <tr>
 <td><strong>貓</strong></td>
 <td>商店、超市、餐館</td>
-<td><strong>2%</strong> 每種毛色</td>
+<td>2% 每種毛色</td>
 </tr>
 <tr>
 <td><strong>貓</strong></td>
 <td>民宅</td>
-<td><strong>2%</strong> 每種毛色</td>
+<td>2% 每種毛色</td>
 </tr>
 <tr>
 <td>哈士奇</td>
-<td>民宅，<strong>只在冬天</strong></td>
+<td>民宅，只在冬天</td>
 <td>1.25%</td>
 </tr>
+<tr>
+<td>金毛尋回犬</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>羅威納犬</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
 </tbody></table></div>
-<p>狗的機率會隨沙盒選項<strong>“狗生成倍率”</strong>一起變化。貓不會：貓有自己的選項<strong>“貓咪生成倍率”</strong>，所以把流浪狗調低或關掉，已經不會影響世界裡貓的數量。</p>
-<p>記住：這個判定<strong>每棟建築只做一次</strong>，而且會存進存檔。回到已經探索過的地方不會再刷出新的狗。</p>
-<p>貓的五種毛色<strong>各自獨立</strong>擲骰，所以單獨一種的機率才這麼低：加起來，牠們給出的貓量和單一品種給出的一樣 多。變的是你遇到<strong>哪一種</strong>毛色。</p>
+<p>狗的機率隨沙盒選項<strong>“狗生成倍率”</strong>一起變化。貓的機率跟著另一個選項<strong>“貓咪生成倍率”</strong>走，所以把流浪狗 調低或關掉，不會改變世界裡貓的數量。</p>
+<p>擲骰每棟建築只做一次，結果會存進存檔。</p>
 <h3 id="品種的內部名稱">品種的內部名稱</h3>
-<p>生成類 mod 和除錯模式要的是狗的<strong>內部名稱</strong>，不是畫面上顯示的名字。列表如下：</p>
+<p>生成類 mod 和除錯模式要的是狗的內部名稱，跟畫面上顯示的名字不一樣：</p>
 <div class="tw"><table><thead><tr>
 <th>品種</th>
 <th>公</th>
@@ -1482,7 +1457,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>germanshepherd</code></td>
 </tr>
 <tr>
-<td>黃金獵犬</td>
+<td>金毛尋回犬</td>
 <td><code>retrievermale</code></td>
 <td><code>retrieverfemale</code></td>
 <td><code>retrieverpup</code></td>
@@ -1566,110 +1541,109 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_tuxedo</code></td>
 </tr>
 </tbody></table></div>
-<p>公和母是<strong>兩個不同的類型</strong>，不是同一個類型下的選項。最後三行只有裝了對應品種的附加 mod 才存在。</p>
-<hr>
-<p><strong>五種毛色共用同一個類型</strong>（<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>），只靠 <code>breed</code> 區分，因為模型相同、只換 貼圖。注意這裡的 <code>breed</code> 帶底線（<code>cat_white</code>），與模組其餘部分不同。</p>
+<p>公和母是兩個不同的類型，不是同一個類型下的選項。五個附加品種只有裝了對應品種的附加 mod 才存在。</p>
+<p>貓的五種毛色共用同一個類型，只靠 <code>breed</code> 區分：模型是同一個，只有貼圖不同。這裡的 <code>breed</code> 帶底線 （<code>cat_white</code>），跟模組其他地方不一樣。</p>
 <h2 id="7-moodle完整清單">7. moodle：完整清單</h2>
-<p>狗的 moodle 會顯示在<strong>單獨的一欄裡，就在你自己那排 moodle 的左邊</strong>。</p>
+<p>狗的 moodle 顯示在自己的一欄裡，在你普通 moodle 的左邊。</p>
 <h3 id="所有品種-moodle-通用的規則">所有品種 moodle 通用的規則</h3>
-<p>只有下面這些條件<strong>全部</strong>成立，加成<strong>才存在</strong>：</p>
+<p>只有下面這些條件同時成立，加成才存在：</p>
 <div class="tw"><table><thead><tr>
 <th>條件</th>
 <th>細節</th>
 </tr></thead><tbody>
 <tr>
-<td>狗<strong>在附近</strong></td>
-<td><strong>8 格</strong>以內，而且<strong>在同一層樓</strong></td>
+<td><strong>狗在旁邊</strong></td>
+<td>8 格以內，而且在同一層</td>
 </tr>
 <tr>
-<td>牠是<strong>你的</strong></td>
-<td>別的玩家的狗不會給你任何東西</td>
+<td><strong>牠是你的</strong></td>
+<td>別的玩家的狗什麼都不給</td>
 </tr>
 <tr>
-<td>牠<strong>沒有不服從</strong></td>
+<td><strong>牠沒有不服從</strong></td>
 <td>忠誠度在下限之上</td>
 </tr>
 <tr>
-<td>牠<strong>沒有中毒</strong></td>
-<td>沒吃過不該吃的東西</td>
+<td><strong>牠沒有中毒</strong></td>
+<td>沒吃過壞東西</td>
 </tr>
 <tr>
-<td>牠<strong>不餓</strong></td>
+<td><strong>牠不餓</strong></td>
 <td>飢餓條低於 75%</td>
 </tr>
 <tr>
-<td>牠<strong>不渴</strong></td>
+<td><strong>牠不渴</strong></td>
 <td>口渴條低於 75%</td>
 </tr>
 </tbody></table></div>
-<p><strong>只要有一條不滿足，moodle 就會關掉。</strong>被虧待的狗一點加成都不給。這是整個 mod 的核心機制： <strong>你不照顧的狗，不會白送你任何好處。</strong></p>
-<blockquote class="quote"><strong>附近有好幾隻狗時，只算最近的那一隻。</strong> mod 只挑一隻狗，顯示那個品種的 moodle。你沒辦法把 德國牧羊犬的「勇氣」和哈士奇的「溫暖」同時疊起來。</blockquote>
-<p>狗被你<strong>抱在懷裡，或是跟你一起坐在車上</strong>時，moodle 照樣有效。</p>
+<p>任何一條不成立，moodle 就熄滅。</p>
+<blockquote class="quote">旁邊有好幾隻狗時只算最近的那隻，所以德國牧羊犬的勇氣和哈士奇的溫暖不會疊加。</blockquote>
+<p>狗被你抱在懷裡，或者和你一起坐車時，moodle 照樣有效。</p>
 <h3 id="各品種的-moodle">各品種的 moodle</h3>
 <div class="tw"><table><thead><tr>
-<th>moodle</th>
+<th>Moodle</th>
 <th>品種</th>
-<th>效果</th>
+<th>有什麼用</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>好夥伴</strong></td>
 <td>小卡犬</td>
-<td>降低<strong>不開心和無聊</strong></td>
+<td>降低不開心和無聊</td>
 </tr>
 <tr>
 <td><strong>勇氣</strong></td>
 <td>德國牧羊犬</td>
-<td>降低<strong>恐慌</strong>（基礎 mod 裡最強的效果）</td>
+<td>降低恐慌（基礎 mod 裡最強的效果）</td>
 </tr>
 <tr>
 <td><strong>靈敏嗅覺</strong></td>
-<td>黃金獵犬</td>
-<td>採集、製陷和瞄準<strong>經驗 +20%</strong>，採集視野<strong>+4 格</strong></td>
+<td>金毛尋回犬</td>
+<td>採集、製陷和瞄準經驗 +20%，採集視野 +4 格</td>
 </tr>
 <tr>
 <td><strong>溫暖</strong></td>
 <td>哈士奇</td>
-<td>力量<strong>經驗 +50%</strong>，幫你保留體力，嚴寒時還會變成<strong>熱源</strong></td>
+<td>力量經驗 +50%，幫你回體力，嚴寒時還會變成熱源</td>
 </tr>
 <tr>
 <td><strong>牧羊本能</strong></td>
 <td>邊境牧羊犬</td>
-<td>畜牧和農業<strong>經驗 +20%</strong>，還會<strong>安撫你周圍的牲畜</strong></td>
+<td>畜牧和農業經驗 +20%，還會安撫你周圍的牲畜</td>
 </tr>
 <tr>
 <td><strong>前線</strong></td>
 <td>羅威納犬</td>
-<td>每次近戰揮擊返還<strong>35% 的耐力</strong>。<strong>只在牠正在打架的時候有效</strong></td>
+<td>每次近戰揮擊返還 35% 的耐力，只在牠正在打架的時候有效</td>
 </tr>
 <tr>
 <td><strong>穩定瞄準</strong></td>
 <td>杜賓犬</td>
-<td>持續消解你的<strong>壓力</strong>，每槍<strong>後座力 -45%</strong>，<strong>裝彈速度 +15%</strong></td>
+<td>持續消解你的壓力，每槍後座力 -45%，裝彈速度 +15%</td>
 </tr>
 <tr>
 <td><strong>軟口銜取</strong></td>
 <td>拉布拉多</td>
-<td><strong>狩獵 3 級起</strong>就把獵物叼回來，堅持程度是別的狗的 3 倍，<strong>60% 的機率多帶一件東西</strong>，屠宰和短刃<strong>經驗 +20%</strong></td>
+<td>狩獵 3 級起就把獵物叼回來，堅持程度是別的狗的 3 倍，60% 的機率多帶一件東西，屠宰和短刃經驗 +20%</td>
 </tr>
 <tr>
 <td><strong>你的影子</strong></td>
 <td>巴哥犬</td>
-<td>壓低<strong>悲傷、無聊和壓力</strong>，而且比任何別的狗都快。<strong>一熱就關閉</strong></td>
+<td>壓低悲傷、無聊和壓力，比任何別的狗都快。一熱就關閉</td>
 </tr>
 <tr>
 <td><strong>貓眼</strong></td>
 <td>貓</td>
-<td><strong>黑暗中的採集不再毫無意義</strong>：沒有牠時只有 1.5 格，有牠時深夜可達白天範圍的約 60%</td>
+<td>黑暗中的採集開始有用：沒有牠時只有 1.5 格，有牠時深夜可達白天範圍的約 60%</td>
 </tr>
 </tbody></table></div>
 <h3 id="任何品種都會給的-moodle">任何品種都會給的 moodle</h3>
 <div class="tw"><table><thead><tr>
-<th>moodle</th>
-<th>觸發條件</th>
-<th>效果</th>
+<th>Moodle</th>
+<th>什麼時候</th>
+<th>有什麼用</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>飢餓</strong></td>
+<td><strong>饑餓</strong></td>
 <td>狗的飢餓到 60% 或更高</td>
 <td>只是提醒</td>
 </tr>
@@ -1685,101 +1659,59 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>精神飽滿</strong></td>
-<td>你在離狗<strong>8 格以內</strong>的地方睡覺，醒來時獲得</td>
-<td><strong>2 個遊戲小時</strong>內降低<strong>恐慌、壓力、疲憊、悲傷和無聊</strong></td>
+<td>你在離狗 8 格以內的地方睡覺，醒來時獲得</td>
+<td>2 個遊戲小時內降低恐慌、壓力、疲憊、悲傷和無聊</td>
 </tr>
 </tbody></table></div>
-<p><strong>「精神飽滿」是唯一不要求狗一直待在旁邊的一個。</strong>它是個計時器：一旦生效，就算你走開也照樣管 滿兩小時。而且它不走照顧條件的過濾，所以就算狗被虧待了也照樣有效。挨著自己的狗睡覺，<strong>永遠</strong> 都划算。</p>
-<p>三個提醒（飢餓、口渴、中毒）同樣無視照顧條件，這也很合理：它們存在的意義，正是告訴你這隻狗 <strong>狀態不好</strong>。</p>
+<p><strong>“精神飽滿”</strong>是唯一不需要狗繼續待在旁邊的一個。牠也不過照料這道篩子，所以對一隻被虧待的狗照樣有效。 飢餓、口渴和中毒這三個提醒同樣不過這道篩子。</p>
 <h2 id="8-特性基因">8. 特性（基因）</h2>
-<p>除了品種以外，每隻狗還有<strong>三項特性</strong>，顯示在狗視窗的<strong>「特性」</strong>區塊裡。它們在<strong>你馴服這隻狗的 那一刻</strong>於品種的範圍內隨機抽出，而且<strong>永遠不會改變</strong>。</p>
-<blockquote class="quote"><em>「天生的基因，終生不變，在狗被馴服時隨機生成，因個體而異。與技能不同，它們永遠不會隨訓練改變； 這是這隻狗與生俱來的原始本性。」</em></blockquote>
+<p>除了品種，每隻狗還有三項特性，顯示在牠視窗的<strong>“特性”</strong>一欄。牠們在你馴服這隻狗的時候， 在品種的區間內抽出來，之後不再變化。</p>
+<blockquote class="quote"><em>“天生的基因，終生不變，在你遇見這隻狗之前就已決定，因個體而異。與技能不同， 它們永遠不會隨訓練改變；這是這隻狗與生俱來的原始本性。”</em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>特性</th>
-<th>作用</th>
+<th>有什麼用</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>力量</strong></td>
-<td>提高<strong>咬合力</strong>，更重要的是提高<strong>馱袋容量</strong></td>
+<td>提高咬合力，更重要的是提高馱袋容量</td>
 </tr>
 <tr>
 <td><strong>攻擊性</strong></td>
-<td>讓牠<strong>更快累積戰鬥經驗值</strong>。<strong>不會</strong>改變牠決定開打還是逃跑的時機</td>
+<td>讓牠更快累積戰鬥經驗值。不會改變牠決定開打還是逃跑的時機</td>
 </tr>
 <tr>
 <td><strong>抗性</strong></td>
-<td>讓牠在戰鬥中<strong>累積更少壓力</strong></td>
+<td>讓牠在戰鬥中累積更少壓力</td>
 </tr>
 </tbody></table></div>
-<p>另外還有<strong>第四個管整體壓力的基因，它不會顯示在視窗裡</strong>。它會放大狗打架時吃到的所有壓力。小卡犬 的這個基因是全部裡最差的，德國牧羊犬和哈士奇則最好。</p>
-<h3 id="標籤怎麼看">標籤怎麼看</h3>
-<div class="tw"><table><thead><tr>
-<th>標籤</th>
-<th>意思</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>低</strong></td>
-<td>低於整條刻度的 34%</td>
-</tr>
-<tr>
-<td><strong>平均</strong></td>
-<td>介於 34% 和 66% 之間</td>
-</tr>
-<tr>
-<td><strong>高</strong></td>
-<td>高於 66%</td>
-</tr>
-</tbody></table></div>
-<p><strong>注意：</strong>這些標籤用的是絕對刻度，<strong>不是</strong>相對於品種的刻度。所以小卡犬三項<strong>永遠</strong>都顯示「低」， 也不存在特別出色的小卡犬。也因為這樣，哈士奇幾乎是你唯一會看到力量標成「高」的狗。</p>
+<p>還有第四個基因，管總體壓力，視窗裡看不到。它會把狗打架時受到的全部壓力乘上一個係數。 小卡犬的這個基因最差，德國牧羊犬和哈士奇的最好。</p>
+<p>視窗裡的標籤對所有品種用同一把尺：低於 34% 是<strong>“低”</strong>，34% 到 66% 之間是<strong>“平均”</strong>， 高於 66% 是<strong>“高”</strong>。所以小卡犬三項永遠顯示“低”。</p>
 <h3 id="這到底有多重要">這到底有多重要</h3>
-<p>基因對傷害和戰鬥經驗值的影響是<strong>上下各 15% 以內</strong>，對抗壓性的影響最多 10 個百分點。<strong>品種的份量 遠比基因重。</strong></p>
-<p>例外是<strong>馱袋</strong>：在這裡力量基因才是主角，同一個品種裡，弱的狗和強的狗差別是實實在在的。</p>
-<p><strong>基因沒辦法訓練。</strong>唯一能改善的方法是<a href="#9-混血讓不同品種配種">讓狗配種</a>。</p>
+<p>基因在傷害和戰鬥經驗上最多左右 15%，在抗壓上最多左右 10 個百分點。品種之間的差距比這大得多。</p>
+<p>例外是馱袋：那裡力量基因是主要因素。</p>
+<p>改善基因的唯一辦法是<a href="#9-混血讓不同品種配種">配種</a>。</p>
 <h2 id="9-混血讓不同品種配種">9. 混血：讓不同品種配種</h2>
-<p>當不同品種的公犬和母犬生下幼犬時，出來的就是<strong>混血</strong>。</p>
+<p>一隻公狗和一隻母狗品種不同時生下的幼犬，就是混血。</p>
 <h3 id="幼犬會變成什麼樣子">幼犬會變成什麼樣子</h3>
-<p><strong>血統取父母的平均。</strong>小卡犬配德國牧羊犬，生出來的幼犬就是 50/50。再拿這隻幼犬去配純種的德國 牧羊犬，就變成 25% 小卡犬、75% 德國牧羊犬。往下一代一代都是這樣。</p>
-<p><strong>外觀只會是其中一個品種，按血統的比重來抽。</strong>一隻 50/50 的幼犬生下來要嘛長得像德國牧羊犬， <strong>要嘛</strong>長得像小卡犬，絕對不會是兩者混在一起的樣子。血統越偏向哪一邊，長得像那一邊的機率就越大。</p>
-<blockquote class="quote"><strong>這裡就是大家最容易搞混的地方：</strong>抽到哪個品種，那個品種就是這隻狗<strong>實際生效</strong>的品種。一隻 50% 哈士奇 / 50% 德國牧羊犬、長得像哈士奇的混血，<strong>在所有機制上就是一隻哈士奇</strong>：「溫暖」 moodle、哈士奇的學習速度、哈士奇的馱袋。混血不會讓牠在這些地方變成中間值。</blockquote>
-<p><strong>基因則會落在父母的中間</strong>，上下各有 6% 左右的浮動。</p>
-<p><strong>混血真正划算的地方在這裡：</strong>幼犬的基因範圍會變成血統裡所有品種範圍的<strong>聯集</strong>。一隻小卡犬 + 哈士奇的混血，力量可以落在 0.00 到 0.80 之間的任何一個值，也就是說牠<strong>可以突破小卡犬的天花板</strong>。 每一窩都挑最強的去配，一代一代下來整條血統都會往上走。</p>
-<p><strong>幼犬不會繼承的東西：</strong>技能，一項都不會。牠生下來<strong>五項全部都是 0 級</strong>，永遠如此。牠從品種那裡 繼承到的是<strong>學習速度</strong>，不是已經學會的東西。</p>
+<p>血統是父母的平均值。小卡犬配德國牧羊犬得到 50/50 的幼犬。拿這隻幼犬再配純種德國牧羊犬， 得到 25% 小卡犬、75% 德國牧羊犬，往下每一代依此類推。</p>
+<p>外觀是血統裡的某一個品種，按百分比加權抽出來。一隻 50/50 的幼犬生下來要麼長著德國牧羊犬的臉， 要麼長著小卡犬的臉，絕不會是視覺上的混合。</p>
+<blockquote class="quote">抽中的那個品種，就是這隻狗實際生效的品種。一隻 50% 哈士奇 / 50% 德國牧羊犬、 生下來長著哈士奇臉的混血，在所有方面都是哈士奇：溫暖 moodle、哈士奇的學習速度、哈士奇的馱袋。</blockquote>
+<p>基因落在父母的中間值，上下浮動大約 6%。</p>
+<p>幼犬的基因區間變成血統裡各品種區間的聯集。一隻小卡犬加哈士奇的混血，力量可能生在 0.00 到 0.80 之間的任何位置，高過小卡犬的上限。每一窩都挑最強的去配，血統會隨著代數往上走。</p>
+<p>幼犬出生時五項技能永遠都是 0 級。牠從品種繼承的是學習速度。</p>
 <h3 id="混血這個標籤">「混血」這個標籤</h3>
-<p>血統裡有一個以上品種的狗，會在品種名稱旁邊多出<strong>「（混血）」</strong>，視窗和右鍵選單裡都看得到。</p>
-<p><strong>百分比的細目</strong>（「50% 哈士奇，50% 德國牧羊犬」）要<strong>把滑鼠移到狗視窗的「品種」那一行</strong>才會 出現，和主要品種的說明一起顯示。</p>
-<h3 id="讓不同品種配種划算嗎">讓不同品種配種划算嗎？</h3>
-<div class="tw"><table><thead><tr>
-<th>目標</th>
-<th>答案</th>
-</tr></thead><tbody>
-<tr>
-<td>一代一代改善基因</td>
-<td><strong>划算</strong>，而且這是唯一的辦法</td>
-</tr>
-<tr>
-<td>同時吃到兩個品種的 moodle</td>
-<td><strong>不行。</strong> 狗只有一個 moodle，就是牠變成的那個品種的</td>
-</tr>
-<tr>
-<td>把兩邊的學習速度加在一起</td>
-<td><strong>不行。</strong> 牠用的是牠變成的那個品種的表</td>
-</tr>
-<tr>
-<td>快速生出很多幼犬</td>
-<td>用<strong>小卡犬當母犬</strong>（每窩 2 到 4 隻）</td>
-</tr>
-</tbody></table></div>
+<p>血統裡有一個以上品種的狗，會在品種名旁邊多出<strong>“(混血)”</strong>，視窗裡和右鍵選單裡都有。 把滑鼠停在狗視窗的<strong>“品種”</strong>那一行上，會看到百分比明細（“50% 哈士奇，50% 德國牧羊犬”）， 以及主導品種的描述。</p>
 <h2 id="10-安裝擴充模組">10. 安裝擴充模組</h2>
-<p>羅威納犬、杜賓犬、拉布拉多和巴哥犬是 <strong>Steam 上獨立的模組</strong>。每一個都：</p>
+<p>羅威納犬、杜賓犬、拉布拉多、巴哥犬和貓是 Steam 上各自獨立的模組。每一個：</p>
 <ul>
-<li><strong>需要本體 Companion Dogs 已安裝並啟用。</strong></li>
-<li>加入<strong>一個品種</strong>，有自己的模型、貼圖、moodle 和出現地點。</li>
-<li>附帶<strong>14 種語言的翻譯</strong>，和本體一樣。</li>
+<li>需要基礎版 Companion Dogs 已安裝並啟用。</li>
+<li>加入一個品種，帶自己的模型、貼圖、moodle 和生成地點。</li>
+<li>附帶 14 種語言的翻譯，和基礎版一樣。</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>擴充模組</th>
 <th>Steam 頁面</th>
-<th>本體最低版本</th>
+<th>基礎版最低版本</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>CD: Rottweiler</strong></td>
@@ -1794,47 +1726,46 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">訂閱</a></td>
-<td><strong>0.6.6 或更新版本</strong></td>
+<td>0.6.6 或更新版本</td>
 </tr>
 <tr>
 <td><strong>CD: Pug</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">訂閱</a></td>
-<td><strong>0.6.8 或更新版本</strong></td>
+<td>0.6.8 或更新版本</td>
 </tr>
 <tr>
 <td><strong>CD: Cats</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">訂閱</a></td>
-<td><strong>0.7.0 或更新</strong></td>
+<td>0.7.0 或更新版本</td>
 </tr>
 </tbody></table></div>
-<p>還有本體，如果你還沒裝： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>。</p>
-<p>如果本體版本太舊，擴充模組<strong>就只是什麼都不做</strong>：不會報錯，不會讓遊戲當掉，那個品種單純不存在。 如果你裝了拉布拉多卻一隻都找不到，<strong>先去確認本體的版本</strong>。</p>
-<blockquote class="quote"><strong>存檔裡還有那個品種的活狗時，不要移除對應的擴充模組。</strong> 狗會失去牠參照的模型和貼圖。</blockquote>
-<p>安裝擴充模組<strong>不會動到任何已經存在的品種</strong>。新品種會自動加入配種和混血的抽選。</p>
-<hr>
-<p><strong>貓在這裡同樣是例外。</strong>牠添加的是<strong>五</strong>個條目（每種毛色一個）而不是一個，並且<strong>不</strong>參與交配和混血的 抽取：不存在與貓的雜交，兩隻貓之間也沒有。其餘相同：需要基礎模組處於啟用狀態，附帶 14 種語言的翻譯， 基礎模組過舊時牠保持無動作而不是報錯。</p>
+<p>還有基礎版，如果你還沒有： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>。</p>
+<p>基礎版太舊的話，擴充模組就什麼也不做：不報錯，不卡遊戲，那個品種只是不存在。 如果你裝了拉布拉多卻一直找不到，先去確認基礎版的版本。</p>
+<blockquote class="quote">不要從還有該品種活狗的存檔裡移除對應的擴充模組。那隻狗會失去模型和參照貼圖。</blockquote>
+<p>裝一個擴充模組不會改變已有品種的任何東西。新品種會自己進入配種和混血的抽取。</p>
+<p>貓在這一點上不一樣。牠加進來的是五個條目（每種毛色一個）而不是一個，而且牠的配種按物種封閉： 五種毛色彼此之間可以配，一窩會像任何混血那樣把兩者摻在一起。</p>
 <h2 id="11-品種常見問題">11. 品種常見問題</h2>
-<p><strong>「哪個品種最好？」</strong> 看你都在做什麼。要<strong>打架</strong>，德國牧羊犬或羅威納犬。要<strong>打獵</strong>，拉布拉多。要<strong>載貨</strong>，哈士奇。要 <strong>顧農場</strong>，邊境牧羊犬。要<strong>用槍</strong>，杜賓犬。而<strong>小卡犬</strong>雖然最弱，光靠那個 moodle 就依然很好用。</p>
-<p><strong>「我的小卡犬練一練會變強嗎？」</strong> 不會。不管你怎麼練，牠都殺不死一隻殭屍，而且牠的特性照定義就是最差的。訓練能提升的是服從、嗅覺 和狩獵，這幾項牠和誰都一樣行。</p>
-<p><strong>「我找到兩隻同品種的狗，該挑哪一隻？」</strong> 你<strong>事先沒辦法知道</strong>：抽選是在馴服的那一刻才發生的。先馴服，再去看視窗裡的<strong>「特性」</strong>區塊。</p>
-<p><strong>「我抓到的狗特性很爛，放掉再馴服一次有用嗎？」</strong> <strong>沒用。</strong>基因只在<strong>第一次馴服時抽一次</strong>，之後這隻狗永遠帶著它，就算放歸再重新馴服也一樣（技能 也是這樣保留的）。想重抽，你得<strong>去馴服另一隻狗</strong>。真的想長期變好，路只有一條： <a href="#9-混血讓不同品種配種">配種</a>。</p>
-<p><strong>「我可以同時吃到兩個品種的 moodle 嗎？」</strong> 不行。只有<strong>離你最近的那隻狗</strong>算數。<strong>「精神飽滿」</strong>是例外，因為它不看距離。</p>
-<p><strong>「moodle 為什麼不見了？」</strong> 幾乎都是飢餓或口渴超過 75%，不然就是忠誠度掉到下限以下。餵食、餵水、摸摸牠。也順便確認狗有沒有 在<strong>8 格以內而且同一層樓</strong>。</p>
-<p><strong>「有跑得比較快的品種嗎？」</strong> 沒有。沒有任何品種跑得比別的品種快。</p>
-<p><strong>「有別的顏色的哈士奇嗎？」</strong> 沒有。每個品種只有一張貼圖，公母共用同一張。</p>
-<p><strong>「體型大的狗咬得比較痛嗎？」</strong> 不會。體型純粹是外觀。體型和力量之間的連動是刻意關掉的。</p>
-<p><strong>「杜賓犬要去哪裡找？」</strong> <strong>警察局。</strong>軍事建築的機率帳面上更高，但遊戲本體的地圖上幾乎沒有軍事建築。</p>
-<p><strong>「我裝了拉布拉多，可是一隻都找不到。」</strong> 先確認 Companion Dogs 本體的版本：拉布拉多<strong>要求 0.6.6 或更新版本</strong>，本體太舊的話牠既不會出現 也不會吭聲。另外也想想你是不是已經把那一帶的房子都翻過了：出現與否的判定是<strong>每棟建築一次，而且 是永久的</strong>。</p>
-<p><strong>「我的混血沒有兩個品種的 moodle。」</strong> 這是正常的。混血在機制上就是<strong>牠看起來的那個品種</strong>。混血只會改變後代的基因範圍，以及視窗裡的 百分比標籤。</p>
-<p><strong>「我想用別的 mod 生成一隻狗，要用哪個名字？」</strong> 用內部名稱，不是畫面上顯示的名字。列表在<a href="#6-對比表格">對比表格</a>的最後。</p>
-<p><strong>「貓比狗好嗎？」</strong> 不更好也不更差：牠做的是另一件事。牠比任何狗望得都遠，而且安靜，是唯一能解決夜間採集的夥伴。代價是牠不 打架、不繁殖、什麼也不馱。貓<strong>不能替代</strong>看門狗；牠填的是從來沒有狗填過的位置。</p>
-<p><strong>「為什麼我不能讓貓去警戒？」</strong> 因為這個模式對牠不存在，所以按鈕根本就沒有。貓沒有戰鬥：牠不警戒、不保護你，哪怕你就在牠旁邊挨打也不會 攻擊喪屍。這一點無法調整。</p>
-<p><strong>「我的貓自己跑掉了，還不聽我的話。」</strong> 牠看見老鼠了。這是品種行為，不是 bug：貓時不時會丟下一切去追齧齒動物，不用你叫，也不需要任何狩獵等級。持續 不久，而且牠會自己回來，通常<strong>叼著那隻老鼠</strong>，放在你腳邊。跑的時候牠拒絕命令，<strong>除了「過來」</strong>，那條命令 當場取消分心。獵殺之後牠就恢復正常聽話了：追是本能，送回來只是送回來。模組裡沒有哪個狗品種會這樣分心， 也沒有開關可以關掉：這就是養貓的代價。</p>
-<p><strong>「貓到底獵什麼？」</strong> 齧齒動物和<strong>兔子</strong>，再往上就沒有了。鹿對牠是<strong>看不見的</strong>，牠連指示都不會做。而你自己養的牲畜從來不算在 內：雞、牛，以及圍欄裡的任何東西，對每一個夥伴都在界外，狗和貓都一樣。要獵大獵物、要啣回來，狗應該是拉 布拉多或黃金獵犬。</p>
-<p><strong>「怎麼才能得到小貓？」</strong> 得不到。貓不繁殖，跟狗不行，跟別的貓也不行。你遊戲裡的每一隻貓都來自世界。</p>
-<p><strong>「五種毛色的數值不同嗎？」</strong> 完全沒有不同。相同的技能、相同的 moodle、相同的資質區間、相同的叫聲。毛色只是外觀，遇到哪一種全看運氣。</p>
-<p><strong>「我的貓太快就變得不聽話了。」</strong> 這就是這個物種。當你消失或疏於照料時，貓的羈絆下降得比狗<strong>快 50%</strong>，與巴哥正好相反。貓要求你在場： 撫摸、食物和水，要有規律。</p>
-<p><strong>「我不再在醒來時收到禮物了。」</strong> 看看牠的條。<strong>飢餓或口渴達到 75% 以上</strong>的貓、生病的貓、不聽話的貓、恐慌中的貓都不會在夜裡出門，而且失敗 是無聲的。另外別忘了這是<strong>每天一次、按主人計</strong>：養兩隻貓也不會得到兩份禮物。</p></article></main>
+<p><strong><span class="ig">哪個品種最好？</span></strong> 看你做什麼。打架選德國牧羊犬或羅威納犬。打獵選拉布拉多。馱東西選哈士奇。農場選邊境牧羊犬。 用槍選杜賓犬。小卡犬數值最差，但牠的心情圖示照樣有用。</p>
+<p><strong><span class="ig">我的小卡犬能靠訓練變強嗎？</span></strong> 不能。牠再怎麼訓練也殺不了殭屍。訓練漲的是服從、嗅覺和狩獵，在這些上牠和別的狗一樣長。</p>
+<p><strong><span class="ig">我找到兩隻同品種的狗，該帶哪隻？</span></strong> 事先看不出來：特性是在馴服那一刻隨機決定的。先馴服，再看視窗裡的<strong><span class="ig">特性</span></strong>一欄。</p>
+<p><strong><span class="ig">我抓到一隻特性很差的狗。放掉再馴服一次行嗎？</span></strong> 沒用。基因只在第一次馴服時隨機一次，放掉再馴服還是同一套（技能也保留）。想要另一次隨機， 就去馴服另一隻狗。想要長期改善，路子是<a href="#9-混血讓不同品種配種">雜交</a>。</p>
+<p><strong><span class="ig">我能同時擁有兩個品種心情圖示嗎？</span></strong> 不能。只有最近的那隻狗算數。<strong><span class="ig">精神飽滿</span></strong>是例外，因為它不依賴距離。</p>
+<p><strong><span class="ig">心情圖示怎麼不見了？</span></strong> 幾乎總是飢餓或口渴超過 75%，或者忠誠低於下限。餵食、餵水、撫摸。也確認一下狗在 8 格以內且在同一層。</p>
+<p><strong><span class="ig">有跑得更快的品種嗎？</span></strong> 沒有。</p>
+<p><strong><span class="ig">有別的顏色的哈士奇嗎？</span></strong> 沒有。每個品種只有一張貼圖，公母共用同一張。貓有五種毛色，但每一種都是獨立的品種。</p>
+<p><strong><span class="ig">大狗咬得更疼嗎？</span></strong> 不。體型只是外觀，不參與傷害計算。</p>
+<p><strong><span class="ig">哪裡能找到杜賓犬？</span></strong> 警察局。軍事建築機率稍高一些，但遊戲原版地圖上幾乎沒有軍事建築。</p>
+<p><strong><span class="ig">我裝了拉布拉多，一隻都找不到。</span></strong> 確認 Companion Dogs 基礎模組的版本：拉布拉多需要 0.6.6 或更新。也確認那片區域的房子是不是已經探索過了： 生成抽籤每棟建築只做一次，不會重來。</p>
+<p><strong><span class="ig">我的混血沒有兩個品種的心情圖示。</span></strong> 這是應該的。對機制來說，混血就是牠看起來像的那個品種。混血只改變幼崽的基因區間和視窗裡的百分比標籤。</p>
+<p><strong><span class="ig">貓比狗好嗎？</span></strong> 牠做的是別的事。放哨比任何狗都遠，而且安靜，還是唯一會在夜裡搜尋的夥伴。代價是牠不打架、 幾乎馱不了東西，而且只和貓繁殖。</p>
+<p><strong><span class="ig">為什麼我不能讓貓去守衛？</span></strong> 這個模式對貓來說不存在，所以按鈕不會出現。貓沒有戰鬥：不放哨、不保護，也不攻擊殭屍， 哪怕你就在牠旁邊挨打。</p>
+<p><strong><span class="ig">我的貓自己跑掉了，還不聽我的話。</span></strong> 牠看見了一隻老鼠。跑的時候牠拒絕任何命令，只有<strong><span class="ig">過來</span></strong>除外。牠會自己回來，通常還叼著那隻老鼠， 而且這個關不掉。</p>
+<p><strong><span class="ig">貓到底獵什麼？</span></strong> 鼠類和兔子。鹿牠連指都不指。養的牲畜（雞、牛、畜欄裡的任何東西）對所有夥伴都排除在外，狗貓都一樣。 要大型獵物和叼回，就用拉布拉多或金毛尋回犬。</p>
+<p><strong><span class="ig">怎麼才能有小貓？</span></strong> 和小狗一樣：你自己的一公一母，都成年、忠誠、吃飽，而且彼此靠近。貓只和貓繁殖。</p>
+<p><strong><span class="ig">五種毛色的數值不一樣嗎？</span></strong> 一樣。同樣的技能、同樣的心情圖示、同樣的特性區間、同樣的叫聲。出現哪一種是抽籤決定的。</p>
+<p><strong><span class="ig">我的貓太快就變得不服從了。</span></strong> 當你消失或把照料放到一邊時，貓的羈絆掉得比狗快 50%（巴哥犬正好相反）。規律地撫摸、餵食和餵水 能穩住忠誠。</p>
+<p><strong><span class="ig">我不再在醒來時收到禮物了。</span></strong> 去看牠的槽。飢餓或口渴在 75% 及以上、生病、不服從或陷入恐慌的貓夜裡不出門，而遊戲不會提示。 每天每位主人一份禮物。</p>
+<p><strong><span class="ig">我想用別的模組生成一隻狗，該用什麼名字？</span></strong> 內部名字，不是螢幕上顯示的那個。名單在<a href="#6-對比表格">對比表格</a>那一節的末尾。</p></article></main>
 </div>
 
 <script>

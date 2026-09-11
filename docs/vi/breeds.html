@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -406,16 +406,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">Mục lục &middot; <b>Giống chó</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-một-giống-chó-thật-sự-thay-đổi-những-gì" data-id="1-một-giống-chó-thật-sự-thay-đổi-những-gì">1. Một giống chó thật sự thay đổi những gì</a>
+<a class="s2" href="#1-một-giống-chó-thật-sự-đổi-những-gì" data-id="1-một-giống-chó-thật-sự-đổi-những-gì">1. Một giống chó thật sự đổi những gì</a>
 <div class="sub">
-<a class="s3" href="#kích-thước-và-sức-mạnh-không-phải-một-thứ" data-id="kích-thước-và-sức-mạnh-không-phải-một-thứ">Kích thước và Sức mạnh không phải một thứ</a>
-<a class="s3" href="#một-giống-một-bộ-dạng" data-id="một-giống-một-bộ-dạng">Một giống, một bộ dạng</a>
+<a class="s3" href="#kích-cỡ-và-sức-mạnh-không-phải-một" data-id="kích-cỡ-và-sức-mạnh-không-phải-một">Kích cỡ và Sức mạnh không phải một</a>
+<a class="s3" href="#một-giống-một-bộ-mặt" data-id="một-giống-một-bộ-mặt">Một giống, một bộ mặt</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#2-chọn-nhanh" data-id="2-chọn-nhanh">2. Chọn nhanh</a>
 <div class="sub">
-<a class="s3" href="#tóm-tắt-mỗi-giống-một-dòng" data-id="tóm-tắt-mỗi-giống-một-dòng">Tóm tắt mỗi giống một dòng</a>
+<a class="s3" href="#tóm-tắt-mỗi-giống-trong-một-dòng" data-id="tóm-tắt-mỗi-giống-trong-một-dòng">Tóm tắt mỗi giống trong một dòng</a>
 </div>
 </div>
 <div class="grp">
@@ -432,8 +432,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#4-bốn-giống-chó-addon" data-id="4-bốn-giống-chó-addon">4. Bốn giống chó addon</a>
 <div class="sub">
 <a class="s3" href="#rottweiler" data-id="rottweiler">Rottweiler</a>
-<a class="s3" href="#doberman" data-id="doberman">Doberman</a>
-<a class="s3" href="#labrador" data-id="labrador">Labrador</a>
+<a class="s3" href="#chó-doberman" data-id="chó-doberman">Chó Doberman</a>
+<a class="s3" href="#chó-labrador" data-id="chó-labrador">Chó Labrador</a>
 <a class="s3" href="#chó-pug" data-id="chó-pug">Chó Pug</a>
 </div>
 </div>
@@ -441,10 +441,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#5-mèo-loài-khác-đầu-tiên" data-id="5-mèo-loài-khác-đầu-tiên">5. Mèo: loài khác đầu tiên</a>
 <div class="sub">
 <a class="s3" href="#những-gì-nó-không-làm" data-id="những-gì-nó-không-làm">Những gì nó KHÔNG làm</a>
-<a class="s3" href="#những-gì-nó-làm-giỏi-hơn-bất-kỳ-con-chó-nào" data-id="những-gì-nó-làm-giỏi-hơn-bất-kỳ-con-chó-nào">Những gì nó làm giỏi hơn bất kỳ con chó nào</a>
-<a class="s3" href="#cái-giá" data-id="cái-giá">Cái giá</a>
-<a class="s3" href="#năm-màu-lông" data-id="năm-màu-lông">Năm màu lông</a>
-<a class="s3" href="#quà-đêm" data-id="quà-đêm">Quà đêm</a>
+<a class="s3" href="#những-gì-nó-làm-giỏi-hơn-mọi-con-chó" data-id="những-gì-nó-làm-giỏi-hơn-mọi-con-chó">Những gì nó làm giỏi hơn mọi con chó</a>
+<a class="s3" href="#cái-giá-phải-trả" data-id="cái-giá-phải-trả">Cái giá phải trả</a>
+<a class="s3" href="#năm-bộ-lông" data-id="năm-bộ-lông">Năm bộ lông</a>
+<a class="s3" href="#món-quà-đêm" data-id="món-quà-đêm">Món quà đêm</a>
 </div>
 </div>
 <div class="grp">
@@ -471,7 +471,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#8-đặc-tính-các-gen" data-id="8-đặc-tính-các-gen">8. Đặc tính (các gen)</a>
 <div class="sub">
-<a class="s3" href="#cách-đọc-các-nhãn" data-id="cách-đọc-các-nhãn">Cách đọc các nhãn</a>
 <a class="s3" href="#chuyện-này-quan-trọng-đến-mức-nào" data-id="chuyện-này-quan-trọng-đến-mức-nào">Chuyện này quan trọng đến mức nào</a>
 </div>
 </div>
@@ -480,7 +479,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="sub">
 <a class="s3" href="#chuyện-gì-xảy-ra-với-chó-con" data-id="chuyện-gì-xảy-ra-với-chó-con">Chuyện gì xảy ra với chó con</a>
 <a class="s3" href="#nhãn-lai" data-id="nhãn-lai">Nhãn "Lai"</a>
-<a class="s3" href="#có-đáng-phối-hai-giống-khác-nhau-không" data-id="có-đáng-phối-hai-giống-khác-nhau-không">Có đáng phối hai giống khác nhau không?</a>
 </div>
 </div>
 <div class="grp">
@@ -491,431 +489,416 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-sổ-tay-giống-chó">Companion Dogs: Sổ tay giống chó</h1>
-<p>Hướng dẫn về tất cả các giống chó: mỗi giống làm tốt nhất việc gì, moodle, đặc tính và cách chọn con phù hợp với lối chơi của bạn.</p>
-<p>Muốn biết <strong>mod hoạt động ra sao</strong> (thuần hóa, mệnh lệnh, thức ăn, túi yên, trò khéo, săn mồi), hãy xem sổ tay còn lại: <a href="features.html" class="xlink">Tính năng</a>.</p>
-<blockquote class="quote"><strong>Các con số trong sổ tay này giả định bạn để nguyên thiết lập mặc định.</strong> Nếu máy chủ tắt <strong><span class="ig">Kỹ năng và huấn luyện</span></strong>, các giống chó ngừng <strong>tiến bộ</strong>: kỹ năng bị khóa ở mức 0, đường sát thương theo cấp trở thành chung chung, và bốn trò khéo mở khóa hết cùng một lúc (mod coi mọi con chó như đang ở Vâng lời 10). Những gì giống chó có <strong>từ lúc sinh ra</strong> thì vẫn còn nguyên: lực cắn cơ bản, khả năng quật ngã, độ lì khi đánh nhau, moodle riêng, túi yên và lứa đẻ. Thứ ẩn các trò khéo đi lại là một tùy chọn khác: <strong><span class="ig">Trò khéo theo Vâng lời</span></strong>.</blockquote>
-<h2 id="1-một-giống-chó-thật-sự-thay-đổi-những-gì">1. Một giống chó thật sự thay đổi những gì</h2>
-<p>Một giống chó chỉ tác động đến <strong>bảy thứ</strong>, ngoài ra không có gì khác:</p>
+<p>Hướng dẫn về mọi giống: mỗi giống giỏi nhất việc gì, có moodle nào, đặc tính ra sao và chọn con nào cho ván chơi của bạn.</p>
+<p>Muốn biết mod chạy thế nào (thuần hóa, mệnh lệnh, thức ăn, túi yên, trò khéo, săn mồi), xem sổ tay còn lại: <a href="features.html" class="xlink">Tính năng</a>.</p>
+<blockquote class="quote">Các con số trong sổ tay này tính theo thiết lập mặc định. Nếu máy chủ tắt <strong><span class="ig">Kỹ năng và huấn luyện</span></strong>, các giống chó ngừng tiến bộ: kỹ năng khóa ở mức 0, đường sát thương theo cấp trở thành chung chung và bốn trò khéo mở khóa cùng một lúc (mod coi mọi con chó như đang ở Vâng lời 10). Những gì giống chó có sẵn từ lúc sinh ra thì vẫn giữ nguyên: lực cắn cơ bản, khả năng quật ngã, độ lì khi đánh nhau, moodle riêng, túi yên và lứa đẻ. Thứ giấu các trò khéo đi lại là một tùy chọn khác, <strong><span class="ig">Trò khéo theo Vâng lời</span></strong>.</blockquote>
+<h2 id="1-một-giống-chó-thật-sự-đổi-những-gì">1. Một giống chó thật sự đổi những gì</h2>
+<p>Giống chó tác động đến bảy thứ:</p>
 <div class="tw"><table><thead><tr>
 <th>Thứ thay đổi</th>
 <th>Giải thích</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Tốc độ học</strong></td>
-<td>Mỗi giống học 5 kỹ năng với tốc độ khác nhau. Đây là thứ định hình giống chó rõ nhất</td>
+<td>Mỗi giống lên từng kỹ năng trong 5 kỹ năng theo nhịp riêng. Đây là khác biệt lớn nhất giữa các giống</td>
 </tr>
 <tr>
 <td><strong>Lực cắn</strong></td>
-<td>Mỗi cú cắn gây bao nhiêu sát thương, và bao nhiêu phần trong đó phải luyện mới có</td>
+<td>Mỗi cú cắn gây bao nhiêu sát thương, và bao nhiêu phần trong đó đến từ huấn luyện</td>
 </tr>
 <tr>
 <td><strong>Độ lì khi đánh nhau</strong></td>
-<td>Nó tích bao nhiêu căng thẳng lúc giao chiến, và tới mức nào thì hoảng loạn rồi bỏ cuộc</td>
+<td>Nó tích bao nhiêu căng thẳng lúc giao chiến, và đến mức nào thì hoảng loạn rồi dừng</td>
 </tr>
 <tr>
-<td><strong>Các đặc tính (gene)</strong></td>
-<td>Khoảng giá trị Sức mạnh, Độ hung hăng và Sức chịu đựng mà nó có thể sinh ra với</td>
+<td><strong>Đặc tính (gene)</strong></td>
+<td>Khoảng Sức mạnh, Độ hung hăng và Sức chịu đựng mà nó có thể sinh ra</td>
 </tr>
 <tr>
 <td><strong>Moodle riêng</strong></td>
-<td>Một lợi ích cho <strong>bạn</strong>, miễn là con chó ở gần, được ăn no và trung thành</td>
+<td>Một phần thưởng cho bạn, khi con chó ở gần, được ăn no và trung thành</td>
 </tr>
 <tr>
 <td><strong>Lứa đẻ</strong></td>
-<td>Mỗi lần sinh được bao nhiêu chó con</td>
+<td>Mỗi lần đẻ được bao nhiêu con</td>
 </tr>
 <tr>
 <td><strong>Nơi nó xuất hiện trên bản đồ</strong></td>
-<td>Mỗi giống có những chỗ riêng của nó</td>
+<td>Mỗi giống có những chỗ riêng</td>
 </tr>
 </tbody></table></div>
-<p>Còn đây là những thứ <strong>KHÔNG</strong> đổi theo giống, dù nhiều người vẫn nghĩ ngược lại:</p>
+<p>Những thứ không đổi theo giống:</p>
 <ul>
-<li><strong>Tốc độ chạy.</strong> Không có giống nào chạy nhanh hơn. Tất cả chạy như nhau.</li>
-<li><strong>Tầm cảnh giới, đánh hơi và săn mồi.</strong> Chỉ phụ thuộc vào cấp kỹ năng. Giống chó quyết định bạn lên tới đó nhanh hay chậm, chứ không nâng trần lên được.</li>
-<li><strong>Các trò khéo.</strong> Cả bốn đều mở khóa theo cấp Vâng lời, giống hệt nhau ở mọi con chó.</li>
-<li><strong>Đói và khát.</strong> Nhịp độ giống nhau ở tất cả các giống (kể cả Husky, xem phần riêng của nó).</li>
-<li><strong>Sức chứa của túi yên</strong>, trừ Husky, giống duy nhất được cộng thêm nhờ giống chó.</li>
-<li><strong>Kích thước cơ thể không phải là Sức mạnh.</strong> Đây là hai chuyện tách biệt, và rất dễ nhầm vì chúng hay đi cùng nhau. Xem bên dưới.</li>
+<li>Tốc độ chạy. Mọi giống chạy nhanh như nhau.</li>
+<li>Tầm canh gác, đánh hơi và săn mồi. Chỉ phụ thuộc cấp kỹ năng.</li>
+<li>Các trò khéo. Bốn trò mở theo cấp Vâng lời, giống nhau cho tất cả.</li>
+<li>Đói và khát. Nhịp như nhau ở mọi giống, kể cả Husky (xem phần của nó).</li>
+<li>Sức chứa túi yên, trừ Husky.</li>
+<li>Kích cỡ thân. Nó tách rời khỏi Sức mạnh.</li>
 </ul>
-<blockquote class="quote"><strong>Có một ngoại lệ, và nó không phải chó.</strong> <a href="#5-mèo-loài-khác-đầu-tiên">Mèo</a> thay đổi thứ thứ tám mà không giống chó nào chạm tới: <strong>những công việc nào tồn tại</strong>. Nó không đánh nhau, không trông gia súc và không sinh sản. Các cơ chế không tệ đi với nó, chúng biến mất. Chừng nào bạn còn so sánh chó với chó, danh sách bảy điểm ở trên vẫn đúng nguyên vẹn.</blockquote>
-<h3 id="kích-thước-và-sức-mạnh-không-phải-một-thứ">Kích thước và Sức mạnh không phải một thứ</h3>
-<p><strong>Sức mạnh</strong> là một gene và có tác dụng thật: nó tăng sát thương cú cắn thêm tối đa <strong>30%</strong>, và cũng chính nó quyết định sức chứa của túi yên.</p>
-<p><strong>Kích thước cơ thể</strong> lại là chuyện khác. Nó đến từ một gene riêng của game, thứ mà mod không bốc cũng không đụng vào, cộng thêm việc chó con lớn dần lên tới cỡ trưởng thành. Hai con chó cùng giống có thể to nhỏ khác nhau mà Sức mạnh vẫn y hệt, và một con to hơn con khác <strong>trong cùng một giống</strong> không vì thế mà cắn mạnh hơn.</p>
-<p>Cái gây nhầm lẫn là <strong>giống chó</strong> định đoạt cả hai thứ đó cùng lúc, mỗi thứ theo một đường riêng: Chó chăn cừu Đức thì to <strong>và</strong> sinh ra đã khỏe, Chó cỏ thì nhỏ <strong>và</strong> sinh ra đã yếu. Nên khi đem giống này so với giống kia, con to hơn đúng là thường cắn mạnh hơn thật. Chỉ có điều nguyên nhân là giống chó chứ không phải kích thước: nhìn vóc dáng thì chẳng biết được gì về Sức mạnh của một con chó cụ thể. Muốn biết thì có thanh Sức mạnh ở mục Đặc tính trong cửa sổ của chó.</p>
-<h3 id="một-giống-một-bộ-dạng">Một giống, một bộ dạng</h3>
-<p><strong>Không có chuyện khác màu trong cùng một giống.</strong> Mỗi giống chỉ có đúng một bộ hình ảnh, và con đực với con cái dùng chung. Husky nào cũng trông y như Husky nào.</p>
-<p>Chó con của giống nào cũng sinh ra với cùng một cỡ nhỏ, rồi lớn dần lên đúng vóc dáng trưởng thành của giống mình.</p>
-<hr>
-<p><strong>Năm con mèo</strong> không phải ngoại lệ, dù trông có vẻ vậy: đen, trắng, cam, tam thể và tuxedo là <strong>năm giống</strong>, mỗi giống có đúng một texture riêng. Đây không phải một con mèo ra năm màu.</p>
+<blockquote class="quote"><a href="#5-mèo-loài-khác-đầu-tiên">Mèo</a> là ngoại lệ. Ngoài bảy thứ trên, nó còn đổi luôn danh sách việc có thể làm: không đánh nhau, không chăm đàn vật nuôi và chỉ phối với mèo. Giao diện thậm chí không hiện nút.</blockquote>
+<h3 id="kích-cỡ-và-sức-mạnh-không-phải-một">Kích cỡ và Sức mạnh không phải một</h3>
+<p>Sức mạnh là một gene. Nó tăng sát thương cú cắn tối đa 30% và quyết định sức chứa túi yên.</p>
+<p>Kích cỡ thân đến từ một gene riêng của game, mod không bốc cũng không đụng tới, cộng thêm quá trình chó con lớn lên tới cỡ trưởng thành của giống. Hai con cùng giống có thể to nhỏ khác nhau dù cùng một mức Sức mạnh, và con to hơn không vì thế mà cắn mạnh hơn.</p>
+<p>Giống chó quyết định cả hai thứ cùng lúc, mỗi thứ theo đường riêng: Chó chăn cừu Đức to con và sinh ra đã khỏe, Chó cỏ nhỏ con và sinh ra đã yếu. Sức mạnh của từng con hiện ở thanh Sức mạnh, trong mục Đặc tính của cửa sổ con chó.</p>
+<h3 id="một-giống-một-bộ-mặt">Một giống, một bộ mặt</h3>
+<p>Mỗi giống chỉ có một texture, và con đực với con cái dùng chung. Năm con mèo là <a href="#năm-bộ-lông">năm giống</a>, không phải một con mèo với năm màu lông.</p>
+<p>Chó con của giống nào cũng sinh ra với cùng cỡ nhỏ như nhau rồi lớn dần tới cỡ trưởng thành của giống đó.</p>
 <h2 id="2-chọn-nhanh">2. Chọn nhanh</h2>
 <div class="tw"><table><thead><tr>
 <th>Nếu bạn muốn...</th>
-<th>Hãy chọn</th>
+<th>Hãy lấy</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>Sống sót qua những ngày đầu với bất cứ thứ gì gặp được</strong></td>
-<td><strong>Chó cỏ</strong></td>
+<td><strong>Sống sót qua mấy ngày đầu bằng thứ bắt được</strong></td>
+<td>Chó cỏ</td>
 </tr>
 <tr>
-<td><strong>Một con chó giữ được trận tuyến và tự giết zombie</strong></td>
-<td><strong>Chó chăn cừu Đức</strong> hoặc <strong>Rottweiler</strong></td>
+<td><strong>Một con giữ được hàng và tự giết zombie</strong></td>
+<td>Chó chăn cừu Đức hoặc Rottweiler</td>
 </tr>
 <tr>
-<td><strong>Đi săn kiếm thịt</strong></td>
-<td><strong>Golden Retriever</strong> hoặc <strong>Labrador</strong></td>
+<td><strong>Săn thịt</strong></td>
+<td>Golden Retriever hoặc Chó Labrador</td>
 </tr>
 <tr>
-<td><strong>Chở đồ nhặt được</strong></td>
-<td><strong>Husky</strong>, khỏi phải bàn</td>
+<td><strong>Chở đồ</strong></td>
+<td>Husky</td>
 </tr>
 <tr>
-<td><strong>Trông nom nông trại trong lúc bạn đi xa</strong></td>
-<td><strong>Border Collie</strong></td>
+<td><strong>Trông nông trại trong lúc bạn đi xa</strong></td>
+<td>Border Collie</td>
 </tr>
 <tr>
-<td><strong>Bắn súng chuẩn hơn</strong></td>
-<td><strong>Doberman</strong></td>
+<td><strong>Bắn giỏi hơn</strong></td>
+<td>Chó Doberman</td>
 </tr>
 <tr>
-<td><strong>Đánh cận chiến được lâu hơn</strong></td>
-<td><strong>Rottweiler</strong></td>
+<td><strong>Đánh cận chiến lâu hơn</strong></td>
+<td>Rottweiler</td>
 </tr>
 <tr>
-<td><strong>Bớt chán chường và buồn bã</strong></td>
-<td><strong>Chó Pug</strong>, còn <strong>Chó cỏ</strong> thì miễn phí</td>
+<td><strong>Bớt chán và bớt buồn</strong></td>
+<td>Chó Pug, hoặc Chó cỏ vốn có sẵn trong mod gốc</td>
 </tr>
 <tr>
 <td><strong>Bớt căng thẳng</strong></td>
-<td><strong>Chó Pug</strong> hoặc <strong>Doberman</strong></td>
+<td>Chó Pug hoặc Chó Doberman</td>
 </tr>
 <tr>
 <td><strong>Bớt hoảng loạn</strong></td>
-<td><strong>Chó chăn cừu Đức</strong></td>
+<td>Chó chăn cừu Đức</td>
 </tr>
 <tr>
 <td><strong>Được báo có zombie sớm hơn</strong></td>
-<td><strong>Chó Pug</strong>, nếu bạn chịu nổi tiếng sủa</td>
+<td>Chó Pug (nó báo bằng tiếng sủa)</td>
+</tr>
+<tr>
+<td><strong>Được báo sớm nhất có thể, mà lại im lặng</strong></td>
+<td>Mèo</td>
 </tr>
 <tr>
 <td><strong>Kiếm đồ được nhiều hơn</strong></td>
-<td><strong>Golden Retriever</strong></td>
+<td>Golden Retriever</td>
 </tr>
 <tr>
-<td><strong>Được cảnh báo sớm nhất có thể, và trong im lặng</strong></td>
-<td><strong>Mèo</strong></td>
+<td><strong>Kiếm đồ lúc rạng sáng</strong></td>
+<td>Mèo</td>
 </tr>
 <tr>
-<td><strong>Hái lượm ban đêm</strong></td>
-<td><strong>Mèo</strong>, và không có vị trí thứ hai</td>
-</tr>
-<tr>
-<td><strong>Một người bạn không để lộ vị trí của bạn</strong></td>
-<td><strong>Mèo</strong></td>
+<td><strong>Một bạn đồng hành không làm lộ vị trí của bạn</strong></td>
+<td>Mèo</td>
 </tr>
 <tr>
 <td><strong>Không chết cóng</strong></td>
-<td><strong>Husky</strong></td>
+<td>Husky</td>
 </tr>
 </tbody></table></div>
-<h3 id="tóm-tắt-mỗi-giống-một-dòng">Tóm tắt mỗi giống một dòng</h3>
+<h3 id="tóm-tắt-mỗi-giống-trong-một-dòng">Tóm tắt mỗi giống trong một dòng</h3>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
-<th>Tóm trong một dòng</th>
+<th>Trong một dòng</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Chó cỏ</strong></td>
-<td>Con chó lai bình dân. Yếu, nhưng quật ngã được zombie và làm bạn thật sự</td>
+<td>Chó lai phổ biến nhất bản đồ. Cắn yếu, nhưng quật ngã được zombie</td>
 </tr>
 <tr>
 <td><strong>Chó chăn cừu Đức</strong></td>
-<td>Người lính. Đánh mạnh và gần như không hoảng loạn</td>
+<td>Giống chiến đấu của mod gốc. Cắn mạnh</td>
 </tr>
 <tr>
 <td><strong>Golden Retriever</strong></td>
-<td>Thợ săn mũi thính, đồng thời giúp bạn kiếm đồ tốt hơn</td>
+<td>Thợ săn mũi thính</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td>Con thú chở đồ giữ ấm cho bạn giữa mùa đông. Bướng</td>
+<td>Chó chở hàng, học chậm</td>
 </tr>
 <tr>
 <td><strong>Border Collie</strong></td>
-<td>Nhân công của nông trại</td>
+<td>Tự trông đàn vật nuôi của nông trại</td>
 </tr>
 <tr>
 <td><strong>Rottweiler</strong></td>
-<td>Chiến binh giúp bạn tiết kiệm thể lực khi cận chiến</td>
+<td>Đấu sĩ cận chiến</td>
 </tr>
 <tr>
-<td><strong>Doberman</strong></td>
-<td>Con chó của súng đạn: ít giật hơn, nạp đạn nhanh hơn, thần kinh vững</td>
+<td><strong>Chó Doberman</strong></td>
+<td>Giống của súng đạn: bớt giật và nạp đạn nhanh hơn</td>
 </tr>
 <tr>
-<td><strong>Labrador</strong></td>
-<td>Chuyên gia tha đồ: đánh nhau tệ nhất mod, mang con mồi về giỏi nhất</td>
+<td><strong>Chó Labrador</strong></td>
+<td>Một trong những tay đánh dở nhất mod, và là con tha mồi giỏi nhất</td>
 </tr>
 <tr>
 <td><strong>Chó Pug</strong></td>
-<td>Con chó của nhà. Ra ngoài thì vô dụng, mà làm bạn thì không con nào bằng</td>
+<td>Chó ở nhà. Không hợp đánh nhau lẫn việc ngoài đồng</td>
 </tr>
 <tr>
 <td><strong>Mèo</strong></td>
-<td>Không phải chó. Không đánh nhau, không sinh sản, không vào chuồng: canh xa hơn tất cả, trong im lặng, và nhìn trong bóng tối thay bạn</td>
+<td>Loài khác. Không đánh nhau, không ra chuồng trại, chỉ phối với mèo. Canh xa hơn tất cả, mà lại im lặng</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-năm-giống-chó-của-mod-gốc">3. Năm giống chó của mod gốc</h2>
-<p>Những giống này có sẵn trong mod chính, bạn không cần cài thêm gì cả.</p>
+<p>Những giống này có sẵn trong mod chính, không cần cài thêm gì.</p>
 <hr>
 <h3 id="chó-cỏ">Chó cỏ</h3>
-<p><strong>Con chó lai đường phố của Brazil.</strong> Đây là con chó bạn sẽ gặp đầu tiên, và nhiều khả năng cũng là bạn đồng hành đầu tiên của bạn.</p>
+<p>Chó lai của mod gốc.</p>
 <blockquote class="quote quote-game"><em>"Chó cỏ là giống chó bình thường, phổ biến, loại chó lai bạn có thể bắt gặp khắp thành phố. Nó không có kỹ năng đặc biệt và vốn khá yếu: không thể tự giết một con zombie, chỉ có thể quật ngã để câu giờ cho bạn."</em></blockquote>
-<p><strong>Tìm ở đâu:</strong> nhà dân, trong thành phố hoặc khu dân cư. <strong>10% mỗi căn</strong>, giống phổ biến nhất game.</p>
-<p><strong>Học:</strong> mọi thứ ở tốc độ bình thường. Không có gì nổi trội, mà cũng không có gì kém.</p>
-<p><strong>Khi chiến đấu:</strong> đây là <strong>con chó duy nhất không kết liễu nổi một con zombie</strong>. Cú cắn của nó ghim con zombie ở mức gần chết rồi dừng lại ở đó. Đây là chủ ý thiết kế và <strong>không tùy chọn sandbox nào thay đổi được</strong>. Bù lại, nó <strong>quật ngã</strong> được, mà quật ngã zombie chính là thứ mua thời gian cho bạn chạy hoặc đánh trả.</p>
-<p>Nó cũng là <strong>con chó dễ hoảng nhất mod</strong>: khi đánh nhau, nó tích căng thẳng nhanh gấp năm lần một con Chó chăn cừu Đức, và luôn là con hoảng loạn đầu tiên.</p>
-<p><strong>Đặc tính:</strong> thấp nhất trong tất cả. Trong cửa sổ của chó, nó <strong>luôn luôn</strong> hiện <strong>Thấp</strong> ở Sức mạnh, Độ hung hăng và Sức chịu đựng, ở bất kỳ con Chó cỏ nào bạn thuần hóa. Có đi tìm một con Chó cỏ <span class="ig">xịn</span> cũng vô ích.</p>
-<p><strong>Lứa đẻ:</strong> <strong>2 đến 4 chó con</strong>, nhiều nhất mod. Nếu mục tiêu của bạn là gây dựng cả một đàn, đây là giống đẻ khỏe nhất.</p>
-<p><strong>Túi yên:</strong> chứa 4 đến 5. Ít nhất.</p>
+<p><strong>Tìm ở đâu:</strong> nhà dân, trong thành phố hoặc khu dân cư. 3% mỗi căn, giống phổ biến nhất game.</p>
+<p><strong>Học:</strong> mọi thứ ở tốc độ bình thường.</p>
+<p><strong>Khi đánh nhau:</strong> đây là con chó duy nhất không kết liễu được zombie. Cú cắn đưa zombie xuống mức gần chết rồi dừng ở đó, và không tùy chọn sandbox nào đổi được điều này.</p>
+<p>Nó cũng là con chó dễ hoảng nhất mod: tích căng thẳng khi đánh nhau nhanh gấp năm lần Chó chăn cừu Đức, và luôn là con hoảng loạn đầu tiên.</p>
+<p><strong>Đặc tính:</strong> thấp nhất mod, Thấp ở cả ba, lúc nào cũng vậy.</p>
+<p><strong>Lứa đẻ:</strong> 2 đến 4 con, nhiều nhất mod. <strong>Túi yên:</strong> chứa 4 đến 5, ít nhất.</p>
 <p><strong>Moodle: <span class="ig">Có bạn bên cạnh</span></strong></p>
 <blockquote class="quote quote-game"><em>"Chó cỏ là giống chó lai rất tình cảm và dễ mến. Sự đồng hành trung thành của nó giúp bạn lên tinh thần, khiến nỗi buồn và sự chán chường tan nhanh hơn khi nó ở gần."</em></blockquote>
-<p>Nó liên tục làm giảm <strong>Buồn bã và Chán chường</strong> khi con chó còn ở gần. Đây là một trong những moodle hữu dụng nhất mod trong sinh hoạt hằng ngày, vì chán chường và buồn bã là chuyện xảy ra liên tục trong Zomboid mà xử lý bằng cách khác thì rất tốn kém.</p>
-<p><strong>Hợp với ai:</strong> hợp với tất cả mọi người, ở giai đoạn đầu. Về sau vẫn tốt, vì moodle của nó giải quyết một vấn đề mà không giống nào khác lo được. Chỉ là đừng trông chờ nó giết được thứ gì.</p>
+<p>Liên tục làm giảm Buồn bã và Chán chường khi nó còn ở gần.</p>
+<p><strong>Hợp với ai:</strong> với tất cả mọi người, ở giai đoạn đầu. Về sau vẫn có ích nhờ cái moodle mà không giống nào khác có.</p>
 <hr>
 <h3 id="chó-chăn-cừu-đức">Chó chăn cừu Đức</h3>
-<p><strong>Con chó của chiến trận.</strong> Giống chuyên chiến đấu của mod gốc.</p>
-<blockquote class="quote quote-game"><em>"Một giống chó nghiệp vụ mạnh mẽ và thông minh. Bẩm sinh khỏe và lì đòn hơn chó cỏ rất nhiều, học Chiến đấu và Vâng lời nhanh, gần như không mất bình tĩnh khi giao chiến, có thể giữ vững vị trí trước cả đàn zombie mà không hoảng loạn, đồng thời tự hạ gục một con zombie."</em></blockquote>
-<p><strong>Tìm ở đâu:</strong> đồn cảnh sát, nhà tù, trại giam, căn cứ quân sự, doanh trại, tiệm súng, kho đạn. <strong>20% mỗi tòa nhà.</strong> Nó không xuất hiện ở nhà dân. Bạn phải chủ động đi tìm.</p>
-<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong>, và Vâng lời nhanh hơn 50%. Săn mồi cũng nhanh hơn một chút. Đây là giống mạnh lên nhanh nhất.</p>
-<p><strong>Khi chiến đấu:</strong> cú cắn mạnh nhất mod gốc, và <strong>tự giết được zombie</strong>. Nhưng thứ tạo nên khác biệt của nó thậm chí không phải sát thương, mà là <strong>bản lĩnh</strong>. Nó tích căng thẳng <strong>chậm hơn Chó cỏ năm lần</strong>, và ngưỡng hoảng loạn của nó cao nhất mod. Trên thực tế: <strong>nó vẫn đánh tiếp trong những tình huống mà bất kỳ giống nào khác cũng đã đứng hình từ lâu</strong>.</p>
-<p><strong>Đặc tính:</strong> khoảng trung bình ở mọi mặt, cao hơn Chó cỏ rất nhiều. Một con Chó chăn cừu Đức sẽ hiện <strong>Trung bình</strong> ở cả ba đặc tính.</p>
-<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
-<p><strong>Túi yên:</strong> 6 đến 8.</p>
+<p>Giống chiến đấu của mod gốc.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó nghiệp vụ mạnh mẽ và thông minh. Bẩm sinh khỏe và lì đòn hơn chó cỏ rất nhiều, học Chiến đấu và Vâng lời nhanh, gần như không mất bình tĩnh khi giao chiến (chỉ nhận một phần ba mức căng thẳng), có thể giữ vững vị trí trước cả đàn zombie mà không hoảng loạn, đồng thời tự hạ gục một con zombie."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> đồn cảnh sát, nhà tù, trại giam, căn cứ quân sự, doanh trại, tiệm súng, kho đạn. 20% mỗi tòa nhà. Nó không xuất hiện ở nhà dân.</p>
+<p><strong>Học:</strong> Chiến đấu nhanh gấp đôi và Vâng lời nhanh hơn 50%. Săn mồi cũng nhanh hơn một chút.</p>
+<p><strong>Khi đánh nhau:</strong> cú cắn mạnh nhất mod gốc, và tự giết được zombie. Nó tích căng thẳng chậm hơn Chó cỏ năm lần, còn ngưỡng hoảng loạn thì cao nhất mod.</p>
+<p><strong>Đặc tính:</strong> Trung bình ở cả ba.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 8.</p>
 <p><strong>Moodle: <span class="ig">Can đảm</span></strong></p>
-<blockquote class="quote quote-game"><em>"Một chú chó chăn cừu Đức gan dạ bên cạnh giúp bạn vững tinh thần: sự hiện diện không biết sợ của nó làm giảm hoảng loạn khi ở gần."</em></blockquote>
-<p>Nó liên tục kéo <strong>Hoảng loạn</strong> xuống. Xét về con số thì đây là moodle mạnh nhất của mod gốc, và nó xử lý một vấn đề nghiêm túc: hoảng loạn làm hỏng đường ngắm của bạn và làm bạn đánh cận chiến kém hẳn đi. Có một con Chó chăn cừu Đức ở gần, bạn đánh nhau với đôi tay vững hơn nhiều.</p>
-<p><strong>Hợp với ai:</strong> hợp với người thích đánh nhau. Nếu bạn chơi kiểu lao vào ăn thua và ở luôn giữa thành phố, đây chính là giống dành cho bạn.</p>
-<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói <span class="ig">chỉ nhận một phần ba mức căng thẳng</span>, nhưng con số thật là <strong>một phần năm</strong>. Dòng chữ đó khiêm tốn quá mức, con chó còn ngon hơn những gì nó hứa.</blockquote>
+<blockquote class="quote quote-game"><em>"Một chú chó chăn cừu Đức gan dạ bên cạnh giúp bạn vững tinh thần. Sự hiện diện không biết sợ của nó làm giảm hoảng loạn khi ở gần."</em></blockquote>
+<p>Liên tục làm giảm Hoảng loạn. Đây là moodle có con số mạnh nhất mod gốc. Hoảng loạn làm hỏng tâm ngắm và các đòn cận chiến.</p>
+<p><strong>Hợp với ai:</strong> người đánh cận chiến, nhất là trong thành phố.</p>
+<blockquote class="quote">Mô tả trong game ghi <span class="ig">một phần ba mức căng thẳng</span>, nhưng con số thật là một phần năm.</blockquote>
 <hr>
 <h3 id="golden-retriever">Golden Retriever</h3>
-<p><strong>Con chó săn mũi thính.</strong> Giống chó giúp bạn kiếm đồ tốt hơn.</p>
-<blockquote class="quote quote-game"><em>"Một giống chó săn thân thiện, thính mũi và có bản năng săn mồi tự nhiên: học Săn mồi nhanh gấp đôi, đồng thời có thể tự hạ gục zombie (dù dễ mất bình tĩnh hơn chó chăn cừu Đức). Chiếc mũi thính giúp bạn kiếm đồ và lần theo thú rừng từ xa hơn."</em></blockquote>
-<p><strong>Tìm ở đâu:</strong> nhà dân, ở một lượt quay riêng tách khỏi Chó cỏ. <strong>2,5% mỗi căn.</strong> Hiếm gấp bốn lần so với Chó cỏ, nhưng lại ở cùng loại nhà: một căn có thể có cả hai.</p>
-<p><strong>Học:</strong> <strong>Săn mồi nhanh gấp đôi</strong>, và Đánh hơi nhanh hơn 50%. Đây là giống lên tới Săn mồi cấp 6 sớm nhất, tức là lúc con chó bắt đầu dám đấu với hươu.</p>
-<p><strong>Khi chiến đấu:</strong> sát thương trung bình, <strong>tự giết được zombie</strong>. Nó căng thẳng nhiều hơn Chó chăn cừu Đức, nhưng ít hơn Chó cỏ.</p>
-<p><strong>Đặc tính:</strong> nhỉnh hơn Chó cỏ một chút, thấp hơn Chó chăn cừu Đức. Đây không phải con chó để đánh nhau.</p>
-<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
-<p><strong>Túi yên:</strong> 6 đến 7.</p>
+<p>Giống mũi thính của mod gốc.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó săn thân thiện, thính mũi và có bản năng săn mồi tự nhiên: học Săn mồi nhanh gấp đôi và Chiến đấu nhanh hơn chó cỏ một chút, đồng thời có thể tự hạ gục zombie (dù dễ mất bình tĩnh hơn chó chăn cừu Đức). Chiếc mũi thính giúp bạn kiếm đồ và lần theo thú rừng từ xa hơn."</em></blockquote>
+<p><strong>Tìm ở đâu:</strong> nhà dân, trong một lượt bốc riêng, tách khỏi Chó cỏ. 1% mỗi căn, bằng một phần ba cơ hội của Chó cỏ. Một căn nhà có thể có cả hai.</p>
+<p><strong>Học:</strong> Săn mồi nhanh gấp đôi và Đánh hơi nhanh hơn 50%. Đây là giống lên tới Săn mồi cấp 6 sớm nhất, tức là lúc con chó bắt đầu dám đụng hươu nai.</p>
+<p><strong>Khi đánh nhau:</strong> sát thương trung bình, tự giết được. Nó căng thẳng nhiều hơn Chó chăn cừu Đức và ít hơn Chó cỏ.</p>
+<p><strong>Đặc tính:</strong> cao hơn Chó cỏ một chút, thấp hơn Chó chăn cừu Đức.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 7.</p>
 <p><strong>Moodle: <span class="ig">Mũi thính</span></strong></p>
 <blockquote class="quote quote-game"><em>"Golden Retriever cùng bạn rà soát mặt đất. Khi ở gần, được ăn no và trung thành, nó giúp bạn phát hiện đồ kiếm được từ xa hơn và học Kiếm đồ, Đặt bẫy cùng Ngắm bắn nhanh hơn."</em></blockquote>
-<p>Ba hiệu ứng:</p>
+<p>Hai tác dụng:</p>
 <ul>
-<li><strong>+20% XP</strong> cho <strong>Kiếm đồ, Đặt bẫy và Ngắm bắn</strong>.</li>
-<li><strong>+4 ô</strong> vào tầm nhìn của bạn trong Chế độ tìm kiếm, <strong>cộng thêm</strong> vào phần thưởng mà con chó nào cũng có sẵn.</li>
+<li>Thêm 20% XP cho Kiếm đồ, Đặt bẫy và Ngắm bắn.</li>
+<li>Thêm 4 ô tầm nhìn ở Chế độ tìm kiếm, cộng dồn với phần mà con chó nào cũng cho.</li>
 </ul>
-<p>Đây là moodle làm thay đổi nhịp chơi của một nhân vật sống ở vùng quê nhiều nhất. Kiếm đồ và Đặt bẫy là hai kỹ năng lên rất chậm, còn Ngắm bắn thì đắt đỏ.</p>
-<p><strong>Hợp với ai:</strong> hợp với người sống bằng săn bắn, kiếm đồ và đặt bẫy. Rất ăn ý với một căn cứ ở vùng quê.</p>
-<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói nó học Chiến đấu <span class="ig">nhanh hơn chó cỏ một chút</span>. Không đúng: nó học Chiến đấu đúng bằng tốc độ của Chó cỏ.</blockquote>
+<p><strong>Hợp với ai:</strong> người sống bằng săn bắn, kiếm đồ và đặt bẫy, thường là dân cắm căn cứ ở quê.</p>
+<blockquote class="quote">Mô tả trong game ghi nó học Chiến đấu <span class="ig">nhanh hơn chó cỏ một chút</span>. Thật ra nó học Chiến đấu cùng tốc độ với Chó cỏ.</blockquote>
 <hr>
 <h3 id="husky">Husky</h3>
-<p><strong>Con thú chở đồ.</strong> Con chó khỏe nhất mod, và là con duy nhất biết sưởi ấm.</p>
-<blockquote class="quote quote-game"><em>"Một giống chó kéo xe phương Bắc khỏe bền: mạnh nhất trong các giống, sinh ra để chở hàng (túi yên của nó chứa được nhiều nhất) và sống sót trong giá lạnh. Bướng bỉnh (học Vâng lời chậm hơn), thân thiện (canh gác kém) và ăn khỏe."</em></blockquote>
+<blockquote class="quote quote-game"><em>"Một giống chó kéo xe phương Bắc khỏe bền: mạnh nhất trong các giống, sinh ra để chở hàng (túi yên của nó chứa được nhiều nhất) và sống sót trong giá lạnh. Nó học Chiến đấu nhanh hơn chó cỏ một chút và có thể hạ zombie, nhưng không phải giống chuyên chiến đấu. Bướng bỉnh (học Vâng lời chậm hơn), thân thiện (canh gác kém) và ăn khỏe (nhanh đói)."</em></blockquote>
 <p><strong>Tìm ở đâu:</strong> hai nguồn.</p>
 <ul>
-<li><strong>Nhà dân, chỉ vào mùa đông.</strong> 1,25% mỗi căn. Không đúng mùa thì đây là giống hiếm nhất game.</li>
-<li><strong>Cửa hàng thú cưng và phòng khám thú y.</strong> 10% mỗi tòa nhà, quanh năm. Đây là cách chắc ăn để kiếm một con.</li>
+<li>Nhà dân, chỉ vào mùa đông, 1,25% mỗi căn. Ngoài mùa đông nó không xuất hiện trong nhà.</li>
+<li>Cửa hàng thú cưng và phòng khám thú y, 10% mỗi tòa nhà, quanh năm. Đây là nguồn chắc ăn nhất.</li>
 </ul>
-<p><strong>Học:</strong> <strong>Đánh hơi nhanh gấp đôi</strong> (khả năng cảnh giới tốt nhất mod), Săn mồi nhanh hơn 50%, và Chiến đấu nhỉnh hơn mức trung bình. <strong>Nhưng nó học Vâng lời chậm hơn 20%</strong>, và đó là <strong>điểm trừ theo giống duy nhất trong cả mod</strong>. Đây là chủ ý: nó bướng thật.</p>
-<p>Hệ quả thực tế của việc Vâng lời lên chậm: nó lâu mở khóa các trò khéo hơn, không nghe lời trong thời gian dài hơn, và ngưỡng trung thành tối thiểu của nó hạ xuống chậm hơn. Nuôi một con Husky cần nhiều kiên nhẫn hơn.</p>
-<p><strong>Khi chiến đấu:</strong> sát thương trên mức trung bình, <strong>tự giết được zombie</strong>, nhưng nó không phải chiến binh. Nó căng thẳng hơn Chó chăn cừu Đức khá nhiều.</p>
-<p><strong>Đặc tính:</strong> <strong>khoảng Sức mạnh cao nhất mod, bỏ xa phần còn lại</strong>. Một con Husky sẽ hiện <strong>Trung bình hoặc Cao</strong> ở Sức mạnh, trong khi các giống khác chỉ nằm ở Trung bình hoặc Thấp.</p>
+<p><strong>Học:</strong> Đánh hơi nhanh gấp đôi (Đánh hơi lên nhanh nhất mod), Săn mồi nhanh hơn 50% và Chiến đấu trên mức trung bình một chút. Vâng lời chậm hơn 20%, hình phạt theo giống duy nhất trong đám chó.</p>
+<p>Nó mở khóa các trò khéo muộn hơn, cãi lời lâu hơn, và sàn trung thành của nó cũng tụt chậm hơn.</p>
+<p><strong>Khi đánh nhau:</strong> sát thương trên mức trung bình, tự giết được. Nó căng thẳng nhiều hơn hẳn Chó chăn cừu Đức.</p>
+<p><strong>Đặc tính:</strong> khoảng Sức mạnh rộng nhất mod, cách biệt hẳn: thường ra Cao.</p>
 <p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
-<p><strong>Túi yên: chứa 13 đến 16.</strong> Đây là giống duy nhất có thưởng túi yên (+50%), và khác biệt là rất lớn: nó chở được <strong>gấp hai đến ba lần</strong> bất kỳ con chó nào khác.</p>
+<p><strong>Túi yên:</strong> chứa 13 đến 16. Đây là giống duy nhất có thưởng túi yên (thêm 50%) và chở nhiều gấp hai tới ba lần bất kỳ con chó nào khác.</p>
 <p><strong>Moodle: <span class="ig">Được sưởi ấm</span></strong></p>
 <blockquote class="quote quote-game"><em>"Husky sát cánh cùng bạn. Khi ở gần, được ăn no và trung thành, việc theo kịp nó giúp Sức mạnh của bạn tăng nhanh hơn, giúp giữ sức nên mệt chậm hơn; khi trời lạnh, bộ lông dày của nó còn giúp bạn giữ ấm."</em></blockquote>
-<p>Ba hiệu ứng:</p>
+<p>Ba tác dụng:</p>
 <ul>
-<li><strong>Sức mạnh tăng nhanh hơn 50%</strong> khi nó ở gần. Sức mạnh là kỹ năng lên chậm nhất trong game, và nó quyết định bạn mang được bao nhiêu và đánh cận chiến mạnh cỡ nào.</li>
-<li><strong>Thể lực hồi liên tục</strong>, bạn mệt chậm hơn.</li>
-<li><strong>Một nguồn sưởi di động</strong>, thứ <strong>tự bật khi bạn bắt đầu thấy lạnh</strong> và tự tắt khi bạn ấm lại. Nó chỉ hoạt động khi trời <strong>thật sự lạnh</strong> (dưới -3 °C ngoài trời) và bạn càng đứng sát con chó thì càng ăn thua. Nó làm chậm đà tụt nhiệt của bạn chứ không thay được áo: quần áo mùa đông vẫn là bắt buộc.</li>
+<li>Sức mạnh lên nhanh hơn 50% khi nó ở gần. Sức mạnh là kỹ năng lên chậm nhất game và quyết định bạn mang được bao nhiêu cùng sát thương cận chiến của bạn.</li>
+<li>Thể lực hồi liên tục, nên bạn mệt chậm hơn.</li>
+<li>Một nguồn sưởi biết đi, tự bật khi bạn bắt đầu lạnh và tự tắt khi bạn ấm lại. Nó chỉ vào việc khi trời rét thật (dưới âm 3 °C ngoài trời) và càng đứng gần con chó thì càng ăn thua. Nó ghìm đà tụt nhiệt, chứ không thay được đồ mùa đông.</li>
 </ul>
-<p><strong>Phần Sức mạnh cộng thêm tính trên số điểm bạn vốn đã kiếm được:</strong> husky chỉ tăng tốc chứ không cho không. Nó có tác dụng khi bạn vận động, đi đường với đồ nặng và đánh nhau; chó nằm cạnh trong khi bạn đứng yên thì chẳng rèn được gì. Bù lại, phần nó tăng tốc là vĩnh viễn: Sức mạnh ở lại với bạn kể cả khi con chó đã đi xa, và mỗi cấp lại nâng khối lượng bạn mang được một cách lâu dài.</p>
-<p><strong>Hợp với ai:</strong> hợp với người đi những chuyến nhặt đồ dài ngày rồi vác đầy đồ trở về, và với người chơi mùa đông khắc nghiệt. Đây là con chó lo hậu cần.</p>
-<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói <span class="ig">ăn khỏe (nhanh đói)</span>. <strong>Điều đó không đúng với con chó đã được thuần hóa.</strong> Nhịp đói của bạn đồng hành là như nhau ở mọi giống. Cái bụng to hơn kia chỉ tồn tại khi nó còn là chó hoang.</blockquote>
+<p>Phần Sức mạnh cộng thêm tính trên lượng XP bạn vốn đã kiếm được: nó tăng tốc quá trình rèn, chứ không tự cho XP. Nó sinh lời trong lúc bạn tập, đi đường với đồ nặng hoặc đánh nhau.</p>
+<p><strong>Hợp với ai:</strong> người đi những chuyến hôi của dài rồi vác đầy đồ về, và người chơi mùa đông khắc nghiệt.</p>
+<blockquote class="quote">Mô tả ghi <span class="ig">ăn khỏe (nhanh đói)</span>. Điều đó chỉ đúng khi nó còn hoang. Sau khi thuần hóa, nhịp đói của nó giống hệt mọi giống khác.</blockquote>
 <hr>
 <h3 id="border-collie">Border Collie</h3>
-<p><strong>Con chó của nông trại.</strong> Giống chuyên chăn đàn.</p>
+<p>Giống chăn đàn của mod gốc.</p>
 <blockquote class="quote quote-game"><em><span class="ig">Một giống chó chăn đàn thông minh, bền bỉ và là bạn đồng hành quen thuộc ở nông trại, nổi bật nhất nhờ trí thông minh.</span></em></blockquote>
-<p><strong>Tìm ở đâu:</strong> nhà kho, chuồng ngựa, silo, chuồng gà, chuồng gia súc, ở <strong>vùng quê</strong>. <strong>15% mỗi tòa nhà</strong>, và lượt quay này <strong>bỏ qua bộ lọc đô thị</strong>, nên một trang trại nằm lọt thỏm giữa đồng không mông quạnh vẫn được tính.</p>
-<p><strong>Học:</strong> <strong>Chăn đàn nhanh gấp đôi</strong>, Vâng lời nhanh hơn 50%, và Đánh hơi nhỉnh hơn mức trung bình.</p>
-<p><strong>Khi chiến đấu:</strong> sát thương trung bình, ngang Golden Retriever. <strong>Tự giết được zombie.</strong> Nó căng thẳng ít hơn Chó cỏ, nhưng nhiều hơn Chó chăn cừu Đức khá xa. Đây không phải chó để đánh nhau, mà là chó làm việc.</p>
-<p><strong>Đặc tính:</strong> các khoảng đều ở mức trung bình, nhỉnh hơn Golden Retriever một chút.</p>
-<p><strong>Lứa đẻ:</strong> <strong>1 đến 3</strong>, nhiều thứ hai trong mod gốc.</p>
-<p><strong>Túi yên:</strong> 6 đến 8.</p>
-<p><strong>Sở trường thật sự:</strong> vùng làm dịu của nó <strong>hiệu quả hơn 50% trên mỗi cấp</strong> so với bất kỳ giống nào khác. Điều này đúng ở cả hai chỗ mà vùng làm dịu tồn tại:</p>
-<ul>
-<li>ở chế độ <strong><span class="ig">Chăm đàn vật nuôi ở đây</span></strong>, khi nó trực trong chuồng;</li>
-<li>ở moodle của nó, thứ làm dịu đàn vật nuôi quanh <strong>bạn</strong>.</li>
-</ul>
-<p>Vì con vật bị căng thẳng thì không cho sữa, không cho len, dễ sảy thai và bỏ đàn chạy tán loạn, một con Border Collie được huấn luyện đúng là ranh giới giữa một nông trại có sản lượng và một nông trại chẳng ra gì.</p>
+<p><strong>Tìm ở đâu:</strong> nhà kho nông trại, chuồng ngựa, xi lô, chuồng gà, bãi quây gia súc, ở vùng quê. 15% mỗi tòa nhà. Lượt bốc này bỏ qua bộ lọc đô thị, nên một nông trại lẻ loi giữa đồng không cũng tính.</p>
+<p><strong>Học:</strong> Chăn đàn nhanh gấp đôi, Vâng lời nhanh hơn 50% và Đánh hơi trên mức trung bình một chút.</p>
+<p><strong>Khi đánh nhau:</strong> sát thương trung bình, ngang Golden. Tự giết được. Nó căng thẳng ít hơn Chó cỏ và nhiều hơn hẳn Chó chăn cừu Đức.</p>
+<p><strong>Đặc tính:</strong> các khoảng ở mức trung bình, nhỉnh hơn Golden một chút.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 3, nhiều thứ nhì trong mod gốc. <strong>Túi yên:</strong> 6 đến 8.</p>
+<p>Sở trường của nó là vầng làm dịu: mỗi cấp cho nhiều hơn 50% so với bất kỳ giống nào khác, cả ở chế độ <strong><span class="ig">Chăm đàn vật nuôi ở đây</span></strong> lẫn ở moodle.</p>
+<p>Con vật bị căng thẳng thì không cho sữa, không cho len, sảy thai và bỏ đàn.</p>
 <p><strong>Moodle: <span class="ig">Bản năng chăn đàn</span></strong></p>
 <blockquote class="quote quote-game"><em>"Border Collie cùng bạn chăm đàn vật nuôi. Khi ở gần, được ăn no và trung thành, nó giúp những con vật xung quanh bình tĩnh hơn, đồng thời giúp bạn học Chăm sóc động vật và Trồng trọt nhanh hơn."</em></blockquote>
-<p>Hai hiệu ứng:</p>
+<p>Hai tác dụng:</p>
 <ul>
-<li><strong>+20% XP</strong> cho <strong>Chăm sóc động vật và Trồng trọt</strong>.</li>
-<li><strong>Làm dịu đàn vật nuôi trong một bán kính quanh bạn</strong>, tự động, trong lúc bạn làm việc.</li>
+<li>Thêm 20% XP cho Chăm sóc động vật và Trồng trọt.</li>
+<li>Tự động làm dịu đàn vật nuôi trong một vòng quanh bạn, trong lúc bạn làm việc.</li>
 </ul>
-<p><strong>Hợp với ai:</strong> hợp với người xây dựng nông trại. Nếu bạn nuôi bò, cừu hay gà, đây là giống bảo vệ sản lượng cho bạn.</p>
-<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game vẫn nói nó <span class="ig">là giống chó cân bằng, làm được nhiều việc nhưng không có sở trường vượt trội</span>. Câu đó đã lỗi thời: Chăn đàn nhân đôi và vùng làm dịu được tăng cường đều đã có rồi.</blockquote>
+<p><strong>Hợp với ai:</strong> người dựng nông trại nuôi bò, cừu hoặc gà.</p>
+<blockquote class="quote">Mô tả trong game vẫn ghi rằng nó <span class="ig">là giống chó cân bằng, làm được nhiều việc nhưng không có sở trường vượt trội</span>. Chỗ đó đã cũ: Chăn đàn gấp đôi và vầng làm dịu mạnh hơn đã có rồi.</blockquote>
 <h2 id="4-bốn-giống-chó-addon">4. Bốn giống chó addon</h2>
-<p>Bốn giống này nằm trong <strong>các mod riêng trên Steam</strong>, và cần có mod Companion Dogs gốc mới chạy được. Link của từng giống nằm ngay trong phần giới thiệu bên dưới, và được gom lại ở mục <a href="#10-cài-đặt-các-addon">Cài đặt các mod addon</a>.</p>
+<p>Bốn giống này nằm trong các mod riêng trên Steam và cần có Companion Dogs bản gốc. Link của từng giống ở ngay trong phần của nó, và gom đủ ở <a href="#10-cài-đặt-các-addon">Cài các addon</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
-<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, mod addon riêng)</em></p>
-<p><strong>Chiến binh giúp bạn đỡ tốn thể lực.</strong></p>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, addon riêng)</em></p>
+<p>Giống chiến đấu, với một moodle trả lại thể lực trong lúc đánh cận chiến.</p>
 <blockquote class="quote quote-game"><em>"Một giống chó canh gác mạnh mẽ được nuôi cho công việc bảo vệ, một chiến binh thực thụ ngang tầm chó chăn cừu Đức: nó học Chiến đấu nhanh gấp đôi, đánh rất mạnh khi lên cấp cao, quật ngã zombie và vẫn tiếp tục chiến đấu ở nơi mà hầu hết các giống khác đã hoảng loạn."</em></blockquote>
 <p><strong>Tìm ở đâu:</strong></p>
 <ul>
-<li><strong>Tòa nhà công nghiệp</strong> (nhà kho, nhà xưởng, nhà máy, bãi phế liệu, xưởng sửa chữa, bến bốc hàng): <strong>10% mỗi tòa nhà</strong>.</li>
-<li><strong>Nhà dân:</strong> 2,5% mỗi căn, một cơ hội hiếm.</li>
+<li>Tòa nhà công nghiệp (kho, nhà xưởng, nhà máy, bãi phế liệu, gara, bến bốc hàng): 10% mỗi tòa nhà.</li>
+<li>Nhà dân: 1% mỗi căn.</li>
 </ul>
-<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong>, và Đánh hơi nhanh hơn 50% (con chó chiến đấu duy nhất có mũi tốt). Không có thưởng cho Vâng lời.</p>
-<p><strong>Khi chiến đấu:</strong> cú cắn ngang với chó chăn cừu Đức, và <strong>thần kinh cũng ngang ngửa</strong>: nó tích căng thẳng chậm hơn chó cỏ năm lần và có ngưỡng hoảng loạn cao nhất. Nó quật ngã và giết được zombie.</p>
-<p><strong>Đặc tính:</strong> giống hệt chó chăn cừu Đức.</p>
+<p><strong>Học:</strong> Chiến đấu nhanh gấp đôi và Đánh hơi nhanh hơn 50% (con chó chiến đấu duy nhất có mũi tốt). Nó không có thưởng Vâng lời.</p>
+<p><strong>Khi đánh nhau:</strong> ngang Chó chăn cừu Đức cả về cú cắn lẫn độ lì: tích căng thẳng chậm hơn chó lai năm lần và có ngưỡng hoảng loạn ở mức cao nhất. Nó quật ngã và giết được.</p>
+<p><strong>Đặc tính:</strong> y hệt Chó chăn cừu Đức.</p>
 <p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 8.</p>
 <p><strong>Moodle: <span class="ig">Tuyến đầu</span></strong></p>
 <blockquote class="quote quote-game"><em>"Rottweiler của bạn đang chiến đấu bên cạnh bạn. Khi nó giao chiến ở gần bạn, được ăn no và trung thành, các đòn cận chiến của bạn tiêu hao ít thể lực hơn."</em></blockquote>
-<p><strong>Hoàn lại 35% thể lực đã tiêu hao cho mỗi đòn cận chiến.</strong></p>
-<p>Đây là moodle nhiều điều kiện nhất mod: biểu tượng hiện lên bất cứ khi nào Rottweiler ở gần, nhưng <strong>hiệu ứng chỉ có tác dụng trong lúc nó thật sự đang đánh nhau</strong>. Và nó chỉ áp dụng cho <strong>cận chiến</strong>, súng thì không được gì.</p>
-<p>Trên thực tế, chỗ này rất lớn. Thể lực chính là thứ giới hạn số zombie bạn đánh liên tục được. Có một con Rottweiler đánh nhau bên cạnh, bạn đánh được nhiều hơn gần một phần ba trước khi hụt hơi.</p>
-<p><strong>Hợp với ai:</strong> hợp với người dọn đàn zombie bằng cận chiến. Đây là giống ăn ý nhất mod với lối chơi hung hăng.</p>
+<p>Trả lại 35% thể lực đã tiêu cho mỗi đòn cận chiến.</p>
+<p>Biểu tượng hiện bất cứ khi nào Rottweiler ở gần, nhưng tác dụng chỉ chạy trong lúc nó đang thật sự đánh nhau.</p>
+<p><strong>Hợp với ai:</strong> người dọn cả bầy zombie bằng cận chiến.</p>
 <hr>
-<h3 id="doberman">Doberman</h3>
-<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, mod addon riêng)</em></p>
-<p><strong>Chó của xạ thủ.</strong></p>
-<blockquote class="quote quote-game"><em>"Một giống chó canh gác thon gọn, luôn cảnh giác và học nhanh nhất trong tất cả các giống. Khi giao chiến, nó thiên hẳn về tấn công mà không có phòng thủ: yếu lúc chưa được huấn luyện, nhưng khi Chiến đấu đạt cấp tối đa thì cắn rất mạnh, dù chịu đòn kém hơn Rottweiler."</em></blockquote>
+<h3 id="chó-doberman">Chó Doberman</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, addon riêng)</em></p>
+<p>Giống chiến đấu, với một moodle hướng về súng đạn.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó bảo vệ thon gọn, cảnh giác và có khả năng học hỏi nhanh nhất trong mọi giống chó: nó rèn luyện tính Vâng lời nhanh hơn cả chó Béc-giê Đức. Trong chiến đấu, nó giống như một lưỡi kiếm sắc bén nhưng không có khiên giáp: yếu ớt khi chưa được huấn luyện, nhưng khi đạt tối đa kỹ năng Chiến đấu, nó cắn mạnh hơn bất kỳ con chó nào khác trong đàn, mặc dù sức chịu đựng đòn roi của nó kém hơn chó Rottweiler."</em></blockquote>
 <p><strong>Tìm ở đâu:</strong></p>
 <ul>
-<li><strong>Đồn cảnh sát:</strong> 18% mỗi tòa nhà.</li>
-<li><strong>Công trình quân sự</strong> (kho đạn, doanh trại, hầm ngầm, chốt gác, trạm kiểm soát): 22% mỗi tòa nhà.</li>
+<li>Đồn cảnh sát: 18% mỗi tòa nhà.</li>
+<li>Tòa nhà quân sự (kho đạn, doanh trại, hầm ngầm, chốt gác, trạm kiểm soát): 22% mỗi tòa nhà.</li>
 </ul>
-<blockquote class="quote"><strong>Lưu ý thực tế:</strong> công trình quân sự <strong>cực kỳ hiếm</strong> trên bản đồ gốc của game (cả bang Kentucky chỉ có chừng năm căn phòng như vậy). Trên thực tế, hãy tìm ở <strong>đồn cảnh sát</strong>.</blockquote>
-<p><strong>Học:</strong> <strong>Chiến đấu nhanh gấp đôi</strong> và <strong>Vâng lời nhanh hơn 50%</strong>, đúng y bộ của chó chăn cừu Đức. Thứ tách hai giống này ra không phải tốc độ huấn luyện, mà là <strong>đường cong sát thương</strong>.</p>
-<p><strong>Khi chiến đấu:</strong> nó có <strong>đường cong dốc nhất mod</strong>. Chưa huấn luyện thì nó đánh yếu hơn Rottweiler khá nhiều, nhưng ở Chiến đấu cấp 10 thì nó <strong>lên tới đỉnh</strong>. Đây là một khoản đầu tư: con Doberman vừa thuần hóa xong thì yếu, còn con Doberman đã huấn luyện thì thuộc hàng đầu.</p>
-<p>Thần kinh vững (ngưỡng hoảng loạn cao nhất), nhưng <strong>chịu đòn kém hơn</strong>: Sức chịu đựng của nó thấp nhất trong nhóm chó chiến.</p>
-<p><strong>Đặc tính:</strong> <strong>khoảng Độ hung hăng cao nhất mod</strong>, nghĩa là nó còn nhận XP chiến đấu nhanh hơn nữa. Sức mạnh và Sức chịu đựng thấp hơn Rottweiler một chút.</p>
+<blockquote class="quote">Tòa nhà quân sự rất hiếm trên bản đồ gốc của game (cả Kentucky chỉ có chừng năm căn phòng như vậy). Hãy tìm ở đồn cảnh sát.</blockquote>
+<p><strong>Học:</strong> Chiến đấu nhanh gấp đôi và Vâng lời nhanh hơn 50%, đúng bộ của Chó chăn cừu Đức.</p>
+<p><strong>Khi đánh nhau:</strong> nó có đường sát thương dốc nhất mod. Chưa huấn luyện thì cắn yếu hơn Rottweiler nhiều; tới Chiến đấu 10 thì chạm cùng mức sát thương đỉnh.</p>
+<p>Độ lì cao (ngưỡng hoảng loạn ở mức cao nhất), nhưng chịu đòn kém hơn: Sức chịu đựng của nó thấp nhất trong đám chó biết đánh.</p>
+<p><strong>Đặc tính:</strong> khoảng Độ hung hăng rộng nhất mod, nhờ vậy nó ăn XP chiến đấu còn nhanh hơn nữa. Sức mạnh và Sức chịu đựng thấp hơn Rottweiler một chút.</p>
 <p><strong>Lứa đẻ:</strong> 1 đến 2. <strong>Túi yên:</strong> 6 đến 8.</p>
-<p><strong>Moodle: <span class="ig">Ngắm vững</span></strong></p>
-<blockquote class="quote quote-game"><em>"Doberman của bạn đang canh chừng phía sau. Khi nó ở gần, được ăn no và trung thành, căng thẳng của bạn giảm dần, tầm ngắm hồi phục nhanh hơn sau mỗi phát bắn và bạn nạp đạn nhanh hơn."</em></blockquote>
-<p>Ba hiệu ứng, tất cả đều dành cho <strong>súng</strong>:</p>
+<p><strong>Moodle: <span class="ig">Ngắm Bắn Ổn Định</span></strong></p>
+<blockquote class="quote quote-game"><em>"Chú chó Doberman đang bảo vệ sau lưng bạn. Khi nó ở gần, được cho ăn no và trung thành, căng thẳng của bạn sẽ tan biến, tâm ngắm phục hồi nhanh hơn sau mỗi phát bắn và bạn nạp đạn nhanh hơn."</em></blockquote>
+<p>Chỉ có giá trị với súng:</p>
 <ul>
-<li><strong>Căng thẳng của bạn giảm liên tục</strong> (căng thẳng cao làm tay ngắm tệ đi trong Zomboid).</li>
-<li><strong>Độ giật hồi phục nhanh hơn 45%</strong> sau mỗi phát bắn. Bạn ngắm lại được sớm hơn.</li>
-<li><strong>Nạp đạn nhanh hơn 15%.</strong></li>
+<li>Căng thẳng của bạn rút liên tục (căng thẳng cao làm tâm ngắm tệ đi).</li>
+<li>Độ giật hồi nhanh hơn 45% sau mỗi phát bắn.</li>
+<li>Nạp đạn nhanh hơn 15%.</li>
 </ul>
-<p><strong>Hợp với ai:</strong> hợp với người chơi bằng súng. Cả ba hiệu ứng đều dồn vào cùng một chuyện: <span class="ig">mình mất bao nhiêu thời gian giữa phát bắn này và phát bắn tiếp theo</span>.</p>
-<blockquote class="quote"><strong>Ghi chú:</strong> mô tả trong game nói nó luyện Vâng lời <span class="ig">còn nhanh hơn cả chó chăn cừu Đức</span> và khi Chiến đấu đạt cấp tối đa thì <span class="ig">cắn mạnh hơn bất kỳ con chó nào khác</span>. Cả hai trường hợp đều là <strong>ngang bằng</strong>, không phải hơn: nó ngang chó chăn cừu Đức về Vâng lời và ngang Rottweiler về sát thương ở cấp 10.</blockquote>
+<p><strong>Hợp với ai:</strong> người chơi súng.</p>
+<blockquote class="quote">Mô tả trong game ghi nó rèn Vâng lời <span class="ig">nhanh hơn cả chó Béc-giê Đức</span>, và ở Chiến đấu tối đa thì <span class="ig">cắn mạnh hơn bất kỳ con chó nào khác trong đàn</span>. Cả hai đều là hòa: nó ngang Chó chăn cừu Đức về Vâng lời và ngang Rottweiler về sát thương ở cấp 10.</blockquote>
 <hr>
-<h3 id="labrador">Labrador</h3>
-<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, mod addon riêng)</em></p>
-<p><strong>Chuyên gia tha mồi.</strong> Giống chó săn giỏi nhất, và cố ý là kẻ đánh nhau tệ nhất mod.</p>
-<blockquote class="quote quote-game"><em>"Chó săn sinh ra để tha về: nó luyện Săn bắn nhanh gấp đôi, Vâng lời theo ngay sau. Đổi lại, nó cố tình là kẻ đánh nhau tệ nhất trong nhà: cú cắn yếu nhất, không quật ngã được ai, và một trận ẩu đả khiến nó hoảng nặng. Tài thật sự của nó nằm ở cái miệng."</em></blockquote>
+<h3 id="chó-labrador">Chó Labrador</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, addon riêng)</em></p>
+<p>Giống săn bắn. Con chó tha mồi về giỏi nhất.</p>
+<blockquote class="quote quote-game"><em>"Một giống chó săn được sinh ra để nhặt đồ mang về: nó rèn luyện kỹ năng Săn mồi nhanh gấp đôi, và tính Vâng lời cũng học nhanh không kém. Trớ trêu thay, nó lại là một trong những chiến binh tệ nhất trong dòng họ: chỉ có Chó Pug cắn yếu hơn, không có khả năng quật ngã mục tiêu, và một cuộc ẩu đả sẽ khiến nó vô cùng hoảng sợ. Món quà lớn nhất của nó chính là cái mõm."</em></blockquote>
 <p><strong>Tìm ở đâu:</strong></p>
 <ul>
-<li><strong>Nhà dân:</strong> <strong>5% mỗi căn.</strong> Đây là giống addon dễ gặp nhất, gấp đôi tỷ lệ của Golden Retriever.</li>
-<li><strong>Vùng hoang dã:</strong> lều săn, khu cắm trại, nhà thuyền, chòi câu cá, trạm kiểm lâm. <strong>20% mỗi tòa nhà.</strong></li>
+<li>Nhà dân: 1% mỗi căn, bằng đúng cơ hội của Golden.</li>
+<li>Vùng rừng núi (chòi săn, khu cắm trại, nhà thuyền, chòi câu cá, trạm kiểm lâm): 20% mỗi tòa nhà.</li>
 </ul>
-<p><strong>Học:</strong> <strong>Săn mồi nhanh gấp đôi</strong> và <strong>Vâng lời nhanh hơn 50%</strong>. Đây là bộ của một thợ săn có kỷ luật.</p>
-<p><strong>Khi chiến đấu:</strong> <strong>tệ nhất mod, và là cố ý</strong>.</p>
+<p><strong>Học:</strong> Săn mồi nhanh gấp đôi và Vâng lời nhanh hơn 50%.</p>
+<p><strong>Khi đánh nhau:</strong> thuộc hàng tệ nhất mod.</p>
 <ul>
-<li><strong>Cú cắn yếu nhất</strong> trong tất cả.</li>
-<li><strong>Không quật ngã được zombie.</strong> Đây là giống duy nhất không làm được việc đó.</li>
-<li>Tích căng thẳng <strong>nhanh gấp ba lần rưỡi</strong> so với Rottweiler, và hoảng loạn ở đúng cái ngưỡng thấp của chó cỏ.</li>
+<li>Cú cắn yếu nhất trong tất cả, chỉ hơn Chó Pug.</li>
+<li>Không quật ngã được zombie. Chỉ nó và Chó Pug là không quật ngã.</li>
+<li>Tích căng thẳng nhanh gấp ba lần rưỡi Rottweiler và hoảng loạn ở đúng cái ngưỡng thấp của chó lai.</li>
 </ul>
-<p>Nó <strong>giết</strong> được zombie nếu bạn cố, nhưng đừng bắt con chó này đi đánh nhau.</p>
-<p><strong>Đặc tính:</strong> <strong>khoảng Độ hung hăng thấp nhất mod</strong>. Nó là con chó hiền nhất ở đây, và cũng vì vậy mà lâu học đánh nhau hơn.</p>
-<p><strong>Lứa đẻ:</strong> <strong>1 đến 3</strong>, giống addon duy nhất vượt quá 2. <strong>Túi yên:</strong> 6 đến 8.</p>
-<p><strong>Moodle: <span class="ig">Miệng Mềm</span></strong></p>
-<blockquote class="quote quote-game"><em>"Labrador tha về mọi con mồi ngay từ chuyến săn đầu tiên, và thường kèm một món thêm. Khi nó ở gần, được cho ăn và trung thành, bạn cũng học Mổ xẻ và Đao ngắn nhanh hơn."</em></blockquote>
-<p>Bốn hiệu ứng, và đây là moodle đầy đủ nhất mod:</p>
+<p>Nó vẫn giết được một con zombie nếu bạn cố.</p>
+<p><strong>Đặc tính:</strong> khoảng Độ hung hăng hẹp nhất mod. Vì vậy nó học đánh nhau lâu hơn.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 3, addon duy nhất vượt quá 2. <strong>Túi yên:</strong> 6 đến 8.</p>
+<p><strong>Moodle: <span class="ig">Ngoạm Nhẹ</span></strong></p>
+<blockquote class="quote quote-game"><em>"Chú chó Labrador của bạn mang về mọi con mồi ngay từ chuyến đi săn đầu tiên, và thường kiếm thêm được thứ gì đó. Khi nó ở gần, được cho ăn no và trung thành, bạn cũng học được kỹ năng Xẻ thịt và Vũ khí Lưỡi ngắn nhanh hơn."</em></blockquote>
 <ul>
-<li><strong>Nó tha con mồi về từ Săn mồi cấp 3</strong>, tức là <strong>ngay từ lúc nó biết săn</strong>. Mọi giống khác phải tới Săn mồi cấp 6 mới bắt đầu tha về. Khác biệt đó lớn bằng nửa ván chơi.</li>
-<li><strong>Nó kiên trì lâu gấp ba lần</strong> khi mang mồi về, trước khi bỏ xác con mồi lại giữa đường.</li>
-<li><strong>60% số lần tha về có kèm một món thêm</strong> rơi xuống đất ngay cạnh bạn: xương thú nhỏ, lông gà, cành khô hoặc trứng chim hoang. <em><span class="ig">Labrador của bạn còn tha về cho bạn: ...</span></em></li>
-<li><strong>+20% XP</strong> cho <strong>Mổ xẻ và Đao ngắn</strong>, đúng hai kỹ năng dùng để xử lý thứ nó tha về.</li>
+<li>Nó tha con mồi về từ Săn mồi 3, tức là ngay khi biết săn. Các giống khác phải tới Săn mồi 6 mới chịu tha về.</li>
+<li>Nó cố mang về lâu gấp ba lần trước khi bỏ xác lại giữa đường.</li>
+<li>60% số lần tha về có kèm một món rơi xuống đất cạnh bạn: xương thú nhỏ, lông gà, cành khô hoặc trứng chim hoang. <em><span class="ig">Chó Labrador của bạn đã mang về thêm thứ khác: ...</span></em></li>
+<li>Thêm 20% XP cho Xẻ thịt và Vũ khí Lưỡi ngắn, hai kỹ năng dùng để xử lý thứ nó mang về.</li>
 </ul>
-<p><strong>Hợp với ai:</strong> hợp với một cuộc sống săn bắn. Golden Retriever học săn nhanh ngang vậy, nhưng <strong>Labrador tha về ngay từ đầu</strong>, và khác biệt đó lộ ra ngay trong những tuần chơi đầu tiên.</p>
+<p><strong>Hợp với ai:</strong> người sống bằng săn bắn. Golden học săn nhanh ngang nó, nhưng Labrador tha mồi về ngay từ đầu.</p>
 <hr>
 <h3 id="chó-pug">Chó Pug</h3>
 <p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, addon riêng)</em></p>
-<p><strong>Con chó của nhà.</strong> Mọi giống khác đều đáng giá vì đánh nhau, đi săn, chăn gia súc hay chở đồ. Chó Pug không làm gì trong số đó, và nó là người bạn tốt nhất trong mod.</p>
-<blockquote class="quote quote-game"><em>"Chó nhà: người bạn đồng hành đầu tiên mà giá trị không nằm ở đánh nhau, đi săn, chăn gia súc hay chở đồ. Nó luyện Vâng lời nhanh gấp đôi bất kỳ giống nào khác, và mối gắn bó không bao giờ tự tụt xuống."</em></blockquote>
+<p>Chó cảnh, với một moodle về tinh thần.</p>
+<blockquote class="quote quote-game"><em>"Loài chó giữ nhà: người bạn đồng hành đầu tiên mà giá trị của nó không nằm ở việc chiến đấu, săn mồi, chăn gia súc hay kéo đồ. Việc huấn luyện tính Vâng lời của nó nhanh gấp đôi so với bất kỳ giống chó nào khác, và mức độ gắn kết của nó không bao giờ tự động giảm."</em></blockquote>
 <p><strong>Tìm ở đâu:</strong></p>
 <ul>
-<li><strong>Nhà dân:</strong> <strong>5% mỗi căn</strong>, dễ ngang Labrador. Nó là chó của nhà mà.</li>
-<li><strong>Cửa hàng thú cưng và phòng khám thú y:</strong> <strong>12% mỗi công trình</strong>, cùng chỗ với Husky.</li>
+<li>Nhà dân: 3% mỗi căn, gấp ba Labrador và Rottweiler, bằng đúng cơ hội của Chó cỏ. Đây là addon dễ gặp trong nhà nhất.</li>
+<li>Cửa hàng thú cưng và phòng khám thú y: 12% mỗi tòa nhà, cùng chỗ với Husky.</li>
 </ul>
-<p><strong>Nó học:</strong> <strong>Vâng lời nhanh gấp đôi</strong>, nhanh hơn mọi giống khác trong mod, kèm <strong>Đánh hơi nhanh hơn 50%</strong> và Săn mồi 20%. Nó leo hết cây kỹ năng trò (đi tới một điểm, đánh lạc hướng zombie, đánh hơi tìm vật phẩm, tha về trong lúc bạn ngủ) trước bất kỳ con chó nào bạn có thể có.</p>
-<p><strong>Mối gắn bó của nó không tụt.</strong> Con chó nào khác cũng tự mất lòng trung thành khi bạn đi vắng hoặc lơ là. Chó Pug thì không. Đi cả tháng rồi về, nó vẫn y nguyên như lúc bạn để lại. Chỉ giống này mới như vậy.</p>
-<p><strong>Nó báo trước tiên.</strong> Ở cùng mức Đánh hơi, chó Pug phát hiện zombie <strong>xa hơn 35%</strong> so với mọi giống khác. Nó được nuôi làm chó báo động, và điều đó vẫn còn hiệu lực.</p>
-<p><strong>Đánh nhau: đừng trông cậy vào nó.</strong> Đây là con chó yếu nhất mod, yếu hơn cả Chó cỏ.</p>
+<p><strong>Học:</strong> Vâng lời nhanh gấp đôi, kèm Đánh hơi nhanh hơn 50% và Săn mồi nhanh hơn 20%. Nó leo hết cây trò khéo (đến một vị trí, đánh lạc hướng zombie, đánh hơi tìm vật phẩm, tìm đồ khi bạn ngủ) trước mọi con chó khác.</p>
+<p>Con chó nào cũng mất lòng trung thành khi bạn biến mất hoặc lơ là chăm sóc; riêng Chó Pug thì không. Đi đường cả tháng về, nó vẫn y như lúc bạn để lại.</p>
+<p>Ở cùng cấp Đánh hơi, Chó Pug phát hiện zombie từ xa hơn mọi giống khác 35%.</p>
+<p><strong>Khi đánh nhau:</strong> đây là con chó yếu nhất mod, dưới cả Chó cỏ.</p>
 <ul>
-<li><strong>Lực cắn yếu nhất</strong> trong tất cả, và cách biệt khá xa.</li>
-<li><strong>Không giết được zombie</strong> và <strong>không quật ngã được</strong>. Là con chó duy nhất bị tắt cả hai.</li>
-<li>Căng thẳng dồn lên nhanh hơn mọi con khác và <strong>hoảng loạn trước tất cả</strong>.</li>
+<li>Cú cắn yếu nhất trong tất cả, cách biệt rộng.</li>
+<li>Không giết được zombie và không quật ngã được. Nó là con chó duy nhất bị tắt cả hai thứ.</li>
+<li>Tích căng thẳng nhanh hơn mọi con khác và hoảng loạn trước tất cả.</li>
 </ul>
-<p><strong>Và cái giá chưa dừng ở đó:</strong></p>
+<p>Những điểm yếu khác:</p>
 <ul>
-<li><strong>Tiếng sủa của nó tố cáo bạn, và không có cách nào bắt im.</strong> Chính tiếng báo động giúp bạn cũng báo cho lũ xác sống, to hơn bất kỳ giống nào, và chó Pug là <strong>con chó duy nhất không có chế độ Nhẹ tiếng và Im lặng</strong>: cả hai nút đều bị làm mờ trong cửa sổ của nó. Bạn không thể chỉ giữ nửa tốt của cái mũi ấy. (Nếu tùy chọn sandbox cho tiếng chó thu hút zombie đang tắt, chó Pug cũng như mọi con khác: tiếng sủa vẫn to, nhưng không kéo ai tới.)</li>
-<li><strong>Nó không theo kịp khi chạy.</strong> Lúc chạy nước rút, chó Pug tụt lại sau mọi con chó khác.</li>
-<li><strong>Mùa hè hành nó.</strong> Cái mõm bẹt không thoát nhiệt được. Trên <strong>28 °C</strong> nó bắt đầu căng thẳng và <strong>ngừng an ủi bạn</strong>; tới <strong>36 °C</strong> thì mức phạt kịch trần. Trong nhà mát hơn, và nó lại hoạt động bình thường.</li>
-<li><strong>Túi yên 2 đến 3.</strong> Đeo thì được, nhưng nó không phải con thú chở đồ.</li>
+<li>Tiếng sủa của nó to nhất trong các giống và kéo zombie tới đúng như cách nó báo cho bạn. Chó Pug là con chó duy nhất không nhận chế độ Nhẹ tiếng và Im lặng: hai nút đó tắt luôn trong cửa sổ của nó. (Khi bạn tắt tiếng ồn của chó trong tùy chọn sandbox, Chó Pug cũng được đối xử như mọi con khác: tiếng sủa vẫn to, nhưng không kéo ai tới.)</li>
+<li>Nó không theo kịp lúc chạy. Cùng một cú nước rút, nó rớt lại sau mọi con chó khác.</li>
+<li>Nó khổ vì nóng. Trên 28 °C nó bắt đầu căng thẳng, thôi an ủi bạn và moodle rời khỏi HUD; tới 36 °C thì hình phạt chạm trần. Trong nhà mát hơn nên nó chạy lại bình thường.</li>
+<li>Túi yên 2 đến 3. Nó có đeo, nhưng không phải con vật chở hàng.</li>
 </ul>
-<p><strong>Bù lại, nó ăn ít uống ít:</strong> đói bằng một nửa và khát ít hơn khoảng một phần ba so với chó cỡ trung.</p>
-<p><strong>Đặc tính:</strong> <strong>khoảng Sức mạnh và Sức chịu đựng hẹp nhất mod</strong>. Lúc nào cũng sinh ra yếu ớt và mong manh, và đó không phải là do con chó con xui.</p>
-<p><strong>Lứa đẻ:</strong> <strong>1 đến 2</strong>.</p>
+<p>Bù lại nó ăn ít uống ít: bằng nửa mức đói và ít hơn một phần ba mức khát của một con chó tầm trung.</p>
+<p><strong>Đặc tính:</strong> khoảng Sức mạnh và Sức chịu đựng hẹp nhất mod. Lứa nào nó cũng sinh ra yếu và mỏng manh.</p>
+<p><strong>Lứa đẻ:</strong> 1 đến 2.</p>
 <p><strong>Moodle: <span class="ig">Cái Bóng Của Bạn</span></strong></p>
-<blockquote class="quote quote-game"><em>"Chó Pug của bạn không rời bạn nửa bước. Khi nó ở gần, được ăn no và trung thành, nỗi buồn, sự chán chường và căng thẳng giảm nhanh hơn bất kỳ con chó nào khác. Cái nóng phá hỏng tất cả: một con Pug đang thở hổn hển không an ủi được ai cho tới khi tìm được chỗ mát."</em></blockquote>
+<blockquote class="quote quote-game"><em>"Chú chó Pug không bao giờ rời khỏi bạn nửa bước. Khi nó ở gần, được cho ăn no và trung thành, các trạng thái bất hạnh, buồn chán và căng thẳng sẽ giảm nhanh hơn so với bất kỳ giống chó nào khác. Nhưng nhiệt độ cao sẽ phá hỏng điều đó: một chú Pug đang thở hổn hển vì nóng sẽ chẳng thể an ủi được ai cho đến khi nó tìm được nơi nào đó mát mẻ."</em></blockquote>
 <ul>
-<li><strong>Buồn bã và Chán chường tan nhanh hơn 60%</strong> so với khi ở cạnh Chó cỏ.</li>
-<li><strong>Căng thẳng cũng giảm.</strong> Không con chó nào khác trong mod động tới căng thẳng chỉ bằng sự có mặt; cách duy nhất còn lại để hạ căng thẳng nhờ chó là ngủ cạnh nó (<span class="ig">Nghỉ ngơi đầy đủ</span>).</li>
-<li><strong>Trời nóng thì moodle biến mất.</strong> Trên 28 °C nó rời khỏi HUD cho tới khi con chó tìm được chỗ mát. Đó là cố ý: bạn nhận ra điểm yếu của giống mà không cần đọc gì cả.</li>
+<li>Buồn bã và Chán chường tan nhanh hơn 60% so với khi ở cạnh Chó cỏ.</li>
+<li>Căng thẳng cũng giảm. Chỉ nó và Chó Doberman đụng tới căng thẳng bằng sự hiện diện, và Chó Doberman rút nhanh hơn. Ngoài hai con đó, cách duy nhất để hạ căng thẳng bằng chó là ngủ cạnh nó (<span class="ig">Ngủ ngon</span>).</li>
 </ul>
-<p><strong>Hợp với ai:</strong> hợp với lối chơi bám căn cứ, với ván chơi dài, và với ai đã chán cảnh mất lòng trung thành vì đi vắng quá lâu. Nếu rời thành phố thì mang theo một con chó gác.</p>
+<p><strong>Hợp với ai:</strong> người chơi thủ căn cứ, chơi ván dài, hoặc đã chán cảnh mất lòng trung thành vì đi vắng quá lâu. Nhớ mang thêm một con chó canh gác nếu định rời thành phố.</p>
 <h2 id="5-mèo-loài-khác-đầu-tiên">5. Mèo: loài khác đầu tiên</h2>
-<p><em>(mod <strong>CD: Cats</strong>, addon riêng)</em></p>
-<p>Mọi giống cho đến đây đều là chó, và khác biệt giữa chúng là mỗi giống làm <strong>được bao nhiêu</strong> ở từng việc. Mèo là ngoại lệ thật sự đầu tiên: cái định nghĩa nó không phải là chỉ số kém hơn, mà là <strong>nó không có một số công việc</strong>.</p>
-<blockquote class="quote quote-game"><em>"Không phải một con chó với chỉ số kém hơn: là một con vật đơn giản là không có một số công việc. Mèo không bao giờ đánh nhau với người chết, không bao giờ bị đưa vào chuồng, và không sinh sản. Nó săn các loài gặm nhấm và thỏ, và để yên hươu nai. Vật nuôi của bạn không bao giờ là con mồi: nó không đụng đến gà hay bất kỳ con vật nào trong chuồng. Thứ nó cho bạn thay vào đó là lời cảnh báo: nó nhận ra người chết xa hơn bất kỳ người bạn nào khác, và im lặng về mọi thứ còn lại."</em></blockquote>
+<p><em>(mod <strong>CD: Cats</strong>, bản phụ trợ riêng)</em></p>
+<p>Mọi giống tính tới đây đều là chó.</p>
+<blockquote class="quote quote-game"><em>"Đây không phải là một chú chó với bộ chỉ số yếu kém hơn, mà là một sinh vật vốn không sinh ra để gánh vác các công việc nặng nhọc. Loài mèo không bao giờ chiến đấu với thây ma, không canh gác chuồng trại và chỉ sinh sản với những con mèo khác. Chúng săn các loài gặm nhấm và thỏ, hoàn toàn phớt lờ hươu nai. Vật nuôi của bạn không bao giờ là con mồi: nó không đụng đến gà hay bất kỳ con vật nào trong chuồng. Giá trị thực sự mà nó mang lại là khả năng cảnh báo: nó phát hiện thây ma từ khoảng cách xa hơn bất kỳ người bạn đồng hành nào khác, và tuyệt nhiên giữ im lặng."</em></blockquote>
 <h3 id="những-gì-nó-không-làm">Những gì nó KHÔNG làm</h3>
-<p>Đây không phải yếu, đây là vắng mặt. Các cơ chế không tồn tại với nó, và giao diện đi theo: bạn sẽ không thấy nút bị mờ, bạn sẽ không thấy nút.</p>
+<p>Các cơ chế này không tồn tại với mèo, và giao diện không hiện nút, kể cả nút bị làm mờ.</p>
 <div class="tw"><table><thead><tr>
 <th>Cái gì</th>
 <th>Cái gì biến mất</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Không đánh nhau</strong></td>
-<td>Không có Chiến đấu trong cửa sổ, không có chế độ <strong>Canh gác</strong>, không có tự vệ. Nó không tấn công zombie ngay cả khi bạn đang bị xé xác ngay trước mặt nó</td>
+<td>Không có Chiến đấu trong cửa sổ, không có chế độ <strong>Canh gác</strong>, không có tự vệ</td>
 </tr>
 <tr>
-<td><strong>Không trông gia súc</strong></td>
-<td>Không có Chăn dắt, và chế độ <strong>Chăm gia súc</strong> không bao giờ xuất hiện trong menu</td>
+<td><strong>Không chăm đàn vật nuôi</strong></td>
+<td>Không có Chăn đàn, và chế độ <strong>Chăm đàn vật nuôi</strong> không xuất hiện trong menu</td>
 </tr>
 <tr>
-<td><strong>Không sinh sản</strong></td>
-<td>Không động dục, không mang thai, không mèo con. Mèo không phối với chó cũng không phối với mèo khác</td>
+<td><strong>Không sinh sản với chó</strong></td>
+<td>Mèo chỉ ghép đôi với mèo, và sinh ra là mèo con</td>
 </tr>
 <tr>
-<td><strong>Không săn thứ gì lớn hơn con thỏ</strong></td>
-<td>Hươu nai là <strong>vô hình</strong> với nó: nó thậm chí không chỉ, nói gì đến đuổi theo. Và vật nuôi của bạn không bao giờ là con mồi: nó không đụng đến gà, bò, hay bất kỳ con vật nào trong chuồng</td>
+<td><strong>Không săn gì to hơn con thỏ</strong></td>
+<td>Hươu là vô hình với nó: nó không chỉ, cũng không đuổi theo</td>
 </tr>
 </tbody></table></div>
-<p><strong>Cuộc săn của nó dừng lại ở con thỏ.</strong> Cùng một trần với Labrador và Golden ở thú nhỏ. Thứ nó không làm là hươu nai: thú lớn làm bị thương kẻ đi săn, và mèo chẳng có gì để đánh trả. Và nó kêu meo khi đuổi theo, như mọi người bạn đồng hành: đi săn cùng mèo <strong>không</strong> hề yên lặng, sự yên lặng của nó là quãng thời gian còn lại.</p>
-<h3 id="những-gì-nó-làm-giỏi-hơn-bất-kỳ-con-chó-nào">Những gì nó làm giỏi hơn bất kỳ con chó nào</h3>
-<p><strong>Nó cảnh báo trước tất cả.</strong> Khi không còn chiến đấu, cảnh báo <strong>chính là</strong> công việc, và mèo có tầm canh gác lớn nhất trong mod:</p>
+<p>Trần của nó ở thú nhỏ giống Labrador và Golden. Nó kêu khi rượt đuổi, nên đi săn cùng mèo là có tiếng ồn. Ngoài lúc săn, nó im lặng.</p>
+<h3 id="những-gì-nó-làm-giỏi-hơn-mọi-con-chó">Những gì nó làm giỏi hơn mọi con chó</h3>
+<p>Vì nó không đánh nhau, cảnh báo chính là việc của nó, và mèo có tầm canh gác lớn nhất trong mod:</p>
 <div class="tw"><table><thead><tr>
 <th></th>
-<th>Khứu giác 0</th>
-<th>Khứu giác 10</th>
+<th>Đánh hơi 0</th>
+<th>Đánh hơi 10</th>
 </tr></thead><tbody>
 <tr>
 <td>Chó thường</td>
@@ -923,41 +906,40 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>27 ô</td>
 </tr>
 <tr>
-<td>Pug</td>
+<td>Chó Pug</td>
 <td>24 ô</td>
 <td>36 ô</td>
 </tr>
 <tr>
 <td><strong>Mèo</strong></td>
-<td><strong>25 ô</strong></td>
-<td><strong>38 ô</strong></td>
+<td>25 ô</td>
+<td>38 ô</td>
 </tr>
 </tbody></table></div>
-<p><strong>Và nó im lặng nhất.</strong> Tiếng ồn mà tiếng meo của nó lan ra bằng <strong>một nửa</strong> của chó và <strong>một phần ba</strong> tiếng sủa của Pug. Pug cảnh báo bạn sớm và để lộ vị trí của bạn khi làm vậy; mèo cảnh báo còn sớm hơn và vẫn im lặng. Đây là người bạn duy nhất trong mod làm được cả hai.</p>
-<p><strong>Nó học Săn nhanh gấp đôi</strong>, ngang với Golden và Labrador, và <strong>Khứu giác nhanh hơn 50%</strong>.</p>
-<h3 id="cái-giá">Cái giá</h3>
-<p><strong>Đây là con vật cứng đầu nhất trong mod.</strong> Vâng lời ở <strong>0,7</strong>, hình phạt học tập nặng nhất hiện có, nặng hơn 0,8 của Husky, thứ cho đến giờ là duy nhất. Nó vẫn mở khóa cả bốn trò, nhưng đến đó <strong>muộn hơn hẳn</strong> bất kỳ con chó nào.</p>
-<p><strong>Và nó bị chuột làm phân tâm.</strong> Thỉnh thoảng con mèo thấy một con gặm nhấm ở gần và cứ thế đuổi theo, bỏ dở việc đang làm. Nó tự săn và giết con gặm nhấm đó, không cần bạn bảo. Không quan trọng nó đang ở chế độ nào, không quan trọng cấp Săn của nó, và lúc đó bạn không phải người ra lệnh: mọi mệnh lệnh bạn đưa ra đều trả về <em><span class="ig">bị phân tâm và phớt lờ bạn</span></em>, và đó là lần duy nhất thông báo ấy nói đúng những gì đã xảy ra. <strong>Gọi nó bằng Lại đây sẽ hủy</strong>, và đó là lệnh duy nhất lọt qua. Trong lúc ấy, bạn không có ai canh gác.</p>
-<p><strong>Và nó mang con chuột về cho bạn.</strong> Khi giết xong, con mèo quay lại chỗ cái xác, tha nó đến chỗ bạn và thả xuống dưới chân bạn. Nó không cần cấp độ nào cho việc đó: mang con mồi đã chết về là bản năng, không phải luyện tập, và nó làm vậy ngay từ ngày đầu. Con còn lại mang về mà không cần luyện là Labrador, khác ở chỗ Labrador mang về vì bạn đã bảo nó.</p>
-<p>Lưu ý rằng chỉ có <strong>loài gặm nhấm</strong>. Thỏ thì nó vẫn săn, nhưng là săn thật sự, với chế độ Săn bật lên và đúng cấp độ mà Labrador cũng cần. Sự phân tâm là bản năng, và bản năng dừng ở chuột nhắt với chuột cống, thứ một con mèo bắt được mà chưa từng luyện tập. Đó là Phục tùng 0,7 của nó cuối cùng cũng không còn chỉ là một con số trên thẻ.</p>
-<p><strong>Và độc lập nhất.</strong> Sự gắn bó của nó giảm <strong>nhanh hơn 50%</strong> so với chó khi bạn biến mất hoặc lơ là chăm sóc. Đây là điều ngược hẳn với Pug, con có sự gắn bó không bao giờ giảm. Mèo đòi hỏi sự có mặt.</p>
-<p><strong>Túi yên 2, hết.</strong> Đây không phải một khoảng như ở các giống khác: phép tính ra <strong>2 với bất kỳ con mèo nào</strong>, dù nó sinh ra khỏe đến đâu. Con vật nhỏ.</p>
-<p><strong>Dễ hoảng.</strong> Nó mang gen căng thẳng ẩn tệ thứ hai trong mod, chỉ sau Caramelo. Nó không đánh nhau, nên điều này không bao giờ lộ ra trong chiến đấu. Nó lộ ra như sự hoảng sợ: tiếng động lớn, tiếng hét, vết thương. Một con mèo hoảng loạn sẽ <strong>ngừng canh gác và ngừng mang quà về</strong>.</p>
-<p><strong>Nó không nằm xuống.</strong> Ở chế độ Ở yên, mèo vẫn đứng. Chỉ là bề ngoài, không thay đổi gì.</p>
-<p><strong>Đặc điểm:</strong> ngang với Pug về <strong>khoảng Sức mạnh hẹp nhất trong mod</strong>, với Hung hăng và Sức chịu đựng cũng thấp như vậy. Không có con mèo khỏe, và đó không phải xui rủi lúc còn nhỏ.</p>
-<h3 id="năm-màu-lông">Năm màu lông</h3>
-<p>Đen, trắng, cam, tam thể và tuxedo. Với mod chúng là <strong>năm giống</strong> (tên riêng, mục riêng trong menu spawn và trong cũi) và với mọi mục đích thực tế chúng là <strong>cùng một con vật</strong>: cùng kỹ năng, cùng moodle, cùng tiếng kêu, cùng khoảng đặc điểm. Màu lông <strong>chỉ là bề ngoài</strong>.</p>
-<p><strong>Bạn gặp màu nào là do may rủi.</strong> Mỗi màu gieo cho tòa nhà của riêng nó, độc lập với nhau. Chúng đã vào với xác suất chia năm, nên tổng lượng mèo trong thế giới vẫn như hồi chỉ có mèo đen: năm màu lông không cho bạn nhiều mèo gấp năm.</p>
-<p><strong>Tìm chúng ở đâu:</strong> <strong>2% mỗi nhà dân</strong>, <strong>2% mỗi cửa hàng, tiệm tạp hóa hoặc quán ăn</strong> và <strong>2,4% mỗi cửa hàng thú cưng hoặc phòng khám thú y</strong>, cho mỗi màu lông. Mèo bám lấy các tòa nhà chứ không phải rừng hoang, nhưng không chỉ ở bên trong chúng: <strong>một nửa số lần nó xuất hiện trong nhà và một nửa ở phần đất quanh nhà</strong>: ngoài sân, trên vỉa hè, bãi đỗ xe hay con hẻm sau cửa hàng.</p>
-<p>Mèo có <strong>hệ số xuất hiện riêng</strong> trong sandbox, <strong><span class="ig">Hệ số xuất hiện của mèo</span></strong>, tách khỏi phần của chó: một thế giới có ít hoặc không có chó hoang vẫn có chừng đó mèo.</p>
-<h3 id="quà-đêm">Quà đêm</h3>
-<p><strong>Cơ chế ẩn nhất mà mèo có.</strong> Bạn tỉnh dậy, và dưới chân là một con vật đã chết.</p>
-<p>Mèo ra ngoài trong lúc bạn ngủ và để lại con mồi. Không có cuộc rượt đuổi và không có gì chết trong thế giới, vì thế món quà <strong>vẫn hoạt động ngay cả khi Săn bị tắt</strong> trong tùy chọn sandbox.</p>
-<p><strong>Kích hoạt thế nào:</strong> khi <strong>tỉnh dậy sau giấc ngủ</strong>, với mèo ở <strong>cách 8 ô trở lại</strong>. Cùng bán kính với «Nghỉ ngơi tốt», và vì cùng lý do: con ra ngoài ban đêm là con mèo đã ở bên bạn.</p>
-<p><strong>Xác suất chính là Săn của nó</strong>, và ở trên cùng nó khép lại thành điều chắc chắn:</p>
+<p>Nó cũng là con kín tiếng nhất. Tiếng kêu của nó ồn bằng nửa một con chó và bằng một phần ba tiếng sủa của chó Pug.</p>
+<p>Săn mồi lên nhanh gấp đôi, ngang với Golden và Labrador, còn Đánh hơi của nó lên nhanh hơn 50%.</p>
+<h3 id="cái-giá-phải-trả">Cái giá phải trả</h3>
+<p>Nó cứng đầu nhất trong mod. Vâng lời ở 0,7, mức phạt học hỏi lớn nhất đang có (Husky, giống duy nhất còn lại bị phạt, ở 0,8). Nó vẫn mở được cả bốn trò khéo, nhưng tới đó muộn hơn bất kỳ con chó nào.</p>
+<p>Nó bị chuột làm phân tâm. Thỉnh thoảng con mèo thấy một con gặm nhấm ở gần và đuổi theo, bỏ lại việc đang làm. Nó tự săn và tự giết con gặm nhấm đó. Chuyện này xảy ra ở mọi chế độ và mọi cấp Săn mồi, và trong lúc đó nó không nghe lời: lệnh nào cũng trả về <em><span class="ig">bị phân tâm và phớt lờ bạn</span></em>. Chỉ có <strong><span class="ig">Lại đây</span></strong> xuyên qua được và hủy cuộc rượt. Trong lúc đó, bạn không có ai canh gác.</p>
+<p>Sau khi giết, con mèo quay lại chỗ cái xác, mang về tận chỗ bạn và đặt xuống dưới chân. Nó giao con mồi ngay từ ngày đầu. Labrador cũng giao mà không cần huấn luyện, nhưng chỉ khi bạn yêu cầu.</p>
+<p>Sự phân tâm này chỉ áp dụng với chuột cống và chuột nhắt. Thỏ thì cần bật chế độ Săn mồi và đủ cấp.</p>
+<p>Nó cũng là con độc lập nhất. Sự gắn kết của nó tụt nhanh hơn của chó 50% khi bạn biến mất hoặc lơi là việc chăm sóc (chó Pug thì ngược lại hoàn toàn: gắn kết của nó không tụt).</p>
+<p><strong>Túi yên:</strong> 2 với mọi con mèo. Ở các giống khác túi yên là một khoảng; với mèo, phép tính cho ra 2 dù nó sinh ra khỏe tới mấy.</p>
+<p>Nó dễ căng thẳng: nó có gen căng thẳng ẩn tệ thứ hai trong mod, chỉ hơn Chó cỏ. Vì nó không đánh nhau, điều này không lộ ra trong chiến đấu, mà lộ ra khi giật mình: tiếng lớn, tiếng hét, vết thương. Một con mèo hoảng loạn sẽ ngừng canh gác và ngừng mang quà về.</p>
+<p>Ở chế độ đứng yên, mèo đứng chứ không nằm. Đó chỉ là hình thức.</p>
+<p><strong>Đặc tính:</strong> ngang với chó Pug ở khoảng Sức mạnh nhỏ nhất trong mod, với Độ hung hăng và Sức chịu đựng đều thấp như vậy.</p>
+<h3 id="năm-bộ-lông">Năm bộ lông</h3>
+<p>Mèo Đen, Mèo Trắng, Mèo Vàng, Mèo Tam Thể và Mèo Tuxedo. Với mod thì đây là năm giống (tên riêng, mục riêng trong menu xuất hiện và trong chuồng), nhưng các con số, biểu tượng tâm trạng, tiếng kêu và khoảng đặc tính đều như nhau. Bộ lông chỉ là hình thức.</p>
+<p>Mỗi bộ lông bốc thăm căn nhà của riêng nó, độc lập với nhau. Tỉ lệ đã được chia cho năm, nên tổng số mèo trong thế giới vẫn như hồi chỉ có mèo đen.</p>
+<p><strong>Nơi tìm thấy:</strong> 2% mỗi căn nhà dân, 2% mỗi cửa hàng, siêu thị hay quán ăn nhanh, và 2,4% mỗi cửa hàng thú cưng hoặc phòng khám thú y, tính riêng theo từng bộ lông. Mèo sinh ra trong công trình, không phải trong rừng: một nửa số lần là bên trong công trình, một nửa là trên khuôn viên của nó (sân, lối đi, bãi đỗ xe hay con hẻm sau cửa hàng).</p>
+<p>Mèo có hệ số xuất hiện riêng trong sandbox, <strong><span class="ig">Hệ số xuất hiện của mèo</span></strong>, tách khỏi hệ số của chó. Một thế giới có ít hoặc không có chó hoang vẫn có đúng số mèo như vậy.</p>
+<h3 id="món-quà-đêm">Món quà đêm</h3>
+<p>Bạn thức dậy và có một con vật chết dưới chân. Con mèo <span class="ig">đi ra ngoài</span> trong lúc bạn ngủ và để lại con mồi. Không có cuộc rượt nào và không có gì chết trong thế giới, nên món quà vẫn hoạt động dù đã tắt Săn mồi trong các tùy chọn sandbox.</p>
+<p>Nó kích hoạt khi bạn thức dậy sau một giấc ngủ, với con mèo ở trong 8 ô, cùng bán kính với <span class="ig">Ngủ ngon</span>.</p>
+<p>Tỉ lệ chính là cấp Săn mồi của nó:</p>
 <div class="tw"><table><thead><tr>
-<th>Săn</th>
-<th>Xác suất có quà</th>
+<th>Săn mồi</th>
+<th>Tỉ lệ có quà</th>
 </tr></thead><tbody>
 <tr>
 <td>0</td>
@@ -976,37 +958,37 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>87%</td>
 </tr>
 <tr>
-<td><strong>10</strong></td>
-<td><strong>100%</strong></td>
+<td>10</td>
+<td>100%</td>
 </tr>
 </tbody></table></div>
-<p><strong>Ở cấp 10 không còn gieo nữa: nó mang về mỗi ngày.</strong></p>
-<p><strong>Săn cũng quyết định CÁI GÌ đến.</strong> Không chỉ là tần suất: cả danh sách đảo ngược:</p>
+<p>Săn mồi cũng quyết định thứ được mang về:</p>
 <div class="tw"><table><thead><tr>
-<th>Săn</th>
-<th>Thường có gì</th>
+<th>Săn mồi</th>
+<th>Thường mang về gì</th>
 </tr></thead><tbody>
 <tr>
 <td>Thấp</td>
-<td>Giun, dế, châu chấu, gián. Thứ mà bất kỳ con vật nào đứng yên cũng tìm được</td>
+<td>Giun, dế, cào cào, gián. Những thứ con vật nào đứng một chỗ cũng tìm được</td>
 </tr>
 <tr>
 <td>Cao</td>
-<td><strong>Chuột nhắt và chuột cống</strong> trở thành trường hợp thường gặp, xen giữa là ếch và rết</td>
+<td>Chuột nhắt và chuột cống thành chuyện thường, giữa đó có ếch và rết</td>
 </tr>
 </tbody></table></div>
-<p>Khác biệt này đáng giá: một con giun là 3 calo, một con chuột cống là 324 và còn giảm 22 điểm đói. Và ếch còn dùng làm mồi câu.</p>
-<p><strong>Một lần mỗi ngày, mỗi chủ.</strong> Có hai con mèo ở gần, bạn nhận <strong>một</strong> món quà, không phải hai.</p>
-<p><strong>Nó nhận XP Săn mỗi lần giao thành công</strong>, và đó chính là cách một con mèo được chăm tốt tự luyện mình lên tới cấp không bao giờ trượt nữa.</p>
-<p><strong>Khi không có gì cả:</strong> mèo <strong>đói hoặc khát từ 75% trở lên</strong>, bị bệnh, bất tuân hoặc đang hoảng loạn thì không ra ngoài. Nó thất bại lặng lẽ, không có thông báo nào trên màn hình. Nếu quà đã ngừng, hãy nhìn các thanh của nó.</p>
-<blockquote class="quote"><strong>Đây không phải trò «Nhặt về trong lúc bạn ngủ»</strong> (Vâng lời 10), trò đó mang về một <strong>vật phẩm dưới đất</strong>. Cả hai đều kích hoạt khi tỉnh dậy và không cản nhau: một con mèo Vâng lời 10 sẽ làm <strong>cả hai</strong> trong cùng một buổi sáng.</blockquote>
-<p><strong>Moodle: «Mắt Mèo»</strong></p>
-<blockquote class="quote quote-game"><em>"Con mèo của bạn thấy thứ bạn không thấy. Chừng nào nó còn được cho ăn, cho uống và gắn bó với bạn, bóng tối thôi giấu đi thứ bạn đang tìm: hái lượm ban đêm hoạt động gần như ban ngày."</em></blockquote>
-<p><strong>Hái lượm trong bóng tối thôi vô dụng.</strong> Trong bóng tối hoàn toàn, trò chơi hạ tầm hái lượm của bạn xuống <strong>1,5 ô</strong>: trên thực tế bạn phải đứng ngay trên biểu tượng mới thấy được. Có mèo ở gần, đêm khuya lên tới khoảng <strong>60% tầm mà bạn có được vào ban ngày</strong>.</p>
-<p>Lưu ý rằng đây là một <strong>bậc thang, không phải mức tăng dần</strong>: không có mèo thì bạn ở phía xấu của ngưỡng và hầu như không hái được gì ban đêm; có mèo thì bạn bước sang phía bên kia. Đó là khác biệt giữa dùng được và không dùng được.</p>
-<p><strong>Nó dành cho ai:</strong> cho những người chơi vào đêm khuya, cho những người muốn lời cảnh báo sớm nhất có thể mà không tự thông báo vị trí của mình, và cho những người muốn chút thịt nhỏ mà không phải dắt theo một con chó lớn. Nó <strong>không</strong> dành cho ai muốn một con canh gác: hãy mang theo một con chó nếu bạn rời thành phố.</p>
+<p>Khác biệt là đáng kể: con giun là 3 calo, con chuột cống là 324 và còn xóa 22 điểm đói. Con ếch dùng làm mồi câu được.</p>
+<p>Một món quà mỗi ngày, cho mỗi chủ. Có hai con mèo ở gần thì bạn được một món, không phải hai.</p>
+<p>Con mèo nhận XP Săn mồi mỗi lần giao thành công, nên một con mèo được chăm tốt sẽ tự lên cấp.</p>
+<p>Mèo đang đói hoặc khát từ 75% trở lên, đang bệnh, không nghe lời hoặc đang hoảng loạn thì không đi. Sự thất bại diễn ra trong im lặng, không có thông báo trên màn hình. Nếu quà ngừng tới, hãy xem các thanh của nó.</p>
+<blockquote class="quote">Trò khéo <strong><span class="ig">Tìm đồ khi bạn ngủ</span></strong> (Vâng lời 10) là chuyện khác: nó mang về một vật phẩm từ mặt đất. Cả hai đều kích hoạt khi bạn thức dậy và không tranh nhau. Một con mèo Vâng lời 10 làm cả hai trong cùng một buổi sáng.</blockquote>
+<p><strong>Biểu tượng tâm trạng: <span class="ig">Mắt Mèo</span></strong></p>
+<blockquote class="quote quote-game"><em>"Chú mèo của bạn nhìn thấy những thứ mà bạn không thể thấy. Khi nó được cho ăn uống đầy đủ và trung thành với bạn, bóng tối sẽ không còn là trở ngại che giấu những gì bạn đang tìm kiếm: việc hái lượm ban đêm sẽ đạt hiệu quả gần như ban ngày."</em></blockquote>
+<p>Trong bóng tối đặc, game hạ tầm hái lượm xuống còn 1,5 ô, và bạn gần như phải đứng ngay trên biểu tượng mới thấy nó. Có mèo ở gần, ban đêm cho khoảng 60% cái tầm mà bạn sẽ có vào ban ngày.</p>
+<p>Khoản lợi này tới một lần cho đủ, không phải góp dần.</p>
+<p><strong>Dành cho ai:</strong> cho người chơi về đêm, cho người muốn có cảnh báo sớm nhất có thể mà không để lộ vị trí của mình, và cho người muốn ít thịt nhỏ mà không phải kéo theo một con chó lớn. Nó không làm lính canh được: hãy mang một con chó theo nếu bạn ra khỏi thành phố.</p>
 <h2 id="6-bảng-so-sánh">6. Bảng so sánh</h2>
 <h3 id="tốc-độ-học">Tốc độ học</h3>
+<p>Số càng lớn thì chó học càng nhanh. Tốc độ bình thường là 1.0.</p>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
 <th>Đánh hơi</th>
@@ -1026,7 +1008,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Chó chăn cừu Đức</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
@@ -1036,14 +1018,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.5</td>
 <td>1.0</td>
 <td>1.2</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
-<td><strong>0.8</strong></td>
+<td>0.8</td>
 <td>1.5</td>
 <td>1.0</td>
 </tr>
@@ -1053,12 +1035,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.0</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 <td>1.0</td>
 <td>1.2</td>
@@ -1066,7 +1048,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Doberman</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
@@ -1076,14 +1058,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.2</td>
 <td>1.0</td>
 <td>1.5</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>Chó Pug</td>
 <td>1.5</td>
 <td>1.0</td>
-<td><strong>2.0</strong></td>
+<td>2.0</td>
 <td>1.2</td>
 <td>1.0</td>
 </tr>
@@ -1091,13 +1073,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Mèo</td>
 <td>1.5</td>
 <td>-</td>
-<td><strong>0.7</strong></td>
-<td><strong>2.0</strong></td>
+<td>0.7</td>
+<td>2.0</td>
 <td>-</td>
 </tr>
 </tbody></table></div>
-<p>Dấu gạch ở Mèo không có nghĩa «học chậm», mà có nghĩa <strong>kỹ năng đó không tồn tại</strong>: Chiến đấu và Chăn dắt không có với nó và thậm chí không xuất hiện trong cửa sổ của nó.</p>
-<p>Hai hình phạt giống duy nhất trong mod là <strong>0.8</strong> của Husky và <strong>0.7</strong> của Mèo, và cái sau nặng hơn.</p>
+<p>Dấu gạch ở Mèo có nghĩa là nó không có kỹ năng đó: Chiến đấu và Chăn dắt không xuất hiện trong cửa sổ của nó.</p>
 <h3 id="chiến-đấu">Chiến đấu</h3>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
@@ -1108,16 +1089,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Chó Pug</td>
-<td><strong>yếu nhất</strong></td>
-<td><strong>0,65x</strong></td>
-<td><strong>Không</strong></td>
-<td><strong>Không</strong></td>
+<td>yếu nhất</td>
+<td>0,65x</td>
+<td>Không</td>
+<td>Không</td>
 </tr>
 <tr>
 <td>Chó cỏ</td>
 <td>yếu</td>
-<td><strong>1x</strong> (mốc tham chiếu)</td>
-<td><strong>Không</strong></td>
+<td>1x (mốc tham chiếu)</td>
+<td>Không</td>
 <td>Có</td>
 </tr>
 <tr>
@@ -1125,7 +1106,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>yếu</td>
 <td>1,3x</td>
 <td>Có</td>
-<td><strong>Không</strong></td>
+<td>Không</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1151,48 +1132,48 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Doberman</td>
 <td>trung bình</td>
-<td><strong>2,6x</strong></td>
+<td>2,6x</td>
 <td>Có</td>
 <td>Có</td>
 </tr>
 <tr>
 <td>Chó chăn cừu Đức</td>
-<td><strong>mạnh</strong></td>
-<td><strong>2,6x</strong></td>
+<td>mạnh</td>
+<td>2,6x</td>
 <td>Có</td>
 <td>Có</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>mạnh</strong></td>
-<td><strong>2,6x</strong></td>
+<td>mạnh</td>
+<td>2,6x</td>
 <td>Có</td>
 <td>Có</td>
 </tr>
 </tbody></table></div>
-<p>Doberman lên tới đỉnh, nhưng xuất phát thấp hơn nhiều: lúc chưa huấn luyện, cú cắn của nó chỉ bằng khoảng <strong>hai phần ba</strong> của Rottweiler, và phải tới cấp 10 mới đuổi kịp.</p>
-<p><strong>Mèo không có trong bảng này</strong>, và không phải vì nó yếu nhất: nó <strong>không đánh nhau</strong>. Không có cú cắn, không có chế độ Canh gác, và nó không phản ứng với zombie ngay cả khi bạn đang bị đánh bên cạnh nó.</p>
+<p>Doberman khởi đầu với khoảng hai phần ba lực cắn của một con Rottweiler.</p>
+<p>Mèo nằm ngoài bảng này vì nó không đánh nhau.</p>
 <h3 id="bản-lĩnh-khi-giao-chiến">Bản lĩnh khi giao chiến</h3>
-<p>Số càng <strong>nhỏ</strong> thì con chó càng lì đòn lúc đánh nhau.</p>
+<p>Số càng nhỏ thì chó càng bình tĩnh trong lúc đánh nhau.</p>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
-<th>Căng thẳng tích lũy khi đánh nhau</th>
+<th>Căng thẳng tích lại khi đánh nhau</th>
 <th>Ngưỡng hoảng loạn</th>
 </tr></thead><tbody>
 <tr>
 <td>Chó chăn cừu Đức</td>
-<td><strong>0,20</strong> (lì nhất)</td>
-<td><strong>0,90</strong> (cao nhất)</td>
+<td>0,20 (bình tĩnh nhất)</td>
+<td>0,90 (cao nhất)</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>0,20</strong></td>
-<td><strong>0,90</strong></td>
+<td>0,20</td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25</td>
-<td><strong>0,90</strong></td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1217,18 +1198,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Chó Pug</td>
 <td>0,90</td>
-<td><strong>0,70</strong> (thấp nhất)</td>
+<td>0,70 (thấp nhất)</td>
 </tr>
 <tr>
 <td>Chó cỏ</td>
-<td><strong>1,00</strong> (dễ hoảng nhất)</td>
-<td><strong>0,80</strong></td>
+<td>1,00 (dễ hoảng nhất)</td>
+<td>0,80</td>
 </tr>
 </tbody></table></div>
-<p>Con chó đã hoảng loạn thì <strong>ngừng chiến đấu, ngừng canh gác và ngừng làm trò khéo</strong>. Vì vậy bảng này quan trọng ngang với sát thương: cắn mạnh mà đứng hình trước đó thì cũng chẳng ích gì.</p>
-<p><strong>Mèo cũng không có ở đây</strong>, vì nó không đánh nhau. Nhưng nó <strong>có hoảng loạn</strong>, và điều này đáng biết: nó mang <strong>gen căng thẳng ẩn tệ thứ hai trong mod</strong>, chỉ sau Caramelo. Vì thứ làm nó căng thẳng không phải chiến đấu, cái còn lại là sự hoảng sợ: tiếng động lớn, tiếng hét, vết thương, bị bỏ bê. Và một con mèo hoảng loạn sẽ <strong>ngừng canh gác và ngừng mang quà đêm về</strong>.</p>
+<p>Chó hoảng loạn thì ngừng đánh, ngừng canh gác và ngừng làm trò. Một con cắn mạnh mà hoảng sớm cho ít hơn một con yếu hơn nhưng trụ được hết trận.</p>
+<p>Mèo cũng nằm ngoài bảng, nhưng mức căng thẳng của nó tệ thứ nhì trong mod, chỉ sau Chó cỏ. Mèo hoảng loạn thì ngừng canh gác và ngừng mang quà về.</p>
 <h3 id="đặc-tính-khoảng-giá-trị-lúc-sinh-ra">Đặc tính (khoảng giá trị lúc sinh ra)</h3>
-<p>Khoảng càng cao thì con chó càng có thể sinh ra tốt. Giá trị dưới 0,34 hiện lên trong cửa sổ là <strong>Thấp</strong>, trên 0,66 là <strong>Cao</strong>, còn ở giữa là <strong>Trung bình</strong>.</p>
+<p>Khoảng càng cao thì chó càng có thể sinh ra tốt. Dưới 0,34 thì cửa sổ hiện <span class="ig">Thấp</span>, trên 0,66 hiện <span class="ig">Cao</span>, còn khoảng giữa hiện <span class="ig">Trung bình</span>.</p>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
 <th>Sức mạnh</th>
@@ -1237,15 +1218,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Chó Pug</td>
-<td><strong>0,00 đến 0,10</strong></td>
+<td>0,00 đến 0,10</td>
 <td>0,05 đến 0,20</td>
-<td><strong>0,00 đến 0,15</strong></td>
+<td>0,00 đến 0,15</td>
 </tr>
 <tr>
 <td>Mèo</td>
-<td><strong>0,00 đến 0,10</strong></td>
-<td><strong>0,00 đến 0,15</strong></td>
-<td><strong>0,00 đến 0,15</strong></td>
+<td>0,00 đến 0,10</td>
+<td>0,00 đến 0,15</td>
+<td>0,00 đến 0,15</td>
 </tr>
 <tr>
 <td>Chó cỏ</td>
@@ -1268,13 +1249,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Labrador</td>
 <td>0,25 đến 0,45</td>
-<td><strong>0,10 đến 0,25</strong></td>
+<td>0,10 đến 0,25</td>
 <td>0,25 đến 0,45</td>
 </tr>
 <tr>
 <td>Doberman</td>
 <td>0,25 đến 0,45</td>
-<td><strong>0,35 đến 0,55</strong></td>
+<td>0,35 đến 0,55</td>
 <td>0,20 đến 0,40</td>
 </tr>
 <tr>
@@ -1291,22 +1272,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>0,55 đến 0,80</strong></td>
+<td>0,55 đến 0,80</td>
 <td>0,10 đến 0,30</td>
 <td>0,40 đến 0,60</td>
 </tr>
 </tbody></table></div>
-<p>Đọc nhanh:</p>
 <ul>
-<li><strong>Chó cỏ lúc nào cũng hiện <span class="ig">Thấp</span> ở cả ba.</strong> Không làm gì có Chó cỏ xịn.</li>
-<li><strong>Chó Pug cũng vậy</strong>, và khoảng Sức mạnh của nó còn hẹp hơn. Không làm gì có Chó Pug khỏe.</li>
-<li><strong>Husky là giống duy nhất thường hiện <span class="ig">Cao</span> ở Sức mạnh.</strong></li>
-<li><strong>Độ hung hăng luôn ra <span class="ig">Thấp</span></strong> ở Golden, Husky và Labrador. Đó là chuyện bình thường của giống, không phải bạn xui.</li>
+<li>Chó cỏ hiện <span class="ig">Thấp</span> ở cả ba.</li>
+<li>Chó Pug cũng vậy, và khoảng Sức mạnh của nó còn hẹp hơn.</li>
+<li>Mèo ngang với Chó Pug về Sức mạnh thấp nhất trong mod.</li>
+<li>Husky là giống duy nhất thường hiện <span class="ig">Cao</span> ở Sức mạnh.</li>
+<li>Độ hung hăng ra <span class="ig">Thấp</span> ở Golden, Husky và Labrador.</li>
 <li>Golden và Doberman cũng hay rơi vào <span class="ig">Thấp</span> ở Sức mạnh và Sức chịu đựng.</li>
-<li><strong>Chó chăn cừu Đức và Rottweiler</strong> là hai giống duy nhất gần như luôn hiện <span class="ig">Trung bình</span> ở cả ba.</li>
-</ul>
-<ul>
-<li><strong>Mèo ngang với Pug về Sức mạnh thấp nhất trong mod.</strong> Không có con mèo khỏe, và đó là lý do túi yên của nó luôn là 2.</li>
+<li>Chó chăn cừu Đức và Rottweiler là hai giống duy nhất gần như luôn hiện <span class="ig">Trung bình</span> ở cả ba.</li>
 </ul>
 <h3 id="túi-yên">Túi yên</h3>
 <div class="tw"><table><thead><tr>
@@ -1315,11 +1293,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Mèo</strong></td>
-<td><strong>2</strong> (cố định)</td>
+<td>2 (cố định)</td>
 </tr>
 <tr>
 <td><strong>Chó Pug</strong></td>
-<td><strong>2 đến 3</strong></td>
+<td>2 đến 3</td>
 </tr>
 <tr>
 <td>Chó cỏ</td>
@@ -1335,18 +1313,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td><strong>13 đến 16</strong></td>
+<td>13 đến 16</td>
 </tr>
 </tbody></table></div>
-<p>Mèo là con duy nhất không có khoảng: phép tính ra <strong>2 với bất kỳ con mèo nào</strong>, dù nó sinh ra khỏe đến đâu.</p>
 <h3 id="lứa-đẻ">Lứa đẻ</h3>
 <div class="tw"><table><thead><tr>
 <th>Giống của chó mẹ</th>
 <th>Số chó con mỗi lứa</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>Chó cỏ</strong></td>
-<td><strong>2 đến 4</strong></td>
+<td><strong>Chó cỏ</strong>, Mèo</td>
+<td>2 đến 4</td>
 </tr>
 <tr>
 <td>Border Collie</td>
@@ -1361,8 +1338,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 đến 2</td>
 </tr>
 </tbody></table></div>
-<p>Số con mỗi lứa tính theo <strong>giống của chó mẹ</strong>, không theo giống của chó bố.</p>
-<p><strong>Mèo không sinh sản</strong>, nên nó không có dòng ở đây: không có động dục, không có mang thai, và không bao giờ có mèo con ra đời. Mèo chỉ vào ván chơi của bạn qua thế giới, không bao giờ qua việc nhân giống của bạn.</p>
+<p>Giống của chó bố không tính.</p>
 <h3 id="tìm-từng-giống-ở-đâu">Tìm từng giống ở đâu</h3>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
@@ -1400,11 +1376,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>12%</td>
 </tr>
 <tr>
-<td>Chó cỏ</td>
-<td>Nhà dân</td>
-<td>10%</td>
-</tr>
-<tr>
 <td>Husky</td>
 <td>Cửa hàng thú cưng, phòng khám thú y</td>
 <td>10%</td>
@@ -1415,51 +1386,55 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>10%</td>
 </tr>
 <tr>
-<td>Labrador</td>
+<td>Chó cỏ</td>
 <td>Nhà dân</td>
-<td>5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td>Chó Pug</td>
 <td>Nhà dân</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>Golden Retriever</td>
-<td>Nhà dân</td>
-<td>2,5%</td>
-</tr>
-<tr>
-<td>Rottweiler</td>
-<td>Nhà dân</td>
-<td>2,5%</td>
+<td>3%</td>
 </tr>
 <tr>
 <td><strong>Mèo</strong></td>
 <td>Cửa hàng thú cưng, phòng khám thú y</td>
-<td><strong>2,4%</strong> mỗi màu lông</td>
+<td>2,4% mỗi màu lông</td>
 </tr>
 <tr>
 <td><strong>Mèo</strong></td>
 <td>Cửa hàng, siêu thị, quán ăn</td>
-<td><strong>2%</strong> mỗi màu lông</td>
+<td>2% mỗi màu lông</td>
 </tr>
 <tr>
 <td><strong>Mèo</strong></td>
 <td>Nhà dân</td>
-<td><strong>2%</strong> mỗi màu lông</td>
+<td>2% mỗi màu lông</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td>Nhà dân, <strong>chỉ vào mùa đông</strong></td>
+<td>Nhà dân, chỉ vào mùa đông</td>
 <td>1,25%</td>
 </tr>
+<tr>
+<td>Golden Retriever</td>
+<td>Nhà dân</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Nhà dân</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Rottweiler</td>
+<td>Nhà dân</td>
+<td>1%</td>
+</tr>
 </tbody></table></div>
-<p>Tỉ lệ của chó co giãn theo tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong>. Của mèo thì không: mèo có tùy chọn riêng, <strong><span class="ig">Hệ số xuất hiện của mèo</span></strong>, nên giảm hoặc tắt chó hoang không còn động tới lượng mèo trong thế giới nữa.</p>
-<p>Nhớ rằng: quyết định chỉ được đưa ra <strong>một lần cho mỗi tòa nhà</strong> và được lưu lại. Quay về một nơi đã khám phá rồi thì không có chó mới xuất hiện.</p>
-<p>Năm màu lông của mèo gieo <strong>mỗi màu một lần riêng</strong>, và đó là lý do xác suất của từng màu thấp đến vậy: cộng lại, chúng cho ra cùng lượng mèo mà một giống đơn lẻ sẽ cho. Cái thay đổi là bạn gặp <strong>màu nào</strong>.</p>
+<p>Tỉ lệ của chó co giãn theo tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong>. Tỉ lệ của mèo theo một tùy chọn khác, <strong><span class="ig">Hệ số xuất hiện của mèo</span></strong>, nên giảm hoặc tắt chó hoang không làm đổi lượng mèo trong thế giới.</p>
+<p>Việc gieo chỉ diễn ra một lần cho mỗi tòa nhà và kết quả được lưu lại.</p>
 <h3 id="tên-nội-bộ-của-các-giống">Tên nội bộ của các giống</h3>
-<p>Mod spawn và chế độ debug hỏi <strong>tên nội bộ</strong> của chó, không phải cái tên hiện trên màn hình. Đây là danh sách:</p>
+<p>Mod spawn và chế độ debug hỏi tên nội bộ của chó, khác với cái tên hiện trên màn hình:</p>
 <div class="tw"><table><thead><tr>
 <th>Giống</th>
 <th>Con đực</th>
@@ -1566,107 +1541,106 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_tuxedo</code></td>
 </tr>
 </tbody></table></div>
-<p>Con đực và con cái là <strong>hai type khác nhau</strong>, không phải một tùy chọn của cùng một type. Ba dòng cuối chỉ tồn tại nếu bạn có cài addon của giống đó.</p>
-<hr>
-<p><strong>Năm màu lông mèo dùng chung một type</strong> (<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>) và chỉ phân biệt bằng <code>breed</code>, vì model giống nhau và chỉ texture thay đổi. Lưu ý rằng ở đây <code>breed</code> có dấu gạch dưới (<code>cat_white</code>), khác với phần còn lại của mod.</p>
+<p>Con đực và con cái là hai type khác nhau, không phải một tùy chọn của cùng một type. Năm giống addon chỉ tồn tại khi có cài addon của giống đó.</p>
+<p>Năm màu lông mèo dùng chung một type và chỉ phân biệt bằng <code>breed</code>: model giống nhau và chỉ texture thay đổi. Ở đây <code>breed</code> có dấu gạch dưới (<code>cat_white</code>), khác với phần còn lại của mod.</p>
 <h2 id="7-moodle-danh-sách-đầy-đủ">7. Moodle: danh sách đầy đủ</h2>
-<p>Moodle của chó hiện ở <strong>một cột riêng, bên trái các moodle bình thường của bạn</strong>.</p>
+<p>Moodle của chó hiện ở một cột riêng, bên trái các moodle bình thường của bạn.</p>
 <h3 id="quy-tắc-chung-cho-mọi-moodle-theo-giống">Quy tắc chung cho mọi moodle theo giống</h3>
-<p>Phần thưởng <strong>chỉ có</strong> khi <strong>tất cả</strong> những điều kiện sau đều đúng:</p>
+<p>Phần thưởng chỉ tồn tại khi tất cả các điều kiện này cùng đúng:</p>
 <div class="tw"><table><thead><tr>
 <th>Điều kiện</th>
 <th>Chi tiết</th>
 </tr></thead><tbody>
 <tr>
-<td>Con chó ở <strong>gần</strong></td>
-<td>Trong vòng <strong>8 ô</strong> và <strong>cùng một tầng</strong></td>
+<td><strong>Con chó ở gần</strong></td>
+<td>Trong vòng 8 ô và cùng tầng</td>
 </tr>
 <tr>
-<td>Nó là <strong>của bạn</strong></td>
+<td><strong>Nó là của bạn</strong></td>
 <td>Chó của người chơi khác không cho gì cả</td>
 </tr>
 <tr>
-<td>Nó <strong>vẫn nghe lời</strong></td>
-<td>Độ trung thành còn trên mức sàn</td>
+<td><strong>Nó không bất tuân</strong></td>
+<td>Lòng trung thành trên mức sàn</td>
 </tr>
 <tr>
-<td>Nó <strong>không bị trúng độc</strong></td>
-<td>Không ăn phải đồ có hại</td>
+<td><strong>Nó không trúng độc</strong></td>
+<td>Không ăn phải đồ hỏng</td>
 </tr>
 <tr>
-<td>Nó <strong>không đói</strong></td>
+<td><strong>Nó không đói</strong></td>
 <td>Thanh đói dưới 75%</td>
 </tr>
 <tr>
-<td>Nó <strong>không khát</strong></td>
+<td><strong>Nó không khát</strong></td>
 <td>Thanh khát dưới 75%</td>
 </tr>
 </tbody></table></div>
-<p><strong>Thiếu bất kỳ điều kiện nào là moodle tắt.</strong> Con chó bị bỏ bê không đem lại phần thưởng nào hết. Đây là cơ chế cốt lõi của mod: <strong>bạn không được gì miễn phí từ một con chó mà bạn không chăm.</strong></p>
-<blockquote class="quote"><strong>Khi có nhiều chó ở gần, chỉ con gần nhất được tính.</strong> Mod chỉ chọn đúng một con và hiện moodle của giống đó. Bạn không thể cùng lúc chồng Can đảm của chó chăn cừu Đức với Được sưởi ấm của Husky.</blockquote>
-<p>Moodle vẫn có tác dụng khi con chó đi cùng bạn, <strong>lúc bạn bế nó hoặc lúc nó ngồi trong xe với bạn</strong>.</p>
+<p>Chỉ cần một điều kiện hỏng là moodle tắt.</p>
+<blockquote class="quote">Có nhiều chó ở gần thì chỉ tính con gần nhất, nên Can đảm của Chó chăn cừu Đức và Được sưởi ấm của Husky không cộng dồn.</blockquote>
+<p>Moodle vẫn còn hiệu lực khi con chó nằm trong lòng bạn hoặc đi xe cùng bạn.</p>
 <h3 id="các-moodle-theo-giống">Các moodle theo giống</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
 <th>Giống</th>
-<th>Tác dụng</th>
+<th>Làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Có bạn bên cạnh</strong></td>
 <td>Chó cỏ</td>
-<td>Làm tan <strong>Buồn bã và Chán chường</strong></td>
+<td>Làm tan Buồn bã và Chán chường</td>
 </tr>
 <tr>
 <td><strong>Can đảm</strong></td>
 <td>Chó chăn cừu Đức</td>
-<td>Làm tan <strong>Hoảng loạn</strong> (hiệu ứng mạnh nhất của mod gốc)</td>
+<td>Làm tan Hoảng loạn (hiệu ứng mạnh nhất của mod gốc)</td>
 </tr>
 <tr>
 <td><strong>Mũi thính</strong></td>
 <td>Golden Retriever</td>
-<td><strong>+20% XP</strong> cho Kiếm đồ, Đặt bẫy và Ngắm bắn, <strong>+4 ô</strong> tầm nhìn khi kiếm đồ</td>
+<td>+20% XP cho Kiếm đồ, Đặt bẫy và Ngắm bắn, +4 ô tầm nhìn khi kiếm đồ</td>
 </tr>
 <tr>
 <td><strong>Được sưởi ấm</strong></td>
 <td>Husky</td>
-<td><strong>+50% XP</strong> Sức mạnh, hồi thể lực, và thành <strong>nguồn sưởi ấm</strong> khi trời rét đậm</td>
+<td>+50% XP Sức mạnh, hồi thể lực và thành nguồn sưởi ấm khi trời rét đậm</td>
 </tr>
 <tr>
 <td><strong>Bản năng chăn đàn</strong></td>
 <td>Border Collie</td>
-<td><strong>+20% XP</strong> cho Chăm sóc động vật và Trồng trọt, và <strong>làm dịu đàn vật nuôi quanh bạn</strong></td>
+<td>+20% XP cho Chăm sóc động vật và Trồng trọt, và làm dịu đàn vật nuôi quanh bạn</td>
 </tr>
 <tr>
 <td><strong>Tuyến đầu</strong></td>
 <td>Rottweiler</td>
-<td>Hoàn lại <strong>35% thể lực</strong> của mỗi đòn cận chiến. <strong>Chỉ khi nó đang giao chiến</strong></td>
+<td>Hoàn lại 35% thể lực của mỗi đòn cận chiến, chỉ khi nó đang giao chiến</td>
 </tr>
 <tr>
-<td><strong>Ngắm vững</strong></td>
+<td><strong>Ngắm Bắn Ổn Định</strong></td>
 <td>Doberman</td>
-<td>Rút bớt <strong>căng thẳng</strong> của bạn, <strong>-45% độ giật</strong> mỗi phát bắn, <strong>+15% tốc độ nạp đạn</strong></td>
+<td>Rút bớt căng thẳng của bạn, -45% độ giật mỗi phát bắn, +15% tốc độ nạp đạn</td>
 </tr>
 <tr>
-<td><strong>Miệng Mềm</strong></td>
+<td><strong>Ngoạm Nhẹ</strong></td>
 <td>Labrador</td>
-<td>Tha con mồi về <strong>ngay từ Săn mồi cấp 3</strong>, kiên trì gấp 3 lần, <strong>60% cơ hội có thêm vật phẩm</strong>, <strong>+20% XP</strong> cho Mổ xẻ và Đao ngắn</td>
+<td>Tha con mồi về ngay từ Săn mồi cấp 3, kiên trì gấp 3 lần, 60% cơ hội có thêm vật phẩm, +20% XP cho Mổ xẻ và Đao ngắn</td>
 </tr>
 <tr>
 <td><strong>Cái Bóng Của Bạn</strong></td>
 <td>Chó Pug</td>
-<td>Làm tan <strong>Buồn bã, Chán chường và Căng thẳng</strong>, nhanh hơn mọi con chó khác. <strong>Tắt khi trời nóng</strong></td>
+<td>Làm tan Buồn bã, Chán chường và Căng thẳng, nhanh hơn mọi con chó khác. Tắt khi trời nóng</td>
 </tr>
 <tr>
 <td><strong>Mắt Mèo</strong></td>
 <td>Mèo</td>
-<td><strong>Hái lượm trong bóng tối thôi vô dụng</strong>: đêm khuya lên tới khoảng 60% tầm ban ngày, so với 1,5 ô khi không có nó</td>
+<td>Hái lượm trong bóng tối bắt đầu có tác dụng: đêm khuya lên tới khoảng 60% tầm ban ngày, so với 1,5 ô khi không có nó</td>
 </tr>
 </tbody></table></div>
 <h3 id="các-moodle-mà-giống-nào-cũng-có">Các moodle mà giống nào cũng có</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
 <th>Khi nào</th>
-<th>Tác dụng</th>
+<th>Làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Đói</strong></td>
@@ -1685,101 +1659,59 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Ngủ ngon</strong></td>
-<td>Bạn thức dậy sau khi ngủ cách con chó <strong>8 ô trở lại</strong></td>
-<td>Làm tan <strong>Hoảng loạn, Căng thẳng, Mệt mỏi, Buồn bã và Chán chường</strong> trong <strong>2 giờ trong game</strong></td>
+<td>Bạn thức dậy sau khi ngủ cách con chó 8 ô trở lại</td>
+<td>Làm tan Hoảng loạn, Căng thẳng, Mệt mỏi, Buồn bã và Chán chường trong 2 giờ trong game</td>
 </tr>
 </tbody></table></div>
-<p><strong><span class="ig">Ngủ ngon</span> là moodle duy nhất không cần con chó tiếp tục ở gần.</strong> Nó là một cái đồng hồ đếm ngược: đã bật rồi thì kéo đủ hai giờ dù bạn có đi đâu. Nó cũng không qua bộ lọc chăm sóc, nên chạy được ngay cả với một con chó bị bỏ bê. Ngủ cạnh con chó thì <strong>lúc nào cũng</strong> đáng làm.</p>
-<p>Ba cái báo còn lại (đói, khát, trúng độc) cũng bỏ qua bộ lọc chăm sóc, và như vậy là hợp lý: chúng sinh ra đúng để báo cho bạn biết con chó <strong>không</strong> ổn.</p>
+<p><strong><span class="ig">Ngủ ngon</span></strong> là moodle duy nhất không cần con chó tiếp tục ở gần. Nó cũng bỏ qua bộ lọc chăm sóc, nên có tác dụng cả với một con chó bị bỏ bê. Ba lời báo về đói, khát và trúng độc cũng bỏ qua bộ lọc y như vậy.</p>
 <h2 id="8-đặc-tính-các-gen">8. Đặc tính (các gen)</h2>
-<p>Ngoài giống chó, mỗi con còn có <strong>ba đặc tính</strong> hiện trong cửa sổ, ở mục <strong><span class="ig">Đặc tính</span></strong>. Chúng được bốc <strong>ngay lúc bạn thuần hóa con chó</strong>, trong khoảng của giống đó, và <strong>không bao giờ thay đổi</strong>.</p>
-<blockquote class="quote quote-game"><em>"Các đặc tính bẩm sinh, cố định suốt đời, được tạo khi con chó được thuần hóa và khác nhau ở từng con. Không giống kỹ năng, chúng không thay đổi qua huấn luyện; đây là bản chất mà con chó sinh ra đã có."</em></blockquote>
+<p>Ngoài giống ra, mỗi con chó còn có ba đặc tính, hiện trong cửa sổ của nó ở phần <strong><span class="ig">Đặc tính</span></strong>. Chúng được gieo lúc bạn thuần hóa con chó, trong khoảng của giống, và sau đó không đổi nữa.</p>
+<blockquote class="quote quote-game"><em>"Các đặc tính bẩm sinh, cố định suốt đời, đã được định sẵn trước khi bạn gặp con chó này và khác nhau ở từng con. Không giống kỹ năng, chúng không thay đổi qua huấn luyện; đây là bản chất mà con chó sinh ra đã có."</em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>Đặc tính</th>
-<th>Tác dụng</th>
+<th>Làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Sức mạnh</strong></td>
-<td>Tăng <strong>lực cắn</strong> và, quan trọng hơn cả, <strong>sức chứa của túi yên</strong></td>
+<td>Tăng lực cắn và, quan trọng hơn cả, sức chứa của túi yên</td>
 </tr>
 <tr>
 <td><strong>Độ hung hăng</strong></td>
-<td>Giúp nó <strong>nhận XP Chiến đấu nhanh hơn</strong>. <strong>Không</strong> ảnh hưởng tới lúc nó quyết định đánh hay bỏ chạy</td>
+<td>Giúp nó nhận XP Chiến đấu nhanh hơn. Không ảnh hưởng tới lúc nó quyết định đánh hay bỏ chạy</td>
 </tr>
 <tr>
 <td><strong>Sức chịu đựng</strong></td>
-<td>Giúp nó <strong>tích ít căng thẳng hơn</strong> khi giao chiến</td>
+<td>Giúp nó tích ít căng thẳng hơn khi giao chiến</td>
 </tr>
 </tbody></table></div>
-<p>Còn một <strong>gen thứ tư, về mức căng thẳng chung, và nó không hiện trong cửa sổ</strong>. Gen này nhân lên toàn bộ căng thẳng mà con chó nhận được khi đánh nhau. Chó cỏ có gen tệ nhất, chó chăn cừu Đức và Husky tốt nhất.</p>
-<h3 id="cách-đọc-các-nhãn">Cách đọc các nhãn</h3>
-<div class="tw"><table><thead><tr>
-<th>Nhãn</th>
-<th>Nghĩa là</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Thấp</strong></td>
-<td>Dưới 34% của thang đo</td>
-</tr>
-<tr>
-<td><strong>Trung bình</strong></td>
-<td>Từ 34% đến 66%</td>
-</tr>
-<tr>
-<td><strong>Cao</strong></td>
-<td>Trên 66%</td>
-</tr>
-</tbody></table></div>
-<p><strong>Lưu ý:</strong> các nhãn nằm trên một thang tuyệt đối, <strong>không</strong> phải so với giống. Vì vậy chó cỏ <strong>luôn</strong> hiện <span class="ig">Thấp</span> ở cả ba, và không có con chó cỏ nào xuất sắc. Cũng vì vậy mà Husky gần như là giống duy nhất bạn sẽ thấy hiện <span class="ig">Cao</span> ở Sức mạnh.</p>
+<p>Còn một gen thứ tư, về căng thẳng chung, không hiện trong cửa sổ. Nó nhân toàn bộ căng thẳng mà con chó nhận khi đánh nhau. Chó cỏ có gen này tệ nhất, Chó chăn cừu Đức và Husky tốt nhất.</p>
+<p>Nhãn trong cửa sổ dùng cùng một thang cho mọi giống: dưới 34% là <strong><span class="ig">Thấp</span></strong>, từ 34% đến 66% là <strong><span class="ig">Trung bình</span></strong>, trên 66% là <strong><span class="ig">Cao</span></strong>. Vì thế một con Chó cỏ luôn hiện <span class="ig">Thấp</span> ở cả ba.</p>
 <h3 id="chuyện-này-quan-trọng-đến-mức-nào">Chuyện này quan trọng đến mức nào</h3>
-<p>Các gen chỉ xê dịch <strong>tối đa 15% về mỗi phía</strong> ở sát thương và XP chiến đấu, và tối đa 10 điểm phần trăm ở khả năng chịu căng thẳng. <strong>Giống chó nặng ký hơn gen rất nhiều.</strong></p>
-<p>Ngoại lệ là <strong>túi yên</strong>: ở đó gen Sức mạnh mới là yếu tố chính, và khác biệt giữa một con yếu với một con khỏe trong cùng một giống là có thật.</p>
-<p><strong>Không có cách nào huấn luyện được một cái gen.</strong> Cách duy nhất để cải thiện là <a href="#9-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
+<p>Các gen xê dịch tối đa 15% về mỗi phía ở sát thương và XP chiến đấu, và tối đa 10 điểm phần trăm ở khả năng chịu căng thẳng. Khác biệt giữa giống này với giống kia còn lớn hơn thế nhiều.</p>
+<p>Ngoại lệ là túi yên: ở đó gen Sức mạnh là yếu tố chính.</p>
+<p>Cách duy nhất để cải thiện một gen là <a href="#9-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
 <h2 id="9-chó-lai-phối-hai-giống-khác-nhau">9. Chó lai: phối hai giống khác nhau</h2>
-<p>Khi một con đực và một con cái khác giống sinh con, bạn được một con <strong>chó lai</strong>.</p>
+<p>Khi một con đực và một con cái khác giống có con, con ra đời là chó lai.</p>
 <h3 id="chuyện-gì-xảy-ra-với-chó-con">Chuyện gì xảy ra với chó con</h3>
-<p><strong>Dòng máu là mức trung bình của bố mẹ.</strong> Chó cỏ với chó chăn cừu Đức cho ra một con 50/50. Đem con đó phối với một con chăn cừu Đức thuần thì ra 25% chó cỏ, 75% chăn cừu Đức. Cứ thế qua từng đời.</p>
-<p><strong>Ngoại hình chỉ lấy MỘT trong hai giống, bốc theo tỷ trọng dòng máu.</strong> Một con 50/50 sinh ra mang mặt chăn cừu Đức <strong>hoặc</strong> mặt chó cỏ, không bao giờ pha trộn về hình ảnh. Dòng máu nghiêng về bên nào nhiều hơn thì khả năng ra mặt bên đó càng cao.</p>
-<blockquote class="quote"><strong>Và đây là chỗ khiến ai cũng nhầm:</strong> giống bốc trúng chính là giống <strong>có tác dụng thật</strong> của con chó. Một con lai 50% Husky / 50% chăn cừu Đức mà sinh ra mang mặt Husky thì <strong>là Husky về mọi mặt</strong>: moodle Được sưởi ấm, tốc độ học của Husky, túi yên của Husky. Việc pha máu không kéo nó về mức trung gian ở bất kỳ điểm nào trong số đó.</blockquote>
-<p><strong>Các gen thì nằm ở khoảng giữa của bố mẹ</strong>, xê dịch chừng 6% về mỗi phía.</p>
-<p><strong>Và đây mới là chỗ lai giống thật sự đáng giá:</strong> khoảng gen của chó con trở thành <strong>hợp</strong> của các khoảng thuộc mọi giống trong dòng máu. Một con lai chó cỏ + Husky có thể sinh ra với Sức mạnh bất kỳ từ 0,00 đến 0,80, tức là nó <strong>có thể vượt trần của chó cỏ</strong>. Cứ chọn những con khỏe nhất mỗi lứa để phối, bạn kéo cả dòng máu đi lên qua các đời.</p>
-<p><strong>Thứ chó con KHÔNG thừa hưởng:</strong> kỹ năng. Nó luôn sinh ra với <strong>cấp 0 ở cả năm kỹ năng</strong>. Cái nó nhận từ giống là <strong>tốc độ học</strong>, chứ không phải phần đã học được.</p>
+<p>Dòng máu là trung bình của bố mẹ. Chó cỏ với Chó chăn cừu Đức cho một con 50/50. Đem con đó phối với một con chăn cừu Đức thuần thì được 25% Chó cỏ, 75% chăn cừu Đức, và cứ thế qua từng đời.</p>
+<p>Ngoại hình là một trong các giống của dòng máu, gieo có trọng số theo phần trăm. Một con 50/50 sinh ra mang mặt của chăn cừu Đức hoặc của Chó cỏ, không bao giờ là một hình pha trộn.</p>
+<blockquote class="quote">Giống bốc trúng chính là giống có tác dụng thật của con chó. Một con lai 50% Husky / 50% chăn cừu Đức sinh ra mang mặt Husky là một con Husky về mọi mặt: moodle Được sưởi ấm, tốc độ học của Husky, túi yên của Husky.</blockquote>
+<p>Các gen nằm ở khoảng giữa của bố mẹ, xê dịch chừng 6% về mỗi phía.</p>
+<p>Khoảng gen của chó con trở thành hợp của các khoảng của mọi giống trong dòng máu. Một con lai Chó cỏ cộng Husky có thể sinh ra với Sức mạnh bất kỳ từ 0,00 đến 0,80, cao hơn trần của Chó cỏ. Cứ phối những con khỏe nhất của mỗi lứa thì dòng máu đi lên qua các đời.</p>
+<p>Chó con luôn sinh ra ở cấp 0 cả năm kỹ năng. Cái nó thừa hưởng từ giống là tốc độ học.</p>
 <h3 id="nhãn-lai">Nhãn "Lai"</h3>
-<p>Con chó có nhiều hơn một giống trong dòng máu sẽ được ghi thêm <strong><span class="ig">(Lai)</span></strong> bên cạnh tên giống, cả trong cửa sổ lẫn trong menu chuột phải.</p>
-<p><strong>Chi tiết phần trăm</strong> (<span class="ig">50% Husky, 50% chó chăn cừu Đức</span>) hiện ra khi bạn <strong>rê chuột lên dòng <span class="ig">Giống</span></strong> trong cửa sổ của chó, kèm theo mô tả của giống chiếm ưu thế.</p>
-<h3 id="có-đáng-phối-hai-giống-khác-nhau-không">Có đáng phối hai giống khác nhau không?</h3>
-<div class="tw"><table><thead><tr>
-<th>Mục tiêu</th>
-<th>Câu trả lời</th>
-</tr></thead><tbody>
-<tr>
-<td>Cải thiện gen qua nhiều đời</td>
-<td><strong>Có</strong>, đây là cách duy nhất</td>
-</tr>
-<tr>
-<td>Có moodle của hai giống</td>
-<td><strong>Không.</strong> Con chó chỉ có một moodle, của giống mà nó trở thành</td>
-</tr>
-<tr>
-<td>Gộp tốc độ học của hai giống</td>
-<td><strong>Không.</strong> Nó dùng bảng của giống mà nó trở thành</td>
-</tr>
-<tr>
-<td>Đẻ thật nhiều chó con</td>
-<td>Hãy chọn <strong>chó cỏ làm mẹ</strong> (2 đến 4 con mỗi lứa)</td>
-</tr>
-</tbody></table></div>
+<p>Một con chó có hơn một giống trong dòng máu sẽ được thêm <strong><span class="ig">(Lai)</span></strong> cạnh tên giống, trong cửa sổ và trong menu chuột phải. Phần trăm chi tiết (<span class="ig">50% Husky, 50% Chó chăn cừu Đức</span>) hiện ra khi bạn rê chuột lên dòng <strong><span class="ig">Giống</span></strong> trong cửa sổ của con chó, kèm mô tả của giống trội.</p>
 <h2 id="10-cài-đặt-các-addon">10. Cài đặt các addon</h2>
-<p>Rottweiler, Doberman, Labrador và Chó Pug là <strong>các mod riêng trên Steam</strong>. Mỗi mod:</p>
+<p>Rottweiler, Doberman, Labrador, Chó Pug và mèo là các mod riêng trên Steam. Mỗi cái:</p>
 <ul>
-<li><strong>Cần có mod nền Companion Dogs đã cài và đang bật.</strong></li>
-<li>Thêm <strong>một giống chó</strong>, kèm mô hình, texture, moodle và các nơi xuất hiện riêng.</li>
-<li>Đi kèm đủ <strong>14 bản dịch</strong>, giống như mod nền.</li>
+<li>Cần có Companion Dogs gốc đã cài và đang bật.</li>
+<li>Thêm một giống, với model, texture, moodle và các nơi xuất hiện riêng.</li>
+<li>Đi kèm 14 bản dịch, giống như của bản gốc.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
 <th>Trang trên Steam</th>
-<th>Phiên bản nền tối thiểu</th>
+<th>Phiên bản gốc tối thiểu</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>CD: Rottweiler</strong></td>
@@ -1794,47 +1726,46 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">đăng ký</a></td>
-<td><strong>0.6.6 trở lên</strong></td>
+<td>0.6.6 trở lên</td>
 </tr>
 <tr>
 <td><strong>CD: Pug</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">đăng ký</a></td>
-<td><strong>0.6.8 trở lên</strong></td>
+<td>0.6.8 trở lên</td>
 </tr>
 <tr>
 <td><strong>CD: Cats</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">đăng ký</a></td>
-<td><strong>0.7.0 trở lên</strong></td>
+<td>0.7.0 trở lên</td>
 </tr>
 </tbody></table></div>
-<p>Và mod nền, nếu bạn chưa có: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
-<p>Nếu mod nền quá cũ, addon <strong>đơn giản là không làm gì cả</strong>: nó không báo lỗi, không làm treo game, giống chó đó chỉ là không tồn tại. Nếu bạn đã cài Labrador mà mãi không gặp con nào, <strong>hãy kiểm tra phiên bản mod nền trước</strong>.</p>
-<blockquote class="quote"><strong>Đừng gỡ một addon khỏi bản lưu đang có chó sống thuộc giống đó.</strong> Con chó sẽ mất mô hình và texture mà nó tham chiếu tới.</blockquote>
-<p>Cài thêm addon <strong>không thay đổi gì ở các giống đã có sẵn</strong>. Những giống mới tự động tham gia vào việc phối giống và lai giống.</p>
-<hr>
-<p><strong>Mèo cũng là ngoại lệ ở đây.</strong> Nó thêm <strong>năm</strong> mục (mỗi màu lông một mục) thay vì một, và <strong>không</strong> tham gia vào việc bốc thăm phối giống hay lai tạp: không có chuyện lai với mèo, kể cả giữa hai con mèo. Phần còn lại vẫn như vậy: cần mod nền đang bật, đi kèm 14 bản dịch, và trên một mod nền quá cũ nó nằm im thay vì báo lỗi.</p>
+<p>Và bản gốc, nếu bạn chưa có: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>
+<p>Nếu bản gốc quá cũ thì addon không làm gì cả: không báo lỗi, không treo game, giống đó chỉ là không tồn tại. Nếu bạn đã cài Labrador mà mãi không gặp con nào, hãy kiểm tra phiên bản bản gốc trước.</p>
+<blockquote class="quote">Đừng gỡ một addon khỏi ván chơi còn chó sống của giống đó. Con chó sẽ mất model và texture tham chiếu.</blockquote>
+<p>Cài một addon không làm đổi gì ở các giống đã có. Các giống mới tự vào vòng phối giống và lai giống.</p>
+<p>Mèo khác ở chỗ này. Nó thêm năm mục (mỗi màu lông một mục) thay vì một, và việc phối của nó đóng trong loài: năm màu lông phối với nhau và lứa đẻ trộn hai màu như mọi lần lai giống.</p>
 <h2 id="11-câu-hỏi-thường-gặp-về-giống-chó">11. Câu hỏi thường gặp về giống chó</h2>
-<p><strong><span class="ig">Giống nào tốt nhất?</span></strong> Tùy bạn chơi kiểu gì. Cần <strong>chiến đấu</strong> thì chọn chó chăn cừu Đức hoặc Rottweiler. Cần <strong>săn mồi</strong> thì Labrador. Cần <strong>chở đồ</strong> thì Husky. Cần <strong>nông trại</strong> thì Border Collie. Cần <strong>bắn súng</strong> thì Doberman. Còn <strong>chó cỏ</strong> vẫn rất đáng nuôi nhờ moodle của nó, dù nó yếu nhất.</p>
-<p><strong><span class="ig">Chó cỏ của tôi có thể mạnh lên nhờ huấn luyện không?</span></strong> Không. Dù bạn huấn luyện tới đâu thì nó cũng không bao giờ tự giết được một con zombie, và đặc tính của nó vốn dĩ là tệ nhất. Huấn luyện chỉ cải thiện Vâng lời, Đánh hơi và Săn mồi, mà ở mấy khoản đó nó chẳng thua con nào.</p>
-<p><strong><span class="ig">Tôi gặp hai con cùng giống, nên bắt con nào?</span></strong> Bạn <strong>không có cách nào biết trước</strong>: đặc tính chỉ được bốc vào đúng lúc thuần hóa. Cứ thuần hóa rồi xem mục <strong><span class="ig">Đặc tính</span></strong> trong cửa sổ.</p>
-<p><strong><span class="ig">Tôi nhận một con có đặc tính xấu. Thả ra rồi thuần hóa lại được không?</span></strong> <strong>Không ăn thua.</strong> Các gen chỉ được bốc <strong>một lần duy nhất, ở lần thuần hóa đầu tiên</strong>, và con chó giữ chúng mãi mãi, kể cả sau khi bị thả rồi thuần hóa lại (kỹ năng cũng được giữ y như vậy). Muốn bốc lại, bạn phải <strong>thuần hóa một con chó khác</strong>. Còn muốn tiến bộ thật sự theo thời gian thì con đường là <a href="#9-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
-<p><strong><span class="ig">Tôi có thể nhận moodle của hai giống cùng lúc không?</span></strong> Không. Chỉ <strong>con chó ở gần nhất</strong> được tính. Ngoại lệ là <strong><span class="ig">Ngủ ngon</span></strong>, vì nó không phụ thuộc vào khoảng cách.</p>
-<p><strong><span class="ig">Sao moodle biến mất rồi?</span></strong> Gần như luôn là do đói hoặc khát vượt quá 75%, hoặc độ trung thành tụt xuống dưới mức sàn. Hãy cho ăn, cho uống nước và vuốt ve nó. Cũng nên kiểm tra xem con chó có đang ở <strong>cách bạn 8 ô trở xuống và cùng một tầng</strong> hay không.</p>
-<p><strong><span class="ig">Có giống nào chạy nhanh hơn không?</span></strong> Không. Không giống nào chạy nhanh hơn giống nào.</p>
-<p><strong><span class="ig">Có Husky màu khác không?</span></strong> Không. Mỗi giống chỉ có một texture, và con đực với con cái dùng chung.</p>
-<p><strong><span class="ig">Chó to thì cắn mạnh hơn à?</span></strong> Không. Kích thước chỉ là hình thức. Liên hệ giữa vóc dáng và sức mạnh đã bị tắt một cách có chủ ý.</p>
-<p><strong><span class="ig">Tìm Doberman ở đâu?</span></strong> <strong>Đồn cảnh sát.</strong> Trên giấy tờ thì tỷ lệ ở công trình quân sự cao hơn, nhưng bản đồ gốc của game gần như không có công trình quân sự nào.</p>
-<p><strong><span class="ig">Tôi cài Labrador mà không thấy con nào.</span></strong> Hãy kiểm tra phiên bản mod nền Companion Dogs: Labrador <strong>đòi bản 0.6.6 trở lên</strong> và sẽ im lặng biến mất trên một mod nền cũ. Cũng nên xem lại bạn đã lục hết nhà cửa trong vùng chưa: quyết định xuất hiện là <strong>một lần cho mỗi tòa nhà, và giữ mãi</strong>.</p>
-<p><strong><span class="ig">Chó lai của tôi không có moodle của cả hai giống.</span></strong> Đúng như thiết kế. Về mặt cơ chế, một con lai chính là <strong>giống mà nó trông giống</strong>. Việc pha máu chỉ thay đổi khoảng gen của đời sau và phần nhãn phần trăm trong cửa sổ.</p>
-<p><strong><span class="ig">Tôi muốn spawn chó bằng mod khác, dùng tên nào?</span></strong> Tên nội bộ, không phải tên hiện trên màn hình. Danh sách nằm ở cuối phần <a href="#6-bảng-so-sánh">Bảng so sánh</a></p>
-<p><strong>«Mèo có tốt hơn chó không?»</strong> Không tốt hơn cũng không tệ hơn: nó làm việc khác. Nó canh xa hơn bất kỳ con chó nào và trong im lặng, và là người bạn duy nhất giải quyết được việc hái lượm ban đêm. Đổi lại nó không đánh nhau, không sinh sản và không mang gì cả. Mèo <strong>không thay thế</strong> chó canh; nó lấp một chỗ mà chưa con chó nào lấp.</p>
-<p><strong>«Tại sao tôi không đặt mèo vào chế độ Canh gác được?»</strong> Vì chế độ đó không tồn tại với nó, và vì thế nút bấm hoàn toàn không có. Mèo không có Chiến đấu: nó không canh, không bảo vệ bạn và sẽ không tấn công zombie ngay cả khi bạn bị đánh bên cạnh nó. Điều này không chỉnh được.</p>
-<p><strong>«Mèo của tôi tự dưng chạy đi mất và không nghe lời tôi nữa.»</strong> Nó thấy một con chuột. Đó là hành vi của giống loài, không phải lỗi: thỉnh thoảng con mèo bỏ hết mọi thứ và đuổi theo một con gặm nhấm, không cần bạn bảo và không cần cấp Săn nào cả. Chuyện đó không kéo dài lâu, và nó tự quay về, thường là <strong>cùng với con chuột</strong>, thứ nó thả xuống dưới chân bạn. Trong lúc chạy nó từ chối mệnh lệnh, <strong>trừ Lại đây</strong>, lệnh này hủy sự phân tâm ngay lập tức. Sau khi giết xong nó lại nghe lời bình thường: cuộc rượt đuổi là bản năng, còn việc mang về chỉ là mang về. Không giống chó nào trong mod bị phân tâm kiểu này, và không có công tắc nào cả: đó là cái giá của việc nuôi mèo.</p>
-<p><strong>«Mèo săn cái gì, chính xác thì?»</strong> Loài gặm nhấm và <strong>thỏ</strong>, không có gì lớn hơn thế. Hươu nai là <strong>vô hình</strong> với nó: nó thậm chí không chỉ. Và vật nuôi của bạn không bao giờ được tính vào: gà, bò và bất cứ thứ gì trong chuồng đều nằm ngoài tầm với của mọi người bạn đồng hành, chó hay mèo. Muốn săn thú lớn và muốn tha mồi về, chó phải là Labrador hoặc Golden.</p>
-<p><strong>«Làm sao để có mèo con?»</strong> Không có. Mèo không sinh sản, cả với chó lẫn với mèo khác. Mọi con mèo trong ván chơi của bạn đều đến từ thế giới.</p>
-<p><strong>«Năm màu lông có chỉ số khác nhau không?»</strong> Không, không hề. Cùng kỹ năng, cùng moodle, cùng khoảng đặc điểm, cùng tiếng kêu. Màu lông chỉ là bề ngoài, và bạn gặp màu nào là do may rủi.</p>
-<p><strong>«Mèo của tôi trở nên bất tuân quá nhanh.»</strong> Đó là do loài. Sự gắn bó của mèo giảm <strong>nhanh hơn 50%</strong> so với chó khi bạn biến mất hoặc lơ là chăm sóc, ngược hẳn với Pug. Mèo đòi hỏi sự có mặt: vuốt ve, thức ăn và nước, đều đặn.</p>
-<p><strong>«Tôi không còn thức dậy cùng quà nữa.»</strong> Hãy nhìn các thanh của nó. Mèo <strong>đói hoặc khát từ 75% trở lên</strong>, bị bệnh, bất tuân hoặc đang hoảng loạn thì không ra ngoài ban đêm, và thất bại đó diễn ra lặng lẽ. Cũng nhớ rằng đây là <strong>một lần mỗi ngày, mỗi chủ</strong>: hai con mèo không cho hai món quà.</p></article></main>
+<p><strong><span class="ig">Giống nào là tốt nhất?</span></strong> Tùy bạn làm gì. Để đánh nhau thì Chó chăn cừu Đức hoặc Rottweiler. Để đi săn thì Chó Labrador. Để chở đồ thì Husky. Để làm nông thì Border Collie. Để dùng súng thì Chó Doberman. Chó cỏ có chỉ số tệ nhất, nhưng biểu tượng tâm trạng của nó vẫn hữu ích.</p>
+<p><strong><span class="ig">Chó cỏ của tôi có thể mạnh lên nhờ huấn luyện không?</span></strong> Không. Nó không bao giờ giết được zombie, dù có luyện tới đâu. Huấn luyện làm tăng Vâng lời, Đánh hơi và Săn mồi, và ở những thứ đó nó tiến bộ như bất kỳ con nào khác.</p>
+<p><strong><span class="ig">Tôi tìm được hai con cùng giống, nên bắt con nào?</span></strong> Không thể biết trước: các đặc tính được bốc ngẫu nhiên ngay lúc thuần hóa. Cứ thuần hóa rồi xem mục <strong><span class="ig">Đặc tính</span></strong> trong cửa sổ.</p>
+<p><strong><span class="ig">Tôi bắt được một con có đặc tính xấu. Thả ra rồi thuần hóa lại được không?</span></strong> Không ăn thua. Gen chỉ được bốc một lần, ở lần thuần hóa đầu tiên, và con chó giữ nguyên bộ gen đó sau khi thả rồi thuần hóa lại (kỹ năng cũng giữ luôn). Muốn có lượt bốc khác thì thuần hóa một con khác. Muốn cải thiện dần theo thời gian thì con đường là <a href="#9-chó-lai-phối-hai-giống-khác-nhau">phối giống</a>.</p>
+<p><strong><span class="ig">Tôi có thể có hai biểu tượng tâm trạng của giống cùng lúc không?</span></strong> Không. Chỉ con chó gần nhất được tính. <strong><span class="ig">Ngủ ngon</span></strong> là ngoại lệ, vì nó không phụ thuộc khoảng cách.</p>
+<p><strong><span class="ig">Sao biểu tượng tâm trạng biến mất?</span></strong> Gần như luôn là đói hoặc khát trên 75%, hoặc trung thành dưới sàn. Hãy cho ăn, cho uống và vuốt ve. Cũng kiểm tra xem con chó có ở trong 8 ô và cùng tầng hay không.</p>
+<p><strong><span class="ig">Có giống nào chạy nhanh hơn không?</span></strong> Không.</p>
+<p><strong><span class="ig">Có Husky màu khác không?</span></strong> Không. Mỗi giống chỉ có một texture, và con đực với con cái dùng chung. Mèo có năm bộ lông, nhưng mỗi bộ là một giống riêng.</p>
+<p><strong><span class="ig">Chó to thì cắn mạnh hơn à?</span></strong> Không. Kích cỡ chỉ là hình thức và không tham gia vào phép tính sát thương.</p>
+<p><strong><span class="ig">Tìm Chó Doberman ở đâu?</span></strong> Đồn cảnh sát. Công trình quân sự có tỉ lệ cao hơn một chút, nhưng bản đồ gốc của game gần như không có công trình quân sự.</p>
+<p><strong><span class="ig">Tôi cài Chó Labrador mà chẳng thấy con nào.</span></strong> Kiểm tra phiên bản mod nền Companion Dogs: Labrador cần bản 0.6.6 trở lên. Cũng kiểm tra xem những căn nhà trong vùng đã được khám phá chưa: lượt bốc xuất hiện diễn ra một lần cho mỗi công trình và không lặp lại.</p>
+<p><strong><span class="ig">Con lai của tôi không có biểu tượng tâm trạng của cả hai giống.</span></strong> Đó là điều bình thường. Với các cơ chế, một con lai chính là cái giống mà nó trông giống. Việc lai chỉ đổi khoảng gen của lũ con và cái nhãn phần trăm trong cửa sổ.</p>
+<p><strong><span class="ig">Mèo có tốt hơn chó không?</span></strong> Nó làm việc khác. Canh xa hơn bất kỳ con chó nào, trong im lặng, và là người bạn duy nhất hái lượm ban đêm. Đổi lại, nó không đánh nhau, chở được rất ít và chỉ sinh sản với mèo khác.</p>
+<p><strong><span class="ig">Sao tôi không sai được con mèo đi canh gác?</span></strong> Chế độ đó không tồn tại với mèo, nên cái nút không hiện ra. Mèo không có Chiến đấu: không canh gác, không bảo vệ và không tấn công zombie, kể cả khi bạn bị đánh ngay bên cạnh nó.</p>
+<p><strong><span class="ig">Con mèo của tôi tự chạy đi và không nghe lời nữa.</span></strong> Nó thấy một con chuột. Trong lúc chạy, nó từ chối mọi lệnh, trừ <strong><span class="ig">Lại đây</span></strong>. Nó tự quay về, thường là kèm con chuột, và không có cách nào tắt chuyện này.</p>
+<p><strong><span class="ig">Chính xác thì mèo săn gì?</span></strong> Loài gặm nhấm và thỏ. Hươu thì nó còn chẳng chỉ. Vật nuôi (gà, bò, bất cứ thứ gì trong chuồng) nằm ngoài với mọi người bạn đồng hành, chó hay mèo cũng vậy. Với thú lớn và với việc mang về, hãy dùng Labrador hoặc Golden Retriever.</p>
+<p><strong><span class="ig">Làm sao để có mèo con?</span></strong> Cùng cách với chó con: một con đực và một con cái của bạn, đã trưởng thành, trung thành, được cho ăn đầy đủ và ở gần nhau. Mèo chỉ sinh sản với mèo.</p>
+<p><strong><span class="ig">Năm bộ lông có chỉ số khác nhau không?</span></strong> Không. Cùng kỹ năng, cùng biểu tượng tâm trạng, cùng khoảng đặc tính, cùng tiếng kêu. Bộ nào xuất hiện là do bốc thăm.</p>
+<p><strong><span class="ig">Con mèo của tôi thành không nghe lời nhanh quá.</span></strong> Gắn kết của mèo tụt nhanh hơn của chó 50% khi bạn biến mất hoặc để việc chăm sóc sang một bên (chó Pug thì ngược lại). Vuốt ve, thức ăn và nước đều đặn sẽ giữ được lòng trung thành.</p>
+<p><strong><span class="ig">Tôi không còn thức dậy thấy quà nữa.</span></strong> Hãy xem các thanh của nó. Mèo đang đói hoặc khát từ 75% trở lên, đang bệnh, không nghe lời hoặc đang hoảng loạn thì ban đêm không đi, và game không báo gì cả. Mỗi ngày một món quà, cho mỗi chủ.</p>
+<p><strong><span class="ig">Tôi muốn dùng mod khác để tạo ra một con chó, phải dùng tên gì?</span></strong> Tên nội bộ, không phải tên hiện trên màn hình. Danh sách nằm trong <a href="#6-bảng-so-sánh">Bảng so sánh</a>, ở cuối mục đó.</p></article></main>
 </div>
 
 <script>

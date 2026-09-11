@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -406,7 +406,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <aside class="rail" id="rail">
     <div class="railhead">Inhalt &middot; <b>Rassen</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-was-eine-rasse-wirklich-verändert" data-id="1-was-eine-rasse-wirklich-verändert">1. Was eine Rasse wirklich verändert</a>
+<a class="s2" href="#1-was-eine-rasse-wirklich-ändert" data-id="1-was-eine-rasse-wirklich-ändert">1. Was eine Rasse wirklich ändert</a>
 <div class="sub">
 <a class="s3" href="#größe-und-stärke-sind-nicht-dasselbe" data-id="größe-und-stärke-sind-nicht-dasselbe">Größe und Stärke sind nicht dasselbe</a>
 <a class="s3" href="#eine-rasse-ein-aussehen" data-id="eine-rasse-ein-aussehen">Eine Rasse, ein Aussehen</a>
@@ -415,7 +415,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#2-schnelle-wahl" data-id="2-schnelle-wahl">2. Schnelle Wahl</a>
 <div class="sub">
-<a class="s3" href="#die-kurzfassung-je-eine-zeile" data-id="die-kurzfassung-je-eine-zeile">Die Kurzfassung, je eine Zeile</a>
+<a class="s3" href="#die-zusammenfassung-in-je-einer-zeile" data-id="die-zusammenfassung-in-je-einer-zeile">Die Zusammenfassung in je einer Zeile</a>
 </div>
 </div>
 <div class="grp">
@@ -443,21 +443,21 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#was-sie-nicht-tut" data-id="was-sie-nicht-tut">Was sie NICHT tut</a>
 <a class="s3" href="#was-sie-besser-kann-als-jeder-hund" data-id="was-sie-besser-kann-als-jeder-hund">Was sie besser kann als jeder Hund</a>
 <a class="s3" href="#der-preis" data-id="der-preis">Der Preis</a>
-<a class="s3" href="#die-fünf-felle" data-id="die-fünf-felle">Die fünf Felle</a>
-<a class="s3" href="#das-nachtgeschenk" data-id="das-nachtgeschenk">Das Nachtgeschenk</a>
+<a class="s3" href="#die-fünf-fellfarben" data-id="die-fünf-fellfarben">Die fünf Fellfarben</a>
+<a class="s3" href="#das-nächtliche-geschenk" data-id="das-nächtliche-geschenk">Das nächtliche Geschenk</a>
 </div>
 </div>
 <div class="grp">
 <a class="s2" href="#6-vergleichstabellen" data-id="6-vergleichstabellen">6. Vergleichstabellen</a>
 <div class="sub">
-<a class="s3" href="#lerngeschwindigkeit" data-id="lerngeschwindigkeit">Lerngeschwindigkeit</a>
+<a class="s3" href="#lerntempo" data-id="lerntempo">Lerntempo</a>
 <a class="s3" href="#kampf" data-id="kampf">Kampf</a>
 <a class="s3" href="#nerven-im-kampf" data-id="nerven-im-kampf">Nerven im Kampf</a>
 <a class="s3" href="#anlagen-spannen-bei-der-geburt" data-id="anlagen-spannen-bei-der-geburt">Anlagen (Spannen bei der Geburt)</a>
 <a class="s3" href="#satteltaschen" data-id="satteltaschen">Satteltaschen</a>
 <a class="s3" href="#wurfgröße" data-id="wurfgröße">Wurfgröße</a>
-<a class="s3" href="#wo-du-welche-rasse-findest" data-id="wo-du-welche-rasse-findest">Wo du welche Rasse findest</a>
-<a class="s3" href="#interne-rassennamen" data-id="interne-rassennamen">Interne Rassennamen</a>
+<a class="s3" href="#wo-du-jede-rasse-findest" data-id="wo-du-jede-rasse-findest">Wo du jede Rasse findest</a>
+<a class="s3" href="#interne-namen-der-rassen" data-id="interne-namen-der-rassen">Interne Namen der Rassen</a>
 </div>
 </div>
 <div class="grp">
@@ -471,7 +471,6 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#8-anlagen-die-gene" data-id="8-anlagen-die-gene">8. Anlagen (die Gene)</a>
 <div class="sub">
-<a class="s3" href="#die-bezeichnungen-lesen" data-id="die-bezeichnungen-lesen">Die Bezeichnungen lesen</a>
 <a class="s3" href="#wie-viel-das-wirklich-ausmacht" data-id="wie-viel-das-wirklich-ausmacht">Wie viel das wirklich ausmacht</a>
 </div>
 </div>
@@ -479,8 +478,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-mischlinge-verschiedene-rassen-kreuzen" data-id="9-mischlinge-verschiedene-rassen-kreuzen">9. Mischlinge: verschiedene Rassen kreuzen</a>
 <div class="sub">
 <a class="s3" href="#was-mit-dem-welpen-passiert" data-id="was-mit-dem-welpen-passiert">Was mit dem Welpen passiert</a>
-<a class="s3" href="#das-label-mischling" data-id="das-label-mischling">Das Label "Mischling"</a>
-<a class="s3" href="#lohnt-es-sich-verschiedene-rassen-zu-kreuzen" data-id="lohnt-es-sich-verschiedene-rassen-zu-kreuzen">Lohnt es sich, verschiedene Rassen zu kreuzen?</a>
+<a class="s3" href="#die-beschriftung-mischling" data-id="die-beschriftung-mischling">Die Beschriftung "Mischling"</a>
 </div>
 </div>
 <div class="grp">
@@ -491,34 +489,34 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-rassenhandbuch">Companion Dogs: Rassenhandbuch</h1>
-<p>Ein Überblick über alle Rassen: worin jede am besten ist, die moodles, die Anlagen und wie du die richtige für dein Spiel aussuchst.</p>
-<p>Wenn du wissen willst, <strong>wie der Mod funktioniert</strong> (zähmen, Befehle, Futter, Satteltaschen, Kunststücke, Jagd), schau ins andere Handbuch: <a href="features.html" class="xlink">Funktionen</a>.</p>
-<blockquote class="quote"><strong>Die Zahlen in diesem Handbuch gehen von den Standardoptionen aus.</strong> Schaltet der Server <strong><span class="ig">Fähigkeiten und Training</span></strong> ab, hören die Rassen auf, sich <strong>weiterzuentwickeln</strong>: Die Fähigkeiten bleiben auf null stehen, die Schadenskurve pro Stufe wird generisch, und die vier Kunststücke schalten sich alle auf einmal frei (der Mod behandelt dann jeden Hund wie Gehorsam 10). Was die Rasse <strong>von Geburt an</strong> mitbringt, gilt weiterhin: die Grundstärke des Bisses, das Umwerfen, die Nerven im Kampf, das eigene moodle, die Satteltaschen und die Wurfgröße. Was die Kunststücke ausblendet, ist die eigene Option <strong><span class="ig">Gehorsams-Kunststücke</span></strong>.</blockquote>
-<h2 id="1-was-eine-rasse-wirklich-verändert">1. Was eine Rasse wirklich verändert</h2>
-<p>Eine Rasse greift in <strong>sieben Dinge</strong> ein, und in nichts sonst:</p>
+<p>Ein Leitfaden zu allen Rassen: worin jede am besten ist, die Moodles, die Anlagen und wie du die richtige für dein Spiel findest.</p>
+<p>Wie der Mod funktioniert (zähmen, Befehle, Futter, Satteltaschen, Kunststücke, Jagd), steht im anderen Handbuch: <a href="features.html" class="xlink">Funktionen</a>.</p>
+<blockquote class="quote">Die Zahlen in diesem Handbuch gehen von den Standardoptionen aus. Schaltet der Server <strong><span class="ig">Fähigkeiten und Training</span></strong> ab, entwickeln sich die Rassen nicht mehr weiter: Die Fähigkeiten bleiben auf null stehen, die Schadenskurve pro Stufe wird generisch und die vier Kunststücke schalten alle auf einmal frei (der Mod behandelt dann jeden Hund wie Gehorsam 10). Was die Rasse von Geburt an mitbringt, gilt weiter: Grundstärke des Bisses, Umwerfen, Nerven im Kampf, eigenes Moodle, Satteltaschen und Wurfgröße. Die Kunststücke blendet eine eigene Option aus, <strong><span class="ig">Gehorsams-Kunststücke</span></strong>.</blockquote>
+<h2 id="1-was-eine-rasse-wirklich-ändert">1. Was eine Rasse wirklich ändert</h2>
+<p>Eine Rasse greift in sieben Dinge ein:</p>
 <div class="tw"><table><thead><tr>
 <th>Was sich ändert</th>
 <th>Erklärung</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Lerntempo</strong></td>
-<td>Jede Rasse lernt jede der 5 Fähigkeiten unterschiedlich schnell. Das prägt eine Rasse am stärksten</td>
+<td>Jede Rasse steigert jede der 5 Fähigkeiten in ihrem eigenen Tempo. Der größte Unterschied zwischen den Rassen</td>
 </tr>
 <tr>
 <td><strong>Bissstärke</strong></td>
-<td>Wie viel Schaden ein Biss macht, und wie viel davon erst durch Training dazukommt</td>
+<td>Wie viel Schaden pro Biss, und wie viel davon erst mit Training kommt</td>
 </tr>
 <tr>
 <td><strong>Nerven im Kampf</strong></td>
-<td>Wie viel Stress er beim Kämpfen aufbaut und ab wann er in Panik gerät und aufhört</td>
+<td>Wie viel Stress er beim Kämpfen ansammelt und ab wann er in Panik gerät und aufhört</td>
 </tr>
 <tr>
 <td><strong>Die Anlagen (Gene)</strong></td>
-<td>Der Bereich von Stärke, Aggressivität und Widerstandskraft, in dem er geboren werden kann</td>
+<td>Die Spanne für Stärke, Aggressivität und Widerstandskraft, in der er geboren werden kann</td>
 </tr>
 <tr>
-<td><strong>Eigenes moodle</strong></td>
-<td>Ein Bonus für <strong>dich</strong>, solange der Hund in der Nähe, satt und loyal ist</td>
+<td><strong>Eigenes Moodle</strong></td>
+<td>Ein Bonus für dich, solange der Hund in der Nähe, satt und loyal ist</td>
 </tr>
 <tr>
 <td><strong>Wurfgröße</strong></td>
@@ -529,396 +527,381 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Jede Rasse hat ihre eigenen Orte</td>
 </tr>
 </tbody></table></div>
-<p>Und das ändert sich <strong>NICHT</strong> je nach Rasse, auch wenn viele es vermuten:</p>
+<p>Was sich nicht nach Rasse ändert:</p>
 <ul>
-<li><strong>Die Laufgeschwindigkeit.</strong> Es gibt keine schnellere Rasse. Alle laufen gleich schnell.</li>
-<li><strong>Die Reichweite von Wachdienst, Spürsinn und Jagd.</strong> Sie hängen allein von der Fähigkeitsstufe ab. Die Rasse ändert nur, wie schnell er dort ankommt, nicht die Obergrenze.</li>
-<li><strong>Die Kunststücke.</strong> Alle vier schalten sich über die Gehorsamsstufe frei, für jeden Hund gleich.</li>
-<li><strong>Hunger und Durst.</strong> Das Tempo ist bei allen Rassen dasselbe (auch beim Husky, siehe seinen Steckbrief).</li>
-<li><strong>Die Kapazität der Satteltaschen</strong>, außer beim Husky, der als Einziger einen Rassenbonus hat.</li>
-<li><strong>Die Körpergröße ist nicht die Stärke.</strong> Das sind zwei verschiedene Dinge, und man verwechselt sie leicht, weil sie meistens zusammen auftreten. Siehe unten.</li>
+<li>Lauftempo. Alle Rassen rennen gleich schnell.</li>
+<li>Reichweite von Wachdienst, Spürsinn und Jagd. Sie hängen nur an der Stufe der Fähigkeit.</li>
+<li>Die Kunststücke. Alle vier schalten über Gehorsam frei, bei jeder Rasse gleich.</li>
+<li>Hunger und Durst. Das Tempo ist bei allen Rassen gleich, Husky eingeschlossen (siehe sein Profil).</li>
+<li>Kapazität der Satteltaschen, außer beim Husky.</li>
+<li>Körpergröße. Sie hat mit der Stärke nichts zu tun.</li>
 </ul>
-<blockquote class="quote"><strong>Es gibt eine Ausnahme, und sie ist kein Hund.</strong> Die <a href="#5-die-katze-die-erste-andere-art">Katze</a> verändert eine achte Sache, die keine Hunderasse berührt: <strong>welche Aufgaben es überhaupt gibt</strong>. Sie kämpft nicht, hütet kein Vieh und paart sich nicht. Die Mechaniken werden für sie nicht schlechter, sie verschwinden. Solange du Hunde miteinander vergleichst, gilt die Liste der sieben Punkte oben vollständig.</blockquote>
+<blockquote class="quote">Die <a href="#5-die-katze-die-erste-andere-art">Katze</a> ist die Ausnahme. Zusätzlich zu diesen sieben Dingen ändert sie, welche Aufgaben es überhaupt gibt: Sie kämpft nicht, versorgt kein Vieh und paart sich nur mit einer anderen Katze. Die Oberfläche zeigt den Knopf gar nicht erst an.</blockquote>
 <h3 id="größe-und-stärke-sind-nicht-dasselbe">Größe und Stärke sind nicht dasselbe</h3>
-<p>Die <strong>Stärke</strong> ist ein Gen und macht wirklich einen Unterschied: Sie erhöht den Bissschaden um bis zu <strong>30%</strong>, und sie bestimmt die Kapazität der Satteltaschen.</p>
-<p>Die <strong>Körpergröße</strong> ist etwas anderes. Sie kommt aus einem eigenen Gen des Spiels, das der Mod weder auswürfelt noch anfasst, dazu aus dem natürlichen Wachstum des Welpen bis zur Erwachsenengröße. Zwei Hunde derselben Rasse können unterschiedlich groß sein, ohne dass sich ihre Stärke unterscheidet, und ein Hund, der größer ist als ein anderer <strong>derselben Rasse</strong>, schlägt deswegen nicht härter zu.</p>
-<p>Verwirrend ist das, weil die <strong>Rasse</strong> beides gleichzeitig festlegt, jedes für sich: Ein Deutscher Schäferhund ist groß <strong>und</strong> wird stark geboren, ein Caramelo ist klein <strong>und</strong> wird schwach geboren. Im Vergleich von Rasse zu Rasse schlägt der größere Hund also tatsächlich meist härter zu. Nur ist die Ursache die Rasse und nicht die Größe: Ein Blick auf den Wuchs sagt nichts über die Stärke eines einzelnen Hundes. Dafür gibt es die Stärke-Leiste unter Anlagen im Hundefenster.</p>
+<p>Die Stärke ist ein Gen. Sie erhöht den Bissschaden um bis zu 30 % und bestimmt die Kapazität der Satteltaschen.</p>
+<p>Die Körpergröße kommt aus einem eigenen Gen des Spiels, das der Mod weder auswürfelt noch anfasst, plus dem Wachstum des Welpen bis zur ausgewachsenen Größe der Rasse. Zwei Hunde derselben Rasse können bei gleicher Stärke unterschiedlich groß sein, und der größere beißt deswegen nicht härter.</p>
+<p>Die Rasse legt beides zugleich fest, jedes für sich: Ein Deutscher Schäferhund ist groß und kommt stark zur Welt, ein Caramelo ist klein und kommt schwach zur Welt. Die Stärke eines einzelnen Hundes steht im Balken Stärke, im Abschnitt Anlagen seines Fensters.</p>
 <h3 id="eine-rasse-ein-aussehen">Eine Rasse, ein Aussehen</h3>
-<p><strong>Innerhalb einer Rasse gibt es keine Farbvarianten.</strong> Jede Rasse hat genau eine Textur, und Rüde wie Hündin verwenden dieselbe. Ein Husky sieht immer gleich aus.</p>
-<p>Ein Welpe kommt bei jeder Rasse in derselben verkleinerten Größe zur Welt und wächst dann auf die Erwachsenengröße seiner Rasse heran.</p>
-<hr>
-<p>Die <strong>fünf Katzen</strong> sind keine Ausnahme, so sehr sie auch danach aussehen: schwarz, weiß, orange, Glückskatze und Smoking sind <strong>fünf Rassen</strong>, jede mit ihrer eigenen einzigen Textur. Es ist nicht eine Katze in fünf Farben.</p>
+<p>Jede Rasse hat genau eine Textur, und Rüde wie Hündin nutzen dieselbe. Die fünf Katzen sind <a href="#die-fünf-fellfarben">fünf Rassen</a>, nicht eine Katze in fünf Farben.</p>
+<p>Ein Welpe kommt bei jeder Rasse in derselben verkleinerten Größe zur Welt und wächst bis zur ausgewachsenen Größe seiner Rasse.</p>
 <h2 id="2-schnelle-wahl">2. Schnelle Wahl</h2>
 <div class="tw"><table><thead><tr>
 <th>Wenn du willst...</th>
 <th>Nimm</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>Die ersten Tage mit dem überstehen, was gerade da ist</strong></td>
-<td><strong>Caramelo</strong></td>
+<td><strong>Die ersten Tage mit dem überleben, was gerade da ist</strong></td>
+<td>Caramelo</td>
 </tr>
 <tr>
-<td><strong>Einen Hund, der die Stellung hält und einen Zombie allein erledigt</strong></td>
-<td><strong>Deutscher Schäferhund</strong> oder <strong>Rottweiler</strong></td>
+<td><strong>Einen Hund, der die Linie hält und Zombies allein erledigt</strong></td>
+<td>Deutscher Schäferhund oder Rottweiler</td>
 </tr>
 <tr>
 <td><strong>Fleisch jagen</strong></td>
-<td><strong>Golden Retriever</strong> oder <strong>Labrador</strong></td>
+<td>Golden Retriever oder Labrador</td>
 </tr>
 <tr>
-<td><strong>Gegenstände tragen</strong></td>
-<td><strong>Husky</strong>, ohne Diskussion</td>
+<td><strong>Beute schleppen</strong></td>
+<td>Husky</td>
 </tr>
 <tr>
-<td><strong>Den Hof versorgen, während du unterwegs bist</strong></td>
-<td><strong>Border Collie</strong></td>
+<td><strong>Den Hof versorgen lassen, während du unterwegs bist</strong></td>
+<td>Border Collie</td>
 </tr>
 <tr>
 <td><strong>Besser schießen</strong></td>
-<td><strong>Dobermann</strong></td>
+<td>Dobermann</td>
 </tr>
 <tr>
 <td><strong>Länger im Nahkampf durchhalten</strong></td>
-<td><strong>Rottweiler</strong></td>
+<td>Rottweiler</td>
 </tr>
 <tr>
-<td><strong>Weniger Langeweile und Traurigkeit</strong></td>
-<td><strong>Mops</strong>, und der <strong>Caramelo</strong> gratis</td>
+<td><strong>Weniger Langeweile und Unglück</strong></td>
+<td>Mops, oder der Caramelo, der schon im Basis-Mod steckt</td>
 </tr>
 <tr>
 <td><strong>Weniger Stress</strong></td>
-<td><strong>Mops</strong> oder <strong>Dobermann</strong></td>
+<td>Mops oder Dobermann</td>
 </tr>
 <tr>
 <td><strong>Weniger Panik</strong></td>
-<td><strong>Deutscher Schäferhund</strong></td>
+<td>Deutscher Schäferhund</td>
 </tr>
 <tr>
 <td><strong>Früher vor Zombies gewarnt werden</strong></td>
-<td><strong>Mops</strong>, wenn du das Bellen aushältst</td>
-</tr>
-<tr>
-<td><strong>Mehr bei der Nahrungssuche finden</strong></td>
-<td><strong>Golden Retriever</strong></td>
+<td>Mops (die Warnung ist Bellen)</td>
 </tr>
 <tr>
 <td><strong>So früh wie möglich gewarnt werden, und lautlos</strong></td>
-<td><strong>Katze</strong></td>
+<td>Katze</td>
+</tr>
+<tr>
+<td><strong>Mehr sammeln</strong></td>
+<td>Golden Retriever</td>
 </tr>
 <tr>
 <td><strong>Nachts sammeln</strong></td>
-<td><strong>Katze</strong>, und es gibt keinen zweiten Platz</td>
+<td>Katze</td>
 </tr>
 <tr>
-<td><strong>Ein Begleiter, der deine Position nicht verrät</strong></td>
-<td><strong>Katze</strong></td>
+<td><strong>Einen Begleiter, der deine Position nicht verrät</strong></td>
+<td>Katze</td>
 </tr>
 <tr>
 <td><strong>Nicht erfrieren</strong></td>
-<td><strong>Husky</strong></td>
+<td>Husky</td>
 </tr>
 </tbody></table></div>
-<h3 id="die-kurzfassung-je-eine-zeile">Die Kurzfassung, je eine Zeile</h3>
+<h3 id="die-zusammenfassung-in-je-einer-zeile">Die Zusammenfassung in je einer Zeile</h3>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
 <th>In einer Zeile</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Caramelo</strong></td>
-<td>Der bescheidene Mischling. Schwach, wirft aber Zombies um und leistet echte Gesellschaft</td>
+<td>Der häufigste Mischling der Karte. Schwacher Biss, wirft Zombies aber um</td>
 </tr>
 <tr>
 <td><strong>Deutscher Schäferhund</strong></td>
-<td>Der Soldat. Schlägt hart zu und gerät so gut wie nie in Panik</td>
+<td>Die Kampfrasse des Basis-Mods. Schlägt hart zu</td>
 </tr>
 <tr>
 <td><strong>Golden Retriever</strong></td>
-<td>Der Jäger mit der feinen Nase, der obendrein deine Nahrungssuche verbessert</td>
+<td>Jäger mit feiner Nase</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td>Das Lasttier, das dich im Winter wärmt. Störrisch</td>
+<td>Lasthund, der langsam lernt</td>
 </tr>
 <tr>
 <td><strong>Border Collie</strong></td>
-<td>Der Angestellte auf dem Hof</td>
+<td>Versorgt das Vieh auf dem Hof allein</td>
 </tr>
 <tr>
 <td><strong>Rottweiler</strong></td>
-<td>Der Krieger, der dir im Nahkampf Ausdauer spart</td>
+<td>Nahkämpfer</td>
 </tr>
 <tr>
 <td><strong>Dobermann</strong></td>
-<td>Der Schützenhund: weniger Rückstoß, schnelleres Nachladen, ruhige Nerven</td>
+<td>Die Schussrasse: weniger Rückstoß und schnelleres Nachladen</td>
 </tr>
 <tr>
 <td><strong>Labrador</strong></td>
-<td>Der Apportierer: der schlechteste Kämpfer im Mod, der beste Beutebringer</td>
+<td>Einer der schlechtesten Kämpfer des Mods und der beste im Apportieren von Beute</td>
 </tr>
 <tr>
 <td><strong>Mops</strong></td>
-<td>Der Haushund. Draußen zu nichts zu gebrauchen und der beste Begleiter, den es gibt</td>
+<td>Haushund. Taugt weder zum Kampf noch zur Arbeit draußen</td>
 </tr>
 <tr>
 <td><strong>Katze</strong></td>
-<td>Kein Hund. Kämpft nicht, paart sich nicht, hütet kein Vieh: wacht weiter als alle anderen, lautlos, und sieht im Dunkeln für dich</td>
+<td>Eine andere Art. Kämpft nicht, geht nicht ins Gehege und paart sich nur mit einer Katze. Hält weiter Wache als alle anderen, und das lautlos</td>
 </tr>
 </tbody></table></div>
 <h2 id="3-die-fünf-rassen-des-basis-mods">3. Die fünf Rassen des Basis-Mods</h2>
-<p>Die kommen zusammen mit dem Haupt-Mod, ohne dass du sonst etwas installieren musst.</p>
+<p>Diese kommen mit dem Haupt-Mod, ohne dass du noch etwas installieren musst.</p>
 <hr>
 <h3 id="caramelo">Caramelo</h3>
-<p><strong>Der brasilianische Straßenmischling.</strong> Das ist der Hund, den du zuerst findest, und wahrscheinlich dein erster Begleiter.</p>
+<p>Der Mischling des Basis-Mods.</p>
 <blockquote class="quote quote-game"><em>"Der Caramelo ist eine einfache Alltagsrasse, der Mischling, den man überall in den Städten findet. Er hat keine besonderen Fähigkeiten und ist von Natur aus schwach: Einen Zombie kann er nicht allein töten, sondern nur umwerfen und dir so Zeit verschaffen."</em></blockquote>
-<p><strong>Wo du ihn findest:</strong> in Wohnhäusern, in der Stadt oder im Wohngebiet. <strong>10% pro Haus</strong>, die häufigste Rasse im Spiel.</p>
-<p><strong>Lernt:</strong> alles mit normaler Geschwindigkeit. Es gibt nichts, worin er heraussticht, und nichts, worin er schlecht ist.</p>
-<p><strong>Im Kampf:</strong> er ist der <strong>einzige Hund, der einen Zombie nicht erledigen kann</strong>. Sein Biss lässt den Zombie fast tot liegen, und da hört es auf. Das ist Absicht, und <strong>keine Sandbox-Einstellung ändert daran etwas</strong>. Dafür <strong>wirft er um</strong>, und einen Zombie umzuwerfen ist genau das, was dir Zeit zum Fliehen oder Zuschlagen kauft.</p>
-<p>Er ist außerdem der <strong>nervöseste Hund im Mod</strong>: Im Kampf sammelt er fünfmal schneller Stress als ein Deutscher Schäferhund, und er gerät als Erster in Panik.</p>
-<p><strong>Anlagen:</strong> die schwächsten von allen. Im Hundefenster zeigt er <strong>Niedrig</strong> bei Stärke, Aggressivität und Widerstandskraft, <strong>immer</strong>, bei jedem Caramelo, den du zähmst. Es bringt nichts, nach einem <span class="ig">guten</span> Caramelo zu suchen.</p>
-<p><strong>Wurf:</strong> <strong>2 bis 4 Welpen</strong>, der größte im Mod. Wenn du eine Zucht aufbauen willst, ist das die Rasse, die am meisten liefert.</p>
-<p><strong>Satteltaschen:</strong> 4 bis 5 Ladung. Die kleinsten.</p>
+<p><strong>Wo du ihn findest:</strong> Wohnhaus, in der Stadt oder im Wohngebiet. 3 % pro Haus, die häufigste Rasse im Spiel.</p>
+<p><strong>Lernt:</strong> alles in normalem Tempo.</p>
+<p><strong>Im Kampf:</strong> Er ist der einzige Hund, der einen Zombie nicht erledigt. Sein Biss bringt den Zombie fast bis zum Tod und hört dort auf, und keine Sandbox-Einstellung ändert das.</p>
+<p>Er ist außerdem der nervöseste Hund des Mods: Er sammelt im Kampf fünfmal schneller Stress an als ein Deutscher Schäferhund und gerät als Erster in Panik.</p>
+<p><strong>Anlagen:</strong> die schwächsten des Mods, immer Niedrig in allen dreien.</p>
+<p><strong>Wurf:</strong> 2 bis 4 Welpen, der größte des Mods. <strong>Satteltaschen:</strong> 4 bis 5 Ladung, die kleinsten.</p>
 <p><strong>Moodle: <span class="ig">Gute Gesellschaft</span></strong></p>
 <blockquote class="quote quote-game"><em>"Der Caramelo ist ein herrlich anhänglicher, charismatischer Mischling. Seine treue Gesellschaft hebt die Stimmung, sodass Traurigkeit und Langeweile schneller vergehen, solange er in der Nähe ist."</em></blockquote>
-<p>Senkt durchgehend <strong>Unglücklich und Gelangweilt</strong>, solange er in der Nähe bleibt. Im Alltag ist das einer der nützlichsten Moodles des Mods, weil Langeweile und Traurigkeit in Zomboid ständige Probleme sind und sich anders nur teuer lösen lassen.</p>
-<p><strong>Für wen er ist:</strong> am Anfang für alle. Und er bleibt auch später gut, weil sein Moodle ein Problem löst, das keine andere Rasse löst. Verlass dich nur nicht darauf, dass er irgendetwas tötet.</p>
+<p>Senkt Unglück und Langeweile laufend, solange er in der Nähe ist.</p>
+<p><strong>Für wen er ist:</strong> für alle, am Anfang. Danach bleibt er wegen des Moodles nützlich, das keine andere Rasse hat.</p>
 <hr>
 <h3 id="deutscher-schäferhund">Deutscher Schäferhund</h3>
-<p><strong>Der Kriegshund.</strong> Die Kampfrasse des Basis-Mods.</p>
-<blockquote class="quote quote-game"><em>"Ein kraftvoller, intelligenter Gebrauchshund. Von Geburt an deutlich stärker und zäher als der Caramelo, lernt er Kampf und Gehorsam schnell, verliert im Kampf kaum die Nerven, hält einer Horde stand, ohne in Panik zu geraten, und kann einen Zombie allein zur Strecke bringen."</em></blockquote>
-<p><strong>Wo du ihn findest:</strong> Polizeirevier, Gefängnis, Arrestzelle, Militärbasis, Kaserne, Waffenladen, Munitionsdepot. <strong>20% pro Gebäude.</strong> In Wohnhäusern taucht er nicht auf. Du musst ihn dir holen.</p>
-<p><strong>Lernt:</strong> <strong>Kampf doppelt so schnell</strong> und Gehorsam 50% schneller. Jagd geht auch etwas schneller. Das ist die Rasse, die am zügigsten stark wird.</p>
-<p><strong>Im Kampf:</strong> der stärkste Biss im Basis-Mod, und er <strong>tötet einen Zombie allein</strong>. Sein eigentlicher Vorteil ist aber gar nicht der Schaden, sondern das <strong>Nervenkostüm</strong>. Er sammelt <strong>fünfmal langsamer</strong> Stress als der Caramelo, und der Punkt, an dem er in Panik gerät, ist der höchste im Mod. In der Praxis heißt das: <strong>Er kämpft in Situationen weiter, in denen jede andere Rasse längst dichtgemacht hätte</strong>.</p>
-<p><strong>Anlagen:</strong> überall Mittelfeld, deutlich über dem Caramelo. Ein Deutscher Schäferhund zeigt bei allen drei Anlagen <strong>Durchschnittlich</strong>.</p>
-<p><strong>Wurf:</strong> 1 bis 2.</p>
-<p><strong>Satteltaschen:</strong> 6 bis 8.</p>
+<p>Die Kampfrasse des Basis-Mods.</p>
+<blockquote class="quote quote-game"><em>"Ein kraftvoller, intelligenter Gebrauchshund. Von Geburt an deutlich stärker und zäher als der Caramelo, lernt er Kampf und Gehorsam schnell, verliert im Kampf kaum die Nerven (nur ein Drittel des Stresses), hält einer Horde stand, ohne in Panik zu geraten, und kann einen Zombie allein zur Strecke bringen."</em></blockquote>
+<p><strong>Wo du ihn findest:</strong> Polizeiwache, Gefängnis, Arrestzelle, Militärbasis, Kaserne, Waffenladen, Munitionsdepot. 20 % pro Gebäude. In Wohnhäusern taucht er nicht auf.</p>
+<p><strong>Lernt:</strong> Kampf doppelt so schnell und Gehorsam 50 % schneller. Jagd ebenfalls etwas schneller.</p>
+<p><strong>Im Kampf:</strong> der stärkste Biss des Basis-Mods, und er erledigt Zombies allein. Er sammelt Stress fünfmal langsamer an als der Caramelo, und sein Panikpunkt ist der höchste des Mods.</p>
+<p><strong>Anlagen:</strong> Durchschnittlich in allen dreien.</p>
+<p><strong>Wurf:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
 <p><strong>Moodle: <span class="ig">Mut</span></strong></p>
-<blockquote class="quote quote-game"><em>"Ein mutiger Deutscher Schäferhund an deiner Seite beruhigt die Nerven: seine furchtlose Gegenwart mildert deine Panik, solange er in der Nähe bleibt."</em></blockquote>
-<p>Senkt durchgehend <strong>Panik</strong>. In Zahlen ist das der stärkste Moodle des Basis-Mods, und er löst ein ernstes Problem: Panik ruiniert dein Zielen und deine Effizienz im Nahkampf. Mit einem Schäferhund in der Nähe kämpfst du mit ruhigerer Hand.</p>
-<p><strong>Für wen er ist:</strong> für alle, die kämpfen. Wenn du mit der Faust und mitten in der Stadt spielst, ist das deine Rasse.</p>
-<blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung im Spiel sagt <span class="ig">ein Drittel des Stresses</span>, der echte Wert ist aber <strong>ein Fünftel</strong>. Der Text ist viel zu vorsichtig, der Hund ist noch besser, als er verspricht.</blockquote>
+<blockquote class="quote quote-game"><em>"Ein mutiger Deutscher Schäferhund an deiner Seite beruhigt die Nerven. Seine furchtlose Gegenwart mildert deine Panik, solange er in der Nähe bleibt."</em></blockquote>
+<p>Senkt laufend die Panik. Es ist das Moodle mit dem stärksten Wert im Basis-Mod. Panik stört beim Zielen und im Nahkampf.</p>
+<p><strong>Für wen er ist:</strong> für alle, die im Nahkampf kämpfen, vor allem in der Stadt.</p>
+<blockquote class="quote">Die Beschreibung im Spiel sagt <span class="ig">ein Drittel des Stresses</span>, der echte Wert ist ein Fünftel.</blockquote>
 <hr>
 <h3 id="golden-retriever">Golden Retriever</h3>
-<p><strong>Der Jagdhund mit der feinen Nase.</strong> Die Rasse, die deine Nahrungssuche verbessert.</p>
-<blockquote class="quote quote-game"><em>"Ein freundlicher, feinnasiger Jagdhund und ein geborener Jäger: Er lernt Jagd doppelt so schnell und kann einen Zombie allein erledigen (verliert dabei aber leichter die Nerven als der Deutsche Schäferhund). Seine Nase hilft dir beim Sammeln und beim Aufspüren von Wild aus größerer Entfernung."</em></blockquote>
-<p><strong>Wo du ihn findest:</strong> in Wohnhäusern, in einer eigenen Auslosung getrennt vom Caramelo. <strong>2,5% pro Haus.</strong> Viermal seltener als der Mischling, aber im selben Haus: Ein Haus kann beide haben.</p>
-<p><strong>Lernt:</strong> <strong>Jagd doppelt so schnell</strong> und Spürsinn 50% schneller. Er erreicht am frühesten Stufe 6 in Jagd, und ab da nimmt es ein Hund mit Rehen auf.</p>
-<p><strong>Im Kampf:</strong> mittlerer Schaden, <strong>tötet allein</strong>. Er stresst schneller als der Schäferhund, langsamer als der Caramelo.</p>
-<p><strong>Anlagen:</strong> etwas über dem Caramelo, unter dem Schäferhund. Ein Raufbold ist er nicht.</p>
-<p><strong>Wurf:</strong> 1 bis 2.</p>
-<p><strong>Satteltaschen:</strong> 6 bis 7.</p>
+<p>Die Spürsinn-Rasse des Basis-Mods.</p>
+<blockquote class="quote quote-game"><em>"Ein freundlicher, feinnasiger Jagdhund und ein geborener Jäger: Er lernt Jagd doppelt so schnell und Kampf etwas schneller als der Caramelo und kann einen Zombie allein erledigen (verliert dabei aber leichter die Nerven als der Deutsche Schäferhund). Seine Nase hilft dir beim Sammeln und beim Aufspüren von Wild aus größerer Entfernung."</em></blockquote>
+<p><strong>Wo du ihn findest:</strong> Wohnhaus, in einer eigenen Auswürfelung getrennt vom Caramelo. 1 % pro Haus, ein Drittel der Chance des Caramelo. Ein Haus kann beide haben.</p>
+<p><strong>Lernt:</strong> Jagd doppelt so schnell und Spürsinn 50 % schneller. Er ist die Rasse, die am frühesten Jagd 6 erreicht, ab dem der Hund sich an Rehe wagt.</p>
+<p><strong>Im Kampf:</strong> mittlerer Schaden, erledigt Zombies allein. Er stresst sich mehr als der Schäferhund und weniger als der Caramelo.</p>
+<p><strong>Anlagen:</strong> etwas über dem Caramelo, unter dem Schäferhund.</p>
+<p><strong>Wurf:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 7.</p>
 <p><strong>Moodle: <span class="ig">Feine Nase</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Golden Retriever sucht mit dir den Boden ab. Solange er in der Nähe, satt und loyal bleibt, entdeckst du Sammelstellen aus größerer Entfernung und lernst Sammeln, Fallenstellen und Zielen schneller."</em></blockquote>
-<p>Drei Effekte:</p>
+<p>Zwei Wirkungen:</p>
 <ul>
-<li><strong>+20% XP</strong> auf <strong>Nahrungssuche, Fallenstellen und Zielen</strong>.</li>
-<li><strong>+4 Felder</strong> Sichtweite im Suchmodus, <strong>zusätzlich</strong> zu dem Bonus, den jeder Hund ohnehin gibt.</li>
+<li>+20 % XP auf Sammeln, Fallenstellen und Zielen.</li>
+<li>+4 Felder Sichtweite im Suchmodus, zusätzlich zu dem Bonus, den jeder Hund ohnehin gibt.</li>
 </ul>
-<p>Das ist der Moodle, der den Rhythmus eines auf das Landleben ausgerichteten Charakters am stärksten verändert. Nahrungssuche und Fallenstellen sind schwer zu leveln, und Zielen ist teuer.</p>
-<p><strong>Für wen er ist:</strong> für alle, die von Jagd, Nahrungssuche und Fallen leben. Passt zu einer Basis auf dem Land.</p>
-<blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung im Spiel sagt, er lerne Kampf <span class="ig">etwas schneller als der Caramelo</span>. Das stimmt nicht: Er lernt Kampf genauso schnell wie der Mischling.</blockquote>
+<p><strong>Für wen er ist:</strong> für alle, die von Jagd, Sammeln und Fallen leben, meist mit Basis auf dem Land.</p>
+<blockquote class="quote">Die Beschreibung im Spiel sagt, er lerne Kampf <span class="ig">etwas schneller als der Caramelo</span>. Er lernt Kampf genauso schnell wie der Caramelo.</blockquote>
 <hr>
 <h3 id="husky">Husky</h3>
-<p><strong>Das Lasttier.</strong> Der stärkste Hund im Mod, und der einzige, der wärmt.</p>
-<blockquote class="quote quote-game"><em>"Ein robuster nordischer Schlittenhund: mit Abstand die stärkste Rasse, gebaut zum Lastentragen (seine Satteltaschen fassen am meisten) und für die Kälte. Störrisch (lernt Gehorsam langsamer), freundlich (ein schlechter Wachhund) und ein großer Esser."</em></blockquote>
+<blockquote class="quote quote-game"><em>"Ein robuster nordischer Schlittenhund: mit Abstand die stärkste Rasse, gebaut zum Lastentragen (seine Satteltaschen fassen am meisten) und für die Kälte. Er lernt Kampf etwas schneller als der Caramelo und kann einen Zombie erledigen, ist aber kein Krieger. Störrisch (lernt Gehorsam langsamer), freundlich (ein schlechter Wachhund) und ein großer Esser (wird schnell hungrig)."</em></blockquote>
 <p><strong>Wo du ihn findest:</strong> zwei Quellen.</p>
 <ul>
-<li><strong>Wohnhaus, nur im Winter.</strong> 1,25% pro Haus. Außerhalb der Saison die seltenste Rasse im Spiel.</li>
-<li><strong>Tierhandlung und Tierarztpraxis.</strong> 10% pro Gebäude, das ganze Jahr über. Das ist der verlässliche Weg zu einem Husky.</li>
+<li>Wohnhaus, nur im Winter, 1,25 % pro Haus. Außerhalb des Winters taucht er in Häusern nicht auf.</li>
+<li>Zoohandlung und Tierarztpraxis, 10 % pro Gebäude, das ganze Jahr über. Das ist die verlässlichste Quelle.</li>
 </ul>
-<p><strong>Lernt:</strong> <strong>Spürsinn doppelt so schnell</strong> (der beste Wachdienst im Mod), Jagd 50% schneller und Kampf etwas über dem Durchschnitt. <strong>Gehorsam lernt er aber 20% langsamer</strong>, und das ist <strong>der einzige Rassemalus im ganzen Mod</strong>. Das ist Absicht: Er ist störrisch.</p>
-<p>Die praktische Folge des langsamen Gehorsams: Er braucht länger, bis die Kunststücke freigeschaltet sind, bleibt länger ungehorsam, und seine Loyalitätsschwelle sinkt langsamer. Ein Husky verlangt mehr Geduld.</p>
-<p><strong>Im Kampf:</strong> überdurchschnittlicher Schaden, <strong>tötet allein</strong>, ein Krieger ist er aber nicht. Er stresst deutlich schneller als ein Schäferhund.</p>
-<p><strong>Anlagen:</strong> die <strong>mit Abstand größte Stärke-Spanne im Mod</strong>. Ein Husky zeigt bei Stärke <strong>Durchschnittlich oder Hoch</strong>, wo die anderen Rassen bei Durchschnittlich oder Niedrig landen.</p>
+<p><strong>Lernt:</strong> Spürsinn doppelt so schnell (der schnellste Spürsinn des Mods), Jagd 50 % schneller und Kampf etwas über dem Durchschnitt. Gehorsam 20 % langsamer, der einzige Rassenmalus unter den Hunden.</p>
+<p>Er braucht länger, bis er die Kunststücke freischaltet, gehorcht länger nicht und seine Loyalitätsuntergrenze sinkt langsamer.</p>
+<p><strong>Im Kampf:</strong> überdurchschnittlicher Schaden, erledigt Zombies allein. Er stresst sich deutlich mehr als ein Schäferhund.</p>
+<p><strong>Anlagen:</strong> die größte Stärke-Spanne des Mods, mit Abstand: meist kommt Hoch heraus.</p>
 <p><strong>Wurf:</strong> 1 bis 2.</p>
-<p><strong>Satteltaschen: 13 bis 16 Ladung.</strong> Er ist die einzige Rasse mit Satteltaschen-Bonus (+50%), und der Unterschied ist gewaltig: Er trägt <strong>zwei- bis dreimal so viel</strong> wie jeder andere Hund.</p>
+<p><strong>Satteltaschen:</strong> 13 bis 16 Ladung. Er ist die einzige Rasse mit einem Satteltaschen-Bonus (+50 %) und trägt zwei- bis dreimal so viel wie jeder andere Hund.</p>
 <p><strong>Moodle: <span class="ig">Gewärmt</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Husky packt an deiner Seite mit an. Solange er in der Nähe, satt und loyal bleibt, wächst deine Stärke schneller, wenn du mit ihm mithältst, und er hilft dir, bei Puste zu bleiben, sodass du langsamer ermüdest; und wenn die Kälte einsetzt, hält dich sein dichtes Fell warm."</em></blockquote>
-<p>Drei Effekte:</p>
+<p>Drei Wirkungen:</p>
 <ul>
-<li><strong>Stärke steigt 50 % schneller</strong>, solange er in der Nähe ist. Stärke ist die langsamste Fertigkeit im Spiel, und sie entscheidet, wie viel du trägst und wie hart du im Nahkampf zuschlägst.</li>
-<li><strong>Ausdauer regeneriert durchgehend</strong>, du ermüdest langsamer.</li>
-<li><strong>Mobile Wärmequelle</strong>, die <strong>von selbst angeht, wenn dir kalt wird</strong>, und wieder ausgeht, sobald du aufgewärmt bist. Sie greift nur bei <strong>echter Kälte</strong> (unter -3 °C im Freien) und bringt umso mehr, je näher du am Hund stehst. Sie bremst das Absinken deiner Temperatur, ersetzt aber keine Kleidung: Winterkleidung bleibt Pflicht.</li>
+<li>Stärke steigt 50 % schneller, solange er in der Nähe ist. Stärke ist die langsamste Fähigkeit des Spiels und entscheidet, wie viel du trägst und wie viel Schaden du im Nahkampf machst.</li>
+<li>Ausdauer erholt sich laufend, du ermüdest also langsamer.</li>
+<li>Eine mobile Wärmequelle, die von allein anspringt, wenn dir kalt wird, und abschaltet, wenn du wieder warm bist. Sie greift erst bei echter Kälte (unter -3 °C im Freien) und bringt umso mehr, je näher du beim Hund bist. Sie bremst den Temperatursturz, ersetzt aber keine Winterkleidung.</li>
 </ul>
-<p><strong>Der Stärke-Zuwachs setzt auf dem auf, was du ohnehin bekämst:</strong> der Husky beschleunigt, er verschenkt nichts. Er zahlt sich aus, während du dich bewegst, beladen unterwegs bist und kämpfst; ein Hund, der neben dir liegt, während du stillstehst, trainiert gar nichts. Dafür ist das, was er beschleunigt, von Dauer: die Stärke bleibt dir auch dann, wenn der Hund längst weg ist, und jede Stufe hebt deine Tragkapazität endgültig an.</p>
-<p><strong>Für wen er ist:</strong> für alle, die lange Plündertouren machen und beladen zurückkommen, und für alle, die mit hartem Winter spielen. Er ist der Logistikhund.</p>
-<blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung sagt <span class="ig">ein großer Esser (wird schnell hungrig)</span>. <strong>Für den bereits gezähmten Hund gilt das nicht.</strong> Das Hungertempo der Begleiter ist bei allen Rassen gleich. Der größere Appetit existiert nur, solange er ein wilder Hund ist.</blockquote>
+<p>Der Stärke-Bonus wirkt auf die XP, die du ohnehin bekommst: Er beschleunigt das Training, gibt aber keine XP von selbst. Er zahlt sich aus, während du dich bewegst, beladen unterwegs bist oder kämpfst.</p>
+<p><strong>Für wen er ist:</strong> für alle, die lange Beutezüge machen und schwer beladen zurückkommen, und für alle, die harte Winter spielen.</p>
+<blockquote class="quote">Die Beschreibung sagt <span class="ig">ein großer Esser (wird schnell hungrig)</span>. Das gilt nur, solange er wild ist. Nach dem Zähmen ist sein Hungertempo dasselbe wie bei allen Rassen.</blockquote>
 <hr>
 <h3 id="border-collie">Border Collie</h3>
-<p><strong>Der Hofhund.</strong> Die Hüterasse.</p>
+<p>Die Hüterasse des Basis-Mods.</p>
 <blockquote class="quote quote-game"><em><span class="ig">Ein aufgeweckter, unermüdlicher Hütehund und der klassische Hofbegleiter, vor allem für seine Intelligenz geschätzt.</span></em></blockquote>
-<p><strong>Wo du ihn findest:</strong> Scheune, Stall, Silo, Hühnerstall, Pferch, auf dem <strong>Land</strong>. <strong>15% pro Gebäude</strong>, und diese Auslosung <strong>ignoriert den Stadtfilter</strong>, eine einsame Farm mitten im Nirgendwo zählt also mit.</p>
-<p><strong>Lernt:</strong> <strong>Hüten doppelt so schnell</strong>, Gehorsam 50% schneller und Spürsinn etwas über dem Durchschnitt.</p>
-<p><strong>Im Kampf:</strong> mittlerer Schaden, genau wie beim Golden. <strong>Tötet allein.</strong> Er stresst langsamer als der Caramelo, aber deutlich schneller als ein Schäferhund. Ein Raufbold ist er nicht, er ist ein Arbeitshund.</p>
+<p><strong>Wo du ihn findest:</strong> Scheune, Stall, Silo, Hühnerstall, Gehege, auf dem Land. 15 % pro Gebäude. Diese Auswürfelung ignoriert den Stadtfilter, ein einsamer Hof im Nirgendwo zählt also mit.</p>
+<p><strong>Lernt:</strong> Hüten doppelt so schnell, Gehorsam 50 % schneller und Spürsinn etwas über dem Durchschnitt.</p>
+<p><strong>Im Kampf:</strong> mittlerer Schaden, wie beim Golden. Erledigt Zombies allein. Er stresst sich weniger als der Caramelo und deutlich mehr als ein Schäferhund.</p>
 <p><strong>Anlagen:</strong> mittlere Spannen, etwas über dem Golden.</p>
-<p><strong>Wurf:</strong> <strong>1 bis 3</strong>, der zweitgrößte im Basis-Mod.</p>
-<p><strong>Satteltaschen:</strong> 6 bis 8.</p>
-<p><strong>Die eigentliche Spezialität:</strong> Er ist <strong>pro Stufe 50% effizienter in der Beruhigungsaura</strong> als jede andere Rasse. Das gilt an beiden Stellen, an denen es diese Aura gibt:</p>
-<ul>
-<li>im Modus <strong><span class="ig">Hier das Vieh versorgen</span></strong>, wo er im Gehege Dienst schiebt;</li>
-<li>in seinem Moodle, der die Tiere rund um <strong>dich</strong> beruhigt.</li>
-</ul>
-<p>Da gestresste Tiere weder Milch noch Wolle geben, verwerfen und ausbüxen, ist ein trainierter Border Collie buchstäblich der Unterschied zwischen einer Farm, die produziert, und einer, die es nicht tut.</p>
+<p><strong>Wurf:</strong> 1 bis 3, der zweitgrößte im Basis-Mod. <strong>Satteltaschen:</strong> 6 bis 8.</p>
+<p>Seine Spezialität ist die Ruhe-Aura: Sie bringt pro Stufe 50 % mehr als die jeder anderen Rasse, sowohl im Modus <strong><span class="ig">Hier das Vieh versorgen</span></strong> als auch im Moodle.</p>
+<p>Gestresste Tiere geben weder Milch noch Wolle, verlieren ihren Nachwuchs und laufen auseinander.</p>
 <p><strong>Moodle: <span class="ig">Hüteinstinkt</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Border Collie hütet mit dir die Herde. Solange er in der Nähe, satt und loyal bleibt, beruhigen sich die Tiere um dich herum, und du lernst Tierpflege und Landwirtschaft schneller."</em></blockquote>
-<p>Zwei Effekte:</p>
+<p>Zwei Wirkungen:</p>
 <ul>
-<li><strong>+20% XP</strong> auf <strong>Tierpflege und Landwirtschaft</strong>.</li>
-<li><strong>Beruhigt das Vieh in einem Umkreis um dich herum</strong>, automatisch, während du arbeitest.</li>
+<li>+20 % XP auf Tierpflege und Landwirtschaft.</li>
+<li>Beruhigt das Vieh in einem Umkreis um dich herum, automatisch, während du arbeitest.</li>
 </ul>
-<p><strong>Für wen er ist:</strong> für alle, die eine Farm aufbauen. Wenn du Kühe, Schafe oder Hühner hast, ist das die Rasse, die deine Produktion schützt.</p>
-<blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung im Spiel sagt noch, er sei <span class="ig">ein ausgewogener Allrounder ohne herausstechende Spezialisierung</span>. Das ist veraltet: Das verdoppelte Hüten und die verstärkte Aura gibt es längst.</blockquote>
+<p><strong>Für wen er ist:</strong> für alle, die einen Hof mit Kuh, Schaf oder Huhn aufbauen.</p>
+<blockquote class="quote">Die Beschreibung im Spiel sagt noch, er sei <span class="ig">ein ausgewogener Allrounder ohne herausstechende Spezialisierung</span>. Sie ist veraltet: das doppelte Hüten und die verstärkte Aura gibt es bereits.</blockquote>
 <h2 id="4-die-vier-addon-rassen">4. Die vier Addon-Rassen</h2>
-<p>Diese kommen als <strong>eigene Mods auf Steam</strong>, die das Basis-Mod Companion Dogs voraussetzen. Die Links zu jeder Rasse stehen unten im Steckbrief und gesammelt unter <a href="#10-die-addons-installieren">Addons installieren</a>.</p>
+<p>Diese vier kommen als eigene Mods im Steam Workshop und brauchen das Basis-Mod Companion Dogs. Der Link zu jeder steht in ihrem Profil, und alle zusammen unter <a href="#10-die-addons-installieren">Die Addons installieren</a>.</p>
 <hr>
 <h3 id="rottweiler">Rottweiler</h3>
 <p><em>(Mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, eigenes Addon)</em></p>
-<p><strong>Der Krieger, der deine Ausdauer schont.</strong></p>
+<p>Kampfrasse mit einem Moodle, das dir im Nahkampf Ausdauer zurückgibt.</p>
 <blockquote class="quote quote-game"><em>"Ein kraftvoller Wachhund, für den Schutzdienst gezüchtet, ein echter Krieger auf Augenhöhe mit dem Deutschen Schäferhund: Er lernt Kampf doppelt so schnell, schlägt auf hohen Stufen hart zu, wirft Zombies um und kämpft weiter, wo die meisten Rassen in Panik geraten."</em></blockquote>
 <p><strong>Wo du ihn findest:</strong></p>
 <ul>
-<li><strong>Industriegebäude</strong> (Lagerhaus, Halle, Fabrik, Schrottplatz, Werkstatt, Laderampe): <strong>10% pro Gebäude</strong>.</li>
-<li><strong>Wohnhaus:</strong> 2,5% pro Haus, eine seltene Chance.</li>
+<li>Industriegebäude (Lagerhalle, Halle, Fabrik, Schrottplatz, Werkstatt, Laderampe): 10 % pro Gebäude.</li>
+<li>Wohnhaus: 1 % pro Haus.</li>
 </ul>
-<p><strong>Lernt:</strong> <strong>Kampf doppelt so schnell</strong> und Spürsinn 50% schneller (der einzige Kampfhund mit guter Nase). Einen Bonus auf Gehorsam hat er nicht.</p>
-<p><strong>Im Kampf:</strong> beim Biss liegt er mit dem Deutschen Schäferhund gleichauf, und <strong>bei den Nerven ebenso</strong>: Er sammelt Stress fünfmal langsamer als der Caramelo und hat die höchstmögliche Panikschwelle. Er wirft um und tötet.</p>
+<p><strong>Lernt:</strong> Kampf doppelt so schnell und Spürsinn 50 % schneller (der einzige Kampfhund mit guter Nase). Einen Gehorsam-Bonus hat er nicht.</p>
+<p><strong>Im Kampf:</strong> Er liegt beim Biss und bei den Nerven gleichauf mit dem Deutschen Schäferhund: Er sammelt Stress fünfmal langsamer an als der Mischling und hat den höchsten Panikpunkt. Er wirft um und erledigt.</p>
 <p><strong>Anlagen:</strong> dieselben wie beim Deutschen Schäferhund.</p>
-<p><strong>Wurfgröße:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
+<p><strong>Wurf:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
 <p><strong>Moodle: <span class="ig">Frontlinie</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Rottweiler kämpft an deiner Seite. Solange er in deiner Nähe im Kampf steht, satt und loyal ist, zehren deine Nahkampfschläge weniger an der Ausdauer."</em></blockquote>
-<p><strong>Er gibt dir 35% der Ausdauer zurück, die jeder Nahkampfschlag kostet.</strong></p>
-<p>Das ist das Moodle mit den meisten Bedingungen im Mod: Das Symbol erscheint immer, wenn der Rottweiler in der Nähe ist, aber <strong>der Effekt greift nur, solange er wirklich kämpft</strong>. Und er gilt <strong>nur im Nahkampf</strong>, Schusswaffen bekommen nichts davon.</p>
-<p>In der Praxis ist das riesig. Die Ausdauer bestimmt, wie viele Zombies du am Stück verprügeln kannst. Mit einem kämpfenden Rottweiler an deiner Seite schlägst du fast ein Drittel öfter zu, bevor dir die Puste ausgeht.</p>
-<p><strong>Für wen er ist:</strong> für alle, die Horden im Nahkampf aufräumen. Keine Rasse im Mod passt besser zu einer aggressiven Spielweise.</p>
+<p>Gibt 35 % der Ausdauer zurück, die jeder Nahkampfschlag kostet.</p>
+<p>Das Symbol erscheint immer, wenn der Rottweiler in der Nähe ist, die Wirkung greift aber nur, solange er tatsächlich kämpft.</p>
+<p><strong>Für wen er ist:</strong> für alle, die Horden im Nahkampf aufräumen.</p>
 <hr>
 <h3 id="dobermann">Dobermann</h3>
 <p><em>(Mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, eigenes Addon)</em></p>
-<p><strong>Der Hund für Schützen.</strong></p>
-<blockquote class="quote quote-game"><em>"Ein schlanker, wachsamer Schutzhund und der schnellste Lerner aller Rassen. Im Kampf ist er ganz Klinge und ohne Panzer: schwach, solange er untrainiert ist, aber bei voller Kampffähigkeit beißt er hart, steckt dafür aber weniger ein als ein Rottweiler."</em></blockquote>
+<p>Kampfrasse mit einem Moodle für Schusswaffen.</p>
+<blockquote class="quote quote-game"><em>"Ein schlanker, wachsamer Schutzhund und der schnellste Lerner aller Rassen: Er trainiert Gehorsam sogar schneller als der Deutsche Schäferhund. Im Kampf ist er ganz Klinge und ohne Panzer: schwach, solange er untrainiert ist, aber bei voller Kampffähigkeit beißt er härter als jeder andere Hund im Rudel, steckt dafür aber weniger ein als ein Rottweiler."</em></blockquote>
 <p><strong>Wo du ihn findest:</strong></p>
 <ul>
-<li><strong>Polizeiwache:</strong> 18% pro Gebäude.</li>
-<li><strong>Militärgebäude</strong> (Munitionslager, Kaserne, Bunker, Wachhaus, Kontrollpunkt): 22% pro Gebäude.</li>
+<li>Polizeiwache: 18 % pro Gebäude.</li>
+<li>Militärgebäude (Munitionsdepot, Kaserne, Bunker, Wachhaus, Kontrollpunkt): 22 % pro Gebäude.</li>
 </ul>
-<blockquote class="quote"><strong>Praktischer Hinweis:</strong> Militärgebäude sind auf der Grundkarte des Spiels <strong>extrem selten</strong> (in ganz Kentucky gibt es nur etwa fünf solcher Räume). Such in der Praxis lieber in der <strong>Polizeiwache</strong>.</blockquote>
-<p><strong>Lernt:</strong> <strong>Kampf doppelt so schnell</strong> und <strong>Gehorsam 50% schneller</strong>, also genau dasselbe Paket wie beim Deutschen Schäferhund. Was die beiden trennt, ist nicht das Trainingstempo, sondern die <strong>Schadenskurve</strong>.</p>
-<p><strong>Im Kampf:</strong> Er hat die <strong>steilste Kurve im Mod</strong>. Ohne Training schlägt er viel schwächer zu als ein Rottweiler, aber bei Kampf 10 <strong>kommt er ganz oben an</strong>. Das ist eine Investition: Der frisch gezähmte Dobermann ist schwach, der trainierte Dobermann spielt in der ersten Reihe.</p>
-<p>Starke Nerven (höchstmögliche Panikschwelle), aber <strong>er steckt weniger ein</strong>: Seine Widerstandskraft ist die niedrigste unter den Kampfhunden.</p>
-<p><strong>Anlagen:</strong> die <strong>höchste Aggressivitätsspanne im Mod</strong>, womit er Kampf-XP noch schneller sammelt. Stärke und Widerstandskraft liegen etwas unter dem Rottweiler.</p>
-<p><strong>Wurfgröße:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
+<blockquote class="quote">Militärgebäude sind auf der Basiskarte des Spiels selten (in ganz Kentucky gibt es etwa fünf solcher Räume). Suche lieber in Polizeiwachen.</blockquote>
+<p><strong>Lernt:</strong> Kampf doppelt so schnell und Gehorsam 50 % schneller, dasselbe Paket wie der Deutsche Schäferhund.</p>
+<p><strong>Im Kampf:</strong> Er hat die steilste Schadenskurve des Mods. Ohne Training beißt er deutlich schwächer als ein Rottweiler; bei Kampf 10 erreicht er denselben Spitzenschaden.</p>
+<p>Starke Nerven (höchster Panikpunkt), aber er steckt weniger ein: Seine Widerstandskraft ist die niedrigste unter den Kampfhunden.</p>
+<p><strong>Anlagen:</strong> die größte Aggressivitäts-Spanne des Mods, wodurch er Kampf-XP noch schneller sammelt. Stärke und Widerstandskraft liegen etwas unter dem Rottweiler.</p>
+<p><strong>Wurf:</strong> 1 bis 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
 <p><strong>Moodle: <span class="ig">Ruhige Hand</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Dobermann hält dir den Rücken frei. Solange er in der Nähe, satt und loyal ist, baut sich dein Stress ab, dein Zielbild fängt sich nach jedem Schuss schneller und du lädst zügiger nach."</em></blockquote>
-<p>Drei Effekte, alle für <strong>Schusswaffen</strong>:</p>
+<p>Gilt nur für Schusswaffen:</p>
 <ul>
-<li><strong>Dein Stress baut sich laufend ab</strong> (hoher Stress verschlechtert in Zomboid das Zielen).</li>
-<li><strong>Der Rückstoß fängt sich 45% schneller</strong> nach jedem Schuss. Du hast früher wieder das Ziel im Visier.</li>
-<li><strong>15% schnelleres Nachladen.</strong></li>
+<li>Dein Stress baut sich laufend ab (hoher Stress verschlechtert das Zielen).</li>
+<li>Der Rückstoß fängt sich nach jedem Schuss 45 % schneller.</li>
+<li>15 % schnelleres Nachladen.</li>
 </ul>
-<p><strong>Für wen er ist:</strong> für alle, die mit Schusswaffen spielen. Die drei Effekte stapeln sich auf dasselbe Problem, nämlich <span class="ig">wie viel Zeit verliere ich zwischen einem Schuss und dem nächsten</span>.</p>
-<blockquote class="quote"><strong>Hinweis:</strong> Die Beschreibung im Spiel sagt, er trainiere Gehorsam <span class="ig">sogar schneller als der Deutsche Schäferhund</span> und beiße bei voller Kampffähigkeit <span class="ig">härter als jeder andere Hund im Rudel</span>. In beiden Fällen ist es ein <strong>Gleichstand</strong>, kein Vorteil: Beim Gehorsam liegt er mit dem Schäferhund gleichauf und beim Schaden auf Stufe 10 mit dem Rottweiler.</blockquote>
+<p><strong>Für wen er ist:</strong> für alle, die mit Schusswaffen spielen.</p>
+<blockquote class="quote">Die Beschreibung im Spiel sagt, er trainiere Gehorsam <span class="ig">sogar schneller als der Deutsche Schäferhund</span> und beiße bei vollem Kampf <span class="ig">härter als jeder andere Hund</span>. In beiden Fällen ist es ein Gleichstand: Beim Gehorsam zieht er mit dem Schäferhund gleich, beim Schaden auf Stufe 10 mit dem Rottweiler.</blockquote>
 <hr>
 <h3 id="labrador">Labrador</h3>
 <p><em>(Mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, eigenes Addon)</em></p>
-<p><strong>Der Apportierer.</strong> Der beste Jagdhund und, ganz bewusst, der schlechteste Kämpfer im Mod.</p>
-<blockquote class="quote quote-game"><em>"Ein Jagdhund, der zum Apportieren gebaut ist: Er trainiert Jagd doppelt so schnell, Gehorsam dicht dahinter. Dafür ist er bewusst der schlechteste Kämpfer der Familie: der schwächste Biss, kein Niederwerfen, und eine Rauferei setzt ihm schwer zu. Seine Gabe ist sein Maul."</em></blockquote>
+<p>Jagdrasse. Der beste Hund fürs Apportieren der Beute.</p>
+<blockquote class="quote quote-game"><em>"Ein Jagdhund, der zum Apportieren gebaut ist: Er trainiert Jagd doppelt so schnell, Gehorsam dicht dahinter. Dafür ist er bewusst einer der schlechtesten Kämpfer der Familie: nur der Mops beißt schwächer, kein Niederwerfen, und eine Rauferei setzt ihm schwer zu. Seine Gabe ist sein Maul."</em></blockquote>
 <p><strong>Wo du ihn findest:</strong></p>
 <ul>
-<li><strong>Wohnhaus:</strong> <strong>5% pro Haus.</strong> Er ist das Addon, das am leichtesten zu finden ist, doppelt so wahrscheinlich wie der Golden Retriever.</li>
-<li><strong>Wildnis:</strong> Jagdhütte, Zeltplatz, Bootshaus, Anglerhütte, Rangerstation. <strong>20% pro Gebäude.</strong></li>
+<li>Wohnhaus: 1 % pro Haus, dieselbe Chance wie beim Golden.</li>
+<li>Wald (Jagdhütte, Zeltplatz, Bootshaus, Anglerhütte, Rangerstation): 20 % pro Gebäude.</li>
 </ul>
-<p><strong>Lernt:</strong> <strong>Jagd doppelt so schnell</strong> und <strong>Gehorsam 50% schneller</strong>. Das ist das Jägerpaket mit Disziplin.</p>
-<p><strong>Im Kampf:</strong> der <strong>schlechteste im Mod, und zwar mit Absicht</strong>.</p>
+<p><strong>Lernt:</strong> Jagd doppelt so schnell und Gehorsam 50 % schneller.</p>
+<p><strong>Im Kampf:</strong> einer der schlechtesten des Mods.</p>
 <ul>
-<li>Der <strong>schwächste Biss</strong> von allen.</li>
-<li><strong>Er wirft keine Zombies um.</strong> Er ist die einzige Rasse ohne diese Fähigkeit.</li>
-<li>Er sammelt Stress <strong>dreieinhalbmal schneller</strong> als ein Rottweiler und gerät an derselben niedrigen Schwelle in Panik wie der Caramelo.</li>
+<li>Der schwächste Biss von allen, nur über dem Mops.</li>
+<li>Wirft keine Zombies um. Nur er und der Mops können das nicht.</li>
+<li>Sammelt dreieinhalbmal schneller Stress an als ein Rottweiler und gerät am selben niedrigen Punkt in Panik wie der Mischling.</li>
 </ul>
-<p>Er <strong>tötet</strong> einen Zombie, wenn du darauf bestehst, aber schick diesen Hund nicht in den Kampf.</p>
-<p><strong>Anlagen:</strong> die <strong>niedrigste Aggressivitätsspanne im Mod</strong>. Er ist der sanftmütigste Hund hier, und genau deshalb braucht er länger, um kämpfen zu lernen.</p>
-<p><strong>Wurfgröße:</strong> <strong>1 bis 3</strong>, das einzige Addon, das über 2 hinausgeht. <strong>Satteltaschen:</strong> 6 bis 8.</p>
+<p>Einen Zombie erledigt er, wenn du dranbleibst.</p>
+<p><strong>Anlagen:</strong> die kleinste Aggressivitäts-Spanne des Mods. Deshalb braucht er länger, um kämpfen zu lernen.</p>
+<p><strong>Wurf:</strong> 1 bis 3, das einzige Addon über 2. <strong>Satteltaschen:</strong> 6 bis 8.</p>
 <p><strong>Moodle: <span class="ig">Weiches Maul</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Labrador bringt jede Beute schon ab der ersten Jagd zurück, oft mit einer Zugabe. Solange er in der Nähe, satt und loyal ist, lernst du zudem Schlachten und Kurzklingen schneller."</em></blockquote>
-<p>Vier Effekte, und damit ist das das vollständigste Moodle im Mod:</p>
 <ul>
-<li><strong>Er bringt die Beute schon ab Jagd 3</strong>, also <strong>ab dem Moment, in dem er überhaupt jagen kann</strong>. Alle anderen Rassen fangen erst bei Jagd 6 damit an. Das ist ein halbes Spiel Unterschied.</li>
-<li><strong>Er bleibt dreimal so lange dran</strong>, bevor er den Kadaver unterwegs liegen lässt.</li>
-<li><strong>60% der Lieferungen bringen einen zusätzlichen Gegenstand</strong> mit, den er neben dir fallen lässt: Knochen von Kleintieren, Hühnerfeder, Zweige oder ein Wildei. <em><span class="ig">Dein Labrador hat dir noch etwas mitgebracht: ...</span></em></li>
-<li><strong>+20% XP</strong> in <strong>Schlachten und Kurzklingen</strong>, also genau in den Fähigkeiten, mit denen du verarbeitest, was er anschleppt.</li>
+<li>Er bringt die Beute ab Jagd 3, also ab dem Moment, in dem er überhaupt jagen kann. Die anderen Rassen bringen sie erst ab Jagd 6.</li>
+<li>Er bleibt dreimal so lange an der Lieferung dran, bevor er den Kadaver unterwegs fallen lässt.</li>
+<li>60 % der Lieferungen kommen mit einem Extra, das neben dir zu Boden geht: Knochen eines kleinen Tieres, Hühnerfeder, Zweige oder ein Wildei. <em><span class="ig">Dein Labrador hat dir noch etwas mitgebracht: ...</span></em></li>
+<li>+20 % XP auf Schlachten und Kurzklingen, die Fähigkeiten zum Verarbeiten dessen, was er bringt.</li>
 </ul>
-<p><strong>Für wen er ist:</strong> für ein Leben von der Jagd. Der Golden Retriever lernt das Jagen genauso schnell, aber <strong>der Labrador liefert von Anfang an</strong>, und der Unterschied zeigt sich in den ersten Spielwochen.</p>
+<p><strong>Für wen er ist:</strong> für alle, die von der Jagd leben. Der Golden lernt das Jagen genauso schnell, aber der Labrador liefert von Anfang an.</p>
 <hr>
 <h3 id="mops">Mops</h3>
 <p><em>(Mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, eigenes Addon)</em></p>
-<p><strong>Der Haushund.</strong> Jede andere Rasse verdient sich ihren Platz durch Kämpfen, Jagen, Hüten oder Tragen. Der Mops macht nichts davon, und er ist der beste Begleiter im Mod.</p>
+<p>Begleithund mit einem Stimmungs-Moodle.</p>
 <blockquote class="quote quote-game"><em>"Der Haushund: der erste Begleiter, dessen Wert nicht im Kämpfen, Jagen, Hüten oder Tragen liegt. Er trainiert Gehorsam doppelt so schnell wie jede andere Rasse, und seine Bindung verfällt nie von allein."</em></blockquote>
 <p><strong>Wo du ihn findest:</strong></p>
 <ul>
-<li><strong>Wohnhaus:</strong> <strong>5% pro Haus</strong>, genauso leicht wie der Labrador. Es ist eben der Haushund.</li>
-<li><strong>Tierhandlung und Tierarztpraxis:</strong> <strong>12% pro Gebäude</strong>, dieselbe Stelle wie beim Husky.</li>
+<li>Wohnhaus: 3 % pro Haus, das Dreifache von Labrador und Rottweiler und dieselbe Chance wie beim Caramelo. Er ist das Addon, das man in Häusern am leichtesten findet.</li>
+<li>Zoohandlung und Tierarzt: 12 % pro Gebäude, dieselben Orte wie beim Husky.</li>
 </ul>
-<p><strong>Er lernt:</strong> <strong>Gehorsam doppelt so schnell</strong> wie jede andere Rasse im Mod, dazu <strong>Spürsinn 50% schneller</strong> und Jagd mit 20%. Er klettert den Kunststückbaum (an einen Punkt gehen, Zombies ablenken, einen Gegenstand erschnüffeln, ihn holen, während du schläfst) schneller hoch als alles andere, was du haben kannst.</p>
-<p><strong>Seine Bindung fällt nicht.</strong> Jeder andere Hund verliert von allein Treue, wenn du weg bist oder nachlässig wirst. Der Mops nicht. Komm nach einem Monat auf der Straße zurück, und er ist genau so, wie du ihn verlassen hast. Er ist die einzige Rasse, bei der das so ist.</p>
-<p><strong>Er warnt zuerst.</strong> Bei gleichem Spürsinn nimmt der Mops Zombies <strong>35% weiter entfernt</strong> wahr als jede andere Rasse. Er wurde als Alarmhund gezüchtet, und das funktioniert noch immer.</p>
-<p><strong>Im Kampf: verlass dich nicht auf ihn.</strong> Er ist der schwächste Hund im Mod, unter dem Caramelo.</p>
+<p><strong>Lernt:</strong> Gehorsam doppelt so schnell, dazu Spürsinn 50 % schneller und Jagd 20 %. Er steigt den Kunststück-Baum (zu einer Stelle gehen, Zombies ablenken, einen Gegenstand erschnüffeln, ihn holen, während du schläfst) früher hoch als jeder andere Hund.</p>
+<p>Jeder andere Hund verliert Loyalität, wenn du verschwindest oder die Pflege schleifen lässt; der Mops nicht. Komm nach einem Monat auf der Straße zurück und er ist, wie du ihn verlassen hast.</p>
+<p>Auf derselben Spürsinn-Stufe bemerkt der Mops Zombies 35 % weiter entfernt als jede andere Rasse.</p>
+<p><strong>Im Kampf:</strong> Er ist der schwächste Hund des Mods, unter dem Caramelo.</p>
 <ul>
-<li>Der <strong>schwächste Biss</strong> von allen, mit deutlichem Abstand.</li>
-<li><strong>Er tötet keine Zombies</strong> und <strong>wirft keine um</strong>. Er ist der einzige Hund, bei dem beides abgeschaltet ist.</li>
-<li>Er sammelt Stress schneller als jeder andere und <strong>gerät vor allen anderen in Panik</strong>.</li>
+<li>Der schwächste Biss von allen, mit deutlichem Abstand.</li>
+<li>Er erledigt keine Zombies und wirft sie nicht um. Er ist der einzige Hund, bei dem beides abgeschaltet ist.</li>
+<li>Er sammelt schneller Stress an als jeder andere und gerät vor allen anderen in Panik.</li>
 </ul>
-<p><strong>Und der Preis hört da nicht auf:</strong></p>
+<p>Weitere Schwächen:</p>
 <ul>
-<li><strong>Sein Bellen verrät dich, und abstellen lässt es sich nicht.</strong> Derselbe Alarm, der dich warnt, warnt auch die Toten, lauter als bei jeder anderen Rasse, und der Mops ist der <strong>einzige Hund ohne die Wachmodi Leise und Still</strong>: beide Schalter sind in seinem Fenster ausgegraut. Die gute Hälfte seiner Nase gibt es nicht einzeln. (Ist in den Sandbox-Optionen abgeschaltet, dass Hundelärm Zombies anlockt, gilt das für den Mops wie für alle: das Bellen bleibt laut, zieht aber niemanden an.)</li>
-<li><strong>Beim Rennen hält er nicht mit.</strong> Im Sprint fällt der Mops hinter jeden anderen Hund zurück.</li>
-<li><strong>Der Sommer tut ihm weh.</strong> Eine flache Schnauze gibt keine Wärme ab. Über <strong>28 °C</strong> fängt er an zu stressen und <strong>hört auf, dich zu trösten</strong>; bei <strong>36 °C</strong> ist die Strafe am Anschlag. Drinnen ist es kühler, und dann funktioniert er wieder.</li>
-<li><strong>Satteltaschen von 2 bis 3.</strong> Er trägt sie, aber ein Lasttier ist er nicht.</li>
+<li>Sein Bellen ist das lauteste aller Rassen und lockt Zombies genauso an, wie es dich warnt. Der Mops ist der einzige Hund, der die Modi <strong><span class="ig">Leise</span></strong> und <strong><span class="ig">Still</span></strong> nicht annimmt: Beide Knöpfe bleiben in seinem Fenster abgeschaltet. (Ist der Hundelärm in den Sandbox-Optionen abgeschaltet, gilt für den Mops dasselbe wie für alle: Das Bellen bleibt laut, zieht aber niemanden an.)</li>
+<li>Er hält beim Rennen nicht mit. Im Sprint fällt er hinter jeden anderen Hund zurück.</li>
+<li>Er leidet unter Hitze. Über 28 °C fängt er an zu stressen, hört auf, dich zu trösten, und das Moodle verschwindet aus dem HUD; bei 36 °C ist der Malus am Anschlag. Drinnen ist es kühler und er funktioniert wieder.</li>
+<li>Satteltaschen von 2 bis 3. Er trägt sie, ist aber kein Lasttier.</li>
 </ul>
-<p><strong>Dafür frisst und trinkt er wenig:</strong> halb so viel Hunger und ein Drittel weniger Durst als ein Hund mittlerer Größe.</p>
-<p><strong>Anlagen:</strong> die <strong>kleinsten Spannen bei Stärke und Widerstandskraft im ganzen Mod</strong>. Er kommt immer schwach und zerbrechlich zur Welt, und das ist kein Pech beim Welpen.</p>
-<p><strong>Wurf:</strong> <strong>1 bis 2</strong>.</p>
+<p>Dafür frisst und trinkt er wenig: halb so viel Hunger und ein Drittel weniger Durst als ein Hund mittlerer Größe.</p>
+<p><strong>Anlagen:</strong> die kleinsten Spannen für Stärke und Widerstandskraft im Mod. Er kommt in jedem Wurf schwach und zerbrechlich zur Welt.</p>
+<p><strong>Wurf:</strong> 1 bis 2.</p>
 <p><strong>Moodle: <span class="ig">Dein Schatten</span></strong></p>
 <blockquote class="quote quote-game"><em>"Dein Mops weicht dir nicht von der Seite. Solange er in der Nähe, satt und treu ist, sinken Unglück, Langeweile und Stress schneller als bei jedem anderen Hund. Hitze macht das zunichte: ein hechelnder Mops tröstet niemanden, bis er es kühl hat."</em></blockquote>
 <ul>
-<li><strong>Unglücklich und Gelangweilt sinken 60% schneller</strong> als neben einem Caramelo.</li>
-<li><strong>Stress sinkt ebenfalls.</strong> Kein anderer Hund im Mod rührt allein durch seine Anwesenheit an den Stress; der einzige andere Weg, Stress mit einem Hund zu senken, ist, neben ihm zu schlafen (<span class="ig">Gut Erholt</span>).</li>
-<li><strong>In der Hitze verschwindet das Moodle.</strong> Über 28 °C geht es aus dem HUD, bis der Hund es kühl hat. Das ist Absicht: du merkst das Problem der Rasse, ohne etwas nachlesen zu müssen.</li>
+<li>Traurigkeit und Langeweile sinken 60 % schneller als neben einem Caramelo.</li>
+<li>Auch der Stress sinkt. Nur er und der Dobermann wirken allein durch ihre Anwesenheit auf Stress, und der Dobermann baut ihn schneller ab. Abgesehen von diesen beiden senkst du Stress mit einem Hund nur, indem du neben ihm schläfst (<span class="ig">Gut erholt</span>).</li>
 </ul>
-<p><strong>Für wen er ist:</strong> für das Spiel von der Basis aus, für lange Partien, und für alle, die es satt haben, Treue zu verlieren, weil sie zu lange weg waren. Nimm einen Wachhund mit, wenn du die Stadt verlässt.</p>
+<p><strong>Für wen er ist:</strong> für alle, die in der Basis spielen, lange Partien machen oder es satt haben, Loyalität zu verlieren, weil sie zu lange weg waren. Nimm einen Wachhund mit, wenn du die Stadt verlässt.</p>
 <h2 id="5-die-katze-die-erste-andere-art">5. Die Katze: die erste andere Art</h2>
 <p><em>(Mod <strong>CD: Cats</strong>, eigenes Addon)</em></p>
-<p>Jede Rasse bis hierher ist ein Hund, und der Unterschied zwischen ihnen liegt darin, <strong>wie viel</strong> sie von jeder Sache können. Die Katze ist die erste echte Ausnahme: was sie ausmacht, sind nicht schlechtere Werte, sondern dass sie <strong>einige der Aufgaben gar nicht hat</strong>.</p>
-<blockquote class="quote quote-game"><em>"Kein Hund mit schlechteren Werten: ein Tier, das einige der Aufgaben schlicht nicht hat. Eine Katze kämpft nie gegen die Toten, wird nie in ein Gehege gestellt und paart sich nicht. Sie jagt Nagetiere und Kaninchen und lässt Rehe in Ruhe. Deine eigenen Tiere sind nie Beute: Sie rührt weder ein Huhn noch irgendetwas in einem Gehege an. Was sie dir stattdessen gibt, ist Warnung: sie bemerkt die Toten weiter draußen als jeder andere Begleiter, und über alles andere schweigt sie."</em></blockquote>
+<p>Alle Rassen bis hierher sind Hunde.</p>
+<blockquote class="quote quote-game"><em>"Kein Hund mit schlechteren Werten, sondern ein Tier, das diese Aufgaben nicht hat. Eine Katze kämpft nie gegen Zombies, wird in keinen Gehege aufpassen und pflanzt sich nicht fort. Sie jagt Mäuse und Ratten und lässt Kaninchen, Waschbären und Rehe in Ruhe. Was sie stattdessen liefert, ist Warnung: Sie bemerkt Zombies weiter entfernt als jeder andere Begleiter und bleibt bei allem anderen still."</em></blockquote>
 <h3 id="was-sie-nicht-tut">Was sie NICHT tut</h3>
-<p>Das ist keine Schwäche, das ist Abwesenheit. Die Mechaniken existieren für sie nicht, und die Oberfläche geht mit: du findest den Knopf nicht ausgegraut, du findest den Knopf nicht.</p>
+<p>Diese Mechaniken gibt es für die Katze nicht, und die Oberfläche zeigt den Knopf nicht an, auch nicht abgeschaltet.</p>
 <div class="tw"><table><thead><tr>
 <th>Was</th>
-<th>Was verschwindet</th>
+<th>Was wegfällt</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Kämpft nicht</strong></td>
-<td>Kein Kampf im Fenster, kein <strong>Wachen</strong>-Modus, kein Selbstschutz. Sie greift keinen Zombie an, auch nicht, während du direkt vor ihr zerfleischt wirst</td>
+<td>Kein Kampf im Fenster, kein Modus <strong>Bewachen</strong>, kein Auto-Schutz</td>
 </tr>
 <tr>
-<td><strong>Hütet kein Vieh</strong></td>
-<td>Kein Hüten, und der Modus <strong>Vieh versorgen</strong> taucht im Menü nie auf</td>
+<td><strong>Versorgt kein Vieh</strong></td>
+<td>Kein Hüten, und der Modus <strong>Hier das Vieh versorgen</strong> taucht im Menü nicht auf</td>
 </tr>
 <tr>
-<td><strong>Paart sich nicht</strong></td>
-<td>Keine Rolligkeit, keine Trächtigkeit, keine Kätzchen. Eine Katze paart sich weder mit einem Hund noch mit einer anderen Katze</td>
+<td><strong>Paart sich nicht mit Hunden</strong></td>
+<td>Eine Katze bildet nur mit einer Katze ein Paar, und heraus kommt ein Kätzchen</td>
 </tr>
 <tr>
 <td><strong>Jagt nichts Größeres als ein Kaninchen</strong></td>
-<td>Ein Reh ist für sie <strong>unsichtbar</strong>: sie zeigt es nicht einmal an, geschweige denn, dass sie ihm nachsetzt. Und deine eigenen Tiere sind nie Beute: Sie rührt weder ein Huhn noch eine Kuh noch irgendetwas in einem Gehege an</td>
+<td>Rehe sind für sie unsichtbar: Sie stellt sie nicht vor und läuft ihnen nicht nach</td>
 </tr>
 </tbody></table></div>
-<p><strong>Ihre Jagd endet beim Kaninchen.</strong> Dieselbe Grenze wie beim Labrador und beim Golden im kleinen Wild. Was sie nicht macht, ist das Reh: Großwild verletzt den, der es jagt, und die Katze hat nichts, womit sie zurückschlagen könnte. Und sie miaut beim Hetzen, wie jeder Begleiter: mit der Katze zu jagen ist <strong>nicht</strong> leise, ihre Stille ist die übrige Zeit.</p>
+<p>Ihre Obergrenze bei kleinem Wild ist dieselbe wie beim Labrador und beim Golden. Beim Hetzen macht sie Lärm, Jagen mit der Katze ist also laut. Außerhalb der Jagd bleibt sie still.</p>
 <h3 id="was-sie-besser-kann-als-jeder-hund">Was sie besser kann als jeder Hund</h3>
-<p><strong>Sie warnt dich vor allen anderen.</strong> Ohne übrigen Kampf <strong>ist</strong> das Warnen die Aufgabe, und die Katze hat die größte Wächter-Reichweite im Mod:</p>
+<p>Weil sie nicht kämpft, ist Warnen ihre Aufgabe, und die Katze hat die größte Wachreichweite des Mods:</p>
 <div class="tw"><table><thead><tr>
 <th></th>
-<th>Geruch 0</th>
-<th>Geruch 10</th>
+<th>Spürsinn 0</th>
+<th>Spürsinn 10</th>
 </tr></thead><tbody>
 <tr>
-<td>Gewöhnlicher Hund</td>
+<td>Normaler Hund</td>
 <td>18 Felder</td>
 <td>27 Felder</td>
 </tr>
@@ -929,62 +912,60 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Katze</strong></td>
-<td><strong>25 Felder</strong></td>
-<td><strong>38 Felder</strong></td>
+<td>25 Felder</td>
+<td>38 Felder</td>
 </tr>
 </tbody></table></div>
-<p><strong>Und sie ist die leiseste.</strong> Der Lärm, den ihr Miauen verbreitet, ist <strong>halb</strong> so groß wie der eines Hundes und <strong>ein Drittel</strong> des Mopsbellens. Der Mops warnt dich früh und verrät dabei deine Position; die Katze warnt dich noch früher und bleibt still. Sie ist der einzige Begleiter im Mod, der beides tut.</p>
-<p><strong>Sie lernt Jagen doppelt so schnell</strong>, gleichauf mit dem Golden und dem Labrador, und <strong>Geruch 50% schneller</strong>.</p>
+<p>Sie ist außerdem die leiseste. Ihr Maunzen ist halb so laut wie ein Hund und ein Drittel so laut wie das Bellen des Mopses.</p>
+<p>Sie jagt doppelt so schnell, gleichauf mit Golden und Labrador, und ihr Spürsinn steigt 50 % schneller.</p>
 <h3 id="der-preis">Der Preis</h3>
-<p><strong>Sie ist das sturste Tier im Mod.</strong> Gehorsam bei <strong>0,7</strong>, der härteste Lernmalus, den es gibt, schlimmer als die 0,8 des Huskys, die bislang die einzige war. Sie schaltet zwar alle vier Tricks frei, aber sie kommt <strong>deutlich später</strong> dort an als jeder Hund.</p>
-<p><strong>Und sie lässt sich von Ratten ablenken.</strong> Hin und wieder erspäht die Katze ein Nagetier in der Nähe und setzt ihm einfach nach, egal was sie gerade tat. Sie jagt das Nagetier von selbst und tötet es, ohne dass du etwas sagst. Der Modus ist egal, ihre Jagdstufe ist egal, und du hast in dem Moment nichts zu sagen: Jeder Befehl kommt als <em><span class="ig">lässt sich ablenken und ignoriert dich</span></em> zurück, und das ist das eine Mal, in dem diese Meldung genau das sagt, was passiert ist. <strong>Ein Ruf mit Komm bricht es ab</strong>, und das ist der einzige Befehl, der durchkommt. Solange bist du ohne Wache.</p>
-<p><strong>Und sie bringt dir die Ratte.</strong> Wenn sie tötet, geht die Katze zum Kadaver zurück, trägt ihn zu dir und legt ihn dir vor die Füße. Dafür braucht sie keine Stufe: Beute abzuliefern ist Instinkt, nicht Training, und sie tut es vom ersten Tag an. Der andere, der ohne Training abliefert, ist der Labrador, und der Unterschied ist, dass der Labrador bringt, weil du darum gebeten hast.</p>
-<p>Beachte: nur <strong>Nagetiere</strong>. Kaninchen jagt sie schon, aber richtig, mit eingeschaltetem Jagdmodus und derselben Stufe, die auch der Labrador braucht. Die Ablenkung ist Instinkt, und Instinkt heißt Ratte und Maus, also das, was eine Katze fängt, ohne je trainiert zu haben. Es ist ihr Gehorsam 0,7, der endlich mehr ist als eine Zahl auf der Karte.</p>
-<p><strong>Und das unabhängigste.</strong> Ihre Bindung fällt <strong>50% schneller</strong> als die eines Hundes, wenn du verschwindest oder bei der Pflege nachlässt. Das ist das genaue Gegenteil des Mopses, dessen Bindung überhaupt nie fällt. Eine Katze verlangt Anwesenheit.</p>
-<p><strong>Satteltasche 2, Punkt.</strong> Das ist keine Spanne wie bei den anderen Rassen: die Rechnung ergibt <strong>2 für jede Katze</strong>, so stark sie auch geboren wird. Kleines Tier.</p>
-<p><strong>Nervös.</strong> Sie hat das zweitschlechteste versteckte Stress-Gen im Mod, nur hinter dem Caramelo. Sie kämpft nicht, also zeigt sich das nie im Kampf. Es zeigt sich als Schreck: lauter Lärm, Geschrei, Verletzung. Eine Katze in Panik <strong>hört auf zu wachen und bringt kein Geschenk mehr</strong>.</p>
-<p><strong>Sie legt sich nicht hin.</strong> Beim Bleiben bleibt die Katze auf den Pfoten. Reine Optik, ändert nichts.</p>
-<p><strong>Anlagen:</strong> gleichauf mit dem Mops bei der <strong>kleinsten Stärke-Spanne im Mod</strong>, mit ebenso niedriger Aggressivität und Widerstandskraft. Es gibt keine starke Katze, und das ist kein Welpenpech.</p>
-<h3 id="die-fünf-felle">Die fünf Felle</h3>
-<p>Schwarz, weiß, orange, Glückskatze und Smoking. Für den Mod sind sie <strong>fünf Rassen</strong> (eigener Name, eigener Eintrag im Spawn-Menü und im Zwinger) und für jeden praktischen Zweck sind sie dasselbe <strong>Tier</strong>: dieselben Fähigkeiten, dasselbe Moodle, dieselbe Stimme, dieselben Anlagenspannen. Das Fell ist <strong>reine Optik</strong>.</p>
-<p><strong>Welches Fell du findest, ist Glückssache.</strong> Jedes würfelt für sein eigenes Gebäude, unabhängig von den anderen. Sie kommen bereits mit durch fünf geteilter Chance herein, also ist die Gesamtmenge Katze in der Welt dieselbe wie damals, als es nur die schwarze gab: fünf Felle geben dir nicht fünfmal so viele Katzen.</p>
-<p><strong>Wo du sie findest:</strong> <strong>2% pro Wohnhaus</strong>, <strong>2% pro Laden, Supermarkt oder Diner</strong> und <strong>2,4% pro Tierhandlung oder Tierarztpraxis</strong>, pro Fell. Eine Katze hält sich an Gebäude statt an die Wildnis, aber nicht an deren Inneres: <strong>in der Hälfte der Fälle taucht sie drinnen auf und in der anderen Hälfte auf dem Grundstück</strong>: Garten, Gehweg, Parkplatz oder die Gasse hinter dem Laden.</p>
-<p>Die Katze hat ihren <strong>eigenen Spawn-Multiplikator</strong> in der Sandbox, <strong><span class="ig">Multiplikator für Katzen-Spawns</span></strong>, getrennt von dem der Hunde: eine Welt mit wenigen oder gar keinen Streunerhunden hat trotzdem genauso viele Katzen.</p>
-<h3 id="das-nachtgeschenk">Das Nachtgeschenk</h3>
-<p><strong>Die versteckteste Mechanik, die die Katze hat.</strong> Du wachst auf, und vor deinen Füßen liegt ein totes Tier.</p>
-<p>Die Katze geht hinaus, während du schläfst, und legt die Beute ab. Es gibt keine Hetzjagd und nichts stirbt in der Welt, deshalb funktioniert das Geschenk <strong>auch dann weiter, wenn Jagen in den Sandbox-Optionen abgeschaltet ist</strong>.</p>
-<p><strong>Wie es auslöst:</strong> beim <strong>Aufwachen aus dem Schlaf</strong>, mit der Katze <strong>8 Felder oder näher</strong>. Derselbe Radius wie bei <span class="ig">Gut erholt</span>, und aus demselben Grund: wer nachts draußen war, war die Katze, die bei dir lag.</p>
-<p><strong>Die Chance ist ihr Jagen</strong>, und oben schließt sie zur Gewissheit:</p>
+<p>Sie ist die störrischste des Mods. Gehorsam auf 0,7, der größte Lernmalus, den es gibt (der Husky, die einzige andere Rasse mit Malus, liegt bei 0,8). Sie schaltet alle vier Kunststücke frei, kommt dort aber deutlich später an als jeder Hund.</p>
+<p>Sie lässt sich von Ratten ablenken. Ab und zu sieht die Katze einen Nager in der Nähe und läuft hinterher, egal was sie gerade tat. Sie jagt und tötet den Nager allein. Das passiert in jedem Modus und auf jeder Jagd-Stufe, und in dieser Zeit gehorcht sie nicht: Jeder Befehl kommt zurück mit <em><span class="ig">lässt sich ablenken und ignoriert dich</span></em>. Nur <strong><span class="ig">Komm her</span></strong> dringt durch und bricht die Hetze ab. Solange das läuft, hast du keine Wache.</p>
+<p>Nach dem Töten geht die Katze zum Kadaver zurück, trägt ihn zu dir und legt ihn dir vor die Füße. Sie liefert ihre Beute vom ersten Tag an. Der Labrador liefert auch ohne Training, aber nur, wenn du ihn darum bittest.</p>
+<p>Die Ablenkung gilt für Ratte und Maus. Kaninchen nur mit eingeschaltetem Jagd-Modus und der passenden Stufe.</p>
+<p>Sie ist auch die eigenständigste. Ihre Bindung sinkt 50 % schneller als die eines Hundes, wenn du verschwindest oder die Pflege schleifen lässt (der Mops ist das Gegenteil: seine Bindung sinkt gar nicht).</p>
+<p><strong>Satteltaschen:</strong> 2 bei jeder Katze. Bei den anderen Rassen sind die Satteltaschen eine Spanne; bei der Katze kommt rechnerisch 2 heraus, so stark sie auch geboren wird.</p>
+<p>Sie ist nervös: Sie hat das zweitschlechteste verborgene Stress-Gen des Mods, nur hinter dem Caramelo. Weil sie nicht kämpft, zeigt sich das nicht im Kampf, sondern im Schreck: lauter Lärm, Schreien, Verletzung. Eine Katze in Panik hört auf zu wachen und bringt keine Geschenke mehr.</p>
+<p>Im Modus Bleib steht die Katze, statt sich hinzulegen. Das ist reine Optik.</p>
+<p><strong>Anlagen:</strong> gleichauf mit dem Mops bei der kleinsten Stärke-Spanne des Mods, mit ebenso niedriger Aggressivität und Widerstandskraft.</p>
+<h3 id="die-fünf-fellfarben">Die fünf Fellfarben</h3>
+<p>Schwarz, Weiß, Rot, Glückskatze und Smoking. Für den Mod sind das fünf Rassen (eigener Name, eigener Eintrag im Spawn-Menü und im Zwinger), aber die Werte, das Moodle, die Stimme und die Anlagen-Spannen sind dieselben. Das Fell ist reine Optik.</p>
+<p>Jede Fellfarbe würfelt ihr Gebäude für sich aus, unabhängig von den anderen. Die Chance ist bereits durch fünf geteilt, die Gesamtzahl der Katzen in der Welt ist also dieselbe wie damals, als es nur die schwarze gab.</p>
+<p><strong>Wo du sie findest:</strong> 2 % pro Wohnhaus, 2 % pro Laden, Supermarkt oder Imbiss und 2,4 % pro Zoohandlung oder Tierarztpraxis, je Fellfarbe. Eine Katze entsteht am Gebäude, nicht im Wald: in der Hälfte der Fälle drinnen, in der anderen Hälfte auf dem Grundstück (Garten, Gehweg, Parkplatz oder die Gasse hinter dem Laden).</p>
+<p>Die Katze hat ihren eigenen Spawn-Multiplikator im Sandkasten, <strong><span class="ig">Multiplikator für Katzen-Spawns</span></strong>, getrennt von dem der Hunde. Eine Welt mit wenigen oder gar keinen Streunern hat weiterhin dieselbe Menge Katzen.</p>
+<h3 id="das-nächtliche-geschenk">Das nächtliche Geschenk</h3>
+<p>Du wachst auf und hast ein totes Tier vor den Füßen liegen. Die Katze <span class="ig">geht raus</span>, während du schläfst, und legt die Beute ab. Es gibt keine Hetze und nichts stirbt in der Welt, das Geschenk funktioniert also weiter, wenn die Jagd in den Sandbox-Optionen abgeschaltet ist.</p>
+<p>Es löst beim Aufwachen aus, wenn die Katze höchstens 8 Felder entfernt ist, derselbe Radius wie bei <span class="ig">Gut erholt</span>.</p>
+<p>Die Chance ist ihre Jagd-Stufe:</p>
 <div class="tw"><table><thead><tr>
-<th>Jagen</th>
+<th>Jagd</th>
 <th>Chance auf ein Geschenk</th>
 </tr></thead><tbody>
 <tr>
 <td>0</td>
-<td>35%</td>
+<td>35 %</td>
 </tr>
 <tr>
 <td>3</td>
-<td>54,5%</td>
+<td>54,5 %</td>
 </tr>
 <tr>
 <td>5</td>
-<td>67,5%</td>
+<td>67,5 %</td>
 </tr>
 <tr>
 <td>8</td>
-<td>87%</td>
+<td>87 %</td>
 </tr>
 <tr>
-<td><strong>10</strong></td>
-<td><strong>100%</strong></td>
+<td>10</td>
+<td>100 %</td>
 </tr>
 </tbody></table></div>
-<p><strong>Auf Stufe 10 wird nicht mehr gewürfelt: sie bringt jeden Tag etwas.</strong></p>
-<p><strong>Jagen entscheidet auch, WAS ankommt.</strong> Es geht nicht nur um die Häufigkeit: die ganze Liste dreht sich um:</p>
+<p>Die Jagd entscheidet auch, was kommt:</p>
 <div class="tw"><table><thead><tr>
-<th>Jagen</th>
-<th>Was üblicherweise auftaucht</th>
+<th>Jagd</th>
+<th>Was meist kommt</th>
 </tr></thead><tbody>
 <tr>
 <td>Niedrig</td>
@@ -992,21 +973,22 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Hoch</td>
-<td><strong>Mäuse und Ratten</strong> werden zum Normalfall, mit Fröschen und Hundertfüßern dazwischen</td>
+<td>Maus und Ratte werden zum Normalfall, dazwischen Frosch und Hundertfüßer</td>
 </tr>
 </tbody></table></div>
-<p>Der Unterschied lohnt sich: ein Wurm hat 3 Kalorien, eine Ratte 324 und nimmt obendrein 22 von deinem Hunger. Und ein Frosch dient zugleich als Angelköder.</p>
-<p><strong>Einmal pro Tag, pro Besitzer.</strong> Mit zwei Katzen in der Nähe bekommst du <strong>ein</strong> Geschenk, nicht zwei.</p>
-<p><strong>Sie bekommt jedes Mal Jagd-EP, wenn die Lieferung klappt</strong>, und genau so trainiert sich eine gut gehaltene Katze selbst bis auf die Stufe hoch, auf der sie nie mehr versagt.</p>
-<p><strong>Wenn nichts auftaucht:</strong> eine Katze mit <strong>Hunger oder Durst bei 75% oder mehr</strong>, krank, ungehorsam oder in Panik geht nicht raus. Sie scheitert lautlos, ohne Meldung auf dem Bildschirm. Wenn die Geschenke ausgeblieben sind, sieh auf ihre Balken.</p>
-<blockquote class="quote"><strong>Das ist nicht der Trick <span class="ig">Holen, während du schläfst</span></strong> (Gehorsam 10), der einen <strong>Gegenstand vom Boden</strong> bringt. Beide lösen beim Aufwachen aus und behindern sich nicht: eine Katze mit Gehorsam 10 macht am selben Morgen <strong>beides</strong>.</blockquote>
+<p>Der Unterschied wiegt schwer: Ein Wurm hat 3 Kalorien, eine Ratte 324 und nimmt zusätzlich 22 Hunger weg. Ein Frosch taugt als Angelköder.</p>
+<p>Es kommt ein Geschenk pro Tag und pro Besitzer. Mit zwei Katzen in der Nähe bekommst du eines, nicht zwei.</p>
+<p>Die Katze bekommt jedes Mal Jagd-XP, wenn die Lieferung klappt, eine gut gepflegte Katze steigt also von allein.</p>
+<p>Eine Katze mit Hunger oder Durst bei 75 % oder mehr, krank, ungehorsam oder in Panik geht nicht raus. Der Ausfall ist stumm, ohne Meldung auf dem Bildschirm. Bleibt das Geschenk aus, schau auf ihre Balken.</p>
+<blockquote class="quote">Das Kunststück <strong><span class="ig">Einen Gegenstand holen, während du schläfst</span></strong> (Gehorsam 10) ist etwas anderes: Es bringt einen Gegenstand vom Boden. Beide lösen beim Aufwachen aus und stehen sich nicht im Weg. Eine Katze mit Gehorsam 10 macht am selben Morgen beides.</blockquote>
 <p><strong>Moodle: <span class="ig">Katzenaugen</span></strong></p>
-<blockquote class="quote quote-game"><em>"Deine Katze sieht, was du nicht siehst. Solange sie gefüttert, getränkt und dir verbunden ist, verbirgt die Dunkelheit nicht mehr, wonach du suchst: Sammeln bei Nacht funktioniert fast so gut wie bei Tag."</em></blockquote>
-<p><strong>Sammeln im Dunkeln ist nicht länger sinnlos.</strong> In völliger Dunkelheit senkt das Spiel deine Sammelreichweite auf <strong>1,5 Felder</strong>: praktisch musst du auf dem Symbol stehen, um es zu sehen. Mit der Katze in der Nähe kommen die Nachtstunden auf etwa <strong>60% der Reichweite, die du bei Tag hättest</strong>.</p>
-<p>Beachte, dass das eine <strong>Stufe ist, keine allmähliche Steigerung</strong>: ohne Katze stehst du auf der falschen Seite der Schwelle und sammelst nachts so gut wie gar nicht; mit einer wechselst du auf die andere Seite. Es ist der Unterschied zwischen funktioniert und funktioniert nicht.</p>
-<p><strong>Für wen sie ist:</strong> für alle, die in den Nachtstunden spielen, für alle, die die früheste mögliche Warnung wollen, ohne die eigene Position zu verraten, und für alle, die kleines Fleisch wollen, ohne einen großen Hund mitzunehmen. Sie ist <strong>nicht</strong> für alle, die einen Wächter wollen: nimm einen Hund mit, wenn du die Stadt verlässt.</p>
+<blockquote class="quote quote-game"><em>"Deine Katze sieht, was du nicht sehen kannst. Solange sie gefüttert und mit Wasser versorgt ist und eine Bindung zu dir hat, verbirgt die Dunkelheit nicht mehr, wonach du suchst: Nachts funktioniert die Nahrungssuche fast genauso gut wie tagsüber."</em></blockquote>
+<p>In völliger Dunkelheit senkt das Spiel die Sammelreichweite auf 1,5 Felder, und du musst fast auf dem Symbol stehen, um es zu sehen. Mit der Katze in der Nähe bringt die Nacht etwa 60 % der Reichweite, die du bei Tag hättest.</p>
+<p>Der Gewinn kommt auf einen Schlag, nicht nach und nach.</p>
+<p><strong>Für wen sie ist:</strong> für alle, die nachts spielen, die so früh wie möglich gewarnt werden wollen, ohne die eigene Position zu verraten, und die kleines Fleisch wollen, ohne einen großen Hund mitzuschleppen. Als Wache taugt sie nicht: Nimm einen Hund mit, wenn du die Stadt verlässt.</p>
 <h2 id="6-vergleichstabellen">6. Vergleichstabellen</h2>
-<h3 id="lerngeschwindigkeit">Lerngeschwindigkeit</h3>
+<h3 id="lerntempo">Lerntempo</h3>
+<p>Je höher die Zahl, desto schneller lernt der Hund. Normales Tempo ist 1.0.</p>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
 <th>Spürsinn</th>
@@ -1017,107 +999,106 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Caramelo</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Deutscher Schäferhund</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,5</td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
-<td>1,5</td>
-<td>1,0</td>
-<td>1,2</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td>2.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>2,0</strong></td>
-<td>1,2</td>
-<td><strong>0,8</strong></td>
-<td>1,5</td>
-<td>1,0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>0.8</td>
+<td>1.5</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Border Collie</td>
-<td>1,2</td>
-<td>1,0</td>
-<td>1,5</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td>1,5</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
-<td>1,0</td>
-<td>1,2</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
 </tr>
 <tr>
 <td>Dobermann</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,5</td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Labrador</td>
-<td>1,2</td>
-<td>1,0</td>
-<td>1,5</td>
-<td><strong>2,0</strong></td>
-<td>1,0</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Mops</td>
-<td>1,5</td>
-<td>1,0</td>
-<td><strong>2,0</strong></td>
-<td>1,2</td>
-<td>1,0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Katze</td>
-<td>1,5</td>
+<td>1.5</td>
 <td>-</td>
-<td><strong>0,7</strong></td>
-<td><strong>2,0</strong></td>
+<td>0.7</td>
+<td>2.0</td>
 <td>-</td>
 </tr>
 </tbody></table></div>
-<p>Der Strich bei der Katze heißt nicht „lernt langsam“, sondern <strong>die Fähigkeit gibt es nicht</strong>: Kampf und Hüten existieren für sie nicht und tauchen in ihrem Fenster gar nicht erst auf.</p>
-<p>Die einzigen zwei Rassen-Malusse im Mod sind die <strong>0.8</strong> des Huskys und die <strong>0.7</strong> der Katze, die von beiden die härtere ist.</p>
+<p>Der Strich bei der Katze bedeutet, dass sie die Fähigkeit nicht hat: Kampf und Hüten tauchen in ihrem Fenster nicht auf.</p>
 <h3 id="kampf">Kampf</h3>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
 <th>Biss ohne Training</th>
 <th>Biss auf Stufe 10</th>
-<th>Tötet allein?</th>
+<th>Erledigt allein?</th>
 <th>Wirft um?</th>
 </tr></thead><tbody>
 <tr>
 <td>Mops</td>
-<td><strong>der schwächste</strong></td>
-<td><strong>0,65x</strong></td>
-<td><strong>Nein</strong></td>
-<td><strong>Nein</strong></td>
+<td>der schwächste</td>
+<td>0,65x</td>
+<td>Nein</td>
+<td>Nein</td>
 </tr>
 <tr>
 <td>Caramelo</td>
 <td>schwach</td>
-<td><strong>1x</strong> (Referenz)</td>
-<td><strong>Nein</strong></td>
+<td>1x (Bezugswert)</td>
+<td>Nein</td>
 <td>Ja</td>
 </tr>
 <tr>
@@ -1125,7 +1106,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>schwach</td>
 <td>1,3x</td>
 <td>Ja</td>
-<td><strong>Nein</strong></td>
+<td>Nein</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1151,48 +1132,48 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Dobermann</td>
 <td>mittel</td>
-<td><strong>2,6x</strong></td>
+<td>2,6x</td>
 <td>Ja</td>
 <td>Ja</td>
 </tr>
 <tr>
 <td>Deutscher Schäferhund</td>
-<td><strong>stark</strong></td>
-<td><strong>2,6x</strong></td>
+<td>stark</td>
+<td>2,6x</td>
 <td>Ja</td>
 <td>Ja</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>stark</strong></td>
-<td><strong>2,6x</strong></td>
+<td>stark</td>
+<td>2,6x</td>
 <td>Ja</td>
 <td>Ja</td>
 </tr>
 </tbody></table></div>
-<p>Der Dobermann kommt ganz nach oben, startet aber viel weiter unten: Er beginnt mit etwa <strong>zwei Dritteln</strong> vom Biss eines Rottweilers und zieht erst auf Stufe 10 gleich.</p>
-<p><strong>Die Katze steht nicht in dieser Tabelle</strong>, und nicht, weil sie die schwächste wäre: sie <strong>kämpft nicht</strong>. Es gibt keinen Biss, es gibt keinen Wachen-Modus, und sie reagiert nicht auf Zombies, selbst wenn du direkt neben ihr verprügelt wirst.</p>
+<p>Der Dobermann startet mit etwa zwei Dritteln des Bisses eines Rottweilers.</p>
+<p>Die Katze steht nicht in dieser Tabelle, weil sie nicht kämpft.</p>
 <h3 id="nerven-im-kampf">Nerven im Kampf</h3>
-<p>Je <strong>kleiner</strong> die Zahl, desto ruhiger bleibt der Hund im Kampf.</p>
+<p>Je kleiner die Zahl, desto kühler bleibt der Hund im Kampf.</p>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
-<th>Stress durch Kämpfen</th>
-<th>Panikschwelle</th>
+<th>Stress im Kampf</th>
+<th>Panikpunkt</th>
 </tr></thead><tbody>
 <tr>
 <td>Deutscher Schäferhund</td>
-<td><strong>0,20</strong> (am ruhigsten)</td>
-<td><strong>0,90</strong> (am höchsten)</td>
+<td>0,20 (der kühlste)</td>
+<td>0,90 (der höchste)</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
-<td><strong>0,20</strong></td>
-<td><strong>0,90</strong></td>
+<td>0,20</td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Dobermann</td>
 <td>0,25</td>
-<td><strong>0,90</strong></td>
+<td>0,90</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
@@ -1217,18 +1198,18 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Mops</td>
 <td>0,90</td>
-<td><strong>0,70</strong> (der niedrigste)</td>
+<td>0,70 (der niedrigste)</td>
 </tr>
 <tr>
 <td>Caramelo</td>
-<td><strong>1,00</strong> (am nervösesten)</td>
-<td><strong>0,80</strong></td>
+<td>1,00 (der nervöseste)</td>
+<td>0,80</td>
 </tr>
 </tbody></table></div>
-<p>Ein Hund in Panik <strong>hört auf zu kämpfen, zu wachen und Kunststücke zu zeigen</strong>. Deshalb zählt diese Tabelle genauso viel wie der Schaden: Ein harter Biss bringt wenig, wenn der Hund vorher dichtmacht.</p>
-<p><strong>Die Katze steht auch hier nicht</strong>, weil sie nicht kämpft. Aber sie <strong>gerät in Panik</strong>, und das ist wissenswert: sie hat das <strong>zweitschlechteste versteckte Stress-Gen im Mod</strong>, nur hinter dem Caramelo. Da nicht der Kampf sie stresst, bleibt der Schreck: lauter Lärm, Geschrei, Verletzung, Vernachlässigung. Und eine Katze in Panik <strong>hört auf zu wachen und bringt kein Nachtgeschenk mehr</strong>.</p>
+<p>Ein Hund in Panik hört auf zu kämpfen, zu wachen und Kunststücke zu machen. Ein Hund mit starkem Biss, der früh in Panik gerät, bringt weniger als ein schwächerer, der den ganzen Kampf durchhält.</p>
+<p>Die Katze steht ebenfalls nicht in der Tabelle, ihr Stress ist aber der zweitschlechteste des Mods, nur hinter dem Caramelo. Eine Katze in Panik hört auf zu wachen und bringt keine Geschenke mehr.</p>
 <h3 id="anlagen-spannen-bei-der-geburt">Anlagen (Spannen bei der Geburt)</h3>
-<p>Je höher die Spanne, desto besser kann der Hund geboren werden. Ein Wert unter 0,34 erscheint im Fenster als <strong>Niedrig</strong>, über 0,66 als <strong>Hoch</strong> und alles dazwischen als <strong>Durchschnittlich</strong>.</p>
+<p>Je größer die Spanne, desto besser kann der Hund zur Welt kommen. Unter 0,34 zeigt das Fenster <span class="ig">Niedrig</span>, über 0,66 zeigt es <span class="ig">Hoch</span>, und die Mitte erscheint als <span class="ig">Durchschnittlich</span>.</p>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
 <th>Stärke</th>
@@ -1237,15 +1218,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td>Mops</td>
-<td><strong>0,00 bis 0,10</strong></td>
+<td>0,00 bis 0,10</td>
 <td>0,05 bis 0,20</td>
-<td><strong>0,00 bis 0,15</strong></td>
+<td>0,00 bis 0,15</td>
 </tr>
 <tr>
 <td>Katze</td>
-<td><strong>0,00 bis 0,10</strong></td>
-<td><strong>0,00 bis 0,15</strong></td>
-<td><strong>0,00 bis 0,15</strong></td>
+<td>0,00 bis 0,10</td>
+<td>0,00 bis 0,15</td>
+<td>0,00 bis 0,15</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1268,13 +1249,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Labrador</td>
 <td>0,25 bis 0,45</td>
-<td><strong>0,10 bis 0,25</strong></td>
+<td>0,10 bis 0,25</td>
 <td>0,25 bis 0,45</td>
 </tr>
 <tr>
 <td>Dobermann</td>
 <td>0,25 bis 0,45</td>
-<td><strong>0,35 bis 0,55</strong></td>
+<td>0,35 bis 0,55</td>
 <td>0,20 bis 0,40</td>
 </tr>
 <tr>
@@ -1291,22 +1272,19 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Husky</td>
-<td><strong>0,55 bis 0,80</strong></td>
+<td>0,55 bis 0,80</td>
 <td>0,10 bis 0,30</td>
 <td>0,40 bis 0,60</td>
 </tr>
 </tbody></table></div>
-<p>Kurz gefasst:</p>
 <ul>
-<li><strong>Der Caramelo zeigt in allen drei immer „Niedrig".</strong> Einen guten Caramelo gibt es nicht.</li>
-<li><strong>Der Mops ebenso</strong>, und seine Spanne bei Stärke ist noch kleiner. Einen starken Mops gibt es nicht.</li>
-<li><strong>Der Husky ist der Einzige, der bei Stärke meistens „Hoch" zeigt.</strong></li>
-<li><strong>Aggressivität kommt immer als „Niedrig" heraus</strong> beim Golden, beim Husky und beim Labrador. Das ist bei ihnen normal, kein Pech.</li>
-<li>Golden und Dobermann landen bei Stärke und Widerstandskraft ebenfalls oft auf „Niedrig".</li>
-<li><strong>Deutscher Schäferhund und Rottweiler</strong> sind die Einzigen, die fast immer in allen drei „Durchschnittlich" zeigen.</li>
-</ul>
-<ul>
-<li><strong>Die Katze liegt mit dem Mops gleichauf bei der kleinsten Stärke im Mod.</strong> Es gibt keine starke Katze, und deshalb fasst ihre Satteltasche immer 2.</li>
+<li>Der Caramelo zeigt <span class="ig">Niedrig</span> in allen dreien.</li>
+<li>Der Mops ebenso, und seine Stärke-Spanne ist noch kleiner.</li>
+<li>Die Katze liegt mit dem Mops gleichauf bei der kleinsten Stärke des Mods.</li>
+<li>Der Husky ist der einzige, der bei Stärke meist <span class="ig">Hoch</span> zeigt.</li>
+<li>Aggressivität fällt beim Golden, beim Husky und beim Labrador auf <span class="ig">Niedrig</span>.</li>
+<li>Golden und Dobermann landen bei Stärke und Widerstandskraft ebenfalls oft auf <span class="ig">Niedrig</span>.</li>
+<li>Deutscher Schäferhund und Rottweiler sind die einzigen, die fast immer <span class="ig">Durchschnittlich</span> in allen dreien zeigen.</li>
 </ul>
 <h3 id="satteltaschen">Satteltaschen</h3>
 <div class="tw"><table><thead><tr>
@@ -1315,11 +1293,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr></thead><tbody>
 <tr>
 <td><strong>Katze</strong></td>
-<td><strong>2</strong> (fest)</td>
+<td>2 (fest)</td>
 </tr>
 <tr>
 <td><strong>Mops</strong></td>
-<td><strong>2 bis 3</strong></td>
+<td>2 bis 3</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1335,18 +1313,17 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
-<td><strong>13 bis 16</strong></td>
+<td>13 bis 16</td>
 </tr>
 </tbody></table></div>
-<p>Die Katze ist die einzige ohne Spanne: die Rechnung ergibt <strong>2 für jede Katze</strong>, so stark sie auch geboren wird.</p>
 <h3 id="wurfgröße">Wurfgröße</h3>
 <div class="tw"><table><thead><tr>
 <th>Rasse der Mutter</th>
 <th>Welpen pro Wurf</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>Caramelo</strong></td>
-<td><strong>2 bis 4</strong></td>
+<td><strong>Caramelo</strong>, Katze</td>
+<td>2 bis 4</td>
 </tr>
 <tr>
 <td>Border Collie</td>
@@ -1361,9 +1338,8 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 bis 2</td>
 </tr>
 </tbody></table></div>
-<p>Die Wurfgröße richtet sich nach der <strong>Rasse der Mutter</strong>, nicht nach der des Vaters.</p>
-<p><strong>Die Katze paart sich nicht</strong>, also hat sie hier keine Zeile: es gibt keine Rolligkeit, keine Trächtigkeit, und es wird nie ein Kätzchen geboren. Eine Katze kommt nur über die Welt in dein Spiel, niemals über deine Zucht.</p>
-<h3 id="wo-du-welche-rasse-findest">Wo du welche Rasse findest</h3>
+<p>Die Rasse des Vaters zählt nicht.</p>
+<h3 id="wo-du-jede-rasse-findest">Wo du jede Rasse findest</h3>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
 <th>Ort</th>
@@ -1372,98 +1348,97 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td>Dobermann</td>
 <td>Militärgebäude</td>
-<td>22%</td>
+<td>22 %</td>
 </tr>
 <tr>
 <td>Deutscher Schäferhund</td>
 <td>Polizeiwache, Gefängnis, Militär, Waffenladen</td>
-<td>20%</td>
+<td>20 %</td>
 </tr>
 <tr>
 <td>Labrador</td>
-<td>Jagdhütte, Zeltplatz, Bootshaus, Rangerstation</td>
-<td>20%</td>
+<td>Jagdhütte, Zeltplatz, Anglerhütte, Rangerstation</td>
+<td>20 %</td>
 </tr>
 <tr>
 <td>Dobermann</td>
 <td>Polizeiwache</td>
-<td>18%</td>
+<td>18 %</td>
 </tr>
 <tr>
 <td>Border Collie</td>
-<td>Scheune, Stall, Bauernhof (ländlich)</td>
-<td>15%</td>
+<td>Scheune, Stall, Hof (ländlich)</td>
+<td>15 %</td>
 </tr>
 <tr>
 <td>Mops</td>
-<td>Tierhandlung, Tierarztpraxis</td>
-<td>12%</td>
-</tr>
-<tr>
-<td>Caramelo</td>
-<td>Wohnhaus</td>
-<td>10%</td>
+<td>Zoohandlung, Tierarzt</td>
+<td>12 %</td>
 </tr>
 <tr>
 <td>Husky</td>
-<td>Tierhandlung, Tierarztpraxis</td>
-<td>10%</td>
+<td>Zoohandlung, Tierarzt</td>
+<td>10 %</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
 <td>Lagerhalle, Fabrik, Schrottplatz</td>
-<td>10%</td>
+<td>10 %</td>
 </tr>
 <tr>
-<td>Labrador</td>
+<td>Caramelo</td>
 <td>Wohnhaus</td>
-<td>5%</td>
+<td>3 %</td>
 </tr>
 <tr>
 <td>Mops</td>
 <td>Wohnhaus</td>
-<td>5%</td>
+<td>3 %</td>
+</tr>
+<tr>
+<td><strong>Katze</strong></td>
+<td>Zoohandlung, Tierarzt</td>
+<td>2,4 % je Fellfarbe</td>
+</tr>
+<tr>
+<td><strong>Katze</strong></td>
+<td>Laden, Supermarkt, Imbiss</td>
+<td>2 % je Fellfarbe</td>
+</tr>
+<tr>
+<td><strong>Katze</strong></td>
+<td>Wohnhaus</td>
+<td>2 % je Fellfarbe</td>
+</tr>
+<tr>
+<td>Husky</td>
+<td>Wohnhaus, nur im Winter</td>
+<td>1,25 %</td>
 </tr>
 <tr>
 <td>Golden Retriever</td>
 <td>Wohnhaus</td>
-<td>2,5%</td>
+<td>1 %</td>
+</tr>
+<tr>
+<td>Labrador</td>
+<td>Wohnhaus</td>
+<td>1 %</td>
 </tr>
 <tr>
 <td>Rottweiler</td>
 <td>Wohnhaus</td>
-<td>2,5%</td>
-</tr>
-<tr>
-<td><strong>Katze</strong></td>
-<td>Tierhandlung, Tierarztpraxis</td>
-<td><strong>2,4%</strong> pro Fell</td>
-</tr>
-<tr>
-<td><strong>Katze</strong></td>
-<td>Laden, Markt, Imbiss</td>
-<td><strong>2%</strong> pro Fell</td>
-</tr>
-<tr>
-<td><strong>Katze</strong></td>
-<td>Wohnhaus</td>
-<td><strong>2%</strong> pro Fell</td>
-</tr>
-<tr>
-<td>Husky</td>
-<td>Wohnhaus, <strong>nur im Winter</strong></td>
-<td>1,25%</td>
+<td>1 %</td>
 </tr>
 </tbody></table></div>
-<p>Die Hundechancen skalieren mit der Sandbox-Option <strong><span class="ig">Multiplikator für Hunde-Spawns</span></strong>. Die Katzenchancen nicht: die Katze hat ihre eigene Einstellung, <strong><span class="ig">Multiplikator für Katzen-Spawns</span></strong>, weniger oder gar keine streunenden Hunde ändern also nichts mehr an der Katzenmenge der Welt.</p>
-<p>Denk daran: Die Entscheidung fällt <strong>einmal pro Gebäude</strong> und bleibt gespeichert. An einen schon erkundeten Ort zurückzukehren bringt keinen neuen Hund.</p>
-<p>Die fünf Felle der Katze würfeln <strong>jedes für sich</strong>, und deshalb ist die Chance auf ein einzelnes so gering: zusammengezählt ergeben sie dieselbe Menge Katze, die eine einzelne Rasse liefern würde. Was sich ändert, ist <strong>welches</strong> Fell du findest.</p>
-<h3 id="interne-rassennamen">Interne Rassennamen</h3>
-<p>Spawn-Mods und der Debug-Modus fragen nach dem <strong>internen Namen</strong> des Hundes, nicht nach dem, der im Spiel angezeigt wird. Hier sind sie:</p>
+<p>Die Hundechancen skalieren mit der Sandbox-Option <strong><span class="ig">Multiplikator für Hunde-Spawns</span></strong>. Die der Katze folgen einer anderen Option, <strong><span class="ig">Multiplikator für Katzen-Spawns</span></strong>, streunende Hunde zu reduzieren oder abzuschalten ändert also nichts an der Menge Katzen in der Welt.</p>
+<p>Die Auswürfelung passiert einmal pro Gebäude und das Ergebnis bleibt gespeichert.</p>
+<h3 id="interne-namen-der-rassen">Interne Namen der Rassen</h3>
+<p>Spawn-Mods und der Debug-Modus verlangen den internen Namen des Hundes, der sich von dem unterscheidet, der auf dem Bildschirm steht:</p>
 <div class="tw"><table><thead><tr>
 <th>Rasse</th>
-<th>Rüde</th>
-<th>Hündin</th>
+<th>Männlich</th>
+<th>Weiblich</th>
 <th>Welpe</th>
 <th><code>breed</code></th>
 </tr></thead><tbody>
@@ -1545,7 +1520,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_white</code></td>
 </tr>
 <tr>
-<td>Orange Katze</td>
+<td>Rote Katze</td>
 <td><code>catmale</code></td>
 <td><code>catfemale</code></td>
 <td><code>catpup</code></td>
@@ -1566,220 +1541,177 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>cat_tuxedo</code></td>
 </tr>
 </tbody></table></div>
-<p>Rüde und Hündin sind <strong>verschiedene Typen</strong>, keine Option desselben Typs. Die letzten vier Zeilen gibt es nur, wenn das Addon der jeweiligen Rasse installiert ist.</p>
-<hr>
-<p><strong>Die fünf Katzenfelle teilen sich denselben Typ</strong> (<code>catmale</code>/<code>catfemale</code>/<code>catpup</code>) und werden nur über <code>breed</code> unterschieden, weil das Modell dasselbe ist und sich nur die Textur ändert. Beachte, dass <code>breed</code> hier einen Unterstrich trägt (<code>cat_white</code>), anders als im Rest des Mods.</p>
+<p>Männlich und weiblich sind unterschiedliche Typen, keine Option desselben Typs. Die fünf Addon-Rassen gibt es nur, wenn das Addon der jeweiligen Rasse installiert ist.</p>
+<p>Die fünf Fellfarben der Katze teilen sich denselben Typ und unterscheiden sich nur über <code>breed</code>: Das Modell ist dasselbe, nur die Textur wechselt. Hier trägt <code>breed</code> einen Unterstrich (<code>cat_white</code>), anders als im Rest des Mods.</p>
 <h2 id="7-moodles-die-komplette-liste">7. Moodles: die komplette Liste</h2>
-<p>Hunde-Moodles erscheinen in <strong>einer eigenen Spalte, links von deinen normalen Moodles</strong>.</p>
+<p>Die Hunde-Moodles erscheinen in einer eigenen Spalte, links von deinen normalen Moodles.</p>
 <h3 id="die-regel-die-für-alle-rassen-moodles-gilt">Die Regel, die für alle Rassen-Moodles gilt</h3>
-<p>Den Bonus gibt es <strong>nur</strong>, wenn <strong>alle</strong> diese Bedingungen zutreffen:</p>
+<p>Den Bonus gibt es nur, wenn alle diese Bedingungen gleichzeitig erfüllt sind:</p>
 <div class="tw"><table><thead><tr>
 <th>Bedingung</th>
 <th>Detail</th>
 </tr></thead><tbody>
 <tr>
-<td>Der Hund ist <strong>nah</strong></td>
-<td>Innerhalb von <strong>8 Feldern</strong> und <strong>auf derselben Etage</strong></td>
+<td><strong>Der Hund ist in der Nähe</strong></td>
+<td>Innerhalb von 8 Feldern und auf derselben Etage</td>
 </tr>
 <tr>
-<td>Er gehört <strong>dir</strong></td>
-<td>Der Hund eines anderen Spielers bringt dir nichts</td>
+<td><strong>Er gehört dir</strong></td>
+<td>Der Hund eines anderen Spielers gibt nichts</td>
 </tr>
 <tr>
-<td>Er ist <strong>nicht ungehorsam</strong></td>
-<td>Loyalität über der Schwelle</td>
+<td><strong>Er ist nicht ungehorsam</strong></td>
+<td>Loyalität über der Untergrenze</td>
 </tr>
 <tr>
-<td>Er ist <strong>nicht vergiftet</strong></td>
+<td><strong>Er ist nicht vergiftet</strong></td>
 <td>Kein schlechtes Futter</td>
 </tr>
 <tr>
-<td>Er ist <strong>nicht hungrig</strong></td>
-<td>Hungerbalken unter 75%</td>
+<td><strong>Er hat keinen Hunger</strong></td>
+<td>Hungerbalken unter 75 %</td>
 </tr>
 <tr>
-<td>Er ist <strong>nicht durstig</strong></td>
-<td>Durstbalken unter 75%</td>
+<td><strong>Er hat keinen Durst</strong></td>
+<td>Durstbalken unter 75 %</td>
 </tr>
 </tbody></table></div>
-<p><strong>Fällt auch nur eine davon weg, schaltet sich das Moodle ab.</strong> Ein schlecht behandelter Hund bringt überhaupt keinen Bonus. Das ist die zentrale Mechanik des Mods: <strong>Von einem Hund, um den du dich nicht kümmerst, bekommst du nichts geschenkt.</strong></p>
-<blockquote class="quote"><strong>Sind mehrere Hunde in der Nähe, zählt nur der nächste.</strong> Der Mod wählt einen einzigen Hund aus und zeigt das Moodle seiner Rasse. Mut vom Schäferhund und Gewärmt vom Husky lassen sich nicht gleichzeitig stapeln.</blockquote>
-<p>Das Moodle wirkt weiter, während der Hund <strong>auf deinem Arm oder mit dir im Auto</strong> unterwegs ist.</p>
+<p>Fällt eine davon weg, schaltet sich das Moodle ab.</p>
+<blockquote class="quote">Sind mehrere Hunde in der Nähe, zählt nur der nächste, Mut vom Schäferhund und Gewärmt vom Husky addieren sich also nicht.</blockquote>
+<p>Das Moodle gilt weiter, während der Hund auf deinem Arm oder mit dir im Auto reist.</p>
 <h3 id="die-rassen-moodles">Die Rassen-Moodles</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
 <th>Rasse</th>
-<th>Was es bewirkt</th>
+<th>Was es tut</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Gute Gesellschaft</strong></td>
 <td>Caramelo</td>
-<td>Senkt <strong>Unglücklich und Gelangweilt</strong></td>
+<td>Senkt Unglück und Langeweile</td>
 </tr>
 <tr>
 <td><strong>Mut</strong></td>
 <td>Deutscher Schäferhund</td>
-<td>Senkt <strong>Panik</strong> (der stärkste Effekt im Basis-Mod)</td>
+<td>Senkt Panik (die stärkste Wirkung im Basis-Mod)</td>
 </tr>
 <tr>
 <td><strong>Feine Nase</strong></td>
 <td>Golden Retriever</td>
-<td><strong>+20% XP</strong> auf Nahrungssuche, Fallenstellen und Zielen, <strong>+4 Felder</strong> Sichtweite bei der Nahrungssuche</td>
+<td>+20 % XP auf Sammeln, Fallenstellen und Zielen, +4 Felder Sammelsicht</td>
 </tr>
 <tr>
 <td><strong>Gewärmt</strong></td>
 <td>Husky</td>
-<td><strong>+50 % XP</strong> auf Stärke, gibt Ausdauer zurück und wird bei <strong>extremer Kälte</strong> zur <strong>Wärmequelle</strong></td>
+<td>+50 % XP auf Stärke, füllt die Ausdauer auf und wird bei extremer Kälte zur Wärmequelle</td>
 </tr>
 <tr>
 <td><strong>Hüteinstinkt</strong></td>
 <td>Border Collie</td>
-<td><strong>+20% XP</strong> auf Tierpflege und Landwirtschaft, und <strong>beruhigt das Vieh um dich herum</strong></td>
+<td>+20 % XP auf Tierpflege und Landwirtschaft, und beruhigt das Vieh um dich herum</td>
 </tr>
 <tr>
 <td><strong>Frontlinie</strong></td>
 <td>Rottweiler</td>
-<td>Gibt <strong>35% der Ausdauer</strong> jedes Nahkampfschlags zurück. <strong>Nur, solange er kämpft</strong></td>
+<td>Gibt 35 % der Ausdauer jedes Nahkampfschlags zurück, nur solange er kämpft</td>
 </tr>
 <tr>
 <td><strong>Ruhige Hand</strong></td>
 <td>Dobermann</td>
-<td>Baut deinen <strong>Stress</strong> ab, <strong>-45% Rückstoß</strong> pro Schuss, <strong>+15% Nachladegeschwindigkeit</strong></td>
+<td>Baut deinen Stress ab, 45 % weniger Rückstoß pro Schuss, 15 % schnelleres Nachladen</td>
 </tr>
 <tr>
 <td><strong>Weiches Maul</strong></td>
 <td>Labrador</td>
-<td>Bringt die Beute <strong>schon ab Jagd 3</strong>, bleibt 3x hartnäckiger dran, <strong>60% Chance auf einen zusätzlichen Gegenstand</strong>, <strong>+20% XP</strong> auf Schlachten und Kurzklingen</td>
+<td>Liefert die Beute ab Jagd 3, bleibt 3x länger dran, 60 % Chance auf ein Extra, +20 % XP auf Schlachten und Kurzklingen</td>
 </tr>
 <tr>
 <td><strong>Dein Schatten</strong></td>
 <td>Mops</td>
-<td>Senkt <strong>Unglücklich, Gelangweilt und Stress</strong>, und schneller als jeder andere Hund. <strong>Schaltet sich in der Hitze ab</strong></td>
+<td>Senkt Traurigkeit, Langeweile und Stress, schneller als jeder andere Hund. Schaltet bei Hitze ab</td>
 </tr>
 <tr>
 <td><strong>Katzenaugen</strong></td>
 <td>Katze</td>
-<td><strong>Sammeln im Dunkeln ist nicht länger sinnlos</strong>: die Nachtstunden kommen auf etwa 60% der Tagesreichweite, gegen 1,5 Felder ohne sie</td>
+<td>Sammeln im Dunkeln funktioniert wieder: Die Nacht bringt etwa 60 % der Tagesreichweite, gegen 1,5 Felder ohne sie</td>
 </tr>
 </tbody></table></div>
 <h3 id="die-moodles-die-jede-rasse-gibt">Die Moodles, die jede Rasse gibt</h3>
 <div class="tw"><table><thead><tr>
 <th>Moodle</th>
 <th>Wann</th>
-<th>Was es bewirkt</th>
+<th>Was es tut</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Hungrig</strong></td>
-<td>Hunger des Hundes bei 60% oder mehr</td>
+<td>Hunger des Hundes bei 60 % oder mehr</td>
 <td>Nur ein Hinweis</td>
 </tr>
 <tr>
 <td><strong>Durstig</strong></td>
-<td>Durst des Hundes bei 60% oder mehr</td>
+<td>Durst des Hundes bei 60 % oder mehr</td>
 <td>Nur ein Hinweis</td>
 </tr>
 <tr>
 <td><strong>Vergiftet</strong></td>
-<td>Er hat etwas gefressen, das ihm nicht bekommt</td>
+<td>Er hat Futter gefressen, das ihm schadet</td>
 <td>Nur ein Hinweis</td>
 </tr>
 <tr>
 <td><strong>Gut erholt</strong></td>
-<td>Du bist aufgewacht, nachdem du <strong>8 Felder oder näher</strong> beim Hund geschlafen hast</td>
-<td>Senkt <strong>Panik, Stress, Müdigkeit, Traurigkeit und Langeweile</strong> für <strong>2 Spielstunden</strong></td>
+<td>Du bist aufgewacht und hast höchstens 8 Felder vom Hund entfernt geschlafen</td>
+<td>Senkt Panik, Stress, Müdigkeit, Traurigkeit und Langeweile für 2 Spielstunden</td>
 </tr>
 </tbody></table></div>
-<p><strong>„Gut erholt" ist das einzige Moodle, das nicht davon abhängt, dass der Hund in der Nähe bleibt.</strong> Es ist ein Timer: einmal aktiv, hält es die vollen zwei Stunden, auch wenn du weggehst. Und es läuft nicht durch den Pflegefilter, funktioniert also sogar mit einem schlecht behandelten Hund. Neben dem Hund zu schlafen lohnt sich <strong>immer</strong>.</p>
-<p>Die drei Hinweise (hungrig, durstig, vergiftet) ignorieren den Pflegefilter ebenfalls, und das ergibt Sinn: Sie sind ja gerade dafür da, dir zu sagen, dass es dem Hund <strong>nicht</strong> gut geht.</p>
+<p><strong><span class="ig">Gut erholt</span></strong> ist das einzige, das nicht davon abhängt, dass der Hund in der Nähe bleibt. Es ignoriert außerdem den Pflegefilter, funktioniert also selbst mit einem vernachlässigten Hund. Die drei Hinweise zu Hunger, Durst und Vergiftung ignorieren den Filter genauso.</p>
 <h2 id="8-anlagen-die-gene">8. Anlagen (die Gene)</h2>
-<p>Neben der Rasse hat jeder Hund <strong>drei Anlagen</strong>, die im Fenster im Abschnitt <strong><span class="ig">Anlagen</span></strong> stehen. Sie werden <strong>in dem Moment ausgewürfelt, in dem du den Hund zähmst</strong>, innerhalb der Spanne seiner Rasse, und sie <strong>ändern sich nie</strong>.</p>
-<blockquote class="quote quote-game"><em>"Angeborene Gene, ein Leben lang unveränderlich, sie werden beim Zähmen des Hundes ausgewürfelt und fallen von Hund zu Hund verschieden aus. Anders als Fähigkeiten ändern sie sich durch Training nie; sie sind das Naturell, mit dem dieser Hund geboren wurde."</em></blockquote>
+<p>Neben der Rasse hat jeder Hund drei Anlagen, die in seinem Fenster im Abschnitt <strong><span class="ig">Anlagen</span></strong> stehen. Sie werden ausgewürfelt, wenn du den Hund zähmst, innerhalb der Spanne seiner Rasse, und ändern sich danach nicht mehr.</p>
+<blockquote class="quote quote-game"><em>"Angeborene Gene, ein Leben lang unveränderlich, sie stehen schon fest, bevor du dem Hund überhaupt begegnest, und fallen von Hund zu Hund verschieden aus. Anders als Fähigkeiten ändern sie sich durch Training nie; sie sind das Naturell, mit dem dieser Hund geboren wurde."</em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>Anlage</th>
-<th>Was sie bewirkt</th>
+<th>Was sie tut</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>Stärke</strong></td>
-<td>Erhöht die <strong>Bisskraft</strong> und vor allem die <strong>Kapazität der Satteltaschen</strong></td>
+<td>Erhöht die Bissstärke und vor allem die Kapazität der Satteltaschen</td>
 </tr>
 <tr>
 <td><strong>Aggressivität</strong></td>
-<td>Lässt ihn <strong>schneller Kampf-XP sammeln</strong>. Sie ändert <strong>nicht</strong>, ob er kämpft oder flieht</td>
+<td>Lässt ihn schneller Kampf-XP sammeln. Ändert nicht, wann er kämpft oder flieht</td>
 </tr>
 <tr>
 <td><strong>Widerstandskraft</strong></td>
-<td>Lässt ihn im Kampf <strong>weniger Stress aufbauen</strong></td>
+<td>Lässt ihn im Kampf weniger Stress ansammeln</td>
 </tr>
 </tbody></table></div>
-<p>Dazu kommt ein <strong>viertes Gen für den allgemeinen Stress, das im Fenster nicht auftaucht</strong>. Es multipliziert den gesamten Stress, den der Hund beim Kämpfen abbekommt. Der Caramelo hat das schlechteste von allen, der Deutsche Schäferhund und der Husky die besten.</p>
-<h3 id="die-bezeichnungen-lesen">Die Bezeichnungen lesen</h3>
-<div class="tw"><table><thead><tr>
-<th>Bezeichnung</th>
-<th>Bedeutet</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Niedrig</strong></td>
-<td>Unter 34% der Skala</td>
-</tr>
-<tr>
-<td><strong>Durchschnittlich</strong></td>
-<td>Zwischen 34% und 66%</td>
-</tr>
-<tr>
-<td><strong>Hoch</strong></td>
-<td>Über 66%</td>
-</tr>
-</tbody></table></div>
-<p><strong>Achtung:</strong> Die Bezeichnungen liegen auf einer absoluten Skala, <strong>nicht</strong> auf einer relativ zur Rasse. Deshalb zeigt ein Caramelo bei allen dreien <strong>immer</strong> <span class="ig">Niedrig</span>, und einen außergewöhnlichen Caramelo gibt es schlicht nicht. Und deshalb ist der Husky praktisch der einzige Hund, den du je mit <span class="ig">Hoch</span> bei Stärke zu sehen bekommst.</p>
+<p>Es gibt noch ein viertes Gen für allgemeinen Stress, das im Fenster nicht auftaucht. Es multipliziert allen Stress, den der Hund im Kampf abbekommt. Der Caramelo hat das schlechteste von allen, der Deutsche Schäferhund und der Husky die besten.</p>
+<p>Die Beschriftung im Fenster nutzt für alle Rassen dieselbe Skala: unter 34 % ist <strong><span class="ig">Niedrig</span></strong>, zwischen 34 % und 66 % ist <strong><span class="ig">Durchschnittlich</span></strong> und über 66 % ist <strong><span class="ig">Hoch</span></strong>. Deshalb zeigt ein Caramelo immer <span class="ig">Niedrig</span> in allen dreien.</p>
 <h3 id="wie-viel-das-wirklich-ausmacht">Wie viel das wirklich ausmacht</h3>
-<p>Die Gene verschieben Schaden und Kampf-XP um <strong>bis zu 15% nach oben oder unten</strong> und die Stressresistenz um bis zu 10 Prozentpunkte. <strong>Die Rasse wiegt viel schwerer als das Gen.</strong></p>
-<p>Die Ausnahme sind die <strong>Satteltaschen</strong>: Da ist das Stärke-Gen der wichtigste Faktor, und der Unterschied zwischen einem schwachen und einem starken Hund derselben Rasse ist deutlich zu spüren.</p>
-<p><strong>Ein Gen lässt sich nicht trainieren.</strong> Die einzige Möglichkeit, sie zu verbessern, ist, <a href="#9-mischlinge-verschiedene-rassen-kreuzen">Hunde zu kreuzen</a>.</p>
+<p>Die Gene bewegen Schaden und Kampf-XP um bis zu 15 % nach oben oder unten und die Stressfestigkeit um bis zu 10 Prozentpunkte. Der Unterschied zwischen zwei Rassen ist deutlich größer.</p>
+<p>Die Ausnahme sind die Satteltaschen: Dort ist das Stärke-Gen der Hauptfaktor.</p>
+<p>Ein Gen lässt sich nur auf einem Weg verbessern, nämlich durch <a href="#9-mischlinge-verschiedene-rassen-kreuzen">Kreuzen</a>.</p>
 <h2 id="9-mischlinge-verschiedene-rassen-kreuzen">9. Mischlinge: verschiedene Rassen kreuzen</h2>
-<p>Wenn ein Rüde und eine Hündin verschiedener Rassen Welpen bekommen, kommt ein <strong>Mischling</strong> heraus.</p>
+<p>Bekommen ein Rüde und eine Hündin verschiedener Rassen Welpen, kommt ein Mischling heraus.</p>
 <h3 id="was-mit-dem-welpen-passiert">Was mit dem Welpen passiert</h3>
-<p><strong>Die Abstammung ist der Durchschnitt der Eltern.</strong> Caramelo mit Deutschem Schäferhund ergibt einen Welpen mit 50/50. Kreuzt du diesen Welpen mit einem reinrassigen Schäferhund, kommst du auf 25% Caramelo und 75% Schäferhund. Und so weiter, Generation für Generation.</p>
-<p><strong>Das Aussehen ist EINE der Rassen, ausgewürfelt mit der Abstammung als Gewicht.</strong> Ein 50/50-Welpe wird mit dem Gesicht eines Schäferhunds <strong>oder</strong> eines Caramelo geboren, nie als optische Mischung. Je stärker die Abstammung zu einer Seite neigt, desto größer die Chance, dass er nach dieser Seite kommt.</p>
-<blockquote class="quote"><strong>Und hier ist der Punkt, der alle verwirrt:</strong> Die ausgewürfelte Rasse ist die <strong>funktionale</strong> Rasse des Hundes. Ein Mischling mit 50% Husky und 50% Schäferhund, der als Husky geboren wird, <strong>ist in jeder Hinsicht ein Husky</strong>: Moodle Gewärmt, Lerntempo des Huskys, Satteltaschen des Huskys. Die Mischung macht ihn in nichts davon zum Mittelding.</blockquote>
-<p><strong>Die Gene landen in der Mitte zwischen den Eltern</strong>, mit einer Streuung von 6% nach oben oder unten.</p>
-<p><strong>Und genau hier zahlt sich die Mischung wirklich aus:</strong> Die Genspanne des Welpen ist ab jetzt die <strong>Vereinigung</strong> der Spannen aller Rassen in seiner Abstammung. Ein Mischling aus Caramelo und Husky kann mit jeder Stärke zwischen 0,00 und 0,80 geboren werden, er <strong>kann also die Obergrenze des Caramelo durchbrechen</strong>. Wenn du die stärksten Hunde jedes Wurfs kreuzt, hebst du über die Generationen die ganze Linie an.</p>
-<p><strong>Was der Welpe NICHT erbt:</strong> irgendeine Fähigkeit. Er wird immer mit <strong>Stufe 0 in allen fünf</strong> geboren. Was er von der Rasse erbt, ist das <strong>Lerntempo</strong>, nicht das Gelernte.</p>
-<h3 id="das-label-mischling">Das Label "Mischling"</h3>
-<p>Ein Hund mit mehr als einer Rasse in der Abstammung bekommt im Fenster und im Kontextmenü ein <strong><span class="ig">(Mischling)</span></strong> neben den Rassennamen.</p>
-<p>Die <strong>prozentuale Aufschlüsselung</strong> (<span class="ig">50% Husky, 50% Deutscher Schäferhund</span>) erscheint, wenn du im Hundefenster <strong>mit der Maus über der Zeile <span class="ig">Rasse</span></strong> stehen bleibst, zusammen mit der Beschreibung der dominanten Rasse.</p>
-<h3 id="lohnt-es-sich-verschiedene-rassen-zu-kreuzen">Lohnt es sich, verschiedene Rassen zu kreuzen?</h3>
-<div class="tw"><table><thead><tr>
-<th>Ziel</th>
-<th>Antwort</th>
-</tr></thead><tbody>
-<tr>
-<td>Gene über Generationen verbessern</td>
-<td><strong>Ja</strong>, das ist der einzige Weg, den es gibt</td>
-</tr>
-<tr>
-<td>Das Moodle von zwei Rassen bekommen</td>
-<td><strong>Nein.</strong> Der Hund hat nur ein Moodle, das der Rasse, zu der er wurde</td>
-</tr>
-<tr>
-<td>Die Lerntempos kombinieren</td>
-<td><strong>Nein.</strong> Er nutzt die Tabelle der Rasse, zu der er wurde</td>
-</tr>
-<tr>
-<td>Schnell viele Welpen bekommen</td>
-<td>Nimm eine <strong>Caramelo-Hündin als Mutter</strong> (2 bis 4 pro Wurf)</td>
-</tr>
-</tbody></table></div>
+<p>Die Abstammung ist der Durchschnitt der Eltern. Caramelo mit Deutschem Schäferhund ergibt einen Welpen mit 50/50. Kreuzt du diesen Welpen mit einem reinen Schäferhund, ergibt das 25 % Caramelo und 75 % Schäferhund, und so weiter mit jeder Generation.</p>
+<p>Das Aussehen ist eine der Rassen der Abstammung, ausgewürfelt mit dem Gewicht der Prozente. Ein Welpe mit 50/50 kommt mit dem Gesicht eines Schäferhundes oder eines Caramelo zur Welt, nie mit einer optischen Mischung.</p>
+<blockquote class="quote">Die Rasse, die dabei herauskommt, ist die funktionale Rasse des Hundes. Ein Mischling mit 50 % Husky und 50 % Schäferhund, der wie ein Husky aussieht, ist in jeder Hinsicht ein Husky: Moodle Gewärmt, Lerntempo des Huskys, Satteltaschen des Huskys.</blockquote>
+<p>Die Gene liegen in der Mitte zwischen den Eltern, mit einer Abweichung von etwa 6 % nach oben oder unten.</p>
+<p>Die Gen-Spanne des Welpen ist ab dann die Vereinigung der Spannen aller Rassen seiner Abstammung. Ein Mischling aus Caramelo und Husky kann mit jeder Stärke zwischen 0,00 und 0,80 zur Welt kommen, über der Obergrenze des Caramelo. Kreuzt du die stärksten Hunde jedes Wurfes, steigt die Linie über die Generationen.</p>
+<p>Der Welpe kommt immer mit Stufe 0 in allen fünf Fähigkeiten zur Welt. Von der Rasse erbt er das Lerntempo.</p>
+<h3 id="die-beschriftung-mischling">Die Beschriftung "Mischling"</h3>
+<p>Ein Hund mit mehr als einer Rasse in der Abstammung bekommt im Fenster und im Kontextmenü ein <strong><span class="ig">(Mischling)</span></strong> neben den Rassennamen. Die genaue Aufschlüsselung (<span class="ig">50 % Husky, 50 % Deutscher Schäferhund</span>) erscheint, wenn du mit der Maus über die Zeile <strong><span class="ig">Rasse</span></strong> im Fenster des Hundes fährst, zusammen mit der Beschreibung der dominanten Rasse.</p>
 <h2 id="10-die-addons-installieren">10. Die Addons installieren</h2>
-<p>Rottweiler, Dobermann, Labrador und Mops sind <strong>eigene Mods im Steam Workshop</strong>. Jedes davon:</p>
+<p>Rottweiler, Dobermann, Labrador, Mops und die Katze sind eigene Mods im Steam Workshop. Jedes davon:</p>
 <ul>
-<li><strong>Setzt voraus, dass Companion Dogs als Basis installiert und aktiv ist.</strong></li>
-<li>Fügt <strong>eine Rasse</strong> hinzu, mit eigenem Modell, eigener Textur, eigenem Moodle und eigenen Spawn-Orten.</li>
-<li>Bringt die <strong>14 Übersetzungen</strong> mit, dieselben wie in der Basis.</li>
+<li>Braucht das installierte und aktive Basis-Mod Companion Dogs.</li>
+<li>Fügt eine Rasse hinzu, mit eigenem Modell, eigener Textur, eigenem Moodle und eigenen Spawn-Orten.</li>
+<li>Kommt mit den 14 Übersetzungen, denselben wie im Basis-Mod.</li>
 </ul>
 <div class="tw"><table><thead><tr>
 <th>Addon</th>
 <th>Steam-Seite</th>
-<th>Mindestversion der Basis</th>
+<th>Mindestversion des Basis-Mods</th>
 </tr></thead><tbody>
 <tr>
 <td><strong>CD: Rottweiler</strong></td>
@@ -1794,47 +1726,46 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>CD: Labrador</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">abonnieren</a></td>
-<td><strong>0.6.6 oder neuer</strong></td>
+<td>0.6.6 oder neuer</td>
 </tr>
 <tr>
 <td><strong>CD: Pug</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">abonnieren</a></td>
-<td><strong>0.6.8 oder neuer</strong></td>
+<td>0.6.8 oder neuer</td>
 </tr>
 <tr>
 <td><strong>CD: Cats</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">abonnieren</a></td>
-<td><strong>0.7.0 oder neuer</strong></td>
+<td>0.7.0 oder neuer</td>
 </tr>
 </tbody></table></div>
-<p>Und die Basis selbst, falls du sie noch nicht hast: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292"><strong>Companion Dogs</strong></a>.</p>
-<p>Ist die Basis zu alt, macht das Addon <strong>einfach gar nichts</strong>: kein Fehler, kein Absturz, die Rasse existiert nur nicht. Wenn du den Labrador installiert hast und nie einen findest, <strong>prüfe zuerst die Version der Basis</strong>.</p>
-<blockquote class="quote"><strong>Entferne kein Addon aus einem Spielstand, in dem noch lebende Hunde dieser Rasse unterwegs sind.</strong> Der Hund verliert das Modell und die Textur, auf die er sich bezieht.</blockquote>
-<p>Ein Addon zu installieren <strong>ändert nichts an den Rassen, die es schon gibt</strong>. Die neuen Rassen kommen automatisch in die Auswürfelung für Zucht und Mischung.</p>
-<hr>
-<p><strong>Die Katze ist auch hier die Ausnahme.</strong> Sie fügt <strong>fünf</strong> Einträge hinzu (einen pro Fell) statt einem, und sie nimmt <strong>nicht</strong> an der Verpaarung oder der Mischlingsbildung teil: es gibt keine Kreuzung mit einer Katze, auch nicht zwischen zwei Katzen. Der Rest gilt genauso: sie braucht den aktiven Basis-Mod, bringt die 14 Übersetzungen mit, und auf einem zu alten Basis-Mod bleibt sie wirkungslos, statt einen Fehler zu werfen.</p>
+<p>Und das Basis-Mod, falls du es noch nicht hast: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>
+<p>Ist das Basis-Mod zu alt, tut das Addon nichts: kein Fehler, kein Absturz, die Rasse gibt es einfach nicht. Wenn du den Labrador installiert hast und nie einen findest, prüf zuerst die Version des Basis-Mods.</p>
+<blockquote class="quote">Entferne kein Addon aus einem Spielstand, in dem noch lebende Hunde dieser Rasse sind. Der Hund verliert Modell und Textur, auf die er sich bezieht.</blockquote>
+<p>Ein Addon zu installieren ändert nichts an den Rassen, die es schon gibt. Die neuen Rassen kommen von allein in die Auswürfelung für Paarung und Mischlinge.</p>
+<p>Bei der Katze ist das anders. Sie fügt fünf Einträge hinzu (einen pro Fellfarbe) statt einen, und ihre Paarung ist auf die Art beschränkt: Die fünf Fellfarben paaren sich untereinander und der Wurf mischt die beiden wie jede andere Kreuzung.</p>
 <h2 id="11-häufige-fragen-zu-rassen">11. Häufige Fragen zu Rassen</h2>
-<p><strong><span class="ig">Welche Rasse ist die beste?</span></strong> Kommt darauf an, was du machst. Für den <strong>Kampf</strong> der Deutsche Schäferhund oder der Rottweiler. Für die <strong>Jagd</strong> der Labrador. Für <strong>Tragkraft</strong> der Husky. Für den <strong>Hof</strong> der Border Collie. Für <strong>Schusswaffen</strong> der Dobermann. Und der <strong>Caramelo</strong> bleibt wegen seines Moodles ausgezeichnet, auch wenn er der schwächste ist.</p>
-<p><strong><span class="ig">Kann mein Caramelo mit Training stark werden?</span></strong> Nein. Er wird nie einen Zombie töten, egal wie viel du trainierst, und seine Anlagen sind per Definition die schlechtesten. Was das Training verbessert, sind Gehorsam, Spürsinn und Jagd, und darin steht er jedem anderen Hund in nichts nach.</p>
-<p><strong><span class="ig">Ich habe zwei Hunde derselben Rasse gefunden, welchen nehme ich?</span></strong> Du <strong>kannst es vorher nicht wissen</strong>: Ausgewürfelt wird im Moment des Zähmens. Zähme ihn und schau dir im Fenster den Abschnitt <strong><span class="ig">Anlagen</span></strong> an.</p>
-<p><strong><span class="ig">Ich habe einen Hund mit schlechten Anlagen. Freilassen und neu zähmen?</span></strong> <strong>Das bringt nichts.</strong> Die Gene werden <strong>nur ein einziges Mal ausgewürfelt, beim ersten Zähmen</strong>, und der Hund behält sie für immer, auch nachdem er freigelassen und wieder gezähmt wurde (genauso wie er seine Fähigkeiten behält). Für eine neue Auswürfelung musst du <strong>einen anderen Hund zähmen</strong>. Wer sich mit der Zeit wirklich verbessern will, geht den Weg über das <a href="#9-mischlinge-verschiedene-rassen-kreuzen">Kreuzen</a>.</p>
-<p><strong><span class="ig">Kann ich zwei Rassen-Moodles gleichzeitig haben?</span></strong> Nein. Es zählt nur der <strong>nächstgelegene Hund</strong>. <strong><span class="ig">Gut erholt</span></strong> ist die Ausnahme, weil es nicht von der Nähe abhängt.</p>
-<p><strong><span class="ig">Warum ist das Moodle verschwunden?</span></strong> Fast immer sind es Hunger oder Durst über 75% oder eine Loyalität, die unter die Untergrenze gefallen ist. Füttere ihn, gib ihm Wasser und streichle ihn. Prüfe außerdem, ob der Hund <strong>höchstens 8 Felder entfernt und auf derselben Etage</strong> ist.</p>
-<p><strong><span class="ig">Gibt es eine schnellere Rasse?</span></strong> Nein. Keine Rasse läuft schneller als eine andere.</p>
-<p><strong><span class="ig">Gibt es den Husky in einer anderen Farbe?</span></strong> Nein. Jede Rasse hat nur eine Textur, und Rüde und Hündin nutzen dieselbe.</p>
-<p><strong><span class="ig">Schlagen große Hunde härter zu?</span></strong> Nein. Die Größe ist rein optisch. Die Kopplung von Körpergröße und Stärke wurde absichtlich abgeschaltet.</p>
-<p><strong><span class="ig">Wo finde ich einen Dobermann?</span></strong> <strong>Auf Polizeiwachen.</strong> Die Chance in Militärgebäuden ist auf dem Papier höher, aber auf der Basiskarte des Spiels gibt es fast keine Militärgebäude.</p>
-<p><strong><span class="ig">Ich habe den Labrador installiert und finde keinen.</span></strong> Prüfe die Version deiner Companion-Dogs-Basis: Der Labrador <strong>braucht 0.6.6 oder neuer</strong> und bleibt auf einer alten Basis unsichtbar und stumm. Prüfe außerdem, ob du die Häuser der Gegend nicht längst abgesucht hast: Die Spawn-Entscheidung fällt <strong>einmal pro Gebäude, für immer</strong>.</p>
-<p><strong><span class="ig">Mein Mischling hat nicht das Moodle beider Rassen.</span></strong> Das ist so gewollt. Ein Mischling ist mechanisch <strong>die Rasse, nach der er aussieht</strong>. Die Mischung ändert nur die Genspanne seiner Nachkommen und die Prozentangabe im Fenster.</p>
-<p><strong><span class="ig">Ich will einen Hund mit einer anderen Mod spawnen, welchen Namen nehme ich?</span></strong> Den internen Namen, nicht den angezeigten. Die Liste steht in <a href="#6-vergleichstabellen">Vergleichstabellen</a>, am Ende des Abschnitts.</p>
-<p><strong>„Ist eine Katze besser als ein Hund?“</strong> Weder besser noch schlechter: sie macht etwas anderes. Sie wacht weiter als jeder Hund und dabei lautlos, und sie ist der einzige Begleiter, der das Sammeln bei Nacht löst. Dafür kämpft sie nicht, paart sich nicht und trägt nichts. Eine Katze <strong>ersetzt keinen</strong> Wachhund; sie füllt einen Platz, den kein Hund gefüllt hat.</p>
-<p><strong>„Warum kann ich meine Katze nicht auf Wachen stellen?“</strong> Weil es den Modus für sie nicht gibt, und deshalb ist der Knopf gar nicht erst da. Eine Katze hat keinen Kampf: sie wacht nicht, beschützt dich nicht und greift keinen Zombie an, selbst wenn du neben ihr getroffen wirst. Das lässt sich nicht einstellen.</p>
-<p><strong>„Meine Katze ist von selbst losgerannt und gehorcht nicht mehr.“</strong> Sie hat eine Ratte gesehen. Das ist Rasseverhalten, kein Fehler: Hin und wieder lässt die Katze alles stehen und setzt einem Nagetier nach, ohne dass du es verlangst und ohne dass eine Jagdstufe nötig wäre. Es dauert nicht lange, und sie kommt von selbst zurück, meist <strong>mit der Ratte</strong>, die sie dir vor die Füße legt. Solange sie läuft, verweigert sie Befehle, <strong>außer Komm</strong>, das die Ablenkung sofort abbricht. Nach dem Töten gehorcht sie wieder normal: Die Jagd ist Instinkt, das Abliefern ist nur Abliefern. Keine Hunderasse im Mod lässt sich so ablenken, und es gibt keinen Schalter dafür: Das ist der Preis einer Katze.</p>
-<p><strong>„Was genau jagt die Katze?“</strong> Nagetiere und <strong>Kaninchen</strong>, und nichts darüber. Ein Reh ist für sie <strong>unsichtbar</strong>: sie zeigt es nicht einmal an. Und deine eigenen Tiere zählen nie mit: Huhn, Kuh und alles in einem Gehege sind für jeden Begleiter tabu, Hund wie Katze. Für Großwild und fürs Apportieren ist der Hund ein Labrador oder ein Golden.</p>
-<p><strong>„Wie bekomme ich Kätzchen?“</strong> Gar nicht. Katzen paaren sich nicht, weder mit Hunden noch mit anderen Katzen. Jede Katze in deinem Spiel kam aus der Welt.</p>
-<p><strong>„Haben die fünf Felle unterschiedliche Werte?“</strong> Nein, nicht ein einziger. Dieselben Fähigkeiten, dasselbe Moodle, dieselben Anlagenspannen, dieselbe Stimme. Das Fell ist reine Optik, und welches du findest, ist Glückssache.</p>
-<p><strong>„Meine Katze wurde viel zu schnell ungehorsam.“</strong> Das ist die Rasse. Die Bindung einer Katze fällt <strong>50% schneller</strong> als die eines Hundes, wenn du verschwindest oder bei der Pflege nachlässt, das genaue Gegenteil des Mopses. Eine Katze verlangt Anwesenheit: streicheln, füttern, tränken, regelmäßig.</p>
-<p><strong>„Ich wache nicht mehr mit Geschenken auf.“</strong> Schau auf ihre Balken. Eine Katze mit <strong>Hunger oder Durst bei 75% oder mehr</strong>, krank, ungehorsam oder in Panik geht nachts nicht raus, und das Ausbleiben wird nicht gemeldet. Denk auch daran, dass es <strong>eines pro Tag und pro Besitzer</strong> ist: zwei Katzen ergeben nicht zwei Geschenke.</p></article></main>
+<p><strong><span class="ig">Welche Rasse ist die beste?</span></strong> Kommt darauf an, was du machst. Für den Kampf Deutscher Schäferhund oder Rottweiler. Für die Jagd Labrador. Für Lasten Husky. Für den Hof Border Collie. Für Schusswaffen Dobermann. Der Caramelo hat die schlechtesten Werte, aber sein Moodle bleibt nützlich.</p>
+<p><strong><span class="ig">Kann mein Caramelo mit Training stark werden?</span></strong> Nein. Er erledigt nie einen Zombie, so viel er auch trainiert. Training steigert Gehorsam, Spürsinn und Jagd, und darin entwickelt er sich wie jeder andere.</p>
+<p><strong><span class="ig">Ich habe zwei Hunde derselben Rasse gefunden, welchen nehme ich?</span></strong> Vorher lässt sich das nicht sagen: Die Anlagen werden erst beim Zähmen ausgewürfelt. Zähme ihn und schau in den Abschnitt <strong><span class="ig">Anlagen</span></strong> im Fenster.</p>
+<p><strong><span class="ig">Ich habe einen Hund mit schlechten Anlagen. Freilassen und neu zähmen?</span></strong> Bringt nichts. Die Gene werden einmal ausgewürfelt, beim ersten Zähmen, und der Hund behält dieselben auch, nachdem du ihn freigelassen und erneut gezähmt hast (die Fähigkeiten bleiben ebenfalls). Für einen neuen Wurf zähme einen anderen Hund. Um sie über die Zeit zu verbessern, führt der Weg über das <a href="#9-mischlinge-verschiedene-rassen-kreuzen">Kreuzen</a>.</p>
+<p><strong><span class="ig">Kann ich zwei Rassen-Moodles gleichzeitig haben?</span></strong> Nein. Nur der nächste Hund zählt. <strong><span class="ig">Gut erholt</span></strong> ist die Ausnahme, weil es nicht an der Nähe hängt.</p>
+<p><strong><span class="ig">Warum ist das Moodle verschwunden?</span></strong> Fast immer sind es Hunger oder Durst über 75 % oder Loyalität unter der Untergrenze. Füttere ihn, gib ihm Wasser und streichle ihn. Prüf auch, ob er höchstens 8 Felder entfernt und auf derselben Etage ist.</p>
+<p><strong><span class="ig">Gibt es eine schnellere Rasse?</span></strong> Nein.</p>
+<p><strong><span class="ig">Gibt es Huskys in anderen Farben?</span></strong> Nein. Jede Rasse hat genau eine Textur, und Rüde wie Hündin nutzen dieselbe. Die Katze hat fünf Fellfarben, aber jede davon ist eine eigene Rasse.</p>
+<p><strong><span class="ig">Beißt ein großer Hund härter?</span></strong> Nein. Die Größe ist reine Optik und geht nicht in die Schadensrechnung ein.</p>
+<p><strong><span class="ig">Wo finde ich einen Dobermann?</span></strong> In der Polizeiwache. Militärgebäude haben eine etwas höhere Chance, aber auf der Basiskarte des Spiels gibt es kaum welche.</p>
+<p><strong><span class="ig">Ich habe den Labrador installiert und finde keinen.</span></strong> Prüf die Version des Basis-Mods Companion Dogs: Der Labrador braucht 0.6.6 oder neuer. Prüf auch, ob die Häuser der Gegend schon erkundet sind: Die Spawn-Auswürfelung passiert einmal pro Gebäude und wiederholt sich nicht.</p>
+<p><strong><span class="ig">Mein Mischling hat nicht die Moodles beider Rassen.</span></strong> Das ist so gedacht. Für die Mechanik ist ein Mischling die Rasse, nach der er aussieht. Die Mischung ändert nur die Gen-Spanne der Welpen und die Prozentangabe im Fenster.</p>
+<p><strong><span class="ig">Ist eine Katze besser als ein Hund?</span></strong> Sie macht etwas anderes. Sie hält weiter Wache als jeder Hund, und das lautlos, und sie ist der einzige Begleiter, der nachts sammelt. Dafür kämpft sie nicht, trägt fast nichts und paart sich nur mit einer anderen Katze.</p>
+<p><strong><span class="ig">Warum kann ich meine Katze nicht auf Wache schicken?</span></strong> Den Modus gibt es für die Katze nicht, also erscheint der Knopf nicht. Eine Katze hat keinen Kampf: Sie wacht nicht, schützt nicht und greift keine Zombies an, auch nicht, wenn du direkt neben ihr Prügel beziehst.</p>
+<p><strong><span class="ig">Meine Katze ist losgerannt und gehorcht mir nicht mehr.</span></strong> Sie hat eine Ratte gesehen. Solange sie rennt, verweigert sie jeden Befehl außer <strong><span class="ig">Komm her</span></strong>. Sie kommt von allein zurück, meist mit der Ratte, und abschalten lässt sich das nicht.</p>
+<p><strong><span class="ig">Was jagt die Katze genau?</span></strong> Nager und Kaninchen. Rehe stellt sie nicht einmal vor. Nutztiere (Huhn, Kuh, alles im Gehege) sind für jeden Begleiter tabu, Hund wie Katze. Für großes Wild und fürs Apportieren nimm Labrador oder Golden.</p>
+<p><strong><span class="ig">Wie bekomme ich Kätzchen?</span></strong> Genauso wie Welpen: einen Kater und eine Katze, beide deine, erwachsen, loyal, gut gefüttert und nah beieinander. Eine Katze paart sich nur mit einer Katze.</p>
+<p><strong><span class="ig">Haben die fünf Fellfarben unterschiedliche Werte?</span></strong> Nein. Dieselben Fähigkeiten, dasselbe Moodle, dieselben Anlagen-Spannen, dieselbe Stimme. Welche davon auftaucht, ist Zufall.</p>
+<p><strong><span class="ig">Meine Katze ist viel zu schnell ungehorsam geworden.</span></strong> Die Bindung der Katze sinkt 50 % schneller als die eines Hundes, wenn du verschwindest oder die Pflege schleifen lässt (beim Mops ist es umgekehrt). Streicheln, Futter und Wasser mit Regelmäßigkeit halten die Loyalität oben.</p>
+<p><strong><span class="ig">Ich wache nicht mehr mit einem Geschenk auf.</span></strong> Schau auf ihre Balken. Eine Katze mit Hunger oder Durst bei 75 % oder mehr, krank, ungehorsam oder in Panik geht nachts nicht raus, und das Spiel sagt es dir nicht. Es gibt ein Geschenk pro Tag und pro Besitzer.</p>
+<p><strong><span class="ig">Ich will einen Hund mit einem anderen Mod spawnen, welchen Namen nehme ich?</span></strong> Den internen Namen, nicht den, der auf dem Bildschirm steht. Die Liste steht in <a href="#6-vergleichstabellen">Vergleichstabellen</a>, am Ende des Abschnitts.</p></article></main>
 </div>
 
 <script>

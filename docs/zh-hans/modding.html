@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -415,7 +415,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#3-动手之前需要准备什么" data-id="3-动手之前需要准备什么">3. 动手之前需要准备什么</a>
 </div>
 <div class="grp">
-<a class="s2" href="#4-一个附加模组的文件" data-id="4-一个附加模组的文件">4. 一个附加模组的文件</a>
+<a class="s2" href="#4-附加模组的文件" data-id="4-附加模组的文件">4. 附加模组的文件</a>
 </div>
 <div class="grp">
 <a class="s2" href="#5-版本守卫" data-id="5-版本守卫">5. 版本守卫</a>
@@ -427,6 +427,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#可选字段" data-id="可选字段">可选字段</a>
 <a class="s3" href="#本能distract" data-id="本能distract">本能：distract</a>
 <a class="s3" href="#声音" data-id="声音">声音</a>
+<a class="s3" href="#食性" data-id="食性">食性</a>
 </div>
 </div>
 <div class="grp">
@@ -468,31 +469,30 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div></nav>
   </aside>
   <main><article class="doc"><h1 id="companion-dogs模组制作手册">Companion Dogs：模组制作手册</h1>
-<p>如何制作你自己的附加模组：一个新品种，或者一整个物种，作为一个独立的创意工坊模组挂接到 Companion Dogs 上。</p>
-<p>这本手册是写给做模组的人的。如果你只想玩，你要看的是另外两本： <a href="features.html" class="xlink">功能</a> 讲狗能做什么， <a href="breeds.html" class="xlink">品种</a> 讲品种本身。</p>
-<p>本手册假设你已经能读 Lua，并且已经有一个带骨骼和动画的动物模型。美术流程不在这里；第 3 节列出模型 文件必须满足的条件，仅此而已。</p>
-<blockquote class="quote"><strong>这是一份公开的契约。</strong> 本手册点到名字的一切，都是给模组外部调用的。这里没有点到名字的东西属于 内部实现，可能在任何版本里不加通知地改变。</blockquote>
+<p>如何做出你自己的附加模组：一个新品种，或者一整个新物种，作为独立的创意工坊模组挂接到 Companion Dogs 上。</p>
+<p>本手册写给做模组的人。如果你只是想玩，看另外两本手册： <a href="features.html" class="xlink">功能</a> 讲狗能做什么， <a href="breeds.html" class="xlink">品种</a> 讲品种。</p>
+<p>它假设你能读 Lua，也已经有一个带骨骼和动画的动物模型。美术流程不在本手册的范围里。第 3 节列出 模型文件必须满足的条件。</p>
+<blockquote class="quote">本手册点到名字的一切都是公开契约，就是给模组外部调用的。这里没有点到名字的东西属于内部实现， 可能在任何版本里不加通知地改变。</blockquote>
 <h2 id="1-附加模组是什么">1. 附加模组是什么</h2>
-<p>附加模组就是一个普通的创意工坊模组，它声明 <code>require=CompanionDogs</code>，并在加载时调用一个函数。它只 添加<strong>一个品种</strong>（如果共用同一个身体，也可以是几个），除此之外什么都不加。让动物表现得像个同伴的 一切，早已在基础模组里，并且是共享的。</p>
-<p><strong>基础模组拥有：</strong></p>
+<p>附加模组就是一个普通的创意工坊模组，它声明 <code>require=CompanionDogs</code>，并在加载时调用一个函数。它 添加一个品种（共用同一副身体的话也可以是几个），除此之外什么都不加。</p>
+<p>基础模组拥有：</p>
 <ul>
 <li>动画状态机、动画集和骨骼</li>
-<li>跟随、寻路、战斗、狩猎、放牧、警戒、需求和日常维护</li>
+<li>跟随、寻路、战斗、狩猎、放牧、哨兵、需求和日常照料</li>
 <li>全部界面：狗的窗口、环形菜单、右键菜单、狗舍、地图标记</li>
-<li>驯服、羁绊、繁殖、幼崽和混血</li>
-<li>沙盒选项，以及多人游戏中的同步</li>
+<li>驯服、羁绊、繁殖、幼犬和混血</li>
+<li>沙盒选项，以及多人游戏里的同步</li>
 </ul>
-<p><strong>你的附加模组拥有：</strong></p>
+<p>你的附加模组拥有：</p>
 <ul>
 <li>让你的动物区别于卡拉梅洛的那些数值</li>
-<li>它的身体模型、贴图、肖像，以及如果有的话，moodle 图标</li>
+<li>它的身体模型、贴图、肖像，以及 moodle 图标（如果有的话）</li>
 <li>它在世界上哪里能被找到</li>
 <li>它的名字和描述，在你随包附带的每一种语言里</li>
 </ul>
-<p>这个分工就是全部要点。一个品种包只是几百行 Lua，因为难的部分已经在跑了。</p>
-<p><strong>一个品种，一副样子。</strong> 品种就是一组数值加上一副样子。如果你想让同一种动物的两种颜色表现不同，那 就是两个品种。如果你想要两种表现相同的颜色，对基础模组来说它们仍然是两个品种（两个名字，狗舍里两 条记录），而你从一张共享的表里把它们写出来，就像 CD: Cats 用它五种毛色做的那样。</p>
+<p>两种表现相同的颜色，对基础模组来说仍然是两个品种（两个名字，狗舍里两条记录）；你从一张共享的表 里把它们写出来，就像 CD: Cats 用它的五种毛色那样。</p>
 <h2 id="2-api-的各个版本">2. API 的各个版本</h2>
-<p><code>CD.API_VERSION</code> 就是一个普通数字。它一直只靠增加东西而变大，所以针对旧版本写的附加模组，在更新的 基础模组上一行都不用改也照样加载。</p>
+<p><code>CD.API_VERSION</code> 就是一个普通数字。它只靠增加东西而变大，所以针对旧版本写的附加模组，在更新的基 础模组上不改一行也照样加载。</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>基础模组版本</th>
@@ -528,16 +528,26 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>、<code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>按物种区分的文本键（<code>&lt;key&gt;_&lt;species&gt;</code>）、<code>CD.defineGenome</code>、与物种无关的辅助函数名</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
 </tbody></table></div>
-<p>守卫里要写的数字，是<strong>你的附加模组真正需要的最低 API</strong>，而那张表里对应的基础模组版本，就是你在创意 工坊页面上要写的版本。从这张表里取，而不是从你写代码时基础模组恰好是什么版本：只存在于开发版里的 字段，就是你的玩家没有的字段。</p>
-<p><strong>缺失的字段会被静默忽略。</strong> 当字段是数值时这没问题：在旧一些的基础模组上，你的动物只是用正常音量 吠叫而已。当字段是一道禁令时就有问题了，因为那样一只永远不该战斗的猫会心安理得地冲上去打。也就是 说：数值可以降级，禁令不行。如果你的动物依赖某道禁令，就用引入它的那个 API 来守卫，让附加模组在更 旧的一切上完全不动。</p>
+<p>守卫里写你的附加模组真正需要的最低 API，并在创意工坊页面上写出那张表里对应的基础模组版本。不要 从你写代码时恰好在跑的那个基础模组上取数字：只存在于开发版里的字段，就是你的玩家没有的字段。</p>
+<p>缺失的字段会被忽略，不报错。字段是数值时这没什么：在旧一些的基础模组上，你的动物只是用正常音量吠 叫。字段是一道禁用开关时就有问题了：一只关掉了战斗的猫，在旧的基础模组上照样会打架。</p>
 <h2 id="3-动手之前需要准备什么">3. 动手之前需要准备什么</h2>
-<p><strong>一个蒙皮好的模型。</strong> 你的动物需要自己的 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 下，而那个文件必须 带着<strong>完整的 21 个 <code>Rac_*</code> 动画片段</strong>。片段不会在模型文件之间继承：一个只有十五个片段的模型，会给你 一只在第一次被要求做其余六个动作时就僵住的动物。模型还必须保持在 <strong>60 根骨骼</strong>以下，并且顶层节点为 单位矩阵，否则引擎每一帧都会抛异常，动物会被画成一团黑色污迹。</p>
-<p>如果你还没有模型，仍然可以把 <code>CD.applyDogModel</code> 指向基础模组的某个身体，然后把其余部分全部写出来并 测试。动物看上去会像卡拉梅洛，但本手册里的每一个系统都能跑。</p>
-<p>身体的<strong>一张贴图</strong>，以及狗舍窗口用的<strong>一张肖像</strong>。</p>
-<p><strong>在写任何代码之前先定一件事：</strong> 你的动物是一个*品种*，还是一个*物种*？品种是数值不同的狗。物种是 压根就没有某些工作的动物。这个差别不是外观问题，它决定你要写哪些字段，第 7 节讲的就是它。</p>
-<h2 id="4-一个附加模组的文件">4. 一个附加模组的文件</h2>
-<p>这是 CD: Pug，已发布的附加模组里最小的一个，只留下要紧的部分：</p>
+<p>你的动物需要自己的蒙皮 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 下，带完整的 21 个 <code>Rac_*</code> 动画片 段。片段不会在模型文件之间继承：只有十五个片段的模型，第一次被要求播放另外六个中的某一个时就会僵 住。模型还得控制在 60 根骨头以内，顶层节点为单位矩阵，否则引擎每帧抛一次异常，动物渲染成一团黑 影。另有两个可选片段，<code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（瘸腿的行走循环）；只有在品种定 义里设了 <code>limpAnim = true</code> 时它们才有用。</p>
+<p>如果你还没有模型，可以把 <code>CD.applyDogModel</code> 指向基础模组的某个身体，先把其余部分都写出来并测试。 动物长得像卡拉梅洛，但本手册里的每个系统都能跑。</p>
+<p>你还需要一张身体贴图，和一张给狗舍窗口用的肖像。</p>
+<p>写任何代码之前，先决定你的动物是一个品种还是一个物种。品种是数值不同的狗。物种是整块缺少某些职能 的动物。这个选择会改变你要写哪些字段；第 7 节讲它。</p>
+<h2 id="4-附加模组的文件">4. 附加模组的文件</h2>
+<p>下面是 CD: Pug，已发布的附加模组里最小的一个，只留了重要的部分：</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -555,7 +565,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>以及 <code>mod.info</code>：</p>
+<p>还有 <code>mod.info</code>：</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -565,18 +575,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> 是关键的一行。它保证基础模组的 Lua <strong>全部</strong>在你的之前跑完，每个阶段都是如 此：先 shared，然后 client，然后 server。没有它，你的文件可能先加载，那时每一次 <code>CD.</code> 调用都是在对 nil 取索引。</p>
-<p><strong><code>versionMin</code> 无法表达"需要 Companion Dogs 0.6.8"。</strong> 那个字段是*游戏*版本的门槛，除此之外别无他 意，而 mod.info 里并不存在写依赖模组版本的字段。基础模组的下限由下一节的守卫来强制，并通过你的描述 告知玩家。把它用文字写在那里，否则玩家得到的唯一症状就是一只永远不出现的动物。</p>
+<p><code>require=CompanionDogs</code> 是要紧的那一行。它保证在每个阶段里，基础模组的全部 Lua 都比你的先跑：先 shared，再 client，再 server。没有它，你的文件可能先加载，每一个 <code>CD.</code> 调用都是对 nil 取索引。</p>
+<p><code>versionMin</code> 表达不了“需要 Companion Dogs 0.6.8”。那个字段只管游戏版本，而 mod.info 里没有写依 赖版本的字段。对基础模组的下限由下一节的守卫强制，并在你的描述里告诉玩家。用文字写在那里，否则玩 家能看到的唯一症状，就是动物永远不出现。</p>
 <h2 id="5-版本守卫">5. 版本守卫</h2>
-<p>把这段放在你附加模组每一个 Lua 文件的最上面，数字换成你的附加模组真正需要的那个：</p>
+<p>把这段放在你附加模组每个 Lua 文件的开头，数字换成你需要的那个：</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>基础模组缺失或者太旧时，文件在第二行就返回了。这时附加模组什么都不做：没有品种，没有刷新，没有 moodle，日志里连一行都没有。这份安静是刻意的。加载了一半的附加模组比根本没加载更糟，因为玩家会得到 一只有名字却没有行为的动物。</p>
-<p>守卫是按文件来的，每个文件守卫自己要用的东西。<code>PugDefinitions.lua</code> 需要模型辅助函数，于是它守卫那 些：</p>
+<p>基础模组不在或者太旧时，文件在第二行就返回，附加模组什么都不做：没有品种，没有刷新，没有 moodle，日志里也没有一行。</p>
+<p>守卫是按文件写的，每个文件守卫自己用到的东西。<code>PugDefinitions.lua</code> 需要模型辅助函数，于是它守卫 这些：</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>永远不要自己创建那个全局变量。</strong> 附加模组里的 <code>CompanionDogs = CompanionDogs or {}</code> 会把一个不存在 的基础模组变成一张搭了一半的表，于是下游每一道守卫都会在不该通过的时候通过。读那个全局变量，永远不 要往里写。</p>
+<p>不要去创建那个全局变量。在附加模组里写 <code>CompanionDogs = CompanionDogs or {}</code>，会把缺失的基础模组 变成一张只搭了一半的表，后面每一道守卫都会在本不该通过的时候通过。</p>
 <h2 id="6-注册品种">6. 注册品种</h2>
-<p>一次调用，在一个 <strong>shared</strong> 文件里：</p>
+<p>一次调用，写在一个 shared 文件里：</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -606,8 +616,8 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>这次调用把品种插入进去，注册它的三个动物类型，重建繁殖顺序好让你的动物参与杂交，并注册刷新步骤。</p>
-<p>有问题的定义会返回 <code>nil</code> 而不是抛错，所以一个失误绝不会把加载一起拖垮。每一次拒绝都会打印一行点名 的日志，所以你第一次注册品种时<strong>要读日志</strong>。</p>
+<p>这次调用会插入品种，注册它的三个动物类型，重建繁殖顺序好让你的动物参与混血，并注册刷新步骤。</p>
+<p>定义写坏了，调用会返回 <code>nil</code> 而不是抛异常，加载继续往下走。每一次拒绝都会在日志里打一行点名的记 录。</p>
 <h3 id="必填字段">必填字段</h3>
 <div class="tw"><table><thead><tr>
 <th>字段</th>
@@ -615,58 +625,58 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>你这个品种的标识符，在所有模组之间唯一。发布之后永不更改。</td>
+<td>你的品种标识符，在所有模组里唯一。发布之后不要改。</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>三个动物类型的前缀：<code>&lt;前缀&gt;pup</code>、<code>&lt;前缀&gt;female</code>、<code>&lt;前缀&gt;male</code>。它选定<strong>身体网格</strong>。</td>
+<td>三个动物类型的前缀：<code>&lt;prefix&gt;pup</code>、<code>&lt;prefix&gt;female</code>、<code>&lt;prefix&gt;male</code>。它挑身体网格。</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
-<td>显示名称的翻译键。</td>
+<td>显示名的翻译键。</td>
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>每项技能的学习速度：<code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 是正常值。</td>
+<td>每项技能的学习速度：<code>scent</code>、<code>combat</code>、<code>obedience</code>、<code>hunt</code>、<code>herding</code>。1.0 是正常。</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>它下嘴有多重。卡拉梅洛是 0.20，能打的品种在 1.0 以上。</td>
+<td>它下嘴有多重。卡拉梅洛是 0.20，战斗型品种在 1.0 以上。</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>，伤害从战斗 0 级到战斗 10 级怎样增长。</td>
+<td><code>{ min, max }</code>，伤害从战斗 0 级到战斗 10 级怎么涨。</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>四个基因出生时的范围：<code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。每个都是 0 到 1 之间的 <code>{ 下限, 上限 }</code>。</td>
+<td>四个基因出生时的范围：<code>strength</code>、<code>aggressiveness</code>、<code>resistance</code>、<code>stress</code>。每个都是 0 到 1 之间的 <code>{ low, high }</code>。</td>
 </tr>
 </tbody></table></div>
 <h3 id="可选字段">可选字段</h3>
 <div class="tw"><table><thead><tr>
 <th>字段</th>
-<th>默认值</th>
+<th>默认</th>
 <th>作用</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
-<td>与 <code>key</code> 相同</td>
-<td>交给引擎的品种名，它选定<strong>贴图</strong>。每个品种唯一。</td>
+<td>就是 <code>key</code></td>
+<td>交给引擎的品种名。它挑贴图。每个品种唯一。</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>描述文本的键。当几个品种共用一段描述时，把它们指向同一个键。</td>
+<td>描述的键。几个品种可以共用一个键。</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>基础模组的值</td>
-<td>每胎幼崽的 <code>{ 下限, 上限 }</code>。</td>
+<td>基础值</td>
+<td>每胎的幼犬数 <code>{ min, max }</code>。</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false 表示它能磨损丧尸，但永远不会补上致命一击。</td>
+<td>false 表示它会把丧尸磨到虚弱，但永远不补上致命一击。</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
@@ -676,42 +686,42 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>一场打斗对它意味着多少压力。</td>
+<td>一场战斗要它付出多少压力。</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>基础模组的值</td>
-<td>它停止战斗的压力水平。<code>panicImmune = true</code> 表示永不停止。</td>
+<td>基础值</td>
+<td>压力到这个水平它就不打了。<code>panicImmune = true</code> 表示它永远不停。</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
 <td>1</td>
-<td>鞍袋容量的倍数。</td>
+<td>驮袋容量的倍率。</td>
 </tr>
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>幼崽的绝对视觉缩放。<strong>小型品种必须设置它</strong>，否则幼崽一出生就是成年体型。</td>
+<td>幼犬的绝对视觉缩放。小型品种必须设它，否则幼犬一生下来就是成年大小。</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>乘到最终的警戒半径上。</td>
+<td>乘在最终的哨兵半径上。</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>缩放警报吠叫的半径和音量。它缩放噪音，而不制造噪音：沙盒的噪音选项关掉之后，没有哪个品种会用吠叫招来丧尸。</td>
+<td>缩放警报吠叫的半径和音量。沙盒里的噪音选项关掉时，无论这个值是多少，没有哪个品种会用吠叫引来丧尸。</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>乘到忠诚度每日的衰减上。<code>0</code> 表示羁绊永不消退。</td>
+<td>乘在每日忠诚衰减上。<code>0</code> 表示羁绊永不消退。</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>动物被锁在全面警戒上：主人在任何地方都无法把它切到安静或静默。当吵闹的警报<strong>就是</strong>设计本身时才用。</td>
+<td>动物一直处于全面警戒：主人在任何地方都不能切到静默或静音。</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
@@ -721,109 +731,173 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>它放弃交付之前还会尝试多少游戏分钟。</td>
+<td>放弃之前它还会试着送多少游戏分钟。</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
-<td>关闭</td>
-<td><code>{ &lt;种类&gt; = { chance = 0..1, ... } }</code>。该品种会自己去追东西，不需要模式，也不需要等级。见下文。</td>
+<td>关</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>。这个品种会自己去追东西，不需要模式，也不需要等级。</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>基础模组的值</td>
-<td>待机动画窗口的长度，单位毫秒。当你的片段比狗的短时要设置它，否则循环会重新开始并在动作中途被切断。</td>
+<td>基础值</td>
+<td>待机动画窗口的长度，单位毫秒。你的片段比狗的短时要设它，否则循环会重开，把动作从中间切断。</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false 让动物在待命和守卫时保持站立，而不是趴下。</td>
+<td>false 让动物在停留和守卫时保持站着，而不是趴下。</td>
+</tr>
+<tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true 让受伤的动物走路时一瘸一拐。只有你的模型带那两个可选片段 <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（1.0 秒的行走循环，根运动和 <code>Rac_Walk</code> 相同）时才设它。没有这两个片段，动物会原地僵着走。</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
 <td>狗的声音</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>。见下文。</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>。</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>狗的那几份列表</td>
+<td>这只动物不能吃什么，对它来说什么算肉，以及它会自己从饲料槽里吃什么。</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>繁殖按物种封闭。见第 7 节。</td>
 </tr>
 <tr>
 <td><code>skills</code>、<code>canBreed</code>、<code>huntMaxPrey</code></td>
-<td>全部开启</td>
-<td>结构性的禁令。第 7 节。</td>
+<td>全部开着</td>
+<td>结构性的开关。见第 7 节。</td>
 </tr>
 </tbody></table></div>
-<p>你加进定义里的数值和标志，可以用 <code>CD.breedNumber(animal, 字段)</code> 和 <code>CD.breedFlag(animal, 字段)</code> 读 回来。比起自己去读 <code>CD.getBreedDef(animal).字段</code>，优先用这两个：它们替你处理缺失的字段，而且在基础 模组变动之后依然能用。</p>
+<p>你加进定义里的数值和标志，用 <code>CD.breedNumber(animal, field)</code> 和 <code>CD.breedFlag(animal, field)</code> 读 回来，不要用 <code>CD.getBreedDef(animal).field</code>。它们会应付字段缺失，基础模组变了也照样能用。</p>
 <h3 id="本能distract">本能：<code>distract</code></h3>
-<p>其他每一个字段都在要求动物擅长某件事。只有这一个，要求它不擅长专心。</p>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>声明了它的品种会时不时注意到什么，然后扔下手头的事追上去。它在<strong>没有任何模式开启</strong>的情况下这么做，从<strong>待命</strong> 和从跟随都一样，那段时间说了算的不是你：命令会带着服从判定已经在用的那条 <code>distracted</code> 消息被拒绝返回。唯一能 通过的命令是「过来」，它会取消这一状态。</p>
-<p>把它当成你给自己品种的代价，而不是加成。在它持续期间，动物不在主人身边，也不放哨。它适合一个以难以约束为 标志的品种。它不适合一条你希望玩家能依靠的工作犬。</p>
-<p>每个种类都接受同一组可选参数，你没写的会落到模组的默认值：</p>
+<p>声明了这个字段的品种，会时不时注意到什么东西，丢下手上的事去追。停留时和跟随时都会这样。持续期 间，命令会被拒绝，用的是服从判定本来就在用的 <code>distracted</code> 消息。只有“过来”这条命令能穿过去，而且 它会取消这次分心。</p>
+<p>每一种分心都接受同样的可选参数。你没写的部分用模组的默认值：</p>
 <div class="tw"><table><thead><tr>
 <th>字段</th>
 <th>作用</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1，只有当该种类的触发器确实找到了东西才会掷。把「25%」写成 <code>25</code> 会被拒绝，并在日志里留下一行具名记录</td>
+<td>0..1，只有这一种的触发器找到了东西才掷。想写“25%”而写成 <code>25</code> 会被拒绝，日志里有一行点名的记录</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
-<td>触发器搜索的格数，如果该种类会搜索的话</td>
+<td>触发器搜索的格数，前提是这一种确实要搜索</td>
 </tr>
 <tr>
 <td><code>durationMin</code></td>
-<td>窗口自行到期前的游戏分钟数</td>
+<td>这个窗口自己过期之前持续多少游戏分钟</td>
 </tr>
 <tr>
 <td><code>cooldownMin</code></td>
-<td>同一只动物再次分心之前的游戏分钟数</td>
+<td>同一只动物再次分心之前要隔多少游戏分钟</td>
 </tr>
 </tbody></table></div>
-<h4 id="prey-种类"><code>prey</code> 种类</h4>
-<p>基础模组自带的唯一种类。动物会去追野生动物，而 <code>classes</code> 决定哪些能得到它的注意：</p>
+<h4 id="prey-这一种"><code>prey</code> 这一种</h4>
+<p>基础模组自带的唯一一种。动物会去追野生动物，<code>classes</code> 挑出哪些算数：</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>无论你声明什么，有两条限制始终成立：</p>
+<p>不管你声明什么，有两条限制照样生效：</p>
 <ul>
-<li><strong>它永远不会超出你的 <code>huntMaxPrey</code>。</strong>这里适用的是狩猎系统的同一个漏斗，所以上限为 <code>small</code> 的品种即使声明 <code>large</code> 也不会去追鹿。</li>
-<li><strong>只有 <code>tiny</code> 会跳过等级门槛。</strong>啮齿动物是刚驯服、狩猎 0 的动物就能抓到的，因为抓老鼠不是谁训练出来的技能。 声明 <code>small</code>，你的品种就会扔下一切去追兔子，但要真正*杀死*它，它仍然需要拉布拉多所需要的那个狩猎等级。本能 决定什么能吸引注意；训练仍然决定什么能被放倒。没有这第二条限制，<code>classes</code> 就会成为抹掉狩猎阶梯的捷径。</li>
+<li>它绝不会越过你的 <code>huntMaxPrey</code>：上限是 <code>small</code> 的品种，就算声明了 <code>large</code> 也不会去追鹿。</li>
+<li>只有 <code>tiny</code> 会跳过等级门槛。刚驯服、狩猎 0 级的动物就已经能抓啮齿类了。声明了 <code>small</code> 之后，这 个品种在任何等级都会去追兔子，但要杀死它，需要的狩猎等级和拉布拉多一样。</li>
 </ul>
-<p>沙盒的狩猎开关管的仍然是最后一击，而不是追逐：关掉狩猎，动物照样会跑，但猎物会逃掉。</p>
-<p>这样完成的猎杀会走正常的回收流程，所以决定它把尸体叼回给主人还是留在倒下的地方的，是你品种的 <code>huntFetchLevel</code>。设成 <code>0</code>，动物从第一天起就会送回来，这正是猫会叼一只死老鼠给你的原因。这段回收 比分心的窗口活得更久：猎物一死，动物就重新接受命令，而回程按它自己的 <code>huntDeliverTimeoutMin</code> 走。 不碰 <code>huntFetchLevel</code> 就适用默认的 6，于是这个品种凭本能去追，但衔回来的资格仍然要自己挣。</p>
-<h4 id="编写你自己的种类">编写你自己的种类</h4>
-<p><code>distract</code> 是一个分发器，<code>prey</code> 只是随它一起提供的那个种类。注册你自己的：</p>
+<p>沙盒里的狩猎开关只影响击杀：动物照样追，但猎物会跑掉。</p>
+<p>这样杀到的猎物走的是正常的回收流程，所以你品种的 <code>huntFetchLevel</code> 决定它会不会把尸体叼回给主人。 设成 <code>0</code> 的话，动物从第一天起就送回来，猫给你叼来一只死老鼠就是这么回事。送回这件事比分心窗口活得 久：猎物一死，动物就重新听命令，回家这一趟按它自己的 <code>huntDeliverTimeoutMin</code> 计时。</p>
+<h4 id="写你自己的一种">写你自己的一种</h4>
+<p><code>distract</code> 是一个分发器。注册你自己的：</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
     drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
-<p>然后像其他种类一样在品种上声明它：<code>distract = { butterfly = { chance = 0.10 } }</code></p>
-<p><code>gate</code> 在模组的全局扫描预算之前运行，廉价的拒绝应该放在这里。<code>find</code> 在预算之后运行，开销就在那里。<code>drive</code> 在它仍然驱动着动物时返回 true，完成时返回 false，这会关闭窗口。你的处理器在自己的 <code>pcall</code> 里运行：如果它抛出 异常，模组会在日志里写一行具名记录，把那个种类在本次会话中注销，并让伙伴的其余部分继续工作。</p>
-<p>为将来的基础种类保留、尚未实现的名字：<strong><code>drink</code></strong>、<strong><code>eat</code></strong>、<strong><code>play</code></strong>。你今天可以用这些名字之一注册一个 种类，但基础模组推出自己的那天，这个名字归它。</p>
+<p>然后像其他种类一样在品种上声明它：<code>distract = { butterfly = { chance = 0.10 } }</code>。</p>
+<p><code>gate</code> 在模组的全局扫描预算之前跑。<code>find</code> 在预算之后跑，做开销大的那次搜索。<code>drive</code> 在还驱动着动 物时返回 true，做完了返回 false，窗口随之关闭。你的处理函数跑在自己的 <code>pcall</code> 里。它抛异常的话， 模组会在日志里写一行点名的记录，本次游戏里注销这一种，同伴的其余部分照常工作。</p>
+<p>留给基础模组将来使用的名字：<code>drink</code>、<code>eat</code>、<code>play</code>。今天你可以用其中一个名字注册一种，但基础模组 发布自己的那一种时会把名字收回去。</p>
 <h3 id="声音">声音</h3>
-<p>不同的物种不说同一种语言。没有 <code>voices</code>，你的猫会吠：</p>
+<p>没有 <code>voices</code> 时每个品种都用狗的声音，于是猫会吠。先注册你自己的声音：</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>然后让品种指向它们：</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> 不是可有可无的装饰。没有它，声音照样会响，但会无视玩家的分类音量滑块和游戏本身 的音效音量，而这是一种没人会来报告的故障，因为什么都不像是坏了。你在 <code>voices</code> 里漏掉的键会回退到狗 的声音，那正是你在狗的品种上想要的，也永远不是你在另一个物种上想要的。</p>
+<p>没有 <code>CD.registerVoices</code> 时声音照样播放，但它们无视玩家的分类音量滑条和游戏的音效音量，日志里也没 有任何东西指向这件事。<code>voices</code> 里漏掉的键会退回狗的声音。</p>
+<p>第三个参数是每个声音的可听范围，单位是格。它应该和你自己声音脚本里写的 <code>distanceMax</code> 对上：</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>在服务器上，基础模组只把声音发给这个范围里的玩家。不写范围的话，声音会按分类拿到一个通用范围：只 传十格的嘶声会发给三十格内的所有人。过了 <code>distanceMax</code>，FMOD 的反比衰减不再继续衰减，也不会归于无 声，所以一个没配好的 <code>.ogg</code> 在任何距离上都会以 <code>distanceMin / distanceMax</code> 的音量继续响。出于同样 的原因，音量大的声音要把 <code>distanceMin</code> 设小。</p>
+<h3 id="食性">食性</h3>
+<p>没有 <code>diet</code> 时每个品种都像狗一样吃：同一批会毒到它的食物，同一批算作肉的食物，同一批它会从饲料槽 里啃的食物。这个字段只为你的品种覆盖这三份列表。</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>之所以有两种写法，是因为游戏自己的分类只能覆盖到这一步。<code>Cheese</code> 是真正的 <code>FoodType</code>，所以一个键 就覆盖了游戏里、以及任何复用这个分类的食物模组里的每一种奶酪。金枪鱼不是：开了的罐头是 <code>FoodType = Fish</code>，和其他所有鱼混在一起，而没开的罐头根本不声明食物类型。<code>badParts</code> 和 <code>proteinParts</code> 就是你够到这类东西的办法。</p>
+<p>每个字段都是一张表，写 <code>&lt;key&gt; = true</code>（加上）或者 <code>&lt;key&gt; = false</code>（去掉基础模组原有的）。既不是 <code>true</code> 也不是 <code>false</code> 的值会被丢掉，日志里有一行点名的记录。</p>
+<div class="tw"><table><thead><tr>
+<th>字段</th>
+<th>它的键是什么</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td>会让动物生病、扣它忠诚、并在喂食菜单里显示成红色条目的食物的 <code>FoodType</code></td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>物品类型里的一小段，小写，在类型名的任意位置匹配</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td>能还上动物那笔肉食欠账的 <code>FoodType</code>，也就是虚弱 moodle 盯着的那笔</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>物品类型里的一小段，匹配方式和 <code>badParts</code> 一样</td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td>你确定不是肉的 <code>FoodType</code>。它只是让基础模组不再为没见过的食物类型写那行日志</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td>动物会自己从饲料槽里吃的 <code>FoodType</code> 和 <code>AnimalFeedType</code></td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>完整的物品类型，用于饲料槽里那些自己没有饲料类型的物品</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code> 从一张空列表开始，而不是从狗的那份开始。你的动物和狗几乎没有共同点时才用它；猫通 常写成几条增删更省事。</p>
+<p>这三份列表跟着动物走，所以站在同一个饲料槽前的狗和猫，从里面吃到的东西不一样。模组自己的食盆是例 外：它存的是食物点数，不是把它填满的那件物品，所以往里填东西对谁都按基础列表来。有毒的东西本来也 放不进食盆。</p>
 <h2 id="7-整块关掉一个系统">7. 整块关掉一个系统</h2>
-<p>五项技能就是五个系统，一一对应：</p>
+<p>五项技能就是五个系统：</p>
 <div class="tw"><table><thead><tr>
 <th>技能</th>
-<th>它就是哪个系统</th>
+<th>它是哪个系统</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>警戒：察觉丧尸并提醒你</td>
+<td>哨兵：发现丧尸并警告你</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>打斗、守卫模式和自卫</td>
+<td>打架、守卫模式和自卫</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
@@ -831,36 +905,38 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>狩猎，外加它给主人的采集加成</td>
+<td>狩猎，以及它给主人的采集加成</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
 <td>照看围栏里的牲畜</td>
 </tr>
 </tbody></table></div>
-<p>物种不是数值更差的狗。它是压根没有其中某些工作的动物。所以它声明自己没有什么：</p>
+<p>所以一个物种声明的是它没有什么：</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>不写或者写 <code>true</code>，都表示这只动物拥有该技能，所以你只需要写出你要拿掉的那些。</p>
-<p>关掉一项技能会<strong>同时做三件事</strong>：系统永远不运行，该技能永远不获得经验，它的进度条连同命令一起从界面 上消失。三件一起。只藏进度条会让技能在没人看得到的地方继续长；只锁住系统会让进度条永远卡在零上。</p>
-<p><code>canBreed = false</code> 放在表外面，因为繁殖既没有进度条也没有经验。而且它是彻底的：这只动物不会怀孕， 永远不会被选作配偶，也不会和自己的品种繁殖。如果你真正想要的是一只正常繁殖、但永远不和狗配的动物，那是下面的 <code>species</code>，不是这个。</p>
+<p>不写，或者写 <code>true</code>，都表示动物有这项技能。</p>
+<p>关掉一项技能，它也就不再攒经验，界面上的进度条和它的那些命令一并消失。</p>
+<p><code>canBreed = false</code> 单独放在表外面，因为繁殖既没有进度条也没有经验。这样的动物不会怀上，不会被选 作配偶，和自己的同类也不繁殖。</p>
 <h3 id="物种">物种</h3>
-<p>一个添加另一种动物、而不是另一个狗品种的附加模组，这样声明：</p>
+<p>加进来的是另一种动物、而不是另一种狗的附加模组，要声明它：</p>
 <pre><code>CD.registerSpecies({ key = "cat",
                      nounKey  = "IGUI_PD_SpeciesNoun_cat",
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>这个字段在迄今发布的每个品种里都不存在，而不存在就意味着 <code>"dog"</code>。所以你已经写好的东西不会改变任何行为。</p>
-<p>它做两件事。<strong>繁殖按物种封闭：</strong>只有双方是同一物种时，一对才会怀上，命令里、每小时的被动掷骰里、调试 工具里都一样。而且界面不再把你的动物叫做狗：<code>nounKey</code> 是填进*「这只 %1 已经属于另一位幸存者」<em>这类 句子的光秃名词，<code>youngKey</code> 则是你这个物种的幼崽在窗口、右键菜单和犬舍里挂着的标签，那个位置狗写的是 </em>幼犬*。</p>
-<p>声明了 <code>species</code> 却不注册并不致命：你的动物依然拒绝跨出自己物种繁殖，因为那道门比较的是原始字符串。 只有那两个名词会退回狗的版本，日志会指名道姓地说明。这个退回故意只做一边，因为反过来，把未注册的物种 当成狗，会悄悄让你的动物跟狗繁殖。</p>
-<p><strong>这是一道封锁，所以它不会降级。</strong>在早于 API 6 的基础模组上，这个字段被静默忽略，就繁殖而言你的动物 就是狗。如果它绝对不能和狗杂交，就检查 API 6，或者在基础模组还旧的时候保持 <code>canBreed = false</code>，猫 就是这么做的。</p>
-<p><code>huntMaxPrey</code> 是<strong>一场确实存在的狩猎之内的上限</strong>，这和 <code>hunt = false</code> 是两码事。它接受 <code>"tiny"</code>（小 鼠、大鼠、松鼠）、<code>"small"</code>（兔子、浣熊）或 <code>"large"</code>（鹿，默认值，没有上限）。超过上限的猎物对你的 动物来说是隐形的：它不会去追，甚至不会去指。不在这个阶梯上的取值会回落到 <code>"large"</code>，并在日志里打印 一行点名的记录。</p>
-<p><strong>被禁的动物不会得到一个灰掉的按钮。</strong> 那个选项会从环形菜单、右键菜单和窗口里消失，服务端的拒绝也是 安静的。一个写着"它无视了命令"的光环会是谎言，因为这并不是不服从。请在你的品种描述里解释这个设计。 这也正是这些字段全都不带来新翻译键的原因。</p>
+<p>到目前为止发布的每个品种都没写这个字段，不写就是 <code>"dog"</code>。</p>
+<p>繁殖按物种封闭：只有双方是同一个物种才会怀上，命令里、每小时的被动判定里和调试工具里都一样。界面 也不再把你的动物叫狗：<code>nounKey</code> 是那个光秃秃的名词，用来填*“这只%1已经属于另一位幸存者。”<em>这类句 子，<code>youngKey</code> 是你这个物种的幼崽在窗口、右键菜单和狗舍里带的标签，狗那里写的是</em>幼犬*。</p>
+<p>这两个名词只管围着 <code>%1</code> 造的句子。其他每一句把*狗*字写死在里面的话（<em>“流浪狗”</em>、<em>“你的狗饿 了。”</em>、<em>“狗故意吠叫”</em>），从 API 7 起都接受一个按物种区分的键：在你的翻译文件里带上 <code>IGUI_PD_ScanStray_cat</code>，屏幕上的动物是猫时，基础模组就显示它，而不是 <code>IGUI_PD_ScanStray</code>。你没带 的键会退回狗的文本。接受这个后缀的键：<code>ScanStray</code>、<code>ScanTitle</code>、<code>PauseGrowthTip</code>、<code>BadFood</code>、 <code>AlertFullDesc</code>、<code>AlertQuietDesc</code>、<code>AlertLockedTip</code>、<code>HuntModeDesc</code>、每一个 <code>Trick*Desc</code>、 <code>TrickDistractDone</code>、<code>TrickNeedsBag</code>、<code>TrickGotoPick</code>、<code>TrickSniffNoItem</code>、<code>TrickFetchNoItem</code>、 <code>AlertGroup</code>、<code>DogLost</code>、每一个 <code>Refused_*</code>、<code>KennelStatusNoData</code>，以及照料类 moodle 的 <code>Moodle_*_desc</code>（Sick、Weak、Hunger、Thirst、Rested、Grief）。屏幕上没有动物的句子（名册标签页， <em>“先和一只动物成为朋友吧。”</em>）在基础模组里已经和物种无关了。猫在十四种语言里都带齐了它们；把它的 <code>IG_UI.json</code> 复制过来当模板。</p>
+<p>动物的 <code>group</code> 只有调试刷新菜单和片段查看器会读，走的是 <code>IGUI_Animal_Group_&lt;group&gt;</code>。在行为辅助函 数之后设 <code>t.group = "cat"</code> 并带上那个键，否则你的物种在那里顶着狗的名字。</p>
+<p>声明了 <code>species</code> 却不注册它，并不致命：你的动物照样拒绝和别的物种繁殖，因为那道门槛比的是原始字符 串。只有那两个名词会退回狗的，日志里会点名说明。</p>
+<p>在低于 API 6 的基础模组上，这个字段被忽略，日志里也没有一行，你的动物就当狗一样繁殖。如果它绝不能 和狗杂交，就守卫在 API 6 上，或者在基础模组更旧的时候保持 <code>canBreed = false</code>，猫就是这么做的。</p>
+<p><code>huntMaxPrey</code> 是在狩猎依然存在的前提下给猎物体型封顶；它不能代替 <code>hunt = false</code>。它接受 <code>"tiny"</code>（老鼠、耗子、松鼠）、<code>"small"</code>（兔子、浣熊）或者 <code>"large"</code>（鹿，默认值，不封顶）。超过上 限的猎物，你的动物既不追也不指示。不在这个阶梯上的值会退回 <code>"large"</code>，并在日志里打一行点名的记 录。</p>
+<p>被封掉的选项会从环形菜单、右键菜单和窗口里消失，服务器不给消息就拒绝它。这些字段一个都不加翻译 键，所以把限制写进你的品种描述里。</p>
 <h2 id="8-动物定义">8. 动物定义</h2>
-<p>引擎把网格绑定到<strong>动物类型</strong>上，而不是绑定到品种上，所以你的品种需要自己的三个类型。这是附加模组里 机械性的一块，最短的路是复制一个现成附加模组的文件再改名。</p>
-<p>三个部分，放在 <code>Definitions/animal/</code> 下的一个 shared 文件里：</p>
+<p>引擎把网格绑在动物类型上，而不是品种上，所以你的品种需要三个自己的类型。最短的路是把某个现成附加 模组的文件复制过来改名字。</p>
+<p>三块东西，放在 <code>Definitions/animal/</code> 下的一个 shared 文件里：</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -889,45 +965,49 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <p>基础模组给你的辅助函数：</p>
 <div class="tw"><table><thead><tr>
 <th>辅助函数</th>
-<th>它填好了什么</th>
+<th>它替你填什么</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>身体模型、骨骼、屠宰用贴图和动画集</td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
+<td>身体模型、骨骼、屠宰后的贴图，以及动画集</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
-<td>一个同伴所需的每一个引擎行为标志</td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
+<td>一个同伴需要的每一个引擎行为标志</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
-<td>动物窗口的肖像镜头</td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
+<td>动物窗口用的肖像相机</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
-<td>脚步声和拟音的共享表</td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
+<td>共享的脚步声和拟音表</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>新物种的基因组，带标准的基因列表（API 7）</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>让受惊的流浪动物不至于失血而死的那个值</td>
+<td>让受惊的流浪动物不会流血流到死的那个值</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>三个成长阶段的屠宰部位</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>三个阶段全部的屠宰产物。<code>meat</code> 可选：<code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>，不写的话动物产出基础模组的狗肉。引擎会把每一块的数量和饱食度都乘上尸体的体型，所以体型数值大的物种（猫用 2.5 到 3.5 当视觉缩放）需要自己的物品，基础饱食度更小，数量更少</td>
 </tr>
 </tbody></table></div>
-<p>四条并不显然的规则：</p>
-<p><strong>动画集必须保持是 <code>"raccoon"</code>。</strong> <code>CD.applyDogModel</code> 会设置它。分叉出去的动画集不会加载它自己的状态 机，而没有状态机的动物就是一只钉在原地的动物。</p>
-<p><strong>复用基因组：</strong> <code>AnimalDefinitions.genome["dog"].genes</code>。不要自己写一份。</p>
-<p><strong>永远不要声明 <code>mate</code>。</strong> 有了它，引擎会在任何动物区域内跑它自己的原生交配，那套逻辑无视本模组的繁殖 禁令和沙盒选项，产出没有羁绊的幼崽。基础模组会在启动时清掉这个字段作为安全网，但别依赖它。</p>
-<p><strong>部位是必需的。</strong> 单独一个文件里三行：</p>
+<p>与物种无关的那批名字是 API 7 才有的。更老的那些，<code>CD.applyDogModel</code>、<code>CD.applyDogBehaviour</code>、 <code>CD.applyDogAvatar</code>、<code>CD.DOG_SOUNDS</code>、<code>CD.defineDogParts</code> 和 <code>CD.DogMoodles</code>，是同样的函数和表， 只是顶着第一代的名字。想在低于 0.7.3 的基础模组上加载的附加模组，守卫写旧名字，新名字存在时就挑新 的：<code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>。</p>
+<p>动画集必须保持 <code>"raccoon"</code>。分叉出去的动画集不会加载自己的状态机，动物就僵在原地。</p>
+<p>基因组要复用。狗的品种指向基础模组的那份列表：<code>AnimalDefinitions.genome["dog"].genes</code>。新物种调用 一次 <code>CD.defineGenome("cat")</code>，把它返回的表交给每个阶段。引擎只读每个阶段的 <code>genes</code> 列表，基因组的 键只是个约定，所以你的物种能有自己的条目，而不必有自己的基因列表。</p>
+<p>不要声明 <code>mate</code>。有它在，引擎会在任何动物区域里跑自己原生的交配，绕开模组的繁殖模块和它的沙盒选 项，生出没有羁绊的幼崽。基础模组启动时会清掉这个字段，但别指望这一点。</p>
+<p>屠宰产物是必须的。单独一个文件，三行：</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>没有它们，屠宰你的动物会让原版代码崩溃，因为它按类型和品种去索引部位定义，然后踩到 nil。</p>
-<p><strong>小型动物需要调整肖像镜头。</strong> <code>CD.applyDogAvatar</code> 里的肖像缩放是按狗校准的，而头像的 zoom 是放大 倍率：动物越小，数字越大。把 zoom 除以相对狗的体型比例，再把偏移量乘上这个比例，否则你的动物会小小 地缩在自己肖像的底部。</p>
+<p>没有它们，屠宰你的动物会让原版代码崩掉，因为它按类型和品种去索引产物定义，索到的是 nil。</p>
+<p><code>CD.applyDogAvatar</code> 里的肖像缩放是按狗校准的，而头像的缩放是放大倍数：动物越小，数字越大。把缩放 除以你的动物相对狗的体型比例，再把各个偏移乘上这个比例，否则你的动物会小小地缩在自己肖像的底部。</p>
 <h2 id="9-模型脚本">9. 模型脚本</h2>
-<p><code>media/scripts/</code> 下的一个文件，正是它告诉游戏你的模型存在：</p>
+<p><code>media/scripts/</code> 下的一个文件告诉游戏你的模型存在：</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -950,10 +1030,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> 是让你模型文件内部的动画片段保持可用的那一行。没有它，模型能加载但永远 不会动。</p>
-<p><code>head</code> 附着点是帽子之类东西所在的位置。如果你想让鞍袋适配你的动物，就用同样的方式在脊椎骨上加 <code>saddlebags_l</code>、<code>saddlebags_r</code> 和 <code>saddlebags_c</code>。这些数字是在游戏里看着动物一点点挪出来的，而不是 量模型量出来的：一个数学上居中的袋子，放在带毛的身体上照样看着歪。</p>
+<p><code>keepMeshAnimations = true</code> 让你模型文件里的片段还能用。没有它，模型加载得起来，却永远不动。</p>
+<p><code>head</code> 挂点是帽子那类东西待的地方。想让驮袋合你的动物，就照同样的方式在脊椎骨上加 <code>saddlebags_l</code>、<code>saddlebags_r</code> 和 <code>saddlebags_c</code>。这几个数字靠在游戏里看着动物一点一点挪出来。从模 型上量出来的值会把袋子放在网格的几何中心，那不是它在身体上看着对的位置。</p>
 <h2 id="10-这只动物在哪里出现">10. 这只动物在哪里出现</h2>
-<p>流浪动物是按建筑、按区块抽取的，就在那个区块第一次加载的时候。你把自己的抽取写成一串步骤，要么放在 品种定义里的 <code>spawns</code>，要么通过 <code>CD.registerStraySpawns(列表)</code>。</p>
+<p>流浪动物是按建筑、按区块抽取的，在那个区块第一次加载的时候。你把自己的抽取写成一串步骤， 可以放在品种定义里叫 <code>spawns</code>，也可以用 <code>CD.registerStraySpawns(list)</code>。</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -966,19 +1046,19 @@ end</code></pre>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>这个步骤的名字，给你自己的日志用</td>
+<td>这一步的名字，给你自己的日志用</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>它在哪个建筑类别上抽取</td>
+<td>在哪一类建筑上抽</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>一个返回百分比的<strong>函数</strong>。是函数而不是数字，这样它才能实时跟随沙盒倍率。</td>
+<td>一个返回百分比的函数，所以它能在抽取的那一刻读到沙盒倍率。</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>持久化存储的键。在整个生态里唯一，并且永不更改。</td>
+<td>持久存储的键。在所有模组之间唯一，而且永远不改。</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
@@ -986,17 +1066,17 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>可选函数，返回布尔值，在抽取之前检查。哈士奇用的是 <code>CD.isWinter</code>。</td>
+<td>可选函数，返回真假，在抽取之前检查。哈士奇用的是 <code>CD.isWinter</code>。</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>在建筑内部而不是街上出生的百分比。默认 35。</td>
+<td>生在建筑内部而不是街上的百分比几率。默认 35。</td>
 </tr>
 </tbody></table></div>
-<p>把你的概率乘上 <code>CD.dogSpawnMultiplier()</code>，或者把 <code>CD.strayChancePerHouse()</code> 除以你自己的稀有度。无论 哪种方式，玩家的沙盒设置都还起作用，而你要是写一个光秃秃的数字，它就不起作用了。</p>
-<p><code>indoor</code> 是偏好而不是承诺：那个区块里没有空闲室内地块的建筑会回落到外面的地块。</p>
+<p>把你的几率乘上 <code>CD.dogSpawnMultiplier()</code>，或者把 <code>CD.strayChancePerHouse()</code> 除以你自己的稀有度。 两种做法都能让玩家的沙盒设置继续有效。</p>
+<p><code>indoor</code> 只是个偏好：那个区块里内部没有空格子的建筑会退回到外面的格子。</p>
 <h3 id="建筑类别">建筑类别</h3>
-<p>基础模组注册了四个，你可以直接用：</p>
+<p>基础版注册了四个：</p>
 <div class="tw"><table><thead><tr>
 <th>类别</th>
 <th>匹配什么</th>
@@ -1015,27 +1095,26 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>农场建筑，并且允许出现在城镇之外</td>
+<td>农场建筑，而且允许出现在城镇之外</td>
 </tr>
 </tbody></table></div>
 <p>如果没有一个合适，就注册你自己的：</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>匹配函数会收到建筑定义，并在一次受保护的调用里运行，所以它里面的失误不会把区块加载拖垮。 <code>skipUrbanGate</code> 让这个类别可以在非城镇区块里抽取，农场或者林中小屋正需要这个。别去动 <code>exclusive</code>： 基础模组的那几个类别彼此互斥，而附加模组的类别设计上是叠加的，会在它们之上再匹配一层。</p>
+<p>匹配函数收到建筑定义，并且运行在一次保护调用里，所以它里面出错不会中断区块加载。 <code>skipUrbanGate</code> 让这个类别可以在非城区的区块里抽取，农场或者林中小屋需要这一点。 不要设 <code>exclusive</code>。基础类别彼此互斥，附加模组的类别是叠在它们之上匹配的。</p>
 <h3 id="已经被占用的后缀">已经被占用的后缀</h3>
-<p>后缀是"这栋建筑已经抽过了"这条记录所用键的一部分。两个模组用同一个后缀，会互相毁掉对方的抽取结果。</p>
-<p>每个后缀都以一根竖线开头。下面这些已经在用：</p>
+<p>后缀是“这栋建筑已经抽过了”这条记录的键的一部分。两个模组用同一个后缀会互相破坏对方的抽取结果。</p>
+<p>每个后缀都以一条竖线开头。已经在用的有：</p>
 <ul>
-<li><strong>基础模组：</strong> 空后缀，以及 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
-<li><strong>罗威纳：</strong> <code>rw</code>、<code>r</code></li>
-<li><strong>杜宾：</strong> <code>db</code>、<code>dm</code></li>
-<li><strong>拉布拉多：</strong> <code>lb</code>、<code>lk</code></li>
-<li><strong>巴哥：</strong> <code>pg</code>、<code>pv</code></li>
-<li><strong>猫：</strong> <code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
+<li>基础版：空后缀，还有 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code></li>
+<li>罗威纳犬：<code>rw</code>、<code>r</code></li>
+<li>杜宾犬：<code>db</code>、<code>dm</code></li>
+<li>拉布拉多：<code>lb</code>、<code>lk</code></li>
+<li>巴哥犬：<code>pg</code>、<code>pv</code></li>
+<li>猫：<code>ct</code>、<code>cv</code>、<code>ctw</code>、<code>cvw</code>、<code>cto</code>、<code>cvo</code>、<code>ctc</code>、<code>cvc</code>、<code>ctx</code>、<code>cvx</code></li>
 </ul>
-<p>挑一个没人用的，然后再也别碰它。</p>
 <h2 id="11-品种-moodle">11. 品种 moodle</h2>
-<p>moodle 是一个 <strong>client</strong> 文件。你往 <code>CD.DogMoodles</code> 里追加一张表，基础模组负责绘制、跟踪和清理：</p>
+<p>moodle 是一个客户端文件。你往 <code>CD.DogMoodles</code> 里追加一张表，剩下的绘制、跟踪和清理都由基础版负责：</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1054,23 +1133,22 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> 返回等级，或者返回 0 表示"不显示"。<code>apply</code> 在调用时会拿到距上次调用过去的游戏分钟数，所 以请把你的效果乘上 <code>elapsedMin</code>，而不要假设一个固定的心跳。</p>
-<p>图标要随包提供<strong>六种尺寸</strong>，从 32 到 128 像素。界面会按玩家的缩放来挑尺寸，缺一个尺寸就是一个空方 块。</p>
-<p>自定义 moodle 是作为叠加层绘制的，并不走游戏自身的 moodle 系统，因为那个系统不接受来自模组的新条 目。这一块已经替你处理好了，但这也是为什么 moodle 出现在模组自己的条带里，而不是混在原版那些中间。</p>
+<p><code>condition</code> 返回等级，0 表示“不显示”。<code>apply</code> 收到距离上次调用过去的游戏分钟数， 所以要把你的效果乘上 <code>elapsedMin</code>。</p>
+<p>图标要提供六种尺寸，从 32 到 128 像素。界面按玩家的缩放挑尺寸，缺一个尺寸就会显示成一个空方块。 图标出现在模组自己那一条里，不和原版 moodle 混在一起。</p>
 <h2 id="12-钩子">12. 钩子</h2>
-<p>基础模组在<strong>服务端</strong>调用的两份函数列表。请从一个 shared 文件里往里追加。每个处理函数都在自己那次受 保护的调用里运行，所以坏掉的附加模组不会把基础模组一起拖垮。</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>，从 API 2 开始，在动物把猎物放到主人脚边之后立刻调用：</p>
+<p>两个函数列表，基础版在服务器上调用它们。从一个 shared 文件往里追加。每个处理函数都跑在自己的保护调用里， 所以一个附加模组出错不会中断基础版。</p>
+<p><code>CD.onHuntDelivered</code> 从 API 2 开始有，在动物把猎物放到主人脚边之后立刻被调用：</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>，从 API 3 开始，在每个维护周期里调用，时机是基础模组已经把未满足需求带来的压 力加好、还没写回去之前。返回一个数字，它会被加到总和里：</p>
+<p><code>CD.onUpkeepStress</code> 从 API 3 开始有，每个照料周期都会被调用，在基础版加完未满足需求带来的压力之后、 写入之前。返回一个数字，它会被加进总数：</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>这是附加模组能影响动物持续压力的<strong>唯一</strong>途径。维护会在每个周期重新计算并覆盖这个值，所以你从外面写 进去的任何东西，下一个心跳就没了。对于来自环境的状态，比如炎热、寒冷、下雨，这才是对的工具。</p>
-<p><strong>多人游戏的规则，一句话：客户端永远不写模组数据。</strong> 客户端这边的写入会在下一次同步时盖掉服务端的副 本，而症状要过几分钟才在毫不相干的地方冒出来。把这份活儿放到服务端文件里做，或者放进这些本来就跑在 服务端的钩子里。</p>
+<p>照料周期每一轮都会重算并覆盖这个值，所以从外面写进去的东西下一个 tick 就没了。 钩子适合用在来自环境的条件上，比如炎热、寒冷或者下雨。</p>
+<p>在多人模式里，客户端永远不写 mod data。客户端这边的一次写入会在下一次同步时覆盖服务器的副本， 而症状要过几分钟才在一个不相干的地方冒出来。请在服务器文件里做这件事，或者用这些钩子。</p>
 <h2 id="13-翻译键">13. 翻译键</h2>
-<p>每个语言目录下随包提供一份 <code>IG_UI.json</code>，路径是 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。基础模组提供了 十四种：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
+<p>每个语言文件夹放一个 <code>IG_UI.json</code>，位置在 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。 基础版带了十四种：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
 <p>一个品种需要的键：</p>
 <div class="tw"><table><thead><tr>
 <th>键</th>
@@ -1078,7 +1156,7 @@ end</code></pre>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>品种名，出现在模组界面各处</td>
+<td>品种名，模组界面里到处都用</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
@@ -1086,7 +1164,7 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>游戏自身界面里的品种名</td>
+<td>游戏自己那些界面里的品种名</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
@@ -1094,11 +1172,11 @@ end</code></pre>
 </tr>
 <tr>
 <td>你的物种键</td>
-<td>如果你加了一个物种，就是你传给 <code>CD.registerSpecies</code> 的 <code>nounKey</code> 和 <code>youngKey</code></td>
+<td>你传给 <code>CD.registerSpecies</code> 的 <code>nounKey</code> 和 <code>youngKey</code></td>
 </tr>
 <tr>
 <td>你的 moodle 键</td>
-<td>名称和描述，如果你有 moodle</td>
+<td>名字和描述</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,44 +1187,76 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>有两件事会咬你。翻译字符串里一个<strong>字面的百分号</strong>会让显示它的那个界面崩掉，因为格式化器把它读成了占 位符。还有，带 <strong>字节顺序标记</strong> 的语言文件编译不过，而且报出来的错误点的是另一个文件的名字，不是真 正坏掉的那个。</p>
+<p>翻译字符串里的裸百分号会让显示它的那个界面崩溃，因为格式化器把它当成占位符读。 带字节顺序标记的语言文件无法编译，而且报错指的是另一个文件，不是坏掉的那个。</p>
 <h2 id="14-存档记住的东西">14. 存档记住的东西</h2>
-<p>你的三个标识符会被写进存档文件，并且从此一直被读回来：</p>
+<p>你的三个标识符会被写进存档文件，并且永远被读回来：</p>
 <ul>
-<li><code>key</code>，存在你每一只动物身上的品种标识符</li>
-<li><code>typePrefix</code>，它构成了引擎所保存的那些动物类型</li>
-<li><code>suffix</code>，"已经抽过了"这份存储的键，每个刷新步骤一个</li>
+<li><code>key</code>，存在你每一只动物身上的品种标识</li>
+<li><code>typePrefix</code>，它组成引擎保存的那些动物类型</li>
+<li><code>suffix</code>，“已经抽过”这份存储的键，每个生成步骤一个</li>
 </ul>
-<p><strong>这三个在发布之后都不能再改名。</strong> 改掉一个 <code>key</code>，会让那个品种所有还活着的动物变成孤儿。改掉一个 <code>suffix</code>，会让每一份现有存档里的每一栋建筑重新抽一次，一个玩了好几个月的世界会突然塞满你的动物。</p>
-<p>这种重抽唯一有用的时候，就是它本身正是目的：CD: Cats 特意给它四种新毛色配了新后缀，正是为了让它们在 已经在跑的世界里开始出现，而原来那只黑猫保留了自己的历史后缀，没有重抽。</p>
-<p><strong>从一份还有该品种活体动物的存档里移除附加模组，就等于弄丢它们。</strong> 引擎会丢弃自己不再认识其类型的动 物。基础模组不会崩，羁绊和狗舍都会干净地降级，但那只动物没了。像每一个已发布的附加模组那样，把这件 事写在你的创意工坊页面上。</p>
-<p><strong>未知的品种是降级而不是失败。</strong> 如果你的附加模组不在，基础模组对于所有相关询问都会回落到默认品种， 所以一份没有你模组也照样打得开的存档是可读的。</p>
+<p>这三个在发布之后都不能改名。改 <code>key</code> 会让那个品种所有活着的动物变成孤儿。 改 <code>suffix</code> 会让所有现存存档里的每一栋建筑重新抽一次，玩了几个月的世界会塞满你的动物。</p>
+<p>新后缀同时也是新品种进入已经在跑的世界的办法。CD: Cats 给它四种新毛色配了新后缀， 它们于是开始在现有存档里出现，而原来那只黑猫保留旧后缀，没有再抽一次。</p>
+<p>从还有该品种活体动物的存档里移除附加模组，会把它们弄丢。引擎会丢掉一个它不再认识类型的动物。 基础版不会崩溃，羁绊和犬舍都会干净地降级。请在你的 Workshop 页面上说明这一点。</p>
+<p>如果你的附加模组缺席，基础版对任何被问到的东西都退回默认品种，所以没装你的模组打开的存档仍然可读。</p>
 <h2 id="15-发布之前">15. 发布之前</h2>
 <ul>
-<li>守卫在<strong>每一个</strong> Lua 文件里都有，并且写的是你真正用到的那个 API。</li>
-<li>基础模组的版本下限用文字写在你的描述里。<code>versionMin</code> 说不出这件事。</li>
-<li>你在第一次加载时读了日志。否则 <code>CD.registerBreed</code> 会安静地拒绝，而每次拒绝都会打印一行点名的记 录。</li>
-<li><code>CD.defineDogParts</code> 确实被调用了。屠宰一只你自己的动物，看看不会崩。</li>
-<li>你的 <code>key</code>、<code>typePrefix</code> 和刷新后缀都是唯一的，而且你愿意永远用下去。</li>
-<li>小型品种设置了 <code>puppySize</code>，并且你亲眼见过一只幼崽来证明这一点。</li>
-<li>如果它是另一个物种，<code>CD.registerVoices</code> 确实被调用了并且 <code>voices</code> 填好了，否则它会吠。</li>
+<li>守卫在每一个 Lua 文件里，而且写的是你实际用到的那个 API。</li>
+<li>基础版的版本下限用文字写在你的描述里。<code>versionMin</code> 说不了这件事。</li>
+<li>你在第一次加载时读了日志。否则 <code>CD.registerBreed</code> 会默默拒绝，而每一次拒绝都会打印一行带名字的记录。</li>
+<li><code>CD.defineDogParts</code> 调用了。屠宰一只你的动物，看看它不会崩。</li>
+<li>你的 <code>key</code>、<code>typePrefix</code> 和生成后缀都是唯一的，而且你不会需要改它们。</li>
+<li>小型品种设置了 <code>puppySize</code>，而且你亲眼见过一只幼犬来证明这一点。</li>
+<li>如果是别的物种，<code>CD.registerVoices</code> 调用了而且 <code>voices</code> 填了，不然它会叫得像狗。</li>
 <li>moodle 图标六种尺寸都在。</li>
-<li>你随包提供的每个语言目录都有全部的键。缺一个键，屏幕上就会显示出光秃秃的键名。</li>
-<li>你在多人游戏里测过，而不只是单人。位置、归属和模组数据在那边的表现是不一样的。</li>
-<li>你的创意工坊页面警告了不要从还有活体动物的存档里移除这个附加模组。</li>
+<li>你提供的每一个语言文件夹都有每一个键。缺一个键，屏幕上就会显示原始键名。</li>
+<li>你在多人模式里测过，不只是单人。位置、归属和 mod data 在那边的表现都不一样。</li>
+<li>你的 Workshop 页面警告了不要从还有活体动物的存档里移除附加模组。</li>
 </ul>
 <h2 id="16-常见错误">16. 常见错误</h2>
-<p><strong>"我的动物从来不出现。"</strong> 几乎总是守卫：你的附加模组需要一个已安装基础模组没有的 API，所以它按设计 处于不动的状态。拿你的 API 数字和第 2 节的表对一下。</p>
-<p><strong>"它出现了，但是僵住不动。"</strong> 动画集不是 <code>"raccoon"</code>，或者你的模型缺了动画片段。两者都会表现为一只 永远站着不动的动物。</p>
-<p><strong>"它被画成一团黑色污迹，日志刷屏。"</strong> 模型的骨骼超过 60 根。</p>
-<p><strong>"屠宰它会崩。"</strong> <code>CD.defineDogParts</code> 没被调用。</p>
-<p><strong>"幼崽一出生就是成年体型。"</strong> 一个没设置 <code>puppySize</code> 的小型品种。这个值是绝对的，而且每一轮扫描都会 重新施加，所以类型本身的尺寸范围救不了你。</p>
-<p><strong>"我的两个品种总是变成对方。"</strong> 它们共用了 <code>engineBreed</code>。前缀选的是网格，可以由一个家族共用； <code>engineBreed</code> 选的是贴图，正是它在那个家族内部做区分，所以它必须每个品种唯一。</p>
-<p><strong>"声音响了，但无视音量滑块。"</strong> 那个声音没有调用过 <code>CD.registerVoices</code>。</p>
-<p><strong>"单人里没问题，上了服务器就乱来。"</strong> 有东西在客户端写模组数据。把它挪到服务端去。</p>
-<p><strong>"我明明关了战斗，它还是和丧尸打起来了。"</strong> 它所运行的基础模组比 API 5 更旧，那时这个字段还不存在， 于是被安静地忽略了。这正是守卫必须拦下来、而不是降级的那种情况。</p>
+<div class="tw"><table><thead><tr>
+<th>症状</th>
+<th>是怎么回事</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>"我的动物从来不出现。"</strong></td>
+<td>几乎总是守卫：附加模组需要一个已安装基础模组没有的 API，于是它提前返回，什么都没注册。拿你的 API 数字和第 2 节的表对一下。</td>
+</tr>
+<tr>
+<td><strong>"它出现了，但是僵住不动。"</strong></td>
+<td>动画集不是 <code>"raccoon"</code>，或者模型缺了动画片段。</td>
+</tr>
+<tr>
+<td><strong>"它渲染成一团黑，日志刷个不停。"</strong></td>
+<td>模型的骨骼超过 60 根。</td>
+</tr>
+<tr>
+<td><strong>"宰它的时候崩溃。"</strong></td>
+<td>没有调用 <code>CD.defineDogParts</code>。</td>
+</tr>
+<tr>
+<td><strong>"幼崽出生就是成年体型。"</strong></td>
+<td>小体型品种没有设置 <code>puppySize</code>。这个值是绝对值，而且每一轮扫描都会重新套用，所以该类型的尺寸区间盖不住它。</td>
+</tr>
+<tr>
+<td><strong>"我的两个品种老是互相变来变去。"</strong></td>
+<td>它们共用了一个 <code>engineBreed</code>。前缀选的是网格，同一家族可以共用。而 <code>engineBreed</code> 选的是贴图，用来区分这个家族里的各个品种，所以每个品种都必须唯一。</td>
+</tr>
+<tr>
+<td><strong>"声音放得出来，却不理会音量滑块。"</strong></td>
+<td>那个声音没有调用 <code>CD.registerVoices</code>。</td>
+</tr>
+<tr>
+<td><strong>"单人能用，上服务器就出毛病。"</strong></td>
+<td>有东西在客户端写 ModData。把它挪到服务端。</td>
+</tr>
+<tr>
+<td><strong>"我明明关掉了战斗，它还是和僵尸打起来。"</strong></td>
+<td>它运行所在的基础模组比 API 5 更旧。那个基础模组不认识这个字段，会直接忽略。守卫应当在这个基础模组上拦住加载，而不是缺着字段照样加载。</td>
+</tr>
+</tbody></table></div>
 <hr>
-<p>这本手册里有什么写错了，或者漏了什么？欢迎到 <a href="https://discord.gg/ndyTBFSuAT">Discord</a> 上说一声。</p></article></main>
+<p>这份手册里有哪里写错了，或者少了什么？到 <a href="https://discord.gg/ndyTBFSuAT">Discord</a>说一声。</p></article></main>
 </div>
 
 <script>

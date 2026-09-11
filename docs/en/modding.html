@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -426,7 +426,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
 <a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
 <a class="s3" href="#instinct-distract" data-id="instinct-distract">Instinct: distract</a>
+<a class="s3" href="#resting-poses" data-id="resting-poses">Resting poses</a>
 <a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
+<a class="s3" href="#the-diet" data-id="the-diet">The diet</a>
 </div>
 </div>
 <div class="grp">
@@ -469,12 +471,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   </aside>
   <main><article class="doc"><h1 id="companion-dogs-modding-manual">Companion Dogs: Modding Manual</h1>
 <p>How to build your own add-on: a new breed, or a whole new species, as a separate Workshop mod that plugs into Companion Dogs.</p>
-<p>This manual is for people who write mods. If you only want to play, the other two manuals are the ones you want: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds themselves.</p>
-<p>It assumes you can already read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here; section 3 lists what the model file has to satisfy, and no more.</p>
-<blockquote class="quote"><strong>This is a public contract.</strong> Everything named in this manual is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
+<p>This manual is for people who write mods. If you only want to play, read the other two manuals: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds.</p>
+<p>It assumes you can read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here. Section 3 lists what the model file has to satisfy.</p>
+<blockquote class="quote">Everything named in this manual is a public contract and is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
 <h2 id="1-what-an-add-on-is">1. What an add-on is</h2>
-<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds <strong>one breed</strong> (or several, if they share a body), and nothing else. Everything that makes the animal behave like a companion already lives in the base mod and is shared.</p>
-<p><strong>The base owns:</strong></p>
+<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds one breed (or several, if they share a body) and nothing else.</p>
+<p>The base owns:</p>
 <ul>
 <li>the animation state machine, the animation set and the skeleton</li>
 <li>following, pathing, combat, hunting, herding, the sentinel, needs and upkeep</li>
@@ -482,16 +484,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>taming, bonding, breeding, puppies and crossbreeds</li>
 <li>the sandbox options, and the multiplayer replication</li>
 </ul>
-<p><strong>Your add-on owns:</strong></p>
+<p>Your add-on owns:</p>
 <ul>
 <li>the numbers that make your animal different from a Caramelo</li>
 <li>its body model, its texture, its portrait and, if it has one, its moodle icon</li>
 <li>where it is found in the world</li>
 <li>its name and description, in every language you ship</li>
 </ul>
-<p><strong>One breed, one look.</strong> A breed is a set of numbers plus one appearance. If you want two colours of the same animal to behave differently, those are two breeds. If you want two colours that behave the same, they are still two breeds to the base (two names, two entries in the kennel), and you write them from one shared table, the way CD: Cats does with its five coats.</p>
+<p>Two colours that behave the same are still two breeds to the base (two names, two entries in the kennel); you write them from one shared table, the way CD: Cats does with its five coats.</p>
 <h2 id="2-the-api-versions">2. The API versions</h2>
-<p><code>CD.API_VERSION</code> is a plain number. It has only ever grown by adding things, so an add-on written against an older version keeps loading on a newer base without a single change.</p>
+<p><code>CD.API_VERSION</code> is a plain number. It only grows by adding things, so an add-on written against an older version keeps loading on a newer base without changes.</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>Base version</th>
@@ -527,14 +529,29 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>per-species text keys (<code>&lt;key&gt;_&lt;species&gt;</code>), <code>CD.defineGenome</code>, the species-neutral helper names</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.7.5</td>
+<td><code>restPoses</code></td>
+</tr>
 </tbody></table></div>
-<p>The number to guard on is the <strong>lowest API that your add-on actually needs</strong>, and the base version in that table is the one you name on your Workshop page. Take it from that table and not from whatever the base happened to be while you were writing: a field that exists only in the developer build is a field your players do not have.</p>
-<p><strong>A missing field is ignored in silence.</strong> That is fine when the field is a number: on an older base your animal simply barks at the normal volume. It is not fine when the field is a block, because then a cat that must never fight will happily fight. So: numbers can degrade, blocks cannot. If your animal depends on a block, guard on the API that introduced it and let the add-on stay inert on anything older.</p>
+<p>Guard on the lowest API your add-on needs, and name the matching base version from that table on your Workshop page. Do not take the number from the base you happened to be running while writing: a field that exists only in the developer build is a field your players do not have.</p>
+<p>A missing field is ignored without an error. For a number field that is harmless: on an older base your animal barks at the normal volume. For a block field it is a problem: a cat with no combat block will fight on an older base.</p>
 <h2 id="3-what-you-need-before-you-start">3. What you need before you start</h2>
-<p><strong>A skinned model.</strong> Your animal needs its own <code>.glb</code> under <code>media/models_X/Skinned/</code>, and that file has to carry the <strong>complete set of 21 <code>Rac_*</code> animation clips</strong>. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked to do one of the other six. The model also has to stay under <strong>60 bones</strong> and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear.</p>
-<p>If you do not have a model yet, you can still write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal will look like a Caramelo, but every system in this manual will run.</p>
-<p><strong>A texture</strong> for the body, and a <strong>portrait</strong> for the kennel window.</p>
-<p><strong>One decision, before any code:</strong> is your animal a <em>breed</em> or a <em>species</em>? A breed is a dog with different numbers. A species is an animal that does not have some of the jobs at all. The difference is not cosmetic, it changes which fields you write, and section 7 is about it.</p>
+<p>Your animal needs its own skinned <code>.glb</code> under <code>media/models_X/Skinned/</code>, with the complete set of 21 <code>Rac_*</code> animation clips. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked for one of the other six. The model also has to stay under 60 bones and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear. Two more clips are optional, <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (limping walk cycles); they only matter if you set <code>limpAnim = true</code> in the breed definition.</p>
+<p>If you do not have a model yet, you can write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal looks like a Caramelo, but every system in this manual runs.</p>
+<p>You also need a texture for the body and a portrait for the kennel window.</p>
+<p>Decide whether your animal is a breed or a species before writing any code. A breed is a dog with different numbers. A species is an animal that lacks some of the jobs entirely. The choice changes which fields you write; section 7 covers it.</p>
 <h2 id="4-the-files-of-an-add-on">4. The files of an add-on</h2>
 <p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
 <pre><code>CompanionDogsPug/
@@ -564,18 +581,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> is the important line. It guarantees that <strong>all</strong> of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
-<p><strong><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8".</strong> That field is the <em>game</em> build gate and nothing else, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section, and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
+<p><code>require=CompanionDogs</code> is the important line. It guarantees that all of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
+<p><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8". That field gates the game build only, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
 <h2 id="5-the-version-guard">5. The version guard</h2>
-<p>Put this at the top of every Lua file of your add-on, with the number your add-on actually needs:</p>
+<p>Put this at the top of every Lua file of your add-on, with the number your add-on needs:</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>With the base missing or too old, the file returns at line two. The add-on then does nothing at all: no breed, no spawn, no moodle, not one line in the log. That silence is deliberate. An add-on that half loads is worse than one that does not load, because the player gets an animal with a name and no behaviour.</p>
-<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those instead:</p>
+<p>With the base missing or too old, the file returns on line two and the add-on does nothing: no breed, no spawn, no moodle, no log line.</p>
+<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Never create the global.</strong> <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table and every guard downstream passes when it should not. Read the global, never write it.</p>
+<p>Do not create the global. <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table, and every guard downstream passes when it should not.</p>
 <h2 id="6-registering-the-breed">6. Registering the breed</h2>
-<p>One call, in a <strong>shared</strong> file:</p>
+<p>One call, in a shared file:</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -605,8 +622,8 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>That call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
-<p>A bad definition returns <code>nil</code> instead of throwing, so a mistake never takes the load down with it. Every rejection prints a named line, so <strong>read the log</strong> the first time you register a breed.</p>
+<p>The call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
+<p>A bad definition makes the call return <code>nil</code> instead of throwing, so the load goes on. Each rejection prints a named line in the log.</p>
 <h3 id="required-fields">Required fields</h3>
 <div class="tw"><table><thead><tr>
 <th>Field</th>
@@ -614,11 +631,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>your breed identifier, unique across every mod. Never changed after release.</td>
+<td>your breed identifier, unique across every mod. Do not change it after release.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Chooses the <strong>body mesh</strong>.</td>
+<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Picks the body mesh.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
@@ -650,12 +667,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>engineBreed</code></td>
 <td>the <code>key</code></td>
-<td>breed name given to the engine, which chooses the <strong>texture</strong>. Unique per breed.</td>
+<td>breed name given to the engine. It picks the texture. Unique per breed.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>description key. Point several breeds at one key when they share a description.</td>
+<td>description key. Several breeds can share one key.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
@@ -675,12 +692,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>how much a fight costs it in stress.</td>
+<td>how much stress a fight costs it.</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
 <td>base value</td>
-<td>stress level at which it stops fighting. <code>panicImmune = true</code> means never.</td>
+<td>stress level at which it stops fighting. <code>panicImmune = true</code> means it never stops.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
@@ -690,7 +707,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>absolute visual scale of the puppy. <strong>A small breed must set this</strong>, otherwise the puppy is born adult sized.</td>
+<td>absolute visual scale of the puppy. A small breed has to set it, or the puppy is born adult sized.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
@@ -700,7 +717,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>scales the radius and volume of the alarm bark. It scales noise, it does not create it: with the sandbox noise option off, no breed attracts zombies with a bark.</td>
+<td>scales the radius and volume of the alarm bark. With the sandbox noise option off, no breed attracts zombies with a bark, whatever the value.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
@@ -710,7 +727,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>the animal is stuck on full alert: the owner cannot set quiet or silent, anywhere. Use it when the loud alarm <strong>is</strong> the design.</td>
+<td>the animal stays on full alert: the owner cannot set quiet or silent anywhere.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
@@ -720,17 +737,17 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game minutes it will keep trying to deliver before giving up.</td>
+<td>game minutes it keeps trying to deliver before giving up.</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
 <td>off</td>
-<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. The breed goes after things on its own, no mode and no level required. See below.</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. The breed goes after things on its own, with no mode and no level required.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
 <td>base value</td>
-<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, or the loop restarts and gets cut mid gesture.</td>
+<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, otherwise the loop restarts and cuts the gesture in the middle.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
@@ -738,14 +755,34 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>false keeps the animal standing on Stay and Guard instead of lying down.</td>
 </tr>
 <tr>
+<td><code>restPoses</code></td>
+<td>lie down</td>
+<td>a list of resting poses the animal draws from every time it settles, with optional transitions and idle variations. Needs clips and animation nodes of your own.</td>
+</tr>
+<tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true makes a wounded animal limp while walking. Only set it when your model has the two optional clips <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (1.0 s walk cycles with the same root motion as <code>Rac_Walk</code>). Without the clips the animal walks frozen in place.</td>
+</tr>
+<tr>
+<td><code>bandSkin</code></td>
+<td>off</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, five body texture names. The animal wears the cut variant while the wound bleeds and the banded one while it is dressed, on the wounded paw. Build the four variants with <code>_dogrig/forge/_paw_band.py</code>. Without it the animal still gets wounded, it just shows no mark.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>dog sounds</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. See below.</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>the dog lists</td>
+<td>what the animal must not eat, what counts as meat for it, and what it eats on its own from a trough.</td>
 </tr>
 <tr>
 <td><code>species</code></td>
 <td><code>"dog"</code></td>
-<td>which species the animal belongs to. Breeding is closed per species. Section 7.</td>
+<td>breeding is closed per species. Section 7.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
@@ -753,20 +790,20 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>the structural blocks. Section 7.</td>
 </tr>
 </tbody></table></div>
-<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>. Prefer those two to reading <code>CD.getBreedDef(animal).field</code> yourself: they handle the missing field for you, and they keep working when the base moves.</p>
+<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>, not with <code>CD.getBreedDef(animal).field</code>. They handle a missing field and keep working when the base changes.</p>
 <h3 id="instinct-distract">Instinct: <code>distract</code></h3>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>A breed that declares it will, every so often, notice something and go after it, dropping whatever it was doing. It does this with <strong>no mode switched on</strong>, from <strong>Stay</strong> as well as Follow, and you are not in charge while it lasts: orders come back refused with the <code>distracted</code> message the obedience roll already uses. The one command that gets through is Come, which cancels it.</p>
-<p>Every kind takes the same optional knobs, and anything you leave out falls back to the mod's defaults:</p>
+<p>A breed that declares it will, every so often, notice something and go after it, dropping whatever it was doing. It does this from Stay as well as Follow. While it lasts, orders come back refused with the <code>distracted</code> message the obedience roll already uses. Come here is the one command that gets through, and it cancels the distraction.</p>
+<p>Every kind takes the same optional knobs. Anything you leave out uses the mod's defaults:</p>
 <div class="tw"><table><thead><tr>
 <th>Field</th>
 <th>What it does</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1, rolled only when the kind's trigger actually found something. Writing <code>25</code> for "25%" is rejected with a named line in the log</td>
+<td>0..1, rolled only when the kind's trigger found something. Writing <code>25</code> for "25%" is rejected with a named line in the log</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
@@ -782,19 +819,19 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 </tbody></table></div>
 <h4 id="the-prey-kind">The <code>prey</code> kind</h4>
-<p>The only kind the base mod ships. The animal goes after wild animals, and <code>classes</code> picks which ones get its attention:</p>
+<p>The only kind the base mod ships. The animal goes after wild animals, and <code>classes</code> picks which ones count:</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>Two limits hold no matter what you declare:</p>
+<p>Two limits apply whatever you declare:</p>
 <ul>
-<li><strong>It never reaches above your <code>huntMaxPrey</code>.</strong> The same funnel the hunting system uses applies here, so a breed capped at <code>small</code> will not chase deer even if it declares <code>large</code>.</li>
-<li><strong>The level gate is only skipped for <code>tiny</code>.</strong> Rodents get caught by a freshly tamed animal with Hunt 0, because catching mice is not a skill anything trains for. Declare <code>small</code> and your breed will drop everything and run after the rabbit, but to actually <em>kill</em> it, it still needs the same Hunt level the Labrador needs.</li>
+<li>It never goes above your <code>huntMaxPrey</code>: a breed capped at <code>small</code> will not chase deer even if it declares <code>large</code>.</li>
+<li>The level gate is skipped only for <code>tiny</code>. A freshly tamed animal with Hunt 0 already catches rodents. With <code>small</code> declared, the breed chases the rabbit at any level, but the kill needs the same Hunt level the Labrador needs.</li>
 </ul>
-<p>The sandbox Hunting toggle still owns the kill, not the chase: with hunting off the animal still runs, but the prey gets away.</p>
-<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner or leaves it where it fell. Set it to <code>0</code> and the animal delivers from day one, which is what makes a cat bring you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>.</p>
+<p>The sandbox Hunting toggle only affects the kill: the animal still chases, but the prey gets away.</p>
+<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner. At <code>0</code> the animal delivers from day one, which is how a cat brings you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>.</p>
 <h4 id="writing-your-own-kind">Writing your own kind</h4>
-<p><code>distract</code> is a dispatcher, and <code>prey</code> is just the kind that ships with it. Register your own:</p>
+<p><code>distract</code> is a dispatcher. Register your own:</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
@@ -802,19 +839,83 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
 <p>Then declare it on the breed like any other kind: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
-<p><code>gate</code> runs before the mod's global scan budget and is where cheap rejections belong. <code>find</code> runs after the budget and is where the cost lives. <code>drive</code> returns true while it is still driving the animal, and false when it is done, which closes the window. Your handler runs in its own <code>pcall</code>: if it throws, the mod logs a named line, unregisters that kind for the session and leaves the rest of the companion working.</p>
-<p>Names reserved for future base kinds, not implemented yet: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. You can register a kind under one of those names today, but the base will win the name when it ships its own.</p>
+<p><code>gate</code> runs before the mod's global scan budget. <code>find</code> runs after the budget and does the expensive search. <code>drive</code> returns true while it is still driving the animal and false when it is done, which closes the window. Your handler runs in its own <code>pcall</code>. If it throws, the mod logs a named line, unregisters that kind for the session and leaves the rest of the companion working.</p>
+<p>Names reserved for future base kinds: <code>drink</code>, <code>eat</code>, <code>play</code>. You can register a kind under one of those names today, but the base takes the name over when it ships its own.</p>
+<h3 id="resting-poses">Resting poses</h3>
+<p>A resting animal lies down. <code>restPoses</code> replaces that single pose with a list the animal draws from every time it settles:</p>
+<pre><code>restPoses = {
+    "cdRest",                                          -- the base lie-down
+    { var = "cdSit", enter = "cdSitIn", exit = "cdSitOut",
+      variation = { "cdSitGroom", "cdSitGroom2" } },
+},</code></pre>
+<p>An entry is either the name of an animation variable or a table. <code>var</code> is the boolean that stays on for the whole pause. <code>enter</code> and <code>exit</code> are one-shot pulses played as the animal settles and as it gets up. <code>variation</code> is a list of one-shot pulses it plays now and then while it holds the pose, on the same clock as the idle variation. Only <code>var</code> is required.</p>
+<p>The draw is uniform and happens on each entry into rest, so two entries mean 50% each and the animal can pick the same one twice in a row. It is not an alternation.</p>
+<p>Each pulse lasts as long as <code>idleAnimMs</code> says for that variable, so pass the table form and give a length for every variable, including the idle ones you already had. Give the <strong>real length of the clip</strong>: an animation node repeats its clip for as long as the variable is on, and the base already shortens the two transitions a little so a late server tick cannot let them loop once before the variable goes off.</p>
+<pre><code>idleAnimMs = { cdIdle2 = 3800, cdIdle3 = 3800, cdSitIn = 1375, cdSitOut = 1417,
+               cdSitGroom = 19833, cdSitGroom2 = 25167 },</code></pre>
+<p>The clips and the nodes are yours, not the base's. Each variable needs a node file in your add-on under <code>media/AnimSets/raccoon/idle/</code>, and the clip its <code>m_AnimName</code> points at has to exist in your model. A node pointing at a clip the model does not have fails silently and the animal just stands in the base idle. Give the pose node a <code>m_ConditionPriority</code> of 10 like the base ones, and a higher number to anything meant to play over it: 11 for a variation, 12 for the two transitions. Keep them in <code>idle/</code> only. A pose node in <code>pathfind/</code> plays a clip with no root motion and freezes the animal where it stands.</p>
 <h3 id="the-voice">The voice</h3>
-<p>A different species does not speak the same language. Without <code>voices</code>, your cat barks:</p>
+<p>Without <code>voices</code> every breed uses the dog sounds, so a cat would bark. Register your own sounds first:</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>Then point the breed at them:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> is not optional decoration. Without it the sounds still play, but they ignore the player's category slider and the game's effect volume, which is a failure nobody reports because nothing looks broken. A key you leave out of <code>voices</code> falls back to the dog sound, which is what you want for a breed of dog and never what you want for another species.</p>
+<p>Without <code>CD.registerVoices</code> the sounds still play, but they ignore the player's category slider and the game's effect volume, and nothing in the log points at it. A key you leave out of <code>voices</code> falls back to the dog sound.</p>
+<p>The third argument is the audible range of each sound in tiles. It should match the <code>distanceMax</code> you wrote in your own sound script:</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>On a server the base sends a sound only to the players inside that range. Leave the range out and the voice gets a generic range by category: a hiss that carries ten tiles goes out to everyone within thirty. Past <code>distanceMax</code> FMOD's inverse rolloff stops attenuating instead of going silent, so a loose <code>.ogg</code> keeps playing at <code>distanceMin / distanceMax</code> of its volume at any distance. Keep <code>distanceMin</code> small on your loud voices for the same reason.</p>
+<h3 id="the-diet">The diet</h3>
+<p>Without <code>diet</code> every breed eats like a dog: the same food that poisons it, the same food that counts as meat, and the same food it grazes from a feeding trough. The field overrides those three lists for your breed only.</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>The two forms exist because the game's own categories only go so far. <code>Cheese</code> is a real <code>FoodType</code>, so one key covers every cheese in the game and in any food mod that reuses the category. Tuna is not: the open tin is <code>FoodType = Fish</code>, together with every other fish, and the sealed tin declares no food type at all. <code>badParts</code> and <code>proteinParts</code> are how you reach those.</p>
+<p>Every field is a table of <code>&lt;key&gt; = true</code> (add) or <code>&lt;key&gt; = false</code> (drop what the base had). A value that is not <code>true</code> or <code>false</code> is dropped with a named line in the log.</p>
+<div class="tw"><table><thead><tr>
+<th>Field</th>
+<th>What its keys are</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td><code>FoodType</code> of food that makes the animal sick, costs it loyalty and gets a red entry in the feed menu</td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>a piece of the item type, lowercase, matched anywhere in it</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td><code>FoodType</code> that pays the animal's meat debt, the one the Weak moodle watches</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>a piece of the item type, same matching as <code>badParts</code></td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td><code>FoodType</code> you know is not meat. It only silences the log line the base writes for a food type it has never seen</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td><code>FoodType</code> and <code>AnimalFeedType</code> the animal eats by itself from a feeding trough</td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>full item type, for an item the trough holds that has no feed type of its own</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code> starts from an empty list instead of the dog one. Use it when your animal shares almost nothing with a dog; a cat is usually easier to write as a handful of additions and removals.</p>
+<p>The three lists follow the animal, so a dog and a cat standing at the same trough eat different things from it. The mod's own bowl is the exception: it stores food points, not the item that filled it, so filling it goes by the base list for everyone. Nothing poisonous can be put in a bowl anyway.</p>
 <h2 id="7-turning-a-whole-system-off">7. Turning a whole system off</h2>
-<p>The five skills are the five systems, one for one:</p>
+<p>The five skills are the five systems:</p>
 <div class="tw"><table><thead><tr>
 <th>Skill</th>
 <th>The system it is</th>
@@ -825,7 +926,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>fighting, the Guard mode and self defence</td>
+<td>fighting, the Guard mode and auto-protect</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
@@ -844,9 +945,9 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Absent or <code>true</code> means the animal has that skill, so you only write the ones you are removing.</p>
-<p>Turning a skill off does <strong>three things at once</strong>: the system never runs, the skill never earns experience, and the bar and its commands disappear from the interface.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. It is total: the animal does not conceive, is never picked as a partner, and does not breed with its own kind either. If what you actually want is an animal that breeds normally but never with a dog, that is <code>species</code>, below, not this.</p>
+<p>Absent or <code>true</code> means the animal has that skill.</p>
+<p>Turning a skill off also stops it earning experience and removes the bar and its commands from the interface.</p>
+<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. The animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
 <h3 id="the-species">The species</h3>
 <p>An add-on that adds another animal, rather than another dog, declares it:</p>
 <pre><code>CD.registerSpecies({ key = "cat",
@@ -854,14 +955,16 @@ huntMaxPrey = "tiny",</code></pre>
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>The field is absent on every breed published so far, and absent means <code>"dog"</code>. So nothing you already wrote changes behaviour.</p>
-<p>It does two things. <strong>Breeding is closed per species:</strong> a pair only conceives when both sides are the same species, in the command, in the passive hourly roll and in the debug tool alike. And the interface stops calling your animal a dog: <code>nounKey</code> is the bare noun that fills sentences like <em>"This %1 already belongs to another survivor"</em>, and <code>youngKey</code> is the label the young of your species carries in the window, the context menu and the kennel, where a dog says <em>Puppy</em>.</p>
+<p>The field is absent on every breed published so far, and absent means <code>"dog"</code>.</p>
+<p>Breeding is closed per species: a pair only conceives when both sides are the same species, in the command, in the passive hourly roll and in the debug tool. And the interface stops calling your animal a dog: <code>nounKey</code> is the bare noun that fills sentences like <em>"This %1 already belongs to another survivor"</em>, and <code>youngKey</code> is the label the young of your species carries in the window, the context menu and the kennel, where a dog says <em>Puppy</em>.</p>
+<p>Those two nouns only cover the sentences built around a <code>%1</code>. Every other sentence with the word <em>dog</em> written into it (<em>"Inspect dog"</em>, <em>"Your dog is hungry"</em>, <em>"The dog barks on purpose"</em>) takes a per-species key from API 7 on: ship <code>IGUI_PD_ScanStray_cat</code> in your translation files and the base shows it instead of <code>IGUI_PD_ScanStray</code> whenever the animal on screen is a cat. A key you did not ship falls back to the dog's text. The keys that accept the suffix: <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, every <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, every <code>Refused_*</code>, <code>KennelStatusNoData</code> and the <code>Moodle_*_desc</code> of the care moodles (Sick, Weak, Hunger, Thirst, Rested, Grief). Sentences with no animal on screen (the registry tab, <em>"Befriend an animal first"</em>) are already species-neutral in the base. The cat ships all of them in fourteen languages; copy its <code>IG_UI.json</code> as the template.</p>
+<p>The animal's <code>group</code> is only read by the debug spawn menu and the clip viewer, through <code>IGUI_Animal_Group_&lt;group&gt;</code>. Set <code>t.group = "cat"</code> after the behaviour helper and ship that key, or your species shows up there under the dog's name.</p>
 <p>Declaring <code>species</code> without registering it is not fatal: your animal still refuses to breed outside its own species, because the gate compares the raw string. Only the two nouns fall back to the dog's, and the log says so by name.</p>
-<p><strong>This is a block, so it does not degrade.</strong> On a base older than API 6 the field is ignored in silence and your animal is a dog for breeding purposes. If it must never cross with one, guard on API 6, or keep <code>canBreed = false</code> while the base is older, which is what the cat does.</p>
-<p><code>huntMaxPrey</code> is a <strong>ceiling inside a hunt that exists</strong>, which is a different thing from <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no ceiling). Prey above the ceiling is invisible to your animal: it does not chase it and does not even point at it. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p><strong>A blocked animal does not get a disabled button.</strong> The option leaves the radial, the context menu and the window, and the refusal on the server is silent. Explain the design in your breed description instead. That is why none of these fields brings a new translation key with it.</p>
+<p>On a base older than API 6 the field is ignored without a log line, and your animal breeds as a dog. If it must never cross with one, guard on API 6, or keep <code>canBreed = false</code> while the base is older, which is what the cat does.</p>
+<p><code>huntMaxPrey</code> caps the prey size inside a hunt that still exists; it does not replace <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no cap). Your animal does not chase or point at prey above the cap. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
+<p>A blocked option disappears from the radial, the context menu and the window, and the server refuses it without a message. None of these fields adds a translation key, so explain the limits in your breed description.</p>
 <h2 id="8-the-animal-definitions">8. The animal definitions</h2>
-<p>The engine binds the mesh to the <strong>animal type</strong>, not to the breed, so your breed needs its own three types. This is the mechanical part of an add-on, and the shortest path is to copy the file of an existing add-on and rename it.</p>
+<p>The engine binds the mesh to the animal type rather than the breed, so your breed needs three types of its own. The shortest path is to copy the file of an existing add-on and rename it.</p>
 <p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
@@ -894,41 +997,46 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <th>What it fills in</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
 <td>body model, skeleton, butchered textures and the animation set</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
 <td>every engine behaviour flag a companion needs</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
 <td>the portrait camera for the animal window</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
 <td>the shared footstep and foley table</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>the genome of a new species, with the standard gene list (API 7)</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
 <td>the value that stops a frightened stray from bleeding to death</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>the butchering parts of all three stages</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>the butchering parts of all three stages. <code>meat</code> is optional: <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>, and without it the animal yields the base's dog meat. The engine multiplies both the count and the hunger of every piece by the carcass size, so a species with a large size (the cat uses 2.5 to 3.5 as a visual scale) needs its own item with a smaller base hunger and a low count</td>
 </tr>
 </tbody></table></div>
-<p><strong>The animation set has to stay <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> sets it. A forked animation set does not load its state machine, and an animal without a state machine is an animal frozen in place.</p>
-<p><strong>Reuse the genome:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Do not write your own.</p>
-<p><strong>Never declare <code>mate</code>.</strong> With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot as a safety net, but do not rely on that.</p>
-<p><strong>Parts are mandatory.</strong> Three lines in their own file:</p>
+<p>The species-neutral names arrived with API 7. The older ones, <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code> and <code>CD.DogMoodles</code>, are the same functions and tables under their first name. An add-on that wants to load on a base older than 0.7.3 guards on the old names and picks the new one when it exists: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
+<p>The animation set has to stay <code>"raccoon"</code>. A forked animation set does not load its state machine, and the animal stands frozen in place.</p>
+<p>Reuse the genome. A dog breed points at the base's list: <code>AnimalDefinitions.genome["dog"].genes</code>. A new species calls <code>CD.defineGenome("cat")</code> once and gives every stage the table it returns. The engine only reads the <code>genes</code> list of each stage, and the genome key is a convention, so your species gets its own entry without a gene list of its own.</p>
+<p>Do not declare <code>mate</code>. With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot, but do not rely on that.</p>
+<p>Parts are mandatory. Three lines in their own file:</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and walks into a nil.</p>
-<p><strong>Small animals need their avatar camera adjusted.</strong> The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
+<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and hits a nil.</p>
+<p>The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
 <h2 id="9-the-model-script">9. The model script</h2>
-<p>One file under <code>media/scripts/</code>, which is what tells the game your model exists:</p>
+<p>One file under <code>media/scripts/</code> tells the game your model exists:</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -951,8 +1059,8 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> is what keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
-<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Those numbers are found by looking at the animal in game and nudging them, not by measuring the model: a bag that is mathematically centred still looks wrong on a body with fur.</p>
+<p><code>keepMeshAnimations = true</code> keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
+<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Find those numbers by looking at the animal in game and nudging them. Values measured from the model put the bag in the geometric centre of the mesh, which is not where it looks right on the body.</p>
 <h2 id="10-where-the-animal-spawns">10. Where the animal spawns</h2>
 <p>Strays are rolled per building, per chunk, the first time that chunk loads. You describe your rolls as a list of steps, either inside the breed definition as <code>spawns</code>, or with <code>CD.registerStraySpawns(list)</code>.</p>
 <pre><code>spawns = {
@@ -975,11 +1083,11 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>a <strong>function</strong> returning a percentage. A function, not a number, so it can follow the sandbox multiplier live.</td>
+<td>a function returning a percentage, so it can read the sandbox multiplier at roll time.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>key of the persistent store. Unique in the whole ecosystem, and never changed.</td>
+<td>key of the persistent store. Unique across all mods, and never changed.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
@@ -994,10 +1102,10 @@ end</code></pre>
 <td>percentage chance of being born inside the building instead of the street. Default 35.</td>
 </tr>
 </tbody></table></div>
-<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Either way the player's sandbox setting keeps working, which it will not if you write a bare number.</p>
-<p><code>indoor</code> is a preference and not a promise: a building with no free interior tile in that chunk falls back to a tile outside.</p>
+<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Both keep the player's sandbox setting working.</p>
+<p><code>indoor</code> is a preference: a building with no free interior tile in that chunk falls back to a tile outside.</p>
 <h3 id="the-building-classes">The building classes</h3>
-<p>The base registers four, and you can use them directly:</p>
+<p>The base registers four:</p>
 <div class="tw"><table><thead><tr>
 <th>Class</th>
 <th>Matches</th>
@@ -1022,21 +1130,20 @@ end</code></pre>
 <p>If none of them fits, register your own:</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>The match function receives the building definition and runs inside a protected call, so a mistake in it cannot take the chunk load down. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which is what a farm or a forest cabin needs. Leave <code>exclusive</code> alone: the base classes are exclusive between themselves, and an add-on class is meant to be additive, matching on top of them.</p>
+<p>The match function receives the building definition and runs inside a protected call, so an error in it does not stop the chunk load. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which a farm or a forest cabin needs. Do not set <code>exclusive</code>. The base classes are exclusive among themselves, and an add-on class matches on top of them.</p>
 <h3 id="suffixes-already-taken">Suffixes already taken</h3>
 <p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
 <p>Every suffix starts with a vertical bar. These are already in use:</p>
 <ul>
-<li><strong>Base:</strong> the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Cats:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li>Base: the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li>Rottweiler: <code>rw</code>, <code>r</code></li>
+<li>Doberman: <code>db</code>, <code>dm</code></li>
+<li>Labrador: <code>lb</code>, <code>lk</code></li>
+<li>Pug: <code>pg</code>, <code>pv</code></li>
+<li>Cats: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<p>Pick something nobody else is using, then never touch it again.</p>
 <h2 id="11-the-breed-moodle">11. The breed moodle</h2>
-<p>A moodle is a <strong>client</strong> file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
+<p>A moodle is a client file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1055,20 +1162,20 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> is called with the game minutes since the last call, so multiply your effect by <code>elapsedMin</code> instead of assuming a fixed tick.</p>
-<p>Ship the icon in <strong>six sizes</strong>, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size is an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
+<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> receives the game minutes since the last call, so multiply your effect by <code>elapsedMin</code>.</p>
+<p>Ship the icon in six sizes, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size shows as an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
 <h2 id="12-hooks">12. Hooks</h2>
-<p>Two lists of functions the base calls on the <strong>server</strong>. Append to them from a shared file. Each handler runs inside its own protected call, so a broken add-on cannot take the base down with it.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, from API 2, called right after the animal drops a kill at its owner's feet:</p>
+<p>Two lists of functions the base calls on the server. Append to them from a shared file. Each handler runs inside its own protected call, so an error in one add-on does not stop the base.</p>
+<p><code>CD.onHuntDelivered</code>, from API 2, is called right after the animal drops a kill at its owner's feet:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, from API 3, called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
+<p><code>CD.onUpkeepStress</code>, from API 3, is called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>This is the <strong>only</strong> way an add-on can influence the animal's continuous stress. Upkeep recomputes and overwrites the value every cycle, so anything you write from outside is lost on the next tick. It is the right tool for a condition that comes from the environment: heat, cold, rain.</p>
-<p><strong>The multiplayer rule, in one line: the client never writes mod data.</strong> A client side write clobbers the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks, which already run there.</p>
+<p>Upkeep recomputes and overwrites the value every cycle, so anything written from outside is lost on the next tick. Use the hook for a condition that comes from the environment, such as heat, cold or rain.</p>
+<p>In multiplayer, the client never writes mod data. A client side write overwrites the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks.</p>
 <h2 id="13-translation-keys">13. Translation keys</h2>
 <p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>The keys a breed needs:</p>
@@ -1094,11 +1201,11 @@ end</code></pre>
 </tr>
 <tr>
 <td>your species keys</td>
-<td>the <code>nounKey</code> and <code>youngKey</code> you passed to <code>CD.registerSpecies</code>, if you added a species</td>
+<td>the <code>nounKey</code> and <code>youngKey</code> you passed to <code>CD.registerSpecies</code></td>
 </tr>
 <tr>
 <td>your moodle keys</td>
-<td>name and description, if you have a moodle</td>
+<td>the name and the description</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,7 +1216,7 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Two things that will bite you. A <strong>literal percent sign</strong> in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. And a language file with a <strong>byte order mark</strong> does not compile, with an error that names a different file than the broken one.</p>
+<p>A literal percent sign in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. A language file with a byte order mark does not compile, and the error names a different file than the broken one.</p>
 <h2 id="14-what-the-save-remembers">14. What the save remembers</h2>
 <p>Three of your identifiers are written into save files and read back forever:</p>
 <ul>
@@ -1117,17 +1224,17 @@ end</code></pre>
 <li><code>typePrefix</code>, which forms the animal types the engine stores</li>
 <li><code>suffix</code>, the key of the "already rolled" store, one per spawn step</li>
 </ul>
-<p><strong>None of the three can ever be renamed after release.</strong> Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world that had been played for months suddenly fills with your animal.</p>
-<p>The one time that re-roll is useful is when it is the point: CD: Cats gave its four new coats new suffixes on purpose, precisely so that they would start appearing in worlds that were already running, while the original black cat kept its historic suffix and did not re-roll.</p>
-<p><strong>Removing an add-on from a save that has living animals of that breed loses them.</strong> The engine discards an animal whose type it no longer knows. The base does not crash, the bond and the kennel degrade cleanly, but the animal is gone. Say so on your Workshop page, the way every published add-on does.</p>
-<p><strong>An unknown breed degrades instead of failing.</strong> If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
+<p>None of the three can be renamed after release. Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world played for months fills with your animal.</p>
+<p>A new suffix is also how a new breed reaches worlds that are already running. CD: Cats gave its four new coats new suffixes, so they started appearing in existing saves, while the original black cat kept its old suffix and did not roll again.</p>
+<p>Removing an add-on from a save that has living animals of that breed loses them. The engine discards an animal whose type it no longer knows. The base does not crash, and the bond and the kennel degrade cleanly. Say so on your Workshop page.</p>
+<p>If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
 <h2 id="15-before-you-publish">15. Before you publish</h2>
 <ul>
-<li>The guard is on <strong>every</strong> Lua file, and names the API you actually use.</li>
+<li>The guard is on every Lua file, and names the API you actually use.</li>
 <li>The base version floor is written in your description, in words. <code>versionMin</code> cannot say it.</li>
 <li>You read the log on first load. <code>CD.registerBreed</code> rejects in silence otherwise, and every rejection prints a named line.</li>
 <li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
-<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you are happy with them forever.</li>
+<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you will not need to change them.</li>
 <li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
 <li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, or it barks.</li>
 <li>The moodle icon exists in all six sizes.</li>
@@ -1142,15 +1249,15 @@ end</code></pre>
 </tr></thead><tbody>
 <tr>
 <td><strong>"My animal never appears."</strong></td>
-<td>Almost always the guard: your add-on needs an API the installed base does not have, so it is inert on purpose. Check your API number against the table in section 2.</td>
+<td>Almost always the guard: the add-on needs an API the installed base does not have, so it returns early and registers nothing. Check your API number against the table in section 2.</td>
 </tr>
 <tr>
 <td><strong>"It appears, but it is frozen."</strong></td>
-<td>The animation set is not <code>"raccoon"</code>, or your model is missing clips. Both come out as an animal that stands still forever.</td>
+<td>The animation set is not <code>"raccoon"</code>, or the model is missing clips.</td>
 </tr>
 <tr>
 <td><strong>"It renders as a black smear and the log floods."</strong></td>
-<td>More than 60 bones in the model.</td>
+<td>The model has more than 60 bones.</td>
 </tr>
 <tr>
 <td><strong>"Butchering it crashes."</strong></td>
@@ -1158,11 +1265,11 @@ end</code></pre>
 </tr>
 <tr>
 <td><strong>"The puppy is born the size of an adult."</strong></td>
-<td>A small breed that did not set <code>puppySize</code>. The value is absolute and is re-applied on every sweep, so the type's own size range does not save you.</td>
+<td>A small breed did not set <code>puppySize</code>. The value is absolute and is applied again on every sweep, so the size range of the type does not cover it.</td>
 </tr>
 <tr>
 <td><strong>"Two of my breeds keep turning into each other."</strong></td>
-<td>They share an <code>engineBreed</code>. The prefix chooses the mesh and can be shared by a family; <code>engineBreed</code> chooses the texture and is what breaks the tie inside that family, so it has to be unique per breed.</td>
+<td>They share an <code>engineBreed</code>. The prefix picks the mesh and can be shared by a family. <code>engineBreed</code> picks the texture and tells the breeds of that family apart, so it has to be unique per breed.</td>
 </tr>
 <tr>
 <td><strong>"The sound plays but ignores the volume slider."</strong></td>
@@ -1170,11 +1277,11 @@ end</code></pre>
 </tr>
 <tr>
 <td><strong>"It works in single player and misbehaves on a server."</strong></td>
-<td>Something is writing mod data on the client. Move it to the server.</td>
+<td>Something writes mod data on the client. Move it to the server.</td>
 </tr>
 <tr>
 <td><strong>"It fought a zombie even though I turned combat off."</strong></td>
-<td>The base it is running on is older than API 5, where the field did not exist yet and was ignored in silence. This is exactly the case where the guard has to block instead of degrade.</td>
+<td>The base it runs on is older than API 5. That base does not know the field and ignores it. The guard has to block on this base instead of loading with the field missing.</td>
 </tr>
 </tbody></table></div>
 <hr>

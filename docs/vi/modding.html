@@ -213,13 +213,13 @@ mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radiu
 .toc a[hidden]{display:none;}
 .grp[hidden]{display:none;}
 
-main{padding:38px 32px 120px; min-width:0;}
-.doc{max-width:70ch; margin:0 auto;}
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
 
 /* ---------- tipografia ---------- */
 h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
 h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
-h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:60ch;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
 h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
 h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
 p{margin:0 0 14px;}
@@ -418,15 +418,16 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#4-các-file-của-một-add-on" data-id="4-các-file-của-một-add-on">4. Các file của một add-on</a>
 </div>
 <div class="grp">
-<a class="s2" href="#5-chốt-kiểm-tra-phiên-bản" data-id="5-chốt-kiểm-tra-phiên-bản">5. Chốt kiểm tra phiên bản</a>
+<a class="s2" href="#5-chốt-chặn-phiên-bản" data-id="5-chốt-chặn-phiên-bản">5. Chốt chặn phiên bản</a>
 </div>
 <div class="grp">
 <a class="s2" href="#6-đăng-ký-giống" data-id="6-đăng-ký-giống">6. Đăng ký giống</a>
 <div class="sub">
-<a class="s3" href="#các-trường-bắt-buộc" data-id="các-trường-bắt-buộc">Các trường bắt buộc</a>
-<a class="s3" href="#các-trường-tùy-chọn" data-id="các-trường-tùy-chọn">Các trường tùy chọn</a>
+<a class="s3" href="#trường-bắt-buộc" data-id="trường-bắt-buộc">Trường bắt buộc</a>
+<a class="s3" href="#trường-tùy-chọn" data-id="trường-tùy-chọn">Trường tùy chọn</a>
 <a class="s3" href="#bản-năng-distract" data-id="bản-năng-distract">Bản năng: distract</a>
 <a class="s3" href="#giọng" data-id="giọng">Giọng</a>
+<a class="s3" href="#khẩu-phần" data-id="khẩu-phần">Khẩu phần</a>
 </div>
 </div>
 <div class="grp">
@@ -467,41 +468,40 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#16-lỗi-thường-gặp" data-id="16-lỗi-thường-gặp">16. Lỗi thường gặp</a>
 </div></nav>
   </aside>
-  <main><article class="doc"><h1 id="companion-dogs-sổ-tay-modding">Companion Dogs: Sổ tay Modding</h1>
-<p>Cách tạo add-on của riêng bạn: một giống mới, hoặc cả một loài, dưới dạng mod Workshop riêng cắm vào Companion Dogs.</p>
-<p>Sổ tay này dành cho người viết mod. Nếu bạn chỉ muốn chơi thì hai cuốn kia mới là thứ bạn cần: <a href="features.html" class="xlink">Tính năng</a> cho những gì con chó làm được, và <a href="breeds.html" class="xlink">Giống chó</a> cho chính các giống.</p>
-<p>Sổ tay giả định bạn đã đọc được Lua và đã có sẵn một model có rig và animation cho con vật của mình. Quy trình làm mỹ thuật không nằm ở đây; mục 3 liệt kê những gì file model phải đáp ứng, và không hơn.</p>
-<blockquote class="quote"><strong>Đây là một giao ước công khai.</strong> Mọi thứ được nêu tên trong sổ tay này tồn tại để được gọi từ bên ngoài mod. Những gì không được nêu tên ở đây là nội bộ và có thể thay đổi ở bất kỳ phiên bản nào mà không báo trước.</blockquote>
+  <main><article class="doc"><h1 id="companion-dogs-sổ-tay-modding">Companion Dogs: Sổ tay modding</h1>
+<p>Cách tự dựng add-on của riêng bạn: một giống mới, hoặc cả một loài mới, dưới dạng mod Workshop riêng cắm vào Companion Dogs.</p>
+<p>Sổ tay này dành cho người viết mod. Nếu bạn chỉ muốn chơi, hãy đọc hai sổ tay còn lại: <a href="features.html" class="xlink">Tính năng</a> nói con chó làm được gì, và <a href="breeds.html" class="xlink">Giống chó</a> nói về các giống.</p>
+<p>Sổ tay giả định bạn đọc được Lua và đã có sẵn model có rig, có animation cho con vật của mình. Quy trình làm art không nằm ở đây. Mục 3 liệt kê những gì file model phải đáp ứng.</p>
+<blockquote class="quote">Mọi thứ được nêu tên trong sổ tay này là hợp đồng công khai và được làm ra để gọi từ ngoài mod. Thứ không nêu ở đây là nội bộ và có thể đổi ở bất kỳ bản phát hành nào mà không báo trước.</blockquote>
 <h2 id="1-add-on-là-gì">1. Add-on là gì</h2>
-<p>Add-on là một mod Workshop bình thường, khai báo <code>require=CompanionDogs</code> và gọi một hàm lúc nạp. Nó thêm <strong>một giống</strong> (hoặc vài giống, nếu chúng dùng chung một thân), và không gì khác. Mọi thứ khiến con vật cư xử như một người bạn đồng hành đều đã nằm sẵn trong mod nền và được dùng chung.</p>
-<p><strong>Mod nền sở hữu:</strong></p>
+<p>Add-on là một mod Workshop bình thường, khai báo <code>require=CompanionDogs</code> và gọi một hàm lúc nạp. Nó thêm một giống (hoặc vài giống, nếu chúng dùng chung thân) và không gì khác.</p>
+<p>Mod nền giữ:</p>
 <ul>
 <li>máy trạng thái animation, bộ animation và bộ xương</li>
-<li>việc đi theo, tìm đường, chiến đấu, săn, chăn gia súc, canh gác, nhu cầu và bảo dưỡng</li>
+<li>bám theo, tìm đường, chiến đấu, đi săn, chăn gia súc, canh gác, nhu cầu và chăm sóc</li>
 <li>toàn bộ giao diện: cửa sổ chó, vòng lệnh, menu chuột phải, chuồng, dấu trên bản đồ</li>
 <li>thuần hóa, gắn bó, sinh sản, chó con và chó lai</li>
-<li>các tùy chọn sandbox và việc đồng bộ trong nhiều người chơi</li>
+<li>các tùy chọn sandbox, và việc đồng bộ nhiều người chơi</li>
 </ul>
-<p><strong>Add-on của bạn sở hữu:</strong></p>
+<p>Add-on của bạn giữ:</p>
 <ul>
-<li>những con số làm con vật của bạn khác với Caramelo</li>
-<li>model thân, texture, ảnh chân dung, và nếu có thì cả biểu tượng moodle</li>
-<li>nơi tìm thấy nó trong thế giới</li>
-<li>tên và mô tả của nó, ở mọi ngôn ngữ bạn gửi kèm</li>
+<li>các con số làm con vật của bạn khác con Caramelo</li>
+<li>model thân, texture, ảnh chân dung và, nếu có, icon moodle của nó</li>
+<li>nơi nó xuất hiện trong thế giới</li>
+<li>tên và mô tả của nó, ở mọi ngôn ngữ bạn phát hành</li>
 </ul>
-<p>Sự phân chia đó chính là toàn bộ ý nghĩa. Một gói giống chỉ là vài trăm dòng Lua, vì phần khó đã chạy sẵn rồi.</p>
-<p><strong>Một giống, một diện mạo.</strong> Giống là một bộ số cộng với một diện mạo. Nếu bạn muốn hai màu của cùng một con vật cư xử khác nhau, đó là hai giống. Nếu bạn muốn hai màu cư xử giống hệt nhau, với mod nền chúng vẫn là hai giống (hai tên, hai mục trong chuồng), và bạn viết chúng từ một bảng dùng chung, giống như CD: Cats làm với năm bộ lông của nó.</p>
+<p>Hai màu lông hành xử y hệt nhau vẫn là hai giống đối với mod nền (hai cái tên, hai mục trong chuồng); bạn viết chúng từ một bảng dùng chung, như CD: Cats làm với năm bộ lông của nó.</p>
 <h2 id="2-các-phiên-bản-api">2. Các phiên bản API</h2>
-<p><code>CD.API_VERSION</code> chỉ là một con số. Nó chỉ lớn lên bằng cách thêm vào, nên một add-on viết cho phiên bản cũ vẫn nạp được trên mod nền mới hơn mà không cần sửa một dòng nào.</p>
+<p><code>CD.API_VERSION</code> là một con số thuần. Nó chỉ lớn lên bằng cách thêm thứ mới, nên add-on viết cho phiên bản cũ vẫn nạp được trên mod nền mới mà không phải sửa gì.</p>
 <div class="tw"><table><thead><tr>
 <th>API</th>
 <th>Phiên bản nền</th>
-<th>Đã thêm gì</th>
+<th>Thêm gì</th>
 </tr></thead><tbody>
 <tr>
 <td>1</td>
 <td>0.6.3</td>
-<td><code>CD.registerBreed</code>, sổ đăng ký sinh ra, moodle của giống</td>
+<td><code>CD.registerBreed</code>, sổ đăng ký spawn, moodle của giống</td>
 </tr>
 <tr>
 <td>2</td>
@@ -528,16 +528,26 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.7.1</td>
 <td><code>species</code>, <code>CD.registerSpecies</code></td>
 </tr>
+<tr>
+<td>7</td>
+<td>0.7.3</td>
+<td>khóa văn bản theo loài (<code>&lt;key&gt;_&lt;species&gt;</code>), <code>CD.defineGenome</code>, tên helper trung tính về loài</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.7.5</td>
+<td><code>diet</code></td>
+</tr>
 </tbody></table></div>
-<p>Con số cần kiểm tra là <strong>API thấp nhất mà add-on của bạn thực sự cần</strong>, và phiên bản nền trong bảng đó là con số bạn ghi trên trang Workshop của mình. Lấy nó từ bảng này, chứ không phải từ việc mod nền tình cờ là bản nào lúc bạn đang viết: một trường chỉ tồn tại trong bản dựng phát triển là một trường mà người chơi của bạn không có.</p>
-<p><strong>Trường thiếu sẽ bị bỏ qua trong im lặng.</strong> Điều đó ổn khi trường là một con số: trên mod nền cũ hơn, con vật của bạn chỉ đơn giản sủa ở âm lượng bình thường. Điều đó không ổn khi trường là một lệnh cấm, vì khi ấy một con mèo lẽ ra không bao giờ được đánh nhau sẽ vui vẻ lao vào đánh. Nghĩa là: con số có thể xuống cấp, lệnh cấm thì không. Nếu con vật của bạn phụ thuộc vào một lệnh cấm, hãy kiểm tra đúng API đã đưa nó vào, và để add-on nằm im hoàn toàn trên mọi bản cũ hơn.</p>
+<p>Hãy chốt chặn ở mức API thấp nhất mà add-on của bạn cần, và ghi lên trang Workshop phiên bản nền tương ứng trong bảng đó. Đừng lấy con số từ bản nền mà bạn tình cờ đang chạy lúc viết: trường chỉ có trong bản dựng của người phát triển là trường người chơi của bạn không có.</p>
+<p>Trường thiếu bị bỏ qua, không báo lỗi. Với trường là con số thì vô hại: trên bản nền cũ, con vật của bạn sủa ở âm lượng bình thường. Với trường tắt cả một khối thì đó là vấn đề: con mèo không có khối chiến đấu vẫn sẽ đánh nhau trên bản nền cũ.</p>
 <h2 id="3-cần-gì-trước-khi-bắt-đầu">3. Cần gì trước khi bắt đầu</h2>
-<p><strong>Một model đã skin.</strong> Con vật của bạn cần file <code>.glb</code> riêng trong <code>media/models_X/Skinned/</code>, và file đó phải mang <strong>trọn bộ 21 clip <code>Rac_*</code></strong>. Clip không được kế thừa giữa các file model: một model có mười lăm clip sẽ cho bạn một con vật đứng đơ ngay lần đầu bị yêu cầu làm một trong sáu động tác còn lại. Model cũng phải nằm dưới <strong>60 xương</strong> và có nút trên cùng ở dạng đơn vị, nếu không engine sẽ ném lỗi mỗi khung hình và con vật hiện ra như một vệt đen.</p>
-<p>Nếu bạn chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một trong các thân của mod nền. Con vật sẽ trông như Caramelo, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
-<p><strong>Một texture</strong> cho thân, và một <strong>ảnh chân dung</strong> cho cửa sổ chuồng.</p>
-<p><strong>Một quyết định, trước cả dòng code đầu tiên:</strong> con vật của bạn là một <em>giống</em> hay một <em>loài</em>? Giống là một con chó với những con số khác. Loài là một con vật vốn dĩ không có một số công việc nào đó. Khác biệt này không phải chuyện bề ngoài, nó thay đổi những trường bạn phải viết, và mục 7 nói về chuyện đó.</p>
+<p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống.</p>
+<p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Caramelo, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
+<p>Bạn cũng cần một texture cho thân và một ảnh chân dung cho cửa sổ chuồng.</p>
+<p>Hãy quyết định con vật của bạn là một giống hay một loài trước khi viết dòng code nào. Giống là con chó với các con số khác. Loài là con vật thiếu hẳn vài phần việc. Lựa chọn đó đổi các trường bạn phải viết; mục 7 nói về nó.</p>
 <h2 id="4-các-file-của-một-add-on">4. Các file của một add-on</h2>
-<p>Đây là CD: Pug, add-on nhỏ nhất đã đăng, chỉ giữ những phần đáng kể:</p>
+<p>Đây là CD: Pug, add-on nhỏ nhất đã xuất bản, với những phần đáng kể:</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -565,18 +575,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> là dòng quan trọng. Nó bảo đảm <strong>toàn bộ</strong> Lua của mod nền đã chạy trước Lua của bạn, ở từng pha: shared trước, rồi client, rồi server. Không có nó, file của bạn có thể nạp trước, và khi ấy mọi lời gọi <code>CD.</code> đều là truy cập vào nil.</p>
-<p><strong><code>versionMin</code> không thể diễn đạt "cần Companion Dogs 0.6.8".</strong> Trường đó là cổng chặn theo phiên bản <em>game</em> và không gì khác, và không có trường mod.info nào cho phiên bản của thứ mà mod phụ thuộc vào. Mức sàn của mod nền do chốt kiểm tra ở mục sau ép buộc, và được thông báo cho người chơi trong phần mô tả của bạn. Hãy viết nó ở đó, bằng lời, nếu không thì triệu chứng duy nhất người chơi nhận được là một con vật chẳng bao giờ xuất hiện.</p>
-<h2 id="5-chốt-kiểm-tra-phiên-bản">5. Chốt kiểm tra phiên bản</h2>
-<p>Đặt đoạn này ở đầu mọi file Lua trong add-on của bạn, với con số mà add-on của bạn thực sự cần:</p>
+<p><code>require=CompanionDogs</code> là dòng quan trọng. Nó bảo đảm toàn bộ Lua của mod nền chạy xong trước mọi file của bạn, ở mọi pha: shared trước, rồi client, rồi server. Thiếu nó, file của bạn có thể nạp trước và mọi lời gọi <code>CD.</code> đều là nil index.</p>
+<p><code>versionMin</code> không diễn đạt được ý "cần Companion Dogs 0.6.8". Trường đó chỉ chặn theo bản dựng của game, và mod.info không có trường nào cho phiên bản của mod phụ thuộc. Mức sàn của mod nền do chốt chặn ở mục sau lo, và được báo cho người chơi trong phần mô tả. Hãy viết rõ ở đó, bằng lời, nếu không thì triệu chứng duy nhất người chơi nhận được là con vật không bao giờ xuất hiện.</p>
+<h2 id="5-chốt-chặn-phiên-bản">5. Chốt chặn phiên bản</h2>
+<p>Đặt đoạn này ở đầu mọi file Lua của add-on, với con số mà add-on của bạn cần:</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>Nếu thiếu mod nền hoặc mod nền quá cũ, file quay về ngay ở dòng thứ hai. Khi đó add-on không làm gì cả: không giống, không sinh ra, không moodle, không một dòng nào trong log. Sự im lặng đó là cố ý. Một add-on nạp được nửa vời còn tệ hơn một add-on không nạp, vì người chơi bị bỏ lại với một con vật có tên mà không có hành vi.</p>
-<p>Chốt kiểm tra là theo từng file, và mỗi file kiểm tra thứ nó dùng. <code>PugDefinitions.lua</code> cần các hàm trợ giúp về model, nên nó kiểm tra những hàm đó:</p>
+<p>Khi mod nền vắng mặt hoặc quá cũ, file trả về ngay ở dòng hai và add-on không làm gì: không giống, không spawn, không moodle, không một dòng log.</p>
+<p>Chốt chặn đặt theo từng file, và mỗi file chặn theo thứ nó dùng. <code>PugDefinitions.lua</code> cần các helper model, nên nó chặn theo chúng:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p><strong>Đừng bao giờ tự tạo biến toàn cục.</strong> <code>CompanionDogs = CompanionDogs or {}</code> trong một add-on sẽ biến một mod nền không tồn tại thành một bảng dựng dở, và mọi chốt kiểm tra phía sau đều lọt qua trong khi lẽ ra không được. Hãy đọc biến toàn cục, đừng bao giờ ghi vào nó.</p>
+<p>Đừng tạo biến toàn cục. <code>CompanionDogs = CompanionDogs or {}</code> trong add-on biến một mod nền vắng mặt thành cái bảng dựng dở, và mọi chốt chặn phía sau đều lọt trong khi lẽ ra phải chặn.</p>
 <h2 id="6-đăng-ký-giống">6. Đăng ký giống</h2>
-<p>Một lời gọi, trong file <strong>shared</strong>:</p>
+<p>Một lời gọi, trong một file shared:</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -606,20 +616,20 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>Lời gọi đó chèn giống vào, đăng ký ba kiểu con vật của nó, dựng lại thứ tự sinh sản để con vật của bạn tham gia vào việc lai giống, và đăng ký các bước sinh ra.</p>
-<p>Một định nghĩa sai sẽ trả về <code>nil</code> thay vì ném lỗi, nên một sai sót không bao giờ kéo cả quá trình nạp sập theo. Mỗi lần từ chối đều in ra một dòng có nêu tên, vì thế hãy <strong>đọc log</strong> trong lần đầu bạn đăng ký một giống.</p>
-<h3 id="các-trường-bắt-buộc">Các trường bắt buộc</h3>
+<p>Lời gọi này chèn giống vào, đăng ký ba loại con vật của nó, dựng lại thứ tự sinh sản để con vật của bạn tham gia lai giống, và đăng ký các bước spawn.</p>
+<p>Định nghĩa sai làm lời gọi trả về <code>nil</code> thay vì ném lỗi, nên việc nạp vẫn chạy tiếp. Mỗi lần bị từ chối đều in một dòng log có nêu tên.</p>
+<h3 id="trường-bắt-buộc">Trường bắt buộc</h3>
 <div class="tw"><table><thead><tr>
 <th>Trường</th>
-<th>Là gì</th>
+<th>Nó là gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>định danh giống của bạn, duy nhất trên mọi mod. Không bao giờ đổi sau khi phát hành.</td>
+<td>định danh giống của bạn, duy nhất trên mọi mod. Đừng đổi sau khi phát hành.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>tiền tố của ba kiểu con vật: <code>&lt;tiền tố&gt;pup</code>, <code>&lt;tiền tố&gt;female</code>, <code>&lt;tiền tố&gt;male</code>. Chọn <strong>mesh thân</strong>.</td>
+<td>tiền tố của ba loại con vật: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Nó chọn mesh thân.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
@@ -631,37 +641,37 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>nó đánh mạnh cỡ nào. Caramelo là 0.20, một giống chiến đấu thì trên 1.0.</td>
+<td>nó đánh mạnh cỡ nào. Con Caramelo là 0.20, giống chuyên đánh nhau thì trên 1.0.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>, sát thương tăng thế nào từ Chiến đấu 0 tới Chiến đấu 10.</td>
+<td><code>{ min, max }</code>, sát thương lớn dần ra sao từ Chiến đấu 0 tới Chiến đấu 10.</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>khoảng lúc sinh của bốn gene: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Mỗi cái là <code>{ thấp, cao }</code> trong khoảng 0 tới 1.</td>
+<td>khoảng lúc sinh của bốn gene: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Mỗi cái là <code>{ low, high }</code> nằm trong 0 tới 1.</td>
 </tr>
 </tbody></table></div>
-<h3 id="các-trường-tùy-chọn">Các trường tùy chọn</h3>
+<h3 id="trường-tùy-chọn">Trường tùy chọn</h3>
 <div class="tw"><table><thead><tr>
 <th>Trường</th>
 <th>Mặc định</th>
-<th>Làm gì</th>
+<th>Nó làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
 <td>chính <code>key</code></td>
-<td>tên giống đưa cho engine, thứ quyết định <strong>texture</strong>. Duy nhất theo từng giống.</td>
+<td>tên giống đưa cho engine. Nó chọn texture. Duy nhất theo từng giống.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>khóa của phần mô tả. Trỏ nhiều giống vào một khóa khi chúng dùng chung mô tả.</td>
+<td>khóa mô tả. Nhiều giống dùng chung được một khóa.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>giá trị của nền</td>
-<td><code>{ nhỏ nhất, lớn nhất }</code> số con mỗi lứa.</td>
+<td>giá trị nền</td>
+<td><code>{ min, max }</code> chó con mỗi lứa.</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
@@ -676,12 +686,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>một trận đánh khiến nó căng thẳng đến mức nào.</td>
+<td>một trận đánh tốn của nó bao nhiêu căng thẳng.</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>giá trị của nền</td>
-<td>mức căng thẳng mà tại đó nó ngừng đánh. <code>panicImmune = true</code> nghĩa là không bao giờ ngừng.</td>
+<td>giá trị nền</td>
+<td>mức căng thẳng khiến nó ngừng đánh. <code>panicImmune = true</code> nghĩa là nó không bao giờ ngừng.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
@@ -691,7 +701,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>tỷ lệ hiển thị tuyệt đối của con non. <strong>Giống nhỏ bắt buộc phải đặt giá trị này</strong>, nếu không con non sinh ra to bằng con trưởng thành.</td>
+<td>tỉ lệ hình ảnh tuyệt đối của chó con. Giống nhỏ buộc phải đặt, nếu không chó con sinh ra to bằng con trưởng thành.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
@@ -701,166 +711,232 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>co giãn bán kính và âm lượng tiếng sủa báo động. Nó co giãn tiếng ồn chứ không tạo ra tiếng ồn: với tùy chọn sandbox tắt đi, không giống nào hút zombie bằng tiếng sủa.</td>
+<td>co giãn bán kính và âm lượng của tiếng sủa báo động. Khi tùy chọn tiếng ồn trong sandbox tắt, không giống nào kéo zombie bằng tiếng sủa, giá trị bao nhiêu cũng vậy.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>nhân vào mức tụt lòng trung thành mỗi ngày. <code>0</code> nghĩa là sự gắn bó không bao giờ phai.</td>
+<td>nhân vào mức hao trung thành mỗi ngày. <code>0</code> nghĩa là mối gắn bó không bao giờ phai.</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>con vật bị kẹt ở mức báo động cao nhất: chủ không thể chuyển sang yên lặng hay im tiếng, từ bất cứ đâu. Dùng khi tiếng báo động ồn ào chính <strong>là</strong> thiết kế.</td>
+<td>con vật luôn ở mức cảnh giác cao nhất: chủ không đặt được chế độ Nhẹ tiếng hay Im lặng ở bất cứ đâu.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>cấp Săn mà từ đó nó tha con mồi về cho chủ.</td>
+<td>mức Săn mồi từ đó nó tha con mồi về cho chủ.</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>số phút trong game mà nó còn cố giao con mồi trước khi bỏ cuộc.</td>
+<td>số phút trong game nó còn cố mang về trước khi bỏ cuộc.</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
 <td>tắt</td>
-<td><code>{ &lt;loại&gt; = { chance = 0..1, ... } }</code>. Giống loài tự đuổi theo mọi thứ, không cần chế độ và không cần cấp độ. Xem bên dưới.</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. Giống này tự chạy theo thứ nó thấy, không cần chế độ nào và không đòi cấp nào.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>giá trị của nền</td>
-<td>độ dài cửa sổ animation đứng yên, tính bằng mili giây. Đặt khi clip của bạn ngắn hơn clip của chó, nếu không vòng lặp sẽ khởi động lại và bị cắt giữa chừng động tác.</td>
+<td>giá trị nền</td>
+<td>độ dài cửa sổ animation đứng yên, tính bằng mili giây. Đặt nó khi clip của bạn ngắn hơn clip chó, nếu không vòng lặp khởi động lại và cắt ngang động tác.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false giữ con vật đứng khi ở lệnh Đứng yên và Canh gác, thay vì nằm xuống.</td>
+<td>false giữ con vật đứng khi Đứng yên và Canh gác thay vì nằm xuống.</td>
+</tr>
+<tr>
+<td><code>limpAnim</code></td>
+<td>false</td>
+<td>true làm con vật bị thương đi khập khiễng. Chỉ đặt khi model của bạn có hai clip tùy chọn <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi 1.0 giây, cùng root motion với <code>Rac_Walk</code>). Thiếu clip thì con vật vừa đi vừa đứng đơ tại chỗ.</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
 <td>âm thanh chó</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>. Xem bên dưới.</td>
+<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>các danh sách của chó</td>
+<td>con vật không được ăn gì, thứ gì tính là thịt với nó, và nó tự ăn gì từ máng.</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td><code>"dog"</code></td>
+<td>sinh sản khép kín theo loài. Mục 7.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
 <td>bật hết</td>
-<td>các lệnh cấm mang tính cấu trúc. Mục 7.</td>
+<td>các khối cấu trúc. Mục 7.</td>
 </tr>
 </tbody></table></div>
-<p>Những con số và cờ bạn thêm vào định nghĩa sẽ được đọc lại bằng <code>CD.breedNumber(animal, trường)</code> và <code>CD.breedFlag(animal, trường)</code>. Hãy ưu tiên hai hàm này thay vì tự đọc <code>CD.getBreedDef(animal).trường</code>: chúng xử lý trường thiếu giúp bạn, và vẫn chạy đúng khi mod nền thay đổi.</p>
+<p>Con số và cờ bạn thêm vào định nghĩa được đọc lại bằng <code>CD.breedNumber(animal, field)</code> và <code>CD.breedFlag(animal, field)</code>, không phải bằng <code>CD.getBreedDef(animal).field</code>. Hai hàm đó xử lý được trường thiếu và vẫn chạy khi mod nền đổi.</p>
 <h3 id="bản-năng-distract">Bản năng: <code>distract</code></h3>
-<p>Mọi trường khác đều đòi con vật giỏi một việc gì đó. Trường này đòi nó dở việc tập trung.</p>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>Một giống loài khai báo trường này, thỉnh thoảng, sẽ để ý thấy thứ gì đó và đuổi theo, bỏ dở việc đang làm. Nó làm vậy khi <strong>không có chế độ nào được bật</strong>, từ <strong>Ở yên</strong> cũng như từ Đi theo, và lúc đó bạn không phải người ra lệnh: mệnh lệnh trả về bị từ chối kèm đúng thông báo <code>distracted</code> mà lượt tung xúc xắc phục tùng đã dùng. Lệnh duy nhất lọt qua là Lại đây, và nó hủy trạng thái này.</p>
-<p>Hãy xem đây là cái giá bạn trao cho giống loài của mình, không phải phần thưởng. Trong lúc đó, con vật không ở bên chủ và không canh gác. Nó hợp với một giống loài mà đặc trưng là khó giữ. Nó không hợp với một con chó làm việc mà bạn muốn người chơi trông cậy vào.</p>
-<p>Mọi loại đều nhận cùng những tùy chọn sau, và thứ gì bạn bỏ trống sẽ lấy theo mặc định của mod:</p>
+<p>Giống nào khai báo nó thì thỉnh thoảng sẽ để ý thấy thứ gì đó và chạy theo, bỏ dở việc đang làm. Nó làm vậy cả khi đang Đứng yên lẫn khi đang Đi theo. Trong lúc đó, mệnh lệnh bị trả về từ chối kèm thông báo <code>distracted</code> mà lượt tung vâng lời vẫn dùng. Lại đây là lệnh duy nhất lọt qua, và nó hủy cơn phân tâm.</p>
+<p>Mọi loại đều nhận cùng bộ núm tùy chọn. Thứ bạn bỏ trống sẽ lấy mặc định của mod:</p>
 <div class="tw"><table><thead><tr>
 <th>Trường</th>
-<th>Tác dụng</th>
+<th>Nó làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1, chỉ được tung khi bộ kích hoạt của loại đó thực sự tìm thấy thứ gì. Viết <code>25</code> thay cho "25%" sẽ bị từ chối kèm một dòng có tên trong log</td>
+<td>0..1, chỉ tung khi bộ kích hoạt của loại đó tìm được thứ gì. Viết <code>25</code> với ý "25%" sẽ bị từ chối kèm một dòng log có nêu tên</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
-<td>số ô mà bộ kích hoạt quét, khi loại đó có quét</td>
+<td>số ô mà bộ kích hoạt quét, với loại nào có quét</td>
 </tr>
 <tr>
 <td><code>durationMin</code></td>
-<td>số phút trong game mà cửa sổ kéo dài trước khi tự hết</td>
+<td>số phút trong game cửa sổ này kéo dài trước khi tự hết hạn</td>
 </tr>
 <tr>
 <td><code>cooldownMin</code></td>
-<td>số phút trong game trước khi cùng con vật đó có thể phân tâm lần nữa</td>
+<td>số phút trong game trước khi cùng con vật đó phân tâm lại được</td>
 </tr>
 </tbody></table></div>
 <h4 id="loại-prey">Loại <code>prey</code></h4>
-<p>Loại duy nhất mà mod nền mang sẵn. Con vật đuổi theo thú hoang, và <code>classes</code> chọn những con nào lấy được sự chú ý của nó:</p>
+<p>Loại duy nhất mod nền phát hành. Con vật chạy theo thú hoang, và <code>classes</code> chọn con nào được tính:</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>Hai giới hạn luôn đúng bất kể bạn khai báo gì:</p>
+<p>Hai giới hạn luôn áp dụng, bạn khai báo gì cũng vậy:</p>
 <ul>
-<li><strong>Nó không bao giờ vượt quá <code>huntMaxPrey</code> của bạn.</strong> Ở đây áp dụng đúng cái phễu của hệ thống săn, nên một giống loài trần <code>small</code> sẽ không đuổi hươu nai dù có khai báo <code>large</code>.</li>
-<li><strong>Cổng cấp độ chỉ được bỏ qua với <code>tiny</code>.</strong> Loài gặm nhấm thì một con vật vừa thuần hóa với Săn 0 vẫn bắt được, vì bắt chuột không phải kỹ năng người ta luyện. Khai báo <code>small</code> và giống loài của bạn sẽ bỏ hết mọi thứ để chạy theo con thỏ, nhưng để thật sự <em>giết</em> nó thì vẫn cần đúng cấp Săn mà Labrador cần. Bản năng quyết định thứ gì lấy được sự chú ý; việc huấn luyện vẫn quyết định thứ gì hạ được. Thiếu giới hạn thứ hai này, <code>classes</code> sẽ thành lối tắt xóa sạch nấc thang Săn.</li>
+<li>Nó không bao giờ vượt <code>huntMaxPrey</code> của bạn: giống bị chặn ở <code>small</code> sẽ không đuổi hươu dù có khai <code>large</code>.</li>
+<li>Chốt chặn theo cấp chỉ bỏ qua với <code>tiny</code>. Con vật vừa thuần hóa, Săn mồi 0, đã bắt được chuột. Khai <code>small</code> thì giống đó đuổi thỏ ở mọi cấp, nhưng để hạ được vẫn cần đúng mức Săn mồi mà con Labrador cần.</li>
 </ul>
-<p>Công tắc Săn trong sandbox vẫn quyết định việc hạ mồi, không phải cuộc rượt đuổi: tắt săn thì con vật vẫn chạy, nhưng con mồi thoát.</p>
-<p>Một con mồi bị hạ theo cách này vẫn đi qua quy trình mang về bình thường, nên chính <code>huntFetchLevel</code> của giống loài quyết định nó tha cái xác về cho chủ hay bỏ lại đúng chỗ con mồi ngã xuống. Đặt <code>0</code> và con vật mang về ngay từ ngày đầu, đó là điều khiến một con mèo tha cho bạn một con chuột chết. Việc mang về sống lâu hơn cửa sổ phân tâm: con mồi vừa chết là con vật lại nhận lệnh, và chặng đường về chạy theo <code>huntDeliverTimeoutMin</code> của chính nó. Cứ để yên <code>huntFetchLevel</code> thì giá trị mặc định 6 được áp dụng, nên giống loài đó đuổi theo bằng bản năng nhưng vẫn phải tự giành lấy quyền tha mồi về.</p>
-<h4 id="tự-viết-loại-của-bạn">Tự viết loại của bạn</h4>
-<p><code>distract</code> là một bộ điều phối, và <code>prey</code> chỉ là loại đi kèm sẵn. Hãy đăng ký loại của bạn:</p>
+<p>Công tắc Săn mồi trong sandbox chỉ tác động tới cú hạ: con vật vẫn đuổi, nhưng con mồi chạy thoát.</p>
+<p>Con mồi hạ theo cách này đi qua quy trình tha về bình thường, nên <code>huntFetchLevel</code> của giống quyết định nó có mang xác về cho chủ hay không. Ở <code>0</code> con vật giao từ ngày đầu, đó là cách con mèo mang cho bạn một con chuột chết. Việc giao sống lâu hơn cửa sổ phân tâm: khi con mồi đã chết, con vật nhận lệnh trở lại, và chặng về chạy theo <code>huntDeliverTimeoutMin</code> của chính nó.</p>
+<h4 id="tự-viết-một-loại">Tự viết một loại</h4>
+<p><code>distract</code> là một bộ điều phối. Hãy đăng ký loại của riêng bạn:</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
     drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
-<p>Rồi khai báo nó trên giống loài như mọi loại khác: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
-<p><code>gate</code> chạy trước ngân sách quét toàn cục của mod, và đó là chỗ dành cho những lần từ chối rẻ tiền. <code>find</code> chạy sau ngân sách, và chi phí nằm ở đó. <code>drive</code> trả về true khi nó vẫn còn đang dẫn dắt con vật, và false khi đã xong, việc này đóng cửa sổ lại. Handler của bạn chạy trong <code>pcall</code> riêng: nếu nó ném lỗi, mod ghi một dòng có tên vào log, gỡ đăng ký loại đó cho cả phiên chơi và để phần còn lại của người bạn đồng hành tiếp tục hoạt động.</p>
-<p>Những tên được giữ chỗ cho các loại tương lai của mod nền, chưa được cài đặt: <strong><code>drink</code></strong>, <strong><code>eat</code></strong>, <strong><code>play</code></strong>. Hôm nay bạn vẫn có thể đăng ký một loại mang một trong các tên đó, nhưng mod nền sẽ giành lấy cái tên vào ngày nó mang loại của chính nó tới.</p>
+<p>Rồi khai báo nó trên giống như mọi loại khác: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> chạy trước hạn mức quét toàn cục của mod. <code>find</code> chạy sau hạn mức đó và làm phần tìm kiếm tốn kém. <code>drive</code> trả về true khi nó còn đang điều khiển con vật và false khi xong, và điều đó đóng cửa sổ lại. Handler của bạn chạy trong <code>pcall</code> riêng. Nếu nó ném lỗi, mod ghi một dòng log có nêu tên, gỡ đăng ký loại đó cho cả phiên và để phần còn lại của con đồng hành chạy bình thường.</p>
+<p>Các tên dành sẵn cho loại của mod nền sau này: <code>drink</code>, <code>eat</code>, <code>play</code>. Hôm nay bạn vẫn đăng ký được một loại dưới các tên đó, nhưng mod nền sẽ lấy lại tên khi nó phát hành loại của mình.</p>
 <h3 id="giọng">Giọng</h3>
-<p>Một loài khác thì không nói cùng một thứ tiếng. Không có <code>voices</code>, con mèo của bạn sẽ sủa:</p>
+<p>Không có <code>voices</code> thì mọi giống dùng âm thanh chó, nên con mèo sẽ sủa. Trước hết hãy đăng ký âm thanh của bạn:</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
+<p>Rồi trỏ giống vào chúng:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
-<p><code>CD.registerVoices</code> không phải thứ trang trí có cũng được. Không có nó thì âm thanh vẫn phát, nhưng bỏ qua thanh trượt theo nhóm của người chơi và âm lượng hiệu ứng của game, và đó là loại hỏng hóc không ai báo cáo vì chẳng có gì trông có vẻ hỏng. Khóa nào bạn bỏ ra ngoài <code>voices</code> sẽ rơi về âm thanh chó, thứ bạn muốn ở một giống chó và không bao giờ là thứ bạn muốn ở một loài khác.</p>
+<p>Không có <code>CD.registerVoices</code> thì âm thanh vẫn phát, nhưng chúng phớt lờ thanh trượt theo hạng mục của người chơi và âm lượng hiệu ứng của game, và không dòng log nào chỉ ra chuyện đó. Khóa bạn bỏ trống trong <code>voices</code> sẽ lùi về âm thanh chó.</p>
+<p>Tham số thứ ba là tầm nghe của từng âm thanh, tính bằng ô. Nó nên khớp với <code>distanceMax</code> bạn viết trong script âm thanh của chính mình:</p>
+<pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
+<p>Trên server, mod nền chỉ gửi âm thanh tới những người chơi nằm trong tầm đó. Bỏ trống tầm thì giọng nhận một tầm chung theo hạng mục: tiếng rít vang xa mười ô sẽ tới tai mọi người trong ba mươi ô. Quá <code>distanceMax</code>, đường suy giảm nghịch đảo của FMOD ngừng làm nhỏ tiếng thay vì tắt hẳn, nên một file <code>.ogg</code> khai lỏng cứ phát mãi ở mức <code>distanceMin / distanceMax</code> âm lượng của nó, ở khoảng cách nào cũng vậy. Cũng vì lý do đó, hãy để <code>distanceMin</code> nhỏ ở những giọng to.</p>
+<h3 id="khẩu-phần">Khẩu phần</h3>
+<p>Không có <code>diet</code> thì mọi giống ăn như chó: cùng những món gây độc, cùng những món tính là thịt, và cùng những món nó gặm từ máng ăn. Trường này ghi đè ba danh sách đó, chỉ cho giống của bạn.</p>
+<pre><code>diet = {
+    bad          = { Fruits = true },              -- fruit now makes it sick
+    badParts     = { onion = false },              -- onion no longer does
+    protein      = { Cheese = true },              -- cheese now counts as meat
+    proteinParts = { tuna = true },                -- and so does anything with "tuna" in its type
+    trough       = { Vegetables = false },         -- it will not graze vegetables
+    troughItems  = { ["Base.CatFoodOpen"] = true },
+},</code></pre>
+<p>Có hai dạng vì hạng mục sẵn có của game chỉ đi được tới đó. <code>Cheese</code> là một <code>FoodType</code> thật, nên một khóa phủ mọi loại phô mai trong game và trong bất kỳ mod đồ ăn nào dùng lại hạng mục đó. Cá ngừ thì không: hộp đã mở là <code>FoodType = Fish</code>, chung với mọi loài cá khác, còn hộp chưa mở không khai loại đồ ăn nào cả. <code>badParts</code> và <code>proteinParts</code> là cách bạn với tới những thứ đó.</p>
+<p>Mỗi trường là một bảng gồm <code>&lt;key&gt; = true</code> (thêm) hoặc <code>&lt;key&gt; = false</code> (bỏ thứ mod nền có sẵn). Giá trị không phải <code>true</code> hay <code>false</code> bị loại kèm một dòng log có nêu tên.</p>
+<div class="tw"><table><thead><tr>
+<th>Trường</th>
+<th>Khóa của nó là gì</th>
+</tr></thead><tbody>
+<tr>
+<td><code>bad</code></td>
+<td><code>FoodType</code> của món làm con vật ốm, làm nó mất trung thành và hiện mục màu đỏ trong menu cho ăn</td>
+</tr>
+<tr>
+<td><code>badParts</code></td>
+<td>một mẩu của item type, viết thường, khớp ở bất cứ chỗ nào trong đó</td>
+</tr>
+<tr>
+<td><code>protein</code></td>
+<td><code>FoodType</code> trả được món nợ thịt của con vật, món nợ mà moodle Yếu theo dõi</td>
+</tr>
+<tr>
+<td><code>proteinParts</code></td>
+<td>một mẩu của item type, khớp giống như <code>badParts</code></td>
+</tr>
+<tr>
+<td><code>nonProtein</code></td>
+<td><code>FoodType</code> mà bạn biết chắc không phải thịt. Nó chỉ dập dòng log mà mod nền ghi cho một loại đồ ăn nó chưa từng thấy</td>
+</tr>
+<tr>
+<td><code>trough</code></td>
+<td><code>FoodType</code> và <code>AnimalFeedType</code> mà con vật tự ăn từ máng</td>
+</tr>
+<tr>
+<td><code>troughItems</code></td>
+<td>item type đầy đủ, cho món nằm trong máng mà không có loại thức ăn riêng</td>
+</tr>
+</tbody></table></div>
+<p><code>replace = true</code> bắt đầu từ danh sách rỗng thay vì danh sách của chó. Dùng nó khi con vật của bạn gần như không chung gì với chó; con mèo thường dễ viết hơn dưới dạng một nhúm dòng thêm và bớt.</p>
+<p>Ba danh sách này đi theo con vật, nên con chó và con mèo đứng cùng một máng ăn hai thứ khác nhau. Cái bát của chính mod là ngoại lệ: nó lưu điểm thức ăn chứ không lưu món đã đổ vào, nên việc đổ đầy đi theo danh sách nền cho tất cả. Dù sao cũng không bỏ được thứ gây độc vào bát.</p>
 <h2 id="7-tắt-hẳn-một-hệ-thống">7. Tắt hẳn một hệ thống</h2>
-<p>Năm kỹ năng chính là năm hệ thống, một đối một:</p>
+<p>Năm kỹ năng chính là năm hệ thống:</p>
 <div class="tw"><table><thead><tr>
 <th>Kỹ năng</th>
-<th>Nó là hệ thống nào</th>
+<th>Là hệ thống nào</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>canh gác: nhận ra zombie và báo cho bạn</td>
+<td>lính gác: phát hiện zombie và báo cho bạn</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>đánh nhau, chế độ Canh giữ và tự vệ</td>
+<td>đánh nhau, chế độ Canh gác và tự vệ</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>cây trò khôn</td>
+<td>cây trò</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>săn bắt, cộng thêm phần thưởng hái lượm mà nó cho chủ</td>
+<td>săn mồi, cộng với phần thưởng kiếm đồ mà nó cho chủ</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>trông gia súc trong bãi quây</td>
+<td>trông đàn vật nuôi trong chuồng</td>
 </tr>
 </tbody></table></div>
-<p>Một loài không phải là con chó với những con số tệ hơn. Nó là con vật vốn không có một số công việc đó. Vì thế nó khai báo những gì nó không có:</p>
+<p>Vậy nên một loài khai báo cái nó không có:</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Vắng mặt hoặc <code>true</code> nghĩa là con vật có kỹ năng ấy, nên bạn chỉ viết ra những kỹ năng đang gỡ bỏ.</p>
-<p>Tắt một kỹ năng làm <strong>ba việc cùng lúc</strong>: hệ thống không bao giờ chạy, kỹ năng không bao giờ nhận kinh nghiệm, và thanh của nó cùng các lệnh biến mất khỏi giao diện. Cả ba cùng nhau. Chỉ giấu thanh thì kỹ năng vẫn lớn lên ở chỗ không ai thấy; chỉ chặn hệ thống thì thanh sẽ mãi mãi kẹt ở số không.</p>
-<p><code>canBreed = false</code> nằm ngoài bảng vì việc sinh sản không có thanh cũng chẳng có kinh nghiệm. Và nó là tuyệt đối: con vật không thụ thai, không bao giờ được chọn làm bạn tình, và cũng không phối với chính giống của nó. Nếu thứ bạn thực sự muốn là một con vật sinh sản bình thường nhưng không bao giờ phối với chó, thì đó là <code>species</code> ở dưới, không phải cái này.</p>
+<p>Không có mặt hoặc <code>true</code> nghĩa là con vật có kỹ năng đó.</p>
+<p>Tắt một kỹ năng cũng khiến nó thôi nhận kinh nghiệm, và gỡ thanh của nó cùng các lệnh của nó khỏi giao diện.</p>
+<p><code>canBreed = false</code> tách khỏi bảng vì việc sinh sản không có thanh và không có kinh nghiệm. Con vật không thụ thai, không bao giờ được chọn làm bạn tình, và cũng không sinh sản với chính loài của nó.</p>
 <h3 id="loài">Loài</h3>
-<p>Một add-on thêm một con vật khác, thay vì thêm một giống chó, khai báo như sau:</p>
+<p>Một addon thêm vào một con vật khác, thay vì thêm một con chó nữa, thì khai báo như sau:</p>
 <pre><code>CD.registerSpecies({ key = "cat",
                      nounKey  = "IGUI_PD_SpeciesNoun_cat",
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>Trường này vắng mặt ở mọi giống đã phát hành cho tới giờ, và vắng mặt nghĩa là <code>"dog"</code>. Nên không có gì bạn đã viết bị đổi hành vi.</p>
-<p>Nó làm hai việc. <strong>Việc sinh sản bị đóng theo loài:</strong> một cặp chỉ thụ thai khi cả hai bên cùng một loài, trong lệnh, trong lượt gieo bị động mỗi giờ và trong công cụ gỡ lỗi đều như nhau. Và giao diện thôi gọi con vật của bạn là chó: <code>nounKey</code> là danh từ trần lấp vào những câu như <em>"Con %1 này đã thuộc về một người sống sót khác"</em>, còn <code>youngKey</code> là nhãn mà con non của loài bạn mang trong cửa sổ, trong menu ngữ cảnh và trong cũi, chỗ mà một con chó ghi là <em>Chó con</em>.</p>
-<p>Khai báo <code>species</code> mà không đăng ký thì không chí mạng: con vật của bạn vẫn từ chối phối ngoài loài của chính nó, vì cổng chặn so sánh chuỗi thô. Chỉ hai danh từ rơi về của chó, và log nói rõ điều đó bằng tên. Việc dự phòng chỉ một chiều là cố ý, vì điều ngược lại, coi một loài chưa đăng ký là chó, sẽ lặng lẽ cho con vật của bạn phối với chó.</p>
-<p><strong>Đây là một chặn, nên nó không hạ cấp.</strong> Trên một bản base cũ hơn API 6, trường này bị bỏ qua trong im lặng và con vật của bạn là chó xét về sinh sản. Nếu nó tuyệt đối không được lai với chó, hãy kiểm tra API 6, hoặc giữ <code>canBreed = false</code> khi base còn cũ, đó là điều con mèo làm.</p>
-<p><code>huntMaxPrey</code> là <strong>trần bên trong một hoạt động săn vẫn tồn tại</strong>, khác với <code>hunt = false</code>. Nó nhận <code>"tiny"</code> (chuột nhắt, chuột cống, sóc), <code>"small"</code> (thỏ, gấu mèo) hoặc <code>"large"</code> (hươu, mặc định, không có trần). Con mồi vượt trần thì con vật của bạn không nhìn thấy: nó không đuổi và cũng không chỉ. Giá trị nằm ngoài bậc thang này sẽ rơi về <code>"large"</code> và in một dòng có nêu tên vào log.</p>
-<p><strong>Con vật bị chặn không nhận được nút bấm mờ đi.</strong> Tùy chọn ấy biến khỏi vòng lệnh, khỏi menu chuột phải và khỏi cửa sổ, còn phía server thì từ chối trong im lặng. Một vầng sáng nói rằng nó phớt lờ mệnh lệnh sẽ là nói dối, vì đây không phải sự bất tuân. Hãy giải thích thiết kế trong phần mô tả giống của bạn. Đó là lý do không trường nào trong số này mang theo khóa dịch mới.</p>
+<p>Trường này vắng mặt ở mọi giống đã phát hành cho tới giờ, và vắng mặt nghĩa là <code>"dog"</code>.</p>
+<p>Việc sinh sản đóng theo loài: một cặp chỉ thụ thai khi cả hai bên cùng một loài, trong lệnh, trong lần gieo thụ động mỗi giờ và trong công cụ debug. Và giao diện thôi gọi con vật của bạn là chó: <code>nounKey</code> là danh từ trần lấp vào những câu như <em>"%1 này đã thuộc về một người sống sót khác"</em>, còn <code>youngKey</code> là nhãn mà con non của loài bạn mang trong cửa sổ, menu chuột phải và cũi, chỗ mà một con chó ghi <em>Chó con</em>.</p>
+<p>Hai danh từ đó chỉ phủ những câu dựng quanh một <code>%1</code>. Mọi câu khác có chữ <em>chó</em> viết thẳng vào trong đó (<em>"Kiểm tra con chó"</em>, <em>"Con chó của bạn đang đói"</em>, <em>"Con chó sủa có chủ đích"</em>) từ API 7 trở đi lấy một khóa theo loài: hãy kèm <code>IGUI_PD_ScanStray_cat</code> trong các file dịch của bạn và bản gốc sẽ hiện nó thay cho <code>IGUI_PD_ScanStray</code> mỗi khi con vật trên màn hình là mèo. Một khóa bạn không kèm theo sẽ lùi về văn bản của chó. Các khóa nhận hậu tố: <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, mọi <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, mọi <code>Refused_*</code>, <code>KennelStatusNoData</code> và các <code>Moodle_*_desc</code> của những moodle chăm sóc (Sick, Weak, Hunger, Thirst, Rested, Grief). Những câu không có con vật nào trên màn hình (thẻ danh sách, <em>"Hãy làm quen với một con vật trước"</em>) thì trong bản gốc đã trung tính về loài rồi. Con mèo kèm đủ tất cả bằng mười bốn thứ tiếng; hãy chép <code>IG_UI.json</code> của nó làm mẫu.</p>
+<p><code>group</code> của con vật chỉ được menu spawn của chế độ debug và trình xem clip đọc tới, qua <code>IGUI_Animal_Group_&lt;group&gt;</code>. Hãy đặt <code>t.group = "cat"</code> sau hàm trợ giúp hành vi và kèm khóa đó, nếu không loài của bạn sẽ hiện ở đó dưới tên của chó.</p>
+<p>Khai báo <code>species</code> mà không đăng ký nó thì không chết người: con vật của bạn vẫn từ chối sinh sản ngoài loài của nó, vì cửa chặn so sánh chuỗi thô. Chỉ hai danh từ lùi về của chó, và log nói rõ điều đó kèm tên.</p>
+<p>Trên một bản gốc cũ hơn API 6, trường này bị bỏ qua mà không có dòng log nào, và con vật của bạn sinh sản như một con chó. Nếu nó tuyệt đối không được lai với chó, hãy chặn ở API 6, hoặc giữ <code>canBreed = false</code> khi bản gốc còn cũ, đó là điều con mèo làm.</p>
+<p><code>huntMaxPrey</code> giới hạn cỡ con mồi bên trong một cuộc săn vẫn còn tồn tại; nó không thay cho <code>hunt = false</code>. Nó nhận <code>"tiny"</code> (chuột nhắt, chuột cống, sóc), <code>"small"</code> (thỏ, gấu mèo) hoặc <code>"large"</code> (hươu, mặc định, không giới hạn). Con vật của bạn không đuổi và không chỉ hướng vào con mồi lớn hơn mức giới hạn. Một giá trị nằm ngoài thang đó sẽ lùi về <code>"large"</code> và in một dòng có tên vào log.</p>
+<p>Một tùy chọn bị chặn sẽ biến khỏi vòng tròn, menu chuột phải và cửa sổ, còn server từ chối nó mà không báo gì. Không trường nào trong số này thêm một khóa dịch, nên hãy giải thích các giới hạn trong phần mô tả giống của bạn.</p>
 <h2 id="8-định-nghĩa-con-vật">8. Định nghĩa con vật</h2>
-<p>Engine buộc mesh vào <strong>kiểu con vật</strong> chứ không phải vào giống, nên giống của bạn cần ba kiểu riêng. Đây là phần máy móc của một add-on, và con đường ngắn nhất là chép file của một add-on sẵn có rồi đổi tên.</p>
-<p>Ba mảnh, trong một file shared dưới <code>Definitions/animal/</code>:</p>
+<p>Engine gắn mesh vào type con vật chứ không phải vào giống, nên giống của bạn cần ba type của riêng nó. Đường ngắn nhất là chép file của một addon đã có rồi đổi tên.</p>
+<p>Ba phần, trong một file shared dưới <code>Definitions/animal/</code>:</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -886,48 +962,52 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>Các hàm trợ giúp mà mod nền cho bạn:</p>
+<p>Các hàm trợ giúp mà bản gốc cho bạn:</p>
 <div class="tw"><table><thead><tr>
 <th>Hàm trợ giúp</th>
-<th>Nó điền vào những gì</th>
+<th>Điền vào những gì</th>
 </tr></thead><tbody>
 <tr>
-<td><code>CD.applyDogModel(t, "Body_Model")</code></td>
-<td>model thân, bộ xương, texture khi mổ thịt và bộ animation</td>
+<td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
+<td>model thân, bộ xương, texture lúc mổ và bộ animation</td>
 </tr>
 <tr>
-<td><code>CD.applyDogBehaviour(t)</code></td>
-<td>mọi cờ hành vi của engine mà một bạn đồng hành cần</td>
+<td><code>CD.applyCompanionBehaviour(t)</code></td>
+<td>mọi cờ hành vi của engine mà một con vật đồng hành cần</td>
 </tr>
 <tr>
-<td><code>CD.applyDogAvatar(t)</code></td>
+<td><code>CD.applyCompanionAvatar(t)</code></td>
 <td>camera chân dung cho cửa sổ con vật</td>
 </tr>
 <tr>
-<td><code>CD.DOG_SOUNDS</code></td>
-<td>bảng dùng chung cho tiếng bước chân và tiếng động</td>
+<td><code>CD.COMPANION_SOUNDS</code></td>
+<td>bảng tiếng chân và tiếng động dùng chung</td>
+</tr>
+<tr>
+<td><code>CD.defineGenome("species")</code></td>
+<td>bộ gen của một loài mới, với danh sách gen chuẩn (API 7)</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>giá trị ngăn một con hoang hoảng sợ chảy máu đến chết</td>
+<td>giá trị ngăn một con hoang đang sợ chảy máu đến chết</td>
 </tr>
 <tr>
-<td><code>CD.defineDogParts(typePrefix, engineBreed)</code></td>
-<td>các phần thịt của cả ba giai đoạn</td>
+<td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
+<td>các phần mổ xẻ của cả ba giai đoạn. <code>meat</code> không bắt buộc: <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>, và không có nó thì con vật cho ra thịt chó của bản gốc. Engine nhân cả số lượng lẫn độ no của từng miếng với cỡ xác, nên một loài có cỡ lớn (con mèo dùng 2.5 đến 3.5 làm thang hình ảnh) cần vật phẩm riêng với độ no gốc nhỏ hơn và số lượng thấp</td>
 </tr>
 </tbody></table></div>
-<p>Bốn quy tắc không hiển nhiên:</p>
-<p><strong>Bộ animation phải giữ nguyên là <code>"raccoon"</code>.</strong> <code>CD.applyDogModel</code> đặt giá trị đó. Một bộ animation tách nhánh sẽ không nạp máy trạng thái của nó, và một con vật không có máy trạng thái là một con vật đứng chết tại chỗ.</p>
-<p><strong>Dùng lại bộ gene:</strong> <code>AnimalDefinitions.genome["dog"].genes</code>. Đừng tự viết bộ của riêng bạn.</p>
-<p><strong>Đừng bao giờ khai báo <code>mate</code>.</strong> Có nó thì engine sẽ chạy cơ chế giao phối gốc của chính nó bên trong bất kỳ khu vực động vật nào, cơ chế đó bỏ qua lệnh chặn sinh sản của mod lẫn các tùy chọn sandbox, và sinh ra con non không có gắn bó. Mod nền xóa trường này lúc khởi động như một lưới an toàn, nhưng đừng trông cậy vào đó.</p>
-<p><strong>Các phần thịt là bắt buộc.</strong> Ba dòng trong một file riêng:</p>
+<p>Các tên trung tính về loài đến cùng API 7. Những tên cũ hơn, <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code> và <code>CD.DogMoodles</code>, chính là những hàm và bảng đó dưới cái tên đầu tiên của chúng. Một addon muốn nạp được trên bản gốc cũ hơn 0.7.3 thì chặn ở tên cũ và lấy tên mới khi nó tồn tại: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
+<p>Bộ animation phải giữ nguyên là <code>"raccoon"</code>. Một bộ animation tách nhánh không nạp máy trạng thái của nó, và con vật đứng đơ tại chỗ.</p>
+<p>Hãy dùng lại bộ gen. Một giống chó trỏ vào danh sách của bản gốc: <code>AnimalDefinitions.genome["dog"].genes</code>. Một loài mới gọi <code>CD.defineGenome("cat")</code> một lần và trao cho mọi giai đoạn cái bảng mà nó trả về. Engine chỉ đọc danh sách <code>genes</code> của từng giai đoạn, còn khóa bộ gen chỉ là quy ước, nên loài của bạn có mục riêng mà không cần danh sách gen của riêng nó.</p>
+<p>Đừng khai báo <code>mate</code>. Có nó thì engine chạy phần giao phối gốc của chính nó bên trong bất kỳ vùng động vật nào, phần đó bỏ qua khối sinh sản của mod và các tùy chọn sandbox của mod, và cho ra chó con không có mối gắn bó. Bản gốc xóa trường này lúc khởi động, nhưng đừng dựa vào đó.</p>
+<p>Các phần mổ xẻ là bắt buộc. Ba dòng trong file của riêng chúng:</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Không có chúng, việc mổ thịt con vật của bạn làm sập code gốc của game, vì code đó tra bảng định nghĩa phần thịt theo kiểu và giống rồi giẫm phải nil.</p>
-<p><strong>Con vật nhỏ cần chỉnh camera chân dung.</strong> Mức zoom chân dung trong <code>CD.applyDogAvatar</code> được hiệu chỉnh theo con chó, và zoom của avatar là độ phóng đại: con vật càng nhỏ thì con số càng lớn. Hãy chia mức zoom cho tỷ lệ kích thước so với chó và nhân các độ lệch với tỷ lệ đó, nếu không con vật của bạn sẽ bé xíu ở đáy bức chân dung của chính nó.</p>
+<p>Thiếu chúng, việc mổ con vật của bạn làm sập code gốc của game, vì nó tra định nghĩa phần mổ theo type và giống rồi đụng phải nil.</p>
+<p>Mức phóng chân dung trong <code>CD.applyDogAvatar</code> được canh cho một con chó, và mức phóng của avatar là độ phóng đại: con vật càng nhỏ thì con số càng lớn. Hãy chia mức phóng cho tỉ lệ cỡ so với chó và nhân các offset với tỉ lệ đó, nếu không con vật của bạn sẽ ngồi bé xíu ở đáy bức chân dung của chính nó.</p>
 <h2 id="9-script-của-model">9. Script của model</h2>
-<p>Một file trong <code>media/scripts/</code>, chính là thứ báo cho game biết model của bạn tồn tại:</p>
+<p>Một file dưới <code>media/scripts/</code> báo cho game biết model của bạn tồn tại:</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -950,10 +1030,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> là thứ giữ cho các clip bên trong file model của bạn còn dùng được. Không có nó thì model vẫn nạp nhưng chẳng bao giờ chuyển động.</p>
-<p>Điểm gắn <code>head</code> là nơi mũ và những thứ tương tự đặt lên. Nếu bạn muốn túi yên vừa với con vật của mình, hãy thêm <code>saddlebags_l</code>, <code>saddlebags_r</code> và <code>saddlebags_c</code> theo cùng cách, ở xương sống lưng. Những con số này được tìm ra bằng cách nhìn con vật trong game rồi nhích dần, chứ không phải bằng cách đo model: một cái túi cân giữa về mặt toán học vẫn trông lệch trên một cơ thể có lông.</p>
+<p><code>keepMeshAnimations = true</code> giữ cho các clip nằm trong file model của bạn còn dùng được. Không có nó, model nạp lên và không bao giờ chạy animation.</p>
+<p>Điểm gắn <code>head</code> là chỗ mũ nón và những thứ tương tự ngồi lên. Nếu bạn muốn túi yên vừa với con vật của mình, hãy thêm <code>saddlebags_l</code>, <code>saddlebags_r</code> và <code>saddlebags_c</code> y như vậy, trên xương sống. Tìm những con số đó bằng cách nhìn con vật trong game và nhích dần. Giá trị đo từ model đặt cái túi vào tâm hình học của mesh, và đó không phải chỗ trông hợp mắt trên thân con vật.</p>
 <h2 id="10-con-vật-xuất-hiện-ở-đâu">10. Con vật xuất hiện ở đâu</h2>
-<p>Con hoang được bốc thăm theo từng tòa nhà, theo từng chunk, vào lần đầu chunk đó được nạp. Bạn mô tả các lượt bốc thăm của mình dưới dạng danh sách các bước, hoặc bên trong định nghĩa giống ở <code>spawns</code>, hoặc bằng <code>CD.registerStraySpawns(danh_sách)</code>.</p>
+<p>Chó hoang được gieo theo từng tòa nhà, từng chunk, vào lần đầu chunk đó nạp. Bạn mô tả các lần gieo của mình bằng một danh sách các bước, hoặc đặt trong định nghĩa giống dưới tên <code>spawns</code>, hoặc dùng <code>CD.registerStraySpawns(list)</code>.</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -970,15 +1050,15 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>lớp tòa nhà mà nó bốc thăm trên đó</td>
+<td>lớp tòa nhà mà bước này gieo trên đó</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>một <strong>hàm</strong> trả về phần trăm. Là hàm chứ không phải con số, để nó bám theo hệ số sandbox theo thời gian thực.</td>
+<td>một hàm trả về phần trăm, nhờ vậy nó đọc được hệ số sandbox ngay lúc gieo.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>khóa của kho lưu bền. Duy nhất trong toàn hệ sinh thái, và không bao giờ đổi.</td>
+<td>khóa của kho lưu lâu dài. Không trùng với bất kỳ mod nào, và không bao giờ đổi.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
@@ -986,20 +1066,20 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>hàm tùy chọn trả về giá trị đúng sai, được kiểm tra trước lượt bốc thăm. Husky dùng <code>CD.isWinter</code>.</td>
+<td>hàm không bắt buộc, trả về đúng sai, được kiểm trước khi gieo. Husky dùng <code>CD.isWinter</code>.</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>phần trăm khả năng sinh ra trong tòa nhà thay vì ngoài đường. Mặc định 35.</td>
+<td>phần trăm khả năng sinh ra bên trong tòa nhà thay vì ngoài đường. Mặc định 35.</td>
 </tr>
 </tbody></table></div>
-<p>Hãy nhân tỷ lệ của bạn với <code>CD.dogSpawnMultiplier()</code>, hoặc chia <code>CD.strayChancePerHouse()</code> cho một độ hiếm của riêng bạn. Cách nào cũng giữ cho thiết lập sandbox của người chơi còn tác dụng, điều sẽ không xảy ra nếu bạn viết một con số trần trụi.</p>
-<p><code>indoor</code> là ưu tiên chứ không phải lời hứa: một tòa nhà không còn ô trong nhà trống trong chunk đó sẽ rơi về một ô bên ngoài.</p>
+<p>Hãy nhân tỉ lệ của bạn với <code>CD.dogSpawnMultiplier()</code>, hoặc chia <code>CD.strayChancePerHouse()</code> cho một độ hiếm của riêng bạn. Cả hai cách đều giữ cho thiết lập sandbox của người chơi còn tác dụng.</p>
+<p><code>indoor</code> chỉ là mong muốn: một tòa nhà không còn ô trống bên trong ở chunk đó sẽ lùi về một ô ngoài trời.</p>
 <h3 id="các-lớp-tòa-nhà">Các lớp tòa nhà</h3>
-<p>Mod nền đăng ký bốn lớp, và bạn dùng trực tiếp được:</p>
+<p>Bản gốc đăng ký bốn lớp:</p>
 <div class="tw"><table><thead><tr>
 <th>Lớp</th>
-<th>Khớp với gì</th>
+<th>Khớp với</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
@@ -1007,7 +1087,7 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>đồn cảnh sát và những chỗ tương tự</td>
+<td>đồn cảnh sát và những nơi tương tự</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
@@ -1015,27 +1095,26 @@ end</code></pre>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>nhà trong trang trại, và lớp này được phép ở ngoài thành phố</td>
+<td>công trình nông trại, và được phép nằm ngoài thị trấn</td>
 </tr>
 </tbody></table></div>
 <p>Nếu không lớp nào hợp, hãy đăng ký lớp của bạn:</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>Hàm so khớp nhận định nghĩa tòa nhà và chạy bên trong một lời gọi được bảo vệ, nên một sai sót trong đó không thể kéo sập việc nạp chunk. <code>skipUrbanGate</code> cho phép lớp bốc thăm ở chunk không thuộc đô thị, thứ mà một trang trại hay một túp lều trong rừng cần. Hãy để <code>exclusive</code> yên: các lớp của mod nền loại trừ lẫn nhau, còn lớp của add-on được thiết kế để cộng thêm, khớp chồng lên chúng.</p>
+<p>Hàm khớp nhận định nghĩa tòa nhà và chạy trong một lời gọi được bảo vệ, nên lỗi trong đó không làm dừng việc nạp chunk. <code>skipUrbanGate</code> cho phép lớp gieo trong một chunk không phải đô thị, điều mà một nông trại hay một căn chòi trong rừng cần đến. Đừng đặt <code>exclusive</code>. Các lớp gốc loại trừ lẫn nhau, còn lớp của addon thì khớp chồng lên chúng.</p>
 <h3 id="những-hậu-tố-đã-có-người-dùng">Những hậu tố đã có người dùng</h3>
-<p>Hậu tố là một phần của khóa dùng để lưu "tòa nhà này đã bốc thăm rồi". Hai mod dùng chung một hậu tố sẽ phá kết quả bốc thăm của nhau.</p>
-<p>Mọi hậu tố đều bắt đầu bằng một dấu gạch đứng. Những cái này đã được dùng:</p>
+<p>Hậu tố là một phần của khóa lưu "tòa nhà này đã gieo rồi". Hai mod dùng chung một hậu tố sẽ làm hỏng kết quả gieo của nhau.</p>
+<p>Mọi hậu tố đều bắt đầu bằng một dấu gạch đứng. Những cái đang được dùng:</p>
 <ul>
-<li><strong>Mod nền:</strong> hậu tố rỗng, và <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
-<li><strong>Rottweiler:</strong> <code>rw</code>, <code>r</code></li>
-<li><strong>Doberman:</strong> <code>db</code>, <code>dm</code></li>
-<li><strong>Labrador:</strong> <code>lb</code>, <code>lk</code></li>
-<li><strong>Pug:</strong> <code>pg</code>, <code>pv</code></li>
-<li><strong>Mèo:</strong> <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li>Bản gốc: hậu tố rỗng, và <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li>Rottweiler: <code>rw</code>, <code>r</code></li>
+<li>Doberman: <code>db</code>, <code>dm</code></li>
+<li>Labrador: <code>lb</code>, <code>lk</code></li>
+<li>Chó Pug: <code>pg</code>, <code>pv</code></li>
+<li>Mèo: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<p>Hãy chọn một cái chưa ai dùng, rồi sau đó đừng bao giờ động vào nó nữa.</p>
 <h2 id="11-moodle-của-giống">11. Moodle của giống</h2>
-<p>Moodle là một file <strong>client</strong>. Bạn nối thêm một bảng vào <code>CD.DogMoodles</code>, và mod nền sẽ vẽ nó, theo dõi nó và dọn dẹp nó:</p>
+<p>Moodle là một file phía client. Bạn nối một bảng vào <code>CD.DogMoodles</code>, và bản gốc lo vẽ nó, theo dõi nó và dọn nó đi:</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1054,51 +1133,50 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> trả về mức, hoặc 0 cho "không hiện". <code>apply</code> được gọi kèm số phút trong game trôi qua kể từ lần gọi trước, nên hãy nhân hiệu ứng của bạn với <code>elapsedMin</code> thay vì giả định một nhịp cố định.</p>
-<p>Hãy gửi kèm biểu tượng ở <strong>sáu kích thước</strong>, từ 32 tới 128 pixel. Giao diện chọn kích thước theo tỷ lệ hiển thị của người chơi, và một kích thước bị thiếu là một ô vuông trống.</p>
-<p>Moodle tự làm được vẽ dạng lớp phủ, chứ không đi qua hệ thống moodle của chính game, vốn không nhận mục mới từ mod. Phần đó đã được lo giúp bạn, nhưng đó là lý do moodle xuất hiện trong dải của riêng mod chứ không nằm chung với các moodle gốc.</p>
+<p><code>condition</code> trả về cấp độ, hoặc 0 nghĩa là "không hiện". <code>apply</code> nhận số phút trong game kể từ lần gọi trước, nên hãy nhân hiệu ứng của bạn với <code>elapsedMin</code>.</p>
+<p>Hãy kèm icon ở sáu kích cỡ, từ 32 đến 128 pixel. Giao diện chọn kích cỡ theo mức phóng của người chơi, và một kích cỡ thiếu sẽ hiện thành ô vuông rỗng. Icon xuất hiện ở dải riêng của mod, không nằm chung với các moodle gốc của game.</p>
 <h2 id="12-hook">12. Hook</h2>
-<p>Hai danh sách hàm mà mod nền gọi trên <strong>server</strong>. Hãy nối vào chúng từ một file shared. Mỗi trình xử lý chạy trong lời gọi được bảo vệ của riêng nó, nên một add-on hỏng không thể kéo mod nền sập theo.</p>
-<p><strong><code>CD.onHuntDelivered</code></strong>, từ API 2, được gọi ngay sau khi con vật thả con mồi xuống dưới chân chủ:</p>
+<p>Hai danh sách hàm mà bản gốc gọi trên server. Hãy nối vào chúng từ một file shared. Mỗi handler chạy trong lời gọi được bảo vệ của riêng nó, nên lỗi ở một addon không làm dừng bản gốc.</p>
+<p><code>CD.onHuntDelivered</code>, có từ API 2, được gọi ngay sau khi con vật thả con mồi xuống chân chủ:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><strong><code>CD.onUpkeepStress</code></strong>, từ API 3, được gọi ở mỗi chu kỳ bảo dưỡng, sau khi mod nền cộng phần căng thẳng từ những nhu cầu chưa được đáp ứng và trước khi ghi lại. Hãy trả về một con số, nó sẽ được cộng vào tổng:</p>
+<p><code>CD.onUpkeepStress</code>, có từ API 3, được gọi mỗi chu kỳ chăm sóc, sau khi bản gốc đã cộng phần căng thẳng từ những nhu cầu chưa được đáp ứng và trước khi ghi nó xuống. Hãy trả về một con số, nó sẽ được cộng vào tổng:</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>Đây là cách <strong>duy nhất</strong> để một add-on tác động lên mức căng thẳng liên tục của con vật. Việc bảo dưỡng tính lại và ghi đè giá trị ở mỗi chu kỳ, nên bất cứ thứ gì bạn ghi từ bên ngoài đều mất ở nhịp kế tiếp. Đây là công cụ đúng cho một trạng thái đến từ môi trường: nóng, lạnh, mưa.</p>
-<p><strong>Quy tắc nhiều người chơi, gói trong một dòng: client không bao giờ ghi dữ liệu mod.</strong> Một lần ghi ở phía client sẽ đè lên bản sao của server ở lần đồng bộ kế tiếp, và triệu chứng nổi lên vài phút sau, ở một chỗ chẳng liên quan. Hãy làm việc đó trong file server, hoặc trong một trong các hook này, vốn đã chạy sẵn ở đó.</p>
+<p>Chu kỳ chăm sóc tính lại và ghi đè giá trị này mỗi vòng, nên mọi thứ ghi từ bên ngoài đều mất ở tick sau. Hãy dùng hook cho một điều kiện đến từ môi trường, như nóng, lạnh hay mưa.</p>
+<p>Trong nhiều người chơi, client không bao giờ ghi mod data. Một lần ghi từ phía client sẽ đè lên bản của server ở lần đồng bộ kế tiếp, và triệu chứng lộ ra sau đó vài phút, ở một chỗ chẳng liên quan. Hãy làm việc đó trong một file phía server, hoặc trong một trong các hook này.</p>
 <h2 id="13-khóa-dịch-thuật">13. Khóa dịch thuật</h2>
-<p>Hãy gửi kèm một <code>IG_UI.json</code> cho mỗi thư mục ngôn ngữ, trong <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. Mod nền gửi kèm mười bốn: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>Những khóa mà một giống cần:</p>
+<p>Hãy kèm một <code>IG_UI.json</code> cho mỗi thư mục ngôn ngữ, trong <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. Bản gốc kèm mười bốn: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
+<p>Các khóa mà một giống cần:</p>
 <div class="tw"><table><thead><tr>
 <th>Khóa</th>
 <th>Hiện ở đâu</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>tên giống, ở khắp giao diện của mod</td>
+<td>tên giống, ở mọi chỗ trong giao diện của mod</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>phần mô tả trên thẻ của con vật</td>
+<td>mô tả trên thẻ của con vật</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>tên giống trên các màn hình của chính game</td>
+<td>tên giống trong các màn hình của chính game</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>mỗi kiểu trong ba kiểu của bạn một khóa</td>
+<td>một khóa cho mỗi type trong ba type của bạn</td>
 </tr>
 <tr>
 <td>các khóa loài của bạn</td>
-<td><code>nounKey</code> và <code>youngKey</code> mà bạn đã truyền cho <code>CD.registerSpecies</code>, nếu bạn có thêm một loài</td>
+<td><code>nounKey</code> và <code>youngKey</code> bạn đã truyền cho <code>CD.registerSpecies</code></td>
 </tr>
 <tr>
 <td>các khóa moodle của bạn</td>
-<td>tên và mô tả, nếu bạn có moodle</td>
+<td>tên và phần mô tả</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1109,44 +1187,76 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>Hai thứ sẽ cắn bạn. Một <strong>dấu phần trăm để nguyên</strong> trong chuỗi đã dịch sẽ làm sập màn hình hiển thị nó, vì bộ định dạng đọc nó như một chỗ dành sẵn. Và một file ngôn ngữ có <strong>byte order mark</strong> thì không biên dịch được, kèm theo một lỗi nêu tên một file khác chứ không phải file đang hỏng.</p>
+<p>Một dấu phần trăm để trần trong chuỗi đã dịch sẽ làm sập màn hình hiện nó, vì bộ định dạng đọc nó như một chỗ giữ chỗ. Một file ngôn ngữ có byte order mark thì không biên dịch được, và lỗi lại gọi tên một file khác chứ không phải file hỏng.</p>
 <h2 id="14-những-gì-file-save-ghi-nhớ">14. Những gì file save ghi nhớ</h2>
-<p>Ba định danh của bạn được ghi vào file save và được đọc lại mãi mãi:</p>
+<p>Ba trong số các định danh của bạn được ghi vào file save và đọc lại mãi mãi:</p>
 <ul>
-<li><code>key</code>, định danh giống lưu trên từng con vật của bạn</li>
-<li><code>typePrefix</code>, thứ tạo nên các kiểu con vật mà engine lưu lại</li>
-<li><code>suffix</code>, khóa của kho "đã bốc thăm rồi", mỗi bước sinh ra một khóa</li>
+<li><code>key</code>, định danh giống được lưu trên mọi con vật của bạn</li>
+<li><code>typePrefix</code>, thứ tạo nên các type con vật mà engine lưu lại</li>
+<li><code>suffix</code>, khóa của kho "đã gieo rồi", mỗi bước xuất hiện một cái</li>
 </ul>
-<p><strong>Không cái nào trong ba cái đó được đổi tên sau khi phát hành.</strong> Đổi tên một <code>key</code> làm mọi con vật còn sống của giống đó thành mồ côi. Đổi tên một <code>suffix</code> khiến mọi tòa nhà trong mọi file save hiện có bốc thăm lại, và một thế giới đã chơi hàng tháng bỗng đầy con vật của bạn.</p>
-<p>Lần duy nhất việc bốc thăm lại đó có ích là khi nó chính là mục đích: CD: Cats cố tình cho bốn bộ lông mới của nó những hậu tố mới, đúng là để chúng bắt đầu xuất hiện trong các thế giới đang chơi dở, trong khi con mèo đen ban đầu vẫn giữ hậu tố lịch sử của nó và không bốc thăm lại.</p>
-<p><strong>Gỡ một add-on khỏi file save còn con vật sống của giống đó là mất chúng.</strong> Engine loại bỏ một con vật mà nó không còn biết kiểu. Mod nền không sập, sự gắn bó và chuồng xuống cấp gọn gàng, nhưng con vật thì không còn. Hãy nói điều đó trên trang Workshop của bạn, như mọi add-on đã đăng đều làm.</p>
-<p><strong>Một giống không rõ sẽ xuống cấp chứ không hỏng.</strong> Nếu thiếu add-on của bạn, mod nền rơi về giống mặc định cho mọi câu hỏi liên quan, nên một file save mở ra mà không có mod của bạn vẫn đọc được.</p>
+<p>Không cái nào trong ba cái đó đổi tên được sau khi phát hành. Đổi tên <code>key</code> làm mọi con vật còn sống của giống đó thành mồ côi. Đổi tên <code>suffix</code> khiến mọi tòa nhà trong mọi file save hiện có gieo lại, và một thế giới đã chơi hàng tháng sẽ đầy con vật của bạn.</p>
+<p>Một hậu tố mới cũng chính là cách một giống mới đến được với những thế giới đang chạy dở. CD: Cats cho bốn màu lông mới của nó những hậu tố mới, nên chúng bắt đầu xuất hiện trong các file save đang có, còn con mèo đen ban đầu vẫn giữ hậu tố cũ và không gieo lại.</p>
+<p>Gỡ một addon khỏi file save còn con vật sống của giống đó sẽ mất chúng. Engine bỏ đi một con vật mà nó không còn biết type. Bản gốc không sập, và mối gắn bó lẫn cái cũi đều xuống cấp một cách gọn gàng. Hãy nói rõ điều đó trên trang Workshop của bạn.</p>
+<p>Nếu addon của bạn không có mặt, bản gốc lùi về giống mặc định cho mọi thứ nó được hỏi, nên một file save mở ra mà không có mod của bạn vẫn đọc được.</p>
 <h2 id="15-trước-khi-đăng">15. Trước khi đăng</h2>
 <ul>
-<li>Chốt kiểm tra có mặt ở <strong>mọi</strong> file Lua, và nêu đúng API mà bạn thực sự dùng.</li>
-<li>Mức sàn phiên bản mod nền được viết bằng lời trong phần mô tả của bạn. <code>versionMin</code> không nói được điều đó.</li>
-<li>Bạn đã đọc log ở lần nạp đầu tiên. Nếu không, <code>CD.registerBreed</code> từ chối trong im lặng, và mỗi lần từ chối đều in một dòng có nêu tên.</li>
-<li><code>CD.defineDogParts</code> đang được gọi. Hãy mổ thịt một con vật của bạn và xem game không sập.</li>
-<li><code>key</code>, <code>typePrefix</code> và các hậu tố sinh ra của bạn là duy nhất, và bạn hài lòng với chúng mãi mãi.</li>
-<li>Giống nhỏ đặt <code>puppySize</code>, và bạn đã tận mắt thấy một con non để chứng minh.</li>
-<li>Nếu là loài khác, <code>CD.registerVoices</code> đang được gọi và <code>voices</code> đã điền đủ, nếu không nó sẽ sủa.</li>
-<li>Biểu tượng moodle có đủ cả sáu kích thước.</li>
-<li>Mọi thư mục ngôn ngữ bạn gửi kèm đều có đủ mọi khóa. Một khóa thiếu sẽ hiện ra khóa thô trên màn hình.</li>
-<li>Bạn đã thử ở chế độ nhiều người chơi, chứ không chỉ một người. Vị trí, quyền sở hữu và dữ liệu mod cư xử khác ở đó.</li>
-<li>Trang Workshop của bạn cảnh báo không gỡ add-on khỏi file save còn con vật sống.</li>
+<li>Lớp bảo vệ có mặt trong mọi file Lua, và gọi đúng tên API bạn thật sự dùng.</li>
+<li>Sàn phiên bản của bản gốc được viết trong phần mô tả, bằng chữ. <code>versionMin</code> không nói được điều đó.</li>
+<li>Bạn đã đọc log ở lần nạp đầu tiên. Nếu không, <code>CD.registerBreed</code> từ chối trong im lặng, mà mỗi lần từ chối đều in ra một dòng có tên.</li>
+<li><code>CD.defineDogParts</code> đã được gọi. Hãy mổ một con vật của bạn và xem nó không sập.</li>
+<li><code>key</code>, <code>typePrefix</code> và các hậu tố xuất hiện của bạn là duy nhất, và bạn sẽ không cần đổi chúng.</li>
+<li>Giống nhỏ con thì đặt <code>puppySize</code>, và bạn đã tận mắt thấy một con chó con để chứng minh.</li>
+<li>Nếu là loài khác, <code>CD.registerVoices</code> đã được gọi và <code>voices</code> đã điền, không thì nó sẽ sủa.</li>
+<li>Icon moodle có đủ cả sáu kích cỡ.</li>
+<li>Mọi thư mục ngôn ngữ bạn kèm theo đều có đủ mọi khóa. Một khóa thiếu sẽ hiện khóa thô lên màn hình.</li>
+<li>Bạn đã thử trong nhiều người chơi, không chỉ một mình. Vị trí, quyền sở hữu và mod data đều hành xử khác ở đó.</li>
+<li>Trang Workshop của bạn cảnh báo về việc gỡ addon khỏi file save còn con vật sống.</li>
 </ul>
 <h2 id="16-lỗi-thường-gặp">16. Lỗi thường gặp</h2>
-<p><strong>"Con vật của tôi chẳng bao giờ xuất hiện."</strong> Gần như luôn là chốt kiểm tra: add-on của bạn cần một API mà mod nền đang cài không có, nên nó nằm im đúng như thiết kế. Hãy đối chiếu số API của bạn với bảng ở mục 2.</p>
-<p><strong>"Nó xuất hiện, nhưng đứng đơ."</strong> Bộ animation không phải <code>"raccoon"</code>, hoặc model của bạn thiếu clip. Cả hai đều ra thành một con vật đứng yên mãi mãi.</p>
-<p><strong>"Nó hiện ra như một vệt đen và log tràn ngập."</strong> Model có hơn 60 xương.</p>
-<p><strong>"Mổ thịt nó thì sập game."</strong> <code>CD.defineDogParts</code> chưa được gọi.</p>
-<p><strong>"Con non sinh ra to bằng con trưởng thành."</strong> Một giống nhỏ chưa đặt <code>puppySize</code>. Giá trị đó là tuyệt đối và được áp lại ở mỗi lượt quét, nên khoảng kích thước của chính kiểu con vật không cứu được bạn.</p>
-<p><strong>"Hai giống của tôi cứ biến thành nhau."</strong> Chúng dùng chung <code>engineBreed</code>. Tiền tố chọn mesh và có thể được cả một họ dùng chung; <code>engineBreed</code> chọn texture và chính nó phân định trong họ đó, nên nó phải duy nhất cho từng giống.</p>
-<p><strong>"Âm thanh phát ra nhưng bỏ qua thanh trượt âm lượng."</strong> <code>CD.registerVoices</code> chưa được gọi cho âm thanh đó.</p>
-<p><strong>"Chơi một mình thì ổn, lên server thì giở chứng."</strong> Có thứ gì đó đang ghi dữ liệu mod ở phía client. Hãy chuyển nó sang server.</p>
-<p><strong>"Nó đánh nhau với zombie dù tôi đã tắt chiến đấu."</strong> Mod nền mà nó đang chạy trên đó cũ hơn API 5, khi trường ấy còn chưa tồn tại và bị bỏ qua trong im lặng. Đây đúng là trường hợp mà chốt kiểm tra phải chặn lại, chứ không phải xuống cấp.</p>
+<div class="tw"><table><thead><tr>
+<th>Triệu chứng</th>
+<th>Nó là gì</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>"Con vật của tôi chẳng bao giờ xuất hiện."</strong></td>
+<td>Gần như luôn là chốt kiểm tra: add-on cần một API mà mod nền đang cài không có, nên nó thoát ra ngay và không đăng ký gì cả. Hãy đối chiếu số API của bạn với bảng ở mục 2.</td>
+</tr>
+<tr>
+<td><strong>"Nó xuất hiện, nhưng đứng cứng."</strong></td>
+<td>Bộ animation không phải <code>"raccoon"</code>, hoặc model thiếu clip.</td>
+</tr>
+<tr>
+<td><strong>"Nó hiện ra như một vệt đen và log tràn lỗi."</strong></td>
+<td>Model có hơn 60 xương.</td>
+</tr>
+<tr>
+<td><strong>"Mổ nó thì game sập."</strong></td>
+<td>Chưa gọi <code>CD.defineDogParts</code>.</td>
+</tr>
+<tr>
+<td><strong>"Con non sinh ra to bằng con trưởng thành."</strong></td>
+<td>Một giống nhỏ không đặt <code>puppySize</code>. Giá trị này là tuyệt đối và được áp lại ở mỗi lượt quét, nên khoảng kích cỡ của kiểu không bao được nó.</td>
+</tr>
+<tr>
+<td><strong>"Hai giống của tôi cứ biến thành nhau."</strong></td>
+<td>Chúng dùng chung một <code>engineBreed</code>. Tiền tố chọn mesh và có thể dùng chung trong một họ. Còn <code>engineBreed</code> chọn texture và phân biệt các giống trong họ đó, nên nó phải là duy nhất cho mỗi giống.</td>
+</tr>
+<tr>
+<td><strong>"Âm thanh có phát nhưng phớt lờ thanh âm lượng."</strong></td>
+<td>Chưa gọi <code>CD.registerVoices</code> cho âm thanh đó.</td>
+</tr>
+<tr>
+<td><strong>"Chơi đơn thì ổn, lên server lại lỗi."</strong></td>
+<td>Có gì đó đang ghi ModData ở phía client. Hãy chuyển nó sang server.</td>
+</tr>
+<tr>
+<td><strong>"Nó đánh nhau với zombie dù tôi đã tắt chiến đấu."</strong></td>
+<td>Mod nền nó đang chạy trên đó cũ hơn API 5. Mod nền đó không biết trường này và bỏ qua nó. Chốt kiểm tra phải chặn trên mod nền này, thay vì cứ nạp khi thiếu trường.</td>
+</tr>
+</tbody></table></div>
 <hr>
-<p>Có gì trong sổ tay này sai, hoặc còn thiếu? Hãy nói trên <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
+<p>Có gì trong sổ tay này sai, hoặc còn thiếu? Hãy nói ở <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
 </div>
 
 <script>
