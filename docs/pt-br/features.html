@@ -718,7 +718,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ol>
 <p>Depois disso, o dia a dia:</p>
 <ul>
-<li>Alimente e dê água todo dia. O cão morre de negligência e não volta.</li>
+<li>Alimente e dê água todo dia. Por padrão a negligência leva a vida a 10% e para aí; com a opção de sandbox <strong><span class="ig">Doença e negligência podem matar</span></strong> ligada o cão morre e não volta.</li>
 <li>Faça carinho. Isso segura a lealdade e ainda alivia o seu tédio e tristeza.</li>
 <li>Abra a janela dele no botão de patinha, abaixo do painel das suas mãos. Tudo do cão fica lá dentro.</li>
 </ul>
@@ -789,7 +789,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Ele entra em modo Seguir com a auto-proteção ligada.</li>
 <li>Fome, sede e estresse zeram.</li>
 <li>As características genéticas são sorteadas nessa hora e não mudam mais.</li>
-<li>Ele fica invencível: zumbi, carro, tiro e fogo não o matam. Ele morre de negligência ou de ferida infeccionada sem tratamento (ver Ferida e curativo, na seção 6).</li>
+<li>Ele fica invencível: zumbi, carro, tiro e fogo não o matam. Negligência e ferida infeccionada sem tratamento (ver Ferida e curativo, na seção 6) só matam com a opção de sandbox <strong><span class="ig">Doença e negligência podem matar</span></strong> ligada; por padrão a vida para em 10%.</li>
 <li>Ele entra no registro <strong><span class="ig">Meus Companheiros</span></strong> e passa a aparecer no mapa.</li>
 </ul>
 <p>Domesticar outro cão não solta o anterior. O novo vira o cão ativo e o antigo vira passivo em modo Ficar. Veja <a href="#16-vários-cães-ao-mesmo-tempo">Vários cães ao mesmo tempo</a>.</p>
@@ -1056,7 +1056,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="ferimento-recuo-e-pânico">Ferimento, recuo e pânico</h3>
 <ul>
 <li>Lutar não tira vida do cão na hora, só estressa. Cada mordida tem uma chance pequena de deixá-lo sangrando.</li>
-<li>A vida dele cai por negligência (fome ou sede acima de 0,8), por comida tóxica, por contra-ataque de cervo na caça e pelas condições da seção Saúde. Negligência e infecção sem tratamento matam.</li>
+<li>A vida dele cai por negligência (fome ou sede acima de 0,8), por comida tóxica, por contra-ataque de cervo na caça e pelas condições da seção Saúde. Negligência e infecção sem tratamento matam só com <strong><span class="ig">Doença e negligência podem matar</span></strong> ligada no sandbox; desligada, o padrão, a vida para em 10%.</li>
 <li>Estados de ferimento: <strong><span class="ig">Ferido</span></strong> abaixo de 30% de vida, <strong><span class="ig">Muito ferido</span></strong> abaixo de 10%. Um cão muito ferido só segue você, não luta.</li>
 <li>Ele recua para trás de você quando a vida cai a 10% ou menos.</li>
 <li>Com estresse alto ele entra em pânico: não luta, não vigia e não obedece truque. Ainda corre até você quando chamado. Ele só sai do pânico quando o estresse cai bem abaixo do limiar.</li>
@@ -1066,7 +1066,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="ferida-e-curativo">Ferida e curativo</h3>
 <ul>
 <li>A cada mordida que o cão dá num zumbi há 0,4% de chance de ele sair com uma ferida aberta. A chance sobe com o cão já machucado ou estressado, e nunca vem mais de uma ferida a cada 2 horas de jogo. Uma queda de vida que o mod não explica (um mod de arma que fere o cão, por exemplo) também vira ferida.</li>
-<li>O cão manca ao andar (Caramelo, Pastor Alemão, Golden e Husky; as outras raças ainda andam normal) e fica um pouco mais lento em todas as raças: anda 10% mais devagar e corre 25% mais devagar. Aparece o selo <strong><span class="ig">Sangrando</span></strong> no nome, na janela e no moodle, e vira <strong><span class="ig">Machucado</span></strong> assim que o curativo está posto. A seção Saúde na aba Status diz a condição, o curativo e o que fazer; com Criação de Animais 5 ou mais mostra também o progresso da cura.</li>
+<li>O cão manca ao andar (Caramelo, Pastor Alemão, Golden e Husky; as outras raças ainda andam normal) e fica um pouco mais lento em todas as raças: anda 10% mais devagar e corre 25% mais devagar. Aparece o selo <strong><span class="ig">Sangrando</span></strong> no nome, na janela e no moodle, e vira <strong><span class="ig">Machucado</span></strong> assim que o curativo está posto. A aba <strong><span class="ig">Saúde</span></strong> da janela do cão mostra a silhueta dele com a pata ferida pintada, a lista de partes do corpo e as condições ativas, e o botão direito nela abre o menu de tratar; a seção Saúde na aba Status diz a condição, o curativo e o que fazer; com Criação de Animais 5 ou mais as duas mostram também o progresso da cura.</li>
 <li>Ferido, ele recusa Caçar e Guardar até sarar. Seguir, Ficar e Atacar continuam.</li>
 <li>Se o cão continua lutando com a ferida aberta, cada mordida pode quebrar a pata, com o dobro da chance da ferida. Aviso <em><span class="ig">quebrou a pata!</span></em>, selo e moodle <strong><span class="ig">Pata quebrada</span></strong>, e o cão anda na metade do passo e não corre mais, em nenhuma situação. A cura passa a levar 3 dias, mesmo com curativo.</li>
 <li>Sangrando e sem curativo, a vida cai (90% da barra por dia, uma barra cheia em pouco mais de um dia) e não recupera até você enfaixar. Chegando a zero, o cão morre. Vale em qualquer estágio: ferida infeccionada sem bandagem sangra e infecciona ao mesmo tempo.</li>
@@ -1074,11 +1074,11 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Ferida sem curativo tem 20% de infeccionar a cada hora de jogo; com curativo comum, 2% por hora; com bandagem suja, 5%; com curativo esterilizado, zero. Ferida infeccionada aparece como <strong><span class="ig">Infeccionado</span></strong> e trava a cura da vida e o cruzamento enquanto durar.</li>
 <li>Para tratar, use <strong><span class="ig">Tratar ferimento</span></strong> no botão direito do cão, ou botão direito na condição na seção Saúde da ficha, com qualquer bandagem ou lençol rasgado no inventário. O curativo sai esterilizado se a bandagem for de álcool, ou se você tiver desinfetante, lenço ou algodão com álcool no inventário (é gasto junto). Primeiros Socorros encurta a ação. Tratar dá lealdade. A bandagem fica no cão e volta ao seu inventário, suja, quando você usa <strong><span class="ig">Remover curativo</span></strong> ou quando a ferida fecha. A pata ferida mostra cortes vermelhos enquanto sangra e uma faixa de gaze com o curativo, em todas as raças do mod base e nos addons de raça, que também mancam da pata ferida. Bandagem suja também serve.</li>
 <li>Ferida limpa fecha em 2 dias, 1 com curativo. Cão parado (Ficar, ou passivo em casa) cura no ritmo cheio, cão trabalhando cura na metade e cão em combate não cura. Cão guardado no canil ou cuidando da fazenda fica em pausa.</li>
-<li>No sandbox, <strong><span class="ig">Cuidado veterinário</span></strong> liga e desliga tudo isso (desligar no meio destrava o cão na hora), <strong><span class="ig">Chance de ferimento por mordida (%)</span></strong> define a chance por mordida em zumbi (padrão 0,4), <strong><span class="ig">Chance de entorse por pulo de cerca (%)</span></strong> (padrão 5), <strong><span class="ig">Chance de vermes por estômago virado (%)</span></strong> (padrão 10) e <strong><span class="ig">Doença por comida e água ruim</span></strong> (multiplicador, padrão 1) fazem o mesmo com as outras doenças, e <strong><span class="ig">Infecção pode matar</span></strong> (padrão ligada) decide se a vida chega a zero.</li>
+<li>No sandbox, <strong><span class="ig">Cuidado veterinário</span></strong> liga e desliga tudo isso (desligar no meio destrava o cão na hora), <strong><span class="ig">Chance de ferimento por mordida (%)</span></strong> define a chance por mordida em zumbi (padrão 0,4), <strong><span class="ig">Chance de entorse por pulo de cerca (%)</span></strong> (padrão 5), <strong><span class="ig">Chance de verminose por 6 h de estômago virado (%)</span></strong> (padrão 10) e <strong><span class="ig">Chance de estômago virado (%)</span></strong> (padrão 25) fazem o mesmo com as outras doenças, e <strong><span class="ig">Doença e negligência podem matar</span></strong> (padrão desligada) decide se a vida chega a zero, tanto por doença quanto por fome e sede; desligada, todo dreno para em 10%.</li>
 </ul>
 <h3 id="infecção-febre-crítico-e-morte">Infecção: febre, crítico e morte</h3>
 <ul>
-<li>A infecção piora sozinha. Depois de 12 horas infeccionado, com ou sem bandagem, vem a febre: selo <strong><span class="ig">Febre</span></strong>, o cão anda 20% mais devagar e a vida drena mais rápido (infeccionado, um quarto da barra por dia; com febre, a metade). O estado crítico depende só da vida: infeccionado e com a vida abaixo de 10%, o cão deita, não se levanta e recusa Seguir, Vir e Atacar. Se a vida chega a zero, morre. Com <strong><span class="ig">Infecção pode matar</span></strong> desligada nenhuma doença tira a vida de 10%.</li>
+<li>A infecção piora sozinha. Depois de 12 horas infeccionado, com ou sem bandagem, vem a febre: selo <strong><span class="ig">Febre</span></strong>, o cão anda 20% mais devagar e a vida drena mais rápido (infeccionado, um quarto da barra por dia; com febre, a metade). O estado crítico depende só da vida: infeccionado e com a vida abaixo de 10%, o cão deita, não se levanta e recusa Seguir, Vir e Atacar. Se a vida chega a zero, morre. Com <strong><span class="ig">Doença e negligência podem matar</span></strong> desligada, que é o padrão, nenhuma doença nem a fome e a sede tiram a vida de 10%.</li>
 <li>Bandagem não cura infecção nem segura a febre. Sozinha, a infecção passa em 2 dias contados do contágio. O <strong><span class="ig">Companion Dogs Antibiótico</span></strong> encurta para 12 horas e o antibiótico do jogo base para 24 (o aviso na tela diz qual foi); enquanto age, a febre não avança. Curada a infecção, a ferida continua aberta e fecha no ritmo normal.</li>
 <li>A <strong><span class="ig">Companion Dogs Vacina</span></strong> dá 90 dias em que a ferida não infecciona e comida ruim ou água contaminada não viram o estômago. Moodle <strong><span class="ig">Vacinado</span></strong>.</li>
 </ul>
@@ -1089,10 +1089,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </ul>
 <h3 id="estômago-virado-e-vermes">Estômago virado e vermes</h3>
 <ul>
-<li>Comida podre dada na mão sempre vira o estômago; comida passada, em 15% das vezes. Água contaminada do jogo (a que envenena você) tem 50% a cada gole, tanto na tigela quanto dada na mão, com uma rolagem a cada 12 horas por cão. Encha com água limpa e passa.</li>
+<li>Comida podre dada na mão sempre vira o estômago. Comida passada e água contaminada do jogo (a que envenena você) têm 25% cada, e a água vale tanto na tigela quanto dada na mão, com uma rolagem a cada 12 horas por cão. Encha com água limpa e passa.</li>
 <li>Dura de 1 a 2 dias e o relógio só anda com o cão bebendo (sede abaixo da metade). Enquanto isso fome e sede drenam o dobro, a vida não recupera, ele não cruza e recusa Caçar e Guardar. Selo <strong><span class="ig">Estômago virado</span></strong>.</li>
 <li>Um tufo de grama do jogo dado pelo menu <strong><span class="ig">Tratar ferimento</span></strong> corta 8 horas do estômago virado e também encurta a intoxicação por comida errada.</li>
-<li>Um em cada dez estômagos virados deixa vermes. A fome drena 40% mais rápido. Nunca passa sozinho: uma dose do <strong><span class="ig">Companion Dogs Vermífugo</span></strong> resolve.</li>
+<li>Vermes são a evolução do estômago virado, não um efeito dele. A cada 6 horas que o cão passa com o estômago virado há 10% de os vermes se instalarem, então curar cedo com grama corta a evolução. Com vermes a fome drena 40% mais rápido e nunca passa sozinho: uma dose do <strong><span class="ig">Companion Dogs Vermífugo</span></strong> resolve. O comprimido leva 4 horas para fazer efeito e segura os vermes por 1 dia, e nesse dia nenhum novo se instala, mesmo com o estômago ainda virado. Dá para dar antes de o cão ter vermes, como prevenção. Enquanto a dose age, o cão mostra o moodle <strong><span class="ig">Vermifugado</span></strong> com as horas que faltam.</li>
 </ul>
 <h3 id="remédios-onde-achar-e-como-dar">Remédios: onde achar e como dar</h3>
 <ul>
@@ -1234,10 +1234,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Fome e sede passam de 0,6. Aparece moodle <strong><span class="ig">Com fome</span></strong> / <strong><span class="ig">Com sede</span></strong> na sua tela.</li>
 <li>A lealdade passa a cair três vezes mais rápido.</li>
 <li>Passando da metade, a cura natural para.</li>
-<li>Passando de 0,8, a vida drena até zero em cerca de 8 horas de jogo.</li>
+<li>Passando de 0,8, a vida drena em cerca de 8 horas de jogo: até 10% por padrão, até zero com <strong><span class="ig">Doença e negligência podem matar</span></strong> ligada.</li>
 <li>A lealdade fura o piso e o cão fica <strong><span class="ig">Desobediente</span></strong>.</li>
 <li>O estresse sobe e ele entra em pânico: para de lutar, de vigiar e de fazer truque.</li>
-<li>A vida chega a zero e ele morre.</li>
+<li>Com a opção ligada, a vida chega a zero e ele morre.</li>
 </ol>
 <p>A morte é permanente. <em><span class="ig">Seu companheiro Caramelo morreu.</span></em> O alforje e tudo que estava dentro caem no chão. Se você tiver outro cão, ele vira o ativo automaticamente.</p>
 <h3 id="o-luto">O luto</h3>
