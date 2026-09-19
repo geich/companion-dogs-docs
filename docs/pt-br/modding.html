@@ -715,7 +715,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>voices</code></td>
 <td>sons de cão</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+<td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
@@ -810,13 +810,14 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <h3 id="a-voz">A voz</h3>
 <p>Sem <code>voices</code> toda raça usa os sons de cão, então um gato latiria. Registre os seus sons primeiro:</p>
 <pre><code>CD.registerVoices({
-    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
+    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <p>Depois aponte a raça para eles:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
-           wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
+           wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
 <p>Sem o <code>CD.registerVoices</code> os sons até tocam, mas ignoram o slider de categoria do jogador e o volume de efeitos do jogo, e nada no log aponta para isso. Chave que você deixar de fora de <code>voices</code> cai no som de cão.</p>
+<p><code>whine</code> é o que o bicho diz quando se machuca ou adoece. <code>eat</code> e <code>drink</code> são o foley de comer e beber. Os de cão são loops que o base para quando o bicho termina; se os seus também forem loop, coloque-os em <code>CD.SOUND_LOOPED</code> e o base os para também quando o ouvinte sai do alcance. Base anterior à API 11 ignora as três chaves e toca os sons de cão.</p>
 <p>O terceiro argumento é o alcance audível de cada som em tiles. Ele deve bater com o <code>distanceMax</code> que você escreveu no seu próprio script de som:</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
 <p>Num servidor o base manda o som só para os jogadores dentro desse alcance. Sem o alcance a voz cai num alcance genérico por categoria: um bufo que alcança dez tiles sai para todo mundo num raio de trinta. Passado o <code>distanceMax</code> o rolloff inverso do FMOD para de atenuar em vez de silenciar, então um <code>.ogg</code> solto segue tocando em <code>distanceMin / distanceMax</code> do volume a qualquer distância. Pelo mesmo motivo, mantenha o <code>distanceMin</code> baixo nas suas vozes altas.</p>
@@ -1197,7 +1198,7 @@ end</code></pre>
 <li>O <code>CD.defineDogParts</code> está sendo chamado. Abata um bicho seu e veja que não crasha.</li>
 <li>O seu <code>key</code>, o <code>typePrefix</code> e os sufixos de spawn são únicos, e você não vai precisar mudar eles.</li>
 <li>Raça pequena define <code>puppySize</code>, e você viu um filhote para provar.</li>
-<li>Se for outra espécie, o <code>CD.registerVoices</code> está sendo chamado e o <code>voices</code> está preenchido, senão ela late.</li>
+<li>Se for outra espécie, o <code>CD.registerVoices</code> está sendo chamado e o <code>voices</code> está preenchido, com <code>whine</code> dentro, senão ela late e geme como cão.</li>
 <li>O ícone do moodle existe nos seis tamanhos.</li>
 <li>Toda pasta de idioma que você entrega tem todas as chaves. Chave faltando mostra a chave crua na tela.</li>
 <li>Você testou em multiplayer, e não só em single player. Posição, propriedade e ModData se comportam de forma diferente lá.</li>

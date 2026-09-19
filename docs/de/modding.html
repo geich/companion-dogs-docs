@@ -715,7 +715,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>voices</code></td>
 <td>Hundegeräusche</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+<td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
@@ -810,13 +810,14 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <h3 id="die-stimme">Die Stimme</h3>
 <p>Ohne <code>voices</code> benutzt jede Rasse die Hundegeräusche, eine Katze würde also bellen. Registriere zuerst deine eigenen Geräusche:</p>
 <pre><code>CD.registerVoices({
-    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
+    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <p>Dann zeigst du die Rasse auf sie:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
-           wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
+           wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
 <p>Ohne <code>CD.registerVoices</code> spielen die Geräusche zwar, aber sie ignorieren den Kategorieregler des Spielers und die Effektlautstärke des Spiels, und nichts im Log weist darauf hin. Ein Schlüssel, den du in <code>voices</code> weglässt, fällt auf das Hundegeräusch zurück.</p>
+<p><code>whine</code> ist das, was das Tier sagt, wenn es sich verletzt oder krank wird. <code>eat</code> und <code>drink</code> sind die Fressgeräusche. Die des Hundes sind Schleifen, die die Basis stoppt, wenn das Tier fertig ist; wenn deine ebenfalls Schleifen sind, trage sie in <code>CD.SOUND_LOOPED</code> ein, dann stoppt die Basis sie auch, wenn der Zuhörer außer Reichweite geht. Eine Basis älter als API 11 ignoriert die drei Schlüssel und spielt die Hundegeräusche.</p>
 <p>Das dritte Argument ist die Hörweite jedes Geräuschs in Feldern. Sie sollte zu dem <code>distanceMax</code> passen, das du in deinem eigenen Sound-Skript geschrieben hast:</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
 <p>Auf einem Server schickt der Basis-Mod ein Geräusch nur an die Spieler innerhalb dieser Reichweite. Lässt du die Reichweite weg, bekommt die Stimme eine generische Reichweite nach Kategorie: ein Fauchen, das zehn Felder weit trägt, geht an alle im Umkreis von dreißig. Jenseits von <code>distanceMax</code> hört FMODs inverse Abschwächung auf zu dämpfen, statt still zu werden, also spielt eine lose <code>.ogg</code> in jeder Entfernung weiter mit <code>distanceMin / distanceMax</code> ihrer Lautstärke. Halte <code>distanceMin</code> bei deinen lauten Stimmen aus demselben Grund klein.</p>
@@ -1197,7 +1198,7 @@ end</code></pre>
 <li><code>CD.defineDogParts</code> wird aufgerufen. Zerleg eines deiner Tiere und sieh nach, dass nichts abstürzt.</li>
 <li>Dein <code>key</code>, dein <code>typePrefix</code> und deine Spawn-Suffixe sind eindeutig, und du wirst sie nicht ändern müssen.</li>
 <li>Eine kleine Rasse setzt <code>puppySize</code>, und du hast einen Welpen gesehen, der das belegt.</li>
-<li>Ist es eine andere Art, wird <code>CD.registerVoices</code> aufgerufen und <code>voices</code> ist ausgefüllt, sonst bellt sie.</li>
+<li>Ist es eine andere Art, wird <code>CD.registerVoices</code> aufgerufen und <code>voices</code> ist ausgefüllt, mit <code>whine</code> darin, sonst bellt und winselt sie wie ein Hund.</li>
 <li>Das Moodle-Symbol existiert in allen sechs Größen.</li>
 <li>Jeder Sprachordner, den du mitlieferst, hat jeden Schlüssel. Ein fehlender Schlüssel zeigt den rohen Schlüssel auf dem Bildschirm.</li>
 <li>Du hast im Multiplayer getestet, nicht nur im Einzelspieler. Position, Besitz und Mod-Daten verhalten sich dort anders.</li>

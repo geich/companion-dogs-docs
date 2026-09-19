@@ -715,7 +715,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>voices</code></td>
 <td>개 소리</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+<td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
@@ -810,13 +810,14 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <h3 id="목소리">목소리</h3>
 <p><code>voices</code>가 없으면 모든 품종이 개 소리를 쓰므로 고양이가 짖습니다. 먼저 여러분의 소리를 등록하세요.</p>
 <pre><code>CD.registerVoices({
-    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
+    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <p>그다음 품종이 그것을 가리키게 합니다.</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
-           wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
+           wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
 <p><code>CD.registerVoices</code> 없이도 소리는 나지만, 플레이어의 분류별 슬라이더와 게임의 효과음 음량을 무시하고, 로그에는 그것을 가리키는 것이 아무것도 없습니다. <code>voices</code>에서 빼먹은 키는 개 소리로 떨어집니다.</p>
+<p><code>whine</code>은 동물이 다치거나 병에 걸렸을 때 내는 소리입니다. <code>eat</code>와 <code>drink</code>는 먹고 마시는 효과음입니다. 개의 것은 루프라서 동물이 다 먹으면 베이스가 멈춥니다. 여러분의 것도 루프라면 <code>CD.SOUND_LOOPED</code>에 넣으세요. 그러면 듣는 사람이 범위 밖으로 나갈 때도 베이스가 멈춥니다. API 11보다 오래된 베이스는 이 세 키를 무시하고 개 소리를 냅니다.</p>
 <p>세 번째 인자는 각 소리가 들리는 거리로, 타일 단위입니다. 여러분의 사운드 스크립트에 쓴 <code>distanceMax</code>와 같아야 합니다.</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
 <p>서버에서 베이스는 그 거리 안의 플레이어에게만 소리를 보냅니다. 거리를 빼면 목소리는 분류별 일반 거리를 받습니다. 열 타일 나가는 하악질이 서른 타일 안 모두에게 나가는 식입니다. <code>distanceMax</code>를 넘어가면 FMOD의 역제곱 감쇠가 무음으로 가지 않고 감쇠를 멈추므로, 그냥 놓아둔 <code>.ogg</code>는 아무리 멀어도 제 음량의 <code>distanceMin / distanceMax</code>로 계속 납니다. 같은 이유로 큰 목소리에는 <code>distanceMin</code>을 작게 두세요.</p>
@@ -1197,7 +1198,7 @@ end</code></pre>
 <li><code>CD.defineDogParts</code>를 부른다. 동물 하나를 해체해 죽지 않는지 본다.</li>
 <li><code>key</code>와 <code>typePrefix</code>와 스폰 접미사가 유일하고, 앞으로 바꿀 일이 없다.</li>
 <li>작은 품종이면 <code>puppySize</code>를 넣었고, 강아지를 직접 보고 확인했다.</li>
-<li>다른 종이면 <code>CD.registerVoices</code>를 부르고 <code>voices</code>를 채웠다. 안 그러면 짖는다.</li>
+<li>다른 종이면 <code>CD.registerVoices</code>를 부르고 <code>whine</code>까지 넣어 <code>voices</code>를 채웠다. 안 그러면 개처럼 짖고 낑낑댄다.</li>
 <li>무들 아이콘이 여섯 크기 전부 있다.</li>
 <li>함께 싣는 언어 폴더마다 모든 키가 있다. 빠진 키는 화면에 키 문자열 그대로 나온다.</li>
 <li>싱글플레이만이 아니라 멀티플레이에서도 시험했다. 위치와 소유권과 모드 데이터는 거기서 다르게 굴러간다.</li>

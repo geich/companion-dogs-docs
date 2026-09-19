@@ -715,7 +715,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>voices</code></td>
 <td>犬の音</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>。</td>
+<td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>。</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
@@ -810,13 +810,14 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <h3 id="鳴き声">鳴き声</h3>
 <p><code>voices</code> がないと、どの犬種も犬の音を使うので、猫が吠えます。まず自分の音を登録します:</p>
 <pre><code>CD.registerVoices({
-    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
+    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <p>そのうえで犬種をそこへ向けます:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
-           wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
+           wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
 <p><code>CD.registerVoices</code> がなくても音は鳴りますが、プレイヤーのカテゴリ別スライダーもゲームの効果音量も 無視され、それを指すものはログのどこにも出ません。<code>voices</code> から抜いたキーは犬の音に落ちます。</p>
+<p><code>whine</code> は動物がけがをしたり病気になったりしたときの鳴き声です。<code>eat</code> と <code>drink</code> は食べる・飲むの効果音です。 犬のものはループで、動物が食べ終わるとベースが止めます。自分のものもループなら <code>CD.SOUND_LOOPED</code> に 入れてください。聞き手が範囲外へ出たときもベースが止めます。API 11 より古いベースはこの三つのキーを 無視して犬の音を鳴らします。</p>
 <p>第三引数は各サウンドの可聴距離、単位はタイルです。自分のサウンドスクリプトに書いた <code>distanceMax</code> と そろえてください:</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
 <p>サーバーでは、ベースはその範囲の中にいるプレイヤーにしか音を送りません。範囲を省くと、鳴き声は カテゴリごとの汎用の範囲をもらいます。10 タイル届くはずのシャーが 30 タイル以内の全員に飛びます。 <code>distanceMax</code> を超えると FMOD の逆二乗の減衰は無音へ向かわずに止まるので、素の <code>.ogg</code> はどんな距離 でも <code>distanceMin / distanceMax</code> の音量で鳴り続けます。同じ理由で、大きな鳴き声ほど <code>distanceMin</code> は小さく保ってください。</p>
@@ -1197,7 +1198,7 @@ end</code></pre>
 <li><code>CD.defineDogParts</code> を呼んでいる。自分の動物を一頭解体して、落ちないことを見た。</li>
 <li><code>key</code>、<code>typePrefix</code>、スポーンの接尾辞が一意で、今後も変える必要がない。</li>
 <li>小型犬種は <code>puppySize</code> を設定し、実際に子を見て確かめた。</li>
-<li>別の種族なら、<code>CD.registerVoices</code> を呼び <code>voices</code> を埋めた。そうでないと吠えます。</li>
+<li>別の種族なら、<code>CD.registerVoices</code> を呼び、<code>whine</code> も含めて <code>voices</code> を埋めた。 そうでないと犬のように吠えたりクンクン鳴いたりします。</li>
 <li>moodle のアイコンが 6 サイズすべてある。</li>
 <li>同梱するどの言語フォルダにも全部のキーがある。キーが欠けると画面にキーがそのまま出ます。</li>
 <li>シングルプレイだけでなくマルチプレイでも試した。位置、所有権、Mod データは、どれもあちらでは挙動が 違います。</li>

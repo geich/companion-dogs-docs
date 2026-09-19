@@ -720,7 +720,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>voices</code></td>
 <td>dog sounds</td>
-<td><code>{ bark, growl, idle, wildbark, pet }</code>.</td>
+<td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
@@ -815,13 +815,14 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <h3 id="the-voice">The voice</h3>
 <p>Without <code>voices</code> every breed uses the dog sounds, so a cat would bark. Register your own sounds first:</p>
 <pre><code>CD.registerVoices({
-    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatPurr = "bark",
+    CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
 <p>Then point the breed at them:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
-           wildbark = "CDCatMeowAmbient", pet = "CDCatPet" },</code></pre>
+           wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
 <p>Without <code>CD.registerVoices</code> the sounds still play, but they ignore the player's category slider and the game's effect volume, and nothing in the log points at it. A key you leave out of <code>voices</code> falls back to the dog sound.</p>
+<p><code>whine</code> is what the animal says when it gets hurt or falls ill. <code>eat</code> and <code>drink</code> are the feeding foley. The dog ones are loops the base stops when the animal is done, so if yours loop as well, add them to <code>CD.SOUND_LOOPED</code> and the base also stops them when the listener walks out of range. A base older than API 11 ignores the three keys and plays the dog sounds.</p>
 <p>The third argument is the audible range of each sound in tiles. It should match the <code>distanceMax</code> you wrote in your own sound script:</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
 <p>On a server the base sends a sound only to the players inside that range. Leave the range out and the voice gets a generic range by category: a hiss that carries ten tiles goes out to everyone within thirty. Past <code>distanceMax</code> FMOD's inverse rolloff stops attenuating instead of going silent, so a loose <code>.ogg</code> keeps playing at <code>distanceMin / distanceMax</code> of its volume at any distance. Keep <code>distanceMin</code> small on your loud voices for the same reason.</p>
@@ -1202,7 +1203,7 @@ end</code></pre>
 <li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
 <li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you will not need to change them.</li>
 <li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
-<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, or it barks.</li>
+<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, <code>whine</code> included, or it barks and whines like a dog.</li>
 <li>The moodle icon exists in all six sizes.</li>
 <li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
 <li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
