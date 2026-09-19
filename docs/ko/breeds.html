@@ -18,12 +18,6 @@
 <link rel="alternate" hreflang="it" href="../it/breeds.html">
 <link rel="alternate" hreflang="ja" href="../ja/breeds.html">
 <link rel="alternate" hreflang="ko" href="../ko/breeds.html">
-<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
-<link rel="alternate" hreflang="th" href="../th/breeds.html">
-<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
-<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
-<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
-<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
 <link rel="alternate" hreflang="x-default" href="../en/breeds.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -241,6 +235,16 @@ figure.shot{margin:0 0 18px; display:flex;}
 figure.shot img{width:74px; height:74px; image-rendering:pixelated;
   background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
+/* icone do jogo no meio da linha, em tabela ou em lista. flex:none nao e enfeite: dentro de um
+   <li>, que e flex, sem ele o icone encolhe e some. A familia de moodle ja tem disco proprio; a de
+   item e transparente e leva a mesma tarja da figura, senao desaparece no tema escuro. */
+.ico{display:inline-block; width:34px; height:34px; flex:none; vertical-align:-11px;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  image-rendering:pixelated;}
+.ico.item{background-color:#cfcbc2; border:1px solid var(--line); border-radius:5px;
+  background-size:26px;}
+td .ico, th .ico{vertical-align:middle;}
+
 /* strings literais da interface do jogo */
 .ig{
   font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
@@ -360,6 +364,7 @@ td code{background:transparent; border:0; padding:0;}
   .mtwarn{padding:10px 12px; font-size:12.6px;}
 }
 
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </style>
@@ -396,7 +401,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>기능 가이드로 이동</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>모딩 가이드로 이동</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="가이드 검색..." aria-label="가이드 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="언어"><optgroup label="검수 완료"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="자동 번역"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko" selected>한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="언어"><optgroup label="검수 완료"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="자동 번역"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko" selected>한국어</option></optgroup></select></div>
   <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="디스코드 참여" aria-label="디스코드 참여"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>디스코드 참여</span></a>
   <button class="iconbtn" id="theme" type="button" aria-label="테마 전환">&#9789;</button>
 </header>
@@ -491,7 +496,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <main><article class="doc"><h1 id="companion-dogs-견종-안내서">Companion Dogs: 견종 안내서</h1>
 <p>모든 견종을 다루는 안내서입니다. 각 견종이 가장 잘하는 일, 무들, 특성, 그리고 내 플레이에 맞는 견종을 고르는 방법입니다.</p>
 <p>모드가 어떻게 돌아가는지(길들이기, 명령, 먹이, 안장 가방, 재주, 사냥)는 다른 안내서를 보세요: <a href="features.html" class="xlink">기능</a>.</p>
-<blockquote class="quote">이 안내서의 숫자는 기본 옵션을 기준으로 합니다. 서버가 <strong><span class="ig">스킬 및 훈련 시스템</span></strong>을 끄면 견종은 더 이상 성장하지 않습니다. 스킬은 0에 묶이고, 레벨당 피해량 곡선은 견종 구분 없는 공용 곡선이 되며, 재주 네 가지가 한꺼번에 풀립니다(모드가 모든 개를 복종 10으로 취급합니다). 견종이 타고난 것은 그대로 남습니다. 기본 무는 힘, 넘어뜨리기, 싸움에서의 담력, 전용 무들, 안장 가방, 한배 새끼 수가 그렇습니다. 재주를 숨기는 것은 따로 있는 <strong><span class="ig">복종 재주</span></strong> 옵션입니다.</blockquote>
+<blockquote class="quote">이 안내서의 숫자는 기본 옵션을 기준으로 합니다. 견종이 타고난 것은 어떤 설정에서도 그대로 유효합니다. 기본 무는 힘, 넘어뜨리기, 싸움에서의 담력, 전용 무들, 안장 가방, 한배 새끼 수가 그렇습니다. 재주를 숨기는 것은 <strong><span class="ig">복종 재주</span></strong> 옵션입니다.</blockquote>
 <h2 id="1-견종이-실제로-바꾸는-것">1. 견종이 실제로 바꾸는 것</h2>
 <p>견종이 건드리는 것은 일곱 가지입니다:</p>
 <div class="tw"><table><thead><tr>
@@ -1666,7 +1671,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">푹 쉼</span></strong>은 개가 계속 옆에 있어야 하지 않는 유일한 무들입니다. 관리 필터도 무시해서 홀대받은 개로도 작동합니다. 배고픔, 목마름, 중독 세 알림도 똑같이 필터를 무시합니다.</p>
 <h2 id="8-특성-유전자">8. 특성 (유전자)</h2>
 <p>견종과 별개로 개마다 특성 세 가지가 있고, 개 창의 <strong><span class="ig">특성 (유전자)</span></strong> 항목에 나옵니다. 개를 길들일 때 견종 범위 안에서 뽑히고 그 뒤로는 바뀌지 않습니다.</p>
-<blockquote class="quote quote-game"><em><span class="ig">타고난 유전자로 평생 고정됩니다. 개를 만나기 전에 이미 정해져 있으며 개체마다 다릅니다. 스킬과 달리 훈련으로 변하지 않으며, 이 개가 타고난 순수한 본성입니다.</span></em></blockquote>
+<blockquote class="quote quote-game"><em><span class="ig">유전자는 같은 품종이라도 개체마다 다릅니다. 절대 오르지 않습니다.</span></em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>특성</th>
 <th>무엇을 하나</th>

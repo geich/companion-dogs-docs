@@ -18,12 +18,6 @@
 <link rel="alternate" hreflang="it" href="../it/modding.html">
 <link rel="alternate" hreflang="ja" href="../ja/modding.html">
 <link rel="alternate" hreflang="ko" href="../ko/modding.html">
-<link rel="alternate" hreflang="ru" href="../ru/modding.html">
-<link rel="alternate" hreflang="th" href="../th/modding.html">
-<link rel="alternate" hreflang="uk" href="../uk/modding.html">
-<link rel="alternate" hreflang="vi" href="../vi/modding.html">
-<link rel="alternate" hreflang="zh-hans" href="../zh-hans/modding.html">
-<link rel="alternate" hreflang="zh-hant" href="../zh-hant/modding.html">
 <link rel="alternate" hreflang="x-default" href="../en/modding.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -241,6 +235,16 @@ figure.shot{margin:0 0 18px; display:flex;}
 figure.shot img{width:74px; height:74px; image-rendering:pixelated;
   background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
+/* icone do jogo no meio da linha, em tabela ou em lista. flex:none nao e enfeite: dentro de um
+   <li>, que e flex, sem ele o icone encolhe e some. A familia de moodle ja tem disco proprio; a de
+   item e transparente e leva a mesma tarja da figura, senao desaparece no tema escuro. */
+.ico{display:inline-block; width:34px; height:34px; flex:none; vertical-align:-11px;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  image-rendering:pixelated;}
+.ico.item{background-color:#cfcbc2; border:1px solid var(--line); border-radius:5px;
+  background-size:26px;}
+td .ico, th .ico{vertical-align:middle;}
+
 /* strings literais da interface do jogo */
 .ig{
   font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
@@ -360,6 +364,7 @@ td code{background:transparent; border:0; padding:0;}
   .mtwarn{padding:10px 12px; font-size:12.6px;}
 }
 
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </style>
@@ -396,7 +401,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Zum Funktionen-Handbuch</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Zum Rassen-Handbuch</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="im Handbuch suchen..." aria-label="Im Handbuch suchen" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Sprache"><optgroup label="Geprüft"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de" selected>Deutsch</option></optgroup><optgroup label="Maschinell übersetzt"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Sprache"><optgroup label="Geprüft"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de" selected>Deutsch</option></optgroup><optgroup label="Maschinell übersetzt"><option value="es">Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option></optgroup></select></div>
   <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Discord beitreten" aria-label="Discord beitreten"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Discord beitreten</span></a>
   <button class="iconbtn" id="theme" type="button" aria-label="Design wechseln">&#9789;</button>
 </header>
@@ -426,6 +431,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#ruheposen" data-id="ruheposen">Ruheposen</a>
 <a class="s3" href="#die-stimme" data-id="die-stimme">Die Stimme</a>
 <a class="s3" href="#die-ernährung" data-id="die-ernährung">Die Ernährung</a>
+<a class="s3" href="#geschlecht-bei-der-geburt" data-id="geschlecht-bei-der-geburt">Geschlecht bei der Geburt</a>
 </div>
 </div>
 <div class="grp">
@@ -717,6 +723,16 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>was das Tier nicht fressen darf, was für es als Fleisch zählt und was es von sich aus aus einem Trog frisst.</td>
 </tr>
 <tr>
+<td><code>maleChance</code></td>
+<td>0.5</td>
+<td>Anteil der Rasse, der männlich geboren wird, von 0 bis 1.</td>
+</tr>
+<tr>
+<td><code>sterileMale</code></td>
+<td>false</td>
+<td>true hält die Männchen der Rasse aus der Zucht heraus.</td>
+</tr>
+<tr>
 <td><code>species</code></td>
 <td><code>"dog"</code></td>
 <td>Zucht ist pro Art geschlossen. Abschnitt 6.</td>
@@ -851,6 +867,13 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tbody></table></div>
 <p><code>replace = true</code> startet von einer leeren Liste statt von der des Hundes. Nimm das, wenn dein Tier fast nichts mit einem Hund gemeinsam hat; eine Katze schreibt sich meist leichter als eine Handvoll Hinzufügungen und Streichungen.</p>
 <p>Die drei Listen hängen am Tier, ein Hund und eine Katze am selben Trog fressen also Verschiedenes daraus. Der Napf des Mods ist die Ausnahme: er speichert Futterpunkte, nicht das Item, das ihn gefüllt hat, also läuft das Füllen für alle über die Basisliste. Etwas Giftiges kommt ohnehin nicht in einen Napf.</p>
+<h3 id="geschlecht-bei-der-geburt">Geschlecht bei der Geburt</h3>
+<p>Jedes Tier wird beim Auftauchen als männlich oder weiblich gezogen, halbe halbe. <code>maleChance</code> ist der Anteil, der männlich geboren wird, von 0 bis 1, und <code>sterileMale</code> hält die Männchen der Rasse aus der Zucht heraus.</p>
+<pre><code>maleChance = 0.00033,
+sterileMale = true,</code></pre>
+<p>Dieses Paar ist die Glückskatze. Das Mosaik aus Orange und Schwarz sitzt auf dem X-Chromosom, also ist eine Glückskatze fast immer weiblich, und das Männchen, das doch auftaucht, ist XXY, etwa eines von dreitausend, und zeugt keinen Wurf. Ein Männchen einer <code>sterileMale</code>-Rasse wird nie als Partner gewählt, und die Option zum Decken verschwindet aus seinem Kontextmenü. Die Weibchen decken normal.</p>
+<p>Ein Männchen einer solchen Rasse trägt überall dort, wo das Spiel sein Geschlecht zeigt, die Marke "Unfruchtbar": in der Tierkarte, im Kontextmenü, im Streunerscan und im Zwinger, damit der Spieler weiß, warum es sich nicht fortpflanzt.</p>
+<p>Beide Felder werden aus der Rassendefinition gelesen, es wird also nichts am Tier gespeichert und ein bestehender Spielstand braucht keine Migration. Dieselbe Ziehung entscheidet das Geschlecht eines Welpen bei der Geburt, eine Rasse, die in der Welt weiblich ist, bleibt also auch in den Würfen weiblich.</p>
 <h2 id="6-ein-ganzes-system-abschalten">6. Ein ganzes System abschalten</h2>
 <p>Die fünf Fertigkeiten sind die fünf Systeme:</p>
 <div class="tw"><table><thead><tr>

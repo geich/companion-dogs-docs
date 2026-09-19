@@ -18,12 +18,6 @@
 <link rel="alternate" hreflang="it" href="../it/breeds.html">
 <link rel="alternate" hreflang="ja" href="../ja/breeds.html">
 <link rel="alternate" hreflang="ko" href="../ko/breeds.html">
-<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
-<link rel="alternate" hreflang="th" href="../th/breeds.html">
-<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
-<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
-<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
-<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
 <link rel="alternate" hreflang="x-default" href="../en/breeds.html">
 <link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -241,6 +235,16 @@ figure.shot{margin:0 0 18px; display:flex;}
 figure.shot img{width:74px; height:74px; image-rendering:pixelated;
   background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
 
+/* icone do jogo no meio da linha, em tabela ou em lista. flex:none nao e enfeite: dentro de um
+   <li>, que e flex, sem ele o icone encolhe e some. A familia de moodle ja tem disco proprio; a de
+   item e transparente e leva a mesma tarja da figura, senao desaparece no tema escuro. */
+.ico{display:inline-block; width:34px; height:34px; flex:none; vertical-align:-11px;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  image-rendering:pixelated;}
+.ico.item{background-color:#cfcbc2; border:1px solid var(--line); border-radius:5px;
+  background-size:26px;}
+td .ico, th .ico{vertical-align:middle;}
+
 /* strings literais da interface do jogo */
 .ig{
   font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
@@ -360,6 +364,7 @@ td code{background:transparent; border:0; padding:0;}
   .mtwarn{padding:10px 12px; font-size:12.6px;}
 }
 
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </style>
@@ -396,7 +401,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <div class="grow"></div>
   <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Ir al manual de Funciones</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Ir al manual de Modding</span></a>
   <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="buscar en el manual..." aria-label="Buscar en el manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Idioma"><optgroup label="Revisado"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Traducción automática"><option value="es" selected>Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Idioma"><optgroup label="Revisado"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Traducción automática"><option value="es" selected>Español</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option></optgroup></select></div>
   <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Entrar al Discord" aria-label="Entrar al Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Entrar al Discord</span></a>
   <button class="iconbtn" id="theme" type="button" aria-label="Cambiar tema">&#9789;</button>
 </header>
@@ -491,7 +496,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <main><article class="doc"><h1 id="companion-dogs-manual-de-razas">Companion Dogs: Manual de Razas</h1>
 <p>Guía de todas las razas: en qué destaca cada una, los moodles, los rasgos y cómo elegir la adecuada para tu partida.</p>
 <p>Para saber cómo funciona el mod (domesticar, órdenes, comida, alforjas, trucos, caza), mira el otro manual: <a href="features.html" class="xlink">Funciones</a>.</p>
-<blockquote class="quote">Los números de este manual dan por hechas las opciones por defecto. Si el servidor apaga <strong><span class="ig">Habilidades y entrenamiento</span></strong>, las razas dejan de evolucionar: las habilidades quedan clavadas en cero, la curva de daño por nivel se vuelve genérica y los cuatro trucos se desbloquean de golpe (el mod trata a todo perro como Obediencia 10). Lo que la raza trae de nacimiento sigue valiendo: fuerza base del mordisco, derribo, temple en la pelea, moodle exclusivo, alforjas y camada. Quien esconde los trucos es la opción aparte <strong><span class="ig">Trucos de obediencia</span></strong>.</blockquote>
+<blockquote class="quote">Los números de este manual dan por hechas las opciones por defecto. Lo que la raza trae de nacimiento vale en cualquier configuración: fuerza base del mordisco, derribo, temple en la pelea, moodle exclusivo, alforjas y camada. Quien esconde los trucos es la opción <strong><span class="ig">Trucos de obediencia</span></strong>.</blockquote>
 <h2 id="1-lo-que-una-raza-cambia-de-verdad">1. Lo que una raza cambia de verdad</h2>
 <p>Una raza toca siete cosas:</p>
 <div class="tw"><table><thead><tr>
@@ -1666,7 +1671,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong><span class="ig">Bien descansado</span></strong> es el único que no depende de que el perro siga cerca. También se salta el filtro de cuidado, así que funciona incluso con un perro maltratado. Los tres avisos de hambre, sed e intoxicación se saltan el filtro igual.</p>
 <h2 id="8-rasgos-los-genes">8. Rasgos (los genes)</h2>
 <p>Además de la raza, cada perro tiene tres rasgos, que salen en su ventana en la sección <strong><span class="ig">Rasgos</span></strong>. Se sortean cuando domesticas al perro, dentro del rango de la raza, y no cambian después.</p>
-<blockquote class="quote quote-game"><em>"Genes innatos, fijos de por vida: ya están decididos antes de que encuentres al perro y varían de uno a otro. A diferencia de las habilidades, nunca cambian con el entrenamiento; son la naturaleza en bruto con la que nació este perro."</em></blockquote>
+<blockquote class="quote quote-game"><em><span class="ig">Los genes varían de un animal a otro, incluso dentro de la misma raza. Nunca suben.</span></em></blockquote>
 <div class="tw"><table><thead><tr>
 <th>Rasgo</th>
 <th>Qué hace</th>
