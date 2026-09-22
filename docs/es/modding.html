@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true hace que un animal herido cojee al andar. Ponlo solo si tu modelo tiene los dos clips opcionales <code>Rac_WalkLimpFront</code> y <code>Rac_WalkLimpBack</code> (ciclos de andar de 1.0 s con el mismo root motion que <code>Rac_Walk</code>). Sin los clips el animal anda congelado en el sitio.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>apagado</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, cinco nombres de textura del cuerpo. En la pata herida, el animal lleva la variante con corte mientras la herida sangra y la vendada mientras tiene el vendaje puesto. Genera las cuatro variantes con <code>_dogrig/forge/_paw_band.py</code>. Sin esto el animal se hiere igual, solo que no muestra ninguna marca.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>sonidos de perro</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

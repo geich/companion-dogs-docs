@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true lässt ein verwundetes Tier beim Laufen humpeln. Setz das nur, wenn dein Modell die beiden optionalen Clips <code>Rac_WalkLimpFront</code> und <code>Rac_WalkLimpBack</code> hat (Laufzyklen von 1,0 s mit derselben Root Motion wie <code>Rac_Walk</code>). Ohne die Clips läuft das Tier auf der Stelle fest.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>aus</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, fünf Namen von Körpertexturen. An der verletzten Pfote trägt das Tier die Variante mit Schnitt, solange die Wunde blutet, und die mit Verband, solange es verbunden ist. Die vier Varianten baust du mit <code>_dogrig/forge/_paw_band.py</code>. Ohne das Feld wird das Tier trotzdem verwundet, es zeigt nur keine Markierung.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>Hundegeräusche</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

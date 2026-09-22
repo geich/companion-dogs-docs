@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true змушує поранену тварину кульгати під час ходьби. Ставте лише тоді, коли у вашої моделі є два необов'язкові кліпи <code>Rac_WalkLimpFront</code> і <code>Rac_WalkLimpBack</code> (цикли ходьби на 1.0 с з тим самим рухом кореня, що й <code>Rac_Walk</code>). Без них тварина йде застиглою на місці.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>вимкнено</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, п'ять назв текстур тіла. На пораненій лапі тварина носить варіант із порізом, поки рана кровоточить, і варіант із перев'язкою, поки її накладено. Чотири варіанти зберіть скриптом <code>_dogrig/forge/_paw_band.py</code>. Без цього поля тварина все одно отримує рани, просто без видимої позначки.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>звуки собаки</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

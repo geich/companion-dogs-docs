@@ -677,7 +677,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>คูณอัตราที่ความภักดีลดลงต่อวัน <code>0</code> แปลว่าความผูกพันไม่จางเลย</td>
+<td>คูณอัตราที่ความซื่อสัตย์ลดลงต่อวัน <code>0</code> แปลว่าความผูกพันไม่จางเลย</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
@@ -718,6 +718,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true ทำให้สัตว์ที่บาดเจ็บเดินกะเผลก ตั้งค่านี้เฉพาะเมื่อโมเดลของคุณมีคลิปทางเลือกสองคลิปคือ <code>Rac_WalkLimpFront</code> และ <code>Rac_WalkLimpBack</code> (วงจรเดิน 1.0 วินาที ที่มี root motion เท่ากับ <code>Rac_Walk</code>) ถ้าไม่มีคลิป สัตว์จะเดินค้างอยู่กับที่</td>
+</tr>
+<tr>
+<td><code>bandSkin</code></td>
+<td>ปิด</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code> ชื่อเท็กซ์เจอร์ลำตัวห้าชื่อ ที่ขาข้างที่บาดเจ็บ สัตว์จะใส่แบบมีรอยแผลขณะที่แผลยังมีเลือดออก และแบบพันผ้าขณะที่พันแผลไว้ สร้างทั้งสี่แบบด้วย <code>_dogrig/forge/_paw_band.py</code> ถ้าไม่ตั้งค่านี้ สัตว์ก็ยังบาดเจ็บได้ตามปกติ แค่ไม่มีรอยให้เห็น</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
@@ -846,7 +851,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr></thead><tbody>
 <tr>
 <td><code>bad</code></td>
-<td><code>FoodType</code> ของอาหารที่ทำให้สัตว์ป่วย ทำให้เสียความภักดี และได้รายการสีแดงในเมนูให้อาหาร</td>
+<td><code>FoodType</code> ของอาหารที่ทำให้สัตว์ป่วย ทำให้เสียความซื่อสัตย์ และได้รายการสีแดงในเมนูให้อาหาร</td>
 </tr>
 <tr>
 <td><code>badParts</code></td>

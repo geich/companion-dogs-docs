@@ -1203,14 +1203,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><strong>Dirofilariose</strong></td>
 <td>1,5% toutes les 6 h d'affilée en plein air</td>
 <td>Perd de la santé, refuse de se battre et de travailler</td>
-<td>Seulement avec son médicament, en 18 h</td>
+<td>3 à 6 jours, ou 18 h avec son médicament</td>
 </tr>
 <tr>
 <td><i class="ico ico-allergy" title="Allergie" role="img" aria-label="Allergie"></i></td>
 <td><strong>Allergie cutanée</strong></td>
 <td>La viande que ce chien ne supporte pas, ou les bestioles de peau</td>
 <td>Marche lentement et stresse</td>
-<td>1 jour toute seule, 6 h avec l'antiallergique</td>
+<td>12 à 24 h toute seule, 6 h avec l'antiallergique</td>
 </tr>
 <tr>
 <td><i class="ico ico-fleas" title="Puces" role="img" aria-label="Puces"></i></td>
@@ -1283,10 +1283,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Le chien se soigne tout seul : une barre de santé pleine en 8 heures de jeu environ. La guérison s'arrête au-delà de la moitié de la barre de faim ou de celle de soif.</p>
 <h3 id="plaie-et-pansement">Plaie et pansement</h3>
 <ul>
-<li>Chaque morsure que le chien porte sur un zombie a 0,2% de chance de lui laisser une plaie ouverte. La chance monte avec un chien déjà blessé ou stressé, et il n'arrive jamais plus d'une plaie toutes les 2 heures de jeu.</li>
-<li>Le chien boite en marchant (Caramelo, Berger Allemand, Golden et Husky ; les autres races marchent encore normalement) et ralentit un peu dans toutes les races : il marche 10% moins vite et court 25% moins vite. Le marqueur <strong><span class="ig">Saigne</span></strong> apparaît sur le nom, dans la fenêtre et sur le moodle, et devient <strong><span class="ig">Blessé</span></strong> dès que le pansement est posé. L'onglet <strong><span class="ig">Santé</span></strong> de la fenêtre du chien montre sa silhouette avec la patte blessée peinte, la liste des parties du corps et les états actifs, et le clic droit dessus ouvre le menu de soin ; la section Santé de l'onglet Statut dit l'état, le pansement et quoi faire ; avec Élevage 5 ou plus, les deux montrent aussi la progression de la guérison.</li>
+<li>Chaque morsure que le chien porte sur un zombie a 0,2% de chance de lui laisser une plaie ouverte. Chaque niveau de Combat retire 0,01 point à cette chance : au niveau 10, elle est divisée par deux, à 0,1%. La chance monte avec un chien déjà blessé ou stressé, et il n'arrive jamais plus d'une plaie toutes les 2 heures de jeu.</li>
+<li>Le chien boite en marchant, dans toutes les races, et ralentit un peu : il marche 10% moins vite et court 25% moins vite. Le marqueur <strong><span class="ig">Saigne</span></strong> apparaît sur le nom, dans la fenêtre et sur le moodle, et devient <strong><span class="ig">Blessé</span></strong> dès que le pansement est posé. L'onglet <strong><span class="ig">Santé</span></strong> de la fenêtre du chien montre sa silhouette avec la patte blessée peinte, la liste des parties du corps et les états actifs, et le clic droit dessus ouvre le menu de soin ; la section Santé de l'onglet Statut dit l'état, le pansement et quoi faire ; avec Élevage 5 ou plus, les deux montrent aussi la progression de la guérison.</li>
 <li>Blessé, il refuse Chasse et Garde jusqu'à guérison. Suivre, Rester et Attaquer continuent.</li>
-<li>Si le chien continue de se battre avec la plaie ouverte, chaque morsure peut lui casser la patte, avec le double de la chance de la plaie. Message <em><span class="ig">s'est cassé une patte !</span></em>, marqueur et moodle <strong><span class="ig">Patte cassée</span></strong>, et le chien marche à la moitié du pas et ne court plus, dans aucune situation. La guérison passe alors à 3 jours, même avec un pansement.</li>
+<li>Si le chien continue de se battre avec la plaie ouverte, chaque morsure peut lui casser la patte, avec la même chance que la plaie. Message <em><span class="ig">s'est cassé une patte !</span></em>, marqueur et moodle <strong><span class="ig">Patte cassée</span></strong>, et le chien marche à la moitié du pas et ne court plus, dans aucune situation. La guérison passe alors à 3 jours, même avec un pansement.</li>
 <li>Qui saigne sans pansement perd de la santé (90% de la barre par jour, une barre pleine en un peu plus d'un jour) et n'en récupère pas tant que vous ne bandez pas. Arrivé à zéro, le chien meurt. Ça vaut à n'importe quel stade : une plaie infectée sans bandage saigne et s'infecte en même temps.</li>
 <li>Sans pansement, le saignement s'arrête tout seul en 12 heures et la fiche se met à dire <strong><span class="ig">Plaie ouverte</span></strong> ; la plaie reste ouverte et peut s'infecter. Le pansement arrête le saignement sur le coup.</li>
 <li>Une plaie sans pansement a 20% de s'infecter par heure de jeu ; avec un bandage sale, 5% par heure ; avec un pansement propre ou stérilisé, zéro. Une plaie infectée s'affiche comme <strong><span class="ig">Infecté</span></strong> et bloque la guérison de la santé et la reproduction tant qu'elle dure.</li>
@@ -1322,8 +1322,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="la-dirofilariose">La dirofilariose</h3>
 <ul>
 <li>Le moustique ne pique qu'en plein air : toutes les 6 heures d'affilée hors d'un toit, le chien tire 1,5% de l'attraper, et rentrer à l'intérieur remet le compte à zéro. C'est la maladie la plus sérieuse du mod.</li>
-<li>Elle dure de 3 à 6 jours, vide un quart de la barre de santé par jour, donne de la fièvre, fait tomber le pas à 65% et la course à 45%, et le chien refuse d'attaquer, de faire un tour, de chasser et de garder. Il lâche la chasse et la garde à l'instant où il tombe malade. Moodle <strong><span class="ig">Dirofilariose</span></strong>.</li>
-<li>Seul le <strong><span class="ig">Companion Dogs Antiparasitaire Cardiaque</span></strong> en vient à bout, en 18 heures. La même dose protège 30 jours et peut se donner à un chien sain, comme ça se fait dans la vraie vie.</li>
+<li>Elle dure de 3 à 6 jours et passe toute seule. En attendant, elle vide un quart de la barre de santé par jour, donne de la fièvre, fait tomber le pas à 65% et la course à 45%, et le chien refuse d'attaquer, de faire un tour, de chasser et de garder. Il lâche la chasse et la garde à l'instant où il tombe malade. Moodle <strong><span class="ig">Dirofilariose</span></strong>.</li>
+<li>Le <strong><span class="ig">Companion Dogs Antiparasitaire Cardiaque</span></strong> l'écourte à 18 heures. La même dose protège 30 jours et peut se donner à un chien sain, comme ça se fait dans la vraie vie.</li>
 </ul>
 <h3 id="allergie-puces-et-tiques">Allergie, puces et tiques</h3>
 <ul>
@@ -1960,7 +1960,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Loyauté</strong>, avec une barre.</li>
 <li><strong>Besoins :</strong> Faim, Soif, Santé, Stress.</li>
 <li><strong>Compétences :</strong> Flair, Combat, Obéissance, Chasse, Troupeau, chacune avec une barre de progression et <strong><span class="ig">Niv X</span></strong>.</li>
-<li><strong>Caractéristiques :</strong> Force, Agressivité, Résistance, affichées en Bas / Moyen / Haut.</li>
+<li><strong>Traits :</strong> Force, Agressivité, Résistance, affichées en Bas / Moyen / Haut.</li>
 <li><strong>Espèce :</strong> Chien ou Chat. Le petit du chat s'affiche en <strong>Chaton</strong>.</li>
 <li><strong>Race :</strong> le nom, l'âge (Adulte ou Chiot) et <span class="ig">(Croisé)</span> quand c'est le cas, avec la description de la race au survol.</li>
 <li><strong>Tableau de chasse :</strong> combien de zombies et combien de proies le chien a déjà tués.</li>
@@ -2046,7 +2046,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><i class="ico ico-immune" title="Vacciné" role="img" aria-label="Vacciné"></i></td>
 <td><strong>Vacciné</strong></td>
 <td>A pris le vaccin</td>
-<td>Pas de grippe, pas d'infection de plaie et pas d'estomac dérangé par la nourriture</td>
+<td>Pas de grippe, pas d'infection de plaie et pas d'estomac dérangé par la nourriture ou l'eau</td>
 </tr>
 <tr>
 <td><i class="ico ico-prot-heartworm" title="Protégé : dirofilariose" role="img" aria-label="Protégé : dirofilariose"></i></td>
@@ -2285,7 +2285,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Chance de blessure par morsure (pour cent)</td>
 <td>0.2</td>
-<td>Par morsure reçue d'un zombie</td>
+<td>Par morsure que le chien donne à un zombie, 5% de moins par niveau de Combat</td>
 </tr>
 <tr>
 <td>Chance d'entorse par saut de clôture (pour cent)</td>
@@ -2300,7 +2300,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Chance d'estomac dérangé (pour cent)</td>
 <td>25.0</td>
-<td>Par nourriture avariée</td>
+<td>Par nourriture périmée ou eau sale</td>
 </tr>
 <tr>
 <td>Chance de grippe (pour cent)</td>
@@ -2310,7 +2310,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Chance de ver du cœur (pour cent)</td>
 <td>1.5</td>
-<td>Tirage quotidien</td>
+<td>Toutes les 6 h d'affilée en plein air</td>
 </tr>
 <tr>
 <td>Chance d'allergie alimentaire (pour cent)</td>
@@ -2320,7 +2320,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Chance de puces ou tiques par morsure (pour cent)</td>
 <td>0.2</td>
-<td>Par morsure reçue</td>
+<td>Par morsure que le chien donne</td>
 </tr>
 </tbody></table></div>
 <h3 id="comportement">Comportement</h3>
@@ -2330,7 +2330,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Ce qu'elle fait</th>
 </tr></thead><tbody>
 <tr>
-<td>Sentinelle : alertes zombies</td>
+<td>Sentinelle: alertes zombies</td>
 <td>Activé</td>
 <td>Interrupteur général de la surveillance du mode Sentinelle</td>
 </tr>
@@ -2436,7 +2436,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Le chien ne monte pas dans la voiture avec moi.</span></strong> Seul le chien en <strong>Suis moi</strong> embarque.</p>
 <p><strong><span class="ig">J'ai laissé le chien garder la base et il n'a rien fait.</span></strong> Le mode Garde, pour l'instant, ne marche qu'avec vous à proximité. Le seul mode qui travaille seul et de loin est <strong><span class="ig">S'occuper du bétail ici</span></strong>, et il exige un enclos à animaux défini.</p>
 <p><strong><span class="ig">Le chien apprend beaucoup trop lentement.</span></strong> Le défaut de <strong><span class="ig">Vitesse d'XP des compétences</span></strong> est 0,5. Montez à 1.0 ou plus dans un monde neuf.</p>
-<p><strong><span class="ig">Mon chien est mort.</span></strong> Un chien mort ne revient pas. Les causes sont la faim ou la soif poussées à l'extrême et une infection non soignée. Les sacoches et leur chargement restent au sol, là où il est tombé.</p>
+<p><strong><span class="ig">Mon chien est mort.</span></strong> Un chien mort ne revient pas. La faim, la soif et la maladie non soignée ne tuent qu'avec l'option du bac à sable <strong><span class="ig">La maladie et la négligence peuvent tuer</span></strong> activée ; par défaut elle est désactivée et la santé s'arrête à 10%. Les sacoches et leur chargement restent au sol, là où il est tombé.</p>
 <p><strong><span class="ig">Ma capacité de charge a changé après l'installation du mod.</span></strong> Companion Dogs ne touche pas à votre poids maximum. Sur un serveur, il y a un détail du jeu de base : votre capacité reste bloquée sur une valeur basse, en ignorant la Force, jusqu'aux premiers dégâts encaissés par le personnage.</p>
 <h2 id="24-retirer-le-mod-dune-sauvegarde-à-lire-avant">24. Retirer le mod d'une sauvegarde (À LIRE AVANT)</h2>
 <p><strong>Retirer Companion Dogs d'une sauvegarde qui contient des chiens fait disparaître des animaux qui ne viennent pas du mod</strong> : le bétail de l'enclos, les poules, tout ce qui se trouve dans cette région de la carte. C'est ainsi que Project Zomboid enregistre les animaux, et le mod ne peut plus se défendre une fois retiré.</p>

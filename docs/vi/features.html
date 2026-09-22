@@ -531,7 +531,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#9-độ-trung-thành" data-id="9-độ-trung-thành">9. Độ trung thành</a>
 <div class="sub">
-<a class="s3" href="#đáy-của-sự-không-nghe-lời" data-id="đáy-của-sự-không-nghe-lời">Đáy của sự không nghe lời</a>
+<a class="s3" href="#ngưỡng-không-nghe-lời" data-id="ngưỡng-không-nghe-lời">Ngưỡng không nghe lời</a>
 <a class="s3" href="#khi-con-chó-từ-chối-một-mệnh-lệnh" data-id="khi-con-chó-từ-chối-một-mệnh-lệnh">Khi con chó từ chối một mệnh lệnh</a>
 </div>
 </div>
@@ -861,7 +861,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Danh tính con chó: tên, giới tính, có phải chó con không, có đang mang thai không, có phải chó lai không</td>
 </tr>
 <tr>
-<td><strong>Chặn phối giống</strong> / <strong>Cho phép phối giống</strong></td>
+<td><strong>Không cho phối giống</strong> / <strong>Cho phép phối giống</strong></td>
 <td>Chỉ chó trưởng thành</td>
 </tr>
 <tr>
@@ -905,7 +905,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Thay đổi tùy con chó đang mang hay không mang túi yên</td>
 </tr>
 <tr>
-<td><strong>Trạng thái</strong></td>
+<td><strong>Tình trạng</strong></td>
 <td>Mở cửa sổ của chó</td>
 </tr>
 <tr>
@@ -970,7 +970,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Bật và tắt</td>
 </tr>
 <tr>
-<td><strong>Trạng thái</strong></td>
+<td><strong>Tình trạng</strong></td>
 <td>Mở và đóng cửa sổ của chó</td>
 </tr>
 <tr>
@@ -1203,14 +1203,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><strong>Giun tim</strong></td>
 <td>1,5% mỗi 6 giờ liên tục ở ngoài trời</td>
 <td>Mất sinh lực, từ chối đánh nhau và làm việc</td>
-<td>Chỉ hết khi dùng thuốc, trong 18 giờ</td>
+<td>3 đến 6 ngày, hoặc 18 giờ nếu dùng thuốc</td>
 </tr>
 <tr>
 <td><i class="ico ico-allergy" title="Dị ứng" role="img" aria-label="Dị ứng"></i></td>
 <td><strong>Dị ứng da</strong></td>
 <td>Loại thịt mà con chó đó không dung nạp được, hoặc ký sinh trên da</td>
 <td>Đi chậm và gây căng thẳng</td>
-<td>1 ngày nếu để tự nhiên, 6 giờ nếu có thuốc dị ứng</td>
+<td>12 đến 24 giờ nếu để tự nhiên, 6 giờ nếu có thuốc dị ứng</td>
 </tr>
 <tr>
 <td><i class="ico ico-fleas" title="Bọ chét" role="img" aria-label="Bọ chét"></i></td>
@@ -1283,10 +1283,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Con chó tự lành: một thanh sinh lực đầy sau khoảng 8 giờ trong game. Việc hồi phục dừng lại khi qua nửa thanh đói hoặc nửa thanh khát.</p>
 <h3 id="vết-thương-và-băng-bó">Vết thương và băng bó</h3>
 <ul>
-<li>Mỗi cú cắn con chó tung vào zombie có 0,2% cơ hội khiến nó bị một vết thương hở. Cơ hội này tăng lên khi con chó đã bị thương hoặc căng thẳng, và không bao giờ có quá một vết thương mỗi 2 giờ trong game.</li>
-<li>Con chó khập khiễng khi đi (Chó cỏ, Chó chăn cừu Đức, Golden Retriever và Husky; các giống khác vẫn đi bình thường) và mọi giống đều chậm đi một chút: đi chậm hơn 10% và chạy chậm hơn 25%. Huy hiệu <strong><span class="ig">Chảy máu</span></strong> hiện trên tên, trong cửa sổ và trên moodle, rồi chuyển thành <strong><span class="ig">Bị thương</span></strong> ngay khi băng bó được đặt lên. Mục <strong><span class="ig">Sức khỏe</span></strong> của cửa sổ chó hiện hình dáng con chó với phần bị thương sáng lên, danh sách bộ phận cơ thể và các tình trạng đang hoạt động, nhấp chuột phải ở đó mở menu điều trị; mục Sức khỏe trong mục Trạng thái ghi rõ tình trạng, tình hình băng bó và việc cần làm. Với Animal Care từ 5 trở lên, cả hai còn hiện tiến độ hồi phục.</li>
+<li>Mỗi cú cắn con chó tung vào zombie có 0,2% cơ hội khiến nó bị một vết thương hở. Mỗi cấp độ Chiến đấu trừ đi 0,01 điểm của cơ hội này: ở cấp 10 nó giảm còn một nửa, tức 0,1%. Cơ hội này tăng lên khi con chó đã bị thương hoặc căng thẳng, và không bao giờ có quá một vết thương mỗi 2 giờ trong game.</li>
+<li>Con chó khập khiễng khi đi, ở mọi giống, và chậm đi một chút: đi chậm hơn 10% và chạy chậm hơn 25%. Huy hiệu <strong><span class="ig">Chảy máu</span></strong> hiện trên tên, trong cửa sổ và trên moodle, rồi chuyển thành <strong><span class="ig">Bị thương</span></strong> ngay khi băng bó được đặt lên. Mục <strong><span class="ig">Sức khỏe</span></strong> của cửa sổ chó hiện hình dáng con chó với phần bị thương sáng lên, danh sách bộ phận cơ thể và các tình trạng đang hoạt động, nhấp chuột phải ở đó mở menu điều trị; mục Sức khỏe trong mục Trạng thái ghi rõ tình trạng, tình hình băng bó và việc cần làm. Với Animal Care từ 5 trở lên, cả hai còn hiện tiến độ hồi phục.</li>
 <li>Bị thương, nó từ chối Săn mồi và Canh gác cho đến khi lành. Đi theo, Đứng yên và Tấn công vẫn hoạt động bình thường.</li>
-<li>Nếu con chó tiếp tục đánh nhau với vết thương hở, mỗi cú cắn có thể làm gãy chân nó, với cơ hội gấp đôi so với việc bị thương. Thông báo <em><span class="ig">đã gãy chân!</span></em> hiện lên, kèm huy hiệu và moodle <strong><span class="ig">Gãy chân</span></strong>, và con chó đi với nửa tốc độ bình thường, không còn chạy được nữa, trong mọi tình huống. Việc hồi phục khi đó mất 3 ngày, kể cả khi có băng bó.</li>
+<li>Nếu con chó tiếp tục đánh nhau với vết thương hở, mỗi cú cắn có thể làm gãy chân nó, với cơ hội bằng với việc bị thương. Thông báo <em><span class="ig">đã gãy chân!</span></em> hiện lên, kèm huy hiệu và moodle <strong><span class="ig">Gãy chân</span></strong>, và con chó đi với nửa tốc độ bình thường, không còn chạy được nữa, trong mọi tình huống. Việc hồi phục khi đó mất 3 ngày, kể cả khi có băng bó.</li>
 <li>Chảy máu mà không băng bó, sinh lực giảm dần (90% thanh mỗi ngày, một thanh đầy sau hơn một ngày một chút) và không hồi phục cho đến khi bạn băng bó nó. Xuống đến không, con chó chết. Điều này đúng ở mọi giai đoạn: một vết thương nhiễm trùng không có băng vừa chảy máu vừa nhiễm trùng nặng hơn cùng lúc.</li>
 <li>Không băng bó, việc chảy máu tự hết sau 12 giờ và tình trạng chuyển thành <strong><span class="ig">Vết thương hở</span></strong>; vết thương vẫn hở và có thể nhiễm trùng. Băng bó dừng chảy máu ngay lập tức.</li>
 <li>Vết thương không băng bó có 20% cơ hội nhiễm trùng mỗi giờ trong game; với băng bẩn, 5% mỗi giờ; với băng sạch hoặc tiệt trùng, không có cơ hội nào. Vết thương nhiễm trùng hiện thành <strong><span class="ig">Nhiễm trùng</span></strong> và chặn việc hồi sinh lực cũng như phối giống trong suốt thời gian đó.</li>
@@ -1322,8 +1322,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="giun-tim">Giun tim</h3>
 <ul>
 <li>Muỗi chỉ đốt ở ngoài trời: mỗi 6 giờ liên tục không có mái che, con chó có 1,5% cơ hội mắc, và bước vào nhà sẽ xóa bộ đếm về không. Đây là căn bệnh nghiêm trọng nhất trong mod.</li>
-<li>Kéo dài 3 đến 6 ngày, hao hụt một phần tư thanh sinh lực mỗi ngày, gây sốt, kéo tốc độ đi xuống còn 65% và chạy xuống còn 45%, và con chó từ chối tấn công, làm trò khéo, săn mồi và canh gác. Nó bỏ việc săn mồi và canh gác ngay lúc đổ bệnh. Moodle <strong><span class="ig">Giun tim</span></strong>.</li>
-<li>Chỉ <strong><span class="ig">Companion Dogs Thuốc Giun Tim</span></strong> giải quyết được, trong 18 giờ. Cùng một liều bảo vệ trong 30 ngày và có thể cho một con chó khỏe mạnh uống, giống như cách làm ngoài đời thật.</li>
+<li>Kéo dài 3 đến 6 ngày rồi tự khỏi. Trong thời gian đó, bệnh làm hao hụt một phần tư thanh sinh lực mỗi ngày, gây sốt, kéo tốc độ đi xuống còn 65% và chạy xuống còn 45%, và con chó từ chối tấn công, làm trò khéo, săn mồi và canh gác. Nó bỏ việc săn mồi và canh gác ngay lúc đổ bệnh. Moodle <strong><span class="ig">Giun tim</span></strong>.</li>
+<li><strong><span class="ig">Companion Dogs Thuốc Giun Tim</span></strong> rút ngắn bệnh còn 18 giờ. Cùng một liều bảo vệ trong 30 ngày và có thể cho một con chó khỏe mạnh uống, giống như cách làm ngoài đời thật.</li>
 </ul>
 <h3 id="dị-ứng-bọ-chét-và-ve-chó">Dị ứng, bọ chét và ve chó</h3>
 <ul>
@@ -1473,7 +1473,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Độ trung thành bắt đầu giảm nhanh gấp ba.</li>
 <li>Vượt quá nửa thanh, việc tự hồi phục dừng lại.</li>
 <li>Vượt quá 0,8, sinh lực hao hụt trong khoảng 8 giờ trong game: tối đa 10% theo mặc định, tới không khi bật <strong><span class="ig">Bệnh tật và bỏ bê có thể gây chết</span></strong>.</li>
-<li>Độ trung thành xuyên thủng đáy và con chó trở nên <strong><span class="ig">Không nghe lời</span></strong>.</li>
+<li>Độ trung thành tụt xuống dưới ngưỡng và con chó trở nên <strong><span class="ig">Không nghe lời</span></strong>.</li>
 <li>Căng thẳng tăng và nó rơi vào hoảng loạn: ngừng đánh nhau, ngừng canh gác và ngừng làm trò khéo.</li>
 <li>Với tùy chọn được bật, sinh lực xuống đến không và nó chết.</li>
 </ol>
@@ -1511,9 +1511,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Cho ăn là cách nhanh nhất, nhưng mức tăng tỷ lệ với lượng đói mà khẩu phần đó xóa được: cho một con chó đang đói ăn có thể trả lại hàng chục điểm cùng lúc. Nếu độ trung thành đã giảm, hãy để nó đói trước khi cho ăn.</li>
 <li>Ăn từ chén không tăng độ trung thành.</li>
 </ul>
-<h3 id="đáy-của-sự-không-nghe-lời">Đáy của sự không nghe lời</h3>
+<h3 id="ngưỡng-không-nghe-lời">Ngưỡng không nghe lời</h3>
 <p>Dưới một mức nhất định, con chó trở nên <strong><span class="ig">Không nghe lời</span></strong> và từ chối đi theo, đánh nhau và làm trò khéo: <em><span class="ig">Caramelo của bạn không còn tin tưởng bạn nữa...</span></em></p>
-<p>Đáy này hạ dần khi Vâng lời tăng lên: bắt đầu ở 30 và giảm 1,5 mỗi cấp, không bao giờ dưới 10. Một con chó Vâng lời cấp 10 chỉ không nghe lời khi độ trung thành dưới 15.</p>
+<p>Ngưỡng này hạ dần khi Vâng lời tăng lên: bắt đầu ở 30 và giảm 1,5 mỗi cấp, không bao giờ dưới 10. Một con chó Vâng lời cấp 10 chỉ không nghe lời khi độ trung thành dưới 15.</p>
 <h3 id="khi-con-chó-từ-chối-một-mệnh-lệnh">Khi con chó từ chối một mệnh lệnh</h3>
 <p>Có bốn lý do, theo thứ tự ưu tiên này:</p>
 <div class="tw"><table><thead><tr>
@@ -1521,7 +1521,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Bạn sẽ thấy gì</th>
 </tr></thead><tbody>
 <tr>
-<td>Độ trung thành dưới đáy</td>
+<td>Độ trung thành dưới ngưỡng</td>
 <td><em><span class="ig">Caramelo Rex chưa đủ tin tưởng để nghe lời bạn.</span></em></td>
 </tr>
 <tr>
@@ -1606,7 +1606,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Vâng lời</strong></td>
 <td>Mỗi mệnh lệnh được nghe theo (có hồi chiêu). Tăng nhanh gấp 4 lần dưới cấp 3</td>
-<td>Đáy độ trung thành thấp hơn, bốn trò khéo, và ít cơ hội không nghe lời hơn</td>
+<td>Ngưỡng độ trung thành thấp hơn, bốn trò khéo, và ít cơ hội không nghe lời hơn</td>
 </tr>
 <tr>
 <td><strong>Săn mồi</strong></td>
@@ -1963,14 +1963,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Đặc tính:</strong> Sức mạnh, Độ hung hăng, Sức chịu đựng, hiển thị dưới dạng Thấp / Trung bình / Cao.</li>
 <li><strong>Loài:</strong> Chó hoặc Mèo. Con mèo con hiển thị là <strong>Mèo con</strong>.</li>
 <li><strong>Giống:</strong> tên, độ tuổi (Trưởng thành hoặc Chó con) và <span class="ig">(Lai)</span> khi có, kèm mô tả giống khi rê chuột.</li>
-<li><strong>Số lần hạ:</strong> bao nhiêu zombie và bao nhiêu con mồi mà con chó đã hạ được.</li>
+<li><strong>Số mạng:</strong> bao nhiêu zombie và bao nhiêu con mồi mà con chó đã hạ được.</li>
 </ul>
 <p>Mọi mục trong tab này đều có giải thích khi rê chuột.</p>
 <h3 id="mục-mệnh-lệnh">Mục "Mệnh lệnh"</h3>
 <ul>
 <li><strong>Chế độ:</strong> Đi theo | Đứng yên | Canh gác</li>
 <li><strong>Cảnh giới:</strong> Báo động | Nhẹ tiếng | Im lặng</li>
-<li><strong>Tự vệ</strong> (bật/tắt)</li>
+<li><strong>Tự bảo vệ</strong> (bật/tắt)</li>
 <li><strong>Săn mồi</strong> (bật/tắt)</li>
 <li><strong>Khoảng cách đi theo:</strong> thanh trượt từ 2 đến 8 ô, từng nửa một, kèm số bên cạnh</li>
 <li><strong>Chăm đàn vật nuôi ở đây</strong></li>
@@ -1986,8 +1986,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li><strong>Giao diện:</strong> <span class="ig">Chữ trạng thái: Bật/Tắt</span> (các dòng cảnh báo nổi trên đầu con chó), <span class="ig">Hình ảnh moodle: Bật/Tắt</span> (các moodle của chó) và <span class="ig">Tên thú cưng: Bật/Tắt</span> (tên phía trên con chó và dòng <span class="ig">Chủ: A</span> trên chó của người khác).</li>
 <li><strong>Âm thanh:</strong> âm lượng tổng, tắt tiếng, và các thanh trượt riêng cho <strong>Sủa</strong>, <strong>Hiệu ứng</strong> và <strong>Môi trường</strong>.</li>
-<li><strong>Tự động cho ăn:</strong> thanh trượt <span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span>.</li>
-<li><strong>Phím tắt:</strong> 14 hành động, với <strong>Đổi phím</strong> và <strong>Xóa</strong>.</li>
+<li><strong>Tự ăn uống:</strong> thanh trượt <span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span>.</li>
+<li><strong>Phím điều khiển:</strong> 14 hành động, với <strong>Gán lại</strong> và <strong>Xóa</strong>.</li>
 </ul>
 <blockquote class="quote">Nếu tiếng sủa làm phiền bạn, thanh trượt <strong>Sủa</strong> chỉ hạ nhỏ mình nó, không tắt cơ chế nào khác.</blockquote>
 <h2 id="19-những-gì-hiện-trên-màn-hình">19. Những gì hiện trên màn hình</h2>
@@ -2046,7 +2046,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><i class="ico ico-immune" title="Đã tiêm phòng" role="img" aria-label="Đã tiêm phòng"></i></td>
 <td><strong>Đã tiêm phòng</strong></td>
 <td>Đã tiêm vắc xin</td>
-<td>Không bị cúm, không nhiễm trùng vết thương và không đau bụng vì đồ ăn</td>
+<td>Không bị cúm, không nhiễm trùng vết thương và không đau bụng vì đồ ăn hay nước</td>
 </tr>
 <tr>
 <td><i class="ico ico-prot-heartworm" title="Được bảo vệ: giun tim" role="img" aria-label="Được bảo vệ: giun tim"></i></td>
@@ -2285,7 +2285,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Xác suất bị thương mỗi cú cắn (phần trăm)</td>
 <td>0.2</td>
-<td>Mỗi lần bị zombie cắn trúng</td>
+<td>Mỗi lần con chó cắn trúng zombie, giảm 5% mỗi cấp Chiến đấu</td>
 </tr>
 <tr>
 <td>Tỉ lệ bong gân mỗi lần nhảy rào (phần trăm)</td>
@@ -2300,7 +2300,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Tỉ lệ đau bụng (phần trăm)</td>
 <td>25.0</td>
-<td>Mỗi lần ăn đồ ăn hỏng</td>
+<td>Mỗi lần ăn đồ ăn ôi hoặc uống nước bẩn</td>
 </tr>
 <tr>
 <td>Tỉ lệ mắc cúm (phần trăm)</td>
@@ -2310,7 +2310,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Tỉ lệ giun tim (phần trăm)</td>
 <td>1.5</td>
-<td>Tung xúc xắc mỗi ngày</td>
+<td>Mỗi 6 giờ liền ở ngoài trời</td>
 </tr>
 <tr>
 <td>Tỉ lệ dị ứng thức ăn (phần trăm)</td>
@@ -2320,7 +2320,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Tỉ lệ bọ chét hoặc ve mỗi lần cắn (phần trăm)</td>
 <td>0.2</td>
-<td>Mỗi lần cắn trúng</td>
+<td>Mỗi lần con chó cắn trúng</td>
 </tr>
 </tbody></table></div>
 <h3 id="hành-vi">Hành vi</h3>
@@ -2436,7 +2436,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Con chó không lên xe cùng tôi.</span></strong> Chỉ con chó ở chế độ <strong>Đi theo</strong> mới lên xe.</p>
 <p><strong><span class="ig">Tôi để con chó canh gác căn cứ và nó không làm gì cả.</span></strong> Chế độ Canh gác, hiện tại, chỉ hoạt động khi bạn ở gần. Chế độ duy nhất tự hoạt động một mình từ xa là <strong><span class="ig">Chăm đàn vật nuôi ở đây</span></strong>, và nó cần một khu chuồng trại được chỉ định.</p>
 <p><strong><span class="ig">Con chó học chậm quá.</span></strong> Mặc định của <strong><span class="ig">Tốc độ nhận XP kỹ năng</span></strong> là 0.5. Tăng lên 1.0 hoặc hơn trong một thế giới mới.</p>
-<p><strong><span class="ig">Con chó của tôi đã chết.</span></strong> Chó chết không quay lại được. Nguyên nhân là đói hoặc khát bị đẩy đến cực điểm và nhiễm trùng không được điều trị. Túi yên cùng hàng hóa bên trong rơi xuống đất ngay chỗ nó ngã xuống.</p>
+<p><strong><span class="ig">Con chó của tôi đã chết.</span></strong> Chó chết không quay lại được. Đói, khát và bệnh không được chữa chỉ gây chết khi bật tùy chọn sandbox <strong><span class="ig">Bệnh tật và bỏ bê có thể gây chết</span></strong>; mặc định tùy chọn này tắt và sinh lực dừng ở 10%. Túi yên cùng hàng hóa bên trong rơi xuống đất ngay chỗ nó ngã xuống.</p>
 <p><strong><span class="ig">Sức chứa của tôi thay đổi sau khi cài mod.</span></strong> Companion Dogs không đụng vào trọng lượng tối đa của bạn. Trên máy chủ có một chi tiết của game gốc: sức chứa của bạn bị kẹt ở một giá trị thấp, bỏ qua Sức mạnh, cho đến khi nhân vật lãnh sát thương đầu tiên.</p>
 <h2 id="24-gỡ-mod-khỏi-một-save-đọc-trước-khi-làm">24. Gỡ mod khỏi một save (ĐỌC TRƯỚC KHI LÀM)</h2>
 <p><strong>Gỡ Companion Dogs khỏi một save đã có chó sẽ làm biến mất những con vật không thuộc về mod</strong>: gia súc trong chuồng, gà, bất cứ thứ gì đang ở vùng bản đồ đó. Đây là cách Project Zomboid lưu trữ động vật, và mod không có cách nào tự bảo vệ sau khi đã bị gỡ.</p>
@@ -2460,7 +2460,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Các bước trên xử lý chó của riêng bạn, nhưng mod cũng rải chó hoang khắp bản đồ, và không thể tìm hết bằng tay. Để dọn sạch toàn bộ save cùng lúc, có một lệnh:</p>
 <ol>
 <li>Vào game với quyền admin (nhiều người chơi) hoặc chạy game ở chế độ debug (một người chơi: thêm <code>-debug</code> vào tùy chọn khởi động Steam).</li>
-<li>Chuột phải vào mặt đất → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
+<li>Chuột phải vào mặt đất → <strong>Chó đồng hành (gỡ lỗi)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Chờ thông báo <code>sweep done</code> rồi lưu game.</li>
 </ol>
 <p>Lệnh này xóa ngay những con chó đang được tải rồi quét phần còn lại của save ở chế độ nền, không làm đứng game. Nếu lệnh từ chối và nêu tên một giống, hãy bật addon đó trong save này rồi lặp lại: thiếu định nghĩa của nó, việc dọn dẹp sẽ xóa luôn động vật của vùng đó.</p>
@@ -2468,7 +2468,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Mục này dành cho ai chạy máy chủ đông người và nhiều chó. Bảng điều khiển tên là <strong><span class="ig">Server tuning / performance</span></strong>: phía trên là đồng hồ đo trực tiếp mức tiêu tốn của mod trên máy chủ; phía dưới là các trường thay đổi mức tiêu tốn đó. Luật chơi (sát thương, đói, XP, giới hạn số chó) không nằm ở đây, vẫn là tùy chọn sandbox, ở mục 22.</p>
 <blockquote class="quote">Bảng điều khiển luôn ở tiếng Anh dù game đang dùng ngôn ngữ nào, vì các nhãn được cố định trong code. Các bảng dưới đây trích dẫn từng nhãn đúng như nó hiện trên màn hình.</blockquote>
 <h3 id="cách-mở-bảng-điều-khiển">Cách mở bảng điều khiển</h3>
-<p>Chuột phải vào mặt đất → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>. Ở chế độ nhiều người chơi bạn phải là admin; ở chế độ một người chơi, chạy game ở chế độ debug (<code>-debug</code> trong tùy chọn khởi động Steam).</p>
+<p>Chuột phải vào mặt đất → <strong>Chó đồng hành (gỡ lỗi)</strong> → <strong>Tools</strong> → <strong><span class="ig">Server tuning / performance</span></strong>. Ở chế độ nhiều người chơi bạn phải là admin; ở chế độ một người chơi, chạy game ở chế độ debug (<code>-debug</code> trong tùy chọn khởi động Steam).</p>
 <h3 id="điều-áp-dụng-cho-mọi-trường">Điều áp dụng cho mọi trường</h3>
 <ul>
 <li>Giá trị có hiệu lực ngay, cho cả máy chủ, và được lưu vào save.</li>

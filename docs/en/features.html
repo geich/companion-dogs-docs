@@ -1203,14 +1203,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><strong>Heartworm</strong></td>
 <td>1.5% every 6 straight hours outdoors</td>
 <td>Loses health, refuses to fight or work</td>
-<td>Only with its medicine, in 18 h</td>
+<td>3 to 6 days, or 18 h with its medicine</td>
 </tr>
 <tr>
 <td><i class="ico ico-allergy" title="Allergy" role="img" aria-label="Allergy"></i></td>
 <td><strong>Skin allergy</strong></td>
 <td>The one meat that dog cannot handle, or skin pests</td>
 <td>Walks slower and gets stressed</td>
-<td>1 day on its own, 6 h with allergy medicine</td>
+<td>12 to 24 h on its own, 6 h with allergy medicine</td>
 </tr>
 <tr>
 <td><i class="ico ico-fleas" title="Fleas" role="img" aria-label="Fleas"></i></td>
@@ -1283,10 +1283,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>The dog heals on its own: a full health bar in about 8 in-game hours. Healing stops past the halfway mark on the hunger bar or the thirst bar.</p>
 <h3 id="wound-and-dressing">Wound and dressing</h3>
 <ul>
-<li>Each bite the dog lands on a zombie has a 0.2% chance of leaving it with an open wound. The chance rises when the dog is already hurt or stressed, and there is never more than one wound every 2 in-game hours.</li>
-<li>The dog limps as it walks (Caramelo, German Shepherd, Golden Retriever and Husky; the other breeds still walk normally) and every breed gets a little slower: it walks 10% slower and runs 25% slower. The <strong><span class="ig">Bleeding</span></strong> badge shows on its name, in its window and on the moodle, and turns into <strong><span class="ig">Injured</span></strong> as soon as the dressing is on. The <strong><span class="ig">Health</span></strong> tab of the dog window shows the dog with the hurt part lit up, the body part list and the active conditions, and right-clicking there opens the treat menu; the Health section on the Status tab says the condition, the dressing and what to do. With Animal Care 5 or more both also show healing progress.</li>
+<li>Each bite the dog lands on a zombie has a 0.2% chance of leaving it with an open wound. Each Combat level takes 0.01 points off that chance: at level 10 it is cut in half, to 0.1%. The chance rises when the dog is already hurt or stressed, and there is never more than one wound every 2 in-game hours.</li>
+<li>The dog limps as it walks, in every breed, and gets a little slower: it walks 10% slower and runs 25% slower. The <strong><span class="ig">Bleeding</span></strong> badge shows on its name, in its window and on the moodle, and turns into <strong><span class="ig">Injured</span></strong> as soon as the dressing is on. The <strong><span class="ig">Health</span></strong> tab of the dog window shows the dog with the hurt part lit up, the body part list and the active conditions, and right-clicking there opens the treat menu; the Health section on the Status tab says the condition, the dressing and what to do. With Animal Care 5 or more both also show healing progress.</li>
 <li>Wounded, it refuses Hunt and Guard until it heals. Follow, Stay and Attack still work.</li>
-<li>If the dog keeps fighting with the wound open, each bite can break its paw, with twice the wound chance. The message <em><span class="ig">broke a paw!</span></em> shows up, with the <strong><span class="ig">Broken paw</span></strong> badge and moodle, and the dog walks at half pace and no longer runs, in any situation. Healing then takes 3 days, even with a dressing.</li>
+<li>If the dog keeps fighting with the wound open, each bite can break its paw, with the same chance as the wound. The message <em><span class="ig">broke a paw!</span></em> shows up, with the <strong><span class="ig">Broken paw</span></strong> badge and moodle, and the dog walks at half pace and no longer runs, in any situation. Healing then takes 3 days, even with a dressing.</li>
 <li>Bleeding and undressed, health falls (90% of the bar per day, a full bar in a bit more than a day) and does not recover until you bandage it. Reaching zero, the dog dies. That holds at any stage: an infected wound with no bandage bleeds and festers at the same time.</li>
 <li>Left undressed, the bleeding stops on its own after 12 hours and the condition changes to <strong><span class="ig">Open wound</span></strong>; the wound stays open and can still get infected. A dressing stops the bleeding at once.</li>
 <li>An undressed wound has a 20% chance per in-game hour of getting infected; with a dirty bandage, 5% per hour; with a clean or sterile dressing, zero. An infected wound shows as <strong><span class="ig">Infected</span></strong> and blocks health recovery and breeding for as long as it lasts.</li>
@@ -1322,8 +1322,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="heartworm">Heartworm</h3>
 <ul>
 <li>The mosquito only bites outdoors: for every 6 straight hours without a roof the dog rolls 1.5%, and stepping inside resets the count. It is the most serious illness in the mod.</li>
-<li>It lasts 3 to 6 days, drains a quarter of the health bar per day, brings a fever, drops the walk to 65% and the run to 45%, and the dog refuses to attack, do tricks, hunt and guard. It drops hunt and guard duty the moment it falls ill. Moodle <strong><span class="ig">Heartworm</span></strong>.</li>
-<li>Only the <strong><span class="ig">Companion Dogs Heartworm Medicine</span></strong> clears it, in 18 hours. The same dose protects for 30 days and can be given to a healthy dog, which is how it is done in real life.</li>
+<li>It lasts 3 to 6 days and clears on its own. Meanwhile it drains a quarter of the health bar per day, brings a fever, drops the walk to 65% and the run to 45%, and the dog refuses to attack, do tricks, hunt and guard. It drops hunt and guard duty the moment it falls ill. Moodle <strong><span class="ig">Heartworm</span></strong>.</li>
+<li>The <strong><span class="ig">Companion Dogs Heartworm Medicine</span></strong> cuts it to 18 hours. The same dose protects for 30 days and can be given to a healthy dog, which is how it is done in real life.</li>
 </ul>
 <h3 id="allergy-fleas-and-ticks">Allergy, fleas and ticks</h3>
 <ul>
@@ -2046,7 +2046,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><i class="ico ico-immune" title="Vaccinated" role="img" aria-label="Vaccinated"></i></td>
 <td><strong>Vaccinated</strong></td>
 <td>Took the vaccine</td>
-<td>No flu, no wound infection and no upset stomach from food</td>
+<td>No flu, no wound infection and no upset stomach from food or water</td>
 </tr>
 <tr>
 <td><i class="ico ico-prot-heartworm" title="Protected: heartworm" role="img" aria-label="Protected: heartworm"></i></td>
@@ -2285,7 +2285,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Wound chance per bite (percent)</td>
 <td>0.2</td>
-<td>Per zombie bite taken</td>
+<td>Per bite the dog lands on a zombie, minus 5% per Combat level</td>
 </tr>
 <tr>
 <td>Sprain chance per fence hop (percent)</td>
@@ -2300,7 +2300,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Upset stomach chance (percent)</td>
 <td>25.0</td>
-<td>Per spoiled meal</td>
+<td>Per stale meal or bad water</td>
 </tr>
 <tr>
 <td>Flu chance (percent)</td>
@@ -2310,7 +2310,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Heartworm chance (percent)</td>
 <td>1.5</td>
-<td>Rolled daily</td>
+<td>Every 6 straight hours outdoors</td>
 </tr>
 <tr>
 <td>Food allergy chance (percent)</td>
@@ -2320,7 +2320,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Flea and tick chance per bite (percent)</td>
 <td>0.2</td>
-<td>Per bite taken</td>
+<td>Per bite the dog lands</td>
 </tr>
 </tbody></table></div>
 <h3 id="behaviour">Behaviour</h3>
@@ -2436,7 +2436,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">The dog won't get in the car with me.</span></strong> Only a dog on <strong>Follow</strong> gets in.</p>
 <p><strong><span class="ig">I left the dog guarding the base and it did nothing.</span></strong> Guard mode, for now, only works with you nearby. The only mode that works on its own from far away is <strong><span class="ig">Care for animals here</span></strong>, and it needs a designated pen.</p>
 <p><strong><span class="ig">The dog learns way too slowly.</span></strong> The default of the <strong><span class="ig">Skill XP multiplier</span></strong> is 0.5. Raise it to 1.0 or more in a new world.</p>
-<p><strong><span class="ig">My dog died.</span></strong> A dead dog does not come back. The causes are hunger or thirst taken to the extreme and an untreated infection. The saddlebags and their cargo stay on the ground where it fell.</p>
+<p><strong><span class="ig">My dog died.</span></strong> A dead dog does not come back. Hunger, thirst and untreated illness only kill with the sandbox option <strong><span class="ig">Illness and neglect can kill</span></strong> on; by default it is off and health stops at 10%. The saddlebags and their cargo stay on the ground where it fell.</p>
 <p><strong><span class="ig">My carry capacity changed after installing the mod.</span></strong> Companion Dogs does not touch your maximum carry weight. On a server there is a base game detail: your capacity stays stuck at a low value, ignoring Strength, until the character takes first damage.</p>
 <h2 id="24-removing-the-mod-from-a-save-read-this-first">24. Removing the mod from a save (READ THIS FIRST)</h2>
 <p><strong>Removing Companion Dogs from a save that has dogs in it makes animals that are not from the mod disappear</strong>: the livestock in your pen, the chickens, whatever is in that part of the map. This is how Project Zomboid stores animals, and the mod cannot defend against it once it has been removed.</p>

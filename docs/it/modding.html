@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true fa zoppicare l'animale ferito mentre cammina. Impostalo solo se il tuo modello ha le due clip facoltative <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (cicli di camminata da 1.0 s con lo stesso root motion di <code>Rac_Walk</code>). Senza le clip l'animale cammina fermo sul posto.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>spento</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, cinque nomi di texture del corpo. Sulla zampa ferita l'animale porta la variante con il taglio mentre la ferita sanguina e quella fasciata mentre ha la fasciatura. Crea le quattro varianti con <code>_dogrig/forge/_paw_band.py</code>. Senza, l'animale si ferisce lo stesso, solo che non mostra nessun segno.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>i suoni del cane</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

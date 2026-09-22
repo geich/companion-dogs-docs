@@ -496,7 +496,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>Add-on của bạn giữ:</p>
 <ul>
-<li>các con số làm con vật của bạn khác con Caramelo</li>
+<li>các con số làm con vật của bạn khác con Chó cỏ</li>
 <li>model thân, texture, ảnh chân dung và, nếu có, icon moodle của nó</li>
 <li>nơi nó xuất hiện trong thế giới</li>
 <li>tên và mô tả của nó, ở mọi ngôn ngữ bạn phát hành</li>
@@ -504,7 +504,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Hai màu lông hành xử y hệt nhau vẫn là hai giống đối với mod nền (hai cái tên, hai mục trong chuồng); bạn viết chúng từ một bảng dùng chung, như CD: Cats làm với năm bộ lông của nó.</p>
 <h2 id="2-cần-gì-trước-khi-bắt-đầu">2. Cần gì trước khi bắt đầu</h2>
 <p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống.</p>
-<p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Caramelo, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
+<p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Chó cỏ, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
 <p>Bạn cũng cần một texture cho thân và một ảnh chân dung cho cửa sổ chuồng.</p>
 <p>Hãy quyết định con vật của bạn là một giống hay một loài trước khi viết dòng code nào. Giống là con chó với các con số khác. Loài là con vật thiếu hẳn vài phần việc. Lựa chọn đó đổi các trường bạn phải viết; mục 6 nói về nó.</p>
 <h2 id="3-các-file-của-một-add-on">3. Các file của một add-on</h2>
@@ -602,7 +602,7 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>nó đánh mạnh cỡ nào. Con Caramelo là 0.20, giống chuyên đánh nhau thì trên 1.0.</td>
+<td>nó đánh mạnh cỡ nào. Con Chó cỏ là 0.20, giống chuyên đánh nhau thì trên 1.0.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
@@ -718,6 +718,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true làm con vật bị thương đi khập khiễng. Chỉ đặt khi model của bạn có hai clip tùy chọn <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi 1.0 giây, cùng root motion với <code>Rac_Walk</code>). Thiếu clip thì con vật vừa đi vừa đứng đơ tại chỗ.</td>
+</tr>
+<tr>
+<td><code>bandSkin</code></td>
+<td>tắt</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, năm tên texture thân. Ở chân bị thương, con vật mang biến thể có vết cắt khi vết thương đang chảy máu và biến thể băng bó khi đã được băng. Tạo bốn biến thể bằng <code>_dogrig/forge/_paw_band.py</code>. Không có trường này thì con vật vẫn bị thương như thường, chỉ là không hiện dấu vết.</td>
 </tr>
 <tr>
 <td><code>voices</code></td>

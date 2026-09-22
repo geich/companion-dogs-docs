@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true заставляет раненое животное хромать при ходьбе. Ставьте его, только если в модели есть два необязательных клипа <code>Rac_WalkLimpFront</code> и <code>Rac_WalkLimpBack</code> (циклы ходьбы на 1.0 секунды с тем же root motion, что у <code>Rac_Walk</code>). Без клипов животное шагает, застыв на месте.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>выключено</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, пять имён текстур тела. На раненой лапе животное носит вариант с порезом, пока рана кровоточит, и вариант с повязкой, пока она наложена. Четыре варианта соберите скриптом <code>_dogrig/forge/_paw_band.py</code>. Без этого поля животное всё равно получает раны, просто без видимой метки.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>звуки собаки</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

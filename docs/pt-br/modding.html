@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true faz o bicho ferido mancar ao andar. Só ligue quando o seu modelo tiver os dois clips opcionais <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (ciclos de andar de 1.0 s com o mesmo root motion do <code>Rac_Walk</code>). Sem os clips o bicho anda congelado no lugar.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>desligado</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, cinco nomes de textura do corpo. Na pata ferida, o bicho veste a variante cortada enquanto a ferida sangra e a enfaixada enquanto está com curativo. Monte as quatro variantes com <code>_dogrig/forge/_paw_band.py</code>. Sem ele o bicho se fere do mesmo jeito, só não mostra marca.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>sons de cão</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

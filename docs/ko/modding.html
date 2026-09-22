@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true면 다친 동물이 걸을 때 절뚝입니다. 모델에 선택 클립 <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>이 있을 때만 켜세요(<code>Rac_Walk</code>와 같은 루트 모션을 가진 1.0초 걷기 사이클). 클립이 없으면 동물이 제자리에 굳은 채 걷습니다.</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>꺼짐</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>, 몸 텍스처 이름 다섯 개. 다친 발에는 상처에서 피가 나는 동안 베인 변형이, 붕대를 감은 동안 붕대 변형이 입혀집니다. 네 가지 변형은 <code>_dogrig/forge/_paw_band.py</code>로 만드세요. 없어도 동물은 똑같이 다치고, 자국만 보이지 않습니다.</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>개 소리</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>

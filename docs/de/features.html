@@ -531,7 +531,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <div class="grp">
 <a class="s2" href="#9-loyalität" data-id="9-loyalität">9. Loyalität</a>
 <div class="sub">
-<a class="s3" href="#der-boden-des-ungehorsams" data-id="der-boden-des-ungehorsams">Der Boden des Ungehorsams</a>
+<a class="s3" href="#die-schwelle-des-ungehorsams" data-id="die-schwelle-des-ungehorsams">Die Schwelle des Ungehorsams</a>
 <a class="s3" href="#wenn-der-hund-einen-befehl-verweigert" data-id="wenn-der-hund-einen-befehl-verweigert">Wenn der Hund einen Befehl verweigert</a>
 </div>
 </div>
@@ -1203,14 +1203,14 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><strong>Herzwurm</strong></td>
 <td>1,5% je 6 h am Stück im Freien</td>
 <td>Verliert Leben, verweigert Kampf und Arbeit</td>
-<td>Nur mit dem Mittel, in 18 h</td>
+<td>3 bis 6 Tage, oder 18 h mit dem Mittel</td>
 </tr>
 <tr>
 <td><i class="ico ico-allergy" title="Allergie" role="img" aria-label="Allergie"></i></td>
 <td><strong>Hautallergie</strong></td>
 <td>Das Fleisch, das dieser Hund nicht verträgt, oder Hautparasiten</td>
 <td>Geht langsam und wird gestresst</td>
-<td>1 Tag von allein, 6 h mit Allergiemittel</td>
+<td>12 bis 24 h von allein, 6 h mit Allergiemittel</td>
 </tr>
 <tr>
 <td><i class="ico ico-fleas" title="Flöhe" role="img" aria-label="Flöhe"></i></td>
@@ -1283,10 +1283,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Der Hund heilt von allein: eine volle Lebensleiste in etwa 8 Spielstunden. Die Heilung stoppt, sobald Hunger oder Durst über die Hälfte der Leiste steigen.</p>
 <h3 id="wunde-und-verband">Wunde und Verband</h3>
 <ul>
-<li>Jeder Biss, den der Hund einem Zombie verpasst, endet mit 0,2% Wahrscheinlichkeit in einer offenen Wunde. Die Chance steigt, wenn er schon verletzt oder gestresst ist, und öfter als alle 2 Spielstunden kommt keine Wunde.</li>
-<li>Der Hund humpelt beim Gehen (Caramelo, Deutscher Schäferhund, Golden und Husky; die anderen Rassen laufen noch normal) und wird bei allen Rassen etwas langsamer: 10% langsamer im Gehen, 25% langsamer im Rennen. Es erscheint der Vermerk <strong><span class="ig">Blutet</span></strong> am Namen, im Fenster und im Moodle, und daraus wird <strong><span class="ig">Verwundet</span></strong>, sobald der Verband sitzt. Der Reiter <strong><span class="ig">Gesundheit</span></strong> des Hundefensters zeigt seine Silhouette mit der verletzten Pfote markiert, die Liste der Körperteile und die aktiven Zustände, und ein Rechtsklick darauf öffnet das Behandlungsmenü; der Abschnitt Gesundheit im Reiter Status nennt Zustand, Verband und was zu tun ist; ab Tierpflege 5 zeigen beide auch den Heilungsfortschritt.</li>
+<li>Jeder Biss, den der Hund einem Zombie verpasst, endet mit 0,2% Wahrscheinlichkeit in einer offenen Wunde. Jede Kampfstufe zieht 0,01 Punkte davon ab: auf Stufe 10 halbiert sich die Chance auf 0,1%. Die Chance steigt, wenn er schon verletzt oder gestresst ist, und öfter als alle 2 Spielstunden kommt keine Wunde.</li>
+<li>Der Hund humpelt beim Gehen, bei allen Rassen, und wird etwas langsamer: 10% langsamer im Gehen, 25% langsamer im Rennen. Es erscheint der Vermerk <strong><span class="ig">Blutet</span></strong> am Namen, im Fenster und im Moodle, und daraus wird <strong><span class="ig">Verwundet</span></strong>, sobald der Verband sitzt. Der Reiter <strong><span class="ig">Gesundheit</span></strong> des Hundefensters zeigt seine Silhouette mit der verletzten Pfote markiert, die Liste der Körperteile und die aktiven Zustände, und ein Rechtsklick darauf öffnet das Behandlungsmenü; der Abschnitt Gesundheit im Reiter Status nennt Zustand, Verband und was zu tun ist; ab Tierpflege 5 zeigen beide auch den Heilungsfortschritt.</li>
 <li>Verletzt lehnt er Jagen und Bewachen ab, bis er geheilt ist. Folgen, Bleiben und Angreifen laufen weiter.</li>
-<li>Kämpft der Hund mit offener Wunde weiter, kann jeder Biss die Pfote brechen, mit der doppelten Wundchance. Meldung <em><span class="ig">hat sich eine Pfote gebrochen!</span></em>, Vermerk und Moodle <strong><span class="ig">Pfote gebrochen</span></strong>, und der Hund geht nur noch halb so schnell und rennt gar nicht mehr, in keiner Lage. Die Heilung dauert dann 3 Tage, auch mit Verband.</li>
+<li>Kämpft der Hund mit offener Wunde weiter, kann jeder Biss die Pfote brechen, mit derselben Chance wie die Wunde. Meldung <em><span class="ig">hat sich eine Pfote gebrochen!</span></em>, Vermerk und Moodle <strong><span class="ig">Pfote gebrochen</span></strong>, und der Hund geht nur noch halb so schnell und rennt gar nicht mehr, in keiner Lage. Die Heilung dauert dann 3 Tage, auch mit Verband.</li>
 <li>Blutet er ohne Verband, sinkt sein Leben (90% der Leiste pro Tag, eine volle Leiste in gut einem Tag) und erholt sich nicht, bis du verbindest. Bei null stirbt der Hund. Das gilt in jedem Stadium: eine entzündete Wunde ohne Verband blutet und entzündet sich zugleich.</li>
 <li>Ohne Verband hört die Blutung nach 12 Stunden von allein auf, und im Fenster steht dann <strong><span class="ig">Offene Wunde</span></strong>; die Wunde bleibt offen und kann sich entzünden. Ein Verband stoppt die Blutung sofort.</li>
 <li>Eine Wunde ohne Verband entzündet sich mit 20% Wahrscheinlichkeit pro Spielstunde; mit schmutzigem Verband 5% pro Stunde; mit sauberem oder sterilem Verband gar nicht. Eine entzündete Wunde erscheint als <strong><span class="ig">Entzündet</span></strong> und blockiert die Lebensheilung und die Zucht, solange sie anhält.</li>
@@ -1322,8 +1322,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="herzwurm">Herzwurm</h3>
 <ul>
 <li>Die Mücke sticht nur im Freien: je 6 Stunden am Stück ohne Dach würfelt der Hund 1,5% auf Ansteckung, und ins Haus zu gehen setzt die Zählung zurück. Es ist die schwerste Krankheit des Mods.</li>
-<li>Er dauert 3 bis 6 Tage, zehrt ein Viertel der Lebensleiste pro Tag, bringt Fieber, drückt den Schritt auf 65% und den Lauf auf 45%, und der Hund verweigert Angreifen, Kunststücke, Jagen und Bewachen. Jagd und Wache lässt er in dem Moment fallen, in dem er erkrankt. Moodle <strong><span class="ig">Herzwurm</span></strong>.</li>
-<li>Nur das <strong><span class="ig">Companion Dogs Herzwurmmittel</span></strong> hilft, in 18 Stunden. Dieselbe Dosis schützt 30 Tage und darf einem gesunden Hund gegeben werden, so wie man es im echten Leben macht.</li>
+<li>Er dauert 3 bis 6 Tage und verschwindet von selbst. Solange zehrt er ein Viertel der Lebensleiste pro Tag, bringt Fieber, drückt den Schritt auf 65% und den Lauf auf 45%, und der Hund verweigert Angreifen, Kunststücke, Jagen und Bewachen. Jagd und Wache lässt er in dem Moment fallen, in dem er erkrankt. Moodle <strong><span class="ig">Herzwurm</span></strong>.</li>
+<li>Das <strong><span class="ig">Companion Dogs Herzwurmmittel</span></strong> verkürzt ihn auf 18 Stunden. Dieselbe Dosis schützt 30 Tage und darf einem gesunden Hund gegeben werden, so wie man es im echten Leben macht.</li>
 </ul>
 <h3 id="allergie-floh-und-zecke">Allergie, Floh und Zecke</h3>
 <ul>
@@ -1473,7 +1473,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Die Loyalität sinkt ab da dreimal so schnell.</li>
 <li>Über der Hälfte hört die natürliche Heilung auf.</li>
 <li>Über 0,8 rinnt das Leben in etwa 8 Spielstunden weg: standardmäßig bis auf 10%, bis auf null mit eingeschalteter Option <strong><span class="ig">Krankheit und Vernachlässigung können töten</span></strong>.</li>
-<li>Die Loyalität fällt unter den Boden und der Hund wird <strong><span class="ig">Ungehorsam</span></strong>.</li>
+<li>Die Loyalität fällt unter die Schwelle und der Hund wird <strong><span class="ig">Ungehorsam</span></strong>.</li>
 <li>Der Stress steigt und er gerät in Panik: kein Kampf mehr, keine Wache, kein Kunststück.</li>
 <li>Mit eingeschalteter Option erreicht das Leben null und er stirbt.</li>
 </ol>
@@ -1511,9 +1511,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Füttern ist der schnellste Weg, aber der Gewinn hängt am gestillten Hunger: einen ausgehungerten Hund zu füttern kann Dutzende Punkte auf einmal zurückgeben. Ist die Loyalität gefallen, lass ihn erst hungrig werden und füttere ihn dann.</li>
 <li>Aus dem Napf zu fressen bringt keine Loyalität.</li>
 </ul>
-<h3 id="der-boden-des-ungehorsams">Der Boden des Ungehorsams</h3>
+<h3 id="die-schwelle-des-ungehorsams">Die Schwelle des Ungehorsams</h3>
 <p>Unter einem bestimmten Punkt wird der Hund <strong><span class="ig">Ungehorsam</span></strong> und verweigert Folgen, Kämpfen und Kunststücke: <em><span class="ig">Dein Caramelo vertraut dir nicht mehr...</span></em></p>
-<p>Dieser Boden sinkt, während Gehorsam steigt: er beginnt bei 30 und fällt um 1,5 pro Stufe, nie unter 10. Ein Hund mit Gehorsam 10 wird erst unter 15 Loyalität ungehorsam.</p>
+<p>Diese Schwelle sinkt, während Gehorsam steigt: sie beginnt bei 30 und fällt um 1,5 pro Stufe, nie unter 10. Ein Hund mit Gehorsam 10 wird erst unter 15 Loyalität ungehorsam.</p>
 <h3 id="wenn-der-hund-einen-befehl-verweigert">Wenn der Hund einen Befehl verweigert</h3>
 <p>Es gibt vier Gründe, in dieser Reihenfolge:</p>
 <div class="tw"><table><thead><tr>
@@ -1521,7 +1521,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Was du siehst</th>
 </tr></thead><tbody>
 <tr>
-<td>Loyalität unter dem Boden</td>
+<td>Loyalität unter der Schwelle</td>
 <td><em><span class="ig">Caramelo Rex vertraut dir nicht und ignoriert den Befehl.</span></em></td>
 </tr>
 <tr>
@@ -1606,7 +1606,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Gehorsam</strong></td>
 <td>Jeder befolgte Befehl (mit Wartezeit). Steigt unter Stufe 3 viermal so schnell</td>
-<td>Niedrigerer Loyalitätsboden, die vier Kunststücke und weniger Verweigerung</td>
+<td>Niedrigere Loyalitätsschwelle, die vier Kunststücke und weniger Verweigerung</td>
 </tr>
 <tr>
 <td><strong>Jagd</strong></td>
@@ -1960,7 +1960,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Loyalität</strong>, mit Balken.</li>
 <li><strong>Bedürfnisse:</strong> Hunger, Durst, Gesundheit, Stress.</li>
 <li><strong>Fähigkeiten:</strong> Spürsinn, Kampf, Gehorsam, Jagd, Hüten, jede mit Fortschrittsbalken und <strong><span class="ig">Lv X</span></strong>.</li>
-<li><strong>Merkmale:</strong> Stärke, Aggressivität, Widerstandskraft, angezeigt als Niedrig / Durchschnittlich / Hoch.</li>
+<li><strong>Anlagen:</strong> Stärke, Aggressivität, Widerstandskraft, angezeigt als Niedrig / Durchschnittlich / Hoch.</li>
 <li><strong>Art:</strong> Hund oder Katze. Ein Katzenjunges erscheint als <strong>Kätzchen</strong>.</li>
 <li><strong>Rasse:</strong> Name, Alter (Erwachsen oder Welpe) und <span class="ig">(Mischling)</span>, wenn es zutrifft, mit der Rassenbeschreibung im Tooltip.</li>
 <li><strong>Erlegt:</strong> wie viele Zombies und wie viel Wild der Hund schon getötet hat.</li>
@@ -2046,7 +2046,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td><i class="ico ico-immune" title="Geimpft" role="img" aria-label="Geimpft"></i></td>
 <td><strong>Geimpft</strong></td>
 <td>Hat den Impfstoff bekommen</td>
-<td>Keine Grippe, keine Wundinfektion und kein verdorbener Magen durch Futter</td>
+<td>Keine Grippe, keine Wundinfektion und kein verdorbener Magen durch Futter oder Wasser</td>
 </tr>
 <tr>
 <td><i class="ico ico-prot-heartworm" title="Geschützt: Herzwurm" role="img" aria-label="Geschützt: Herzwurm"></i></td>
@@ -2285,7 +2285,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Verletzungschance pro Biss (Prozent)</td>
 <td>0.2</td>
-<td>Pro Biss, den er von einem Zombie abbekommt</td>
+<td>Pro Biss, den er einem Zombie verpasst, minus 5% pro Kampf-Stufe</td>
 </tr>
 <tr>
 <td>Verstauchungschance pro Zaunsprung (Prozent)</td>
@@ -2300,7 +2300,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Chance auf Magenverstimmung (Prozent)</td>
 <td>25.0</td>
-<td>Pro verdorbener Mahlzeit</td>
+<td>Pro angegangenem Futter oder schmutzigem Wasser</td>
 </tr>
 <tr>
 <td>Grippe-Chance (Prozent)</td>
@@ -2310,7 +2310,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Herzwurm-Chance (Prozent)</td>
 <td>1.5</td>
-<td>Täglich gewürfelt</td>
+<td>Alle 6 Stunden am Stück im Freien</td>
 </tr>
 <tr>
 <td>Futterallergie-Chance (Prozent)</td>
@@ -2320,7 +2320,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td>Floh- und Zecken-Chance pro Biss (Prozent)</td>
 <td>0.2</td>
-<td>Pro Biss, den er abbekommt</td>
+<td>Pro Biss, den er austeilt</td>
 </tr>
 </tbody></table></div>
 <h3 id="verhalten">Verhalten</h3>
@@ -2436,7 +2436,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">Der Hund steigt nicht mit mir ins Auto.</span></strong> Nur ein Hund im Modus <strong>Folgen</strong> steigt ein.</p>
 <p><strong><span class="ig">Ich habe den Hund die Basis bewachen lassen und er hat nichts getan.</span></strong> Der Modus Bewachen funktioniert vorerst nur, solange du in der Nähe bist. Der einzige Modus, der allein aus der Ferne arbeitet, ist <strong><span class="ig">Hier das Vieh versorgen</span></strong>, und der braucht ein ausgewiesenes Gehege.</p>
 <p><strong><span class="ig">Der Hund lernt viel zu langsam.</span></strong> Der Standard der <strong><span class="ig">XP-Rate für Fähigkeiten</span></strong> ist 0,5. Stell sie in einer neuen Welt auf 1.0 oder mehr.</p>
-<p><strong><span class="ig">Mein Hund ist gestorben.</span></strong> Ein toter Hund kommt nicht zurück. Die Ursachen sind Hunger oder Durst bis zum Äußersten und eine unbehandelte Infektion. Die Satteltaschen und die Ladung bleiben am Boden liegen, wo er gefallen ist.</p>
+<p><strong><span class="ig">Mein Hund ist gestorben.</span></strong> Ein toter Hund kommt nicht zurück. Hunger, Durst und unbehandelte Krankheit töten nur, wenn die Sandbox-Option <strong><span class="ig">Krankheit und Vernachlässigung können töten</span></strong> an ist; standardmäßig ist sie aus, und das Leben bleibt bei 10% stehen. Die Satteltaschen und die Ladung bleiben am Boden liegen, wo er gefallen ist.</p>
 <p><strong><span class="ig">Meine Tragfähigkeit hat sich nach der Installation des Mods geändert.</span></strong> Companion Dogs rührt dein Maximalgewicht nicht an. Auf dem Server gibt es eine Eigenheit des Grundspiels: Deine Kapazität bleibt auf einem niedrigen Wert eingefroren, ohne Rücksicht auf Stärke, bis der Charakter den ersten Schaden nimmt.</p>
 <h2 id="24-den-mod-aus-einem-spielstand-entfernen-vorher-lesen">24. Den Mod aus einem Spielstand entfernen (VORHER LESEN)</h2>
 <p><strong>Nimmst du Companion Dogs aus einem Spielstand mit Hunden heraus, verschwinden auch Tiere, die nicht zum Mod gehören</strong>: das Vieh im Gehege, die Hühner, alles in dieser Region der Karte. So legt Project Zomboid Tiere ab, und der Mod kann sich nach seiner Entfernung nicht mehr dagegen wehren.</p>

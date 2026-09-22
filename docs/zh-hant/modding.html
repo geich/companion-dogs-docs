@@ -412,7 +412,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="加入 Discord" aria-label="加入 Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>加入 Discord</span></a>
   <button class="iconbtn" id="theme" type="button" aria-label="切換主題">&#9789;</button>
 </header>
-<div class="mtwarn" role="note"><span class="mtdot"></span><b>機器翻譯，尚未校閱.</b> 本頁是從葡萄牙文機器翻譯而來的，還沒有人校閱過，用詞和數字都可能有誤。有疑問時，請對照英文版或葡萄牙文原文。 <a href="../en/modding.html">閱讀英文版</a></div>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>機器翻譯，尚未校閱。</b>本頁是從葡萄牙文機器翻譯而來的，還沒有人校閱過，用詞和數字都可能有誤。有疑問時，請對照英文版或葡萄牙文原文。<a href="../en/modding.html">閱讀英文版</a></div>
 
 <div class="wrap">
   <aside class="rail" id="rail">
@@ -481,11 +481,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   </aside>
   <main><article class="doc"><h1 id="companion-dogs模組製作手冊">Companion Dogs：模組製作手冊</h1>
 <p>如何製作你自己的附加模組：一個新品種，或者一整個物種，作為獨立的創意工坊模組掛接到 Companion Dogs 上。</p>
-<p>這本手冊是寫給做模組的人看的。如果你只是想玩，你要看的是另外兩本： <a href="features.html" class="xlink">功能</a> 講狗狗能做什麼， <a href="breeds.html" class="xlink">品種</a> 講品種本身。</p>
-<p>本手冊假設你已經讀得懂 Lua，並且手上已經有一個附骨架與動畫的動物模型。美術流程不在這裡； 第 2 節列出模型檔案必須符合的條件。</p>
-<blockquote class="quote">本手冊點名的一切都是公開契約，都是給模組外部呼叫用的。這裡沒有點名的東西屬於內部實作， 可能在任何版本裡不經通知就改掉。</blockquote>
+<p>這本手冊是寫給做模組的人看的。如果你只是想玩，你要看的是另外兩本： <a href="features.html" class="xlink">功能</a>講狗狗能做什麼， <a href="breeds.html" class="xlink">品種</a>講品種本身。</p>
+<p>本手冊假設你已經讀得懂 Lua，並且手上已經有一個附骨架與動畫的動物模型。美術流程不在這裡；第 2 節列出模型檔案必須符合的條件。</p>
+<blockquote class="quote">本手冊點名的一切都是公開契約，都是給模組外部呼叫用的。這裡沒有點名的東西屬於內部實作，可能在任何版本裡不經通知就改掉。</blockquote>
 <h2 id="1-附加模組是什麼">1. 附加模組是什麼</h2>
-<p>附加模組就是一個普通的創意工坊模組，它宣告 <code>require=CompanionDogs</code>，並在載入時呼叫一個函式。 它加入一個品種（若共用同一副身體，也可以是好幾個），除此之外什麼都不加。</p>
+<p>附加模組就是一個普通的創意工坊模組，它宣告 <code>require=CompanionDogs</code>，並在載入時呼叫一個函式。它加入一個品種（若共用同一副身體，也可以是好幾個），除此之外什麼都不加。</p>
 <p>基礎模組擁有：</p>
 <ul>
 <li>動畫狀態機、動作集和骨架</li>
@@ -501,12 +501,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>牠在世界上出現的地點</li>
 <li>牠的名字和描述，你附上的每一種語言都要</li>
 </ul>
-<p>兩種行為完全相同的毛色，對基礎版來說仍然是兩個品種（兩個名字，犬舍裡兩個條目）； 你從同一張共用的表把它們寫出來，就像 CD: Cats 對它的五種毛色做的那樣。</p>
+<p>兩種行為完全相同的毛色，對基礎版來說仍然是兩個品種（兩個名字，犬舍裡兩個條目）；你從同一張共用的表把它們寫出來，就像 CD: Cats 對它的五種毛色做的那樣。</p>
 <h2 id="2-動手之前要準備什麼">2. 動手之前要準備什麼</h2>
-<p>你的動物需要自己的 skinned <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下， 並且要有完整的 21 個 <code>Rac_*</code> 動畫片段。片段不會在模型檔案之間繼承： 只有十五個片段的模型，會在第一次被要求做另外六個之一的時候當場凍住。 模型還必須維持在 60 根骨頭以內，而且頂層節點要在單位變換上， 否則引擎每一幀都拋一次例外，動物會被畫成一團黑影。另外還有兩個選用片段， <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（跛行的走路循環）； 只有你在品種定義裡設了 <code>limpAnim = true</code> 它們才有意義。</p>
-<p>如果你還沒有模型，可以把 <code>CD.applyDogModel</code> 指向基礎版的某一具身體， 其他所有東西照樣寫得出來也測得了。動物看起來像小卡犬，但這本手冊裡的每一套系統都在跑。</p>
+<p>你的動物需要自己的 skinned <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下，並且要有完整的 21 個 <code>Rac_*</code> 動畫片段。片段不會在模型檔案之間繼承：只有十五個片段的模型，會在第一次被要求做另外六個之一的時候當場凍住。模型還必須維持在 60 根骨頭以內，而且頂層節點要在單位變換上，否則引擎每一幀都拋一次例外，動物會被畫成一團黑影。另外還有兩個選用片段， <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（跛行的走路循環）；只有你在品種定義裡設了 <code>limpAnim = true</code> 它們才有意義。</p>
+<p>如果你還沒有模型，可以把 <code>CD.applyDogModel</code> 指向基礎版的某一具身體，其他所有東西照樣寫得出來也測得了。動物看起來像小卡犬，但這本手冊裡的每一套系統都在跑。</p>
 <p>你還需要身體的貼圖，以及犬舍視窗用的肖像。</p>
-<p>動手寫程式之前先決定：你的動物是一個品種還是一個物種。品種是數字不一樣的狗。 物種是完全缺少某些工作的動物。這個選擇改變你要寫哪些欄位；第 6 節講這件事。</p>
+<p>動手寫程式之前先決定：你的動物是一個品種還是一個物種。品種是數字不一樣的狗。物種是完全缺少某些工作的動物。這個選擇改變你要寫哪些欄位；第 6 節講這件事。</p>
 <h2 id="3-一個附加模組的檔案">3. 一個附加模組的檔案</h2>
 <p>這是 CD: Pug，已發佈的附加模組裡最小的一個，只列出有意義的部分：</p>
 <pre><code>CompanionDogsPug/
@@ -536,14 +536,14 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> 是最重要的那一行。它保證基礎版所有的 Lua 都在你的任何一行之前跑完， 每一個階段都是：先 shared，再 client，再 server。沒有它，你的檔案可能先載入， 於是每一個 <code>CD.</code> 呼叫都是對 nil 取索引。</p>
-<p><code>versionMin</code> 表達不了「需要 Companion Dogs 0.6.8」。那個欄位只管遊戲版本， 而 mod.info 裡沒有表達相依版本的欄位。基礎版的下限靠下一節的守衛執行， 並且靠你的描述告訴玩家。用文字寫在那裡，否則玩家得到的唯一症狀就是一隻永遠不出現的動物。</p>
+<p><code>require=CompanionDogs</code> 是最重要的那一行。它保證基礎版所有的 Lua 都在你的任何一行之前跑完，每一個階段都是：先 shared，再 client，再 server。沒有它，你的檔案可能先載入，於是每一個 <code>CD.</code> 呼叫都是對 nil 取索引。</p>
+<p><code>versionMin</code> 表達不了「需要 Companion Dogs 0.6.8」。那個欄位只管遊戲版本，而 mod.info 裡沒有表達相依版本的欄位。基礎版的下限靠下一節的守衛執行，並且靠你的描述告訴玩家。用文字寫在那裡，否則玩家得到的唯一症狀就是一隻永遠不出現的動物。</p>
 <h2 id="4-版本守衛">4. 版本守衛</h2>
 <p>把這段放在你附加模組的每一個 Lua 檔案最上面，數字換成你的附加模組需要的那個：</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>基礎版不存在或者太舊時，檔案在第二行就 return，附加模組什麼都不做： 沒有品種、沒有生成、沒有 moodle、也沒有日誌。</p>
-<p>守衛是逐檔案的，每個檔案守衛它自己用到的東西。<code>PugDefinitions.lua</code> 需要模型輔助函式， 所以它守衛那些：</p>
+<p>基礎版不存在或者太舊時，檔案在第二行就 return，附加模組什麼都不做：沒有品種、沒有生成、沒有 moodle、也沒有日誌。</p>
+<p>守衛是逐檔案的，每個檔案守衛它自己用到的東西。<code>PugDefinitions.lua</code> 需要模型輔助函式，所以它守衛那些：</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>不要去建立那個全域變數。在附加模組裡寫 <code>CompanionDogs = CompanionDogs or {}</code> 會把「基礎版不存在」變成一張半成品的表，於是下游每一道守衛都會在不該通過的時候通過。</p>
 <h2 id="5-註冊品種">5. 註冊品種</h2>
@@ -720,6 +720,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true 讓受傷的動物走路時跛行。只有你的模型有那兩個選用片段 <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（1.0 秒的走路循環，root motion 和 <code>Rac_Walk</code> 相同）時才設。沒有那兩個片段，動物會原地凍住地走。</td>
 </tr>
 <tr>
+<td><code>bandSkin</code></td>
+<td>關</td>
+<td><code>{ base, front, back, cutFront, cutBack }</code>，五個身體貼圖名。受傷的腿在傷口流血時換成帶傷口的版本，包紮後換成纏繃帶的版本。四個變體用 <code>_dogrig/forge/_paw_band.py</code> 產生。不設的話動物照樣會受傷，只是看不到痕跡。</td>
+</tr>
+<tr>
 <td><code>voices</code></td>
 <td>狗的聲音</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>。</td>
@@ -750,12 +755,12 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>結構性的區塊。第 6 節。</td>
 </tr>
 </tbody></table></div>
-<p>你加進定義裡的數字和旗標，要用 <code>CD.breedNumber(animal, field)</code> 和 <code>CD.breedFlag(animal, field)</code> 讀回來，不要用 <code>CD.getBreedDef(animal).field</code>。前兩個會處理欄位不存在的情況， 而且基礎版改動之後照樣能用。</p>
+<p>你加進定義裡的數字和旗標，要用 <code>CD.breedNumber(animal, field)</code> 和 <code>CD.breedFlag(animal, field)</code> 讀回來，不要用 <code>CD.getBreedDef(animal).field</code>。前兩個會處理欄位不存在的情況，而且基礎版改動之後照樣能用。</p>
 <h3 id="本能distract">本能：<code>distract</code></h3>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>宣告了這個的品種，會時不時注意到某個東西然後追過去，把手上正在做的事丟下。 牠在停留時會這麼做，在跟隨時也會。持續期間，指令會被回絕， 用的是服從判定本來就在用的那句 <code>distracted</code> 訊息。過來是唯一穿得過去的指令，而且它會取消這次分心。</p>
+<p>宣告了這個的品種，會時不時注意到某個東西然後追過去，把手上正在做的事丟下。牠在停留時會這麼做，在跟隨時也會。持續期間，指令會被回絕，用的是服從判定本來就在用的那句 <code>distracted</code> 訊息。過來是唯一穿得過去的指令，而且它會取消這次分心。</p>
 <p>每一種都吃同一組選用旋鈕。你沒寫的部分用模組的預設值：</p>
 <div class="tw"><table><thead><tr>
 <th>欄位</th>
@@ -786,10 +791,10 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <p>不管你宣告什麼，有兩條限制都成立：</p>
 <ul>
 <li>牠永遠不會超過你的 <code>huntMaxPrey</code>：上限卡在 <code>small</code> 的品種，就算宣告 <code>large</code> 也不會去追鹿。</li>
-<li>只有 <code>tiny</code> 會跳過等級關卡。剛馴服、狩獵 0 級的動物就已經抓得到鼠類。 宣告了 <code>small</code> 的話，這個品種在任何等級都會去追兔子，但要殺掉牠需要和拉布拉多一樣的狩獵等級。</li>
+<li>只有 <code>tiny</code> 會跳過等級關卡。剛馴服、狩獵 0 級的動物就已經抓得到鼠類。宣告了 <code>small</code> 的話，這個品種在任何等級都會去追兔子，但要殺掉牠需要和拉布拉多一樣的狩獵等級。</li>
 </ul>
 <p>沙盒的狩獵開關只影響殺這一步：動物照樣去追，但獵物會跑掉。</p>
-<p>用這種方式殺到的獵物走的是正常的回收流程，所以你品種的 <code>huntFetchLevel</code> 決定牠會不會把屍體叼回給主人。 設成 <code>0</code> 的話動物從第一天就會送過來，貓叼一隻死老鼠給你就是這樣來的。 送達這件事的壽命比分心視窗長：獵物一死，動物就重新聽指令，而回家那一趟跑的是它自己的 <code>huntDeliverTimeoutMin</code>。</p>
+<p>用這種方式殺到的獵物走的是正常的回收流程，所以你品種的 <code>huntFetchLevel</code> 決定牠會不會把屍體叼回給主人。設成 <code>0</code> 的話動物從第一天就會送過來，貓叼一隻死老鼠給你就是這樣來的。送達這件事的壽命比分心視窗長：獵物一死，動物就重新聽指令，而回家那一趟跑的是它自己的 <code>huntDeliverTimeoutMin</code>。</p>
 <h4 id="撰寫你自己的種類">撰寫你自己的種類</h4>
 <p><code>distract</code> 是一個分派器。註冊你自己的：</p>
 <pre><code>CD.registerDistraction("butterfly", {
@@ -799,8 +804,8 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
 <p>然後像其他任何一種那樣宣告在品種上：<code>distract = { butterfly = { chance = 0.10 } }</code>。</p>
-<p><code>gate</code> 在模組的全域掃描預算之前跑。<code>find</code> 在預算之後跑，做那個花錢的搜尋。 <code>drive</code> 在還在驅動這隻動物的期間回傳 true，做完了回傳 false，這會關掉視窗。 你的處理函式跑在自己的 <code>pcall</code> 裡。如果它拋例外，模組會記一行帶名字的日誌， 把那一種在這次工作階段裡取消註冊，其餘的夥伴功能照常。</p>
-<p>保留給未來基礎版種類的名字：<code>drink</code>、<code>eat</code>、<code>play</code>。你今天可以用其中一個名字註冊一種， 但基礎版推出自己的那一版時會把名字接管過去。</p>
+<p><code>gate</code> 在模組的全域掃描預算之前跑。<code>find</code> 在預算之後跑，做那個花錢的搜尋。 <code>drive</code> 在還在驅動這隻動物的期間回傳 true，做完了回傳 false，這會關掉視窗。你的處理函式跑在自己的 <code>pcall</code> 裡。如果它拋例外，模組會記一行帶名字的日誌，把那一種在這次工作階段裡取消註冊，其餘的夥伴功能照常。</p>
+<p>保留給未來基礎版種類的名字：<code>drink</code>、<code>eat</code>、<code>play</code>。你今天可以用其中一個名字註冊一種，但基礎版推出自己的那一版時會把名字接管過去。</p>
 <h3 id="休息姿勢">休息姿勢</h3>
 <p>休息的動物會趴下。<code>restPoses</code> 把這唯一的姿勢換成一份清單，動物每次安頓下來都從裡面抽一個：</p>
 <pre><code>restPoses = {
@@ -823,13 +828,13 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <p>然後讓品種指向它們：</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
-<p>沒有 <code>CD.registerVoices</code>，聲音還是會播，但它們不理會玩家的分類滑桿和遊戲的音效音量， 而且日誌裡沒有任何線索指向這件事。你在 <code>voices</code> 裡漏掉的鍵會退回狗的聲音。</p>
-<p><code>whine</code> 是動物受傷或生病時發出的聲音。<code>eat</code> 和 <code>drink</code> 是吃喝的音效。狗的是循環音， 動物吃完時由基礎模組停止；如果你的也是循環音，把它們加進 <code>CD.SOUND_LOOPED</code>，聽者走出範圍時基礎模組 也會把它們停掉。比 API 11 更舊的基礎模組會無視這三個鍵，照放狗的聲音。</p>
+<p>沒有 <code>CD.registerVoices</code>，聲音還是會播，但它們不理會玩家的分類滑桿和遊戲的音效音量，而且日誌裡沒有任何線索指向這件事。你在 <code>voices</code> 裡漏掉的鍵會退回狗的聲音。</p>
+<p><code>whine</code> 是動物受傷或生病時發出的聲音。<code>eat</code> 和 <code>drink</code> 是吃喝的音效。狗的是循環音，動物吃完時由基礎模組停止；如果你的也是循環音，把它們加進 <code>CD.SOUND_LOOPED</code>，聽者走出範圍時基礎模組也會把它們停掉。比 API 11 更舊的基礎模組會無視這三個鍵，照放狗的聲音。</p>
 <p>第三個參數是每個音效的可聽範圍，以格計。它應該和你自己在音效腳本裡寫的 <code>distanceMax</code> 一致：</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
-<p>在伺服器上，基礎版只把聲音送給在那個範圍內的玩家。範圍不寫的話，這個聲音會拿到一個按分類給的通用範圍： 一聲只傳十格的哈氣會送給三十格內的所有人。超過 <code>distanceMax</code> 之後， FMOD 的反比衰減會停止衰減而不是歸零，所以一個沒管好的 <code>.ogg</code> 會在任何距離上都以 <code>distanceMin / distanceMax</code> 的音量繼續播。同樣的道理，你那些大聲的音效要把 <code>distanceMin</code> 留小。</p>
+<p>在伺服器上，基礎版只把聲音送給在那個範圍內的玩家。範圍不寫的話，這個聲音會拿到一個按分類給的通用範圍：一聲只傳十格的哈氣會送給三十格內的所有人。超過 <code>distanceMax</code> 之後， FMOD 的反比衰減會停止衰減而不是歸零，所以一個沒管好的 <code>.ogg</code> 會在任何距離上都以 <code>distanceMin / distanceMax</code> 的音量繼續播。同樣的道理，你那些大聲的音效要把 <code>distanceMin</code> 留小。</p>
 <h3 id="飲食">飲食</h3>
-<p>沒有 <code>diet</code> 的話每個品種都像狗一樣吃：一樣的食物會毒到牠，一樣的食物算肉， 一樣的東西牠會從飼料槽自己吃。這個欄位只為你的品種覆寫那三張清單。</p>
+<p>沒有 <code>diet</code> 的話每個品種都像狗一樣吃：一樣的食物會毒到牠，一樣的食物算肉，一樣的東西牠會從飼料槽自己吃。這個欄位只為你的品種覆寫那三張清單。</p>
 <pre><code>diet = {
     bad          = { Fruits = true },              -- fruit now makes it sick
     badParts     = { onion = false },              -- onion no longer does
@@ -838,8 +843,8 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     trough       = { Vegetables = false },         -- it will not graze vegetables
     troughItems  = { ["Base.CatFoodOpen"] = true },
 },</code></pre>
-<p>兩種寫法並存，是因為遊戲自己的分類只能做到這個程度。<code>Cheese</code> 是一個真的 <code>FoodType</code>， 所以一個鍵就涵蓋了遊戲裡以及任何沿用這個分類的食物模組裡的每一種乳酪。鮪魚不是： 開過的罐頭是 <code>FoodType = Fish</code>，和其他所有魚在一起，而沒開的罐頭根本沒宣告食物類型。 <code>badParts</code> 和 <code>proteinParts</code> 就是你搆到那些東西的辦法。</p>
-<p>每個欄位都是一張 <code>&lt;key&gt; = true</code>（加入）或 <code>&lt;key&gt; = false</code>（拿掉基礎版本來有的）的表。 不是 <code>true</code> 也不是 <code>false</code> 的值會被丟掉，並在日誌裡留下一行帶名字的記錄。</p>
+<p>兩種寫法並存，是因為遊戲自己的分類只能做到這個程度。<code>Cheese</code> 是一個真的 <code>FoodType</code>，所以一個鍵就涵蓋了遊戲裡以及任何沿用這個分類的食物模組裡的每一種乳酪。鮪魚不是：開過的罐頭是 <code>FoodType = Fish</code>，和其他所有魚在一起，而沒開的罐頭根本沒宣告食物類型。 <code>badParts</code> 和 <code>proteinParts</code> 就是你搆到那些東西的辦法。</p>
+<p>每個欄位都是一張 <code>&lt;key&gt; = true</code>（加入）或 <code>&lt;key&gt; = false</code>（拿掉基礎版本來有的）的表。不是 <code>true</code> 也不是 <code>false</code> 的值會被丟掉，並在日誌裡留下一行帶名字的記錄。</p>
 <div class="tw"><table><thead><tr>
 <th>欄位</th>
 <th>它的鍵是什麼</th>
@@ -873,15 +878,15 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>完整的物品類型，用在飼料槽裝得下、但本身沒有飼料類型的物品上</td>
 </tr>
 </tbody></table></div>
-<p><code>replace = true</code> 從一張空清單開始，而不是從狗那張。當你的動物和狗幾乎沒有共通點時用它； 一隻貓通常寫成幾個增減會比較省事。</p>
-<p>那三張清單跟著動物走，所以一條狗和一隻貓站在同一個飼料槽前，吃到的東西不一樣。 模組自己的食盆是例外：它存的是食物點數，不是把它裝滿的那個物品，所以裝填時對所有動物都走基礎版那張清單。 反正有毒的東西本來就放不進食盆。</p>
+<p><code>replace = true</code> 從一張空清單開始，而不是從狗那張。當你的動物和狗幾乎沒有共通點時用它；一隻貓通常寫成幾個增減會比較省事。</p>
+<p>那三張清單跟著動物走，所以一條狗和一隻貓站在同一個飼料槽前，吃到的東西不一樣。模組自己的食盆是例外：它存的是食物點數，不是把它裝滿的那個物品，所以裝填時對所有動物都走基礎版那張清單。反正有毒的東西本來就放不進食盆。</p>
 <h3 id="出生時的性別">出生時的性別</h3>
-<p>每隻動物出現時都會抽一次公母，預設對半。<code>maleChance</code> 是生為公的比例，0 到 1，<code>sterileMale</code> 則把該品種 的公排除在配種之外。</p>
+<p>每隻動物出現時都會抽一次公母，預設對半。<code>maleChance</code> 是生為公的比例，0 到 1，<code>sterileMale</code> 則把該品種的公排除在配種之外。</p>
 <pre><code>maleChance = 0.00033,
 sterileMale = true,</code></pre>
-<p>這一對就是三花貓。橘色和黑色的花紋掛在 X 染色體上，所以三花幾乎都是母的，偶爾出現的公是 XXY，大約三千隻裡 一隻，也生不出小貓。<code>sterileMale</code> 品種的公永遠不會被選為配偶，右鍵選單裡的配種選項也會消失。母的照常配種。</p>
-<p>這種品種的公在遊戲顯示性別的地方都會帶上「不育」：狀態面板、右鍵選單、流浪動物掃描和狗舍，玩家就知道牠為 什麼不配種。</p>
-<p>兩個欄位都從品種定義裡讀，動物身上不寫任何東西，舊存檔也不用遷移。同一次抽籤也決定幼崽出生時的性別，所以在 世界裡是母的品種，在窩裡也還是母的。</p>
+<p>這一對就是三花貓。橘色和黑色的花紋掛在 X 染色體上，所以三花幾乎都是母的，偶爾出現的公是 XXY，大約三千隻裡一隻，也生不出小貓。<code>sterileMale</code> 品種的公永遠不會被選為配偶，右鍵選單裡的配種選項也會消失。母的照常配種。</p>
+<p>這種品種的公在遊戲顯示性別的地方都會帶上「不育」：狀態面板、右鍵選單、流浪動物掃描和狗舍，玩家就知道牠為什麼不配種。</p>
+<p>兩個欄位都從品種定義裡讀，動物身上不寫任何東西，舊存檔也不用遷移。同一次抽籤也決定幼崽出生時的性別，所以在世界裡是母的品種，在窩裡也還是母的。</p>
 <h2 id="6-整套關掉一個系統">6. 整套關掉一個系統</h2>
 <p>五項技能就是五套系統：</p>
 <div class="tw"><table><thead><tr>
@@ -915,7 +920,7 @@ canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
 <p>不寫或者寫 <code>true</code> 都表示這隻動物有那項技能。</p>
 <p>關掉一項技能也會讓牠不再累積該項經驗，並且把那條進度條和它的指令從介面上移除。</p>
-<p><code>canBreed = false</code> 和那張表分開，因為配種既沒有進度條也沒有經驗。這隻動物不會懷孕， 永遠不會被挑作伴侶，和自己同類也不配種。</p>
+<p><code>canBreed = false</code> 和那張表分開，因為配種既沒有進度條也沒有經驗。這隻動物不會懷孕，永遠不會被挑作伴侶，和自己同類也不配種。</p>
 <h3 id="物種">物種</h3>
 <p>一個加入別種動物、而不是再加一種狗的擴充模組，要這樣宣告：</p>
 <pre><code>CD.registerSpecies({ key = "cat",
@@ -924,15 +929,15 @@ huntMaxPrey = "tiny",</code></pre>
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
 <p>到目前為止發佈過的每一個品種都沒有這個欄位，而沒有就表示 <code>"dog"</code>。</p>
-<p>配種按物種封閉：只有雙方是同一物種才會懷孕，指令裡、被動的每小時抽取裡和除錯工具裡都一樣。 介面也不再把你的動物叫做狗：<code>nounKey</code> 是填進*"這隻%1已經屬於另一位倖存者"<em>這類句子的光禿名詞， 而 <code>youngKey</code> 是你這個物種的幼體在視窗、右鍵選單和犬舍裡帶的標籤，狗在那裡寫的是</em>幼犬*。</p>
-<p>那兩個名詞只管得到繞著 <code>%1</code> 造的句子。其他每一句把*狗*這個字直接寫進去的句子 （<em>"檢查動物"</em>、<em>"你的狗餓了"</em>、<em>"狗故意吠叫"</em>）從 API 7 起改用按物種的鍵： 在你的翻譯檔裡放上 <code>IGUI_PD_ScanStray_cat</code>，只要畫面上的動物是貓，基礎版就會顯示它而不是 <code>IGUI_PD_ScanStray</code>。你沒放的鍵會退回狗的文字。接受這個後綴的鍵有：<code>ScanStray</code>、<code>ScanTitle</code>、 <code>PauseGrowthTip</code>、<code>BadFood</code>、<code>AlertFullDesc</code>、<code>AlertQuietDesc</code>、<code>AlertLockedTip</code>、<code>HuntModeDesc</code>、 每一個 <code>Trick*Desc</code>、<code>TrickDistractDone</code>、<code>TrickNeedsBag</code>、<code>TrickGotoPick</code>、<code>TrickSniffNoItem</code>、 <code>TrickFetchNoItem</code>、<code>AlertGroup</code>、<code>DogLost</code>、每一個 <code>Refused_*</code>、<code>KennelStatusNoData</code> 以及照料類 moodle 的 <code>Moodle_*_desc</code>（Sick、Weak、Hunger、Thirst、Rested、Grief）。 畫面上沒有動物的句子（登記分頁、<em>"先和一隻動物成為朋友吧"</em>）在基礎版裡本來就是物種中立的。 貓把它們十四種語言全部附上了；把牠的 <code>IG_UI.json</code> 當範本抄走。</p>
-<p>動物的 <code>group</code> 只有除錯模式的生成選單和動作片段檢視器會讀，透過 <code>IGUI_Animal_Group_&lt;group&gt;</code>。 在行為輔助函式之後設 <code>t.group = "cat"</code> 並附上那個鍵，否則你的物種在那裡會頂著狗的名字出現。</p>
-<p>宣告了 <code>species</code> 卻沒註冊並不致命：你的動物照樣拒絕和自己物種以外的配種，因為那道關卡比對的是原始字串。 只有那兩個名詞會退回狗的，而且日誌會指名說出來。</p>
-<p>在比 API 6 更舊的基礎版上，這個欄位會被忽略而且不留日誌，你的動物會像狗一樣配種。 如果牠絕對不能和狗雜交，就在 API 6 上設守衛，或者在基礎版還舊的時候保持 <code>canBreed = false</code>， 貓就是這麼做的。</p>
-<p><code>huntMaxPrey</code> 限制的是一場仍然存在的狩獵裡的獵物體型，它不能取代 <code>hunt = false</code>。 它接受 <code>"tiny"</code>（老鼠、大鼠、松鼠）、<code>"small"</code>（兔子、浣熊）或 <code>"large"</code>（鹿，預設值，不設上限）。 你的動物不會去追、也不會去指認超過上限的獵物。不在這道階梯上的值會退回 <code>"large"</code>， 並在日誌裡印出一行帶名字的記錄。</p>
-<p>被擋掉的選項會從輪盤、右鍵選單和視窗裡消失，伺服器也會不吭一聲地拒絕它。這些欄位沒有一個會新增翻譯鍵， 所以請在你的品種描述裡把限制講清楚。</p>
+<p>配種按物種封閉：只有雙方是同一物種才會懷孕，指令裡、被動的每小時抽取裡和除錯工具裡都一樣。介面也不再把你的動物叫做狗：<code>nounKey</code> 是填進<em>"這隻%1已經屬於另一位倖存者"</em>這類句子的光禿名詞，而 <code>youngKey</code> 是你這個物種的幼體在視窗、右鍵選單和犬舍裡帶的標籤，狗在那裡寫的是<em>幼犬</em>。</p>
+<p>那兩個名詞只管得到繞著 <code>%1</code> 造的句子。其他每一句把<em>狗</em>這個字直接寫進去的句子（<em>"檢查動物"</em>、<em>"你的狗餓了"</em>、<em>"狗故意吠叫"</em>）從 API 7 起改用按物種的鍵：在你的翻譯檔裡放上 <code>IGUI_PD_ScanStray_cat</code>，只要畫面上的動物是貓，基礎版就會顯示它而不是 <code>IGUI_PD_ScanStray</code>。你沒放的鍵會退回狗的文字。接受這個後綴的鍵有：<code>ScanStray</code>、<code>ScanTitle</code>、 <code>PauseGrowthTip</code>、<code>BadFood</code>、<code>AlertFullDesc</code>、<code>AlertQuietDesc</code>、<code>AlertLockedTip</code>、<code>HuntModeDesc</code>、每一個 <code>Trick*Desc</code>、<code>TrickDistractDone</code>、<code>TrickNeedsBag</code>、<code>TrickGotoPick</code>、<code>TrickSniffNoItem</code>、 <code>TrickFetchNoItem</code>、<code>AlertGroup</code>、<code>DogLost</code>、每一個 <code>Refused_*</code>、<code>KennelStatusNoData</code> 以及照料類 moodle 的 <code>Moodle_*_desc</code>（Sick、Weak、Hunger、Thirst、Rested、Grief）。畫面上沒有動物的句子（登記分頁、<em>"先和一隻動物成為朋友吧"</em>）在基礎版裡本來就是物種中立的。貓把它們十四種語言全部附上了；把牠的 <code>IG_UI.json</code> 當範本抄走。</p>
+<p>動物的 <code>group</code> 只有除錯模式的生成選單和動作片段檢視器會讀，透過 <code>IGUI_Animal_Group_&lt;group&gt;</code>。在行為輔助函式之後設 <code>t.group = "cat"</code> 並附上那個鍵，否則你的物種在那裡會頂著狗的名字出現。</p>
+<p>宣告了 <code>species</code> 卻沒註冊並不致命：你的動物照樣拒絕和自己物種以外的配種，因為那道關卡比對的是原始字串。只有那兩個名詞會退回狗的，而且日誌會指名說出來。</p>
+<p>在比 API 6 更舊的基礎版上，這個欄位會被忽略而且不留日誌，你的動物會像狗一樣配種。如果牠絕對不能和狗雜交，就在 API 6 上設守衛，或者在基礎版還舊的時候保持 <code>canBreed = false</code>，貓就是這麼做的。</p>
+<p><code>huntMaxPrey</code> 限制的是一場仍然存在的狩獵裡的獵物體型，它不能取代 <code>hunt = false</code>。它接受 <code>"tiny"</code>（老鼠、大鼠、松鼠）、<code>"small"</code>（兔子、浣熊）或 <code>"large"</code>（鹿，預設值，不設上限）。你的動物不會去追、也不會去指認超過上限的獵物。不在這道階梯上的值會退回 <code>"large"</code>，並在日誌裡印出一行帶名字的記錄。</p>
+<p>被擋掉的選項會從輪盤、右鍵選單和視窗裡消失，伺服器也會不吭一聲地拒絕它。這些欄位沒有一個會新增翻譯鍵，所以請在你的品種描述裡把限制講清楚。</p>
 <h2 id="7-動物定義">7. 動物定義</h2>
-<p>引擎把 mesh 綁在動物類型上，而不是品種上，所以你的品種需要三個自己的類型。 最短的路是把某個現有擴充模組的檔案複製過來改名。</p>
+<p>引擎把 mesh 綁在動物類型上，而不是品種上，所以你的品種需要三個自己的類型。最短的路是把某個現有擴充模組的檔案複製過來改名。</p>
 <p>三個部分，放在 <code>Definitions/animal/</code> 底下的同一個 shared 檔案裡：</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
@@ -993,16 +998,16 @@ AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
 <td>三個階段的屠宰部位。<code>meat</code> 是選填：<code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>，不填的話動物產出基礎版的狗肉。引擎會把每一塊的數量和飽足度都乘上屍體大小，所以體型數值大的物種（貓用 2.5 到 3.5 當視覺縮放）需要自己的物品，基礎飽足度要更小、數量要更低</td>
 </tr>
 </tbody></table></div>
-<p>物種中立的名字是 API 7 才有的。比較舊的那些，<code>CD.applyDogModel</code>、<code>CD.applyDogBehaviour</code>、 <code>CD.applyDogAvatar</code>、<code>CD.DOG_SOUNDS</code>、<code>CD.defineDogParts</code> 和 <code>CD.DogMoodles</code>， 是同一批函式和表格頂著它們最早的名字。想在比 0.7.3 更舊的基礎版上載入的擴充模組， 就對舊名字設守衛，新的存在時就挑新的： <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>。</p>
+<p>物種中立的名字是 API 7 才有的。比較舊的那些，<code>CD.applyDogModel</code>、<code>CD.applyDogBehaviour</code>、 <code>CD.applyDogAvatar</code>、<code>CD.DOG_SOUNDS</code>、<code>CD.defineDogParts</code> 和 <code>CD.DogMoodles</code>，是同一批函式和表格頂著它們最早的名字。想在比 0.7.3 更舊的基礎版上載入的擴充模組，就對舊名字設守衛，新的存在時就挑新的： <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>。</p>
 <p>動作集必須維持是 <code>"raccoon"</code>。分岔出去的動作集不會載入它的狀態機，動物會定在原地不動。</p>
-<p>基因組要重複使用。狗的品種指向基礎版的清單：<code>AnimalDefinitions.genome["dog"].genes</code>。 新物種呼叫一次 <code>CD.defineGenome("cat")</code>，然後把它回傳的表給每一個階段。 引擎只讀每個階段的 <code>genes</code> 清單，而基因組的鍵只是個慣例，所以你的物種有自己的條目， 卻不必有自己的基因清單。</p>
-<p>不要宣告 <code>mate</code>。有了它，引擎會在任何動物區域裡跑它自己的原生交配，那套會忽略模組的配種封鎖 和它的沙盒選項，生出來的幼犬沒有羈絆。基礎版在啟動時會清掉這個欄位，但不要靠它。</p>
+<p>基因組要重複使用。狗的品種指向基礎版的清單：<code>AnimalDefinitions.genome["dog"].genes</code>。新物種呼叫一次 <code>CD.defineGenome("cat")</code>，然後把它回傳的表給每一個階段。引擎只讀每個階段的 <code>genes</code> 清單，而基因組的鍵只是個慣例，所以你的物種有自己的條目，卻不必有自己的基因清單。</p>
+<p>不要宣告 <code>mate</code>。有了它，引擎會在任何動物區域裡跑它自己的原生交配，那套會忽略模組的配種封鎖和它的沙盒選項，生出來的幼犬沒有羈絆。基礎版在啟動時會清掉這個欄位，但不要靠它。</p>
 <p>部位是必填的。三行，放在自己的檔案裡：</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
 <p>沒有它們，屠宰你的動物會讓原版程式碼崩潰，因為它用類型和品種去索引部位定義，然後撞上 nil。</p>
-<p><code>CD.applyDogAvatar</code> 裡的肖像縮放是照著狗校準的，而頭像縮放是放大倍率：動物越小，數字越大。 把縮放值除以牠相對狗的體型比例，再把偏移值乘上這個比例，否則你的動物會小小一隻縮在自己肖像的底部。</p>
+<p><code>CD.applyDogAvatar</code> 裡的肖像縮放是照著狗校準的，而頭像縮放是放大倍率：動物越小，數字越大。把縮放值除以牠相對狗的體型比例，再把偏移值乘上這個比例，否則你的動物會小小一隻縮在自己肖像的底部。</p>
 <h2 id="8-模型腳本">8. 模型腳本</h2>
 <p><code>media/scripts/</code> 底下的一個檔案告訴遊戲你的模型存在：</p>
 <pre><code>module Base
@@ -1028,9 +1033,9 @@ end</code></pre>
     }
 }</code></pre>
 <p><code>keepMeshAnimations = true</code> 讓你模型檔案裡的動作片段保持可用。沒有它，模型會載入但永遠不會動。</p>
-<p><code>head</code> 這個掛點是帽子之類的東西待的地方。如果你想讓馱袋合到你的動物身上， 就照同樣的方式在脊椎骨上加 <code>saddlebags_l</code>、<code>saddlebags_r</code> 和 <code>saddlebags_c</code>。 這些數字要靠在遊戲裡看著動物一點一點挪出來。從模型上量出來的值會把袋子放在 mesh 的幾何中心， 那不是它在身上看起來對的位置。</p>
+<p><code>head</code> 這個掛點是帽子之類的東西待的地方。如果你想讓馱袋合到你的動物身上，就照同樣的方式在脊椎骨上加 <code>saddlebags_l</code>、<code>saddlebags_r</code> 和 <code>saddlebags_c</code>。這些數字要靠在遊戲裡看著動物一點一點挪出來。從模型上量出來的值會把袋子放在 mesh 的幾何中心，那不是它在身上看起來對的位置。</p>
 <h2 id="9-這隻動物會在哪裡出現">9. 這隻動物會在哪裡出現</h2>
-<p>流浪動物是按建築、按區塊抽取的，在那個區塊第一次載入的時候。你把自己的抽取寫成一串步驟， 可以放在品種定義裡叫 <code>spawns</code>，也可以用 <code>CD.registerStraySpawns(list)</code>。</p>
+<p>流浪動物是按建築、按區塊抽取的，在那個區塊第一次載入的時候。你把自己的抽取寫成一串步驟，可以放在品種定義裡叫 <code>spawns</code>，也可以用 <code>CD.registerStraySpawns(list)</code>。</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -1070,7 +1075,7 @@ end</code></pre>
 <td>生在建築內部而不是街上的百分比機率。預設 35。</td>
 </tr>
 </tbody></table></div>
-<p>把你的機率乘上 <code>CD.dogSpawnMultiplier()</code>，或者把 <code>CD.strayChancePerHouse()</code> 除以你自己的稀有度。 兩種做法都能讓玩家的沙盒設定繼續有效。</p>
+<p>把你的機率乘上 <code>CD.dogSpawnMultiplier()</code>，或者把 <code>CD.strayChancePerHouse()</code> 除以你自己的稀有度。兩種做法都能讓玩家的沙盒設定繼續有效。</p>
 <p><code>indoor</code> 只是個偏好：那個區塊裡內部沒有空格子的建築會退回到外面的格子。</p>
 <h3 id="建築類別">建築類別</h3>
 <p>基礎版註冊了四個：</p>
@@ -1098,7 +1103,7 @@ end</code></pre>
 <p>如果沒有一個合適，就註冊你自己的：</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>匹配函式收到建築定義，並且執行在一次保護呼叫裡，所以它裡面出錯不會中斷區塊載入。 <code>skipUrbanGate</code> 讓這個類別可以在非市區的區塊裡抽取，農場或者林中小屋需要這一點。 不要設 <code>exclusive</code>。基礎類別彼此互斥，擴充模組的類別是疊在它們之上匹配的。</p>
+<p>匹配函式收到建築定義，並且執行在一次保護呼叫裡，所以它裡面出錯不會中斷區塊載入。 <code>skipUrbanGate</code> 讓這個類別可以在非市區的區塊裡抽取，農場或者林中小屋需要這一點。不要設 <code>exclusive</code>。基礎類別彼此互斥，擴充模組的類別是疊在它們之上匹配的。</p>
 <h3 id="已經被佔用的後綴">已經被佔用的後綴</h3>
 <p>後綴是「這棟建築已經抽過了」這筆記錄的鍵的一部分。兩個模組用同一個後綴會互相破壞對方的抽取結果。</p>
 <p>每個後綴都以一條直線開頭。已經在用的有：</p>
@@ -1130,23 +1135,23 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> 回傳等級，0 表示「不顯示」。<code>apply</code> 收到距離上次呼叫過去的遊戲分鐘數， 所以要把你的效果乘上 <code>elapsedMin</code>。</p>
-<p>圖示要提供六種尺寸，從 32 到 128 像素。介面按玩家的縮放挑尺寸，缺一個尺寸就會顯示成一個空方塊。 圖示出現在模組自己那一條裡，不和原版 moodle 混在一起。</p>
+<p><code>condition</code> 回傳等級，0 表示「不顯示」。<code>apply</code> 收到距離上次呼叫過去的遊戲分鐘數，所以要把你的效果乘上 <code>elapsedMin</code>。</p>
+<p>圖示要提供六種尺寸，從 32 到 128 像素。介面按玩家的縮放挑尺寸，缺一個尺寸就會顯示成一個空方塊。圖示出現在模組自己那一條裡，不和原版 moodle 混在一起。</p>
 <h2 id="11-掛鉤">11. 掛鉤</h2>
-<p>兩個函式清單，基礎版在伺服器上呼叫它們。從一個 shared 檔案往裡追加。每個處理函式都跑在自己的保護呼叫裡， 所以一個擴充模組出錯不會中斷基礎版。</p>
+<p>兩個函式清單，基礎版在伺服器上呼叫它們。從一個 shared 檔案往裡追加。每個處理函式都跑在自己的保護呼叫裡，所以一個擴充模組出錯不會中斷基礎版。</p>
 <p><code>CD.onHuntDelivered</code> 從 API 2 開始有，在動物把獵物放到主人腳邊之後立刻被呼叫：</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><code>CD.onUpkeepStress</code> 從 API 3 開始有，每個照料週期都會被呼叫，在基礎版加完未滿足需求帶來的壓力之後、 寫入之前。回傳一個數字，它會被加進總數：</p>
+<p><code>CD.onUpkeepStress</code> 從 API 3 開始有，每個照料週期都會被呼叫，在基礎版加完未滿足需求帶來的壓力之後、寫入之前。回傳一個數字，它會被加進總數：</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>照料週期每一輪都會重算並覆寫這個值，所以從外面寫進去的東西下一個 tick 就沒了。 掛鉤適合用在來自環境的條件上，比如炎熱、寒冷或者下雨。</p>
-<p>在多人模式裡，客戶端永遠不寫 mod data。客戶端這邊的一次寫入會在下一次同步時覆寫伺服器的副本， 而症狀要過幾分鐘才在一個不相干的地方冒出來。請在伺服器檔案裡做這件事，或者用這些掛鉤。</p>
-<p><strong>SERVER TUNING</strong> 面板裡的數字都是普通的 <code>CD.*</code> 常數，附加模組可以在載入時從 shared 或伺服器檔案裡給其中一個賦值。從 API 9 起，面板把伺服器載入完成那一刻生效的值當作那個旋鈕的預設值：它一直保持到管理員手動改寫，重設按鈕回到它，面板也把它顯示為預設值。在更舊的基礎模組上，面板每次啟動都會把出廠值寫回去。要在載入時賦值，不要在之後的事件裡賦，否則下一次改動任何旋鈕都會把出廠值放回來。</p>
+<p>照料週期每一輪都會重算並覆寫這個值，所以從外面寫進去的東西下一個 tick 就沒了。掛鉤適合用在來自環境的條件上，比如炎熱、寒冷或者下雨。</p>
+<p>在多人模式裡，客戶端永遠不寫 mod data。客戶端這邊的一次寫入會在下一次同步時覆寫伺服器的副本，而症狀要過幾分鐘才在一個不相干的地方冒出來。請在伺服器檔案裡做這件事，或者用這些掛鉤。</p>
+<p><strong>SERVER TUNING</strong>面板裡的數字都是普通的 <code>CD.*</code> 常數，附加模組可以在載入時從 shared 或伺服器檔案裡給其中一個賦值。從 API 9 起，面板把伺服器載入完成那一刻生效的值當作那個旋鈕的預設值：它一直保持到管理員手動改寫，重設按鈕回到它，面板也把它顯示為預設值。在更舊的基礎模組上，面板每次啟動都會把出廠值寫回去。要在載入時賦值，不要在之後的事件裡賦，否則下一次改動任何旋鈕都會把出廠值放回來。</p>
 <h2 id="12-翻譯鍵">12. 翻譯鍵</h2>
-<p>每個語言資料夾放一個 <code>IG_UI.json</code>，位置在 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。 基礎版帶了十四種：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
+<p>每個語言資料夾放一個 <code>IG_UI.json</code>，位置在 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。基礎版帶了十四種：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
 <p>一個品種需要的鍵：</p>
 <div class="tw"><table><thead><tr>
 <th>鍵</th>
@@ -1185,7 +1190,7 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>翻譯字串裡的裸百分號會讓顯示它的那個畫面崩潰，因為格式化器把它當成佔位符讀。 帶位元組順序記號的語言檔案無法編譯，而且報錯指的是另一個檔案，不是壞掉的那個。</p>
+<p>翻譯字串裡的裸百分號會讓顯示它的那個畫面崩潰，因為格式化器把它當成佔位符讀。帶位元組順序記號的語言檔案無法編譯，而且報錯指的是另一個檔案，不是壞掉的那個。</p>
 <h2 id="13-存檔記住的東西">13. 存檔記住的東西</h2>
 <p>你的三個識別碼會被寫進存檔檔案，並且永遠被讀回來：</p>
 <ul>
@@ -1193,9 +1198,9 @@ end</code></pre>
 <li><code>typePrefix</code>，它組成引擎保存的那些動物類型</li>
 <li><code>suffix</code>，「已經抽過」這份儲存的鍵，每個生成步驟一個</li>
 </ul>
-<p>這三個在發佈之後都不能改名。改 <code>key</code> 會讓那個品種所有活著的動物變成孤兒。 改 <code>suffix</code> 會讓所有現存存檔裡的每一棟建築重新抽一次，玩了幾個月的世界會塞滿你的動物。</p>
-<p>新後綴同時也是新品種進入已經在跑的世界的辦法。CD: Cats 給牠四種新毛色配了新後綴， 牠們於是開始在現有存檔裡出現，而原來那隻黑貓保留舊後綴，沒有再抽一次。</p>
-<p>從還有該品種活體動物的存檔裡移除擴充模組，會把牠們弄丟。引擎會丟掉一隻牠不再認識類型的動物。 基礎版不會崩潰，羈絆和犬舍都會乾淨地降級。請在你的 Workshop 頁面上說明這一點。</p>
+<p>這三個在發佈之後都不能改名。改 <code>key</code> 會讓那個品種所有活著的動物變成孤兒。改 <code>suffix</code> 會讓所有現存存檔裡的每一棟建築重新抽一次，玩了幾個月的世界會塞滿你的動物。</p>
+<p>新後綴同時也是新品種進入已經在跑的世界的辦法。CD: Cats 給牠四種新毛色配了新後綴，牠們於是開始在現有存檔裡出現，而原來那隻黑貓保留舊後綴，沒有再抽一次。</p>
+<p>從還有該品種活體動物的存檔裡移除擴充模組，會把牠們弄丟。引擎會丟掉一隻牠不再認識類型的動物。基礎版不會崩潰，羈絆和犬舍都會乾淨地降級。請在你的 Workshop 頁面上說明這一點。</p>
 <p>如果你的擴充模組缺席，基礎版對任何被問到的東西都退回預設品種，所以沒裝你的模組打開的存檔仍然可讀。</p>
 <h2 id="14-發佈之前">14. 發佈之前</h2>
 <ul>
@@ -1205,7 +1210,7 @@ end</code></pre>
 <li><code>CD.defineDogParts</code> 呼叫了。屠宰一隻你的動物，看看牠不會崩。</li>
 <li>你的 <code>key</code>、<code>typePrefix</code> 和生成後綴都是唯一的，而且你不會需要改它們。</li>
 <li>小型品種設定了 <code>puppySize</code>，而且你親眼見過一隻幼犬來證明這一點。</li>
-<li>如果是別的物種，<code>CD.registerVoices</code> 呼叫了而且 <code>voices</code> 填了，裡面也有 <code>whine</code>， 不然牠會像狗一樣又吠又嗚咽。</li>
+<li>如果是別的物種，<code>CD.registerVoices</code> 呼叫了而且 <code>voices</code> 填了，裡面也有 <code>whine</code>，不然牠會像狗一樣又吠又嗚咽。</li>
 <li>moodle 圖示六種尺寸都在。</li>
 <li>你提供的每一個語言資料夾都有每一個鍵。缺一個鍵，畫面上就會顯示原始鍵名。</li>
 <li>你在多人模式裡測過，不只是單人。位置、歸屬和 mod data 在那邊的表現都不一樣。</li>
