@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Modding: How to build a breed or species add-on">
+<meta name="description" content="Modding: Cách tạo addon giống chó hoặc loài mới">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Companion Dogs: Modding">
-<meta property="og:description" content="Modding: How to build a breed or species add-on">
-<meta property="og:url" content="https://companiondogs.pet/docs/en/modding.html">
+<meta property="og:description" content="Modding: Cách tạo addon giống chó hoặc loài mới">
+<meta property="og:url" content="https://companiondogs.pet/docs/vi/modding.html">
 <meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="../en/modding.html">
@@ -403,112 +403,112 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
   <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
 
 <header class="top">
-  <button class="iconbtn" id="menu" type="button" aria-label="Open contents" aria-expanded="false" aria-controls="rail">&#9776;</button>
-  <a class="brand" href="../index.html" title="Back to the documentation home page"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Modding</em>
+  <button class="iconbtn" id="menu" type="button" aria-label="Mở mục lục" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Về trang chủ tài liệu"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Modding</em>
   <div class="grow"></div>
-  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Features manual</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Go to the Breeds manual</span></a>
-  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="search the manual..." aria-label="Search the manual" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
-  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Language"><optgroup label="Reviewed"><option value="en" selected>English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Machine translated"><option value="es">Español</option><option value="fr">Français</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
-  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Join the Discord" aria-label="Join the Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Join the Discord</span></a>
-  <button class="iconbtn" id="theme" type="button" aria-label="Toggle theme">&#9789;</button>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mở tài liệu Tính năng</span></a><a class="other" href="breeds.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Mở tài liệu Giống chó</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="tìm trong tài liệu..." aria-label="Tìm trong tài liệu" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Ngôn ngữ"><optgroup label="Đã duyệt"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Dịch máy"><option value="es">Español</option><option value="fr">Français</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi" selected>Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Vào Discord" aria-label="Vào Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Vào Discord</span></a>
+  <button class="iconbtn" id="theme" type="button" aria-label="Đổi giao diện sáng/tối">&#9789;</button>
 </header>
-
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Dịch máy, chưa được kiểm tra.</b> Trang này được dịch bằng máy từ bản tiếng Bồ Đào Nha và chưa có ai kiểm lại. Thuật ngữ và con số có thể sai. Nếu thấy chỗ nào chưa rõ, hãy đối chiếu với bản tiếng Anh hoặc bản gốc tiếng Bồ Đào Nha. <a href="../en/modding.html">Đọc bản tiếng Anh</a></div>
 
 <div class="wrap">
   <aside class="rail" id="rail">
-    <div class="railhead">Contents &middot; <b>Modding</b></div>
+    <div class="railhead">Mục lục &middot; <b>Modding</b></div>
     <nav class="toc" id="toc"><div class="grp">
-<a class="s2" href="#1-what-an-add-on-is" data-id="1-what-an-add-on-is">1. What an add-on is</a>
+<a class="s2" href="#1-add-on-là-gì" data-id="1-add-on-là-gì">1. Add-on là gì</a>
 </div>
 <div class="grp">
-<a class="s2" href="#2-what-you-need-before-you-start" data-id="2-what-you-need-before-you-start">2. What you need before you start</a>
+<a class="s2" href="#2-cần-gì-trước-khi-bắt-đầu" data-id="2-cần-gì-trước-khi-bắt-đầu">2. Cần gì trước khi bắt đầu</a>
 </div>
 <div class="grp">
-<a class="s2" href="#3-the-files-of-an-add-on" data-id="3-the-files-of-an-add-on">3. The files of an add-on</a>
+<a class="s2" href="#3-các-file-của-một-add-on" data-id="3-các-file-của-một-add-on">3. Các file của một add-on</a>
 </div>
 <div class="grp">
-<a class="s2" href="#4-the-version-guard" data-id="4-the-version-guard">4. The version guard</a>
+<a class="s2" href="#4-chốt-chặn-phiên-bản" data-id="4-chốt-chặn-phiên-bản">4. Chốt chặn phiên bản</a>
 </div>
 <div class="grp">
-<a class="s2" href="#5-registering-the-breed" data-id="5-registering-the-breed">5. Registering the breed</a>
+<a class="s2" href="#5-đăng-ký-giống" data-id="5-đăng-ký-giống">5. Đăng ký giống</a>
 <div class="sub">
-<a class="s3" href="#required-fields" data-id="required-fields">Required fields</a>
-<a class="s3" href="#optional-fields" data-id="optional-fields">Optional fields</a>
-<a class="s3" href="#instinct-distract" data-id="instinct-distract">Instinct: distract</a>
-<a class="s3" href="#resting-poses" data-id="resting-poses">Resting poses</a>
-<a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
-<a class="s3" href="#the-diet" data-id="the-diet">The diet</a>
-<a class="s3" href="#sex-at-birth" data-id="sex-at-birth">Sex at birth</a>
+<a class="s3" href="#trường-bắt-buộc" data-id="trường-bắt-buộc">Trường bắt buộc</a>
+<a class="s3" href="#trường-tùy-chọn" data-id="trường-tùy-chọn">Trường tùy chọn</a>
+<a class="s3" href="#bản-năng-distract" data-id="bản-năng-distract">Bản năng: distract</a>
+<a class="s3" href="#tư-thế-nghỉ" data-id="tư-thế-nghỉ">Tư thế nghỉ</a>
+<a class="s3" href="#giọng" data-id="giọng">Giọng</a>
+<a class="s3" href="#khẩu-phần" data-id="khẩu-phần">Khẩu phần</a>
+<a class="s3" href="#giới-tính-khi-sinh" data-id="giới-tính-khi-sinh">Giới tính khi sinh</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#6-turning-a-whole-system-off" data-id="6-turning-a-whole-system-off">6. Turning a whole system off</a>
+<a class="s2" href="#6-tắt-hẳn-một-hệ-thống" data-id="6-tắt-hẳn-một-hệ-thống">6. Tắt hẳn một hệ thống</a>
 <div class="sub">
-<a class="s3" href="#the-species" data-id="the-species">The species</a>
+<a class="s3" href="#loài" data-id="loài">Loài</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#7-the-animal-definitions" data-id="7-the-animal-definitions">7. The animal definitions</a>
+<a class="s2" href="#7-định-nghĩa-con-vật" data-id="7-định-nghĩa-con-vật">7. Định nghĩa con vật</a>
 </div>
 <div class="grp">
-<a class="s2" href="#8-the-model-script" data-id="8-the-model-script">8. The model script</a>
+<a class="s2" href="#8-script-của-model" data-id="8-script-của-model">8. Script của model</a>
 </div>
 <div class="grp">
-<a class="s2" href="#9-where-the-animal-spawns" data-id="9-where-the-animal-spawns">9. Where the animal spawns</a>
+<a class="s2" href="#9-con-vật-xuất-hiện-ở-đâu" data-id="9-con-vật-xuất-hiện-ở-đâu">9. Con vật xuất hiện ở đâu</a>
 <div class="sub">
-<a class="s3" href="#the-building-classes" data-id="the-building-classes">The building classes</a>
-<a class="s3" href="#suffixes-already-taken" data-id="suffixes-already-taken">Suffixes already taken</a>
+<a class="s3" href="#các-lớp-tòa-nhà" data-id="các-lớp-tòa-nhà">Các lớp tòa nhà</a>
+<a class="s3" href="#những-hậu-tố-đã-có-người-dùng" data-id="những-hậu-tố-đã-có-người-dùng">Những hậu tố đã có người dùng</a>
 </div>
 </div>
 <div class="grp">
-<a class="s2" href="#10-the-breed-moodle" data-id="10-the-breed-moodle">10. The breed moodle</a>
+<a class="s2" href="#10-moodle-của-giống" data-id="10-moodle-của-giống">10. Moodle của giống</a>
 </div>
 <div class="grp">
-<a class="s2" href="#11-hooks" data-id="11-hooks">11. Hooks</a>
+<a class="s2" href="#11-hook" data-id="11-hook">11. Hook</a>
 </div>
 <div class="grp">
-<a class="s2" href="#12-translation-keys" data-id="12-translation-keys">12. Translation keys</a>
+<a class="s2" href="#12-khóa-dịch-thuật" data-id="12-khóa-dịch-thuật">12. Khóa dịch thuật</a>
 </div>
 <div class="grp">
-<a class="s2" href="#13-what-the-save-remembers" data-id="13-what-the-save-remembers">13. What the save remembers</a>
+<a class="s2" href="#13-những-gì-file-save-ghi-nhớ" data-id="13-những-gì-file-save-ghi-nhớ">13. Những gì file save ghi nhớ</a>
 </div>
 <div class="grp">
-<a class="s2" href="#14-before-you-publish" data-id="14-before-you-publish">14. Before you publish</a>
+<a class="s2" href="#14-trước-khi-đăng" data-id="14-trước-khi-đăng">14. Trước khi đăng</a>
 </div>
 <div class="grp">
-<a class="s2" href="#15-common-mistakes" data-id="15-common-mistakes">15. Common mistakes</a>
+<a class="s2" href="#15-lỗi-thường-gặp" data-id="15-lỗi-thường-gặp">15. Lỗi thường gặp</a>
 </div></nav>
   </aside>
-  <main><article class="doc"><h1 id="companion-dogs-modding-manual">Companion Dogs: Modding Manual</h1>
-<p>How to build your own add-on: a new breed, or a whole new species, as a separate Workshop mod that plugs into Companion Dogs.</p>
-<p>This manual is for people who write mods. If you only want to play, read the other two manuals: <a href="features.html" class="xlink">Features</a> for what the dog does, and <a href="breeds.html" class="xlink">Breeds</a> for the breeds.</p>
-<p>It assumes you can read Lua and that you have a rigged, animated model for your animal. The art pipeline is not covered here. Section 2 lists what the model file has to satisfy.</p>
-<blockquote class="quote">Everything named in this manual is a public contract and is meant to be called from outside the mod. Anything not named here is internal and can change in any release without notice.</blockquote>
-<h2 id="1-what-an-add-on-is">1. What an add-on is</h2>
-<p>An add-on is a normal Workshop mod that declares <code>require=CompanionDogs</code> and calls one function at load time. It adds one breed (or several, if they share a body) and nothing else.</p>
-<p>The base owns:</p>
+  <main><article class="doc"><h1 id="companion-dogs-sổ-tay-modding">Companion Dogs: Sổ tay modding</h1>
+<p>Cách tự dựng add-on của riêng bạn: một giống mới, hoặc cả một loài mới, dưới dạng mod Workshop riêng cắm vào Companion Dogs.</p>
+<p>Sổ tay này dành cho người viết mod. Nếu bạn chỉ muốn chơi, hãy đọc hai sổ tay còn lại: <a href="features.html" class="xlink">Tính năng</a> nói con chó làm được gì, và <a href="breeds.html" class="xlink">Giống chó</a> nói về các giống.</p>
+<p>Sổ tay giả định bạn đọc được Lua và đã có sẵn model có rig, có animation cho con vật của mình. Quy trình làm art không nằm ở đây. Mục 2 liệt kê những gì file model phải đáp ứng.</p>
+<blockquote class="quote">Mọi thứ được nêu tên trong sổ tay này là hợp đồng công khai và được làm ra để gọi từ ngoài mod. Thứ không nêu ở đây là nội bộ và có thể đổi ở bất kỳ bản phát hành nào mà không báo trước.</blockquote>
+<h2 id="1-add-on-là-gì">1. Add-on là gì</h2>
+<p>Add-on là một mod Workshop bình thường, khai báo <code>require=CompanionDogs</code> và gọi một hàm lúc nạp. Nó thêm một giống (hoặc vài giống, nếu chúng dùng chung thân) và không gì khác.</p>
+<p>Mod nền giữ:</p>
 <ul>
-<li>the animation state machine, the animation set and the skeleton</li>
-<li>following, pathing, combat, hunting, herding, the sentinel, needs and upkeep</li>
-<li>the whole user interface: the dog window, the radial, the context menu, the kennel, the map marker</li>
-<li>taming, bonding, breeding, puppies and crossbreeds</li>
-<li>the sandbox options, and the multiplayer replication</li>
+<li>máy trạng thái animation, bộ animation và bộ xương</li>
+<li>bám theo, tìm đường, chiến đấu, đi săn, chăn gia súc, canh gác, nhu cầu và chăm sóc</li>
+<li>toàn bộ giao diện: cửa sổ chó, vòng lệnh, menu chuột phải, chuồng, dấu trên bản đồ</li>
+<li>thuần hóa, gắn bó, sinh sản, chó con và chó lai</li>
+<li>các tùy chọn sandbox, và việc đồng bộ nhiều người chơi</li>
 </ul>
-<p>Your add-on owns:</p>
+<p>Add-on của bạn giữ:</p>
 <ul>
-<li>the numbers that make your animal different from a Caramelo</li>
-<li>its body model, its texture, its portrait and, if it has one, its moodle icon</li>
-<li>where it is found in the world</li>
-<li>its name and description, in every language you ship</li>
+<li>các con số làm con vật của bạn khác con Caramelo</li>
+<li>model thân, texture, ảnh chân dung và, nếu có, icon moodle của nó</li>
+<li>nơi nó xuất hiện trong thế giới</li>
+<li>tên và mô tả của nó, ở mọi ngôn ngữ bạn phát hành</li>
 </ul>
-<p>Two colours that behave the same are still two breeds to the base (two names, two entries in the kennel); you write them from one shared table, the way CD: Cats does with its five coats.</p>
-<h2 id="2-what-you-need-before-you-start">2. What you need before you start</h2>
-<p>Your animal needs its own skinned <code>.glb</code> under <code>media/models_X/Skinned/</code>, with the complete set of 21 <code>Rac_*</code> animation clips. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked for one of the other six. The model also has to stay under 60 bones and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear. Two more clips are optional, <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (limping walk cycles); they only matter if you set <code>limpAnim = true</code> in the breed definition.</p>
-<p>If you do not have a model yet, you can write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal looks like a Caramelo, but every system in this manual runs.</p>
-<p>You also need a texture for the body and a portrait for the kennel window.</p>
-<p>Decide whether your animal is a breed or a species before writing any code. A breed is a dog with different numbers. A species is an animal that lacks some of the jobs entirely. The choice changes which fields you write; section 6 covers it.</p>
-<h2 id="3-the-files-of-an-add-on">3. The files of an add-on</h2>
-<p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
+<p>Hai màu lông hành xử y hệt nhau vẫn là hai giống đối với mod nền (hai cái tên, hai mục trong chuồng); bạn viết chúng từ một bảng dùng chung, như CD: Cats làm với năm bộ lông của nó.</p>
+<h2 id="2-cần-gì-trước-khi-bắt-đầu">2. Cần gì trước khi bắt đầu</h2>
+<p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống.</p>
+<p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Caramelo, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
+<p>Bạn cũng cần một texture cho thân và một ảnh chân dung cho cửa sổ chuồng.</p>
+<p>Hãy quyết định con vật của bạn là một giống hay một loài trước khi viết dòng code nào. Giống là con chó với các con số khác. Loài là con vật thiếu hẳn vài phần việc. Lựa chọn đó đổi các trường bạn phải viết; mục 6 nói về nó.</p>
+<h2 id="3-các-file-của-một-add-on">3. Các file của một add-on</h2>
+<p>Đây là CD: Pug, add-on nhỏ nhất đã xuất bản, với những phần đáng kể:</p>
 <pre><code>CompanionDogsPug/
   42/
     mod.info
@@ -526,7 +526,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       lua/shared/Translate/EN/IG_UI.json
       lua/shared/Translate/PTBR/IG_UI.json
   common/</code></pre>
-<p>And the <code>mod.info</code>:</p>
+<p>Và <code>mod.info</code>:</p>
 <pre><code>id=CompanionDogsPug
 name=CD: Pug
 description=Pugs for Companion Dogs. REQUIRES the Companion Dogs mod (0.6.8 or newer).
@@ -536,18 +536,18 @@ require=CompanionDogs
 modversion=0.1.0
 pzversion=42.19.0
 versionMin=42.18.0</code></pre>
-<p><code>require=CompanionDogs</code> is the important line. It guarantees that all of the base Lua has run before any of yours, in every phase: shared first, then client, then server. Without it your files can load first and every <code>CD.</code> call is a nil index.</p>
-<p><code>versionMin</code> cannot express "needs Companion Dogs 0.6.8". That field gates the game build only, and there is no mod.info field for a dependency version. The floor on the base is enforced by the guard in the next section and announced to players in your description. Write it there, in words, or the only symptom a player gets is an animal that never appears.</p>
-<h2 id="4-the-version-guard">4. The version guard</h2>
-<p>Put this at the top of every Lua file of your add-on, with the number your add-on needs:</p>
+<p><code>require=CompanionDogs</code> là dòng quan trọng. Nó bảo đảm toàn bộ Lua của mod nền chạy xong trước mọi file của bạn, ở mọi pha: shared trước, rồi client, rồi server. Thiếu nó, file của bạn có thể nạp trước và mọi lời gọi <code>CD.</code> đều là nil index.</p>
+<p><code>versionMin</code> không diễn đạt được ý "cần Companion Dogs 0.6.8". Trường đó chỉ chặn theo bản dựng của game, và mod.info không có trường nào cho phiên bản của mod phụ thuộc. Mức sàn của mod nền do chốt chặn ở mục sau lo, và được báo cho người chơi trong phần mô tả. Hãy viết rõ ở đó, bằng lời, nếu không thì triệu chứng duy nhất người chơi nhận được là con vật không bao giờ xuất hiện.</p>
+<h2 id="4-chốt-chặn-phiên-bản">4. Chốt chặn phiên bản</h2>
+<p>Đặt đoạn này ở đầu mọi file Lua của add-on, với con số mà add-on của bạn cần:</p>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
-<p>With the base missing or too old, the file returns on line two and the add-on does nothing: no breed, no spawn, no moodle, no log line.</p>
-<p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those:</p>
+<p>Khi mod nền vắng mặt hoặc quá cũ, file trả về ngay ở dòng hai và add-on không làm gì: không giống, không spawn, không moodle, không một dòng log.</p>
+<p>Chốt chặn đặt theo từng file, và mỗi file chặn theo thứ nó dùng. <code>PugDefinitions.lua</code> cần các helper model, nên nó chặn theo chúng:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
-<p>Do not create the global. <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table, and every guard downstream passes when it should not.</p>
-<h2 id="5-registering-the-breed">5. Registering the breed</h2>
-<p>One call, in a shared file:</p>
+<p>Đừng tạo biến toàn cục. <code>CompanionDogs = CompanionDogs or {}</code> trong add-on biến một mod nền vắng mặt thành cái bảng dựng dở, và mọi chốt chặn phía sau đều lọt trong khi lẽ ra phải chặn.</p>
+<h2 id="5-đăng-ký-giống">5. Đăng ký giống</h2>
+<p>Một lời gọi, trong một file shared:</p>
 <pre><code>CD.registerBreed({
     key = "pug",
     engineBreed = "pug",
@@ -577,264 +577,259 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
           chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
     },
 })</code></pre>
-<p>The call inserts the breed, registers its three animal types, rebuilds the breeding order so your animal takes part in crossbreeding, and registers the spawn steps.</p>
-<p>A bad definition makes the call return <code>nil</code> instead of throwing, so the load goes on. Each rejection prints a named line in the log.</p>
-<h3 id="required-fields">Required fields</h3>
+<p>Lời gọi này chèn giống vào, đăng ký ba loại con vật của nó, dựng lại thứ tự sinh sản để con vật của bạn tham gia lai giống, và đăng ký các bước spawn.</p>
+<p>Định nghĩa sai làm lời gọi trả về <code>nil</code> thay vì ném lỗi, nên việc nạp vẫn chạy tiếp. Mỗi lần bị từ chối đều in một dòng log có nêu tên.</p>
+<h3 id="trường-bắt-buộc">Trường bắt buộc</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What it is</th>
+<th>Trường</th>
+<th>Nó là gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>key</code></td>
-<td>your breed identifier, unique across every mod. Do not change it after release.</td>
+<td>định danh giống của bạn, duy nhất trên mọi mod. Đừng đổi sau khi phát hành.</td>
 </tr>
 <tr>
 <td><code>typePrefix</code></td>
-<td>prefix of the three animal types: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Picks the body mesh.</td>
+<td>tiền tố của ba loại con vật: <code>&lt;prefix&gt;pup</code>, <code>&lt;prefix&gt;female</code>, <code>&lt;prefix&gt;male</code>. Nó chọn mesh thân.</td>
 </tr>
 <tr>
 <td><code>nameKey</code></td>
-<td>translation key of the display name.</td>
+<td>khóa dịch của tên hiển thị.</td>
 </tr>
 <tr>
 <td><code>xpMult</code></td>
-<td>learning speed per skill: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 is normal.</td>
+<td>tốc độ học theo từng kỹ năng: <code>scent</code>, <code>combat</code>, <code>obedience</code>, <code>hunt</code>, <code>herding</code>. 1.0 là bình thường.</td>
 </tr>
 <tr>
 <td><code>combatPower</code></td>
-<td>how hard it hits. The Caramelo is 0.20, a fighting breed is above 1.0.</td>
+<td>nó đánh mạnh cỡ nào. Con Caramelo là 0.20, giống chuyên đánh nhau thì trên 1.0.</td>
 </tr>
 <tr>
 <td><code>lethalityCurve</code></td>
-<td><code>{ min, max }</code>, how the damage grows from Combat 0 to Combat 10.</td>
+<td><code>{ min, max }</code>, sát thương lớn dần ra sao từ Chiến đấu 0 tới Chiến đấu 10.</td>
 </tr>
 <tr>
 <td><code>geneRange</code></td>
-<td>birth range of the four genes: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Each is <code>{ low, high }</code> inside 0 to 1.</td>
+<td>khoảng lúc sinh của bốn gene: <code>strength</code>, <code>aggressiveness</code>, <code>resistance</code>, <code>stress</code>. Mỗi cái là <code>{ low, high }</code> nằm trong 0 tới 1.</td>
 </tr>
 </tbody></table></div>
-<h3 id="optional-fields">Optional fields</h3>
+<h3 id="trường-tùy-chọn">Trường tùy chọn</h3>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>Default</th>
-<th>What it does</th>
+<th>Trường</th>
+<th>Mặc định</th>
+<th>Nó làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>engineBreed</code></td>
-<td>the <code>key</code></td>
-<td>breed name given to the engine. It picks the texture. Unique per breed.</td>
+<td>chính <code>key</code></td>
+<td>tên giống đưa cho engine. Nó chọn texture. Duy nhất theo từng giống.</td>
 </tr>
 <tr>
 <td><code>descKey</code></td>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>description key. Several breeds can share one key.</td>
+<td>khóa mô tả. Nhiều giống dùng chung được một khóa.</td>
 </tr>
 <tr>
 <td><code>litter</code></td>
-<td>base value</td>
-<td><code>{ min, max }</code> puppies per birth.</td>
+<td>giá trị nền</td>
+<td><code>{ min, max }</code> chó con mỗi lứa.</td>
 </tr>
 <tr>
 <td><code>canKill</code></td>
 <td>true</td>
-<td>false means it wears zombies down but never lands the killing blow.</td>
+<td>false nghĩa là nó bào mòn zombie nhưng không bao giờ ra đòn kết liễu.</td>
 </tr>
 <tr>
 <td><code>canKnockdown</code></td>
 <td>false</td>
-<td>true lets it knock a zombie over.</td>
+<td>true cho phép nó quật ngã zombie.</td>
 </tr>
 <tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
-<td>how much stress a fight costs it.</td>
+<td>một trận đánh tốn của nó bao nhiêu căng thẳng.</td>
 </tr>
 <tr>
 <td><code>panicThreshold</code></td>
-<td>base value</td>
-<td>stress level at which it stops fighting. <code>panicImmune = true</code> means it never stops.</td>
+<td>giá trị nền</td>
+<td>mức căng thẳng khiến nó ngừng đánh. <code>panicImmune = true</code> nghĩa là nó không bao giờ ngừng.</td>
 </tr>
 <tr>
 <td><code>bagMult</code></td>
 <td>1</td>
-<td>saddlebag capacity multiplier.</td>
+<td>hệ số sức chứa của túi yên.</td>
 </tr>
 <tr>
 <td><code>puppySize</code></td>
 <td>0.6</td>
-<td>absolute visual scale of the puppy. A small breed has to set it, or the puppy is born adult sized.</td>
+<td>tỉ lệ hình ảnh tuyệt đối của chó con. Giống nhỏ buộc phải đặt, nếu không chó con sinh ra to bằng con trưởng thành.</td>
 </tr>
 <tr>
 <td><code>sentinelMult</code></td>
 <td>1</td>
-<td>multiplies the final sentinel radius.</td>
+<td>nhân vào bán kính canh gác cuối cùng.</td>
 </tr>
 <tr>
 <td><code>barkNoiseMult</code></td>
 <td>1</td>
-<td>scales the radius and volume of the alarm bark. With the sandbox noise option off, no breed attracts zombies with a bark, whatever the value.</td>
+<td>co giãn bán kính và âm lượng của tiếng sủa báo động. Khi tùy chọn tiếng ồn trong sandbox tắt, không giống nào kéo zombie bằng tiếng sủa, giá trị bao nhiêu cũng vậy.</td>
 </tr>
 <tr>
 <td><code>loyaltyDecayMult</code></td>
 <td>1</td>
-<td>multiplies the daily loyalty decay. <code>0</code> means the bond never fades.</td>
+<td>nhân vào mức hao trung thành mỗi ngày. <code>0</code> nghĩa là mối gắn bó không bao giờ phai.</td>
 </tr>
 <tr>
 <td><code>alertModeLocked</code></td>
 <td>false</td>
-<td>the animal stays on full alert: the owner cannot set quiet or silent anywhere.</td>
+<td>con vật luôn ở mức cảnh giác cao nhất: chủ không đặt được chế độ Nhẹ tiếng hay Im lặng ở bất cứ đâu.</td>
 </tr>
 <tr>
 <td><code>huntFetchLevel</code></td>
 <td>6</td>
-<td>Hunt level from which it carries the kill back to its owner.</td>
+<td>mức Săn mồi từ đó nó tha con mồi về cho chủ.</td>
 </tr>
 <tr>
 <td><code>huntDeliverTimeoutMin</code></td>
 <td>5</td>
-<td>game minutes it keeps trying to deliver before giving up.</td>
+<td>số phút trong game nó còn cố mang về trước khi bỏ cuộc.</td>
 </tr>
 <tr>
 <td><code>distract</code></td>
-<td>off</td>
-<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. The breed goes after things on its own, with no mode and no level required.</td>
+<td>tắt</td>
+<td><code>{ &lt;kind&gt; = { chance = 0..1, ... } }</code>. Giống này tự chạy theo thứ nó thấy, không cần chế độ nào và không đòi cấp nào.</td>
 </tr>
 <tr>
 <td><code>idleAnimMs</code></td>
-<td>base value</td>
-<td>length of the idle animation window, in milliseconds. Set it when your clips are shorter than the dog ones, otherwise the loop restarts and cuts the gesture in the middle.</td>
+<td>giá trị nền</td>
+<td>độ dài cửa sổ animation đứng yên, tính bằng mili giây. Đặt nó khi clip của bạn ngắn hơn clip chó, nếu không vòng lặp khởi động lại và cắt ngang động tác.</td>
 </tr>
 <tr>
 <td><code>restAnim</code></td>
 <td>true</td>
-<td>false keeps the animal standing on Stay and Guard instead of lying down.</td>
+<td>false giữ con vật đứng khi Đứng yên và Canh gác thay vì nằm xuống.</td>
 </tr>
 <tr>
 <td><code>restPoses</code></td>
-<td>lie down</td>
-<td>a list of resting poses the animal draws from every time it settles, with optional transitions and idle variations. Needs clips and animation nodes of your own.</td>
+<td>nằm xuống</td>
+<td>một danh sách tư thế nghỉ mà con vật rút ra mỗi lần nó nằm yên, với các chuyển tiếp và biến thể đứng yên tùy chọn. Cần clip và node animation của riêng bạn.</td>
 </tr>
 <tr>
 <td><code>limpAnim</code></td>
 <td>false</td>
-<td>true makes a wounded animal limp while walking. Only set it when your model has the two optional clips <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (1.0 s walk cycles with the same root motion as <code>Rac_Walk</code>). Without the clips the animal walks frozen in place.</td>
-</tr>
-<tr>
-<td><code>bandSkin</code></td>
-<td>off</td>
-<td><code>{ base, front, back, cutFront, cutBack }</code>, five body texture names. The animal wears the cut variant while the wound bleeds and the banded one while it is dressed, on the wounded paw. Build the four variants with <code>_dogrig/forge/_paw_band.py</code>. Without it the animal still gets wounded, it just shows no mark.</td>
+<td>true làm con vật bị thương đi khập khiễng. Chỉ đặt khi model của bạn có hai clip tùy chọn <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi 1.0 giây, cùng root motion với <code>Rac_Walk</code>). Thiếu clip thì con vật vừa đi vừa đứng đơ tại chỗ.</td>
 </tr>
 <tr>
 <td><code>voices</code></td>
-<td>dog sounds</td>
+<td>âm thanh chó</td>
 <td><code>{ bark, growl, idle, wildbark, pet, whine, eat, drink }</code>.</td>
 </tr>
 <tr>
 <td><code>diet</code></td>
-<td>the dog lists</td>
-<td>what the animal must not eat, what counts as meat for it, and what it eats on its own from a trough.</td>
+<td>các danh sách của chó</td>
+<td>con vật không được ăn gì, thứ gì tính là thịt với nó, và nó tự ăn gì từ máng.</td>
 </tr>
 <tr>
 <td><code>maleChance</code></td>
 <td>0.5</td>
-<td>share of the breed born male, 0 to 1.</td>
+<td>tỷ lệ sinh ra là đực, từ 0 đến 1.</td>
 </tr>
 <tr>
 <td><code>sterileMale</code></td>
 <td>false</td>
-<td>true keeps males of the breed out of breeding.</td>
+<td>true giữ con đực của giống đó ngoài việc sinh sản.</td>
 </tr>
 <tr>
 <td><code>species</code></td>
 <td><code>"dog"</code></td>
-<td>breeding is closed per species. Section 6.</td>
+<td>sinh sản khép kín theo loài. Mục 6.</td>
 </tr>
 <tr>
 <td><code>skills</code>, <code>canBreed</code>, <code>huntMaxPrey</code></td>
-<td>everything on</td>
-<td>the structural blocks. Section 6.</td>
+<td>bật hết</td>
+<td>các khối cấu trúc. Mục 6.</td>
 </tr>
 </tbody></table></div>
-<p>Numbers and flags you add to the definition can be read back with <code>CD.breedNumber(animal, field)</code> and <code>CD.breedFlag(animal, field)</code>, not with <code>CD.getBreedDef(animal).field</code>. They handle a missing field and keep working when the base changes.</p>
-<h3 id="instinct-distract">Instinct: <code>distract</code></h3>
+<p>Con số và cờ bạn thêm vào định nghĩa được đọc lại bằng <code>CD.breedNumber(animal, field)</code> và <code>CD.breedFlag(animal, field)</code>, không phải bằng <code>CD.getBreedDef(animal).field</code>. Hai hàm đó xử lý được trường thiếu và vẫn chạy khi mod nền đổi.</p>
+<h3 id="bản-năng-distract">Bản năng: <code>distract</code></h3>
 <pre><code>distract = {
     prey = { chance = 0.25 },
 },</code></pre>
-<p>A breed that declares it will, every so often, notice something and go after it, dropping whatever it was doing. It does this from Stay as well as Follow. While it lasts, orders come back refused with the <code>distracted</code> message the obedience roll already uses. Come here is the one command that gets through, and it cancels the distraction.</p>
-<p>Every kind takes the same optional knobs. Anything you leave out uses the mod's defaults:</p>
+<p>Giống nào khai báo nó thì thỉnh thoảng sẽ để ý thấy thứ gì đó và chạy theo, bỏ dở việc đang làm. Nó làm vậy cả khi đang Đứng yên lẫn khi đang Đi theo. Trong lúc đó, mệnh lệnh bị trả về từ chối kèm thông báo <code>distracted</code> mà lượt tung vâng lời vẫn dùng. Lại đây là lệnh duy nhất lọt qua, và nó hủy cơn phân tâm.</p>
+<p>Mọi loại đều nhận cùng bộ núm tùy chọn. Thứ bạn bỏ trống sẽ lấy mặc định của mod:</p>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What it does</th>
+<th>Trường</th>
+<th>Nó làm gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>chance</code></td>
-<td>0..1, rolled only when the kind's trigger found something. Writing <code>25</code> for "25%" is rejected with a named line in the log</td>
+<td>0..1, chỉ tung khi bộ kích hoạt của loại đó tìm được thứ gì. Viết <code>25</code> với ý "25%" sẽ bị từ chối kèm một dòng log có nêu tên</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
-<td>tiles the trigger searches, when the kind searches at all</td>
+<td>số ô mà bộ kích hoạt quét, với loại nào có quét</td>
 </tr>
 <tr>
 <td><code>durationMin</code></td>
-<td>game minutes the window lasts before it expires on its own</td>
+<td>số phút trong game cửa sổ này kéo dài trước khi tự hết hạn</td>
 </tr>
 <tr>
 <td><code>cooldownMin</code></td>
-<td>game minutes before the same animal can be distracted again</td>
+<td>số phút trong game trước khi cùng con vật đó phân tâm lại được</td>
 </tr>
 </tbody></table></div>
-<h4 id="the-prey-kind">The <code>prey</code> kind</h4>
-<p>The only kind the base mod ships. The animal goes after wild animals, and <code>classes</code> picks which ones count:</p>
+<h4 id="loại-prey">Loại <code>prey</code></h4>
+<p>Loại duy nhất mod nền phát hành. Con vật chạy theo thú hoang, và <code>classes</code> chọn con nào được tính:</p>
 <pre><code>distract = {
     prey = { chance = 0.25, radius = 6, classes = { tiny = true, small = true } },
 },</code></pre>
-<p>Two limits apply whatever you declare:</p>
+<p>Hai giới hạn luôn áp dụng, bạn khai báo gì cũng vậy:</p>
 <ul>
-<li>It never goes above your <code>huntMaxPrey</code>: a breed capped at <code>small</code> will not chase deer even if it declares <code>large</code>.</li>
-<li>The level gate is skipped only for <code>tiny</code>. A freshly tamed animal with Hunt 0 already catches rodents. With <code>small</code> declared, the breed chases the rabbit at any level, but the kill needs the same Hunt level the Labrador needs.</li>
+<li>Nó không bao giờ vượt <code>huntMaxPrey</code> của bạn: giống bị chặn ở <code>small</code> sẽ không đuổi hươu dù có khai <code>large</code>.</li>
+<li>Chốt chặn theo cấp chỉ bỏ qua với <code>tiny</code>. Con vật vừa thuần hóa, Săn mồi 0, đã bắt được chuột. Khai <code>small</code> thì giống đó đuổi thỏ ở mọi cấp, nhưng để hạ được vẫn cần đúng mức Săn mồi mà con Labrador cần.</li>
 </ul>
-<p>The sandbox Hunting toggle only affects the kill: the animal still chases, but the prey gets away.</p>
-<p>A kill made this way goes through the normal retrieval, so your breed's <code>huntFetchLevel</code> decides whether it carries the body back to the owner. At <code>0</code> the animal delivers from day one, which is how a cat brings you a dead rat. The delivery outlives the distraction window: once the prey is dead the animal takes orders again, and the trip home runs on its own <code>huntDeliverTimeoutMin</code>.</p>
-<h4 id="writing-your-own-kind">Writing your own kind</h4>
-<p><code>distract</code> is a dispatcher. Register your own:</p>
+<p>Công tắc Săn mồi trong sandbox chỉ tác động tới cú hạ: con vật vẫn đuổi, nhưng con mồi chạy thoát.</p>
+<p>Con mồi hạ theo cách này đi qua quy trình tha về bình thường, nên <code>huntFetchLevel</code> của giống quyết định nó có mang xác về cho chủ hay không. Ở <code>0</code> con vật giao từ ngày đầu, đó là cách con mèo mang cho bạn một con chuột chết. Việc giao sống lâu hơn cửa sổ phân tâm: khi con mồi đã chết, con vật nhận lệnh trở lại, và chặng về chạy theo <code>huntDeliverTimeoutMin</code> của chính nó.</p>
+<h4 id="tự-viết-một-loại">Tự viết một loại</h4>
+<p><code>distract</code> là một bộ điều phối. Hãy đăng ký loại của riêng bạn:</p>
 <pre><code>CD.registerDistraction("butterfly", {
     gate  = function(animal, cfg) return animal:isOutside() end,   -- optional, cheap pre-check
     find  = function(animal, cfg) return findButterflyNear(animal, cfg.radius) end,
     drive = function(animal, owner, d, cfg) return chaseIt(animal, d) end,
     stop  = function(animal, d) end,                               -- optional, cleanup
 })</code></pre>
-<p>Then declare it on the breed like any other kind: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
-<p><code>gate</code> runs before the mod's global scan budget. <code>find</code> runs after the budget and does the expensive search. <code>drive</code> returns true while it is still driving the animal and false when it is done, which closes the window. Your handler runs in its own <code>pcall</code>. If it throws, the mod logs a named line, unregisters that kind for the session and leaves the rest of the companion working.</p>
-<p>Names reserved for future base kinds: <code>drink</code>, <code>eat</code>, <code>play</code>. You can register a kind under one of those names today, but the base takes the name over when it ships its own.</p>
-<h3 id="resting-poses">Resting poses</h3>
-<p>A resting animal lies down. <code>restPoses</code> replaces that single pose with a list the animal draws from every time it settles:</p>
+<p>Rồi khai báo nó trên giống như mọi loại khác: <code>distract = { butterfly = { chance = 0.10 } }</code>.</p>
+<p><code>gate</code> chạy trước hạn mức quét toàn cục của mod. <code>find</code> chạy sau hạn mức đó và làm phần tìm kiếm tốn kém. <code>drive</code> trả về true khi nó còn đang điều khiển con vật và false khi xong, và điều đó đóng cửa sổ lại. Handler của bạn chạy trong <code>pcall</code> riêng. Nếu nó ném lỗi, mod ghi một dòng log có nêu tên, gỡ đăng ký loại đó cho cả phiên và để phần còn lại của con đồng hành chạy bình thường.</p>
+<p>Các tên dành sẵn cho loại của mod nền sau này: <code>drink</code>, <code>eat</code>, <code>play</code>. Hôm nay bạn vẫn đăng ký được một loại dưới các tên đó, nhưng mod nền sẽ lấy lại tên khi nó phát hành loại của mình.</p>
+<h3 id="tư-thế-nghỉ">Tư thế nghỉ</h3>
+<p>Con vật đang nghỉ thì nằm xuống. <code>restPoses</code> thay tư thế duy nhất đó bằng một danh sách mà con vật rút ra mỗi lần nó nằm yên:</p>
 <pre><code>restPoses = {
     "cdRest",                                          -- the base lie-down
     { var = "cdSit", enter = "cdSitIn", exit = "cdSitOut",
       variation = { "cdSitGroom", "cdSitGroom2" } },
 },</code></pre>
-<p>An entry is either the name of an animation variable or a table. <code>var</code> is the boolean that stays on for the whole pause. <code>enter</code> and <code>exit</code> are one-shot pulses played as the animal settles and as it gets up. <code>variation</code> is a list of one-shot pulses it plays now and then while it holds the pose, on the same clock as the idle variation. Only <code>var</code> is required.</p>
-<p>The draw is uniform and happens on each entry into rest, so two entries mean 50% each and the animal can pick the same one twice in a row. It is not an alternation.</p>
-<p>Each pulse lasts as long as <code>idleAnimMs</code> says for that variable, so pass the table form and give a length for every variable, including the idle ones you already had. Give the <strong>real length of the clip</strong>.</p>
+<p>Mỗi mục là tên một biến animation hoặc một bảng. <code>var</code> là boolean bật suốt cả quãng nghỉ. <code>enter</code> và <code>exit</code> là các xung phát một lần, khi con vật nằm yên và khi nó đứng dậy. <code>variation</code> là danh sách các xung phát một lần mà nó thỉnh thoảng phát trong lúc giữ tư thế, theo cùng đồng hồ với biến thể đứng yên. Chỉ <code>var</code> là bắt buộc.</p>
+<p>Việc rút là đồng đều và xảy ra ở mỗi lần vào nghỉ, nên hai mục nghĩa là 50% mỗi mục và con vật có thể rút trúng cùng một mục hai lần liên tiếp. Nó không phải luân phiên.</p>
+<p>Mỗi xung kéo dài đúng bằng những gì <code>idleAnimMs</code> nói cho biến đó, nên hãy truyền dạng bảng và cho mọi biến một độ dài, kể cả các biến đứng yên bạn đã có. Hãy ghi <strong>độ dài thật của clip</strong>.</p>
 <pre><code>idleAnimMs = { cdIdle2 = 3800, cdIdle3 = 3800, cdSitIn = 1375, cdSitOut = 1417,
                cdSitGroom = 19833, cdSitGroom2 = 25167 },</code></pre>
-<p>The clips and the nodes are yours, not the base's. Each variable needs a node file in your add-on under <code>media/AnimSets/raccoon/idle/</code>, and the clip its <code>m_AnimName</code> points at has to exist in your model. A node pointing at a clip the model does not have fails silently and the animal just stands in the base idle. Give the pose node a <code>m_ConditionPriority</code> of 10 like the base ones, and a higher number to anything meant to play over it: 11 for a variation, 12 for the two transitions. A node plays its clip on a loop unless you say otherwise, so every node that is meant to play once -- both transitions and every variation -- needs <code>&lt;m_Looped&gt;false&lt;/m_Looped&gt;</code>. Without it the clip restarts the moment it ends and the animal visibly snaps back and does it again, because the variable only goes off on the next server tick. Keep them in <code>idle/</code> only. A pose node in <code>pathfind/</code> plays a clip with no root motion and freezes the animal where it stands.</p>
-<h3 id="the-voice">The voice</h3>
-<p>Without <code>voices</code> every breed uses the dog sounds, so a cat would bark. Register your own sounds first:</p>
+<p>Clip và node là của bạn, không phải của mod nền. Mỗi biến cần một file node trong add-on của bạn dưới <code>media/AnimSets/raccoon/idle/</code>, và clip mà <code>m_AnimName</code> của nó trỏ tới phải có trong model của bạn. Một node trỏ tới clip mà model không có sẽ thất bại trong im lặng và con vật chỉ đứng yên ở tư thế đứng yên của mod nền. Cho node tư thế một <code>m_ConditionPriority</code> là 10 như của mod nền, và một số cao hơn cho bất kỳ thứ gì phải phát đè lên nó: 11 cho một biến thể, 12 cho hai chuyển tiếp. Một node phát clip theo vòng lặp trừ khi bạn nói khác đi, nên mọi node được định phát một lần, cả hai chuyển tiếp lẫn mọi biến thể, đều cần <code>&lt;m_Looped&gt;false&lt;/m_Looped&gt;</code>. Không có nó, clip khởi động lại ngay khi kết thúc và con vật giật ngược lại thấy rõ rồi làm lại lần nữa, vì biến chỉ tắt ở tick tiếp theo của server. Chỉ để chúng trong <code>idle/</code>. Một node tư thế trong <code>pathfind/</code> phát clip không có root motion và đóng băng con vật ngay tại chỗ.</p>
+<h3 id="giọng">Giọng</h3>
+<p>Không có <code>voices</code> thì mọi giống dùng âm thanh chó, nên con mèo sẽ sủa. Trước hết hãy đăng ký âm thanh của bạn:</p>
 <pre><code>CD.registerVoices({
     CDCatMeow = "bark", CDCatGrowl = "bark", CDCatHiss = "bark", CDCatPurr = "bark",
     CDCatPet = "fx", CDCatMeowAmbient = "ambient",
 })</code></pre>
-<p>Then point the breed at them:</p>
+<p>Rồi trỏ giống vào chúng:</p>
 <pre><code>voices = { bark = "CDCatMeow", growl = "CDCatGrowl", idle = "CDCatPurr",
            wildbark = "CDCatMeowAmbient", pet = "CDCatPet", whine = "CDCatHiss" },</code></pre>
-<p>Without <code>CD.registerVoices</code> the sounds still play, but they ignore the player's category slider and the game's effect volume, and nothing in the log points at it. A key you leave out of <code>voices</code> falls back to the dog sound.</p>
-<p><code>whine</code> is what the animal says when it gets hurt or falls ill. <code>eat</code> and <code>drink</code> are the feeding foley. The dog ones are loops the base stops when the animal is done, so if yours loop as well, add them to <code>CD.SOUND_LOOPED</code> and the base also stops them when the listener walks out of range. A base older than API 11 ignores the three keys and plays the dog sounds.</p>
-<p>The third argument is the audible range of each sound in tiles. It should match the <code>distanceMax</code> you wrote in your own sound script:</p>
+<p>Không có <code>CD.registerVoices</code> thì âm thanh vẫn phát, nhưng chúng phớt lờ thanh trượt theo hạng mục của người chơi và âm lượng hiệu ứng của game, và không dòng log nào chỉ ra chuyện đó. Khóa bạn bỏ trống trong <code>voices</code> sẽ lùi về âm thanh chó.</p>
+<p><code>whine</code> là tiếng con vật kêu khi bị thương hay đổ bệnh. <code>eat</code> và <code>drink</code> là tiếng ăn và uống. Tiếng của chó là vòng lặp mà bản gốc dừng khi con vật ăn xong; nếu của bạn cũng là vòng lặp, hãy thêm chúng vào <code>CD.SOUND_LOOPED</code> để bản gốc cũng dừng chúng khi người nghe đi ra khỏi tầm. Bản gốc cũ hơn API 11 bỏ qua ba khóa này và phát âm thanh chó.</p>
+<p>Tham số thứ ba là tầm nghe của từng âm thanh, tính bằng ô. Nó nên khớp với <code>distanceMax</code> bạn viết trong script âm thanh của chính mình:</p>
 <pre><code>CD.registerVoices(map, nil, { CDCatMeow = 22, CDCatGrowl = 10 })</code></pre>
-<p>On a server the base sends a sound only to the players inside that range. Leave the range out and the voice gets a generic range by category: a hiss that carries ten tiles goes out to everyone within thirty. Past <code>distanceMax</code> FMOD's inverse rolloff stops attenuating instead of going silent, so a loose <code>.ogg</code> keeps playing at <code>distanceMin / distanceMax</code> of its volume at any distance. Keep <code>distanceMin</code> small on your loud voices for the same reason.</p>
-<h3 id="the-diet">The diet</h3>
-<p>Without <code>diet</code> every breed eats like a dog: the same food that poisons it, the same food that counts as meat, and the same food it grazes from a feeding trough. The field overrides those three lists for your breed only.</p>
+<p>Trên server, mod nền chỉ gửi âm thanh tới những người chơi nằm trong tầm đó. Bỏ trống tầm thì giọng nhận một tầm chung theo hạng mục: tiếng rít vang xa mười ô sẽ tới tai mọi người trong ba mươi ô. Quá <code>distanceMax</code>, đường suy giảm nghịch đảo của FMOD ngừng làm nhỏ tiếng thay vì tắt hẳn, nên một file <code>.ogg</code> khai lỏng cứ phát mãi ở mức <code>distanceMin / distanceMax</code> âm lượng của nó, ở khoảng cách nào cũng vậy. Cũng vì lý do đó, hãy để <code>distanceMin</code> nhỏ ở những giọng to.</p>
+<h3 id="khẩu-phần">Khẩu phần</h3>
+<p>Không có <code>diet</code> thì mọi giống ăn như chó: cùng những món gây độc, cùng những món tính là thịt, và cùng những món nó gặm từ máng ăn. Trường này ghi đè ba danh sách đó, chỉ cho giống của bạn.</p>
 <pre><code>diet = {
     bad          = { Fruits = true },              -- fruit now makes it sick
     badParts     = { onion = false },              -- onion no longer does
@@ -843,102 +838,102 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
     trough       = { Vegetables = false },         -- it will not graze vegetables
     troughItems  = { ["Base.CatFoodOpen"] = true },
 },</code></pre>
-<p>The two forms exist because the game's own categories only go so far. <code>Cheese</code> is a real <code>FoodType</code>, so one key covers every cheese in the game and in any food mod that reuses the category. Tuna is not: the open tin is <code>FoodType = Fish</code>, together with every other fish, and the sealed tin declares no food type at all. <code>badParts</code> and <code>proteinParts</code> are how you reach those.</p>
-<p>Every field is a table of <code>&lt;key&gt; = true</code> (add) or <code>&lt;key&gt; = false</code> (drop what the base had). A value that is not <code>true</code> or <code>false</code> is dropped with a named line in the log.</p>
+<p>Có hai dạng vì hạng mục sẵn có của game chỉ đi được tới đó. <code>Cheese</code> là một <code>FoodType</code> thật, nên một khóa phủ mọi loại phô mai trong game và trong bất kỳ mod đồ ăn nào dùng lại hạng mục đó. Cá ngừ thì không: hộp đã mở là <code>FoodType = Fish</code>, chung với mọi loài cá khác, còn hộp chưa mở không khai loại đồ ăn nào cả. <code>badParts</code> và <code>proteinParts</code> là cách bạn với tới những thứ đó.</p>
+<p>Mỗi trường là một bảng gồm <code>&lt;key&gt; = true</code> (thêm) hoặc <code>&lt;key&gt; = false</code> (bỏ thứ mod nền có sẵn). Giá trị không phải <code>true</code> hay <code>false</code> bị loại kèm một dòng log có nêu tên.</p>
 <div class="tw"><table><thead><tr>
-<th>Field</th>
-<th>What its keys are</th>
+<th>Trường</th>
+<th>Khóa của nó là gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>bad</code></td>
-<td><code>FoodType</code> of food that makes the animal sick, costs it loyalty and gets a red entry in the feed menu</td>
+<td><code>FoodType</code> của món làm con vật ốm, làm nó mất trung thành và hiện mục màu đỏ trong menu cho ăn</td>
 </tr>
 <tr>
 <td><code>badParts</code></td>
-<td>a piece of the item type, lowercase, matched anywhere in it</td>
+<td>một mẩu của item type, viết thường, khớp ở bất cứ chỗ nào trong đó</td>
 </tr>
 <tr>
 <td><code>protein</code></td>
-<td><code>FoodType</code> that pays the animal's meat debt, the one the Weak moodle watches</td>
+<td><code>FoodType</code> trả được món nợ thịt của con vật, món nợ mà moodle Yếu theo dõi</td>
 </tr>
 <tr>
 <td><code>proteinParts</code></td>
-<td>a piece of the item type, same matching as <code>badParts</code></td>
+<td>một mẩu của item type, khớp giống như <code>badParts</code></td>
 </tr>
 <tr>
 <td><code>nonProtein</code></td>
-<td><code>FoodType</code> you know is not meat. It only silences the log line the base writes for a food type it has never seen</td>
+<td><code>FoodType</code> mà bạn biết chắc không phải thịt. Nó chỉ dập dòng log mà mod nền ghi cho một loại đồ ăn nó chưa từng thấy</td>
 </tr>
 <tr>
 <td><code>trough</code></td>
-<td><code>FoodType</code> and <code>AnimalFeedType</code> the animal eats by itself from a feeding trough</td>
+<td><code>FoodType</code> và <code>AnimalFeedType</code> mà con vật tự ăn từ máng</td>
 </tr>
 <tr>
 <td><code>troughItems</code></td>
-<td>full item type, for an item the trough holds that has no feed type of its own</td>
+<td>item type đầy đủ, cho món nằm trong máng mà không có loại thức ăn riêng</td>
 </tr>
 </tbody></table></div>
-<p><code>replace = true</code> starts from an empty list instead of the dog one. Use it when your animal shares almost nothing with a dog; a cat is usually easier to write as a handful of additions and removals.</p>
-<p>The three lists follow the animal, so a dog and a cat standing at the same trough eat different things from it. The mod's own bowl is the exception: it stores food points, not the item that filled it, so filling it goes by the base list for everyone. Nothing poisonous can be put in a bowl anyway.</p>
-<h3 id="sex-at-birth">Sex at birth</h3>
-<p>Every animal is drawn male or female when it spawns, half and half. <code>maleChance</code> is the share born male, from 0 to 1, and <code>sterileMale</code> keeps the males of the breed out of breeding.</p>
+<p><code>replace = true</code> bắt đầu từ danh sách rỗng thay vì danh sách của chó. Dùng nó khi con vật của bạn gần như không chung gì với chó; con mèo thường dễ viết hơn dưới dạng một nhúm dòng thêm và bớt.</p>
+<p>Ba danh sách này đi theo con vật, nên con chó và con mèo đứng cùng một máng ăn hai thứ khác nhau. Cái bát của chính mod là ngoại lệ: nó lưu điểm thức ăn chứ không lưu món đã đổ vào, nên việc đổ đầy đi theo danh sách nền cho tất cả. Dù sao cũng không bỏ được thứ gây độc vào bát.</p>
+<h3 id="giới-tính-khi-sinh">Giới tính khi sinh</h3>
+<p>Mỗi con vật được bốc đực hay cái khi xuất hiện, năm mươi năm mươi. <code>maleChance</code> là tỷ lệ sinh ra là đực, từ 0 đến 1, còn <code>sterileMale</code> giữ con đực của giống đó ngoài việc sinh sản.</p>
 <pre><code>maleChance = 0.00033,
 sterileMale = true,</code></pre>
-<p>That pair is the calico cat. The orange and black mosaic is carried on the X chromosome, so a calico is almost always female, and the male that does turn up is XXY, about one in three thousand, and cannot father a litter. A male of a <code>sterileMale</code> breed is never picked as a partner, and the option to breed disappears from its context menu. The females breed normally.</p>
-<p>A male of such a breed is tagged "Sterile" wherever the game shows its sex: the status panel, the context menu, the stray scan and the kennel, so the player knows why it does not breed.</p>
-<p>Both fields are read from the breed definition, so nothing is written on the animal and an existing save needs no migration. The same draw decides the sex of a puppy at birth, so a breed that is female in the world stays female in the litters.</p>
-<h2 id="6-turning-a-whole-system-off">6. Turning a whole system off</h2>
-<p>The five skills are the five systems:</p>
+<p>Cặp đó chính là mèo tam thể. Mảng màu cam và đen nằm trên nhiễm sắc thể X, nên mèo tam thể gần như luôn là cái, và con đực thi thoảng xuất hiện là XXY, khoảng một trên ba nghìn, và không thể có con. Con đực của giống đặt <code>sterileMale</code> không bao giờ được chọn làm bạn tình, và tùy chọn phối giống biến mất khỏi menu chuột phải của nó. Con cái sinh sản bình thường.</p>
+<p>Con đực của giống như vậy mang nhãn "Vô sinh" ở mọi nơi trò chơi hiển thị giới tính của nó: bảng thông tin, menu chuột phải, lượt quét thú hoang và cũi, để người chơi biết vì sao nó không sinh sản.</p>
+<p>Cả hai trường đều được đọc từ định nghĩa của giống, nên không có gì được ghi lên con vật và file lưu cũ không cần chuyển đổi. Cùng lượt bốc đó quyết định giới tính của con non khi chào đời, nên giống nào là cái ngoài thế giới thì trong lứa đẻ vẫn là cái.</p>
+<h2 id="6-tắt-hẳn-một-hệ-thống">6. Tắt hẳn một hệ thống</h2>
+<p>Năm kỹ năng chính là năm hệ thống:</p>
 <div class="tw"><table><thead><tr>
-<th>Skill</th>
-<th>The system it is</th>
+<th>Kỹ năng</th>
+<th>Là hệ thống nào</th>
 </tr></thead><tbody>
 <tr>
 <td><code>scent</code></td>
-<td>the sentinel: noticing zombies and warning you</td>
+<td>lính gác: phát hiện zombie và báo cho bạn</td>
 </tr>
 <tr>
 <td><code>combat</code></td>
-<td>fighting, the Guard mode and auto-protect</td>
+<td>đánh nhau, chế độ Canh gác và tự vệ</td>
 </tr>
 <tr>
 <td><code>obedience</code></td>
-<td>the trick tree</td>
+<td>cây trò</td>
 </tr>
 <tr>
 <td><code>hunt</code></td>
-<td>hunting, plus the foraging bonus it gives its owner</td>
+<td>săn mồi, cộng với phần thưởng kiếm đồ mà nó cho chủ</td>
 </tr>
 <tr>
 <td><code>herding</code></td>
-<td>tending livestock in a pen</td>
+<td>trông đàn vật nuôi trong chuồng</td>
 </tr>
 </tbody></table></div>
-<p>So a species declares what it does not have:</p>
+<p>Vậy nên một loài khai báo cái nó không có:</p>
 <pre><code>skills = { combat = false, herding = false },
 canBreed = false,
 huntMaxPrey = "tiny",</code></pre>
-<p>Absent or <code>true</code> means the animal has that skill.</p>
-<p>Turning a skill off also stops it earning experience and removes the bar and its commands from the interface.</p>
-<p><code>canBreed = false</code> is separate from the table because breeding has no bar and no experience. The animal does not conceive, is never picked as a partner, and does not breed with its own kind either.</p>
-<h3 id="the-species">The species</h3>
-<p>An add-on that adds another animal, rather than another dog, declares it:</p>
+<p>Không có mặt hoặc <code>true</code> nghĩa là con vật có kỹ năng đó.</p>
+<p>Tắt một kỹ năng cũng khiến nó thôi nhận kinh nghiệm, và gỡ thanh của nó cùng các lệnh của nó khỏi giao diện.</p>
+<p><code>canBreed = false</code> tách khỏi bảng vì việc sinh sản không có thanh và không có kinh nghiệm. Con vật không thụ thai, không bao giờ được chọn làm bạn tình, và cũng không sinh sản với chính loài của nó.</p>
+<h3 id="loài">Loài</h3>
+<p>Một addon thêm vào một con vật khác, thay vì thêm một con chó nữa, thì khai báo như sau:</p>
 <pre><code>CD.registerSpecies({ key = "cat",
                      nounKey  = "IGUI_PD_SpeciesNoun_cat",
                      youngKey = "IGUI_PD_Young_cat" })
 
 CD.registerBreed({ ..., species = "cat" })</code></pre>
-<p>The field is absent on every breed published so far, and absent means <code>"dog"</code>.</p>
-<p>Breeding is closed per species: a pair only conceives when both sides are the same species, in the command, in the passive hourly roll and in the debug tool. And the interface stops calling your animal a dog: <code>nounKey</code> is the bare noun that fills sentences like <em>"This %1 already belongs to another survivor"</em>, and <code>youngKey</code> is the label the young of your species carries in the window, the context menu and the kennel, where a dog says <em>Puppy</em>.</p>
-<p>Those two nouns only cover the sentences built around a <code>%1</code>. Every other sentence with the word <em>dog</em> written into it (<em>"Inspect dog"</em>, <em>"Your dog is hungry"</em>, <em>"The dog barks on purpose"</em>) takes a per-species key from API 7 on: ship <code>IGUI_PD_ScanStray_cat</code> in your translation files and the base shows it instead of <code>IGUI_PD_ScanStray</code> whenever the animal on screen is a cat. A key you did not ship falls back to the dog's text. The keys that accept the suffix: <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, every <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, every <code>Refused_*</code>, <code>KennelStatusNoData</code> and the <code>Moodle_*_desc</code> of the care moodles (Sick, Weak, Hunger, Thirst, Rested, Grief). Sentences with no animal on screen (the registry tab, <em>"Befriend an animal first"</em>) are already species-neutral in the base. The cat ships all of them in fourteen languages; copy its <code>IG_UI.json</code> as the template.</p>
-<p>The animal's <code>group</code> is only read by the debug spawn menu and the clip viewer, through <code>IGUI_Animal_Group_&lt;group&gt;</code>. Set <code>t.group = "cat"</code> after the behaviour helper and ship that key, or your species shows up there under the dog's name.</p>
-<p>Declaring <code>species</code> without registering it is not fatal: your animal still refuses to breed outside its own species, because the gate compares the raw string. Only the two nouns fall back to the dog's, and the log says so by name.</p>
-<p>On a base older than API 6 the field is ignored without a log line, and your animal breeds as a dog. If it must never cross with one, guard on API 6, or keep <code>canBreed = false</code> while the base is older, which is what the cat does.</p>
-<p><code>huntMaxPrey</code> caps the prey size inside a hunt that still exists; it does not replace <code>hunt = false</code>. It takes <code>"tiny"</code> (mice, rats, squirrels), <code>"small"</code> (rabbits, raccoons) or <code>"large"</code> (deer, the default, no cap). Your animal does not chase or point at prey above the cap. A value outside that ladder falls back to <code>"large"</code> and prints a named line in the log.</p>
-<p>A blocked option disappears from the radial, the context menu and the window, and the server refuses it without a message. None of these fields adds a translation key, so explain the limits in your breed description.</p>
-<h2 id="7-the-animal-definitions">7. The animal definitions</h2>
-<p>The engine binds the mesh to the animal type rather than the breed, so your breed needs three types of its own. The shortest path is to copy the file of an existing add-on and rename it.</p>
-<p>The three pieces, in one shared file under <code>Definitions/animal/</code>:</p>
+<p>Trường này vắng mặt ở mọi giống đã phát hành cho tới giờ, và vắng mặt nghĩa là <code>"dog"</code>.</p>
+<p>Việc sinh sản đóng theo loài: một cặp chỉ thụ thai khi cả hai bên cùng một loài, trong lệnh, trong lần gieo thụ động mỗi giờ và trong công cụ debug. Và giao diện thôi gọi con vật của bạn là chó: <code>nounKey</code> là danh từ trần lấp vào những câu như <em>"%1 này đã thuộc về một người sống sót khác"</em>, còn <code>youngKey</code> là nhãn mà con non của loài bạn mang trong cửa sổ, menu chuột phải và cũi, chỗ mà một con chó ghi <em>Chó con</em>.</p>
+<p>Hai danh từ đó chỉ phủ những câu dựng quanh một <code>%1</code>. Mọi câu khác có chữ <em>chó</em> viết thẳng vào trong đó (<em>"Kiểm tra con chó"</em>, <em>"Con chó của bạn đang đói"</em>, <em>"Con chó sủa có chủ đích"</em>) từ API 7 trở đi lấy một khóa theo loài: hãy kèm <code>IGUI_PD_ScanStray_cat</code> trong các file dịch của bạn và bản gốc sẽ hiện nó thay cho <code>IGUI_PD_ScanStray</code> mỗi khi con vật trên màn hình là mèo. Một khóa bạn không kèm theo sẽ lùi về văn bản của chó. Các khóa nhận hậu tố: <code>ScanStray</code>, <code>ScanTitle</code>, <code>PauseGrowthTip</code>, <code>BadFood</code>, <code>AlertFullDesc</code>, <code>AlertQuietDesc</code>, <code>AlertLockedTip</code>, <code>HuntModeDesc</code>, mọi <code>Trick*Desc</code>, <code>TrickDistractDone</code>, <code>TrickNeedsBag</code>, <code>TrickGotoPick</code>, <code>TrickSniffNoItem</code>, <code>TrickFetchNoItem</code>, <code>AlertGroup</code>, <code>DogLost</code>, mọi <code>Refused_*</code>, <code>KennelStatusNoData</code> và các <code>Moodle_*_desc</code> của những moodle chăm sóc (Sick, Weak, Hunger, Thirst, Rested, Grief). Những câu không có con vật nào trên màn hình (thẻ danh sách, <em>"Hãy làm quen với một con vật trước"</em>) thì trong bản gốc đã trung tính về loài rồi. Con mèo kèm đủ tất cả bằng mười bốn thứ tiếng; hãy chép <code>IG_UI.json</code> của nó làm mẫu.</p>
+<p><code>group</code> của con vật chỉ được menu spawn của chế độ debug và trình xem clip đọc tới, qua <code>IGUI_Animal_Group_&lt;group&gt;</code>. Hãy đặt <code>t.group = "cat"</code> sau hàm trợ giúp hành vi và kèm khóa đó, nếu không loài của bạn sẽ hiện ở đó dưới tên của chó.</p>
+<p>Khai báo <code>species</code> mà không đăng ký nó thì không chết người: con vật của bạn vẫn từ chối sinh sản ngoài loài của nó, vì cửa chặn so sánh chuỗi thô. Chỉ hai danh từ lùi về của chó, và log nói rõ điều đó kèm tên.</p>
+<p>Trên một bản gốc cũ hơn API 6, trường này bị bỏ qua mà không có dòng log nào, và con vật của bạn sinh sản như một con chó. Nếu nó tuyệt đối không được lai với chó, hãy chặn ở API 6, hoặc giữ <code>canBreed = false</code> khi bản gốc còn cũ, đó là điều con mèo làm.</p>
+<p><code>huntMaxPrey</code> giới hạn cỡ con mồi bên trong một cuộc săn vẫn còn tồn tại; nó không thay cho <code>hunt = false</code>. Nó nhận <code>"tiny"</code> (chuột nhắt, chuột cống, sóc), <code>"small"</code> (thỏ, gấu mèo) hoặc <code>"large"</code> (hươu, mặc định, không giới hạn). Con vật của bạn không đuổi và không chỉ hướng vào con mồi lớn hơn mức giới hạn. Một giá trị nằm ngoài thang đó sẽ lùi về <code>"large"</code> và in một dòng có tên vào log.</p>
+<p>Một tùy chọn bị chặn sẽ biến khỏi vòng tròn, menu chuột phải và cửa sổ, còn server từ chối nó mà không báo gì. Không trường nào trong số này thêm một khóa dịch, nên hãy giải thích các giới hạn trong phần mô tả giống của bạn.</p>
+<h2 id="7-định-nghĩa-con-vật">7. Định nghĩa con vật</h2>
+<p>Engine gắn mesh vào type con vật chứ không phải vào giống, nên giống của bạn cần ba type của riêng nó. Đường ngắn nhất là chép file của một addon đã có rồi đổi tên.</p>
+<p>Ba phần, trong một file shared dưới <code>Definitions/animal/</code>:</p>
 <pre><code>AnimalDefinitions.stages["pug"] = {}
 AnimalDefinitions.stages["pug"].stages = {}
 AnimalDefinitions.stages["pug"].stages["pugpup"] = {}
@@ -964,52 +959,52 @@ pugfemale.breeds = AnimalDefinitions.breeds["pug"].breeds
 pugfemale.stages = AnimalDefinitions.stages["pug"].stages
 pugfemale.genes = AnimalDefinitions.genome["dog"].genes
 AnimalDefinitions.animals["pugfemale"] = pugfemale</code></pre>
-<p>The helpers the base gives you:</p>
+<p>Các hàm trợ giúp mà bản gốc cho bạn:</p>
 <div class="tw"><table><thead><tr>
-<th>Helper</th>
-<th>What it fills in</th>
+<th>Hàm trợ giúp</th>
+<th>Điền vào những gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>CD.applyCompanionModel(t, "Body_Model")</code></td>
-<td>body model, skeleton, butchered textures and the animation set</td>
+<td>model thân, bộ xương, texture lúc mổ và bộ animation</td>
 </tr>
 <tr>
 <td><code>CD.applyCompanionBehaviour(t)</code></td>
-<td>every engine behaviour flag a companion needs</td>
+<td>mọi cờ hành vi của engine mà một con vật đồng hành cần</td>
 </tr>
 <tr>
 <td><code>CD.applyCompanionAvatar(t)</code></td>
-<td>the portrait camera for the animal window</td>
+<td>camera chân dung cho cửa sổ con vật</td>
 </tr>
 <tr>
 <td><code>CD.COMPANION_SOUNDS</code></td>
-<td>the shared footstep and foley table</td>
+<td>bảng tiếng chân và tiếng động dùng chung</td>
 </tr>
 <tr>
 <td><code>CD.defineGenome("species")</code></td>
-<td>the genome of a new species, with the standard gene list (API 7)</td>
+<td>bộ gen của một loài mới, với danh sách gen chuẩn (API 7)</td>
 </tr>
 <tr>
 <td><code>CD.STRAY_NO_BLEEDOUT</code></td>
-<td>the value that stops a frightened stray from bleeding to death</td>
+<td>giá trị ngăn một con hoang đang sợ chảy máu đến chết</td>
 </tr>
 <tr>
 <td><code>CD.defineCompanionParts(typePrefix, engineBreed, meat)</code></td>
-<td>the butchering parts of all three stages. <code>meat</code> is optional: <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>, and without it the animal yields the base's dog meat. The engine multiplies both the count and the hunger of every piece by the carcass size, so a species with a large size (the cat uses 2.5 to 3.5 as a visual scale) needs its own item with a smaller base hunger and a low count</td>
+<td>các phần mổ xẻ của cả ba giai đoạn. <code>meat</code> không bắt buộc: <code>{ item, minNb, maxNb, pupMinNb, pupMaxNb }</code>, và không có nó thì con vật cho ra thịt chó của bản gốc. Engine nhân cả số lượng lẫn độ no của từng miếng với cỡ xác, nên một loài có cỡ lớn (con mèo dùng 2.5 đến 3.5 làm thang hình ảnh) cần vật phẩm riêng với độ no gốc nhỏ hơn và số lượng thấp</td>
 </tr>
 </tbody></table></div>
-<p>The species-neutral names arrived with API 7. The older ones, <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code> and <code>CD.DogMoodles</code>, are the same functions and tables under their first name. An add-on that wants to load on a base older than 0.7.3 guards on the old names and picks the new one when it exists: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
-<p>The animation set has to stay <code>"raccoon"</code>. A forked animation set does not load its state machine, and the animal stands frozen in place.</p>
-<p>Reuse the genome. A dog breed points at the base's list: <code>AnimalDefinitions.genome["dog"].genes</code>. A new species calls <code>CD.defineGenome("cat")</code> once and gives every stage the table it returns. The engine only reads the <code>genes</code> list of each stage, and the genome key is a convention, so your species gets its own entry without a gene list of its own.</p>
-<p>Do not declare <code>mate</code>. With it, the engine runs its own native mating inside any animal zone, which ignores the mod's breeding block and its sandbox options, and produces puppies with no bond. The base clears the field at boot, but do not rely on that.</p>
-<p>Parts are mandatory. Three lines in their own file:</p>
+<p>Các tên trung tính về loài đến cùng API 7. Những tên cũ hơn, <code>CD.applyDogModel</code>, <code>CD.applyDogBehaviour</code>, <code>CD.applyDogAvatar</code>, <code>CD.DOG_SOUNDS</code>, <code>CD.defineDogParts</code> và <code>CD.DogMoodles</code>, chính là những hàm và bảng đó dưới cái tên đầu tiên của chúng. Một addon muốn nạp được trên bản gốc cũ hơn 0.7.3 thì chặn ở tên cũ và lấy tên mới khi nó tồn tại: <code>local applyModel = CD.applyCompanionModel or CD.applyDogModel</code>.</p>
+<p>Bộ animation phải giữ nguyên là <code>"raccoon"</code>. Một bộ animation tách nhánh không nạp máy trạng thái của nó, và con vật đứng đơ tại chỗ.</p>
+<p>Hãy dùng lại bộ gen. Một giống chó trỏ vào danh sách của bản gốc: <code>AnimalDefinitions.genome["dog"].genes</code>. Một loài mới gọi <code>CD.defineGenome("cat")</code> một lần và trao cho mọi giai đoạn cái bảng mà nó trả về. Engine chỉ đọc danh sách <code>genes</code> của từng giai đoạn, còn khóa bộ gen chỉ là quy ước, nên loài của bạn có mục riêng mà không cần danh sách gen của riêng nó.</p>
+<p>Đừng khai báo <code>mate</code>. Có nó thì engine chạy phần giao phối gốc của chính nó bên trong bất kỳ vùng động vật nào, phần đó bỏ qua khối sinh sản của mod và các tùy chọn sandbox của mod, và cho ra chó con không có mối gắn bó. Bản gốc xóa trường này lúc khởi động, nhưng đừng dựa vào đó.</p>
+<p>Các phần mổ xẻ là bắt buộc. Ba dòng trong file của riêng chúng:</p>
 <pre><code>if CompanionDogs and CompanionDogs.defineDogParts then
     CompanionDogs.defineDogParts("pug", "pug")
 end</code></pre>
-<p>Without them, butchering your animal crashes the vanilla code, because it indexes the parts definition by type and breed and hits a nil.</p>
-<p>The portrait zoom in <code>CD.applyDogAvatar</code> is calibrated for a dog, and avatar zoom is magnification: the smaller the animal, the bigger the number. Divide the zoom by the size ratio against a dog and multiply the offsets by it, or your animal sits tiny at the bottom of its own portrait.</p>
-<h2 id="8-the-model-script">8. The model script</h2>
-<p>One file under <code>media/scripts/</code> tells the game your model exists:</p>
+<p>Thiếu chúng, việc mổ con vật của bạn làm sập code gốc của game, vì nó tra định nghĩa phần mổ theo type và giống rồi đụng phải nil.</p>
+<p>Mức phóng chân dung trong <code>CD.applyDogAvatar</code> được canh cho một con chó, và mức phóng của avatar là độ phóng đại: con vật càng nhỏ thì con số càng lớn. Hãy chia mức phóng cho tỉ lệ cỡ so với chó và nhân các offset với tỉ lệ đó, nếu không con vật của bạn sẽ ngồi bé xíu ở đáy bức chân dung của chính nó.</p>
+<h2 id="8-script-của-model">8. Script của model</h2>
+<p>Một file dưới <code>media/scripts/</code> báo cho game biết model của bạn tồn tại:</p>
 <pre><code>module Base
 {
     model Pug_Body
@@ -1032,10 +1027,10 @@ end</code></pre>
         keepMeshAnimations = true,
     }
 }</code></pre>
-<p><code>keepMeshAnimations = true</code> keeps the clips inside your model file usable. Without it the model loads and never animates.</p>
-<p>The <code>head</code> attachment is where hats and the like sit. If you want the saddlebag to fit your animal, add <code>saddlebags_l</code>, <code>saddlebags_r</code> and <code>saddlebags_c</code> the same way, on the spine bone. Find those numbers by looking at the animal in game and nudging them. Values measured from the model put the bag in the geometric centre of the mesh, which is not where it looks right on the body.</p>
-<h2 id="9-where-the-animal-spawns">9. Where the animal spawns</h2>
-<p>Strays are rolled per building, per chunk, the first time that chunk loads. You describe your rolls as a list of steps, either inside the breed definition as <code>spawns</code>, or with <code>CD.registerStraySpawns(list)</code>.</p>
+<p><code>keepMeshAnimations = true</code> giữ cho các clip nằm trong file model của bạn còn dùng được. Không có nó, model nạp lên và không bao giờ chạy animation.</p>
+<p>Điểm gắn <code>head</code> là chỗ mũ nón và những thứ tương tự ngồi lên. Nếu bạn muốn túi yên vừa với con vật của mình, hãy thêm <code>saddlebags_l</code>, <code>saddlebags_r</code> và <code>saddlebags_c</code> y như vậy, trên xương sống. Tìm những con số đó bằng cách nhìn con vật trong game và nhích dần. Giá trị đo từ model đặt cái túi vào tâm hình học của mesh, và đó không phải chỗ trông hợp mắt trên thân con vật.</p>
+<h2 id="9-con-vật-xuất-hiện-ở-đâu">9. Con vật xuất hiện ở đâu</h2>
+<p>Chó hoang được gieo theo từng tòa nhà, từng chunk, vào lần đầu chunk đó nạp. Bạn mô tả các lần gieo của mình bằng một danh sách các bước, hoặc đặt trong định nghĩa giống dưới tên <code>spawns</code>, hoặc dùng <code>CD.registerStraySpawns(list)</code>.</p>
 <pre><code>spawns = {
     { id = "pughouse", class = "house", suffix = "|pg", breed = "pug", indoor = 85,
       chance = function() return CD.strayChancePerHouse() / CD.PUG_HOUSE_RARITY end },
@@ -1043,80 +1038,80 @@ end</code></pre>
       chance = function() return CD.PUG_PETVET_CHANCE * CD.dogSpawnMultiplier() end },
 },</code></pre>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>What it is</th>
+<th>Khóa</th>
+<th>Là gì</th>
 </tr></thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>name of the step, for your own logs</td>
+<td>tên của bước, dùng cho log của chính bạn</td>
 </tr>
 <tr>
 <td><code>class</code></td>
-<td>the building class it rolls on</td>
+<td>lớp tòa nhà mà bước này gieo trên đó</td>
 </tr>
 <tr>
 <td><code>chance</code></td>
-<td>a function returning a percentage, so it can read the sandbox multiplier at roll time.</td>
+<td>một hàm trả về phần trăm, nhờ vậy nó đọc được hệ số sandbox ngay lúc gieo.</td>
 </tr>
 <tr>
 <td><code>suffix</code></td>
-<td>key of the persistent store. Unique across all mods, and never changed.</td>
+<td>khóa của kho lưu lâu dài. Không trùng với bất kỳ mod nào, và không bao giờ đổi.</td>
 </tr>
 <tr>
 <td><code>breed</code></td>
-<td>the breed key to spawn</td>
+<td>khóa của giống sẽ xuất hiện</td>
 </tr>
 <tr>
 <td><code>gate</code></td>
-<td>optional function returning a boolean, checked before the roll. The Husky uses <code>CD.isWinter</code>.</td>
+<td>hàm không bắt buộc, trả về đúng sai, được kiểm trước khi gieo. Husky dùng <code>CD.isWinter</code>.</td>
 </tr>
 <tr>
 <td><code>indoor</code></td>
-<td>percentage chance of being born inside the building instead of the street. Default 35.</td>
+<td>phần trăm khả năng sinh ra bên trong tòa nhà thay vì ngoài đường. Mặc định 35.</td>
 </tr>
 </tbody></table></div>
-<p>Multiply your chance by <code>CD.dogSpawnMultiplier()</code>, or divide <code>CD.strayChancePerHouse()</code> by a rarity of your own. Both keep the player's sandbox setting working.</p>
-<p><code>indoor</code> is a preference: a building with no free interior tile in that chunk falls back to a tile outside.</p>
-<h3 id="the-building-classes">The building classes</h3>
-<p>The base registers four:</p>
+<p>Hãy nhân tỉ lệ của bạn với <code>CD.dogSpawnMultiplier()</code>, hoặc chia <code>CD.strayChancePerHouse()</code> cho một độ hiếm của riêng bạn. Cả hai cách đều giữ cho thiết lập sandbox của người chơi còn tác dụng.</p>
+<p><code>indoor</code> chỉ là mong muốn: một tòa nhà không còn ô trống bên trong ở chunk đó sẽ lùi về một ô ngoài trời.</p>
+<h3 id="các-lớp-tòa-nhà">Các lớp tòa nhà</h3>
+<p>Bản gốc đăng ký bốn lớp:</p>
 <div class="tw"><table><thead><tr>
-<th>Class</th>
-<th>Matches</th>
+<th>Lớp</th>
+<th>Khớp với</th>
 </tr></thead><tbody>
 <tr>
 <td><code>house</code></td>
-<td>residential buildings that are not shops</td>
+<td>nhà ở không phải cửa hàng</td>
 </tr>
 <tr>
 <td><code>police</code></td>
-<td>police stations and the like</td>
+<td>đồn cảnh sát và những nơi tương tự</td>
 </tr>
 <tr>
 <td><code>petvet</code></td>
-<td>pet shops and veterinary clinics</td>
+<td>cửa hàng thú cưng và phòng khám thú y</td>
 </tr>
 <tr>
 <td><code>farm</code></td>
-<td>farm buildings, and it is allowed outside town</td>
+<td>công trình nông trại, và được phép nằm ngoài thị trấn</td>
 </tr>
 </tbody></table></div>
-<p>If none of them fits, register your own:</p>
+<p>Nếu không lớp nào hợp, hãy đăng ký lớp của bạn:</p>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
-<p>The match function receives the building definition and runs inside a protected call, so an error in it does not stop the chunk load. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which a farm or a forest cabin needs. Do not set <code>exclusive</code>. The base classes are exclusive among themselves, and an add-on class matches on top of them.</p>
-<h3 id="suffixes-already-taken">Suffixes already taken</h3>
-<p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
-<p>Every suffix starts with a vertical bar. These are already in use:</p>
+<p>Hàm khớp nhận định nghĩa tòa nhà và chạy trong một lời gọi được bảo vệ, nên lỗi trong đó không làm dừng việc nạp chunk. <code>skipUrbanGate</code> cho phép lớp gieo trong một chunk không phải đô thị, điều mà một nông trại hay một căn chòi trong rừng cần đến. Đừng đặt <code>exclusive</code>. Các lớp gốc loại trừ lẫn nhau, còn lớp của addon thì khớp chồng lên chúng.</p>
+<h3 id="những-hậu-tố-đã-có-người-dùng">Những hậu tố đã có người dùng</h3>
+<p>Hậu tố là một phần của khóa lưu "tòa nhà này đã gieo rồi". Hai mod dùng chung một hậu tố sẽ làm hỏng kết quả gieo của nhau.</p>
+<p>Mọi hậu tố đều bắt đầu bằng một dấu gạch đứng. Những cái đang được dùng:</p>
 <ul>
-<li>Base: the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
+<li>Bản gốc: hậu tố rỗng, và <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code></li>
 <li>Rottweiler: <code>rw</code>, <code>r</code></li>
 <li>Doberman: <code>db</code>, <code>dm</code></li>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
-<li>Pug: <code>pg</code>, <code>pv</code></li>
-<li>Cats: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
+<li>Chó Pug: <code>pg</code>, <code>pv</code></li>
+<li>Mèo: <code>ct</code>, <code>cv</code>, <code>ctw</code>, <code>cvw</code>, <code>cto</code>, <code>cvo</code>, <code>ctc</code>, <code>cvc</code>, <code>ctx</code>, <code>cvx</code></li>
 </ul>
-<h2 id="10-the-breed-moodle">10. The breed moodle</h2>
-<p>A moodle is a client file. You append a table to <code>CD.DogMoodles</code>, and the base draws it, tracks it and cleans it up:</p>
+<h2 id="10-moodle-của-giống">10. Moodle của giống</h2>
+<p>Moodle là một file phía client. Bạn nối một bảng vào <code>CD.DogMoodles</code>, và bản gốc lo vẽ nó, theo dõi nó và dọn nó đi:</p>
 <pre><code>CD.DogMoodles[#CD.DogMoodles + 1] = {
     id = "shadow",
     breed = "pug",
@@ -1135,51 +1130,51 @@ end</code></pre>
         CD.relieveMood(player, CD.moodleReliefPerMin() * elapsedMin)
     end,
 }</code></pre>
-<p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> receives the game minutes since the last call, so multiply your effect by <code>elapsedMin</code>.</p>
-<p>Ship the icon in six sizes, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size shows as an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
-<h2 id="11-hooks">11. Hooks</h2>
-<p>Two lists of functions the base calls on the server. Append to them from a shared file. Each handler runs inside its own protected call, so an error in one add-on does not stop the base.</p>
-<p><code>CD.onHuntDelivered</code>, from API 2, is called right after the animal drops a kill at its owner's feet:</p>
+<p><code>condition</code> trả về cấp độ, hoặc 0 nghĩa là "không hiện". <code>apply</code> nhận số phút trong game kể từ lần gọi trước, nên hãy nhân hiệu ứng của bạn với <code>elapsedMin</code>.</p>
+<p>Hãy kèm icon ở sáu kích cỡ, từ 32 đến 128 pixel. Giao diện chọn kích cỡ theo mức phóng của người chơi, và một kích cỡ thiếu sẽ hiện thành ô vuông rỗng. Icon xuất hiện ở dải riêng của mod, không nằm chung với các moodle gốc của game.</p>
+<h2 id="11-hook">11. Hook</h2>
+<p>Hai danh sách hàm mà bản gốc gọi trên server. Hãy nối vào chúng từ một file shared. Mỗi handler chạy trong lời gọi được bảo vệ của riêng nó, nên lỗi ở một addon không làm dừng bản gốc.</p>
+<p><code>CD.onHuntDelivered</code>, có từ API 2, được gọi ngay sau khi con vật thả con mồi xuống chân chủ:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
 end</code></pre>
-<p><code>CD.onUpkeepStress</code>, from API 3, is called every upkeep cycle, after the base has added the stress from unmet needs and before it is written. Return a number, which is added to the total:</p>
+<p><code>CD.onUpkeepStress</code>, có từ API 3, được gọi mỗi chu kỳ chăm sóc, sau khi bản gốc đã cộng phần căng thẳng từ những nhu cầu chưa được đáp ứng và trước khi ghi nó xuống. Hãy trả về một con số, nó sẽ được cộng vào tổng:</p>
 <pre><code>CD.onUpkeepStress[#CD.onUpkeepStress + 1] = function(animal, needsStress)
     return CD.pugHeatRatio(animal) * CD.PUG_HEAT_STRESS_MAX
 end</code></pre>
-<p>Upkeep recomputes and overwrites the value every cycle, so anything written from outside is lost on the next tick. Use the hook for a condition that comes from the environment, such as heat, cold or rain.</p>
-<p>In multiplayer, the client never writes mod data. A client side write overwrites the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks.</p>
-<p>The numbers in the <strong>SERVER TUNING</strong> panel are plain <code>CD.*</code> constants, and an add-on may assign one from a shared or server file at load. From API 9 the panel takes the value in effect when the server finishes loading as that knob's default: it stays until an admin types over it, the reset button returns to it, and the panel shows it as the default. On an older base the panel wrote the stock value back on every boot. Assign at load, not from a later event, or the next change to any knob puts the stock value back.</p>
-<h2 id="12-translation-keys">12. Translation keys</h2>
-<p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
-<p>The keys a breed needs:</p>
+<p>Chu kỳ chăm sóc tính lại và ghi đè giá trị này mỗi vòng, nên mọi thứ ghi từ bên ngoài đều mất ở tick sau. Hãy dùng hook cho một điều kiện đến từ môi trường, như nóng, lạnh hay mưa.</p>
+<p>Trong nhiều người chơi, client không bao giờ ghi mod data. Một lần ghi từ phía client sẽ đè lên bản của server ở lần đồng bộ kế tiếp, và triệu chứng lộ ra sau đó vài phút, ở một chỗ chẳng liên quan. Hãy làm việc đó trong một file phía server, hoặc trong một trong các hook này.</p>
+<p>Các con số trong bảng <strong>SERVER TUNING</strong> là hằng số <code>CD.*</code> bình thường, và một add-on có thể gán một hằng từ file shared hoặc server lúc nạp. Từ API 9, bảng lấy giá trị đang có hiệu lực khi server nạp xong làm mặc định của núm đó: nó giữ nguyên cho tới khi admin gõ đè lên, nút reset quay về nó, và bảng hiện nó như mặc định. Trên mod nền cũ hơn, bảng ghi lại giá trị gốc mỗi lần khởi động. Hãy gán lúc nạp, không phải từ một sự kiện về sau, nếu không lần đổi tiếp theo ở bất kỳ núm nào sẽ đặt lại giá trị gốc.</p>
+<h2 id="12-khóa-dịch-thuật">12. Khóa dịch thuật</h2>
+<p>Hãy kèm một <code>IG_UI.json</code> cho mỗi thư mục ngôn ngữ, trong <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. Bản gốc kèm mười bốn: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
+<p>Các khóa mà một giống cần:</p>
 <div class="tw"><table><thead><tr>
-<th>Key</th>
-<th>Where it shows</th>
+<th>Khóa</th>
+<th>Hiện ở đâu</th>
 </tr></thead><tbody>
 <tr>
 <td><code>IGUI_PD_Breed_&lt;key&gt;</code></td>
-<td>the breed name, everywhere in the mod's interface</td>
+<td>tên giống, ở mọi chỗ trong giao diện của mod</td>
 </tr>
 <tr>
 <td><code>IGUI_PD_BreedDesc_&lt;key&gt;</code></td>
-<td>the description on the animal's card</td>
+<td>mô tả trên thẻ của con vật</td>
 </tr>
 <tr>
 <td><code>IGUI_Breed_&lt;engineBreed&gt;</code></td>
-<td>the breed name in the game's own screens</td>
+<td>tên giống trong các màn hình của chính game</td>
 </tr>
 <tr>
 <td><code>IGUI_AnimalType_&lt;type&gt;</code></td>
-<td>one for each of your three types</td>
+<td>một khóa cho mỗi type trong ba type của bạn</td>
 </tr>
 <tr>
-<td>your species keys</td>
-<td>the <code>nounKey</code> and <code>youngKey</code> you passed to <code>CD.registerSpecies</code></td>
+<td>các khóa loài của bạn</td>
+<td><code>nounKey</code> và <code>youngKey</code> bạn đã truyền cho <code>CD.registerSpecies</code></td>
 </tr>
 <tr>
-<td>your moodle keys</td>
-<td>the name and the description</td>
+<td>các khóa moodle của bạn</td>
+<td>tên và phần mô tả</td>
 </tr>
 </tbody></table></div>
 <pre><code>{
@@ -1190,76 +1185,76 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
-<p>A literal percent sign in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. A language file with a byte order mark does not compile, and the error names a different file than the broken one.</p>
-<h2 id="13-what-the-save-remembers">13. What the save remembers</h2>
-<p>Three of your identifiers are written into save files and read back forever:</p>
+<p>Một dấu phần trăm để trần trong chuỗi đã dịch sẽ làm sập màn hình hiện nó, vì bộ định dạng đọc nó như một chỗ giữ chỗ. Một file ngôn ngữ có byte order mark thì không biên dịch được, và lỗi lại gọi tên một file khác chứ không phải file hỏng.</p>
+<h2 id="13-những-gì-file-save-ghi-nhớ">13. Những gì file save ghi nhớ</h2>
+<p>Ba trong số các định danh của bạn được ghi vào file save và đọc lại mãi mãi:</p>
 <ul>
-<li><code>key</code>, the breed identifier stored on every animal of yours</li>
-<li><code>typePrefix</code>, which forms the animal types the engine stores</li>
-<li><code>suffix</code>, the key of the "already rolled" store, one per spawn step</li>
+<li><code>key</code>, định danh giống được lưu trên mọi con vật của bạn</li>
+<li><code>typePrefix</code>, thứ tạo nên các type con vật mà engine lưu lại</li>
+<li><code>suffix</code>, khóa của kho "đã gieo rồi", mỗi bước xuất hiện một cái</li>
 </ul>
-<p>None of the three can be renamed after release. Renaming a <code>key</code> orphans every living animal of that breed. Renaming a <code>suffix</code> makes every building in every existing save roll again, and a world played for months fills with your animal.</p>
-<p>A new suffix is also how a new breed reaches worlds that are already running. CD: Cats gave its four new coats new suffixes, so they started appearing in existing saves, while the original black cat kept its old suffix and did not roll again.</p>
-<p>Removing an add-on from a save that has living animals of that breed loses them. The engine discards an animal whose type it no longer knows. The base does not crash, and the bond and the kennel degrade cleanly. Say so on your Workshop page.</p>
-<p>If your add-on is missing, the base falls back to the default breed for anything it is asked about, so a save opened without your mod is readable.</p>
-<h2 id="14-before-you-publish">14. Before you publish</h2>
+<p>Không cái nào trong ba cái đó đổi tên được sau khi phát hành. Đổi tên <code>key</code> làm mọi con vật còn sống của giống đó thành mồ côi. Đổi tên <code>suffix</code> khiến mọi tòa nhà trong mọi file save hiện có gieo lại, và một thế giới đã chơi hàng tháng sẽ đầy con vật của bạn.</p>
+<p>Một hậu tố mới cũng chính là cách một giống mới đến được với những thế giới đang chạy dở. CD: Cats cho bốn màu lông mới của nó những hậu tố mới, nên chúng bắt đầu xuất hiện trong các file save đang có, còn con mèo đen ban đầu vẫn giữ hậu tố cũ và không gieo lại.</p>
+<p>Gỡ một addon khỏi file save còn con vật sống của giống đó sẽ mất chúng. Engine bỏ đi một con vật mà nó không còn biết type. Bản gốc không sập, và mối gắn bó lẫn cái cũi đều xuống cấp một cách gọn gàng. Hãy nói rõ điều đó trên trang Workshop của bạn.</p>
+<p>Nếu addon của bạn không có mặt, bản gốc lùi về giống mặc định cho mọi thứ nó được hỏi, nên một file save mở ra mà không có mod của bạn vẫn đọc được.</p>
+<h2 id="14-trước-khi-đăng">14. Trước khi đăng</h2>
 <ul>
-<li>The guard is on every Lua file, and names the API you actually use.</li>
-<li>The base version floor is written in your description, in words. <code>versionMin</code> cannot say it.</li>
-<li>You read the log on first load. <code>CD.registerBreed</code> rejects in silence otherwise, and every rejection prints a named line.</li>
-<li><code>CD.defineDogParts</code> is called. Butcher one of your animals and see that it does not crash.</li>
-<li>Your <code>key</code>, <code>typePrefix</code> and spawn suffixes are unique, and you will not need to change them.</li>
-<li>A small breed sets <code>puppySize</code>, and you have seen a puppy to prove it.</li>
-<li>If it is another species, <code>CD.registerVoices</code> is called and <code>voices</code> is filled in, <code>whine</code> included, or it barks and whines like a dog.</li>
-<li>The moodle icon exists in all six sizes.</li>
-<li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
-<li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
-<li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
+<li>Lớp bảo vệ có mặt trong mọi file Lua, và gọi đúng tên API bạn thật sự dùng.</li>
+<li>Sàn phiên bản của bản gốc được viết trong phần mô tả, bằng chữ. <code>versionMin</code> không nói được điều đó.</li>
+<li>Bạn đã đọc log ở lần nạp đầu tiên. Nếu không, <code>CD.registerBreed</code> từ chối trong im lặng, mà mỗi lần từ chối đều in ra một dòng có tên.</li>
+<li><code>CD.defineDogParts</code> đã được gọi. Hãy mổ một con vật của bạn và xem nó không sập.</li>
+<li><code>key</code>, <code>typePrefix</code> và các hậu tố xuất hiện của bạn là duy nhất, và bạn sẽ không cần đổi chúng.</li>
+<li>Giống nhỏ con thì đặt <code>puppySize</code>, và bạn đã tận mắt thấy một con chó con để chứng minh.</li>
+<li>Nếu là loài khác, <code>CD.registerVoices</code> đã được gọi và <code>voices</code> đã điền, có cả <code>whine</code> trong đó, không thì nó sẽ sủa và rên ư ử như chó.</li>
+<li>Icon moodle có đủ cả sáu kích cỡ.</li>
+<li>Mọi thư mục ngôn ngữ bạn kèm theo đều có đủ mọi khóa. Một khóa thiếu sẽ hiện khóa thô lên màn hình.</li>
+<li>Bạn đã thử trong nhiều người chơi, không chỉ một mình. Vị trí, quyền sở hữu và mod data đều hành xử khác ở đó.</li>
+<li>Trang Workshop của bạn cảnh báo về việc gỡ addon khỏi file save còn con vật sống.</li>
 </ul>
-<h2 id="15-common-mistakes">15. Common mistakes</h2>
+<h2 id="15-lỗi-thường-gặp">15. Lỗi thường gặp</h2>
 <div class="tw"><table><thead><tr>
-<th>Symptom</th>
-<th>What it is</th>
+<th>Triệu chứng</th>
+<th>Nó là gì</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>"My animal never appears."</strong></td>
-<td>Almost always the guard: the add-on needs an API the installed base does not have, so it returns early and registers nothing.</td>
+<td><strong>"Con vật của tôi chẳng bao giờ xuất hiện."</strong></td>
+<td>Gần như luôn là chốt kiểm tra: add-on cần một API mà mod nền đang cài không có, nên nó thoát ra ngay và không đăng ký gì cả.</td>
 </tr>
 <tr>
-<td><strong>"It appears, but it is frozen."</strong></td>
-<td>The animation set is not <code>"raccoon"</code>, or the model is missing clips.</td>
+<td><strong>"Nó xuất hiện, nhưng đứng cứng."</strong></td>
+<td>Bộ animation không phải <code>"raccoon"</code>, hoặc model thiếu clip.</td>
 </tr>
 <tr>
-<td><strong>"It renders as a black smear and the log floods."</strong></td>
-<td>The model has more than 60 bones.</td>
+<td><strong>"Nó hiện ra như một vệt đen và log tràn lỗi."</strong></td>
+<td>Model có hơn 60 xương.</td>
 </tr>
 <tr>
-<td><strong>"Butchering it crashes."</strong></td>
-<td><code>CD.defineDogParts</code> was not called.</td>
+<td><strong>"Mổ nó thì game sập."</strong></td>
+<td>Chưa gọi <code>CD.defineDogParts</code>.</td>
 </tr>
 <tr>
-<td><strong>"The puppy is born the size of an adult."</strong></td>
-<td>A small breed did not set <code>puppySize</code>. The value is absolute and is applied again on every sweep, so the size range of the type does not cover it.</td>
+<td><strong>"Con non sinh ra to bằng con trưởng thành."</strong></td>
+<td>Một giống nhỏ không đặt <code>puppySize</code>. Giá trị này là tuyệt đối và được áp lại ở mỗi lượt quét, nên khoảng kích cỡ của kiểu không bao được nó.</td>
 </tr>
 <tr>
-<td><strong>"Two of my breeds keep turning into each other."</strong></td>
-<td>They share an <code>engineBreed</code>. The prefix picks the mesh and can be shared by a family. <code>engineBreed</code> picks the texture and tells the breeds of that family apart, so it has to be unique per breed.</td>
+<td><strong>"Hai giống của tôi cứ biến thành nhau."</strong></td>
+<td>Chúng dùng chung một <code>engineBreed</code>. Tiền tố chọn mesh và có thể dùng chung trong một họ. Còn <code>engineBreed</code> chọn texture và phân biệt các giống trong họ đó, nên nó phải là duy nhất cho mỗi giống.</td>
 </tr>
 <tr>
-<td><strong>"The sound plays but ignores the volume slider."</strong></td>
-<td><code>CD.registerVoices</code> was not called for that sound.</td>
+<td><strong>"Âm thanh có phát nhưng phớt lờ thanh âm lượng."</strong></td>
+<td>Chưa gọi <code>CD.registerVoices</code> cho âm thanh đó.</td>
 </tr>
 <tr>
-<td><strong>"It works in single player and misbehaves on a server."</strong></td>
-<td>Something writes mod data on the client. Move it to the server.</td>
+<td><strong>"Chơi đơn thì ổn, lên server lại lỗi."</strong></td>
+<td>Có gì đó đang ghi ModData ở phía client. Hãy chuyển nó sang server.</td>
 </tr>
 <tr>
-<td><strong>"It fought a zombie even though I turned combat off."</strong></td>
-<td>The base it runs on is older than API 5. That base does not know the field and ignores it. The guard has to block on this base instead of loading with the field missing.</td>
+<td><strong>"Nó đánh nhau với zombie dù tôi đã tắt chiến đấu."</strong></td>
+<td>Mod nền nó đang chạy trên đó cũ hơn API 5. Mod nền đó không biết trường này và bỏ qua nó. Chốt kiểm tra phải chặn trên mod nền này, thay vì cứ nạp khi thiếu trường.</td>
 </tr>
 </tbody></table></div>
 <hr>
-<p>Something in this manual wrong, or missing? Say so on <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
+<p>Có gì trong sổ tay này sai, hoặc còn thiếu? Hãy nói ở <a href="https://discord.gg/ndyTBFSuAT">Discord</a>.</p></article></main>
 </div>
 
 <script>
@@ -1447,12 +1442,12 @@ end</code></pre>
 
   function render(qs){
     if(!hits.length){
-      results.innerHTML='<div class="rnone">No match for <b>'+esc(qs.trim())+'</b>.</div>';
+      results.innerHTML='<div class="rnone">Không tìm thấy kết quả cho <b>'+esc(qs.trim())+'</b>.</div>';
     }else{
       var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
-             ' results'+'</div>'];
+             ' kết quả'+'</div>'];
       hits.forEach(function(r,i){
-        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Start');
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Đầu trang');
         h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
                '<span class="rcrumb">'+esc(crumb)+'</span>'+
                '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');

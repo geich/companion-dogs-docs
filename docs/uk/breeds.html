@@ -1,0 +1,2087 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Породи: Усі 9 порід, moodles і особливості">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: Породи">
+<meta property="og:description" content="Породи: Усі 9 порід, moodles і особливості">
+<meta property="og:url" content="https://companiondogs.pet/docs/uk/breeds.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="fr" href="../fr/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: Породи</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* comunidade: a cor da propria marca do Discord, a mesma da home, para o botao ler como o mesmo
+   destino nas duas pontas do site em vez de competir com o acento do tema */
+.discord{
+  display:inline-flex; align-items:center; gap:8px; flex:none; text-decoration:none;
+  color:#fff; background:#5865F2; border:1px solid #5865F2; border-radius:6px;
+  padding:6px 12px 6px 10px; font-size:12.8px; font-weight:640; white-space:nowrap;
+  transition:background .15s, border-color .15s;
+}
+.discord svg{width:17px; height:17px; fill:currentColor; flex:none;}
+.discord:hover{background:#4752E0; border-color:#4752E0;}
+.discord:active{transform:translateY(1px);}
+.discord:focus-visible{outline:2px solid var(--accent-soft); outline-offset:2px;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px; overflow-wrap:anywhere;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
+
+/* icone do jogo no meio da linha, em tabela ou em lista. flex:none nao e enfeite: dentro de um
+   <li>, que e flex, sem ele o icone encolhe e some. A familia de moodle ja tem disco proprio; a de
+   item e transparente e leva a mesma tarja da figura, senao desaparece no tema escuro. */
+.ico{display:inline-block; width:34px; height:34px; flex:none; vertical-align:-11px;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  image-rendering:pixelated;}
+.ico.item{background-color:#cfcbc2; border:1px solid var(--line); border-radius:5px;
+  background-size:26px;}
+td .ico, th .ico{vertical-align:middle;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+  /* sao dois links cruzados, um por manual irmao. Sem o rotulo eles viram duas pastinhas iguais,
+     que nao dizem para onde levam: aqui fica so o primeiro. */
+  .other + .other{display:none;}
+  /* o icone do Discord e reconhecido sozinho, entao aqui ele perde o rotulo em vez de sair */
+  .discord span{display:none;}
+  .discord{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+  /* a dica da tecla `/` fica em cima da direita do campo. Num campo desta largura ela come a
+     parte que ainda dava para ler, e num celular nem existe tecla para dizer. */
+  .kbd{display:none;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="Відкрити зміст" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="Повернутися на головну сторінку документації"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">Породи</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Перейти до посібника «Можливості»</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>Перейти до посібника «Модинг»</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="пошук у посібнику..." aria-label="Пошук у посібнику" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="Мова"><optgroup label="Перевірено"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="Автопереклад"><option value="es">Español</option><option value="fr">Français</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk" selected>Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans">简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="Зайти в Discord" aria-label="Зайти в Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Зайти в Discord</span></a>
+  <button class="iconbtn" id="theme" type="button" aria-label="Перемкнути тему">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>Автоматичний переклад, не перевірено.</b> Цю сторінку переклала машина з португальської, і ніхто її не перевіряв. Можливі помилки в термінах і числах. Якщо сумніваєтеся, звіряйтеся з англійською версією або з португальським оригіналом. <a href="../en/breeds.html">Читати англійською</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">Зміст &middot; <b>Породи</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-що-порода-змінює-насправді" data-id="1-що-порода-змінює-насправді">1. Що порода змінює насправді</a>
+<div class="sub">
+<a class="s3" href="#розмір-і-сила-це-не-одне-й-те-саме" data-id="розмір-і-сила-це-не-одне-й-те-саме">Розмір і Сила це не одне й те саме</a>
+<a class="s3" href="#одна-порода-один-вигляд" data-id="одна-порода-один-вигляд">Одна порода, один вигляд</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-швидкий-вибір" data-id="2-швидкий-вибір">2. Швидкий вибір</a>
+<div class="sub">
+<a class="s3" href="#кожна-порода-одним-рядком" data-id="кожна-порода-одним-рядком">Кожна порода одним рядком</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-пять-порід-базового-мода" data-id="3-пять-порід-базового-мода">3. П'ять порід базового мода</a>
+<div class="sub">
+<a class="s3" href="#карамело" data-id="карамело">Карамело</a>
+<a class="s3" href="#німецька-вівчарка" data-id="німецька-вівчарка">Німецька вівчарка</a>
+<a class="s3" href="#золотистий-ретривер" data-id="золотистий-ретривер">Золотистий ретривер</a>
+<a class="s3" href="#хаскі" data-id="хаскі">Хаскі</a>
+<a class="s3" href="#бордер-колі" data-id="бордер-колі">Бордер-колі</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-чотири-породи-з-доповнень" data-id="4-чотири-породи-з-доповнень">4. Чотири породи з доповнень</a>
+<div class="sub">
+<a class="s3" href="#ротвейлер" data-id="ротвейлер">Ротвейлер</a>
+<a class="s3" href="#доберман" data-id="доберман">Доберман</a>
+<a class="s3" href="#лабрадор" data-id="лабрадор">Лабрадор</a>
+<a class="s3" href="#мопс" data-id="мопс">Мопс</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-кішка-перший-інший-вид" data-id="5-кішка-перший-інший-вид">5. Кішка: перший інший вид</a>
+<div class="sub">
+<a class="s3" href="#чого-вона-не-робить" data-id="чого-вона-не-робить">Чого вона НЕ робить</a>
+<a class="s3" href="#що-вона-робить-краще-за-будь-яку-собаку" data-id="що-вона-робить-краще-за-будь-яку-собаку">Що вона робить краще за будь-яку собаку</a>
+<a class="s3" href="#ціна" data-id="ціна">Ціна</a>
+<a class="s3" href="#пять-забарвлень" data-id="пять-забарвлень">П'ять забарвлень</a>
+<a class="s3" href="#нічний-подарунок" data-id="нічний-подарунок">Нічний подарунок</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-порівняльні-таблиці" data-id="6-порівняльні-таблиці">6. Порівняльні таблиці</a>
+<div class="sub">
+<a class="s3" href="#швидкість-навчання" data-id="швидкість-навчання">Швидкість навчання</a>
+<a class="s3" href="#бій" data-id="бій">Бій</a>
+<a class="s3" href="#нерви-в-бою" data-id="нерви-в-бою">Нерви в бою</a>
+<a class="s3" href="#риси-діапазони-при-народженні" data-id="риси-діапазони-при-народженні">Риси (діапазони при народженні)</a>
+<a class="s3" href="#сідельні-сумки" data-id="сідельні-сумки">Сідельні сумки</a>
+<a class="s3" href="#виводок" data-id="виводок">Виводок</a>
+<a class="s3" href="#де-шукати-кожну-породу" data-id="де-шукати-кожну-породу">Де шукати кожну породу</a>
+<a class="s3" href="#внутрішні-імена-порід" data-id="внутрішні-імена-порід">Внутрішні імена порід</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-moodles-повний-список" data-id="7-moodles-повний-список">7. Moodles: повний список</a>
+<div class="sub">
+<a class="s3" href="#правило-яке-діє-для-всіх-породних-moodles" data-id="правило-яке-діє-для-всіх-породних-moodles">Правило, яке діє для всіх породних moodles</a>
+<a class="s3" href="#породні-moodles" data-id="породні-moodles">Породні moodles</a>
+<a class="s3" href="#moodles-які-дає-будь-яка-порода" data-id="moodles-які-дає-будь-яка-порода">Moodles, які дає будь-яка порода</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-риси-гени" data-id="8-риси-гени">8. Риси (гени)</a>
+<div class="sub">
+<a class="s3" href="#наскільки-це-справді-важливо" data-id="наскільки-це-справді-важливо">Наскільки це справді важливо</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-метиси-схрещування-різних-порід" data-id="9-метиси-схрещування-різних-порід">9. Метиси: схрещування різних порід</a>
+<div class="sub">
+<a class="s3" href="#що-відбувається-з-цуценям" data-id="що-відбувається-з-цуценям">Що відбувається з цуценям</a>
+<a class="s3" href="#позначка-метис" data-id="позначка-метис">Позначка «Метис»</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-встановлення-доповнень" data-id="10-встановлення-доповнень">10. Встановлення доповнень</a>
+</div>
+<div class="grp">
+<a class="s2" href="#11-часті-питання-про-породи" data-id="11-часті-питання-про-породи">11. Часті питання про породи</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs-посібник-із-порід">Companion Dogs: посібник із порід</h1>
+<p>Довідник усіх порід: що кожна робить найкраще, які в неї moodle, які риси і як вибрати ту, що підійде вашій грі.</p>
+<p>Як працює сам мод (приручення, команди, їжа, сідельні сумки, трюки, полювання), дивіться в іншому посібнику: <a href="features.html" class="xlink">Можливості</a>.</p>
+<blockquote class="quote">Числа в цьому посібнику розраховані на стандартні налаштування. Те, що порода дає від народження, працює за будь-яких налаштувань: базова сила укусу, збивання з ніг, витримка в бою, власний moodle, сідельні сумки та виводок. Трюки ховає опція <strong>«Трюки послуху»</strong>.</blockquote>
+<h2 id="1-що-порода-змінює-насправді">1. Що порода змінює насправді</h2>
+<p>Порода впливає на сім речей:</p>
+<div class="tw"><table><thead><tr>
+<th>Що змінюється</th>
+<th>Пояснення</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Швидкість навчання</strong></td>
+<td>Кожна порода вивчає кожну з 5 навичок у своєму темпі. Це найбільша різниця між породами</td>
+</tr>
+<tr>
+<td><strong>Сила укусу</strong></td>
+<td>Скільки шкоди за укус і яка частина цього приходить із тренуванням</td>
+</tr>
+<tr>
+<td><strong>Витримка в бою</strong></td>
+<td>Скільки стресу він набирає в бійці і в який момент панікує та зупиняється</td>
+</tr>
+<tr>
+<td><strong>Риси (гени)</strong></td>
+<td>Діапазон Сили, Агресивності та Спротиву, з яким він може народитися</td>
+</tr>
+<tr>
+<td><strong>Власний moodle</strong></td>
+<td>Бонус для вас, поки пес поруч, нагодований і відданий</td>
+</tr>
+<tr>
+<td><strong>Виводок</strong></td>
+<td>Скільки цуценят за одні пологи</td>
+</tr>
+<tr>
+<td><strong>Де він з'являється на карті</strong></td>
+<td>У кожної породи свої місця</td>
+</tr>
+</tbody></table></div>
+<p>Що від породи не залежить:</p>
+<ul>
+<li>Швидкість бігу. Усі породи бігають однаково.</li>
+<li>Радіус вартового, нюху й полювання. Залежить тільки від рівня навички.</li>
+<li>Трюки. Усі чотири відкриваються за рівнем Послуху, однаково для всіх.</li>
+<li>Голод і спрага. Темп однаковий для всіх порід, Хаскі теж (дивіться його картку).</li>
+<li>Місткість сідельних сумок, окрім Хаскі.</li>
+<li>Розмір тіла. Він живе окремо від Сили.</li>
+</ul>
+<blockquote class="quote"><a href="#5-кішка-перший-інший-вид">Кішка</a> це виняток. Крім цих семи речей, вона змінює ще й те, які роботи взагалі існують: не б'ється, не доглядає худобу і паруєтся лише з іншою кішкою. Інтерфейс навіть не показує кнопку.</blockquote>
+<h3 id="розмір-і-сила-це-не-одне-й-те-саме">Розмір і Сила це не одне й те саме</h3>
+<p>Сила це ген. Вона піднімає шкоду від укусу до 30% і задає місткість сідельних сумок.</p>
+<p>Розмір тіла походить від окремого гена самої гри, який мод не розігрує і не чіпає, плюс від зростання цуценяти до дорослої статури. Два пси однієї породи можуть мати різний розмір за однакової Сили, і більший від цього не б'є сильніше.</p>
+<p>Порода задає обидві речі водночас, кожну своїм боком: Німецька вівчарка велика і народжується сильною, Карамело малий і народжується слабким. Силу конкретного пса видно на смужці Сили, у розділі Риси у вікні собаки.</p>
+<h3 id="одна-порода-один-вигляд">Одна порода, один вигляд</h3>
+<p>У кожної породи одна текстура, і самець із самицею носять ту саму. П'ять котів це <a href="#пять-забарвлень">п'ять порід</a>, а не один кіт у п'яти кольорах.</p>
+<p>Цуценя будь-якої породи народжується однаково зменшеним і виростає до дорослої статури своєї породи.</p>
+<h2 id="2-швидкий-вибір">2. Швидкий вибір</h2>
+<div class="tw"><table><thead><tr>
+<th>Якщо вам треба...</th>
+<th>Беріть</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Пережити перші дні з тим, що трапиться</strong></td>
+<td>Карамело</td>
+</tr>
+<tr>
+<td><strong>Пса, який тримає лінію і сам убиває зомбі</strong></td>
+<td>Німецьку вівчарку або Ротвейлера</td>
+</tr>
+<tr>
+<td><strong>Полювати на м'ясо</strong></td>
+<td>Золотистого ретривера або Лабрадора</td>
+</tr>
+<tr>
+<td><strong>Возити лут</strong></td>
+<td>Хаскі</td>
+</tr>
+<tr>
+<td><strong>Доглянути ферму, поки вас немає</strong></td>
+<td>Бордер-колі</td>
+</tr>
+<tr>
+<td><strong>Краще стріляти</strong></td>
+<td>Добермана</td>
+</tr>
+<tr>
+<td><strong>Довше триматися в ближньому бою</strong></td>
+<td>Ротвейлера</td>
+</tr>
+<tr>
+<td><strong>Менше нудьги і смутку</strong></td>
+<td>Мопса, або Карамело, який уже є в базовому моді</td>
+</tr>
+<tr>
+<td><strong>Менше стресу</strong></td>
+<td>Мопса або Добермана</td>
+</tr>
+<tr>
+<td><strong>Менше паніки</strong></td>
+<td>Німецьку вівчарку</td>
+</tr>
+<tr>
+<td><strong>Дізнаватися про зомбі раніше</strong></td>
+<td>Мопса (попередження це гавкіт)</td>
+</tr>
+<tr>
+<td><strong>Дізнаватися якомога раніше, і мовчки</strong></td>
+<td>Кішку</td>
+</tr>
+<tr>
+<td><strong>Більше збирати</strong></td>
+<td>Золотистого ретривера</td>
+</tr>
+<tr>
+<td><strong>Збирати вдосвіта</strong></td>
+<td>Кішку</td>
+</tr>
+<tr>
+<td><strong>Супутника, який не видає вашу позицію</strong></td>
+<td>Кішку</td>
+</tr>
+<tr>
+<td><strong>Не змерзнути</strong></td>
+<td>Хаскі</td>
+</tr>
+</tbody></table></div>
+<h3 id="кожна-порода-одним-рядком">Кожна порода одним рядком</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Одним рядком</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Карамело</strong></td>
+<td>Найпоширеніший безпородний пес на карті. Укус слабкий, зате збиває зомбі з ніг</td>
+</tr>
+<tr>
+<td><strong>Німецька вівчарка</strong></td>
+<td>Бойова порода базового мода. Б'є сильно</td>
+</tr>
+<tr>
+<td><strong>Золотистий ретривер</strong></td>
+<td>Мисливець із тонким нюхом</td>
+</tr>
+<tr>
+<td><strong>Хаскі</strong></td>
+<td>В'ючний пес, що вчиться поволі</td>
+</tr>
+<tr>
+<td><strong>Бордер-колі</strong></td>
+<td>Сам доглядає худобу на фермі</td>
+</tr>
+<tr>
+<td><strong>Ротвейлер</strong></td>
+<td>Боєць ближнього бою</td>
+</tr>
+<tr>
+<td><strong>Доберман</strong></td>
+<td>Стрілецька порода: менша віддача і швидше перезаряджання</td>
+</tr>
+<tr>
+<td><strong>Лабрадор</strong></td>
+<td>Один із найгірших бійців мода і найкращий у принесенні здобичі</td>
+</tr>
+<tr>
+<td><strong>Мопс</strong></td>
+<td>Домашній пес. Не годиться ні для бою, ні для роботи надворі</td>
+</tr>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>Інший вид. Не б'ється, не йде в загін і паруєтся лише з кішкою. Вартує далі за всіх, і мовчки</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-пять-порід-базового-мода">3. П'ять порід базового мода</h2>
+<p>Ці йдуть разом із головним модом, більше нічого ставити не треба.</p>
+<hr>
+<h3 id="карамело">Карамело</h3>
+<p>Безпородний пес базового мода.</p>
+<blockquote class="quote quote-game"><em>"Звичайна безпородна собака, яку можна зустріти майже в кожному місті. Вона не має особливих здібностей і від природи слабка: не здатна самостійно вбити зомбі, лише збити його з ніг, вигравши вам трохи часу."</em></blockquote>
+<p><strong>Де шукати:</strong> житловий будинок, у місті чи в передмісті. 3% на будинок, найпоширеніша порода гри.</p>
+<p><strong>Вчиться:</strong> усе зі звичайною швидкістю.</p>
+<p><strong>У бою:</strong> єдиний пес, який не добиває зомбі. Укус доводить зомбі майже до смерті і на цьому спиняється, і жодне налаштування пісочниці цього не змінює.</p>
+<p>Це ще й найнервовіший пес мода: у бійці він набирає стрес у п'ять разів швидше за Німецьку вівчарку і першим впадає в паніку.</p>
+<p><strong>Риси:</strong> найслабші в моді, Низька в усіх трьох, завжди.</p>
+<p><strong>Виводок:</strong> від 2 до 4 цуценят, найбільший у моді. <strong>Сідельні сумки:</strong> 4 або 5 вантажу, найменше.</p>
+<p><strong>Moodle: «Гарна компанія»</strong></p>
+<blockquote class="quote quote-game"><em>"Неймовірно лагідний і харизматичний собака-метис. Віддана компанія Карамело піднімає настрій, тож у його присутності смуток і нудьга відступають швидше."</em></blockquote>
+<p>Знижує Смуток і Нудьгу постійно, поки він поруч.</p>
+<p><strong>Кому підходить:</strong> усім на початку. Далі він лишається корисним завдяки moodle, якого немає в жодної іншої породи.</p>
+<hr>
+<h3 id="німецька-вівчарка">Німецька вівчарка</h3>
+<p>Бойова порода базового мода.</p>
+<blockquote class="quote quote-game"><em>"Потужний і розумний службовий собака. Від народження значно сильніший і витриваліший за Карамело, швидко вивчає Бій і Слухняність, майже не накопичує стрес у сутичках, здатний стримувати натовп зомбі без паніки та самостійно вбивати зомбі."</em></blockquote>
+<p><strong>Де шукати:</strong> відділок поліції, в'язниця, тюрма, військова база, казарма, збройовий магазин, склад боєприпасів. 20% на будівлю. У житлових будинках не трапляється.</p>
+<p><strong>Вчиться:</strong> Бій удвічі швидше, Послух на 50% швидше. Полювання теж трохи швидше.</p>
+<p><strong>У бою:</strong> найсильніший укус базового мода, і зомбі він убиває сам. Стрес набирає в п'ять разів повільніше за Карамело, а поріг паніки в нього найвищий у моді.</p>
+<p><strong>Риси:</strong> Звичайна в усіх трьох.</p>
+<p><strong>Виводок:</strong> від 1 до 2. <strong>Сідельні сумки:</strong> від 6 до 8.</p>
+<p><strong>Moodle: «Відвага»</strong></p>
+<blockquote class="quote quote-game"><em>"Смілива Німецька вівчарка поруч додає вам упевненості: її безстрашна присутність зменшує вашу паніку, поки вона знаходиться біля вас."</em></blockquote>
+<p>Постійно знижує Паніку. Це moodle із найсильнішим числом у базовому моді. Паніка псує приціл і ближній бій.</p>
+<p><strong>Кому підходить:</strong> тим, хто б'ється зброєю ближнього бою, надто в місті.</p>
+<blockquote class="quote">Опис у грі каже про «лише третину від звичайного», але справжнє число це п'ята частина.</blockquote>
+<hr>
+<h3 id="золотистий-ретривер">Золотистий ретривер</h3>
+<p>Порода нюху в базовому моді.</p>
+<blockquote class="quote quote-game"><em>"Доброзичливий мисливський собака з чудовим нюхом. Він удвічі швидше вивчає навичку Полювання, а також може самостійно вбити зомбі (хоча нервує в бою більше, ніж Німецька вівчарка). Його нюх допомагає знаходити рослини та вистежувати дичину з більшої відстані."</em></blockquote>
+<p><strong>Де шукати:</strong> житловий будинок, окремим розіграшем від Карамело. 1% на будинок, третина шансу Карамело. В одному будинку можуть бути обидва.</p>
+<p><strong>Вчиться:</strong> Полювання удвічі швидше, Нюх на 50% швидше. Це порода, яка найраніше доходить до 6 рівня Полювання, коли пес починає виходити на оленя.</p>
+<p><strong>У бою:</strong> середня шкода, добиває сам. Нервує більше за вівчарку і менше за Карамело.</p>
+<p><strong>Риси:</strong> трохи вище за Карамело, нижче за вівчарку.</p>
+<p><strong>Виводок:</strong> від 1 до 2. <strong>Сідельні сумки:</strong> від 6 до 7.</p>
+<p><strong>Moodle: «Гострий нюх»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш Золотистий ретривер допомагає шукати здобич. Поки він поруч, нагодований і відданий вам, ви помічаєте знахідки для пошуку з більшої відстані та швидше розвиваєте навички Пошук, Пастки й Стрільба."</em></blockquote>
+<p>Два ефекти:</p>
+<ul>
+<li>+20% досвіду до Пошуку, Пасток і Стрільби.</li>
+<li>+4 клітинки до радіуса огляду в режимі пошуку, поверх бонусу, який дає будь-який пес.</li>
+</ul>
+<p><strong>Кому підходить:</strong> тим, хто живе з полювання, збиральництва і пасток, зазвичай із базою на селі.</p>
+<blockquote class="quote">Опис у грі каже, що Бій він вивчає «трохи швидше». Насправді Бій він вивчає з тією самою швидкістю, що й Карамело.</blockquote>
+<hr>
+<h3 id="хаскі">Хаскі</h3>
+<blockquote class="quote quote-game"><em>"Витривалий північний їздовий собака. Це найсильніша порода, створена для перевезення вантажів (його сідельні сумки мають найбільшу місткість) і виживання в холоді. Упертий (повільніше навчається Слухняності), доброзичливий (не найкращий охоронець) і дуже ненажерливий."</em></blockquote>
+<p><strong>Де шукати:</strong> два джерела.</p>
+<ul>
+<li>Житловий будинок, тільки взимку, 1,25% на будинок. Поза зимою в будинках не трапляється.</li>
+<li>Зоомагазин і ветеринарна клініка, 10% на будівлю, цілий рік. Це найнадійніше джерело.</li>
+</ul>
+<p><strong>Вчиться:</strong> Нюх удвічі швидше (найшвидший Нюх у моді), Полювання на 50% швидше, Бій трохи вище за середнє. Послух на 20% повільніше, єдиний штраф породи серед псів.</p>
+<p>Через це він довше відкриває трюки, довше не слухається, а поріг лояльності в нього спадає повільніше.</p>
+<p><strong>У бою:</strong> шкода вище середнього, добиває сам. Нервує помітно більше за вівчарку.</p>
+<p><strong>Риси:</strong> найширший діапазон Сили в моді, з великим відривом: зазвичай виходить Висока.</p>
+<p><strong>Виводок:</strong> від 1 до 2.</p>
+<p><strong>Сідельні сумки:</strong> від 13 до 16 вантажу. Це єдина порода з бонусом до сумок (+50%), і несе вона удвічі або втричі більше за будь-якого іншого пса.</p>
+<p><strong>Moodle: «Зігрітий»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш Хаскі працює нарівні з вами. Поки він поруч, нагодований і відданий вам, встигати за ним допомагає швидше нарощувати Силу, допомагає повільніше втомлюватися, а в холодну погоду його густа шерсть зігріває вас."</em></blockquote>
+<p>Три ефекти:</p>
+<ul>
+<li>Сила росте на 50% швидше, поки він поруч. Сила це найповільніша навичка гри, і саме вона вирішує, скільки ви несете і скільки шкоди даєте в ближньому бою.</li>
+<li>Дихання відновлюється постійно, тож ви втомлюєтеся повільніше.</li>
+<li>Рухоме джерело тепла, яке вмикається саме, коли ви починаєте мерзнути, і вимикається, коли ви зігрілися. Працює лише в справжній холод (нижче -3 °C просто неба) і тим більше, чим ближче ви до пса. Гальмує падіння температури, але зимового одягу не замінює.</li>
+</ul>
+<p>Приріст Сили множить той досвід, який ви й так отримували: він пришвидшує тренування, а не дає досвід сам собою. Капає, поки ви вправляєтеся, ходите з вантажем або б'єтеся.</p>
+<p><strong>Кому підходить:</strong> тим, хто ходить у довгі рейди і вертається навантаженим, і тим, хто грає важку зиму.</p>
+<blockquote class="quote">Опис каже «дуже ненажерливий (швидко голодніє)». Це діє тільки поки він дикий. Після приручення темп голоду в нього такий самий, як у всіх порід.</blockquote>
+<hr>
+<h3 id="бордер-колі">Бордер-колі</h3>
+<p>Пастуша порода базового мода.</p>
+<blockquote class="quote quote-game"><em><span class="ig">Розумний і невтомний пастуший собака, класичний помічник на фермі, який понад усе цінується за свій інтелект.</span></em></blockquote>
+<p><strong>Де шукати:</strong> клуня, стайня, силос, курник, загін, у сільській місцевості. 15% на будівлю. Цей розіграш не зважає на міський фільтр, тож самотня ферма посеред нічого теж рахується.</p>
+<p><strong>Вчиться:</strong> Пастуша справа удвічі швидше, Послух на 50% швидше, Нюх трохи вище за середнє.</p>
+<p><strong>У бою:</strong> середня шкода, як у ретривера. Добиває сам. Нервує менше за Карамело і помітно більше за вівчарку.</p>
+<p><strong>Риси:</strong> середні діапазони, трохи вище за ретривера.</p>
+<p><strong>Виводок:</strong> від 1 до 3, другий за розміром у базовому моді. <strong>Сідельні сумки:</strong> від 6 до 8.</p>
+<p>Його спеціальність це аура спокою: за рівень вона дає на 50% більше, ніж у будь-якої іншої породи, і в режимі <strong>«Доглядати за худобою тут»</strong>, і в moodle.</p>
+<p>Тварина в стресі не дає ні молока, ні вовни, скидає плід і розбігається.</p>
+<p><strong>Moodle: «Пастуший інстинкт»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш бордер-колі пасе стадо разом з вами. Поки він поруч, ситий і відданий, тварини навколо заспокоюються, а ви швидше вивчаєте Догляд за тваринами і Фермерство."</em></blockquote>
+<p>Два ефекти:</p>
+<ul>
+<li>+20% досвіду до Догляду за тваринами і Фермерства.</li>
+<li>Заспокоює худобу в радіусі навколо вас, автоматично, поки ви працюєте.</li>
+</ul>
+<p><strong>Кому підходить:</strong> тим, хто ставить ферму з коровою, вівцею чи куркою.</p>
+<blockquote class="quote">Опис у грі досі каже, що він «добре збалансована універсальна порода без яскраво вираженої спеціалізації». Це застаріло: подвоєна Пастуша справа і посилена аура вже працюють.</blockquote>
+<h2 id="4-чотири-породи-з-доповнень">4. Чотири породи з доповнень</h2>
+<p>Ці чотири виходять окремими модами в Steam і залежать від базового Companion Dogs. Посилання на кожну є в її картці, а всі разом зібрані в розділі <a href="#10-встановлення-доповнень">Встановлення доповнень</a>.</p>
+<hr>
+<h3 id="ротвейлер">Ротвейлер</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>, окреме доповнення)</em></p>
+<p>Бойова порода з moodle, який повертає дихання в ближньому бою.</p>
+<blockquote class="quote quote-game"><em>"Потужний сторожовий собака, виведений для охорони, справжній воїн на рівні Німецької вівчарки: вдвічі швидше вивчає Бій, б'є важко на високих рівнях, збиває зомбі з ніг і продовжує бій там, де більшість порід панікує."</em></blockquote>
+<p><strong>Де шукати:</strong></p>
+<ul>
+<li>Промислова будівля (склад, ангар, завод, звалище металобрухту, майстерня, вантажний док): 10% на будівлю.</li>
+<li>Житловий будинок: 1% на будинок.</li>
+</ul>
+<p><strong>Вчиться:</strong> Бій удвічі швидше, Нюх на 50% швидше (єдиний бойовий пес із добрим нюхом). Бонусу до Послуху не має.</p>
+<p><strong>У бою:</strong> зрівнявся з Німецькою вівчаркою і за укусом, і за витримкою: набирає стрес у п'ять разів повільніше за безпородного, а поріг паніки в нього на максимумі. Збиває з ніг і добиває.</p>
+<p><strong>Риси:</strong> такі самі, як у Німецької вівчарки.</p>
+<p><strong>Виводок:</strong> від 1 до 2. <strong>Сідельні сумки:</strong> від 6 до 8.</p>
+<p><strong>Moodle: «Передова»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш ротвейлер б'ється поруч із вами. Поки він у бою біля вас, ситий і відданий, ваші удари в ближньому бою витрачають менше витривалості."</em></blockquote>
+<p>Повертає 35% дихання, витраченого на кожен удар у ближньому бою.</p>
+<p>Значок висить завжди, коли ротвейлер поруч, але сам ефект діє тільки поки він справді б'ється.</p>
+<p><strong>Кому підходить:</strong> тим, хто вичищає натовп у ближньому бою.</p>
+<hr>
+<h3 id="доберман">Доберман</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>, окреме доповнення)</em></p>
+<p>Бойова порода з moodle, зробленим під вогнепальну зброю.</p>
+<blockquote class="quote quote-game"><em>"Стрункий і пильний сторожовий собака та найкмітливіша з усіх порід. У бою це суцільне лезо без броні: слабкий, поки ненавчений, але на повному рівні Бою кусає сильно, хоча й тримає менше ударів, ніж ротвейлер."</em></blockquote>
+<p><strong>Де шукати:</strong></p>
+<ul>
+<li>Відділок поліції: 18% на будівлю.</li>
+<li>Військова будівля (склад боєприпасів, казарма, бункер, вартовий пост, блокпост): 22% на будівлю.</li>
+</ul>
+<blockquote class="quote">Військова будівля на базовій карті гри трапляється рідко (таких кімнат на весь Кентуккі десь п'ять). Шукайте у відділках поліції.</blockquote>
+<p><strong>Вчиться:</strong> Бій удвічі швидше, Послух на 50% швидше, той самий набір, що й у Німецької вівчарки.</p>
+<p><strong>У бою:</strong> має найкрутішу криву шкоди в моді. Без тренування б'є помітно слабше за ротвейлера, а на Бою 10 виходить на ту саму верхню шкоду.</p>
+<p>Витримка висока (поріг паніки на максимумі), проте ударів він тримає менше: Спротив у нього найнижчий серед бойових псів.</p>
+<p><strong>Риси:</strong> найширший діапазон Агресивності в моді, тому бойовий досвід він набирає ще швидше. Сила і Спротив трохи нижчі, ніж у ротвейлера.</p>
+<p><strong>Виводок:</strong> від 1 до 2. <strong>Сідельні сумки:</strong> від 6 до 8.</p>
+<p><strong>Moodle: «Тверда рука»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш доберман прикриває вас. Поки він поруч, ситий і відданий, ваш стрес спадає, приціл швидше відновлюється після кожного пострілу, а перезаряджання йде швидше."</em></blockquote>
+<p>Діє тільки на вогнепальну зброю:</p>
+<ul>
+<li>Ваш стрес спадає постійно (високий стрес псує приціл).</li>
+<li>Віддача гаситься на 45% швидше після кожного пострілу.</li>
+<li>Перезаряджання на 15% швидше.</li>
+</ul>
+<p><strong>Кому підходить:</strong> тим, хто грає від вогнепальної зброї.</p>
+<blockquote class="quote">Опис у грі каже, що Послух він тренує «швидше за Німецьку вівчарку», а на максимальному Бою «кусає сильніше за будь-якого іншого пса». В обох випадках це нічия: за Послухом він рівний вівчарці, а за шкодою 10 рівня рівний ротвейлеру.</blockquote>
+<hr>
+<h3 id="лабрадор">Лабрадор</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>, окреме доповнення)</em></p>
+<p>Мисливська порода. Найкращий пес, щоб приносити здобич.</p>
+<blockquote class="quote quote-game"><em>"Мисливський пес, створений приносити здобич: полювання він опановує вдвічі швидше, слухняність іде слідом. Натомість це навмисно один із найгірших бійців у родині: слабше кусає лише мопс, жодних збивань з ніг, а бійка добряче його вибиває з рівноваги. Справжній дар лабрадора у пащі."</em></blockquote>
+<p><strong>Де шукати:</strong></p>
+<ul>
+<li>Житловий будинок: 1% на будинок, той самий шанс, що й у ретривера.</li>
+<li>Ліс (мисливська хатина, кемпінг, човновий сарай, рибальський пост, пост лісника): 20% на будівлю.</li>
+</ul>
+<p><strong>Вчиться:</strong> Полювання удвічі швидше, Послух на 50% швидше.</p>
+<p><strong>У бою:</strong> один із найгірших у моді.</p>
+<ul>
+<li>Найслабший укус з усіх, вище тільки за мопса.</li>
+<li>Не збиває зомбі з ніг. Не збивають тільки він і мопс.</li>
+<li>Набирає стрес у три з половиною рази швидше за ротвейлера і панікує на тій самій низькій позначці, що й безпородний.</li>
+</ul>
+<p>Зомбі він таки вб'є, якщо ви наполягатимете.</p>
+<p><strong>Риси:</strong> найвужчий діапазон Агресивності в моді. Через це він довше вчиться битися.</p>
+<p><strong>Виводок:</strong> від 1 до 3, єдине доповнення, яке перевалює за 2. <strong>Сідельні сумки:</strong> від 6 до 8.</p>
+<p><strong>Moodle: «М'яка хватка»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш лабрадор приносить здобич із першого ж полювання, часто з додатком. Поки він поруч, ситий і відданий, розбирання та короткі клинки опановуються швидше."</em></blockquote>
+<ul>
+<li>Приносить здобич уже з Полювання 3, тобто відколи взагалі вміє полювати. Решта порід починають носити тільки з Полювання 6.</li>
+<li>Тримається за доставку втричі довше, перш ніж кинути тушу дорогою.</li>
+<li>60% доставок приходять із зайвою річчю, покинутою на землю поруч: кістка дрібного звіра, куряче перо, гілочки або дике яйце. <em><span class="ig">Ваш Лабрадор приніс іще дещо: ...</span></em></li>
+<li>+20% досвіду до Розбирання і Коротких клинків, навичок, якими обробляють принесене.</li>
+</ul>
+<p><strong>Кому підходить:</strong> тим, хто живе з полювання. Ретривер вчиться полювати так само швидко, але лабрадор носить здобич від самого початку.</p>
+<hr>
+<h3 id="мопс">Мопс</h3>
+<p><em>(мод <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>, окреме доповнення)</em></p>
+<p>Пес-компаньйон із moodle на настрій.</p>
+<blockquote class="quote quote-game"><em>"Домашній пес: перший супутник, чия цінність не в бійці, полюванні, випасанні чи перенесенні вантажу. Він тренує Послух удвічі швидше за будь-яку іншу породу, а його прив'язаність ніколи не спадає сама."</em></blockquote>
+<p><strong>Де шукати:</strong></p>
+<ul>
+<li>Житловий будинок: 3% на будинок, утричі більше за лабрадора і ротвейлера, і стільки ж, скільки в Карамело. Це доповнення найлегше знайти по хатах.</li>
+<li>Зоомагазин і ветеринар: 12% на будівлю, те саме місце, що й у Хаскі.</li>
+</ul>
+<p><strong>Вчиться:</strong> Послух удвічі швидше, Нюх на 50% швидше, Полювання на 20%. Дерево трюків (піти в точку, відволікти зомбі, винюхати предмет, шукати, поки ви спите) він проходить раніше за будь-якого іншого пса.</p>
+<p>Кожен інший пес втрачає лояльність, коли ви зникаєте або кидаєте догляд напризволяще. Мопс ні. Вертайтеся після місяця в дорозі, і він точно такий, яким ви його лишили.</p>
+<p>На тому самому рівні Нюху мопс помічає зомбі на 35% далі за будь-яку іншу породу.</p>
+<p><strong>У бою:</strong> найслабший пес мода, слабший за Карамело.</p>
+<ul>
+<li>Найслабший укус з усіх, із великим відривом.</li>
+<li>Не добиває зомбі і не збиває з ніг. Це єдиний пес, у якого вимкнено і те, і те.</li>
+<li>Набирає стрес швидше за всіх і панікує раніше за всіх.</li>
+</ul>
+<p>Інші слабкі місця:</p>
+<ul>
+<li>Гавкіт у нього найгучніший з усіх порід і притягує зомбі рівно так само, як попереджає вас. Мопс це єдиний пес, який не приймає режимів «Тихо» і «Повна тиша»: обидві кнопки в його вікні неактивні. (Якщо шум собаки вимкнено в налаштуваннях пісочниці, для мопса це працює як для всіх: гавкіт лишається гучним, але нікого не тягне.)</li>
+<li>Не встигає за бігом. На спринті відстає від будь-якого іншого пса.</li>
+<li>Потерпає від спеки. Вище 28 °C він починає нервувати, перестає вас утішати і moodle зникає з екрана; на 36 °C штраф упирається в стелю. У приміщенні прохолодніше, і там він знову працює.</li>
+<li>Сідельні сумки від 2 до 3. Носити носить, але в'ючна тварина з нього ніяка.</li>
+</ul>
+<p>Натомість він мало їсть і п'є: удвічі менший голод і на третину менша спрага, ніж у пса середньої статури.</p>
+<p><strong>Риси:</strong> найвужчі діапазони Сили і Спротиву в моді. Народжується слабким і крихким у будь-якому виводку.</p>
+<p><strong>Виводок:</strong> від 1 до 2.</p>
+<p><strong>Moodle: «Твоя тінь»</strong></p>
+<blockquote class="quote quote-game"><em>"Ваш мопс не відходить ні на крок. Поки він поруч, ситий і відданий, смуток, нудьга і стрес спадають швидше, ніж з будь-яким іншим псом. Спека все зводить нанівець: захеканий мопс нікого не втішить, доки не знайде прохолоду."</em></blockquote>
+<ul>
+<li>Смуток і Нудьга спадають на 60% швидше, ніж поруч із Карамело.</li>
+<li>Стрес теж спадає. Самою присутністю стрес чіпають лише він і доберман, причому доберман виводить його швидше. Крім цих двох, єдиний спосіб збити стрес собакою це поспати поруч із нею («Добре відпочив»).</li>
+</ul>
+<p><strong>Кому підходить:</strong> тим, хто грає з бази, у довгій партії, або кому набридло втрачати лояльність через довгу відсутність. Виїжджаєте з міста, беріть сторожового пса на додачу.</p>
+<h2 id="5-кішка-перший-інший-вид">5. Кішка: перший інший вид</h2>
+<p><em>(мод <strong>CD: Cats</strong>, окремий аддон)</em></p>
+<p>Усі породи до цього моменту були собаками.</p>
+<blockquote class="quote quote-game"><em>"Це не собака з гіршими показниками, а тварина, у якої просто немає частини обов'язків. Кішка ніколи не б'ється з мерцями, її не можна поставити в загін, і розмножується вона лише з іншими кішками. Вона полює на гризунів і кроликів, а оленів не чіпає. Ваші власні тварини ніколи не стануть здобиччю: вона не чіпає ні курку, ні будь-кого в загоні. Натомість вона дає попередження: помічає мерців далі за будь-якого іншого супутника і мовчить про все інше."</em></blockquote>
+<h3 id="чого-вона-не-робить">Чого вона НЕ робить</h3>
+<p>Цих механік для кішки не існує, і інтерфейс не показує кнопку навіть вимкненою.</p>
+<div class="tw"><table><thead><tr>
+<th>Що</th>
+<th>Що зникає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Не б'ється</strong></td>
+<td>Немає Бою у вікні, немає режиму <strong>Охороняти</strong>, немає самозахисту</td>
+</tr>
+<tr>
+<td><strong>Не доглядає за худобою</strong></td>
+<td>Немає Пастушої справи, і режим <strong>Доглядати за худобою</strong> не з'являється в меню</td>
+</tr>
+<tr>
+<td><strong>Не паруються з собакою</strong></td>
+<td>Кішка утворює пару лише з кішкою, і народжується кошеня</td>
+</tr>
+<tr>
+<td><strong>Не полює ні на що більше за кролика</strong></td>
+<td>Олень для неї невидимий: вона ні вказує, ні кидається вслід</td>
+</tr>
+</tbody></table></div>
+<p>Її стеля в дрібній дичині така сама, як у Лабрадора й Золотистого. Вона нявкає під час переслідування, тож полювання з кішкою шумне. Поза полюванням вона тиха.</p>
+<h3 id="що-вона-робить-краще-за-будь-яку-собаку">Що вона робить краще за будь-яку собаку</h3>
+<p>Оскільки вона не б'ється, попереджати і є її роботою, а кішка має найбільший радіус вартування в моді:</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>Нюх 0</th>
+<th>Нюх 10</th>
+</tr></thead><tbody>
+<tr>
+<td>Звичайна собака</td>
+<td>18 клітинок</td>
+<td>27 клітинок</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>24 клітинки</td>
+<td>36 клітинок</td>
+</tr>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>25 клітинок</td>
+<td>38 клітинок</td>
+</tr>
+</tbody></table></div>
+<p>Вона ж і найтихіша. Шум її нявкання вдвічі менший за собачий і втричі менший за гавкіт Мопса.</p>
+<p>Полює вдвічі швидше, наврівні із Золотистим і Лабрадором, а її Нюх росте на 50% швидше.</p>
+<h3 id="ціна">Ціна</h3>
+<p>Вона найупертіша в моді. Послух на 0,7, найбільший штраф до навчання, що існує (Хаскі, єдина інша порода зі штрафом, має 0,8). Вона відкриває всі чотири трюки, але доходить до них значно пізніше за будь-яку собаку.</p>
+<p>Вона відволікається на щурів. Час від часу кішка бачить поблизу гризуна й біжить за ним, покидаючи те, що робила. Вона полює і вбиває гризуна сама. Це трапляється в будь-якому режимі й на будь-якому рівні Полювання, і в цей час вона не слухається: будь-яка команда повертається з <em><span class="ig">відволікається й не слухається</span></em>. Тільки <strong><span class="ig">Іди сюди</span></strong> проходить і скасовує погоню. Поки це триває, ви без вартового.</p>
+<p>Після вбивства кішка повертається до тушки, несе її до вас і кидає вам під ноги. Вона віддає здобич із першого дня. Лабрадор теж віддає без тренування, але лише коли ви попросите.</p>
+<p>Відволікання діє на щура й мишу. Кролик тільки з увімкненим режимом Полювання і з потрібним рівнем.</p>
+<p>Вона ж і найнезалежніша. Її зв'язок падає на 50% швидше за собачий, коли ви зникаєте або розслаблені в догляді (у Мопса все навпаки: його зв'язок не падає).</p>
+<p><strong>Сідельні сумки:</strong> 2 в будь-якої кішки. В інших порід сумки це діапазон; у кішки розрахунок дає 2, якою б сильною вона не народилася.</p>
+<p>Вона нервова: у неї другий найгірший прихований ген стресу в моді, гірший лише в Карамело. Оскільки вона не б'ється, це видно не в бою, а в переляку: гучний шум, крик, поранення. Кішка в паніці перестає вартувати і перестає приносити подарунки.</p>
+<p>У режимі Залишитися кішка стоїть, а не лягає. Це лише вигляд.</p>
+<p><strong>Риси:</strong> наврівні з Мопсом за найменшим діапазоном Сили в моді, з такими ж низькими Агресивністю та Спротивом.</p>
+<h3 id="пять-забарвлень">П'ять забарвлень</h3>
+<p>Чорна, Біла, Руда, Триколірна і Смокінг. Для мода це п'ять порід (власна назва, власний запис у меню спавну і в псарні), але числа, муділ, голос і діапазони рис однакові. Забарвлення лише вигляд.</p>
+<p>Кожне забарвлення розігрує власний будинок, незалежно. Шанс уже поділений на п'ять, тож загальна кількість котів у світі така сама, як тоді, коли існувала лише чорна.</p>
+<p><strong>Де знайти:</strong> 2% на житловий будинок, 2% на магазин, крамницю чи закусочну і 2,4% на зоомагазин або ветклініку, на кожне забарвлення. Кішка з'являється в будівлі, а не в лісі: у половині випадків усередині будівлі, у половині на її ділянці (двір, тротуар, парковка або провулок за магазином).</p>
+<p>Кішка має власний множник спавну в пісочниці, <strong><span class="ig">Множник появи котів</span></strong>, окремий від собачого. Світ із малою кількістю вуличних собак або без них має ту саму кількість котів.</p>
+<h3 id="нічний-подарунок">Нічний подарунок</h3>
+<p>Ви прокидаєтеся, і у вас під ногами мертвий звір. Кішка <span class="ig">виходить</span> поки ви спите і залишає здобич. Погоні немає і у світі ніхто не гине, тож подарунок працює навіть із вимкненим Полюванням в опціях пісочниці.</p>
+<p>Спрацьовує при пробудженні зі сну, з кішкою за 8 клітинок або менше, це той самий радіус, що й у <span class="ig">Добре відпочив</span>.</p>
+<p>Шанс це її рівень Полювання:</p>
+<div class="tw"><table><thead><tr>
+<th>Полювання</th>
+<th>Шанс подарунка</th>
+</tr></thead><tbody>
+<tr>
+<td>0</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>54,5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>67,5%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>87%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>Полювання ж вирішує і що саме прийде:</p>
+<div class="tw"><table><thead><tr>
+<th>Полювання</th>
+<th>Що зазвичай приходить</th>
+</tr></thead><tbody>
+<tr>
+<td>Низьке</td>
+<td>Черв'як, цвіркун, коник, тарган. Те, що будь-яка тварина знайде, стоячи на місці</td>
+</tr>
+<tr>
+<td>Високе</td>
+<td>Миша й щур стають звичайним випадком, із жабою та сколопендрою поміж них</td>
+</tr>
+</tbody></table></div>
+<p>Різниця важить: черв'як це 3 калорії, щур це 324 і ще знімає 22 голоду. Жаба годиться як принада для рибалки.</p>
+<p>Приходить один подарунок на день, на власника. З двома кішками поблизу ви отримаєте один, а не два.</p>
+<p>Кішка отримує досвід Полювання щоразу, коли доставка вдається, тож доглянута кішка росте сама.</p>
+<p>Кішка з голодом чи спрагою на 75% або більше, хвора, неслухняна або в паніці не виходить. Провал німий, без попередження на екрані. Якщо подарунки зникли, подивіться на її шкали.</p>
+<blockquote class="quote">Трюк <strong><span class="ig">Шукати предмет, поки ви спите</span></strong> (Послух 10) це інша річ: він приносить предмет із землі. Обидва спрацьовують при пробудженні і не конкурують. Кішка з Послухом 10 робить обидва одного ранку.</blockquote>
+<p><strong>Муділ: <span class="ig">Котячі очі</span></strong></p>
+<blockquote class="quote quote-game"><em>"Ваша кішка бачить те, чого не бачите ви. Поки вона нагодована, напоєна і прив'язана до вас, темрява перестає ховати те, що ви шукаєте: збиральництво вночі працює майже як удень."</em></blockquote>
+<p>У темряві гра опускає радіус збиральництва до 1,5 клітинки, і вам треба стояти майже на іконці, щоб її побачити. З кішкою поблизу нічна пора дає близько 60% того радіуса, який ви мали б удень.</p>
+<p>Приріст приходить одразу, а не поступово.</p>
+<p><strong>Для кого вона:</strong> для тих, хто грає ночами, хто хоче найранішого попередження, не викриваючи власної позиції, і хто хоче дрібне м'ясо, не тягаючи великої собаки. Вартовим вона не служить: беріть собаку із собою, якщо виїжджаєте з міста.</p>
+<h2 id="6-порівняльні-таблиці">6. Порівняльні таблиці</h2>
+<h3 id="швидкість-навчання">Швидкість навчання</h3>
+<p>Що більше число, то швидше пес учиться. Звичайна швидкість це 1,0.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Нюх</th>
+<th>Бій</th>
+<th>Послух</th>
+<th>Полювання</th>
+<th>Пастуша справа</th>
+</tr></thead><tbody>
+<tr>
+<td>Карамело</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Німецька вівчарка</td>
+<td>1,0</td>
+<td>2,0</td>
+<td>1,5</td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>1,5</td>
+<td>1,0</td>
+<td>1,2</td>
+<td>2,0</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>2,0</td>
+<td>1,2</td>
+<td>0,8</td>
+<td>1,5</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>1,2</td>
+<td>1,0</td>
+<td>1,5</td>
+<td>1,0</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>1,5</td>
+<td>2,0</td>
+<td>1,0</td>
+<td>1,0</td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>1,0</td>
+<td>2,0</td>
+<td>1,5</td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>1,2</td>
+<td>1,0</td>
+<td>1,5</td>
+<td>2,0</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>1,5</td>
+<td>1,0</td>
+<td>2,0</td>
+<td>1,2</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Кішка</td>
+<td>1,5</td>
+<td>-</td>
+<td>0,7</td>
+<td>2,0</td>
+<td>-</td>
+</tr>
+</tbody></table></div>
+<p>Прочерк у Кішки означає, що навички в неї немає: Бій і Випас не з'являються в її вікні.</p>
+<h3 id="бій">Бій</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Укус без тренування</th>
+<th>Укус на 10 рівні</th>
+<th>Вбиває сам?</th>
+<th>Збиває з ніг?</th>
+</tr></thead><tbody>
+<tr>
+<td>Мопс</td>
+<td>найслабший</td>
+<td>0,65x</td>
+<td>Ні</td>
+<td>Ні</td>
+</tr>
+<tr>
+<td>Карамело</td>
+<td>слабкий</td>
+<td>1x (еталон)</td>
+<td>Ні</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>слабкий</td>
+<td>1,3x</td>
+<td>Так</td>
+<td>Ні</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>слабкий</td>
+<td>1,5x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>слабкий</td>
+<td>1,5x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>середній</td>
+<td>1,9x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>середній</td>
+<td>2,6x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Німецька вівчарка</td>
+<td>сильний</td>
+<td>2,6x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>сильний</td>
+<td>2,6x</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+</tbody></table></div>
+<p>Доберман починає приблизно з двох третин укусу ротвейлера.</p>
+<p>Кішки в цій таблиці немає, бо вона не б'ється.</p>
+<h3 id="нерви-в-бою">Нерви в бою</h3>
+<p>Що менше число, то спокійніше пес поводиться в бійці.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Стрес, накопичений у бою</th>
+<th>Поріг паніки</th>
+</tr></thead><tbody>
+<tr>
+<td>Німецька вівчарка</td>
+<td>0,20 (найспокійніша)</td>
+<td>0,90 (найвищий)</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>0,20</td>
+<td>0,90</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>0,25</td>
+<td>0,90</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>0,33</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>0,60</td>
+<td>0,85</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>0,70</td>
+<td>0,80</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>0,90</td>
+<td>0,70 (найнижчий)</td>
+</tr>
+<tr>
+<td>Карамело</td>
+<td>1,00 (найнервовіший)</td>
+<td>0,80</td>
+</tr>
+</tbody></table></div>
+<p>Пес у паніці перестає битися, охороняти й робити трюки. Пес із сильним укусом, що панікує рано, дає менше, ніж слабший пес, який витримує всю бійку.</p>
+<p>Кішки в таблиці теж немає, але стрес у неї другий найгірший у моді, гірший лише в Карамело. Кішка в паніці перестає пильнувати і перестає приносити подарунок.</p>
+<h3 id="риси-діапазони-при-народженні">Риси (діапазони при народженні)</h3>
+<p>Що ширший діапазон, то кращим може народитися пес. Нижче 0,34 вікно показує <span class="ig">Низька</span>, вище 0,66 показує <span class="ig">Висока</span>, а середина виходить як <span class="ig">Звичайна</span>.</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Сила</th>
+<th>Агресивність</th>
+<th>Спротив</th>
+</tr></thead><tbody>
+<tr>
+<td>Мопс</td>
+<td>0,00 до 0,10</td>
+<td>0,05 до 0,20</td>
+<td>0,00 до 0,15</td>
+</tr>
+<tr>
+<td>Кішка</td>
+<td>0,00 до 0,10</td>
+<td>0,00 до 0,15</td>
+<td>0,00 до 0,15</td>
+</tr>
+<tr>
+<td>Карамело</td>
+<td>0,00 до 0,15</td>
+<td>0,00 до 0,15</td>
+<td>0,00 до 0,15</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>0,20 до 0,40</td>
+<td>0,10 до 0,30</td>
+<td>0,20 до 0,40</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>0,20 до 0,45</td>
+<td>0,15 до 0,40</td>
+<td>0,25 до 0,50</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>0,25 до 0,45</td>
+<td>0,10 до 0,25</td>
+<td>0,25 до 0,45</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>0,25 до 0,45</td>
+<td>0,35 до 0,55</td>
+<td>0,20 до 0,40</td>
+</tr>
+<tr>
+<td>Німецька вівчарка</td>
+<td>0,30 до 0,50</td>
+<td>0,30 до 0,50</td>
+<td>0,30 до 0,50</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>0,30 до 0,50</td>
+<td>0,30 до 0,50</td>
+<td>0,30 до 0,50</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>0,55 до 0,80</td>
+<td>0,10 до 0,30</td>
+<td>0,40 до 0,60</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>Карамело показує <span class="ig">Низька</span> в усіх трьох.</li>
+<li>Мопс так само, і діапазон Сили в нього ще вужчий.</li>
+<li>Кішка ділить із Мопсом найменшу Силу в моді.</li>
+<li>Хаскі єдиний, хто зазвичай показує <span class="ig">Висока</span> в Силі.</li>
+<li>Агресивність виходить <span class="ig">Низька</span> в Золотистого ретривера, Хаскі й Лабрадора.</li>
+<li>Золотистий ретривер і Доберман теж часто падають у <span class="ig">Низька</span> по Силі та Спротиву.</li>
+<li>Німецька вівчарка й Ротвейлер єдині, хто майже завжди показує <span class="ig">Звичайна</span> в усіх трьох.</li>
+</ul>
+<h3 id="сідельні-сумки">Сідельні сумки</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Вантаж</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>2 (фіксовано)</td>
+</tr>
+<tr>
+<td><strong>Мопс</strong></td>
+<td>2 до 3</td>
+</tr>
+<tr>
+<td>Карамело</td>
+<td>4 до 5</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>6 до 7</td>
+</tr>
+<tr>
+<td>Німецька вівчарка, Бордер-колі, Ротвейлер, Доберман, Лабрадор</td>
+<td>6 до 8</td>
+</tr>
+<tr>
+<td><strong>Хаскі</strong></td>
+<td>13 до 16</td>
+</tr>
+</tbody></table></div>
+<h3 id="виводок">Виводок</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода матері</th>
+<th>Цуценят за раз</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Карамело</strong>, Кішка</td>
+<td>2 до 4</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>1 до 3</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>1 до 3</td>
+</tr>
+<tr>
+<td>Німецька вівчарка, Золотистий ретривер, Хаскі, Ротвейлер, Доберман, Мопс</td>
+<td>1 до 2</td>
+</tr>
+</tbody></table></div>
+<p>Порода батька не рахується.</p>
+<h3 id="де-шукати-кожну-породу">Де шукати кожну породу</h3>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Місце</th>
+<th>Шанс</th>
+</tr></thead><tbody>
+<tr>
+<td>Доберман</td>
+<td>Військова будівля</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>Німецька вівчарка</td>
+<td>Поліцейська дільниця, в'язниця, військова база, збройовий магазин</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>Мисливська хатина, кемпінг, човновий сарай, пост лісників</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td>Поліцейська дільниця</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td>Сарай, стайня, ферма (сільська місцевість)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>Зоомагазин, ветеринарна клініка</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>Зоомагазин, ветеринарна клініка</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>Склад, завод, звалище</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Карамело</td>
+<td>Житловий будинок</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td>Житловий будинок</td>
+<td>3%</td>
+</tr>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>Зоомагазин, ветеринарна клініка</td>
+<td>2,4% на забарвлення</td>
+</tr>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>Магазин, супермаркет, закусочна</td>
+<td>2% на забарвлення</td>
+</tr>
+<tr>
+<td><strong>Кішка</strong></td>
+<td>Житловий будинок</td>
+<td>2% на забарвлення</td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td>Житловий будинок, тільки взимку</td>
+<td>1,25%</td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td>Житловий будинок</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td>Житловий будинок</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td>Житловий будинок</td>
+<td>1%</td>
+</tr>
+</tbody></table></div>
+<p>Шанси для собак масштабуються опцією пісочниці <strong><span class="ig">Множник появи собак</span></strong>. Шанси для котів ідуть за іншою опцією, <strong><span class="ig">Множник появи котів</span></strong>, тож зменшення чи вимкнення бродячих собак не змінює кількість котів у світі.</p>
+<p>Розіграш відбувається один раз на будівлю, і результат зберігається.</p>
+<h3 id="внутрішні-імена-порід">Внутрішні імена порід</h3>
+<p>Моди на спавн і режим налагодження просять внутрішнє ім'я собаки, яке відрізняється від імені на екрані:</p>
+<div class="tw"><table><thead><tr>
+<th>Порода</th>
+<th>Самець</th>
+<th>Самка</th>
+<th>Цуценя</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>Карамело</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>Німецька вівчарка</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>Золотистий ретривер</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>Хаскі</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>Бордер-колі</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>Ротвейлер</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>Доберман</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>Лабрадор</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+<tr>
+<td>Мопс</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
+<tr>
+<td>Чорна кішка</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat</code></td>
+</tr>
+<tr>
+<td>Біла кішка</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_white</code></td>
+</tr>
+<tr>
+<td>Руда кішка</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_orange</code></td>
+</tr>
+<tr>
+<td>Триколірна кішка</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_calico</code></td>
+</tr>
+<tr>
+<td>Кішка у смокінгу</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_tuxedo</code></td>
+</tr>
+</tbody></table></div>
+<p>Самець і самка це різні типи, а не опція одного типу. П'ять порід з аддонів існують лише тоді, коли встановлено аддон тієї породи.</p>
+<p>П'ять котячих забарвлень ділять один тип і розрізняються тільки за <code>breed</code>: модель одна, змінюється лише текстура. Тут <code>breed</code> пишеться через підкреслення (<code>cat_white</code>), на відміну від решти моду.</p>
+<h2 id="7-moodles-повний-список">7. Moodles: повний список</h2>
+<p>Собачі moodles показуються окремою колонкою, ліворуч від ваших звичайних moodles.</p>
+<h3 id="правило-яке-діє-для-всіх-породних-moodles">Правило, яке діє для всіх породних moodles</h3>
+<p>Бонус існує лише тоді, коли всі ці умови виконані водночас:</p>
+<div class="tw"><table><thead><tr>
+<th>Умова</th>
+<th>Деталі</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Пес поруч</strong></td>
+<td>У межах 8 клітинок і на тому самому поверсі</td>
+</tr>
+<tr>
+<td><strong>Він ваш</strong></td>
+<td>Пес іншого гравця не дає нічого</td>
+</tr>
+<tr>
+<td><strong>Він не неслухняний</strong></td>
+<td>Лояльність вище порогу</td>
+</tr>
+<tr>
+<td><strong>Він не отруєний</strong></td>
+<td>Ніякої зіпсованої їжі</td>
+</tr>
+<tr>
+<td><strong>Він не голодний</strong></td>
+<td>Шкала голоду нижче 75%</td>
+</tr>
+<tr>
+<td><strong>Він не хоче пити</strong></td>
+<td>Шкала спраги нижче 75%</td>
+</tr>
+</tbody></table></div>
+<p>Якщо одна з них не виконується, moodle вимикається.</p>
+<blockquote class="quote">Якщо поруч кілька псів, рахується тільки найближчий, тож Відвага від вівчарки й Зігрітий від Хаскі не складаються.</blockquote>
+<p>Moodle далі діє, поки пес їде у вас на руках або в машині разом з вами.</p>
+<h3 id="породні-moodles">Породні moodles</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Порода</th>
+<th>Що дає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Гарна компанія</strong></td>
+<td>Карамело</td>
+<td>Зменшує смуток і нудьгу</td>
+</tr>
+<tr>
+<td><strong>Відвага</strong></td>
+<td>Німецька вівчарка</td>
+<td>Зменшує паніку (найсильніший ефект у базовому моді)</td>
+</tr>
+<tr>
+<td><strong>Гострий нюх</strong></td>
+<td>Золотистий ретривер</td>
+<td>+20% досвіду в Пошуку, Пастках і Стрільбі, +4 клітинки дальності пошуку</td>
+</tr>
+<tr>
+<td><strong>Зігрітий</strong></td>
+<td>Хаскі</td>
+<td>+50% досвіду до Сили, повертає дихання і в сильний мороз стає джерелом тепла</td>
+</tr>
+<tr>
+<td><strong>Пастуший інстинкт</strong></td>
+<td>Бордер-колі</td>
+<td>+20% досвіду в Догляді за тваринами і Фермерстві, а ще заспокоює худобу навколо вас</td>
+</tr>
+<tr>
+<td><strong>Передова</strong></td>
+<td>Ротвейлер</td>
+<td>Повертає 35% витривалості за кожен удар у ближньому бою, тільки поки він б'ється</td>
+</tr>
+<tr>
+<td><strong>Тверда рука</strong></td>
+<td>Доберман</td>
+<td>Знімає ваш стрес, -45% віддачі на постріл, +15% швидкості перезарядки</td>
+</tr>
+<tr>
+<td><strong>М'яка хватка</strong></td>
+<td>Лабрадор</td>
+<td>Приносить здобич уже з 3 рівня Полювання, наполягає втричі довше, 60% шансу на додатковий предмет, +20% досвіду в Розбиранні та Коротких клинках</td>
+</tr>
+<tr>
+<td><strong>Твоя тінь</strong></td>
+<td>Мопс</td>
+<td>Знижує смуток, нудьгу і стрес, швидше за будь-якого іншого пса. У спеку вимикається</td>
+</tr>
+<tr>
+<td><strong>Котячі очі</strong></td>
+<td>Кішка</td>
+<td>Збір у темряві починає працювати: досвітні години дають близько 60% денної дальності проти 1,5 клітинки без неї</td>
+</tr>
+</tbody></table></div>
+<h3 id="moodles-які-дає-будь-яка-порода">Moodles, які дає будь-яка порода</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>Коли</th>
+<th>Що дає</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Голодний</strong></td>
+<td>Голод пса на 60% або більше</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Спраглий</strong></td>
+<td>Спрага пса на 60% або більше</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Отруєння</strong></td>
+<td>Він з'їв їжу, яка йому шкодить</td>
+<td>Тільки попередження</td>
+</tr>
+<tr>
+<td><strong>Добре відпочив</strong></td>
+<td>Ви прокинулися після сну не далі ніж за 8 клітинок від пса</td>
+<td>Зменшує паніку, стрес, втому, смуток і нудьгу на 2 ігрові години</td>
+</tr>
+</tbody></table></div>
+<p><strong><span class="ig">Добре відпочив</span></strong> єдиний, кому не треба, щоб пес і далі був поруч. Він також ігнорує фільтр догляду, тож працює навіть із занедбаним псом. Три попередження про голод, спрагу й отруєння ігнорують фільтр так само.</p>
+<h2 id="8-риси-гени">8. Риси (гени)</h2>
+<p>Крім породи, у кожного пса є три риси, показані в його вікні в розділі <strong><span class="ig">Риси</span></strong>. Вони розігруються, коли ви приручаєте пса, у межах діапазону породи, і далі не змінюються.</p>
+<blockquote class="quote quote-game"><em><span class="ig">Гени різняться від тварини до тварини навіть у межах однієї породи. Вони ніколи не зростають.</span></em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>Риса</th>
+<th>Що робить</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Сила</strong></td>
+<td>Піднімає силу укусу і, насамперед, вміст сідельних сумок</td>
+</tr>
+<tr>
+<td><strong>Агресивність</strong></td>
+<td>Пришвидшує набір досвіду Бою. Не змінює того, коли пес вирішує битися чи тікати</td>
+</tr>
+<tr>
+<td><strong>Спротив</strong></td>
+<td>Змушує його набирати менше стресу в бійці</td>
+</tr>
+</tbody></table></div>
+<p>Є ще четвертий ген, загального стресу, якого у вікні не видно. Він множить увесь стрес, що пес набирає в бійці. У Карамело він найгірший, у Німецької вівчарки й Хаскі найкращі.</p>
+<p>Позначка у вікні використовує ту саму шкалу для всіх порід: нижче 34% це <strong><span class="ig">Низька</span></strong>, від 34% до 66% це <strong><span class="ig">Звичайна</span></strong>, вище 66% це <strong><span class="ig">Висока</span></strong>. Тому Карамело показує <span class="ig">Низька</span> в усіх трьох, завжди.</p>
+<h3 id="наскільки-це-справді-важливо">Наскільки це справді важливо</h3>
+<p>Гени змінюють до 15% в кожен бік у шкоді й досвіді бою, і до 10 відсоткових пунктів у стійкості до стресу. Різниця між породами набагато більша.</p>
+<p>Виняток це сідельні сумки: там ген Сили головний чинник.</p>
+<p>Єдиний спосіб покращити ген це <a href="#9-метиси-схрещування-різних-порід">схрещувати собак</a>.</p>
+<h2 id="9-метиси-схрещування-різних-порід">9. Метиси: схрещування різних порід</h2>
+<p>Коли самець і самка різних порід мають цуценят, виходить метис.</p>
+<h3 id="що-відбувається-з-цуценям">Що відбувається з цуценям</h3>
+<p>Родовід це середнє батьків. Карамело з Німецькою вівчаркою дає цуценя 50/50. Схрестити це цуценя з чистою вівчаркою дає 25% Карамело, 75% вівчарки, і так далі з кожним поколінням.</p>
+<p>Зовнішність це одна з порід родоводу, розіграна з вагою за відсотком. Цуценя 50/50 народжується з виглядом вівчарки або Карамело, ніколи з візуальною сумішшю.</p>
+<blockquote class="quote">Порода, що випала в розіграші, це функціональна порода пса. Метис 50% Хаскі / 50% вівчарка, що народився з виглядом Хаскі, це Хаскі для всіх ефектів: moodle Зігрітий, швидкість навчання Хаскі, сідельні сумки Хаскі.</blockquote>
+<p>Гени лягають між батьківськими, з розкидом близько 6% у кожен бік.</p>
+<p>Діапазон гена цуценяти стає об'єднанням діапазонів порід родоводу. Метис Карамело плюс Хаскі може народитися з будь-якою Силою від 0,00 до 0,80, вище стелі Карамело. Схрещуючи найсильніших псів кожного виводка, родовід росте з поколіннями.</p>
+<p>Цуценя завжди народжується з нульовим рівнем усіх п'яти навичок. Від породи воно успадковує швидкість навчання.</p>
+<h3 id="позначка-метис">Позначка «Метис»</h3>
+<p>Пес із більш ніж однією породою в родоводі отримує <strong><span class="ig">(Метис)</span></strong> поруч із назвою породи, у вікні й у контекстному меню. Розклад у відсотках (<span class="ig">50% Хаскі, 50% Німецька вівчарка</span>) показується, якщо навести мишу на рядок <strong><span class="ig">Порода</span></strong> у вікні пса, разом з описом домінантної породи.</p>
+<h2 id="10-встановлення-доповнень">10. Встановлення доповнень</h2>
+<p>Ротвейлер, Доберман, Лабрадор, Мопс і кішка це окремі моди в Steam. Кожен із них:</p>
+<ul>
+<li>Потребує встановленого й увімкненого базового Companion Dogs.</li>
+<li>Додає одну породу з власною моделлю, текстурою, moodle і місцями спавну.</li>
+<li>Іде з 14 перекладами, такими самими, як у базі.</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>Доповнення</th>
+<th>Сторінка в Steam</th>
+<th>Мінімальна версія бази</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">підписатися</a></td>
+<td>0.6.3 або новіша</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">підписатися</a></td>
+<td>0.6.3 або новіша</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">підписатися</a></td>
+<td>0.6.6 або новіша</td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">підписатися</a></td>
+<td>0.6.8 або новіша</td>
+</tr>
+<tr>
+<td><strong>CD: Cats</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">підписатися</a></td>
+<td>0.7.0 або новіша</td>
+</tr>
+</tbody></table></div>
+<p>І сама база, якщо у вас її ще немає: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>
+<p>Якщо база застара, доповнення просто нічого не робить: без помилки, без вильоту, породи просто немає. Якщо ви встановили Лабрадора й ніяк його не знайдете, спершу перевірте версію бази.</p>
+<blockquote class="quote">Не знімайте доповнення зі збереження, де є живі пси тієї породи. Пес втратить модель і текстуру.</blockquote>
+<p>Встановлення доповнення нічого не змінює в породах, що вже є. Нові породи самі входять у розіграш схрещування й метисації.</p>
+<p>Кішка тут відрізняється. Вона додає п'ять записів (по одному на забарвлення) замість одного, і схрещування в неї закрите за видом: п'ять забарвлень схрещуються між собою, а виводок змішує два, як будь-яка метисація.</p>
+<h2 id="11-часті-питання-про-породи">11. Часті питання про породи</h2>
+<p><strong><span class="ig">Яка порода найкраща?</span></strong> Залежить від того, чим ви займаєтеся. Для бою Німецька вівчарка або Ротвейлер. Для полювання Лабрадор. Для вантажу Хаскі. Для ферми Бордер-колі. Для вогнепальної зброї Доберман. У Карамело найгірші числа, але його муділ лишається корисним.</p>
+<p><strong><span class="ig">Чи може мій Карамело стати сильним завдяки тренуванню?</span></strong> Ні. Він ніколи не вбиває зомбі, скільки б не тренувався. Тренування підіймає Послух, Нюх і Полювання, і в цьому він росте як будь-хто інший.</p>
+<p><strong><span class="ig">Знайшов двох собак однієї породи, яку брати?</span></strong> Наперед дізнатися неможливо: риси розігруються в момент приручення. Приручіть і подивіться розділ <strong><span class="ig">Риси</span></strong> у вікні.</p>
+<p><strong><span class="ig">Взяв собаку з поганими рисами. Відпустити й приручити знову?</span></strong> Не допоможе. Гени розігруються один раз, при першому приручені, і собака зберігає ті самі після відпускання й нового приручення (навички теж лишаються). Щоб отримати інший розкид, приручіть іншу собаку. Щоб покращувати з часом, шлях це <a href="#9-метиси-схрещування-різних-порід">схрещування</a>.</p>
+<p><strong><span class="ig">Чи можу я мати два породних муділи одночасно?</span></strong> Ні. Рахується лише найближча собака. <strong><span class="ig">Добре відпочив</span></strong> це виняток, бо він не залежить від близькості.</p>
+<p><strong><span class="ig">Чому муділ зник?</span></strong> Майже завжди це голод чи спрага вище 75%, або відданість нижче порогу. Погодуйте, дайте воду й погладьте. Перевірте також, чи собака за 8 клітинок або менше і на тому самому поверсі.</p>
+<p><strong><span class="ig">Чи є швидша порода?</span></strong> Ні.</p>
+<p><strong><span class="ig">Чи є Хаскі іншого кольору?</span></strong> Ні. У кожної породи одна текстура, і самець та самиця користуються тією самою. У кішки п'ять забарвлень, але кожне з них це окрема порода.</p>
+<p><strong><span class="ig">Велика собака б'є сильніше?</span></strong> Ні. Розмір лише візуальний і в розрахунок шкоди не входить.</p>
+<p><strong><span class="ig">Де знайти Добермана?</span></strong> Відділок поліції. У військовій будівлі шанс трохи вищий, але військових будівель на базовій мапі гри майже немає.</p>
+<p><strong><span class="ig">Встановив Лабрадора і жодного не знаходжу.</span></strong> Перевірте версію бази Companion Dogs: Лабрадору потрібна 0.6.6 або новіша. Перевірте також, чи будинки регіону вже досліджені: розіграш спавну відбувається один раз на будівлю і не повторюється.</p>
+<p><strong><span class="ig">У мого метиса немає муділів обох порід.</span></strong> Так і має бути. Для механік метис це та порода, на яку він схожий. Змішування лише змінює діапазон генів цуценят і відсотковий підпис у вікні.</p>
+<p><strong><span class="ig">Кішка краща за собаку?</span></strong> Вона робить інше. Вартує далі за будь-яку собаку, мовчки, і це єдиний супутник, який збирає вночі. Натомість вона не б'ється, майже нічого не носить і паруються лише з іншою кішкою.</p>
+<p><strong><span class="ig">Чому я не можу поставити кішку вартувати?</span></strong> Цього режиму для кішки не існує, тож кнопка не з'являється. У кішки немає Бою: вона не вартує, не захищає і не нападає на зомбі, навіть коли вас б'ють поруч із нею.</p>
+<p><strong><span class="ig">Моя кішка побігла кудись сама й перестала мене слухатися.</span></strong> Вона побачила щура. Поки вона біжить, вона відмовляє в будь-якій команді, крім <strong><span class="ig">Іди сюди</span></strong>. Повертається сама, зазвичай зі щуром, і вимкнути це неможливо.</p>
+<p><strong><span class="ig">На кого саме полює кішка?</span></strong> Гризуни й кролик. На оленя вона навіть не вказує. Свійська тварина (курка, корова, будь-хто в загоні) лишається поза грою для кожного супутника, собаки чи кішки. Для великої дичини і для доставки беріть Лабрадора або Золотистого.</p>
+<p><strong><span class="ig">Як зробити кошеня?</span></strong> Так само, як цуценя: ваші самець і самиця, дорослі, віддані, добре нагодовані й поруч одне з одним. Кішка паруються лише з кішкою.</p>
+<p><strong><span class="ig">Чи мають п'ять забарвлень різні числа?</span></strong> Ні. Ті самі навички, той самий муділ, ті самі діапазони рис, той самий голос. Яке з них з'явиться вирішує розіграш.</p>
+<p><strong><span class="ig">Моя кішка стала неслухняною надто швидко.</span></strong> Зв'язок кішки падає на 50% швидше за собачий, коли ви зникаєте або відкладаєте догляд (у Мопса все навпаки). Погладжування, їжа й вода з регулярністю утримують відданість.</p>
+<p><strong><span class="ig">Я перестав прокидатися з подарунком.</span></strong> Подивіться на її шкали. Кішка з голодом чи спрагою на 75% або більше, хвора, неслухняна або в паніці вночі не виходить, і гра про це не попереджає. Подарунок один на день і на власника.</p>
+<p><strong><span class="ig">Хочу заспавнити собаку іншим модом, яке ім'я вживати?</span></strong> Внутрішнє ім'я, а не те, що видно на екрані. Список є в <a href="#6-порівняльні-таблиці">Порівняльних таблицях</a>, наприкінці розділу.</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">Нічого не знайдено за запитом <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' результатів'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'Початок');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>

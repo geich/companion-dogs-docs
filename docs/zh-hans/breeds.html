@@ -1,0 +1,2087 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="品种: 9 个品种、moodle 与特性">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Companion Dogs: 品种">
+<meta property="og:description" content="品种: 9 个品种、moodle 与特性">
+<meta property="og:url" content="https://companiondogs.pet/docs/zh-hans/breeds.html">
+<meta property="og:image" content="https://companiondogs.pet/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="../en/breeds.html">
+<link rel="alternate" hreflang="pt-br" href="../pt-br/breeds.html">
+<link rel="alternate" hreflang="de" href="../de/breeds.html">
+<link rel="alternate" hreflang="es" href="../es/breeds.html">
+<link rel="alternate" hreflang="fr" href="../fr/breeds.html">
+<link rel="alternate" hreflang="it" href="../it/breeds.html">
+<link rel="alternate" hreflang="ja" href="../ja/breeds.html">
+<link rel="alternate" hreflang="ko" href="../ko/breeds.html">
+<link rel="alternate" hreflang="ru" href="../ru/breeds.html">
+<link rel="alternate" hreflang="th" href="../th/breeds.html">
+<link rel="alternate" hreflang="uk" href="../uk/breeds.html">
+<link rel="alternate" hreflang="vi" href="../vi/breeds.html">
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/breeds.html">
+<link rel="alternate" hreflang="zh-hant" href="../zh-hant/breeds.html">
+<link rel="alternate" hreflang="x-default" href="../en/breeds.html">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("cd-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Companion Dogs: 品种</title>
+<style>
+:root{
+  --ground:#F6F3EE; --surface:#FFFDFA; --sunk:#EDE8E0;
+  --line:#DED6C9; --line-soft:#E9E2D7;
+  --text:#20201D; --text-2:#5C574E; --text-3:#6B665C;
+  --accent:#4E3A29; --accent-soft:#7A5B3F; --accent-wash:#EFE7DC;
+  --signal:#A85A22;
+  --paw-fur:#6E4514; --mark-bg:#F3D9A8;
+  --shadow:0 1px 2px rgba(60,45,30,.06),0 8px 24px -12px rgba(60,45,30,.18);
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  --rail:300px; --top-h:60px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#15171A; --surface:#1C1F24; --sunk:#101215;
+  --line:#2E333A; --line-soft:#24282E;
+  --text:#E6E3DD; --text-2:#A7A49C; --text-3:#93908A;
+  --accent:#C79A6C; --accent-soft:#A87F55; --accent-wash:#241E18;
+  --signal:#D08A45;
+  --paw-fur:#8A5A1B; --mark-bg:#4A3A22;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px; text-decoration-thickness:1px;}
+a:hover{color:var(--signal);}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px;}
+
+/* ---------- topo ---------- */
+.top{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:14px; padding:10px 20px;
+}
+/* logo oficial (cd-paw-v3-color.svg): definido uma vez, usado por referencia */
+.pawdef{position:absolute; width:0; height:0; overflow:hidden;}
+.paw{display:block; flex:none;}
+.brand{
+  display:flex; align-items:center; gap:10px; min-width:0;
+  text-decoration:none; color:inherit; border-radius:6px;
+  margin:-4px -8px; padding:4px 8px; transition:background .15s;
+}
+.brand .paw{width:25px; height:25px; transition:transform .15s;}
+a.brand:hover{background:var(--accent-wash);}
+a.brand:hover b{color:var(--accent);}
+a.brand:hover .paw{transform:scale(1.06);}
+.brand b{font-size:14.5px; font-weight:650; letter-spacing:-.01em; white-space:nowrap;}
+.sl{font-family:var(--mono); font-style:normal; color:var(--text-3); font-size:15px; flex:none; margin:0 -5px;}
+.cur{
+  font-style:normal; font-size:14.5px; font-weight:650; color:var(--accent);
+  white-space:nowrap; letter-spacing:-.01em; flex:none;
+}
+.grow{flex:1;}
+.search{position:relative; flex:none;}
+.find{
+  font-family:var(--sans); font-size:13px; color:var(--text);
+  background:var(--ground); border:1px solid var(--line); border-radius:5px;
+  padding:7px 30px 7px 11px; width:230px; transition:border-color .15s,width .2s;
+}
+.find::placeholder{color:var(--text-3);}
+.find:focus{border-color:var(--accent-soft); outline:none; width:300px;}
+.find::-webkit-search-cancel-button{display:none;}
+.kbd{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:10px; color:var(--text-3);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px;
+  pointer-events:none; background:var(--surface);
+}
+.find:focus ~ .kbd{opacity:0;}
+
+/* painel de resultados */
+.results{
+  position:absolute; top:calc(100% + 9px); right:0; z-index:60;
+  width:min(580px,88vw); max-height:min(64vh,540px); overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--surface); border:1px solid var(--line); border-radius:9px;
+  box-shadow:var(--shadow); padding:6px;
+}
+.results[hidden]{display:none;}
+.rcount{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-3); padding:7px 10px 8px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.ritem{
+  display:block; text-decoration:none; color:inherit;
+  padding:8px 10px; border-radius:6px; border:1px solid transparent;
+}
+.ritem:hover{background:var(--accent-wash);}
+.ritem.sel{background:var(--accent-wash); border-color:var(--line);}
+.rcrumb{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-bottom:3px; display:block;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rtext{
+  font-size:13.2px; line-height:1.5; color:var(--text-2);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.rnone{padding:16px 12px; font-size:13.5px; color:var(--text-3);}
+.rnone b{color:var(--text-2);}
+mark{background:var(--mark-bg); color:var(--text); font-weight:660; border-radius:2px; padding:0 1px;}
+
+/* destaque do trecho ao chegar nele */
+@keyframes cdflash{from{background:var(--mark-bg);} to{background:transparent;}}
+.flash{animation:cdflash 1.8s ease-out; border-radius:4px;}
+.iconbtn{
+  background:var(--ground); border:1px solid var(--line); color:var(--text-2);
+  border-radius:5px; width:33px; height:33px; cursor:pointer; font-size:14px;
+  display:grid; place-items:center; flex:none;
+}
+.iconbtn:hover{color:var(--accent); border-color:var(--accent-soft);}
+#menu{display:none;}
+
+/* link para o outro manual */
+.other{
+  display:flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ground); border:1px solid var(--line); border-radius:6px;
+  padding:6px 12px 6px 10px; color:var(--text-2); flex:none;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.other .paw{width:18px; height:18px; opacity:.62; transition:opacity .15s;}
+.other span{font-size:12.8px; font-weight:600; white-space:nowrap;}
+.other:hover{border-color:var(--accent-soft); color:var(--accent); background:var(--accent-wash);}
+.other:hover .paw{opacity:1;}
+
+/* comunidade: a cor da propria marca do Discord, a mesma da home, para o botao ler como o mesmo
+   destino nas duas pontas do site em vez de competir com o acento do tema */
+.discord{
+  display:inline-flex; align-items:center; gap:8px; flex:none; text-decoration:none;
+  color:#fff; background:#5865F2; border:1px solid #5865F2; border-radius:6px;
+  padding:6px 12px 6px 10px; font-size:12.8px; font-weight:640; white-space:nowrap;
+  transition:background .15s, border-color .15s;
+}
+.discord svg{width:17px; height:17px; fill:currentColor; flex:none;}
+.discord:hover{background:#4752E0; border-color:#4752E0;}
+.discord:active{transform:translateY(1px);}
+.discord:focus-visible{outline:2px solid var(--accent-soft); outline-offset:2px;}
+
+/* ---------- estrutura ---------- */
+.wrap{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); align-items:start;}
+.rail{
+  position:sticky; top:var(--top-h); height:calc(100dvh - var(--top-h)); overflow-y:auto;
+  overscroll-behavior:contain;
+  border-right:1px solid var(--line); background:var(--sunk);
+  padding:16px 12px 40px;
+}
+.railhead{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); margin:0 0 10px; padding:0 10px;
+}
+.railhead b{color:var(--accent); font-weight:600;}
+
+/* acordeao: so as seções principais; subseções abrem na seção lida */
+.grp{display:flex; flex-direction:column;}
+.toc a{display:block; text-decoration:none; border-radius:4px; overflow-wrap:anywhere;}
+.s2{
+  color:var(--text-2); font-size:13.4px; font-weight:560; line-height:1.38;
+  padding:7px 10px; border-left:2px solid transparent;
+}
+.s2:hover{background:var(--accent-wash); color:var(--text);}
+.grp.open > .s2{color:var(--accent); font-weight:660; background:var(--accent-wash); border-left-color:var(--accent);}
+.sub{display:none; flex-direction:column; padding:2px 0 6px; margin-left:10px; border-left:1px solid var(--line);}
+.grp.open > .sub{display:flex;}
+.s3{
+  color:var(--text-3); font-size:12.4px; line-height:1.36;
+  padding:4px 10px 4px 12px; border-left:2px solid transparent; margin-left:-1px;
+}
+.s3:hover{background:var(--accent-wash); color:var(--text-2);}
+.s3[aria-current="true"]{color:var(--accent); border-left-color:var(--accent-soft); font-weight:600;}
+.toc a[hidden]{display:none;}
+.grp[hidden]{display:none;}
+
+main{padding:38px 56px 120px 56px; min-width:0;}
+.doc{max-width:none; margin:0;}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{text-wrap:balance; letter-spacing:-.021em; line-height:1.18;}
+h1{font-size:clamp(30px,4.2vw,42px); font-weight:700; margin:0 0 6px;}
+h1 + p{font-size:17px; color:var(--text-2); margin:0 0 8px; max-width:90ch;}
+h2{font-size:24px; font-weight:670; margin:60px 0 14px; padding-top:22px; border-top:1px solid var(--line);}
+h3{font-size:17.5px; font-weight:660; margin:34px 0 8px; color:var(--accent);}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px; padding-left:22px; display:flex; flex-direction:column; gap:6px;}
+li{margin:0;}
+li > ul, li > ol{margin:6px 0 0;}
+strong{font-weight:660; color:var(--text);}
+hr{border:0; border-top:1px solid var(--line-soft); margin:34px 0;}
+code{font-family:var(--mono); font-size:.87em; background:var(--sunk);
+  border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px; overflow-wrap:anywhere;}
+pre{margin:0 0 18px; padding:12px 14px; background:var(--sunk);
+  border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
+pre code{background:transparent; border:0; padding:0; font-size:13px; line-height:1.65;
+  white-space:pre;}
+
+/* recorte de tela do jogo; o fundo e fixo nos dois temas porque o icone tem transparencia e
+   some no escuro */
+figure.shot{margin:0 0 18px; display:flex;}
+figure.shot img{width:74px; height:74px; image-rendering:pixelated;
+  background:#cfcbc2; border:1px solid var(--line); border-radius:8px; padding:7px;}
+
+/* icone do jogo no meio da linha, em tabela ou em lista. flex:none nao e enfeite: dentro de um
+   <li>, que e flex, sem ele o icone encolhe e some. A familia de moodle ja tem disco proprio; a de
+   item e transparente e leva a mesma tarja da figura, senao desaparece no tema escuro. */
+.ico{display:inline-block; width:34px; height:34px; flex:none; vertical-align:-11px;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  image-rendering:pixelated;}
+.ico.item{background-color:#cfcbc2; border:1px solid var(--line); border-radius:5px;
+  background-size:26px;}
+td .ico, th .ico{vertical-align:middle;}
+
+/* strings literais da interface do jogo */
+.ig{
+  font-family:var(--mono); font-size:.85em; letter-spacing:-.01em;
+  color:var(--accent); background:var(--accent-wash);
+  border:1px solid var(--line); border-radius:4px;
+  /* NAO por nowrap aqui: muita string do jogo e uma frase inteira (a maior tem 81 caracteres) e
+     em tela de celular ela sozinha empurra a pagina para o lado. */
+  padding:1.5px 6px; overflow-wrap:anywhere;
+}
+strong .ig{font-weight:600;}
+
+/* link que sai para o outro manual */
+a.xlink::after{content:" \2197"; font-size:.85em; color:var(--text-3);}
+
+blockquote{
+  margin:0 0 18px; padding:12px 16px;
+  background:var(--surface); border:1px solid var(--line);
+  border-left:3px solid var(--signal); border-radius:0 6px 6px 0;
+  color:var(--text-2); font-size:14.6px;
+}
+blockquote p{margin:0;}
+blockquote.quote-game{
+  border-left-color:var(--accent-soft); background:var(--accent-wash);
+  font-family:var(--mono); font-size:13.4px; line-height:1.6;
+}
+blockquote.quote-game em{font-style:normal; color:var(--text-2);}
+blockquote .ig{background:transparent; border-color:transparent; padding:0;}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--line);
+  border-radius:8px; background:var(--surface); box-shadow:var(--shadow);}
+table{border-collapse:collapse; width:100%; font-size:13.8px; font-variant-numeric:tabular-nums;}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+th{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-3); background:var(--sunk);
+  white-space:nowrap; border-bottom:1px solid var(--line);}
+tbody tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:var(--accent-wash);}
+td code{background:transparent; border:0; padding:0;}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  :root{--rail:260px;}
+  main{padding:30px 22px 100px;}
+  .other span{display:none;}
+  .other{padding:6px 9px;}
+  /* sao dois links cruzados, um por manual irmao. Sem o rotulo eles viram duas pastinhas iguais,
+     que nao dizem para onde levam: aqui fica so o primeiro. */
+  .other + .other{display:none;}
+  /* o icone do Discord e reconhecido sozinho, entao aqui ele perde o rotulo em vez de sair */
+  .discord span{display:none;}
+  .discord{padding:6px 9px;}
+}
+@media (max-width:760px){
+  #menu{display:grid;}
+  .wrap{grid-template-columns:1fr;}
+  .rail{position:fixed; top:var(--top-h); left:0; width:290px; z-index:35;
+    transform:translateX(-100%); transition:transform .22s ease, visibility .22s ease;}
+  .rail.open{transform:none; box-shadow:var(--shadow);}
+  .find{width:104px;} .find:focus{width:132px;}
+  main{padding:24px 18px 90px;}
+  h2{font-size:21px; margin-top:44px;}
+  .sl,.brand b{display:none;}
+  /* fechado, o trilho fica so deslocado: sem isto os links continuam alcancaveis por Tab
+     fora da tela, e o foco arrasta a pagina para um lugar invisivel */
+  .rail{visibility:hidden;}
+  .rail.open{visibility:visible;}
+}
+/* Abaixo disto a soma das larguras travadas da barra (menu, marca, aba atual, busca, tema)
+   passa da largura da tela e a pagina inteira ganha rolagem lateral. */
+@media (max-width:480px){
+  .top{gap:8px; padding:10px 10px;}
+  .cur,.sl,.other{display:none;}
+  .search{flex:1 1 auto; min-width:0;}
+  .find,.find:focus{width:100%;}
+  /* a dica da tecla `/` fica em cima da direita do campo. Num campo desta largura ela come a
+     parte que ainda dava para ler, e num celular nem existe tecla para dizer. */
+  .kbd{display:none;}
+}
+/* seletor de idioma: <select> nativo de proposito. Ele ja da teclado, leitor de tela e a roda
+   nativa do celular de graca, e os dois <optgroup> comunicam "revisado" x "automatico" pela
+   estrutura, sem repetir um rotulo em cada linha. */
+.lang{position:relative; display:flex; align-items:center; flex:none;}
+.lang svg{
+  position:absolute; left:8px; width:14px; height:14px; pointer-events:none;
+  fill:none; stroke:var(--text-3); stroke-width:1.7;
+}
+.lang select{
+  appearance:none; -webkit-appearance:none;
+  font-family:inherit; font-size:12.6px; font-weight:560; color:var(--text-2);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 22px 6px 27px; max-width:150px; cursor:pointer;
+}
+.lang select:hover{border-color:var(--accent-soft); color:var(--text);}
+.lang select:focus-visible{outline:2px solid var(--accent-soft); outline-offset:1px;}
+.lang::after{
+  content:""; position:absolute; right:9px; width:0; height:0; pointer-events:none;
+  border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+  border-top:4px solid var(--text-3);
+}
+
+/* aviso de traducao automatica: fica acima de tudo, inclusive de quem chegou por link direto
+   numa secao e nunca viu o seletor */
+.mtwarn{
+  border-bottom:1px solid var(--line);
+  background:var(--accent-wash); color:var(--text-2);
+  padding:11px 20px; font-size:13.4px; line-height:1.5;
+}
+.mtwarn b{color:var(--text); font-weight:640;}
+.mtwarn a{color:var(--accent); font-weight:600; white-space:nowrap;}
+.mtwarn .mtdot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--signal); margin-right:7px; vertical-align:middle;
+}
+@media (max-width:480px){
+  .lang select{max-width:104px; padding:6px 20px 6px 24px; font-size:12px;}
+  .mtwarn{padding:10px 12px; font-size:12.6px;}
+}
+
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+html{scroll-padding-top:calc(var(--top-h) + 16px);}
+</style>
+</head>
+<body>
+
+<svg class="pawdef" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 1024 1024"><defs>
+    <linearGradient id="d_g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFA55A"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D32"/></linearGradient>
+    <linearGradient id="d_g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D59C51"/><stop offset="1" stop-color="#BE7E34"/></linearGradient>
+    <linearGradient id="d_g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D69E53"/><stop offset="1" stop-color="#BD7D33"/></linearGradient>
+    <linearGradient id="d_g5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEA459"/><stop offset="1" stop-color="#AE6B22"/></linearGradient>
+    <linearGradient id="d_g5g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A156"/><stop offset="1" stop-color="#BE7F34"/></linearGradient>
+  </defs>
+  <path d="M386 930.87C365.45 929.19 331.63 921.65 316.85 915.44C295.23 906.37 281.15 892.73 275.78 875.66C272.51 865.28 272.57 844.96 275.9 833.5C282.71 810.12 294.59 788.92 319.11 756.43C330.1 741.87 334.48 736.35 352.05 714.92C386.38 673.06 393.27 664.25 406.44 645.5C421.92 623.45 431.64 611.4 443.55 599.52C474.93 568.22 505.14 557.62 534.22 567.72C560.15 576.72 584.35 598.54 612.17 638C625.71 657.21 642.04 678.53 658.11 698C705.46 755.36 723.33 779.54 736.08 803.5C752.25 833.9 755.34 861.98 744.92 884.01C740.42 893.53 728.26 905.14 716.5 911.17C701.07 919.08 673.92 926.48 647 930.1C634.94 931.72 603.55 931.71 590.5 930.07C568.67 927.33 546.05 919.64 532.82 910.46C520.07 901.61 518.39 900.82 512.09 900.67C506.39 900.54 505.88 900.75 497.1 906.82C475.73 921.6 454.4 928.65 423.94 930.97C408.81 932.12 401.18 932.1 386 930.87ZM246.06 663.96C202.99 658.05 159.99 615.6 141.62 560.88C134.94 540.95 132.83 529.46 132.24 509.7C131.67 490.57 132.65 482.37 137.22 468C142.39 451.72 148.74 441.16 159.15 431.52C178.93 413.2 209.94 410.97 239.5 425.73C268.19 440.06 296.62 473.49 311.38 510.25C320.48 532.89 324.35 552.52 324.36 576C324.36 600.88 319.99 617.87 309.37 634.32C300.16 648.58 285.53 659.44 271 662.82C264.03 664.44 253.15 664.94 246.06 663.96ZM770.76 658.03C748.6 654 731.75 640.56 721.49 618.74C700.06 573.21 713.51 505.92 754.28 454.67C775.09 428.51 804.71 411.6 832 410.3C860.27 408.96 879.98 421.09 893.61 448.22C906.28 473.44 908.03 507.54 898.47 543C883.74 597.65 843.62 644.12 800.97 655.94C792.53 658.28 777.74 659.3 770.76 658.03ZM407 513.31C402.07 512.48 394.37 509.65 386.89 505.92C347.95 486.47 319.66 431.01 317.3 369.5C316.08 337.44 321.08 311.38 333.43 285.5C346.29 258.53 364.59 242.16 388.46 236.26C398.61 233.74 399.61 233.67 408.53 234.8C444.84 239.38 475.98 271.27 492.23 320.5C500.8 346.49 503.58 366.04 502.67 394C501.37 434.1 490 466.68 469.28 489.7C460.02 499.98 444.95 509.33 432.54 512.48C427.05 513.88 413.1 514.33 407 513.31ZM609.21 504.47C581.81 498.53 557.5 471.89 546.69 435.97C528.37 375.16 541.9 304.53 580.67 258.5C600.31 235.19 629.85 222.49 652.93 227.45C690.35 235.49 717.17 273.45 723.95 327.97C725.67 341.88 725.25 367.77 723.04 382.77C711.64 460.27 659.98 515.5 609.21 504.47ZM141.16 404.54C138.22 403.83 135.21 402.63 134.47 401.87C132.8 400.16 127.26 379.51 125.4 368.06C123.57 356.78 123.63 333.84 125.52 322.18C127.26 311.46 131.69 294.8 133.45 292.4C134.47 291 134.9 291.46 136.46 295.64C139.98 305 154.72 333.61 162.42 346C171.31 360.3 181.55 374.79 188.92 383.5L194 389.5L189.77 393.23C177.83 403.74 157.46 408.48 141.16 404.54ZM872.74 398.91C869.57 398.45 864.39 397.02 861.23 395.75C854.9 393.19 844.08 386.37 843.35 384.48C843.1 383.82 847.76 376.8 853.72 368.88C870.65 346.34 886.13 320.39 896.57 297C899.14 291.23 901.61 286.11 902.05 285.63C903.02 284.57 906.04 294.09 909.17 308.11C911.22 317.25 911.49 321.02 911.44 339.5C911.38 361.55 910.38 369.03 905.15 386.53C902.15 396.57 901.6 397.09 892.4 398.6C883.46 400.06 880.88 400.1 872.74 398.91ZM383.5 216.3C379.08 215.72 370.15 213.1 364.86 210.83L360.22 208.85L358.86 200.67C357.09 190.01 357.09 153.77 358.86 145.5C363.38 124.43 369.49 106.76 376.14 95.49L378.42 91.62L380.25 98.06C391.94 139.38 404.03 169.74 419.43 196.42C421.94 200.78 424 204.89 424 205.55C424 207.55 410.05 213.75 401.79 215.43C394.37 216.94 389.91 217.15 383.5 216.3ZM647.97 208.06C640.37 207.03 630.2 203.51 624.64 199.99L620 197.04L623.4 191.72C636.84 170.71 653.4 131.01 662.59 97.74C664.6 90.46 666.39 84.34 666.56 84.15C666.73 83.95 668.65 87.33 670.82 91.65C685.54 120.92 691.21 159.11 685.93 193.37L684.72 201.24L680.55 203.08C670.9 207.35 657.67 209.37 647.97 208.06Z" fill="var(--paw-fur)" fill-rule="evenodd"/>
+  <path d="M610.05 479.91C574.56 468.33 553.76 417.21 561.56 360.78C566.52 324.93 580.18 294.56 599.78 275.84C614.03 262.22 627.44 256.36 642.33 257.24C652.29 257.83 659.81 260.55 667.91 266.52C683.22 277.78 694.95 299.08 700.69 326C703.32 338.33 703.29 376.29 700.63 390.5C692.77 432.68 669.45 467.52 641.51 478.87C632.9 482.36 618.98 482.83 610.05 479.91Z" fill="url(#d_g1b)"/>
+  <path d="M611 450.25C602.67 447.99 595.99 444.05 588.63 437.07C580.83 429.67 575.05 422.04 570.71 413.41C564.81 401.69 563.61 395.66 563.58 377.5C563.55 360.22 565.55 346.31 570.58 328.63C573.32 318.99 581.94 300.92 588.18 291.74C604.42 267.81 629.49 254.42 648.79 259.37C665.97 263.77 679.19 275.61 688.86 295.28C703.66 325.35 705.49 371.26 692.9 396.45C683.78 414.67 669.2 432.55 656.22 441.42C642.71 450.65 625.14 454.08 611 450.25Z" fill="url(#d_g1g)"/>
+  <path d="M405.12 488.49C374.56 479.91 349.03 443.35 341.39 397.24C339.05 383.15 339.03 350.57 341.35 338.15C349.62 293.83 373.9 265.1 403.14 265.02C440.03 264.92 472.16 307.5 480.55 367.61C482.74 383.29 482.11 408.37 479.18 422C472.24 454.33 455.96 477.74 434 486.98C426.9 489.96 412.97 490.69 405.12 488.49Z" fill="url(#d_g2b)"/>
+  <path d="M406.5 458.98C387.93 455.26 368.76 439.35 355.22 416.42C344.08 397.55 341.56 387.4 341.6 361.5C341.61 350.73 342.18 342.5 343.33 336.32C350.29 298.97 371.27 271.6 396.54 266.9C427.98 261.06 461.54 294.4 473.9 343.75C478.64 362.68 480.42 393.04 477.47 404.54C476.63 407.82 473.5 415.51 470.51 421.64C456.8 449.75 432.17 464.12 406.5 458.98Z" fill="url(#d_g2g)"/>
+  <path d="M774.5 633.61C756.84 629.31 743.1 614.26 736.77 592.29C734.82 585.52 734.52 582.15 734.51 566.5C734.5 546.5 735.64 539.22 741.55 521.47C756.56 476.41 788.48 442.01 821.5 435.31C837.47 432.07 852.98 436.74 864.36 448.23C891.01 475.14 889.87 531.89 861.74 579.66C847.82 603.3 830.09 620.59 810.62 629.51C798.72 634.97 785.98 636.41 774.5 633.61Z" fill="url(#d_g3b)"/>
+  <path d="M782.35 605.64C768.77 602.19 754.43 590.74 748.2 578.39C742.23 566.56 739.25 549.62 740.92 536.9C742.91 521.66 752.41 498.1 763.47 480.96C780.5 454.56 807.87 436 829.76 436C854.13 436 870.33 449.44 878.63 476.53C881.19 484.9 881.38 486.7 881.37 503.5C881.37 520.4 881.18 522.21 878.31 533.04C873.85 549.84 866.95 563.63 858.1 573.41C845.44 587.42 829.41 598.5 814.49 603.57C804.96 606.8 790.55 607.73 782.35 605.64Z" fill="url(#d_g3g)"/>
+  <path d="M237.37 640.02C205.57 631.68 176.72 600.08 162.03 557.46C155.61 538.85 153.69 528.04 153.59 510C153.48 491.29 154.97 484.13 162 469.49C171.66 449.35 186.98 440.05 208.5 441.26C225.75 442.23 239.6 449.64 257.56 467.5C271.24 481.1 278.81 491.71 287.27 509.12C302.51 540.51 307.21 572.85 300.39 599.5C295.09 620.2 279.63 636.85 261.89 640.94C255.23 642.47 245.31 642.1 237.37 640.02Z" fill="url(#d_g4b)"/>
+  <path d="M231.35 612.96C224.89 611.68 213.51 607.49 208.46 604.53C199.86 599.49 184.51 587.15 178.8 580.7C169.48 570.15 162.47 555.5 157.91 537C154.78 524.31 154.45 495.36 157.31 485C160.52 473.38 167.47 460.71 173.88 454.79C196.54 433.85 229.08 439.46 257.63 469.23C269.19 481.28 274.13 488.45 282.55 505.37C294.19 528.76 298.57 546.22 296.22 559.9C292.2 583.37 281.04 600.9 264.96 609.02C256.16 613.46 242.17 615.1 231.35 612.96Z" fill="url(#d_g4g)"/>
+  <path d="M384.5 900.9C374.62 898.93 365.35 895.72 356.5 891.21C343.69 884.69 331.91 872.94 326.22 861C318.08 843.93 317.44 826.32 324.19 805C331.03 783.37 345.08 763 378.98 725.5C400.51 701.69 409.69 690.12 424.21 668.5C444.39 638.46 452.79 628.33 465.36 618.84C482.33 606.04 496.32 601.43 515.84 602.24C529.8 602.82 539.15 605.77 551.6 613.53C567.37 623.36 578.33 635.8 601.79 670.5C615.37 690.6 624.4 701.97 643.53 723.11C670.46 752.85 678.53 763.02 688.89 780.22C702.67 803.12 708.08 828.31 703.44 847.98C700.6 860.03 695.66 868.58 686.01 878.16C678.5 885.62 675.83 887.53 666.89 891.84C649.3 900.33 643.78 901.49 621 901.48C603.11 901.48 600.62 901.25 590.78 898.77C578.91 895.76 570.24 892.51 546.44 882.14C525.98 873.22 516.99 871.2 505.52 872.95C497.01 874.24 492.37 875.91 468.5 886.24C439.02 899.01 430.72 901.07 407 901.55C397.38 901.74 387.25 901.45 384.5 900.9Z" fill="url(#d_g5b)"/>
+  <path d="M384 872.57C373.67 870.4 363.13 866.34 354.56 861.23C343.75 854.79 331.48 842.52 327.09 833.77C323.86 827.31 323.74 826.69 324.28 818.77C325.77 796.96 342.3 769.19 375.81 732.2C397.76 707.96 413.13 688.56 425.46 669.5C447.89 634.84 461.97 620.04 481.47 610.62C493.47 604.83 499.26 603.52 513 603.52C527.93 603.51 537.67 606.49 551.1 615.17C568.19 626.22 576.02 635.1 599.48 670C615.02 693.12 621.54 701.45 642.51 725C663.93 749.06 672.82 760.08 681.23 773C690.87 787.8 692.96 792.04 697.48 806C703.19 823.63 702.19 828.48 689.38 845.15C681.02 856.03 664.81 865.87 647.2 870.77C638.42 873.21 635.88 873.47 620.5 873.48C606.29 873.49 602.03 873.13 594.5 871.27C580.08 867.71 564.96 862.2 548.93 854.67C531.33 846.39 517.57 843.4 505.02 845.11C497.48 846.15 488.28 849.5 460.07 861.51C452.69 864.65 441.44 868.57 435.07 870.21C425.04 872.8 421.3 873.24 407 873.57C395.53 873.83 388.52 873.53 384 872.57Z" fill="url(#d_g5g)"/></symbol></svg>
+
+<header class="top">
+  <button class="iconbtn" id="menu" type="button" aria-label="打开目录" aria-expanded="false" aria-controls="rail">&#9776;</button>
+  <a class="brand" href="../index.html" title="返回文档首页"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><b>Companion Dogs</b></a><i class="sl">/</i><em class="cur">品种</em>
+  <div class="grow"></div>
+  <a class="other" href="features.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往功能手册</span></a><a class="other" href="modding.html"><svg viewBox="0 0 1024 1024" class="paw" aria-hidden="true" focusable="false"><use href="#paw"/></svg><span>前往模组制作手册</span></a>
+  <div class="search"><input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="搜索手册……" aria-label="搜索手册" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results"><span class="kbd">/</span><div class="results" id="results" role="listbox" hidden></div></div>
+  <div class="lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18"/><path d="M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><select id="lang" aria-label="语言"><optgroup label="已校对"><option value="en">English</option><option value="pt-br">Português (Brasil)</option><option value="de">Deutsch</option></optgroup><optgroup label="机器翻译"><option value="es">Español</option><option value="fr">Français</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="vi">Tiếng Việt</option><option value="zh-hans" selected>简体中文</option><option value="zh-hant">繁體中文</option></optgroup></select></div>
+  <a class="discord" href="https://discord.gg/ndyTBFSuAT" target="_blank" rel="noopener" title="加入 Discord" aria-label="加入 Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>加入 Discord</span></a>
+  <button class="iconbtn" id="theme" type="button" aria-label="切换主题">&#9789;</button>
+</header>
+<div class="mtwarn" role="note"><span class="mtdot"></span><b>机器翻译，未经校对.</b> 本页由葡萄牙语机器翻译而成，没有经过人工校对，术语和数字都可能有误。如有疑问，请对照英文版或葡萄牙语原文。 <a href="../en/breeds.html">阅读英文版</a></div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="railhead">目录 &middot; <b>品种</b></div>
+    <nav class="toc" id="toc"><div class="grp">
+<a class="s2" href="#1-品种到底改变了什么" data-id="1-品种到底改变了什么">1. 品种到底改变了什么</a>
+<div class="sub">
+<a class="s3" href="#体型和力量不是一回事" data-id="体型和力量不是一回事">体型和力量不是一回事</a>
+<a class="s3" href="#一个品种一种外观" data-id="一个品种一种外观">一个品种，一种外观</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#2-快速选择" data-id="2-快速选择">2. 快速选择</a>
+<div class="sub">
+<a class="s3" href="#一句话总结" data-id="一句话总结">一句话总结</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#3-基础模组的五个品种" data-id="3-基础模组的五个品种">3. 基础模组的五个品种</a>
+<div class="sub">
+<a class="s3" href="#小卡犬" data-id="小卡犬">小卡犬</a>
+<a class="s3" href="#德国牧羊犬" data-id="德国牧羊犬">德国牧羊犬</a>
+<a class="s3" href="#金毛寻回犬" data-id="金毛寻回犬">金毛寻回犬</a>
+<a class="s3" href="#哈士奇" data-id="哈士奇">哈士奇</a>
+<a class="s3" href="#边境牧羊犬" data-id="边境牧羊犬">边境牧羊犬</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#4-四个附加品种" data-id="4-四个附加品种">4. 四个附加品种</a>
+<div class="sub">
+<a class="s3" href="#罗威纳犬" data-id="罗威纳犬">罗威纳犬</a>
+<a class="s3" href="#杜宾犬" data-id="杜宾犬">杜宾犬</a>
+<a class="s3" href="#拉布拉多" data-id="拉布拉多">拉布拉多</a>
+<a class="s3" href="#巴哥犬" data-id="巴哥犬">巴哥犬</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#5-猫第一个别的物种" data-id="5-猫第一个别的物种">5. 猫：第一个别的物种</a>
+<div class="sub">
+<a class="s3" href="#它不做什么" data-id="它不做什么">它不做什么</a>
+<a class="s3" href="#它比任何狗都做得好的事" data-id="它比任何狗都做得好的事">它比任何狗都做得好的事</a>
+<a class="s3" href="#代价" data-id="代价">代价</a>
+<a class="s3" href="#五种毛色" data-id="五种毛色">五种毛色</a>
+<a class="s3" href="#夜里的礼物" data-id="夜里的礼物">夜里的礼物</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#6-对比表格" data-id="6-对比表格">6. 对比表格</a>
+<div class="sub">
+<a class="s3" href="#学习速度" data-id="学习速度">学习速度</a>
+<a class="s3" href="#战斗" data-id="战斗">战斗</a>
+<a class="s3" href="#战斗时的胆量" data-id="战斗时的胆量">战斗时的胆量</a>
+<a class="s3" href="#特性出生范围" data-id="特性出生范围">特性（出生范围）</a>
+<a class="s3" href="#驮袋" data-id="驮袋">驮袋</a>
+<a class="s3" href="#每胎产仔数" data-id="每胎产仔数">每胎产仔数</a>
+<a class="s3" href="#各品种在哪里找" data-id="各品种在哪里找">各品种在哪里找</a>
+<a class="s3" href="#品种的内部名称" data-id="品种的内部名称">品种的内部名称</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#7-moodle完整清单" data-id="7-moodle完整清单">7. moodle：完整清单</a>
+<div class="sub">
+<a class="s3" href="#所有品种-moodle-通用的规则" data-id="所有品种-moodle-通用的规则">所有品种 moodle 通用的规则</a>
+<a class="s3" href="#各品种的-moodle" data-id="各品种的-moodle">各品种的 moodle</a>
+<a class="s3" href="#任何品种都会给的-moodle" data-id="任何品种都会给的-moodle">任何品种都会给的 moodle</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#8-特性基因" data-id="8-特性基因">8. 特性（基因）</a>
+<div class="sub">
+<a class="s3" href="#这到底有多重要" data-id="这到底有多重要">这到底有多重要</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#9-混血不同品种的杂交" data-id="9-混血不同品种的杂交">9. 混血：不同品种的杂交</a>
+<div class="sub">
+<a class="s3" href="#幼犬会怎么样" data-id="幼犬会怎么样">幼犬会怎么样</a>
+<a class="s3" href="#混血标签" data-id="混血标签">“混血”标签</a>
+</div>
+</div>
+<div class="grp">
+<a class="s2" href="#10-安装附加模组" data-id="10-安装附加模组">10. 安装附加模组</a>
+</div>
+<div class="grp">
+<a class="s2" href="#11-品种常见问题" data-id="11-品种常见问题">11. 品种常见问题</a>
+</div></nav>
+  </aside>
+  <main><article class="doc"><h1 id="companion-dogs品种手册">Companion Dogs：品种手册</h1>
+<p>所有品种的指南：每个品种最擅长什么、心情图标、特性，以及怎么为你这局游戏挑对狗。</p>
+<p>想知道模组本身怎么运作（驯服、指令、喂食、驮袋、技巧、狩猎），看另一本手册： <a href="features.html" class="xlink">功能</a>。</p>
+<blockquote class="quote">本手册里的数字都以默认选项为准。品种天生带来的东西在任何设置下都有效： 基础咬合力、击倒、战斗时的胆量、专属心情图标、驮袋和产崽数。 把技巧藏起来的是选项 <strong>“服从技巧”</strong>。</blockquote>
+<h2 id="1-品种到底改变了什么">1. 品种到底改变了什么</h2>
+<p>品种影响七件事：</p>
+<div class="tw"><table><thead><tr>
+<th>变的是什么</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>学习速度</strong></td>
+<td>每个品种提升 5 项技能各有自己的节奏。这是品种之间最大的差别</td>
+</tr>
+<tr>
+<td><strong>咬合力</strong></td>
+<td>每次撕咬造成多少伤害，其中有多少来自训练</td>
+</tr>
+<tr>
+<td><strong>战斗时的胆量</strong></td>
+<td>打架时积累多少压力，到哪个点会陷入恐慌并停手</td>
+</tr>
+<tr>
+<td><strong>特性（基因）</strong></td>
+<td>出生时力量、攻击性和抗性可能落在的区间</td>
+</tr>
+<tr>
+<td><strong>专属心情图标</strong></td>
+<td>只要狗在身边、吃饱且忠诚，就给你一个加成</td>
+</tr>
+<tr>
+<td><strong>产崽数</strong></td>
+<td>每胎生几只幼崽</td>
+</tr>
+<tr>
+<td><strong>在地图上哪里出现</strong></td>
+<td>每个品种有自己的地点</td>
+</tr>
+</tbody></table></div>
+<p>不随品种变的东西：</p>
+<ul>
+<li>奔跑速度。所有品种跑得一样快。</li>
+<li>警戒、嗅觉和狩猎的范围。这些只看技能等级。</li>
+<li>技巧。四个技巧按服从等级解锁，对所有狗都一样。</li>
+<li>饥饿和口渴。所有品种的速度相同，哈士奇也不例外（见它那一节）。</li>
+<li>驮袋容量，哈士奇除外。</li>
+<li>体型。它和力量是分开的。</li>
+</ul>
+<blockquote class="quote"><a href="#5-猫第一个别的物种">猫</a>是例外。除了这七件事，它还改变了有哪些活可干：不打架， 不照顾牲畜，只和猫繁殖。界面里连按钮都不会出现。</blockquote>
+<h3 id="体型和力量不是一回事">体型和力量不是一回事</h3>
+<p>力量是一个基因。它最多把咬合伤害提高 30%，并决定驮袋的容量。</p>
+<p>体型来自游戏自己的一个基因，模组既不抽也不动它，再加上幼崽长到成年体格的过程。同一品种的两只狗可以 力量相同而体型不同，体型大的并不因此咬得更重。</p>
+<p>品种同时定下这两件事，但各走各的路：德国牧羊犬体型大，生下来也强壮；小卡犬体型小，生下来就弱。单只 狗的力量显示在狗窗口“特性”一栏里的力量条上。</p>
+<h3 id="一个品种一种外观">一个品种，一种外观</h3>
+<p>每个品种只有一张贴图，公母共用。五只猫是<a href="#五种毛色">五个品种</a>，不是一只猫的五种颜色。</p>
+<p>任何品种的幼崽出生时都是同样的缩小体型，然后长到本品种的成年体格。</p>
+<h2 id="2-快速选择">2. 快速选择</h2>
+<div class="tw"><table><thead><tr>
+<th>如果你想……</th>
+<th>就选</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>用手边现成的狗熬过头几天</strong></td>
+<td>小卡犬</td>
+</tr>
+<tr>
+<td><strong>一只顶得住阵线、能独自杀死僵尸的狗</strong></td>
+<td>德国牧羊犬或罗威纳犬</td>
+</tr>
+<tr>
+<td><strong>打猎弄肉</strong></td>
+<td>金毛寻回犬或拉布拉多</td>
+</tr>
+<tr>
+<td><strong>驮战利品</strong></td>
+<td>哈士奇</td>
+</tr>
+<tr>
+<td><strong>你出门在外时有狗看着农场</strong></td>
+<td>边境牧羊犬</td>
+</tr>
+<tr>
+<td><strong>枪打得更准</strong></td>
+<td>杜宾犬</td>
+</tr>
+<tr>
+<td><strong>近战撑得更久</strong></td>
+<td>罗威纳犬</td>
+</tr>
+<tr>
+<td><strong>少点无聊和悲伤</strong></td>
+<td>巴哥犬，或者基础模组里就有的小卡犬</td>
+</tr>
+<tr>
+<td><strong>少点压力</strong></td>
+<td>巴哥犬或杜宾犬</td>
+</tr>
+<tr>
+<td><strong>少点恐慌</strong></td>
+<td>德国牧羊犬</td>
+</tr>
+<tr>
+<td><strong>更早收到僵尸预警</strong></td>
+<td>巴哥犬（预警是吠叫）</td>
+</tr>
+<tr>
+<td><strong>尽可能早收到预警，而且不出声</strong></td>
+<td>猫</td>
+</tr>
+<tr>
+<td><strong>采集更多</strong></td>
+<td>金毛寻回犬</td>
+</tr>
+<tr>
+<td><strong>深夜采集</strong></td>
+<td>猫</td>
+</tr>
+<tr>
+<td><strong>一个不会暴露你位置的同伴</strong></td>
+<td>猫</td>
+</tr>
+<tr>
+<td><strong>别被冻死</strong></td>
+<td>哈士奇</td>
+</tr>
+</tbody></table></div>
+<h3 id="一句话总结">一句话总结</h3>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>一句话</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>小卡犬</strong></td>
+<td>地图上最常见的土狗。咬合弱，但能击倒僵尸</td>
+</tr>
+<tr>
+<td><strong>德国牧羊犬</strong></td>
+<td>基础模组的战斗品种。下口重</td>
+</tr>
+<tr>
+<td><strong>金毛寻回犬</strong></td>
+<td>鼻子灵的猎手</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>学得慢的驮货犬</td>
+</tr>
+<tr>
+<td><strong>边境牧羊犬</strong></td>
+<td>自己看管农场的牲畜</td>
+</tr>
+<tr>
+<td><strong>罗威纳犬</strong></td>
+<td>近身缠斗的斗犬</td>
+</tr>
+<tr>
+<td><strong>杜宾犬</strong></td>
+<td>枪战品种：后坐力更小，装弹更快</td>
+</tr>
+<tr>
+<td><strong>拉布拉多</strong></td>
+<td>模组里最差的斗犬之一，也是叼回猎物最强的</td>
+</tr>
+<tr>
+<td><strong>巴哥犬</strong></td>
+<td>居家犬。既不能打，也不适合在外面干活</td>
+</tr>
+<tr>
+<td><strong>猫</strong></td>
+<td>另一个物种。不打架，不进畜栏，只和猫繁殖。警戒比谁都远，而且不出声</td>
+</tr>
+</tbody></table></div>
+<h2 id="3-基础模组的五个品种">3. 基础模组的五个品种</h2>
+<p>这五个随主模组一起来，不用另外装东西。</p>
+<hr>
+<h3 id="小卡犬">小卡犬</h3>
+<p>基础模组的土狗。</p>
+<blockquote class="quote"><em>“小卡犬是一种基础、常见的品种，你在城市各处都能找到的狗。它没有特殊技能，天性较弱：无法独自 杀死僵尸，只能击倒它们为你争取时间。”</em></blockquote>
+<p><strong>去哪找：</strong> 城区或住宅区的民宅。每栋房子 3%，是游戏里最常见的品种。</p>
+<p><strong>学习速度：</strong> 全部按正常速度。</p>
+<p><strong>打起来：</strong> 它是唯一一种不会给僵尸补最后一下的狗。咬到僵尸快死就停在那里，任何沙盒设置都改不了。</p>
+<p>它也是模组里最容易紧张的狗：战斗中积累压力的速度是德国牧羊犬的五倍，也总是第一个陷入恐慌的。</p>
+<p><strong>特性：</strong> 模组里最弱的，三项永远都是“低”。</p>
+<p><strong>产崽数：</strong> 2 到 4 只，模组里最多。<strong>驮袋：</strong> 载货 4 到 5，最小。</p>
+<p><strong>心情图标：“好伙伴”</strong></p>
+<blockquote class="quote"><em>“小卡犬是一只非常亲人、充满魅力的狗狗，它忠诚的陪伴让你振作精神，它在身边时悲伤和无聊都消退 得更快。”</em></blockquote>
+<p>只要它在身边，就持续降低你的不开心和无聊。</p>
+<p><strong>适合谁：</strong> 开局阶段人人都适合。之后它靠这个别的品种都没有的心情图标，仍然好用。</p>
+<hr>
+<h3 id="德国牧羊犬">德国牧羊犬</h3>
+<p>基础模组的战斗品种。</p>
+<blockquote class="quote"><em>“强壮而聪明的工作犬。天生就比小卡犬更强壮、更结实，学习战斗和服从都很快，战斗时几乎不会慌乱， 面对成群的丧尸也能稳住阵脚而不惊慌，并且能独自撂倒一只丧尸。”</em></blockquote>
+<p><strong>去哪找：</strong> 警察局、监狱、看守所、军事基地、兵营、枪械店、弹药库。每栋建筑 20%。民宅里不会有。</p>
+<p><strong>学习速度：</strong> 战斗两倍速，服从快 50%。狩猎也稍快一点。</p>
+<p><strong>打起来：</strong> 基础模组里咬得最重的狗，而且能独自杀死僵尸。积累压力的速度比小卡犬慢五倍，陷入恐慌的 临界点是模组里最高的。</p>
+<p><strong>特性：</strong> 三项都在中等。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。<strong>驮袋：</strong> 6 到 8。</p>
+<p><strong>心情图标：“勇气”</strong></p>
+<blockquote class="quote"><em>“身旁有一只勇敢的德国牧羊犬让你镇定下来，它无畏的存在会在靠近你时减轻你的恐慌。”</em></blockquote>
+<p>持续降低恐慌。这是基础模组里数值最强的心情图标。恐慌会影响瞄准和近战。</p>
+<p><strong>适合谁：</strong> 玩近战的人，尤其是在城里。</p>
+<blockquote class="quote">游戏里的描述写着“压力只有三分之一”，但实际的数字是五分之一。</blockquote>
+<hr>
+<h3 id="金毛寻回犬">金毛寻回犬</h3>
+<p>基础模组的嗅觉品种。</p>
+<blockquote class="quote"><em>“友善且嗅觉灵敏的猎犬，天生的猎手：学习狩猎的速度是小卡犬的两倍，并且能独自撂倒一只丧尸（不过 比德国牧羊犬更容易慌乱）。它灵敏的鼻子能帮你在更远的距离搜寻食物和追踪猎物。”</em></blockquote>
+<p><strong>去哪找：</strong> 民宅，和小卡犬各抽各的。每栋房子 1%，是小卡犬机会的三分之一。同一栋房子里两种都可能有。</p>
+<p><strong>学习速度：</strong> 狩猎两倍速，嗅觉快 50%。它是最早把狩猎练到 6 级的品种，到那一级狗才开始对付鹿。</p>
+<p><strong>打起来：</strong> 伤害中等，能独自杀死僵尸。比德国牧羊犬容易紧张，比小卡犬沉得住气。</p>
+<p><strong>特性：</strong> 比小卡犬高一点，比德国牧羊犬低。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。<strong>驮袋：</strong> 6 到 7。</p>
+<p><strong>心情图标：“灵敏嗅觉”</strong></p>
+<blockquote class="quote"><em>“你的金毛寻回犬用灵敏的嗅觉与你一同搜寻。当它喂饱、忠诚且在身边时，你能更远地发现可采集之物， 并更快提升采集、制陷和瞄准。”</em></blockquote>
+<p>两个效果：</p>
+<ul>
+<li>采集、制陷和瞄准的经验 +20%。</li>
+<li>搜寻模式的视野半径 +4 格，叠在任何狗本来就给的加成之上。</li>
+</ul>
+<p><strong>适合谁：</strong> 靠狩猎、采集和陷阱过日子的人，一般是乡下基地。</p>
+<blockquote class="quote">游戏里的描述说它学战斗“比小卡犬稍快一些”。实际上它学战斗和小卡犬一样快。</blockquote>
+<hr>
+<h3 id="哈士奇">哈士奇</h3>
+<blockquote class="quote"><em>“一只皮实的北方雪橇犬：迄今为止最强壮的犬种，天生用来驮运货物（它的驮包装得最多）并在严寒中 生存。固执（学习服从较慢）、友善（不擅看家），而且食量大。”</em></blockquote>
+<p><strong>去哪找：</strong> 两个来源。</p>
+<ul>
+<li>民宅，只在冬天，每栋房子 1.25%。不是冬天就不会在民宅出现。</li>
+<li>宠物店和兽医诊所，每栋建筑 10%，全年都有。这是最靠谱的来源。</li>
+</ul>
+<p><strong>学习速度：</strong> 嗅觉两倍速（模组里升得最快的嗅觉），狩猎快 50%，战斗略高于平均。服从慢 20%，这是狗里 唯一的品种减益。</p>
+<p>它解锁技巧更慢，不听话的时间更长，忠诚度下限也降得更慢。</p>
+<p><strong>打起来：</strong> 伤害高于平均，能独自杀死僵尸。比德国牧羊犬容易紧张得多。</p>
+<p><strong>特性：</strong> 力量区间是模组里最高的，差距还很大，通常出“高”。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。</p>
+<p><strong>驮袋：</strong> 载货 13 到 16。它是唯一有驮袋加成（+50%）的品种，装的是别的狗的两到三倍。</p>
+<p><strong>心情图标：“温暖”</strong></p>
+<blockquote class="quote"><em>“你的哈士奇在身边与你并肩出力。当它喂饱、忠诚且在身边时，跟上它的步伐会让你的力量提升得更快， 它还帮你保留体力，使你更不容易疲惫；而当寒意袭来时，它厚实的皮毛会为你保暖。”</em></blockquote>
+<p>三个效果：</p>
+<ul>
+<li>只要它在身边，力量提升快 50%。力量是游戏里最慢的技能，它决定你能背多少，以及近战打多重。</li>
+<li>体力持续恢复，所以你更不容易累。</li>
+<li>一个会移动的热源，你开始变冷时自动打开，暖回来就关掉。只有在真冷的时候才起作用（户外低于 -3 °C），而且离狗越近效果越强。它能拖慢体温下降，但代替不了冬装。</li>
+</ul>
+<p>力量加成作用在你本来就会拿到的经验上：它加快训练，本身不产生经验。你锻炼、负重赶路或者打架时才有 收益。</p>
+<p><strong>适合谁：</strong> 跑长途搜刮再满载而归的人，以及玩严冬的人。</p>
+<blockquote class="quote">描述里写着“食量大（很快就饿）”。这只在它还是野狗时成立。驯服之后，它变饿的速度和所有品种一样。</blockquote>
+<hr>
+<h3 id="边境牧羊犬">边境牧羊犬</h3>
+<p>基础模组的牧羊品种。</p>
+<blockquote class="quote"><em>“一只聪慧而不知疲倦的牧羊犬，经典的农场伙伴，尤以聪明著称。”</em></blockquote>
+<p><strong>去哪找：</strong> 乡下的谷仓、马厩、筒仓、鸡舍、畜栏。每栋建筑 15%。这次抽取不看城市过滤器，所以荒郊野外 一座孤零零的农场也算数。</p>
+<p><strong>学习速度：</strong> 放牧两倍速，服从快 50%，嗅觉略高于平均。</p>
+<p><strong>打起来：</strong> 伤害中等，和金毛一样。能独自杀死僵尸。比小卡犬沉得住气，但比德国牧羊犬容易紧张得多。</p>
+<p><strong>特性：</strong> 中等区间，比金毛略高。</p>
+<p><strong>产崽数：</strong> 1 到 3 只，基础模组里第二多。<strong>驮袋：</strong> 6 到 8。</p>
+<p>它的专长是安抚光环：每一级的效果比任何别的品种高 50%，在 <strong>“在这照顾牲畜”</strong> 模式和心情图标里都是 这样。</p>
+<p>牲畜有压力就不产奶、不产毛，会流产，还会走散。</p>
+<p><strong>心情图标：“牧羊本能”</strong></p>
+<blockquote class="quote"><em>“你的边境牧羊犬与你一起看顾畜群。当它喂饱、忠诚且在身边时，你周围的牲畜会安定下来，你学习畜牧 和农业也会更快。”</em></blockquote>
+<p>两个效果：</p>
+<ul>
+<li>畜牧和农业的经验 +20%。</li>
+<li>你干活时，自动安抚你周围一定半径内的牲畜。</li>
+</ul>
+<p><strong>适合谁：</strong> 养牛、养羊或者养鸡搞农场的人。</p>
+<blockquote class="quote">游戏里的描述还写着它“目前它是一只均衡的多面手，还没有突出的专长”。这句已经过时了：放牧翻倍和 加强过的光环都已经存在。</blockquote>
+<h2 id="4-四个附加品种">4. 四个附加品种</h2>
+<p>这四个是 Steam 上单独的模组，都依赖 Companion Dogs 本体。每个的链接就在下面的介绍里，全部链接也 汇总在<a href="#10-安装附加模组">安装附加模组</a>。</p>
+<hr>
+<h3 id="罗威纳犬">罗威纳犬</h3>
+<p><em>(模组 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a></strong>，单独的附加模组)</em></p>
+<p>战斗品种，心情图标会在近战中还你体力。</p>
+<blockquote class="quote"><em>“为护卫工作培育的强壮看门犬，是与德国牧羊犬比肩的真正战士：战斗技能学习速度翻倍，高等级时下口 凶狠，能扑倒僵尸，在大多数犬种惊慌失措时仍继续战斗。”</em></blockquote>
+<p><strong>去哪找：</strong></p>
+<ul>
+<li>工业建筑（仓库、厂房、工厂、废车场、修车铺、装卸区）：每栋建筑 10%。</li>
+<li>民宅：每栋房子 1%。</li>
+</ul>
+<p><strong>学习速度：</strong> 战斗两倍速，嗅觉快 50%（唯一一只嗅觉好的战斗犬）。服从没有加成。</p>
+<p><strong>打起来：</strong> 咬合和胆量都和德国牧羊犬持平：积累压力的速度比土狗慢五倍，恐慌临界点是最高值。能击倒 也能补刀。</p>
+<p><strong>特性：</strong> 和德国牧羊犬相同。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。<strong>驮袋：</strong> 6 到 8。</p>
+<p><strong>心情图标：“前线”</strong></p>
+<blockquote class="quote"><em>“你的罗威纳犬正在你身旁作战。只要它在附近交战、吃饱且忠诚，你的近战攻击就消耗更少耐力。”</em></blockquote>
+<p>每一次近战攻击返还 35% 消耗掉的体力。</p>
+<p>只要罗威纳犬在附近，图标就一直显示，但效果只在它真的在打架时才生效。</p>
+<p><strong>适合谁：</strong> 靠近战清尸群的人。</p>
+<hr>
+<h3 id="杜宾犬">杜宾犬</h3>
+<p><em>(模组 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a></strong>，单独的附加模组)</em></p>
+<p>战斗品种，心情图标是给枪械准备的。</p>
+<blockquote class="quote"><em>“身形精瘦、警觉性极高的看门犬，也是所有犬种中学得最快的一个。它在战斗中全是锋刃而无护甲：未受 训练时很弱，但战斗技能满级后咬合力超过模组中任何一条狗，只是比罗威纳犬更不耐打。”</em></blockquote>
+<p><strong>去哪找：</strong></p>
+<ul>
+<li>警察局：每栋建筑 18%。</li>
+<li>军事建筑（弹药库、兵营、地堡、岗亭、检查站）：每栋建筑 22%。</li>
+</ul>
+<blockquote class="quote">军事建筑在游戏本体的地图上很罕见（整个肯塔基大概只有五个这样的房间）。还是去警察局找吧。</blockquote>
+<p><strong>学习速度：</strong> 战斗两倍速，服从快 50%，和德国牧羊犬是同一套。</p>
+<p><strong>打起来：</strong> 它的伤害曲线是模组里最陡的。没训练时咬得比罗威纳犬轻得多；战斗练到 10 级就追平最高 伤害。</p>
+<p>胆子大（恐慌临界点是最高值），但更不耐打：它的抗性在斗犬里最低。</p>
+<p><strong>特性：</strong> 攻击性区间是模组里最高的，这让它涨战斗经验更快。力量和抗性略低于罗威纳犬。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。<strong>驮袋：</strong> 6 到 8。</p>
+<p><strong>心情图标：“稳定瞄准”</strong></p>
+<blockquote class="quote"><em>“你的杜宾犬正在为你警戒。只要它在附近、吃饱且忠诚，你的压力就会消退，每次射击后瞄准恢复更快， 装弹也更迅速。”</em></blockquote>
+<p>只对枪械有效：</p>
+<ul>
+<li>你的压力持续下降（压力高会让瞄准变差）。</li>
+<li>每次射击后，后坐力恢复快 45%。</li>
+<li>装弹快 15%。</li>
+</ul>
+<p><strong>适合谁：</strong> 玩枪的人。</p>
+<blockquote class="quote">游戏里的描述说它练服从“服从技能的训练速度甚至超过德国牧羊犬”，还说战斗满级时“咬合力超过模组中 任何一条狗”。这两点其实都是持平：服从和德国牧羊犬一样，10 级伤害和罗威纳犬一样。</blockquote>
+<hr>
+<h3 id="拉布拉多">拉布拉多</h3>
+<p><em>(模组 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a></strong>，单独的附加模组)</em></p>
+<p>狩猎品种。叼回猎物最强的狗。</p>
+<blockquote class="quote"><em>“为衔回猎物而生的猎犬：训练狩猎的速度是别的狗的两倍，服从紧随其后。作为代价，它是本家族中最差 的斗犬之一：只有巴哥犬咬合更弱，无法击倒，打一架就会让它相当不安。它真正的天赋在于那张嘴。”</em></blockquote>
+<p><strong>去哪找：</strong></p>
+<ul>
+<li>民宅：每栋房子 1%，和金毛一样的机会。</li>
+<li>野外（猎人小屋、露营地、船屋、渔场、护林站）：每栋建筑 20%。</li>
+</ul>
+<p><strong>学习速度：</strong> 狩猎两倍速，服从快 50%。</p>
+<p><strong>打起来：</strong> 模组里最差的之一。</p>
+<ul>
+<li>咬合是全场最弱的，只比巴哥犬强。</li>
+<li>不会击倒僵尸。只有它和巴哥犬不会。</li>
+<li>积累压力的速度是罗威纳犬的三倍半，恐慌临界点和土狗一样低。</li>
+</ul>
+<p>你要是硬撑着打，它还是能杀死一只僵尸。</p>
+<p><strong>特性：</strong> 攻击性区间是模组里最低的。它学打架更慢就是因为这个。</p>
+<p><strong>产崽数：</strong> 1 到 3 只，是唯一超过 2 的附加品种。<strong>驮袋：</strong> 6 到 8。</p>
+<p><strong>心情图标：“软口衔取”</strong></p>
+<blockquote class="quote"><em>“你的拉布拉多从第一次狩猎起就会把每一次猎物叼回来，还常常额外带回点什么。只要它在身边、吃饱且 忠诚，你的屠宰与短刃也学得更快。”</em></blockquote>
+<ul>
+<li>狩猎 3 级起就叼回猎物，也就是从它能打猎那一刻起。别的品种要到狩猎 6 级才开始叼。</li>
+<li>送货途中坚持的时间是别的狗的三倍，之后才会把尸体丢在半路。</li>
+<li>60% 的送货会额外在你脚边掉一样东西：小动物骨头、鸡毛、树枝或者野鸟蛋。<em>“你的拉布拉多还给你叼 回了：……”</em></li>
+<li>屠宰和短刃的经验 +20%，这正是处理它叼回来的东西要用的技能。</li>
+</ul>
+<p><strong>适合谁：</strong> 靠打猎过日子的人。金毛学打猎一样快，但拉布拉多从一开始就会叼回来。</p>
+<hr>
+<h3 id="巴哥犬">巴哥犬</h3>
+<p><em>(模组 <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a></strong>，单独的附加模组)</em></p>
+<p>陪伴犬，配一个管情绪的心情图标。</p>
+<blockquote class="quote"><em>“居家犬：第一只价值不在战斗、狩猎、牧畜或负重的伙伴。它的服从训练速度是其他犬种的两倍，而且 羁绊永远不会自行下降。”</em></blockquote>
+<p><strong>去哪找：</strong></p>
+<ul>
+<li>民宅：每栋房子 3%，是拉布拉多和罗威纳犬的三倍，和小卡犬一样的机会。它是最容易在民宅里找到的附加 品种。</li>
+<li>宠物店和兽医诊所：每栋建筑 12%，和哈士奇同一个地方。</li>
+</ul>
+<p><strong>学习速度：</strong> 服从两倍速，嗅觉快 50%，狩猎快 20%。它爬技巧树（前往指定地点、引开丧尸、嗅出物品、 睡觉时寻找物品）比任何别的狗都早。</p>
+<p>别的狗在你消失或者疏于照顾时都会掉忠诚；巴哥犬不会。你在外面跑一个月回来，它还是你走时的样子。</p>
+<p>在同样的嗅觉等级下，巴哥犬发现僵尸的距离比任何别的品种远 35%。</p>
+<p><strong>打起来：</strong> 它是模组里最弱的狗，比小卡犬还弱。</p>
+<ul>
+<li>咬合是全场最弱的，而且差得很远。</li>
+<li>既不会杀死僵尸也不会击倒。它是唯一两样都关掉的狗。</li>
+<li>积累压力比谁都快，也比谁都先陷入恐慌。</li>
+</ul>
+<p>其他弱点：</p>
+<ul>
+<li>它的叫声是所有品种里最响的，在提醒你的同时也一样把僵尸引过来。巴哥犬是唯一不接受 <strong>“静默”</strong> 和 <strong>“静音”</strong> 模式的狗：它窗口里那两个按钮是灰的。（在沙盒选项里关掉狗的噪音后，巴哥犬和别的狗一样： 叫声还是那么响，但不会引来任何人。）</li>
+<li>跟不上跑步。冲刺时它会被任何别的狗甩在后面。</li>
+<li>怕热。超过 28 °C 它开始有压力，不再安慰你，心情图标也从 HUD 上消失；到 36 °C 惩罚到顶。屋里凉快些， 它就恢复正常。</li>
+<li>驮袋 2 到 3。它能背，但不是驮货的。</li>
+</ul>
+<p>作为补偿，它吃得少喝得也少：食量是中等体型狗的一半，喝水比它们少三分之一。</p>
+<p><strong>特性：</strong> 力量和抗性的区间是模组里最小的。不管哪一窝，它生下来都又弱又脆。</p>
+<p><strong>产崽数：</strong> 1 到 2 只。</p>
+<p><strong>心情图标：“你的影子”</strong></p>
+<blockquote class="quote"><em>“你的巴哥犬寸步不离。只要它在身边、吃饱且忠诚，沮丧、无聊和压力下降得比任何其他狗都快。高温会 让这一切失效：一只喘气的巴哥犬安慰不了任何人，直到它找到凉快的地方。”</em></blockquote>
+<ul>
+<li>悲伤和无聊下降的速度比在小卡犬身边快 60%。</li>
+<li>压力也会下降。只有它和杜宾犬能靠陪伴影响压力，而杜宾犬降得更快。除了这两只，靠狗降压力的唯一 办法就是睡在它旁边（“精神饱满”）。</li>
+</ul>
+<p><strong>适合谁：</strong> 蹲基地玩的人、长局玩家，或者受够了因为出门太久掉忠诚的人。要出城的话，带一只看门狗 一起走。</p>
+<h2 id="5-猫第一个别的物种">5. 猫：第一个别的物种</h2>
+<p><em>（模组 <strong>CD: Cats</strong>，独立附加包）</em></p>
+<p>到这里为止的所有品种都是狗。</p>
+<blockquote class="quote quote-game"><em>"它不是数值更差的狗，而是一种本来就没有某些职责的动物。猫从不与丧尸搏斗，不能被派去看管畜栏， 也只和其他猫繁殖。它捕猎鼠类和兔子，对鹿视而不见。你自己养的牲畜永远不是猎物：它不会碰鸡， 也不会碰畜栏里的任何动物。它给你的是预警：比任何其他同伴都更早察觉丧尸， 而在其他所有事情上都很安静。"</em></blockquote>
+<h3 id="它不做什么">它不做什么</h3>
+<p>这些机制对猫来说并不存在，界面上连灰掉的按钮都不会出现。</p>
+<div class="tw"><table><thead><tr>
+<th>什么</th>
+<th>消失了什么</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>不战斗</strong></td>
+<td>窗口里没有战斗，没有<strong>守卫</strong>模式，没有自我保护</td>
+</tr>
+<tr>
+<td><strong>不照顾牲畜</strong></td>
+<td>没有放牧，<strong>照顾牲畜</strong>模式也不出现在菜单里</td>
+</tr>
+<tr>
+<td><strong>不与狗繁殖</strong></td>
+<td>猫只和猫配对，生下来的是小猫</td>
+</tr>
+<tr>
+<td><strong>不猎比兔子更大的东西</strong></td>
+<td>鹿对它来说是隐形的：既不指示，也不追上去</td>
+</tr>
+</tbody></table></div>
+<p>它在小型猎物上的上限和拉布拉多、金毛一样。它追猎时会叫，所以带猫打猎是有声音的。不打猎的时候它很安静。</p>
+<h3 id="它比任何狗都做得好的事">它比任何狗都做得好的事</h3>
+<p>既然它不战斗，预警就是它的工作，而猫拥有模组里最大的哨兵半径：</p>
+<div class="tw"><table><thead><tr>
+<th></th>
+<th>嗅觉 0</th>
+<th>嗅觉 10</th>
+</tr></thead><tbody>
+<tr>
+<td>普通狗</td>
+<td>18 格</td>
+<td>27 格</td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td>24 格</td>
+<td>36 格</td>
+</tr>
+<tr>
+<td><strong>猫</strong></td>
+<td>25 格</td>
+<td>38 格</td>
+</tr>
+</tbody></table></div>
+<p>它也是最安静的。它喵叫的噪音是狗的一半，是巴哥犬吠叫的三分之一。</p>
+<p>狩猎涨速翻倍，与金毛和拉布拉多并列，而它的嗅觉涨得快 50%。</p>
+<h3 id="代价">代价</h3>
+<p>它是模组里最犟的。服从系数 0.7，是现有最大的学习惩罚（哈士奇是唯一另一个带惩罚的品种，为 0.8）。 它照样能解锁四个技巧，但比任何狗都晚得多才到得了。</p>
+<p>它会被老鼠带走注意力。猫时不时会看见附近有鼠类就追上去，把手上的事丢下。它自己猎杀这只鼠类。 这在任何模式、任何狩猎等级下都会发生，而那段时间它不听话：任何命令都会以 <em><span class="ig">分心了，没听你的</span></em>返回。只有<strong><span class="ig">过来</span></strong>能穿过去并取消这场追逐。在此期间，你没有哨兵。</p>
+<p>杀完之后，猫会回到尸体旁，把它叼到你身边扔在你脚下。它从第一天起就会送猎物。拉布拉多也不用训练就送， 但只在你要求时送。</p>
+<p>这种分心只针对大鼠和小鼠。兔子要开着狩猎模式并达到相应等级才行。</p>
+<p>它也是最独立的。当你消失或在照料上松懈时，它的羁绊掉得比狗快 50%（巴哥犬正好相反：它的羁绊不掉）。</p>
+<p><strong>驮袋：</strong>任何猫都是 2。别的品种驮袋是一个区间；在猫身上算下来就是 2，无论它出生时多强壮。</p>
+<p>它很神经：拥有模组里第二差的隐藏压力基因，只比小卡犬好一点。因为它不打架，这一点不体现在战斗里， 而体现在受惊时：巨响、喊叫、受伤。陷入恐慌的猫会停止放哨，也停止送礼物。</p>
+<p>在待命模式下，猫是站着而不是趴着。这只是外观。</p>
+<p><strong>特性：</strong>与巴哥犬并列拥有模组里最小的力量区间，攻击性和抗性同样低。</p>
+<h3 id="五种毛色">五种毛色</h3>
+<p>黑猫、白猫、橘猫、三花猫和奶牛猫。对模组来说这是五个品种（各有名字、各有生成菜单和犬舍里的条目）， 但数值、心情图标、叫声和特性区间都一样。毛色只是外观。</p>
+<p>每种毛色都独立地为自己抽建筑。几率已经是除以五之后的，所以世界里猫的总量和只有黑猫时一样。</p>
+<p><strong>在哪找：</strong>住宅每栋 2%，商店、超市或快餐店每栋 2%，宠物店或兽医诊所每栋 2.4%，按毛色分别计算。 猫出生在建筑里，不在野外：一半在建筑内部，一半在它的地块上（院子、人行道、停车场或店后的巷子）。</p>
+<p>猫在沙盒里有自己的生成倍率，<strong><span class="ig">猫咪生成倍率</span></strong>，与狗的那个分开。一个流浪狗很少或没有的世界， 猫的数量照旧。</p>
+<h3 id="夜里的礼物">夜里的礼物</h3>
+<p>你醒来，脚边有一只死掉的小动物。猫在你睡觉时<span class="ig">出门</span>并留下猎物。没有追逐，世界里也没有东西死去， 所以即使在沙盒选项里关掉狩猎，这份礼物照样有效。</p>
+<p>在你从睡眠中醒来时触发，猫在 8 格以内，和<span class="ig">精神饱满</span>是同一个半径。</p>
+<p>几率就是它的狩猎等级：</p>
+<div class="tw"><table><thead><tr>
+<th>狩猎</th>
+<th>送来礼物的几率</th>
+</tr></thead><tbody>
+<tr>
+<td>0</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>54.5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>67.5%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>87%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>100%</td>
+</tr>
+</tbody></table></div>
+<p>狩猎还决定送来什么：</p>
+<div class="tw"><table><thead><tr>
+<th>狩猎</th>
+<th>通常送来什么</th>
+</tr></thead><tbody>
+<tr>
+<td>低</td>
+<td>蚯蚓、蟋蟀、蝗虫、蟑螂。任何动物站在原地就能找到的东西</td>
+</tr>
+<tr>
+<td>高</td>
+<td>小鼠和大鼠成了常见情况，中间夹着青蛙和蜈蚣</td>
+</tr>
+</tbody></table></div>
+<p>差别很大：蚯蚓是 3 卡路里，大鼠是 324，还能消掉 22 点饥饿。青蛙可以当钓鱼饵。</p>
+<p>每天每位主人一份礼物。身边有两只猫，你得到一份，不是两份。</p>
+<p>每次成功送达，猫都会获得狩猎经验，所以照料得好的猫会自己涨。</p>
+<p>饥饿或口渴在 75% 及以上、生病、不服从或陷入恐慌的猫不会出门。失败是无声的，屏幕上没有提示。 如果礼物停了，去看它的槽。</p>
+<blockquote class="quote">技巧<strong><span class="ig">睡觉时寻找物品</span></strong>（服从 10）是另一回事：它带回地上的一件物品。两者都在你醒来时触发， 并不互相竞争。服从 10 的猫会在同一个早上把两件都做完。</blockquote>
+<p><strong>心情图标：<span class="ig">猫眼</span></strong></p>
+<blockquote class="quote quote-game"><em><span class="ig">你的猫能看见你看不见的东西。只要它吃饱喝足并与你亲近，黑暗就藏不住你要找的东西： 夜间搜寻的效果接近白天。</span></em></blockquote>
+<p>在漆黑里，游戏把搜寻范围压到 1.5 格，你几乎得站在图标上才能看见它。有猫在附近， 深夜大约能拿到你白天该有范围的 60%。</p>
+<p>这个增益是一次性给足的，不是慢慢累积。</p>
+<p><strong>适合谁：</strong>适合深夜玩的人，适合想要最早预警又不暴露自己位置的人，以及想要小块肉又不想带一只大狗的人。 它当不了警卫：要出城就带一只狗一起走。</p>
+<h2 id="6-对比表格">6. 对比表格</h2>
+<h3 id="学习速度">学习速度</h3>
+<p>数字越大，狗学得越快。正常速度是 1.0。</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>嗅觉</th>
+<th>战斗</th>
+<th>服从</th>
+<th>狩猎</th>
+<th>放牧</th>
+</tr></thead><tbody>
+<tr>
+<td>小卡犬</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>德国牧羊犬</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>1.2</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>0.8</td>
+<td>1.5</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>1.2</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td>1.5</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>猫</td>
+<td>1.5</td>
+<td>-</td>
+<td>0.7</td>
+<td>2.0</td>
+<td>-</td>
+</tr>
+</tbody></table></div>
+<p>猫那一栏的破折号表示它没有这个技能：战斗和牧养不会出现在它的窗口里。</p>
+<h3 id="战斗">战斗</h3>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>未受训时的咬合</th>
+<th>战斗 10 级时的咬合</th>
+<th>能独自杀死僵尸吗？</th>
+<th>能击倒吗？</th>
+</tr></thead><tbody>
+<tr>
+<td>巴哥犬</td>
+<td>最弱</td>
+<td>0.65 倍</td>
+<td>不能</td>
+<td>不能</td>
+</tr>
+<tr>
+<td>小卡犬</td>
+<td>弱</td>
+<td>1 倍（基准）</td>
+<td>不能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>弱</td>
+<td>1.3 倍</td>
+<td>能</td>
+<td>不能</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>弱</td>
+<td>1.5 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>弱</td>
+<td>1.5 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>中等</td>
+<td>1.9 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td>中等</td>
+<td>2.6 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>德国牧羊犬</td>
+<td>强</td>
+<td>2.6 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>强</td>
+<td>2.6 倍</td>
+<td>能</td>
+<td>能</td>
+</tr>
+</tbody></table></div>
+<p>杜宾犬起步大约是罗威纳犬咬合的三分之二。</p>
+<p>猫不在这张表里，因为它不打架。</p>
+<h3 id="战斗时的胆量">战斗时的胆量</h3>
+<p>数字越小，狗打架时越沉得住气。</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>打架累积的压力</th>
+<th>惊慌阈值</th>
+</tr></thead><tbody>
+<tr>
+<td>德国牧羊犬</td>
+<td>0.20（最沉稳）</td>
+<td>0.90（最高）</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>0.20</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td>0.25</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>0.33</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>0.60</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>0.70</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td>0.90</td>
+<td>0.70（最低）</td>
+</tr>
+<tr>
+<td>小卡犬</td>
+<td>1.00（最容易慌）</td>
+<td>0.80</td>
+</tr>
+</tbody></table></div>
+<p>惊慌的狗会停止战斗、停止警戒、停止表演。一只咬合强却早早惊慌的狗，产出比一只更弱但撑完整场架的狗还少。</p>
+<p>猫同样不在表里，但它的压力值是模组里第二差的，只比小卡犬好。惊慌的猫会停止警戒，也不再带礼物回来。</p>
+<h3 id="特性出生范围">特性（出生范围）</h3>
+<p>区间越高，狗出生时可能越好。低于 0.34 窗口显示“低”，高于 0.66 显示“高”，中间显示“平均”。</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>力量</th>
+<th>攻击性</th>
+<th>抗性</th>
+</tr></thead><tbody>
+<tr>
+<td>巴哥犬</td>
+<td>0.00 到 0.10</td>
+<td>0.05 到 0.20</td>
+<td>0.00 到 0.15</td>
+</tr>
+<tr>
+<td>猫</td>
+<td>0.00 到 0.10</td>
+<td>0.00 到 0.15</td>
+<td>0.00 到 0.15</td>
+</tr>
+<tr>
+<td>小卡犬</td>
+<td>0.00 到 0.15</td>
+<td>0.00 到 0.15</td>
+<td>0.00 到 0.15</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>0.20 到 0.40</td>
+<td>0.10 到 0.30</td>
+<td>0.20 到 0.40</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>0.20 到 0.45</td>
+<td>0.15 到 0.40</td>
+<td>0.25 到 0.50</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>0.25 到 0.45</td>
+<td>0.10 到 0.25</td>
+<td>0.25 到 0.45</td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td>0.25 到 0.45</td>
+<td>0.35 到 0.55</td>
+<td>0.20 到 0.40</td>
+</tr>
+<tr>
+<td>德国牧羊犬</td>
+<td>0.30 到 0.50</td>
+<td>0.30 到 0.50</td>
+<td>0.30 到 0.50</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>0.30 到 0.50</td>
+<td>0.30 到 0.50</td>
+<td>0.30 到 0.50</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>0.55 到 0.80</td>
+<td>0.10 到 0.30</td>
+<td>0.40 到 0.60</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>小卡犬三项都显示“低”。</li>
+<li>巴哥犬也一样，而且它的力量区间更窄。</li>
+<li>猫和巴哥犬并列模组里最低的力量。</li>
+<li>哈士奇是唯一常在力量上显示“高”的品种。</li>
+<li>攻击性在金毛、哈士奇和拉布拉多身上都出“低”。</li>
+<li>金毛和杜宾犬的力量与抗性也经常落在“低”。</li>
+<li>德国牧羊犬和罗威纳犬是仅有的两个几乎总是三项都显示“平均”的品种。</li>
+</ul>
+<h3 id="驮袋">驮袋</h3>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>载货</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>猫</strong></td>
+<td>2（固定）</td>
+</tr>
+<tr>
+<td><strong>巴哥犬</strong></td>
+<td>2 到 3</td>
+</tr>
+<tr>
+<td>小卡犬</td>
+<td>4 到 5</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>6 到 7</td>
+</tr>
+<tr>
+<td>德国牧羊犬、边境牧羊犬、罗威纳犬、杜宾犬、拉布拉多</td>
+<td>6 到 8</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>13 到 16</td>
+</tr>
+</tbody></table></div>
+<h3 id="每胎产仔数">每胎产仔数</h3>
+<div class="tw"><table><thead><tr>
+<th>母犬品种</th>
+<th>每胎幼犬数</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>小卡犬</strong>、猫</td>
+<td>2 到 4</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>1 到 3</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>1 到 3</td>
+</tr>
+<tr>
+<td>德国牧羊犬、金毛寻回犬、哈士奇、罗威纳犬、杜宾犬、巴哥犬</td>
+<td>1 到 2</td>
+</tr>
+</tbody></table></div>
+<p>父亲的品种不算数。</p>
+<h3 id="各品种在哪里找">各品种在哪里找</h3>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>地点</th>
+<th>几率</th>
+</tr></thead><tbody>
+<tr>
+<td>杜宾犬</td>
+<td>军事建筑</td>
+<td>22%</td>
+</tr>
+<tr>
+<td>德国牧羊犬</td>
+<td>警察局、监狱、军事建筑、枪械店</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>猎人小屋、露营地、船屋、护林站</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td>警察局</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td>谷仓、马厩、农场（乡下）</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td>宠物店、兽医</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>宠物店、兽医</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>仓库、工厂、废车场</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>小卡犬</td>
+<td>民宅</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td>民宅</td>
+<td>3%</td>
+</tr>
+<tr>
+<td><strong>猫</strong></td>
+<td>宠物店、兽医</td>
+<td>2.4% 每种毛色</td>
+</tr>
+<tr>
+<td><strong>猫</strong></td>
+<td>商店、超市、餐馆</td>
+<td>2% 每种毛色</td>
+</tr>
+<tr>
+<td><strong>猫</strong></td>
+<td>民宅</td>
+<td>2% 每种毛色</td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td>民宅，只在冬天</td>
+<td>1.25%</td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td>民宅</td>
+<td>1%</td>
+</tr>
+</tbody></table></div>
+<p>狗的几率随沙盒选项<strong>“狗生成倍率”</strong>一起变化。猫的几率跟着另一个选项<strong>“猫咪生成倍率”</strong>走，所以把流浪狗 调低或关掉，不会改变世界里猫的数量。</p>
+<p>投骰每栋建筑只做一次，结果会存进存档。</p>
+<h3 id="品种的内部名称">品种的内部名称</h3>
+<p>生成类 mod 和调试模式要的是狗的内部名称，跟屏幕上显示的名字不一样：</p>
+<div class="tw"><table><thead><tr>
+<th>品种</th>
+<th>公</th>
+<th>母</th>
+<th>幼犬</th>
+<th><code>breed</code></th>
+</tr></thead><tbody>
+<tr>
+<td>小卡犬</td>
+<td><code>dogmale</code></td>
+<td><code>dogfemale</code></td>
+<td><code>dogpup</code></td>
+<td><code>brown</code></td>
+</tr>
+<tr>
+<td>德国牧羊犬</td>
+<td><code>gsmale</code></td>
+<td><code>gsfemale</code></td>
+<td><code>gspup</code></td>
+<td><code>germanshepherd</code></td>
+</tr>
+<tr>
+<td>金毛寻回犬</td>
+<td><code>retrievermale</code></td>
+<td><code>retrieverfemale</code></td>
+<td><code>retrieverpup</code></td>
+<td><code>golden</code></td>
+</tr>
+<tr>
+<td>哈士奇</td>
+<td><code>huskymale</code></td>
+<td><code>huskyfemale</code></td>
+<td><code>huskypup</code></td>
+<td><code>husky</code></td>
+</tr>
+<tr>
+<td>边境牧羊犬</td>
+<td><code>bcmale</code></td>
+<td><code>bcfemale</code></td>
+<td><code>bcpup</code></td>
+<td><code>bordercollie</code></td>
+</tr>
+<tr>
+<td>罗威纳犬</td>
+<td><code>rottmale</code></td>
+<td><code>rottfemale</code></td>
+<td><code>rottpup</code></td>
+<td><code>rottweiler</code></td>
+</tr>
+<tr>
+<td>杜宾犬</td>
+<td><code>dobmale</code></td>
+<td><code>dobfemale</code></td>
+<td><code>dobpup</code></td>
+<td><code>doberman</code></td>
+</tr>
+<tr>
+<td>拉布拉多</td>
+<td><code>labmale</code></td>
+<td><code>labfemale</code></td>
+<td><code>labpup</code></td>
+<td><code>labrador</code></td>
+</tr>
+<tr>
+<td>巴哥犬</td>
+<td><code>pugmale</code></td>
+<td><code>pugfemale</code></td>
+<td><code>pugpup</code></td>
+<td><code>pug</code></td>
+</tr>
+<tr>
+<td>黑猫</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat</code></td>
+</tr>
+<tr>
+<td>白猫</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_white</code></td>
+</tr>
+<tr>
+<td>橘猫</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_orange</code></td>
+</tr>
+<tr>
+<td>玳瑁猫</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_calico</code></td>
+</tr>
+<tr>
+<td>燕尾猫</td>
+<td><code>catmale</code></td>
+<td><code>catfemale</code></td>
+<td><code>catpup</code></td>
+<td><code>cat_tuxedo</code></td>
+</tr>
+</tbody></table></div>
+<p>公和母是两个不同的类型，不是同一个类型下的选项。五个附加品种只有装了对应品种的附加 mod 才存在。</p>
+<p>猫的五种毛色共用同一个类型，只靠 <code>breed</code> 区分：模型是同一个，只有贴图不同。这里的 <code>breed</code> 带下划线 （<code>cat_white</code>），跟模组其他地方不一样。</p>
+<h2 id="7-moodle完整清单">7. moodle：完整清单</h2>
+<p>狗的 moodle 显示在自己的一列里，在你普通 moodle 的左边。</p>
+<h3 id="所有品种-moodle-通用的规则">所有品种 moodle 通用的规则</h3>
+<p>只有下面这些条件同时成立，加成才存在：</p>
+<div class="tw"><table><thead><tr>
+<th>条件</th>
+<th>细节</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>狗在旁边</strong></td>
+<td>8 格以内，而且在同一层</td>
+</tr>
+<tr>
+<td><strong>它是你的</strong></td>
+<td>别的玩家的狗什么都不给</td>
+</tr>
+<tr>
+<td><strong>它没有不服从</strong></td>
+<td>忠诚度在下限之上</td>
+</tr>
+<tr>
+<td><strong>它没有中毒</strong></td>
+<td>没吃过坏东西</td>
+</tr>
+<tr>
+<td><strong>它不饿</strong></td>
+<td>饥饿条低于 75%</td>
+</tr>
+<tr>
+<td><strong>它不渴</strong></td>
+<td>口渴条低于 75%</td>
+</tr>
+</tbody></table></div>
+<p>任何一条不成立，moodle 就熄灭。</p>
+<blockquote class="quote">旁边有好几只狗时只算最近的那只，所以德国牧羊犬的勇气和哈士奇的温暖不会叠加。</blockquote>
+<p>狗被你抱在怀里，或者和你一起坐车时，moodle 照样有效。</p>
+<h3 id="各品种的-moodle">各品种的 moodle</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>品种</th>
+<th>有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>好伙伴</strong></td>
+<td>小卡犬</td>
+<td>降低不开心和无聊</td>
+</tr>
+<tr>
+<td><strong>勇气</strong></td>
+<td>德国牧羊犬</td>
+<td>降低恐慌（基础模组里最强的效果）</td>
+</tr>
+<tr>
+<td><strong>灵敏嗅觉</strong></td>
+<td>金毛寻回犬</td>
+<td>采集、制陷和瞄准经验 +20%，采集视野 +4 格</td>
+</tr>
+<tr>
+<td><strong>温暖</strong></td>
+<td>哈士奇</td>
+<td>力量经验 +50%，帮你回体力，严寒时还会变成热源</td>
+</tr>
+<tr>
+<td><strong>牧羊本能</strong></td>
+<td>边境牧羊犬</td>
+<td>畜牧和农业经验 +20%，还会安抚你周围的牲畜</td>
+</tr>
+<tr>
+<td><strong>前线</strong></td>
+<td>罗威纳犬</td>
+<td>每次近战挥击返还 35% 的耐力，只在它正在打架的时候有效</td>
+</tr>
+<tr>
+<td><strong>稳定瞄准</strong></td>
+<td>杜宾犬</td>
+<td>持续消解你的压力，每枪后坐力 -45%，装弹速度 +15%</td>
+</tr>
+<tr>
+<td><strong>软口衔取</strong></td>
+<td>拉布拉多</td>
+<td>狩猎 3 级起就把猎物叼回来，坚持程度是别的狗的 3 倍，60% 的几率多带一件东西，屠宰和短刃经验 +20%</td>
+</tr>
+<tr>
+<td><strong>你的影子</strong></td>
+<td>巴哥犬</td>
+<td>压低悲伤、无聊和压力，比任何别的狗都快。一热就关闭</td>
+</tr>
+<tr>
+<td><strong>猫眼</strong></td>
+<td>猫</td>
+<td>黑暗中的采集开始有用：没有它时只有 1.5 格，有它时深夜可达白天范围的约 60%</td>
+</tr>
+</tbody></table></div>
+<h3 id="任何品种都会给的-moodle">任何品种都会给的 moodle</h3>
+<div class="tw"><table><thead><tr>
+<th>Moodle</th>
+<th>什么时候</th>
+<th>有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>饥饿</strong></td>
+<td>狗的饥饿到 60% 或更高</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>口渴</strong></td>
+<td>狗的口渴到 60% 或更高</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>中毒</strong></td>
+<td>它吃了对自己有害的东西</td>
+<td>只是提醒</td>
+</tr>
+<tr>
+<td><strong>精神饱满</strong></td>
+<td>你在离狗 8 格以内的地方睡觉，醒来时获得</td>
+<td>2 个游戏小时内降低恐慌、压力、疲惫、悲伤和无聊</td>
+</tr>
+</tbody></table></div>
+<p><strong>“精神饱满”</strong>是唯一不需要狗继续待在旁边的一个。它也不过照料这道筛子，所以对一只被亏待的狗照样有效。 饥饿、口渴和中毒这三个提醒同样不过这道筛子。</p>
+<h2 id="8-特性基因">8. 特性（基因）</h2>
+<p>除了品种，每只狗还有三项特性，显示在它窗口的<strong>“特性”</strong>一栏。它们在你驯服这只狗的时候， 在品种的区间内抽出来，之后不再变化。</p>
+<blockquote class="quote"><em>“基因因个体而异，即使同一个品种也不同。它们永远不会提升。”</em></blockquote>
+<div class="tw"><table><thead><tr>
+<th>特性</th>
+<th>有什么用</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>力量</strong></td>
+<td>提高咬合力，更主要的是决定驮袋的容量</td>
+</tr>
+<tr>
+<td><strong>攻击性</strong></td>
+<td>让它更快获得战斗经验值。不会改变它决定攻击或撤退的时机</td>
+</tr>
+<tr>
+<td><strong>抗性</strong></td>
+<td>让它在战斗中累积更少压力</td>
+</tr>
+</tbody></table></div>
+<p>还有第四个基因，管总体压力，窗口里看不到。它会把狗打架时受到的全部压力乘上一个系数。 小卡犬的这个基因最差，德国牧羊犬和哈士奇的最好。</p>
+<p>窗口里的标签对所有品种用同一把尺子：低于 34% 是<strong>“低”</strong>，34% 到 66% 之间是<strong>“平均”</strong>， 高于 66% 是<strong>“高”</strong>。所以小卡犬三项永远显示“低”。</p>
+<h3 id="这到底有多重要">这到底有多重要</h3>
+<p>基因在伤害和战斗经验上最多左右 15%，在抗压上最多左右 10 个百分点。品种之间的差距比这大得多。</p>
+<p>例外是驮袋：那里力量基因是主要因素。</p>
+<p>改善基因的唯一办法是<a href="#9-混血不同品种的杂交">杂交</a>。</p>
+<h2 id="9-混血不同品种的杂交">9. 混血：不同品种的杂交</h2>
+<p>一只公狗和一只母狗品种不同时生下的幼犬，就是混血。</p>
+<h3 id="幼犬会怎么样">幼犬会怎么样</h3>
+<p>血统是父母的平均值。小卡犬配德国牧羊犬得到 50/50 的幼犬。拿这只幼犬再配纯种德国牧羊犬， 得到 25% 小卡犬、75% 德国牧羊犬，往下每一代依此类推。</p>
+<p>外观是血统里的某一个品种，按百分比加权抽出来。一只 50/50 的幼犬生下来要么长着德国牧羊犬的脸， 要么长着小卡犬的脸，绝不会是视觉上的混合。</p>
+<blockquote class="quote">抽中的那个品种，就是这只狗实际生效的品种。一只 50% 哈士奇 / 50% 德国牧羊犬、 生下来长着哈士奇脸的混血，在所有方面都是哈士奇：温暖 moodle、哈士奇的学习速度、哈士奇的驮袋。</blockquote>
+<p>基因落在父母的中间值，上下浮动大约 6%。</p>
+<p>幼犬的基因区间变成血统里各品种区间的并集。一只小卡犬加哈士奇的混血，力量可能生在 0.00 到 0.80 之间的任何位置，高过小卡犬的上限。每一窝都挑最强的去配，血统会随着代数往上走。</p>
+<p>幼犬出生时五项技能永远都是 0 级。它从品种继承的是学习速度。</p>
+<h3 id="混血标签">“混血”标签</h3>
+<p>血统里有一个以上品种的狗，会在品种名旁边多出<strong>“(混血)”</strong>，窗口里和右键菜单里都有。 把鼠标停在狗窗口的<strong>“品种”</strong>那一行上，会看到百分比明细（“50% 哈士奇，50% 德国牧羊犬”）， 以及主导品种的描述。</p>
+<h2 id="10-安装附加模组">10. 安装附加模组</h2>
+<p>罗威纳犬、杜宾犬、拉布拉多、巴哥犬和猫是 Steam 上各自独立的模组。每一个：</p>
+<ul>
+<li>需要基础版 Companion Dogs 已安装并启用。</li>
+<li>添加一个品种，带自己的模型、贴图、moodle 和刷新地点。</li>
+<li>附带 14 种语言的翻译，和基础版一样。</li>
+</ul>
+<div class="tw"><table><thead><tr>
+<th>附加模组</th>
+<th>Steam 页面</th>
+<th>基础版最低版本</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>CD: Rottweiler</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">订阅</a></td>
+<td>0.6.3 或更新</td>
+</tr>
+<tr>
+<td><strong>CD: Doberman</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">订阅</a></td>
+<td>0.6.3 或更新</td>
+</tr>
+<tr>
+<td><strong>CD: Labrador</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">订阅</a></td>
+<td>0.6.6 或更新</td>
+</tr>
+<tr>
+<td><strong>CD: Pug</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">订阅</a></td>
+<td>0.6.8 或更新</td>
+</tr>
+<tr>
+<td><strong>CD: Cats</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">订阅</a></td>
+<td>0.7.0 或更新</td>
+</tr>
+</tbody></table></div>
+<p>还有基础版，如果你还没有： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>。</p>
+<p>基础版太旧的话，附加模组就什么也不做：不报错，不卡游戏，那个品种只是不存在。 如果你装了拉布拉多却一直找不到，先去确认基础版的版本。</p>
+<blockquote class="quote">不要从还有该品种活狗的存档里移除对应的附加模组。那只狗会失去模型和参照贴图。</blockquote>
+<p>装一个附加模组不会改变已有品种的任何东西。新品种会自己进入配种和混血的抽取。</p>
+<p>猫在这一点上不一样。它加进来的是五个条目（每种毛色一个）而不是一个，而且它的配种按物种封闭： 五种毛色彼此之间可以配，一窝会像任何混血那样把两者掺在一起。</p>
+<h2 id="11-品种常见问题">11. 品种常见问题</h2>
+<p><strong><span class="ig">哪个品种最好？</span></strong> 看你做什么。打架选德国牧羊犬或罗威纳犬。打猎选拉布拉多。驮东西选哈士奇。农场选边境牧羊犬。 用枪选杜宾犬。小卡犬数值最差，但它的心情图标照样有用。</p>
+<p><strong><span class="ig">我的小卡犬能靠训练变强吗？</span></strong> 不能。它再怎么训练也杀不了僵尸。训练涨的是服从、嗅觉和狩猎，在这些上它和别的狗一样长。</p>
+<p><strong><span class="ig">我找到两只同品种的狗，该带哪只？</span></strong> 事先看不出来：特性是在驯服那一刻随机决定的。先驯服，再看窗口里的<strong><span class="ig">特性</span></strong>一栏。</p>
+<p><strong><span class="ig">我抓到一只特性很差的狗。放掉再驯服一次行吗？</span></strong> 没用。基因只在第一次驯服时随机一次，放掉再驯服还是同一套（技能也保留）。想要另一次随机， 就去驯服另一只狗。想要长期改善，路子是<a href="#9-混血不同品种的杂交">杂交</a>。</p>
+<p><strong><span class="ig">我能同时拥有两个品种心情图标吗？</span></strong> 不能。只有最近的那只狗算数。<strong><span class="ig">精神饱满</span></strong>是例外，因为它不依赖距离。</p>
+<p><strong><span class="ig">心情图标怎么不见了？</span></strong> 几乎总是饥饿或口渴超过 75%，或者忠诚低于下限。喂食、喂水、抚摸。也确认一下狗在 8 格以内且在同一层。</p>
+<p><strong><span class="ig">有跑得更快的品种吗？</span></strong> 没有。</p>
+<p><strong><span class="ig">有别的颜色的哈士奇吗？</span></strong> 没有。每个品种只有一张贴图，公母共用同一张。猫有五种毛色，但每一种都是独立的品种。</p>
+<p><strong><span class="ig">大狗咬得更疼吗？</span></strong> 不。体型只是外观，不参与伤害计算。</p>
+<p><strong><span class="ig">哪里能找到杜宾犬？</span></strong> 警察局。军事建筑几率稍高一些，但游戏原版地图上几乎没有军事建筑。</p>
+<p><strong><span class="ig">我装了拉布拉多，一只都找不到。</span></strong> 确认 Companion Dogs 基础模组的版本：拉布拉多需要 0.6.6 或更新。也确认那片区域的房子是不是已经探索过了： 生成抽签每栋建筑只做一次，不会重来。</p>
+<p><strong><span class="ig">我的混血没有两个品种的心情图标。</span></strong> 这是应该的。对机制来说，混血就是它看起来像的那个品种。混血只改变幼崽的基因区间和窗口里的百分比标签。</p>
+<p><strong><span class="ig">猫比狗好吗？</span></strong> 它做的是别的事。放哨比任何狗都远，而且安静，还是唯一会在夜里搜寻的伙伴。代价是它不打架、 几乎驮不了东西，而且只和猫繁殖。</p>
+<p><strong><span class="ig">为什么我不能让猫去守卫？</span></strong> 这个模式对猫来说不存在，所以按钮不会出现。猫没有战斗：不放哨、不保护，也不攻击僵尸， 哪怕你就在它旁边挨打。</p>
+<p><strong><span class="ig">我的猫自己跑掉了，还不听我的话。</span></strong> 它看见了一只老鼠。跑的时候它拒绝任何命令，只有<strong><span class="ig">过来</span></strong>除外。它会自己回来，通常还叼着那只老鼠， 而且这个关不掉。</p>
+<p><strong><span class="ig">猫到底猎什么？</span></strong> 鼠类和兔子。鹿它连指都不指。养的牲畜（鸡、牛、畜栏里的任何东西）对所有伙伴都排除在外，狗猫都一样。 要大型猎物和叼回，就用拉布拉多或金毛。</p>
+<p><strong><span class="ig">怎么才能有小猫？</span></strong> 和小狗一样：你自己的一公一母，都成年、忠诚、吃饱，而且彼此靠近。猫只和猫繁殖。</p>
+<p><strong><span class="ig">五种毛色的数值不一样吗？</span></strong> 一样。同样的技能、同样的心情图标、同样的特性区间、同样的叫声。出现哪一种是抽签决定的。</p>
+<p><strong><span class="ig">我的猫太快就变得不服从了。</span></strong> 当你消失或把照料放到一边时，猫的羁绊掉得比狗快 50%（巴哥犬正好相反）。规律地抚摸、喂食和喂水 能稳住忠诚。</p>
+<p><strong><span class="ig">我不再在醒来时收到礼物了。</span></strong> 去看它的槽。饥饿或口渴在 75% 及以上、生病、不服从或陷入恐慌的猫夜里不出门，而游戏不会提示。 每天每位主人一份礼物。</p>
+<p><strong><span class="ig">我想用别的模组生成一只狗，该用什么名字？</span></strong> 内部名字，不是屏幕上显示的那个。名单在<a href="#6-对比表格">对比表格</a>那一节的末尾。</p></article></main>
+</div>
+
+<script>
+(function(){
+  // nome do arquivo desta pagina: o seletor de idioma troca so a pasta e mantem o manual
+  var PAGE='breeds.html';
+  var rail=document.getElementById('rail');
+  var toc=document.getElementById('toc');
+  var find=document.getElementById('find');
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var grps=[].slice.call(toc.querySelectorAll('.grp'));
+  var map={}; links.forEach(function(l){ map[l.dataset.id]=l; });
+  var tops=[], current=null;
+
+  function measure(){
+    var h=document.querySelector('.top').getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--top-h', Math.round(h)+'px');
+  }
+  function headerOff(){
+    return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-h'),10)+24;
+  }
+  // posiçoes medidas UMA vez: medir por frame de scroll travava a rolagem
+  function buildTops(){
+    tops=[];
+    var y=scrollY;
+    [].slice.call(document.querySelectorAll('.doc h2[id],.doc h3[id]')).forEach(function(h){
+      tops.push({id:h.id, top:h.getBoundingClientRect().top+y});
+    });
+    tops.sort(function(a,b){ return a.top-b.top; });
+  }
+  measure(); buildTops();
+
+  function spy(){
+    if(!tops.length) return;
+    var y=scrollY+headerOff(), best=null;
+    for(var i=0;i<tops.length;i++){ if(tops[i].top<=y) best=tops[i].id; else break; }
+    if(best===current) return;
+    current=best;
+    links.forEach(function(l){ l.removeAttribute('aria-current'); });
+    var l=map[best];
+    if(!l) return;
+    l.setAttribute('aria-current','true');
+    // abre so o grupo da seçao lida
+    var grp=l.closest('.grp');
+    grps.forEach(function(g){ g.classList.toggle('open', g===grp); });
+    // rola SO o trilho (scrollIntoView arrastaria a pagina junto)
+    var lt=l.offsetTop, lh=l.offsetHeight, rh=rail.clientHeight, st=rail.scrollTop;
+    if(lt<st+40 || lt+lh>st+rh-40) rail.scrollTop=Math.max(0, lt-rh/2+lh/2);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ spy(); tick=false; }); },{passive:true});
+  addEventListener('resize',function(){ measure(); buildTops(); current=null; spy(); });
+  addEventListener('load',function(){ measure(); buildTops(); current=null; spy(); });
+
+  // clique no indice: posiciona na mao, previsivel e ja descontando o header
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    // Ctrl/Cmd/Shift+clique e clique de rodinha sao "abrir em outra aba": deixa o navegador
+    // fazer o dele, senao o atalho vira um scroll silencioso na mesma aba.
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    setRail(false);
+    current=null; spy();
+  });
+  // links de ancora dentro do texto
+  document.querySelector('main').addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    history.replaceState(null,'',a.getAttribute('href'));
+    current=null; spy();
+  });
+
+  // ---------- busca em texto completo ----------
+  var results=document.getElementById('results');
+  var idx=[], hits=[], sel=-1;
+
+  // normalizacao que PRESERVA o comprimento: as posicoes precisam bater com o texto cru,
+  // senao o destaque sai deslocado (NFD sozinho aumenta o tamanho da string).
+  function norm(s){
+    var out='';
+    for(var i=0;i<s.length;i++){
+      var c=s[i].normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+      out += (c.length===1 ? c : s[i].toLowerCase());
+    }
+    return out;
+  }
+  function esc(t){
+    return t.replace(/[&<>]/g,function(c){ return c==='&'?'&amp;':(c==='<'?'&lt;':'&gt;'); });
+  }
+
+  function ownText(el){
+    // um <li> com sublista nao deve engolir o texto dos filhos
+    if(el.tagName==='LI' && el.querySelector('ul,ol')){
+      var t='';
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3) t+=n.nodeValue;
+        else if(n.nodeType===1 && n.tagName!=='UL' && n.tagName!=='OL') t+=n.textContent;
+      });
+      return t;
+    }
+    return el.textContent;
+  }
+
+  function buildIndex(){
+    idx=[];
+    var h2='', h3='';
+    var q='.doc h2,.doc h3,.doc p,.doc li,.doc blockquote,.doc tbody tr';
+    [].slice.call(document.querySelectorAll(q)).forEach(function(el){
+      var tag=el.tagName;
+      if(tag==='H2'){ h2=el.textContent.trim(); h3=''; }
+      else if(tag==='H3'){ h3=el.textContent.trim(); }
+      var txt=ownText(el).replace(/\s+/g,' ').trim();
+      if(txt.length<2) return;
+      idx.push({el:el, h2:h2, h3:h3, txt:txt, n:norm(txt), head:(tag==='H2'||tag==='H3')});
+    });
+  }
+  buildIndex();
+
+  function markHTML(raw, terms){
+    var n=norm(raw), rng=[];
+    terms.forEach(function(t){
+      var p=0;
+      while((p=n.indexOf(t,p))>=0){ rng.push([p,p+t.length]); p+=t.length; }
+    });
+    if(!rng.length) return esc(raw);
+    rng.sort(function(a,b){ return a[0]-b[0]; });
+    var merged=[rng[0]];
+    for(var i=1;i<rng.length;i++){
+      var last=merged[merged.length-1];
+      if(rng[i][0]<=last[1]) last[1]=Math.max(last[1],rng[i][1]);
+      else merged.push(rng[i]);
+    }
+    var out='', pos=0;
+    merged.forEach(function(h){
+      out+=esc(raw.slice(pos,h[0]))+'<mark>'+esc(raw.slice(h[0],h[1]))+'</mark>';
+      pos=h[1];
+    });
+    return out+esc(raw.slice(pos));
+  }
+
+  function snippet(b, terms){
+    var first=1e9;
+    terms.forEach(function(t){ var p=b.n.indexOf(t); if(p>=0&&p<first) first=p; });
+    if(first===1e9) first=0;
+    var from=Math.max(0, first-48);
+    if(from>0){ var sp=b.txt.indexOf(' ',from); if(sp>0&&sp-from<18) from=sp+1; }
+    var raw=b.txt.slice(from, from+210);
+    return (from>0?'&hellip;':'')+markHTML(raw, terms)+(from+210<b.txt.length?'&hellip;':'');
+  }
+
+  var WORDSTART=/[\s(,.:;–“"']/;
+
+  function run(qs){
+    var terms=norm(qs.trim()).split(/\s+/).filter(function(t){ return t.length>0; });
+    hits=[]; sel=-1;
+    if(!terms.length){ close(); return; }
+    for(var i=0;i<idx.length;i++){
+      var b=idx[i], ok=true, score=0;
+      for(var t=0;t<terms.length;t++){
+        var p=b.n.indexOf(terms[t]);
+        if(p<0){ ok=false; break; }
+        score+=6;
+        if(p===0 || WORDSTART.test(b.n.charAt(p-1))) score+=4;
+        if(norm(b.h2+' '+b.h3).indexOf(terms[t])>=0) score+=3;
+      }
+      if(!ok) continue;
+      if(b.head) score+=16;
+      score-=i*0.002;
+      hits.push({b:b, score:score, terms:terms});
+    }
+    hits.sort(function(a,b){ return b.score-a.score; });
+    hits=hits.slice(0,40);
+    render(qs);
+  }
+
+  function render(qs){
+    if(!hits.length){
+      results.innerHTML='<div class="rnone">未找到相关结果： <b>'+esc(qs.trim())+'</b>.</div>';
+    }else{
+      var h=['<div class="rcount">'+hits.length+(hits.length===40?'+':'')+
+             ' 个结果'+'</div>'];
+      hits.forEach(function(r,i){
+        var crumb=r.b.h3 ? (r.b.h2+'  ›  '+r.b.h3) : (r.b.h2||'顶部');
+        h.push('<a class="ritem" id="r'+i+'" href="#" data-i="'+i+'" role="option">'+
+               '<span class="rcrumb">'+esc(crumb)+'</span>'+
+               '<span class="rtext">'+snippet(r.b, r.terms)+'</span></a>');
+      });
+      results.innerHTML=h.join('');
+    }
+    results.hidden=false;
+    find.setAttribute('aria-expanded','true');
+  }
+
+  function close(){
+    results.hidden=true; results.innerHTML='';
+    find.setAttribute('aria-expanded','false');
+    find.removeAttribute('aria-activedescendant');
+    sel=-1;
+  }
+
+  function highlight(i){
+    var items=results.querySelectorAll('.ritem');
+    if(!items.length) return;
+    if(i<0) i=items.length-1;
+    if(i>=items.length) i=0;
+    sel=i;
+    [].slice.call(items).forEach(function(a,k){ a.classList.toggle('sel', k===sel); });
+    // sem isto o leitor de tela nao anuncia nada ao navegar de seta pelos resultados
+    find.setAttribute('aria-activedescendant', items[sel].id);
+    items[sel].scrollIntoView({block:'nearest'});
+  }
+
+  function goTo(i){
+    var r=hits[i]; if(!r) return;
+    close(); find.blur();
+    var el=r.b.el;
+    scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+    el.classList.remove('flash');
+    void el.offsetWidth;                 // reinicia a animacao
+    el.classList.add('flash');
+    setTimeout(function(){ el.classList.remove('flash'); }, 2000);
+    current=null; spy();
+  }
+
+  var deb=null;
+  find.addEventListener('input',function(){
+    clearTimeout(deb);
+    var v=find.value;
+    deb=setTimeout(function(){ run(v); }, 90);
+  });
+  find.addEventListener('focus',function(){ if(find.value.trim()) run(find.value); });
+  find.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ find.value=''; close(); find.blur(); return; }
+    if(results.hidden) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); highlight(sel+1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); highlight(sel-1); }
+    else if(e.key==='Enter'){ e.preventDefault(); goTo(sel<0?0:sel); }
+  });
+  results.addEventListener('click',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    e.preventDefault(); goTo(parseInt(a.dataset.i,10));
+  });
+  results.addEventListener('mousemove',function(e){
+    var a=e.target.closest('.ritem'); if(!a) return;
+    var i=parseInt(a.dataset.i,10);
+    if(i!==sel) highlight(i);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search')) close();
+  });
+  // atalhos: "/" e Ctrl+K focam a busca
+  addEventListener('keydown',function(e){
+    var t=e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA') return;
+    if(e.key==='/' || ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k')){
+      e.preventDefault(); find.focus(); find.select();
+    }
+  });
+
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{ localStorage.setItem('cd-theme',next); }catch(e){}
+  });
+
+  // troca de idioma: mantem manual e ancora, e grava a escolha para a raiz do site respeitar
+  var langSel=document.getElementById('lang');
+  if(langSel){
+    langSel.addEventListener('change',function(){
+      var code=this.value;
+      try{ localStorage.setItem('cd-lang',code); }catch(e){}
+      location.href='../'+code+'/'+PAGE+location.hash;
+    });
+  }
+
+  var menuBtn=document.getElementById('menu');
+  function setRail(open){
+    rail.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  menuBtn.addEventListener('click',function(){ setRail(!rail.classList.contains('open')); });
+
+  if(location.hash){
+    var el=document.getElementById(location.hash.slice(1));
+    if(el) setTimeout(function(){
+      scrollTo(0, el.getBoundingClientRect().top+scrollY-headerOff()+8);
+      buildTops(); current=null; spy();
+    },60);
+  }
+  spy();
+})();
+</script>
+</body>
+</html>
