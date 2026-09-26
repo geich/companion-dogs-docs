@@ -10,7 +10,7 @@ and are labelled as such, both in the language menu and at the top of every page
 | Page | Covers |
 |---|---|
 | `<lang>/features.html` | commands, modes, combat, care, skills and sandbox options |
-| `<lang>/breeds.html` | the 9 breeds, moodles, genes and crossbreeds |
+| `<lang>/breeds.html` | the breeds, moodles, genes and crossbreeds |
 | `<lang>/modding.html` | how to build a breed or species add-on |
 
 The two player manuals are written in Portuguese first; the modding manual is written in

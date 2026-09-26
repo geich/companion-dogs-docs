@@ -738,8 +738,13 @@ Mods=CompanionDogs</code></pre>
 <td><code>CompanionDogsPug</code></td>
 <td><code>3787202559</code></td>
 </tr>
+<tr>
+<td>CD: Belgian Malinois</td>
+<td><code>CompanionDogsMalinois</code></td>
+<td>尚未發佈</td>
+</tr>
 </tbody></table></div>
-<p>帶上基礎模組和四個品種附加模組，就是這樣：</p>
+<p>帶上基礎模組和已發佈的品種附加模組，就是這樣：</p>
 <pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
 Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
 <ul>
@@ -799,9 +804,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>20%</td>
 </tr>
 <tr>
+<td><strong>德國牧羊犬</strong></td>
+<td>民宅</td>
+<td>0.5%</td>
+</tr>
+<tr>
 <td><strong>哈士奇</strong></td>
 <td>民宅，只在冬天</td>
-<td>1.25%</td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>民宅，全年</td>
+<td>0.2%</td>
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
@@ -813,10 +828,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>穀倉、馬廄、青貯塔、雞舍，在鄉下</td>
 <td>15%</td>
 </tr>
+<tr>
+<td><strong>邊境牧羊犬</strong></td>
+<td>民宅</td>
+<td>0.5%</td>
+</tr>
 </tbody></table></div>
 <p>狗通常出生在建築外面一格空地上：街道、院子、空地。只有外面沒有空地時，牠才會出生在裡面。</p>
 <p>沙盒選項<strong>「狗生成倍率」</strong>會同時縮放所有這些機率。設為 0 時生成關閉。</p>
-<blockquote class="quote">附加品種是 Steam 上的獨立模組，各自有自己的生成地點： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>。每一種具體做什麼，看<a href="breeds.html" class="xlink">品種手冊</a>。</blockquote>
+<blockquote class="quote">附加品種是 Steam 上的獨立模組，各自有自己的生成地點： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>和 CD: Belgian Malinois（尚未發佈）。每一種具體做什麼，看<a href="breeds.html" class="xlink">品種手冊</a>。</blockquote>
 <h3 id="怎麼馴服">怎麼馴服</h3>
 <p>在野生的狗身上按右鍵。唯一出現的選項是<strong>「餵食（結交）」</strong>。</p>
 <ul>
@@ -1131,7 +1151,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><i class="ico ico-bleeding" title="流血" role="img" aria-label="流血"></i></td>
 <td><strong>流血</strong></td>
-<td>每次撕咬殭屍 0.2%</td>
+<td>每次撕咬殭屍 0.4%</td>
 <td>掉生命值並跛行</td>
 <td>12 小時內自行停止，包紮的話立刻停止</td>
 </tr>
@@ -1234,6 +1254,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>劑量</th>
 <th>治療</th>
 <th>之後的保護</th>
+<th>寵物店機率</th>
 </tr></thead><tbody>
 <tr>
 <td><i class="ico item ico-med-abx" title="抗生素" role="img" aria-label="抗生素"></i></td>
@@ -1241,6 +1262,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>12 小時治癒感染，並縮短流感病程</td>
 <td>不提供保護</td>
+<td>13.6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-dewormer" title="驅蟲片" role="img" aria-label="驅蟲片"></i></td>
@@ -1248,6 +1270,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>8</td>
 <td>治療寄生蟲，4 小時起效</td>
 <td>30 天</td>
+<td>13.6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-vaccine" title="疫苗" role="img" aria-label="疫苗"></i></td>
@@ -1255,6 +1278,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>1 天治癒流感，並立刻切斷傳染</td>
 <td>90 天，且傷口不會感染</td>
+<td>9.3%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-allergy" title="過敏藥" role="img" aria-label="過敏藥"></i></td>
@@ -1262,6 +1286,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>24</td>
 <td>6 小時治癒過敏</td>
 <td>2 天</td>
+<td>17.9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-flea" title="跳蚤蜱蟲藥" role="img" aria-label="跳蚤蜱蟲藥"></i></td>
@@ -1269,6 +1294,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>12 小時清除跳蚤和蜱蟲</td>
 <td>30 天</td>
+<td>17.9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-heartworm" title="心絲蟲藥" role="img" aria-label="心絲蟲藥"></i></td>
@@ -1276,14 +1302,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>18 小時治癒心絲蟲</td>
 <td>30 天</td>
+<td>11.5%</td>
 </tr>
 </tbody></table></div>
+<p>最後一欄是在寵物店貨架上找到該藥品的機率。六種藥品在這種家具裡出現得最多，數值以沙盒戰利品選項為預設值計算。藥局和診所大約是它的四分之三。其他家具請見第 20 節的<a href="#每件物品出現的機率">每件物品出現的機率</a>。</p>
 <p>藥品不是喝下去就好：一劑藥會開啟一段持續數小時的治療，只有在療程結束時才會治好疾病。去哪裡找藥、怎麼給藥，在本節末尾的「藥品」部分。</p>
 <h3 id="痊癒">痊癒</h3>
 <p>狗會自己痊癒：滿血大約需要 8 個遊戲小時。飢餓條或口渴條過半之後，痊癒就會停止。</p>
 <h3 id="傷口與包紮">傷口與包紮</h3>
 <ul>
-<li>狗每次咬中殭屍，都有 0.2% 的機率留下一個開放傷口。戰鬥技能等級每升一級，這個機率就降低 0.01 個百分點，到 10 級時減半，只剩 0.1%。狗已經受傷或有壓力時機率會上升，而且每 2 個遊戲小時最多只會出現一次新傷口。</li>
+<li>狗每次咬中殭屍，都有 0.4% 的機率留下一個開放傷口。戰鬥技能等級每升一級，這個機率就降低 0.02 個百分點，到 10 級時減半，只剩 0.2%。狗已經受傷或有壓力時機率會上升，而且每 2 個遊戲小時最多只會出現一次新傷口。</li>
 <li>所有品種的狗走路時都會跛行，而且會稍微變慢：走路慢 10%，跑步慢 25%。牠的名字、視窗和心情圖示上會出現<strong>「流血」</strong>徽章，包紮好之後就變成<strong>「受傷」</strong>。狗視窗的<strong>「健康」</strong>標籤頁會顯示牠的輪廓、受傷部位標示、身體部位清單和目前病症，右鍵點擊能打開治療選單；狀態標籤頁的健康部分會說明病症、包紮情況和該做什麼。畜牧技能 5 級或以上時，兩處都會額外顯示痊癒進度。</li>
 <li>受傷時，牠會拒絕狩獵和守衛，直到痊癒。跟隨、停留和攻擊照常。</li>
 <li>如果狗帶著開放傷口繼續打架，每次咬合都有可能造成腿骨折，機率和傷口機率相同。會出現提示 <em><span class="ig">腿骨折了！</span></em>，加上<strong>「腿骨折」</strong>徽章和心情圖示，狗會以一半的速度走路，在任何情況下都不再能跑。痊癒時間也會變成 3 天，即使有包紮也一樣。</li>
@@ -1293,7 +1321,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>治療時，在狗的右鍵選單裡用<strong>「治療傷口」</strong>，或者在視窗健康部分的病症上按右鍵，需要背包裡有任意繃帶或撕破的床單。如果繃帶本身是酒精繃帶，或者你背包裡有消毒液、酒精棉片或棉球（會一起被消耗掉），包紮出來就是消毒過的。急救技能能縮短治療動作的時間。治療能提升忠誠度。繃帶會留在狗身上，你使用<strong>「拆除包紮」</strong>或者傷口癒合時，它會髒著回到你的背包。受傷的腿在流血時會顯示紅色切口，包紮後會顯示一圈紗布，模組基礎品種和所有品種附加模組都是如此，而且都會因為受傷的腿而跛行。髒繃帶也能用。</li>
 <li>乾淨的傷口 2 天癒合，包紮的話 1 天。靜止的狗（停留模式，或在家被動狀態）以全速痊癒，工作中的狗以一半速度痊癒，戰鬥中的狗不會痊癒。照顧牲畜的狗痊癒速度和在家被動狀態一樣。只有存在犬舍裡的狗會暫停，因為牠離開了這個世界。</li>
 <li>在沙盒裡，<strong>「獸醫護理」</strong>能整體開關這一切（中途關閉會立刻解除狗身上的限制），<strong>「疾病和疏忽可致死」</strong>（預設關閉）決定生命值能不能降到零，不管是因為疾病還是飢餓和口渴；關閉時，所有掉血都會停在 10%。</li>
-<li>每種疾病都有自己獨立的百分比機率，設為零就單獨關閉那種疾病：<strong>「每次撕咬的受傷機率（百分比）」</strong>（預設 0.2）、<strong>「每次跳欄的扭傷機率（百分比）」</strong>（預設 0.5）、<strong>「腸胃不適時每6小時感染寄生蟲機率（百分比）」</strong>（預設 10）、<strong>「腸胃不適機率（百分比）」</strong>（預設 25）、<strong>「流感機率（百分比）」</strong>（預設 15，既用於飢餓的狗每天的判定，也用於每小時待在患病的狗身邊的判定）、<strong>「心絲蟲機率（百分比）」</strong>（預設 1.5）、<strong>「食物過敏機率（百分比）」</strong>（預設 5），以及<strong>「每次咬傷感染跳蚤和蜱蟲機率（百分比）」</strong>（預設 0.2）。</li>
+<li>每種疾病都有自己獨立的百分比機率，設為零就單獨關閉那種疾病：<strong>「每次撕咬的受傷機率（百分比）」</strong>（預設 0.4）、<strong>「每次跳欄的扭傷機率（百分比）」</strong>（預設 0.5）、<strong>「腸胃不適時每6小時感染寄生蟲機率（百分比）」</strong>（預設 10）、<strong>「腸胃不適機率（百分比）」</strong>（預設 25）、<strong>「流感機率（百分比）」</strong>（預設 15，既用於飢餓的狗每天的判定，也用於每小時待在患病的狗身邊的判定）、<strong>「心絲蟲機率（百分比）」</strong>（預設 1.5）、<strong>「食物過敏機率（百分比）」</strong>（預設 5），以及<strong>「每次咬傷感染跳蚤和蜱蟲機率（百分比）」</strong>（預設 0.2）。</li>
 </ul>
 <h3 id="感染發燒危急與死亡">感染：發燒、危急與死亡</h3>
 <ul>
@@ -1335,7 +1363,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="藥品哪裡找怎麼用">藥品：哪裡找、怎麼用</h3>
 <ul>
 <li>一共六種，每盒都有好幾劑：抗生素 12 劑，驅蟲片 8 劑，疫苗 6 劑，過敏藥 24 劑，跳蚤蜱蟲藥 12 劑，心絲蟲藥 6 劑。每次治療消耗一劑。</li>
-<li>會出現在藥櫃、藥局、醫院、商店貨架、軍用倉庫、寵物店、寵物用品箱、家用浴室、車庫和農場。疫苗和心絲蟲藥還會出現在獸醫診所的櫃檯上，那裡是牠們最常見的地方。</li>
+<li>會出現在藥櫃、藥局、醫院、商店貨架、軍用倉庫、寵物店、寵物用品箱、家用浴室、車庫和農場。在獸醫診所，疫苗和心絲蟲藥還會出現在桌子裡（4.8%）和每個狗窩裡（2.4%）。</li>
 <li>全都透過同一個<strong>「治療傷口」</strong>子選單給藥，或者在視窗的健康部分：右鍵點擊病症，就會顯示你攜帶的物品能做什麼。</li>
 <li>藥品不是喝下去就好：一劑藥會開啟一段持續數小時的治療，只有在療程結束時才會治好疾病。健康檔案會顯示<strong>「正在治療」</strong>這一行，如果藥品還有預防效果，會顯示<strong>「已防護」</strong>和剩餘天數。</li>
 <li>狗主人的急救和畜牧技能合計能把治療時間縮短 5%（每級），並把保護期延長 2.5%（每級）。給生病的狗治療能獲得急救經驗；給健康的狗預防性用藥則沒有經驗。</li>
@@ -1777,7 +1805,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6 到 7</td>
 </tr>
 <tr>
-<td><strong>德國牧羊犬、邊境牧羊犬、羅威納犬、杜賓犬、拉布拉多</strong></td>
+<td><strong>德國牧羊犬、邊境牧羊犬、羅威納犬、杜賓犬、拉布拉多、馬林諾斯犬</strong></td>
 <td>6 到 8</td>
 </tr>
 <tr>
@@ -2284,7 +2312,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td>每次撕咬的受傷機率（百分比）</td>
-<td>0.2</td>
+<td>0.4</td>
 <td>狗每咬中殭屍一次判定一次，戰鬥每升一級降低 5%</td>
 </tr>
 <tr>

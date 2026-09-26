@@ -738,8 +738,13 @@ Mods=CompanionDogs</code></pre>
 <td><code>CompanionDogsPug</code></td>
 <td><code>3787202559</code></td>
 </tr>
+<tr>
+<td>CD: Belgian Malinois</td>
+<td><code>CompanionDogsMalinois</code></td>
+<td>pas encore publié</td>
+</tr>
 </tbody></table></div>
-<p>Avec le mod de base et les quatre add-ons de race, ça donne :</p>
+<p>Avec le mod de base et les add-ons de race publiés, ça donne :</p>
 <pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
 Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
 <ul>
@@ -799,9 +804,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>20%</td>
 </tr>
 <tr>
+<td><strong>Berger Allemand</strong></td>
+<td>Maison résidentielle</td>
+<td>0,5%</td>
+</tr>
+<tr>
 <td><strong>Husky</strong></td>
 <td>Maison résidentielle, en hiver seulement</td>
-<td>1,25%</td>
+<td>2,5%</td>
+</tr>
+<tr>
+<td><strong>Husky</strong></td>
+<td>Maison résidentielle, toute l'année</td>
+<td>0,2%</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -813,10 +828,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Grange, écurie, silo, poulailler, à la campagne</td>
 <td>15%</td>
 </tr>
+<tr>
+<td><strong>Border Collie</strong></td>
+<td>Maison résidentielle</td>
+<td>0,5%</td>
+</tr>
 </tbody></table></div>
 <p>Le chien apparaît d'habitude sur une case libre à l'extérieur du bâtiment : rue, jardin, terrain vague. Il n'apparaît à l'intérieur que s'il ne reste aucune case libre dehors.</p>
 <p>L'option de bac à sable <strong><span class="ig">Multiplicateur d'apparition des chiens</span></strong> met toutes ces chances à l'échelle d'un coup. À 0, les apparitions sont coupées.</p>
-<blockquote class="quote">Les races d'addon arrivent dans des mods Steam séparés, chacune avec ses propres lieux d'apparition : <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a> et <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>. Ce que fait chacune se trouve dans le <a href="breeds.html" class="xlink">manuel des races</a>.</blockquote>
+<blockquote class="quote">Les races d'addon arrivent dans des mods Steam séparés, chacune avec ses propres lieux d'apparition : <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> et CD: Belgian Malinois (pas encore publié). Ce que fait chacune se trouve dans le <a href="breeds.html" class="xlink">manuel des races</a>.</blockquote>
 <h3 id="comment-apprivoiser">Comment apprivoiser</h3>
 <p>Faites un clic droit sur le chien sauvage. La seule option qui apparaît est <strong><span class="ig">Donner à manger (apprivoiser)</span></strong>.</p>
 <ul>
@@ -1131,7 +1151,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><i class="ico ico-bleeding" title="Saigne" role="img" aria-label="Saigne"></i></td>
 <td><strong>Saigne</strong></td>
-<td>0,2% par morsure sur un zombie</td>
+<td>0,4% par morsure sur un zombie</td>
 <td>Perd de la santé et boite</td>
 <td>S'arrête tout seul en 12 h, ou tout de suite avec un pansement</td>
 </tr>
@@ -1234,6 +1254,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Doses</th>
 <th>Traite</th>
 <th>Protège ensuite</th>
+<th>Chance en animalerie</th>
 </tr></thead><tbody>
 <tr>
 <td><i class="ico item ico-med-abx" title="Antibiotique" role="img" aria-label="Antibiotique"></i></td>
@@ -1241,6 +1262,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>L'infection en 12 h, raccourcit la grippe</td>
 <td>Ne protège pas</td>
+<td>13,6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-dewormer" title="Vermifuge" role="img" aria-label="Vermifuge"></i></td>
@@ -1248,6 +1270,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>8</td>
 <td>Les vers, en agissant en 4 h</td>
 <td>30 jours</td>
+<td>13,6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-vaccine" title="Vaccin" role="img" aria-label="Vaccin"></i></td>
@@ -1255,6 +1278,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>La grippe en 1 jour, et coupe la contagion sur le coup</td>
 <td>90 jours, et la plaie ne s'infecte pas</td>
+<td>9,3%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-allergy" title="Antiallergique" role="img" aria-label="Antiallergique"></i></td>
@@ -1262,6 +1286,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>24</td>
 <td>L'allergie en 6 h</td>
 <td>2 jours</td>
+<td>17,9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-flea" title="Antipuces" role="img" aria-label="Antipuces"></i></td>
@@ -1269,6 +1294,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>Puces et tiques en 12 h</td>
 <td>30 jours</td>
+<td>17,9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-heartworm" title="Dirofilariose" role="img" aria-label="Dirofilariose"></i></td>
@@ -1276,14 +1302,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>La dirofilariose en 18 h</td>
 <td>30 jours</td>
+<td>11,5%</td>
 </tr>
 </tbody></table></div>
+<p>La dernière colonne est la chance de trouver le médicament sur une étagère d'animalerie, le contenant où les six apparaissent le plus, avec les options de butin du bac à sable par défaut. En pharmacie et en clinique, c'est environ les trois quarts. Les autres contenants sont dans <a href="#à-quelle-fréquence-chaque-objet-apparaît">À quelle fréquence chaque objet apparaît</a>, dans la section 20.</p>
 <p>Un médicament ne guérit pas d'une gorgée : la dose ouvre un traitement qui court pendant des heures et n'enlève la maladie qu'à la fin. Où en trouver et comment le donner, c'est dans Les médicaments, à la fin de cette section.</p>
 <h3 id="la-guérison">La guérison</h3>
 <p>Le chien se soigne tout seul : une barre de santé pleine en 8 heures de jeu environ. La guérison s'arrête au-delà de la moitié de la barre de faim ou de celle de soif.</p>
 <h3 id="plaie-et-pansement">Plaie et pansement</h3>
 <ul>
-<li>Chaque morsure que le chien porte sur un zombie a 0,2% de chance de lui laisser une plaie ouverte. Chaque niveau de Combat retire 0,01 point à cette chance : au niveau 10, elle est divisée par deux, à 0,1%. La chance monte avec un chien déjà blessé ou stressé, et il n'arrive jamais plus d'une plaie toutes les 2 heures de jeu.</li>
+<li>Chaque morsure que le chien porte sur un zombie a 0,4% de chance de lui laisser une plaie ouverte. Chaque niveau de Combat retire 0,02 point à cette chance : au niveau 10, elle est divisée par deux, à 0,2%. La chance monte avec un chien déjà blessé ou stressé, et il n'arrive jamais plus d'une plaie toutes les 2 heures de jeu.</li>
 <li>Le chien boite en marchant, dans toutes les races, et ralentit un peu : il marche 10% moins vite et court 25% moins vite. Le marqueur <strong><span class="ig">Saigne</span></strong> apparaît sur le nom, dans la fenêtre et sur le moodle, et devient <strong><span class="ig">Blessé</span></strong> dès que le pansement est posé. L'onglet <strong><span class="ig">Santé</span></strong> de la fenêtre du chien montre sa silhouette avec la patte blessée peinte, la liste des parties du corps et les états actifs, et le clic droit dessus ouvre le menu de soin ; la section Santé de l'onglet Statut dit l'état, le pansement et quoi faire ; avec Élevage 5 ou plus, les deux montrent aussi la progression de la guérison.</li>
 <li>Blessé, il refuse Chasse et Garde jusqu'à guérison. Suivre, Rester et Attaquer continuent.</li>
 <li>Si le chien continue de se battre avec la plaie ouverte, chaque morsure peut lui casser la patte, avec la même chance que la plaie. Message <em><span class="ig">s'est cassé une patte !</span></em>, marqueur et moodle <strong><span class="ig">Patte cassée</span></strong>, et le chien marche à la moitié du pas et ne court plus, dans aucune situation. La guérison passe alors à 3 jours, même avec un pansement.</li>
@@ -1293,7 +1321,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Pour soigner, prenez <strong><span class="ig">Soigner la blessure</span></strong> au clic droit sur le chien, ou le clic droit sur l'état dans la section Santé de la fiche, avec n'importe quel bandage ou drap déchiré dans l'inventaire. Le pansement sort stérilisé si le bandage est alcoolisé, ou si vous avez du désinfectant, une lingette ou du coton à l'alcool dans l'inventaire (il est consommé avec). Premiers secours raccourcit l'action. Soigner donne de la loyauté. Le bandage reste sur le chien et revient dans votre inventaire, sale, quand vous utilisez <strong><span class="ig">Retirer le pansement</span></strong> ou quand la plaie se referme. La patte blessée montre des coupures rouges tant qu'elle saigne et une bande de gaze avec le pansement, dans toutes les races du mod de base et dans les add-ons de race, qui boitent aussi de la patte blessée. Un bandage sale fait aussi l'affaire.</li>
 <li>Une plaie propre se referme en 2 jours, 1 avec un pansement. Un chien à l'arrêt (Rester, ou passif à la maison) guérit à plein régime, un chien qui travaille guérit à moitié et un chien en combat ne guérit pas. Un chien qui garde la ferme guérit comme un passif à la maison. Seul le chien rangé au chenil est en pause, parce qu'il sort du monde.</li>
 <li>Dans le bac à sable, <strong><span class="ig">Soins vétérinaires</span></strong> active et coupe tout ça (couper en cours de route débloque le chien sur le coup) et <strong><span class="ig">La maladie et la négligence peuvent tuer</span></strong> (coupée par défaut) décide si la santé descend à zéro, par maladie comme par faim et soif ; coupée, chaque drain s'arrête à 10%.</li>
-<li>Chaque maladie a sa propre chance en pourcentage, et zéro coupe cette maladie à elle seule : <strong><span class="ig">Chance de blessure par morsure (pour cent)</span></strong> (0,2 par défaut), <strong><span class="ig">Chance d'entorse par saut de clôture (pour cent)</span></strong> (0,5 par défaut), <strong><span class="ig">Chance de vers par 6 h d'estomac dérangé (pour cent)</span></strong> (10 par défaut), <strong><span class="ig">Chance d'estomac dérangé (pour cent)</span></strong> (25 par défaut), <strong><span class="ig">Chance de grippe (pour cent)</span></strong> (15 par défaut, vaut aussi bien pour le tirage quotidien du chien affamé que pour chaque heure passée à côté d'un chien malade), <strong><span class="ig">Chance de ver du cœur (pour cent)</span></strong> (1,5 par défaut), <strong><span class="ig">Chance d'allergie alimentaire (pour cent)</span></strong> (5 par défaut) et <strong><span class="ig">Chance de puces ou tiques par morsure (pour cent)</span></strong> (0,2 par défaut).</li>
+<li>Chaque maladie a sa propre chance en pourcentage, et zéro coupe cette maladie à elle seule : <strong><span class="ig">Chance de blessure par morsure (pour cent)</span></strong> (0,4 par défaut), <strong><span class="ig">Chance d'entorse par saut de clôture (pour cent)</span></strong> (0,5 par défaut), <strong><span class="ig">Chance de vers par 6 h d'estomac dérangé (pour cent)</span></strong> (10 par défaut), <strong><span class="ig">Chance d'estomac dérangé (pour cent)</span></strong> (25 par défaut), <strong><span class="ig">Chance de grippe (pour cent)</span></strong> (15 par défaut, vaut aussi bien pour le tirage quotidien du chien affamé que pour chaque heure passée à côté d'un chien malade), <strong><span class="ig">Chance de ver du cœur (pour cent)</span></strong> (1,5 par défaut), <strong><span class="ig">Chance d'allergie alimentaire (pour cent)</span></strong> (5 par défaut) et <strong><span class="ig">Chance de puces ou tiques par morsure (pour cent)</span></strong> (0,2 par défaut).</li>
 </ul>
 <h3 id="infection-fièvre-état-critique-et-mort">Infection : fièvre, état critique et mort</h3>
 <ul>
@@ -1335,7 +1363,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="les-médicaments-où-en-trouver-et-comment-les-donner">Les médicaments : où en trouver et comment les donner</h3>
 <ul>
 <li>Ils sont six, tous avec plusieurs doses par boîte : l'antibiotique rend 12 doses, le vermifuge 8, le vaccin 6, l'antiallergique 24, l'antipuces 12 et l'antiparasitaire cardiaque 6. Chaque traitement dépense une dose.</li>
-<li>On les trouve dans les armoires à pharmacie, les pharmacies, les hôpitaux, les rayons de magasin, les dépôts militaires, les animaleries, les caisses de fournitures pour animaux, les salles de bain, les garages et les fermes. Le vaccin et l'antiparasitaire cardiaque aussi sur les comptoirs de la clinique vétérinaire, où ils sont les plus courants.</li>
+<li>On les trouve dans les armoires à pharmacie, les pharmacies, les hôpitaux, les rayons de magasin, les dépôts militaires, les animaleries, les caisses de fournitures pour animaux, les salles de bain, les garages et les fermes. À la clinique vétérinaire, le vaccin et l'antiparasitaire cardiaque apparaissent aussi dans le bureau (4,8%) et dans chaque niche pour chien (2,4%).</li>
 <li>Tout se donne par le même sous-menu <strong><span class="ig">Soigner la blessure</span></strong>, ou par la section Santé de la fiche : clic droit sur l'état et vous voyez ce qui est possible avec ce que vous portez.</li>
 <li>Un médicament ne guérit pas d'une gorgée : il ouvre un traitement qui court des heures et n'enlève la maladie qu'à la fin. La fiche montre la ligne <strong><span class="ig">En traitement</span></strong> pendant ce temps, et <strong><span class="ig">Protégé contre</span></strong> avec les jours qui restent quand le médicament prévient aussi.</li>
 <li>Premiers secours et Élevage du maître raccourcissent le traitement de 5% par niveau cumulés, et étirent la protection de 2,5% par niveau. Soigner un chien malade donne de l'XP de Premiers secours ; une dose préventive sur un chien sain n'en donne pas.</li>
@@ -1777,7 +1805,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6 à 7</td>
 </tr>
 <tr>
-<td><strong>Berger Allemand, Border Collie, Rottweiler, Doberman, Labrador</strong></td>
+<td><strong>Berger Allemand, Border Collie, Rottweiler, Doberman, Labrador, Berger Belge Malinois</strong></td>
 <td>6 à 8</td>
 </tr>
 <tr>
@@ -2284,7 +2312,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td>Chance de blessure par morsure (pour cent)</td>
-<td>0.2</td>
+<td>0.4</td>
 <td>Par morsure que le chien donne à un zombie, 5% de moins par niveau de Combat</td>
 </tr>
 <tr>

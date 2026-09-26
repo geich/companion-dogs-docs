@@ -738,8 +738,13 @@ Mods=CompanionDogs</code></pre>
 <td><code>CompanionDogsPug</code></td>
 <td><code>3787202559</code></td>
 </tr>
+<tr>
+<td>CD: Belgian Malinois</td>
+<td><code>CompanionDogsMalinois</code></td>
+<td>尚未发布</td>
+</tr>
 </tbody></table></div>
-<p>带上基础模组和四个品种附加模组，就是这样：</p>
+<p>带上基础模组和已发布的品种附加模组，就是这样：</p>
 <pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559
 Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug</code></pre>
 <ul>
@@ -799,9 +804,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>20%</td>
 </tr>
 <tr>
+<td><strong>德国牧羊犬</strong></td>
+<td>住宅</td>
+<td>0.5%</td>
+</tr>
+<tr>
 <td><strong>哈士奇</strong></td>
 <td>住宅，只在冬天</td>
-<td>1.25%</td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td><strong>哈士奇</strong></td>
+<td>住宅，全年</td>
+<td>0.2%</td>
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
@@ -813,10 +828,15 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>谷仓、马厩、青贮塔、鸡舍，在乡村地区</td>
 <td>15%</td>
 </tr>
+<tr>
+<td><strong>边境牧羊犬</strong></td>
+<td>住宅</td>
+<td>0.5%</td>
+</tr>
 </tbody></table></div>
 <p>狗通常会出生在建筑外面一块空地上：街道、院子、空地。只有外面找不到空地时，它才会出生在里面。</p>
 <p>沙盒选项<strong><span class="ig">狗生成倍率</span></strong>会同时缩放所有这些几率。设为 0 时生成关闭。</p>
-<blockquote class="quote">附加品种是 Steam 上单独的模组，各自有自己的生成地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>。每个品种具体做什么，看<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
+<blockquote class="quote">附加品种是 Steam 上单独的模组，各自有自己的生成地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>和 CD: Belgian Malinois（尚未发布）。每个品种具体做什么，看<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
 <h3 id="怎么驯服">怎么驯服</h3>
 <p>右键点击野生的狗。唯一出现的选项是<strong><span class="ig">喂食（结交）</span></strong>。</p>
 <ul>
@@ -1131,7 +1151,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><i class="ico ico-bleeding" title="流血" role="img" aria-label="流血"></i></td>
 <td><strong>流血</strong></td>
-<td>每次撕咬僵尸 0.2%</td>
+<td>每次撕咬僵尸 0.4%</td>
 <td>掉生命值并跛行</td>
 <td>12 小时内自行停止，包扎的话立刻停止</td>
 </tr>
@@ -1234,6 +1254,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>剂量</th>
 <th>治疗</th>
 <th>之后的保护</th>
+<th>宠物店几率</th>
 </tr></thead><tbody>
 <tr>
 <td><i class="ico item ico-med-abx" title="抗生素" role="img" aria-label="抗生素"></i></td>
@@ -1241,6 +1262,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>12 小时治愈感染，并缩短流感病程</td>
 <td>不提供保护</td>
+<td>13.6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-dewormer" title="驱虫片" role="img" aria-label="驱虫片"></i></td>
@@ -1248,6 +1270,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>8</td>
 <td>治疗寄生虫，4 小时起效</td>
 <td>30 天</td>
+<td>13.6%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-vaccine" title="疫苗" role="img" aria-label="疫苗"></i></td>
@@ -1255,6 +1278,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>1 天治愈流感，并立刻切断传染</td>
 <td>90 天，且伤口不会感染</td>
+<td>9.3%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-allergy" title="过敏药" role="img" aria-label="过敏药"></i></td>
@@ -1262,6 +1286,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>24</td>
 <td>6 小时治愈过敏</td>
 <td>2 天</td>
+<td>17.9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-flea" title="跳蚤蜱虫药" role="img" aria-label="跳蚤蜱虫药"></i></td>
@@ -1269,6 +1294,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>12</td>
 <td>12 小时清除跳蚤和蜱虫</td>
 <td>30 天</td>
+<td>17.9%</td>
 </tr>
 <tr>
 <td><i class="ico item ico-med-heartworm" title="心丝虫药" role="img" aria-label="心丝虫药"></i></td>
@@ -1276,14 +1302,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6</td>
 <td>18 小时治愈心丝虫</td>
 <td>30 天</td>
+<td>11.5%</td>
 </tr>
 </tbody></table></div>
+<p>最后一列是在宠物店货架上找到该药品的几率。六种药品在这种家具里出现得最多，数值按沙盒战利品选项为默认值计算。药房和诊所大约是它的四分之三。其他家具见第 20 节的<a href="#每件物品出现的几率">每件物品出现的几率</a>。</p>
 <p>药品不是喝下去就好：一剂药会开启一段持续数小时的治疗，只有在疗程结束时才会治好疾病。去哪里找药、怎么给药，在本节末尾的<span class="ig">药品</span>部分。</p>
 <h3 id="痊愈">痊愈</h3>
 <p>狗会自己痊愈：满血大约需要 8 个游戏小时。饥饿条或口渴条过半之后，痊愈就会停止。</p>
 <h3 id="伤口与包扎">伤口与包扎</h3>
 <ul>
-<li>狗每次咬中僵尸，都有 0.2% 的几率留下一个开放伤口。战斗技能等级每升一级，这个几率就降低 0.01 个百分点，到 10 级时减半，只剩 0.1%。狗已经受伤或有压力时几率会上升，而且每 2 个游戏小时最多只会出现一次新伤口。</li>
+<li>狗每次咬中僵尸，都有 0.4% 的几率留下一个开放伤口。战斗技能等级每升一级，这个几率就降低 0.02 个百分点，到 10 级时减半，只剩 0.2%。狗已经受伤或有压力时几率会上升，而且每 2 个游戏小时最多只会出现一次新伤口。</li>
 <li>所有品种的狗走路时都会跛行，而且会稍微变慢：走路慢 10%，跑步慢 25%。它的名字、窗口和心情图标上会出现 <strong><span class="ig">流血</span></strong>徽章，包扎好之后就变成<strong><span class="ig">受伤</span></strong>。狗窗口的<strong><span class="ig">健康</span></strong>标签页会显示它的轮廓、受伤部位高亮、身体部位列表和当前病症，右键点击能打开治疗菜单；状态标签页的健康部分会说明病症、包扎情况和该做什么。畜牧技能 5 级或以上时，两处都会额外显示痊愈进度。</li>
 <li>受伤时，它会拒绝狩猎和守卫，直到痊愈。跟随、停留和攻击照常。</li>
 <li>如果狗带着开放伤口继续打架，每次咬合都有可能造成腿骨折，几率和伤口几率相同。会出现提示 <em><span class="ig">腿骨折了！</span></em>，加上<strong><span class="ig">腿骨折</span></strong>徽章和心情图标，狗会以一半的速度走路，在任何情况下都不再能跑。痊愈时间也会变成 3 天，即使有包扎也一样。</li>
@@ -1293,7 +1321,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>治疗时，在狗的右键菜单里用<strong><span class="ig">治疗伤口</span></strong>，或者在窗口健康部分的病症上右键，需要背包里有任意绷带或撕破的床单。如果绷带本身是酒精绷带，或者你背包里有消毒液、酒精棉片或棉球（会一起被消耗掉），包扎出来就是消毒过的。急救技能能缩短治疗动作的时间。治疗能提升忠诚度。绷带会留在狗身上，你使用<strong><span class="ig">拆除包扎</span></strong>或者伤口愈合时，它会脏着回到你的背包。受伤的腿在流血时会显示红色切口，包扎后会显示一圈纱布，模组基础品种和所有品种附加模组都是如此，而且都会因为受伤的腿而跛行。脏绷带也能用。</li>
 <li>干净的伤口 2 天愈合，包扎的话 1 天。静止的狗（停留模式，或在家被动状态）以全速痊愈，在工作的狗以一半速度痊愈，在战斗中的狗不会痊愈。照顾牲畜的狗痊愈速度和在家被动状态一样。只有存在犬舍里的狗会暂停，因为它离开了这个世界。</li>
 <li>在沙盒里，<strong><span class="ig">兽医护理</span></strong>能整体开关这一切（中途关闭会立刻解除狗身上的限制）， <strong><span class="ig">疾病和疏忽可致死</span></strong>（默认关闭）决定生命值能不能降到零，不管是因为疾病还是饥饿和口渴；关闭时，所有掉血都会停在 10%。</li>
-<li>每种疾病都有自己独立的百分比几率，设为零就单独关闭那种疾病： <strong><span class="ig">每次撕咬的受伤几率（百分比）</span></strong>（默认 0.2）、<strong><span class="ig">每次跳栏的扭伤几率（百分比）</span></strong> （默认 0.5）、<strong><span class="ig">肠胃不适时每6小时感染寄生虫几率（百分比）</span></strong>（默认 10）、 <strong><span class="ig">肠胃不适几率（百分比）</span></strong>（默认 25）、<strong><span class="ig">流感几率（百分比）</span></strong>（默认 15，既用于饥饿的狗每天的判定，也用于每小时待在患病的狗身边的判定）、 <strong><span class="ig">心丝虫几率（百分比）</span></strong>（默认 1.5）、<strong><span class="ig">食物过敏几率（百分比）</span></strong>（默认 5），以及<strong><span class="ig">每次咬伤感染跳蚤和蜱虫几率（百分比）</span></strong>（默认 0.2）。</li>
+<li>每种疾病都有自己独立的百分比几率，设为零就单独关闭那种疾病： <strong><span class="ig">每次撕咬的受伤几率（百分比）</span></strong>（默认 0.4）、<strong><span class="ig">每次跳栏的扭伤几率（百分比）</span></strong> （默认 0.5）、<strong><span class="ig">肠胃不适时每6小时感染寄生虫几率（百分比）</span></strong>（默认 10）、 <strong><span class="ig">肠胃不适几率（百分比）</span></strong>（默认 25）、<strong><span class="ig">流感几率（百分比）</span></strong>（默认 15，既用于饥饿的狗每天的判定，也用于每小时待在患病的狗身边的判定）、 <strong><span class="ig">心丝虫几率（百分比）</span></strong>（默认 1.5）、<strong><span class="ig">食物过敏几率（百分比）</span></strong>（默认 5），以及<strong><span class="ig">每次咬伤感染跳蚤和蜱虫几率（百分比）</span></strong>（默认 0.2）。</li>
 </ul>
 <h3 id="感染发烧危急和死亡">感染：发烧、危急和死亡</h3>
 <ul>
@@ -1335,7 +1363,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <h3 id="药品哪里能找到怎么用">药品：哪里能找到、怎么用</h3>
 <ul>
 <li>一共六种，每盒都有好几剂：抗生素 12 剂，驱虫片 8 剂，疫苗 6 剂，过敏药 24 剂，跳蚤蜱虫药 12 剂，心丝虫药 6 剂。每次治疗消耗一剂。</li>
-<li>会出现在药柜、药房、医院、商店货架、军用仓库、宠物店、宠物用品箱、家用浴室、车库和农场。疫苗和心丝虫药还会出现在兽医诊所的柜台上，那里是它们最常见的地方。</li>
+<li>会出现在药柜、药房、医院、商店货架、军用仓库、宠物店、宠物用品箱、家用浴室、车库和农场。在兽医诊所，疫苗和心丝虫药还会出现在桌子里（4.8%）和每个狗舍里（2.4%）。</li>
 <li>全都通过同一个<strong><span class="ig">治疗伤口</span></strong>子菜单给药，或者在窗口的健康部分：右键点击病症，就会显示你携带的物品能做什么。</li>
 <li>药品不是喝下去就好：一剂药会开启一段持续数小时的治疗，只有在疗程结束时才会治好疾病。期间健康档案会显示<strong><span class="ig">正在治疗</span></strong>这一行，如果药品还有预防效果，会显示 <strong><span class="ig">已防护</span></strong>和剩余天数。</li>
 <li>狗主人的急救和畜牧技能合计能把治疗时间缩短 5%（每级），并把保护期延长 2.5%（每级）。给生病的狗治疗能获得急救经验；给健康的狗预防性用药则没有经验。</li>
@@ -1777,7 +1805,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>6 到 7</td>
 </tr>
 <tr>
-<td><strong>德国牧羊犬、边境牧羊犬、罗威纳、杜宾、拉布拉多</strong></td>
+<td><strong>德国牧羊犬、边境牧羊犬、罗威纳、杜宾、拉布拉多、马林诺斯犬</strong></td>
 <td>6 到 8</td>
 </tr>
 <tr>
@@ -2284,7 +2312,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tr>
 <tr>
 <td>每次撕咬的受伤几率（百分比）</td>
-<td>0.2</td>
+<td>0.4</td>
 <td>狗每咬中僵尸一次判定一次，战斗每升一级降低 5%</td>
 </tr>
 <tr>
