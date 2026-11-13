@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-menu-radial-maintenir-q" data-id="b-menu-radial-maintenir-q">b) Menu radial (maintenir Q)</a>
 <a class="s3" href="#c-raccourcis-clavier" data-id="c-raccourcis-clavier">c) Raccourcis clavier</a>
 <a class="s3" href="#d-boutons-dans-la-fenêtre-du-chien" data-id="d-boutons-dans-la-fenêtre-du-chien">d) Boutons dans la fenêtre du chien</a>
+<a class="s3" href="#jouer-à-la-manette" data-id="jouer-à-la-manette">Jouer à la manette</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Avec le mod de base et les add-ons de race publiés, ça donne :</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>Le mod de base vient avant les add-ons dans les deux listes. Un add-on de race chargé avant Companion Dogs n'enregistre pas sa race.</li>
 <li>Redémarrez complètement le serveur après avoir touché au .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Le chien apparaît d'habitude sur une case libre à l'extérieur du bâtiment : rue, jardin, terrain vague. Il n'apparaît à l'intérieur que s'il ne reste aucune case libre dehors.</p>
 <p>L'option de bac à sable <strong><span class="ig">Multiplicateur d'apparition des chiens</span></strong> met toutes ces chances à l'échelle d'un coup. À 0, les apparitions sont coupées.</p>
 <p>Le Loup Gris ne sort pas d'un bâtiment : il naît en meute dans la forêt et attaque. Pour en avoir un, il faut le vaincre, le soigner et l'apprivoiser. Voir <a href="#7-animaux-agressifs">Animaux agressifs</a>.</p>
-<blockquote class="quote">Les races d'addon arrivent dans des mods Steam séparés, chacune avec ses propres lieux d'apparition : <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> et <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. Ce que fait chacune se trouve dans le <a href="breeds.html" class="xlink">manuel des races</a>.</blockquote>
+<blockquote class="quote">Les races d'addon arrivent dans des mods Steam séparés, chacune avec ses propres lieux d'apparition : <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> et <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. Ce que fait chacune se trouve dans le <a href="breeds.html" class="xlink">manuel des races</a>.</blockquote>
 <h3 id="comment-apprivoiser">Comment apprivoiser</h3>
 <p>Faites un clic droit sur le chien sauvage. La seule option qui apparaît est <strong><span class="ig">Donner à manger (apprivoiser)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Lui ordonne d'attaquer le zombie le plus proche</td>
 </tr>
 <tr>
+<td><strong>Charge</strong></td>
+<td>Seulement chez le Dogue allemand : court en ligne droite et renverse les zombies sur son passage. Pendant la recharge, affiche les minutes restantes</td>
+</tr>
+<tr>
 <td><strong>Tours</strong> ▸</td>
 <td>Sous-menu avec les quatre tours</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Garde</span> n'apparaît pas dans ce menu. La commande n'existe que dans le menu radial, sur le raccourci clavier et sur le bouton de l'onglet Commandes.</blockquote>
 <h3 id="b-menu-radial-maintenir-q">b) Menu radial (maintenir Q)</h3>
 <p>Le mod se greffe sur le menu d'emotes du jeu. Maintenez Q et une nouvelle catégorie apparaît, au nom de la race de votre chien, avec une icône de patte. Elle n'apparaît qu'avec un chien actif à côté de vous.</p>
-<p>Les parts sont : <strong>Viens ici</strong>, <strong>Suis moi</strong>, <strong>Reste ici</strong>, <strong>Garde</strong>, <strong>Alerte</strong>, <strong>Discret</strong>, <strong>Silencieux</strong>, <strong>Attaque le plus proche</strong>, <strong>Chasse</strong> / <strong>Arrête de chasser</strong>, <strong>Tours ▸</strong> et <strong>Ouvrir les sacoches</strong> (s'il porte des sacoches).</p>
+<p>Les parts sont : <strong>Viens ici</strong>, <strong>Suis moi</strong>, <strong>Reste ici</strong>, <strong>Garde</strong>, <strong>Alerte</strong>, <strong>Discret</strong>, <strong>Silencieux</strong>, <strong>Attaque le plus proche</strong>, <strong>Chasse</strong> / <strong>Arrête de chasser</strong>, <strong>Va chercher</strong>, <strong>État</strong>, <strong>Auto-protection : Oui</strong> / <strong>Auto-protection : Non</strong>, <strong>Caresser</strong>, <strong>Tours ▸</strong> et <strong>Ouvrir les sacoches</strong> (s'il porte des sacoches). Le Dogue allemand a aussi la <strong>Charge</strong>.</p>
+<p>Le chat n'a ni Garde ni Attaque le plus proche, et le Carlin n'a ni Discret ni Silencieux.</p>
 <p>Choisir <strong>Tours</strong> ouvre un troisième niveau du radial avec les quatre tours et un <strong>Retour</strong>. Un tour pas encore débloqué apparaît avec une icône rouge et le niveau exigé dans son nom, du genre <em><span class="ig">Faire diversion (Obéissance 3)</span></em>.</p>
 <p>Certaines commandes font aussi gesticuler votre personnage : appeler lève la main, ordonner de rester fait le geste d'arrêt, ordonner d'attaquer pointe du doigt.</p>
 <h3 id="c-raccourcis-clavier">c) Raccourcis clavier</h3>
-<p>Il y a 14 actions assignables et aucune n'arrive avec une touche définie. Ça se règle dans l'onglet <strong><span class="ig">Paramètres</span></strong> de la fenêtre du chien.</p>
+<p>Il y a 16 actions assignables et aucune n'arrive avec une touche définie. Ça se règle dans l'onglet <strong><span class="ig">Paramètres</span></strong> de la fenêtre du chien.</p>
 <div class="tw"><table><thead><tr>
 <th>Action</th>
 <th>Ce que ça fait</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Attaque commandée</td>
 </tr>
 <tr>
+<td><strong>Charge</strong></td>
+<td>Seulement chez le Dogue allemand</td>
+</tr>
+<tr>
 <td><strong>Alerte</strong> / <strong>Discret</strong> / <strong>Silencieux</strong></td>
 <td>Mode de la sentinelle</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Ouvre et ferme la fenêtre du chien</td>
 </tr>
 <tr>
+<td><strong>Caresser</strong></td>
+<td>Les mêmes caresses que dans le menu contextuel</td>
+</tr>
+<tr>
 <td><strong>Aller à un endroit</strong></td>
 <td>Ouvre le curseur de visée du tour</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Si vous choisissez une touche déjà prise, le mod prévient : <em><span class="ig">F est déjà utilisée par: Reste</span></em>. Sans touche définie, le bouton affiche <em><span class="ig">Non assignée</span></em>.</p>
 <h3 id="d-boutons-dans-la-fenêtre-du-chien">d) Boutons dans la fenêtre du chien</h3>
 <p>L'onglet Commandes a tout en bouton. La liste complète est dans <a href="#19-la-fenêtre-du-chien">La fenêtre du chien</a>.</p>
+<h3 id="jouer-à-la-manette">Jouer à la manette</h3>
+<p>Le mod fonctionne à la manette :</p>
+<ul>
+<li>Le radial du chien s'ouvre avec la croix directionnelle vers le bas, c'est le menu d'émotes du jeu.</li>
+<li>Les caresses passent aussi par le radial animal du jeu, avec la croix vers le haut.</li>
+<li>Les fenêtres de confirmation acceptent la manette : nommer le chien qu'on vient d'apprivoiser, renommer, relâcher, arrêter de s'occuper du bétail et rappeler un chien qui est loin.</li>
+<li>Dans l'onglet <strong><span class="ig">Mes compagnons</span></strong>, la croix choisit le chien.</li>
+<li>Dans les sacoches, gauche et droite passent de votre sac à dos aux sacoches, haut et bas choisissent l'objet, A le déplace et B ferme.</li>
+<li>Dans la fenêtre <strong><span class="ig">Inspecter le chien</span></strong> (clic droit sur un chien errant), la croix parcourt les lignes et affiche l'explication de chacune.</li>
+</ul>
 <h2 id="4-les-trois-modes-suivre-rester-et-garder">4. Les trois modes : Suivre, Rester et Garder</h2>
 <p>Le chien est toujours dans l'un de ces trois. Sentinelle, chasse et auto-protection sont des réglages posés par-dessus le mode.</p>
 <h3 id="suivre">Suivre</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>En Suivre, seulement avec l'auto-protection activée et seulement si le zombie vous vise, vise le chien, ou si vous êtes déjà en train de vous battre. Le zombie doit être à 5 cases ou moins de vous.</li>
 <li>En Garder, toujours, dans les 10 cases du poste.</li>
-<li>Avec la commande <strong><span class="ig">Attaque le plus proche</span></strong>, il cherche dans un rayon de 12 cases et poursuit pendant 2 minutes de jeu.</li>
+<li>Avec la commande <strong><span class="ig">Attaque le plus proche</span></strong>, il cherche dans un rayon de 12 cases et poursuit pendant 2 minutes de jeu. Chaque ordre vaut pour une cible : une fois ce zombie à terre, il se remet à vous suivre.</li>
+<li>Avec la <strong><span class="ig">Charge</span></strong>, que seul le Dogue allemand possède, il court en ligne droite jusqu'au zombie devant vous et renverse ceux qui sont sur son passage. Les détails sont dans le <a href="breeds.html" class="xlink">manuel des races</a>.</li>
 </ul>
 <p>Il n'attaque que les zombies hostiles. Les PNJ alliés d'autres mods (Bandits, A-Life) sont épargnés.</p>
 <h3 id="il-ne-mord-pas-à-travers-un-mur">Il ne mord pas à travers un mur</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Sa santé baisse par négligence (faim ou soif au-dessus de 0,8), par nourriture toxique, par la contre-attaque d'un cerf à la chasse et par les états de la section Santé. La négligence et une infection non soignée ne tuent qu'avec <strong><span class="ig">La maladie et la négligence peuvent tuer</span></strong> activée dans le bac à sable ; coupée, ce qui est le défaut, la santé s'arrête à 10%.</li>
 <li>États de blessure : <strong><span class="ig">Blessé</span></strong> en dessous de 30% de santé, <strong><span class="ig">Gravement blessé</span></strong> en dessous de 10%. Un chien gravement blessé ne fait que vous suivre, il ne se bat pas.</li>
 <li>Il se replie derrière vous quand sa santé tombe à 10% ou moins.</li>
-<li>Avec un stress élevé il panique : il ne se bat pas, ne surveille plus et n'obéit à aucun tour. Il court encore vers vous quand vous l'appelez. Il ne sort de la panique que quand le stress descend bien en dessous du seuil.</li>
+<li>Avec un stress élevé il panique : il lâche le combat, revient près de vous et ne se bat plus, ne surveille plus et n'obéit à aucun tour. Il court encore vers vous quand vous l'appelez. Il ne sort de la panique que quand le stress descend bien en dessous du seuil. Des caresses ou de la nourriture le calment tout de suite, et un ordre d'attaque donné avant la panique est annulé.</li>
 </ul>
 <h3 id="le-tableau-de-chasse">Le tableau de chasse</h3>
 <p>Chaque chien a son propre compteur, visible dans sa fenêtre : <strong><span class="ig">Tableau de chasse : 14 zombies, 3 proies</span></strong>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Nourrir accepte n'importe quel aliment non pourri qui coupe la faim ; seule la liste de nourriture toxique est interdite. Pour les <a href="#protéines-cest-un-carnivore">heures sans protéines</a> le type compte. Seule la bouchée nécessaire est consommée.</li>
 <li>Donner à boire demande n'importe quel récipient d'eau dans l'inventaire (le mod cherche aussi dans les sacs).</li>
 <li>Les caresses ont un temps de recharge de 90 minutes de jeu.</li>
+<li>Les caresses passent aussi par la touche <strong>Caresser</strong>, le radial du chien et le radial animal du jeu (croix vers le haut, à la manette). C'est toujours la même caresse, accroupi et avec le gain de loyauté.</li>
 </ul>
 <h3 id="léchelle-de-la-négligence">L'échelle de la négligence</h3>
 <p>Si vous laissez le chien à l'abandon :</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>La gamelle tient de la nourriture ou de l'eau, jamais les deux à la fois. Pour changer, utilisez <strong><span class="ig">Vider la gamelle</span></strong>.</p>
 <p>Le modèle montre le contenu : grise quand elle est vide, marron avec des croquettes, bleue avec de l'eau.</p>
 <h3 id="ce-qui-compte-comme-nourriture-de-gamelle">Ce qui compte comme nourriture de gamelle</h3>
-<p>À peu près n'importe quel aliment qui coupe la faim et qui n'est pas avarié : viande, conserve, plat cuisiné, légume, fruit, oeuf, nourriture pour chien, et aussi herbe et foin.</p>
+<p>À peu près n'importe quel aliment qui coupe la faim et qui n'est pas avarié : viande, conserve, plat cuisiné, légume, fruit, oeuf, nourriture pour chien, et aussi herbe, foin et les sacs de nourriture pour animaux et d'herbe.</p>
 <p>Reste dehors la <a href="#la-nourriture-qui-fait-du-mal">liste de ce qui fait mal au chien</a>, qui apparaît en rouge dans le menu.</p>
 <blockquote class="quote">La pâtée pour chien non ouverte n'apparaît pas dans la liste. Ouvrez la boîte d'abord.</blockquote>
 <p>La gamelle tient jusqu'à 100 points :</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Objet</th>
 <th>Points</th>
 </tr></thead><tbody>
+<tr>
+<td>Nourriture pour animaux, sac plein</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Sac de croquettes</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Herbe</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Sac d'herbe, plein</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>Les deux sacs du jeu valent 1 point par utilisation qu'il leur reste. Le sac ne dépense que ce qui tenait dans la gamelle et, une fois vide, devient le sac vide.</p>
 <p>La viande, le poisson, l'oeuf ou les croquettes que vous versez restent marqués comme protéines, et quand le chien mange cette part, elle compte pour le <a href="#protéines-cest-un-carnivore">compteur des protéines</a> comme si vous l'aviez nourri à la main. Une gamelle remplie de légumes coupe sa faim, rien de plus.</p>
 <p>Si l'objet dépasse la place libre, la gamelle se remplit à ras bord et vous rend le reste. Sur une gamelle à 80 points, un sac de croquettes la monte à 100 et revient dans votre inventaire en valant 40. Le message <em><span class="ig">La gamelle n'a pas la place pour tout ça.</span></em> n'apparaît que si la gamelle est pleine à ras bord.</p>
 <h3 id="comment-le-chien-sen-sert">Comment le chien s'en sert</h3>
 <ul>
 <li>Il y va tout seul quand la faim ou la soif atteint 0,5 (réglable par personnage avec le curseur <em><span class="ig">Mange ou boit quand la faim ou la soif atteint</span></em>, dans l'onglet Paramètres).</li>
 <li>Il cherche une gamelle dans un rayon de 16 cases. La gamelle du mod comme la mangeoire du jeu de base font l'affaire.</li>
+<li>Sans gamelle à son étage, il cherche à l'étage du dessous et à celui du dessus et prend l'escalier. S'il n'arrive pas à atteindre l'étage de la gamelle, il abandonne au bout de 30 secondes et cherche à nouveau.</li>
 <li>Chaque visite vide la moitié de la jauge. Il passe environ 3 minutes de jeu à manger.</li>
 <li>Pendant qu'il va à la gamelle ou qu'il mange, il ignore les zombies et tout le reste. Seul un ordre de votre part l'interrompt. Un chien en panique à cause de la faim en sort en mangeant.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Berger Allemand, Border Collie, Rottweiler, Doberman, Labrador, Berger Belge Malinois</strong></td>
 <td>6 à 8</td>
+</tr>
+<tr>
+<td><strong>Loup Gris, Dogue allemand</strong></td>
+<td>8 à 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Interface :</strong> <span class="ig">Textes d'état : activés/désactivés</span> (les avertissements flottants au-dessus de la tête du chien), <span class="ig">Image d'humeur : activée/désactivée</span> (les moodles de chien) et <span class="ig">Nom de l'animal : activé/désactivé</span> (le nom au-dessus du chien et le <span class="ig">Propriétaire : Untel</span> des chiens des autres).</li>
 <li><strong>Son :</strong> volume général, couper le son, et des barres séparées pour <strong>Aboiements</strong>, <strong>Effets</strong> et <strong>Ambiance</strong>.</li>
 <li><strong>Repas automatique :</strong> la barre <span class="ig">Mange ou boit quand la faim ou la soif atteint</span>.</li>
-<li><strong>Raccourcis clavier :</strong> les 14 actions, avec <strong>Réassigner</strong> et <strong>Effacer</strong>.</li>
+<li><strong>Raccourcis clavier :</strong> les 16 actions, avec <strong>Réassigner</strong> et <strong>Effacer</strong>.</li>
 </ul>
 <blockquote class="quote">Si les aboiements vous gênent, la barre <strong>Aboiements</strong> ne baisse que ça, sans couper la moindre mécanique.</blockquote>
 <h2 id="20-ce-qui-saffiche-à-lécran">20. Ce qui s'affiche à l'écran</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Valable pour tous les moodles de race : sur un chien déloyal, malade, ou qui a très faim ou très soif, le moodle s'éteint jusqu'à ce qu'il soit soigné de nouveau.</blockquote>
 <h3 id="textes-au-dessus-de-la-tête">Textes au-dessus de la tête</h3>
-<p>Le chien empile plusieurs lignes de statut au-dessus de sa tête, visibles à 14 cases et seulement au même étage. De haut en bas : l'alerte de la sentinelle, son état (<strong>Terrifié</strong>, <strong>En panique</strong>, <strong>Gravement blessé</strong>, <strong>Désobéissant</strong>, <strong>Blessé</strong>, <strong>Nerveux</strong>), ce qu'il est en train de faire (manger, chasser, flairer, s'occuper du bétail), la gestation, et le nom, toujours en dernier.</p>
+<p>Le chien empile plusieurs lignes de statut au-dessus de sa tête, visibles à 14 cases et seulement au même étage. De haut en bas : l'alerte de la sentinelle, son état (<strong>Terrifié</strong>, <strong>En panique</strong>, <strong>Gravement blessé</strong>, <strong>Désobéissant</strong>, <strong>Blessé</strong>, <strong>Nerveux</strong>), ce qu'il est en train de faire (manger, chasser, flairer, s'occuper du bétail), la recharge de la Charge chez le Dogue allemand (<strong><span class="ig">Charge dans 12 min</span></strong>), la gestation, et le nom, toujours en dernier.</p>
 <p>L'option <strong><span class="ig">Textes d'état : désactivés</span></strong> (onglet Paramètres) efface tout sauf le nom, et l'option <strong><span class="ig">Nom de l'animal : désactivé</span></strong> (même onglet) n'efface que le nom et le <span class="ig">Propriétaire : Untel</span>. Les deux désactivées, plus rien n'est dessiné. Chacune ne vaut que pour son joueur. L'option du bac à sable <strong><span class="ig">Afficher le nom des chiens</span></strong> est une règle du monde et efface l'étiquette entière pour tout le monde.</p>
 <p>Le chien d'un autre joueur n'affiche que <strong><span class="ig">Propriétaire : Untel</span></strong>, la gestation et le nom.</p>
 <p>Quand la menace est un loup, l'alerte de la sentinelle remplace <span class="ig">zombie</span> par loup : <em><span class="ig">Loup au loin</span></em>, <em><span class="ig">Loup à proximité</span></em>, <em><span class="ig">Loup tout près !</span></em> et <em><span class="ig">Une meute de loups !</span></em>. Voir <a href="#7-animaux-agressifs">Animaux agressifs</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Se désabonner du seul Rottweiler, du Doberman, du Labrador, du Pug (ou de n'importe quel autre) et continuer à jouer avec le mod de base cause le même problème, car les chiens de cette race restent enregistrés dans la sauvegarde.</p>
 <h3 id="si-vos-animaux-ont-déjà-disparu">Si vos animaux ont déjà disparu</h3>
 <p><strong>Réinstallez le mod tout de suite, avant de continuer à jouer ou de sauvegarder.</strong> Les animaux reviennent probablement. Une fois que le jeu a sauvegardé par-dessus, le fichier est perdu et il n'en existe aucune copie.</p>
+<p>Si ce qui est revenu à l'état d'origine, ce sont les meubles et le butin d'une zone, comme une maison entière, la cause est une gamelle restée au sol. Ce morceau de carte a une copie : le jeu garde le fichier qui a échoué dans le dossier <code>blam</code> de la sauvegarde, à côté d'un <code>_error.txt</code>. Jeu fermé et mod réactivé, faites une copie du dossier <code>map</code> de la sauvegarde et copiez <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> par-dessus <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Ce que vous avez changé dans cette zone après la remise à zéro est perdu.</p>
 <h3 id="comment-le-retirer-sans-risque">Comment le retirer sans risque</h3>
 <p>Étape 1 : gardez tous les addons activés. Vérifiez que chaque addon de race que vous avez utilisé dans cette sauvegarde est coché dans la liste de mods de cette sauvegarde (<strong><span class="ig">CHARGER</span></strong> &gt; la sauvegarde &gt; <strong><span class="ig">Choisir les Mods ...</span></strong>). Un addon désactivé cause déjà le problème décrit plus haut.</p>
 <p>Étape 2 : débarrassez-vous des chiens. Deux façons sûres :</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Les porter dans l'inventaire. Le jeu sait sauter cet objet : seul le chien part, le reste demeure.</li>
 </ul>
 <p>Relâcher le chien ou l'emmener loin ne règle rien : son enregistrement reste dans la sauvegarde, et le déplacer ailleurs ne change que la région qui va casser.</p>
-<p>Étape 3 : sauvegardez la partie. C'est la sauvegarde qui grave le nettoyage.</p>
-<p>Étape 4 : retirez le mod.</p>
+<p>Étape 3 : ramassez les gamelles. Une gamelle du mod laissée au sol casse aussi la sauvegarde sans le mod : le jeu ne peut pas lire le morceau de carte où elle se trouve et le recrée de zéro, avec les meubles et le butin revenus à leur état d'origine et sans vos constructions. Ramassez chaque gamelle et gardez-la dans l'inventaire ou dans un conteneur (placard, caisse, coffre de voiture). Dans un conteneur, elle ne cause rien.</p>
+<p>Étape 4 : sauvegardez la partie. C'est la sauvegarde qui grave le nettoyage.</p>
+<p>Étape 5 : retirez le mod.</p>
 <h3 id="nettoyage-complet-admin-mode-debug">Nettoyage complet (admin / mode debug)</h3>
 <p>Les étapes ci-dessus couvrent vos propres chiens, mais le mod sème aussi des errants sur la carte, et impossible de tous les trouver à la main. Pour nettoyer la sauvegarde entière d'un coup, il existe une commande :</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Clic droit sur le sol → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Attendez le message <code>sweep done</code> et sauvegardez la partie.</li>
 </ol>
-<p>La commande efface sur le moment les chiens chargés, puis balaie le reste de la sauvegarde en arrière-plan, sans bloquer la partie. Si elle refuse en citant une race, activez cet addon dans cette sauvegarde et recommencez : sans ses définitions, le nettoyage efface les animaux de la région.</p>
+<p>La commande efface sur le moment les chiens chargés, puis balaie le reste de la sauvegarde en arrière-plan, sans bloquer la partie. Elle ramasse aussi les gamelles posées au sol près des joueurs ; le message dit combien. Une gamelle laissée là où personne ne se trouve en ce moment n'est pas atteinte : allez-y et ramassez-la à la main. Si elle refuse en citant une race, activez cet addon dans cette sauvegarde et recommencez : sans ses définitions, le nettoyage efface les animaux de la région.</p>
 <h2 id="26-réglage-fin-du-serveur-admin">26. Réglage fin du serveur (admin)</h2>
 <p>Cette section s'adresse à qui fait tourner un serveur avec beaucoup de monde et beaucoup de chiens. Le panneau s'appelle <strong><span class="ig">Server tuning / performance</span></strong> : en haut, un compteur en direct de ce que le mod coûte au serveur ; en bas, les champs qui changent ce coût. Les règles de jeu (dégâts, faim, XP, limite de chiens) ne sont pas là, elles restent des options du bac à sable, dans la section 23.</p>
 <blockquote class="quote">Le panneau reste en anglais quelle que soit la langue du jeu, parce que ses libellés sont figés dans le code. Les tableaux ci-dessous citent chacun tel qu'il apparaît à l'écran.</blockquote>

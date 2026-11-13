@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Pug: <code>pg</code>, <code>pv</code></li>
 <li>Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Cats: every suffix that starts with <code>ct</code>, <code>cv</code> or <code>cs</code> (one set per coat)</li>
 </ul>
 <h2 id="10-the-breed-moodle">10. The breed moodle</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> receives the game minutes since the last call, so multiply your effect by <code>elapsedMin</code>.</p>
+<p>A moodle that changes state instead of disappearing has three optional fields. <code>tintFor(dog)</code> returns the background color as r, g, b, and nil keeps <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> and <code>descText(player)</code> return the tooltip text, and nil keeps the text of <code>nameKey</code> and <code>descKey</code>. The Great Dane uses them for its Charge moodle, which turns yellow and shows the minutes left while it recharges.</p>
 <p>Ship the icon in six sizes, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size shows as an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
 <h2 id="11-hooks">11. Hooks</h2>
 <p>Two lists of functions the base calls on the server. Append to them from a shared file.</p>

@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Pug: <code>pg</code>, <code>pv</code></li>
 <li>Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Cats: todo sufijo que empieza por <code>ct</code>, <code>cv</code> o <code>cs</code> (un conjunto por pelaje)</li>
 </ul>
 <h2 id="10-el-moodle-de-la-raza">10. El moodle de la raza</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> devuelve el nivel, o 0 para "no se muestra". <code>apply</code> recibe los minutos de juego desde la última llamada, así que multiplica tu efecto por <code>elapsedMin</code>.</p>
+<p>Un moodle que cambia de estado en vez de desaparecer tiene tres campos opcionales. <code>tintFor(dog)</code> devuelve el color de fondo como r, g, b, y nil mantiene <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> y <code>descText(player)</code> devuelven el texto del globo, y nil mantiene el texto de <code>nameKey</code> y <code>descKey</code>. El Gran danés los usa en su moodle de Embestida, que se pone amarillo y muestra los minutos que faltan durante la recarga.</p>
 <p>Entrega el icono en seis tamaños, de 32 a 128 píxeles. La interfaz elige el tamaño según el escalado del jugador, y un tamaño que falte sale como un cuadrado vacío. El icono aparece en la tira del propio mod, no entre los moodles vanilla.</p>
 <h2 id="11-hooks">11. Hooks</h2>
 <p>Dos listas de funciones que el base llama en el servidor. Añade a ellas desde un archivo shared.</p>

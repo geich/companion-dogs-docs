@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>ลาบราดอร์: <code>lb</code>, <code>lk</code></li>
 <li>ปั๊ก: <code>pg</code>, <code>pv</code></li>
 <li>มาลินอยส์: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>เกรทเดน: <code>gf</code>, <code>gd</code></li>
 <li>แมว: คำต่อท้ายทุกอันที่ขึ้นต้นด้วย <code>ct</code>, <code>cv</code> หรือ <code>cs</code> (หนึ่งชุดต่อหนึ่งสีขน)</li>
 </ul>
 <h2 id="10-moodle-ของสายพนธ">10. moodle ของสายพันธุ์</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> คืนค่าระดับ หรือ 0 แปลว่า "ไม่แสดง" ส่วน <code>apply</code> ได้รับจำนวนนาทีในเกมนับจากการเรียก ครั้งก่อน ให้คูณเอฟเฟกต์ของคุณด้วย <code>elapsedMin</code></p>
+<p>Moodle ที่เปลี่ยนสถานะแทนที่จะหายไป มีฟิลด์เสริมสามตัว <code>tintFor(dog)</code> คืนสีพื้นหลังเป็น r, g, b และ nil จะใช้ <code>tintR</code>/<code>tintG</code>/<code>tintB</code> เหมือนเดิม <code>nameText(player)</code> และ <code>descText(player)</code> คืนข้อความในกล่องข้อความ และ nil จะใช้ข้อความของ <code>nameKey</code> และ <code>descKey</code> เหมือนเดิม เกรทเดนใช้ ทั้งสามตัวกับ Moodle พุ่งชน ซึ่งกลายเป็นสีเหลืองและแสดงนาทีที่เหลือระหว่างชาร์จ</p>
 <p>ใส่ไอคอนมาให้ครบหกขนาด ตั้งแต่ 32 ถึง 128 พิกเซล อินเทอร์เฟซจะเลือกขนาดตามการปรับสเกลของผู้เล่น และขนาดที่ขาดไปจะขึ้นเป็นสี่เหลี่ยมว่าง ไอคอนจะไปอยู่ในแถบของม็อดเอง ไม่ปนกับ moodle ของเกมหลัก</p>
 <h2 id="11-ฮก">11. ฮุก</h2>
 <p>รายการฟังก์ชันสองชุดที่ตัวหลักเรียกบนเซิร์ฟเวอร์ ให้เพิ่มเข้าไปจากไฟล์ shared</p>

@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-menu-radiale-tieni-premuto-q" data-id="b-menu-radiale-tieni-premuto-q">b) Menu radiale (tieni premuto Q)</a>
 <a class="s3" href="#c-tasti-di-scelta-rapida" data-id="c-tasti-di-scelta-rapida">c) Tasti di scelta rapida</a>
 <a class="s3" href="#d-pulsanti-nella-finestra-del-cane" data-id="d-pulsanti-nella-finestra-del-cane">d) Pulsanti nella finestra del cane</a>
+<a class="s3" href="#giocare-con-il-controller" data-id="giocare-con-il-controller">Giocare con il controller</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Con il mod base e gli add-on di razza pubblicati viene così:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>Il mod base viene prima degli add-on in tutte e due le liste. Un add-on di razza caricato prima di Companion Dogs non registra la razza.</li>
 <li>Riavvia il server per intero dopo aver toccato il .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Di solito il cane nasce su una casella libera fuori dall'edificio: strada, cortile, terreno. Nasce dentro solo quando non resta nessuna casella esterna libera.</p>
 <p>L'opzione di sandbox <strong><span class="ig">Moltiplicatore tasso di spawn cani</span></strong> scala tutte queste probabilità in una volta. A 0 lo spawn si spegne.</p>
 <p>Il Lupo grigio non esce dagli edifici: nasce in branco nel bosco e attacca. Per averne uno bisogna sconfiggerlo, curarlo e addomesticarlo. Vedi <a href="#7-animali-aggressivi">Animali aggressivi</a>.</p>
-<blockquote class="quote">Le razze add-on arrivano in mod separate su Steam, ognuna con i propri posti di spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. Quello che fa ognuna sta nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</blockquote>
+<blockquote class="quote">Le razze add-on arrivano in mod separate su Steam, ognuna con i propri posti di spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. Quello che fa ognuna sta nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</blockquote>
 <h3 id="come-si-addomestica">Come si addomestica</h3>
 <p>Clicca con il tasto destro sul cane selvatico. L'unica voce che compare è <strong><span class="ig">Dai cibo (fai amicizia)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Lo manda contro lo zombie più vicino</td>
 </tr>
 <tr>
+<td><strong>Carica</strong></td>
+<td>Solo nell'Alano: corre in linea retta e atterra gli zombie sul suo cammino. Durante la ricarica, mostra i minuti che mancano</td>
+</tr>
+<tr>
 <td><strong>Trucchi</strong> ▸</td>
 <td>Sottomenu con i quattro trucchi</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Difendi</span> non compare in questo menu. Il comando esiste solo nel menu radiale, sul tasto di scelta rapida e nel pulsante della scheda Comandi.</blockquote>
 <h3 id="b-menu-radiale-tieni-premuto-q">b) Menu radiale (tieni premuto Q)</h3>
 <p>Il mod entra nel menu delle emote del gioco. Tieni premuto Q e compare una categoria nuova con il nome della razza del tuo cane e un'icona a forma di zampa. La categoria appare solo con un cane attivo lì vicino.</p>
-<p>Gli spicchi sono: <strong>Vieni qui</strong>, <strong>Segui</strong>, <strong>Resta</strong>, <strong>Difendi</strong>, <strong>Avviso</strong>, <strong>Discreto</strong>, <strong>Silenzioso</strong>, <strong>Attacca il più vicino</strong>, <strong>Caccia</strong> / <strong>Smetti di cacciare</strong>, <strong>Trucchi ▸</strong> e <strong>Apri le bisacce</strong> (se ha le bisacce addosso).</p>
+<p>Gli spicchi sono: <strong>Vieni qui</strong>, <strong>Segui</strong>, <strong>Resta</strong>, <strong>Difendi</strong>, <strong>Avviso</strong>, <strong>Discreto</strong>, <strong>Silenzioso</strong>, <strong>Attacca il più vicino</strong>, <strong>Caccia</strong> / <strong>Smetti di cacciare</strong>, <strong>Porta</strong>, <strong>Stato</strong>, <strong>Auto-protezione: Attiva</strong> / <strong>Auto-protezione: Disattiva</strong>, <strong>Accarezza</strong>, <strong>Trucchi ▸</strong> e <strong>Apri le bisacce</strong> (se ha le bisacce addosso). L'Alano ha anche la <strong>Carica</strong>.</p>
+<p>Il gatto non ha Difendi né Attacca il più vicino, e il Carlino non ha Discreto né Silenzioso.</p>
 <p>Scegliendo <strong>Trucchi</strong> si apre un terzo livello del radiale con i quattro trucchi e un <strong>Indietro</strong>. Un trucco non ancora sbloccato compare con l'icona rossa e il livello richiesto nel nome, tipo <em><span class="ig">Distrai (Obbedienza 3)</span></em>.</p>
 <p>Alcuni comandi fanno anche gesticolare il tuo personaggio: chiamare alza la mano, dire di restare fa il gesto dell'alt, ordinare l'attacco punta il dito.</p>
 <h3 id="c-tasti-di-scelta-rapida">c) Tasti di scelta rapida</h3>
-<p>Le azioni assegnabili sono 14 e nessuna ha già un tasto. Le configuri nella scheda <strong><span class="ig">Impostazioni</span></strong> della finestra del cane.</p>
+<p>Le azioni assegnabili sono 16 e nessuna ha già un tasto. Le configuri nella scheda <strong><span class="ig">Impostazioni</span></strong> della finestra del cane.</p>
 <div class="tw"><table><thead><tr>
 <th>Azione</th>
 <th>Cosa fa</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Attacco a comando</td>
 </tr>
 <tr>
+<td><strong>Carica</strong></td>
+<td>Solo nell'Alano</td>
+</tr>
+<tr>
 <td><strong>Avviso</strong> / <strong>Discreto</strong> / <strong>Silenzioso</strong></td>
 <td>Modalità della sentinella</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Apre e chiude la finestra del cane</td>
 </tr>
 <tr>
+<td><strong>Accarezza</strong></td>
+<td>La stessa carezza del menu di contesto</td>
+</tr>
+<tr>
 <td><strong>Vai in un punto</strong></td>
 <td>Apre il cursore di mira del trucco</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Se scegli un tasto già usato, il mod avvisa: <em><span class="ig">F già in uso da: Resta</span></em>. Senza un tasto assegnato il pulsante mostra <em><span class="ig">Non assegnato</span></em>.</p>
 <h3 id="d-pulsanti-nella-finestra-del-cane">d) Pulsanti nella finestra del cane</h3>
 <p>La scheda Comandi ha tutto sotto forma di pulsante. L'elenco completo sta in <a href="#19-la-finestra-del-cane">La finestra del cane</a>.</p>
+<h3 id="giocare-con-il-controller">Giocare con il controller</h3>
+<p>Il mod funziona con il controller:</p>
+<ul>
+<li>Il radiale del cane si apre con la croce direzionale verso il basso, che è il menu delle emote del gioco.</li>
+<li>La carezza passa anche dal radiale degli animali del gioco, con la croce verso l'alto.</li>
+<li>Le finestre di conferma accettano il controller: dare il nome al cane appena addomesticato, rinominare, liberare, smettere di badare al bestiame e richiamare un cane che è lontano.</li>
+<li>Nella scheda <strong><span class="ig">I Miei Compagni</span></strong>, la croce sceglie il cane.</li>
+<li>Nelle bisacce, sinistra e destra passano dal tuo zaino alle bisacce, su e giù scelgono l'oggetto, A lo sposta e B chiude.</li>
+<li>Nella finestra <strong><span class="ig">Ispeziona il cane</span></strong> (tasto destro su un randagio), la croce scorre le righe e mostra la spiegazione di ognuna.</li>
+</ul>
 <h2 id="4-le-tre-modalità-segui-resta-e-difendi">4. Le tre modalità: Segui, Resta e Difendi</h2>
 <p>Il cane sta sempre in una di queste tre. Sentinella, caccia e auto-protezione sono regolazioni che si sovrappongono alla modalità.</p>
 <h3 id="segui">Segui</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>In Segui, solo con l'auto-protezione accesa e solo se lo zombie punta te o il cane, o se stai già combattendo. Lo zombie deve stare a 5 caselle o meno da te.</li>
 <li>In Difendi, sempre, dentro le 10 caselle dalla postazione.</li>
-<li>Con il comando <strong><span class="ig">Attacca il più vicino</span></strong>, cerca in un raggio di 12 caselle e insegue per 2 minuti di gioco.</li>
+<li>Con il comando <strong><span class="ig">Attacca il più vicino</span></strong>, cerca in un raggio di 12 caselle e insegue per 2 minuti di gioco. Ogni ordine vale per un bersaglio: finito quello zombie, torna a seguirti.</li>
+<li>Con la <strong><span class="ig">Carica</span></strong>, che ha solo l'Alano, corre in linea retta fino allo zombie davanti a te e atterra quelli sul suo cammino. I dettagli sono nel <a href="breeds.html" class="xlink">manuale delle razze</a>.</li>
 </ul>
 <p>Attacca solo gli zombie ostili. Gli NPC alleati di altre mod (Bandits, A-Life) vengono risparmiati.</p>
 <h3 id="non-morde-attraverso-i-muri">Non morde attraverso i muri</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>La salute cala per incuria (fame o sete sopra 0,8), per cibo tossico, per la reazione del cervo durante la caccia e per le condizioni della sezione Salute. Incuria e infezione non curata uccidono solo con <strong><span class="ig">Malattie e incuria possono uccidere</span></strong> accesa nel sandbox; spenta, quella di base, la salute si ferma al 10%.</li>
 <li>Stati di ferita: <strong><span class="ig">Ferito</span></strong> sotto il 30% di salute, <strong><span class="ig">Gravemente ferito</span></strong> sotto il 10%. Un cane gravemente ferito ti segue soltanto, non combatte.</li>
 <li>Ripiega dietro di te quando la salute scende al 10% o meno.</li>
-<li>Con lo stress alto entra in panico: non combatte, non fa la guardia e non esegue trucchi. Corre ancora da te quando lo chiami. Esce dal panico solo quando lo stress scende ben sotto la soglia.</li>
+<li>Con lo stress alto entra in panico: molla lo scontro, torna vicino a te e non combatte, non fa la guardia e non esegue trucchi. Corre ancora da te quando lo chiami. Esce dal panico solo quando lo stress scende ben sotto la soglia. Una carezza o il cibo lo calmano subito, e un ordine di attacco dato prima del panico viene annullato.</li>
 </ul>
 <h3 id="conteggio-delle-uccisioni">Conteggio delle uccisioni</h3>
 <p>Ogni cane ha il proprio contatore, visibile nella sua finestra: <strong><span class="ig">Uccisioni: 14 zombie, 3 prede</span></strong>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Dare da mangiare accetta qualsiasi cibo che non sia marcio e che tolga la fame; è vietata solo la lista del cibo tossico. Per le <a href="#proteine-è-carnivoro">ore senza proteine</a> il tipo conta. Viene consumato solo il morso necessario.</li>
 <li>Dare acqua richiede un contenitore qualsiasi con acqua nell'inventario (il mod cerca anche dentro gli zaini).</li>
 <li>Le coccole hanno un tempo di attesa di 90 minuti di gioco.</li>
+<li>La carezza passa anche dal tasto <strong>Accarezza</strong>, dal radiale del cane e dal radiale degli animali del gioco (croce verso l'alto, con il controller). È sempre la stessa, accovacciato e con il guadagno di lealtà.</li>
 </ul>
 <h3 id="la-scala-dellincuria">La scala dell'incuria</h3>
 <p>Se lasci il cane a se stesso:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>La ciotola tiene cibo oppure acqua, mai le due cose insieme. Per cambiare, usa <strong><span class="ig">Svuota la ciotola</span></strong>.</p>
 <p>Il modello mostra il contenuto: grigia da vuota, marrone con le crocchette, azzurra con l'acqua.</p>
 <h3 id="cosa-vale-come-cibo-da-ciotola">Cosa vale come cibo da ciotola</h3>
-<p>Quasi ogni cibo che tolga la fame e non sia andato a male: carne, scatolame, pasti cucinati, verdura, frutta, uova, cibo per cani, e anche erba tagliata e paglia.</p>
+<p>Quasi ogni cibo che tolga la fame e non sia andato a male: carne, scatolame, pasti cucinati, verdura, frutta, uova, cibo per cani, e anche erba tagliata, paglia e i sacchi di mangime per animali e di erba.</p>
 <p>Resta fuori la <a href="#il-cibo-che-fa-male">lista di quello che fa male al cane</a>, che compare in rosso nel menu.</p>
 <blockquote class="quote">La lattina di cibo per cani chiusa non compare nella lista. Aprila prima.</blockquote>
 <p>La ciotola tiene fino a 100 punti:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Oggetto</th>
 <th>Punti</th>
 </tr></thead><tbody>
+<tr>
+<td>Sacchetto di mangime per animali, pieno</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Cibo secco per cani</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Erba tagliata</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Sacco di erba, pieno</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>I due sacchi del gioco valgono 1 punto per ogni uso che resta. Il sacco consuma solo quello che è entrato nella ciotola e, quando finisce, diventa il sacco vuoto.</p>
 <p>Quello che versi di carne, pesce, uova o crocchette resta segnato come proteina, e quando il cane mangia quella parte conta per l'<a href="#proteine-è-carnivoro">orologio delle proteine</a> come se gli avessi dato da mangiare a mano. Una ciotola piena solo di verdura gli toglie la fame e nient'altro.</p>
 <p>Se l'oggetto è più grande dello spazio libero, la ciotola si riempie fino all'orlo e ti restituisce il resto. Su una ciotola a 80 punti, un sacco di cibo secco la porta a 100 e torna nel tuo inventario valendo 40. Il messaggio <em><span class="ig">La ciotola è piena.</span></em> compare solo con la ciotola del tutto piena.</p>
 <h3 id="come-la-usa-il-cane">Come la usa il cane</h3>
 <ul>
 <li>Ci va da solo quando la fame o la sete arrivano a 0,5 (regolabile per personaggio con il cursore <em><span class="ig">Mangia quando fame/sete raggiunge</span></em>, nella scheda Impostazioni).</li>
 <li>Cerca una ciotola in un raggio di 16 caselle. Vanno bene sia la ciotola del mod sia la mangiatoia vanilla del gioco.</li>
+<li>Senza ciotola al suo piano, cerca al piano di sotto e a quello di sopra e prende le scale. Se non riesce a raggiungere il piano della ciotola, rinuncia dopo 30 secondi e torna a cercare.</li>
 <li>Ogni visita toglie metà della barra. Resta a mangiare per circa 3 minuti di gioco.</li>
 <li>Mentre va alla ciotola o mangia, ignora gli zombie e tutto il resto. Solo un tuo comando lo interrompe. Un cane in panico per la fame esce dal panico quando mangia.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Pastore Tedesco, Border Collie, Rottweiler, Dobermann, Labrador, Pastore Belga Malinois</strong></td>
 <td>da 6 a 8</td>
+</tr>
+<tr>
+<td><strong>Lupo grigio, Alano</strong></td>
+<td>da 8 a 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Interfaccia:</strong> <span class="ig">Testi di stato: on/off</span> (gli avvisi che fluttuano sopra la testa del cane), <span class="ig">Icona umore: on/off</span> (i moodle del cane) e <span class="ig">Nome dell'animale: on/off</span> (il nome sopra il cane e il <span class="ig">Proprietario: Tizio</span> dei cani degli altri).</li>
 <li><strong>Suono:</strong> volume principale, muto, e cursori separati per <strong>Abbaio</strong>, <strong>Effetti</strong> e <strong>Ambiente</strong>.</li>
 <li><strong>Auto-nutrizione:</strong> il cursore <span class="ig">Mangia quando fame/sete raggiunge</span>.</li>
-<li><strong>Tasti di scelta rapida:</strong> le 14 azioni, con <strong>Riassegna</strong> e <strong>Cancella</strong>.</li>
+<li><strong>Tasti di scelta rapida:</strong> le 16 azioni, con <strong>Riassegna</strong> e <strong>Cancella</strong>.</li>
 </ul>
 <blockquote class="quote">Se l'abbaio ti dà fastidio, il cursore dell'<strong>Abbaio</strong> abbassa solo quello, senza spegnere nessuna meccanica.</blockquote>
 <h2 id="20-cosa-vedi-sullo-schermo">20. Cosa vedi sullo schermo</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Vale per tutti i moodle di razza: su un cane sleale, malato, o con fame o sete alta, il moodle si spegne finché non è di nuovo accudito.</blockquote>
 <h3 id="i-testi-sopra-la-testa">I testi sopra la testa</h3>
-<p>Il cane impila diverse righe di stato sopra la testa, visibili a 14 caselle e solo sullo stesso piano. Dall'alto in basso: l'allarme della sentinella, lo stato (<strong>Terrorizzato</strong>, <strong>Nel panico</strong>, <strong>Gravemente ferito</strong>, <strong>Disubbidiente</strong>, <strong>Ferito</strong>, <strong>Nervoso</strong>), quello che sta facendo (mangia, caccia, fiuta, bada al bestiame), la gravidanza, e il nome, sempre per ultimo.</p>
+<p>Il cane impila diverse righe di stato sopra la testa, visibili a 14 caselle e solo sullo stesso piano. Dall'alto in basso: l'allarme della sentinella, lo stato (<strong>Terrorizzato</strong>, <strong>Nel panico</strong>, <strong>Gravemente ferito</strong>, <strong>Disubbidiente</strong>, <strong>Ferito</strong>, <strong>Nervoso</strong>), quello che sta facendo (mangia, caccia, fiuta, bada al bestiame), la ricarica della Carica nell'Alano (<strong><span class="ig">Carica tra 12 min</span></strong>), la gravidanza, e il nome, sempre per ultimo.</p>
 <p>L'opzione <strong><span class="ig">Testi di stato: off</span></strong> (scheda Impostazioni) spegne tutto tranne il nome, e l'opzione <strong><span class="ig">Nome dell'animale: off</span></strong> (stessa scheda) spegne solo il nome e il <span class="ig">Proprietario: Tizio</span>. Con tutte e due spente non viene disegnato niente. Ognuna vale solo per il tuo giocatore. L'opzione di sandbox <strong><span class="ig">Mostra nomi sopra la testa</span></strong> è regola del mondo e cancella l'etichetta intera per tutti.</p>
 <p>Il cane di un altro giocatore mostra solo <strong><span class="ig">Proprietario: Tizio</span></strong>, la gravidanza e il nome.</p>
 <p>Quando la minaccia è un lupo, l'allarme della sentinella cambia <span class="ig">zombie</span> con lupo: <em><span class="ig">Lupo in lontananza</span></em>, <em><span class="ig">Lupo nei paraggi</span></em>, <em><span class="ig">Lupo vicinissimo!</span></em> e <em><span class="ig">Branco di lupi!</span></em>. Vedi <a href="#7-animali-aggressivi">Animali aggressivi</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Disiscriversi solo dal Rottweiler, dal Dobermann, dal Labrador, dal Carlino (o da qualsiasi altro) e continuare a giocare con la mod base causa lo stesso problema, perché i cani di quella razza restano scritti nel salvataggio.</p>
 <h3 id="se-gli-animali-sono-già-spariti">Se gli animali sono già spariti</h3>
 <p><strong>Reinstalla la mod adesso, prima di continuare a giocare o salvare.</strong> Gli animali probabilmente tornano. Una volta che il gioco salva sopra, il file è perso e non ne esiste nessun backup.</p>
+<p>Se a tornare allo stato originale sono stati i mobili e il bottino di una zona, come una casa intera, la causa è una ciotola rimasta a terra. Quel pezzo di mappa ha una copia: il gioco tiene il file che ha fallito nella cartella <code>blam</code> del salvataggio, accanto a un <code>_error.txt</code>. A gioco chiuso e con la mod di nuovo attiva, fai un backup della cartella <code>map</code> del salvataggio e copia <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> sopra <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Quello che hai cambiato in quella zona dopo il ripristino va perso.</p>
 <h3 id="come-rimuoverla-in-sicurezza">Come rimuoverla in sicurezza</h3>
 <p>Passo 1: tieni tutti gli addon attivi. Verifica che ogni addon di razza che hai usato in quel salvataggio sia spuntato nella lista mod di quel salvataggio (<strong><span class="ig">CARICA</span></strong> &gt; il salvataggio &gt; <strong><span class="ig">Scegli le mod...</span></strong>). Un addon disattivato causa già il problema descritto sopra.</p>
 <p>Passo 2: libera il salvataggio dai cani. Due modi sicuri:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Portarli nell'inventario. Il gioco sa saltare quell'oggetto: sparisce solo il cane, il resto rimane.</li>
 </ul>
 <p>Lasciar andare il cane o portarlo lontano non risolve: il suo record resta nel salvataggio, e spostarlo altrove cambia soltanto quale regione si rompe.</p>
-<p>Passo 3: salva la partita. È il salvataggio che scrive la pulizia.</p>
-<p>Passo 4: rimuovi la mod.</p>
+<p>Passo 3: raccogli le ciotole. Una ciotola della mod lasciata a terra rompe anche lei il salvataggio senza la mod: il gioco non riesce a leggere il pezzo di mappa dove si trova e lo ricrea da zero, con mobili e bottino tornati allo stato originale e senza le tue costruzioni. Raccogli ogni ciotola da terra e tienila nell'inventario o dentro un contenitore (armadio, cassa, bagagliaio). Dentro un contenitore non causa nulla.</p>
+<p>Passo 4: salva la partita. È il salvataggio che scrive la pulizia.</p>
+<p>Passo 5: rimuovi la mod.</p>
 <h3 id="pulizia-completa-admin-modalità-debug">Pulizia completa (admin / modalità debug)</h3>
 <p>I passi qui sopra coprono i tuoi cani, ma la mod sparge anche randagi per la mappa, e non c'è modo di trovarli tutti a mano. Per pulire l'intero salvataggio in una volta c'è un comando:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Tasto destro sul terreno → <strong>Cani da compagnia (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Aspetta il messaggio <code>sweep done</code> e salva la partita.</li>
 </ol>
-<p>Il comando cancella subito i cani caricati e poi setaccia il resto del salvataggio in secondo piano, senza bloccare la partita. Se rifiuta citando una razza, attiva quell'addon in quel salvataggio e ripeti: senza le sue definizioni, pulire cancella gli animali della regione.</p>
+<p>Il comando cancella subito i cani caricati e poi setaccia il resto del salvataggio in secondo piano, senza bloccare la partita. Toglie anche da terra le ciotole vicine ai giocatori; il messaggio dice quante. Una ciotola lasciata dove adesso non c'è nessuno non viene raggiunta: vai lì e raccoglila a mano. Se rifiuta citando una razza, attiva quell'addon in quel salvataggio e ripeti: senza le sue definizioni, pulire cancella gli animali della regione.</p>
 <h2 id="26-messa-a-punto-del-server-admin">26. Messa a punto del server (admin)</h2>
 <p>Questa sezione è per chi manda avanti un server con tanta gente e tanti cani. Il pannello si chiama <strong><span class="ig">Server tuning / performance</span></strong>: in alto, un misuratore dal vivo di quanto la mod costa al server; sotto, i campi che cambiano quel costo. Le regole di gioco (danno, fame, XP, limite di cani) non stanno qui, restano opzioni di sandbox, nella sezione 23.</p>
 <blockquote class="quote">Il pannello resta in inglese in qualsiasi lingua del gioco, perché le etichette sono fisse nel codice. Le tabelle qui sotto citano ognuna di esse come appare sullo schermo.</blockquote>

@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-menu-radial-segurar-q" data-id="b-menu-radial-segurar-q">b) Menu radial (segurar Q)</a>
 <a class="s3" href="#c-teclas-de-atalho" data-id="c-teclas-de-atalho">c) Teclas de atalho</a>
 <a class="s3" href="#d-botões-na-janela-do-cão" data-id="d-botões-na-janela-do-cão">d) Botões na janela do cão</a>
+<a class="s3" href="#jogar-com-controle" data-id="jogar-com-controle">Jogar com controle</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Com o base e os add-ons de raça publicados, fica assim:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>O base vem antes dos add-ons nas duas listas. Um add-on de raça carregado antes do Companion Dogs não registra a raça.</li>
 <li>Reinicie o servidor por completo depois de mexer no .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>O cão costuma nascer num tile livre do lado de fora do prédio: rua, quintal, terreno. Ele só nasce dentro quando não sobra nenhum tile externo livre.</p>
 <p>A opção de sandbox <strong><span class="ig">Multiplicador de spawn de animais</span></strong> escala todas essas chances de uma vez. Em 0 o spawn desliga.</p>
 <p>O Lobo-cinzento não sai de prédio: ele nasce em alcateia na floresta e ataca. Para ter um, é preciso derrotá-lo, tratar e domar. Ver <a href="#7-animais-agressivos">Animais agressivos</a>.</p>
-<blockquote class="quote">As raças de addon vêm em mods separados na Steam, cada uma com os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
+<blockquote class="quote">As raças de addon vêm em mods separados na Steam, cada uma com os próprios lugares de spawn: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> e <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. O que cada uma faz está no <a href="breeds.html" class="xlink">manual de raças</a>.</blockquote>
 <h3 id="como-domesticar">Como domesticar</h3>
 <p>Clique com o botão direito no cão selvagem. A única opção que aparece é <strong><span class="ig">Dar comida (fazer amizade)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Manda atacar o zumbi mais próximo</td>
 </tr>
 <tr>
+<td><strong>Investida</strong></td>
+<td>Só no Dogue Alemão: corre em linha reta e derruba os zumbis no caminho. Na recarga, mostra os minutos que faltam</td>
+</tr>
+<tr>
 <td><strong>Truques</strong> ▸</td>
 <td>Submenu com os quatro truques</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Vigiar</span> não aparece nesse menu. O comando só existe no menu radial, na tecla de atalho e no botão da aba Comandos.</blockquote>
 <h3 id="b-menu-radial-segurar-q">b) Menu radial (segurar Q)</h3>
 <p>O mod entra no menu de emotes do jogo. Segure Q e aparece uma categoria nova com o nome da raça do seu cão e um ícone de patinha. A categoria só aparece com um cão ativo por perto.</p>
-<p>As fatias são: <strong>Vir aqui</strong>, <strong>Seguir</strong>, <strong>Ficar</strong>, <strong>Vigiar</strong>, <strong>Alerta</strong>, <strong>Discreto</strong>, <strong>Silencioso</strong>, <strong>Atacar mais próximo</strong>, <strong>Caçar</strong> / <strong>Parar de caçar</strong>, <strong>Truques ▸</strong> e <strong>Abrir alforjes</strong> (se ele estiver com alforje).</p>
+<p>As fatias são: <strong>Vir aqui</strong>, <strong>Seguir</strong>, <strong>Ficar</strong>, <strong>Vigiar</strong>, <strong>Alerta</strong>, <strong>Discreto</strong>, <strong>Silencioso</strong>, <strong>Atacar mais próximo</strong>, <strong>Caçar</strong> / <strong>Parar de caçar</strong>, <strong>Trazer</strong>, <strong>Status</strong>, <strong>Auto-proteção: Ligada</strong> / <strong>Auto-proteção: Desligada</strong>, <strong>Acariciar</strong>, <strong>Truques ▸</strong> e <strong>Abrir alforjes</strong> (se ele estiver com alforje). O Dogue Alemão tem também a <strong>Investida</strong>.</p>
+<p>O gato não tem Vigiar nem Atacar mais próximo, e o Pug não tem Discreto nem Silencioso.</p>
 <p>Escolher <strong>Truques</strong> abre um terceiro nível do radial com os quatro truques e um <strong>Voltar</strong>. Truque ainda não destravado aparece com ícone vermelho e o nível exigido no nome, tipo <em><span class="ig">Distrair (Obediência 3)</span></em>.</p>
 <p>Alguns comandos também fazem o seu personagem gesticular: chamar levanta a mão, mandar ficar faz o gesto de parar, mandar atacar aponta.</p>
 <h3 id="c-teclas-de-atalho">c) Teclas de atalho</h3>
-<p>São 14 ações bindáveis e nenhuma vem com tecla definida. Você configura na aba <strong><span class="ig">Configurações</span></strong> da janela do cão.</p>
+<p>São 16 ações bindáveis e nenhuma vem com tecla definida. Você configura na aba <strong><span class="ig">Configurações</span></strong> da janela do cão.</p>
 <div class="tw"><table><thead><tr>
 <th>Ação</th>
 <th>O que faz</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Ataque comandado</td>
 </tr>
 <tr>
+<td><strong>Investida</strong></td>
+<td>Só no Dogue Alemão</td>
+</tr>
+<tr>
 <td><strong>Alerta</strong> / <strong>Discreto</strong> / <strong>Silencioso</strong></td>
 <td>Modo da sentinela</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Abre e fecha a janela do cão</td>
 </tr>
 <tr>
+<td><strong>Acariciar</strong></td>
+<td>O mesmo carinho do menu de contexto</td>
+</tr>
+<tr>
 <td><strong>Ir até um ponto</strong></td>
 <td>Abre o cursor de mira do truque</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Se você escolher uma tecla já usada, o mod avisa: <em><span class="ig">F já usada por: Ficar</span></em>. Sem tecla definida, o botão mostra <em><span class="ig">Sem tecla</span></em>.</p>
 <h3 id="d-botões-na-janela-do-cão">d) Botões na janela do cão</h3>
 <p>A aba Comandos tem tudo em botão. A lista completa está em <a href="#19-a-janela-do-cão">A janela do cão</a>.</p>
+<h3 id="jogar-com-controle">Jogar com controle</h3>
+<p>O mod funciona no controle:</p>
+<ul>
+<li>O radial do cão abre no direcional para baixo, que é o menu de emotes do jogo.</li>
+<li>O carinho também sai pelo radial de animal do jogo, no direcional para cima.</li>
+<li>As janelas de confirmação aceitam o controle: dar nome ao cão recém-domado, renomear, soltar, parar de cuidar do gado e chamar de volta um cão que está longe.</li>
+<li>Na aba <strong><span class="ig">Meus Companheiros</span></strong>, o direcional escolhe o cão.</li>
+<li>No alforje, esquerda e direita trocam entre a sua mochila e o alforje, cima e baixo escolhem o item, A move e B fecha.</li>
+<li>Na janela de <strong><span class="ig">Inspecionar animal</span></strong> (botão direito num vira-lata), o direcional percorre as linhas e mostra a explicação de cada uma.</li>
+</ul>
 <h2 id="4-os-três-modos-seguir-ficar-e-vigiar">4. Os três modos: Seguir, Ficar e Vigiar</h2>
 <p>O cão está sempre em um desses três. Sentinela, caça e auto-proteção são ajustes por cima do modo.</p>
 <h3 id="seguir">Seguir</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>Em Seguir, só com a auto-proteção ligada e só se o zumbi mirar você ou o cão, ou se você já estiver lutando. O zumbi precisa estar a 5 tiles ou menos de você.</li>
 <li>Em Vigiar, sempre, dentro dos 10 tiles do posto.</li>
-<li>Com o comando <strong><span class="ig">Atacar mais próximo</span></strong>, ele busca num raio de 12 tiles e persegue por 2 minutos de jogo.</li>
+<li>Com o comando <strong><span class="ig">Atacar mais próximo</span></strong>, ele busca num raio de 12 tiles e persegue por 2 minutos de jogo. Cada ordem vale um alvo: acabado aquele zumbi, ele volta a seguir.</li>
+<li>Com a <strong><span class="ig">Investida</span></strong>, que só o Dogue Alemão tem, ele corre em linha reta até o zumbi à sua frente e derruba os que estiverem no caminho. A ordem está na ficha dele, no <a href="breeds.html" class="xlink">manual de raças</a>.</li>
 </ul>
 <p>Ele só ataca zumbis hostis. NPCs aliados de outros mods (Bandits, A-Life) são poupados.</p>
 <h3 id="ele-não-morde-através-de-parede">Ele não morde através de parede</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>A vida dele cai por negligência (fome ou sede acima de 0,8), por comida tóxica, por contra-ataque de cervo na caça e pelas condições da seção Saúde. Negligência e infecção sem tratamento matam só com <strong><span class="ig">Doença e negligência podem matar</span></strong> ligada no sandbox; desligada, o padrão, a vida para em 10%.</li>
 <li>Estados de ferimento: <strong><span class="ig">Ferido</span></strong> abaixo de 30% de vida, <strong><span class="ig">Muito ferido</span></strong> abaixo de 10%. Um cão muito ferido só segue você, não luta.</li>
 <li>Ele recua para trás de você quando a vida cai a 10% ou menos.</li>
-<li>Com estresse alto ele entra em pânico: não luta, não vigia e não obedece truque. Ainda corre até você quando chamado. Ele só sai do pânico quando o estresse cai bem abaixo do limiar.</li>
+<li>Com estresse alto ele entra em pânico: larga a briga, volta para perto de você e não luta, não vigia nem obedece truque. Ainda corre até você quando chamado. Ele só sai do pânico quando o estresse cai bem abaixo do limiar. Carinho ou comida acalmam na hora, e uma ordem de atacar dada antes do pânico é cancelada.</li>
 </ul>
 <h3 id="contagem-de-abates">Contagem de abates</h3>
 <p>Cada cão tem o próprio contador, visível na janela dele: <strong><span class="ig">Abates: 14 zumbis, 3 caças</span></strong>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Alimentar aceita qualquer comida que não esteja podre e mate fome; só a lista de comida tóxica é proibida. Para as <a href="#proteína-ele-é-carnívoro">horas sem proteína</a> o tipo importa. Só a mordida necessária é consumida.</li>
 <li>Dar água precisa de qualquer recipiente com água no inventário (o mod procura dentro das mochilas também).</li>
 <li>Carinho tem cooldown de 90 minutos de jogo.</li>
+<li>O carinho também sai pela tecla <strong>Acariciar</strong>, pelo radial do cão e pelo radial de animal do jogo (direcional para cima, no controle). É sempre o mesmo, agachado e com o ganho de lealdade.</li>
 </ul>
 <h3 id="a-escada-da-negligência">A escada da negligência</h3>
 <p>Se você largar o cão:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>A tigela guarda comida ou água, nunca as duas ao mesmo tempo. Para trocar, use <strong><span class="ig">Esvaziar a tigela</span></strong>.</p>
 <p>O modelo mostra o conteúdo: cinza vazia, marrom com ração, azul com água.</p>
 <h3 id="o-que-vale-como-comida-de-tigela">O que vale como comida de tigela</h3>
-<p>Quase qualquer comida que mate fome e não esteja estragada: carne, enlatado, refeição cozida, legume, fruta, ovo, ração de cachorro, e também capim e feno.</p>
+<p>Quase qualquer comida que mate fome e não esteja estragada: carne, enlatado, refeição cozida, legume, fruta, ovo, ração de cachorro, e também capim, feno e os sacos de ração para animais e de grama.</p>
 <p>Fica de fora a <a href="#comida-que-faz-mal">lista do que faz mal ao cão</a>, que aparece em vermelho no menu.</p>
 <blockquote class="quote">A lata de ração fechada não aparece na lista. Abra a lata primeiro.</blockquote>
 <p>A tigela guarda até 100 pontos:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Item</th>
 <th>Pontos</th>
 </tr></thead><tbody>
+<tr>
+<td>Saco de Ração para Animais, cheio</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Saco de ração</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Capim</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Saco de Grama, cheio</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>Os dois sacos do jogo valem 1 ponto por uso que ainda têm. O saco gasta só o que coube na tigela e, quando acaba, vira o saco vazio.</p>
 <p>O que você despeja de carne, peixe, ovo ou ração fica marcado como proteína, e quando o cão come essa parte ela conta para o <a href="#proteína-ele-é-carnívoro">relógio da proteína</a> como se você tivesse alimentado na mão. Tigela cheia só de legume mata a fome dele e mais nada.</p>
 <p>Se o item for maior que o espaço livre, a tigela enche até o topo e devolve o resto para você. Numa tigela em 80 pontos, um saco de ração leva a tigela a 100 e volta para o seu inventário valendo 40. A mensagem <em><span class="ig">A tigela não tem espaço para tudo isso.</span></em> só aparece com a tigela completamente cheia.</p>
 <h3 id="como-o-cão-usa">Como o cão usa</h3>
 <ul>
 <li>Ele vai sozinho quando a fome ou a sede chegam em 0,5 (ajustável por personagem no slider <em><span class="ig">Come quando a fome/sede atinge</span></em>, na aba Configurações).</li>
 <li>Ele procura tigela num raio de 16 tiles. Serve tanto a tigela do mod quanto o cocho vanilla do jogo.</li>
+<li>Sem tigela no andar dele, ele procura no andar de baixo e no de cima e vai pela escada. Se não consegue chegar ao andar da tigela, desiste em 30 segundos e volta a procurar.</li>
 <li>Cada visita mata metade da barra. Ele fica uns 3 minutos de jogo comendo.</li>
 <li>Enquanto está indo à tigela ou comendo, ele ignora zumbi e tudo mais. Só um comando seu interrompe. Um cão em pânico por fome sai do pânico quando come.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Pastor Alemão, Border Collie, Rottweiler, Doberman, Labrador, Pastor Belga Malinois</strong></td>
 <td>6 a 8</td>
+</tr>
+<tr>
+<td><strong>Lobo-cinzento, Dogue Alemão</strong></td>
+<td>8 a 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Interface:</strong> <span class="ig">Textos de status: ligados/desligados</span> (os avisos flutuantes na cabeça do cão), <span class="ig">Imagem de humor: ligada/desligada</span> (os moodles de cão) e <span class="ig">Nome do pet: ligado/desligado</span> (o nome acima do cão e o <span class="ig">Dono: Fulano</span> dos cães dos outros).</li>
 <li><strong>Som:</strong> volume geral, mudo, e sliders separados para <strong>Latido</strong>, <strong>Efeitos</strong> e <strong>Ambiente</strong>.</li>
 <li><strong>Auto-alimentação:</strong> o slider <span class="ig">Come quando a fome/sede atinge</span>.</li>
-<li><strong>Teclas:</strong> as 14 ações, com <strong>Alterar</strong> e <strong>Limpar</strong>.</li>
+<li><strong>Teclas:</strong> as 16 ações, com <strong>Alterar</strong> e <strong>Limpar</strong>.</li>
 </ul>
 <blockquote class="quote">Se o latido incomoda, o slider de <strong>Latido</strong> abaixa só ele, sem desligar nenhuma mecânica.</blockquote>
 <h2 id="20-o-que-aparece-na-tela">20. O que aparece na tela</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Vale para todos os moodles de raça: em cão desleal, doente, ou com fome ou sede alta, o moodle desliga até ele estar cuidado de novo.</blockquote>
 <h3 id="textos-acima-da-cabeça">Textos acima da cabeça</h3>
-<p>O cão empilha várias linhas de status acima da cabeça, visíveis a 14 tiles e só no mesmo andar. De cima para baixo: alerta da sentinela, estado (<strong>Apavorado</strong>, <strong>Em pânico</strong>, <strong>Muito ferido</strong>, <strong>Desobediente</strong>, <strong>Ferido</strong>, <strong>Nervoso</strong>), o que ele está fazendo (comendo, caçando, farejando, cuidando do gado), gravidez, e o nome, sempre por último.</p>
+<p>O cão empilha várias linhas de status acima da cabeça, visíveis a 14 tiles e só no mesmo andar. De cima para baixo: alerta da sentinela, estado (<strong>Apavorado</strong>, <strong>Em pânico</strong>, <strong>Muito ferido</strong>, <strong>Desobediente</strong>, <strong>Ferido</strong>, <strong>Nervoso</strong>), o que ele está fazendo (comendo, caçando, farejando, cuidando do gado), a recarga da Investida no Dogue Alemão (<strong><span class="ig">Investida em 12 min</span></strong>), gravidez, e o nome, sempre por último.</p>
 <p>A opção <strong><span class="ig">Textos de status: desligados</span></strong> (aba Configurações) apaga tudo menos o nome, e a opção <strong><span class="ig">Nome do pet: desligado</span></strong> (mesma aba) apaga só o nome e o <span class="ig">Dono: Fulano</span>. As duas desligadas, nada é desenhado. Cada uma vale só para o seu jogador. A opção de sandbox <strong><span class="ig">Mostrar nome acima do pet</span></strong> é regra do mundo e apaga a etiqueta inteira para todo mundo.</p>
 <p>Cão de outro jogador mostra só <strong><span class="ig">Dono: Fulano</span></strong>, a gravidez e o nome.</p>
 <p>Quando a ameaça é um lobo, o alerta da sentinela troca <span class="ig">zumbi</span> por lobo: <em><span class="ig">Lobo ao longe</span></em>, <em><span class="ig">Lobo por perto</span></em>, <em><span class="ig">Lobo bem perto!</span></em> e <em><span class="ig">Alcateia!</span></em>. Ver <a href="#7-animais-agressivos">Animais agressivos</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Desinscrever só o Rottweiler, o Doberman, o Labrador, o Pug (ou qualquer outro) e continuar jogando com o mod base causa o mesmo problema, porque os cães daquela raça continuam gravados no save.</p>
 <h3 id="se-os-animais-já-sumiram">Se os animais já sumiram</h3>
 <p><strong>Reinstale o mod agora, antes de continuar jogando ou salvar.</strong> Os animais provavelmente voltam. Depois que o jogo salva por cima, o arquivo está perdido e não existe backup dele.</p>
+<p>Se o que voltou ao estado original foram os móveis e o loot de uma área, como uma casa inteira, a causa é uma tigela que ficou no chão. Esse pedaço do mapa tem cópia: o jogo guarda o arquivo que falhou na pasta <code>blam</code> do save, ao lado de um <code>_error.txt</code>. Com o jogo fechado e o mod ligado de novo, faça um backup da pasta <code>map</code> do save e copie <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> por cima de <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. O que você mudou naquela área depois do reset se perde.</p>
 <h3 id="como-remover-com-segurança">Como remover com segurança</h3>
 <p>Passo 1: mantenha todos os addons ligados. Confira que todo addon de raça que você já usou nesse save está marcado na lista de mods daquele save (<strong><span class="ig">CARREGAR</span></strong> &gt; o save &gt; <strong><span class="ig">Escolher Mods...</span></strong>). Um addon desativado já causa o problema descrito acima.</p>
 <p>Passo 2: livre-se dos cães. Duas formas seguras:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Carregar no inventário. O jogo sabe pular esse item: some só o cão, o resto fica.</li>
 </ul>
 <p>Soltar o cão ou levá-lo para longe não resolve: o registro dele continua no save, e levá-lo para outro lugar só muda qual região vai quebrar.</p>
-<p>Passo 3: salve o jogo. É o save que grava a limpeza.</p>
-<p>Passo 4: remova o mod.</p>
+<p>Passo 3: recolha as tigelas. Uma tigela do mod largada no chão também quebra o save sem o mod: o jogo não consegue ler o pedaço do mapa onde ela está e recria esse pedaço do zero, com os móveis e o loot de volta ao estado original e sem as suas construções. Pegue cada tigela do chão e guarde no inventário ou dentro de um container (armário, caixa, porta-malas). Dentro de um container ela não causa nada.</p>
+<p>Passo 4: salve o jogo. É o save que grava a limpeza.</p>
+<p>Passo 5: remova o mod.</p>
 <h3 id="limpeza-completa-admin-modo-debug">Limpeza completa (admin / modo debug)</h3>
 <p>Os passos acima cobrem os seus cães, mas o mod também espalha vira-latas pelo mapa, e não dá para achar todos na mão. Para limpar o save inteiro de uma vez existe um comando:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Clique com o botão direito no chão → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Espere a mensagem <code>sweep done</code> e salve o jogo.</li>
 </ol>
-<p>O comando apaga os cães carregados na hora e depois varre o resto do save em segundo plano, sem travar a partida. Se ele recusar citando uma raça, ligue aquele addon nesse save e repita: sem as definições dele, limpar apaga os animais da região.</p>
+<p>O comando apaga os cães carregados na hora e depois varre o resto do save em segundo plano, sem travar a partida. Ele também tira do chão as tigelas que estão perto dos jogadores; a mensagem diz quantas. Tigela largada onde não há ninguém agora não é alcançada: vá até ela e recolha na mão. Se ele recusar citando uma raça, ligue aquele addon nesse save e repita: sem as definições dele, limpar apaga os animais da região.</p>
 <h2 id="26-ajuste-fino-do-servidor-admin">26. Ajuste fino do servidor (admin)</h2>
 <p>Esta seção é para quem roda servidor com muita gente e muito cão. O painel se chama <strong><span class="ig">Server tuning / performance</span></strong>: em cima, um medidor ao vivo do que o mod gasta no servidor; embaixo, os campos que mudam esse gasto. Regra de jogo (dano, fome, XP, limite de cães) não fica aqui, continua sendo opção de sandbox, na seção 23.</p>
 <blockquote class="quote">O painel fica em inglês em qualquer idioma do jogo, porque os rótulos são fixos no código. As tabelas abaixo citam cada um como ele aparece na tela.</blockquote>

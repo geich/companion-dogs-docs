@@ -448,6 +448,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
 <a class="s3" href="#carlin" data-id="carlin">Carlin</a>
 <a class="s3" href="#berger-belge-malinois" data-id="berger-belge-malinois">Berger Belge Malinois</a>
+<a class="s3" href="#dogue-allemand" data-id="dogue-allemand">Dogue allemand</a>
 </div>
 </div>
 <div class="grp">
@@ -559,7 +560,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>La race fixe les deux choses à la fois, chacune de son côté : un Berger Allemand est grand et naît fort, un Caramelo est petit et naît faible. La Force d'un chien donné s'affiche sur la barre de Force, dans la section Traits de la fenêtre du chien.</p>
 <h3 id="une-race-une-apparence">Une race, une apparence</h3>
 <p>Chaque race n'a qu'une seule texture, et mâle et femelle utilisent la même. Les cinq chats sont <a href="#les-cinq-pelages">cinq races</a>, pas un chat en cinq couleurs.</p>
-<p>Le chiot de toute race naît à la même taille réduite et grandit jusqu'à la taille adulte de sa race.</p>
+<p>Le chiot naît à une taille réduite et grandit jusqu'à la taille adulte de sa race. La taille à la naissance est la même pour toutes les races, sauf le Dogue allemand, qui naît déjà plus grand.</p>
 <h2 id="2-choix-rapide">2. Choix rapide</h2>
 <div class="tw"><table><thead><tr>
 <th>Si vous voulez...</th>
@@ -572,6 +573,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Un chien qui tient la ligne et tue un zombie tout seul</strong></td>
 <td>Berger Allemand ou Rottweiler</td>
+</tr>
+<tr>
+<td><strong>Renverser plusieurs zombies d'un coup</strong></td>
+<td>Dogue allemand</td>
 </tr>
 <tr>
 <td><strong>Chasser pour la viande</strong></td>
@@ -682,6 +687,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Berger Belge Malinois</strong></td>
 <td>Chien de flair : une flèche marque le zombie que vous ne voyez pas</td>
+</tr>
+<tr>
+<td><strong>Dogue allemand</strong></td>
+<td>Le plus grand chien du mod. Sur ordre, il court en ligne droite et renverse les zombies sur son passage</td>
 </tr>
 <tr>
 <td><strong>Loup Gris</strong></td>
@@ -925,6 +934,41 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Pour qui :</strong> ceux qui explorent les villes et les bâtiments fermés et veulent savoir où est le zombie avant d'ouvrir la porte.</p>
 <blockquote class="quote">La description en jeu dit qu'il est <span class="ig">le meilleur en flair</span>. En vitesse de Flair, il est à égalité avec le Husky.</blockquote>
+<hr>
+<h3 id="dogue-allemand">Dogue allemand</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a></strong>, addon séparé)</em></p>
+<p>Le plus grand chien du mod, plus haut que le Loup Gris, avec un ordre à lui qui renverse plusieurs zombies d'un coup.</p>
+<blockquote class="quote quote-game"><em>"Un géant doux. Apprend le Combat 2x, l'Obéissance 1.5x et la Chasse 1.2x. Sur ordre, il charge en ligne droite et renverse les zombies sur son passage (Charge). On le trouve dans les fermes et, plus rarement, dans les maisons."</em></blockquote>
+<p><strong>Où le trouver :</strong></p>
+<ul>
+<li>Grange, écurie et ferme, à la campagne : 8% par bâtiment.</li>
+<li>Maison résidentielle : 0,3% par maison.</li>
+</ul>
+<p><strong>Il apprend :</strong> le Combat à double vitesse, l'Obéissance 50% et la Chasse 20% plus vite, le même ensemble que le Berger Allemand et le Doberman.</p>
+<p><strong>Au combat :</strong> sans dressage, il a la morsure la plus forte du mod, un quart au-dessus de celle du Berger Allemand. Au Combat 10, il est à égalité avec le Berger et le Rottweiler. Il met à terre et il tue.</p>
+<p>Son sang-froid est celui du Doberman : il accumule peu de stress en se battant et son seuil de panique est au maximum.</p>
+<p><strong>Traits :</strong> Force de 0,45 à 0,70, la même fourchette que le Loup Gris. Résistance de 0,45 à 0,65, la plus haute du mod. Agressivité de 0,10 à 0,30, que la fenêtre affiche toujours <span class="ig">Bas</span>, donc il gagne l'XP de Combat un peu plus lentement que le Berger.</p>
+<p><strong>Portée :</strong> 1 à 2, avec des chiots plus grands que ceux des autres races. <strong>Sacoches :</strong> 8 à 10.</p>
+<p><strong>Ordre : <span class="ig">Charge</span></strong></p>
+<ul>
+<li>Il est dans le menu radial du chien, dans le menu contextuel et sur une touche à lui, livrée sans raccourci.</li>
+<li>Il vise le zombie debout le plus proche de vous, jusqu'à 10 cases et au même étage, et préfère celui qui est devant vous.</li>
+<li>Il court en ligne droite jusqu'à 2 cases au-delà de la cible, 12 cases au plus, et renverse les zombies debout qui sont à 1 case de sa trajectoire : 2 au Combat 1, jusqu'à 10 au Combat 10. Chaque zombie renversé donne de l'XP de Combat.</li>
+<li>Il s'arrête au premier mur, porte fermée, fenêtre ou trou. Sans zombie à portée en ligne droite, l'ordre ne part pas : <em><span class="ig">Votre Dogue allemand Rex n'a rien trouvé à attaquer à proximité.</span></em></li>
+<li>Après la course il continue d'attaquer le zombie le plus proche, comme avec <strong><span class="ig">Attaque le plus proche</span></strong>.</li>
+<li>Chaque charge fait monter son stress, un peu moins avec une Résistance élevée, et l'ordre ne revient qu'après 30 minutes de jeu. Pendant la recharge, la part du radial devient grise avec les minutes restantes, le menu contextuel affiche <strong><span class="ig">Charge (12 min)</span></strong> et <strong><span class="ig">Charge dans 12 min</span></strong> apparaît au-dessus de sa tête.</li>
+<li>Déloyal, en panique, gravement blessé ou boiteux, il refuse l'ordre. Et, comme n'importe quel ordre, il peut l'ignorer par désobéissance.</li>
+<li>Avec l'option de sandbox <strong><span class="ig">Les compagnons combattent les zombies</span></strong> désactivée, l'ordre n'apparaît pas.</li>
+</ul>
+<p><strong>Moodle : <span class="ig">Charge prête</span></strong></p>
+<blockquote class="quote quote-game"><em>"Votre Dogue allemand est prêt à charger. Donnez l'ordre depuis le menu radial du chien et il court en ligne droite en renversant les zombies sur son passage."</em></blockquote>
+<p>Il ne donne aucun bonus. Il montre seulement si la Charge est disponible :</p>
+<ul>
+<li>Bleu avec la Charge prête.</li>
+<li>Jaune pendant la recharge, avec le nom <strong><span class="ig">Charge en recharge</span></strong> et les minutes dans l'infobulle : <em><span class="ig">Reprend son souffle, prêt dans 12 min.</span></em></li>
+<li>Il disparaît quand le chien ne peut pas charger : déloyal, en panique, gravement blessé, boiteux, malade, ou très affamé ou assoiffé.</li>
+</ul>
+<p><strong>Pour qui :</strong> ceux qui se battent aux côtés du chien et veulent se frayer un chemin dans un groupe de zombies.</p>
 <h2 id="5-le-chat-la-première-autre-espèce">5. Le chat : la première autre espèce</h2>
 <p><em>(mod <strong>CD: Cats</strong>, addon séparé)</em></p>
 <p>Toutes les races vues jusqu'ici sont des chiens.</p>
@@ -1042,7 +1086,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>Un chat dont la faim ou la soif est à 75% ou plus, malade, désobéissant ou paniqué ne sort pas. L'échec est muet, sans message à l'écran. Si le cadeau s'est arrêté, regardez ses barres.</p>
 <blockquote class="quote">Le tour <strong><span class="ig">Rapporter un objet pendant votre sommeil</span></strong> (Obéissance 10) est autre chose : il rapporte un objet du sol. Les deux se déclenchent au réveil et ne se gênent pas. Un chat d'Obéissance 10 fait les deux le même matin.</blockquote>
 <p><strong>Moodle : <span class="ig">Yeux de Chat</span></strong></p>
-<blockquote class="quote quote-game"><em>"Votre chat voit ce que vous ne voyez pas. Tant qu'il est nourri, abreuvé et attaché à vous, l'obscurité cesse de cacher ce que vous cherchez : la cueillette de nuit rend presque autant que de jour."</em></blockquote>
+<blockquote class="quote quote-game"><em>"Votre chat voit ce que vous ne voyez pas. Tant qu'il est nourri, abreuvé et attaché à vous, l'obscurité cesse de cacher ce que vous cherchez : la recherche de nuit rend presque autant que de jour."</em></blockquote>
 <p>Dans le noir complet, le jeu fait tomber la portée de fouille à 1,5 tile, et il faut être presque sur l'icône pour la voir. Avec le chat près de vous, la nuit rend environ 60% de la portée que vous auriez de jour.</p>
 <p>Le gain arrive d'un coup, pas petit à petit.</p>
 <p><strong>Pour qui :</strong> ceux qui jouent de nuit, ceux qui veulent l'alerte le plus tôt possible sans trahir leur propre position et ceux qui veulent de la petite viande sans traîner un grand chien. Il ne fait pas office de garde : emmenez un chien avec vous si vous quittez la ville.</p>
@@ -1053,7 +1097,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Où le trouver :</strong> en meute de 1 à 3, dans la forêt. Il ne devient le vôtre qu'une fois vaincu, s'il tombe vivant (10% des fois, par défaut), s'il est soigné avec un bandage et s'il se relève. Ensuite il s'apprivoise avec de la nourriture comme n'importe quel chien errant, avec déjà 40 de confiance.</p>
 <p><strong>Il apprend :</strong> le Combat et la Chasse au double, le Flair 50% plus vite. Obéissance à 0,6, la plus lente du mod : il met plus de temps que le Chat à débloquer les tours.</p>
 <p><strong>Au combat :</strong> la morsure du Berger Allemand : forte, il tue tout seul et met à terre. Il accumule le stress presque aussi lentement que le Berger, et son seuil de panique est à égalité avec le plus haut du mod.</p>
-<p><strong>Traits :</strong> Force de 0,45 à 0,70, Agressivité de 0,40 à 0,70 et Résistance de 0,40 à 0,65. C'est la plus large plage d'Agressivité du mod et la deuxième de Force, derrière le Husky.</p>
+<p><strong>Traits :</strong> Force de 0,45 à 0,70, Agressivité de 0,40 à 0,70 et Résistance de 0,40 à 0,65. C'est la plus large plage d'Agressivité du mod. En Force, il est à égalité avec le Dogue allemand au deuxième rang, derrière le Husky.</p>
 <p><strong>Portée :</strong> aucune. Le loup ne se reproduit ni avec un chien ni avec un autre loup.</p>
 <p><strong>Sacoches :</strong> 8 à 10 de charge.</p>
 <p><strong>Ce qu'il ne fait pas :</strong> il ne garde pas le bétail. Troupeau n'apparaît pas dans sa fenêtre.</p>
@@ -1155,6 +1199,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Dogue allemand</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
 <td>1.0</td>
 </tr>
 <tr>
@@ -1260,8 +1312,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Oui</td>
 <td>Oui</td>
 </tr>
+<tr>
+<td>Dogue allemand</td>
+<td>la plus forte</td>
+<td>2,6x</td>
+<td>Oui</td>
+<td>Oui</td>
+</tr>
 </tbody></table></div>
-<p>Le Doberman démarre avec environ deux tiers de la morsure d'un Rottweiler.</p>
+<p>Le Doberman démarre avec environ deux tiers de la morsure d'un Rottweiler. Le Dogue allemand démarre un quart au-dessus du Berger Allemand et finit à égalité avec lui.</p>
 <p>Le Chat reste hors de ce tableau parce qu'il ne se bat pas.</p>
 <h3 id="sang-froid-au-combat">Sang-froid au combat</h3>
 <p>Plus le nombre est petit, plus le chien garde son calme en se battant.</p>
@@ -1292,6 +1351,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Loup Gris</td>
+<td>0,25</td>
+<td>0,90</td>
+</tr>
+<tr>
+<td>Dogue allemand</td>
 <td>0,25</td>
 <td>0,90</td>
 </tr>
@@ -1403,6 +1467,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,40 à 0,65</td>
 </tr>
 <tr>
+<td>Dogue allemand</td>
+<td>0,45 à 0,70</td>
+<td>0,10 à 0,30</td>
+<td>0,45 à 0,65</td>
+</tr>
+<tr>
 <td>Husky</td>
 <td>0,55 à 0,80</td>
 <td>0,10 à 0,30</td>
@@ -1414,7 +1484,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>Le Carlin aussi, et sa fourchette de Force est encore plus petite.</li>
 <li>Le Chat égale le Carlin pour la plus petite Force du mod.</li>
 <li>Le Husky est le seul qui affiche souvent <span class="ig">Haut</span> en Force.</li>
-<li>L'Agressivité sort <span class="ig">Bas</span> chez le Golden, le Husky et le Labrador.</li>
+<li>L'Agressivité sort <span class="ig">Bas</span> chez le Golden, le Husky, le Labrador et le Dogue allemand.</li>
 <li>Le Golden et le Doberman tombent aussi souvent sur <span class="ig">Bas</span> en Force et en Résistance.</li>
 <li>Le Berger Allemand, le Rottweiler et le Berger Belge Malinois sont les seuls à afficher <span class="ig">Moyen</span> dans les trois presque toujours.</li>
 </ul>
@@ -1444,7 +1514,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>6 à 8</td>
 </tr>
 <tr>
-<td>Loup Gris</td>
+<td>Loup Gris, Dogue allemand</td>
 <td>8 à 10</td>
 </tr>
 <tr>
@@ -1470,7 +1540,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 à 3</td>
 </tr>
 <tr>
-<td>Berger Allemand, Golden Retriever, Husky, Rottweiler, Doberman, Carlin, Berger Belge Malinois</td>
+<td>Berger Allemand, Golden Retriever, Husky, Rottweiler, Doberman, Carlin, Berger Belge Malinois, Dogue allemand</td>
 <td>1 à 2</td>
 </tr>
 </tbody></table></div>
@@ -1530,6 +1600,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Husky</td>
 <td>Animalerie, vétérinaire</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Dogue allemand</td>
+<td>Grange, écurie, ferme (campagne)</td>
+<td>8%</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1595,6 +1670,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Berger Belge Malinois</td>
 <td>Maison</td>
 <td>0,5%</td>
+</tr>
+<tr>
+<td>Dogue allemand</td>
+<td>Maison</td>
+<td>0,3%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1687,6 +1767,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>malfemale</code></td>
 <td><code>malpup</code></td>
 <td><code>malinois</code></td>
+</tr>
+<tr>
+<td>Dogue allemand</td>
+<td><code>gdanemale</code></td>
+<td><code>gdanefemale</code></td>
+<td><code>gdanepup</code></td>
+<td><code>greatdane</code></td>
 </tr>
 <tr>
 <td>Chat Noir</td>
@@ -1826,6 +1913,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Toutes les 5 s, une flèche marque l'endroit où était le zombie le plus proche que vous ne voyez pas, jusqu'à 25 cases</td>
 </tr>
 <tr>
+<td><strong>Charge prête</strong></td>
+<td>Dogue allemand</td>
+<td>Simple indicateur : bleu avec la Charge prête, jaune avec les minutes pendant la recharge</td>
+</tr>
+<tr>
 <td><strong>Lien de meute</strong></td>
 <td>Loup Gris</td>
 <td>Les loups sauvages ne vous remarquent pas, fait baisser la Panique et +20% d'XP en Course et Discrétion</td>
@@ -1902,7 +1994,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="létiquette-croisé">L'étiquette "Croisé"</h3>
 <p>Un chien avec plus d'une race dans sa lignée reçoit <strong><span class="ig">(Croisé)</span></strong> à côté du nom de la race, dans sa fenêtre et dans le menu contextuel. Le détail en pourcentage (<span class="ig">50% Husky, 50% Berger Allemand</span>) apparaît en passant la souris sur la ligne <strong><span class="ig">Race</span></strong> de la fenêtre du chien, avec la description de la race dominante.</p>
 <h2 id="11-installer-les-addons">11. Installer les addons</h2>
-<p>Rottweiler, Doberman, Labrador, Carlin, Berger Belge Malinois et le chat sont des mods à part sur Steam. Chacun :</p>
+<p>Rottweiler, Doberman, Labrador, Carlin, Berger Belge Malinois, Dogue allemand et le chat sont des mods à part sur Steam. Chacun :</p>
 <ul>
 <li>A besoin du Companion Dogs de base installé et actif.</li>
 <li>Ajoute une race, avec son modèle, sa texture, son moodle et ses lieux d'apparition.</li>
@@ -1942,6 +2034,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Belgian Malinois</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">s'abonner</a></td>
 <td>0.8.0 ou plus récente</td>
+</tr>
+<tr>
+<td><strong>CD: Great Dane</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">s'abonner</a></td>
+<td>0.9.0 ou plus récente</td>
 </tr>
 </tbody></table></div>
 <p>Et le mod de base, si vous ne l'avez pas encore : <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>

@@ -448,6 +448,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
 <a class="s3" href="#pug" data-id="pug">Pug</a>
 <a class="s3" href="#pastor-belga-malinois" data-id="pastor-belga-malinois">Pastor Belga Malinois</a>
+<a class="s3" href="#dogue-alemão" data-id="dogue-alemão">Dogue Alemão</a>
 </div>
 </div>
 <div class="grp">
@@ -559,7 +560,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>A raça define as duas coisas ao mesmo tempo, cada uma pelo seu lado: um Pastor Alemão é grande e nasce forte, um Caramelo é pequeno e nasce fraco. A Força de um cão individual aparece na barra de Força, na seção Características da janela do cão.</p>
 <h3 id="uma-raça-uma-aparência">Uma raça, uma aparência</h3>
 <p>Cada raça tem uma textura só, e macho e fêmea usam a mesma. Os cinco gatos são <a href="#as-cinco-pelagens">cinco raças</a>, não um gato em cinco cores.</p>
-<p>Filhote de qualquer raça nasce no mesmo tamanho reduzido e cresce até o porte adulto da raça dele.</p>
+<p>Filhote nasce num tamanho reduzido e cresce até o porte adulto da raça dele. O tamanho de nascença é o mesmo em todas as raças, menos no Dogue Alemão, que já nasce maior.</p>
 <h2 id="2-escolha-rápida">2. Escolha rápida</h2>
 <div class="tw"><table><thead><tr>
 <th>Se você quer...</th>
@@ -572,6 +573,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Um cão que segura a linha e mata zumbi sozinho</strong></td>
 <td>Pastor Alemão ou Rottweiler</td>
+</tr>
+<tr>
+<td><strong>Derrubar vários zumbis de uma vez</strong></td>
+<td>Dogue Alemão</td>
 </tr>
 <tr>
 <td><strong>Caçar carne</strong></td>
@@ -682,6 +687,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Pastor Belga Malinois</strong></td>
 <td>Cão de faro: uma seta marca o zumbi que você não vê</td>
+</tr>
+<tr>
+<td><strong>Dogue Alemão</strong></td>
+<td>O maior cão do mod. Sob ordem, corre em linha reta e derruba os zumbis no caminho</td>
 </tr>
 <tr>
 <td><strong>Lobo-cinzento</strong></td>
@@ -925,6 +934,41 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Para quem é:</strong> quem explora cidade e prédio fechado e quer saber onde está o zumbi antes de abrir a porta.</p>
 <blockquote class="quote">A descrição no jogo diz que ele é <span class="ig">o melhor de faro</span>. Em velocidade de Faro ele empata com o Husky.</blockquote>
+<hr>
+<h3 id="dogue-alemão">Dogue Alemão</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a></strong>, addon separado)</em></p>
+<p>O maior cão do mod, mais alto que o Lobo-cinzento, com uma ordem própria que derruba vários zumbis de uma vez.</p>
+<blockquote class="quote quote-game"><em>"Um gigante dócil. Aprende Combate 2x, Obediência 1.5x e Caça 1.2x. Sob comando, investe em linha reta e derruba os zumbis no caminho (Investida). Encontrado em fazendas, e raramente, em casas."</em></blockquote>
+<p><strong>Onde achar:</strong></p>
+<ul>
+<li>Celeiro, estábulo e fazenda, na zona rural: 8% por prédio.</li>
+<li>Casa residencial: 0,3% por casa.</li>
+</ul>
+<p><strong>Aprende:</strong> Combate no dobro, Obediência 50% e Caça 20% mais rápido, o mesmo pacote do Pastor Alemão e do Doberman.</p>
+<p><strong>Na luta:</strong> sem treino, tem a mordida mais forte do mod, um quarto acima da do Pastor Alemão. No Combate 10 empata com o Pastor e o Rottweiler. Derruba e mata.</p>
+<p>O nervo é o do Doberman: acumula pouco estresse brigando e tem o ponto de pânico no máximo.</p>
+<p><strong>Características:</strong> Força de 0,45 a 0,70, a mesma faixa do Lobo-cinzento. Resistência de 0,45 a 0,65, a maior do mod. Agressividade de 0,10 a 0,30, que a janela sempre mostra como <span class="ig">Baixa</span>, então ele ganha XP de Combate um pouco mais devagar que o Pastor.</p>
+<p><strong>Ninhada:</strong> 1 a 2, com filhote maior que o das outras raças. <strong>Alforje:</strong> 8 a 10.</p>
+<p><strong>Ordem: <span class="ig">Investida</span></strong></p>
+<ul>
+<li>Fica no menu radial do cão, no menu de contexto e numa tecla própria, que vem sem tecla definida.</li>
+<li>Ele mira no zumbi de pé mais perto de você, a até 10 tiles e no mesmo andar, e prefere o que está à sua frente.</li>
+<li>Corre em linha reta até passar 2 tiles do alvo, no máximo 12 tiles, e derruba os zumbis de pé que estiverem a 1 tile do caminho: 2 com Combate 1, até 10 com Combate 10. Cada zumbi derrubado dá XP de Combate.</li>
+<li>Para na primeira parede, porta fechada, janela ou buraco. Sem zumbi ao alcance em linha reta, a ordem não sai: <em><span class="ig">Seu Dogue Alemão Rex não encontrou nada ao alcance para atacar.</span></em></li>
+<li>Depois da corrida ele continua atacando o zumbi mais próximo, como no <strong><span class="ig">Atacar mais próximo</span></strong>.</li>
+<li>Cada investida sobe o estresse dele, um pouco menos com Resistência alta, e a ordem só volta depois de 30 minutos de jogo. Durante a recarga, a fatia do radial fica cinza com os minutos que faltam, o menu de contexto mostra <strong><span class="ig">Investida (12 min)</span></strong> e acima da cabeça dele aparece <strong><span class="ig">Investida em 12 min</span></strong>.</li>
+<li>Desleal, em pânico, muito ferido ou mancando, ele recusa a ordem. E, como qualquer ordem, ela pode ser ignorada por desobediência.</li>
+<li>Com a opção de sandbox <strong><span class="ig">Companheiros atacam zumbis</span></strong> desligada, a ordem não aparece.</li>
+</ul>
+<p><strong>Moodle: <span class="ig">Investida pronta</span></strong></p>
+<blockquote class="quote quote-game"><em>"Seu Dogue Alemão está pronto para investir. Dê a ordem pelo menu radial do cão para ele correr em linha reta e derrubar os zumbis no caminho."</em></blockquote>
+<p>Não dá bônus. Ele só mostra se a Investida está disponível:</p>
+<ul>
+<li>Azul com a Investida pronta.</li>
+<li>Amarelo durante a recarga, com o nome <strong><span class="ig">Investida em recarga</span></strong> e os minutos no balão: <em><span class="ig">Recuperando o fôlego, pronto em 12 min.</span></em></li>
+<li>Some quando ele não pode investir: desleal, em pânico, muito ferido, mancando, doente, ou com fome ou sede alta.</li>
+</ul>
+<p><strong>Para quem é:</strong> quem luta junto com o cão e quer abrir caminho num grupo de zumbis.</p>
 <h2 id="5-o-gato-a-primeira-outra-espécie">5. O gato: a primeira outra espécie</h2>
 <p><em>(mod <strong>CD: Cats</strong>, addon separado)</em></p>
 <p>Todas as raças até aqui são cães.</p>
@@ -1053,7 +1097,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Onde achar:</strong> em alcateia de 1 a 3, na floresta. Ele só vira seu depois de derrotado, se cair vivo (10% das vezes, por padrão), for tratado com bandagem e levantar. Aí ele se doma com comida como qualquer vira-lata, já com 40 de confiança.</p>
 <p><strong>Aprende:</strong> Combate e Caça no dobro da velocidade, Faro 50% mais rápido. Obediência a 0,6, a mais lenta do mod: ele demora mais que o Gato para destravar os truques.</p>
 <p><strong>Na luta:</strong> a mordida do Pastor Alemão: forte, mata sozinho e derruba. Acumula estresse quase tão devagar quanto o Pastor, e o ponto de pânico empata no mais alto do mod.</p>
-<p><strong>Características:</strong> Força de 0,45 a 0,70, Agressividade de 0,40 a 0,70 e Resistência de 0,40 a 0,65. É a maior faixa de Agressividade do mod e a segunda maior de Força, atrás do Husky.</p>
+<p><strong>Características:</strong> Força de 0,45 a 0,70, Agressividade de 0,40 a 0,70 e Resistência de 0,40 a 0,65. É a maior faixa de Agressividade do mod. Em Força, empata com o Dogue Alemão como a segunda maior, atrás do Husky.</p>
 <p><strong>Ninhada:</strong> nenhuma. O lobo não cruza com cão nem com outro lobo.</p>
 <p><strong>Alforje:</strong> 8 a 10 de carga.</p>
 <p><strong>Não faz:</strong> não cuida do gado. Pastoreio não aparece na janela dele.</p>
@@ -1155,6 +1199,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Dogue Alemão</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
 <td>1.0</td>
 </tr>
 <tr>
@@ -1260,8 +1312,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Sim</td>
 <td>Sim</td>
 </tr>
+<tr>
+<td>Dogue Alemão</td>
+<td>a mais forte</td>
+<td>2,6x</td>
+<td>Sim</td>
+<td>Sim</td>
+</tr>
 </tbody></table></div>
-<p>O Doberman começa com cerca de dois terços da mordida de um Rottweiler.</p>
+<p>O Doberman começa com cerca de dois terços da mordida de um Rottweiler. O Dogue Alemão começa um quarto acima do Pastor Alemão e termina empatado com ele.</p>
 <p>O Gato fica fora desta tabela porque não luta.</p>
 <h3 id="nervo-na-luta">Nervo na luta</h3>
 <p>Quanto menor o número, mais frio o cão fica brigando.</p>
@@ -1292,6 +1351,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Lobo-cinzento</td>
+<td>0,25</td>
+<td>0,90</td>
+</tr>
+<tr>
+<td>Dogue Alemão</td>
 <td>0,25</td>
 <td>0,90</td>
 </tr>
@@ -1403,6 +1467,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0,40 a 0,65</td>
 </tr>
 <tr>
+<td>Dogue Alemão</td>
+<td>0,45 a 0,70</td>
+<td>0,10 a 0,30</td>
+<td>0,45 a 0,65</td>
+</tr>
+<tr>
 <td>Husky</td>
 <td>0,55 a 0,80</td>
 <td>0,10 a 0,30</td>
@@ -1414,7 +1484,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>O Pug também, e a faixa de Força dele é ainda menor.</li>
 <li>O Gato empata com o Pug na menor Força do mod.</li>
 <li>O Husky é o único que costuma mostrar <span class="ig">Alta</span> em Força.</li>
-<li>Agressividade sai <span class="ig">Baixa</span> no Golden, no Husky e no Labrador.</li>
+<li>Agressividade sai <span class="ig">Baixa</span> no Golden, no Husky, no Labrador e no Dogue Alemão.</li>
 <li>Golden e Doberman também caem em <span class="ig">Baixa</span> com frequência em Força e Resistência.</li>
 <li>Pastor Alemão, Rottweiler e Pastor Belga Malinois são os únicos que mostram <span class="ig">Média</span> nas três quase sempre.</li>
 </ul>
@@ -1444,7 +1514,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>6 a 8</td>
 </tr>
 <tr>
-<td>Lobo-cinzento</td>
+<td>Lobo-cinzento, Dogue Alemão</td>
 <td>8 a 10</td>
 </tr>
 <tr>
@@ -1470,7 +1540,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 a 3</td>
 </tr>
 <tr>
-<td>Pastor Alemão, Golden Retriever, Husky, Rottweiler, Doberman, Pug, Pastor Belga Malinois</td>
+<td>Pastor Alemão, Golden Retriever, Husky, Rottweiler, Doberman, Pug, Pastor Belga Malinois, Dogue Alemão</td>
 <td>1 a 2</td>
 </tr>
 </tbody></table></div>
@@ -1530,6 +1600,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Husky</td>
 <td>Pet shop, veterinário</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Dogue Alemão</td>
+<td>Celeiro, estábulo, fazenda (rural)</td>
+<td>8%</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1595,6 +1670,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Pastor Belga Malinois</td>
 <td>Casa residencial</td>
 <td>0,5%</td>
+</tr>
+<tr>
+<td>Dogue Alemão</td>
+<td>Casa residencial</td>
+<td>0,3%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1687,6 +1767,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>malfemale</code></td>
 <td><code>malpup</code></td>
 <td><code>malinois</code></td>
+</tr>
+<tr>
+<td>Dogue Alemão</td>
+<td><code>gdanemale</code></td>
+<td><code>gdanefemale</code></td>
+<td><code>gdanepup</code></td>
+<td><code>greatdane</code></td>
 </tr>
 <tr>
 <td>Gato Preto</td>
@@ -1826,6 +1913,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>A cada 5 s, uma seta marca onde estava o zumbi mais próximo que você não vê, até 25 tiles</td>
 </tr>
 <tr>
+<td><strong>Investida pronta</strong></td>
+<td>Dogue Alemão</td>
+<td>Só aviso: azul com a Investida pronta, amarelo com os minutos durante a recarga</td>
+</tr>
+<tr>
 <td><strong>Alcateia</strong></td>
 <td>Lobo-cinzento</td>
 <td>Lobo selvagem não te nota, derruba Pânico e +20% de XP em Corrida e Discrição</td>
@@ -1902,7 +1994,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="o-rótulo-mestiço">O rótulo "Mestiço"</h3>
 <p>Um cão com mais de uma raça na linhagem ganha <strong><span class="ig">(Mestiço)</span></strong> ao lado do nome da raça, na janela e no menu de contexto. O detalhamento percentual (<span class="ig">50% Husky, 50% Pastor Alemão</span>) aparece passando o mouse na linha <strong><span class="ig">Raça</span></strong> da janela do cão, junto com a descrição da raça dominante.</p>
 <h2 id="11-instalando-os-addons">11. Instalando os addons</h2>
-<p>Rottweiler, Doberman, Labrador, Pug, Pastor Belga Malinois e o gato são mods separados na Steam. Cada um:</p>
+<p>Rottweiler, Doberman, Labrador, Pug, Pastor Belga Malinois, Dogue Alemão e o gato são mods separados na Steam. Cada um:</p>
 <ul>
 <li>Precisa do Companion Dogs base instalado e ativo.</li>
 <li>Adiciona uma raça, com modelo, textura, moodle e locais de spawn próprios.</li>
@@ -1942,6 +2034,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Belgian Malinois</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">assinar</a></td>
 <td>0.8.0 ou mais novo</td>
+</tr>
+<tr>
+<td><strong>CD: Great Dane</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">assinar</a></td>
+<td>0.9.0 ou mais novo</td>
 </tr>
 </tbody></table></div>
 <p>E o base, se você ainda não tem: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>

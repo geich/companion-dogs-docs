@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Pug: <code>pg</code>, <code>pv</code></li>
 <li>Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Cats: ogni suffisso che comincia con <code>ct</code>, <code>cv</code> o <code>cs</code> (una serie per manto)</li>
 </ul>
 <h2 id="10-il-moodle-della-razza">10. Il moodle della razza</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> torna il livello, oppure 0 per "non mostrare". <code>apply</code> riceve i minuti di gioco passati dall'ultima chiamata, quindi moltiplica il tuo effetto per <code>elapsedMin</code>.</p>
+<p>Un moodle che cambia stato invece di sparire ha tre campi opzionali. <code>tintFor(dog)</code> restituisce il colore di sfondo come r, g, b, e nil mantiene <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> e <code>descText(player)</code> restituiscono il testo del fumetto, e nil mantiene il testo di <code>nameKey</code> e <code>descKey</code>. L'Alano li usa per il suo moodle della Carica, che diventa giallo e mostra i minuti che mancano durante la ricarica.</p>
 <p>Pubblica l'icona in sei misure, da 32 a 128 pixel. L'interfaccia sceglie la misura in base alla scala del giocatore, e una misura che manca si vede come un quadrato vuoto. L'icona compare nella striscia della mod, non tra i moodle vanilla.</p>
 <h2 id="11-gli-hook">11. Gli hook</h2>
 <p>Due liste di funzioni che la base chiama sul server. Aggiungici le tue da un file shared.</p>

@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Chó Pug: <code>pg</code>, <code>pv</code></li>
 <li>Chó Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Mèo: mọi hậu tố bắt đầu bằng <code>ct</code>, <code>cv</code> hoặc <code>cs</code> (mỗi màu lông một bộ)</li>
 </ul>
 <h2 id="10-moodle-của-giống">10. Moodle của giống</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> trả về cấp độ, hoặc 0 nghĩa là "không hiện". <code>apply</code> nhận số phút trong game kể từ lần gọi trước, nên hãy nhân hiệu ứng của bạn với <code>elapsedMin</code>.</p>
+<p>Moodle đổi trạng thái thay vì biến mất có ba trường tùy chọn. <code>tintFor(dog)</code> trả về màu nền dạng r, g, b, và nil giữ nguyên <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> và <code>descText(player)</code> trả về chữ trong khung chú thích, và nil giữ nguyên chữ của <code>nameKey</code> và <code>descKey</code>. Great Dane dùng chúng cho moodle Lao tới, chuyển sang màu vàng và hiện số phút còn lại trong lúc hồi.</p>
 <p>Hãy kèm icon ở sáu kích cỡ, từ 32 đến 128 pixel. Giao diện chọn kích cỡ theo mức phóng của người chơi, và một kích cỡ thiếu sẽ hiện thành ô vuông rỗng. Icon xuất hiện ở dải riêng của mod, không nằm chung với các moodle gốc của game.</p>
 <h2 id="11-hook">11. Hook</h2>
 <p>Hai danh sách hàm mà bản gốc gọi trên server. Hãy nối vào chúng từ một file shared.</p>

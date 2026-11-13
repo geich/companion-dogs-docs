@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-menu-vòng-tròn-giữ-phím-q" data-id="b-menu-vòng-tròn-giữ-phím-q">b) Menu vòng tròn (giữ phím Q)</a>
 <a class="s3" href="#c-phím-tắt" data-id="c-phím-tắt">c) Phím tắt</a>
 <a class="s3" href="#d-các-nút-trong-cửa-sổ-chó" data-id="d-các-nút-trong-cửa-sổ-chó">d) Các nút trong cửa sổ chó</a>
+<a class="s3" href="#chơi-bằng-tay-cầm" data-id="chơi-bằng-tay-cầm">Chơi bằng tay cầm</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Với mod gốc và các addon giống đã phát hành, sẽ ra thế này:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>Mod gốc đứng trước các addon trong cả hai danh sách. Một addon giống được tải trước Companion Dogs sẽ không đăng ký được giống của nó.</li>
 <li>Khởi động lại máy chủ hoàn toàn sau khi sửa file .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Con chó thường sinh ra ở một ô trống bên ngoài tòa nhà: đường phố, sân, khu đất trống. Nó chỉ sinh ra bên trong khi không còn ô trống nào bên ngoài.</p>
 <p>Tùy chọn sandbox <strong><span class="ig">Hệ số xuất hiện của chó</span></strong> tăng hoặc giảm tất cả các tỷ lệ này cùng lúc. Ở mức 0 thì việc xuất hiện tắt hẳn.</p>
 <p>Sói xám không xuất hiện trong tòa nhà: nó sinh ra theo bầy trong rừng và tấn công. Muốn có một con, bạn phải đánh bại nó, chữa trị rồi thuần hóa. Xem <a href="#7-động-vật-hung-dữ">Động vật hung dữ</a>.</p>
-<blockquote class="quote">Các giống addon nằm trong những mod Steam riêng, mỗi mod có chỗ xuất hiện riêng: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> và <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. Mỗi giống làm gì thì xem ở <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</blockquote>
+<blockquote class="quote">Các giống addon nằm trong những mod Steam riêng, mỗi mod có chỗ xuất hiện riêng: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> và <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. Mỗi giống làm gì thì xem ở <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</blockquote>
 <h3 id="cách-thuần-hóa">Cách thuần hóa</h3>
 <p>Nhấp chuột phải vào con chó hoang. Tùy chọn duy nhất hiện ra là <strong><span class="ig">Cho ăn (làm quen)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Ra lệnh tấn công zombie gần nhất</td>
 </tr>
 <tr>
+<td><strong>Lao tới</strong></td>
+<td>Chỉ có ở Great Dane: chạy thẳng và húc ngã những con zombie trên đường. Trong lúc hồi, hiện số phút còn lại</td>
+</tr>
+<tr>
 <td><strong>Trò khéo</strong> ▸</td>
 <td>Menu con với bốn trò khéo</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote"><strong><span class="ig">Canh gác</span></strong> không xuất hiện trong menu này. Lệnh đó chỉ có ở menu vòng tròn, trên phím tắt và trên nút trong mục Lệnh.</blockquote>
 <h3 id="b-menu-vòng-tròn-giữ-phím-q">b) Menu vòng tròn (giữ phím Q)</h3>
 <p>Mod chèn vào menu emote của game. Giữ phím Q, một danh mục mới hiện ra mang tên giống chó của bạn kèm biểu tượng bàn chân. Danh mục này chỉ hiện khi có chó đang được chọn ở gần.</p>
-<p>Các lát cắt gồm: <strong>Lại đây</strong>, <strong>Đi theo</strong>, <strong>Đứng yên</strong>, <strong>Canh gác</strong>, <strong>Báo động</strong>, <strong>Nhẹ tiếng</strong>, <strong>Im lặng</strong>, <strong>Tấn công mục tiêu gần nhất</strong>, <strong>Đi săn</strong> / <strong>Ngừng săn</strong>, <strong>Trò khéo ▸</strong> và <strong>Mở túi yên</strong> (nếu nó đang mang túi yên).</p>
+<p>Các lát cắt gồm: <strong>Lại đây</strong>, <strong>Đi theo</strong>, <strong>Đứng yên</strong>, <strong>Canh gác</strong>, <strong>Báo động</strong>, <strong>Nhẹ tiếng</strong>, <strong>Im lặng</strong>, <strong>Tấn công mục tiêu gần nhất</strong>, <strong>Đi săn</strong> / <strong>Ngừng săn</strong>, <strong>Gọi về</strong>, <strong>Tình trạng</strong>, <strong>Tự bảo vệ: Bật</strong> / <strong>Tự bảo vệ: Tắt</strong>, <strong>Vuốt ve</strong>, <strong>Trò khéo ▸</strong> và <strong>Mở túi yên</strong> (nếu nó đang mang túi yên). Great Dane còn có <strong>Lao tới</strong>.</p>
+<p>Mèo không có Canh gác và Tấn công mục tiêu gần nhất, còn Chó Pug không có Nhẹ tiếng và Im lặng.</p>
 <p>Chọn <strong>Trò khéo</strong> sẽ mở ra cấp thứ ba của menu vòng tròn với bốn trò khéo và một nút <strong>Quay lại</strong>. Trò khéo chưa mở khóa hiện icon đỏ và cấp yêu cầu trong tên, kiểu <em><span class="ig">Đánh lạc hướng (Vâng lời 3)</span></em>.</p>
 <p>Vài lệnh cũng khiến nhân vật của bạn ra dấu: gọi thì giơ tay lên, ra lệnh đứng yên thì làm động tác dừng lại, ra lệnh tấn công thì chỉ tay.</p>
 <h3 id="c-phím-tắt">c) Phím tắt</h3>
-<p>Có 14 hành động có thể gán phím và không hành động nào có sẵn phím định trước. Bạn thiết lập trong mục <strong><span class="ig">Cài đặt</span></strong> của cửa sổ chó.</p>
+<p>Có 16 hành động có thể gán phím và không hành động nào có sẵn phím định trước. Bạn thiết lập trong mục <strong><span class="ig">Cài đặt</span></strong> của cửa sổ chó.</p>
 <div class="tw"><table><thead><tr>
 <th>Hành động</th>
 <th>Làm gì</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Tấn công theo lệnh</td>
 </tr>
 <tr>
+<td><strong>Lao tới</strong></td>
+<td>Chỉ có ở Great Dane</td>
+</tr>
+<tr>
 <td><strong>Báo động</strong> / <strong>Nhẹ tiếng</strong> / <strong>Im lặng</strong></td>
 <td>Chế độ cảnh giới</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Mở và đóng cửa sổ của chó</td>
 </tr>
 <tr>
+<td><strong>Vuốt ve</strong></td>
+<td>Cách vuốt ve giống như trong menu chuột phải</td>
+</tr>
+<tr>
 <td><strong>Đến một vị trí</strong></td>
 <td>Mở con trỏ ngắm của trò khéo</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Nếu bạn chọn một phím đã được dùng, mod sẽ báo: <em><span class="ig">F đã được dùng cho: Đứng yên</span></em>. Chưa gán phím, nút hiện <em><span class="ig">Chưa gán</span></em>.</p>
 <h3 id="d-các-nút-trong-cửa-sổ-chó">d) Các nút trong cửa sổ chó</h3>
 <p>Mục <strong>Lệnh</strong> có tất cả dưới dạng nút bấm. Danh sách đầy đủ nằm ở <a href="#19-cửa-sổ-chó">Cửa sổ của chó</a>.</p>
+<h3 id="chơi-bằng-tay-cầm">Chơi bằng tay cầm</h3>
+<p>Mod chạy được bằng tay cầm:</p>
+<ul>
+<li>Menu vòng tròn của chó mở bằng nút hướng xuống, đó là menu biểu cảm của game.</li>
+<li>Vuốt ve cũng làm được qua menu vòng tròn động vật của game, bằng nút hướng lên.</li>
+<li>Các cửa sổ xác nhận nhận tay cầm: đặt tên cho con chó vừa thuần hóa, đổi tên, thả, thôi chăm đàn vật nuôi và gọi về một con chó đang ở xa.</li>
+<li>Ở thẻ <strong><span class="ig">Bạn đồng hành của tôi</span></strong>, nút hướng dùng để chọn chó.</li>
+<li>Trong túi yên, trái và phải chuyển giữa ba lô của bạn và túi yên, lên và xuống chọn món đồ, A chuyển đồ và B đóng.</li>
+<li>Trong cửa sổ <strong><span class="ig">Kiểm tra con chó</span></strong> (chuột phải vào một con chó hoang), nút hướng đi qua từng dòng và hiện lời giải thích của mỗi dòng.</li>
+</ul>
 <h2 id="4-ba-chế-độ-đi-theo-đứng-yên-và-canh-gác">4. Ba chế độ: Đi theo, Đứng yên và Canh gác</h2>
 <p>Con chó luôn ở một trong ba chế độ này. Cảnh giới, săn mồi và tự bảo vệ là những điều chỉnh nằm bên trên chế độ.</p>
 <h3 id="đi-theo">Đi theo</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>Ở chế độ Đi theo, chỉ khi tự bảo vệ đang bật và chỉ khi zombie nhắm vào bạn hoặc con chó, hoặc khi bạn đã đang đánh nhau. Zombie phải cách bạn 5 ô trở xuống.</li>
 <li>Ở chế độ Canh gác, luôn luôn, trong phạm vi 10 ô quanh trạm gác.</li>
-<li>Với lệnh <strong><span class="ig">Tấn công mục tiêu gần nhất</span></strong>, nó tìm kiếm trong bán kính 12 ô và đuổi theo trong 2 phút trong game.</li>
+<li>Với lệnh <strong><span class="ig">Tấn công mục tiêu gần nhất</span></strong>, nó tìm kiếm trong bán kính 12 ô và đuổi theo trong 2 phút trong game. Mỗi lệnh chỉ dùng cho một mục tiêu: xong con zombie đó, nó quay lại đi theo bạn.</li>
+<li>Với <strong><span class="ig">Lao tới</span></strong>, thứ chỉ Great Dane có, nó chạy thẳng tới con zombie trước mặt bạn và húc ngã những con trên đường. Chi tiết nằm trong <a href="breeds.html" class="xlink">sổ tay giống chó</a>.</li>
 </ul>
 <p>Nó chỉ tấn công zombie thù địch. NPC đồng minh từ các mod khác (Bandits, A-Life) được tha.</p>
 <h3 id="nó-không-cắn-xuyên-tường">Nó không cắn xuyên tường</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Sinh lực của nó giảm vì bỏ bê (đói hoặc khát trên 0,8), vì thức ăn độc hại, vì hươu phản công lúc săn mồi và vì các tình trạng ở mục Sức khỏe. Bỏ bê và nhiễm trùng không chữa chỉ gây chết khi <strong><span class="ig">Bệnh tật và bỏ bê có thể gây chết</span></strong> được bật trong sandbox; tắt, tức mặc định, sinh lực dừng ở 10%.</li>
 <li>Các trạng thái vết thương: <strong><span class="ig">Bị thương</span></strong> dưới 30% sinh lực, <strong><span class="ig">Bị thương nặng</span></strong> dưới 10%. Một con chó bị thương nặng chỉ đi theo bạn, không đánh nhau.</li>
 <li>Nó lùi về phía sau bạn khi sinh lực giảm xuống 10% hoặc thấp hơn.</li>
-<li>Với căng thẳng cao, nó rơi vào hoảng loạn: không đánh nhau, không canh gác và không nghe trò khéo. Nó vẫn chạy đến chỗ bạn khi được gọi. Nó chỉ thoát khỏi hoảng loạn khi căng thẳng giảm xuống hẳn dưới ngưỡng.</li>
+<li>Với căng thẳng cao, nó rơi vào hoảng loạn: bỏ cuộc đánh, quay về bên bạn và không đánh nhau, không canh gác, không nghe trò khéo. Nó vẫn chạy đến chỗ bạn khi được gọi. Nó chỉ thoát khỏi hoảng loạn khi căng thẳng giảm xuống hẳn dưới ngưỡng. Vuốt ve hoặc cho ăn làm nó bình tĩnh ngay, và lệnh tấn công đưa ra trước lúc hoảng loạn sẽ bị hủy.</li>
 </ul>
 <h3 id="đếm-số-đã-hạ">Đếm số đã hạ</h3>
 <p>Mỗi con chó có bộ đếm riêng, hiển thị trong cửa sổ của nó: <em><span class="ig">Đã hạ: 14 zombie, 3 con mồi</span></em>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Cho ăn chấp nhận bất kỳ đồ ăn nào chưa thối và làm giảm đói; chỉ danh sách đồ ăn độc hại bị cấm. Với <a href="#chất-đạm-nó-là-loài-ăn-thịt">số giờ không có chất đạm</a> thì loại đồ ăn quan trọng. Chỉ đúng miếng cần thiết bị tiêu thụ.</li>
 <li>Cho uống nước cần bất kỳ vật chứa nước nào trong túi đồ (mod cũng tìm cả bên trong ba lô nữa).</li>
 <li>Vuốt ve có thời gian hồi chiêu 90 phút trong game.</li>
+<li>Vuốt ve cũng làm được bằng phím <strong>Vuốt ve</strong>, qua menu vòng tròn của chó và menu vòng tròn động vật của game (nút hướng lên, trên tay cầm). Lần nào cũng giống nhau: ngồi xuống vuốt ve và tăng độ trung thành.</li>
 </ul>
 <h3 id="bậc-thang-của-sự-bỏ-bê">Bậc thang của sự bỏ bê</h3>
 <p>Nếu bạn bỏ mặc con chó:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Chén chứa thức ăn hoặc nước, không bao giờ cả hai cùng lúc. Để đổi, dùng <strong><span class="ig">Đổ hết trong chén</span></strong>.</p>
 <p>Mô hình thể hiện nội dung bên trong: xám khi rỗng, nâu khi có thức ăn cho chó, xanh dương khi có nước.</p>
 <h3 id="thứ-nào-tính-là-thức-ăn-trong-chén">Thứ nào tính là thức ăn trong chén</h3>
-<p>Gần như bất kỳ đồ ăn nào làm giảm đói và chưa bị hỏng: thịt, đồ hộp, món đã nấu chín, rau củ, trái cây, trứng, thức ăn cho chó, và cả cỏ lẫn cỏ khô.</p>
+<p>Gần như bất kỳ đồ ăn nào làm giảm đói và chưa bị hỏng: thịt, đồ hộp, món đã nấu chín, rau củ, trái cây, trứng, thức ăn cho chó, và cả cỏ, cỏ khô cùng hai loại bao Animal Feed Bag và Grass Bag.</p>
 <p>Nằm ngoài là <a href="#thức-ăn-có-hại-cho-chó">danh sách những thứ có hại cho chó</a>, thứ hiện màu đỏ trong menu.</p>
 <blockquote class="quote">Lon thức ăn cho chó còn đóng không xuất hiện trong danh sách. Hãy mở lon trước.</blockquote>
 <p>Chén chứa được tối đa 100 điểm:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Vật phẩm</th>
 <th>Điểm</th>
 </tr></thead><tbody>
+<tr>
+<td>Animal Feed Bag, đầy</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Bao thức ăn cho chó</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Cỏ</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Grass Bag, đầy</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>Hai loại bao của game tính 1 điểm cho mỗi lần dùng còn lại. Bao chỉ hao đúng phần vừa vào chén, và khi hết thì thành bao rỗng.</p>
 <p>Phần thịt, cá, trứng hoặc thức ăn cho chó mà bạn đổ vào được đánh dấu là chất đạm, và khi con chó ăn phần đó, nó tính vào <a href="#chất-đạm-nó-là-loài-ăn-thịt">đồng hồ chất đạm</a> như thể bạn đã cho ăn bằng tay. Chén chỉ toàn rau củ chỉ giảm đói, không hơn không kém.</p>
 <p>Nếu món đồ lớn hơn khoảng trống còn lại, chén đầy tới nóc và trả phần còn thừa lại cho bạn. Với một cái chén đang ở 80 điểm, một bao thức ăn cho chó đổ đầy chén lên 100 rồi quay về túi đồ của bạn còn giá trị 40. Thông báo <em><span class="ig">Chén không còn đủ chỗ cho hết số đó.</span></em> chỉ xuất hiện khi chén đã đầy hoàn toàn.</p>
 <h3 id="cách-con-chó-sử-dụng">Cách con chó sử dụng</h3>
 <ul>
 <li>Nó tự đi khi đói hoặc khát đạt 0,5 (chỉnh riêng theo nhân vật ở thanh trượt <em><span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span></em>, trong mục Cài đặt).</li>
 <li>Nó tìm chén trong bán kính 16 ô. Dùng được cả chén của mod lẫn máng ăn gốc của game.</li>
+<li>Không có chén ở tầng của nó, nó tìm ở tầng dưới và tầng trên rồi đi cầu thang. Nếu không lên được tầng có chén, nó bỏ cuộc sau 30 giây rồi tìm lại.</li>
 <li>Mỗi lần ghé qua giảm nửa thanh. Nó ăn trong khoảng 3 phút trong game.</li>
 <li>Trong lúc đi đến chén hoặc đang ăn, nó phớt lờ zombie và mọi thứ khác. Chỉ một mệnh lệnh của bạn mới làm gián đoạn. Một con chó hoảng loạn vì đói sẽ thoát hoảng loạn khi ăn.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Chó chăn cừu Đức, Border Collie, Rottweiler, Doberman, Labrador, Chó Malinois</strong></td>
 <td>6 đến 8</td>
+</tr>
+<tr>
+<td><strong>Sói xám, Great Dane</strong></td>
+<td>8 đến 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Giao diện:</strong> <span class="ig">Chữ trạng thái: Bật/Tắt</span> (các dòng cảnh báo nổi trên đầu con chó), <span class="ig">Hình ảnh moodle: Bật/Tắt</span> (các moodle của chó) và <span class="ig">Tên thú cưng: Bật/Tắt</span> (tên phía trên con chó và dòng <span class="ig">Chủ: A</span> trên chó của người khác).</li>
 <li><strong>Âm thanh:</strong> âm lượng tổng, tắt tiếng, và các thanh trượt riêng cho <strong>Sủa</strong>, <strong>Hiệu ứng</strong> và <strong>Môi trường</strong>.</li>
 <li><strong>Tự ăn uống:</strong> thanh trượt <span class="ig">Ăn/uống khi mức đói hoặc khát đạt</span>.</li>
-<li><strong>Phím điều khiển:</strong> 14 hành động, với <strong>Gán lại</strong> và <strong>Xóa</strong>.</li>
+<li><strong>Phím điều khiển:</strong> 16 hành động, với <strong>Gán lại</strong> và <strong>Xóa</strong>.</li>
 </ul>
 <blockquote class="quote">Nếu tiếng sủa làm phiền bạn, thanh trượt <strong>Sủa</strong> chỉ hạ nhỏ mình nó, không tắt cơ chế nào khác.</blockquote>
 <h2 id="20-những-gì-hiện-trên-màn-hình">20. Những gì hiện trên màn hình</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Điều này đúng với mọi moodle theo giống: ở một con chó không trung thành, đang bệnh, hoặc đói hay khát cao, moodle đó tắt cho đến khi nó được chăm sóc trở lại.</blockquote>
 <h3 id="chữ-phía-trên-đầu">Chữ phía trên đầu</h3>
-<p>Con chó xếp chồng nhiều dòng trạng thái phía trên đầu, nhìn thấy được trong 14 ô và chỉ cùng tầng. Từ trên xuống dưới: cảnh báo Cảnh giới, trạng thái (<strong>Kinh hãi</strong>, <strong>Đang hoảng loạn</strong>, <strong>Bị thương nặng</strong>, <strong>Không nghe lời</strong>, <strong>Bị thương</strong>, <strong>Lo lắng</strong>), việc nó đang làm (ăn, săn mồi, đánh hơi, chăm đàn vật nuôi), mang thai, và tên, luôn ở cuối cùng.</p>
+<p>Con chó xếp chồng nhiều dòng trạng thái phía trên đầu, nhìn thấy được trong 14 ô và chỉ cùng tầng. Từ trên xuống dưới: cảnh báo Cảnh giới, trạng thái (<strong>Kinh hãi</strong>, <strong>Đang hoảng loạn</strong>, <strong>Bị thương nặng</strong>, <strong>Không nghe lời</strong>, <strong>Bị thương</strong>, <strong>Lo lắng</strong>), việc nó đang làm (ăn, săn mồi, đánh hơi, chăm đàn vật nuôi), thời gian hồi Lao tới của Great Dane (<strong><span class="ig">Lao tới sau 12 phút</span></strong>), mang thai, và tên, luôn ở cuối cùng.</p>
 <p>Tùy chọn <strong><span class="ig">Chữ trạng thái: Tắt</span></strong> (mục Cài đặt) xóa hết mọi thứ trừ tên, còn tùy chọn <strong><span class="ig">Tên thú cưng: Tắt</span></strong> (cùng mục đó) chỉ xóa tên và dòng <span class="ig">Chủ: A</span>. Tắt cả hai, không gì được vẽ ra nữa. Mỗi tùy chọn chỉ áp dụng cho người chơi của bạn. Tùy chọn sandbox <strong><span class="ig">Hiện tên trên đầu chó</span></strong> là luật của thế giới và xóa toàn bộ nhãn cho tất cả mọi người.</p>
 <p>Chó của người chơi khác chỉ hiện <strong><span class="ig">Chủ: A</span></strong>, tình trạng mang thai và tên.</p>
 <p>Khi mối đe dọa là sói, cảnh báo của Cảnh giới đổi <span class="ig">zombie</span> thành sói: <em><span class="ig">Có sói ở xa</span></em>, <em><span class="ig">Có sói gần đây</span></em>, <em><span class="ig">Sói ở rất gần!</span></em> và <em><span class="ig">Bầy sói!</span></em>. Xem <a href="#7-động-vật-hung-dữ">Động vật hung dữ</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Hủy đăng ký chỉ riêng Rottweiler, Doberman, Labrador, Pug (hoặc bất kỳ giống nào khác) rồi tiếp tục chơi với mod gốc cũng gây ra vấn đề y hệt, vì chó của giống đó vẫn còn được ghi trong save.</p>
 <h3 id="nếu-động-vật-đã-biến-mất">Nếu động vật đã biến mất</h3>
 <p><strong>Cài lại mod ngay bây giờ, trước khi chơi tiếp hoặc lưu game.</strong> Động vật nhiều khả năng sẽ quay lại. Sau khi game lưu đè lên, tệp đó mất hẳn và không có bản sao lưu nào của nó.</p>
+<p>Nếu thứ quay về trạng thái ban đầu là đồ đạc và đồ nhặt được của cả một khu, như nguyên một căn nhà, nguyên nhân là một cái chén còn nằm trên mặt đất. Mảnh bản đồ này có bản sao: game giữ tệp bị lỗi trong thư mục <code>blam</code> của save, cạnh một tệp <code>_error.txt</code>. Tắt game, bật lại mod, sao lưu thư mục <code>map</code> của save rồi chép <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> đè lên <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Những gì bạn thay đổi ở khu đó sau lần đặt lại sẽ mất.</p>
 <h3 id="cách-gỡ-an-toàn">Cách gỡ an toàn</h3>
 <p>Bước 1: giữ mọi addon đang bật. Kiểm tra xem mọi addon giống mà bạn từng dùng trong save đó có được đánh dấu trong danh sách mod của save ấy không (<strong><span class="ig">LOAD</span></strong> &gt; save đó &gt; <strong><span class="ig">Choose Mods...</span></strong>). Một addon bị tắt là đã đủ gây ra vấn đề mô tả ở trên.</p>
 <p>Bước 2: loại bỏ những con chó. Có hai cách an toàn:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Mang trong túi đồ. Game biết cách bỏ qua vật phẩm đó: chỉ con chó biến mất, phần còn lại vẫn còn.</li>
 </ul>
 <p>Thả con chó ra hoặc mang nó đi thật xa không giải quyết được gì: hồ sơ của nó vẫn còn trong save, và mang nó đi nơi khác chỉ đổi vùng nào sẽ bị hỏng.</p>
-<p>Bước 3: lưu game. Chính lúc lưu là lúc việc dọn dẹp được ghi lại.</p>
-<p>Bước 4: gỡ mod.</p>
+<p>Bước 3: nhặt chén về. Chén của mod để trên mặt đất cũng làm hỏng save khi không có mod: game không đọc được mảnh bản đồ nơi chén nằm và tạo lại mảnh đó từ đầu, đồ đạc và đồ nhặt được trở về như lúc đầu, còn công trình của bạn thì mất. Nhặt hết chén khỏi mặt đất rồi cất trong túi đồ hoặc trong một vật chứa (tủ, thùng, cốp xe). Ở trong vật chứa thì không sao cả.</p>
+<p>Bước 4: lưu game. Chính lúc lưu là lúc việc dọn dẹp được ghi lại.</p>
+<p>Bước 5: gỡ mod.</p>
 <h3 id="dọn-dẹp-toàn-bộ-quản-trị-viên-chế-độ-debug">Dọn dẹp toàn bộ (quản trị viên / chế độ debug)</h3>
 <p>Các bước trên xử lý chó của riêng bạn, nhưng mod cũng rải chó hoang khắp bản đồ, và không thể tìm hết bằng tay. Để dọn sạch toàn bộ save cùng lúc, có một lệnh:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Chuột phải vào mặt đất → <strong>Chó đồng hành (gỡ lỗi)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Chờ thông báo <code>sweep done</code> rồi lưu game.</li>
 </ol>
-<p>Lệnh này xóa ngay những con chó đang được tải rồi quét phần còn lại của save ở chế độ nền, không làm đứng game. Nếu lệnh từ chối và nêu tên một giống, hãy bật addon đó trong save này rồi lặp lại: thiếu định nghĩa của nó, việc dọn dẹp sẽ xóa luôn động vật của vùng đó.</p>
+<p>Lệnh này xóa ngay những con chó đang được tải rồi quét phần còn lại của save ở chế độ nền, không làm đứng game. Lệnh cũng nhặt khỏi mặt đất những cái chén ở gần người chơi; thông báo sẽ nói bao nhiêu cái. Chén để ở nơi hiện không có ai thì lệnh không với tới: hãy đến đó và nhặt bằng tay. Nếu lệnh từ chối và nêu tên một giống, hãy bật addon đó trong save này rồi lặp lại: thiếu định nghĩa của nó, việc dọn dẹp sẽ xóa luôn động vật của vùng đó.</p>
 <h2 id="26-tinh-chỉnh-máy-chủ-quản-trị-viên">26. Tinh chỉnh máy chủ (quản trị viên)</h2>
 <p>Mục này dành cho ai chạy máy chủ đông người và nhiều chó. Bảng điều khiển tên là <strong><span class="ig">Server tuning / performance</span></strong>: phía trên là đồng hồ đo trực tiếp mức tiêu tốn của mod trên máy chủ; phía dưới là các trường thay đổi mức tiêu tốn đó. Luật chơi (sát thương, đói, XP, giới hạn số chó) không nằm ở đây, vẫn là tùy chọn sandbox, ở mục 23.</p>
 <blockquote class="quote">Bảng điều khiển luôn ở tiếng Anh dù game đang dùng ngôn ngữ nào, vì các nhãn được cố định trong code. Các bảng dưới đây trích dẫn từng nhãn đúng như nó hiện trên màn hình.</blockquote>

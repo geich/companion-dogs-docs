@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>拉布拉多：<code>lb</code>、<code>lk</code></li>
 <li>巴哥犬：<code>pg</code>、<code>pv</code></li>
 <li>馬林諾斯犬：<code>ml</code>、<code>mm</code>、<code>mh</code></li>
+<li>大丹犬：<code>gf</code>、<code>gd</code></li>
 <li>貓：以 <code>ct</code>、<code>cv</code> 或 <code>cs</code> 開頭的每一個後綴（每種毛色一組）</li>
 </ul>
 <h2 id="10-品種-moodle">10. 品種 moodle</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> 回傳等級，0 表示「不顯示」。<code>apply</code> 收到距離上次呼叫過去的遊戲分鐘數，所以要把你的效果乘上 <code>elapsedMin</code>。</p>
+<p>會改變狀態而不是消失的 moodle，有三個可選欄位。<code>tintFor(dog)</code> 以 r, g, b 傳回背景色，傳回 nil 就保留 <code>tintR</code>/<code>tintG</code>/<code>tintB</code>。<code>nameText(player)</code> 和 <code>descText(player)</code> 傳回氣泡裡的文字，傳回 nil 就保留 <code>nameKey</code> 和 <code>descKey</code> 的文字。大丹犬的衝撞 moodle 就用了這三個欄位，冷卻期間變成黃色並顯示剩餘分鐘。</p>
 <p>圖示要提供六種尺寸，從 32 到 128 像素。介面按玩家的縮放挑尺寸，缺一個尺寸就會顯示成一個空方塊。圖示出現在模組自己那一條裡，不和原版 moodle 混在一起。</p>
 <h2 id="11-掛鉤">11. 掛鉤</h2>
 <p>兩個函式清單，基礎版在伺服器上呼叫它們。從一個 shared 檔案往裡追加。</p>

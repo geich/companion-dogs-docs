@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-radialmenü-q-halten" data-id="b-radialmenü-q-halten">b) Radialmenü (Q halten)</a>
 <a class="s3" href="#c-tastenkürzel" data-id="c-tastenkürzel">c) Tastenkürzel</a>
 <a class="s3" href="#d-schaltflächen-im-hundefenster" data-id="d-schaltflächen-im-hundefenster">d) Schaltflächen im Hundefenster</a>
+<a class="s3" href="#mit-controller-spielen" data-id="mit-controller-spielen">Mit Controller spielen</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Mit dem Basis-Mod und den veröffentlichten Rassen-Add-ons sieht es so aus:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>Der Basis-Mod steht in beiden Listen vor den Add-ons. Ein Rassen-Add-on, das vor Companion Dogs lädt, meldet seine Rasse nicht an.</li>
 <li>Starte den Server komplett neu, nachdem du die .ini geändert hast.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Der Hund entsteht meist auf einem freien Feld draußen vor dem Gebäude: Straße, Hof, Grundstück. Drinnen entsteht er nur, wenn draußen kein freies Feld übrig bleibt.</p>
 <p>Die Sandkasten-Option <strong><span class="ig">Multiplikator für Hunde-Spawns</span></strong> skaliert all diese Chancen auf einmal. Bei 0 gibt es gar keine Hunde mehr.</p>
 <p>Der Grauwolf kommt nicht aus Gebäuden: Er entsteht im Rudel im Wald und greift an. Um einen zu bekommen, musst du ihn besiegen, behandeln und zähmen. Siehe <a href="#7-aggressive-tiere">Aggressive Tiere</a>.</p>
-<blockquote class="quote">Die Add-on-Rassen kommen als eigene Mods auf Steam, jede mit ihren eigenen Fundorten: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> und <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. Was jede kann, steht im <a href="breeds.html" class="xlink">Rassenhandbuch</a>.</blockquote>
+<blockquote class="quote">Die Add-on-Rassen kommen als eigene Mods auf Steam, jede mit ihren eigenen Fundorten: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> und <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. Was jede kann, steht im <a href="breeds.html" class="xlink">Rassenhandbuch</a>.</blockquote>
 <h3 id="so-zähmst-du-ihn">So zähmst du ihn</h3>
 <p>Rechtsklick auf den wilden Hund. Die einzige Option, die erscheint, ist <strong><span class="ig">Futter geben (anfreunden)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Schickt ihn auf den nächsten Zombie</td>
 </tr>
 <tr>
+<td><strong>Ansturm</strong></td>
+<td>Nur bei der Deutschen Dogge: rennt in gerader Linie los und wirft die Zombies auf dem Weg um. Während der Abklingzeit zeigt der Eintrag die restlichen Minuten</td>
+</tr>
+<tr>
 <td><strong>Kunststücke</strong> ▸</td>
 <td>Untermenü mit den vier Kunststücken</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Bewachen</span> steht nicht in diesem Menü. Den Befehl gibt es nur im Radialmenü, auf einer Taste und als Schaltfläche im Reiter Befehle.</blockquote>
 <h3 id="b-radialmenü-q-halten">b) Radialmenü (Q halten)</h3>
 <p>Der Mod hängt sich in das Emote-Menü des Spiels. Halte Q, und es erscheint eine neue Kategorie mit dem Rassennamen deines Hundes und einem Pfotensymbol. Die Kategorie taucht nur auf, wenn ein aktiver Hund in der Nähe ist.</p>
-<p>Die Segmente sind: <strong>Komm her</strong>, <strong>Folgen</strong>, <strong>Bleib</strong>, <strong>Bewachen</strong>, <strong>Alarm</strong>, <strong>Leise</strong>, <strong>Still</strong>, <strong>Nächsten angreifen</strong>, <strong>Jagen</strong> / <strong>Jagd beenden</strong>, <strong>Kunststücke ▸</strong> und <strong>Satteltaschen öffnen</strong> (wenn er Taschen trägt).</p>
+<p>Die Segmente sind: <strong>Komm her</strong>, <strong>Folgen</strong>, <strong>Bleib</strong>, <strong>Bewachen</strong>, <strong>Alarm</strong>, <strong>Leise</strong>, <strong>Still</strong>, <strong>Nächsten angreifen</strong>, <strong>Jagen</strong> / <strong>Jagd beenden</strong>, <strong>Bring</strong>, <strong>Status</strong>, <strong>Auto-Schutz: An</strong> / <strong>Auto-Schutz: Aus</strong>, <strong>Streicheln</strong>, <strong>Kunststücke ▸</strong> und <strong>Satteltaschen öffnen</strong> (wenn er Taschen trägt). Die Deutsche Dogge hat außerdem <strong>Ansturm</strong>.</p>
+<p>Die Katze hat weder Bewachen noch Nächsten angreifen, und der Mops hat weder Leise noch Still.</p>
 <p><strong>Kunststücke</strong> öffnet eine dritte Ebene des Radials mit den vier Kunststücken und einem <strong>Zurück</strong>. Ein noch nicht freigeschaltetes Kunststück steht mit rotem Symbol da und trägt die verlangte Stufe im Namen, etwa <em><span class="ig">Ablenken (Gehorsam 3)</span></em>.</p>
 <p>Manche Befehle lassen deine Figur auch gestikulieren: Rufen hebt die Hand, Bleiben macht das Stoppzeichen, Angreifen zeigt hin.</p>
 <h3 id="c-tastenkürzel">c) Tastenkürzel</h3>
-<p>Es gibt 14 belegbare Aktionen, und keine kommt mit einer voreingestellten Taste. Du belegst sie im Reiter <strong><span class="ig">Einstellungen</span></strong> des Hundefensters.</p>
+<p>Es gibt 16 belegbare Aktionen, und keine kommt mit einer voreingestellten Taste. Du belegst sie im Reiter <strong><span class="ig">Einstellungen</span></strong> des Hundefensters.</p>
 <div class="tw"><table><thead><tr>
 <th>Aktion</th>
 <th>Was sie tut</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Angriff auf Befehl</td>
 </tr>
 <tr>
+<td><strong>Ansturm</strong></td>
+<td>Nur bei der Deutschen Dogge</td>
+</tr>
+<tr>
 <td><strong>Alarm</strong> / <strong>Leise</strong> / <strong>Still</strong></td>
 <td>Modus des Wachdiensts</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Öffnet und schließt das Hundefenster</td>
 </tr>
 <tr>
+<td><strong>Streicheln</strong></td>
+<td>Dasselbe Streicheln wie im Kontextmenü</td>
+</tr>
+<tr>
 <td><strong>Zu einer Stelle gehen</strong></td>
 <td>Öffnet den Zielcursor des Kunststücks</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Wählst du eine Taste, die schon belegt ist, warnt der Mod: <em><span class="ig">F wird bereits verwendet von: Bleib</span></em>. Ohne belegte Taste zeigt die Schaltfläche <em><span class="ig">Nicht belegt</span></em>.</p>
 <h3 id="d-schaltflächen-im-hundefenster">d) Schaltflächen im Hundefenster</h3>
 <p>Der Reiter Befehle hat alles als Schaltfläche. Die vollständige Liste steht in <a href="#19-das-hundefenster">Das Hundefenster</a>.</p>
+<h3 id="mit-controller-spielen">Mit Controller spielen</h3>
+<p>Der Mod funktioniert mit dem Controller:</p>
+<ul>
+<li>Das Radialmenü des Hundes öffnet sich mit dem Steuerkreuz nach unten, das ist das Emote-Menü des Spiels.</li>
+<li>Streicheln geht auch über das Tier-Radialmenü des Spiels, mit dem Steuerkreuz nach oben.</li>
+<li>Die Bestätigungsfenster nehmen den Controller an: einem frisch gezähmten Hund einen Namen geben, umbenennen, freilassen, die Viehpflege beenden und einen weit entfernten Hund zurückrufen.</li>
+<li>Im Reiter <strong><span class="ig">Meine Gefährten</span></strong> wählt das Steuerkreuz den Hund aus.</li>
+<li>In den Satteltaschen wechseln links und rechts zwischen deinem Rucksack und den Satteltaschen, oben und unten wählen den Gegenstand, A verschiebt ihn und B schließt.</li>
+<li>Im Fenster <strong><span class="ig">Hund untersuchen</span></strong> (Rechtsklick auf einen Streuner) geht das Steuerkreuz die Zeilen durch und zeigt zu jeder die Erklärung.</li>
+</ul>
 <h2 id="4-die-drei-modi-folgen-bleiben-und-bewachen">4. Die drei Modi: Folgen, Bleiben und Bewachen</h2>
 <p>Der Hund ist immer in einem dieser drei. Wachdienst, Jagd und Auto-Schutz kommen obendrauf.</p>
 <h3 id="folgen">Folgen</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>In Folgen nur mit eingeschaltetem Auto-Schutz und nur, wenn der Zombie dich oder den Hund ins Visier nimmt oder wenn du schon kämpfst. Der Zombie muss 5 Felder oder näher an dir sein.</li>
 <li>In Bewachen immer, innerhalb der 10 Felder um den Posten.</li>
-<li>Mit dem Befehl <strong><span class="ig">Nächsten angreifen</span></strong> sucht er im Umkreis von 12 Feldern und verfolgt 2 Spielminuten lang.</li>
+<li>Mit dem Befehl <strong><span class="ig">Nächsten angreifen</span></strong> sucht er im Umkreis von 12 Feldern und verfolgt 2 Spielminuten lang. Jeder Befehl gilt für ein Ziel: Ist dieser Zombie erledigt, folgt er dir wieder.</li>
+<li>Mit <strong><span class="ig">Ansturm</span></strong>, den nur die Deutsche Dogge hat, rennt sie in gerader Linie auf den Zombie vor dir zu und wirft die auf dem Weg um. Die Einzelheiten stehen im <a href="breeds.html" class="xlink">Rassenhandbuch</a>.</li>
 </ul>
 <p>Er greift nur feindliche Zombies an. Verbündete NPCs aus anderen Mods (Bandits, A-Life) bleiben verschont.</p>
 <h3 id="er-beißt-nicht-durch-wände">Er beißt nicht durch Wände</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Sein Leben sinkt durch Vernachlässigung (Hunger oder Durst über 0,8), durch giftiges Futter, durch den Gegenangriff eines Rehs auf der Jagd und durch die Zustände im Abschnitt Gesundheit. Vernachlässigung und unbehandelte Infektion töten nur mit eingeschaltetem <strong><span class="ig">Krankheit und Vernachlässigung können tödlich sein</span></strong> im Sandkasten; ausgeschaltet, die Voreinstellung, stoppt das Leben bei 10%.</li>
 <li>Verletzungsstufen: <strong><span class="ig">Verletzt</span></strong> unter 30% Leben, <strong><span class="ig">Schwer verletzt</span></strong> unter 10%. Ein schwer verletzter Hund folgt dir nur noch, er kämpft nicht.</li>
 <li>Er zieht sich hinter dich zurück, sobald sein Leben auf 10% oder weniger fällt.</li>
-<li>Bei hohem Stress gerät er in Panik: kein Kampf, keine Wache, kein Kunststück. Gerufen läuft er weiterhin zu dir. Aus der Panik kommt er erst, wenn der Stress deutlich unter die Schwelle fällt.</li>
+<li>Bei hohem Stress gerät er in Panik: Er bricht den Kampf ab, kommt zu dir zurück und kämpft nicht, hält keine Wache und macht keine Kunststücke. Gerufen läuft er weiterhin zu dir. Aus der Panik kommt er erst, wenn der Stress deutlich unter die Schwelle fällt. Streicheln oder Futter beruhigen ihn sofort, und ein Angriffsbefehl von vor der Panik wird abgebrochen.</li>
 </ul>
 <h3 id="abschusszähler">Abschusszähler</h3>
 <p>Jeder Hund hat seinen eigenen Zähler, sichtbar in seinem Fenster: <strong><span class="ig">Erlegt: 14 Zombies, 3 Wild</span></strong>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Füttern nimmt jedes Futter an, das nicht verdorben ist und satt macht; verboten ist nur die Liste der giftigen Sachen. Für die <a href="#eiweiß-er-ist-ein-fleischfresser">Stunden ohne Eiweiß</a> zählt die Art. Nur der nötige Bissen wird verbraucht.</li>
 <li>Wasser geben braucht irgendeinen Behälter mit Wasser im Inventar (der Mod sucht auch in den Rucksäcken).</li>
 <li>Streicheln hat eine Wartezeit von 90 Spielminuten.</li>
+<li>Streicheln geht auch über die Taste <strong>Streicheln</strong>, das Radialmenü des Hundes und das Tier-Radialmenü des Spiels (Steuerkreuz nach oben, am Controller). Es ist immer dasselbe, in der Hocke und mit dem Loyalitätsgewinn.</li>
 </ul>
 <h3 id="die-leiter-der-vernachlässigung">Die Leiter der Vernachlässigung</h3>
 <p>Wenn du den Hund sich selbst überlässt:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Der Napf hält Futter oder Wasser, nie beides zugleich. Zum Wechseln nimmst du <strong><span class="ig">Napf leeren</span></strong>.</p>
 <p>Das Modell zeigt den Inhalt: grau leer, braun mit Futter, blau mit Wasser.</p>
 <h3 id="was-als-napffutter-zählt">Was als Napffutter zählt</h3>
-<p>Fast alles, was satt macht und nicht verdorben ist: Fleisch, Konserven, gekochte Mahlzeiten, Gemüse, Obst, Ei, Hundefutter, dazu Gras und Heu.</p>
+<p>Fast alles, was satt macht und nicht verdorben ist: Fleisch, Konserven, gekochte Mahlzeiten, Gemüse, Obst, Ei, Hundefutter, dazu Gras, Heu und die Säcke mit Tierfutter und mit Gras.</p>
 <p>Draußen bleibt die <a href="#futter-das-schadet">Liste dessen, was dem Hund schadet</a>, die im Menü rot erscheint.</p>
 <blockquote class="quote">Die ungeöffnete Dose Hundefutter steht nicht in der Liste. Öffne die Dose zuerst.</blockquote>
 <p>Der Napf fasst bis zu 100 Punkte:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Gegenstand</th>
 <th>Punkte</th>
 </tr></thead><tbody>
+<tr>
+<td>Tierfuttersack, voll</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Sack Hundefutter</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Gras</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Grassack, voll</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>Die beiden Säcke aus dem Spiel zählen 1 Punkt pro Nutzung, die noch drin ist. Der Sack gibt nur ab, was in den Napf gepasst hat, und wird zum leeren Sack, wenn er aufgebraucht ist.</p>
 <p>Was du an Fleisch, Fisch, Ei oder Hundefutter hineinschüttest, wird als Eiweiß vermerkt, und wenn der Hund diesen Teil frisst, zählt er für die <a href="#eiweiß-er-ist-ein-fleischfresser">Eiweiß-Uhr</a> genauso, als hättest du aus der Hand gefüttert. Ein Napf voll Gemüse stillt nur seinen Hunger und sonst nichts.</p>
 <p>Ist der Gegenstand größer als der freie Platz, füllt sich der Napf bis oben und der Rest kommt zu dir zurück. Bei einem Napf mit 80 Punkten bringt ein Sack Hundefutter ihn auf 100 und geht mit einem Wert von 40 zurück in dein Inventar. Die Meldung <em><span class="ig">Im Napf ist nicht genug Platz für all das.</span></em> erscheint nur bei einem randvollen Napf.</p>
 <h3 id="wie-der-hund-ihn-nutzt">Wie der Hund ihn nutzt</h3>
 <ul>
 <li>Er geht von allein hin, sobald Hunger oder Durst 0,5 erreichen (pro Figur einstellbar am Regler <em><span class="ig">Frisst, wenn Hunger/Durst erreicht</span></em> im Reiter Einstellungen).</li>
 <li>Er sucht im Umkreis von 16 Feldern nach einem Napf. Es taugt der Napf des Mods ebenso wie der Futtertrog aus dem Grundspiel.</li>
+<li>Ohne Napf auf seiner Etage sucht er eine Etage tiefer und eine höher und nimmt die Treppe. Kommt er nicht auf die Etage des Napfs, gibt er nach 30 Sekunden auf und sucht neu.</li>
 <li>Jeder Besuch nimmt die halbe Leiste. Er frisst etwa 3 Spielminuten lang.</li>
 <li>Auf dem Weg zum Napf und beim Fressen ignoriert er Zombies und alles andere. Nur ein Befehl von dir unterbricht ihn. Ein Hund, der aus Hunger in Panik ist, kommt beim Fressen wieder heraus.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Deutscher Schäferhund, Border Collie, Rottweiler, Dobermann, Labrador, Malinois</strong></td>
 <td>6 bis 8</td>
+</tr>
+<tr>
+<td><strong>Grauwolf, Deutsche Dogge</strong></td>
+<td>8 bis 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Oberfläche:</strong> <span class="ig">Statustexte: an/aus</span> (die schwebenden Hinweise über dem Kopf des Hundes), <span class="ig">Stimmungsbild: an/aus</span> (die Hunde-Moodles) und <span class="ig">Name des Tiers: an/aus</span> (der Name über dem Hund und das <span class="ig">Besitzer: Soundso</span> bei den Hunden der anderen).</li>
 <li><strong>Ton:</strong> Gesamtlautstärke, stumm, und getrennte Regler für <strong>Bellen</strong>, <strong>Effekte</strong> und <strong>Umgebung</strong>.</li>
 <li><strong>Selbstfütterung:</strong> der Regler <span class="ig">Frisst, wenn Hunger/Durst erreicht</span>.</li>
-<li><strong>Tastenbelegung:</strong> die 14 Aktionen, mit <strong>Neu belegen</strong> und <strong>Löschen</strong>.</li>
+<li><strong>Tastenbelegung:</strong> die 16 Aktionen, mit <strong>Neu belegen</strong> und <strong>Löschen</strong>.</li>
 </ul>
 <blockquote class="quote">Wenn dich das Bellen stört, senkt der Regler <strong>Bellen</strong> nur das, ohne irgendeine Mechanik abzuschalten.</blockquote>
 <h2 id="20-was-auf-dem-bildschirm-erscheint">20. Was auf dem Bildschirm erscheint</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Das gilt für alle Rassen-Moodles: Bei einem illoyalen oder kranken Hund, oder bei einem mit starkem Hunger oder Durst, schaltet sich das Moodle ab, bis er wieder versorgt ist.</blockquote>
 <h3 id="texte-über-dem-kopf">Texte über dem Kopf</h3>
-<p>Der Hund stapelt mehrere Statuszeilen über seinem Kopf, sichtbar auf 14 Felder und nur auf derselben Etage. Von oben nach unten: Warnung des Wachdienstes, Zustand (<strong>Verängstigt</strong>, <strong>In Panik</strong>, <strong>Schwer verletzt</strong>, <strong>Ungehorsam</strong>, <strong>Verletzt</strong>, <strong>Nervös</strong>), was er gerade tut (fressen, jagen, schnüffeln, das Vieh versorgen), Trächtigkeit und der Name, immer zuletzt.</p>
+<p>Der Hund stapelt mehrere Statuszeilen über seinem Kopf, sichtbar auf 14 Felder und nur auf derselben Etage. Von oben nach unten: Warnung des Wachdienstes, Zustand (<strong>Verängstigt</strong>, <strong>In Panik</strong>, <strong>Schwer verletzt</strong>, <strong>Ungehorsam</strong>, <strong>Verletzt</strong>, <strong>Nervös</strong>), was er gerade tut (fressen, jagen, schnüffeln, das Vieh versorgen), die Abklingzeit des Ansturms bei der Deutschen Dogge (<strong><span class="ig">Ansturm in 12 Min.</span></strong>), Trächtigkeit und der Name, immer zuletzt.</p>
 <p>Die Option <strong><span class="ig">Statustexte: aus</span></strong> (Reiter Einstellungen) blendet alles außer dem Namen aus, und die Option <strong><span class="ig">Name des Tiers: aus</span></strong> (derselbe Reiter) blendet nur den Namen und das <span class="ig">Besitzer: Soundso</span> aus. Sind beide aus, wird gar nichts gezeichnet. Jede gilt nur für den eigenen Spieler. Die Sandbox-Option <strong><span class="ig">Namensschilder anzeigen</span></strong> ist Weltregel und entfernt das ganze Schild für alle.</p>
 <p>Beim Hund eines anderen Spielers siehst du nur <strong><span class="ig">Besitzer: Soundso</span></strong>, die Trächtigkeit und den Namen.</p>
 <p>Wenn die Bedrohung ein Wolf ist, nennt die Warnung des Wachdienstes statt <span class="ig">Zombie</span> den Wolf: <em><span class="ig">Wolf in der Ferne</span></em>, <em><span class="ig">Wolf in der Nähe</span></em>, <em><span class="ig">Wolf ganz nah!</span></em> und <em><span class="ig">Wolfsrudel!</span></em>. Siehe <a href="#7-aggressive-tiere">Aggressive Tiere</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Nur den Rottweiler, den Dobermann, den Labrador oder den Mops (oder irgendeinen anderen) abzubestellen und mit dem Basis-Mod weiterzuspielen, verursacht dasselbe Problem, weil die Hunde dieser Rasse weiterhin im Spielstand stehen.</p>
 <h3 id="wenn-die-tiere-schon-weg-sind">Wenn die Tiere schon weg sind</h3>
 <p><strong>Installiere den Mod sofort wieder, bevor du weiterspielst oder speicherst.</strong> Die Tiere kommen wahrscheinlich zurück. Sobald das Spiel darüber gespeichert hat, ist die Datei verloren, und ein Backup davon gibt es nicht.</p>
+<p>Wenn stattdessen die Möbel und die Beute eines Bereichs, etwa eines ganzen Hauses, in den Originalzustand zurückgefallen sind, liegt es an einem Napf auf dem Boden. Für dieses Kartenstück gibt es eine Kopie: Das Spiel legt die fehlerhafte Datei im Ordner <code>blam</code> des Spielstands ab, neben einer <code>_error.txt</code>. Schließ das Spiel, schalte den Mod wieder an, sichere den Ordner <code>map</code> des Spielstands und kopiere <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> über <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Was du nach dem Zurücksetzen in diesem Bereich geändert hast, geht verloren.</p>
 <h3 id="so-entfernst-du-ihn-sicher">So entfernst du ihn sicher</h3>
 <p>Schritt 1: Lass alle Addons an. Prüfe, dass jedes Rassen-Addon, das du in diesem Spielstand jemals benutzt hast, in dessen Mod-Liste angehakt ist (<strong><span class="ig">LADEN</span></strong> &gt; der Spielstand &gt; <strong><span class="ig">Mods wählen...</span></strong>). Schon ein abgeschaltetes Addon löst das oben beschriebene Problem aus.</p>
 <p>Schritt 2: Werde die Hunde los. Es gibt zwei sichere Wege:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Ins Inventar nehmen. Dieses Objekt kann das Spiel überspringen: Nur der Hund verschwindet, der Rest bleibt.</li>
 </ul>
 <p>Den Hund freizulassen oder weit wegzubringen hilft nicht: Sein Eintrag bleibt im Spielstand, und ein Umzug ändert nur, welche Region kaputtgeht.</p>
-<p>Schritt 3: Speichere das Spiel. Erst das Speichern schreibt die Aufräumaktion fest.</p>
-<p>Schritt 4: Entferne den Mod.</p>
+<p>Schritt 3: Sammle die Näpfe ein. Ein Napf des Mods, der auf dem Boden liegt, macht den Spielstand ohne den Mod ebenfalls kaputt: Das Spiel kann das Kartenstück, auf dem er liegt, nicht lesen und baut dieses Stück neu auf, mit Möbeln und Beute im Originalzustand und ohne deine Bauten. Heb jeden Napf vom Boden auf und verstau ihn im Inventar oder in einem Behälter (Schrank, Kiste, Kofferraum). In einem Behälter richtet er keinen Schaden an.</p>
+<p>Schritt 4: Speichere das Spiel. Erst das Speichern schreibt die Aufräumaktion fest.</p>
+<p>Schritt 5: Entferne den Mod.</p>
 <h3 id="komplette-reinigung-admin-debug-modus">Komplette Reinigung (Admin / Debug-Modus)</h3>
 <p>Die Schritte oben decken deine eigenen Hunde ab, aber der Mod verteilt auch Streuner über die Karte, und die findest du nicht alle von Hand. Für den ganzen Spielstand auf einen Schlag gibt es einen Befehl:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Rechtsklick auf den Boden → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Warte auf die Meldung <code>sweep done</code> und speichere das Spiel.</li>
 </ol>
-<p>Der Befehl löscht die geladenen Hunde sofort und durchsucht danach den Rest des Spielstands im Hintergrund, ohne die Partie anzuhalten. Verweigert er sich unter Nennung einer Rasse, schalte dieses Addon in diesem Spielstand an und wiederhole es: ohne seine Definitionen löscht das Aufräumen die Tiere der Region.</p>
+<p>Der Befehl löscht die geladenen Hunde sofort und durchsucht danach den Rest des Spielstands im Hintergrund, ohne die Partie anzuhalten. Er hebt auch die Näpfe auf, die in der Nähe der Spieler auf dem Boden liegen; die Meldung sagt, wie viele. Ein Napf an einer Stelle, an der gerade niemand ist, wird nicht erreicht: Geh hin und heb ihn von Hand auf. Verweigert er sich unter Nennung einer Rasse, schalte dieses Addon in diesem Spielstand an und wiederhole es: ohne seine Definitionen löscht das Aufräumen die Tiere der Region.</p>
 <h2 id="26-server-feinabstimmung-admin">26. Server-Feinabstimmung (Admin)</h2>
 <p>Dieser Abschnitt ist für alle, die einen Server mit vielen Leuten und vielen Hunden betreiben. Das Panel heißt <strong><span class="ig">Server tuning / performance</span></strong>: oben eine Live-Anzeige dessen, was der Mod auf dem Server kostet; darunter die Felder, die diese Kosten ändern. Spielregeln (Schaden, Hunger, XP, Hundelimit) stehen nicht hier, das bleiben Sandbox-Optionen aus Abschnitt 23.</p>
 <blockquote class="quote">Das Panel bleibt in jeder Spielsprache englisch, weil die Bezeichnungen im Code festgeschrieben sind. Die Tabellen unten nennen jede so, wie sie auf dem Bildschirm steht.</blockquote>

@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-menú-radial-mantener-q" data-id="b-menú-radial-mantener-q">b) Menú radial (mantener Q)</a>
 <a class="s3" href="#c-teclas-de-atajo" data-id="c-teclas-de-atajo">c) Teclas de atajo</a>
 <a class="s3" href="#d-botones-en-la-ventana-del-perro" data-id="d-botones-en-la-ventana-del-perro">d) Botones en la ventana del perro</a>
+<a class="s3" href="#jugar-con-mando" data-id="jugar-con-mando">Jugar con mando</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>Con el base y los add-ons de raza publicados, queda así:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>El base va antes de los add-ons en las dos listas. Un add-on de raza cargado antes de Companion Dogs no registra la raza.</li>
 <li>Reinicia el servidor por completo después de tocar el .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>El perro suele aparecer en una casilla libre fuera del edificio: la calle, el patio, el terreno. Solo aparece dentro cuando no queda ninguna casilla libre fuera.</p>
 <p>La opción de sandbox <strong><span class="ig">Multiplicador de aparición de perros</span></strong> escala todas esas probabilidades de golpe. En 0 se apaga la aparición.</p>
 <p>El Lobo gris no sale de edificios: aparece en manada en el bosque y ataca. Para tener uno hay que derrotarlo, tratarlo y domesticarlo. Mira <a href="#7-animales-agresivos">Animales agresivos</a>.</p>
-<blockquote class="quote">Las razas de add-on vienen en mods aparte en Steam, cada una con sus propios sitios de aparición: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> y <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. Lo que hace cada una está en el <a href="breeds.html" class="xlink">manual de razas</a>.</blockquote>
+<blockquote class="quote">Las razas de add-on vienen en mods aparte en Steam, cada una con sus propios sitios de aparición: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> y <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. Lo que hace cada una está en el <a href="breeds.html" class="xlink">manual de razas</a>.</blockquote>
 <h3 id="cómo-domesticar">Cómo domesticar</h3>
 <p>Haz clic derecho en el perro salvaje. La única opción que sale es <strong><span class="ig">Dar comida (hacerse amigo)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Le manda atacar al zombi más cercano</td>
 </tr>
 <tr>
+<td><strong>Embestida</strong></td>
+<td>Solo en el Gran danés: corre en línea recta y derriba a los zombis en su camino. Durante la recarga, muestra los minutos que faltan</td>
+</tr>
+<tr>
 <td><strong>Trucos</strong> ▸</td>
 <td>Submenú con los cuatro trucos</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Vigilar</span> no sale en ese menú. La orden solo existe en el menú radial, en la tecla de atajo y en el botón de la pestaña Órdenes.</blockquote>
 <h3 id="b-menú-radial-mantener-q">b) Menú radial (mantener Q)</h3>
 <p>El mod entra en el menú de emotes del juego. Mantén Q y sale una categoría nueva con el nombre de la raza de tu perro y un icono de huella. La categoría solo sale con un perro activo cerca.</p>
-<p>Las porciones son: <strong>Ven aquí</strong>, <strong>Seguir</strong>, <strong>Quieto</strong>, <strong>Vigilar</strong>, <strong>Alerta</strong>, <strong>Silencioso</strong>, <strong>Mudo</strong>, <strong>Atacar al más cercano</strong>, <strong>Cazar</strong> / <strong>Dejar de cazar</strong>, <strong>Trucos ▸</strong> y <strong>Abrir alforjas</strong> (si lleva alforjas).</p>
+<p>Las porciones son: <strong>Ven aquí</strong>, <strong>Seguir</strong>, <strong>Quieto</strong>, <strong>Vigilar</strong>, <strong>Alerta</strong>, <strong>Silencioso</strong>, <strong>Mudo</strong>, <strong>Atacar al más cercano</strong>, <strong>Cazar</strong> / <strong>Dejar de cazar</strong>, <strong>Traer</strong>, <strong>Estado</strong>, <strong>Protección automática: activada</strong> / <strong>Protección automática: desactivada</strong>, <strong>Acariciar</strong>, <strong>Trucos ▸</strong> y <strong>Abrir alforjas</strong> (si lleva alforjas). El Gran danés tiene además la <strong>Embestida</strong>.</p>
+<p>El gato no tiene Vigilar ni Atacar al más cercano, y el Carlino no tiene Silencioso ni Mudo.</p>
 <p>Elegir <strong>Trucos</strong> abre un tercer nivel del radial con los cuatro trucos y un <strong>Volver</strong>. Un truco todavía bloqueado sale con icono rojo y el nivel que pide en el nombre, del estilo <em><span class="ig">Distraer (Obediencia 3)</span></em>.</p>
 <p>Algunas órdenes también hacen gesticular a tu personaje: llamar levanta la mano, mandar quedarse hace el gesto de parar, mandar atacar señala.</p>
 <h3 id="c-teclas-de-atajo">c) Teclas de atajo</h3>
-<p>Son 14 acciones asignables y ninguna viene con tecla puesta. Se configuran en la pestaña <strong><span class="ig">Ajustes</span></strong> de la ventana del perro.</p>
+<p>Son 16 acciones asignables y ninguna viene con tecla puesta. Se configuran en la pestaña <strong><span class="ig">Ajustes</span></strong> de la ventana del perro.</p>
 <div class="tw"><table><thead><tr>
 <th>Acción</th>
 <th>Qué hace</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Ataque por orden</td>
 </tr>
 <tr>
+<td><strong>Embestida</strong></td>
+<td>Solo en el Gran danés</td>
+</tr>
+<tr>
 <td><strong>Alerta</strong> / <strong>Silencioso</strong> / <strong>Mudo</strong></td>
 <td>Modo del centinela</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Abre y cierra la ventana del perro</td>
 </tr>
 <tr>
+<td><strong>Acariciar</strong></td>
+<td>La misma caricia que en el menú de contexto</td>
+</tr>
+<tr>
 <td><strong>Ir a un punto</strong></td>
 <td>Abre el cursor de puntería del truco</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Si eliges una tecla ya usada, el mod avisa: <em><span class="ig">F ya está en uso por: Quieto</span></em>. Sin tecla puesta, el botón muestra <em><span class="ig">Sin asignar</span></em>.</p>
 <h3 id="d-botones-en-la-ventana-del-perro">d) Botones en la ventana del perro</h3>
 <p>La pestaña Órdenes lo tiene todo en botones. La lista completa está en <a href="#19-la-ventana-del-perro">La ventana del perro</a>.</p>
+<h3 id="jugar-con-mando">Jugar con mando</h3>
+<p>El mod funciona con mando:</p>
+<ul>
+<li>El radial del perro se abre con la cruceta hacia abajo, que es el menú de gestos del juego.</li>
+<li>La caricia también sale del radial de animal del juego, con la cruceta hacia arriba.</li>
+<li>Las ventanas de confirmación aceptan el mando: poner nombre al perro recién domesticado, renombrar, soltar, dejar de cuidar el ganado y llamar de vuelta a un perro que está lejos.</li>
+<li>En la pestaña <strong><span class="ig">Mis Compañeros</span></strong>, la cruceta elige el perro.</li>
+<li>En las alforjas, izquierda y derecha cambian entre tu mochila y las alforjas, arriba y abajo eligen el objeto, A lo mueve y B cierra.</li>
+<li>En la ventana de <strong><span class="ig">Inspeccionar perro</span></strong> (clic derecho en un perro callejero), la cruceta recorre las líneas y muestra la explicación de cada una.</li>
+</ul>
 <h2 id="4-los-tres-modos-seguir-quieto-y-vigilar">4. Los tres modos: Seguir, Quieto y Vigilar</h2>
 <p>El perro siempre está en uno de los tres. Centinela, caza y protección automática son ajustes por encima del modo.</p>
 <h3 id="seguir">Seguir</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>En Seguir, solo con la protección automática encendida y solo si el zombi te apunta a ti o al perro, o si tú ya estás peleando. El zombi tiene que estar a 5 casillas o menos de ti.</li>
 <li>En Vigilar, siempre, dentro de las 10 casillas del puesto.</li>
-<li>Con la orden <strong><span class="ig">Atacar al más cercano</span></strong>, busca en un radio de 12 casillas y persigue durante 2 minutos de juego.</li>
+<li>Con la orden <strong><span class="ig">Atacar al más cercano</span></strong>, busca en un radio de 12 casillas y persigue durante 2 minutos de juego. Cada orden vale para un objetivo: acabado ese zombi, vuelve a seguirte.</li>
+<li>Con la <strong><span class="ig">Embestida</span></strong>, que solo tiene el Gran danés, corre en línea recta hasta el zombi que tienes delante y derriba a los que estén en el camino. Los detalles están en el <a href="breeds.html" class="xlink">manual de razas</a>.</li>
 </ul>
 <p>Solo ataca a zombis hostiles. Los NPC aliados de otros mods (Bandits, A-Life) quedan a salvo.</p>
 <h3 id="no-muerde-a-través-de-la-pared">No muerde a través de la pared</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>La vida le baja por abandono (hambre o sed por encima de 0,8), por comida tóxica, por el contraataque de un ciervo en la caza y por las condiciones de la sección Salud. El abandono y la infección sin tratar solo matan con <strong><span class="ig">Las enfermedades y el descuido pueden matar</span></strong> activada en el sandbox; apagada, que es lo normal, la vida se para en el 10%.</li>
 <li>Estados de herida: <strong><span class="ig">Herido</span></strong> por debajo del 30% de vida, <strong><span class="ig">Gravemente herido</span></strong> por debajo del 10%. Un perro gravemente herido solo te sigue, no pelea.</li>
 <li>Retrocede detrás de ti cuando la vida cae al 10% o menos.</li>
-<li>Con el estrés alto entra en pánico: no pelea, no vigila y no obedece trucos. Aún corre hacia ti cuando lo llamas. Solo sale del pánico cuando el estrés baja bastante por debajo del umbral.</li>
+<li>Con el estrés alto entra en pánico: suelta la pelea, vuelve a tu lado y no pelea, no vigila ni obedece trucos. Aún corre hacia ti cuando lo llamas. Solo sale del pánico cuando el estrés baja bastante por debajo del umbral. Una caricia o comida lo calman al momento, y una orden de atacar dada antes del pánico se cancela.</li>
 </ul>
 <h3 id="recuento-de-bajas">Recuento de bajas</h3>
 <p>Cada perro tiene su propio contador, visible en su ventana: <strong><span class="ig">Bajas: 14 zombis, 3 presas</span></strong>.</p>
@@ -1191,21 +1226,21 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>El lobo aguanta pocos disparos. Con la pistola de 9 mm son 3; con el revólver .38, 4; con .45, .357, fusil o escopeta, 2. En cuerpo a cuerpo depende del daño del arma y de tu nivel con ella: un arma pesada lo derriba en pocos golpes, un cuchillo ligero necesita muchos. El golpe crítico vale una vez y media.</p>
 <p>Las opciones <strong><span class="ig">Animales agresivos: resistencia</span></strong> y <strong><span class="ig">Animales agresivos: daño del mordisco</span></strong> multiplican cuántos golpes aguanta y cuánto hace daño el mordisco.</p>
 <h3 id="caído-tratar-cargar-o-rematar">Caído: tratar, cargar o rematar</h3>
-<p>Derrotado, el lobo cae con vida con la probabilidad de <strong><span class="ig">Animales agresivos: probabilidad de caer con vida</span></strong> (10% por defecto) o muere. Caído, se queda tumbado gimiendo, marcado <strong><span class="ig">Caído</span></strong>, y ya no recibe daño de golpes ni de disparos. No se mueve del sitio, y quien llega después, incluso después de guardar y cargar la partida, lo encuentra tumbado allí.</p>
+<p>Derrotado, el lobo cae con vida con la probabilidad de <strong><span class="ig">Animales agresivos: probabilidad de caer con vida</span></strong> (10% por defecto) o muere. Caído, se queda tumbado gimiendo, marcado <strong><span class="ig">Derribado</span></strong>, y ya no recibe daño de golpes ni de disparos. No se mueve del sitio, y quien llega después, incluso después de guardar y cargar la partida, lo encuentra tumbado allí.</p>
 <p>Clic derecho en el caído:</p>
 <ul>
 <li><strong><span class="ig">Tratar herida</span></strong>: elige un vendaje (estéril, normal o sucio). Tienes que estar a su lado.</li>
 <li><strong><span class="ig">Cargar</span></strong>: lleva al caído para tratarlo en otro sitio. Los plazos siguen corriendo mientras lo cargas.</li>
 <li><strong><span class="ig">Rematar</span></strong>: mata al caído con un golpe en el suelo, que depende del arma en la mano: cuchillada, golpe pesado o pisotón.</li>
 </ul>
-<p>Sin vendaje muere en <strong><span class="ig">Animales agresivos: horas hasta que el caído muere</span></strong> (6 horas de juego por defecto). Con vendaje queda marcado <strong><span class="ig">Recuperándose</span></strong> y se levanta después de <strong><span class="ig">Animales agresivos: horas de recuperación</span></strong> (12 horas por defecto): el vendaje estéril acorta el plazo a 9 horas y el sucio lo alarga a 15.</p>
+<p>Sin vendaje muere en <strong><span class="ig">Animales agresivos: horas hasta que muere uno derribado</span></strong> (6 horas de juego por defecto). Con vendaje queda marcado <strong><span class="ig">Recuperándose</span></strong> y se levanta después de <strong><span class="ig">Animales agresivos: horas de recuperación</span></strong> (12 horas por defecto): el vendaje estéril acorta el plazo a 9 horas y el sucio lo alarga a 15.</p>
 <p>Se levanta rescatado: ya no ataca a nadie y ya tiene 40 de confianza. A partir de ahí se domestica con comida, como cualquier callejero. El lobo como compañero está en el <a href="breeds.html" class="xlink">manual de razas</a>.</p>
 <h3 id="tu-perro-contra-el-lobo">Tu perro contra el lobo</h3>
 <ul>
 <li>El perro trata al lobo como trata al zombi: con la protección automática encendida, va a por el lobo que te apunta a ti, y en Vigilar defiende su puesto.</li>
 <li>El lobo mordido por el perro puede volverse contra él. El mordisco del lobo estresa al perro, puede dejarlo herido y le quita vida, pero por sí solo nunca lo baja de la mitad de la vida.</li>
 <li>El Caramelo, que no mata zombis, tampoco derriba lobos: cansa al lobo y para.</li>
-<li>El centinela avisa del lobo como avisa del zombi, con etiquetas propias: <em><span class="ig">Lobo a lo lejos</span></em>, <em><span class="ig">Lobo cerca</span></em>, <em><span class="ig">¡Lobo muy cerca!</span></em> y <em><span class="ig">¡Manada de lobos!</span></em>.</li>
+<li>El centinela avisa del lobo como avisa del zombi, con etiquetas propias: <em><span class="ig">Lobo a lo lejos</span></em>, <em><span class="ig">Lobo en los alrededores</span></em>, <em><span class="ig">¡Lobo cerca!</span></em> y <em><span class="ig">¡Manada de lobos!</span></em>.</li>
 <li>El perro que cuida del ganado también defiende al rebaño del lobo: <em><span class="ig">¡Caramelo percibe un lobo cerca del corral!</span></em></li>
 </ul>
 <blockquote class="quote">En partida en solitario, el avance rápido del tiempo no se frena con un lobo cerca, solo con zombis. Para el avance cuando entres en el bosque.</blockquote>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Alimentar acepta cualquier comida que no esté podrida y quite hambre; solo la lista de comida tóxica está prohibida. Para las <a href="#proteína-es-carnívoro">horas sin proteína</a> el tipo importa. Solo se consume el bocado necesario.</li>
 <li>Dar agua necesita cualquier recipiente con agua en el inventario (el mod busca dentro de las mochilas también).</li>
 <li>El cariño tiene un tiempo de espera de 90 minutos de juego.</li>
+<li>La caricia también sale con la tecla <strong>Acariciar</strong>, desde el radial del perro y desde el radial de animal del juego (cruceta hacia arriba, con mando). Siempre es la misma, agachado y con la ganancia de lealtad.</li>
 </ul>
 <h3 id="la-escalera-del-abandono">La escalera del abandono</h3>
 <p>Si dejas al perro tirado:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>El cuenco guarda comida o agua, nunca las dos a la vez. Para cambiar, usa <strong><span class="ig">Vaciar el cuenco</span></strong>.</p>
 <p>El modelo enseña el contenido: gris vacío, marrón con pienso, azul con agua.</p>
 <h3 id="qué-vale-como-comida-de-cuenco">Qué vale como comida de cuenco</h3>
-<p>Casi cualquier comida que quite hambre y no esté estropeada: carne, conserva, plato cocinado, verdura, fruta, huevo, pienso de perro, y también hierba y heno.</p>
+<p>Casi cualquier comida que quite hambre y no esté estropeada: carne, conserva, plato cocinado, verdura, fruta, huevo, pienso de perro, y también hierba, heno y las bolsas de alimento para animales y de hierba.</p>
 <p>Se queda fuera la <a href="#comida-que-le-hace-daño">lista de lo que le hace daño</a>, que sale en rojo en el menú.</p>
 <blockquote class="quote">La lata de pienso cerrada no sale en la lista. Abre la lata primero.</blockquote>
 <p>El cuenco guarda hasta 100 puntos:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Objeto</th>
 <th>Puntos</th>
 </tr></thead><tbody>
+<tr>
+<td>Bolsa de alimento para animales, llena</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Comida seca para perros</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Recorte de hierba</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Bolsa de hierba, llena</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>Las dos bolsas del juego valen 1 punto por cada uso que les quede. La bolsa solo gasta lo que cupo en el cuenco y, cuando se acaba, se convierte en la bolsa vacía.</p>
 <p>Lo que echas de carne, pescado, huevo o pienso queda marcado como proteína, y cuando el perro come esa parte cuenta para el <a href="#proteína-es-carnívoro">reloj de la proteína</a> como si le hubieras dado de comer en la mano. Un cuenco lleno solo de verdura le quita el hambre y nada más.</p>
 <p>Si el objeto es mayor que el espacio libre, el cuenco se llena hasta arriba y te devuelve el resto. En un cuenco a 80 puntos, una bolsa de pienso lo lleva a 100 y vuelve a tu inventario valiendo 40. El mensaje <em><span class="ig">El cuenco no tiene espacio para todo eso.</span></em> solo sale con el cuenco completamente lleno.</p>
 <h3 id="cómo-lo-usa-el-perro">Cómo lo usa el perro</h3>
 <ul>
 <li>Va solo cuando el hambre o la sed llegan a 0,5 (ajustable por personaje en la barra <em><span class="ig">Come cuando el hambre/sed alcanza</span></em>, en la pestaña Ajustes).</li>
 <li>Busca cuenco en un radio de 16 casillas. Le vale tanto el cuenco del mod como el comedero normal del juego.</li>
+<li>Sin cuenco en su piso, busca en el piso de abajo y en el de arriba y va por la escalera. Si no consigue llegar al piso del cuenco, se rinde a los 30 segundos y vuelve a buscar.</li>
 <li>Cada visita le quita media barra. Se pasa unos 3 minutos de juego comiendo.</li>
 <li>Mientras va al cuenco o come, ignora a los zombis y todo lo demás. Solo una orden tuya lo interrumpe. Un perro en pánico por hambre sale del pánico cuando come.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>Pastor Alemán, Border Collie, Rottweiler, Doberman, Labrador, Pastor Belga Malinois</strong></td>
 <td>6 a 8</td>
+</tr>
+<tr>
+<td><strong>Lobo gris, Gran danés</strong></td>
+<td>8 a 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Interfaz:</strong> <span class="ig">Textos de estado: activados/desactivados</span> (los avisos flotantes sobre la cabeza del perro), <span class="ig">Icono de ánimo: activado/desactivado</span> (los moodles de perro) y <span class="ig">Nombre de la mascota: activado/desactivado</span> (el nombre sobre el perro y el <span class="ig">Dueño: Fulano</span> de los demás).</li>
 <li><strong>Sonido:</strong> volumen general, silenciar, y deslizadores aparte para <strong>Ladridos</strong>, <strong>Efectos</strong> y <strong>Ambiente</strong>.</li>
 <li><strong>Alimentación automática:</strong> el deslizador <span class="ig">Come cuando el hambre/sed alcanza</span>.</li>
-<li><strong>Atajos de teclado:</strong> las 14 acciones, con <strong>Reasignar</strong> y <strong>Borrar</strong>.</li>
+<li><strong>Atajos de teclado:</strong> las 16 acciones, con <strong>Reasignar</strong> y <strong>Borrar</strong>.</li>
 </ul>
 <blockquote class="quote">Si los ladridos molestan, el deslizador de <strong>Ladridos</strong> baja solo eso, sin apagar ninguna mecánica.</blockquote>
 <h2 id="20-lo-que-aparece-en-pantalla">20. Lo que aparece en pantalla</h2>
@@ -2422,10 +2472,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">Vale para todos los moodles de raza: en un perro desleal, enfermo, o con hambre o sed alta, el moodle se apaga hasta que vuelva a estar cuidado.</blockquote>
 <h3 id="textos-sobre-la-cabeza">Textos sobre la cabeza</h3>
-<p>El perro apila varias líneas de estado sobre la cabeza, visibles a 14 casillas y solo en el mismo piso. De arriba abajo: alerta del centinela, estado (<strong>Aterrorizado</strong>, <strong>En pánico</strong>, <strong>Gravemente herido</strong>, <strong>Desobediente</strong>, <strong>Herido</strong>, <strong>Nervioso</strong>), lo que está haciendo (comiendo, cazando, olfateando, cuidando del ganado), embarazo, y el nombre, siempre el último.</p>
+<p>El perro apila varias líneas de estado sobre la cabeza, visibles a 14 casillas y solo en el mismo piso. De arriba abajo: alerta del centinela, estado (<strong>Aterrorizado</strong>, <strong>En pánico</strong>, <strong>Gravemente herido</strong>, <strong>Desobediente</strong>, <strong>Herido</strong>, <strong>Nervioso</strong>), lo que está haciendo (comiendo, cazando, olfateando, cuidando del ganado), la recarga de la Embestida en el Gran danés (<strong><span class="ig">Embestida en 12 min</span></strong>), embarazo, y el nombre, siempre el último.</p>
 <p>La opción <strong><span class="ig">Textos de estado: desactivados</span></strong> (pestaña Ajustes) borra todo menos el nombre, y la opción <strong><span class="ig">Nombre de la mascota: desactivado</span></strong> (misma pestaña) borra solo el nombre y el rótulo <span class="ig">Dueño: Fulano</span>. Con las dos desactivadas no se dibuja nada. Cada una vale solo para tu jugador. La opción de sandbox <strong><span class="ig">Mostrar etiquetas con el nombre del perro</span></strong> es regla del mundo y borra la etiqueta entera para todos.</p>
 <p>El perro de otro jugador muestra solo <strong><span class="ig">Dueño: Fulano</span></strong>, el embarazo y el nombre.</p>
-<p>Cuando la amenaza es un lobo, la alerta del centinela cambia <span class="ig">zombi</span> por lobo: <em><span class="ig">Lobo a lo lejos</span></em>, <em><span class="ig">Lobo cerca</span></em>, <em><span class="ig">¡Lobo muy cerca!</span></em> y <em><span class="ig">¡Manada de lobos!</span></em>. Mira <a href="#7-animales-agresivos">Animales agresivos</a>.</p>
+<p>Cuando la amenaza es un lobo, la alerta del centinela cambia <span class="ig">zombi</span> por lobo: <em><span class="ig">Lobo a lo lejos</span></em>, <em><span class="ig">Lobo en los alrededores</span></em>, <em><span class="ig">¡Lobo cerca!</span></em> y <em><span class="ig">¡Manada de lobos!</span></em>. Mira <a href="#7-animales-agresivos">Animales agresivos</a>.</p>
 <h3 id="marcador-en-el-mapa">Marcador en el mapa</h3>
 <p>Cada perro vinculado recibe una huella en el mapa del mundo y en el minimapa.</p>
 <ul>
@@ -2585,7 +2635,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>En porcentaje. El resto de las veces el lobo derrotado muere</td>
 </tr>
 <tr>
-<td>Animales agresivos: horas hasta que el caído muere</td>
+<td>Animales agresivos: horas hasta que muere uno derribado</td>
 <td>6</td>
 <td>Horas de juego que aguanta el caído sin vendaje. Vale de 1 a 72</td>
 </tr>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Desuscribirse solo del Rottweiler, el Doberman, el Labrador, el Carlino (o de cualquier otro) y seguir jugando con el mod base causa el mismo problema, porque los perros de esa raza siguen grabados en la partida.</p>
 <h3 id="si-los-animales-ya-desaparecieron">Si los animales ya desaparecieron</h3>
 <p><strong>Reinstala el mod ahora, antes de seguir jugando o de guardar.</strong> Lo más probable es que los animales vuelvan. Después de que el juego guarde encima, el archivo está perdido y no hay copia de seguridad.</p>
+<p>Si lo que volvió al estado original fueron los muebles y el botín de una zona, como una casa entera, la causa es un cuenco que quedó en el suelo. Ese trozo del mapa tiene copia: el juego guarda el archivo que falló en la carpeta <code>blam</code> de la partida, junto a un <code>_error.txt</code>. Con el juego cerrado y el mod activado de nuevo, haz una copia de la carpeta <code>map</code> de la partida y copia <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> encima de <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Lo que cambiaste en esa zona después del reinicio se pierde.</p>
 <h3 id="cómo-quitarlo-con-seguridad">Cómo quitarlo con seguridad</h3>
 <p>Paso 1: deja todos los addons activados. Comprueba que todo addon de raza que hayas usado en esa partida esté marcado en la lista de mods de esa partida (<strong><span class="ig">CARGAR</span></strong> &gt; la partida &gt; <strong><span class="ig">Elegir mods...</span></strong>). Un addon desactivado ya causa el problema de arriba.</p>
 <p>Paso 2: quítate los perros de encima. Dos formas seguras:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Llevarlos en el inventario. El juego sabe saltarse ese objeto: desaparece solo el perro, el resto se queda.</li>
 </ul>
 <p>Soltar al perro o llevártelo lejos no sirve: su registro sigue en la partida, y llevarlo a otro sitio solo cambia qué región se rompe.</p>
-<p>Paso 3: guarda la partida. Es el guardado el que graba la limpieza.</p>
-<p>Paso 4: quita el mod.</p>
+<p>Paso 3: recoge los cuencos. Un cuenco del mod tirado en el suelo también rompe la partida sin el mod: el juego no puede leer el trozo del mapa donde está y lo rehace desde cero, con los muebles y el botín como al principio y sin tus construcciones. Recoge cada cuenco del suelo y guárdalo en el inventario o dentro de un contenedor (armario, caja, maletero). Dentro de un contenedor no causa nada.</p>
+<p>Paso 4: guarda la partida. Es el guardado el que graba la limpieza.</p>
+<p>Paso 5: quita el mod.</p>
 <h3 id="limpieza-completa-admin-modo-debug">Limpieza completa (admin / modo debug)</h3>
 <p>Los pasos de arriba cubren tus perros, pero el mod también reparte callejeros por el mapa, y no hay manera de encontrarlos todos a mano. Para limpiar la partida entera de una vez hay un comando:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Clic derecho en el suelo → <strong>Perros compañeros (depuración)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Espera el mensaje <code>sweep done</code> y guarda la partida.</li>
 </ol>
-<p>El comando borra los perros cargados al momento y después barre el resto de la partida en segundo plano, sin trabar el juego. Si se niega citando una raza, activa ese addon en esa partida y repite: sin sus definiciones, limpiar borra los animales de la región.</p>
+<p>El comando borra los perros cargados al momento y después barre el resto de la partida en segundo plano, sin trabar el juego. También quita del suelo los cuencos que están cerca de los jugadores; el mensaje dice cuántos. Un cuenco tirado donde ahora no hay nadie no se alcanza: ve hasta él y recógelo a mano. Si se niega citando una raza, activa ese addon en esa partida y repite: sin sus definiciones, limpiar borra los animales de la región.</p>
 <h2 id="26-ajuste-fino-del-servidor-admin">26. Ajuste fino del servidor (admin)</h2>
 <p>Esta sección es para quien lleva un servidor con mucha gente y muchos perros. El panel se llama <strong><span class="ig">Server tuning / performance</span></strong>: arriba, un medidor en vivo de lo que el mod gasta en el servidor; abajo, los campos que cambian ese gasto. Las reglas de juego (daño, hambre, XP, límite de perros) no están aquí, siguen siendo opciones de sandbox, en la sección 23.</p>
 <blockquote class="quote">El panel se queda en inglés en cualquier idioma del juego, porque las etiquetas están fijas en el código. Las tablas de abajo citan cada una tal como aparece en pantalla.</blockquote>

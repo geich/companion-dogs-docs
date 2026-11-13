@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>ラブラドール: <code>lb</code>、<code>lk</code></li>
 <li>パグ: <code>pg</code>、<code>pv</code></li>
 <li>マリノア: <code>ml</code>、<code>mm</code>、<code>mh</code></li>
+<li>グレート・デーン: <code>gf</code>、<code>gd</code></li>
 <li>猫: <code>ct</code>、<code>cv</code>、<code>cs</code> のどれかで始まる接尾辞すべて（毛色ごとに一組）</li>
 </ul>
 <h2 id="10-犬種の-moodle">10. 犬種の moodle</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> は段階を返し、出さないときは 0 を返します。<code>apply</code> は前回の呼び出しからのゲーム内の分数を受け取るので、効果には <code>elapsedMin</code> を掛けてください。</p>
+<p>消える代わりに状態が変わるムードルには、省略できるフィールドが3つあります。<code>tintFor(dog)</code> は背景色を r, g, b で返し、nil なら <code>tintR</code>/<code>tintG</code>/<code>tintB</code> のままです。<code>nameText(player)</code> と <code>descText(player)</code> は吹き出しの文を返し、nil なら <code>nameKey</code> と <code>descKey</code> の文のままです。グレート・デーンは突進のムードルでこれを使い、クールダウン中は黄色になって残り時間を表示します。</p>
 <p>アイコンは 32 から 128 ピクセルまで、6 サイズ同梱します。インターフェースはプレイヤーの拡大率でサイズを選ぶので、足りないサイズは空の四角として出ます。アイコンはバニラの moodle の列ではなく、Mod 自身の列に出ます。</p>
 <h2 id="11-フック">11. フック</h2>
 <p>ベースがサーバー側で呼ぶ関数のリストが二つあります。shared のファイルから足してください。</p>

@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Mops: <code>pg</code>, <code>pv</code></li>
 <li>Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Katzen: jedes Suffix, das mit <code>ct</code>, <code>cv</code> oder <code>cs</code> beginnt (ein Satz pro Fellfarbe)</li>
 </ul>
 <h2 id="10-das-rassen-moodle">10. Das Rassen-Moodle</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> gibt die Stufe zurück, oder 0 für "wird nicht angezeigt". <code>apply</code> bekommt die Spielminuten seit dem letzten Aufruf, multipliziere deinen Effekt also mit <code>elapsedMin</code>.</p>
+<p>Ein Moodle, das seinen Zustand wechselt, statt zu verschwinden, hat drei optionale Felder. <code>tintFor(dog)</code> gibt die Hintergrundfarbe als r, g, b zurück, und nil behält <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> und <code>descText(player)</code> geben den Tooltip-Text zurück, und nil behält den Text von <code>nameKey</code> und <code>descKey</code>. Die Deutsche Dogge nutzt sie für ihr Ansturm-Moodle, das gelb wird und während der Aufladung die restlichen Minuten zeigt.</p>
 <p>Liefere das Symbol in sechs Größen mit, von 32 bis 128 Pixel. Die Oberfläche wählt die Größe nach der Skalierung des Spielers, und eine fehlende Größe erscheint als leeres Quadrat. Das Symbol erscheint in der eigenen Leiste des Mods, nicht bei den Vanilla-Moodles.</p>
 <h2 id="11-hooks">11. Hooks</h2>
 <p>Zwei Listen von Funktionen, die der Basis-Mod auf dem Server aufruft. Häng sie aus einer shared-Datei an.</p>

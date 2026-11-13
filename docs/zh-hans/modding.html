@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>拉布拉多：<code>lb</code>、<code>lk</code></li>
 <li>巴哥犬：<code>pg</code>、<code>pv</code></li>
 <li>马林诺斯犬：<code>ml</code>、<code>mm</code>、<code>mh</code></li>
+<li>大丹犬：<code>gf</code>、<code>gd</code></li>
 <li>猫：以 <code>ct</code>、<code>cv</code> 或 <code>cs</code> 开头的所有后缀（每种毛色一套）</li>
 </ul>
 <h2 id="10-品种-moodle">10. 品种 moodle</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> 返回等级，0 表示“不显示”。<code>apply</code> 收到距离上次调用过去的游戏分钟数，所以要把你的效果乘上 <code>elapsedMin</code>。</p>
+<p>会改变状态而不是消失的心情图标，有三个可选字段。<code>tintFor(dog)</code> 以 r, g, b 返回背景色，返回 nil 就保留 <code>tintR</code>/<code>tintG</code>/<code>tintB</code>。<code>nameText(player)</code> 和 <code>descText(player)</code> 返回气泡里的文字，返回 nil 就保留 <code>nameKey</code> 和 <code>descKey</code> 的文字。大丹犬的冲撞心情图标就用了这三个字段，冷却期间变成黄色并显示剩余分钟。</p>
 <p>图标要提供六种尺寸，从 32 到 128 像素。界面按玩家的缩放挑尺寸，缺一个尺寸就会显示成一个空方块。图标出现在模组自己那一条里，不和原版 moodle 混在一起。</p>
 <h2 id="11-钩子">11. 钩子</h2>
 <p>两个函数列表，基础版在服务器上调用它们。从一个 shared 文件往里追加。</p>

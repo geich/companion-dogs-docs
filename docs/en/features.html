@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-radial-menu-hold-q" data-id="b-radial-menu-hold-q">b) Radial menu (hold Q)</a>
 <a class="s3" href="#c-keybindings" data-id="c-keybindings">c) Keybindings</a>
 <a class="s3" href="#d-buttons-in-the-dog-window" data-id="d-buttons-in-the-dog-window">d) Buttons in the dog window</a>
+<a class="s3" href="#playing-with-a-controller" data-id="playing-with-a-controller">Playing with a controller</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>With the base mod and the published breed add-ons it looks like this:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>The base mod comes before the add-ons in both lists. A breed add-on loaded before Companion Dogs does not register its breed.</li>
 <li>Fully restart the server after editing the .ini.</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>The dog usually spawns on a free tile outside the building: street, yard, empty lot. It only spawns inside when there is no free outdoor tile left.</p>
 <p>The sandbox option <strong><span class="ig">Animal spawn multiplier</span></strong> scales all of those chances at once. At 0 spawning is off.</p>
 <p>The Gray Wolf does not come from a building: it is born in a pack in the forest and attacks. To have one, you have to defeat it, treat it and tame it. See <a href="#7-aggressive-animals">Aggressive animals</a>.</p>
-<blockquote class="quote">Addon breeds come in separate Steam mods, each with its own spawn spots: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a> and <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>. What each one does is in the <a href="breeds.html" class="xlink">breeds manual</a>.</blockquote>
+<blockquote class="quote">Addon breeds come in separate Steam mods, each with its own spawn spots: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a> and <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>. What each one does is in the <a href="breeds.html" class="xlink">breeds manual</a>.</blockquote>
 <h3 id="how-to-tame">How to tame</h3>
 <p>Right click the wild dog. The only option that shows up is <strong><span class="ig">Give food (befriend)</span></strong>.</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Orders it to attack the closest zombie</td>
 </tr>
 <tr>
+<td><strong>Charge</strong></td>
+<td>Great Dane only: runs in a straight line and knocks down the zombies in its way. During the cooldown, shows the minutes left</td>
+</tr>
+<tr>
 <td><strong>Tricks</strong> ▸</td>
 <td>Submenu with the four tricks</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">Guard</span> is not in this menu. The command only exists in the radial menu, on the keybinding and on the button in the Commands tab.</blockquote>
 <h3 id="b-radial-menu-hold-q">b) Radial menu (hold Q)</h3>
 <p>The mod hooks into the game's emote menu. Hold Q and a new category shows up, named after your dog's breed and marked with a paw icon. The category only appears with an active dog nearby.</p>
-<p>The slices are: <strong>Come here</strong>, <strong>Follow</strong>, <strong>Stay</strong>, <strong>Guard</strong>, <strong>Alert</strong>, <strong>Quiet</strong>, <strong>Silent</strong>, <strong>Attack nearest</strong>, <strong>Hunt</strong> / <strong>Stop hunting</strong>, <strong>Tricks ▸</strong> and <strong>Open saddlebags</strong> (if it is wearing one).</p>
+<p>The slices are: <strong>Come here</strong>, <strong>Follow</strong>, <strong>Stay</strong>, <strong>Guard</strong>, <strong>Alert</strong>, <strong>Quiet</strong>, <strong>Silent</strong>, <strong>Attack nearest</strong>, <strong>Hunt</strong> / <strong>Stop hunting</strong>, <strong>Bring</strong>, <strong>Status</strong>, <strong>Auto-protect: On</strong> / <strong>Auto-protect: Off</strong>, <strong>Pet</strong>, <strong>Tricks ▸</strong> and <strong>Open saddlebags</strong> (if it is wearing one). The Great Dane also has <strong>Charge</strong>.</p>
+<p>The cat has no Guard or Attack nearest, and the Pug has no Quiet or Silent.</p>
 <p>Picking <strong>Tricks</strong> opens a third radial level with the four tricks and a <strong>Back</strong>. A trick you have not unlocked yet shows up with a red icon and the required level in its name, like <em><span class="ig">Distract (Obedience 3)</span></em>.</p>
 <p>Some commands also make your character gesture: calling raises a hand, telling it to stay does the stop gesture, ordering an attack points.</p>
 <h3 id="c-keybindings">c) Keybindings</h3>
-<p>There are 14 bindable actions and none of them comes with a key set. You set them up on the <strong><span class="ig">Settings</span></strong> tab of the dog window.</p>
+<p>There are 16 bindable actions and none of them comes with a key set. You set them up on the <strong><span class="ig">Settings</span></strong> tab of the dog window.</p>
 <div class="tw"><table><thead><tr>
 <th>Action</th>
 <th>What it does</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Commanded attack</td>
 </tr>
 <tr>
+<td><strong>Charge</strong></td>
+<td>Great Dane only</td>
+</tr>
+<tr>
 <td><strong>Alert</strong> / <strong>Quiet</strong> / <strong>Silent</strong></td>
 <td>Sentinel mode</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Opens and closes the dog window</td>
 </tr>
 <tr>
+<td><strong>Pet</strong></td>
+<td>The same petting as in the context menu</td>
+</tr>
+<tr>
 <td><strong>Go to a spot</strong></td>
 <td>Opens the trick's targeting cursor</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>If you pick a key that is already taken, the mod warns you: <em><span class="ig">F already used by: Stay</span></em>. With no key set, the button shows <em><span class="ig">Unbound</span></em>.</p>
 <h3 id="d-buttons-in-the-dog-window">d) Buttons in the dog window</h3>
 <p>The Commands tab has all of it as buttons. The full list is in <a href="#19-the-dog-window">The dog window</a>.</p>
+<h3 id="playing-with-a-controller">Playing with a controller</h3>
+<p>The mod works on a controller:</p>
+<ul>
+<li>The dog's radial opens on D-pad down, which is the game's emote menu.</li>
+<li>Petting also comes from the game's animal radial, on D-pad up.</li>
+<li>The confirmation windows take the controller: naming a newly tamed dog, renaming, releasing, stopping farm care and calling back a dog that is far away.</li>
+<li>On the <strong><span class="ig">My Companions</span></strong> tab, the D-pad picks the dog.</li>
+<li>In the saddlebag, left and right switch between your backpack and the saddlebag, up and down pick the item, A moves it and B closes.</li>
+<li>In the <strong><span class="ig">Inspect dog</span></strong> window (right-click on a stray), the D-pad steps through the lines and shows the explanation of each one.</li>
+</ul>
 <h2 id="4-the-three-modes-follow-stay-and-guard">4. The three modes: Follow, Stay and Guard</h2>
 <p>The dog is always in one of these three. Sentinel, hunting and auto-protect are settings layered on top of the mode.</p>
 <h3 id="follow">Follow</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>In Follow, only with auto-protect on, and only if the zombie targets you or the dog, or you are already fighting. The zombie has to be 5 tiles or less from you.</li>
 <li>In Guard, always, within 10 tiles of its post.</li>
-<li>With the <strong><span class="ig">Attack nearest</span></strong> command, it searches within 12 tiles and chases for 2 in-game minutes.</li>
+<li>With the <strong><span class="ig">Attack nearest</span></strong> command, it searches within 12 tiles and chases for 2 in-game minutes. Each order is good for one target: once that zombie is down, it goes back to following.</li>
+<li>With <strong><span class="ig">Charge</span></strong>, which only the Great Dane has, it runs in a straight line at the zombie in front of you and knocks down the ones in its way. The order is on its sheet, in the <a href="breeds.html" class="xlink">breed manual</a>.</li>
 </ul>
 <p>It only attacks hostile zombies. Friendly NPCs from other mods (Bandits, A-Life) are spared.</p>
 <h3 id="it-wont-bite-through-walls">It won't bite through walls</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Its health drops from neglect (hunger or thirst above 0.8), from toxic food, from a deer fighting back during a hunt and from the conditions in the Health section. Neglect and an untreated infection only kill with <strong><span class="ig">Illness and neglect can kill</span></strong> on in the sandbox; off, the default, health stops at 10%.</li>
 <li>Wound states: <strong><span class="ig">Hurt</span></strong> below 30% health, <strong><span class="ig">Badly wounded</span></strong> below 10%. A badly wounded dog only follows you, it does not fight.</li>
 <li>It runs behind you when its health drops to 10% or less.</li>
-<li>With high stress it panics: it does not fight, does not keep watch and does not do tricks. It still runs to you when you call it. It only comes out of panic once stress falls well below the threshold.</li>
+<li>With high stress it panics: it drops the fight, comes back to you and does not fight, keep watch or do tricks. It still runs to you when you call it. It only comes out of panic once stress falls well below the threshold. Petting or food calms it at once, and an attack order given before the panic is cancelled.</li>
 </ul>
 <h3 id="kill-count">Kill count</h3>
 <p>Each dog has its own counter, shown in its window: <strong><span class="ig">Kills: 14 zombies, 3 prey</span></strong>.</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Feeding takes any food that is not rotten and fills hunger; only the toxic food list is off limits. For the <a href="#protein-it-is-a-carnivore">hours without protein</a> the type matters. Only the bite it needs is consumed.</li>
 <li>Giving water needs any water container in your inventory (the mod looks inside bags too).</li>
 <li>Petting has a 90 in-game minute cooldown.</li>
+<li>Petting also comes from the <strong>Pet</strong> key, the dog's radial and the game's animal radial (D-pad up, on a controller). It is always the same, crouched and with the loyalty gain.</li>
 </ul>
 <h3 id="the-neglect-ladder">The neglect ladder</h3>
 <p>If you let the dog go:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>The bowl holds food or water, never both at the same time. To switch, use <strong><span class="ig">Empty the bowl</span></strong>.</p>
 <p>The model shows what is inside: grey when empty, brown with kibble, blue with water.</p>
 <h3 id="what-counts-as-bowl-food">What counts as bowl food</h3>
-<p>Just about any food that kills hunger and is not rotten: meat, canned goods, cooked meals, vegetables, fruit, eggs, dog food, and also grass and hay.</p>
+<p>Just about any food that kills hunger and is not rotten: meat, canned goods, cooked meals, vegetables, fruit, eggs, dog food, and also grass, hay and the animal feed and grass bags.</p>
 <p>The <a href="#food-that-is-bad-for-dogs">list of what is bad for dogs</a> is left out, and it shows up in red in the menu.</p>
 <blockquote class="quote">An unopened can of dog food does not show up in the list. Open the can first.</blockquote>
 <p>The bowl holds up to 100 points:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>Item</th>
 <th>Points</th>
 </tr></thead><tbody>
+<tr>
+<td>Animal Feed Bag, full</td>
+<td>100</td>
+</tr>
 <tr>
 <td>Bag of dog food</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>Grass</td>
 <td>7</td>
 </tr>
+<tr>
+<td>Grass Bag, full</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>The two bags from the game are worth 1 point per use they still have. The bag only spends what fit in the bowl and, when it runs out, turns into the empty bag.</p>
 <p>Whatever meat, fish, egg or dog food you pour in stays marked as protein, and when the dog eats that part it counts for the <a href="#protein-it-is-a-carnivore">protein clock</a> as if you had fed it by hand. A bowl filled only with vegetables kills its hunger and nothing else.</p>
 <p>If the item is bigger than the free space, the bowl fills to the top and hands the rest back to you. On a bowl sitting at 80 points, a bag of dog food takes it to 100 and returns to your inventory worth 40. The message <em><span class="ig">The bowl doesn't have room for all of that.</span></em> only shows up when the bowl is completely full.</p>
 <h3 id="how-the-dog-uses-it">How the dog uses it</h3>
 <ul>
 <li>It goes on its own when hunger or thirst reaches 0.5 (adjustable per character with the <em><span class="ig">Eats when hunger/thirst reaches</span></em> slider, in the Settings tab).</li>
 <li>It looks for a bowl within 16 tiles. Both the mod's bowl and the game's vanilla feeding trough work.</li>
+<li>With no bowl on its floor, it looks on the floor below and the one above and takes the stairs. If it cannot reach the bowl's floor, it gives up after 30 seconds and looks again.</li>
 <li>Each visit clears half the bar. It spends about 3 in-game minutes eating.</li>
 <li>While it is walking to the bowl or eating, it ignores zombies and everything else. Only an order from you interrupts it. A dog panicking from hunger leaves the panic when it eats.</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>German Shepherd, Border Collie, Rottweiler, Doberman, Labrador, Belgian Malinois</strong></td>
 <td>6 to 8</td>
+</tr>
+<tr>
+<td><strong>Gray Wolf, Great Dane</strong></td>
+<td>8 to 10</td>
 </tr>
 <tr>
 <td><strong>Husky</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>Interface:</strong> <span class="ig">Status texts: on/off</span> (the floating warnings above the dog's head), <span class="ig">Mood image: on/off</span> (the dog moodles) and <span class="ig">Pet name: on/off</span> (the name above the dog and the <span class="ig">Owner: so-and-so</span> on other people's dogs).</li>
 <li><strong>Sound:</strong> master volume, mute, and separate sliders for <strong>Barking</strong>, <strong>Effects</strong> and <strong>Ambient</strong>.</li>
 <li><strong>Auto-feed:</strong> the <span class="ig">Eats when hunger/thirst reaches</span> slider.</li>
-<li><strong>Keybindings:</strong> the 14 actions, with <strong>Rebind</strong> and <strong>Clear</strong>.</li>
+<li><strong>Keybindings:</strong> the 16 actions, with <strong>Rebind</strong> and <strong>Clear</strong>.</li>
 </ul>
 <blockquote class="quote">If the barking bothers you, the <strong>Barking</strong> slider lowers only that, without turning off any mechanic.</blockquote>
 <h2 id="20-what-shows-up-on-screen">20. What shows up on screen</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">This holds for every breed moodle: on a disloyal, sick, very hungry or very thirsty dog, the moodle switches off until it is cared for again.</blockquote>
 <h3 id="text-above-the-head">Text above the head</h3>
-<p>The dog stacks several status lines above its head, visible from 14 tiles and only on the same floor. From top to bottom: the sentinel alert, its state (<strong>Terrified</strong>, <strong>Panicking</strong>, <strong>Badly wounded</strong>, <strong>Disobedient</strong>, <strong>Hurt</strong>, <strong>Nervous</strong>), what it is doing (eating, hunting, sniffing, tending the livestock), pregnancy, and the name, always last.</p>
+<p>The dog stacks several status lines above its head, visible from 14 tiles and only on the same floor. From top to bottom: the sentinel alert, its state (<strong>Terrified</strong>, <strong>Panicking</strong>, <strong>Badly wounded</strong>, <strong>Disobedient</strong>, <strong>Hurt</strong>, <strong>Nervous</strong>), what it is doing (eating, hunting, sniffing, tending the livestock), the Charge cooldown on the Great Dane (<strong><span class="ig">Charge in 12 min</span></strong>), pregnancy, and the name, always last.</p>
 <p>The <strong><span class="ig">Status texts: off</span></strong> option (Settings tab) hides everything except the name, and the <strong><span class="ig">Pet name: off</span></strong> option (same tab) hides only the name and the <span class="ig">Owner: so-and-so</span>. With both off, nothing is drawn. Each one applies only to its own player. The sandbox option <strong><span class="ig">Show pet name tags</span></strong> is a world rule and removes the whole tag for everyone.</p>
 <p>Another player's dog shows only <strong><span class="ig">Owner: so-and-so</span></strong>, the pregnancy and the name.</p>
 <p>When the threat is a wolf, the sentinel alert swaps <span class="ig">zombie</span> for wolf: <em><span class="ig">Wolf far off</span></em>, <em><span class="ig">Wolf nearby</span></em>, <em><span class="ig">Wolf close!</span></em> and <em><span class="ig">Wolf pack!</span></em>. See <a href="#7-aggressive-animals">Aggressive animals</a>.</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>Unsubscribing from just the Rottweiler, the Doberman, the Labrador, the Pug (or any other) and playing on with the base mod causes the same problem: the dogs of that breed are still written in the save.</p>
 <h3 id="if-your-animals-already-vanished">If your animals already vanished</h3>
 <p><strong>Reinstall the mod right now, before playing on or saving.</strong> The animals will most likely come back. Once the game saves over it, the file is lost and there is no backup of it.</p>
+<p>If what went back to its original state was the furniture and the loot of an area, like a whole house, the cause is a bowl left on the ground. That piece of the map has a copy: the game keeps the file that failed in the save's <code>blam</code> folder, next to an <code>_error.txt</code>. With the game closed and the mod enabled again, back up the save's <code>map</code> folder and copy <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> over <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>. Whatever you changed in that area after the reset is lost.</p>
 <h3 id="how-to-remove-it-safely">How to remove it safely</h3>
 <p>Step 1: keep every addon enabled. Check that every breed addon you have ever used in that save is ticked in that save's mod list (<strong><span class="ig">LOAD</span></strong> &gt; the save &gt; <strong><span class="ig">Choose Mods...</span></strong>). A disabled addon already causes the problem described above.</p>
 <p>Step 2: get rid of the dogs. Two safe ways:</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Carry the dog in your inventory. The game knows to skip that item: only the dog goes, the rest stays.</li>
 </ul>
 <p>Releasing a dog or walking it far away does not help: its record stays in the save, and moving it somewhere else only changes which region breaks.</p>
-<p>Step 3: save the game. The save is what writes the cleanup down.</p>
-<p>Step 4: remove the mod.</p>
+<p>Step 3: pick up the bowls. A mod bowl left on the ground also breaks the save without the mod: the game cannot read the piece of the map where it lies and rebuilds that piece from scratch, with the furniture and the loot back to their original state and without your constructions. Pick every bowl up off the ground and keep it in your inventory or inside a container (cupboard, crate, trunk). Inside a container it does no harm.</p>
+<p>Step 4: save the game. The save is what writes the cleanup down.</p>
+<p>Step 5: remove the mod.</p>
 <h3 id="full-cleanup-admin-debug-mode">Full cleanup (admin / debug mode)</h3>
 <p>The steps above cover your own dogs, but the mod also spreads strays around the map, and there is no way to find all of them by hand. To clean the whole save at once there is a command:</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>Right-click the ground → <strong>Companion Dogs (debug)</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>.</li>
 <li>Wait for the <code>sweep done</code> message and save the game.</li>
 </ol>
-<p>The command deletes the loaded dogs right away and then sweeps the rest of the save in the background, without freezing the game. If it refuses and names a breed, enable that addon in the save and repeat: without its definitions, cleaning deletes the animals of the region.</p>
+<p>The command deletes the loaded dogs right away and then sweeps the rest of the save in the background, without freezing the game. It also takes the bowls lying near the players off the ground; the message says how many. A bowl left where nobody is right now is not reached: go there and pick it up by hand. If it refuses and names a breed, enable that addon in the save and repeat: without its definitions, cleaning deletes the animals of the region.</p>
 <h2 id="26-server-tuning-admin">26. Server tuning (admin)</h2>
 <p>This section is for people running a server with many players and many dogs. The panel is called <strong><span class="ig">Server tuning / performance</span></strong>: on top, a live meter of what the mod costs the server; below it, the fields that change that cost. Game rules (damage, hunger, XP, the dog limit) do not live here. They are still sandbox options, in section 23.</p>
 <blockquote class="quote">The panel is in English whatever language the game is in, because its labels are fixed in the code. The tables below quote each one as it appears on screen.</blockquote>

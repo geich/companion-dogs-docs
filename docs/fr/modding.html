@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador : <code>lb</code>, <code>lk</code></li>
 <li>Pug : <code>pg</code>, <code>pv</code></li>
 <li>Malinois : <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane : <code>gf</code>, <code>gd</code></li>
 <li>Cats : tout suffixe qui commence par <code>ct</code>, <code>cv</code> ou <code>cs</code> (un jeu par pelage)</li>
 </ul>
 <h2 id="10-le-moodle-de-la-race">10. Le moodle de la race</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> renvoie le niveau, ou 0 pour "ne s'affiche pas". <code>apply</code> reçoit les minutes de jeu écoulées depuis le dernier appel, donc multipliez votre effet par <code>elapsedMin</code>.</p>
+<p>Un moodle qui change d'état au lieu de disparaître a trois champs optionnels. <code>tintFor(dog)</code> renvoie la couleur de fond en r, g, b, et nil garde <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> et <code>descText(player)</code> renvoient le texte de l'infobulle, et nil garde le texte de <code>nameKey</code> et <code>descKey</code>. Le Dogue allemand s'en sert pour son moodle de Charge, qui passe au jaune et affiche les minutes restantes pendant la recharge.</p>
 <p>Livrez l'icône en six tailles, de 32 à 128 pixels. L'interface choisit la taille selon la mise à l'échelle du joueur, et une taille manquante s'affiche comme un carré vide. L'icône apparaît dans la bande du mod lui-même, et non parmi les moodles habituels du jeu.</p>
 <h2 id="11-hooks">11. Hooks</h2>
 <p>Deux listes de fonctions que le mod de base appelle sur le serveur. Ajoutez-y depuis un fichier shared.</p>

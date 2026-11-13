@@ -448,6 +448,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
 <a class="s3" href="#pug" data-id="pug">Pug</a>
 <a class="s3" href="#belgian-malinois" data-id="belgian-malinois">Belgian Malinois</a>
+<a class="s3" href="#great-dane" data-id="great-dane">Great Dane</a>
 </div>
 </div>
 <div class="grp">
@@ -559,7 +560,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>The breed sets both things at once, each on its own track: a German Shepherd is big and born strong, a Caramelo is small and born weak. An individual dog's Strength shows on the Strength bar, in the Traits section of the dog window.</p>
 <h3 id="one-breed-one-look">One breed, one look</h3>
 <p>Each breed has one texture, and male and female use the same one. The five cats are <a href="#the-five-coats">five breeds</a>, not one cat in five colours.</p>
-<p>A puppy of any breed is born at the same reduced size and grows into the adult size of its breed.</p>
+<p>A puppy is born at a reduced size and grows into the adult size of its breed. The birth size is the same in every breed except the Great Dane, which is born bigger.</p>
 <h2 id="2-quick-pick">2. Quick pick</h2>
 <div class="tw"><table><thead><tr>
 <th>If you want...</th>
@@ -572,6 +573,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>A dog that holds the line and kills zombies on its own</strong></td>
 <td>German Shepherd or Rottweiler</td>
+</tr>
+<tr>
+<td><strong>To knock down several zombies at once</strong></td>
+<td>Great Dane</td>
 </tr>
 <tr>
 <td><strong>To hunt for meat</strong></td>
@@ -682,6 +687,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Belgian Malinois</strong></td>
 <td>Scent dog: an arrow marks the zombie you cannot see</td>
+</tr>
+<tr>
+<td><strong>Great Dane</strong></td>
+<td>The biggest dog in the mod. On command, it runs in a straight line and knocks down the zombies in its way</td>
 </tr>
 <tr>
 <td><strong>Gray Wolf</strong></td>
@@ -925,6 +934,41 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Who it is for:</strong> anyone who explores towns and closed buildings and wants to know where the zombie is before opening the door.</p>
 <blockquote class="quote">The in-game description says it is <span class="ig">the best at scent</span>. In Scent speed it ties with the Husky.</blockquote>
+<hr>
+<h3 id="great-dane">Great Dane</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a></strong>, separate addon)</em></p>
+<p>The biggest dog in the mod, taller than the Gray Wolf, with an order of its own that knocks down several zombies at once.</p>
+<blockquote class="quote quote-game"><em>"A gentle giant. Learns Combat 2x, Obedience 1.5x and Hunting 1.2x. On command it charges in a straight line and knocks down the zombies in its way (Charge). Found on farms and, rarely, in homes."</em></blockquote>
+<p><strong>Where to find it:</strong></p>
+<ul>
+<li>Barn, stable and farm, in the countryside: 8% per building.</li>
+<li>Residential house: 0.3% per house.</li>
+</ul>
+<p><strong>Learns:</strong> Combat at double speed, Obedience 50% and Hunting 20% faster, the same package as the German Shepherd and the Doberman.</p>
+<p><strong>In a fight:</strong> untrained, it has the strongest bite in the mod, a quarter above the German Shepherd's. At Combat 10 it ties with the Shepherd and the Rottweiler. It knocks zombies down and kills them.</p>
+<p>Its nerve is the Doberman's: it builds little stress in a fight and its panic point is at the top.</p>
+<p><strong>Traits:</strong> Strength from 0.45 to 0.70, the same range as the Gray Wolf. Resistance from 0.45 to 0.65, the highest in the mod. Aggressiveness from 0.10 to 0.30, which the window always shows as <span class="ig">Low</span>, so it gains Combat XP a little slower than the Shepherd.</p>
+<p><strong>Litter:</strong> 1 to 2, with puppies bigger than other breeds'. <strong>Saddlebag:</strong> 8 to 10.</p>
+<p><strong>Order: <span class="ig">Charge</span></strong></p>
+<ul>
+<li>It is in the dog's radial menu, in the context menu and on a key of its own, which comes unbound.</li>
+<li>It aims at the standing zombie closest to you, up to 10 tiles away and on the same floor, and prefers the one in front of you.</li>
+<li>It runs in a straight line until it is 2 tiles past the target, 12 tiles at most, and knocks down the standing zombies within 1 tile of its path: 2 at Combat 1, up to 10 at Combat 10. Each zombie knocked down gives Combat XP.</li>
+<li>It stops at the first wall, closed door, window or hole. With no zombie in reach in a straight line, the order does not go out: <em><span class="ig">Your Great Dane Rex finds nothing it can reach to attack.</span></em></li>
+<li>After the run it keeps attacking the nearest zombie, as with <strong><span class="ig">Attack nearest</span></strong>.</li>
+<li>Each charge raises its stress, a little less with high Resistance, and the order only comes back after 30 in-game minutes. During the cooldown, the radial slice turns grey with the minutes left, the context menu shows <strong><span class="ig">Charge (12 min)</span></strong> and <strong><span class="ig">Charge in 12 min</span></strong> appears over its head.</li>
+<li>Disloyal, panicking, badly wounded or limping, it refuses the order. And, like any order, it can be ignored through disobedience.</li>
+<li>With the sandbox option <strong><span class="ig">Companions fight zombies</span></strong> off, the order does not show up.</li>
+</ul>
+<p><strong>Moodle: <span class="ig">Charge Ready</span></strong></p>
+<blockquote class="quote quote-game"><em>"Your Great Dane is ready to charge. Give the order from the dog's radial menu and it runs in a straight line, knocking down the zombies in its way."</em></blockquote>
+<p>It gives no bonus. It only shows whether the Charge is available:</p>
+<ul>
+<li>Blue with the Charge ready.</li>
+<li>Yellow during the cooldown, with the name <strong><span class="ig">Charge Recharging</span></strong> and the minutes in the tooltip: <em><span class="ig">Catching its breath, ready in 12 min.</span></em></li>
+<li>It goes away when the dog cannot charge: disloyal, panicking, badly wounded, limping, sick, or very hungry or thirsty.</li>
+</ul>
+<p><strong>Who it is for:</strong> anyone who fights alongside the dog and wants to open a way through a group of zombies.</p>
 <h2 id="5-the-cat-the-first-other-species">5. The cat: the first other species</h2>
 <p><em>(mod <strong>CD: Cats</strong>, separate addon)</em></p>
 <p>Every breed up to here is a dog.</p>
@@ -1053,7 +1097,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Where to find it:</strong> in packs of 1 to 3, in the forest. It only becomes yours after it is defeated, falls alive (10% of the time, by default), is treated with a bandage and gets up. Then it is tamed with food like any stray, already at 40 trust.</p>
 <p><strong>Learns:</strong> Combat and Hunting at double speed, Scent 50% faster. Obedience at 0.6, the slowest in the mod: it takes longer than the Cat to unlock the tricks.</p>
 <p><strong>In a fight:</strong> the German Shepherd's bite: strong, kills on its own and knocks down. It builds up stress almost as slowly as the Shepherd, and its panic point ties for the highest in the mod.</p>
-<p><strong>Traits:</strong> Strength from 0.45 to 0.70, Aggressiveness from 0.40 to 0.70 and Resistance from 0.40 to 0.65. It is the highest Aggressiveness range in the mod and the second highest Strength, behind the Husky.</p>
+<p><strong>Traits:</strong> Strength from 0.45 to 0.70, Aggressiveness from 0.40 to 0.70 and Resistance from 0.40 to 0.65. It is the highest Aggressiveness range in the mod. In Strength it ties with the Great Dane as the second highest, behind the Husky.</p>
 <p><strong>Litter:</strong> none. The wolf does not breed with a dog or with another wolf.</p>
 <p><strong>Saddlebag:</strong> 8 to 10 load.</p>
 <p><strong>Does not:</strong> care for livestock. Herding does not appear in its window.</p>
@@ -1155,6 +1199,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1.5</td>
 <td>1.2</td>
 <td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Great Dane</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.5</td>
+<td>1.2</td>
 <td>1.0</td>
 </tr>
 <tr>
@@ -1260,8 +1312,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Yes</td>
 <td>Yes</td>
 </tr>
+<tr>
+<td>Great Dane</td>
+<td>the strongest</td>
+<td>2.6x</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
 </tbody></table></div>
-<p>The Doberman starts with about two thirds of a Rottweiler's bite.</p>
+<p>The Doberman starts with about two thirds of a Rottweiler's bite. The Great Dane starts a quarter above the German Shepherd and ends tied with it.</p>
 <p>The Cat is not in this table because it does not fight.</p>
 <h3 id="nerve-in-a-fight">Nerve in a fight</h3>
 <p>The lower the number, the cooler the dog stays in a fight.</p>
@@ -1292,6 +1351,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Gray Wolf</td>
+<td>0.25</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>Great Dane</td>
 <td>0.25</td>
 <td>0.90</td>
 </tr>
@@ -1403,6 +1467,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>0.40 to 0.65</td>
 </tr>
 <tr>
+<td>Great Dane</td>
+<td>0.45 to 0.70</td>
+<td>0.10 to 0.30</td>
+<td>0.45 to 0.65</td>
+</tr>
+<tr>
 <td>Husky</td>
 <td>0.55 to 0.80</td>
 <td>0.10 to 0.30</td>
@@ -1414,7 +1484,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>So does the Pug, and its Strength range is smaller still.</li>
 <li>The Cat ties the Pug for the smallest Strength in the mod.</li>
 <li>The Husky is the only one that usually shows <span class="ig">High</span> in Strength.</li>
-<li>Aggressiveness comes out <span class="ig">Low</span> on the Golden, the Husky and the Labrador.</li>
+<li>Aggressiveness comes out <span class="ig">Low</span> on the Golden, the Husky, the Labrador and the Great Dane.</li>
 <li>The Golden and the Doberman also land on <span class="ig">Low</span> often in Strength and Resistance.</li>
 <li>German Shepherd, Rottweiler and Belgian Malinois are the only ones that show <span class="ig">Average</span> in all three nearly always.</li>
 </ul>
@@ -1444,7 +1514,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>6 to 8</td>
 </tr>
 <tr>
-<td>Gray Wolf</td>
+<td>Gray Wolf, Great Dane</td>
 <td>8 to 10</td>
 </tr>
 <tr>
@@ -1470,7 +1540,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1 to 3</td>
 </tr>
 <tr>
-<td>German Shepherd, Golden Retriever, Husky, Rottweiler, Doberman, Pug, Belgian Malinois</td>
+<td>German Shepherd, Golden Retriever, Husky, Rottweiler, Doberman, Pug, Belgian Malinois, Great Dane</td>
 <td>1 to 2</td>
 </tr>
 </tbody></table></div>
@@ -1530,6 +1600,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Husky</td>
 <td>Pet shop, vet</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Great Dane</td>
+<td>Barn, stable, farm (rural)</td>
+<td>8%</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1595,6 +1670,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Belgian Malinois</td>
 <td>Residential house</td>
 <td>0.5%</td>
+</tr>
+<tr>
+<td>Great Dane</td>
+<td>Residential house</td>
+<td>0.3%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1687,6 +1767,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>malfemale</code></td>
 <td><code>malpup</code></td>
 <td><code>malinois</code></td>
+</tr>
+<tr>
+<td>Great Dane</td>
+<td><code>gdanemale</code></td>
+<td><code>gdanefemale</code></td>
+<td><code>gdanepup</code></td>
+<td><code>greatdane</code></td>
 </tr>
 <tr>
 <td>Black Cat</td>
@@ -1826,6 +1913,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Every 5 s, an arrow marks where the nearest zombie you cannot see was, up to 25 tiles</td>
 </tr>
 <tr>
+<td><strong>Charge Ready</strong></td>
+<td>Great Dane</td>
+<td>Indicator only: blue with the Charge ready, yellow with the minutes during the cooldown</td>
+</tr>
+<tr>
 <td><strong>Pack Bond</strong></td>
 <td>Gray Wolf</td>
 <td>Wild wolves do not notice you, drops Panic and +20% XP in Running and Lightfooted</td>
@@ -1902,7 +1994,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="the-mixed-label">The "Mixed" label</h3>
 <p>A dog with more than one breed in its lineage gets <strong><span class="ig">(Mixed)</span></strong> next to the breed name, in its window and in the context menu. The percentage breakdown (<span class="ig">50% Husky, 50% German Shepherd</span>) shows up when you hover the <strong><span class="ig">Breed</span></strong> line in the dog's window, along with the description of the dominant breed.</p>
 <h2 id="11-installing-the-addons">11. Installing the addons</h2>
-<p>Rottweiler, Doberman, Labrador, Pug, Belgian Malinois and the cat are separate mods on Steam. Each one:</p>
+<p>Rottweiler, Doberman, Labrador, Pug, Belgian Malinois, Great Dane and the cat are separate mods on Steam. Each one:</p>
 <ul>
 <li>Requires the base Companion Dogs installed and enabled.</li>
 <li>Adds one breed, with its own model, texture, moodle and spawn locations.</li>
@@ -1942,6 +2034,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Belgian Malinois</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">subscribe</a></td>
 <td>0.8.0 or newer</td>
+</tr>
+<tr>
+<td><strong>CD: Great Dane</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">subscribe</a></td>
+<td>0.9.0 or newer</td>
 </tr>
 </tbody></table></div>
 <p>And the base mod, if you do not have it yet: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>

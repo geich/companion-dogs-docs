@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b環形選單按住-q" data-id="b環形選單按住-q">b）環形選單（按住 Q）</a>
 <a class="s3" href="#c快捷鍵" data-id="c快捷鍵">c）快捷鍵</a>
 <a class="s3" href="#d狗視窗裡的按鈕" data-id="d狗視窗裡的按鈕">d）狗視窗裡的按鈕</a>
+<a class="s3" href="#用手把玩" data-id="用手把玩">用手把玩</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>帶上基礎模組和已發佈的品種附加模組，就是這樣：</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>基礎模組要在兩份清單裡都排在附加模組之前。品種附加模組如果在 Companion Dogs 之前載入，就不會註冊那個品種。</li>
 <li>修改完 .ini 後要完全重啟伺服器。</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>狗通常出生在建築外面一格空地上：街道、院子、空地。只有外面沒有空地時，牠才會出生在裡面。</p>
 <p>沙盒選項<strong>「狗生成倍率」</strong>會同時縮放所有這些機率。設為 0 時生成關閉。</p>
 <p>灰狼不會從建築裡出生：牠成群出生在森林裡，並且會攻擊。想要一隻的話，必須先擊敗牠、治療牠，再馴服牠。見<a href="#7-攻擊性動物">攻擊性動物</a>。</p>
-<blockquote class="quote">附加品種是 Steam 上的獨立模組，各自有自己的生成地點： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>。每一種具體做什麼，看<a href="breeds.html" class="xlink">品種手冊</a>。</blockquote>
+<blockquote class="quote">附加品種是 Steam 上的獨立模組，各自有自己的生成地點： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>。每一種具體做什麼，看<a href="breeds.html" class="xlink">品種手冊</a>。</blockquote>
 <h3 id="怎麼馴服">怎麼馴服</h3>
 <p>在野生的狗身上按右鍵。唯一出現的選項是<strong>「餵食（結交）」</strong>。</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>命令牠攻擊最近的殭屍</td>
 </tr>
 <tr>
+<td><strong>衝撞</strong></td>
+<td>僅限大丹犬：沿直線衝出，撞倒路上的殭屍。冷卻期間顯示剩餘分鐘數</td>
+</tr>
+<tr>
 <td><strong>技巧</strong> ▸</td>
 <td>四個技巧的子選單</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote">「守衛」不在這個選單裡。這個命令只存在於環形選單、快捷鍵，以及命令標籤頁的按鈕裡。</blockquote>
 <h3 id="b環形選單按住-q">b）環形選單（按住 Q）</h3>
 <p>模組接入遊戲自帶的表情選單。按住 Q 會出現一個新分類，以你狗的品種命名，帶一個爪印圖示。這個分類只在附近有當前同伴時才會出現。</p>
-<p>分區有：<strong>過來</strong>、<strong>跟隨</strong>、<strong>停留</strong>、<strong>守衛</strong>、<strong>警報</strong>、<strong>靜默</strong>、<strong>靜音</strong>、<strong>攻擊最近目標</strong>、<strong>狩獵</strong> / <strong>停止狩獵</strong>、<strong>技巧 ▸</strong>和<strong>開啟馱袋</strong>（如果牠帶著馱袋的話）。</p>
+<p>分區有：<strong>過來</strong>、<strong>跟隨</strong>、<strong>停留</strong>、<strong>守衛</strong>、<strong>警報</strong>、<strong>靜默</strong>、<strong>靜音</strong>、<strong>攻擊最近目標</strong>、<strong>狩獵</strong> / <strong>停止狩獵</strong>、<strong>召回</strong>、<strong>狀態</strong>、<strong>自動守護：開</strong> / <strong>自動守護：關</strong>、<strong>撫摸</strong>、<strong>技巧 ▸</strong>和<strong>開啟馱袋</strong>（如果牠帶著馱袋的話）。大丹犬還多一個<strong>衝撞</strong>。</p>
+<p>貓沒有守衛和攻擊最近目標，巴哥犬沒有靜默和靜音。</p>
 <p>選擇<strong>技巧</strong>會打開環形選單的第三層，裡面是四個技巧和一個<strong>返回</strong>。還沒解鎖的技巧會顯示紅色圖示，名字裡帶上需要的等級，比如<em>「引開注意（服從 3）」</em>。</p>
 <p>有些命令還會讓你的角色做手勢：叫狗過來會抬手，命令停留會做停止手勢，命令攻擊會指向目標。</p>
 <h3 id="c快捷鍵">c）快捷鍵</h3>
-<p>一共有 14 個可綁定的動作，預設都沒有設定按鍵。在狗視窗的<strong>「設定」</strong>標籤頁裡配置。</p>
+<p>一共有 16 個可綁定的動作，預設都沒有設定按鍵。在狗視窗的<strong>「設定」</strong>標籤頁裡配置。</p>
 <div class="tw"><table><thead><tr>
 <th>動作</th>
 <th>作用</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>命令攻擊</td>
 </tr>
 <tr>
+<td><strong>衝撞</strong></td>
+<td>僅限大丹犬</td>
+</tr>
+<tr>
 <td><strong>警報</strong> / <strong>靜默</strong> / <strong>靜音</strong></td>
 <td>哨兵模式</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>打開和關閉狗的視窗</td>
 </tr>
 <tr>
+<td><strong>撫摸</strong></td>
+<td>和右鍵選單裡的撫摸一樣</td>
+</tr>
+<tr>
 <td><strong>前往指定地點</strong></td>
 <td>打開技巧的瞄準游標</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>如果你選了已經被占用的按鍵，模組會提示：<em><span class="ig">F 已被使用：停留</span></em>。沒設定按鍵時，按鈕顯示 <em><span class="ig">未繫結</span></em>。</p>
 <h3 id="d狗視窗裡的按鈕">d）狗視窗裡的按鈕</h3>
 <p>命令標籤頁把所有功能都做成了按鈕。完整清單在<a href="#19-狗的視窗">狗的視窗</a>。</p>
+<h3 id="用手把玩">用手把玩</h3>
+<p>本模組可以用手把操作：</p>
+<ul>
+<li>狗的輪盤選單用方向鍵下開啟，也就是遊戲的表情選單。</li>
+<li>撫摸也可以透過遊戲的動物輪盤選單完成，用方向鍵上。</li>
+<li>確認視窗支援手把：替剛馴服的狗取名、改名、放生、停止照料牲畜，以及把走遠的狗叫回來。</li>
+<li>在<strong>「我的夥伴」</strong>分頁裡，用方向鍵選狗。</li>
+<li>在馱袋裡，左右切換你的背包和馱袋，上下選物品，A 移動，B 關閉。</li>
+<li>在<strong>「檢查動物」</strong>視窗（右鍵點流浪狗）裡，方向鍵逐行移動，並顯示每一行的說明。</li>
+</ul>
 <h2 id="4-三種模式跟隨停留和守衛">4. 三種模式：跟隨、停留和守衛</h2>
 <p>狗一直處於這三種模式之一。哨兵、狩獵和自動守護是疊加在模式之上的調整。</p>
 <h3 id="跟隨">跟隨</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>在跟隨模式下，只有自動守護打開，而且只有殭屍瞄準了你或狗，或者你已經在戰鬥時才會動手。殭屍必須離你 5 格或更近。</li>
 <li>在守衛模式下，只要在崗位 10 格以內，牠隨時會動手。</li>
-<li>用<strong>「攻擊最近目標」</strong>命令時，牠會在 12 格範圍內搜索，並追擊 2 遊戲分鐘。</li>
+<li>用<strong>「攻擊最近目標」</strong>命令時，牠會在 12 格範圍內搜索，並追擊 2 遊戲分鐘。每次命令只針對一個目標：那隻殭屍解決後，牠就回來跟隨你。</li>
+<li>用<strong>「衝撞」</strong>時（只有大丹犬有），牠會沿直線衝向你面前的殭屍，撞倒路上的殭屍。詳細說明在<a href="breeds.html" class="xlink">品種手冊</a>裡。</li>
 </ul>
 <p>牠只攻擊敵對殭屍。其他模組（Bandits、A-Life）的友方 NPC 會被放過。</p>
 <h3 id="牠不會隔牆咬人">牠不會隔牆咬人</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>牠的生命值會因為疏忽照顧（飢餓或口渴超過 0.8）、有毒食物、狩獵中鹿的反擊，以及「健康」一節裡的各種病症而下降。疏忽照顧和未治療的感染只有在沙盒選項<strong>「疾病和疏忽可致死」</strong>打開時才會致死；關閉時（預設），生命值會停在 10%。</li>
 <li>受傷狀態：生命值低於 30% 時是<strong>「受傷」</strong>，低於 10% 時是<strong>「重傷」</strong>。重傷的狗只會跟著你，不會戰鬥。</li>
 <li>生命值降到 10% 或更低時，牠會退到你身後。</li>
-<li>壓力過高時牠會陷入恐慌：不戰鬥、不守衛、也不聽從技巧命令。被叫喚時牠還是會跑向你。只有壓力降到閾值以下很多時，牠才會脫離恐慌。</li>
+<li>壓力過高時牠會陷入恐慌：放棄戰鬥，回到你身邊，不戰鬥、不守衛、也不聽從技巧命令。被叫喚時牠還是會跑向你。只有壓力降到閾值以下很多時，牠才會脫離恐慌。撫摸或餵食會讓牠馬上冷靜下來，恐慌前下達的攻擊命令會被取消。</li>
 </ul>
 <h3 id="擊殺計數">擊殺計數</h3>
 <p>每隻狗都有自己的計數器，顯示在牠的視窗裡：<strong>「擊殺：14 隻殭屍，3 次狩獵」</strong>。</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>餵食接受任何沒有腐爛、能填飽饑餓的食物；只有毒物清單上的東西不行。至於<a href="#蛋白質牠是肉食動物">無蛋白質可撐的小時數</a>，食物的類型才有講究。只有必要的那一口會被消耗掉。</li>
 <li>餵水需要背包裡有任意裝了水的容器（模組也會檢查背包裡的包）。</li>
 <li>撫摸的冷卻時間是 90 個遊戲分鐘。</li>
+<li>撫摸也可以用<strong>撫摸</strong>鍵、狗的輪盤選單和遊戲的動物輪盤選單（手把上是方向鍵上）來完成。每種方式都一樣，會蹲下撫摸，也會增加忠誠度。</li>
 </ul>
 <h3 id="疏忽照顧的階梯">疏忽照顧的階梯</h3>
 <p>如果你放著狗不管：</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>食盆只能裝食物或水，不能同時裝兩樣。要換，用<strong>「倒空食盆」</strong>。</p>
 <p>模型會顯示裡面裝的東西：空的是灰色，裝著狗糧是棕色，裝著水是藍色。</p>
 <h3 id="什麼算食盆裡的食物">什麼算食盆裡的食物</h3>
-<p>幾乎任何能填飽饑餓、沒有變質的食物都行：肉、罐頭、煮熟的餐食、蔬菜、水果、蛋、狗糧，還有乾草和青草。</p>
+<p>幾乎任何能填飽饑餓、沒有變質的食物都行：肉、罐頭、煮熟的餐食、蔬菜、水果、蛋、狗糧，還有乾草、青草，以及動物飼料袋和袋裝草料。</p>
 <p><a href="#對狗有害的食物">對狗有害的清單</a>不算在內，它們會在選單裡顯示成紅色。</p>
 <blockquote class="quote">沒打開的狗糧罐頭不會出現在清單裡。先把罐頭打開。</blockquote>
 <p>食盆最多能裝 100 點：</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>物品</th>
 <th>點數</th>
 </tr></thead><tbody>
+<tr>
+<td>動物飼料袋（滿袋）</td>
+<td>100</td>
+</tr>
 <tr>
 <td>一袋狗糧</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>青草</td>
 <td>7</td>
 </tr>
+<tr>
+<td>袋裝草料（滿袋）</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>這兩種遊戲裡的袋子，每剩一次使用次數就算 1 點。袋子只消耗食盆裝得下的部分，用完後會變成空袋子。</p>
 <p>你倒進去的肉、魚、蛋或狗糧都會被標記成蛋白質，狗吃到這部分的時候，會按你親手餵食那樣計入<a href="#蛋白質牠是肉食動物">蛋白質的時鐘</a>。食盆裡如果只裝蔬菜，就只會填飽饑餓，其他的什麼都不算。</p>
 <p>如果物品比剩餘空間大，食盆會裝滿到頂，剩下的還給你。一個已經有 80 點的食盆，倒進一袋狗糧會把食盆填到 100，剩下價值 40 的部分回到你的背包。<em>「食盆放不下這麼多。」</em>這條訊息只在食盆完全裝滿時才會出現。</p>
 <h3 id="狗怎麼用食盆">狗怎麼用食盆</h3>
 <ul>
 <li>饑餓或口渴到達 0.5 時，牠會自己去（可以按角色調整，在設定分頁的<em>「饑餓/口渴達到時進食」</em>滑桿）。</li>
 <li>牠會在 16 格範圍內尋找食盆。模組的食盆和遊戲自帶的原版食槽都能用。</li>
+<li>自己這層沒有食盆時，牠會去下一層和上一層找，並走樓梯過去。如果到不了食盆所在的那層，牠會在 30 秒後放棄，重新尋找。</li>
 <li>每次去吃能清掉半條狀態條。牠大概會花 3 個遊戲分鐘進食。</li>
 <li>在去食盆的路上或正在吃的時候，牠會無視殭屍和其他一切。只有你下的命令能打斷牠。因為饑餓陷入恐慌的狗，吃過東西後就會脫離恐慌。</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>德國牧羊犬、邊境牧羊犬、羅威納犬、杜賓犬、拉布拉多、馬林諾斯犬</strong></td>
 <td>6 到 8</td>
+</tr>
+<tr>
+<td><strong>灰狼、大丹犬</strong></td>
+<td>8 到 10</td>
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>介面：</strong>「狀態文字：開/關」（狗頭頂上方的浮動提示）、「心情圖示：開/關」（狗的心情圖示）和「寵物名字：開/關」（狗頭頂上的名字，以及其他人的狗身上的「主人：某某」）。</li>
 <li><strong>聲音：</strong>總音量、靜音，以及<strong>吠叫</strong>、<strong>音效</strong>和<strong>環境音</strong>的獨立滑桿。</li>
 <li><strong>自動進食：</strong>「饑餓/口渴達到時進食」滑桿。</li>
-<li><strong>按鍵繫結：</strong> 14 個操作，附有<strong>重新繫結</strong>和<strong>清除</strong>按鈕。</li>
+<li><strong>按鍵繫結：</strong> 16 個操作，附有<strong>重新繫結</strong>和<strong>清除</strong>按鈕。</li>
 </ul>
 <blockquote class="quote">如果吠叫聲讓你覺得吵，<strong>吠叫</strong>滑桿只會調低它的音量，不會關閉任何機制。</blockquote>
 <h2 id="20-螢幕上會顯示什麼">20. 螢幕上會顯示什麼</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">適用於所有品種心情圖示：狗不忠誠、生病，或饑餓、口渴過高時，心情圖示會關閉，直到牠重新得到照顧為止。</blockquote>
 <h3 id="頭頂上方的文字">頭頂上方的文字</h3>
-<p>狗會在頭頂疊放好幾行狀態文字，14 格內可見，且只在同一層樓可見。由上到下依序是：哨兵警報、狀態（<strong>恐懼</strong>、<strong>恐慌</strong>、<strong>重傷</strong>、<strong>不服從</strong>、<strong>受傷</strong>、<strong>緊張</strong>）、正在做的事（進食、狩獵、嗅探、照料牲畜）、懷孕，以及名字，永遠排在最後。</p>
+<p>狗會在頭頂疊放好幾行狀態文字，14 格內可見，且只在同一層樓可見。由上到下依序是：哨兵警報、狀態（<strong>恐懼</strong>、<strong>恐慌</strong>、<strong>重傷</strong>、<strong>不服從</strong>、<strong>受傷</strong>、<strong>緊張</strong>）、正在做的事（進食、狩獵、嗅探、照料牲畜）、大丹犬的衝撞冷卻（<strong>「衝撞：12分鐘後就緒」</strong>）、懷孕，以及名字，永遠排在最後。</p>
 <p><strong>「狀態文字：關」</strong>選項（設定分頁）會隱藏除了名字以外的所有內容，<strong>「寵物名字：關」</strong>選項（同一分頁）只隱藏名字和「主人：某某」。兩個都關閉時，什麼都不會顯示。每個選項只對你自己的玩家生效。沙盒選項<strong>「顯示狗的名稱標籤」</strong>是世界規則，會為所有人隱藏整條標籤。</p>
 <p>其他玩家的狗只會顯示<strong>「主人：某某」</strong>、懷孕狀態和名字。</p>
 <p>威脅是狼時，哨兵警報會把「殭屍」換成狼：<em><span class="ig">察覺到遠處的狼</span></em>、<em><span class="ig">嗅探到附近的狼</span></em>、 <em><span class="ig">警惕地盯防近處的狼！</span></em>和<em><span class="ig">正對一群狼低吼！</span></em>。見<a href="#7-攻擊性動物">攻擊性動物</a>。</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>只取消訂閱羅威納、杜賓、拉布拉多、巴哥犬（或任何其他品種），卻繼續玩基礎模組，也會造成同樣的問題，因為那個品種的狗依然記錄在存檔裡。</p>
 <h3 id="如果動物已經消失了">如果動物已經消失了</h3>
 <p><strong>現在就重新安裝模組，在繼續遊戲或存檔之前。</strong>動物很可能會回來。一旦遊戲把存檔覆蓋寫入，那個檔案就徹底遺失了，也沒有備份。</p>
+<p>如果回到原樣的是一整片區域（比如一整棟房子）的家具和戰利品，原因是留在地上的食盆。這塊地圖有備份：遊戲會把讀取失敗的檔案放在存檔的 <code>blam</code> 資料夾裡，旁邊還有一個 <code>_error.txt</code>。關掉遊戲、重新啟用模組，先備份存檔的 <code>map</code> 資料夾，再把 <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> 複製覆蓋到 <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>。重置之後你在那片區域做的改動會遺失。</p>
 <h3 id="怎樣安全地移除">怎樣安全地移除</h3>
 <p>步驟 1：保持所有附加模組開啟。確認你在這個存檔裡用過的每個品種附加模組，都在這個存檔的模組列表裡勾選著（<strong>「載入」</strong> &gt; 該存檔 &gt; <strong>「選擇模組...」</strong>）。停用一個附加模組，就已經會造成上面說的問題。</p>
 <p>步驟 2：處理掉這些狗。有兩種安全的方法：</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>把牠抱在懷裡帶走。遊戲知道要跳過這個物品：只有狗會消失，其他東西都留著。</li>
 </ul>
 <p>放走狗，或是把牠帶去很遠的地方都解決不了問題：牠的紀錄依然留在存檔裡，帶去別的地方只是換了一個會出問題的區域而已。</p>
-<p>步驟 3：存檔。是存檔這個動作把清理結果寫進去的。</p>
-<p>步驟 4：移除模組。</p>
+<p>步驟 3：收回食盆。丟在地上的模組食盆，同樣會在沒有模組時弄壞存檔：遊戲讀不了食盆所在的那塊地圖，就把那塊從頭重建，家具和戰利品回到原樣，你的建築也會消失。把每個食盆都從地上撿起來，放進物品欄或容器裡（櫃子、箱子、後車廂）。放在容器裡就不會出事。</p>
+<p>步驟 4：存檔。是存檔這個動作把清理結果寫進去的。</p>
+<p>步驟 5：移除模組。</p>
 <h3 id="徹底清理管理員偵錯模式">徹底清理（管理員／偵錯模式）</h3>
 <p>上面的步驟只處理了你自己的狗，但模組還會在地圖上撒下流浪狗，沒辦法一隻一隻用手去找。要一次清理整個存檔，有一個指令可以用：</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>在地上點右鍵 → <strong>同伴犬（除錯）</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li>等待 <code>sweep done</code> 這則訊息出現，然後存檔。</li>
 </ol>
-<p>這個指令會立刻刪除已載入的狗，然後在背景掃描存檔剩下的部分，不會卡住遊戲。如果它提示某個品種並拒絕執行，就在這個存檔裡啟用那個附加模組再重試：沒有牠的定義，清理會把那片區域的動物一併刪掉。</p>
+<p>這個指令會立刻刪除已載入的狗，然後在背景掃描存檔剩下的部分，不會卡住遊戲。它還會把玩家附近地上的食盆收走，訊息裡會說收了幾個。現在沒人在的地方留下的食盆它搆不到：要走過去親手撿起來。如果它提示某個品種並拒絕執行，就在這個存檔裡啟用那個附加模組再重試：沒有牠的定義，清理會把那片區域的動物一併刪掉。</p>
 <h2 id="26-伺服器微調管理員">26. 伺服器微調（管理員）</h2>
 <p>這一節是給經營著很多玩家、很多狗的伺服器管理者看的。這個面板叫<strong>「Server tuning / performance」</strong>：上半部是模組在伺服器上開銷的即時儀表；下半部是能改變這個開銷的欄位。遊戲規則（傷害、饑餓、經驗、狗數量上限）不在這裡，它們仍然是沙盒選項，在第 23 節。</p>
 <blockquote class="quote">不管遊戲用什麼語言，這個面板都是英文的，因為標籤是寫死在程式碼裡的。下面的表格按螢幕上顯示的原樣引用每一項。</blockquote>

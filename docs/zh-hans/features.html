@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b环形菜单按住-q" data-id="b环形菜单按住-q">b）环形菜单（按住 Q）</a>
 <a class="s3" href="#c快捷键" data-id="c快捷键">c）快捷键</a>
 <a class="s3" href="#d狗窗口里的按钮" data-id="d狗窗口里的按钮">d）狗窗口里的按钮</a>
+<a class="s3" href="#用手柄玩" data-id="用手柄玩">用手柄玩</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>带上基础模组和已发布的品种附加模组，就是这样：</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>基础模组在两份列表里都要排在附加模组前面。品种附加模组如果在 Companion Dogs 之前加载，它的品种就不会注册。</li>
 <li>改完 .ini 后要完全重启服务器。</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>狗通常会出生在建筑外面一块空地上：街道、院子、空地。只有外面找不到空地时，它才会出生在里面。</p>
 <p>沙盒选项<strong><span class="ig">狗生成倍率</span></strong>会同时缩放所有这些几率。设为 0 时生成关闭。</p>
 <p>灰狼不会在建筑里出现：它成群生成在森林里，而且会发起攻击。想要一只，得先击败它，再治疗、驯服。见<a href="#7-攻击性动物">攻击性动物</a>。</p>
-<blockquote class="quote">附加品种是 Steam 上单独的模组，各自有自己的生成地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>。每个品种具体做什么，看<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
+<blockquote class="quote">附加品种是 Steam 上单独的模组，各自有自己的生成地点： <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a>和 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>。每个品种具体做什么，看<a href="breeds.html" class="xlink">品种手册</a>。</blockquote>
 <h3 id="怎么驯服">怎么驯服</h3>
 <p>右键点击野生的狗。唯一出现的选项是<strong><span class="ig">喂食（结交）</span></strong>。</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>命令它攻击最近的僵尸</td>
 </tr>
 <tr>
+<td><strong>冲撞</strong></td>
+<td>仅限大丹犬：沿直线冲出，撞倒路上的僵尸。冷却期间显示剩余分钟数</td>
+</tr>
+<tr>
 <td><strong>技巧</strong> ▸</td>
 <td>四个技巧的子菜单</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote quote-game"><span class="ig">守卫</span>不在这个菜单里。这个命令只存在于环形菜单、快捷键，以及命令标签页的按钮里。</blockquote>
 <h3 id="b环形菜单按住-q">b）环形菜单（按住 Q）</h3>
 <p>模组接入游戏自带的表情菜单。按住 Q 会出现一个新分类，以你狗的品种命名，带一个爪印图标。这个分类只在附近有当前同伴时才会出现。</p>
-<p>分区有：<strong>过来</strong>、<strong>跟随</strong>、<strong>停留</strong>、<strong>守卫</strong>、<strong>警报</strong>、<strong>静默</strong>、<strong>静音</strong>、<strong>攻击最近目标</strong>、<strong>狩猎</strong> / <strong>停止狩猎</strong>、<strong>技巧 ▸</strong>和<strong>打开驮袋</strong>（如果它带着驮袋的话）。</p>
+<p>分区有：<strong>过来</strong>、<strong>跟随</strong>、<strong>停留</strong>、<strong>守卫</strong>、<strong>警报</strong>、<strong>静默</strong>、<strong>静音</strong>、<strong>攻击最近目标</strong>、<strong>狩猎</strong> / <strong>停止狩猎</strong>、<strong>召回</strong>、<strong>状态</strong>、<strong>自动守护：开</strong> / <strong>自动守护：关</strong>、<strong>抚摸</strong>、<strong>技巧 ▸</strong>和<strong>打开驮袋</strong>（如果它带着驮袋的话）。大丹犬还多一个<strong>冲撞</strong>。</p>
+<p>猫没有守卫和攻击最近目标，巴哥犬没有静默和静音。</p>
 <p>选择<strong>技巧</strong>会打开环形菜单的第三层，里面是四个技巧和一个<strong>返回</strong>。还没解锁的技巧会显示红色图标，名字里带上需要的等级，比如 <em><span class="ig">引开注意（服从 3）</span></em>。</p>
 <p>有些命令还会让你的角色做手势：叫狗过来会抬手，命令停留会做停止手势，命令攻击会指向目标。</p>
 <h3 id="c快捷键">c）快捷键</h3>
-<p>一共有 14 个可绑定的动作，默认都没有设定按键。在狗窗口的 <strong><span class="ig">设置</span></strong>标签页里配置。</p>
+<p>一共有 16 个可绑定的动作，默认都没有设定按键。在狗窗口的 <strong><span class="ig">设置</span></strong>标签页里配置。</p>
 <div class="tw"><table><thead><tr>
 <th>动作</th>
 <th>作用</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>命令攻击</td>
 </tr>
 <tr>
+<td><strong>冲撞</strong></td>
+<td>仅限大丹犬</td>
+</tr>
+<tr>
 <td><strong>警报</strong> / <strong>静默</strong> / <strong>静音</strong></td>
 <td>哨兵模式</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>打开和关闭狗的窗口</td>
 </tr>
 <tr>
+<td><strong>抚摸</strong></td>
+<td>和右键菜单里的抚摸一样</td>
+</tr>
+<tr>
 <td><strong>前往指定地点</strong></td>
 <td>打开技巧的瞄准光标</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>如果你选了已经被占用的按键，模组会提示：<em><span class="ig">F 已被占用：停留</span></em>。没设定按键时，按钮显示 <em><span class="ig">未绑定</span></em>。</p>
 <h3 id="d狗窗口里的按钮">d）狗窗口里的按钮</h3>
 <p>命令标签页把所有功能都做成了按钮。完整列表在<a href="#19-狗窗口">狗的窗口</a>。</p>
+<h3 id="用手柄玩">用手柄玩</h3>
+<p>本模组可以用手柄操作：</p>
+<ul>
+<li>狗的轮盘菜单用方向键下打开，也就是游戏的表情菜单。</li>
+<li>抚摸也可以通过游戏的动物轮盘菜单完成，用方向键上。</li>
+<li>确认窗口支持手柄：给刚驯服的狗取名、改名、放生、停止照料牲畜，以及把走远的狗叫回来。</li>
+<li>在<strong><span class="ig">我的伙伴</span></strong>标签页里，用方向键选狗。</li>
+<li>在驮袋里，左右切换你的背包和驮袋，上下选物品，A 移动，B 关闭。</li>
+<li>在<strong><span class="ig">检查动物</span></strong>窗口（右键点流浪狗）里，方向键逐行移动，并显示每一行的说明。</li>
+</ul>
 <h2 id="4-三种模式跟随停留和守卫">4. 三种模式：跟随、停留和守卫</h2>
 <p>狗一直处于这三种模式之一。哨兵、狩猎和自动守护是叠加在模式之上的调整。</p>
 <h3 id="跟随">跟随</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>在跟随模式下，只有自动守护打开，而且只有僵尸瞄准了你或狗，或者你已经在战斗时才会动手。僵尸必须离你 5 格或更近。</li>
 <li>在守卫模式下，只要在岗位 10 格以内，它随时会动手。</li>
-<li>用<strong><span class="ig">攻击最近目标</span></strong>命令时，它会在 12 格范围内搜索，并追击 2 游戏分钟。</li>
+<li>用<strong><span class="ig">攻击最近目标</span></strong>命令时，它会在 12 格范围内搜索，并追击 2 游戏分钟。每次命令只针对一个目标：那只僵尸解决后，它就回来跟随你。</li>
+<li>用<strong><span class="ig">冲撞</span></strong>时（只有大丹犬有），它会沿直线冲向你面前的僵尸，撞倒路上的僵尸。详细说明在<a href="breeds.html" class="xlink">品种手册</a>里。</li>
 </ul>
 <p>它只攻击敌对僵尸。其他模组（Bandits、A-Life）的友方 NPC 会被放过。</p>
 <h3 id="它不会隔墙咬人">它不会隔墙咬人</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>它的生命值会因为疏忽照顾（饥饿或口渴超过 0.8）、有毒食物、狩猎中鹿的反击，以及<span class="ig">健康</span>一节里的各种病症而下降。疏忽照顾和未治疗的感染只有在沙盒选项 <strong><span class="ig">疾病和疏忽可致死</span></strong>打开时才会致死；关闭时（默认），生命值会停在 10%。</li>
 <li>受伤状态：生命值低于 30% 时是<strong><span class="ig">受伤</span></strong>，低于 10% 时是<strong><span class="ig">重伤</span></strong>。重伤的狗只会跟着你，不会战斗。</li>
 <li>生命值降到 10% 或更低时，它会退到你身后。</li>
-<li>压力过高时它会陷入恐慌：不战斗、不守卫、也不听从技巧命令。被叫唤时它还是会跑向你。只有压力降到阈值以下很多时，它才会脱离恐慌。</li>
+<li>压力过高时它会陷入恐慌：放弃战斗，回到你身边，不战斗、不守卫、也不听从技巧命令。被叫唤时它还是会跑向你。只有压力降到阈值以下很多时，它才会脱离恐慌。抚摸或喂食会让它马上冷静下来，恐慌前下达的攻击命令会被取消。</li>
 </ul>
 <h3 id="击杀计数">击杀计数</h3>
 <p>每只狗都有自己的计数器，显示在它的窗口里：<strong><span class="ig">击杀数：14 只僵尸，3 次狩猎</span></strong>。</p>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>喂食接受任何没有腐烂、能填饱饥饿的食物；只有毒物清单上的东西不行。至于<a href="#蛋白质它是肉食动物">无蛋白质可撑的小时数</a>，食物的类型才有讲究。只有必要的那一口会被消耗掉。</li>
 <li>喂水需要背包里有任意装了水的容器（模组也会检查背包里的包）。</li>
 <li>抚摸的冷却时间是 90 个游戏分钟。</li>
+<li>抚摸也可以用<strong>抚摸</strong>键、狗的轮盘菜单和游戏的动物轮盘菜单（手柄上是方向键上）来完成。每种方式都一样，会蹲下抚摸，也会增加忠诚度。</li>
 </ul>
 <h3 id="疏忽照顾的阶梯">疏忽照顾的阶梯</h3>
 <p>如果你放着狗不管：</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>食盆只能装食物或水，不能同时装两样。要换，用 <strong><span class="ig">倒空食盆</span></strong>。</p>
 <p>模型会显示里面装的东西：空的是灰色，装着狗粮是棕色，装着水是蓝色。</p>
 <h3 id="什么算食盆里的食物">什么算食盆里的食物</h3>
-<p>几乎任何能填饱饥饿、没有变质的食物都行：肉、罐头、煮熟的餐食、蔬菜、水果、蛋、狗粮，还有干草和青草。</p>
+<p>几乎任何能填饱饥饿、没有变质的食物都行：肉、罐头、煮熟的餐食、蔬菜、水果、蛋、狗粮，还有干草、青草，以及袋装动物饲料和袋装草料。</p>
 <p><a href="#对狗有害的食物">对狗有害的清单</a>不算在内，它们会在菜单里显示成红色。</p>
 <blockquote class="quote">没打开的狗粮罐头不会出现在清单里。先把罐头打开。</blockquote>
 <p>食盆最多能装 100 点：</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>物品</th>
 <th>点数</th>
 </tr></thead><tbody>
+<tr>
+<td>袋装动物饲料（满袋）</td>
+<td>100</td>
+</tr>
 <tr>
 <td>一袋狗粮</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>青草</td>
 <td>7</td>
 </tr>
+<tr>
+<td>袋装草料（满袋）</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>这两种游戏里的袋子，每剩一次使用次数就算 1 点。袋子只消耗食盆装得下的部分，用完后会变成空袋子。</p>
 <p>你倒进去的肉、鱼、蛋或狗粮都会被标记成蛋白质，狗吃到这部分的时候，会按你亲手喂食那样计入<a href="#蛋白质它是肉食动物">蛋白质的时钟</a>。食盆里如果只装蔬菜，就只会填饱饥饿，别的什么都不算。</p>
 <p>如果物品比剩余空间大，食盆会装满到顶，剩下的还给你。一个已经有 80 点的食盆，倒进一袋狗粮会把食盆填到 100，剩下价值 40 的部分回到你的背包。 <em><span class="ig">食盆放不下这么多。</span></em>这条消息只在食盆完全装满时才会出现。</p>
 <h3 id="狗怎么用食盆">狗怎么用食盆</h3>
 <ul>
 <li>饥饿或口渴到达 0.5 时，它会自己去（可以按角色调整，在设置标签页的 <em><span class="ig">饥饿/口渴达到时进食</span></em>滑条）。</li>
 <li>它会在 16 格范围内寻找食盆。模组的食盆和游戏自带的原版食槽都能用。</li>
+<li>自己这层没有食盆时，它会去下一层和上一层找，并走楼梯过去。如果到不了食盆所在的那层，它会在 30 秒后放弃，重新寻找。</li>
 <li>每次去吃能清掉半条状态条。它大概会花 3 个游戏分钟进食。</li>
 <li>在去食盆的路上或正在吃的时候，它会无视僵尸和其他一切。只有你下的命令能打断它。因为饥饿陷入恐慌的狗，吃过东西后就会脱离恐慌。</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>德国牧羊犬、边境牧羊犬、罗威纳、杜宾、拉布拉多、马林诺斯犬</strong></td>
 <td>6 到 8</td>
+</tr>
+<tr>
+<td><strong>灰狼、大丹犬</strong></td>
+<td>8 到 10</td>
 </tr>
 <tr>
 <td><strong>哈士奇</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>界面：</strong><span class="ig">状态文字：开/关</span>（狗头顶上方的浮动提示）、<span class="ig">心情图标：开/关</span>（狗的心情图标）和<span class="ig">宠物名字：开/关</span>（狗头顶上的名字，以及其他人的狗身上的<span class="ig">主人：某某</span>）。</li>
 <li><strong>声音：</strong>总音量、静音，以及<strong>吠叫</strong>、<strong>音效</strong>和<strong>环境音</strong>的独立滑条。</li>
 <li><strong>自动进食：</strong><span class="ig">饥饿/口渴达到时进食</span>滑条。</li>
-<li><strong>按键绑定：</strong>14 个操作，配有<strong>重新绑定</strong>和<strong>清除</strong>按钮。</li>
+<li><strong>按键绑定：</strong>16 个操作，配有<strong>重新绑定</strong>和<strong>清除</strong>按钮。</li>
 </ul>
 <blockquote class="quote">如果吠叫声让你觉得吵，<strong>吠叫</strong>滑条只会调低它的音量，不会关闭任何机制。</blockquote>
 <h2 id="20-屏幕上会显示什么">20. 屏幕上会显示什么</h2>
@@ -2422,7 +2472,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">每个品种心情图标都遵循这条规则：狗不忠诚、生病，或者饥饿、口渴值过高时，心情图标会关闭，直到它重新被照顾好为止。</blockquote>
 <h3 id="头顶上方的文字">头顶上方的文字</h3>
-<p>狗会在头顶叠放好几行状态文字，14 格内可见，且只在同一层楼可见。从上到下依次是：哨兵警报、状态（<strong>恐惧</strong>、<strong>恐慌</strong>、<strong>重伤</strong>、<strong>不服从</strong>、<strong>受伤</strong>、<strong>紧张</strong>），正在做的事情（进食、狩猎、嗅探、照料牲畜），怀孕，以及名字，永远排在最后。</p>
+<p>狗会在头顶叠放好几行状态文字，14 格内可见，且只在同一层楼可见。从上到下依次是：哨兵警报、状态（<strong>恐惧</strong>、<strong>恐慌</strong>、<strong>重伤</strong>、<strong>不服从</strong>、<strong>受伤</strong>、<strong>紧张</strong>），正在做的事情（进食、狩猎、嗅探、照料牲畜），大丹犬的冲撞冷却（<strong><span class="ig">冲撞：12分钟后就绪</span></strong>），怀孕，以及名字，永远排在最后。</p>
 <p><strong><span class="ig">状态文字：关</span></strong>选项（<span class="ig">设置</span>标签页）会隐藏除名字以外的所有内容，<strong><span class="ig">宠物名字：关</span></strong>选项（同一标签页）只隐藏名字和<span class="ig">主人：某某</span>。两个都关掉时，什么都不会显示。每个选项只对你自己的玩家生效。沙盒选项<strong><span class="ig">显示狗的名称标签</span></strong>是世界规则，会为所有人隐藏整条标签。</p>
 <p>其他玩家的狗只会显示<strong><span class="ig">主人：某某</span></strong>、怀孕状态和名字。</p>
 <p>威胁是狼时，哨兵警报里的<span class="ig">僵尸</span>会换成狼：<em><span class="ig">远处有狼</span></em>、<em><span class="ig">附近有狼</span></em>、<em><span class="ig">狼靠近！</span></em> 和<em><span class="ig">一群狼！</span></em>。见<a href="#7-攻击性动物">攻击性动物</a>。</p>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>只取消订阅罗威纳、杜宾、拉布拉多、哈巴狗（或者其他任何一个品种）的附加模组，却继续用基础模组游玩，会造成同样的问题，因为那个品种的狗依然记录在存档里。</p>
 <h3 id="如果动物已经消失了">如果动物已经消失了</h3>
 <p><strong>现在就重新安装模组，在继续游戏或存档之前。</strong>动物很可能会回来。一旦游戏把存档覆盖写入，那个文件就彻底丢失了，也没有备份。</p>
+<p>如果回到原样的是一整片区域（比如一整栋房子）的家具和战利品，原因是留在地上的食盆。这块地图有备份：游戏会把读取失败的文件放在存档的 <code>blam</code> 文件夹里，旁边还有一个 <code>_error.txt</code>。关掉游戏、重新启用模组，先备份存档的 <code>map</code> 文件夹，再把 <code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> 复制覆盖到 <code>map/&lt;x&gt;/&lt;y&gt;.bin</code>。重置之后你在那片区域做的改动会丢失。</p>
 <h3 id="怎样安全地移除">怎样安全地移除</h3>
 <p>第 1 步：保持所有附加模组开启。确认你在这个存档里用过的每个品种附加模组，都在这个存档的模组列表里勾选着（<strong><span class="ig">载入游戏</span></strong> &gt; 该存档 &gt; <strong><span class="ig">选择模组...</span></strong>）。停用一个附加模组，就已经会造成上面说的问题。</p>
 <p>第 2 步：处理掉这些狗。有两种安全的方法：</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>把它抱在怀里带走。游戏知道要跳过这个物品：只有狗会消失，其他东西都留着。</li>
 </ul>
 <p>放走狗，或者把它带去很远的地方都解决不了问题：它的记录依然留在存档里，带去别的地方只是换了一个会出问题的区域而已。</p>
-<p>第 3 步：存档。是存档这个动作把清理结果写进去的。</p>
-<p>第 4 步：移除模组。</p>
+<p>第 3 步：收回食盆。丢在地上的模组食盆，同样会在没有模组时弄坏存档：游戏读不了食盆所在的那块地图，就把那块从头重建，家具和战利品回到原样，你的建筑也会消失。把每个食盆都从地上捡起来，放进物品栏或容器里（柜子、箱子、后备箱）。放在容器里就不会出事。</p>
+<p>第 4 步：存档。是存档这个动作把清理结果写进去的。</p>
+<p>第 5 步：移除模组。</p>
 <h3 id="彻底清理管理员-调试模式">彻底清理（管理员 / 调试模式）</h3>
 <p>上面的步骤只处理了你自己的狗，但模组还会在地图上撒下流浪狗，没办法一只一只手动去找。要一次性清理整个存档，有一个命令可以用：</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>在地面上点右键 → <strong>同伴犬（调试）</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li>等待 <code>sweep done</code> 这条消息出现，然后存档。</li>
 </ol>
-<p>这个命令会立刻删除已加载的狗，然后在后台扫描存档剩下的部分，不会卡住游戏。如果它提示某个品种并拒绝执行，就在这个存档里启用那个附加模组再重试：没有它的定义，清理会把那片区域的动物一并删掉。</p>
+<p>这个命令会立刻删除已加载的狗，然后在后台扫描存档剩下的部分，不会卡住游戏。它还会把玩家附近地上的食盆收走，消息里会说收了几个。现在没人在的地方留下的食盆它够不到：要走过去亲手捡起来。如果它提示某个品种并拒绝执行，就在这个存档里启用那个附加模组再重试：没有它的定义，清理会把那片区域的动物一并删掉。</p>
 <h2 id="26-服务器性能调优管理员">26. 服务器性能调优（管理员）</h2>
 <p>这一节是给运行着很多玩家、很多狗的服务器管理者看的。这个面板叫 <strong><span class="ig">Server tuning / performance</span></strong>：上半部分是模组在服务器上开销的实时仪表；下半部分是能改变这个开销的字段。游戏规则（伤害、饥饿、经验、狗数量上限）不在这里，它们仍然是沙盒选项，在第 23 节。</p>
 <blockquote class="quote">不管游戏用什么语言，这个面板都是英文的，因为标签是写死在代码里的。下面的表格按屏幕上显示的原样引用每一项。</blockquote>

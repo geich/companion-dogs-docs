@@ -448,6 +448,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#labrador" data-id="labrador">Labrador</a>
 <a class="s3" href="#carlino" data-id="carlino">Carlino</a>
 <a class="s3" href="#pastore-belga-malinois" data-id="pastore-belga-malinois">Pastore Belga Malinois</a>
+<a class="s3" href="#alano" data-id="alano">Alano</a>
 </div>
 </div>
 <div class="grp">
@@ -559,7 +560,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p>La razza decide le due cose insieme, ognuna per conto suo: un Pastore Tedesco è grosso e nasce forte, un Caramelo è piccolo e nasce debole. La Forza del singolo cane si legge nella barra Forza, nella sezione Tratti della finestra del cane.</p>
 <h3 id="una-razza-un-aspetto">Una razza, un aspetto</h3>
 <p>Ogni razza ha una sola texture, e maschio e femmina usano la stessa. I cinque gatti sono <a href="#i-cinque-manti">cinque razze</a>, non un gatto in cinque colori.</p>
-<p>Il cucciolo di qualsiasi razza nasce con la stessa taglia ridotta e cresce fino alla stazza adulta della sua razza.</p>
+<p>Il cucciolo nasce con una taglia ridotta e cresce fino alla stazza adulta della sua razza. La taglia alla nascita è la stessa in tutte le razze, tranne nell'Alano, che nasce già più grande.</p>
 <h2 id="2-scelta-rapida">2. Scelta rapida</h2>
 <div class="tw"><table><thead><tr>
 <th>Se vuoi...</th>
@@ -572,6 +573,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Un cane che tiene la linea e uccide zombie da solo</strong></td>
 <td>Pastore Tedesco o Rottweiler</td>
+</tr>
+<tr>
+<td><strong>Atterrare più zombie in una volta</strong></td>
+<td>Alano</td>
 </tr>
 <tr>
 <td><strong>Cacciare carne</strong></td>
@@ -682,6 +687,10 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <tr>
 <td><strong>Pastore Belga Malinois</strong></td>
 <td>Cane da fiuto: una freccia segna lo zombie che non vedi</td>
+</tr>
+<tr>
+<td><strong>Alano</strong></td>
+<td>Il cane più grande del mod. Al tuo comando corre in linea retta e atterra gli zombie sul suo cammino</td>
 </tr>
 <tr>
 <td><strong>Lupo grigio</strong></td>
@@ -925,6 +934,41 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p><strong>Per chi è:</strong> per chi esplora città ed edifici chiusi e vuole sapere dov'è lo zombie prima di aprire la porta.</p>
 <blockquote class="quote">La descrizione nel gioco dice che è <em><span class="ig">il migliore nel fiuto</span></em>. In velocità di Fiuto è alla pari con l'Husky.</blockquote>
+<hr>
+<h3 id="alano">Alano</h3>
+<p><em>(mod <strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a></strong>, addon separato)</em></p>
+<p>Il cane più grande del mod, più alto del Lupo grigio, con un ordine tutto suo che atterra più zombie in una volta.</p>
+<blockquote class="quote quote-game"><em>"Un gigante buono. Impara il Combattimento 2x, l'Obbedienza 1.5x e la Caccia 1.2x. Al tuo comando carica in linea retta e atterra gli zombi sul suo cammino (Carica). Si trova nelle fattorie e, raramente, nelle case."</em></blockquote>
+<p><strong>Dove trovarlo:</strong></p>
+<ul>
+<li>Fienile, stalla e fattoria, in campagna: 8% per edificio.</li>
+<li>Casa residenziale: 0,3% per casa.</li>
+</ul>
+<p><strong>Impara:</strong> Combattimento al doppio della velocità, Obbedienza il 50% e Caccia il 20% più in fretta, lo stesso pacchetto del Pastore Tedesco e del Dobermann.</p>
+<p><strong>In combattimento:</strong> senza addestramento ha il morso più forte del mod, un quarto sopra quello del Pastore Tedesco. A Combattimento 10 è alla pari con il Pastore e il Rottweiler. Atterra e uccide.</p>
+<p>Ha il sangue freddo del Dobermann: accumula poco stress combattendo e la soglia di panico è al massimo.</p>
+<p><strong>Tratti:</strong> Forza da 0,45 a 0,70, la stessa fascia del Lupo grigio. Resistenza da 0,45 a 0,65, la più alta del mod. Aggressività da 0,10 a 0,30, che la finestra mostra sempre come <span class="ig">Basso</span>, quindi guadagna XP di Combattimento un po' più lentamente del Pastore.</p>
+<p><strong>Cucciolata:</strong> da 1 a 2, con cuccioli più grandi di quelli delle altre razze. <strong>Bisacce:</strong> da 8 a 10.</p>
+<p><strong>Ordine: <span class="ig">Carica</span></strong></p>
+<ul>
+<li>Sta nel menu radiale del cane, nel menu di contesto e su un tasto tutto suo, che arriva senza assegnazione.</li>
+<li>Punta lo zombie in piedi più vicino a te, fino a 10 caselle e allo stesso piano, e preferisce quello davanti a te.</li>
+<li>Corre in linea retta fino a 2 caselle oltre il bersaglio, al massimo 12 caselle, e atterra gli zombie in piedi che si trovano a 1 casella dal suo percorso: 2 a Combattimento 1, fino a 10 a Combattimento 10. Ogni zombie atterrato dà XP di Combattimento.</li>
+<li>Si ferma al primo muro, porta chiusa, finestra o buco. Senza zombie a portata in linea retta, l'ordine non parte: <em><span class="ig">Il tuo Alano Rex non trova nulla di raggiungibile da attaccare.</span></em></li>
+<li>Dopo la corsa continua ad attaccare lo zombie più vicino, come con <strong><span class="ig">Attacca il più vicino</span></strong>.</li>
+<li>Ogni carica gli alza lo stress, un po' meno con Resistenza alta, e l'ordine torna solo dopo 30 minuti di gioco. Durante la ricarica, lo spicchio del radiale diventa grigio con i minuti che mancano, il menu di contesto mostra <strong><span class="ig">Carica (12 min)</span></strong> e sopra la sua testa compare <strong><span class="ig">Carica tra 12 min</span></strong>.</li>
+<li>Sleale, nel panico, gravemente ferito o zoppicante, rifiuta l'ordine. E, come ogni ordine, può ignorarlo per disobbedienza.</li>
+<li>Con l'opzione sandbox <strong><span class="ig">Combattimento attivo</span></strong> spenta, l'ordine non compare.</li>
+</ul>
+<p><strong>Moodle: <span class="ig">Carica pronta</span></strong></p>
+<blockquote class="quote quote-game"><em>"Il tuo Alano è pronto a caricare. Dai l'ordine dal menu radiale del cane e correrà in linea retta atterrando gli zombi sul suo cammino."</em></blockquote>
+<p>Non dà nessun bonus. Mostra solo se la Carica è disponibile:</p>
+<ul>
+<li>Blu con la Carica pronta.</li>
+<li>Giallo durante la ricarica, con il nome <strong><span class="ig">Carica in ricarica</span></strong> e i minuti nel fumetto: <em><span class="ig">Sta riprendendo fiato, pronto tra 12 min.</span></em></li>
+<li>Sparisce quando non può caricare: sleale, nel panico, gravemente ferito, zoppicante, malato, o molto affamato o assetato.</li>
+</ul>
+<p><strong>Per chi è:</strong> per chi combatte insieme al cane e vuole aprirsi la strada in un gruppo di zombie.</p>
 <h2 id="5-il-gatto-la-prima-altra-specie">5. Il gatto: la prima altra specie</h2>
 <p><em>(mod <strong>CD: Cats</strong>, addon separato)</em></p>
 <p>Tutte le razze viste finora sono cani.</p>
@@ -1053,7 +1097,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <p><strong>Dove trovarlo:</strong> in branco da 1 a 3, nel bosco. Diventa tuo solo dopo essere stato sconfitto, se cade vivo (il 10% delle volte, di base), viene curato con una benda e si rialza. A quel punto si addomestica con il cibo come un randagio qualsiasi, già con 40 di fiducia.</p>
 <p><strong>Impara:</strong> Combattimento e Caccia al doppio della velocità, Fiuto il 50% più in fretta. Obbedienza a 0,6, la più lenta del mod: ci mette più del Gatto a sbloccare i trucchi.</p>
 <p><strong>In combattimento:</strong> il morso del Pastore Tedesco: forte, uccide da solo e atterra. Accumula stress lentamente quasi quanto il Pastore, e la soglia di panico pareggia con la più alta del mod.</p>
-<p><strong>Tratti:</strong> Forza da 0,45 a 0,70, Aggressività da 0,40 a 0,70 e Resistenza da 0,40 a 0,65. È la fascia di Aggressività più alta del mod e la seconda di Forza, dietro l'Husky.</p>
+<p><strong>Tratti:</strong> Forza da 0,45 a 0,70, Aggressività da 0,40 a 0,70 e Resistenza da 0,40 a 0,65. È la fascia di Aggressività più alta del mod. In Forza è alla pari con l'Alano come seconda, dietro l'Husky.</p>
 <p><strong>Cucciolata:</strong> nessuna. Il lupo non si accoppia né con i cani né con un altro lupo.</p>
 <p><strong>Bisacce:</strong> da 8 a 10 di carico.</p>
 <p><strong>Non fa:</strong> non bada al bestiame. La Pastorizia non compare nella sua finestra.</p>
@@ -1155,6 +1199,14 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>1,5</td>
 <td>1,2</td>
 <td>1,0</td>
+<td>1,0</td>
+</tr>
+<tr>
+<td>Alano</td>
+<td>1,0</td>
+<td>2,0</td>
+<td>1,5</td>
+<td>1,2</td>
 <td>1,0</td>
 </tr>
 <tr>
@@ -1260,8 +1312,15 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Sì</td>
 <td>Sì</td>
 </tr>
+<tr>
+<td>Alano</td>
+<td>il più forte</td>
+<td>2,6x</td>
+<td>Sì</td>
+<td>Sì</td>
+</tr>
 </tbody></table></div>
-<p>Il Dobermann parte con circa due terzi del morso di un Rottweiler.</p>
+<p>Il Dobermann parte con circa due terzi del morso di un Rottweiler. L'Alano parte un quarto sopra il Pastore Tedesco e finisce alla pari con lui.</p>
 <p>Il Gatto resta fuori da questa tabella perché non combatte.</p>
 <h3 id="sangue-freddo-in-combattimento">Sangue freddo in combattimento</h3>
 <p>Più basso è il numero, più il cane resta freddo mentre combatte.</p>
@@ -1292,6 +1351,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </tr>
 <tr>
 <td>Lupo grigio</td>
+<td>0,25</td>
+<td>0,90</td>
+</tr>
+<tr>
+<td>Alano</td>
 <td>0,25</td>
 <td>0,90</td>
 </tr>
@@ -1403,6 +1467,12 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>da 0,40 a 0,65</td>
 </tr>
 <tr>
+<td>Alano</td>
+<td>da 0,45 a 0,70</td>
+<td>da 0,10 a 0,30</td>
+<td>da 0,45 a 0,65</td>
+</tr>
+<tr>
 <td>Husky</td>
 <td>da 0,55 a 0,80</td>
 <td>da 0,10 a 0,30</td>
@@ -1414,7 +1484,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <li>Anche il Carlino, e la sua fascia di Forza è ancora più bassa.</li>
 <li>Il Gatto pareggia con il Carlino sulla Forza più bassa del mod.</li>
 <li>L'Husky è l'unico che di solito mostra <span class="ig">Alto</span> in Forza.</li>
-<li>L'Aggressività esce <span class="ig">Basso</span> nel Golden, nell'Husky e nel Labrador.</li>
+<li>L'Aggressività esce <span class="ig">Basso</span> nel Golden, nell'Husky, nel Labrador e nell'Alano.</li>
 <li>Anche Golden e Dobermann cadono spesso su <span class="ig">Basso</span> in Forza e Resistenza.</li>
 <li>Pastore Tedesco, Rottweiler e Pastore Belga Malinois sono gli unici che mostrano <span class="ig">Medio</span> in tutti e tre quasi sempre.</li>
 </ul>
@@ -1444,7 +1514,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>da 6 a 8</td>
 </tr>
 <tr>
-<td>Lupo grigio</td>
+<td>Lupo grigio, Alano</td>
 <td>da 8 a 10</td>
 </tr>
 <tr>
@@ -1470,7 +1540,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>da 1 a 3</td>
 </tr>
 <tr>
-<td>Pastore Tedesco, Golden Retriever, Husky, Rottweiler, Dobermann, Carlino, Pastore Belga Malinois</td>
+<td>Pastore Tedesco, Golden Retriever, Husky, Rottweiler, Dobermann, Carlino, Pastore Belga Malinois, Alano</td>
 <td>da 1 a 2</td>
 </tr>
 </tbody></table></div>
@@ -1530,6 +1600,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Husky</td>
 <td>Negozio di animali, veterinario</td>
 <td>10%</td>
+</tr>
+<tr>
+<td>Alano</td>
+<td>Fienile, stalla, fattoria (campagna)</td>
+<td>8%</td>
 </tr>
 <tr>
 <td>Caramelo</td>
@@ -1595,6 +1670,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Pastore Belga Malinois</td>
 <td>Casa residenziale</td>
 <td>0,5%</td>
+</tr>
+<tr>
+<td>Alano</td>
+<td>Casa residenziale</td>
+<td>0,3%</td>
 </tr>
 <tr>
 <td>Husky</td>
@@ -1687,6 +1767,13 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><code>malfemale</code></td>
 <td><code>malpup</code></td>
 <td><code>malinois</code></td>
+</tr>
+<tr>
+<td>Alano</td>
+<td><code>gdanemale</code></td>
+<td><code>gdanefemale</code></td>
+<td><code>gdanepup</code></td>
+<td><code>greatdane</code></td>
 </tr>
 <tr>
 <td>Gatto Nero</td>
@@ -1826,6 +1913,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td>Ogni 5 s, una freccia segna dove si trovava lo zombie più vicino che non vedi, fino a 25 caselle</td>
 </tr>
 <tr>
+<td><strong>Carica pronta</strong></td>
+<td>Alano</td>
+<td>Solo un avviso: blu con la Carica pronta, giallo con i minuti durante la ricarica</td>
+</tr>
+<tr>
 <td><strong>Legame di branco</strong></td>
 <td>Lupo grigio</td>
 <td>Il lupo selvatico non ti nota, abbassa il Panico e +20% di XP in Corsa e Passo felpato</td>
@@ -1902,7 +1994,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h3 id="letichetta-meticcio">L'etichetta "Meticcio"</h3>
 <p>Un cane con più di una razza nella linea di sangue si porta dietro <strong><span class="ig">(Meticcio)</span></strong> accanto al nome della razza, nella finestra e nel menu contestuale. Il dettaglio in percentuale (<span class="ig">50% Husky, 50% Pastore Tedesco</span>) compare passando il mouse sulla riga <strong><span class="ig">Razza</span></strong> della finestra del cane, insieme alla descrizione della razza dominante.</p>
 <h2 id="11-installare-gli-addon">11. Installare gli addon</h2>
-<p>Rottweiler, Dobermann, Labrador, Carlino, Pastore Belga Malinois e il gatto sono mod separati su Steam. Ognuno:</p>
+<p>Rottweiler, Dobermann, Labrador, Carlino, Pastore Belga Malinois, Alano e il gatto sono mod separati su Steam. Ognuno:</p>
 <ul>
 <li>Ha bisogno del Companion Dogs base installato e attivo.</li>
 <li>Aggiunge una razza, con modello, texture, moodle e luoghi di spawn propri.</li>
@@ -1942,6 +2034,11 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <td><strong>CD: Belgian Malinois</strong></td>
 <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">iscriviti</a></td>
 <td>0.8.0 o più recente</td>
+</tr>
+<tr>
+<td><strong>CD: Great Dane</strong></td>
+<td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">iscriviti</a></td>
+<td>0.9.0 o più recente</td>
 </tr>
 </tbody></table></div>
 <p>E il base, se non ce l'hai ancora: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3740052292">Companion Dogs</a>.</p>

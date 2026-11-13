@@ -488,6 +488,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#b-ラジアルメニューqを長押し" data-id="b-ラジアルメニューqを長押し">b) ラジアルメニュー（Qを長押し）</a>
 <a class="s3" href="#c-キー割り当て" data-id="c-キー割り当て">c) キー割り当て</a>
 <a class="s3" href="#d-犬のウィンドウのボタン" data-id="d-犬のウィンドウのボタン">d) 犬のウィンドウのボタン</a>
+<a class="s3" href="#コントローラーで遊ぶ" data-id="コントローラーで遊ぶ">コントローラーで遊ぶ</a>
 </div>
 </div>
 <div class="grp">
@@ -764,14 +765,24 @@ Mods=CompanionDogs</code></pre>
 <td><code>3787202559</code></td>
 </tr>
 <tr>
+<td>CD: Cats</td>
+<td><code>CompanionCat</code></td>
+<td><code>3791294616</code></td>
+</tr>
+<tr>
 <td>CD: Belgian Malinois</td>
 <td><code>CompanionDogsMalinois</code></td>
 <td><code>3808688990</code></td>
 </tr>
+<tr>
+<td>CD: Great Dane</td>
+<td><code>CompanionDogsGreatDane</code></td>
+<td><code>3838731769</code></td>
+</tr>
 </tbody></table></div>
 <p>本体と公開済みの犬種アドオンを入れると、こうなります:</p>
-<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3808688990
-Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionDogsMalinois</code></pre>
+<pre><code>WorkshopItems=3740052292;3762296152;3770795385;3779327129;3787202559;3791294616;3808688990;3838731769
+Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLabrador;CompanionDogsPug;CompanionCat;CompanionDogsMalinois;CompanionDogsGreatDane</code></pre>
 <ul>
 <li>どちらのリストでも本体をアドオンより先に書きます。Companion Dogs より先に読み込まれた犬種アドオンは犬種を登録できません。</li>
 <li>.ini をいじったら、サーバーを完全に再起動してください。</li>
@@ -862,7 +873,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>犬はたいてい建物の外側の空いたタイルに現れます。道路、庭、空き地などです。外に空きタイルが1つも残っていないときだけ屋内に出ます。</p>
 <p>サンドボックス設定の <strong><span class="ig">犬の出現率倍率</span></strong> がこれらの確率をまとめて増減させます。0にすると出現が止まります。</p>
 <p>ハイイロオオカミは建物には出ません。森に群れで現れ、襲ってきます。手に入れるには、倒して、手当てして、手懐ける必要があります。<a href="#7-攻撃的な動物">攻撃的な動物</a>を参照してください。</p>
-<blockquote class="quote">アドオンの犬種はSteamの別MODで配布されていて、それぞれ独自の出現場所を持っています: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>。それぞれの特徴は<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</blockquote>
+<blockquote class="quote">アドオンの犬種はSteamの別MODで配布されていて、それぞれ独自の出現場所を持っています: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3762296152">CD: Rottweiler</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3770795385">CD: Doberman</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3779327129">CD: Labrador</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3787202559">CD: Pug</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808688990">CD: Belgian Malinois</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838731769">CD: Great Dane</a>、 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3791294616">CD: Cats</a>。それぞれの特徴は<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</blockquote>
 <h3 id="手懐け方">手懐け方</h3>
 <p>野良犬を右クリックします。出てくる選択肢は <strong><span class="ig">食べ物やります (仲良くする)</span></strong> の1つだけです。</p>
 <ul>
@@ -939,6 +950,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>一番近いゾンビを攻撃させる</td>
 </tr>
 <tr>
+<td><strong>突進</strong></td>
+<td>グレート・デーンのみ。一直線に走って進路上のゾンビをなぎ倒す。クールダウン中は残り時間を表示</td>
+</tr>
+<tr>
 <td><strong>芸</strong> ▸</td>
 <td>4つの芸のサブメニュー</td>
 </tr>
@@ -970,11 +985,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <blockquote class="quote">「見張れ」はこのメニューには出ません。この命令はラジアルメニュー、キー割り当て、コマンドタブのボタンにだけあります。</blockquote>
 <h3 id="b-ラジアルメニューqを長押し">b) ラジアルメニュー（Qを長押し）</h3>
 <p>MODはゲームのエモートメニューに相乗りします。Qを長押しすると、あなたの犬の犬種名と肉球アイコンが付いた新しいカテゴリが出ます。このカテゴリは近くにアクティブな犬がいるときだけ現れます。</p>
-<p>並ぶのは <strong>来て</strong>、<strong>従う</strong>、<strong>待て</strong>、<strong>見張れ</strong>、<strong>警戒</strong>、<strong>静か</strong>、<strong>無音</strong>、<strong>近くを攻撃</strong>、<strong>狩り</strong> / <strong>狩りをやめる</strong>、<strong>芸 ▸</strong>、そして<strong>サドルバッグを開く</strong>（装着中のみ）です。</p>
+<p>並ぶのは <strong>来て</strong>、<strong>従う</strong>、<strong>待て</strong>、<strong>見張れ</strong>、<strong>警戒</strong>、<strong>静か</strong>、<strong>無音</strong>、<strong>近くを攻撃</strong>、<strong>狩り</strong> / <strong>狩りをやめる</strong>、<strong>呼び寄せる</strong>、<strong>状態</strong>、<strong>自動護衛：オン</strong> / <strong>自動護衛：オフ</strong>、<strong>撫でる</strong>、<strong>芸 ▸</strong>、そして<strong>サドルバッグを開く</strong>（装着中のみ）です。グレート・デーンには <strong>突進</strong> もあります。</p>
+<p>ネコには見張れと近くを攻撃がなく、パグには静かと無音がありません。</p>
 <p><strong>芸</strong> を選ぶとラジアルの3階層目が開き、4つの芸と <strong>戻る</strong> が並びます。まだ解放していない芸は赤いアイコンで表示され、名前に必要なレベルが付きます。たとえば <em><span class="ig">気を引く（服従 3）</span></em> です。</p>
 <p>命令の一部では自分のキャラクターも動作します。呼ぶと手を上げ、待てを出すと制止の仕草をし、攻撃を命じると指を差します。</p>
 <h3 id="c-キー割り当て">c) キー割り当て</h3>
-<p>割り当てられる操作は14個で、初期状態ではどれにもキーが入っていません。設定は犬のウィンドウの <strong><span class="ig">設定</span></strong> タブで行います。</p>
+<p>割り当てられる操作は16個で、初期状態ではどれにもキーが入っていません。設定は犬のウィンドウの <strong><span class="ig">設定</span></strong> タブで行います。</p>
 <div class="tw"><table><thead><tr>
 <th>操作</th>
 <th>内容</th>
@@ -1004,6 +1020,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>攻撃命令</td>
 </tr>
 <tr>
+<td><strong>突進</strong></td>
+<td>グレート・デーンのみ</td>
+</tr>
+<tr>
 <td><strong>警戒</strong> / <strong>静か</strong> / <strong>無音</strong></td>
 <td>見張りのモード</td>
 </tr>
@@ -1020,6 +1040,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>犬のウィンドウを開閉する</td>
 </tr>
 <tr>
+<td><strong>撫でる</strong></td>
+<td>コンテキストメニューと同じ撫で方</td>
+</tr>
+<tr>
 <td><strong>指定した場所へ行かせる</strong></td>
 <td>芸の照準カーソルを出す</td>
 </tr>
@@ -1031,6 +1055,16 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>すでに使われているキーを選ぶと警告が出ます: <em><span class="ig">Fはすでに使用されています：待て</span></em>。キーが入っていないボタンには <em><span class="ig">未割り当て</span></em> と表示されます。</p>
 <h3 id="d-犬のウィンドウのボタン">d) 犬のウィンドウのボタン</h3>
 <p>コマンドタブに全部ボタンで並んでいます。一覧は<a href="#19-犬のウィンドウ">犬のウィンドウ</a>にあります。</p>
+<h3 id="コントローラーで遊ぶ">コントローラーで遊ぶ</h3>
+<p>このモッドはコントローラーでも動きます。</p>
+<ul>
+<li>犬のラジアルは十字キーの下で開きます。ゲームのエモートメニューです。</li>
+<li>撫でるのは、ゲームの動物用ラジアル（十字キーの上）からもできます。</li>
+<li>確認ウィンドウはコントローラーで操作できます。手懐けたばかりの犬の名付け、名前の変更、解放、家畜の世話の終了、遠くにいる犬の呼び戻しです。</li>
+<li><strong><span class="ig">マイコンパニオン</span></strong> タブでは、十字キーで犬を選びます。</li>
+<li>サドルバッグでは、左右で自分のリュックとサドルバッグを切り替え、上下でアイテムを選び、Aで移し、Bで閉じます。</li>
+<li><strong><span class="ig">犬を調べる</span></strong> ウィンドウ（野良犬を右クリック）では、十字キーで行を順に選ぶと、それぞれの説明が出ます。</li>
+</ul>
 <h2 id="4-3つのモード従う待て見張れ">4. 3つのモード：従う、待て、見張れ</h2>
 <p>犬は常にこの3つのどれかにいます。見張り、狩り、自動護衛はモードの上に重ねる設定です。</p>
 <h3 id="従う">従う</h3>
@@ -1115,7 +1149,8 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>追従中は、自動護衛がオンで、しかもゾンビがあなたか犬を狙っているか、あなたがすでに戦っている場合だけです。ゾンビはあなたから5マス以内にいる必要があります。</li>
 <li>見張り中は、持ち場から10マス以内なら常に戦います。</li>
-<li><strong><span class="ig">近くを攻撃</span></strong> の命令では、半径12マスから相手を探し、ゲーム内時間で2分間追いかけます。</li>
+<li><strong><span class="ig">近くを攻撃</span></strong> の命令では、半径12マスから相手を探し、ゲーム内時間で2分間追いかけます。命令1回につき相手は1体で、そのゾンビを倒すとまた付いてきます。</li>
+<li><strong><span class="ig">突進</span></strong> はグレート・デーンだけのもので、あなたの前にいるゾンビへ一直線に走り、進路上のゾンビをなぎ倒します。詳しくは<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</li>
 </ul>
 <p>攻撃するのは敵対的なゾンビだけです。他のMODの友好NPC（Bandits、A-Life）には手を出しません。</p>
 <h3 id="壁越しには噛みつかない">壁越しには噛みつかない</h3>
@@ -1158,7 +1193,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>体力が減るのは、放置（空腹か喉の渇きが0.8超）、有害な食べ物、狩りで鹿に反撃されたとき、そして健康の節にある症状です。放置と手当てされない感染が死につながるのは、サンドボックスで <strong><span class="ig">病気や放置による死亡</span></strong> をオンにしたときだけです。オフ（初期値）なら体力は10%で止まります。</li>
 <li>負傷の状態は、体力30%未満で <strong><span class="ig">負傷</span></strong>、10%未満で <strong><span class="ig">重傷</span></strong> です。重傷の犬はついてくるだけで戦いません。</li>
 <li>体力が10%以下になると、あなたの後ろに下がります。</li>
-<li>ストレスが高いとパニックに入り、戦わず、見張らず、芸もしません。呼べば走ってはきます。ストレスがしきい値をかなり下回るまでパニックは解けません。</li>
+<li>ストレスが高いとパニックに入り、戦いをやめてあなたのそばに戻り、戦わず、見張らず、芸もしません。呼べば走ってはきます。ストレスがしきい値をかなり下回るまでパニックは解けません。撫でるか食べ物を与えるとすぐに落ち着き、パニックの前に出した攻撃命令は取り消されます。</li>
 </ul>
 <h3 id="討伐数">討伐数</h3>
 <p>犬はそれぞれ自分の記録を持っていて、ウィンドウで見られます: <strong><span class="ig">討伐数：ゾンビ 14体、獲物 3匹</span></strong>。</p>
@@ -1170,7 +1205,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <ul>
 <li>1頭から3頭の群れが森に現れ、街には現れません。森の区画はそれぞれ一度だけ抽選され、プレイヤーが 24マス以内にいると群れは現れません。群れはあなたがまだ近づいていない区画に現れます。</li>
 <li>何もないとき、群れは生まれた場所のまわりをうろつきます。歩き、走り、座り、においを嗅ぎます。あなたを遠くまで追いかけたオオカミも、あとでそこへ戻ります。</li>
-<li><strong><span class="ig">オオカミの群れ：頻度</span></strong> で現れる数が増減し、0なら1つも現れません。群れのオオカミがすべて死ぬか保護されると、<strong><span class="ig">オオカミの群れ：再出現までの日数</span></strong>（標準でゲーム内30日、0なら二度と現れない）のあとで、その場所に新しい群れが現れます。</li>
+<li><strong><span class="ig">オオカミの群れ：出現頻度</span></strong> で現れる数が増減し、0なら1つも現れません。群れのオオカミがすべて死ぬか保護されると、<strong><span class="ig">オオカミの群れ：再出現までの日数</span></strong>（標準でゲーム内30日、0なら二度と現れない）のあとで、その場所に新しい群れが現れます。</li>
 <li>調べる画面ではオオカミは <strong><span class="ig">野生のオオカミ</span></strong> と表示され、<strong><span class="ig">敵対</span></strong> の印が付きます。食べ物は受け取らず、メニューには仲良くする選択肢も抱き上げる選択肢も出ません。</li>
 </ul>
 <h3 id="襲い方">襲い方</h3>
@@ -1189,23 +1224,23 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>群れの半分が倒されると、残りは逃げます。</p>
 <h3 id="どれだけ耐えるか">どれだけ耐えるか</h3>
 <p>オオカミは銃弾を数発しか耐えません。9mmピストルなら3発、.38リボルバーなら4発、.45、.357、ライフル、ショットガンなら2発です。近接戦では、武器のダメージとその武器でのあなたのレベルで決まります。重い武器なら数回で倒れ、軽いナイフだと何回もかかります。クリティカルは1.5倍です。</p>
-<p><strong><span class="ig">攻撃的な動物：打たれ強さ</span></strong> と <strong><span class="ig">攻撃的な動物：噛みつきのダメージ</span></strong> が、耐えられる攻撃の回数と噛みつきの痛さに倍率をかけます。</p>
+<p><strong><span class="ig">攻撃的な動物：耐久力</span></strong> と <strong><span class="ig">攻撃的な動物：噛みつきダメージ</span></strong> が、耐えられる攻撃の回数と噛みつきの痛さに倍率をかけます。</p>
 <h3 id="倒れたオオカミ手当て運ぶとどめ">倒れたオオカミ：手当て、運ぶ、とどめ</h3>
-<p>倒されたオオカミは、<strong><span class="ig">攻撃的な動物：生きて倒れる確率</span></strong>（標準で10%）で生きたまま倒れ、それ以外は死にます。倒れたオオカミは横たわってうめき、<strong><span class="ig">倒れている</span></strong> の印が付き、打撃も銃弾ももうダメージになりません。その場から動かず、あとから来た人も、セーブして読み込み直したあとでも、そこに横たわっているのを見つけます。</p>
+<p>倒されたオオカミは、<strong><span class="ig">攻撃的な動物：生きたまま倒れる確率</span></strong>（標準で10%）で生きたまま倒れ、それ以外は死にます。倒れたオオカミは横たわってうめき、<strong><span class="ig">ダウン</span></strong> の印が付き、打撃も銃弾ももうダメージになりません。その場から動かず、あとから来た人も、セーブして読み込み直したあとでも、そこに横たわっているのを見つけます。</p>
 <p>倒れたオオカミを右クリックします:</p>
 <ul>
 <li><strong><span class="ig">傷を治療する</span></strong>：包帯を選びます（滅菌したもの、普通のもの、汚れたもの）。すぐ隣にいる必要があります。</li>
 <li><strong><span class="ig">抱き上げる</span></strong>：倒れたオオカミを別の場所へ運んで手当てします。抱えているあいだも期限は進みます。</li>
 <li><strong><span class="ig">とどめを刺す</span></strong>：地面への一撃で殺します。手に持った武器によって、刺す、重い一撃、踏みつけのどれかになります。</li>
 </ul>
-<p>手当てしないと、<strong><span class="ig">攻撃的な動物：倒れてから死ぬまでの時間</span></strong>（標準でゲーム内6時間）で死にます。手当てすると <strong><span class="ig">回復中</span></strong> の印が付き、<strong><span class="ig">攻撃的な動物：回復時間</span></strong>（標準で12時間）のあとで起き上がります。滅菌した包帯なら9時間に縮まり、汚れた包帯なら15時間に延びます。</p>
+<p>手当てしないと、<strong><span class="ig">攻撃的な動物：ダウンから死亡までの時間</span></strong>（標準でゲーム内6時間）で死にます。手当てすると <strong><span class="ig">回復中</span></strong> の印が付き、<strong><span class="ig">攻撃的な動物：回復時間</span></strong>（標準で12時間）のあとで起き上がります。滅菌した包帯なら9時間に縮まり、汚れた包帯なら15時間に延びます。</p>
 <p>起き上がったオオカミは保護された状態です。もう誰も襲わず、信頼度がすでに40あります。そこからはほかの野良犬と同じように食べ物で手懐けられます。相棒としてのオオカミは<a href="breeds.html" class="xlink">犬種マニュアル</a>にあります。</p>
 <h3 id="あなたの犬とオオカミ">あなたの犬とオオカミ</h3>
 <ul>
 <li>犬はオオカミをゾンビと同じように扱います。自動護衛がオンなら、あなたを狙うオオカミに向かっていき、見張れでは自分の持ち場を守ります。</li>
 <li>犬に噛まれたオオカミは、犬に向かってくることがあります。オオカミの噛みつきは犬にストレスを与え、負傷させることもあり、体力を減らしますが、それだけで犬の体力が半分より下がることはありません。</li>
 <li>ゾンビを倒しきれないカラーメロは、オオカミも倒せません。オオカミを疲れさせて止まります。</li>
-<li>見張りはゾンビと同じようにオオカミも知らせ、専用の表示を使います: <em><span class="ig">遠くにオオカミ</span></em>、 <em><span class="ig">近くにオオカミ</span></em>、<em><span class="ig">オオカミがすぐそこに！</span></em>、<em><span class="ig">オオカミの群れ！</span></em>。</li>
+<li>見張りはゾンビと同じようにオオカミも知らせ、専用の表示を使います: <em><span class="ig">遠くにオオカミ</span></em>、 <em><span class="ig">近くにオオカミ</span></em>、<em><span class="ig">オオカミがすぐ近くに！</span></em>、<em><span class="ig">オオカミの群れ！</span></em>。</li>
 <li>家畜の世話をしている犬は、家畜をオオカミからも守ります: <em><span class="ig">カラーメロが囲いの近くにいるオオカミを察知しました！</span></em></li>
 </ul>
 <blockquote class="quote">ソロでは、時間の早送りはオオカミが近くにいても遅くならず、ゾンビのときだけ遅くなります。森に入るときは早送りを止めてください。</blockquote>
@@ -1812,6 +1847,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>摂食は腐っておらず空腹を満たせる食べ物なら何でも受け付けます。禁じられているのは有害な食べ物のリストだけです。<a href="#タンパク質犬は肉食">タンパク質なしの時間</a>には種類が効いてきます。消費されるのは必要な分だけです。</li>
 <li>水をやるには、水の入った容器がインベントリにあれば足ります（MODはバッグの中も探します）。</li>
 <li>撫でるのはゲーム内90分のクールダウンがあります。</li>
+<li>撫でるのは <strong>撫でる</strong> キー、犬のラジアル、ゲームの動物用ラジアル（コントローラーでは十字キーの上）からもできます。どれも同じで、しゃがんで撫で、忠誠度も上がります。</li>
 </ul>
 <h3 id="放置したときの階段">放置したときの階段</h3>
 <p>犬をほったらかしにすると、こうなります:</p>
@@ -1896,7 +1932,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>餌皿に入るのは食べ物か水のどちらかで、両方は入りません。入れ替えるときは <strong><span class="ig">ボウルを空にする</span></strong> を使います。</p>
 <p>モデルを見れば中身が分かります。空ならグレー、フードなら茶色、水なら青です。</p>
 <h3 id="餌皿に入れられるもの">餌皿に入れられるもの</h3>
-<p>腐っておらず空腹を満たせるものならほぼ何でも入ります。肉、缶詰、調理済みの料理、野菜、果物、卵、ドッグフード、それに草と干し草も入ります。</p>
+<p>腐っておらず空腹を満たせるものならほぼ何でも入ります。肉、缶詰、調理済みの料理、野菜、果物、卵、ドッグフード、それに草と干し草、動物用飼料の袋と草の袋も入ります。</p>
 <p>除かれるのは<a href="#体に悪い食べ物">体に悪い食べ物のリスト</a>で、メニューでは赤く表示されます。</p>
 <blockquote class="quote">未開封のドッグフードの缶はリストに出ません。先に缶を開けてください。</blockquote>
 <p>餌皿は100ポイントまで貯められます:</p>
@@ -1904,6 +1940,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <th>アイテム</th>
 <th>ポイント</th>
 </tr></thead><tbody>
+<tr>
+<td>動物用飼料の袋（満杯）</td>
+<td>100</td>
+</tr>
 <tr>
 <td>ドッグフードの袋</td>
 <td>60</td>
@@ -1920,13 +1960,19 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>草</td>
 <td>7</td>
 </tr>
+<tr>
+<td>草の袋（満杯）</td>
+<td>5</td>
+</tr>
 </tbody></table></div>
+<p>ゲームの2種類の袋は、残っている使用回数1回につき1ポイントです。袋は餌皿に入った分だけ減り、使い切ると空の袋になります。</p>
 <p>肉、魚、卵、ドッグフードを入れた分はタンパク質として記録され、犬がその部分を食べたときに、手渡しでやったのと同じように<a href="#タンパク質犬は肉食">タンパク質の時計</a>へ反映されます。野菜だけの餌皿は空腹を満たすだけで、それ以上のことはしません。</p>
 <p>入れるものが残り容量より大きい場合、餌皿は満杯まで入って残りが手元に戻ります。80ポイントの餌皿にドッグフードの袋を入れると、餌皿は100になり、袋は40ぶんの価値でインベントリへ戻ります。メッセージ <em><span class="ig">ボウルにはそれを全部入れる余裕がありません。</span></em> が出るのは、餌皿が完全に満杯のときだけです。</p>
 <h3 id="犬の使い方">犬の使い方</h3>
 <ul>
 <li>空腹か喉の渇きが0.5に達すると自分で向かいます（設定タブのスライダー <em><span class="ig">空腹／喉の渇きがこの値に達すると食べる</span></em> でキャラクターごとに調整できます）。</li>
 <li>半径16マスから餌皿を探します。MODの餌皿でも、ゲーム本体の飼い葉桶でも構いません。</li>
+<li>自分の階に餌皿がなければ、下の階と上の階を探し、階段で向かいます。餌皿の階にたどり着けないときは、30秒であきらめて探し直します。</li>
 <li>1回でゲージの半分が埋まります。食べているのはゲーム内で3分ほどです。</li>
 <li>餌皿へ向かっているあいだと食べているあいだは、ゾンビもほかの何もかも無視します。止められるのはあなたの命令だけです。空腹でパニックになっていた犬は、食べればパニックが解けます。</li>
 </ul>
@@ -2126,6 +2172,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <tr>
 <td><strong>ジャーマンシェパード、ボーダー・コリー、ロットワイラー、ドーベルマン、ラブラドール、マリノア</strong></td>
 <td>6～8</td>
+</tr>
+<tr>
+<td><strong>ハイイロオオカミ、グレート・デーン</strong></td>
+<td>8～10</td>
 </tr>
 <tr>
 <td><strong>ハスキー</strong></td>
@@ -2334,7 +2384,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>インターフェース：</strong>「ステータステキスト：オン／オフ」（犬の頭の上に浮かぶ通知）、「気分アイコン：オン／オフ」（犬のムードル）、「ペットの名前：オン／オフ」（犬の頭上の名前と、ほかの人の犬に出る「飼い主：〇〇」）。</li>
 <li><strong>サウンド：</strong>マスター音量、ミュート、そして<strong>鳴き声</strong>、<strong>効果音</strong>、<strong>環境音</strong>の個別スライダー。</li>
 <li><strong>自動給餌：</strong>「空腹／喉の渇きがこの値に達すると食べる」のスライダー。</li>
-<li><strong>キー割り当て：</strong>14個の操作を、<strong>再割り当て</strong>と<strong>クリア</strong>で設定します。</li>
+<li><strong>キー割り当て：</strong>16個の操作を、<strong>再割り当て</strong>と<strong>クリア</strong>で設定します。</li>
 </ul>
 <blockquote class="quote">吠え声がうるさいときは、<strong>鳴き声</strong>のスライダーを下げればそれだけが静かになります。仕組みは何も止まりません。</blockquote>
 <h2 id="20-画面に出るもの">20. 画面に出るもの</h2>
@@ -2422,10 +2472,10 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 </tbody></table></div>
 <blockquote class="quote">犬種のムードルにはすべて共通です。忠誠度が低い、病気、空腹や喉の渇きが高い、そのどれかの間はムードルが止まり、世話をし直すまで戻りません。</blockquote>
 <h3 id="頭の上のテキスト">頭の上のテキスト</h3>
-<p>犬は頭の上に状態の行を積み重ねて表示します。見えるのは14マスまでで、同じ階にいるときだけです。上から順に、見張りの警告、状態（<strong>怯えている</strong>、<strong>パニック状態</strong>、<strong>重傷</strong>、<strong>不服従</strong>、<strong>負傷</strong>、<strong>緊張している</strong>）、今していること（食事、狩り、においを嗅ぐ、家畜の世話）、妊娠、そして最後が必ず名前です。</p>
+<p>犬は頭の上に状態の行を積み重ねて表示します。見えるのは14マスまでで、同じ階にいるときだけです。上から順に、見張りの警告、状態（<strong>怯えている</strong>、<strong>パニック状態</strong>、<strong>重傷</strong>、<strong>不服従</strong>、<strong>負傷</strong>、<strong>緊張している</strong>）、今していること（食事、狩り、においを嗅ぐ、家畜の世話）、グレート・デーンの突進のクールダウン（<strong><span class="ig">突進まで12分</span></strong>）、妊娠、そして最後が必ず名前です。</p>
 <p>「設定」タブの<strong>「ステータステキスト：オフ」</strong>にすると、名前以外がすべて消えます。同じタブの<strong>「ペットの名前：オフ」</strong>にすると、名前と「飼い主：〇〇」だけが消えます。両方を切ると、何も描かれません。どちらも自分の画面にしか効きません。サンドボックスの<strong>「犬の名前タグを表示」</strong>はワールドのルールで、全員のぶんのタグをまるごと消します。</p>
 <p>ほかのプレイヤーの犬は、<strong>「飼い主：〇〇」</strong>と妊娠と名前だけが見えます。</p>
-<p>脅威がオオカミのときは、見張りの警告の「ゾンビ」がオオカミに変わります: <em>「遠くにオオカミ」</em>、<em>「近くにオオカミ」</em>、<em>「オオカミがすぐそこに！」</em>、<em>「オオカミの群れ！」</em>。<a href="#7-攻撃的な動物">攻撃的な動物</a>を参照してください。</p>
+<p>脅威がオオカミのときは、見張りの警告の「ゾンビ」がオオカミに変わります: <em>「遠くにオオカミ」</em>、<em>「近くにオオカミ」</em>、<em>「オオカミがすぐ近くに！」</em>、<em>「オオカミの群れ！」</em>。<a href="#7-攻撃的な動物">攻撃的な動物</a>を参照してください。</p>
 <h3 id="マップのマーカー">マップのマーカー</h3>
 <p>絆を結んだ犬は、ワールドマップにもミニマップにも肉球のマーカーが付きます。</p>
 <ul>
@@ -2580,12 +2630,12 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>大元のスイッチ。オフならオオカミはほかの野良犬と同じようにふるまい、新しい群れも現れません</td>
 </tr>
 <tr>
-<td>攻撃的な動物：生きて倒れる確率</td>
+<td>攻撃的な動物：生きたまま倒れる確率</td>
 <td>10</td>
 <td>パーセントです。それ以外では、倒されたオオカミは死にます</td>
 </tr>
 <tr>
-<td>攻撃的な動物：倒れてから死ぬまでの時間</td>
+<td>攻撃的な動物：ダウンから死亡までの時間</td>
 <td>6</td>
 <td>倒れたオオカミが包帯なしで持ちこたえるゲーム内の時間。1から72まで</td>
 </tr>
@@ -2595,17 +2645,17 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <td>手当てした倒れたオオカミが起き上がるまでの時間。滅菌した包帯なら4分の1短く、汚れた包帯なら4分の1長くなります。1から168まで</td>
 </tr>
 <tr>
-<td>攻撃的な動物：噛みつきのダメージ</td>
+<td>攻撃的な動物：噛みつきダメージ</td>
 <td>1.0</td>
 <td>噛みつきのダメージを0から5で増減します</td>
 </tr>
 <tr>
-<td>攻撃的な動物：打たれ強さ</td>
+<td>攻撃的な動物：耐久力</td>
 <td>1.0</td>
 <td>耐えられる攻撃の回数を0.1から10で増減します</td>
 </tr>
 <tr>
-<td>オオカミの群れ：頻度</td>
+<td>オオカミの群れ：出現頻度</td>
 <td>1.0</td>
 <td>森に現れる群れの数を0から10で増減します。0で無効</td>
 </tr>
@@ -2853,6 +2903,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p>ロットワイラー、ドーベルマン、ラブラドール、パグ（ほかのどれでも同じです）だけ購読を外して、基本modのまま遊び続けた場合も同じことが起きます。その犬種の犬がセーブに残っているからです。</p>
 <h3 id="もう動物が消えてしまったら">もう動物が消えてしまったら</h3>
 <p><strong>遊び続ける前、セーブする前に、いますぐmodを入れ直してください。</strong>動物はたいてい戻ってきます。ゲームが上書き保存してしまうと、そのファイルは失われ、バックアップもありません。</p>
+<p>元の状態に戻ったのが、家一軒のような一帯の家具や戦利品なら、原因は地面に残ったボウルです。この区画にはコピーがあります。ゲームは読めなかったファイルをセーブの <code>blam</code> フォルダに、 <code>_error.txt</code> と一緒に残しています。ゲームを閉じてmodを有効に戻し、セーブの <code>map</code> フォルダをバックアップしてから、<code>blam/&lt;x&gt;/&lt;y&gt;.bin</code> を <code>map/&lt;x&gt;/&lt;y&gt;.bin</code> に上書きコピーしてください。リセット後にその一帯で変えたことは失われます。</p>
 <h3 id="安全に外す手順">安全に外す手順</h3>
 <p>その1：アドオンはすべて有効なままにします。そのセーブで使ったことのある犬種アドオンが全部、そのセーブのmod一覧（<strong>「ロード」</strong> &gt; そのセーブ &gt; <strong>「MODの選択...」</strong>）でチェックされているか確認してください。アドオンを1つ切るだけで、上に書いた問題が起きます。</p>
 <p>その2：犬を手放します。安全なやり方は2つです。</p>
@@ -2861,8 +2912,9 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>インベントリに入れて持つ。ゲームはこのアイテムを飛ばせるので、消えるのは犬だけで残りは無事です。</li>
 </ul>
 <p>犬を野生に戻したり遠くへ連れて行ったりしても解決しません。犬の記録はセーブに残りますし、別の場所へ移すのは、どの地域が壊れるかを変えるだけです。</p>
-<p>その3：ゲームをセーブします。掃除を書き込むのはセーブです。</p>
-<p>その4：modを外します。</p>
+<p>その3：ボウルを回収します。地面に置いたままのmodのボウルも、mod抜きのセーブを壊します。ゲームはボウルがあるマップの区画を読めず、その区画を一から作り直すので、家具や戦利品は元の状態に戻り、あなたの建築物は消えます。ボウルはすべて地面から拾い、インベントリかコンテナ（戸棚、木箱、トランク）にしまってください。コンテナの中なら何も起きません。</p>
+<p>その4：ゲームをセーブします。掃除を書き込むのはセーブです。</p>
+<p>その5：modを外します。</p>
 <h3 id="まるごと掃除する管理者デバッグモード">まるごと掃除する（管理者／デバッグモード）</h3>
 <p>ここまでの手順はあなたの犬をカバーしますが、modはマップに野良犬も撒いていて、それを全部手で見つけることはできません。セーブ全体を一度に掃除するコマンドがあります。</p>
 <ol>
@@ -2870,7 +2922,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li>地面を右クリック → <strong>コンパニオンドッグ（デバッグ）</strong> → <strong>Tools</strong> → <strong>Delete ALL dogs (whole save)</strong>。</li>
 <li><code>sweep done</code>のメッセージを待ってからゲームをセーブします。</li>
 </ol>
-<p>このコマンドは読み込み済みの犬をその場で消し、残りのセーブは裏で掃除するので、プレイが止まることはありません。犬種の名前を挙げて拒否された場合は、そのアドオンをこのセーブで有効にしてからやり直してください。定義がないまま掃除すると、その地域の動物が消えます。</p>
+<p>このコマンドは読み込み済みの犬をその場で消し、残りのセーブは裏で掃除するので、プレイが止まることはありません。プレイヤーの近くで地面に置かれているボウルも回収し、その数をメッセージで知らせます。いま誰もいない場所に置いたボウルには届かないので、そこまで行って手で拾ってください。犬種の名前を挙げて拒否された場合は、そのアドオンをこのセーブで有効にしてからやり直してください。定義がないまま掃除すると、その地域の動物が消えます。</p>
 <h2 id="26-サーバーの詳細調整管理者">26. サーバーの詳細調整（管理者）</h2>
 <p>この節は、人も犬も多いサーバーを運営する人向けです。パネルの名前は<strong>「Server tuning / performance」</strong>で、上段がmodのサーバー負荷の生の計測、下段がその負荷を変える項目です。ゲームのルール（ダメージ、空腹、経験値、犬の上限）はここにはなく、23節のサンドボックスのオプションのままです。</p>
 <blockquote class="quote">パネルはゲームの言語に関係なく英語のままです。ラベルがコードに直書きだからです。以下の表では、画面に出るとおりの名前で書いています。</blockquote>

@@ -1253,6 +1253,7 @@ end)</code></pre>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
 <li>Pug: <code>pg</code>, <code>pv</code></li>
 <li>Malinois: <code>ml</code>, <code>mm</code>, <code>mh</code></li>
+<li>Great Dane: <code>gf</code>, <code>gd</code></li>
 <li>Cats: todo sufixo que começa com <code>ct</code>, <code>cv</code> ou <code>cs</code> (um conjunto por pelagem)</li>
 </ul>
 <h2 id="10-o-moodle-da-raça">10. O moodle da raça</h2>
@@ -1276,6 +1277,7 @@ end)</code></pre>
     end,
 }</code></pre>
 <p><code>condition</code> devolve o nível, ou 0 para "não aparece". <code>apply</code> recebe os game-minutes desde a última chamada, então multiplique o seu efeito por <code>elapsedMin</code>.</p>
+<p>Moodle que muda de estado em vez de sumir tem três campos opcionais. <code>tintFor(dog)</code> devolve a cor do fundo em r, g, b, e nil mantém <code>tintR</code>/<code>tintG</code>/<code>tintB</code>. <code>nameText(player)</code> e <code>descText(player)</code> devolvem o texto do balão, e nil mantém o texto de <code>nameKey</code> e <code>descKey</code>. O Dogue Alemão usa os três no moodle da Investida, que fica amarelo e mostra os minutos que faltam durante a recarga.</p>
 <p>Entregue o ícone em seis tamanhos, de 32 a 128 pixels. A interface escolhe o tamanho pela escala do jogador, e tamanho faltando aparece como um quadrado vazio. O ícone aparece na faixa do próprio mod, e não entre os moodles do vanilla.</p>
 <h2 id="11-hooks">11. Hooks</h2>
 <p>Duas listas de funções que o base chama no server. Acrescente nelas a partir de um arquivo shared.</p>
