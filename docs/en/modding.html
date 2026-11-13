@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#the-voice" data-id="the-voice">The voice</a>
 <a class="s3" href="#the-diet" data-id="the-diet">The diet</a>
 <a class="s3" href="#sex-at-birth" data-id="sex-at-birth">Sex at birth</a>
+<a class="s3" href="#hostile-breeds-aggression" data-id="hostile-breeds-aggression">Hostile breeds: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-where-the-animal-spawns" data-id="9-where-the-animal-spawns">9. Where the animal spawns</a>
 <div class="sub">
 <a class="s3" href="#the-building-classes" data-id="the-building-classes">The building classes</a>
+<a class="s3" href="#spawning-in-the-wild" data-id="spawning-in-the-wild">Spawning in the wild</a>
 <a class="s3" href="#suffixes-already-taken" data-id="suffixes-already-taken">Suffixes already taken</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-hooks" data-id="11-hooks">11. Hooks</a>
+<div class="sub">
+<a class="s3" href="#npc-mods" data-id="npc-mods">NPC mods</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-translation-keys" data-id="12-translation-keys">12. Translation keys</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>Two colours that behave the same are still two breeds to the base (two names, two entries in the kennel); you write them from one shared table, the way CD: Cats does with its five coats.</p>
 <h2 id="2-what-you-need-before-you-start">2. What you need before you start</h2>
-<p>Your animal needs its own skinned <code>.glb</code> under <code>media/models_X/Skinned/</code>, with the complete set of 21 <code>Rac_*</code> animation clips. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked for one of the other six. The model also has to stay under 60 bones and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear. Two more clips are optional, <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (limping walk cycles); they only matter if you set <code>limpAnim = true</code> in the breed definition.</p>
+<p>Your animal needs its own skinned <code>.glb</code> under <code>media/models_X/Skinned/</code>, with the complete set of 21 <code>Rac_*</code> animation clips. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked for one of the other six. The model also has to stay under 60 bones and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear. Two more clips are optional, <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (limping walk cycles); they only matter if you set <code>limpAnim = true</code> in the breed definition. A hostile breed has four more optional clips: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> and <code>Rac_DownedUp</code> for the animal lying defeated (<code>downedAnim = true</code>), and <code>Rac_Growl</code> for the threat pose (<code>growlAnim = true</code>).</p>
 <p>If you do not have a model yet, you can write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal looks like a Caramelo, but every system in this manual runs.</p>
 <p>You also need a texture for the body and a portrait for the kennel window.</p>
 <p>Decide whether your animal is a breed or a species before writing any code. A breed is a dog with different numbers. A species is an animal that lacks some of the jobs entirely. The choice changes which fields you write; section 6 covers it.</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>With the base missing or too old, the file returns on line two and the add-on does nothing: no breed, no spawn, no moodle, no log line.</p>
+<p>A hostile breed guards on 12. An older base ignores <code>aggression</code> and the animal comes out tame, which is safe, but the add-on then ships a wolf that never attacks.</p>
 <p>The guard is per file, and each file guards on what it uses. <code>PugDefinitions.lua</code> needs the model helpers, so it guards on those:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>Do not create the global. <code>CompanionDogs = CompanionDogs or {}</code> in an add-on turns a missing base into a half built table, and every guard downstream passes when it should not.</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true lets it knock a zombie over.</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true gives the breed the Charge order (API 13): on command it runs in a straight line at the zombie ahead of its owner and knocks down the zombies in its way, 2 at Combat 1 up to 10 at Combat 10. Costs stress and has a 30 game minute cooldown. Needs <code>canKnockdown</code>.</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>how much stress a fight costs it.</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true makes a wounded animal limp while walking. Only set it when your model has the two optional clips <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (1.0 s walk cycles with the same root motion as <code>Rac_Walk</code>). Without the clips the animal walks frozen in place.</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>off</td>
+<td><code>true</code> or a table: every ownerless adult of the breed that was never tamed attacks players (API 12). See "Hostile breeds" below.</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>true when your model has <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> and <code>Rac_DownedUp</code>. A defeated hostile animal then lies and breathes on those clips. Without it, it lies on <code>Rac_Dead</code>.</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>true when your model has the looped clip <code>Rac_Growl</code>. A hostile animal crouches on it while it growls. Without it, it growls standing.</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>That pair is the calico cat. The orange and black mosaic is carried on the X chromosome, so a calico is almost always female, and the male that does turn up is XXY, about one in three thousand, and cannot father a litter. A male of a <code>sterileMale</code> breed is never picked as a partner, and the option to breed disappears from its context menu. The females breed normally.</p>
 <p>A male of such a breed is tagged "Sterile" wherever the game shows its sex: the status panel, the context menu, the stray scan and the kennel, so the player knows why it does not breed.</p>
 <p>Both fields are read from the breed definition, so nothing is written on the animal and an existing save needs no migration. The same draw decides the sex of a puppy at birth, so a breed that is female in the world stays female in the litters.</p>
+<h3 id="hostile-breeds-aggression">Hostile breeds: <code>aggression</code></h3>
+<p>From API 12 a breed can be hostile. Every adult of the breed that has no owner and was never tamed growls at players and attacks them. A puppy never attacks, a companion never attacks, and an animal that was once tamed or was rescued stays calm. The player can turn the whole thing off with the sandbox option <strong>"Aggressive animals"</strong>, on by default; with it off the breed behaves like any stray.</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>That is the wolf. <code>aggression = true</code> takes every default below, a table changes only the fields it names, and leaving the field out or setting it to <code>false</code> keeps the breed tame.</p>
+<div class="tw"><table><thead><tr>
+<th>Field</th>
+<th>Default</th>
+<th>Range</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>, <code>medium</code>, <code>large</code></td>
+<td>bite reach (0.9, 1.1 or 1.25 tiles), base damage, and where it bites: small goes for feet and legs, medium and large also reach hands and arms</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 to 20</td>
+<td>tiles at which it notices a player. Crouching counts x0.6 and running x1.25. Without line of sight it only smells a player within 2.5 tiles</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 to 1</td>
+<td>chance that it growls a warning before attacking. A sleeping player always gets the warning, and wakes up</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 to 6000</td>
+<td>length of each warning growl, in milliseconds</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 to 20</td>
+<td>walking closer than this during the warning starts the attack. Never larger than <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 to 900</td>
+<td>length of the lunge. A blow or a shove during it interrupts the bite, and stepping back makes it miss</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>, <code>recoverMax</code></td>
+<td>900, 1600</td>
+<td>400 to 4000</td>
+<td>pause between a bite and the next lunge, drawn between the two</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 to 5</td>
+<td>multiplies the bite damage</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 to 1</td>
+<td>chance that a bite knocks the player down. Large size only</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 to 30</td>
+<td>how many blows it takes, see below</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 to 60</td>
+<td>tiles from where the chase started before it gives up</td>
+</tr>
+</tbody></table></div>
+<p>A hostile animal starts with 1 health, and each blow takes <code>blow / toughness</code> from it. A melee blow is worth the weapon's average damage divided by 1.6, 8% more or less for each Weapon level above or below 5, between 0.35 and 2.5. A firearm shot is worth its average damage divided by 0.4, up to 4, so a 9 mm pistol is 2 and rifles and shotguns hit the cap. Explosives are 4, and a critical hit multiplies the blow by 1.5. With the default <code>toughness</code> of 4, two pistol shots defeat it. The sandbox has a multiplier for the toughness and one for the bite damage, on top of yours.</p>
+<p>A defeated animal falls alive at the sandbox chance (10% by default) or dies. Fallen, it cannot be hurt any more. It bleeds out after a few hours unless a player bandages it, and once bandaged it gets up rescued: tame, trusting the player, and ready to be tamed with food like any stray. The player can also finish it from the context menu. The companions of every player treat a hostile animal as a threat, like a zombie: they fight it, and the sentinel barks at it.</p>
+<p>The growl is the <code>growl</code> key of your <code>voices</code>. Without one the animal growls like a dog.</p>
+<p>Set <code>canThump = false</code> on the three animal types, after the behaviour helper, as the wolf does. The engine has it on by default, and then an animal that was attacked, is very hungry or thirsty, or is under heavy stress bangs on doors and windows, and a very hungry or thirsty one paths through them, so a closed door may not end the chase.</p>
+<p>Every field is checked when the breed registers, and every problem prints a line in the log with your breed key. A value out of range falls back to the default, and a chance written as a percentage (<code>warnChance = 40</code>) gets a hint that 0.4 is meant. An unknown key is dropped and the line lists the valid ones. A value that is not <code>true</code>, <code>false</code> or a table leaves the breed tame.</p>
+<p>A base older than API 12 ignores the field, and the breed stays tame.</p>
 <h2 id="6-turning-a-whole-system-off">6. Turning a whole system off</h2>
 <p>The five skills are the five systems:</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>The match function receives the building definition and runs inside a protected call, so an error in it does not stop the chunk load. <code>skipUrbanGate</code> lets the class roll in a chunk that is not urban, which a farm or a forest cabin needs. Do not set <code>exclusive</code>. The base classes are exclusive among themselves, and an add-on class matches on top of them.</p>
+<h3 id="spawning-in-the-wild">Spawning in the wild</h3>
+<p>From API 12, a step with <code>zone</code> instead of <code>class</code> rolls once per chunk of the map, not per building. This is how the wolf is born in the forest:</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>Key</th>
+<th>What it is</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>a zone registered with <code>CD.registerSpawnZone</code>. The base registers <code>forest</code>.</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>, how many are born together. Default <code>{ 1, 1 }</code>.</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>optional function returning in-game days. Once every animal of the group is dead or rescued and that many days have passed, the spot can hold a new group. Without it, or with 0, it never does.</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>, <code>suffix</code>, <code>breed</code> and <code>gate</code> work as above; <code>indoor</code> does not apply. The animals are not born with a player within 24 tiles, and the chunk tries again on its next load. A group of a hostile breed roams around the spot where it was born and fights together: when one starts a chase, the others within 24 tiles join it, and once half of them are defeated the rest run away.</p>
+<p>Register your own zone with a function that receives a map square:</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>The base checks a handful of squares of the winning chunk, not all of them. A name that is already registered is ignored.</p>
 <h3 id="suffixes-already-taken">Suffixes already taken</h3>
 <p>The suffix is part of the key under which "this building was already rolled" is saved. Two mods using the same suffix corrupt each other's rolls.</p>
 <p>Every suffix starts with a vertical bar. These are already in use:</p>
 <ul>
-<li>Base: the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code></li>
+<li>Base: the empty suffix, and <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code>, <code>wf</code></li>
 <li>Rottweiler: <code>rw</code>, <code>r</code></li>
 <li>Doberman: <code>db</code>, <code>dm</code>, <code>dh</code></li>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> returns the level, or 0 for "not showing". <code>apply</code> receives the game minutes since the last call, so multiply your effect by <code>elapsedMin</code>.</p>
 <p>Ship the icon in six sizes, from 32 to 128 pixels. The interface picks the size by the player's scaling, and a missing size shows as an empty square. The icon appears in the mod's own strip, not among the vanilla moodles.</p>
 <h2 id="11-hooks">11. Hooks</h2>
-<p>Two lists of functions the base calls on the server. Append to them from a shared file. Each handler runs inside its own protected call, so an error in one add-on does not stop the base.</p>
+<p>Two lists of functions the base calls on the server. Append to them from a shared file.</p>
 <p><code>CD.onHuntDelivered</code>, from API 2, is called right after the animal drops a kill at its owner's feet:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>Upkeep recomputes and overwrites the value every cycle, so anything written from outside is lost on the next tick. Use the hook for a condition that comes from the environment, such as heat, cold or rain.</p>
 <p>In multiplayer, the client never writes mod data. A client side write overwrites the server's copy on the next sync, and the symptom shows up minutes later somewhere unrelated. Do the work in a server file, or in one of these hooks.</p>
 <p>The numbers in the <strong>SERVER TUNING</strong> panel are plain <code>CD.*</code> constants, and an add-on may assign one from a shared or server file at load. From API 9 the panel takes the value in effect when the server finishes loading as that knob's default: it stays until an admin types over it, the reset button returns to it, and the panel shows it as the default. On an older base the panel wrote the stock value back on every boot. Assign at load, not from a later event, or the next change to any knob puts the stock value back.</p>
+<h3 id="npc-mods">NPC mods</h3>
+<p>This part is for NPC mods, not for breed add-ons. Some NPC mods build their people on top of a zombie, so the dog sees a zombie and attacks it. From API 13 an NPC mod can tell the dog who is a friend, with the list <code>CompanionDogs.npcChecks</code>. Add a function to it from a shared file, so it exists on the server and on the client:</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>The function gets the zombie and the dog's owner, and returns one of three answers:</p>
+<ul>
+<li><code>true</code>: a friend. The dog leaves it alone.</li>
+<li><code>false</code>: hostile. The dog fights it like any zombie.</li>
+<li><code>nil</code>: not one of your NPCs. The dog goes on with its usual rules.</li>
+</ul>
+<p>The first answer that is not <code>nil</code> decides. The dog asks every time it picks a target or checks the one it already has, so this covers combat, the sentinel, the charge and the attack order.</p>
+<p>The first two lines create the list when your mod loads before Companion Dogs. Without Companion Dogs installed, nobody reads the list and nothing breaks, so there is no version guard.</p>
+<p><code>owner</code> is <code>nil</code> when the owner is offline. Decide what your NPCs are to a dog with no owner around. On the client, <code>owner</code> is the local player.</p>
+<p>The function runs for every zombie near a dog, several times a second. Keep it cheap. Test a variable or a field of your own first, and call <code>getModData()</code> only after that: it creates a table on every zombie it touches.</p>
+<p>On a dedicated server the engine ignores <code>setVariable</code> on a zombie, so a variable your mod sets is not there on the server. If your mod runs on servers, recognize your NPC by something the server holds, like mod data written on the server or a table of your own keyed by the zombie.</p>
+<p>If you only need the dog to leave all your NPCs alone, and only in single player, there is a way with no code: set <code>NoZombieHandling</code> to true on the body with <code>setVariable</code>. Other mods read the same variable. It has the server limit above, and the dog also ignores your hostile NPCs.</p>
 <h2 id="12-translation-keys">12. Translation keys</h2>
 <p>Ship one <code>IG_UI.json</code> per language folder, under <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. The base ships fourteen: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>The keys a breed needs:</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>A hostile breed of a new species can also ship the threat texts for it. The sentinel's tag over the dog, the group warning and the livestock keeper's warning look for a key ending in your species, and fall back to the generic hostile animal text:</p>
+<div class="tw"><table><thead><tr>
+<th>Key</th>
+<th>Where it shows</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>tag over the dog, several of them near</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>tag over the dog, one close</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>tag over the dog, one nearby</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>tag over the dog, one far off</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>the message when the dog barks at a group</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>the livestock keeper's message</td>
+</tr>
+</tbody></table></div>
+<p>In the two messages <code>%1</code> is the dog, its breed followed by its name. The base ships the keys for <code>wolf</code>, and the generic ones end in <code>_hostile</code>.</p>
 <p>A literal percent sign in a translated string crashes the screen that shows it, because the formatter reads it as a placeholder. A language file with a byte order mark does not compile, and the error names a different file than the broken one.</p>
 <h2 id="13-what-the-save-remembers">13. What the save remembers</h2>
 <p>Three of your identifiers are written into save files and read back forever:</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>The moodle icon exists in all six sizes.</li>
 <li>Every language folder you ship has every key. A missing key shows the raw key on screen.</li>
 <li>You tested in multiplayer, not only in single player. Position, ownership and mod data all behave differently there.</li>
+<li>A hostile breed was tested with <strong>"Aggressive animals"</strong> on and off, and one animal was defeated, bandaged and seen getting up.</li>
 <li>Your Workshop page warns against removing the add-on from a save with living animals.</li>
 </ul>
 <h2 id="15-common-mistakes">15. Common mistakes</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"It works in single player and misbehaves on a server."</strong></td>
 <td>Something writes mod data on the client. Move it to the server.</td>
+</tr>
+<tr>
+<td><strong>"My <code>warnChance</code> is ignored."</strong></td>
+<td>It was written as a percentage. <code>40</code> is out of range and falls back to the default of 0.6; 40% is <code>0.4</code>. The log line says so.</td>
+</tr>
+<tr>
+<td><strong>"The defeated animal lies like a corpse."</strong></td>
+<td><code>downedAnim</code> is off, so it lies on <code>Rac_Dead</code>. Set it only when the model has the three downed clips.</td>
 </tr>
 <tr>
 <td><strong>"It fought a zombie even though I turned combat off."</strong></td>

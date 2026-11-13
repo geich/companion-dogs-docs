@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#聲音" data-id="聲音">聲音</a>
 <a class="s3" href="#飲食" data-id="飲食">飲食</a>
 <a class="s3" href="#出生時的性別" data-id="出生時的性別">出生時的性別</a>
+<a class="s3" href="#敵對品種aggression" data-id="敵對品種aggression">敵對品種：aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-這隻動物會在哪裡出現" data-id="9-這隻動物會在哪裡出現">9. 這隻動物會在哪裡出現</a>
 <div class="sub">
 <a class="s3" href="#建築類別" data-id="建築類別">建築類別</a>
+<a class="s3" href="#在野外生成" data-id="在野外生成">在野外生成</a>
 <a class="s3" href="#已經被佔用的後綴" data-id="已經被佔用的後綴">已經被佔用的後綴</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-掛鉤" data-id="11-掛鉤">11. 掛鉤</a>
+<div class="sub">
+<a class="s3" href="#npc-模組" data-id="npc-模組">NPC 模組</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-翻譯鍵" data-id="12-翻譯鍵">12. 翻譯鍵</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>兩種行為完全相同的毛色，對基礎版來說仍然是兩個品種（兩個名字，犬舍裡兩個條目）；你從同一張共用的表把它們寫出來，就像 CD: Cats 對它的五種毛色做的那樣。</p>
 <h2 id="2-動手之前要準備什麼">2. 動手之前要準備什麼</h2>
-<p>你的動物需要自己的 skinned <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下，並且要有完整的 21 個 <code>Rac_*</code> 動畫片段。片段不會在模型檔案之間繼承：只有十五個片段的模型，會在第一次被要求做另外六個之一的時候當場凍住。模型還必須維持在 60 根骨頭以內，而且頂層節點要在單位變換上，否則引擎每一幀都拋一次例外，動物會被畫成一團黑影。另外還有兩個選用片段， <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（跛行的走路循環）；只有你在品種定義裡設了 <code>limpAnim = true</code> 它們才有意義。</p>
+<p>你的動物需要自己的 skinned <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下，並且要有完整的 21 個 <code>Rac_*</code> 動畫片段。片段不會在模型檔案之間繼承：只有十五個片段的模型，會在第一次被要求做另外六個之一的時候當場凍住。模型還必須維持在 60 根骨頭以內，而且頂層節點要在單位變換上，否則引擎每一幀都拋一次例外，動物會被畫成一團黑影。另外還有兩個選用片段， <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（跛行的走路循環）；只有你在品種定義裡設了 <code>limpAnim = true</code> 它們才有意義。敵對品種還有四個選用片段： <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 用於被擊敗後躺著的動物（<code>downedAnim = true</code>）， <code>Rac_Growl</code> 用於威脅姿勢（<code>growlAnim = true</code>）。</p>
 <p>如果你還沒有模型，可以把 <code>CD.applyDogModel</code> 指向基礎版的某一具身體，其他所有東西照樣寫得出來也測得了。動物看起來像小卡犬，但這本手冊裡的每一套系統都在跑。</p>
 <p>你還需要身體的貼圖，以及犬舍視窗用的肖像。</p>
 <p>動手寫程式之前先決定：你的動物是一個品種還是一個物種。品種是數字不一樣的狗。物種是完全缺少某些工作的動物。這個選擇改變你要寫哪些欄位；第 6 節講這件事。</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>基礎版不存在或者太舊時，檔案在第二行就 return，附加模組什麼都不做：沒有品種、沒有生成、沒有 moodle、也沒有日誌。</p>
+<p>敵對品種守衛在 12 上。更舊的基礎版會忽略 <code>aggression</code>，動物生出來是溫順的，這是安全的，但這樣附加模組發佈出去的就是一隻永遠不攻擊的狼。</p>
 <p>守衛是逐檔案的，每個檔案守衛它自己用到的東西。<code>PugDefinitions.lua</code> 需要模型輔助函式，所以它守衛那些：</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>不要去建立那個全域變數。在附加模組裡寫 <code>CompanionDogs = CompanionDogs or {}</code> 會把「基礎版不存在」變成一張半成品的表，於是下游每一道守衛都會在不該通過的時候通過。</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true 讓牠能撞倒殭屍。</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true 讓這個品種有衝鋒命令（API 13）：下令時，牠會直線衝向主人前方的殭屍，撞倒路上的殭屍，戰鬥 1 級時 2 隻，到戰鬥 10 級時 10 隻。會消耗壓力，冷卻時間 30 遊戲分鐘。需要 <code>canKnockdown</code>。</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>一場架讓牠付出多少壓力。</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true 讓受傷的動物走路時跛行。只有你的模型有那兩個選用片段 <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（1.0 秒的走路循環，root motion 和 <code>Rac_Walk</code> 相同）時才設。沒有那兩個片段，動物會原地凍住地走。</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>關</td>
+<td><code>true</code> 或一張表：這個品種每一隻沒有主人、從沒被馴服過的成年動物都會攻擊玩家（API 12）。見下面的「敵對品種」。</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>你的模型有 <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 時設為 true。被擊敗的敵對動物就會用這些片段躺著呼吸。不設的話，牠躺在 <code>Rac_Dead</code> 上。</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>你的模型有循環片段 <code>Rac_Growl</code> 時設為 true。敵對動物低吼時會用它伏低身子。不設的話，牠站著低吼。</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>這一對就是三花貓。橘色和黑色的花紋掛在 X 染色體上，所以三花幾乎都是母的，偶爾出現的公是 XXY，大約三千隻裡一隻，也生不出小貓。<code>sterileMale</code> 品種的公永遠不會被選為配偶，右鍵選單裡的配種選項也會消失。母的照常配種。</p>
 <p>這種品種的公在遊戲顯示性別的地方都會帶上「不育」：狀態面板、右鍵選單、流浪動物掃描和狗舍，玩家就知道牠為什麼不配種。</p>
 <p>兩個欄位都從品種定義裡讀，動物身上不寫任何東西，舊存檔也不用遷移。同一次抽籤也決定幼崽出生時的性別，所以在世界裡是母的品種，在窩裡也還是母的。</p>
+<h3 id="敵對品種aggression">敵對品種：<code>aggression</code></h3>
+<p>從 API 12 起，品種可以是敵對的。這個品種每一隻沒有主人、從沒被馴服過的成年動物，都會對玩家低吼並攻擊他們。幼崽永遠不攻擊，同伴永遠不攻擊，曾經被馴服過或被救下的動物會保持平靜。玩家可以用沙盒選項<strong>「攻擊性動物」</strong>把整件事關掉，預設開啟；關掉時這個品種的行為就和任何流浪動物一樣。</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>這就是狼。<code>aggression = true</code> 採用下面所有的預設值，一張表只改它寫到的欄位，不寫這個欄位或設為 <code>false</code> 則讓品種保持溫順。</p>
+<div class="tw"><table><thead><tr>
+<th>欄位</th>
+<th>預設</th>
+<th>範圍</th>
+<th>有什麼用</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>、<code>medium</code>、<code>large</code></td>
+<td>咬擊距離（0.9、1.1 或 1.25 格）、基礎傷害，以及咬哪裡：small 咬腳和腿，medium 和 large 還咬得到手和手臂</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 到 20</td>
+<td>牠在幾格內注意到玩家。蹲著算 x0.6，跑步算 x1.25。沒有視線時，牠只聞得到 2.5 格內的玩家</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 到 1</td>
+<td>攻擊之前先低吼警告的機率。睡覺的玩家一定會收到警告，並且醒來</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 到 6000</td>
+<td>每次警告低吼的長度，以毫秒計</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 到 20</td>
+<td>警告期間走到比這更近的地方就會開始攻擊。永遠不大於 <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 到 900</td>
+<td>撲擊的長度。這段時間裡打一下或推一下會打斷咬擊，後退則讓牠咬空</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>、<code>recoverMax</code></td>
+<td>900、1600</td>
+<td>400 到 4000</td>
+<td>一次咬擊和下一次撲擊之間的停頓，在兩者之間抽取</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 到 5</td>
+<td>咬擊傷害的倍率</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 到 1</td>
+<td>一次咬擊把玩家撲倒的機率。只有 large 體型</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 到 30</td>
+<td>牠能挨多少下，見下文</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 到 60</td>
+<td>離追擊起點多少格時放棄</td>
+</tr>
+</tbody></table></div>
+<p>敵對動物一開始有 1 點生命，每一下扣掉 <code>blow / toughness</code>。近戰一下的值是武器的平均傷害除以 1.6，武器等級每高於 5 一級多 8%、每低於 5 一級少 8%，介於 0.35 和 2.5 之間。槍械一發的值是平均傷害除以 0.4，最多 4，所以 9 mm 手槍是 2，步槍和霰彈槍會碰到上限。爆炸物是 4，暴擊把這一下乘以 1.5。用預設的 <code>toughness</code> 4，兩發手槍就能擊敗牠。沙盒在你的數值之上還有一個耐打程度倍率和一個咬傷傷害倍率。</p>
+<p>被擊敗的動物按沙盒機率（預設 10%）倒地存活，否則死亡。倒地後牠不會再受傷。除非玩家幫牠包紮，牠會在幾個小時後失血而死；包紮後牠會被救下並站起來：溫順、信任那位玩家，可以像任何流浪動物一樣用食物馴服。玩家也可以從右鍵選單了結牠。每個玩家的同伴都把敵對動物當作威脅，就像對殭屍一樣：牠們會和牠打，哨兵也會對牠吠叫。</p>
+<p>低吼聲是你 <code>voices</code> 裡的 <code>growl</code> 鍵。沒有的話，動物會像狗一樣低吼。</p>
+<p>像狼一樣，在三個動物類型上、行為輔助函式之後設定 <code>canThump = false</code>。引擎預設開著它，這時被攻擊過、非常餓或非常渴、或壓力很大的動物會撞門和窗，非常餓或非常渴的動物還會規劃穿過門窗的路徑，所以關上的門不一定能結束追擊。</p>
+<p>每個欄位都會在品種註冊時檢查，每個問題都會在日誌裡印一行帶著你品種鍵的記錄。超出範圍的值會退回預設值，寫成百分比的機率（<code>warnChance = 40</code>）會得到一個提示，說明要寫的是 0.4。不認識的鍵會被丟掉，那一行會列出有效的鍵。不是 <code>true</code>、<code>false</code> 或表的值會讓品種保持溫順。</p>
+<p>比 API 12 更舊的基礎版會忽略這個欄位，品種保持溫順。</p>
 <h2 id="6-整套關掉一個系統">6. 整套關掉一個系統</h2>
 <p>五項技能就是五套系統：</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>匹配函式收到建築定義，並且執行在一次保護呼叫裡，所以它裡面出錯不會中斷區塊載入。 <code>skipUrbanGate</code> 讓這個類別可以在非市區的區塊裡抽取，農場或者林中小屋需要這一點。不要設 <code>exclusive</code>。基礎類別彼此互斥，擴充模組的類別是疊在它們之上匹配的。</p>
+<h3 id="在野外生成">在野外生成</h3>
+<p>從 API 12 起，用 <code>zone</code> 取代 <code>class</code> 的步驟，是按地圖區塊抽一次，而不是按建築。狼就是這樣出生在森林裡的：</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>鍵</th>
+<th>是什麼</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>用 <code>CD.registerSpawnZone</code> 註冊的區域。基礎版註冊了 <code>forest</code>。</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>，一起出生幾隻。預設 <code>{ 1, 1 }</code>。</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>選用函式，回傳遊戲天數。一旦這一群動物全部死亡或被救下，而且過了這麼多天，那個地點就能容納新的一群。不設或設為 0，就永遠不會。</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>、<code>suffix</code>、<code>breed</code> 和 <code>gate</code> 的作用和上面一樣；<code>indoor</code> 不適用。玩家在 24 格以內時動物不會出生，那個區塊會在下一次載入時再試一次。敵對品種的一群會在出生地附近遊蕩並一起戰鬥：一隻開始追擊時，24 格內的其他動物會加入，一半被擊敗之後其餘的會逃跑。</p>
+<p>用一個接收地圖格子的函式註冊你自己的區域：</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>基礎版只檢查勝出區塊裡的少數幾個格子，不是全部。已經註冊過的名字會被忽略。</p>
 <h3 id="已經被佔用的後綴">已經被佔用的後綴</h3>
 <p>後綴是「這棟建築已經抽過了」這筆記錄的鍵的一部分。兩個模組用同一個後綴會互相破壞對方的抽取結果。</p>
 <p>每個後綴都以一條直線開頭。已經在用的有：</p>
 <ul>
-<li>基礎版：空後綴，還有 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code></li>
+<li>基礎版：空後綴，還有 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code>、<code>wf</code></li>
 <li>羅威納犬：<code>rw</code>、<code>r</code></li>
 <li>杜賓犬：<code>db</code>、<code>dm</code>、<code>dh</code></li>
 <li>拉布拉多：<code>lb</code>、<code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> 回傳等級，0 表示「不顯示」。<code>apply</code> 收到距離上次呼叫過去的遊戲分鐘數，所以要把你的效果乘上 <code>elapsedMin</code>。</p>
 <p>圖示要提供六種尺寸，從 32 到 128 像素。介面按玩家的縮放挑尺寸，缺一個尺寸就會顯示成一個空方塊。圖示出現在模組自己那一條裡，不和原版 moodle 混在一起。</p>
 <h2 id="11-掛鉤">11. 掛鉤</h2>
-<p>兩個函式清單，基礎版在伺服器上呼叫它們。從一個 shared 檔案往裡追加。每個處理函式都跑在自己的保護呼叫裡，所以一個擴充模組出錯不會中斷基礎版。</p>
+<p>兩個函式清單，基礎版在伺服器上呼叫它們。從一個 shared 檔案往裡追加。</p>
 <p><code>CD.onHuntDelivered</code> 從 API 2 開始有，在動物把獵物放到主人腳邊之後立刻被呼叫：</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>照料週期每一輪都會重算並覆寫這個值，所以從外面寫進去的東西下一個 tick 就沒了。掛鉤適合用在來自環境的條件上，比如炎熱、寒冷或者下雨。</p>
 <p>在多人模式裡，客戶端永遠不寫 mod data。客戶端這邊的一次寫入會在下一次同步時覆寫伺服器的副本，而症狀要過幾分鐘才在一個不相干的地方冒出來。請在伺服器檔案裡做這件事，或者用這些掛鉤。</p>
 <p><strong>SERVER TUNING</strong>面板裡的數字都是普通的 <code>CD.*</code> 常數，附加模組可以在載入時從 shared 或伺服器檔案裡給其中一個賦值。從 API 9 起，面板把伺服器載入完成那一刻生效的值當作那個旋鈕的預設值：它一直保持到管理員手動改寫，重設按鈕回到它，面板也把它顯示為預設值。在更舊的基礎模組上，面板每次啟動都會把出廠值寫回去。要在載入時賦值，不要在之後的事件裡賦，否則下一次改動任何旋鈕都會把出廠值放回來。</p>
+<h3 id="npc-模組">NPC 模組</h3>
+<p>這部分是給 NPC 模組看的，不是給品種附加模組。有些 NPC 模組把他們的人物建立在殭屍之上，所以狗看到的是殭屍，就會攻擊。從 API 13 起，NPC 模組可以用清單 <code>CompanionDogs.npcChecks</code> 告訴狗誰是朋友。從一個 shared 檔案往裡加一個函式，這樣它在伺服器和客戶端都存在：</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>這個函式收到殭屍和狗的主人，回傳三種答案之一：</p>
+<ul>
+<li><code>true</code>：朋友。狗不去碰它。</li>
+<li><code>false</code>：敵對。狗像對任何殭屍一樣和它打。</li>
+<li><code>nil</code>：不是你的 NPC。狗照牠平常的規則走。</li>
+</ul>
+<p>第一個不是 <code>nil</code> 的答案說了算。狗每次挑選目標或檢查已有的目標時都會問，所以這涵蓋了戰鬥、哨兵、衝鋒和攻擊命令。</p>
+<p>前兩行是為了在你的模組比 Companion Dogs 先載入時建立這份清單。沒裝 Companion Dogs 的話，沒有人讀這份清單，什麼也不會壞，所以不需要版本守衛。</p>
+<p>主人離線時 <code>owner</code> 是 <code>nil</code>。你要決定你的 NPC 對一隻主人不在身邊的狗來說算什麼。在客戶端，<code>owner</code> 是本地玩家。</p>
+<p>這個函式會對狗附近的每一隻殭屍執行，一秒好幾次。讓它保持便宜。先檢查一個變數或你自己的欄位，之後才呼叫 <code>getModData()</code>：它會在碰到的每一隻殭屍上建立一張表。</p>
+<p>在專用伺服器上，引擎會忽略對殭屍的 <code>setVariable</code>，所以你的模組設的變數在伺服器上不存在。如果你的模組在伺服器上跑，就用伺服器持有的東西來辨認你的 NPC，比如在伺服器上寫入的 mod data，或是你自己以殭屍為鍵的表。</p>
+<p>如果你只需要狗放過你所有的 NPC，而且只在單人遊戲裡，有一個不用寫程式的辦法：用 <code>setVariable</code> 把身體上的 <code>NoZombieHandling</code> 設為 true。其他模組也讀同一個變數。它有上面說的伺服器限制，而且狗也會無視你的敵對 NPC。</p>
 <h2 id="12-翻譯鍵">12. 翻譯鍵</h2>
 <p>每個語言資料夾放一個 <code>IG_UI.json</code>，位置在 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。基礎版帶了十四種：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
 <p>一個品種需要的鍵：</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>新物種的敵對品種也可以為牠附帶威脅文字。狗頭頂的哨兵標籤、群體警告和看管牲畜的警告會去找以你的物種結尾的鍵，找不到就退回通用的敵對動物文字：</p>
+<div class="tw"><table><thead><tr>
+<th>鍵</th>
+<th>顯示在哪裡</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>狗頭頂的標籤，附近有好幾隻</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>狗頭頂的標籤，有一隻很近</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>狗頭頂的標籤，有一隻在附近</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>狗頭頂的標籤，有一隻在遠處</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>狗對著一群吠叫時的訊息</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>看管牲畜的狗的訊息</td>
+</tr>
+</tbody></table></div>
+<p>在這兩則訊息裡，<code>%1</code> 是狗：品種後面接名字。基礎版附帶了 <code>wolf</code> 的鍵，通用的鍵以 <code>_hostile</code> 結尾。</p>
 <p>翻譯字串裡的裸百分號會讓顯示它的那個畫面崩潰，因為格式化器把它當成佔位符讀。帶位元組順序記號的語言檔案無法編譯，而且報錯指的是另一個檔案，不是壞掉的那個。</p>
 <h2 id="13-存檔記住的東西">13. 存檔記住的東西</h2>
 <p>你的三個識別碼會被寫進存檔檔案，並且永遠被讀回來：</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>moodle 圖示六種尺寸都在。</li>
 <li>你提供的每一個語言資料夾都有每一個鍵。缺一個鍵，畫面上就會顯示原始鍵名。</li>
 <li>你在多人模式裡測過，不只是單人。位置、歸屬和 mod data 在那邊的表現都不一樣。</li>
+<li>敵對品種在<strong>「攻擊性動物」</strong>開啟和關閉時都測過，而且擊敗過一隻、包紮過，並親眼看到牠站起來。</li>
 <li>你的 Workshop 頁面警告了不要從還有活體動物的存檔裡移除擴充模組。</li>
 </ul>
 <h2 id="15-常見錯誤">15. 常見錯誤</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"單人能用，上伺服器就出毛病。"</strong></td>
 <td>有東西在客戶端寫 ModData。把它挪到伺服器端。</td>
+</tr>
+<tr>
+<td><strong>"我的 <code>warnChance</code> 被忽略了。"</strong></td>
+<td>它寫成了百分比。<code>40</code> 超出範圍，會退回預設值 0.6；40% 是 <code>0.4</code>。日誌那一行會說明。</td>
+</tr>
+<tr>
+<td><strong>"被擊敗的動物躺得像一具屍體。"</strong></td>
+<td><code>downedAnim</code> 沒開，所以牠用 <code>Rac_Dead</code> 躺著。只有模型帶齊三個倒地片段時才打開。</td>
 </tr>
 <tr>
 <td><strong>"我明明關掉了戰鬥，牠還是和殭屍打起來。"</strong></td>

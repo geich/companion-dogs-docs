@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#声音" data-id="声音">声音</a>
 <a class="s3" href="#食性" data-id="食性">食性</a>
 <a class="s3" href="#出生时的性别" data-id="出生时的性别">出生时的性别</a>
+<a class="s3" href="#敌对品种aggression" data-id="敌对品种aggression">敌对品种：aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-这只动物在哪里出现" data-id="9-这只动物在哪里出现">9. 这只动物在哪里出现</a>
 <div class="sub">
 <a class="s3" href="#建筑类别" data-id="建筑类别">建筑类别</a>
+<a class="s3" href="#在野外生成" data-id="在野外生成">在野外生成</a>
 <a class="s3" href="#已经被占用的后缀" data-id="已经被占用的后缀">已经被占用的后缀</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-钩子" data-id="11-钩子">11. 钩子</a>
+<div class="sub">
+<a class="s3" href="#npc-模组" data-id="npc-模组">NPC 模组</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-翻译键" data-id="12-翻译键">12. 翻译键</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>两种表现相同的颜色，对基础模组来说仍然是两个品种（两个名字，狗舍里两条记录）；你从一张共享的表里把它们写出来，就像 CD: Cats 用它的五种毛色那样。</p>
 <h2 id="2-动手之前需要准备什么">2. 动手之前需要准备什么</h2>
-<p>你的动物需要自己的蒙皮 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 下，带完整的 21 个 <code>Rac_*</code> 动画片段。片段不会在模型文件之间继承：只有十五个片段的模型，第一次被要求播放另外六个中的某一个时就会僵住。模型还得控制在 60 根骨头以内，顶层节点为单位矩阵，否则引擎每帧抛一次异常，动物渲染成一团黑影。另有两个可选片段，<code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（瘸腿的行走循环）；只有在品种定义里设了 <code>limpAnim = true</code> 时它们才有用。</p>
+<p>你的动物需要自己的蒙皮 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 下，带完整的 21 个 <code>Rac_*</code> 动画片段。片段不会在模型文件之间继承：只有十五个片段的模型，第一次被要求播放另外六个中的某一个时就会僵住。模型还得控制在 60 根骨头以内，顶层节点为单位矩阵，否则引擎每帧抛一次异常，动物渲染成一团黑影。另有两个可选片段，<code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（瘸腿的行走循环）；只有在品种定义里设了 <code>limpAnim = true</code> 时它们才有用。敌对品种还有四个可选片段：<code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 用于被击败后躺在地上的动物（<code>downedAnim = true</code>），<code>Rac_Growl</code> 用于威胁姿势（<code>growlAnim = true</code>）。</p>
 <p>如果你还没有模型，可以把 <code>CD.applyDogModel</code> 指向基础模组的某个身体，先把其余部分都写出来并测试。动物长得像小卡犬，但本手册里的每个系统都能跑。</p>
 <p>你还需要一张身体贴图，和一张给狗舍窗口用的肖像。</p>
 <p>写任何代码之前，先决定你的动物是一个品种还是一个物种。品种是数值不同的狗。物种是整块缺少某些职能的动物。这个选择会改变你要写哪些字段；第 6 节讲它。</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>基础模组不在或者太旧时，文件在第二行就返回，附加模组什么都不做：没有品种，没有刷新，没有 moodle，日志里也没有一行。</p>
+<p>敌对品种要守卫到 12。更旧的基础模组会忽略 <code>aggression</code>，动物出来是温顺的，这不会出问题，但你的附加模组发布出去的就是一只从不攻击的狼。</p>
 <p>守卫是按文件写的，每个文件守卫自己用到的东西。<code>PugDefinitions.lua</code> 需要模型辅助函数，于是它守卫这些：</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>不要去创建那个全局变量。在附加模组里写 <code>CompanionDogs = CompanionDogs or {}</code>，会把缺失的基础模组变成一张只搭了一半的表，后面每一道守卫都会在本不该通过的时候通过。</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true 让它能把丧尸撞倒。</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true 给这个品种冲锋命令（API 13）：一声令下，它会沿直线冲向主人前方的丧尸，把路上的丧尸撞倒，战斗 1 级时 2 只，战斗 10 级时最多 10 只。会消耗压力，冷却 30 游戏分钟。需要 <code>canKnockdown</code>。</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>一场战斗要它付出多少压力。</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true 让受伤的动物走路时一瘸一拐。只有你的模型带那两个可选片段 <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（1.0 秒的行走循环，根运动和 <code>Rac_Walk</code> 相同）时才设它。没有这两个片段，动物会原地僵着走。</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>关</td>
+<td><code>true</code> 或一张表：这个品种每一只没有主人、从未被驯服过的成年个体都会攻击玩家（API 12）。见下面的“敌对品种”。</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>你的模型带 <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 时设为 true。被击败的敌对动物就会用这些片段躺着喘气。不设的话，它用 <code>Rac_Dead</code> 躺着。</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>你的模型带循环片段 <code>Rac_Growl</code> 时设为 true。敌对动物低吼时会用它伏低身子。不设的话，它站着低吼。</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>这一对就是三花猫。橘色和黑色的花纹挂在 X 染色体上，所以三花几乎都是母的，偶尔出现的公是 XXY，大约三千只里一只，也生不出崽。<code>sterileMale</code> 品种的公永远不会被选为配偶，右键菜单里的繁殖选项也会消失。母的照常繁殖。</p>
 <p>这种品种的公在游戏显示性别的地方都会带上“不育”：状态面板、右键菜单、流浪动物扫描和狗舍，玩家就知道它为什么不繁殖。</p>
 <p>两个字段都从品种定义里读，动物身上不写任何东西，老存档也不用迁移。同一次抽签还决定幼崽出生时的性别，所以在世界里是母的品种，在窝里也还是母的。</p>
+<h3 id="敌对品种aggression">敌对品种：<code>aggression</code></h3>
+<p>从 API 12 起，品种可以是敌对的。这个品种每一只没有主人、从未被驯服过的成年个体都会对玩家低吼并发起攻击。幼崽从不攻击，同伴从不攻击，曾经被驯服过或被救下的动物也保持平静。玩家可以用沙盒选项 <strong>"攻击性动物"</strong>整个关掉它，默认开启；关掉后，这个品种的行为和任何流浪动物一样。</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>这就是狼。<code>aggression = true</code> 采用下面所有默认值，一张表只改它写出的字段，不写这个字段或者设成 <code>false</code>，品种就保持温顺。</p>
+<div class="tw"><table><thead><tr>
+<th>字段</th>
+<th>默认</th>
+<th>范围</th>
+<th>作用</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>、<code>medium</code>、<code>large</code></td>
+<td>撕咬距离（0.9、1.1 或 1.25 格）、基础伤害，以及咬哪里：small 咬脚和腿，medium 和 large 还能咬到手和手臂</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 到 20</td>
+<td>它在多少格内注意到玩家。蹲着按 x0.6 计，奔跑按 x1.25 计。没有视线时，它只能闻到 2.5 格内的玩家</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 到 1</td>
+<td>它在攻击前先低吼警告的几率。睡着的玩家总会收到警告，并且会醒来</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 到 6000</td>
+<td>每次警告低吼的长度，单位毫秒</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 到 20</td>
+<td>警告期间走得比这更近就会触发攻击。永远不会大于 <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 到 900</td>
+<td>扑咬前摇的长度。这期间的一次打击或推搡会打断撕咬，后退会让它咬空</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>、<code>recoverMax</code></td>
+<td>900、1600</td>
+<td>400 到 4000</td>
+<td>一次撕咬和下一次扑咬之间的停顿，在两者之间抽取</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 到 5</td>
+<td>撕咬伤害的倍率</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 到 1</td>
+<td>一次撕咬把玩家扑倒的几率。只对 large 体型有效</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 到 30</td>
+<td>它能挨多少下，见下文</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 到 60</td>
+<td>离追赶起点多少格后它会放弃</td>
+</tr>
+</tbody></table></div>
+<p>敌对动物开始时有 1 点生命值，每次打击从中扣掉 <code>blow / toughness</code>。一次近战打击的值是武器平均伤害除以 1.6，武器技能每比 5 级高或低一级，就多或少 8%，范围在 0.35 到 2.5 之间。一发枪击的值是它的平均伤害除以 0.4，最多 4，所以 9 mm 手枪是 2，步枪和霰弹枪会顶到上限。爆炸物是 4，暴击会让打击乘以 1.5。在默认 <code>toughness</code> 为 4 时，两发手枪子弹就能击败它。沙盒里还有一个耐打程度倍率和一个撕咬伤害倍率，叠在你的数值之上。</p>
+<p>被击败的动物按沙盒设定的几率（默认 10%）活着倒地，否则死亡。倒地后它不会再受伤。除非有玩家给它包扎，它会在几个小时后失血而死；包扎之后它会作为被救下的动物站起来：温顺、信任那名玩家，可以像任何流浪动物一样用食物驯服。玩家也可以从右键菜单了结它。每名玩家的同伴都把敌对动物当作威胁，就像对待丧尸：它们会和它打，哨兵也会冲它吠叫。</p>
+<p>低吼用的是你 <code>voices</code> 里的 <code>growl</code> 键。没有的话，动物会像狗一样低吼。</p>
+<p>像狼一样，在三个动物类型上、行为辅助函数之后设置 <code>canThump = false</code>。引擎默认开着它，这时被攻击过、非常饿或非常渴、或压力很大的动物会撞门和窗，非常饿或非常渴的动物还会规划穿过门窗的路径，所以关上的门不一定能结束追击。</p>
+<p>品种注册时每个字段都会被检查，每个问题都会在日志里打印一行，带上你的品种键。超出范围的值会退回默认值，写成百分比的几率（<code>warnChance = 40</code>）会得到一条提示，说明本意是 0.4。未知的键会被丢掉，那一行会列出有效的键。不是 <code>true</code>、<code>false</code> 或表的值会让品种保持温顺。</p>
+<p>比 API 12 更旧的基础模组会忽略这个字段，品种保持温顺。</p>
 <h2 id="6-整块关掉一个系统">6. 整块关掉一个系统</h2>
 <p>五项技能就是五个系统：</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>匹配函数收到建筑定义，并且运行在一次保护调用里，所以它里面出错不会中断区块加载。 <code>skipUrbanGate</code> 让这个类别可以在非城区的区块里抽取，农场或者林中小屋需要这一点。不要设 <code>exclusive</code>。基础类别彼此互斥，附加模组的类别是叠在它们之上匹配的。</p>
+<h3 id="在野外生成">在野外生成</h3>
+<p>从 API 12 起，用 <code>zone</code> 代替 <code>class</code> 的步骤是按地图区块抽一次，而不是按建筑。狼就是这样在森林里出生的：</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>键</th>
+<th>是什么</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>用 <code>CD.registerSpawnZone</code> 注册的区域。基础版注册了 <code>forest</code>。</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>，一起出生的数量。默认 <code>{ 1, 1 }</code>。</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>可选函数，返回游戏天数。一群动物全部死亡或被救下、并且过了这么多天之后，那个地点可以再容纳一群新的。不设或者为 0 时，永远不会。</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>、<code>suffix</code>、<code>breed</code> 和 <code>gate</code> 的作用同上；<code>indoor</code> 不适用。24 格内有玩家时动物不会出生，那个区块会在下一次加载时再试。敌对品种的一群会在出生地周围游荡并一起战斗：一只开始追赶时，24 格内的其他同伴会加入，一旦有一半被击败，剩下的就会逃走。</p>
+<p>用一个接收地图格子的函数注册你自己的区域：</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>基础版只检查中选区块里的少数几个格子，不是全部。已经注册过的名字会被忽略。</p>
 <h3 id="已经被占用的后缀">已经被占用的后缀</h3>
 <p>后缀是“这栋建筑已经抽过了”这条记录的键的一部分。两个模组用同一个后缀会互相破坏对方的抽取结果。</p>
 <p>每个后缀都以一条竖线开头。已经在用的有：</p>
 <ul>
-<li>基础版：空后缀，还有 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code></li>
+<li>基础版：空后缀，还有 <code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code>、<code>wf</code></li>
 <li>罗威纳犬：<code>rw</code>、<code>r</code></li>
 <li>杜宾犬：<code>db</code>、<code>dm</code>、<code>dh</code></li>
 <li>拉布拉多：<code>lb</code>、<code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> 返回等级，0 表示“不显示”。<code>apply</code> 收到距离上次调用过去的游戏分钟数，所以要把你的效果乘上 <code>elapsedMin</code>。</p>
 <p>图标要提供六种尺寸，从 32 到 128 像素。界面按玩家的缩放挑尺寸，缺一个尺寸就会显示成一个空方块。图标出现在模组自己那一条里，不和原版 moodle 混在一起。</p>
 <h2 id="11-钩子">11. 钩子</h2>
-<p>两个函数列表，基础版在服务器上调用它们。从一个 shared 文件往里追加。每个处理函数都跑在自己的保护调用里，所以一个附加模组出错不会中断基础版。</p>
+<p>两个函数列表，基础版在服务器上调用它们。从一个 shared 文件往里追加。</p>
 <p><code>CD.onHuntDelivered</code> 从 API 2 开始有，在动物把猎物放到主人脚边之后立刻被调用：</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>照料周期每一轮都会重算并覆盖这个值，所以从外面写进去的东西下一个 tick 就没了。钩子适合用在来自环境的条件上，比如炎热、寒冷或者下雨。</p>
 <p>在多人模式里，客户端永远不写 mod data。客户端这边的一次写入会在下一次同步时覆盖服务器的副本，而症状要过几分钟才在一个不相干的地方冒出来。请在服务器文件里做这件事，或者用这些钩子。</p>
 <p><strong>SERVER TUNING</strong>面板里的数字都是普通的 <code>CD.*</code> 常量，附加模组可以在加载时从 shared 或服务器文件里给其中一个赋值。从 API 9 起，面板把服务器加载完成那一刻生效的值当作那个旋钮的默认值：它一直保持到管理员手动改写，重置按钮回到它，面板也把它显示为默认值。在更旧的基础模组上，面板每次启动都会把出厂值写回去。要在加载时赋值，不要在之后的事件里赋，否则下一次改动任何旋钮都会把出厂值放回来。</p>
+<h3 id="npc-模组">NPC 模组</h3>
+<p>这一部分是给 NPC 模组的，不是给品种附加模组的。有些 NPC 模组把它们的人物建立在一只丧尸之上，于是狗看到的是丧尸，就会攻击它。从 API 13 起，NPC 模组可以通过列表 <code>CompanionDogs.npcChecks</code> 告诉狗谁是朋友。从一个 shared 文件往里添加一个函数，这样它在服务器和客户端上都存在：</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>这个函数收到丧尸和狗的主人，返回三种答案之一：</p>
+<ul>
+<li><code>true</code>：朋友。狗不去管它。</li>
+<li><code>false</code>：敌对。狗像对待任何丧尸一样和它打。</li>
+<li><code>nil</code>：不是你的 NPC。狗按它平常的规则继续。</li>
+</ul>
+<p>第一个不是 <code>nil</code> 的答案说了算。狗每次挑选目标或者检查已有目标时都会问一遍，所以这覆盖了战斗、哨兵、冲锋和攻击命令。</p>
+<p>前两行是在你的模组比 Companion Dogs 先加载时创建这个列表。没装 Companion Dogs 时，没人读这个列表，什么都不会坏，所以不需要版本守卫。</p>
+<p>主人离线时 <code>owner</code> 是 <code>nil</code>。你要决定，身边没有主人的狗把你的 NPC 当作什么。在客户端，<code>owner</code> 是本地玩家。</p>
+<p>这个函数会对狗附近的每一只丧尸运行，每秒好几次。让它保持轻量。先测试一个变量或你自己的字段，之后再调用 <code>getModData()</code>：它会在它碰到的每一只丧尸上创建一张表。</p>
+<p>在专用服务器上，引擎会忽略对丧尸调用的 <code>setVariable</code>，所以你的模组设的变量在服务器上不存在。如果你的模组要在服务器上运行，就用服务器持有的东西来认出你的 NPC，比如在服务器上写入的 mod data，或者你自己以丧尸为键的表。</p>
+<p>如果你只需要狗不去管你所有的 NPC，而且只在单人游戏里，有一个不用写代码的办法：用 <code>setVariable</code> 把身体上的 <code>NoZombieHandling</code> 设为 true。其他模组也读同一个变量。它有上面说的服务器限制，而且狗也会无视你的敌对 NPC。</p>
 <h2 id="12-翻译键">12. 翻译键</h2>
 <p>每个语言文件夹放一个 <code>IG_UI.json</code>，位置在 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>。基础版带了十四种：EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI。</p>
 <p>一个品种需要的键：</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>新物种的敌对品种还可以附带针对它的威胁文本。狗头顶的哨兵标签、成群警告和照顾牲畜的狗的警告，都会去找以你的物种结尾的键，找不到就退回通用的敌对动物文本：</p>
+<div class="tw"><table><thead><tr>
+<th>键</th>
+<th>显示在哪里</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>狗头顶的标签，附近有好几只</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>狗头顶的标签，有一只很近</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>狗头顶的标签，附近有一只</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>狗头顶的标签，远处有一只</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>狗冲一群吠叫时的消息</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>照顾牲畜的狗的消息</td>
+</tr>
+</tbody></table></div>
+<p>在这两条消息里，<code>%1</code> 是那只狗，品种后面跟着它的名字。基础版带了 <code>wolf</code> 的键，通用的键以 <code>_hostile</code> 结尾。</p>
 <p>翻译字符串里的裸百分号会让显示它的那个界面崩溃，因为格式化器把它当成占位符读。带字节顺序标记的语言文件无法编译，而且报错指的是另一个文件，不是坏掉的那个。</p>
 <h2 id="13-存档记住的东西">13. 存档记住的东西</h2>
 <p>你的三个标识符会被写进存档文件，并且永远被读回来：</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>moodle 图标六种尺寸都在。</li>
 <li>你提供的每一个语言文件夹都有每一个键。缺一个键，屏幕上就会显示原始键名。</li>
 <li>你在多人模式里测过，不只是单人。位置、归属和 mod data 在那边的表现都不一样。</li>
+<li>敌对品种在<strong>"攻击性动物"</strong>开和关两种情况下都测过，而且有一只动物被击败、包扎，并亲眼看到它站起来。</li>
 <li>你的 Workshop 页面警告了不要从还有活体动物的存档里移除附加模组。</li>
 </ul>
 <h2 id="15-常见错误">15. 常见错误</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"单人能用，上服务器就出毛病。"</strong></td>
 <td>有东西在客户端写 ModData。把它挪到服务端。</td>
+</tr>
+<tr>
+<td><strong>"我的 <code>warnChance</code> 被无视了。"</strong></td>
+<td>它写成了百分比。<code>40</code> 超出范围，会退回默认值 0.6；40% 是 <code>0.4</code>。日志那一行会说明这一点。</td>
+</tr>
+<tr>
+<td><strong>"被击败的动物像尸体一样躺着。"</strong></td>
+<td><code>downedAnim</code> 没开，所以它用 <code>Rac_Dead</code> 躺着。只有模型带齐三个倒地片段时才打开。</td>
 </tr>
 <tr>
 <td><strong>"我明明关掉了战斗，它还是和僵尸打起来。"</strong></td>

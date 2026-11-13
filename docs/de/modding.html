@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#die-stimme" data-id="die-stimme">Die Stimme</a>
 <a class="s3" href="#die-ernährung" data-id="die-ernährung">Die Ernährung</a>
 <a class="s3" href="#geschlecht-bei-der-geburt" data-id="geschlecht-bei-der-geburt">Geschlecht bei der Geburt</a>
+<a class="s3" href="#feindselige-rassen-aggression" data-id="feindselige-rassen-aggression">Feindselige Rassen: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-wo-das-tier-auftaucht" data-id="9-wo-das-tier-auftaucht">9. Wo das Tier auftaucht</a>
 <div class="sub">
 <a class="s3" href="#die-gebäudeklassen" data-id="die-gebäudeklassen">Die Gebäudeklassen</a>
+<a class="s3" href="#in-der-wildnis-spawnen" data-id="in-der-wildnis-spawnen">In der Wildnis spawnen</a>
 <a class="s3" href="#schon-vergebene-suffixe" data-id="schon-vergebene-suffixe">Schon vergebene Suffixe</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-hooks" data-id="11-hooks">11. Hooks</a>
+<div class="sub">
+<a class="s3" href="#npc-mods" data-id="npc-mods">NPC-Mods</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-übersetzungsschlüssel" data-id="12-übersetzungsschlüssel">12. Übersetzungsschlüssel</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>Zwei Farben, die sich gleich verhalten, sind für den Basis-Mod trotzdem zwei Rassen (zwei Namen, zwei Einträge im Zwinger); du schreibst sie aus einer gemeinsamen Tabelle, so wie CD: Cats es mit seinen fünf Fellfarben macht.</p>
 <h2 id="2-was-du-brauchst-bevor-du-anfängst">2. Was du brauchst, bevor du anfängst</h2>
-<p>Dein Tier braucht seine eigene geskinnte <code>.glb</code> unter <code>media/models_X/Skinned/</code>, mit dem kompletten Satz der 21 <code>Rac_*</code>-Animationsclips. Clips werden nicht zwischen Modelldateien vererbt: ein Modell mit fünfzehn Clips gibt dir ein Tier, das beim ersten Aufruf eines der anderen sechs einfriert. Das Modell muss außerdem unter 60 Knochen bleiben und seinen obersten Knoten auf Identität haben, sonst wirft die Engine einmal pro Frame und das Tier wird als schwarzer Fleck gerendert. Zwei weitere Clips sind optional, <code>Rac_WalkLimpFront</code> und <code>Rac_WalkLimpBack</code> (Laufzyklen mit Humpeln); sie zählen nur, wenn du in der Rassendefinition <code>limpAnim = true</code> setzt.</p>
+<p>Dein Tier braucht seine eigene geskinnte <code>.glb</code> unter <code>media/models_X/Skinned/</code>, mit dem kompletten Satz der 21 <code>Rac_*</code>-Animationsclips. Clips werden nicht zwischen Modelldateien vererbt: ein Modell mit fünfzehn Clips gibt dir ein Tier, das beim ersten Aufruf eines der anderen sechs einfriert. Das Modell muss außerdem unter 60 Knochen bleiben und seinen obersten Knoten auf Identität haben, sonst wirft die Engine einmal pro Frame und das Tier wird als schwarzer Fleck gerendert. Zwei weitere Clips sind optional, <code>Rac_WalkLimpFront</code> und <code>Rac_WalkLimpBack</code> (Laufzyklen mit Humpeln); sie zählen nur, wenn du in der Rassendefinition <code>limpAnim = true</code> setzt. Eine feindselige Rasse hat vier weitere optionale Clips: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> und <code>Rac_DownedUp</code> für das besiegt am Boden liegende Tier (<code>downedAnim = true</code>) und <code>Rac_Growl</code> für die Drohhaltung (<code>growlAnim = true</code>).</p>
 <p>Wenn du noch kein Modell hast, kannst du alles andere schreiben und testen, indem du <code>CD.applyDogModel</code> auf einen der Basis-Körper zeigen lässt. Das Tier sieht aus wie ein Caramelo, aber jedes System aus diesem Handbuch läuft.</p>
 <p>Du brauchst außerdem eine Textur für den Körper und ein Porträt für das Zwingerfenster.</p>
 <p>Entscheide vor der ersten Zeile Code, ob dein Tier eine Rasse oder eine Art ist. Eine Rasse ist ein Hund mit anderen Zahlen. Eine Art ist ein Tier, dem manche Aufgaben komplett fehlen. Die Entscheidung ändert, welche Felder du schreibst; Abschnitt 6 behandelt das.</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>Fehlt der Basis-Mod oder ist er zu alt, kehrt die Datei in Zeile zwei zurück und das Addon tut nichts: keine Rasse, kein Spawn, kein Moodle, keine Logzeile.</p>
+<p>Eine feindselige Rasse prüft auf 12. Ein älterer Basis-Mod ignoriert <code>aggression</code> und das Tier kommt zahm heraus, was sicher ist, aber das Addon liefert dann einen Wolf aus, der nie angreift.</p>
 <p>Die Prüfung gilt pro Datei, und jede Datei prüft auf das, was sie benutzt. <code>PugDefinitions.lua</code> braucht die Modell-Helfer, also prüft sie auf die:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>Leg das Global nicht selbst an. <code>CompanionDogs = CompanionDogs or {}</code> in einem Addon macht aus einem fehlenden Basis-Mod eine halb gebaute Tabelle, und jede Prüfung weiter unten geht durch, obwohl sie es nicht sollte.</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true lässt es einen Zombie umwerfen.</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true gibt der Rasse den Befehl Ansturm (API 13): auf Befehl rennt sie in gerader Linie auf den Zombie vor ihrem Besitzer zu und wirft die Zombies auf ihrem Weg um, 2 bei Kampf 1 bis zu 10 bei Kampf 10. Kostet Stress und hat eine Abklingzeit von 30 Spielminuten. Braucht <code>canKnockdown</code>.</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>wie viel Stress ein Kampf es kostet.</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true lässt ein verwundetes Tier beim Laufen humpeln. Setz das nur, wenn dein Modell die beiden optionalen Clips <code>Rac_WalkLimpFront</code> und <code>Rac_WalkLimpBack</code> hat (Laufzyklen von 1,0 s mit derselben Root Motion wie <code>Rac_Walk</code>). Ohne die Clips läuft das Tier auf der Stelle fest.</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>aus</td>
+<td><code>true</code> oder eine Tabelle: jedes erwachsene Tier der Rasse ohne Besitzer, das nie gezähmt wurde, greift Spieler an (API 12). Siehe "Feindselige Rassen" weiter unten.</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>true, wenn dein Modell <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> und <code>Rac_DownedUp</code> hat. Ein besiegtes feindseliges Tier liegt und atmet dann auf diesen Clips. Ohne das Feld liegt es auf <code>Rac_Dead</code>.</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>true, wenn dein Modell den geloopten Clip <code>Rac_Growl</code> hat. Ein feindseliges Tier duckt sich darauf, während es knurrt. Ohne das Feld knurrt es im Stehen.</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>Dieses Paar ist die Glückskatze. Das Mosaik aus Orange und Schwarz sitzt auf dem X-Chromosom, also ist eine Glückskatze fast immer weiblich, und das Männchen, das doch auftaucht, ist XXY, etwa eines von dreitausend, und zeugt keinen Wurf. Ein Männchen einer <code>sterileMale</code>-Rasse wird nie als Partner gewählt, und die Option zum Decken verschwindet aus seinem Kontextmenü. Die Weibchen decken normal.</p>
 <p>Ein Männchen einer solchen Rasse trägt überall dort, wo das Spiel sein Geschlecht zeigt, die Marke "Unfruchtbar": in der Tierkarte, im Kontextmenü, im Streunerscan und im Zwinger, damit der Spieler weiß, warum es sich nicht fortpflanzt.</p>
 <p>Beide Felder werden aus der Rassendefinition gelesen, es wird also nichts am Tier gespeichert und ein bestehender Spielstand braucht keine Migration. Dieselbe Ziehung entscheidet das Geschlecht eines Welpen bei der Geburt, eine Rasse, die in der Welt weiblich ist, bleibt also auch in den Würfen weiblich.</p>
+<h3 id="feindselige-rassen-aggression">Feindselige Rassen: <code>aggression</code></h3>
+<p>Ab API 12 kann eine Rasse feindselig sein. Jedes erwachsene Tier der Rasse ohne Besitzer, das nie gezähmt wurde, knurrt Spieler an und greift sie an. Ein Welpe greift nie an, ein Begleiter greift nie an, und ein Tier, das einmal gezähmt oder gerettet wurde, bleibt ruhig. Der Spieler kann das Ganze mit der Sandbox-Option <strong>"Aggressive Tiere"</strong> abschalten, standardmäßig an; ist sie aus, verhält sich die Rasse wie jeder Streuner.</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>Das ist der Wolf. <code>aggression = true</code> nimmt alle Standardwerte unten, eine Tabelle ändert nur die Felder, die sie nennt, und das Feld wegzulassen oder auf <code>false</code> zu setzen hält die Rasse zahm.</p>
+<div class="tw"><table><thead><tr>
+<th>Feld</th>
+<th>Standard</th>
+<th>Bereich</th>
+<th>Was es tut</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>, <code>medium</code>, <code>large</code></td>
+<td>Bissreichweite (0.9, 1.1 oder 1.25 Felder), Grundschaden und wohin es beißt: small geht auf Füße und Beine, medium und large erreichen auch Hände und Arme</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 bis 20</td>
+<td>Felder, auf die es einen Spieler bemerkt. Geduckt zählt x0.6 und Rennen x1.25. Ohne Sichtlinie wittert es einen Spieler nur innerhalb von 2.5 Feldern</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 bis 1</td>
+<td>Chance, dass es vor dem Angriff warnend knurrt. Ein schlafender Spieler bekommt die Warnung immer und wacht auf</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 bis 6000</td>
+<td>Länge jedes Warnknurrens, in Millisekunden</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 bis 20</td>
+<td>wer während der Warnung näher kommt, löst den Angriff aus. Nie größer als <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 bis 900</td>
+<td>Länge des Ansprungs. Ein Schlag oder Stoß währenddessen unterbricht den Biss, und Zurückweichen lässt ihn danebengehen</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>, <code>recoverMax</code></td>
+<td>900, 1600</td>
+<td>400 bis 4000</td>
+<td>Pause zwischen einem Biss und dem nächsten Ansprung, zwischen beiden Werten gezogen</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 bis 5</td>
+<td>multipliziert den Bissschaden</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 bis 1</td>
+<td>Chance, dass ein Biss den Spieler umwirft. Nur Größe large</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 bis 30</td>
+<td>wie viele Treffer es einsteckt, siehe unten</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 bis 60</td>
+<td>Felder ab dem Beginn der Verfolgung, bevor es aufgibt</td>
+</tr>
+</tbody></table></div>
+<p>Ein feindseliges Tier startet mit 1 Leben, und jeder Treffer zieht <code>blow / toughness</code> davon ab. Ein Nahkampftreffer ist den durchschnittlichen Schaden der Waffe geteilt durch 1.6 wert, 8 % mehr oder weniger für jede Waffenstufe über oder unter 5, zwischen 0.35 und 2.5. Ein Schuss ist seinen durchschnittlichen Schaden geteilt durch 0.4 wert, bis 4, eine 9-mm-Pistole ist also 2, und Gewehre und Schrotflinten erreichen die Obergrenze. Sprengstoff ist 4, und ein kritischer Treffer multipliziert den Treffer mit 1.5. Mit dem Standard-<code>toughness</code> von 4 besiegen es zwei Pistolenschüsse. Die Sandbox hat einen Multiplikator für die Zähigkeit und einen für den Bissschaden, zusätzlich zu deinen.</p>
+<p>Ein besiegtes Tier geht mit der Sandbox-Chance (standardmäßig 10 %) lebend zu Boden oder stirbt. Am Boden kann es nicht mehr verletzt werden. Es verblutet nach einigen Stunden, wenn kein Spieler es verbindet, und einmal verbunden steht es gerettet auf: zahm, mit Vertrauen zum Spieler und bereit, wie jeder Streuner mit Futter gezähmt zu werden. Der Spieler kann es auch über das Kontextmenü erlösen. Die Begleiter aller Spieler behandeln ein feindseliges Tier als Bedrohung, wie einen Zombie: Sie kämpfen gegen es, und der Wachdienst bellt es an.</p>
+<p>Das Knurren ist der Schlüssel <code>growl</code> deiner <code>voices</code>. Ohne ihn knurrt das Tier wie ein Hund.</p>
+<p>Setze <code>canThump = false</code> bei den drei Tiertypen, nach dem Verhaltens-Helfer, wie der Wolf es tut. Die Engine schaltet es standardmäßig ein, und dann schlägt ein Tier, das angegriffen wurde, sehr hungrig oder durstig ist oder unter starkem Stress steht, gegen Türen und Fenster, und ein sehr hungriges oder durstiges sucht sich seinen Weg durch sie hindurch. Eine geschlossene Tür beendet die Verfolgung dann womöglich nicht.</p>
+<p>Jedes Feld wird geprüft, wenn die Rasse sich registriert, und jedes Problem schreibt eine Zeile mit deinem Rassenschlüssel ins Log. Ein Wert außerhalb des Bereichs fällt auf den Standard zurück, und eine als Prozent geschriebene Chance (<code>warnChance = 40</code>) bekommt den Hinweis, dass 0.4 gemeint ist. Ein unbekannter Schlüssel wird verworfen, und die Zeile listet die gültigen auf. Ein Wert, der weder <code>true</code>, <code>false</code> noch eine Tabelle ist, lässt die Rasse zahm.</p>
+<p>Ein Basis-Mod älter als API 12 ignoriert das Feld, und die Rasse bleibt zahm.</p>
 <h2 id="6-ein-ganzes-system-abschalten">6. Ein ganzes System abschalten</h2>
 <p>Die fünf Fertigkeiten sind die fünf Systeme:</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>Die Trefferfunktion bekommt die Gebäudedefinition und läuft in einem geschützten Aufruf, ein Fehler darin hält also das Laden des Chunks nicht auf. <code>skipUrbanGate</code> lässt die Klasse in einem Chunk würfeln, der nicht städtisch ist, was ein Hof oder eine Waldhütte braucht. Setz kein <code>exclusive</code>. Die Basisklassen sind untereinander exklusiv, und eine Addon-Klasse trifft zusätzlich zu ihnen.</p>
+<h3 id="in-der-wildnis-spawnen">In der Wildnis spawnen</h3>
+<p>Ab API 12 würfelt ein Schritt mit <code>zone</code> statt <code>class</code> einmal pro Chunk der Karte, nicht pro Gebäude. So entsteht der Wolf im Wald:</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>Schlüssel</th>
+<th>Was er ist</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>eine mit <code>CD.registerSpawnZone</code> registrierte Zone. Der Basis-Mod registriert <code>forest</code>.</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>, wie viele zusammen entstehen. Standard <code>{ 1, 1 }</code>.</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>optionale Funktion, die Spieltage zurückgibt. Sobald jedes Tier der Gruppe tot oder gerettet ist und so viele Tage vergangen sind, kann die Stelle eine neue Gruppe aufnehmen. Ohne sie, oder mit 0, nie.</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>, <code>suffix</code>, <code>breed</code> und <code>gate</code> funktionieren wie oben; <code>indoor</code> gilt hier nicht. Die Tiere entstehen nicht, solange ein Spieler innerhalb von 24 Feldern ist, und der Chunk versucht es beim nächsten Laden erneut. Eine Gruppe einer feindseligen Rasse streift um die Stelle, an der sie entstanden ist, und kämpft gemeinsam: Wenn eines eine Verfolgung beginnt, schließen sich die anderen innerhalb von 24 Feldern an, und sobald die Hälfte besiegt ist, läuft der Rest davon.</p>
+<p>Registriere deine eigene Zone mit einer Funktion, die ein Feld der Karte bekommt:</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>Der Basis-Mod prüft eine Handvoll Felder des gewinnenden Chunks, nicht alle. Ein Name, der schon registriert ist, wird ignoriert.</p>
 <h3 id="schon-vergebene-suffixe">Schon vergebene Suffixe</h3>
 <p>Das Suffix ist Teil des Schlüssels, unter dem "dieses Gebäude wurde schon gewürfelt" gespeichert wird. Zwei Mods mit demselben Suffix zerschießen sich gegenseitig die Würfe.</p>
 <p>Jedes Suffix beginnt mit einem senkrechten Strich. Diese sind schon in Gebrauch:</p>
 <ul>
-<li>Basis-Mod: das leere Suffix, dazu <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code></li>
+<li>Basis-Mod: das leere Suffix, dazu <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code>, <code>wf</code></li>
 <li>Rottweiler: <code>rw</code>, <code>r</code></li>
 <li>Dobermann: <code>db</code>, <code>dm</code>, <code>dh</code></li>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> gibt die Stufe zurück, oder 0 für "wird nicht angezeigt". <code>apply</code> bekommt die Spielminuten seit dem letzten Aufruf, multipliziere deinen Effekt also mit <code>elapsedMin</code>.</p>
 <p>Liefere das Symbol in sechs Größen mit, von 32 bis 128 Pixel. Die Oberfläche wählt die Größe nach der Skalierung des Spielers, und eine fehlende Größe erscheint als leeres Quadrat. Das Symbol erscheint in der eigenen Leiste des Mods, nicht bei den Vanilla-Moodles.</p>
 <h2 id="11-hooks">11. Hooks</h2>
-<p>Zwei Listen von Funktionen, die der Basis-Mod auf dem Server aufruft. Häng sie aus einer shared-Datei an. Jeder Handler läuft in seinem eigenen geschützten Aufruf, ein Fehler in einem Addon hält den Basis-Mod also nicht auf.</p>
+<p>Zwei Listen von Funktionen, die der Basis-Mod auf dem Server aufruft. Häng sie aus einer shared-Datei an.</p>
 <p><code>CD.onHuntDelivered</code>, ab API 2, wird direkt aufgerufen, nachdem das Tier eine Beute vor den Füßen seines Besitzers abgelegt hat:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>Der Upkeep rechnet den Wert in jedem Zyklus neu und überschreibt ihn, alles von außen Geschriebene ist also im nächsten Tick weg. Nimm den Hook für einen Zustand, der aus der Umgebung kommt, etwa Hitze, Kälte oder Regen.</p>
 <p>Im Multiplayer schreibt der Client nie Mod-Daten. Ein Schreibvorgang auf Client-Seite überschreibt beim nächsten Sync die Kopie des Servers, und das Symptom zeigt sich Minuten später an einer ganz anderen Stelle. Erledige die Arbeit in einer Server-Datei oder in einem dieser Hooks.</p>
 <p>Die Zahlen im Panel <strong>SERVER TUNING</strong> sind gewöhnliche <code>CD.*</code>-Konstanten, und ein Addon darf eine davon beim Laden aus einer shared- oder Server-Datei setzen. Ab API 9 nimmt das Panel den Wert, der gilt, wenn der Server fertig geladen hat, als Standard dieses Reglers: er bleibt, bis ein Admin ihn überschreibt, der Reset-Knopf kehrt zu ihm zurück, und das Panel zeigt ihn als Standard an. Auf einem älteren Basis-Mod schrieb das Panel bei jedem Start den Werkswert zurück. Setz den Wert beim Laden, nicht aus einem späteren Ereignis, sonst stellt die nächste Änderung an irgendeinem Regler den Werkswert wieder her.</p>
+<h3 id="npc-mods">NPC-Mods</h3>
+<p>Dieser Teil ist für NPC-Mods, nicht für Rassen-Addons. Manche NPC-Mods bauen ihre Leute auf einem Zombie auf, also sieht der Hund einen Zombie und greift ihn an. Ab API 13 kann ein NPC-Mod dem Hund sagen, wer ein Freund ist, mit der Liste <code>CompanionDogs.npcChecks</code>. Häng eine Funktion aus einer shared-Datei an, damit sie auf dem Server und auf dem Client existiert:</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>Die Funktion bekommt den Zombie und den Besitzer des Hundes und gibt eine von drei Antworten zurück:</p>
+<ul>
+<li><code>true</code>: ein Freund. Der Hund lässt ihn in Ruhe.</li>
+<li><code>false</code>: feindselig. Der Hund bekämpft ihn wie jeden Zombie.</li>
+<li><code>nil</code>: keiner deiner NPCs. Der Hund folgt seinen üblichen Regeln.</li>
+</ul>
+<p>Die erste Antwort, die nicht <code>nil</code> ist, entscheidet. Der Hund fragt jedes Mal, wenn er ein Ziel wählt oder das prüft, das er schon hat, das deckt also Kampf, Wachdienst, Ansturm und den Angriffsbefehl ab.</p>
+<p>Die ersten beiden Zeilen legen die Liste an, wenn dein Mod vor Companion Dogs lädt. Ohne installiertes Companion Dogs liest niemand die Liste und nichts geht kaputt, deshalb gibt es keine Versionsprüfung.</p>
+<p><code>owner</code> ist <code>nil</code>, wenn der Besitzer offline ist. Entscheide, was deine NPCs für einen Hund ohne Besitzer in der Nähe sind. Auf dem Client ist <code>owner</code> der lokale Spieler.</p>
+<p>Die Funktion läuft für jeden Zombie in der Nähe eines Hundes, mehrmals pro Sekunde. Halte sie billig. Prüfe zuerst eine Variable oder ein eigenes Feld und ruf <code>getModData()</code> erst danach auf: Es legt an jedem Zombie, den es berührt, eine Tabelle an.</p>
+<p>Auf einem dedizierten Server ignoriert die Engine <code>setVariable</code> an einem Zombie, eine Variable, die dein Mod setzt, ist auf dem Server also nicht da. Läuft dein Mod auf Servern, erkenne deinen NPC an etwas, das der Server hält, etwa an Mod-Daten, die auf dem Server geschrieben wurden, oder an einer eigenen Tabelle mit dem Zombie als Schlüssel.</p>
+<p>Wenn der Hund nur alle deine NPCs in Ruhe lassen soll, und nur im Einzelspieler, gibt es einen Weg ohne Code: setz <code>NoZombieHandling</code> mit <code>setVariable</code> am Körper auf true. Andere Mods lesen dieselbe Variable. Es gilt dieselbe Server-Grenze wie oben, und der Hund ignoriert dann auch deine feindseligen NPCs.</p>
 <h2 id="12-übersetzungsschlüssel">12. Übersetzungsschlüssel</h2>
 <p>Liefere pro Sprachordner eine <code>IG_UI.json</code> mit, unter <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. Der Basis-Mod liefert vierzehn: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>Die Schlüssel, die eine Rasse braucht:</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>Eine feindselige Rasse einer neuen Art kann auch die Bedrohungstexte für sie mitliefern. Das Schild des Wachdienstes über dem Hund, die Gruppenwarnung und die Warnung des Viehhüters suchen einen Schlüssel, der auf deine Art endet, und fallen auf den allgemeinen Text für feindselige Tiere zurück:</p>
+<div class="tw"><table><thead><tr>
+<th>Schlüssel</th>
+<th>Wo er erscheint</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>Schild über dem Hund, mehrere in der Nähe</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>Schild über dem Hund, eines ganz nah</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>Schild über dem Hund, eines in der Nähe</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>Schild über dem Hund, eines in der Ferne</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>die Meldung, wenn der Hund eine Gruppe anbellt</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>die Meldung des Viehhüters</td>
+</tr>
+</tbody></table></div>
+<p>In den beiden Meldungen ist <code>%1</code> der Hund, seine Rasse gefolgt von seinem Namen. Der Basis-Mod liefert die Schlüssel für <code>wolf</code>, und die allgemeinen enden auf <code>_hostile</code>.</p>
 <p>Ein wörtliches Prozentzeichen in einer übersetzten Zeichenkette lässt den Bildschirm abstürzen, der sie anzeigt, weil der Formatierer es als Platzhalter liest. Eine Sprachdatei mit Byte Order Mark kompiliert nicht, und der Fehler nennt eine andere Datei als die kaputte.</p>
 <h2 id="13-was-der-spielstand-sich-merkt">13. Was der Spielstand sich merkt</h2>
 <p>Drei deiner Kennungen werden in Speicherdateien geschrieben und für immer wieder gelesen:</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>Das Moodle-Symbol existiert in allen sechs Größen.</li>
 <li>Jeder Sprachordner, den du mitlieferst, hat jeden Schlüssel. Ein fehlender Schlüssel zeigt den rohen Schlüssel auf dem Bildschirm.</li>
 <li>Du hast im Multiplayer getestet, nicht nur im Einzelspieler. Position, Besitz und Mod-Daten verhalten sich dort anders.</li>
+<li>Eine feindselige Rasse wurde mit <strong>"Aggressive Tiere"</strong> an und aus getestet, und ein Tier wurde besiegt, verbunden und beim Aufstehen beobachtet.</li>
 <li>Deine Workshop-Seite warnt davor, das Addon aus einem Spielstand mit lebenden Tieren zu entfernen.</li>
 </ul>
 <h2 id="15-häufige-fehler">15. Häufige Fehler</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"Im Einzelspieler läuft es, auf einem Server spinnt es."</strong></td>
 <td>Irgendetwas schreibt Mod-Daten auf dem Client. Verleg das auf den Server.</td>
+</tr>
+<tr>
+<td><strong>"Mein <code>warnChance</code> wird ignoriert."</strong></td>
+<td>Er wurde als Prozent geschrieben. <code>40</code> liegt außerhalb des Bereichs und fällt auf den Standard 0.6 zurück; 40 % ist <code>0.4</code>. Die Logzeile sagt das.</td>
+</tr>
+<tr>
+<td><strong>"Das besiegte Tier liegt da wie ein Kadaver."</strong></td>
+<td><code>downedAnim</code> ist aus, also liegt es auf <code>Rac_Dead</code>. Schalte es nur ein, wenn das Modell die drei Clips fürs Liegen am Boden hat.</td>
 </tr>
 <tr>
 <td><strong>"Es hat gekämpft, obwohl ich Kampf abgeschaltet habe."</strong></td>

@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#la-voz" data-id="la-voz">La voz</a>
 <a class="s3" href="#la-dieta" data-id="la-dieta">La dieta</a>
 <a class="s3" href="#sexo-al-nacer" data-id="sexo-al-nacer">Sexo al nacer</a>
+<a class="s3" href="#razas-hostiles-aggression" data-id="razas-hostiles-aggression">Razas hostiles: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-dónde-aparece-el-animal" data-id="9-dónde-aparece-el-animal">9. Dónde aparece el animal</a>
 <div class="sub">
 <a class="s3" href="#las-clases-de-edificio" data-id="las-clases-de-edificio">Las clases de edificio</a>
+<a class="s3" href="#aparición-en-la-naturaleza" data-id="aparición-en-la-naturaleza">Aparición en la naturaleza</a>
 <a class="s3" href="#sufijos-ya-cogidos" data-id="sufijos-ya-cogidos">Sufijos ya cogidos</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-hooks" data-id="11-hooks">11. Hooks</a>
+<div class="sub">
+<a class="s3" href="#mods-de-npc" data-id="mods-de-npc">Mods de NPC</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-claves-de-traducción" data-id="12-claves-de-traducción">12. Claves de traducción</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>Dos colores que se comportan igual siguen siendo dos razas para el base (dos nombres, dos entradas en la perrera); los escribes desde una sola tabla compartida, como hace CD: Cats con sus cinco pelajes.</p>
 <h2 id="2-lo-que-necesitas-antes-de-empezar">2. Lo que necesitas antes de empezar</h2>
-<p>Tu animal necesita su propio <code>.glb</code> con skin en <code>media/models_X/Skinned/</code>, con el juego completo de los 21 clips de animación <code>Rac_*</code>. Los clips no se heredan entre archivos de modelo: un modelo con quince clips te da un animal que se congela la primera vez que se le pide uno de los otros seis. El modelo también tiene que quedarse por debajo de 60 huesos y tener su nodo superior en identidad, o el motor lanza un error por fotograma y el animal se dibuja como un borrón negro. Hay dos clips más opcionales, <code>Rac_WalkLimpFront</code> y <code>Rac_WalkLimpBack</code> (ciclos de andar cojeando); solo importan si pones <code>limpAnim = true</code> en la definición de la raza.</p>
+<p>Tu animal necesita su propio <code>.glb</code> con skin en <code>media/models_X/Skinned/</code>, con el juego completo de los 21 clips de animación <code>Rac_*</code>. Los clips no se heredan entre archivos de modelo: un modelo con quince clips te da un animal que se congela la primera vez que se le pide uno de los otros seis. El modelo también tiene que quedarse por debajo de 60 huesos y tener su nodo superior en identidad, o el motor lanza un error por fotograma y el animal se dibuja como un borrón negro. Hay dos clips más opcionales, <code>Rac_WalkLimpFront</code> y <code>Rac_WalkLimpBack</code> (ciclos de andar cojeando); solo importan si pones <code>limpAnim = true</code> en la definición de la raza. Una raza hostil tiene cuatro clips opcionales más: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> y <code>Rac_DownedUp</code> para el animal tumbado tras ser derrotado (<code>downedAnim = true</code>), y <code>Rac_Growl</code> para la pose de amenaza (<code>growlAnim = true</code>).</p>
 <p>Si todavía no tienes modelo, puedes escribir y probar todo lo demás apuntando <code>CD.applyDogModel</code> a uno de los cuerpos del base. El animal se ve como un Caramelo, pero funcionan todos los sistemas de este manual.</p>
 <p>También necesitas una textura para el cuerpo y un retrato para la ventana de la perrera.</p>
 <p>Decide si tu animal es una raza o una especie antes de escribir código. Una raza es un perro con números distintos. Una especie es un animal al que le faltan trabajos enteros. La elección cambia qué campos escribes; lo cubre la sección 6.</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>Si el base falta o es demasiado antiguo, el archivo retorna en la línea dos y el addon no hace nada: ni raza, ni spawn, ni moodle, ni línea de log.</p>
+<p>Una raza hostil comprueba 12. Un base más antiguo ignora <code>aggression</code> y el animal sale manso, lo cual es seguro, pero entonces el addon entrega un lobo que nunca ataca.</p>
 <p>La comprobación es por archivo, y cada archivo comprueba lo que usa. <code>PugDefinitions.lua</code> necesita los helpers de modelo, así que comprueba esos:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>No crees el global. <code>CompanionDogs = CompanionDogs or {}</code> en un addon convierte un base ausente en una tabla a medio construir, y todas las comprobaciones que vienen después pasan cuando no deberían.</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true le deja tirar al suelo a un zombi.</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true le da a la raza la orden de Embestida (API 13): al mandarlo, corre en línea recta hacia el zombi que tiene delante su dueño y tira al suelo a los zombis que encuentra en el camino, 2 con Combate 1 y hasta 10 con Combate 10. Cuesta estrés y tiene un tiempo de espera de 30 minutos de juego. Necesita <code>canKnockdown</code>.</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>cuánto estrés le cuesta una pelea.</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true hace que un animal herido cojee al andar. Ponlo solo si tu modelo tiene los dos clips opcionales <code>Rac_WalkLimpFront</code> y <code>Rac_WalkLimpBack</code> (ciclos de andar de 1.0 s con el mismo root motion que <code>Rac_Walk</code>). Sin los clips el animal anda congelado en el sitio.</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>apagado</td>
+<td><code>true</code> o una tabla: todo adulto de la raza sin dueño que nunca fue domesticado ataca a los jugadores (API 12). Mira "Razas hostiles" más abajo.</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>true cuando tu modelo tiene <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> y <code>Rac_DownedUp</code>. Un animal hostil derrotado se tumba y respira con esos clips. Sin esto, se tumba con <code>Rac_Dead</code>.</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>true cuando tu modelo tiene el clip en bucle <code>Rac_Growl</code>. Un animal hostil se agacha con él mientras gruñe. Sin esto, gruñe de pie.</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>Ese par es la gata calicó. El mosaico de naranja y negro va en el cromosoma X, así que una calicó es casi siempre hembra, y el macho que llega a salir es XXY, uno de cada tres mil, y no engendra camada. Un macho de una raza con <code>sterileMale</code> nunca es elegido como pareja, y la opción de criar desaparece de su menú contextual. Las hembras crían normal.</p>
 <p>Un macho de una raza así lleva la marca "Estéril" en todos los sitios donde el juego muestra su sexo: la ficha, el menú contextual, el escaneo de callejeros y la perrera, para que el jugador sepa por qué no cría.</p>
 <p>Los dos campos se leen de la definición de la raza, así que no se escribe nada en el animal y una partida existente no necesita migración. El mismo sorteo decide el sexo de un cachorro al nacer, así que una raza que es hembra en el mundo sigue siendo hembra en las camadas.</p>
+<h3 id="razas-hostiles-aggression">Razas hostiles: <code>aggression</code></h3>
+<p>Desde la API 12 una raza puede ser hostil. Todo adulto de la raza que no tiene dueño y nunca fue domesticado les gruñe a los jugadores y los ataca. Un cachorro nunca ataca, un compañero nunca ataca, y un animal que fue domesticado alguna vez o que fue rescatado se queda tranquilo. El jugador puede apagar todo esto con la opción de sandbox <strong>"Animales agresivos"</strong>, activada por defecto; con ella apagada, la raza se porta como cualquier callejero.</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>Ese es el lobo. <code>aggression = true</code> toma todos los valores por defecto de abajo, una tabla cambia solo los campos que nombra, y dejar el campo fuera o ponerlo en <code>false</code> mantiene la raza mansa.</p>
+<div class="tw"><table><thead><tr>
+<th>Campo</th>
+<th>Por defecto</th>
+<th>Rango</th>
+<th>Qué hace</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>, <code>medium</code>, <code>large</code></td>
+<td>alcance del mordisco (0.9, 1.1 o 1.25 casillas), daño base, y dónde muerde: small va a pies y piernas, medium y large también llegan a manos y brazos</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 a 20</td>
+<td>casillas a las que nota a un jugador. Agachado cuenta x0.6 y corriendo x1.25. Sin línea de visión solo huele a un jugador a menos de 2.5 casillas</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 a 1</td>
+<td>probabilidad de que gruña un aviso antes de atacar. Un jugador dormido siempre recibe el aviso, y se despierta</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 a 6000</td>
+<td>duración de cada gruñido de aviso, en milisegundos</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 a 20</td>
+<td>acercarse más que esto durante el aviso dispara el ataque. Nunca mayor que <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 a 900</td>
+<td>duración del salto. Un golpe o un empujón durante el salto interrumpe el mordisco, y retroceder hace que falle</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>, <code>recoverMax</code></td>
+<td>900, 1600</td>
+<td>400 a 4000</td>
+<td>pausa entre un mordisco y el siguiente salto, sorteada entre los dos</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 a 5</td>
+<td>multiplica el daño del mordisco</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 a 1</td>
+<td>probabilidad de que un mordisco tire al jugador al suelo. Solo tamaño large</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 a 30</td>
+<td>cuántos golpes aguanta, mira abajo</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 a 60</td>
+<td>casillas desde donde empezó la persecución antes de rendirse</td>
+</tr>
+</tbody></table></div>
+<p>Un animal hostil empieza con 1 de vida, y cada golpe le quita <code>blow / toughness</code>. Un golpe cuerpo a cuerpo vale el daño medio del arma dividido entre 1.6, un 8% más o menos por cada nivel del arma por encima o por debajo de 5, entre 0.35 y 2.5. Un disparo vale su daño medio dividido entre 0.4, hasta 4, así que una pistola de 9 mm da 2 y los fusiles y las escopetas llegan al tope. Los explosivos dan 4, y un golpe crítico multiplica el golpe por 1.5. Con la <code>toughness</code> por defecto de 4, dos disparos de pistola lo derrotan. El sandbox tiene un multiplicador para la resistencia y otro para el daño del mordisco, encima de los tuyos.</p>
+<p>Un animal derrotado cae con vida con la probabilidad del sandbox (10% por defecto) o muere. Caído, ya no se le puede hacer daño. Se desangra en unas horas a menos que un jugador lo vende, y una vez vendado se levanta rescatado: manso, confiando en el jugador y listo para domesticarlo con comida como cualquier callejero. El jugador también puede rematarlo desde el menú contextual. Los compañeros de todos los jugadores tratan a un animal hostil como una amenaza, igual que a un zombi: pelean con él, y el centinela le ladra.</p>
+<p>El gruñido es la clave <code>growl</code> de tus <code>voices</code>. Sin ella el animal gruñe como un perro.</p>
+<p>Pon <code>canThump = false</code> en los tres tipos de animal, después del helper de comportamiento, como hace el lobo. El motor lo trae activado por defecto, y entonces un animal al que atacaron, que tiene mucha hambre o sed, o que está muy estresado golpea puertas y ventanas, y uno con mucha hambre o sed traza su camino a través de ellas, así que una puerta cerrada puede no terminar la persecución.</p>
+<p>Cada campo se comprueba cuando la raza se registra, y cada problema imprime una línea en el log con la clave de tu raza. Un valor fuera de rango vuelve al valor por defecto, y una probabilidad escrita como porcentaje (<code>warnChance = 40</code>) recibe una pista de que se quería decir 0.4. Una clave desconocida se descarta y la línea lista las válidas. Un valor que no es <code>true</code>, <code>false</code> ni una tabla deja la raza mansa.</p>
+<p>Un base anterior a la API 12 ignora el campo, y la raza se queda mansa.</p>
 <h2 id="6-apagar-un-sistema-entero">6. Apagar un sistema entero</h2>
 <p>Las cinco habilidades son los cinco sistemas:</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>La función de encaje recibe la definición del edificio y corre dentro de una llamada protegida, así que un error suyo no corta la carga del chunk. <code>skipUrbanGate</code> deja que la clase tire en un chunk que no es urbano, que es lo que necesitan una granja o una cabaña en el bosque. No pongas <code>exclusive</code>. Las clases del base son exclusivas entre ellas, y una clase de addon encaja por encima.</p>
+<h3 id="aparición-en-la-naturaleza">Aparición en la naturaleza</h3>
+<p>Desde la API 12, un paso con <code>zone</code> en vez de <code>class</code> tira una vez por chunk del mapa, no por edificio. Así nace el lobo en el bosque:</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>Clave</th>
+<th>Qué es</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>una zona registrada con <code>CD.registerSpawnZone</code>. El base registra <code>forest</code>.</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>, cuántos nacen juntos. Por defecto <code>{ 1, 1 }</code>.</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>función opcional que devuelve días de juego. Cuando todos los animales del grupo han muerto o han sido rescatados y han pasado esos días, el sitio puede recibir un grupo nuevo. Sin ella, o con 0, no lo recibe nunca.</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>, <code>suffix</code>, <code>breed</code> y <code>gate</code> funcionan como arriba; <code>indoor</code> no se aplica. Los animales no nacen con un jugador a menos de 24 casillas, y el chunk lo vuelve a intentar en su siguiente carga. Un grupo de una raza hostil vaga alrededor del sitio donde nació y pelea en grupo: cuando uno empieza una persecución, los demás a menos de 24 casillas se suman, y cuando la mitad cae derrotada el resto huye.</p>
+<p>Registra tu propia zona con una función que recibe una casilla del mapa:</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>El base comprueba un puñado de casillas del chunk ganador, no todas. Un nombre que ya está registrado se ignora.</p>
 <h3 id="sufijos-ya-cogidos">Sufijos ya cogidos</h3>
 <p>El sufijo es parte de la clave con la que se guarda "este edificio ya se tiró". Dos mods con el mismo sufijo se corrompen las tiradas el uno al otro.</p>
 <p>Todos los sufijos empiezan por una barra vertical. Estos ya están en uso:</p>
 <ul>
-<li>Base: el sufijo vacío, y <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code></li>
+<li>Base: el sufijo vacío, y <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code>, <code>wf</code></li>
 <li>Rottweiler: <code>rw</code>, <code>r</code></li>
 <li>Doberman: <code>db</code>, <code>dm</code>, <code>dh</code></li>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> devuelve el nivel, o 0 para "no se muestra". <code>apply</code> recibe los minutos de juego desde la última llamada, así que multiplica tu efecto por <code>elapsedMin</code>.</p>
 <p>Entrega el icono en seis tamaños, de 32 a 128 píxeles. La interfaz elige el tamaño según el escalado del jugador, y un tamaño que falte sale como un cuadrado vacío. El icono aparece en la tira del propio mod, no entre los moodles vanilla.</p>
 <h2 id="11-hooks">11. Hooks</h2>
-<p>Dos listas de funciones que el base llama en el servidor. Añade a ellas desde un archivo shared. Cada handler corre dentro de su propia llamada protegida, así que un error de un addon no para el base.</p>
+<p>Dos listas de funciones que el base llama en el servidor. Añade a ellas desde un archivo shared.</p>
 <p><code>CD.onHuntDelivered</code>, desde la API 2, se llama justo después de que el animal suelte una presa a los pies de su dueño:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>El mantenimiento recalcula y sobrescribe el valor en cada ciclo, así que lo que se escriba desde fuera se pierde en el tick siguiente. Usa el hook para una condición que venga del entorno, como calor, frío o lluvia.</p>
 <p>En multijugador, el client nunca escribe mod data. Una escritura desde el client pisa la copia del servidor en la sincronización siguiente, y el síntoma sale minutos después en un sitio que no tiene nada que ver. Haz el trabajo en un archivo de server, o en uno de estos hooks.</p>
 <p>Los números del panel <strong>SERVER TUNING</strong> son constantes <code>CD.*</code> normales, y un addon puede asignar una desde un archivo shared o de server al cargar. Desde la API 9 el panel toma el valor vigente cuando el servidor termina de cargar como el valor por defecto de ese control: se mantiene hasta que un admin escriba encima, el botón de reset vuelve a él, y el panel lo muestra como valor por defecto. En un base más viejo el panel volvía a escribir el valor de fábrica en cada arranque. Asigna al cargar, no desde un evento posterior, o el siguiente cambio en cualquier control devuelve el valor de fábrica.</p>
+<h3 id="mods-de-npc">Mods de NPC</h3>
+<p>Esta parte es para los mods de NPC, no para los addons de raza. Algunos mods de NPC construyen a sus personajes encima de un zombi, así que el perro ve un zombi y lo ataca. Desde la API 13 un mod de NPC puede decirle al perro quién es amigo, con la lista <code>CompanionDogs.npcChecks</code>. Añádele una función desde un archivo shared, para que exista en el servidor y en el client:</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>La función recibe el zombi y el dueño del perro, y devuelve una de tres respuestas:</p>
+<ul>
+<li><code>true</code>: un amigo. El perro lo deja en paz.</li>
+<li><code>false</code>: hostil. El perro pelea con él como con cualquier zombi.</li>
+<li><code>nil</code>: no es uno de tus NPC. El perro sigue con sus reglas de siempre.</li>
+</ul>
+<p>Decide la primera respuesta que no es <code>nil</code>. El perro pregunta cada vez que elige un objetivo o comprueba el que ya tiene, así que esto cubre el combate, el centinela, la embestida y la orden de atacar.</p>
+<p>Las dos primeras líneas crean la lista cuando tu mod carga antes que Companion Dogs. Sin Companion Dogs instalado, nadie lee la lista y nada se rompe, así que no hay comprobación de versión.</p>
+<p><code>owner</code> es <code>nil</code> cuando el dueño está desconectado. Decide qué son tus NPC para un perro sin dueño cerca. En el client, <code>owner</code> es el jugador local.</p>
+<p>La función corre para cada zombi cerca de un perro, varias veces por segundo. Que sea barata. Comprueba primero una variable o un campo tuyo, y llama a <code>getModData()</code> solo después: crea una tabla en cada zombi que toca.</p>
+<p>En un servidor dedicado el motor ignora <code>setVariable</code> en un zombi, así que una variable que pone tu mod no está en el servidor. Si tu mod corre en servidores, reconoce a tu NPC por algo que guarde el servidor, como mod data escrito en el servidor o una tabla tuya indexada por el zombi.</p>
+<p>Si solo necesitas que el perro deje en paz a todos tus NPC, y solo en un jugador, hay una forma sin código: pon <code>NoZombieHandling</code> a true en el cuerpo con <code>setVariable</code>. Otros mods leen la misma variable. Tiene el límite de servidor de arriba, y el perro también ignora a tus NPC hostiles.</p>
 <h2 id="12-claves-de-traducción">12. Claves de traducción</h2>
 <p>Entrega un <code>IG_UI.json</code> por carpeta de idioma, en <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. El base entrega catorce: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>Las claves que necesita una raza:</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>Una raza hostil de una especie nueva también puede entregar los textos de amenaza para ella. La etiqueta del centinela sobre el perro, el aviso de grupo y el aviso del cuidador de ganado buscan una clave que termine en tu especie, y si no la hay usan el texto genérico de animal hostil:</p>
+<div class="tw"><table><thead><tr>
+<th>Clave</th>
+<th>Dónde sale</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>etiqueta sobre el perro, varios cerca</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>etiqueta sobre el perro, uno muy cerca</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>etiqueta sobre el perro, uno cerca</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>etiqueta sobre el perro, uno lejos</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>el mensaje cuando el perro le ladra a un grupo</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>el mensaje del cuidador de ganado</td>
+</tr>
+</tbody></table></div>
+<p>En los dos mensajes <code>%1</code> es el perro, su raza seguida de su nombre. El base entrega las claves de <code>wolf</code>, y las genéricas terminan en <code>_hostile</code>.</p>
 <p>Un signo de porcentaje literal dentro de una cadena traducida revienta la pantalla que la muestra, porque el formateador lo lee como un marcador. Un archivo de idioma con marca de orden de bytes no compila, y el error nombra un archivo distinto del que está roto.</p>
 <h2 id="13-lo-que-recuerda-la-partida">13. Lo que recuerda la partida</h2>
 <p>Tres de tus identificadores se escriben en los archivos de partida y se leen para siempre:</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>El icono del moodle existe en los seis tamaños.</li>
 <li>Cada carpeta de idioma que entregas tiene todas las claves. Una clave que falta muestra la clave cruda en pantalla.</li>
 <li>Lo has probado en multijugador, no solo en un jugador. La posición, la propiedad y el mod data se comportan de otra forma allí.</li>
+<li>Una raza hostil se probó con <strong>"Animales agresivos"</strong> activado y desactivado, y se derrotó a un animal, se vendó y se le vio levantarse.</li>
 <li>Tu página de la Workshop avisa de lo que pasa al quitar el addon de una partida con animales vivos.</li>
 </ul>
 <h2 id="15-errores-comunes">15. Errores comunes</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"Funciona en un jugador y se porta mal en un servidor."</strong></td>
 <td>Algo escribe mod data en el client. Muévelo al server.</td>
+</tr>
+<tr>
+<td><strong>"Mi <code>warnChance</code> se ignora."</strong></td>
+<td>Se escribió como porcentaje. <code>40</code> está fuera de rango y vuelve al valor por defecto de 0.6; el 40% es <code>0.4</code>. La línea del log lo dice.</td>
+</tr>
+<tr>
+<td><strong>"El animal derrotado se tumba como un cadáver."</strong></td>
+<td><code>downedAnim</code> está apagado, así que se tumba con <code>Rac_Dead</code>. Actívalo solo cuando el modelo tenga los tres clips de caído.</td>
 </tr>
 <tr>
 <td><strong>"Peleó con un zombi aunque apagué el combate."</strong></td>

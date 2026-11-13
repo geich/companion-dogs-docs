@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#giọng" data-id="giọng">Giọng</a>
 <a class="s3" href="#khẩu-phần" data-id="khẩu-phần">Khẩu phần</a>
 <a class="s3" href="#giới-tính-khi-sinh" data-id="giới-tính-khi-sinh">Giới tính khi sinh</a>
+<a class="s3" href="#giống-hung-dữ-aggression" data-id="giống-hung-dữ-aggression">Giống hung dữ: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-con-vật-xuất-hiện-ở-đâu" data-id="9-con-vật-xuất-hiện-ở-đâu">9. Con vật xuất hiện ở đâu</a>
 <div class="sub">
 <a class="s3" href="#các-lớp-tòa-nhà" data-id="các-lớp-tòa-nhà">Các lớp tòa nhà</a>
+<a class="s3" href="#xuất-hiện-ngoài-hoang-dã" data-id="xuất-hiện-ngoài-hoang-dã">Xuất hiện ngoài hoang dã</a>
 <a class="s3" href="#những-hậu-tố-đã-có-người-dùng" data-id="những-hậu-tố-đã-có-người-dùng">Những hậu tố đã có người dùng</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-hook" data-id="11-hook">11. Hook</a>
+<div class="sub">
+<a class="s3" href="#mod-npc" data-id="mod-npc">Mod NPC</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-khóa-dịch-thuật" data-id="12-khóa-dịch-thuật">12. Khóa dịch thuật</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>Hai màu lông hành xử y hệt nhau vẫn là hai giống đối với mod nền (hai cái tên, hai mục trong chuồng); bạn viết chúng từ một bảng dùng chung, như CD: Cats làm với năm bộ lông của nó.</p>
 <h2 id="2-cần-gì-trước-khi-bắt-đầu">2. Cần gì trước khi bắt đầu</h2>
-<p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống.</p>
+<p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống. Một giống hung dữ có thêm bốn clip tùy chọn: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> và <code>Rac_DownedUp</code> cho con vật nằm gục sau khi bị đánh bại (<code>downedAnim = true</code>), và <code>Rac_Growl</code> cho tư thế đe dọa (<code>growlAnim = true</code>).</p>
 <p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Chó cỏ, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
 <p>Bạn cũng cần một texture cho thân và một ảnh chân dung cho cửa sổ chuồng.</p>
 <p>Hãy quyết định con vật của bạn là một giống hay một loài trước khi viết dòng code nào. Giống là con chó với các con số khác. Loài là con vật thiếu hẳn vài phần việc. Lựa chọn đó đổi các trường bạn phải viết; mục 6 nói về nó.</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>Khi mod nền vắng mặt hoặc quá cũ, file trả về ngay ở dòng hai và add-on không làm gì: không giống, không spawn, không moodle, không một dòng log.</p>
+<p>Một giống hung dữ chặn ở 12. Mod nền cũ hơn bỏ qua <code>aggression</code> và con vật sinh ra hiền, điều đó an toàn, nhưng khi đó add-on phát hành một con sói không bao giờ tấn công.</p>
 <p>Chốt chặn đặt theo từng file, và mỗi file chặn theo thứ nó dùng. <code>PugDefinitions.lua</code> cần các helper model, nên nó chặn theo chúng:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>Đừng tạo biến toàn cục. <code>CompanionDogs = CompanionDogs or {}</code> trong add-on biến một mod nền vắng mặt thành cái bảng dựng dở, và mọi chốt chặn phía sau đều lọt trong khi lẽ ra phải chặn.</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true cho phép nó quật ngã zombie.</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true cho giống lệnh Lao tới (API 13): khi được ra lệnh, nó chạy thẳng tới con zombie phía trước chủ và quật ngã những con zombie trên đường, 2 con ở Chiến đấu 1 cho tới 10 con ở Chiến đấu 10. Tốn căng thẳng và có thời gian hồi 30 phút trong game. Cần <code>canKnockdown</code>.</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>một trận đánh tốn của nó bao nhiêu căng thẳng.</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true làm con vật bị thương đi khập khiễng. Chỉ đặt khi model của bạn có hai clip tùy chọn <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi 1.0 giây, cùng root motion với <code>Rac_Walk</code>). Thiếu clip thì con vật vừa đi vừa đứng đơ tại chỗ.</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>tắt</td>
+<td><code>true</code> hoặc một bảng: mọi con trưởng thành không chủ của giống, chưa từng được thuần hóa, sẽ tấn công người chơi (API 12). Xem "Giống hung dữ" bên dưới.</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>true khi model của bạn có <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> và <code>Rac_DownedUp</code>. Khi đó con vật hung dữ bị đánh bại nằm và thở trên các clip đó. Không có nó, con vật nằm trên <code>Rac_Dead</code>.</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>true khi model của bạn có clip lặp <code>Rac_Growl</code>. Con vật hung dữ cúi thấp người trên clip đó trong lúc gầm gừ. Không có nó, con vật đứng mà gầm gừ.</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>Cặp đó chính là mèo tam thể. Mảng màu cam và đen nằm trên nhiễm sắc thể X, nên mèo tam thể gần như luôn là cái, và con đực thi thoảng xuất hiện là XXY, khoảng một trên ba nghìn, và không thể có con. Con đực của giống đặt <code>sterileMale</code> không bao giờ được chọn làm bạn tình, và tùy chọn phối giống biến mất khỏi menu chuột phải của nó. Con cái sinh sản bình thường.</p>
 <p>Con đực của giống như vậy mang nhãn "Vô sinh" ở mọi nơi trò chơi hiển thị giới tính của nó: bảng thông tin, menu chuột phải, lượt quét thú hoang và cũi, để người chơi biết vì sao nó không sinh sản.</p>
 <p>Cả hai trường đều được đọc từ định nghĩa của giống, nên không có gì được ghi lên con vật và file lưu cũ không cần chuyển đổi. Cùng lượt bốc đó quyết định giới tính của con non khi chào đời, nên giống nào là cái ngoài thế giới thì trong lứa đẻ vẫn là cái.</p>
+<h3 id="giống-hung-dữ-aggression">Giống hung dữ: <code>aggression</code></h3>
+<p>Từ API 12, một giống có thể hung dữ. Mọi con trưởng thành của giống không có chủ và chưa từng được thuần hóa sẽ gầm gừ với người chơi và tấn công họ. Con non không bao giờ tấn công, bạn đồng hành không bao giờ tấn công, và con vật từng được thuần hóa hoặc đã được cứu thì vẫn hiền. Người chơi có thể tắt toàn bộ bằng tùy chọn sandbox <strong>"Động vật hung dữ"</strong>, mặc định bật; khi tắt, giống đó cư xử như mọi con thú hoang.</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>Đó là con sói. <code>aggression = true</code> lấy mọi mặc định bên dưới, một bảng chỉ đổi những trường nó nêu tên, còn bỏ trống trường này hoặc đặt <code>false</code> thì giống vẫn hiền.</p>
+<div class="tw"><table><thead><tr>
+<th>Trường</th>
+<th>Mặc định</th>
+<th>Khoảng</th>
+<th>Nó làm gì</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>, <code>medium</code>, <code>large</code></td>
+<td>tầm cắn (0.9, 1.1 hoặc 1.25 ô), sát thương nền, và chỗ nó cắn: small nhắm bàn chân và cẳng chân, medium và large với tới cả bàn tay và cánh tay</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 tới 20</td>
+<td>số ô mà ở đó nó nhận ra người chơi. Ngồi xổm tính x0.6 và chạy tính x1.25. Không có đường ngắm, nó chỉ đánh hơi thấy người chơi trong vòng 2.5 ô</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 tới 1</td>
+<td>tỷ lệ nó gầm gừ cảnh báo trước khi tấn công. Người chơi đang ngủ luôn được cảnh báo, và thức dậy</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 tới 6000</td>
+<td>độ dài mỗi tiếng gầm gừ cảnh báo, tính bằng mili giây</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 tới 20</td>
+<td>đi lại gần hơn khoảng này trong lúc cảnh báo sẽ bắt đầu cuộc tấn công. Không bao giờ lớn hơn <code>detect</code></td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 tới 900</td>
+<td>độ dài cú vồ. Một đòn đánh hoặc một cú đẩy trong lúc đó cắt ngang cú cắn, và lùi lại khiến nó cắn trượt</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>, <code>recoverMax</code></td>
+<td>900, 1600</td>
+<td>400 tới 4000</td>
+<td>quãng nghỉ giữa một cú cắn và cú vồ tiếp theo, bốc ngẫu nhiên trong khoảng giữa hai số</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 tới 5</td>
+<td>nhân sát thương cú cắn</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 tới 1</td>
+<td>tỷ lệ một cú cắn quật ngã người chơi. Chỉ với cỡ large</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 tới 30</td>
+<td>nó chịu được bao nhiêu đòn, xem bên dưới</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 tới 60</td>
+<td>số ô tính từ nơi cuộc rượt đuổi bắt đầu, trước khi nó bỏ cuộc</td>
+</tr>
+</tbody></table></div>
+<p>Con vật hung dữ bắt đầu với 1 sinh lực, và mỗi đòn lấy đi <code>blow / toughness</code> từ đó. Một đòn cận chiến có giá trị bằng sát thương trung bình của vũ khí chia cho 1.6, cộng hoặc trừ 8% cho mỗi cấp kỹ năng vũ khí trên hoặc dưới 5, nằm giữa 0.35 và 2.5. Một phát súng có giá trị bằng sát thương trung bình của nó chia cho 0.4, tối đa 4, nên khẩu súng lục 9 mm là 2 còn súng trường và shotgun chạm mức trần. Chất nổ là 4, và đòn chí mạng nhân giá trị đòn lên 1.5. Với <code>toughness</code> mặc định là 4, hai phát súng lục hạ được nó. Sandbox có một hệ số cho độ lì đòn và một cho sát thương cú cắn, nhân thêm lên giá trị của bạn.</p>
+<p>Con vật bị đánh bại gục mà vẫn sống theo tỷ lệ của sandbox (mặc định 10%), nếu không thì chết. Khi đã gục, nó không còn bị thương được nữa. Nó chết vì mất máu sau vài giờ trừ khi một người chơi băng bó cho nó, và khi đã được băng bó nó đứng dậy trong trạng thái được cứu: hiền, tin người chơi, và sẵn sàng để được thuần hóa bằng thức ăn như mọi con thú hoang. Người chơi cũng có thể kết liễu nó từ menu chuột phải. Bạn đồng hành của mọi người chơi coi con vật hung dữ là mối đe dọa, như zombie: chúng đánh nó, và lính gác sủa báo nó.</p>
+<p>Tiếng gầm gừ là khóa <code>growl</code> trong <code>voices</code> của bạn. Không có khóa đó, con vật gầm gừ như chó.</p>
+<p>Đặt <code>canThump = false</code> cho cả ba loại con vật, sau helper hành vi, như con sói. Engine bật cờ này mặc định, và khi đó con vật bị tấn công, rất đói hoặc rất khát, hoặc bị căng thẳng nặng sẽ đập cửa và cửa sổ, còn con rất đói hoặc rất khát sẽ tìm đường xuyên qua chúng, nên cửa đóng có thể không chấm dứt cuộc rượt đuổi.</p>
+<p>Mọi trường đều được kiểm tra khi giống đăng ký, và mỗi vấn đề in một dòng log kèm khóa giống của bạn. Giá trị ngoài khoảng lùi về mặc định, và một tỷ lệ viết dưới dạng phần trăm (<code>warnChance = 40</code>) nhận một gợi ý rằng ý bạn là 0.4. Khóa lạ bị bỏ đi và dòng log liệt kê các khóa hợp lệ. Giá trị không phải <code>true</code>, <code>false</code> hay một bảng thì giữ giống ở trạng thái hiền.</p>
+<p>Mod nền cũ hơn API 12 bỏ qua trường này, và giống vẫn hiền.</p>
 <h2 id="6-tắt-hẳn-một-hệ-thống">6. Tắt hẳn một hệ thống</h2>
 <p>Năm kỹ năng chính là năm hệ thống:</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>Hàm khớp nhận định nghĩa tòa nhà và chạy trong một lời gọi được bảo vệ, nên lỗi trong đó không làm dừng việc nạp chunk. <code>skipUrbanGate</code> cho phép lớp gieo trong một chunk không phải đô thị, điều mà một nông trại hay một căn chòi trong rừng cần đến. Đừng đặt <code>exclusive</code>. Các lớp gốc loại trừ lẫn nhau, còn lớp của addon thì khớp chồng lên chúng.</p>
+<h3 id="xuất-hiện-ngoài-hoang-dã">Xuất hiện ngoài hoang dã</h3>
+<p>Từ API 12, một bước có <code>zone</code> thay cho <code>class</code> gieo một lần cho mỗi chunk của bản đồ, không phải cho mỗi tòa nhà. Đây là cách con sói sinh ra trong rừng:</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>Khóa</th>
+<th>Là gì</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td>một vùng đã đăng ký bằng <code>CD.registerSpawnZone</code>. Bản gốc đăng ký <code>forest</code>.</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>, số con sinh ra cùng nhau. Mặc định <code>{ 1, 1 }</code>.</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>hàm không bắt buộc, trả về số ngày trong game. Khi mọi con vật của nhóm đã chết hoặc được cứu và đã qua chừng ấy ngày, chỗ đó có thể nhận một nhóm mới. Không có nó, hoặc với 0, thì không bao giờ.</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>, <code>suffix</code>, <code>breed</code> và <code>gate</code> hoạt động như ở trên; <code>indoor</code> không áp dụng. Con vật không sinh ra khi có người chơi trong vòng 24 ô, và chunk thử lại ở lần nạp kế tiếp. Một nhóm thuộc giống hung dữ lang thang quanh chỗ nó sinh ra và đánh cùng nhau: khi một con bắt đầu rượt đuổi, những con khác trong vòng 24 ô nhập cuộc, và khi một nửa số con bị đánh bại thì phần còn lại bỏ chạy.</p>
+<p>Đăng ký vùng của riêng bạn bằng một hàm nhận một ô bản đồ:</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>Bản gốc chỉ kiểm tra một nhúm ô của chunk trúng thăm, không phải tất cả. Một tên đã được đăng ký rồi sẽ bị bỏ qua.</p>
 <h3 id="những-hậu-tố-đã-có-người-dùng">Những hậu tố đã có người dùng</h3>
 <p>Hậu tố là một phần của khóa lưu "tòa nhà này đã gieo rồi". Hai mod dùng chung một hậu tố sẽ làm hỏng kết quả gieo của nhau.</p>
 <p>Mọi hậu tố đều bắt đầu bằng một dấu gạch đứng. Những cái đang được dùng:</p>
 <ul>
-<li>Bản gốc: hậu tố rỗng, và <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code></li>
+<li>Bản gốc: hậu tố rỗng, và <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code>, <code>wf</code></li>
 <li>Rottweiler: <code>rw</code>, <code>r</code></li>
 <li>Doberman: <code>db</code>, <code>dm</code>, <code>dh</code></li>
 <li>Labrador: <code>lb</code>, <code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> trả về cấp độ, hoặc 0 nghĩa là "không hiện". <code>apply</code> nhận số phút trong game kể từ lần gọi trước, nên hãy nhân hiệu ứng của bạn với <code>elapsedMin</code>.</p>
 <p>Hãy kèm icon ở sáu kích cỡ, từ 32 đến 128 pixel. Giao diện chọn kích cỡ theo mức phóng của người chơi, và một kích cỡ thiếu sẽ hiện thành ô vuông rỗng. Icon xuất hiện ở dải riêng của mod, không nằm chung với các moodle gốc của game.</p>
 <h2 id="11-hook">11. Hook</h2>
-<p>Hai danh sách hàm mà bản gốc gọi trên server. Hãy nối vào chúng từ một file shared. Mỗi handler chạy trong lời gọi được bảo vệ của riêng nó, nên lỗi ở một addon không làm dừng bản gốc.</p>
+<p>Hai danh sách hàm mà bản gốc gọi trên server. Hãy nối vào chúng từ một file shared.</p>
 <p><code>CD.onHuntDelivered</code>, có từ API 2, được gọi ngay sau khi con vật thả con mồi xuống chân chủ:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>Chu kỳ chăm sóc tính lại và ghi đè giá trị này mỗi vòng, nên mọi thứ ghi từ bên ngoài đều mất ở tick sau. Hãy dùng hook cho một điều kiện đến từ môi trường, như nóng, lạnh hay mưa.</p>
 <p>Trong nhiều người chơi, client không bao giờ ghi mod data. Một lần ghi từ phía client sẽ đè lên bản của server ở lần đồng bộ kế tiếp, và triệu chứng lộ ra sau đó vài phút, ở một chỗ chẳng liên quan. Hãy làm việc đó trong một file phía server, hoặc trong một trong các hook này.</p>
 <p>Các con số trong bảng <strong>SERVER TUNING</strong> là hằng số <code>CD.*</code> bình thường, và một add-on có thể gán một hằng từ file shared hoặc server lúc nạp. Từ API 9, bảng lấy giá trị đang có hiệu lực khi server nạp xong làm mặc định của núm đó: nó giữ nguyên cho tới khi admin gõ đè lên, nút reset quay về nó, và bảng hiện nó như mặc định. Trên mod nền cũ hơn, bảng ghi lại giá trị gốc mỗi lần khởi động. Hãy gán lúc nạp, không phải từ một sự kiện về sau, nếu không lần đổi tiếp theo ở bất kỳ núm nào sẽ đặt lại giá trị gốc.</p>
+<h3 id="mod-npc">Mod NPC</h3>
+<p>Phần này dành cho mod NPC, không phải cho add-on giống. Một số mod NPC dựng người của họ trên nền một con zombie, nên con chó thấy một con zombie và tấn công. Từ API 13, mod NPC có thể cho con chó biết ai là bạn, bằng danh sách <code>CompanionDogs.npcChecks</code>. Hãy thêm một hàm vào đó từ một file shared, để nó tồn tại cả trên server lẫn trên client:</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>Hàm nhận con zombie và chủ của con chó, rồi trả về một trong ba câu trả lời:</p>
+<ul>
+<li><code>true</code>: bạn. Con chó để yên nó.</li>
+<li><code>false</code>: thù địch. Con chó đánh nó như mọi con zombie.</li>
+<li><code>nil</code>: không phải NPC của bạn. Con chó tiếp tục theo quy tắc thường lệ.</li>
+</ul>
+<p>Câu trả lời đầu tiên khác <code>nil</code> sẽ quyết định. Con chó hỏi mỗi lần nó chọn mục tiêu hoặc kiểm tra lại mục tiêu đang có, nên điều này bao trùm chiến đấu, lính gác, cú lao tới và lệnh tấn công.</p>
+<p>Hai dòng đầu tạo danh sách khi mod của bạn nạp trước Companion Dogs. Không cài Companion Dogs thì không ai đọc danh sách và không có gì hỏng, nên không cần chốt chặn phiên bản.</p>
+<p><code>owner</code> là <code>nil</code> khi chủ đang ngoại tuyến. Hãy quyết định NPC của bạn là gì đối với một con chó không có chủ ở quanh. Trên client, <code>owner</code> là người chơi cục bộ.</p>
+<p>Hàm chạy cho mọi zombie gần một con chó, vài lần mỗi giây. Hãy giữ nó rẻ. Kiểm tra trước một biến hoặc một trường của riêng bạn, và chỉ gọi <code>getModData()</code> sau đó: nó tạo một bảng trên mọi zombie mà nó chạm tới.</p>
+<p>Trên server chuyên dụng, engine bỏ qua <code>setVariable</code> trên zombie, nên một biến do mod của bạn đặt sẽ không có trên server. Nếu mod của bạn chạy trên server, hãy nhận ra NPC của bạn bằng thứ mà server nắm giữ, như mod data ghi trên server hoặc một bảng của riêng bạn có khóa là con zombie.</p>
+<p>Nếu bạn chỉ cần con chó để yên mọi NPC của bạn, và chỉ trong chơi đơn, có một cách không cần code: đặt <code>NoZombieHandling</code> thành true trên thân bằng <code>setVariable</code>. Các mod khác cũng đọc cùng biến đó. Nó có giới hạn về server nêu trên, và con chó cũng bỏ qua cả NPC thù địch của bạn.</p>
 <h2 id="12-khóa-dịch-thuật">12. Khóa dịch thuật</h2>
 <p>Hãy kèm một <code>IG_UI.json</code> cho mỗi thư mục ngôn ngữ, trong <code>media/lua/shared/Translate/&lt;LANG&gt;/</code>. Bản gốc kèm mười bốn: EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>Các khóa mà một giống cần:</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>Một giống hung dữ thuộc loài mới cũng có thể kèm các chữ đe dọa cho loài đó. Nhãn của lính gác trên đầu con chó, lời cảnh báo bầy và lời cảnh báo của con chó chăn đàn sẽ tìm một khóa kết thúc bằng loài của bạn, và lùi về chữ chung cho động vật hung dữ:</p>
+<div class="tw"><table><thead><tr>
+<th>Khóa</th>
+<th>Hiện ở đâu</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>nhãn trên đầu con chó, nhiều con ở gần</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>nhãn trên đầu con chó, một con rất gần</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>nhãn trên đầu con chó, một con ở gần</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>nhãn trên đầu con chó, một con ở xa</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>thông báo khi con chó sủa báo một bầy</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>thông báo của con chó chăn đàn</td>
+</tr>
+</tbody></table></div>
+<p>Trong hai thông báo, <code>%1</code> là con chó, tên giống rồi đến tên của nó. Bản gốc kèm các khóa cho <code>wolf</code>, và các khóa chung kết thúc bằng <code>_hostile</code>.</p>
 <p>Một dấu phần trăm để trần trong chuỗi đã dịch sẽ làm sập màn hình hiện nó, vì bộ định dạng đọc nó như một chỗ giữ chỗ. Một file ngôn ngữ có byte order mark thì không biên dịch được, và lỗi lại gọi tên một file khác chứ không phải file hỏng.</p>
 <h2 id="13-những-gì-file-save-ghi-nhớ">13. Những gì file save ghi nhớ</h2>
 <p>Ba trong số các định danh của bạn được ghi vào file save và đọc lại mãi mãi:</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>Icon moodle có đủ cả sáu kích cỡ.</li>
 <li>Mọi thư mục ngôn ngữ bạn kèm theo đều có đủ mọi khóa. Một khóa thiếu sẽ hiện khóa thô lên màn hình.</li>
 <li>Bạn đã thử trong nhiều người chơi, không chỉ một mình. Vị trí, quyền sở hữu và mod data đều hành xử khác ở đó.</li>
+<li>Giống hung dữ đã được thử với <strong>"Động vật hung dữ"</strong> bật và tắt, và đã có một con bị đánh bại, được băng bó và được thấy đứng dậy.</li>
 <li>Trang Workshop của bạn cảnh báo về việc gỡ addon khỏi file save còn con vật sống.</li>
 </ul>
 <h2 id="15-lỗi-thường-gặp">15. Lỗi thường gặp</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"Chơi đơn thì ổn, lên server lại lỗi."</strong></td>
 <td>Có gì đó đang ghi ModData ở phía client. Hãy chuyển nó sang server.</td>
+</tr>
+<tr>
+<td><strong>"<code>warnChance</code> của tôi bị bỏ qua."</strong></td>
+<td>Nó được viết dưới dạng phần trăm. <code>40</code> nằm ngoài khoảng và lùi về mặc định 0.6; 40% là <code>0.4</code>. Dòng log có nói điều đó.</td>
+</tr>
+<tr>
+<td><strong>"Con vật bị đánh bại nằm như một cái xác."</strong></td>
+<td><code>downedAnim</code> đang tắt, nên nó nằm bằng <code>Rac_Dead</code>. Chỉ bật khi model có đủ ba clip gục.</td>
 </tr>
 <tr>
 <td><strong>"Nó đánh nhau với zombie dù tôi đã tắt chiến đấu."</strong></td>

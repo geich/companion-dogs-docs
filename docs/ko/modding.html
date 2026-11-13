@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#목소리" data-id="목소리">목소리</a>
 <a class="s3" href="#식단" data-id="식단">식단</a>
 <a class="s3" href="#태어날-때의-성별" data-id="태어날-때의-성별">태어날 때의 성별</a>
+<a class="s3" href="#적대적-품종-aggression" data-id="적대적-품종-aggression">적대적 품종: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-동물이-나타나는-곳" data-id="9-동물이-나타나는-곳">9. 동물이 나타나는 곳</a>
 <div class="sub">
 <a class="s3" href="#건물-분류" data-id="건물-분류">건물 분류</a>
+<a class="s3" href="#야생에서-스폰하기" data-id="야생에서-스폰하기">야생에서 스폰하기</a>
 <a class="s3" href="#이미-쓰이는-접미사" data-id="이미-쓰이는-접미사">이미 쓰이는 접미사</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-훅" data-id="11-훅">11. 훅</a>
+<div class="sub">
+<a class="s3" href="#npc-모드" data-id="npc-모드">NPC 모드</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-번역-키" data-id="12-번역-키">12. 번역 키</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>행동이 똑같은 두 색깔도 베이스에게는 서로 다른 두 품종입니다(이름 둘, 견사 항목 둘). 공유 테이블 하나에서 둘을 뽑아 쓰면 되고, CD: Cats가 다섯 가지 털색으로 그렇게 합니다.</p>
 <h2 id="2-시작하기-전에-필요한-것">2. 시작하기 전에 필요한 것</h2>
-<p>동물에게는 <code>media/models_X/Skinned/</code> 아래에 자기 스킨드 <code>.glb</code>가 필요하고, 그 안에 <code>Rac_*</code> 애니메이션 클립 21개가 전부 들어 있어야 합니다. 클립은 모델 파일끼리 상속되지 않습니다. 클립이 열다섯 개뿐인 모델은 나머지 여섯 개 중 하나가 요구되는 순간 얼어붙는 동물이 됩니다. 모델은 또한 본 60개 아래여야 하고 최상위 노드가 항등이어야 합니다. 아니면 엔진이 프레임마다 예외를 던지고 동물은 검은 얼룩으로 그려집니다. 선택 클립이 둘 더 있습니다. <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>(절뚝이는 걷기 사이클)인데, 품종 정의에서 <code>limpAnim = true</code>를 켤 때만 의미가 있습니다.</p>
+<p>동물에게는 <code>media/models_X/Skinned/</code> 아래에 자기 스킨드 <code>.glb</code>가 필요하고, 그 안에 <code>Rac_*</code> 애니메이션 클립 21개가 전부 들어 있어야 합니다. 클립은 모델 파일끼리 상속되지 않습니다. 클립이 열다섯 개뿐인 모델은 나머지 여섯 개 중 하나가 요구되는 순간 얼어붙는 동물이 됩니다. 모델은 또한 본 60개 아래여야 하고 최상위 노드가 항등이어야 합니다. 아니면 엔진이 프레임마다 예외를 던지고 동물은 검은 얼룩으로 그려집니다. 선택 클립이 둘 더 있습니다. <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>(절뚝이는 걷기 사이클)인데, 품종 정의에서 <code>limpAnim = true</code>를 켤 때만 의미가 있습니다. 적대적 품종에는 선택 클립이 넷 더 있습니다. 쓰러져 누운 동물을 위한 <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code>, <code>Rac_DownedUp</code> (<code>downedAnim = true</code>), 그리고 위협 자세를 위한 <code>Rac_Growl</code>(<code>growlAnim = true</code>)입니다.</p>
 <p>아직 모델이 없다면, <code>CD.applyDogModel</code>을 베이스의 몸 중 하나로 겨누어 놓고 나머지 전부를 쓰고 시험할 수 있습니다. 동물은 믹스처럼 보이지만, 이 설명서의 모든 시스템이 돌아갑니다.</p>
 <p>몸에 쓸 텍스처와 견사 창에 쓸 초상화도 필요합니다.</p>
 <p>코드를 쓰기 전에 여러분의 동물이 품종인지 종인지부터 정하세요. 품종은 숫자가 다른 개입니다. 종은 어떤 일거리 자체가 없는 동물입니다. 이 선택이 무슨 필드를 쓰는지를 바꿉니다. 6절이 다룹니다.</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>베이스가 없거나 너무 낡았으면 파일은 둘째 줄에서 반환되고 애드온은 아무것도 하지 않습니다. 품종도, 스폰도, 무들도, 로그 한 줄도 없습니다.</p>
+<p>적대적 품종은 12로 가드를 겁니다. 그보다 낡은 베이스는 <code>aggression</code>을 무시하고 동물은 온순하게 나옵니다. 안전하기는 하지만, 그러면 애드온은 절대 공격하지 않는 늑대를 싣고 나가는 셈입니다.</p>
 <p>가드는 파일마다 걸고, 파일마다 자기가 쓰는 것으로 겁니다. <code>PugDefinitions.lua</code>는 모델 헬퍼가 필요하므로 그것으로 겁니다.</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>전역을 만들지 마세요. 애드온 안의 <code>CompanionDogs = CompanionDogs or {}</code>는 없는 베이스를 반쯤 만들어진 테이블로 바꿔 놓고, 그 뒤의 모든 가드가 통과하면 안 될 때 통과합니다.</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true면 좀비를 넘어뜨릴 수 있습니다.</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true면 품종이 돌진 명령을 받습니다(API 13). 명령하면 주인 앞쪽의 좀비를 향해 일직선으로 달려가 길목의 좀비를 넘어뜨립니다. 전투 1에서 2마리, 전투 10에서 최대 10마리입니다. 스트레스가 들고 게임 내 30분의 재사용 대기시간이 있습니다. <code>canKnockdown</code>이 필요합니다.</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>싸움 한 번이 스트레스를 얼마나 먹는지.</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true면 다친 동물이 걸을 때 절뚝입니다. 모델에 선택 클립 <code>Rac_WalkLimpFront</code>와 <code>Rac_WalkLimpBack</code>이 있을 때만 켜세요(<code>Rac_Walk</code>와 같은 루트 모션을 가진 1.0초 걷기 사이클). 클립이 없으면 동물이 제자리에 굳은 채 걷습니다.</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>꺼짐</td>
+<td><code>true</code> 또는 테이블. 주인이 없고 한 번도 길들여진 적 없는 그 품종의 성체가 모두 플레이어를 공격합니다(API 12). 아래 "적대적 품종"을 보세요.</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>모델에 <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code>, <code>Rac_DownedUp</code>이 있을 때 true. 그러면 쓰러진 적대적 동물이 이 클립으로 누워서 숨을 쉽니다. 없으면 <code>Rac_Dead</code>로 눕습니다.</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>모델에 루프 클립 <code>Rac_Growl</code>이 있을 때 true. 적대적 동물이 으르렁대는 동안 이 클립으로 몸을 낮춥니다. 없으면 선 채로 으르렁댑니다.</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>이 한 쌍이 바로 삼색 고양이입니다. 주황과 검정의 모자이크는 X 염색체에 실려 있어서 삼색은 거의 항상 암컷이고, 가끔 나오는 수컷은 XXY로 3000마리에 한 마리쯤이며 새끼를 보지 못합니다. <code>sterileMale</code> 품종의 수컷은 짝으로 뽑히지 않고, 상호작용 메뉴에서 번식 항목이 사라집니다. 암컷은 평소대로 번식합니다.</p>
 <p>그런 품종의 수컷은 게임이 성별을 보여주는 모든 곳에 "불임" 표시가 붙습니다. 상태창, 상호작용 메뉴, 떠돌이 조사, 견사 어디서나 붙으니 플레이어가 왜 번식하지 않는지 알 수 있습니다.</p>
 <p>두 항목 모두 품종 정의에서 읽으므로 동물에는 아무것도 기록되지 않고, 기존 세이브에도 마이그레이션이 필요 없습니다. 같은 추첨이 새끼가 태어날 때의 성별도 정하므로, 월드에서 암컷인 품종은 새끼에서도 암컷으로 남습니다.</p>
+<h3 id="적대적-품종-aggression">적대적 품종: <code>aggression</code></h3>
+<p>API 12부터 품종이 적대적일 수 있습니다. 주인이 없고 한 번도 길들여진 적 없는 그 품종의 성체는 모두 플레이어에게 으르렁대고 공격합니다. 새끼는 절대 공격하지 않고, 동반자도 절대 공격하지 않으며, 한 번이라도 길들여졌거나 구조된 동물은 얌전히 있습니다. 플레이어는 샌드박스 옵션 <strong>"공격적인 동물"</strong>로 이 전부를 끌 수 있고, 기본값은 켜짐입니다. 꺼져 있으면 그 품종은 여느 떠돌이처럼 행동합니다.</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>이것이 늑대입니다. <code>aggression = true</code>는 아래 기본값을 전부 받고, 테이블은 자기가 적은 필드만 바꾸며, 필드를 빼거나 <code>false</code>로 두면 품종은 온순하게 남습니다.</p>
+<div class="tw"><table><thead><tr>
+<th>필드</th>
+<th>기본값</th>
+<th>범위</th>
+<th>하는 일</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>, <code>medium</code>, <code>large</code></td>
+<td>무는 거리(0.9, 1.1, 1.25타일), 기본 피해, 무는 부위. small은 발과 다리를 노리고, medium과 large는 손과 팔까지 닿습니다</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3에서 20</td>
+<td>플레이어를 알아채는 타일 거리. 웅크리면 x0.6, 달리면 x1.25로 칩니다. 시야가 없으면 2.5타일 안의 플레이어만 냄새로 맡습니다</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0에서 1</td>
+<td>공격하기 전에 으르렁대며 경고할 확률. 잠든 플레이어는 언제나 경고를 받고, 잠에서 깹니다</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800에서 6000</td>
+<td>경고 으르렁거림 한 번의 길이, 밀리초</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5에서 20</td>
+<td>경고하는 동안 이보다 가까이 걸어오면 공격이 시작됩니다. <code>detect</code>보다 커지지 않습니다</td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250에서 900</td>
+<td>덤벼드는 동작의 길이. 그동안 때리거나 밀치면 물기가 끊기고, 뒤로 물러나면 빗나갑니다</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>, <code>recoverMax</code></td>
+<td>900, 1600</td>
+<td>400에서 4000</td>
+<td>물고 나서 다음 덤벼들기까지의 틈. 둘 사이에서 뽑습니다</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0에서 5</td>
+<td>물기 피해에 곱합니다</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0에서 1</td>
+<td>물기가 플레이어를 넘어뜨릴 확률. large 크기만</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1에서 30</td>
+<td>몇 번 맞아야 쓰러지는지. 아래를 보세요</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8에서 60</td>
+<td>추격이 시작된 곳에서 몇 타일 떨어지면 포기하는지</td>
+</tr>
+</tbody></table></div>
+<p>적대적 동물은 체력 1로 시작하고, 한 대 맞을 때마다 <code>blow / toughness</code>만큼 깎입니다. 근접 일격의 값은 무기의 평균 피해를 1.6으로 나눈 것이고, 무기 레벨이 5보다 하나 높거나 낮을 때마다 8%씩 오르내리며, 0.35에서 2.5 사이입니다. 총 한 발의 값은 평균 피해를 0.4로 나눈 것이고 최대 4입니다. 그래서 9 mm 권총은 2이고, 소총과 산탄총은 상한에 닿습니다. 폭발물은 4이고, 치명타는 일격 값에 1.5를 곱합니다. 기본 <code>toughness</code> 4라면 권총 두 발로 제압됩니다. 샌드박스에는 맷집 배수와 물기 피해 배수가 하나씩 있고, 여러분의 값 위에 곱해집니다.</p>
+<p>제압된 동물은 샌드박스 확률(기본값 10%)로 살아서 쓰러지고, 아니면 죽습니다. 쓰러지면 더는 다치지 않습니다. 플레이어가 붕대를 감지 않으면 몇 시간 뒤 피를 흘리다 죽고, 붕대를 감으면 구조된 상태로 일어납니다. 온순하고, 플레이어를 신뢰하며, 여느 떠돌이처럼 음식으로 길들일 수 있습니다. 플레이어는 상황 메뉴로 숨통을 끊을 수도 있습니다. 모든 플레이어의 동반자는 적대적 동물을 좀비처럼 위협으로 다룹니다. 싸우고, 보초는 그것을 보고 짖습니다.</p>
+<p>으르렁거림은 여러분 <code>voices</code>의 <code>growl</code> 키입니다. 없으면 동물은 개처럼 으르렁댑니다.</p>
+<p>늑대처럼, 세 동물 타입 모두에 동작 헬퍼 다음에 <code>canThump = false</code>를 넣으세요. 엔진은 기본으로 이 값을 켜 두고, 그러면 공격받은 동물, 몹시 배고프거나 목마른 동물, 스트레스가 심한 동물이 문과 창문을 두드리며, 몹시 배고프거나 목마른 동물은 그 사이로 경로를 잡습니다. 그래서 닫힌 문이 추격을 끝내지 못할 수 있습니다.</p>
+<p>모든 필드는 품종이 등록될 때 검사되고, 문제마다 여러분의 품종 키가 붙은 줄이 로그에 찍힙니다. 범위 밖의 값은 기본값으로 떨어지고, 백분율로 적은 확률(<code>warnChance = 40</code>)에는 0.4를 뜻한 것이라는 힌트가 붙습니다. 모르는 키는 버려지고, 그 줄이 유효한 키를 나열합니다. <code>true</code>도 <code>false</code>도 테이블도 아닌 값이면 품종은 온순하게 남습니다.</p>
+<p>API 12보다 낡은 베이스는 이 필드를 무시하고, 품종은 온순하게 남습니다.</p>
 <h2 id="6-시스템-하나를-통째로-끄기">6. 시스템 하나를 통째로 끄기</h2>
 <p>스킬 다섯 개가 곧 시스템 다섯 개입니다.</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>판정 함수는 건물 정의를 받고 보호 호출 안에서 도므로, 거기서 난 오류가 청크 로드를 멈추지 않습니다. <code>skipUrbanGate</code>는 도시가 아닌 청크에서도 그 분류가 굴게 하며, 농장이나 숲속 오두막에는 그것이 필요합니다. <code>exclusive</code>는 켜지 마세요. 베이스 분류들은 자기들끼리 배타적이고, 애드온 분류는 그 위에 겹쳐서 걸립니다.</p>
+<h3 id="야생에서-스폰하기">야생에서 스폰하기</h3>
+<p>API 12부터 <code>class</code> 대신 <code>zone</code>을 가진 단계는 건물마다가 아니라 지도의 청크마다 한 번 굴립니다. 늑대가 숲에서 태어나는 방식이 이것입니다.</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>키</th>
+<th>무엇인가</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td><code>CD.registerSpawnZone</code>으로 등록한 구역. 베이스는 <code>forest</code>를 등록합니다.</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>, 함께 태어나는 수. 기본값 <code>{ 1, 1 }</code>.</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>게임 내 일수를 돌려주는 선택 함수. 무리의 동물이 모두 죽거나 구조되고 그만큼의 날이 지나면, 그 자리에 새 무리가 생길 수 있습니다. 없거나 0이면 절대 생기지 않습니다.</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>, <code>suffix</code>, <code>breed</code>, <code>gate</code>는 위와 같이 작동하고, <code>indoor</code>는 적용되지 않습니다. 플레이어가 24타일 안에 있으면 동물이 태어나지 않고, 그 청크는 다음 로드 때 다시 시도합니다. 적대적 품종의 무리는 태어난 자리 주변을 돌아다니고 함께 싸웁니다. 하나가 추격을 시작하면 24타일 안의 다른 개체가 합류하고, 절반이 제압되면 나머지는 달아납니다.</p>
+<p>지도 칸 하나를 받는 함수로 여러분의 구역을 등록하세요.</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>베이스는 당첨된 청크의 칸을 전부가 아니라 몇 개만 검사합니다. 이미 등록된 이름은 무시됩니다.</p>
 <h3 id="이미-쓰이는-접미사">이미 쓰이는 접미사</h3>
 <p>접미사는 "이 건물은 이미 굴렸다"를 저장하는 키의 일부입니다. 같은 접미사를 쓰는 두 모드는 서로의 굴림을 망가뜨립니다.</p>
 <p>접미사는 모두 세로 막대로 시작합니다. 이미 쓰이고 있는 것들입니다.</p>
 <ul>
-<li>베이스: 빈 접미사, 그리고 <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code></li>
+<li>베이스: 빈 접미사, 그리고 <code>g</code>, <code>h</code>, <code>hv</code>, <code>bc</code>, <code>gh</code>, <code>hh</code>, <code>bh</code>, <code>wf</code></li>
 <li>로트와일러: <code>rw</code>, <code>r</code></li>
 <li>도베르만: <code>db</code>, <code>dm</code>, <code>dh</code></li>
 <li>래브라도: <code>lb</code>, <code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code>은 단계를 돌려주고, 안 보일 때는 0을 돌려줍니다. <code>apply</code>는 지난 호출 이후의 게임 내 분을 받으므로, 효과에 <code>elapsedMin</code>을 곱하세요.</p>
 <p>아이콘은 32픽셀부터 128픽셀까지 여섯 크기로 실으세요. 인터페이스가 플레이어의 배율에 따라 크기를 고르고, 없는 크기는 빈 사각형으로 나옵니다. 아이콘은 바닐라 무들 사이가 아니라 모드 자체의 줄에 나타납니다.</p>
 <h2 id="11-훅">11. 훅</h2>
-<p>베이스가 서버에서 호출하는 함수 목록 둘입니다. shared 파일에서 덧붙이세요. 각 핸들러는 자기 보호 호출 안에서 도므로, 애드온 하나에서 난 오류가 베이스를 멈추지 않습니다.</p>
+<p>베이스가 서버에서 호출하는 함수 목록 둘입니다. shared 파일에서 덧붙이세요.</p>
 <p>API 2부터 있는 <code>CD.onHuntDelivered</code>는 동물이 사냥감을 주인 발치에 내려놓은 직후에 호출됩니다.</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>유지 관리는 주기마다 값을 다시 계산해 덮어쓰므로, 바깥에서 쓴 것은 다음 틱에 사라집니다. 더위나 추위나 비처럼 환경에서 오는 조건에는 이 훅을 쓰세요.</p>
 <p>멀티플레이에서 클라이언트는 모드 데이터를 절대 쓰지 않습니다. 클라이언트 쪽에서 쓴 값은 다음 동기화에 서버의 사본을 덮어쓰고, 증상은 몇 분 뒤 상관없는 곳에서 나타납니다. 그 일은 서버 파일에서 하거나 이 훅 안에서 하세요.</p>
 <p><strong>SERVER TUNING</strong> 패널의 숫자들은 평범한 <code>CD.*</code> 상수이고, 애드온은 로드 시점에 shared나 server 파일에서 하나를 대입할 수 있습니다. API 9부터 패널은 서버가 로드를 마친 시점에 유효한 값을 그 조절값의 기본값으로 삼습니다. 관리자가 덮어쓸 때까지 유지되고, 리셋 버튼은 그 값으로 돌아가며, 패널도 그것을 기본값으로 보여 줍니다. 더 오래된 베이스에서는 패널이 부팅할 때마다 출고값을 다시 써 넣었습니다. 로드 시점에 대입하고 나중의 이벤트에서는 하지 마세요. 그러지 않으면 어느 조절값이든 다음에 바뀌는 순간 출고값으로 돌아갑니다.</p>
+<h3 id="npc-모드">NPC 모드</h3>
+<p>이 부분은 품종 애드온이 아니라 NPC 모드를 위한 것입니다. 어떤 NPC 모드는 사람을 좀비 위에 만들기 때문에, 개는 좀비를 보고 공격합니다. API 13부터 NPC 모드는 <code>CompanionDogs.npcChecks</code> 목록으로 누가 친구인지 개에게 알려 줄 수 있습니다. shared 파일에서 여기에 함수를 덧붙이세요. 그래야 서버와 클라이언트 양쪽에 있습니다.</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>함수는 좀비와 개의 주인을 받고, 세 가지 대답 중 하나를 돌려줍니다.</p>
+<ul>
+<li><code>true</code>: 친구. 개가 건드리지 않습니다.</li>
+<li><code>false</code>: 적대. 개가 여느 좀비처럼 싸웁니다.</li>
+<li><code>nil</code>: 여러분의 NPC가 아님. 개는 평소 규칙대로 갑니다.</li>
+</ul>
+<p><code>nil</code>이 아닌 첫 대답이 결정합니다. 개는 대상을 고를 때와 이미 가진 대상을 확인할 때마다 묻습니다. 그래서 전투, 보초, 돌진, 공격 명령이 모두 여기에 걸립니다.</p>
+<p>첫 두 줄은 여러분의 모드가 Companion Dogs보다 먼저 로드될 때 목록을 만듭니다. Companion Dogs가 설치되어 있지 않으면 아무도 목록을 읽지 않고 아무것도 깨지지 않으므로, 버전 가드는 없습니다.</p>
+<p>주인이 오프라인이면 <code>owner</code>는 <code>nil</code>입니다. 주인이 곁에 없는 개에게 여러분의 NPC가 무엇인지 정하세요. 클라이언트에서 <code>owner</code>는 로컬 플레이어입니다.</p>
+<p>함수는 개 근처의 모든 좀비에 대해 1초에 여러 번 돕니다. 가볍게 유지하세요. 여러분 자신의 변수나 필드를 먼저 검사하고, <code>getModData()</code>는 그다음에만 부르세요. 그것은 건드리는 모든 좀비에 테이블을 하나씩 만듭니다.</p>
+<p>데디케이티드 서버에서 엔진은 좀비에 대한 <code>setVariable</code>을 무시하므로, 여러분의 모드가 설정한 변수는 서버에 없습니다. 여러분의 모드가 서버에서 돈다면, 서버가 들고 있는 것으로 NPC를 알아보세요. 서버에서 쓴 모드 데이터나, 좀비를 키로 삼은 여러분 자신의 테이블 같은 것입니다.</p>
+<p>개가 여러분의 NPC 전부를 내버려 두기만 하면 되고, 그것도 싱글플레이에서만이라면 코드 없는 방법이 있습니다. <code>setVariable</code>로 몸에 <code>NoZombieHandling</code>을 true로 설정하세요. 다른 모드도 같은 변수를 읽습니다. 위의 서버 한계가 그대로 있고, 개가 여러분의 적대적 NPC도 무시합니다.</p>
 <h2 id="12-번역-키">12. 번역 키</h2>
 <p>언어 폴더마다 <code>IG_UI.json</code> 하나씩을 <code>media/lua/shared/Translate/&lt;LANG&gt;/</code> 아래에 실으세요. 베이스는 열네 개를 싣습니다. EN, PTBR, CH, CN, DE, ES, FR, IT, JP, KO, RU, TH, UA, VI.</p>
 <p>품종에 필요한 키입니다.</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>새로운 종의 적대적 품종은 그 종의 위협 문구도 실을 수 있습니다. 개 머리 위의 보초 표시, 무리 경고, 가축 돌보미의 경고는 여러분의 종으로 끝나는 키를 찾고, 없으면 일반 적대적 동물 문구로 떨어집니다.</p>
+<div class="tw"><table><thead><tr>
+<th>키</th>
+<th>어디에 나오는가</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>개 머리 위 표시, 여러 마리가 가까이 있을 때</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>개 머리 위 표시, 한 마리가 아주 가까이 있을 때</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>개 머리 위 표시, 한 마리가 근처에 있을 때</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>개 머리 위 표시, 한 마리가 멀리 있을 때</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>개가 무리를 보고 짖을 때의 메시지</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>가축 돌보미의 메시지</td>
+</tr>
+</tbody></table></div>
+<p>두 메시지에서 <code>%1</code>은 개이고, 품종 뒤에 이름이 붙습니다. 베이스는 <code>wolf</code>용 키를 싣고, 일반 키는 <code>_hostile</code>로 끝납니다.</p>
 <p>번역 문자열 안의 퍼센트 기호 하나가 그것을 보여주는 화면을 죽입니다. 포매터가 그것을 자리표시자로 읽기 때문입니다. 바이트 순서 표시가 붙은 언어 파일은 컴파일되지 않고, 오류는 망가진 파일이 아닌 다른 파일의 이름을 댑니다.</p>
 <h2 id="13-세이브가-기억하는-것">13. 세이브가 기억하는 것</h2>
 <p>여러분의 식별자 셋은 세이브 파일에 쓰이고 영원히 다시 읽힙니다.</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>무들 아이콘이 여섯 크기 전부 있다.</li>
 <li>함께 싣는 언어 폴더마다 모든 키가 있다. 빠진 키는 화면에 키 문자열 그대로 나온다.</li>
 <li>싱글플레이만이 아니라 멀티플레이에서도 시험했다. 위치와 소유권과 모드 데이터는 거기서 다르게 굴러간다.</li>
+<li>적대적 품종이면 <strong>"공격적인 동물"</strong>을 켜고 끈 상태로 시험했고, 한 마리를 제압하고 붕대를 감아 일어나는 것을 보았다.</li>
 <li>워크샵 페이지가 살아 있는 동물이 있는 세이브에서 애드온을 빼지 말라고 경고한다.</li>
 </ul>
 <h2 id="15-흔한-실수">15. 흔한 실수</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>"싱글플레이에서는 되는데 서버에서 이상하게 논다."</strong></td>
 <td>무언가가 클라이언트에서 모드 데이터를 쓰고 있습니다. 서버로 옮기세요.</td>
+</tr>
+<tr>
+<td><strong>"<code>warnChance</code>가 무시된다."</strong></td>
+<td>백분율로 적었습니다. <code>40</code>은 범위 밖이라 기본값 0.6으로 떨어집니다. 40%는 <code>0.4</code>입니다. 로그 줄이 그렇게 말해 줍니다.</td>
+</tr>
+<tr>
+<td><strong>"쓰러진 동물이 시체처럼 누워 있다."</strong></td>
+<td><code>downedAnim</code>이 꺼져 있어서 <code>Rac_Dead</code>로 눕습니다. 모델에 쓰러짐 클립 셋이 모두 있을 때만 켜세요.</td>
 </tr>
 <tr>
 <td><strong>"전투를 껐는데도 좀비와 싸웠다."</strong></td>

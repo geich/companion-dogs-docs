@@ -439,6 +439,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s3" href="#鳴き声" data-id="鳴き声">鳴き声</a>
 <a class="s3" href="#食性" data-id="食性">食性</a>
 <a class="s3" href="#生まれたときの性別" data-id="生まれたときの性別">生まれたときの性別</a>
+<a class="s3" href="#敵対的な犬種-aggression" data-id="敵対的な犬種-aggression">敵対的な犬種: aggression</a>
 </div>
 </div>
 <div class="grp">
@@ -457,6 +458,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <a class="s2" href="#9-その動物が現れる場所" data-id="9-その動物が現れる場所">9. その動物が現れる場所</a>
 <div class="sub">
 <a class="s3" href="#建物のクラス" data-id="建物のクラス">建物のクラス</a>
+<a class="s3" href="#野生でのスポーン" data-id="野生でのスポーン">野生でのスポーン</a>
 <a class="s3" href="#すでに使われている接尾辞" data-id="すでに使われている接尾辞">すでに使われている接尾辞</a>
 </div>
 </div>
@@ -465,6 +467,9 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </div>
 <div class="grp">
 <a class="s2" href="#11-フック" data-id="11-フック">11. フック</a>
+<div class="sub">
+<a class="s3" href="#npc-mod" data-id="npc-mod">NPC Mod</a>
+</div>
 </div>
 <div class="grp">
 <a class="s2" href="#12-翻訳キー" data-id="12-翻訳キー">12. 翻訳キー</a>
@@ -503,7 +508,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 </ul>
 <p>同じ振る舞いの二色でも、ベースから見れば犬種は二つです（名前が二つ、犬舎の項目も二つ）。CD: Cats が五つの毛色でやっているように、共有テーブルひとつから書き起こします。</p>
 <h2 id="2-始める前に必要なもの">2. 始める前に必要なもの</h2>
-<p>動物には <code>media/models_X/Skinned/</code> の下に自分用のスキン付き <code>.glb</code> が要り、21 本の <code>Rac_*</code> アニメーションクリップが全部そろっている必要があります。クリップはモデルファイル間で継承されません。15 本しかないモデルは、残り 6 本のどれかを求められた瞬間に固まる動物になります。モデルはさらにボーン 60 本以下で、トップノードが単位行列でなければなりません。そうでないとエンジンが毎フレーム例外を投げ、動物は黒い染みとして描画されます。任意のクリップがもう 2 本あります。<code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（足を引きずる歩行サイクル）で、犬種定義で <code>limpAnim = true</code> にしたときだけ意味を持ちます。</p>
+<p>動物には <code>media/models_X/Skinned/</code> の下に自分用のスキン付き <code>.glb</code> が要り、21 本の <code>Rac_*</code> アニメーションクリップが全部そろっている必要があります。クリップはモデルファイル間で継承されません。15 本しかないモデルは、残り 6 本のどれかを求められた瞬間に固まる動物になります。モデルはさらにボーン 60 本以下で、トップノードが単位行列でなければなりません。そうでないとエンジンが毎フレーム例外を投げ、動物は黒い染みとして描画されます。任意のクリップがもう 2 本あります。<code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（足を引きずる歩行サイクル）で、犬種定義で <code>limpAnim = true</code> にしたときだけ意味を持ちます。敵対的な犬種には、さらに任意のクリップが 4 本あります。倒されて横たわる動物用の <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code>、<code>Rac_DownedUp</code>（<code>downedAnim = true</code>）と、威嚇のポーズ用の <code>Rac_Growl</code>（<code>growlAnim = true</code>）です。</p>
 <p>モデルがまだないなら、<code>CD.applyDogModel</code> をベースの体のどれかに向けておけば、それ以外は全部書いて試せます。動物の見た目はカラーメロですが、このマニュアルにあるシステムはすべて動きます。</p>
 <p>体のテクスチャと、犬舎ウィンドウ用の肖像も要ります。</p>
 <p>コードを書き始める前に、あなたの動物が犬種なのか種族なのかを決めてください。犬種は数値の違う犬です。種族は、いくつかの仕事をそもそも持たない動物です。この選択で書く項目が変わります。第 6 節で扱います。</p>
@@ -543,6 +548,7 @@ versionMin=42.18.0</code></pre>
 <pre><code>local CD = CompanionDogs
 if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return end</code></pre>
 <p>ベースがない、または古すぎる場合、ファイルは 2 行目で戻り、アドオンは何もしません。犬種も、スポーンも、moodle も、ログの 1 行も出ません。</p>
+<p>敵対的な犬種は 12 でガードします。古いベースは <code>aggression</code> を無視し、動物はおとなしく出てきます。それ自体は安全ですが、アドオンは決して襲わないオオカミを出荷することになります。</p>
 <p>ガードはファイルごとで、各ファイルは自分が使うものでガードします。<code>PugDefinitions.lua</code> はモデルのヘルパーを使うので、それでガードします:</p>
 <pre><code>if not (CompanionDogs and CompanionDogs.applyDogModel and CompanionDogs.DOG_SOUNDS) then return end</code></pre>
 <p>グローバルを作ってはいけません。アドオンの中の <code>CompanionDogs = CompanionDogs or {}</code> は、ベースがないという状態を半分だけできたテーブルに変えてしまい、以降のガードが通ってはいけない場面で全部通ります。</p>
@@ -645,6 +651,11 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td>true でゾンビを転ばせられます。</td>
 </tr>
 <tr>
+<td><code>charge</code></td>
+<td>false</td>
+<td>true で犬種に突進の命令が付きます（API 13）。命令すると飼い主の前方のゾンビへ一直線に走り、通り道のゾンビを転ばせます。戦闘 1 で 2 体、戦闘 10 で 10 体までです。ストレスがかかり、ゲーム内 30 分のクールダウンがあります。<code>canKnockdown</code> が必要です。</td>
+</tr>
+<tr>
 <td><code>combatStressMult</code></td>
 <td>1</td>
 <td>戦闘一回で受けるストレスの量。</td>
@@ -718,6 +729,21 @@ if not (CD and CD.registerBreed and (CD.API_VERSION or 0) &gt;= 3) then return e
 <td><code>limpAnim</code></td>
 <td>false</td>
 <td>true で、傷ついた動物が歩くとき足を引きずります。任意のクリップ <code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（<code>Rac_Walk</code> と同じルートモーションを持つ 1.0 秒の歩行サイクル）がモデルにあるときだけ設定してください。クリップがないと動物はその場で固まったまま歩きます。</td>
+</tr>
+<tr>
+<td><code>aggression</code></td>
+<td>切</td>
+<td><code>true</code> かテーブル。その犬種の、飼い主がおらず一度も手なずけられたことのない成体がすべてプレイヤーを襲います（API 12）。下の「敵対的な犬種」を参照。</td>
+</tr>
+<tr>
+<td><code>downedAnim</code></td>
+<td>false</td>
+<td>モデルに <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code>、<code>Rac_DownedUp</code> があるときに true。倒された敵対的な動物は、これらのクリップで横たわって呼吸します。ないと <code>Rac_Dead</code> で横たわります。</td>
+</tr>
+<tr>
+<td><code>growlAnim</code></td>
+<td>false</td>
+<td>モデルにループのクリップ <code>Rac_Growl</code> があるときに true。敵対的な動物はうなる間、これで身をかがめます。ないと立ったままうなります。</td>
 </tr>
 <tr>
 <td><code>bandSkin</code></td>
@@ -887,6 +913,92 @@ sterileMale = true,</code></pre>
 <p>この組み合わせは三毛猫そのものです。オレンジと黒のモザイクは X 染色体に乗っているので、三毛猫はほぼ必ずメスで、まれに出るオスは XXY、3000 匹に 1 匹ほどで、子を作れません。<code>sterileMale</code> の品種のオスは相手に選ばれず、コンテキストメニューから交配の項目が消えます。メスは普通に繁殖します。</p>
 <p>そういう品種のオスには、ゲームが性別を出す場所すべてで「繁殖不能」が付きます。ステータス画面、コンテキストメニュー、野良のスキャン、犬舎のどこでも付くので、なぜ繁殖しないのかがプレイヤーに伝わります。</p>
 <p>どちらのフィールドも品種の定義から読まれるので、動物側には何も書かれず、既存のセーブに移行処理は要りません。同じ抽選が出産時の子の性別も決めるので、世界でメスになる品種は生まれる子でもメスのままです。</p>
+<h3 id="敵対的な犬種-aggression">敵対的な犬種: <code>aggression</code></h3>
+<p>API 12 から、犬種を敵対的にできます。その犬種の、飼い主がおらず一度も手なずけられたことのない成体はすべて、プレイヤーにうなって襲いかかります。子は決して襲わず、相棒も決して襲わず、一度手なずけられたか保護された動物はおとなしいままです。プレイヤーはサンドボックスのオプション <strong>「攻撃的な動物」</strong>（標準でオン）で全体を切れます。切ると、その犬種はほかの野良と同じようにふるまいます。</p>
+<pre><code>aggression = {
+    size = "large", detect = 10, warnChance = 0.4, warnMs = 2000, windupMs = 500,
+    recoverMin = 1000, recoverMax = 1700, knockdown = 0.12, toughness = 5, leash = 30,
+},</code></pre>
+<p>これがオオカミです。<code>aggression = true</code> なら下の既定値をすべて使い、テーブルなら書いた項目だけが変わります。項目を書かないか <code>false</code> にすると、犬種はおとなしいままです。</p>
+<div class="tw"><table><thead><tr>
+<th>項目</th>
+<th>既定値</th>
+<th>範囲</th>
+<th>効果</th>
+</tr></thead><tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>"medium"</code></td>
+<td><code>small</code>、<code>medium</code>、<code>large</code></td>
+<td>噛みつきの届く距離（0.9、1.1、1.25 タイル）、基礎ダメージ、噛む場所。small は足と脚を狙い、medium と large は手と腕にも届きます</td>
+</tr>
+<tr>
+<td><code>detect</code></td>
+<td>9</td>
+<td>3 から 20</td>
+<td>プレイヤーに気づくタイル数。しゃがみは x0.6、走りは x1.25 で数えます。視線が通らないと、2.5 タイル以内のプレイヤーをにおいで嗅ぎつけるだけです</td>
+</tr>
+<tr>
+<td><code>warnChance</code></td>
+<td>0.6</td>
+<td>0 から 1</td>
+<td>襲う前にうなって警告する確率。眠っているプレイヤーは必ず警告を受け、目を覚まします</td>
+</tr>
+<tr>
+<td><code>warnMs</code></td>
+<td>2500</td>
+<td>800 から 6000</td>
+<td>警告のうなり声一回の長さ、ミリ秒</td>
+</tr>
+<tr>
+<td><code>warnRadius</code></td>
+<td>4</td>
+<td>1.5 から 20</td>
+<td>警告の間にこれより近くへ歩くと攻撃が始まります。<code>detect</code> より大きくはなりません</td>
+</tr>
+<tr>
+<td><code>windupMs</code></td>
+<td>450</td>
+<td>250 から 900</td>
+<td>飛びかかりの長さ。その間の打撃か押しのけで噛みつきが止まり、後ろへ下がると外れます</td>
+</tr>
+<tr>
+<td><code>recoverMin</code>、<code>recoverMax</code></td>
+<td>900、1600</td>
+<td>400 から 4000</td>
+<td>噛みつきから次の飛びかかりまでの間。二つの値の間で引きます</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>1.0</td>
+<td>0 から 5</td>
+<td>噛みつきのダメージにかかる倍率</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>0.08</td>
+<td>0 から 1</td>
+<td>噛みつきがプレイヤーを押し倒す確率。large だけ</td>
+</tr>
+<tr>
+<td><code>toughness</code></td>
+<td>4</td>
+<td>1 から 30</td>
+<td>何回の打撃に耐えるか。下を参照</td>
+</tr>
+<tr>
+<td><code>leash</code></td>
+<td>25</td>
+<td>8 から 60</td>
+<td>追跡が始まった場所から何タイルで諦めるか</td>
+</tr>
+</tbody></table></div>
+<p>敵対的な動物の体力は 1 から始まり、打撃ごとに <code>blow / toughness</code> が減ります。近接の打撃は武器の平均ダメージを 1.6 で割った値で、武器のレベルが 5 より 1 上がるごとに 8% 増え、1 下がるごとに 8% 減り、 0.35 から 2.5 の間に収まります。銃の一発は平均ダメージを 0.4 で割った値で、上限は 4 です。だから 9 mm ピストルは 2 で、ライフルとショットガンは上限に届きます。爆発物は 4 で、クリティカルは打撃を 1.5 倍にします。<code>toughness</code> が既定の 4 なら、ピストル 2 発で倒れます。サンドボックスには打たれ強さの倍率と噛みつきのダメージの倍率があり、あなたの値の上に掛かります。</p>
+<p>倒された動物は、サンドボックスの確率（標準 10%）で生きたまま倒れるか、死にます。倒れた動物はもう傷つきません。プレイヤーが包帯を巻かないと数時間で死に、包帯を巻くと保護された状態で起き上がります。おとなしく、プレイヤーを信頼し、ほかの野良と同じように食べ物で手なずけられる状態です。プレイヤーはコンテキストメニューからとどめを刺すこともできます。どのプレイヤーの相棒も、敵対的な動物をゾンビと同じ脅威として扱います。戦い、見張りはそれに吠えます。</p>
+<p>うなり声は <code>voices</code> の <code>growl</code> キーです。ないと、動物は犬のようにうなります。</p>
+<p>オオカミと同じく、三つの動物タイプすべてで、振る舞いのヘルパーのあとに <code>canThump = false</code> を設定してください。エンジンの既定はオンで、その場合、攻撃された動物、ひどく空腹か喉が渇いた動物、強いストレスを受けた動物はドアや窓を叩き、ひどく空腹か喉が渇いた動物はそこを通り抜ける経路を取ります。そのため、閉じたドアで追跡が終わらないことがあります。</p>
+<p>どの項目も犬種の登録時に検査され、問題ごとにあなたの犬種キー入りの行がログに出ます。範囲外の値は既定値に戻り、パーセントで書いた確率（<code>warnChance = 40</code>）には 0.4 のつもりだというヒントが付きます。知らないキーは捨てられ、その行に有効なキーが並びます。<code>true</code>、<code>false</code>、テーブルのどれでもない値なら、犬種はおとなしいままです。</p>
+<p>API 12 より古いベースはこの項目を無視し、犬種はおとなしいままです。</p>
 <h2 id="6-システムを丸ごと切る">6. システムを丸ごと切る</h2>
 <p>五つのスキルが、そのまま五つのシステムです:</p>
 <div class="tw"><table><thead><tr>
@@ -1104,11 +1216,38 @@ end</code></pre>
 <pre><code>CD.registerBuildingClass("mineshaft", function(def) return def:isX() end,
                          { skipUrbanGate = true })</code></pre>
 <p>一致の関数は建物の定義を受け取り、保護された呼び出しの中で走るので、その中のエラーでチャンクのロードが止まることはありません。<code>skipUrbanGate</code> は、市街ではないチャンクでもそのクラスの判定を通します。農場や森の小屋にはこれが要ります。<code>exclusive</code> は設定しないでください。ベースのクラスどうしは排他ですが、アドオンのクラスはその上に重ねて一致します。</p>
+<h3 id="野生でのスポーン">野生でのスポーン</h3>
+<p>API 12 から、<code>class</code> の代わりに <code>zone</code> を持つ手順は、建物ごとではなく、マップのチャンクごとに一度振られます。オオカミはこうして森に生まれます:</p>
+<pre><code>{ id = "wolf", zone = "forest", chance = CD.wolfPackChance, suffix = "|wf", breed = "wolf",
+  pack = { 1, 3 }, repopDays = CD.wolfRepopulateDays },</code></pre>
+<div class="tw"><table><thead><tr>
+<th>キー</th>
+<th>中身</th>
+</tr></thead><tbody>
+<tr>
+<td><code>zone</code></td>
+<td><code>CD.registerSpawnZone</code> で登録したゾーン。ベースは <code>forest</code> を登録しています。</td>
+</tr>
+<tr>
+<td><code>pack</code></td>
+<td><code>{ min, max }</code>、一緒に生まれる数。既定は <code>{ 1, 1 }</code>。</td>
+</tr>
+<tr>
+<td><code>repopDays</code></td>
+<td>任意。ゲーム内の日数を返す関数。群れの動物が全部死ぬか保護され、その日数がたつと、その場所に新しい群れが入れるようになります。ないか 0 なら、二度と入りません。</td>
+</tr>
+</tbody></table></div>
+<p><code>chance</code>、<code>suffix</code>、<code>breed</code>、<code>gate</code> は上と同じように働きます。<code>indoor</code> は効きません。プレイヤーが 24 タイル以内にいると動物は生まれず、そのチャンクは次のロードでもう一度試します。敵対的な犬種の群れは生まれた場所のまわりをうろつき、一緒に戦います。一頭が追跡を始めると 24 タイル以内のほかの個体も加わり、半分が倒されると残りは逃げます。</p>
+<p>自分のゾーンは、マップの square を受け取る関数で登録します:</p>
+<pre><code>CD.registerSpawnZone("farmland", function(sq)
+    return sq:getZoneType() == "FarmLand"
+end)</code></pre>
+<p>ベースは当たったチャンクの square を全部ではなく、いくつかだけ調べます。すでに登録されている名前は無視されます。</p>
 <h3 id="すでに使われている接尾辞">すでに使われている接尾辞</h3>
 <p>接尾辞は、「この建物はもう判定済み」を保存するキーの一部です。同じ接尾辞を使う二つの Mod は、互いの判定を壊します。</p>
 <p>どの接尾辞も縦棒で始まります。使用中のものは次のとおり:</p>
 <ul>
-<li>ベース: 空の接尾辞と、<code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code></li>
+<li>ベース: 空の接尾辞と、<code>g</code>、<code>h</code>、<code>hv</code>、<code>bc</code>、<code>gh</code>、<code>hh</code>、<code>bh</code>、<code>wf</code></li>
 <li>ロットワイラー: <code>rw</code>、<code>r</code></li>
 <li>ドーベルマン: <code>db</code>、<code>dm</code>、<code>dh</code></li>
 <li>ラブラドール: <code>lb</code>、<code>lk</code></li>
@@ -1139,7 +1278,7 @@ end</code></pre>
 <p><code>condition</code> は段階を返し、出さないときは 0 を返します。<code>apply</code> は前回の呼び出しからのゲーム内の分数を受け取るので、効果には <code>elapsedMin</code> を掛けてください。</p>
 <p>アイコンは 32 から 128 ピクセルまで、6 サイズ同梱します。インターフェースはプレイヤーの拡大率でサイズを選ぶので、足りないサイズは空の四角として出ます。アイコンはバニラの moodle の列ではなく、Mod 自身の列に出ます。</p>
 <h2 id="11-フック">11. フック</h2>
-<p>ベースがサーバー側で呼ぶ関数のリストが二つあります。shared のファイルから足してください。ハンドラはそれぞれ自分の保護された呼び出しの中で走るので、あるアドオンのエラーでベースが止まることはありません。</p>
+<p>ベースがサーバー側で呼ぶ関数のリストが二つあります。shared のファイルから足してください。</p>
 <p><code>CD.onHuntDelivered</code> は API 2 からで、動物が仕留めた獲物を飼い主の足元に落とした直後に呼ばれます:</p>
 <pre><code>CD.onHuntDelivered[#CD.onHuntDelivered + 1] = function(animal, owner)
     -- server side, so this is the right place to write mod data
@@ -1151,6 +1290,30 @@ end</code></pre>
 <p>メンテナンスは周期ごとに値を計算し直して上書きするので、外から書いたものは次のティックで消えます。暑さ、寒さ、雨のように環境から来る条件には、このフックを使ってください。</p>
 <p>マルチプレイでは、client は Mod データを決して書きません。client 側で書くと次の同期でサーバーの写しを上書きしてしまい、症状は数分後に無関係なところに出ます。作業は server のファイルか、この二つのフックの中で行ってください。</p>
 <p><strong>SERVER TUNING</strong> パネルの数値は普通の <code>CD.*</code> 定数で、アドオンはロード時に shared か server のファイルから代入できます。API 9 からは、サーバーがロードを終えた時点で有効な値が、そのつまみの既定値になります。管理者が上書きするまで残り、リセットボタンはその値に戻り、パネルもそれを既定値として表示します。古いベースでは、パネルは起動のたびに出荷時の値を書き戻していました。代入はロード時に行い、後のイベントからは行わないでください。さもないと、どれかのつまみを次に変えたときに出荷時の値に戻ります。</p>
+<h3 id="npc-mod">NPC Mod</h3>
+<p>ここは犬種アドオンではなく NPC Mod 向けです。NPC Mod の中には人をゾンビの上に組み立てるものがあり、犬にはゾンビに見えるので襲ってしまいます。API 13 から、NPC Mod は <code>CompanionDogs.npcChecks</code> のリストで、誰が味方かを犬に伝えられます。shared のファイルから関数を足してください。そうすればサーバーにも client にも存在します:</p>
+<pre><code>CompanionDogs = CompanionDogs or {}
+CompanionDogs.npcChecks = CompanionDogs.npcChecks or {}
+
+table.insert(CompanionDogs.npcChecks, function(zombie, owner)
+    if not zombie:getVariableBoolean("MyModNPC") then return nil end
+    local npc = MyMod.npcOf(zombie)
+    if not npc then return nil end
+    if not owner then return true end
+    return not MyMod.isHostileTo(npc, owner)
+end)</code></pre>
+<p>関数はゾンビと犬の飼い主を受け取り、三つの答えのどれかを返します:</p>
+<ul>
+<li><code>true</code>: 味方。犬は手を出しません。</li>
+<li><code>false</code>: 敵対。犬はほかのゾンビと同じように戦います。</li>
+<li><code>nil</code>: あなたの NPC ではない。犬はいつものルールで続けます。</li>
+</ul>
+<p><code>nil</code> ではない最初の答えで決まります。犬は標的を選ぶたび、今の標的を確かめるたびに訊くので、戦闘、見張り、突進、攻撃命令のすべてに効きます。</p>
+<p>最初の 2 行は、あなたの Mod が Companion Dogs より先にロードされたときにリストを作ります。Companion Dogs が入っていなければ誰もリストを読まず、何も壊れないので、バージョンガードは要りません。</p>
+<p>飼い主がオフラインのとき <code>owner</code> は <code>nil</code> です。近くに飼い主のいない犬にとって、あなたの NPC が何なのかを決めてください。client では <code>owner</code> はローカルプレイヤーです。</p>
+<p>関数は犬の近くのゾンビすべてについて、1 秒に何度も走ります。軽くしてください。まず自分の変数かフィールドを調べ、<code>getModData()</code> はそのあとで呼んでください。触れたゾンビすべてにテーブルを作るからです。</p>
+<p>専用サーバーではエンジンがゾンビへの <code>setVariable</code> を無視するので、あなたの Mod が設定した変数はサーバーにはありません。Mod がサーバーで動くなら、サーバーが持っているもので NPC を見分けてください。サーバーで書いた Mod データや、ゾンビをキーにした自前のテーブルなどです。</p>
+<p>犬にあなたの NPC 全員を放っておかせたいだけで、しかもシングルプレイだけなら、コードなしの方法があります。体に <code>setVariable</code> で <code>NoZombieHandling</code> を true にします。ほかの Mod も同じ変数を読みます。上のサーバーの制限があり、犬はあなたの敵対的な NPC も無視します。</p>
 <h2 id="12-翻訳キー">12. 翻訳キー</h2>
 <p><code>media/lua/shared/Translate/&lt;LANG&gt;/</code> の下に、言語フォルダごとに <code>IG_UI.json</code> をひとつ同梱します。ベースは 14 言語ぶん同梱しています。EN、PTBR、CH、CN、DE、ES、FR、IT、JP、KO、RU、TH、UA、VI です。</p>
 <p>犬種に要るキー:</p>
@@ -1191,6 +1354,37 @@ end</code></pre>
     "IGUI_PD_Breed_pug": "Pug",
     "IGUI_PD_BreedDesc_pug": "The house dog: the first companion whose worth is not fighting."
 }</code></pre>
+<p>新しい種族の敵対的な犬種は、その種族用の脅威の文も同梱できます。犬の頭の上の見張りの表示、群れの警告、家畜番の警告は、あなたの種族で終わるキーを探し、なければ汎用の敵対的な動物の文に落ちます:</p>
+<div class="tw"><table><thead><tr>
+<th>キー</th>
+<th>どこに出るか</th>
+</tr></thead><tbody>
+<tr>
+<td><code>IGUI_PD_ThreatGroupTag_&lt;species&gt;</code></td>
+<td>犬の頭の上の表示、何頭も近くにいるとき</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatCloseTag_&lt;species&gt;</code></td>
+<td>犬の頭の上の表示、一頭がすぐそば</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatNearTag_&lt;species&gt;</code></td>
+<td>犬の頭の上の表示、一頭が近く</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatFarTag_&lt;species&gt;</code></td>
+<td>犬の頭の上の表示、一頭が遠く</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_ThreatGroup_&lt;species&gt;</code></td>
+<td>犬が群れに吠えたときのメッセージ</td>
+</tr>
+<tr>
+<td><code>IGUI_PD_CareThreat_&lt;species&gt;</code></td>
+<td>家畜番のメッセージ</td>
+</tr>
+</tbody></table></div>
+<p>二つのメッセージでは <code>%1</code> が犬で、犬種のあとに名前が続きます。ベースは <code>wolf</code> のキーを同梱していて、汎用のものは <code>_hostile</code> で終わります。</p>
 <p>翻訳した文字列の中のパーセント記号そのものは、それを出す画面を落とします。フォーマッタがプレースホルダとして読むからです。バイトオーダーマークの付いた言語ファイルはコンパイルされず、しかもエラーは壊れているファイルとは別のファイルを名指しします。</p>
 <h2 id="13-セーブが覚えているもの">13. セーブが覚えているもの</h2>
 <p>あなたの識別子のうち三つは、セーブファイルに書き込まれ、以後ずっと読み戻されます:</p>
@@ -1215,6 +1409,7 @@ end</code></pre>
 <li>moodle のアイコンが 6 サイズすべてある。</li>
 <li>同梱するどの言語フォルダにも全部のキーがある。キーが欠けると画面にキーがそのまま出ます。</li>
 <li>シングルプレイだけでなくマルチプレイでも試した。位置、所有権、Mod データは、どれもあちらでは挙動が違います。</li>
+<li>敵対的な犬種は <strong>「攻撃的な動物」</strong> のオンとオフで試し、一頭を倒して包帯を巻き、起き上がるのを見た。</li>
 <li>動物が生きているセーブからアドオンを外さないよう、Workshop ページで警告している。</li>
 </ul>
 <h2 id="15-よくある失敗">15. よくある失敗</h2>
@@ -1253,6 +1448,14 @@ end</code></pre>
 <tr>
 <td><strong>「シングルプレイでは動くのにサーバーだとおかしい」</strong></td>
 <td>どこかが client で Mod データを書いています。server へ移してください。</td>
+</tr>
+<tr>
+<td><strong>「<code>warnChance</code> が無視される」</strong></td>
+<td>パーセントで書いています。<code>40</code> は範囲外なので既定の 0.6 に戻ります。40% は <code>0.4</code> です。ログの行にそう出ます。</td>
+</tr>
+<tr>
+<td><strong>「倒した動物が死体のように横たわる」</strong></td>
+<td><code>downedAnim</code> が切なので、<code>Rac_Dead</code> で横たわります。モデルに倒れたときの三つのクリップがそろっているときだけ入れてください。</td>
 </tr>
 <tr>
 <td><strong>「戦闘を切ったのにゾンビと戦った」</strong></td>
