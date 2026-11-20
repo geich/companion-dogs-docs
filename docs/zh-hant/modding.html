@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-動手之前要準備什麼">2. 動手之前要準備什麼</h2>
 <p>你的動物需要自己的 skinned <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 底下，並且要有完整的 21 個 <code>Rac_*</code> 動畫片段。片段不會在模型檔案之間繼承：只有十五個片段的模型，會在第一次被要求做另外六個之一的時候當場凍住。模型還必須維持在 60 根骨頭以內，而且頂層節點要在單位變換上，否則引擎每一幀都拋一次例外，動物會被畫成一團黑影。另外還有兩個選用片段， <code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（跛行的走路循環）；只有你在品種定義裡設了 <code>limpAnim = true</code> 它們才有意義。敵對品種還有四個選用片段： <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 用於被擊敗後躺著的動物（<code>downedAnim = true</code>）， <code>Rac_Growl</code> 用於威脅姿勢（<code>growlAnim = true</code>）。</p>
 <p>如果你還沒有模型，可以把 <code>CD.applyDogModel</code> 指向基礎版的某一具身體，其他所有東西照樣寫得出來也測得了。動物看起來像小卡犬，但這本手冊裡的每一套系統都在跑。</p>
-<p>你還需要身體的貼圖，以及犬舍視窗用的肖像。</p>
+<p>你還需要身體的貼圖和肖像。肖像顯示在犬舍視窗裡。頭部圖示 <code>CDHead_&lt;key&gt;.png</code> 是選用的：它是右鍵選單裡動物名字旁邊的圖示，沒有它時選單顯示肖像。</p>
 <p>動手寫程式之前先決定：你的動物是一個品種還是一個物種。品種是數字不一樣的狗。物種是完全缺少某些工作的動物。這個選擇改變你要寫哪些欄位；第 6 節講這件事。</p>
 <h2 id="3-一個附加模組的檔案">3. 一個附加模組的檔案</h2>
 <p>這是 CD: Pug，已發佈的附加模組裡最小的一個，只列出有意義的部分：</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-ce-quil-vous-faut-avant-de-commencer">2. Ce qu'il vous faut avant de commencer</h2>
 <p>Votre animal a besoin de son propre <code>.glb</code> skinné sous <code>media/models_X/Skinned/</code>, avec le jeu complet des 21 clips d'animation <code>Rac_*</code>. Les clips ne s'héritent pas entre fichiers de modèle : un modèle qui en a quinze vous donne un animal qui se fige la première fois qu'on lui en demande un des six autres. Le modèle doit aussi rester sous les 60 os et avoir son nœud racine à l'identité, sinon le moteur lève une exception à chaque frame et l'animal s'affiche en traînée noire. Deux clips de plus sont optionnels, <code>Rac_WalkLimpFront</code> et <code>Rac_WalkLimpBack</code> (cycles de marche boiteuse) ; ils ne comptent que si vous mettez <code>limpAnim = true</code> dans la définition de race. Une race hostile a quatre clips optionnels de plus : <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> et <code>Rac_DownedUp</code> pour l'animal couché vaincu (<code>downedAnim = true</code>), et <code>Rac_Growl</code> pour la pose de menace (<code>growlAnim = true</code>).</p>
 <p>Si vous n'avez pas encore de modèle, vous pouvez écrire et tester tout le reste en pointant <code>CD.applyDogModel</code> sur l'un des corps du mod de base. L'animal ressemble à un Caramelo, mais tous les systèmes de ce manuel tournent.</p>
-<p>Il vous faut aussi une texture pour le corps et un portrait pour la fenêtre du chenil.</p>
+<p>Il vous faut aussi une texture pour le corps et un portrait. Le portrait s'affiche dans la fenêtre du chenil. Une icône de tête, <code>CDHead_&lt;key&gt;.png</code>, est facultative : c'est l'icône à côté du nom de l'animal dans le menu du clic droit, et sans elle le menu affiche le portrait.</p>
 <p>Décidez si votre animal est une race ou une espèce avant d'écrire la moindre ligne de code. Une race est un chien avec d'autres chiffres. Une espèce est un animal à qui certains métiers manquent tout à fait. Le choix change les champs que vous écrivez ; la section 6 s'en occupe.</p>
 <h2 id="3-les-fichiers-dun-add-on">3. Les fichiers d'un add-on</h2>
 <p>Voici CD: Pug, le plus petit add-on publié, avec les parties qui comptent :</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-was-du-brauchst-bevor-du-anfängst">2. Was du brauchst, bevor du anfängst</h2>
 <p>Dein Tier braucht seine eigene geskinnte <code>.glb</code> unter <code>media/models_X/Skinned/</code>, mit dem kompletten Satz der 21 <code>Rac_*</code>-Animationsclips. Clips werden nicht zwischen Modelldateien vererbt: ein Modell mit fünfzehn Clips gibt dir ein Tier, das beim ersten Aufruf eines der anderen sechs einfriert. Das Modell muss außerdem unter 60 Knochen bleiben und seinen obersten Knoten auf Identität haben, sonst wirft die Engine einmal pro Frame und das Tier wird als schwarzer Fleck gerendert. Zwei weitere Clips sind optional, <code>Rac_WalkLimpFront</code> und <code>Rac_WalkLimpBack</code> (Laufzyklen mit Humpeln); sie zählen nur, wenn du in der Rassendefinition <code>limpAnim = true</code> setzt. Eine feindselige Rasse hat vier weitere optionale Clips: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> und <code>Rac_DownedUp</code> für das besiegt am Boden liegende Tier (<code>downedAnim = true</code>) und <code>Rac_Growl</code> für die Drohhaltung (<code>growlAnim = true</code>).</p>
 <p>Wenn du noch kein Modell hast, kannst du alles andere schreiben und testen, indem du <code>CD.applyDogModel</code> auf einen der Basis-Körper zeigen lässt. Das Tier sieht aus wie ein Caramelo, aber jedes System aus diesem Handbuch läuft.</p>
-<p>Du brauchst außerdem eine Textur für den Körper und ein Porträt für das Zwingerfenster.</p>
+<p>Du brauchst außerdem eine Textur für den Körper und ein Porträt. Das Porträt erscheint im Zwingerfenster. Ein Kopf-Icon, <code>CDHead_&lt;key&gt;.png</code>, ist optional: Es ist das Icon neben dem Namen des Tiers im Rechtsklick-Menü, und ohne es zeigt das Menü das Porträt.</p>
 <p>Entscheide vor der ersten Zeile Code, ob dein Tier eine Rasse oder eine Art ist. Eine Rasse ist ein Hund mit anderen Zahlen. Eine Art ist ein Tier, dem manche Aufgaben komplett fehlen. Die Entscheidung ändert, welche Felder du schreibst; Abschnitt 6 behandelt das.</p>
 <h2 id="3-die-dateien-eines-addons">3. Die Dateien eines Addons</h2>
 <p>Das hier ist CD: Pug, das kleinste veröffentlichte Addon, mit den Teilen, auf die es ankommt:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

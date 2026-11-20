@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-lo-que-necesitas-antes-de-empezar">2. Lo que necesitas antes de empezar</h2>
 <p>Tu animal necesita su propio <code>.glb</code> con skin en <code>media/models_X/Skinned/</code>, con el juego completo de los 21 clips de animación <code>Rac_*</code>. Los clips no se heredan entre archivos de modelo: un modelo con quince clips te da un animal que se congela la primera vez que se le pide uno de los otros seis. El modelo también tiene que quedarse por debajo de 60 huesos y tener su nodo superior en identidad, o el motor lanza un error por fotograma y el animal se dibuja como un borrón negro. Hay dos clips más opcionales, <code>Rac_WalkLimpFront</code> y <code>Rac_WalkLimpBack</code> (ciclos de andar cojeando); solo importan si pones <code>limpAnim = true</code> en la definición de la raza. Una raza hostil tiene cuatro clips opcionales más: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> y <code>Rac_DownedUp</code> para el animal tumbado tras ser derrotado (<code>downedAnim = true</code>), y <code>Rac_Growl</code> para la pose de amenaza (<code>growlAnim = true</code>).</p>
 <p>Si todavía no tienes modelo, puedes escribir y probar todo lo demás apuntando <code>CD.applyDogModel</code> a uno de los cuerpos del base. El animal se ve como un Caramelo, pero funcionan todos los sistemas de este manual.</p>
-<p>También necesitas una textura para el cuerpo y un retrato para la ventana de la perrera.</p>
+<p>También necesitas una textura para el cuerpo y un retrato. El retrato aparece en la ventana de la perrera. Un icono de cabeza, <code>CDHead_&lt;key&gt;.png</code>, es opcional: es el icono junto al nombre del animal en el menú del clic derecho, y sin él el menú muestra el retrato.</p>
 <p>Decide si tu animal es una raza o una especie antes de escribir código. Una raza es un perro con números distintos. Una especie es un animal al que le faltan trabajos enteros. La elección cambia qué campos escribes; lo cubre la sección 6.</p>
 <h2 id="3-los-archivos-de-un-addon">3. Los archivos de un addon</h2>
 <p>Esto es CD: Pug, el addon publicado más pequeño, con las partes que importan:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

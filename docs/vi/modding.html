@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-cần-gì-trước-khi-bắt-đầu">2. Cần gì trước khi bắt đầu</h2>
 <p>Con vật của bạn cần file <code>.glb</code> skinned riêng đặt dưới <code>media/models_X/Skinned/</code>, với đủ bộ 21 clip animation <code>Rac_*</code>. Clip không kế thừa giữa các file model: model chỉ có mười lăm clip cho bạn một con vật đứng đơ ngay lần đầu bị đòi một trong sáu clip còn lại. Model cũng phải dưới 60 xương và có node trên cùng ở identity, nếu không engine ném lỗi mỗi khung hình và con vật hiện lên như một vệt đen. Có thêm hai clip tùy chọn, <code>Rac_WalkLimpFront</code> và <code>Rac_WalkLimpBack</code> (chu kỳ đi khập khiễng); chúng chỉ có tác dụng nếu bạn đặt <code>limpAnim = true</code> trong định nghĩa giống. Một giống hung dữ có thêm bốn clip tùy chọn: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> và <code>Rac_DownedUp</code> cho con vật nằm gục sau khi bị đánh bại (<code>downedAnim = true</code>), và <code>Rac_Growl</code> cho tư thế đe dọa (<code>growlAnim = true</code>).</p>
 <p>Nếu chưa có model, bạn vẫn viết và thử được mọi thứ còn lại bằng cách trỏ <code>CD.applyDogModel</code> vào một thân có sẵn của mod nền. Con vật trông như con Chó cỏ, nhưng mọi hệ thống trong sổ tay này đều chạy.</p>
-<p>Bạn cũng cần một texture cho thân và một ảnh chân dung cho cửa sổ chuồng.</p>
+<p>Bạn cũng cần một texture cho thân và một ảnh chân dung. Ảnh chân dung hiện trong cửa sổ chuồng. Biểu tượng đầu, <code>CDHead_&lt;key&gt;.png</code>, là tùy chọn: đó là biểu tượng cạnh tên con vật trong menu chuột phải, và nếu không có thì menu hiện ảnh chân dung.</p>
 <p>Hãy quyết định con vật của bạn là một giống hay một loài trước khi viết dòng code nào. Giống là con chó với các con số khác. Loài là con vật thiếu hẳn vài phần việc. Lựa chọn đó đổi các trường bạn phải viết; mục 6 nói về nó.</p>
 <h2 id="3-các-file-của-một-add-on">3. Các file của một add-on</h2>
 <p>Đây là CD: Pug, add-on nhỏ nhất đã xuất bản, với những phần đáng kể:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-what-you-need-before-you-start">2. What you need before you start</h2>
 <p>Your animal needs its own skinned <code>.glb</code> under <code>media/models_X/Skinned/</code>, with the complete set of 21 <code>Rac_*</code> animation clips. Clips are not inherited between model files: a model with fifteen clips gives you an animal that freezes the first time it is asked for one of the other six. The model also has to stay under 60 bones and have its top node at identity, or the engine throws once per frame and the animal renders as a black smear. Two more clips are optional, <code>Rac_WalkLimpFront</code> and <code>Rac_WalkLimpBack</code> (limping walk cycles); they only matter if you set <code>limpAnim = true</code> in the breed definition. A hostile breed has four more optional clips: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> and <code>Rac_DownedUp</code> for the animal lying defeated (<code>downedAnim = true</code>), and <code>Rac_Growl</code> for the threat pose (<code>growlAnim = true</code>).</p>
 <p>If you do not have a model yet, you can write and test everything else by pointing <code>CD.applyDogModel</code> at one of the base bodies. The animal looks like a Caramelo, but every system in this manual runs.</p>
-<p>You also need a texture for the body and a portrait for the kennel window.</p>
+<p>You also need a texture for the body and a portrait. The portrait shows in the kennel window. A head icon, <code>CDHead_&lt;key&gt;.png</code>, is optional: it is the icon next to the animal's name in the right-click menu, and without it the menu shows the portrait.</p>
 <p>Decide whether your animal is a breed or a species before writing any code. A breed is a dog with different numbers. A species is an animal that lacks some of the jobs entirely. The choice changes which fields you write; section 6 covers it.</p>
 <h2 id="3-the-files-of-an-add-on">3. The files of an add-on</h2>
 <p>This is CD: Pug, the smallest published add-on, with the parts that matter:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

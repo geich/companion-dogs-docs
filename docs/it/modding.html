@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-cosa-ti-serve-prima-di-iniziare">2. Cosa ti serve prima di iniziare</h2>
 <p>Il tuo animale ha bisogno di un <code>.glb</code> skinnato tutto suo sotto <code>media/models_X/Skinned/</code>, con la serie completa delle 21 clip di animazione <code>Rac_*</code>. Le clip non si ereditano tra file di modello: un modello con quindici clip ti dà un animale che si blocca la prima volta che gliene viene chiesta una delle altre sei. Il modello deve anche restare sotto i 60 ossi e avere il nodo di testa in identità, altrimenti il motore lancia un'eccezione a ogni frame e l'animale viene disegnato come una macchia nera. Altre due clip sono facoltative, <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (cicli di camminata zoppicante); contano solo se imposti <code>limpAnim = true</code> nella definizione della razza. Una razza ostile ha altre quattro clip facoltative: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> e <code>Rac_DownedUp</code> per l'animale sdraiato dopo la sconfitta (<code>downedAnim = true</code>), e <code>Rac_Growl</code> per la posa di minaccia (<code>growlAnim = true</code>).</p>
 <p>Se non hai ancora un modello, puoi scrivere e provare tutto il resto puntando <code>CD.applyDogModel</code> su uno dei corpi della base. L'animale sembra un Caramelo, ma ogni sistema di questo manuale funziona.</p>
-<p>Ti servono anche una texture per il corpo e un ritratto per la finestra del canile.</p>
+<p>Ti servono anche una texture per il corpo e un ritratto. Il ritratto compare nella finestra del canile. Un'icona della testa, <code>CDHead_&lt;key&gt;.png</code>, è facoltativa: è l'icona accanto al nome dell'animale nel menu del tasto destro, e senza di essa il menu mostra il ritratto.</p>
 <p>Decidi se il tuo animale è una razza o una specie prima di scrivere una riga di codice. Una razza è un cane con numeri diversi. Una specie è un animale a cui mancano del tutto alcuni dei mestieri. La scelta cambia quali campi scrivi; se ne occupa la sezione 6.</p>
 <h2 id="3-i-file-di-un-add-on">3. I file di un add-on</h2>
 <p>Questo è CD: Pug, l'add-on pubblicato più piccolo, con le parti che contano:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

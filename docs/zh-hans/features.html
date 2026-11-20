@@ -2359,7 +2359,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <li><strong>技能：</strong>嗅觉、战斗、服从、狩猎、放牧，各自带进度条和<strong><span class="ig">Lv X</span></strong>。</li>
 <li><strong>特性：</strong>力量、攻击性、抗性，显示为低 / 平均 / 高。</li>
 <li><strong>物种：</strong>狗或猫。猫的幼崽显示为<strong>幼猫</strong>。</li>
-<li><strong>品种：</strong>名称、年龄（成年或幼崽），以及适用时显示的<strong><span class="ig">（混血）</span></strong>标记，鼠标悬停可看到品种介绍。</li>
+<li><strong>品种：</strong>名称、性别（公或母）、年龄（成年或幼崽），以及适用时显示的<strong><span class="ig">（混血）</span></strong>标记，鼠标悬停可看到品种介绍。</li>
 <li><strong>击杀：</strong>这只狗已经杀死了多少僵尸和多少猎物。</li>
 </ul>
 <p>标签页里的每一项，鼠标悬停都有说明。</p>
@@ -2888,6 +2888,7 @@ Mods=CompanionDogs;CompanionDogsRottweiler;CompanionDogsDoberman;CompanionDogsLa
 <p><strong><span class="ig">我的狗不杀僵尸，只是把它们撞倒。</span></strong> 小卡犬只会撞倒僵尸，任何设置都改不了这一点。你需要自己补刀。其他品种能独自杀死僵尸。</p>
 <p><strong><span class="ig">狗一直叫，还引来了僵尸。</span></strong> 把哨兵模式改成<strong>静默</strong>，这样它就不会大声吠叫。如果想让任何叫声都不再引来僵尸，关闭沙盒选项 <strong><span class="ig">狗的噪音吸引僵尸</span></strong>，它对所有品种都生效。</p>
 <p><strong><span class="ig">我的狗不见了。</span></strong> / <strong><span class="ig">狗被困在围栏另一边出不来。</span></strong> 这两种情况都可以用<strong>召回</strong>解决：点开爪印按钮打开窗口，切到<strong><span class="ig">我的伙伴</span></strong>标签页。口哨声会吸引僵尸。详情见<a href="#18-同时养多只狗">同时养多只狗</a>。</p>
+<p><strong><span class="ig">我改了 Steam 名字，狗就从列表里消失了。</span></strong> 联机合作时，游戏靠 Steam 名字认出你。从 0.9.1 版起，改名后列表会自动跟上。如果你在那之前就丢了列表，有一个恢复命令，但它只对管理员显示，而且狗会归到执行命令的人名下，所以必须由丢了列表的人自己执行。联机合作时没有人一进来就是管理员，房主也不是。房主在聊天里给管理员权限：<code>/setaccesslevel "名字" "admin"</code>，填执行命令那个人现在的名字。然后在地上点右键 → <strong>同伴犬（调试）</strong> → <strong>Tools</strong> → <strong>Take over dogs of an old player name</strong>，输入旧名字。结束后，房主用 <code>/setaccesslevel "名字" "user"</code> 收回管理员权限。</p>
 <p><strong><span class="ig">我的狗怀不上孕。</span></strong> 对照<a href="#17-交配与幼崽">繁殖条件</a>的清单检查一遍。饥饿和口渴只有在红色区间才会造成影响，忠诚度完全不算在内。也检查一下<strong><span class="ig">禁止繁殖</span></strong>有没有开着。狗只能和狗交配，猫只能和猫交配。</p>
 <p><strong><span class="ig">我的幼崽长不大。</span></strong> 检查一下它身上有没有开着<strong><span class="ig">暂停成长</span></strong>。除此之外就只是时间问题：默认是 90 个游戏日，就算幼崽不在你身边，这个时钟也照常走。如果期限已经到了，靠近它一次：变化会在幼崽被加载的时候发生。</p>
 <p><strong><span class="ig">狗不跟我一起上车。</span></strong> 只有处于<strong>跟随</strong>模式的狗才会上车。</p>

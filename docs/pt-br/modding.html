@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-o-que-você-precisa-antes-de-começar">2. O que você precisa antes de começar</h2>
 <p>O seu bicho precisa do próprio <code>.glb</code> skinado em <code>media/models_X/Skinned/</code>, com o conjunto completo dos 21 clips de animação <code>Rac_*</code>. Clip não é herdado entre arquivos de modelo: um modelo com quinze clips dá um bicho que congela na primeira vez que alguém pedir um dos outros seis. O modelo também tem de ficar abaixo de 60 ossos e ter o nó de topo em identidade, senão a engine estoura uma vez por frame e o bicho aparece como um borrão preto. Mais dois clips são opcionais, <code>Rac_WalkLimpFront</code> e <code>Rac_WalkLimpBack</code> (ciclos de andar mancando); eles só importam se você marcar <code>limpAnim = true</code> na definição da raça. Raça hostil tem mais quatro clips opcionais: <code>Rac_DownedLie</code>, <code>Rac_DownedRest</code> e <code>Rac_DownedUp</code> para o bicho caído derrotado (<code>downedAnim = true</code>), e <code>Rac_Growl</code> para a pose de ameaça (<code>growlAnim = true</code>).</p>
 <p>Se você ainda não tem modelo, dá para escrever e testar todo o resto apontando o <code>CD.applyDogModel</code> para um dos corpos do base. O bicho parece um caramelo, mas todo sistema deste manual roda.</p>
-<p>Você também precisa de uma textura para o corpo e de um retrato para a janela do canil.</p>
+<p>Você também precisa de uma textura para o corpo e de um retrato. O retrato aparece na janela do canil. Um ícone de cabeça, <code>CDHead_&lt;key&gt;.png</code>, é opcional: é o ícone ao lado do nome do bicho no menu de botão direito, e sem ele o menu mostra o retrato.</p>
 <p>Decida se o seu bicho é uma raça ou uma espécie antes de escrever qualquer código. Raça é um cão com números diferentes. Espécie é um bicho que não tem alguns dos trabalhos. A escolha muda quais campos você escreve; a seção 6 cobre isso.</p>
 <h2 id="3-os-arquivos-de-um-addon">3. Os arquivos de um addon</h2>
 <p>Este é o CD: Pug, o menor addon publicado, com as partes que importam:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

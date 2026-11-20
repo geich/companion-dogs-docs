@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-始める前に必要なもの">2. 始める前に必要なもの</h2>
 <p>動物には <code>media/models_X/Skinned/</code> の下に自分用のスキン付き <code>.glb</code> が要り、21 本の <code>Rac_*</code> アニメーションクリップが全部そろっている必要があります。クリップはモデルファイル間で継承されません。15 本しかないモデルは、残り 6 本のどれかを求められた瞬間に固まる動物になります。モデルはさらにボーン 60 本以下で、トップノードが単位行列でなければなりません。そうでないとエンジンが毎フレーム例外を投げ、動物は黒い染みとして描画されます。任意のクリップがもう 2 本あります。<code>Rac_WalkLimpFront</code> と <code>Rac_WalkLimpBack</code>（足を引きずる歩行サイクル）で、犬種定義で <code>limpAnim = true</code> にしたときだけ意味を持ちます。敵対的な犬種には、さらに任意のクリップが 4 本あります。倒されて横たわる動物用の <code>Rac_DownedLie</code>、<code>Rac_DownedRest</code>、<code>Rac_DownedUp</code>（<code>downedAnim = true</code>）と、威嚇のポーズ用の <code>Rac_Growl</code>（<code>growlAnim = true</code>）です。</p>
 <p>モデルがまだないなら、<code>CD.applyDogModel</code> をベースの体のどれかに向けておけば、それ以外は全部書いて試せます。動物の見た目はカラーメロですが、このマニュアルにあるシステムはすべて動きます。</p>
-<p>体のテクスチャと、犬舎ウィンドウ用の肖像も要ります。</p>
+<p>体のテクスチャと肖像も要ります。肖像は犬舎ウィンドウに出ます。頭のアイコン <code>CDHead_&lt;key&gt;.png</code> は任意です。右クリックメニューで動物の名前の横に出るアイコンで、ないときはメニューに肖像が出ます。</p>
 <p>コードを書き始める前に、あなたの動物が犬種なのか種族なのかを決めてください。犬種は数値の違う犬です。種族は、いくつかの仕事をそもそも持たない動物です。この選択で書く項目が変わります。第 6 節で扱います。</p>
 <h2 id="3-アドオンのファイル構成">3. アドオンのファイル構成</h2>
 <p>これは公開済みで最小のアドオン、CD: Pug の、要点だけを抜いたものです:</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua

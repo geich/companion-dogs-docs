@@ -510,7 +510,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
 <h2 id="2-动手之前需要准备什么">2. 动手之前需要准备什么</h2>
 <p>你的动物需要自己的蒙皮 <code>.glb</code>，放在 <code>media/models_X/Skinned/</code> 下，带完整的 21 个 <code>Rac_*</code> 动画片段。片段不会在模型文件之间继承：只有十五个片段的模型，第一次被要求播放另外六个中的某一个时就会僵住。模型还得控制在 60 根骨头以内，顶层节点为单位矩阵，否则引擎每帧抛一次异常，动物渲染成一团黑影。另有两个可选片段，<code>Rac_WalkLimpFront</code> 和 <code>Rac_WalkLimpBack</code>（瘸腿的行走循环）；只有在品种定义里设了 <code>limpAnim = true</code> 时它们才有用。敌对品种还有四个可选片段：<code>Rac_DownedLie</code>、<code>Rac_DownedRest</code> 和 <code>Rac_DownedUp</code> 用于被击败后躺在地上的动物（<code>downedAnim = true</code>），<code>Rac_Growl</code> 用于威胁姿势（<code>growlAnim = true</code>）。</p>
 <p>如果你还没有模型，可以把 <code>CD.applyDogModel</code> 指向基础模组的某个身体，先把其余部分都写出来并测试。动物长得像小卡犬，但本手册里的每个系统都能跑。</p>
-<p>你还需要一张身体贴图，和一张给狗舍窗口用的肖像。</p>
+<p>你还需要一张身体贴图和一张肖像。肖像显示在狗舍窗口里。头部图标 <code>CDHead_&lt;key&gt;.png</code> 是可选的：它是右键菜单里动物名字旁边的图标，没有它时菜单显示肖像。</p>
 <p>写任何代码之前，先决定你的动物是一个品种还是一个物种。品种是数值不同的狗。物种是整块缺少某些职能的动物。这个选择会改变你要写哪些字段；第 6 节讲它。</p>
 <h2 id="3-附加模组的文件">3. 附加模组的文件</h2>
 <p>下面是 CD: Pug，已发布的附加模组里最小的一个，只留了重要的部分：</p>
@@ -524,6 +524,7 @@ html{scroll-padding-top:calc(var(--top-h) + 16px);}
       scripts/models_pug.txt
       textures/Body/Pug.png
       textures/CDPortrait_pug.png
+      textures/CDHead_pug.png
       lua/shared/CompanionDogsPug_Breed.lua
       lua/shared/Definitions/animal/PugDefinitions.lua
       lua/shared/Definitions/animal/CompanionDogsPug_Parts.lua
